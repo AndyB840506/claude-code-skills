@@ -15,10 +15,14 @@ Claude Code skills are `.md` files that teach Claude to do specific tasks. Any r
 
 Ask conversationally:
 
+- **What language?** — Spanish or English
+- **Where should this skill live?** — Business (private, company-only) or Other (public, shareable)
+  - **Business:** Skills for internal projects, confidential or company-specific. Saved in `.claude/skills/business/` and never shared publicly.
+  - **Other:** General-purpose skills that can be shared with other users. Saved in `.claude/skills/other/` and can be published to public repos.
 - **What should Claude do automatically?** — describe the outcome you want
 - **What information does it need?** — URL, text, folder, data, file...
 - **What should it generate?** — HTML, report, file, code, dashboard...
-- **Will you use this yourself or share with others?**
+- **Will you use this yourself or share with others?** (this can also help determine if it's business or other)
 
 If you've already described enough (e.g., "a skill that reads a CSV of products and generates product cards in HTML"), I'll design directly.
 
@@ -176,18 +180,32 @@ One line describing what it does in simple language.
 
 ## Step 4 — Install the Skill
 
-After generating, install automatically:
+After generating, install automatically in the correct folder based on privacy:
 
+**If BUSINESS (private):**
 ```bash
-mkdir -p .claude/skills
-cp [skill-name].md .claude/skills/
+mkdir -p .claude/skills/business
+cp [skill-name].md .claude/skills/business/
 ```
 
-If you want the skill available in ALL your projects (not just this folder):
-
+**If OTHER (public):**
 ```bash
-mkdir -p ~/.claude/skills
-cp [skill-name].md ~/.claude/skills/
+mkdir -p .claude/skills/other
+cp [skill-name].md .claude/skills/other/
+```
+
+If you want the skill available in ALL your projects (not just this folder), copy to the global folder:
+
+**Business:**
+```bash
+mkdir -p ~/.claude/skills/business
+cp [skill-name].md ~/.claude/skills/business/
+```
+
+**Other:**
+```bash
+mkdir -p ~/.claude/skills/other
+cp [skill-name].md ~/.claude/skills/other/
 ```
 
 ---

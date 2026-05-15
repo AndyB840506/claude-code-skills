@@ -16,10 +16,13 @@ Las skills de Claude Code son archivos `.md` que le enseñan a Claude a hacer ta
 Pregunta de forma conversacional:
 
 - **¿En qué idioma quieres la skill?** — Español o English
+- **¿Dónde quieres guardar esta skill?** — Business (privada, solo para tu empresa) u Other (pública, se puede compartir)
+  - **Business:** Skills para proyectos internos, confidenciales o específicos de tu empresa. Se guardan en `.claude/skills/business/` y nunca se comparten públicamente.
+  - **Other:** Skills de utilidad general que se pueden compartir con otros usuarios. Se guardan en `.claude/skills/other/` y se pueden publicar en repositorios públicos.
 - **¿Qué quieres que haga Claude automáticamente?** — describe el resultado que esperas
 - **¿Qué información necesita recibir?** — URL, texto, carpeta, datos, archivo...
 - **¿Qué debe generar?** — HTML, informe, archivo, código, dashboard...
-- **¿Lo vas a usar tú o se lo vas a dar a otras personas?**
+- **¿Lo vas a usar tú o se lo vas a dar a otras personas?** (esto también puede indicar si es business u other)
 
 Si el usuario ya describió suficiente (ej: "una skill que lea un CSV de productos y genere fichas de producto en HTML"), diseña directamente.
 
@@ -241,18 +244,32 @@ Antes de instalar y compartir, responde estas preguntas (afectan la estructura f
 
 ## Paso 4 — Instalar la skill
 
-Después de generarla, instálala automáticamente:
+Después de generarla, instálala automáticamente en la carpeta correcta según la privacidad:
 
+**Si es BUSINESS (privada):**
 ```bash
-mkdir -p .claude/skills
-cp [nombre-skill].md .claude/skills/
+mkdir -p .claude/skills/business
+cp [nombre-skill].md .claude/skills/business/
 ```
 
-Si el usuario quiere que la skill esté disponible en todos sus proyectos (no solo en esta carpeta):
-
+**Si es OTHER (pública):**
 ```bash
-mkdir -p ~/.claude/skills
-cp [nombre-skill].md ~/.claude/skills/
+mkdir -p .claude/skills/other
+cp [nombre-skill].md .claude/skills/other/
+```
+
+Si el usuario quiere que la skill esté disponible en todos sus proyectos (no solo en esta carpeta), copia a la carpeta global correspondiente:
+
+**Business:**
+```bash
+mkdir -p ~/.claude/skills/business
+cp [nombre-skill].md ~/.claude/skills/business/
+```
+
+**Other:**
+```bash
+mkdir -p ~/.claude/skills/other
+cp [nombre-skill].md ~/.claude/skills/other/
 ```
 
 ---
