@@ -3,16 +3,16 @@ name: handoff
 description: "Automatically generate session handoff document with accomplishments, pause point, and blockers. Copies to clipboard for easy pasting in next session + GitHub backup. Triggers: handoff, session handoff, write handoff, continue session, session notes, pause point, next session, where we stopped, backup session."
 ---
 
-# Handoff — Session Summary + GitHub Backup
+# Handoff — Session Summary to Clipboard
 
-Automatically generates and copies a session summary to your clipboard — no file creation needed. Plus backs up all changes to GitHub.
+Automatically generates a session summary and copies it to your clipboard — ready to paste with Ctrl+V in next session. No file creation, no git commits.
 
 **What it does:**
 1. Analyzes recent git commits and file changes
 2. Generates structured handoff document
 3. Automatically copies to clipboard (Ctrl+V ready)
 4. Displays the document in chat
-5. Performs git add/commit/push to GitHub
+5. Done — ready for next session
 
 ---
 
@@ -45,8 +45,8 @@ Or with a custom topic (brief, kebab-case):
 
 ✓ Handoff document automatically copied to clipboard  
 ✓ Full document displayed in chat  
-✓ GitHub commit with hash  
-✓ Ready to paste with Ctrl+V in next session
+✓ Ready to paste with Ctrl+V in next session  
+✓ No file creation, no git operations
 
 ---
 
@@ -106,76 +106,39 @@ Identify and extract:
 
 ### Step 3: Generate Document
 
-Create a structured handoff document in `.agents/handoff/YYYY-MM-DD-topic.md`:
+Create a structured handoff document with:
 
-```markdown
----
-date: 2026-05-14
-session-topic: Skills folder reorganization
----
+**Structure:**
+- Date and session topic
+- Accomplishments (3-5 bullet points)
+- Key learnings
+- Files changed
+- Pause point for next session
+- Blockers (if any)
 
-# Session: Skills folder reorganization
-
-## Accomplishments
-- ✓ Reorganized 11 skills into self-contained folders
-- ✓ Added execution sections to all dependent skills
-- ✓ Created comprehensive documentation for session-close
-- ✓ All skills now have proper structure (SKILL.md + workflows/ + docs/)
-- ✓ Committed to GitHub
-
-## Files Changed
-- .claude/skills/session-close/SKILL.md (added EXECUTION section)
-- .claude/skills/retrospective/SKILL.md (added EXECUTION section)
-- .claude/skills/prompt-reviewer/SKILL.md (added EXECUTION section)
-- .claude/skills/skill-management/SKILL.md (added EXECUTION section)
-- .claude/skills/handoff/SKILL.md (added EXECUTION section)
-- New docs: workflow-overview.md, when-to-use.md, what-to-expect.md
-
-## Pause Point
-Session-close skill is now fully executable. Next session can:
-1. Test the complete workflow end-to-end
-2. Fine-tune the skill based on real usage
-3. Work on new features or improvements
-
-## Blockers
-None identified. All skills functional.
-```
+**Content:**
+Focus on outcomes, not activities. Include what changed and why.
 
 ### Step 4: Copy to Clipboard
 
-Automatically copy the document content to clipboard so user can Ctrl+V paste it.
+Automatically copy the complete document to clipboard so user can:
+- Paste it into next session's message with Ctrl+V
+- Save it to their notes/wiki if needed
+- Share it with team members
 
-### Step 5: Git Commit and Push
+**That's it.** No file creation. No git operations.
 
-Execute git operations:
+### Step 5: Display Document
 
-```bash
-git add .
-git commit -m "Session: session-topic YYYY-MM-DD HH:MM:SS
+Show the generated document in chat:
 
-[Session accomplishments from document]"
-
-git push
-```
-
-Expected output:
-```
-[main abc1234] Session: session-topic 2026-05-14 18:30:00
-X files changed, Y insertions(+), Z deletions(-)
-```
-
-### Step 6: Display Document
-
-Show the generated document in chat with confirmation:
-
-> **Handoff document created!**
+> **Handoff document generated!**
 >
-> ✓ Saved to: `.agents/handoff/2026-05-14-topic.md`
 > ✓ Copied to clipboard (Ctrl+V ready)
-> ✓ Committed and pushed to GitHub
+> ✓ Paste this into next session to pick up where you left off
 >
 > [Full document content displayed]
 
 ---
 
-**Handoff complete!** Session documented, committed, and backed up.
+**Handoff complete!** Ready to paste in next session.
