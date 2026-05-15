@@ -1,192 +1,156 @@
 ---
 name: handoff
-description: "Create structured session handoff documents + automatic GitHub backup. Captures accomplishments, pause point, blockers, and next steps. Also performs git commit + push for automatic backup. Output: .agents/handoff/YYYY-MM-DD-topic.md + GitHub commit. Triggers: handoff, session handoff, write handoff, continue session, session notes, pause point, next session, where we stopped, backup session."
+description: "Automatically generate session handoff document with accomplishments, pause point, and blockers + GitHub backup. Creates copiable summary for next session. Output: .agents/handoff/YYYY-MM-DD-topic.md + git commit + push. Triggers: handoff, session handoff, write handoff, continue session, session notes, pause point, next session, where we stopped, backup session."
 ---
 
-# Handoff — Session Continuity + GitHub Backup
+# Handoff — Session Summary + GitHub Backup
 
-Create structured handoff for session continuation **and** automatically backup to GitHub.
+Automatically generates a copiable summary of what you accomplished, where you paused, and what's next — plus backs up to GitHub.
 
-**Two actions in one:**
-1. Write handoff document (`.agents/handoff/YYYY-MM-DD-topic.md`)
-2. Git commit + push all changes to GitHub
+**What it does:**
+1. Analyzes recent git commits and file changes
+2. Generates structured handoff document
+3. Saves to `.agents/handoff/YYYY-MM-DD-topic.md`
+4. Performs git add/commit/push to GitHub
+5. Displays the document for you to copy/paste into next session
 
 ---
 
-## Quick Execution
+## How to Use
 
-```bash
-# Automatic: does both handoff doc + git push
+Simply invoke:
+
+```
 /handoff
+```
 
-# With specific topic
-/handoff skill-creation
+Or specify a topic:
+
+```
+/handoff skill-fixes
 ```
 
 ---
 
-## What It Does
+## What Gets Generated
 
-### Part 1: Write Handoff Document
+The skill automatically creates a document with:
 
-Creates `.agents/handoff/YYYY-MM-DD-topic.md` with:
-- What was accomplished this session
-- Where we paused (mid-task, between tasks, or blocked)
-- Files to read first in next session
+**What We Accomplished**
+- List of commits and changes from this session
+- Files modified with brief description
+- Features added, bugs fixed, skills created
+
+**Where We Paused**
+- Last action completed
+- Next action to do
 - Any blockers or pending decisions
 
-### Part 2: GitHub Backup (Automatic)
+**Files to Read First**
+- Recently modified files listed
+- Critical paths for next session
 
-After writing handoff:
-- `git add -A`
-- `git commit -m "Session: [topic] - [timestamp]"`
-- `git push origin main`
-- Confirmation message with commit hash
+**Status**
+- Ready for next session immediately
+
+---
+
+## Execution Flow
+
+### Step 1: Analyze Session
+Gathers recent commits, file changes, and identifies theme:
+```bash
+git log --oneline -5
+git diff --stat HEAD~5
+```
+
+### Step 2: Generate Document
+Creates `.agents/handoff/YYYY-MM-DD-topic.md` with structured format:
+- Date and status
+- Accomplishments section
+- Pause point details
+- Files to read first
+- Questions or blockers
+
+### Step 3: Display for Copy/Paste
+Shows the generated document in the chat so you can:
+- Read it immediately
+- Copy entire document for next session
+- Verify it captured everything correctly
+
+### Step 4: GitHub Backup
+```bash
+git add -A
+git commit -m "Session: [topic] [timestamp]"
+git push origin main
+```
+
+### Step 5: Confirmation
+Shows commit hash and link to GitHub so you can verify backup succeeded.
 
 ---
 
-## Execution Steps
+## Output Example
 
-### Step 1: Create Output Directory
-
-```bash
-mkdir -p .agents/handoff
 ```
-
-### Step 2: Identify Session Topic
-
-If topic provided: use it as identifier.
-
-If not: derive from recent commits:
-```bash
-git log --oneline -1 --format="%s"
-```
-
-Topic slug format: 2-4 words, lowercase, hyphen-separated (e.g., `skill-creation`, `bug-fixes`)
-
-### Step 3: Gather Session Accomplishments
-
-```bash
-# Recent commits this session
-git log --oneline --since="2 hours ago"
-
-# Recent file changes
-git diff --stat HEAD~5 | head -20
-```
-
-### Step 4: Identify Pause Point
-
-Determine where we stopped:
-1. **Last thing done?** — Be specific with file references
-2. **What's next?** — What should the next session do
-3. **Mid-task or between tasks?**
-4. **Any blockers or pending decisions?**
-
-### Step 5: Identify Key Files
-
-List files the next session should read first:
-```bash
-# Recently modified
-git diff --name-only HEAD~5
-```
-
-### Step 6: Write Handoff Document
-
-Write to: `.agents/handoff/YYYY-MM-DD-topic-slug.md`
-
-```markdown
-# Handoff: [Topic]
-
-**Date:** YYYY-MM-DD
-**Status:** Paused mid-task | Between tasks | Blocked on X
+✓ Handoff document created:
+  File: .agents/handoff/2026-05-14-bug-fixes.md
+  
+[Full document content below — copy for next session]
 
 ---
+
+# Handoff: Bug Fixes
+
+**Date:** 2026-05-14  
+**Status:** Between tasks — ready to continue
 
 ## What We Accomplished This Session
 
-### 1. [Accomplishment 1]
-[Brief description with file citations]
+### 1. Fixed retrospective skill not triggering
+- Moved files from loose .md to folder structure
+- All 13 skills now discoverable
+- File: .claude/skills/retrospective/SKILL.md
 
-**Files changed:**
-- `path/to/file.py` — Description
+### 2. Clarified auto-compact configuration
+- Updated .claude/settings.json
+- Added instructions to CLAUDE.md
+- Context now compacts at 50% threshold
 
-### 2. [Accomplishment 2]
-...
-
----
+**Files changed (last 5):**
+- .claude/settings.json
+- .claude/skills/session-close/SKILL.md
+- CLAUDE.md
 
 ## Where We Paused
 
-[Clear description of pause point]
+Session complete. All skills working, backups current.
 
-**Last action:** [what was just done]
-**Next action:** [what should happen next]
-**Blockers (if any):** [anything blocking progress]
-
----
+**Last action:** Ran session-close workflow  
+**Next action:** Continue development (no blockers)
 
 ## Files to Read First
 
 ```
-path/to/critical-file.py
-path/to/related-file.py
+.claude/skills/session-close/SKILL.md
+.claude/settings.json
 ```
 
 ---
-
-## Questions to Answer
-
-1. [Open question needing decision]
-```
-
-### Step 7: Automatic GitHub Backup
-
-```bash
-# Stage all changes
-git add -A
-
-# Commit with timestamp
-git commit -m "Session: [topic-slug] $(date +'%Y-%m-%d %H:%M:%S')"
-
-# Push to remote
-git push origin main
-
-# Show confirmation
-echo "✓ Backup complete: [commit-hash]"
-```
-
----
-
-## Key Rules
-
-- **Capture state clearly** — next session needs to pick up exactly where you left off
-- **Identify blockers** — don't leave the next session guessing
-- **List files explicitly** — file paths, not descriptions
-- **Cite everything** — file paths for all references
-- **Backup always runs** — even if handoff document is minimal, git push still happens
-
----
-
-## Example Output
-
-```
-✓ Handoff document created:
-  .agents/handoff/2026-05-14-skill-creation.md
 
 ✓ GitHub backup:
-  Commit: 3x4a5b6c
-  Message: "Session: skill-creation 2026-05-14 20:45:30"
-  URL: https://github.com/AndyB840506/claude-projects/commit/3x4a5b6c
-
+  Commit: c8cec62
+  Message: "Session: bug-fixes 2026-05-14 20:34"
+  
 Status: Ready for next session
 ```
 
 ---
 
-## After Running Handoff
+## Tips
 
-Next session can:
-1. Read `.agents/handoff/YYYY-MM-DD-topic.md` to understand context
-2. Know exactly where to continue
-3. Trust that GitHub has the latest backup
-4. Start fresh with full history preserved
+- **Copy the entire document** — paste it at the start of next session for quick context
+- **Customize before closing** — edit the document if you want to add notes
+- **Always backs up** — even minimal handoff documents trigger git push
+- **Use with session-close** — this is Paso 4 of the `/session-close` workflow
+- **Manual or automatic** — invoke `/handoff` anytime, or let `/session-close` do it
