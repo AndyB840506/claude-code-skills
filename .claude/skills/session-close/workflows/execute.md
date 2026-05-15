@@ -129,6 +129,29 @@ Execute the 5-step workflow in order. Each step builds on previous ones. All con
 
 ---
 
+## STEP 6: Clear Screen (Optional)
+
+**What happens:**
+1. Ask user: "Have you pasted the handoff summary in your next session?"
+2. If YES: Execute `clear` to clean the screen
+3. If NO: Skip (user can clear manually later)
+
+**Purpose:**
+- Cleans up the screen after session ends
+- Ensures fresh start for next session
+- Only runs after user confirms they've pasted the handoff
+
+**Expected output:**
+```
+Have you pasted the handoff summary in your next session? [yes/no]
+
+✓ Session closed and screen cleared. Ready for new work!
+```
+
+**Time:** < 1 second
+
+---
+
 ## Full Execution Flow
 
 ```
@@ -140,9 +163,11 @@ Step 2: /prompt-reviewer → [confirm improvements?] → improve docs
   ↓
 Step 3: /skill-management → [confirm reorganize?] → fix structure
   ↓
-Step 4: /handoff → [automatic] → create document + git push
+Step 4: /handoff → [automatic] → copy to clipboard
   ↓
 Step 5: Google Drive sync → [automatic] → backup to Drive
+  ↓
+Step 6: Clear screen → [confirm pasted?] → clear screen
   ↓
 DONE ✓
 ```
@@ -170,12 +195,13 @@ DONE ✓
 
 ---
 
-## Success = All 5 Steps Complete
+## Success = All 6 Steps Complete
 
 ✓ Retrospective: Learnings extracted (or skipped)  
 ✓ Prompt Reviewer: Skills improved (or skipped)  
 ✓ Skill Management: Structure verified (or reorganized)  
-✓ Handoff: Document created + pushed  
+✓ Handoff: Document copied to clipboard  
 ✓ Google Drive: Synced (or skipped if not configured)  
+✓ Clear Screen: Confirmed paste, cleared (or skipped)  
 
-Session is closed and ready for next session or hand-off.
+Session is closed and ready for next session with a clean slate.

@@ -101,6 +101,24 @@ Complete session closing in 5 steps: extract learnings, review skills, organize 
 
 ---
 
+## Step 6: Clear Screen — Start Fresh
+
+**Optional** (after confirming paste)
+
+**What happens:**
+- Ask: "Have you pasted the handoff summary in your next session?"
+- If YES: Execute `clear` to clean the screen
+- If NO: Skip (user can clear manually)
+
+**Why it matters:**
+- Clean slate for next session
+- No clutter from previous work
+- Psychological reset
+
+**Time:** < 1 second
+
+---
+
 ## Execution Summary
 
 | Step | Skill | Action | Time | Required |
@@ -108,8 +126,9 @@ Complete session closing in 5 steps: extract learnings, review skills, organize 
 | 1 | Retrospective | Extract & apply learnings | 2-3m | Yes |
 | 2 | Prompt Reviewer | Review & improve | 2-3m | No |
 | 3 | Skill Management | Verify structure | 2-3m | No |
-| 4 | Handoff | Document & push | 1-2m | Yes |
+| 4 | Handoff | Copy to clipboard | 1-2m | Yes |
 | 5 | Google Drive Sync | Auto-backup | Auto | Yes* |
+| 6 | Clear Screen | Clean screen | Auto | Optional |
 
 *Requires Google Drive MCP installed
 

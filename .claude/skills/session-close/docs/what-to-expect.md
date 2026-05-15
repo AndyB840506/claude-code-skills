@@ -168,6 +168,33 @@ Automatic, < 1 second
 
 ---
 
+## Step 6: Clear Screen
+
+### Expected Output
+
+**Console:**
+```
+Have you pasted the handoff summary in your next session?
+[yes/no]
+```
+
+**If YES:**
+```
+✓ Session closed and screen cleared.
+Ready for new work!
+
+[Screen clears]
+```
+
+**If NO:**
+- Screen stays as is
+- User can clear manually later with `clear` command
+
+### Duration
+< 1 second
+
+---
+
 ## Full Session Output Timeline
 
 ```
@@ -175,8 +202,9 @@ Starting session-close...
 [~3m] Retrospective: Learnings extracted + confirmed
 [~3m] Prompt Reviewer: Skills improved + confirmed
 [~3m] Skill Management: Structure verified + confirmed
-[~2m] Handoff: Document created + pushed
+[~2m] Handoff: Document copied to clipboard
 [<1s] Google Drive: Auto-synced
+[<1s] Clear: Confirmed + cleared
 [Total: ~10 minutes]
 
 Session closed ✓
@@ -214,9 +242,8 @@ Session close is complete when you see:
 ✓ Retrospective completed (learnings captured or skipped)  
 ✓ Prompt Reviewer completed (improvements applied or skipped)  
 ✓ Skill Management completed (structure verified or reorganized)  
-✓ Handoff file created in `.agents/handoff/`  
-✓ Git commit visible in `git log`  
-✓ GitHub push confirmed  
 ✓ Handoff text copied to clipboard  
+✓ Google Drive synced (or skipped if not configured)  
+✓ Screen cleared (or user chose to skip)  
 
-At this point, your session is fully documented and backed up.
+At this point, your session is fully documented, backed up, and ready for next session.

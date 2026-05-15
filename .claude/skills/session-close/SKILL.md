@@ -117,6 +117,19 @@ This step runs automatically — no confirmation needed. It creates the handoff 
 
 This happens automatically if Google Drive MCP is configured. No action needed.
 
+### Execute Step 6: Clear Screen (Optional)
+
+Ask user confirmation:
+
+> **Have you pasted the handoff summary in your next session?**
+>
+> Once confirmed, I'll clear the screen to start fresh.
+>
+> Ready? [yes/no]
+
+If YES: Execute `clear` to clean the screen.  
+If NO: Skip and done.
+
 ---
 
 **Session close workflow complete!** All 5 steps have executed. Session is documented and backed up.
