@@ -83,15 +83,23 @@ Continue to STEP 4
 ## STEP 4: Handoff (Fully Automatic)
 
 ```
-Display: "Step 4: Creating handoff document..."
+Display: "Step 4: Generating handoff document..."
 
 Invoke: /handoff
-  (This generates session summary and git commit)
+  (This generates session summary in memory, copies to clipboard, and makes git commit)
 
-Wait for completion. Should create:
-  - File: .agents/handoff/YYYY-MM-DD-[topic].md
-  - Git commit: Session: [topic] YYYY-MM-DD HH:MM:SS
-  - Clipboard: Summary ready to paste
+What /handoff does:
+  1. Analyzes git history and conversation context
+  2. Generates handoff markdown in memory (accomplishments, pause point, blockers, etc.)
+  3. Copies the complete document to clipboard (Ctrl+V ready)
+  4. Displays the full document in chat
+  5. Creates git commit: Session: [topic] YYYY-MM-DD HH:MM:SS
+  6. Pushes commit to GitHub (origin/main)
+
+Wait for completion. Should result in:
+  - Handoff document in clipboard (ready to paste)
+  - Document displayed in chat
+  - Git commit made and pushed
 
 Display: "✓ Handoff created and committed to GitHub"
 
@@ -103,18 +111,23 @@ Continue to STEP 5
 ```
 Display: "Step 5: Backing up to Google Drive..."
 
-Find the handoff file created in Step 4:
-  → Look in .agents/handoff/ folder
-  → Read the most recent .md file
-  → Get filename and full content
+Take the handoff document from Step 4 (content still in context):
+  → Extract the full markdown content
+  → Generate filename: handoff-[YYYY-MM-DD].md
 
-Use mcp__claude_ai_Google_Drive__create_file to copy it:
-  - title: "handoff-[YYYY-MM-DD].md"
-  - parentId: "G:\My Drive\claude projects" (or folder ID)
-  - text_content: [full markdown content from handoff file]
-  - content_mime_type: "text/markdown"
+Write to temporary file in project root:
+  → Create file: handoff-[YYYY-MM-DD].md
+  → Write the complete handoff markdown
 
-Wait for file creation to complete.
+Copy to Google Drive Desktop folder:
+  → Use bash: cp "handoff-[YYYY-MM-DD].md" "/g/My Drive/claude projects/handoff-[YYYY-MM-DD].md"
+  → Wait for copy to complete
+
+Delete the temporary file:
+  → Remove handoff-[YYYY-MM-DD].md from project root
+
+Google Drive Desktop auto-sync:
+  → File automatically synced to cloud (5-10 seconds)
 
 Display: "✓ Handoff backed up to Google Drive"
 
@@ -157,7 +170,8 @@ If any step fails:
 
 ## Storage Paths
 
-- Handoff local: `.agents/handoff/YYYY-MM-DD-[topic].md`
-- Handoff Google Drive: `G:\My Drive\claude projects\handoff-[YYYY-MM-DD].md`
+- Handoff primary: Clipboard (ready to paste with Ctrl+V)
+- Handoff backup (git): GitHub commit history
+- Handoff backup (Google Drive): `G:\My Drive\claude projects\handoff-[YYYY-MM-DD].md`
 - Git branch: `main` (always)
 - Git remote: `origin` (GitHub)

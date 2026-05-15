@@ -51,8 +51,8 @@ When `/session-close` is invoked, execute all 5 steps automatically:
 1. Invoke `/retrospective` → ask user to confirm changes
 2. Invoke `/prompt-reviewer` → ask user to confirm improvements  
 3. Invoke `/skill-management` → ask user to confirm reorganization
-4. Invoke `/handoff` → create document & git commit (automatic, no prompt)
-5. Copy handoff to Google Drive → `G:\My Drive\claude projects\` (automatic, no prompt)
+4. Invoke `/handoff` → generate doc in memory → copy to clipboard → git commit (automatic)
+5. Copy the handoff document to `G:\My Drive\claude projects\` using local file copy (automatic)
 
 **Steps 1-3:** Show results and wait for user confirmation.  
 **Steps 4-5:** Run automatically without user prompts.

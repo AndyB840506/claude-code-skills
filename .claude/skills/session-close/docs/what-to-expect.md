@@ -119,22 +119,26 @@ Reorganize? [y/n]
 Running /handoff...
 
 Generating handoff document...
-✓ Created: .agents/handoff/2026-05-14-session-topic.md
-✓ Added to git
+✓ Analyzed session from git and conversation
+✓ Generated handoff document
+✓ Copied to clipboard (ready to paste with Ctrl+V)
 ✓ Committed: "Session: session-topic 2026-05-14 18:30:00"
 ✓ Pushed to GitHub
 
 Handoff document copied to clipboard
 ```
 
-**File Created:**
-`.agents/handoff/YYYY-MM-DD-session-topic.md`
-
-**Contents:**
+**Handoff Document Contents:**
+- Date and topic
 - Accomplishments from this session
 - Pause point for next session
 - Any blockers or issues
 - Files changed
+- Next actions
+
+**Storage:**
+- Primary: Your clipboard (ready to paste in next session with Ctrl+V)
+- Backup: GitHub (committed to git history)
 
 ### Duration
 1-2 minutes
@@ -147,24 +151,32 @@ session-topic skill updates + handoff document
 
 ---
 
-## Step 5: Google Drive Sync
+## Step 5: Google Drive Backup
 
 ### Expected Output
 
-**Silent/Automatic**
-- Handoff document synced to Google Drive
-- No console output required
+**Console:**
+```
+Step 5: Backing up to Google Drive...
+✓ Handoff backed up to Google Drive
+```
 
-**If you see nothing:**
-- Sync succeeded silently
-- Check Google Drive in a few seconds
+**File Created:**
+`G:\My Drive\claude projects\handoff-2026-05-14.md`
+
+**What happens:**
+- Handoff document (from Step 4) written to temp file
+- Copied to Google Drive Desktop folder
+- Temp file deleted
+- Google Drive Desktop auto-syncs to cloud (5-10 seconds)
 
 **If you see error:**
-- Google Drive MCP may not be installed
-- This is optional — local + GitHub backups still exist
+- Displays warning but continues (backup is optional)
+- Local clipboard + GitHub backups still exist
+- You can manually copy the file later
 
 ### Duration
-Automatic, < 1 second
+5-10 seconds
 
 ---
 

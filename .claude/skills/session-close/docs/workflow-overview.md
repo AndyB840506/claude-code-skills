@@ -66,38 +66,43 @@ Complete session closing in 5 steps: extract learnings, review skills, organize 
 **Command:** `/handoff`
 
 **What happens:**
-- Generates `.agents/handoff/YYYY-MM-DD-topic.md` with:
+- Generates handoff document in memory with:
   - Accomplishments from this session
   - Where to resume next session
   - Any blockers or issues
-- Creates git commit with handoff content
+  - Files changed
+- Copies complete document to clipboard (ready to paste with Ctrl+V)
+- Displays document in chat
+- Creates git commit with session data
 - Pushes to GitHub
-- Copies summary to clipboard
 
 **Why it matters:**
-- Creates clear handoff for next session
+- Creates clear handoff for next session (in clipboard)
 - Automatic GitHub backup
 - Preserves session context
+- Ready to paste immediately
 
 **Time:** 1-2 minutes
 
 ---
 
-## Step 5: Google Drive Sync — Automatic Backup
+## Step 5: Google Drive Backup — Local File Copy
 
-**Automatic** (if MCP is configured)
+**Automatic** (no user action needed)
 
 **What happens:**
-- Handoff document automatically synced to Google Drive
-- Creates additional backup layer
-- No user action needed
+- Takes handoff document from Step 4
+- Writes to temp file: `handoff-[YYYY-MM-DD].md`
+- Copies to: `G:\My Drive\claude projects\handoff-[YYYY-MM-DD].md`
+- Deletes temp file
+- Google Drive Desktop auto-syncs to cloud (5-10 seconds)
 
 **Why it matters:**
-- Triple backup (local git + GitHub + Google Drive)
-- Accessible from anywhere
-- Survives local disk failures
+- Triple backup (clipboard + GitHub + Google Drive)
+- Accessible from Google Drive account
+- Cloud sync happens automatically
 
-**Time:** Automatic
+**Time:** 5-10 seconds
 
 ---
 

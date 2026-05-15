@@ -38,7 +38,7 @@ STEP 5: Copy handoff to Google Drive
 3. **Each step completes before next starts** — do not run in parallel
 4. **Display clear status messages** — show which step is running and when it completes
 5. **All changes are reversible** — everything goes through git
-6. **Step 5 uses Google Drive API** — use `mcp__claude_ai_Google_Drive__create_file` tool to copy handoff
+6. **Step 5 uses local file copy** — write handoff markdown to a temp file, then copy to `G:\My Drive\claude projects\` using bash `cp` or PowerShell `Copy-Item`
 
 ## User Prompts
 
@@ -72,17 +72,17 @@ Session closed successfully.
 - User can choose YES/NO even if results unclear
 
 **For Step 4 (handoff):**
-- If handoff creation fails: display error and stop sequence
+- If handoff invocation fails: display error and stop sequence
 - User can retry with `/handoff` manually
-- Cannot proceed to Step 5 without a handoff file
+- Cannot proceed to Step 5 without handoff output (clipboard content)
 
-**For Step 5 (Google Drive):**
-- If Google Drive backup fails: show error but continue
+**For Step 5 (Google Drive file copy):**
+- If file copy fails: show error but continue
 - Display: "⚠ Could not back up to Google Drive: [reason]"
 - Hint: "Check that `G:\My Drive\claude projects\` exists and is writable"
 - **Do NOT stop** — Step 4 succeeded, backup is optional
 - Session close still completes successfully
-- User can retry Step 5 with `/handoff` → manually copy later
+- Handoff is already in clipboard from Step 4
 
 **General:**
 - All git commits succeed or fail atomically (can be retried)
@@ -91,8 +91,8 @@ Session closed successfully.
 
 ## Storage Paths
 
-- Handoff document (local): `.agents/handoff/YYYY-MM-DD-[topic].md`
-- Handoff document (Google Drive): `G:\My Drive\claude projects\handoff-[YYYY-MM-DD].md`
+- Handoff document: Lives in memory/clipboard only (not written to disk)
+- Google Drive backup: `G:\My Drive\claude projects\handoff-[YYYY-MM-DD].md`
 - Folder must exist beforehand: `G:\My Drive\claude projects\` (use Google Drive Desktop)
 
 ## Git Integration
@@ -111,6 +111,6 @@ To verify implementation:
 2. Confirm all 5 steps execute in order
 3. Verify approval prompts appear for Steps 1-3
 4. Verify Steps 4-5 run without prompts
-5. Check `.agents/handoff/` folder for document
-6. Check `G:\My Drive\claude projects\` for backup
+5. Verify handoff document is copied to clipboard (can paste with Ctrl+V)
+6. Check `G:\My Drive\claude projects\` for `handoff-[date].md` file
 7. Verify git commit created and pushed
