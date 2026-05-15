@@ -101,7 +101,27 @@ Complete session closing in 5 steps: extract learnings, review skills, organize 
 
 ---
 
-## Step 6: Clear Screen — Start Fresh
+## Step 6: Compact Context — Optimize Space
+
+**Automatic**
+
+**What happens:**
+- Runs `/compact` command
+- Compresses conversation history
+- Removes verbose/redundant output
+- Frees up context for next session
+
+**Why it matters:**
+- Prepares for long-running projects
+- Optimizes token usage
+- Maintains conversation efficiency
+- Creates space for new work
+
+**Time:** 1-2 seconds
+
+---
+
+## Step 7: Clear Screen — Start Fresh
 
 **Optional** (after confirming paste)
 
@@ -128,7 +148,8 @@ Complete session closing in 5 steps: extract learnings, review skills, organize 
 | 3 | Skill Management | Verify structure | 2-3m | No |
 | 4 | Handoff | Copy to clipboard | 1-2m | Yes |
 | 5 | Google Drive Sync | Auto-backup | Auto | Yes* |
-| 6 | Clear Screen | Clean screen | Auto | Optional |
+| 6 | Compact | Compress context | 1-2s | Yes |
+| 7 | Clear Screen | Clean screen | Auto | Optional |
 
 *Requires Google Drive MCP installed
 

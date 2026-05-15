@@ -168,7 +168,23 @@ Automatic, < 1 second
 
 ---
 
-## Step 6: Clear Screen
+## Step 6: Compact Context
+
+### Expected Output
+
+**Console:**
+```
+Compacting conversation history...
+✓ Context compressed: 2500+ tokens freed
+Ready for next session
+```
+
+### Duration
+1-2 seconds
+
+---
+
+## Step 7: Clear Screen
 
 ### Expected Output
 

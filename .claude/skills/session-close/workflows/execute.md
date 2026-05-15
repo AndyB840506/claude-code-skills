@@ -129,7 +129,32 @@ Execute the 5-step workflow in order. Each step builds on previous ones. All con
 
 ---
 
-## STEP 6: Clear Screen (Optional)
+## STEP 6: Compact Context
+
+**What happens:**
+1. Run `/compact` command to compress conversation history
+2. Removes verbose output and redundant messages
+3. Frees up context space for next session
+4. Preserves essential information
+
+**Purpose:**
+- Optimize token usage
+- Create space for next session's work
+- Maintain conversation efficiency
+- Prepare for long-running projects
+
+**Expected output:**
+```
+Compacting conversation history...
+✓ Context compressed: X tokens freed
+Ready for next session
+```
+
+**Time:** 1-2 seconds
+
+---
+
+## STEP 7: Clear Screen (Optional)
 
 **What happens:**
 1. Ask user: "Have you pasted the handoff summary in your next session?"
@@ -137,15 +162,17 @@ Execute the 5-step workflow in order. Each step builds on previous ones. All con
 3. If NO: Skip (user can clear manually later)
 
 **Purpose:**
-- Cleans up the screen after session ends
-- Ensures fresh start for next session
-- Only runs after user confirms they've pasted the handoff
+- Clean slate for next session
+- No clutter from previous work
+- Psychological reset after compact
 
 **Expected output:**
 ```
 Have you pasted the handoff summary in your next session? [yes/no]
 
 ✓ Session closed and screen cleared. Ready for new work!
+
+[Screen clears]
 ```
 
 **Time:** < 1 second
@@ -167,7 +194,9 @@ Step 4: /handoff → [automatic] → copy to clipboard
   ↓
 Step 5: Google Drive sync → [automatic] → backup to Drive
   ↓
-Step 6: Clear screen → [confirm pasted?] → clear screen
+Step 6: /compact → [automatic] → compress context
+  ↓
+Step 7: Clear screen → [confirm pasted?] → clear screen
   ↓
 DONE ✓
 ```
@@ -195,13 +224,14 @@ DONE ✓
 
 ---
 
-## Success = All 6 Steps Complete
+## Success = All 7 Steps Complete
 
 ✓ Retrospective: Learnings extracted (or skipped)  
 ✓ Prompt Reviewer: Skills improved (or skipped)  
 ✓ Skill Management: Structure verified (or reorganized)  
 ✓ Handoff: Document copied to clipboard  
 ✓ Google Drive: Synced (or skipped if not configured)  
+✓ Compact: Context compressed  
 ✓ Clear Screen: Confirmed paste, cleared (or skipped)  
 
-Session is closed and ready for next session with a clean slate.
+Session is closed, optimized, and ready for next session with a clean slate.

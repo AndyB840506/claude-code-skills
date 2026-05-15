@@ -117,7 +117,16 @@ This step runs automatically — no confirmation needed. It creates the handoff 
 
 This happens automatically if Google Drive MCP is configured. No action needed.
 
-### Execute Step 6: Clear Screen (Optional)
+### Execute Step 6: Compact Context
+
+Run this command:
+```
+/compact
+```
+
+Compresses conversation history to free up context space for next session.
+
+### Execute Step 7: Clear Screen (Optional)
 
 Ask user confirmation:
 
@@ -132,4 +141,4 @@ If NO: Skip and done.
 
 ---
 
-**Session close workflow complete!** All 5 steps have executed. Session is documented and backed up.
+**Session close workflow complete!** All 7 steps have executed. Session is documented, backed up, and optimized for next session.
