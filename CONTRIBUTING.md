@@ -1,142 +1,161 @@
 # Contributing to Claude Code Skills
 
-Thanks for wanting to improve these skills! This guide explains how to fork, branch, and submit improvements.
+¡Gracias por interesarte en mejorar estas skills! Este repositorio contiene skills reutilizables para Claude Code que se pueden mejorar, extender y compartir con la comunidad.
 
----
+## Cómo Contribuir
 
-## Getting Started
+### 1. Fork el Repositorio
+Haz click en "Fork" en GitHub. Esto crea tu propia copia del proyecto.
 
-### 1. Fork the Repository
-Click **Fork** on GitHub to create your own copy: `yourusername/podcast-creator-kit`
-
-### 2. Clone Your Fork
 ```bash
-git clone https://github.com/yourusername/podcast-creator-kit.git
-cd podcast-creator-kit
-git remote add upstream https://github.com/AndyB840506/podcast-creator-kit.git
+git clone https://github.com/TU-USUARIO/claude-code-skills.git
+cd claude-code-skills
 ```
 
-### 3. Create a Branch
-Branch names should describe the improvement:
+### 2. Crea una Branch
+Para cada cambio, crea una rama descriptiva:
+
 ```bash
-git checkout -b improve/prompt-reviewer-clarity
-git checkout -b fix/btq-typo-in-script
-git checkout -b add/new-skill-lead-scorer
+git checkout -b mejora/nombre-de-la-mejora
+# o
+git checkout -b fix/nombre-del-bug
+# o
+git checkout -b feature/nueva-funcionalidad
 ```
 
-**Branch naming:**
-- `improve/` — enhancing existing skills
-- `fix/` — bug fixes or corrections
-- `add/` — new skills or major additions
-- `docs/` — documentation updates
+**Convención de nombres:**
+- `mejora/` — mejoras a skills existentes
+- `fix/` — correcciones de bugs
+- `feature/` — nuevas skills o features
+- `docs/` — mejoras a documentación
 
----
+### 3. Haz tus Cambios
 
-## Making Changes
-
-### What Can You Improve?
-
-✅ **Do improve:**
-- Clarity of instructions
-- Missing edge cases
-- Better examples
-- Typos or grammar
-- More specific triggers
-- Better error handling
-- Validated against real use
-
-❌ **Don't:**
-- Change tone/voice without reason
-- Remove rules without justifying
-- Make it more complex (simpler is better)
-- Add dependencies without necessity
-
-### Testing Your Changes
-
-Before submitting, test that your changes work:
-
-1. **If you modified a skill:** Simulate using it. Are the instructions clear? Can someone follow them without confusion?
-2. **If you added a new skill:** Does it trigger correctly? Do all the steps make sense?
-3. **Check formatting:** Frontmatter valid? Markdown consistent?
-
----
-
-## Submitting Your Changes
-
-### 1. Commit with Clarity
-```bash
-git commit -m "improve/prompt-reviewer: add concrete BTQ examples
-
-- Added 3 example scenarios (guión, artwork, social copy)
-- Shows symptom fixes vs. root cause fixes
-- Helps users understand depth of analysis needed"
+**Para mejorar un skill existente:**
+```
+.claude/skills/nombre-skill/
+├── SKILL.md          # Actualizar descripción, triggers, instrucciones
+├── workflows/        # Agregar/mejorar workflows
+├── docs/             # Agregar documentación avanzada
+└── scripts/          # Scripts helper si es necesario
 ```
 
-### 2. Push to Your Fork
+**Reglas:**
+- SKILL.md debe estar bajo 50 líneas (router claro)
+- Cada workflow en archivo separado
+- Triggers deben ser específicos y cubrir variaciones
+- Documentar cambios en commit messages en español o inglés
+
+### 4. Testea tus Cambios
+
+Antes de hacer commit:
+
 ```bash
-git push origin improve/prompt-reviewer-clarity
+# Verifica que la estructura es correcta
+ls -R .claude/skills/tu-skill/
+
+# Abre el archivo SKILL.md y confirma que:
+# - Nombre en frontmatter match folder name
+# - Triggers sean claros y múltiples
+# - Descripción sea concisa
+# - Estructura sea consistente
 ```
 
-### 3. Create a Pull Request
-On GitHub, click **"New Pull Request"** and describe:
+### 5. Commit y Push
 
-**Title:** `improve/prompt-reviewer: better BTQ examples`
+```bash
+git add .
+git commit -m "mejora: descripción clara de qué cambiaste"
+git push origin mejora/nombre-de-la-mejora
+```
 
-**Description:**
-```markdown
-## What changed?
-- Added concrete examples from BTQ podcast workflow
-- Clarified difference between symptom and root cause fixes
+**Mensaje de commit:**
+- Empieza con verbo: `feat:`, `fix:`, `docs:`, `mejora:`
+- Claro y conciso (1 línea máximo, 50 caracteres idealmente)
+- Español o inglés consistente con el resto del proyecto
 
-## Why?
-The "Think Like Mario" section was too abstract. These examples show it in action.
+### 6. Crea un Pull Request
+
+1. Ve a tu fork en GitHub
+2. Click en "Compare & pull request"
+3. Describe:
+   - **Qué cambiaste** — descripción breve
+   - **Por qué** — cuál es el problema que solucionas
+   - **Cómo lo testeaste** — si aplica
+4. Submit PR
+
+**Ejemplo de descripción de PR:**
+
+```
+## Descripción
+Mejora el skill `retrospective` para detectar también cambios fallidos.
+
+## Problema
+El skill actual solo detecta "redone work" pero no cuando algo falla completamente sin ser reintentado.
+
+## Cambios
+- Agregué patrón "Failed attempts" en Step 1
+- Documenté en sección "What NOT to Encode"
+- Actualicé ejemplo en Quick Start
 
 ## Testing
-- Read through the examples
-- Verified they make sense for podcast workflows
-- Checked formatting
-
-## Checklist
-- [x] Tested the skill/change
-- [x] Frontmatter is valid (if skill)
-- [x] Markdown formatting is consistent
-- [x] No unnecessary complexity added
+Probé manualmente detectando un skill fallido en la sesión anterior.
 ```
 
+## Qué Tipo de Contribuciones Aceptamos
+
+✅ **Mejoras bienvenidas:**
+- Agregar triggers más específicos
+- Mejorar ejemplos o documentación
+- Arreglar bugs en instrucciones
+- Optimizar workflows
+- Traducir a otros idiomas
+- Agregar secciones "Troubleshooting"
+- Nuevas skills bien estructuradas
+
+❌ **No aceptamos:**
+- Cambios destructivos sin discusión previa
+- Skills sin estructura de carpeta
+- SKILL.md mayor a 50 líneas sin workflows
+- Cambios a frontmatter `name:` sin justificación
+
+## Estructura Esperada
+
+Cualquier skill debe seguir este patrón:
+
+```
+.claude/skills/nombre-skill/
+├── SKILL.md                    # Frontmatter + router (máx 50 líneas)
+├── workflows/                  # Procedimientos paso a paso
+│   ├── workflow1.md
+│   └── workflow2.md
+├── templates/                  # HTML, email, etc (si aplica)
+└── docs/                       # Documentación avanzada (si aplica)
+```
+
+**SKILL.md debe tener:**
+- Frontmatter: `name:` (kebab-case) y `description:` (con triggers)
+- Descripción 1-liner
+- Quick Start mostrando cómo usarlo
+- Secciones numeradas claras
+- Referencias a workflows si existen
+
+Ver [skill-management/SKILL.md](.claude/skills/skill-management/SKILL.md) para ejemplo completo.
+
+## Código de Conducta
+
+- Sé respetuoso con otros contribuyentes
+- Proporciona feedback constructivo
+- Acepta feedback sobre tus PRs
+- Si no estás seguro, pregunta antes de invertir mucho tiempo
+
+## Preguntas?
+
+Abre una Issue en GitHub describiendo:
+1. Qué quieres hacer
+2. Por qué lo quieres hacer
+3. Cómo planeas hacerlo (si tienes idea)
+
 ---
 
-## Code of Conduct
-
-- **Be respectful** — we're all learning and improving
-- **Explain your reasoning** — "why" is as important as "what"
-- **Keep scope focused** — one improvement per PR when possible
-- **Assume good intent** — feedback is about the idea, not the person
-
----
-
-## What Happens After You Submit
-
-1. **Review** — I'll review your changes and may ask questions
-2. **Feedback** — Constructive suggestions for improvement
-3. **Merge** — Once approved, your changes go live
-4. **Credit** — You'll be attributed in commit history and changelog
-
----
-
-## Questions?
-
-If you're unsure about something:
-- Check the existing skills for patterns
-- Read the README.md for context
-- Open an issue to discuss before spending time on large changes
-
----
-
-## Recognition
-
-Contributors are recognized in:
-- Git commit history (forever)
-- Changelog (if major improvements)
-- README credits section (if you want)
-
-Thanks for making these skills better! 🚀
+**¡Gracias por contribuir! La comunidad de Claude Code te lo agradece.** 🚀
