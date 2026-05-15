@@ -1,11 +1,11 @@
 ---
 name: retrospective
-description: Analyze the current session to extract reusable learnings and propose updates to relevant skills. Use when the user asks for a retrospective, what did we learn, or how skills should be updated. Triggers: retrospective, what did we learn, update skills.
+description: "Analyze the current session to extract reusable learnings and propose updates to relevant skills. Extract signals from corrections, redone work, missing steps, and what worked well. Then propose specific diffs to skill files. Use when completing a workflow, iterating multiple times, or asking what we learned. Triggers: retrospective, what did we learn, update skills, what did we improve, lessons learned, session review, did we learn, skill improvements, how should we update."
 ---
 
-# Retrospective
+# Retrospective — Learn and Update Skills
 
-Analyze the current session and extract learnings that should flow back into skills.
+Analyzes the current session to extract reusable learnings and proposes updates to skill files.
 
 ## When to Use
 
