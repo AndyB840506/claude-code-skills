@@ -71,3 +71,61 @@ Si es muy grande, se organiza con carpetas:
 ├── workflows/ (procedimientos)
 └── docs/ (referencias)
 ```
+
+---
+
+## Crítico: Secciones de EJECUCIÓN
+
+Para que tu skill *realmente ejecute* (no solo mostrar documentación), el SKILL.md debe incluir una sección `## EXECUTION` con instrucciones explícitas.
+
+**Sin EXECUTION:** La skill muestra documentación pero no dispara acciones  
+**Con EXECUTION:** La skill realmente ejecuta el proceso cuando se invoca
+
+### Plantilla
+
+```markdown
+## EXECUTION
+
+Has invocado `/tu-skill`. Ahora ejecuta el proceso:
+
+### Paso 1: [Primera acción]
+[Qué hacer, qué buscar]
+
+### Paso 2: [Segunda acción]
+[Qué hacer, qué buscar]
+
+[Continúa con todos los pasos...]
+
+---
+
+**¡Proceso completado!** [Resumen de lo realizado]
+```
+
+### Ejemplo (de una skill real: retrospective)
+
+```markdown
+## EXECUTION
+
+Has invocado `/retrospective`. Ahora realiza el análisis:
+
+### Paso 1: Extraer Señales
+Escanea la conversación: correcciones, trabajo rehecho, pasos faltantes, qué funcionó
+
+### Paso 2: Mapear a Skills
+Identifica qué skills necesitan actualizarse
+
+### Paso 3: Proponer Cambios
+Muestra diffs específicos
+
+### Paso 4: Pedir Confirmación
+Espera aprobación del usuario
+
+### Paso 5: Aplicar Cambios
+Actualiza archivos si fue aprobado
+
+---
+
+**¡Retrospective completado!**
+```
+
+**Incluye secciones EXECUTION en toda skill que generes.** Esto es lo que hace que las skills realmente funcionen.
