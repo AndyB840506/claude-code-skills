@@ -1,6 +1,6 @@
 # Session Close Execution Workflow
 
-Execute the 5-step workflow in order. Each step builds on previous ones. All confirmation checkpoints give user full control.
+Execute the 7-step workflow in order. Each step builds on previous ones. All confirmation checkpoints give user full control.
 
 ---
 

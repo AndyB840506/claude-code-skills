@@ -85,67 +85,11 @@ See [When to Use](docs/when-to-use.md) for detailed guidelines, but quick versio
 
 ## EXECUTION
 
-You have invoked `/session-close`. Now execute the 7-step workflow in order.
-
-### Step 1: Run Retrospective
-
-Execute:
-```
-/retrospective
-```
-
-Wait for user confirmation. If approved, skill updates are made. If skipped, continue to Step 2.
-
-### Step 2: Run Prompt Reviewer
-
-Execute:
-```
-/prompt-reviewer
-```
-
-Wait for user confirmation. If approved, improvements are made. If skipped, continue to Step 3.
-
-### Step 3: Run Skill Management
-
-Execute:
-```
-/skill-management audit
-```
-
-Wait for user confirmation. If approved, structure is fixed. If skipped, continue to Step 4.
-
-### Step 4: Generate Handoff
-
-Execute:
-```
-/handoff
-```
-
-Handoff document is generated and copied to clipboard. Continue to Step 5.
-
-### Step 5: Google Drive Sync (Automatic)
-
-Attempt to sync handoff document to Google Drive if MCP is configured. If Google Drive MCP is not installed, this step silently skips (no error). No user action needed. Continue to Step 6.
-
-### Step 6: Compact Context
-
-Execute:
-```
-/compact
-```
-
-This compresses conversation history to free up tokens for next session. Automatic execution — no user confirmation needed.
-
-### Step 7: Clear Screen (Optional)
-
-Ask user:
-> **Have you pasted the handoff summary in your next session?**
-> 
-> [yes/no]
-
-If YES: Execute `clear` to clean the screen.  
-If NO: Skip. Session close complete.
-
----
-
-**Session close workflow complete!** All 7 steps have executed. Session is documented, backed up, and optimized for next session.
+Follow [Execution Workflow](workflows/execute.md) to execute the complete 7-step session-close workflow:
+1. Retrospective — Extract learnings and update skills
+2. Prompt Reviewer — Improve documentation
+3. Skill Management — Verify structure  
+4. Handoff — Generate session summary
+5. Google Drive Sync — Automatic backup
+6. Compact Context — Compress conversation history
+7. Clear Screen — Fresh start for next session
