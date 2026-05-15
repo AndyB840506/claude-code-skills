@@ -1,6 +1,6 @@
 ---
 name: session-close
-description: "Complete session closing workflow: analyze learnings, review skills, organize structure, backup to GitHub + auto-sync to Google Drive. Triggers: session close, end session, closing session, cierre de sesión, cerrar sesión, session wrap-up, wrap up, end-of-session."
+description: "Automated 5-step session close: retrospective + prompt review + skill audit + handoff (to clipboard, no files) + optional Google Drive backup. Triggers: session close, end session, closing session, cierre de sesión, cerrar sesión, session wrap-up, wrap up, end-of-session."
 ---
 
 # Session Close — Automated Complete Workflow
@@ -28,10 +28,10 @@ All steps run sequentially. Each step completes before the next begins.
 ## Output
 
 ✓ Skill improvements applied (approved by you mid-flow)  
-✓ Handoff document created and backed up  
+✓ Handoff document copied to clipboard (Ctrl+V ready)  
 ✓ Git commit made and pushed to GitHub  
-✓ Handoff copied to Google Drive backup folder  
-✓ Summary displayed with all changes
+✓ Optional: Handoff backed up to Google Drive (if folder exists)  
+✓ No files created — document stays in clipboard only
 
 ---
 
