@@ -38,7 +38,8 @@ STEP 5: Copy handoff to Google Drive
 3. **Each step completes before next starts** — do not run in parallel
 4. **Display clear status messages** — show which step is running and when it completes
 5. **All changes are reversible** — everything goes through git
-6. **Step 5 uses local file copy** — write handoff markdown to a temp file, then copy to `G:\My Drive\claude projects\` using bash `cp` or PowerShell `Copy-Item`
+6. **CRITICAL: Step 4 creates NO files** — Generate handoff in memory only, copy to clipboard, do NOT write `.md` files to disk
+7. **Step 5 is optional** — Only copy to Google Drive if folder exists; skip silently if not
 
 ## User Prompts
 
@@ -72,17 +73,18 @@ Session closed successfully.
 - User can choose YES/NO even if results unclear
 
 **For Step 4 (handoff):**
-- If handoff invocation fails: display error and stop sequence
-- User can retry with `/handoff` manually
-- Cannot proceed to Step 5 without handoff output (clipboard content)
+- Generates document in memory only (no files created)
+- If generation succeeds: copy to clipboard, show document, commit to git
+- If git commit fails: display error but continue (handoff is safe in clipboard)
+- Do NOT create any fallback files
 
-**For Step 5 (Google Drive file copy):**
-- If file copy fails: show error but continue
-- Display: "⚠ Could not back up to Google Drive: [reason]"
-- Hint: "Check that `G:\My Drive\claude projects\` exists and is writable"
-- **Do NOT stop** — Step 4 succeeded, backup is optional
-- Session close still completes successfully
-- Handoff is already in clipboard from Step 4
+**For Step 5 (Google Drive backup):**
+- Check if `G:\My Drive\claude projects\` folder exists
+- If exists: copy handoff to Google Drive (optional, nice-to-have)
+- If doesn't exist: skip silently (not an error condition)
+- **Do NOT create files** if folder doesn't exist
+- Session closes successfully either way
+- Handoff is already safe in clipboard and GitHub
 
 **General:**
 - All git commits succeed or fail atomically (can be retried)
@@ -91,9 +93,17 @@ Session closed successfully.
 
 ## Storage Paths
 
-- Handoff document: Lives in memory/clipboard only (not written to disk)
-- Google Drive backup: `G:\My Drive\claude projects\handoff-[YYYY-MM-DD].md`
-- Folder must exist beforehand: `G:\My Drive\claude projects\` (use Google Drive Desktop)
+**Primary Storage (Always):**
+- Clipboard: Handoff document copied from memory (Ctrl+V ready)
+- Git: Automatic session commit to GitHub
+
+**Optional Storage (Step 5 only):**
+- Google Drive: `G:\My Drive\claude projects\` (only if folder exists)
+
+**Files Created:**
+- ❌ NO local `.md` files created — document stays in memory and clipboard only
+- ✓ Git commit created (automatic)
+- ✓ Optional Google Drive copy (if folder exists)
 
 ## Git Integration
 
@@ -111,6 +121,9 @@ To verify implementation:
 2. Confirm all 5 steps execute in order
 3. Verify approval prompts appear for Steps 1-3
 4. Verify Steps 4-5 run without prompts
-5. Verify handoff document is copied to clipboard (can paste with Ctrl+V)
-6. Check `G:\My Drive\claude projects\` for `handoff-[date].md` file
-7. Verify git commit created and pushed
+5. **CRITICAL:** Verify handoff document is copied to clipboard (can paste with Ctrl+V)
+6. **CRITICAL:** Verify NO `.md` files were created in project root
+   - Should NOT see: `handoff-*.md`, `report-*.md`, etc.
+   - Only clipboard and git commit
+7. Verify git commit created with session topic and timestamp
+8. (Optional) Check `G:\My Drive\claude projects\` if folder sync is enabled

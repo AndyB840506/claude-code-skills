@@ -94,7 +94,7 @@ Claude invokes `/skill-management` which audits the skills folder for:
 Claude invokes `/handoff` which automatically:
 
 1. Analyzes the session from git history and conversation context
-2. Generates structured handoff document in memory:
+2. Generates structured handoff document **in memory only** (no file created):
    - **Date and topic** — When and what
    - **Accomplishments** — 3-5 bullet points of what was completed
    - **Files changed** — List of modified files
@@ -103,29 +103,26 @@ Claude invokes `/handoff` which automatically:
    - **Blockers** — Any issues preventing progress
 3. Copies the complete document to clipboard using `$content | Set-Clipboard`
 4. Displays the document in chat (so you can see what was created)
-5. Creates and pushes git commit:
+5. Creates git commit:
    ```bash
    git add -A
    git commit -m "Session: [topic] YYYY-MM-DD HH:MM:SS"
    git push origin main
    ```
 
-**What the handoff document contains:**
-- Complete session summary ready to paste with Ctrl+V in next session
-- All essential information to resume work
-- Structured format for easy reading
+**Critical:** Handoff document lives in memory and clipboard only — no `.md` files created.
 
 **Storage:**
 - Primary: Clipboard (for pasting in next session)
 - Backup: GitHub (git commit history)
-- Not written to any local file — lives in memory only
+- No local files created
 
 **Output:** 
 - Document displayed in chat
 - Confirmation: "✓ Handoff created and committed to GitHub"
 - Ready to paste in next session with Ctrl+V
 
-**No user confirmation needed**
+**No user confirmation needed. No files created.**
 
 **Then continues to Step 5**
 
@@ -133,39 +130,35 @@ Claude invokes `/handoff` which automatically:
 
 ## STEP 5: Google Drive Backup (Fully Automatic)
 
-Claude automatically:
+**Optional backup step:** The handoff document is already safely in:
+- Clipboard (from Step 4)
+- GitHub (from Step 4 git commit)
 
-1. Takes the handoff document content from Step 4 (still in context)
-2. Writes it to a temporary file: `handoff-[YYYY-MM-DD].md` in the project root
-3. Copies the file to Google Drive Desktop folder using bash:
-   ```bash
-   cp "handoff-2026-05-15.md" "/g/My Drive/claude projects/handoff-2026-05-15.md"
-   ```
-4. Deletes the temporary file from project root
-5. Google Drive for Desktop automatically syncs to cloud (5-10 seconds)
+This step optionally backs up to Google Drive:
 
-**Process:**
-```
-Write temp file: handoff-2026-05-15.md
-Copy: project root → G:\My Drive\claude projects\
-Delete temp file
-Google Drive Desktop syncs automatically
-```
+1. Takes the handoff document from clipboard (already in memory from Step 4)
+2. **If `G:\My Drive\claude projects\` exists:**
+   - Writes temp file to disk
+   - Copies to Google Drive backup folder
+   - Deletes temp file
+   - Google Drive Desktop auto-syncs (5-10 seconds)
+3. **If folder doesn't exist:**
+   - Skip silently or show optional message
+   - Session close still completes successfully
 
-**Storage:**
-- Local: `G:\My Drive\claude projects\handoff-[YYYY-MM-DD].md`
-- Cloud: Automatically synced by Google Drive Desktop to your Google Drive account
+**Storage after Step 5:**
+- Clipboard: ✓ Document ready to paste (Ctrl+V)
+- GitHub: ✓ Automatic commit from Step 4
+- Google Drive: ✓ Optional backup (if folder exists)
 
-**Output:** "✓ Handoff backed up to Google Drive"
+**Output:** "✓ Handoff backed up to Google Drive" (or silent skip)
 
 **No user confirmation needed**
 
-**If backup fails:**
-- Display error message with reason (e.g., "could not copy to G:\My Drive\claude projects\")
-- Show hint to troubleshoot (e.g., "Check that the folder exists and is writable")
-- **Do NOT stop** — Step 4 succeeded, handoff is safe in clipboard and GitHub
+**If Google Drive folder doesn't exist:**
+- **Do NOT create files** — just skip
 - Session close still completes successfully
-- You can manually copy the file later if needed
+- Handoff is already safe in clipboard and GitHub
 
 ---
 
