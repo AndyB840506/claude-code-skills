@@ -8,6 +8,7 @@
 - **Format rules:** "X articles use paragraphs, not single-sentence-per-line"
 - **Missing steps:** "create Quartz post, not just images"
 - **Proven patterns:** "real screenshots + hand-drawn diagrams together"
+- **Backup strategies:** "Local Google Drive Desktop folder (`G:\My Drive\...`) for direct file sync instead of MCP"
 
 ## What NOT to Encode
 

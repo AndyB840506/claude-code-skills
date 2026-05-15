@@ -1,6 +1,6 @@
 # Session Close Execution Workflow
 
-Execute the 7-step workflow in order. Each step builds on previous ones. All confirmation checkpoints give user full control.
+You have invoked `/session-close`. Execute the 5-step workflow in order. Each step MUST complete before proceeding to the next.
 
 ---
 
@@ -117,65 +117,19 @@ Execute the 7-step workflow in order. Each step builds on previous ones. All con
 
 ---
 
-## STEP 5: Google Drive Sync (Automatic)
+## STEP 5: Google Drive Backup
+
+**ACTION:** Copy handoff document to Google Drive backup folder
 
 **What happens:**
-1. If Google Drive MCP is installed: handoff document automatically synced to Google Drive
-2. If not installed: silently skips (no error)
+1. Locate latest `report-[name]-[YYYY-MM-DD].md` in current working directory
+2. Copy to `G:\My Drive\claude projects\`
+3. Report: "✓ Handoff backed up to Google Drive (`G:\My Drive\claude projects`)"
 
 **Expected output:**
-- Handoff file backed up to Google Drive (if configured)
-- Time: Automatic, < 1 second
-
----
-
-## STEP 6: Compact Context
-
-**What happens:**
-1. Run `/compact` command to compress conversation history
-2. Removes verbose output and redundant messages
-3. Frees up context space for next session
-4. Preserves essential information
-
-**Purpose:**
-- Optimize token usage
-- Create space for next session's work
-- Maintain conversation efficiency
-- Prepare for long-running projects
-
-**Expected output:**
-```
-Compacting conversation history...
-✓ Context compressed: X tokens freed
-Ready for next session
-```
-
-**Time:** 1-2 seconds
-
----
-
-## STEP 7: Clear Screen (Optional)
-
-**What happens:**
-1. Ask user: "Have you pasted the handoff summary in your next session?"
-2. If YES: Execute `clear` to clean the screen
-3. If NO: Skip (user can clear manually later)
-
-**Purpose:**
-- Clean slate for next session
-- No clutter from previous work
-- Psychological reset after compact
-
-**Expected output:**
-```
-Have you pasted the handoff summary in your next session? [yes/no]
-
-✓ Session closed and screen cleared. Ready for new work!
-
-[Screen clears]
-```
-
-**Time:** < 1 second
+- Handoff file copied to Google Drive Desktop folder
+- Automatic sync via Google Drive for Desktop handles upload
+- Time: 1-2 seconds
 
 ---
 
@@ -190,13 +144,9 @@ Step 2: /prompt-reviewer → [confirm improvements?] → improve docs
   ↓
 Step 3: /skill-management → [confirm reorganize?] → fix structure
   ↓
-Step 4: /handoff → [automatic] → copy to clipboard
+Step 4: /handoff → [automatic] → copy to clipboard + GitHub backup
   ↓
-Step 5: Google Drive sync → [automatic] → backup to Drive
-  ↓
-Step 6: /compact → [automatic] → compress context
-  ↓
-Step 7: Clear screen → [confirm pasted?] → clear screen
+Step 5: Google Drive backup → [automatic] → copy to G:\My Drive\claude projects
   ↓
 DONE ✓
 ```
@@ -224,14 +174,12 @@ DONE ✓
 
 ---
 
-## Success = All 7 Steps Complete
+## Success = All 5 Steps Complete
 
-✓ Retrospective: Learnings extracted (or skipped)  
-✓ Prompt Reviewer: Skills improved (or skipped)  
-✓ Skill Management: Structure verified (or reorganized)  
-✓ Handoff: Document copied to clipboard  
-✓ Google Drive: Synced (or skipped if not configured)  
-✓ Compact: Context compressed  
-✓ Clear Screen: Confirmed paste, cleared (or skipped)  
+✓ Step 1: Retrospective (learnings extracted, skills updated if approved)  
+✓ Step 2: Prompt Reviewer (documentation improved if approved)  
+✓ Step 3: Skill Management (structure verified, reorganized if approved)  
+✓ Step 4: Handoff (document generated and backed up to GitHub)  
+✓ Step 5: Google Drive Backup (document copied to `G:\My Drive\claude projects`)
 
-Session is closed, optimized, and ready for next session with a clean slate.
+**Session is fully closed, documented, and backed up.**
