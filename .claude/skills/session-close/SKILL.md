@@ -13,7 +13,7 @@ Automated 7-step workflow to close your session: analyze learnings, review skill
 
 ## How It Works
 
-Execute the following 5-step workflow in order. See [Execution Workflow](workflows/execute.md) for detailed process:
+Execute the following 7-step workflow in order. See [Execution Workflow](workflows/execute.md) for detailed process:
 
 **Step 1: Retrospective**
 - Run: `/retrospective`
@@ -38,7 +38,17 @@ Execute the following 5-step workflow in order. See [Execution Workflow](workflo
 **Step 5: Google Drive Sync** (Automatic)
 - Backup document is automatically synced to Google Drive if MCP is configured
 
-Steps 1-3 are independent and optional (skip or rerun as needed). Steps 4-5 run sequentially at the end: handoff must complete before Google Drive sync.
+**Step 6: Compact Context** (Automatic)
+- Run: `/compact`
+- Compresses conversation history to free context space
+- No user interaction needed
+
+**Step 7: Clear Screen** (Optional)
+- Asks user confirmation: "Have you pasted the handoff summary in your next session?"
+- If YES: Clears the screen for a fresh start
+- If NO: Skips, user can clear manually later
+
+Steps 1-3 are independent and optional (skip or rerun as needed). Steps 4-6 run sequentially. Step 7 is optional based on user preference.
 
 ---
 
@@ -77,7 +87,7 @@ See [When to Use](docs/when-to-use.md) for detailed guidelines, but quick versio
 
 ## EXECUTION
 
-You have invoked `/session-close`. Now execute the 5-step workflow below in order.
+You have invoked `/session-close`. Now execute the 7-step workflow below in order.
 
 ### Execute Step 1: Retrospective
 
@@ -138,8 +148,8 @@ Ask user confirmation:
 >
 > Ready? [yes/no]
 
-If YES: Execute `clear` to clean the screen.  
-If NO: Skip and done.
+**If YES:** Execute `clear` to clean the screen for a fresh start.  
+**If NO:** Skip clearing — session remains complete, screen stays as is. You can manually clear anytime with `clear` command.
 
 ---
 
