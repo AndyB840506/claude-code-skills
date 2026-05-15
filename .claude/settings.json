@@ -1,14 +1,7 @@
 {
-  "hooks": {
-    "auto-compact-at-50-percent": {
-      "on": "context-at-50-percent",
-      "run": "claude compact",
-      "description": "Automatically compact context when it reaches 50% to prevent disconnection"
-    }
-  },
-  "compaction": {
+  "autoCompact": {
     "enabled": true,
-    "threshold-percent": 50,
-    "auto-trigger": true
+    "threshold": 0.5,
+    "description": "Automatically compact context when reaching 50% to maintain session continuity"
   }
 }

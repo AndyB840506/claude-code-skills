@@ -16,6 +16,22 @@ Cuando el usuario abra esta carpeta y escriba cualquier cosa, responde:
 
 Después usa la skill `crear-skill` automáticamente.
 
+## Auto-compactación de contexto
+
+**IMPORTANTE:** Cuando el contexto llegue al **50%**, compacta automáticamente:
+
+```
+/compact
+```
+
+Esto:
+- ✓ Resume el contexto anterior
+- ✓ Mantiene el historial importante
+- ✓ Continúa la sesión sin desconexión
+- ✓ Prepara espacio para nueva conversación
+
+**Configuración:** Habilitada en `.claude/settings.json`
+
 ## Qué genera
 
 - Un archivo `.md` con las instrucciones completas de la skill
