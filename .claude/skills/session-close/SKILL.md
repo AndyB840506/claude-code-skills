@@ -1,17 +1,18 @@
 ---
 name: session-close
-description: "Complete session closing workflow: analyze learnings (retrospective), review skill quality (prompt-reviewer), organize skills (skill-management), backup session (handoff). Run at end of session to consolidate work and prepare for next session. Triggers: session close, end session, closing session, cierre de sesión, cerrar sesión, session wrap-up, wrap up, end-of-session, session complete, finish session, session review workflow."
+description: "Complete session closing workflow: analyze learnings (retrospective), review skill quality (prompt-reviewer), organize skills (skill-management), backup to GitHub + auto-sync to Google Drive. Run at end of session to consolidate work and prepare for next session. Triggers: session close, end session, closing session, cierre de sesión, cerrar sesión, session wrap-up, wrap up, end-of-session, session complete, finish session, session review workflow."
 ---
 
 # Session Close — Complete Closing Workflow
 
-Guía completo de cierre de sesión. Ejecuta 4 pasos en orden: análisis de learnings → revisión de skills → organización → respaldo.
+Guía completo de cierre de sesión. Ejecuta 5 pasos en orden: análisis de learnings → revisión de skills → organización → respaldo a GitHub → sincronización automática a Google Drive.
 
 **Orden del flujo:**
 1. **Retrospective** — Analiza la sesión y extrae learnings
 2. **Prompt Reviewer** — Revisa y mejora los skills creados/modificados
 3. **Skill Management** — Organiza la estructura de skills si es necesaria
-4. **Handoff** — Respalda la sesión (git push + documentation)
+4. **Handoff** — Respalda la sesión (git push a GitHub)
+5. **Auto-sync to Google Drive** — Sincroniza automáticamente los cambios a G:\My Drive
 
 ---
 
@@ -29,7 +30,8 @@ O ejecuta manualmente en orden si prefieres:
 /retrospective                    # Paso 1: Analizar aprendizajes
 /prompt-reviewer                  # Paso 2: Revisar skills
 /skill-management                 # Paso 3: Organizar estructura
-/handoff                          # Paso 4: Respaldar sesión
+/handoff                          # Paso 4: Respaldar a GitHub
+                                  # Paso 5: Auto-sync a Google Drive (automático)
 ```
 
 ---
@@ -79,6 +81,20 @@ Respalda todo:
 
 ---
 
+### Paso 5: Auto-sync to Google Drive
+Sincronización automática posterior:
+- Copia todos los cambios a `G:\My Drive\kit-skill-creator\`
+- Google Drive for Desktop sincroniza automáticamente a la nube
+- Sin necesidad de intervención manual
+- Confírma que la sincronización se completó
+
+**Output:** Confirmación de sincronización + timestamp
+
+**Automatización:**
+Este paso se ejecuta automáticamente después de que `handoff` completa. No requiere acción manual.
+
+---
+
 ## Flujo Recomendado
 
 **Fin de sesión productiva:**
@@ -110,3 +126,6 @@ Si estás refinando un skill continuamente:
 - **No es obligatorio** — puedes ejecutar los pasos individuales en cualquier orden
 - **Aplica solo lo que tenga sentido** — no todas las sugerencias aplican siempre
 - **Git push solo con cambios reales** — handoff no hace push si no hay cambios
+- **Automatización completa** — una vez termina handoff, Google Drive se sincroniza automáticamente
+- **Doble respaldo** — después de `/session-close`, tu trabajo está en GitHub + Google Drive
+- **Sin esperas** — la sincronización a Google Drive es instantánea (Google Drive for Desktop la sube automáticamente)
