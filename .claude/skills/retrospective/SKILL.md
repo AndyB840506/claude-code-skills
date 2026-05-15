@@ -129,3 +129,9 @@ After completing any multi-step workflow, check if retrospective is needed:
 When suggesting: "We iterated a few times here. Want to run `/retrospective` to update the skill so next time is faster?"
 
 The user decides. This is a nudge, not a requirement.
+
+## Critical Constraint
+
+**Paso 4 (Ask for Confirmation) is MANDATORY** — The skill ALWAYS asks for explicit user approval before applying any changes to skill files. This is not optional. User must respond with "yes", "only X", or "no" before any diffs are applied.
+
+This prevents unintended skill modifications and ensures user has control.

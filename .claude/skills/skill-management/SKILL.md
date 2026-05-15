@@ -3,9 +3,11 @@ name: skill-management
 description: "Audit and reorganize skills properly. Scans for structure issues, suggests fixes, asks for confirmation before applying changes. Build self-contained skills with SKILL.md as minimal router and separate workflows/templates/docs. Triggers: skill structure, organize skill, skill architecture, skill folder, refactor skill, skill maintenance, organize skills, fix skill structure, audit skills."
 ---
 
-# Skill Management — Build Better Organized Skills
+# Skill Management — Audit, Organize, and Improve Skills
 
-Create maintainable, portable skills using a self-contained folder pattern. Keep SKILL.md minimal (under 50 lines) as a router, move workflows and details to separate files.
+Audits skill structure, proposes fixes, and asks for explicit confirmation before making changes. Create maintainable, portable skills using a self-contained folder pattern. Keep SKILL.md minimal (under 50 lines) as a router, move workflows and details to separate files.
+
+**Critical Rule:** This skill ALWAYS asks for confirmation before reorganizing or modifying any skill folders. Changes only apply if user explicitly approves.
 
 ## Quick Start (30 seconds)
 

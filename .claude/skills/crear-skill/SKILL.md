@@ -100,7 +100,24 @@ Genera el archivo `.md` con estructura clara:
 
 ---
 
-## Paso 4 — Instalar la skill
+## Paso 4 — Ask for User Confirmation
+
+**CRITICAL:** Before writing any skill to disk, explicitly ask the user:
+
+```
+¿Quieres que guarde esta skill?
+
+Skill: [nombre-skill]
+Ubicación: .claude/skills/[nombre-skill]/SKILL.md
+
+- "sí" / "yes" — Guardar la skill
+- "no" — No guardar, quiero revisar primero
+- "cambiar X" — Cambiar algo antes de guardar
+```
+
+**Wait for explicit approval.** Do not write to disk unless user confirms.
+
+## Paso 5 — Instalar la skill
 
 **IMPORTANTE:** Todas las skills van SIEMPRE en `.claude/skills/nombre-skill/SKILL.md` en estructura de carpeta, NO como archivos `.md` sueltos.
 

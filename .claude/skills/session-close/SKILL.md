@@ -5,7 +5,7 @@ description: "Complete session closing workflow: analyze learnings (retrospectiv
 
 # Session Close — Complete Closing Workflow
 
-Guía completo de cierre de sesión. Ejecuta 5 pasos en orden: análisis de learnings → revisión de skills → organización → respaldo a GitHub → sincronización automática a Google Drive.
+Guía completo de cierre de sesión. Ejecuta 5 pasos funcionales en orden: análisis de learnings (retroactive) → revisión de skills (prompt-reviewer) → organización (skill-management) → respaldo a GitHub (handoff) → sincronización automática a Google Drive. Todos los pasos son ejecutables — cada uno que modifique contenido pide confirmación explícita.
 
 **Orden del flujo:**
 1. **Retrospective** — Analiza la sesión y extrae learnings
