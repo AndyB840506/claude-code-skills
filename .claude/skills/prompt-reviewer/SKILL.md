@@ -66,9 +66,10 @@ You have invoked `/prompt-reviewer`. Now audit the skills and documentation.
 - Identify major gaps
 
 **If user specified "thorough": THOROUGH MODE** (15 minutes)
-- Review all skills in this project
-- Check for all types of issues
-- Comprehensive analysis
+- Review ALL skills in `.claude/skills/` comprehensively
+- Check for syntax, consistency, and completeness
+- Deep analysis of structure, patterns, and alignment
+- Full effectiveness audit across entire skill library
 
 ### Step 2: Audit for Issues
 

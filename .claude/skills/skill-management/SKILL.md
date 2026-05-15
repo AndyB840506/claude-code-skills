@@ -93,6 +93,8 @@ Identify each issue with:
 - What's wrong
 - Suggested fix
 
+**Note:** If `.claude/skills/` folder doesn't exist, it will be created automatically.
+
 ### Step 2: Propose Reorganization
 
 For each issue, propose a specific fix:

@@ -24,10 +24,12 @@ Simply invoke:
 /handoff
 ```
 
-Or with a custom topic:
+Or with a custom topic (brief, kebab-case):
 
 ```
-/handoff my-topic
+/handoff skill-execution-fix
+/handoff documentation-overhaul
+/handoff bug-fixes-session
 ```
 
 ---

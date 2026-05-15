@@ -81,8 +81,8 @@ Format findings as a table:
 ```
 | # | Learning | Type | Skill | Change |
 |---|----------|------|-------|--------|
-| 1 | X pattern | Correction | skill-name | Add section |
-| 2 | Y missing | Missing Step | skill-name | Create doc |
+| 1 | Static docs don't execute | Correction | session-close | Add EXECUTION section |
+| 2 | Skills need pattern guidance | Missing Step | skill-creator | Document EXECUTION requirement |
 ```
 
 ### Step 2: Map to Skills

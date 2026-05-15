@@ -38,7 +38,7 @@ Execute the following 5-step workflow in order. See [Execution Workflow](workflo
 **Step 5: Google Drive Sync** (Automatic)
 - Backup document is automatically synced to Google Drive if MCP is configured
 
-Each step is independent — you can skip any step or rerun as needed.
+Steps 1-3 are independent and optional (skip or rerun as needed). Steps 4-5 run sequentially at the end: handoff must complete before Google Drive sync.
 
 ---
 
