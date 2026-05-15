@@ -11,45 +11,43 @@ Automated 5-step workflow to close your session: analyze learnings, review skill
 
 ---
 
-## Quick Start
+## How It Works
 
-```
-/session-close
-```
+Execute the following 5-step workflow in order. See [Execution Workflow](workflows/execute.md) for detailed process:
 
-Or run steps individually:
+**Step 1: Retrospective**
+- Run: `/retrospective`
+- Extracts learnings, proposes skill updates
+- User confirms or skips changes
 
-```
-/retrospective        # Step 1: Analyze learnings
-/prompt-reviewer      # Step 2: Review skills
-/skill-management     # Step 3: Organize structure
-/handoff              # Step 4: Document + GitHub backup
-                      # Step 5: Auto-sync to Google Drive (automatic)
-```
+**Step 2: Prompt Reviewer**
+- Run: `/prompt-reviewer`
+- Reviews and improves updated skills (optional)
+- User confirms or skips changes
+
+**Step 3: Skill Management**
+- Run: `/skill-management`
+- Verifies folder structure, suggests fixes (optional)
+- User confirms or skips changes
+
+**Step 4: Handoff**
+- Run: `/handoff`
+- Generates handoff document
+- Creates git commit + push to GitHub
+
+**Step 5: Google Drive Sync** (Automatic)
+- Backup document is automatically synced to Google Drive if MCP is configured
+
+Each step is independent — you can skip any step or rerun as needed.
 
 ---
 
-## 5-Step Workflow
+## When to Use
 
-| Step | Skill | Purpose |
-|---|---|---|
-| 1 | Retrospective | Extract learnings, propose skill updates |
-| 2 | Prompt Reviewer | Audit and improve skills |
-| 3 | Skill Management | Verify folder structure |
-| 4 | Handoff | Generate summary doc + git push |
-| 5 | Auto-sync | Copy to Google Drive (if installed) |
-
----
-
-## Execution
-
-All steps execute automatically with confirmation checkpoints where needed:
-
-- **Step 1:** Extracts learnings, asks "Apply these changes?"
-- **Step 2:** Reviews skills, suggests improvements (optional)
-- **Step 3:** Audits structure, asks "Reorganize?" (optional)
-- **Step 4:** Generates handoff doc and pushes to GitHub
-- **Step 5:** Auto-syncs to Google Drive if configured
+- **End of day** — especially after creating/modifying skills
+- **After major refactoring** — to capture learnings
+- **Before switching projects** — complete session handoff
+- **Quarterly** — full skills audit and reorganization
 
 ---
 
@@ -58,13 +56,10 @@ All steps execute automatically with confirmation checkpoints where needed:
 ✓ Skill improvements (if approved)  
 ✓ Structured handoff document (`.agents/handoff/YYYY-MM-DD-topic.md`)  
 ✓ GitHub commit + push  
-✓ Google Drive sync (if installed)
+✓ Google Drive sync (if installed)  
 
 ---
 
-## Tips
+## Full Details
 
-- **End of day recommended** — especially after creating/modifying skills
-- **Optional** — run individual steps in any order
-- **With retrospective** — skill improvements are optional
-- **Triple backup** — document + GitHub + Google Drive
+See [Execution Workflow](workflows/execute.md) for step-by-step process and what to expect at each stage.
