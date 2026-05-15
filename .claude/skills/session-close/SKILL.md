@@ -11,7 +11,7 @@ Guía completo de cierre de sesión. Ejecuta 5 pasos en orden: análisis de lear
 1. **Retrospective** — Analiza la sesión y extrae learnings
 2. **Prompt Reviewer** — Revisa y mejora los skills creados/modificados
 3. **Skill Management** — Organiza la estructura de skills si es necesaria
-4. **Handoff** — Respalda la sesión (git push a GitHub)
+4. **Handoff** — Crea documento + respalda a GitHub (git push)
 5. **Auto-sync to Google Drive** — Sincroniza automáticamente los cambios a G:\My Drive
 
 ---
@@ -91,16 +91,15 @@ Ejecuta handoff automáticamente con dos acciones:
 ---
 
 ### Paso 5: Auto-sync to Google Drive
-Sincronización automática posterior:
-- Copia todos los cambios a `G:\My Drive\kit-skill-creator\`
-- Google Drive for Desktop sincroniza automáticamente a la nube
-- Sin necesidad de intervención manual
-- Confírma que la sincronización se completó
+Sincronización automática (requiere Google Drive for Desktop instalado):
+- Copia `.agents/handoff/` y `.claude/` a `G:\My Drive\kit-skill-creator\`
+- Google Drive for Desktop detecta cambios y sincroniza automáticamente a la nube
+- Sin intervención manual — la sincronización sucede automáticamente en background
 
-**Output:** Confirmación de sincronización + timestamp
+**Output:** Confirmación que archivos fueron copiados a Google Drive
 
-**Automatización:**
-Este paso se ejecuta automáticamente después de que `handoff` completa. No requiere acción manual.
+**Requisito:**
+Google Drive for Desktop debe estar instalado y configurado en `G:\My Drive\`. Si no está instalado, el paso se salta (solo GitHub queda respaldado).
 
 ---
 
