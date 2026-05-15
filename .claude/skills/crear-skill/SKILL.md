@@ -102,18 +102,30 @@ Genera el archivo `.md` con estructura clara:
 
 ## Paso 4 — Instalar la skill
 
-Después de generarla, instálala en la carpeta correcta:
+**IMPORTANTE:** Todas las skills van SIEMPRE en `.claude/skills/nombre-skill/SKILL.md` en estructura de carpeta, NO como archivos `.md` sueltos.
 
-**Si es BUSINESS (privada):**
+Las carpetas `business/` y `other/` son SOLO para kits completos, no para skills individuales.
+
 ```bash
-mkdir -p .claude/skills/business
-cp [nombre-skill].md .claude/skills/business/
+mkdir -p .claude/skills/nombre-skill
+cat > .claude/skills/nombre-skill/SKILL.md << 'EOF'
+[contenido de la skill]
+EOF
 ```
 
-**Si es OTHER (pública):**
-```bash
-mkdir -p .claude/skills/other
-cp [nombre-skill].md .claude/skills/other/
+Claude Code detecta automáticamente cualquier skill en carpetas de `.claude/skills/` con la estructura correcta:
+```
+.claude/skills/
+├── nombre-skill/
+│   └── SKILL.md        ← Siempre así, nunca como archivo suelto
+```
+
+Si la skill incluye workflows, usa la estructura de skill-management:
+```
+.claude/skills/nombre-skill/
+├── SKILL.md            ← Router minimal (<50 líneas)
+├── workflows/          ← Procedimientos paso a paso
+└── docs/               ← Referencias avanzadas
 ```
 
 ---

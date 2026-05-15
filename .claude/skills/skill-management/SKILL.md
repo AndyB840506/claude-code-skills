@@ -203,6 +203,42 @@ Skip the folder structure if:
 
 ---
 
+## Troubleshooting: Skill Detection Issues
+
+**Problem: Skill isn't showing in Claude Code's available skills list**
+
+**Most common cause:** Loose `.md` files in `.claude/skills/` directory mixed with folder-based skills.
+
+**Example of what breaks detection:**
+```
+.claude/skills/
+├── my-skill.md                    ❌ Loose file
+├── my-skill/SKILL.md              ❌ Same skill as folder
+└── other-skill/SKILL.md            ✓ Correct
+```
+
+Claude Code gets confused and may fail to detect ANY skills when this happens.
+
+**Fix:**
+1. Check `.claude/skills/` for loose `.md` files
+2. For each loose file, create a folder with that name
+3. Move the `.md` file inside as `SKILL.md`
+4. Delete the original loose `.md` file
+5. Commit the change to git
+
+**Correct structure (always):**
+```
+.claude/skills/
+├── skill-name-1/
+│   └── SKILL.md                   ✓ Always in a folder
+├── skill-name-2/
+│   └── SKILL.md                   ✓ Folder with SKILL.md
+```
+
+After fixing, Claude Code auto-discovers skills. No restart needed.
+
+---
+
 ## Real Example: Document Analyzer Skill
 
 This skill is 200+ lines if flat. With folder structure, it's organized:
