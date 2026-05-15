@@ -51,3 +51,22 @@ Or specify analysis depth:
 ## Output
 
 Problem identification + before/after examples + ready to apply or skip
+
+---
+
+## See Also
+
+- [Execution Workflow](workflows/execute.md) — Step-by-step audit process
+
+---
+
+## EXECUTION
+
+You have invoked `/prompt-reviewer-en`. Now follow the [Execution Workflow](workflows/execute.md) to audit and improve skills.
+
+The workflow covers:
+1. Choose quick or thorough mode
+2. Audit for clarity issues, gaps, ineffectiveness, pattern violations
+3. Propose specific improvements
+4. Ask for confirmation
+5. Apply changes if approved

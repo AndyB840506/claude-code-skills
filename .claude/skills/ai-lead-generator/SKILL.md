@@ -5,7 +5,7 @@ description: "Genera leads de negocio reales con IA buscando en Google y redes s
 
 # AI Lead Generator — Find Real Business Leads
 
-Busca leads reales en Google y redes sociales, los puntúa 0-100, y genera un reporte HTML descargable como PDF.
+Busca leads reales en Google, los puntúa 0-100, y genera reportes HTML/CSV.
 
 **Regla fundamental:** Nunca inventa leads. Cada lead proviene de una búsqueda real.
 
@@ -21,39 +21,29 @@ Describe qué vendes y a quién le quieres vender.
 
 ---
 
-## Workflow
+## How It Works
 
-| Paso | Tarea |
-|---|---|
-| 1 | Entender qué necesitas (producto, mercado) |
-| 2 | Ejecutar búsquedas reales en Google |
-| 3 | Puntuar cada lead (0-100) |
-| 4 | Categorizar por probabilidad (PREMIUM/HOT/WARM/COLD) |
-| 5 | Generar reporte HTML descargable |
+Follow [Execution Workflow](workflows/execute.md):
+
+1. Understand requirements (product, target market)
+2. Execute real Google searches
+3. Score each lead (0-100)
+4. Categorize by probability (PREMIUM/HOT/WARM/COLD)
+5. Generate HTML/PDF/CSV reports
 
 ---
 
 ## Output
 
-✓ Lista de empresas reales encontradas  
+✓ Real leads with verified info  
 ✓ Puntuación individual (0-100)  
-✓ Categoría de probabilidad  
-✓ Reporte HTML profesional  
-✓ CSV exportable al CRM
+✓ Probability categories  
+✓ Reportes profesionales  
+✓ CSV para CRM
 
 ---
 
-## Modos de Búsqueda
+## Documentation
 
-- **Nativo:** WebSearch gratis, sin API keys
-- **Serper.dev:** Google API, más rápido (opcional)
-- **Híbrido:** Serper + Hunter.io para emails
-
----
-
-## Key Points
-
-- Cada lead es verificado — no datos ficticios
-- Puntuación basada en señales reales
-- Reportes limpios y profesionales
-- Pronto para ejecutar (contacto directo)
+- [Execution Workflow](workflows/execute.md) — Step-by-step process
+- [Search Modes](docs/search-modes.md) — Nativo vs Serper vs Híbrido
