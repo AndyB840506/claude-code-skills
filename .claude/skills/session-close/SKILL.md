@@ -42,12 +42,14 @@ Each step is independent — you can skip any step or rerun as needed.
 
 ---
 
-## When to Use
+---
 
-- **End of day** — especially after creating/modifying skills
-- **After major refactoring** — to capture learnings
-- **Before switching projects** — complete session handoff
-- **Quarterly** — full skills audit and reorganization
+## Documentation
+
+- **[Workflow Overview](docs/workflow-overview.md)** — Detailed breakdown of each step
+- **[When to Use](docs/when-to-use.md)** — Decision tree for running session-close
+- **[What to Expect](docs/what-to-expect.md)** — Expected output and troubleshooting
+- **[Execution Workflow](workflows/execute.md)** — Step-by-step execution guide
 
 ---
 
@@ -60,6 +62,20 @@ Each step is independent — you can skip any step or rerun as needed.
 
 ---
 
-## Full Details
+## When to Use
 
-See [Execution Workflow](workflows/execute.md) for step-by-step process and what to expect at each stage.
+See [When to Use](docs/when-to-use.md) for detailed guidelines, but quick version:
+- **End of major sessions** — after creating/modifying skills or fixing bugs
+- **End of day** — batch daily changes into one session close
+- **Before handing off** — ensure everything is documented and backed up
+- **Optional during long sessions** — run individual steps mid-stream
+
+---
+
+## Quick Start
+
+```
+/session-close
+```
+
+This will execute the 5-step workflow in order with confirmation at each step.
