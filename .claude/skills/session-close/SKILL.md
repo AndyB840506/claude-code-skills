@@ -85,11 +85,25 @@ See [When to Use](docs/when-to-use.md) for detailed guidelines, but quick versio
 
 ## EXECUTION
 
-Follow [Execution Workflow](workflows/execute.md) to execute the complete 7-step session-close workflow:
-1. Retrospective — Extract learnings and update skills
-2. Prompt Reviewer — Improve documentation
-3. Skill Management — Verify structure  
-4. Handoff — Generate session summary
-5. Google Drive Sync — Automatic backup
-6. Compact Context — Compress conversation history
-7. Clear Screen — Fresh start for next session
+You have invoked `/session-close`. Execute the 7-step workflow in order:
+
+### Steps 1-4: Execute in Sequence
+- **Step 1:** Run `/retrospective` → wait for user confirmation → continue
+- **Step 2:** Run `/prompt-reviewer` → wait for user confirmation → continue
+- **Step 3:** Run `/skill-management audit` → wait for user confirmation → continue
+- **Step 4:** Run `/handoff` → generates document, copies to clipboard → continue
+
+### Step 5: Google Drive Sync (Automatic)
+If Google Drive MCP is installed, attempt to sync the handoff document automatically. If not installed, silently skip (no error). Proceed to Step 6 regardless.
+
+### Step 6: Compact Context (Automatic)
+Execute `/compact` command to compress conversation history and free up context tokens. No user confirmation needed. Proceed to Step 7.
+
+### Step 7: Clear Screen (User Confirmation)
+Ask user: "Have you pasted the handoff summary in your next session? [yes/no]"
+- If **YES:** Execute `clear` command to clean the screen
+- If **NO:** Skip clearing, session complete
+
+---
+
+**Session close complete!** All 7 steps executed. Session documented, backed up, and optimized.
