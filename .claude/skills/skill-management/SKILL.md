@@ -1,6 +1,6 @@
 ---
 name: skill-management
-description: "Create and organize skills properly. Build self-contained skills with SKILL.md as a minimal router and separate workflow files for procedures. Everything related to a skill lives in one folder: templates, scripts, docs. Use when restructuring a skill, understanding skill architecture, or making a complex skill maintainable. Triggers: skill structure, organize skill, skill architecture, skill folder, refactor skill, skill maintenance."
+description: "Audit and reorganize skills properly. Scans for structure issues, suggests fixes, asks for confirmation before applying changes. Build self-contained skills with SKILL.md as minimal router and separate workflows/templates/docs. Triggers: skill structure, organize skill, skill architecture, skill folder, refactor skill, skill maintenance, organize skills, fix skill structure, audit skills."
 ---
 
 # Skill Management — Build Better Organized Skills
@@ -111,7 +111,31 @@ Bad SKILL.md:
 
 ---
 
-## Step 4 — Name Consistently
+## Step 4 — Verification & Confirmation
+
+Before applying ANY changes:
+
+1. **Scan the current state** — Show what needs fixing
+2. **List proposed actions** — Be specific:
+   ```
+   Problemas encontrados:
+   1. skill-x/SKILL.md es 65 líneas → Mover secciones a workflows/
+   2. skill-y/templates/ → Mover a skill-y/templates/ (mejor organización)
+   3. skill-z/scripts/ → Crear carpeta scripts/ (no existe)
+   ```
+
+3. **Ask for explicit confirmation:**
+   ```
+   ¿Quieres que haga esta reorganización?
+
+   - "sí" / "yes" — Proceder con todos los cambios
+   - "solo X" — Solo cambio específico #X
+   - "no" / "skip" — No hacer nada
+   ```
+
+**CRITICAL:** Wait for user response. Do NOT proceed without approval.
+
+### Step 5 — Name Consistently
 
 ```
 .claude/skills/my-skill/

@@ -1,6 +1,6 @@
 ---
 name: retrospective
-description: "Analyze the current session to extract reusable learnings and propose updates to relevant skills. Extract signals from corrections, redone work, missing steps, and what worked well. Then propose specific diffs to skill files. Use when completing a workflow, iterating multiple times, or asking what we learned. Triggers: retrospective, what did we learn, update skills, what did we improve, lessons learned, session review, did we learn, skill improvements, how should we update."
+description: "Analyze session to extract learnings, propose skill updates, ask for confirmation before applying. Detects corrections, redone work, missing steps, patterns that worked. Proposes specific diffs with user approval required. Use when completing workflow, iterating multiple times, or asking what we learned. Triggers: retrospective, what did we learn, update skills, what did we improve, lessons learned, session review, did we learn, skill improvements, how should we update."
 ---
 
 # Retrospective — Learn and Update Skills
@@ -71,9 +71,28 @@ Present findings as a table:
 
 Then show the actual edits for approval.
 
-### Step 4: Apply
+### Step 4: Ask for Confirmation
 
-After user approves, apply all edits. One edit per skill file, show the diff.
+**CRITICAL:** Before applying ANY changes, explicitly ask:
+
+```
+¿Quieres que aplique estos cambios a los skills?
+
+Cambios propuestos:
+1. .claude/skills/retrospective/SKILL.md — Add learning X
+2. .claude/skills/handoff/SKILL.md — Add learning Y
+
+Responde:
+- "sí" / "yes" — Aplicar todos los cambios
+- "solo X" — Aplicar solo cambios específicos
+- "no" / "skip" — No aplicar nada
+```
+
+**Wait for explicit user confirmation.** Do not proceed unless user approves.
+
+### Step 5: Apply
+
+After user approves, apply all edits. One edit per skill file, show the diff before and after.
 
 ## What NOT to Encode
 
