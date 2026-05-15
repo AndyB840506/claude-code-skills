@@ -24,6 +24,8 @@ Simply invoke:
 /handoff
 ```
 
+The summary is copied to your clipboard. Paste it with **Ctrl+V** at the start of your next session to pick up exactly where you left off.
+
 Or with a custom topic (brief, kebab-case):
 
 ```

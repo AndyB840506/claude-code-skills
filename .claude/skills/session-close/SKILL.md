@@ -56,7 +56,7 @@ Steps 1-3 are independent and optional (skip or rerun as needed). Steps 4-5 run 
 ## Output
 
 ✓ Skill improvements (if approved)  
-✓ Handoff document copied to clipboard (Ctrl+V ready)  
+✓ Handoff document copied to clipboard (Ctrl+V to paste in next session)  
 ✓ Google Drive sync (if installed, automatic)  
 
 ---
