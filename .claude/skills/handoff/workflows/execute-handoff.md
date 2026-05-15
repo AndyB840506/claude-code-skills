@@ -88,15 +88,17 @@ Example: `.agents/handoff/2026-05-14-skill-fixes.md`
 
 ---
 
-## Step 4: Display Document in Chat
+## Step 4: Copy to Clipboard & Display
 
-Show the full generated document so the user can:
-- See the summary immediately
-- Copy the entire document
-- Verify it's accurate
-- Paste it in the next session for quick context
+Automatically copy the document to the user's clipboard, then display in chat:
 
-Format:
+```powershell
+# Use PowerShell Set-Clipboard to copy document content
+$content | Set-Clipboard
+Write-Host "✓ Handoff copied to clipboard — ready to paste"
+```
+
+Display in chat:
 ```
 ✓ Handoff document generated:
 
@@ -104,7 +106,7 @@ Format:
 [FULL DOCUMENT CONTENT HERE]
 ---
 
-Ready to copy for next session.
+✓ Copied to clipboard — paste in new session with Ctrl+V
 ```
 
 ---
@@ -157,9 +159,10 @@ WHEN /handoff is invoked:
    - Pause point (ask user or infer)
    - Files to read (from changed files)
 5. SAVE to .agents/handoff/YYYY-MM-DD-topic.md
-6. DISPLAY full document in chat
-7. RUN git add -A && git commit && git push
-8. SHOW commit hash and confirmation
+6. COPY document to clipboard (PowerShell Set-Clipboard)
+7. DISPLAY full document in chat
+8. RUN git add -A && git commit && git push
+9. SHOW commit hash and confirmation
 ```
 
 ---
@@ -167,7 +170,7 @@ WHEN /handoff is invoked:
 ## Key Points
 
 ✓ Document is **automatically generated** from git data  
-✓ User can **copy entire document** from chat  
+✓ Document is **automatically copied to clipboard** — no manual copy needed  
 ✓ Document is **saved** to `.agents/handoff/` for record  
 ✓ GitHub **backup is automatic** with every handoff  
-✓ **Ready to paste** in next session for instant context
+✓ **Ready to paste** in next session with Ctrl+V for instant context
