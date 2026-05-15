@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "hooks": {
+    "on_skill_invoked": [
+      {
+        "trigger": "skill_name == 'session-close'",
+        "action": "execute_sequence",
+        "sequence": [
+          "/retrospective",
+          "/prompt-reviewer",
+          "/skill-management",
+          "/handoff",
+          "copy_to_google_drive"
+        ]
+      }
+    ]
+  }
+}
