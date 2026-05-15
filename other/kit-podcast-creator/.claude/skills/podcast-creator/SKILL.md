@@ -1,6 +1,6 @@
 ---
 name: podcast-creator
-description: "Crea un podcast desde cero: setup de identidad, guiones completos, plan de grabación, artwork, social media, show notes y exportación HTML. Triggers: 'crear podcast', 'nuevo podcast', 'empezar podcast', 'quiero un podcast', 'guion de podcast', 'script de episodio', 'plan de lanzamiento podcast', 'show notes', 'artwork podcast', 'producir episodio', 'podcast desde cero', 'create podcast', 'podcast script', 'episode script', 'podcast from scratch', 'podcast workflow', 'podcast production', 'producción de podcast', 'lanzar podcast'."
+description: "Produces complete podcasts from scratch: brand identity setup, full episode scripts, recording plan, artwork prompts, social media launch, show notes, HTML export. Everything you need from concept to published episode. Triggers: 'crear podcast', 'nuevo podcast', 'empezar podcast', 'quiero un podcast', 'guion de podcast', 'script de episodio', 'plan de grabación', 'plan de lanzamiento podcast', 'show notes podcast', 'artwork podcast', 'producir episodio', 'podcast desde cero', 'create podcast', 'podcast script', 'episode script', 'podcast from scratch', 'podcast workflow', 'podcast production', 'producción de podcast', 'lanzar podcast'."
 ---
 
 # Podcast Creator — Producción completa de podcast
