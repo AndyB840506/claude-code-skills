@@ -46,39 +46,11 @@ See [When to Use](docs/when-to-use.md) for detailed guidelines, but quick versio
 
 ## EXECUTION
 
-**You invoke:** `/session-close`
+Invokes `/session-close` to execute all 5 steps automatically.
 
-**Automation executes all 5 steps in sequence (you only confirm approval prompts):**
+**Steps 1-3:** User confirms approval prompts as each step completes.  
+**Steps 4-5:** Run automatically without confirmation.
 
-1. **Step 1: Retrospective** — Scans conversation for learnings, proposes skill updates
-   - Shows: Learnings found
-   - **You confirm:** "Apply these changes?" → YES/NO
-   - Updates approved skills
-
-2. **Step 2: Prompt Reviewer** — Reviews updated skills, finds clarity issues
-   - Shows: Improvements found
-   - **You confirm:** "Apply improvements?" → YES/NO
-   - Updates approved skills
-
-3. **Step 3: Skill Management** — Audits folder structure, identifies issues
-   - Shows: Structure issues found
-   - **You confirm:** "Reorganize?" → YES/NO
-   - Applies approved reorganization
-
-4. **Step 4: Handoff** — Generates document, creates commit, pushes to GitHub
-   - Runs automatically (no confirmation needed)
-   - Creates `.agents/handoff/YYYY-MM-DD-topic.md`
-   - Commits and pushes to GitHub
-   - Copies summary to clipboard
-
-5. **Step 5: Google Drive Backup** — Copies handoff to Google Drive backup folder
-   - Runs automatically (no confirmation needed)
-   - Copies to `G:\My Drive\claude projects\`
-   - Google Drive Desktop auto-syncs to cloud
-
-**Result:** All 5 steps complete automatically. Session fully closed, documented, backed up.
-
----
-
-**Implementation details:** See [INSTRUCTIONS.md](INSTRUCTIONS.md) for auto-execution rules and error handling.
+See [Execution Workflow](workflows/execute.md) for detailed step-by-step instructions.  
+See [INSTRUCTIONS.md](INSTRUCTIONS.md) for implementation rules.
 
