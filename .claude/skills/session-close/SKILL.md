@@ -5,9 +5,9 @@ description: "Complete session closing workflow: analyze learnings, review skill
 
 # Session Close — Complete Closing Workflow
 
-Automated 5-step workflow to close your session: analyze learnings, review skills, organize structure, and backup everything.
+Automated 7-step workflow to close your session: analyze learnings, review skills, organize structure, backup everything, and prepare for next session.
 
-**Executes in order:** Retrospective → Prompt Reviewer → Skill Management → Handoff → Google Drive sync
+**Executes in order:** Retrospective → Prompt Reviewer → Skill Management → Handoff → Google Drive sync → Compact Context → Clear Screen
 
 ---
 
@@ -58,6 +58,8 @@ Steps 1-3 are independent and optional (skip or rerun as needed). Steps 4-5 run 
 ✓ Skill improvements (if approved)  
 ✓ Handoff document copied to clipboard (Ctrl+V to paste in next session)  
 ✓ Google Drive sync (if installed, automatic)  
+✓ Context compressed (Step 6)  
+✓ Screen cleared for fresh start (Step 7, optional)  
 
 ---
 
