@@ -11,46 +11,17 @@ Automated 5-step workflow to close your session: analyze learnings, review skill
 
 ---
 
-## How It Works
+## 5-Step Workflow
 
-Execute the following 5-step workflow in order. See [Execution Workflow](workflows/execute.md) for detailed process:
+1. **Retrospective** → `/retrospective` — Extract learnings, propose skill updates
+2. **Prompt Reviewer** → `/prompt-reviewer` — Review and improve updated skills (optional)
+3. **Skill Management** → `/skill-management` — Verify folder structure, suggest fixes (optional)
+4. **Handoff** → `/handoff` — Generate handoff document, create git commit + push
+5. **Google Drive Backup** — Automatic via Desktop app (Step 4 handoff syncs)
 
-**Step 1: Retrospective**
-- Run: `/retrospective`
-- Extracts learnings, proposes skill updates
-- User confirms or skips changes
+Steps 1-3 are independent (skip/rerun as needed). Steps 4-5 run sequentially.
 
-**Step 2: Prompt Reviewer**
-- Run: `/prompt-reviewer`
-- Reviews and improves updated skills (optional)
-- User confirms or skips changes
-
-**Step 3: Skill Management**
-- Run: `/skill-management`
-- Verifies folder structure, suggests fixes (optional)
-- User confirms or skips changes
-
-**Step 4: Handoff**
-- Run: `/handoff`
-- Generates handoff document
-- Creates git commit + push to GitHub
-
-**Step 5: Google Drive Backup**
-- Handoff document is automatically backed up to `G:\My Drive\claude projects`
-- Syncs to Google Drive via Desktop app
-
-Steps 1-3 are independent and optional (skip or rerun as needed). Steps 4-5 run sequentially.
-
----
-
----
-
-## Documentation
-
-- **[Workflow Overview](docs/workflow-overview.md)** — Detailed breakdown of each step
-- **[When to Use](docs/when-to-use.md)** — Decision tree for running session-close
-- **[What to Expect](docs/what-to-expect.md)** — Expected output and troubleshooting
-- **[Execution Workflow](workflows/execute.md)** — Step-by-step execution guide
+See [Full Workflow](workflows/execute.md) for detailed step-by-step execution.
 
 ---
 

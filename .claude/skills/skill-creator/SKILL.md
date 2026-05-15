@@ -49,23 +49,9 @@ install it → ready to use
 
 ---
 
-## Storage
-
-All skills go in:
-```
-.claude/skills/skill-name/SKILL.md
-```
-
-For larger skills, use folder structure:
-```
-.claude/skills/skill-name/
-├── SKILL.md (router)
-├── workflows/ (procedures)
-└── docs/ (references)
-```
-
 ---
 
 ## See Also
 
-- **[EXECUTION Sections](docs/execution-sections.md)** — How to make skills actually work with explicit instructions
+- [Storage & Organization](docs/storage.md) — Skill folder structure
+- [EXECUTION Sections](docs/execution-sections.md) — How to make skills actually work

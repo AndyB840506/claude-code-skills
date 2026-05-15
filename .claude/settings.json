@@ -1,7 +1,0 @@
-{
-  "autoCompact": {
-    "enabled": true,
-    "threshold": 0.5,
-    "description": "Automatically compact context when reaching 50% to maintain session continuity"
-  }
-}

@@ -39,15 +39,6 @@ Or specify analysis depth:
 
 ---
 
-## What It Finds
-
-- **Clarity issues** — Ambiguous language, confusing structure
-- **Gaps** — Missing steps, undefined terms, no examples
-- **Ineffectiveness** — Vague instructions, missing context
-- **Pattern violations** — Inconsistent style, poor naming
-
----
-
 ## Output
 
 Problem identification + before/after examples + ready to apply or skip
@@ -56,6 +47,7 @@ Problem identification + before/after examples + ready to apply or skip
 
 ## See Also
 
+- [What It Finds](docs/findings.md) — Patterns and examples
 - [Execution Workflow](workflows/execute.md) — Step-by-step audit process
 
 ---

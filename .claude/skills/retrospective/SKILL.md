@@ -56,9 +56,9 @@ You have invoked `/retrospective`. Now execute the 5-step workflow:
 1. **Extract Signals** — Scan conversation for corrections, redone work, missing steps, what worked well
 2. **Map to Skills** — Identify which skills need updating based on learnings
 3. **Propose Diffs** — Generate specific changes with reasoning for each skill
-4. **Ask Confirmation** — Present all changes and wait for user approval
-5. **Apply Changes** — Update skill files if user approved
+4. **Ask Confirmation** — Present all changes and wait for user approval (or confirm "no updates needed")
+5. **Apply Changes** — Update skill files if user approved; otherwise proceed to next session step
 
 See [Full Workflow](workflows/extract.md) for detailed step-by-step instructions.
 
-**Result:** Skills updated with session learnings (if approved).
+**Result:** Skills updated with session learnings (if approved), or next step ready if no changes proposed.
