@@ -1,11 +1,11 @@
 ---
 name: handoff
-description: "Automatically generate session handoff document with accomplishments, pause point, and blockers. Copies to clipboard for easy pasting in next session + GitHub backup. Triggers: handoff, session handoff, write handoff, continue session, session notes, pause point, next session, where we stopped, backup session."
+description: "Automatically generate session handoff document with accomplishments, pause point, and blockers. Copies to clipboard for easy pasting in next session. Creates git commit + automatic GitHub backup. Triggers: handoff, session handoff, write handoff, continue session, session notes, pause point, next session, where we stopped, backup session."
 ---
 
 # Handoff — Session Summary to Clipboard
 
-Automatically generates a session summary and copies it to your clipboard — ready to paste with Ctrl+V in next session. No file creation, no git commits.
+Automatically generates a session summary and copies it to your clipboard — ready to paste with Ctrl+V in next session. Creates git commit + GitHub backup automatically.
 
 **What it does:**
 1. Analyzes recent git commits and file changes
