@@ -71,13 +71,22 @@ Verifica la organización:
 
 ---
 
-### Paso 4: Handoff
-Respalda todo:
-- Git add/commit de cambios con timestamp
-- Git push a GitHub
-- Confirmación de respaldo completado
+### Paso 4: Handoff — Documento + GitHub Backup
+Ejecuta handoff automáticamente con dos acciones:
 
-**Output:** Confirmación de backup + commit hash
+**Acción 1: Crear documento de handoff**
+- Escribe a `.agents/handoff/YYYY-MM-DD-session-close.md`
+- Documenta qué se logró
+- Documenta dónde pausamos
+- Documenta blockers o próximos pasos
+
+**Acción 2: GitHub Backup (Automático)**
+- `git add -A` de todos los cambios
+- `git commit -m "Session: session-close [timestamp]"`
+- `git push origin main` a GitHub
+- Confirmación con commit hash
+
+**Output:** Documento de handoff + Confirmación de backup + commit hash
 
 ---
 
@@ -97,25 +106,30 @@ Este paso se ejecuta automáticamente después de que `handoff` completa. No req
 
 ## Flujo Recomendado
 
-**Fin de sesión productiva:**
+**Fin de sesión productiva (recomendado):**
 ```
-1. /session-close
-2. Revisa las propuestas de retrospective
-3. Aplica cambios de prompt-reviewer si necesita
-4. Deja que handoff respaldes todo
+/session-close
+  ↓ Paso 1: Retrospective (analiza learnings)
+  ↓ Paso 2: Prompt Reviewer (revisa skills)
+  ↓ Paso 3: Skill Management (organiza)
+  ↓ Paso 4: Handoff (crea documento + git push)
+  ↓ Paso 5: Auto-sync Google Drive (automático)
+  
+✓ Todo respaldado automáticamente
 ```
 
 **Fin de sesión simple:**
 ```
-Si no hiciste cambios en skills, puedes saltar los pasos 1-3 y solo:
+Si no hiciste cambios en skills, solo ejecuta:
 /handoff
+  → Crea documento de continuidad
+  → Git commit + push automáticamente
 ```
 
-**Desarrollo iterativo:**
+**Solo respaldo sin análisis:**
 ```
-Si estás refinando un skill continuamente:
-/skill-management    # Solo organización
-/handoff            # Respaldar cambios
+Si solo quieres respaldar sin retrospective/revision:
+/handoff
 ```
 
 ---
@@ -124,8 +138,9 @@ Si estás refinando un skill continuamente:
 
 - **Ejecuta al final del día** — especialmente después de crear o modificar skills
 - **No es obligatorio** — puedes ejecutar los pasos individuales en cualquier orden
-- **Aplica solo lo que tenga sentido** — no todas las sugerencias aplican siempre
-- **Git push solo con cambios reales** — handoff no hace push si no hay cambios
-- **Automatización completa** — una vez termina handoff, Google Drive se sincroniza automáticamente
-- **Doble respaldo** — después de `/session-close`, tu trabajo está en GitHub + Google Drive
-- **Sin esperas** — la sincronización a Google Drive es instantánea (Google Drive for Desktop la sube automáticamente)
+- **Handoff = Documento + Git Push** — ambas acciones suceden en el Paso 4
+- **Git push solo con cambios reales** — handoff solo pushea si hay cambios
+- **Automatización completa** — 5 pasos se ejecutan en secuencia automáticamente
+- **Triple respaldo** — después de `/session-close`: documento (.agents/), GitHub, Google Drive
+- **Sin esperas** — Google Drive for Desktop sincroniza automáticamente a la nube
+- **Limpieza de contexto** — después de session-close, puedes usar `/compact` para limpiar sesión
