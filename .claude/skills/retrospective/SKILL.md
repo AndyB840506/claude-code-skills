@@ -51,4 +51,14 @@ Analyzes the current session to extract reusable learnings and proposes updates 
 
 ## EXECUTION
 
-See [Extract Signals](workflows/extract.md) to start the 5-step retrospective analysis workflow.
+You have invoked `/retrospective`. Now execute the 5-step workflow:
+
+1. **Extract Signals** — Scan conversation for corrections, redone work, missing steps, what worked well
+2. **Map to Skills** — Identify which skills need updating based on learnings
+3. **Propose Diffs** — Generate specific changes with reasoning for each skill
+4. **Ask Confirmation** — Present all changes and wait for user approval
+5. **Apply Changes** — Update skill files if user approved
+
+See [Full Workflow](workflows/extract.md) for detailed step-by-step instructions.
+
+**Result:** Skills updated with session learnings (if approved).

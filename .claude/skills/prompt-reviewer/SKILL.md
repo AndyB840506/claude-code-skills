@@ -62,4 +62,13 @@ Problem identification + before/after examples + ready to apply or skip
 
 ## EXECUTION
 
-See [Execution Workflow](workflows/execute.md) for step-by-step instructions to audit and improve skills.
+You have invoked `/prompt-reviewer`. Now execute the 4-step audit workflow:
+
+1. **Choose Mode** — Quick (5 min) or Thorough (15 min) analysis depth
+2. **Audit** — Scan for clarity issues, gaps, ineffectiveness, pattern violations
+3. **Propose** — Generate specific improvements with before/after examples
+4. **Confirm & Apply** — Present findings and apply only if user approves
+
+See [Full Workflow](workflows/execute.md) for detailed step-by-step instructions.
+
+**Result:** Skills reviewed and improved (if approved).

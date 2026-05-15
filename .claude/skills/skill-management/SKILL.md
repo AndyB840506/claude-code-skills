@@ -62,4 +62,14 @@ Self-contained skills with folder structure:
 
 ## EXECUTION
 
-See [Audit Workflow](workflows/audit.md) for step-by-step instructions to audit and organize skills.
+You have invoked `/skill-management`. Now execute the audit and organize workflow:
+
+1. **Audit Structure** — Scan `.claude/skills/` for organization issues, missing folders, oversized SKILL.md files
+2. **Identify Issues** — Check each skill for: structure problems, routing issues, missing documentation folders
+3. **Propose Fixes** — Generate specific reorganization steps for each issue
+4. **Confirm & Apply** — Present findings and apply changes only if user approves
+5. **Verify** — Scan again to confirm all issues are resolved
+
+See [Full Workflow](workflows/audit.md) for detailed step-by-step instructions.
+
+**Result:** Skills reorganized into standard pattern (if approved).
