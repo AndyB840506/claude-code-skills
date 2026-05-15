@@ -125,14 +125,16 @@ Handoff document is generated and copied to clipboard. Continue to Step 5.
 
 ### Step 5: Google Drive Sync (Automatic)
 
-Check if Google Drive MCP is configured. If yes, handoff document is automatically synced. No user action needed. Continue to Step 6.
+Attempt to sync handoff document to Google Drive if MCP is configured. If Google Drive MCP is not installed, this step silently skips (no error). No user action needed. Continue to Step 6.
 
 ### Step 6: Compact Context
 
-Show message:
-> Compacting conversation history...
-> Run `/compact` to compress context and free up tokens for next session.
-> (You can run this manually when ready, or skip if not needed)
+Execute:
+```
+/compact
+```
+
+This compresses conversation history to free up tokens for next session. Automatic execution — no user confirmation needed.
 
 ### Step 7: Clear Screen (Optional)
 
