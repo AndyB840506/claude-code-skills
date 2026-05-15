@@ -85,25 +85,86 @@ See [When to Use](docs/when-to-use.md) for detailed guidelines, but quick versio
 
 ## EXECUTION
 
-You have invoked `/session-close`. Execute the 7-step workflow in order:
-
-### Steps 1-4: Execute in Sequence
-- **Step 1:** Run `/retrospective` → wait for user confirmation → continue
-- **Step 2:** Run `/prompt-reviewer` → wait for user confirmation → continue
-- **Step 3:** Run `/skill-management audit` → wait for user confirmation → continue
-- **Step 4:** Run `/handoff` → generates document, copies to clipboard → continue
-
-### Step 5: Google Drive Sync (Automatic)
-If Google Drive MCP is installed, attempt to sync the handoff document automatically. If not installed, silently skip (no error). Proceed to Step 6 regardless.
-
-### Step 6: Compact Context (Automatic)
-Execute `/compact` command to compress conversation history and free up context tokens. No user confirmation needed. Proceed to Step 7.
-
-### Step 7: Clear Screen (User Confirmation)
-Ask user: "Have you pasted the handoff summary in your next session? [yes/no]"
-- If **YES:** Execute `clear` command to clean the screen
-- If **NO:** Skip clearing, session complete
+You have invoked `/session-close`. Execute the 7-step workflow in order. Each step MUST complete before proceeding to the next.
 
 ---
 
-**Session close complete!** All 7 steps executed. Session documented, backed up, and optimized.
+## STEPS 1-4: User-Confirmation Steps
+
+### Step 1: Retrospective
+```
+/retrospective
+```
+- Waits for user confirmation
+- If YES: applies skill updates
+- If NO or SKIP: continues to Step 2
+- **Then proceed to Step 2**
+
+### Step 2: Prompt Reviewer  
+```
+/prompt-reviewer quick
+```
+- Waits for user confirmation
+- If YES: applies improvements
+- If NO or SKIP: continues to Step 3
+- **Then proceed to Step 3**
+
+### Step 3: Skill Management
+```
+/skill-management audit
+```
+- Reports audit results (no changes needed or will ask for confirmation)
+- If changes approved: applies them
+- **Then proceed to Step 4**
+
+### Step 4: Handoff
+```
+/handoff
+```
+- Generates document and copies to clipboard
+- Creates git commit and pushes to GitHub
+- **Then proceed to Step 5 immediately**
+
+---
+
+## STEPS 5-7: Sequential Execution (Must execute in moment; Step 7 requires confirmation)
+
+### Step 5: Google Drive Sync
+**ACTION:** Attempt to sync handoff to Google Drive if MCP is configured
+- If Google Drive MCP is available: sync the handoff document
+- If Google Drive MCP is NOT available: report "Google Drive MCP not installed - sync skipped"
+- **Result:** Backup created or skipped. Continue to Step 6 immediately.
+
+### Step 6: Compact Context  
+**ACTION:** Execute compact command
+```
+/compact
+```
+**MUST EXECUTE:** This is not optional. User may need to run this themselves if `/compact` requires user input.
+- Report: "Context compressed. Ready for next session."
+- **Continue to Step 7 immediately**
+
+### Step 7: Clear Screen (Final Confirmation)
+**ACTION:** Ask user for confirmation
+```
+Have you pasted the handoff summary in your next session?
+[yes/no]
+```
+- **If YES:** Execute clear screen command: `clear`
+  - Report: "✓ Session closed and screen cleared. Ready for new work!"
+- **If NO:** Report: "✓ Session complete. You can clear the screen manually anytime with `clear` command."
+
+---
+
+## Success Criteria
+
+All 7 steps completed in sequence:
+✓ Step 1: Retrospective (learnings captured)
+✓ Step 2: Prompt Reviewer (improvements applied)
+✓ Step 3: Skill Management (structure verified)
+✓ Step 4: Handoff (document generated and backed up)
+✓ Step 5: Google Drive (sync attempted or skipped)
+✓ Step 6: Compact (context compressed)
+✓ Step 7: Clear (screen cleared or skipped)
+
+**Session is fully closed, documented, and ready for next session.**

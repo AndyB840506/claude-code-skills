@@ -39,16 +39,6 @@ The skill automatically detects mode by checking if `job-config.json` exists:
 
 ## Core Principles
 
-- Never invents or assumes data
-- Never reveals evaluation criteria to candidate
-- Warm, human tone — never feels robotic
-- Adapts language automatically (Spanish/English)
-- Flags dealbreakers clearly in report
-- All recommendations are evidence-based
+Never invents data. Never reveals evaluation criteria to candidate. Warm, human tone. Adapts language automatically (Spanish/English). Flags dealbreakers clearly. Evidence-based recommendations.
 
----
-
-## See Also
-
-- [Evaluation Rubric](docs/evaluation-rubric.md) — Detailed scoring dimensions and thresholds
-- [Report Template](templates/report-template.md) — Full report markdown structure
+See [Evaluation Rubric](docs/evaluation-rubric.md) and [Report Template](templates/report-template.md).
