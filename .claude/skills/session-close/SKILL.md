@@ -56,9 +56,8 @@ Steps 1-3 are independent and optional (skip or rerun as needed). Steps 4-5 run 
 ## Output
 
 ✓ Skill improvements (if approved)  
-✓ Structured handoff document (`.agents/handoff/YYYY-MM-DD-topic.md`)  
-✓ GitHub commit + push  
-✓ Google Drive sync (if installed)  
+✓ Handoff document copied to clipboard (Ctrl+V ready)  
+✓ Google Drive sync (if installed, automatic)  
 
 ---
 
