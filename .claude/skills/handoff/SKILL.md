@@ -55,38 +55,55 @@ The skill automatically creates a document with:
 
 ---
 
-## Execution Flow
+## Automatic Execution Flow
 
-### Step 1: Analyze Session
-Gathers recent commits, file changes, and identifies theme:
+**When you invoke `/handoff`, Claude immediately executes:**
+
+### Step 1 — Analyze Session (Automatic)
+Claude runs:
 ```bash
 git log --oneline -5
 git diff --stat HEAD~5
 ```
+Extracts: commit messages, changed files, theme/topic
 
-### Step 2: Generate Document
-Creates `.agents/handoff/YYYY-MM-DD-topic.md` with structured format:
-- Date and status
-- Accomplishments section
-- Pause point details
-- Files to read first
-- Questions or blockers
+### Step 2 — Generate Document (Automatic)
+Claude creates `.agents/handoff/YYYY-MM-DD-topic.md` with:
+- Date and session status
+- What was accomplished (from commits)
+- Where we paused (Claude asks you this)
+- Files to read first (from changed files)
+- Any blockers or decisions needed
 
-### Step 3: Display for Copy/Paste
-Shows the generated document in the chat so you can:
-- Read it immediately
-- Copy entire document for next session
-- Verify it captured everything correctly
+### Step 3 — Ask for Session Summary
+Claude asks you:
+```
+¿Dónde pausamos exactamente?
 
-### Step 4: GitHub Backup
+- Last action: [what was just done]
+- Next action: [what should happen next]
+- Blockers: [anything blocking progress]
+```
+
+Wait for your response, then incorporate into document.
+
+### Step 4 — Display Document (Automatic)
+Claude shows the complete generated document in chat:
+- Full text visible for reading
+- Ready to copy/paste entirely
+- For pasting at start of next session
+
+### Step 5 — GitHub Backup (Automatic)
+Claude executes:
 ```bash
 git add -A
 git commit -m "Session: [topic] [timestamp]"
 git push origin main
 ```
 
-### Step 5: Confirmation
-Shows commit hash and link to GitHub so you can verify backup succeeded.
+Shows commit hash and GitHub link as confirmation.
+
+**Everything happens automatically** — no need to ask "do it now". Just invoke `/handoff` and it handles all 5 steps.
 
 ---
 
