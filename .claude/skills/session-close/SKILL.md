@@ -72,10 +72,52 @@ See [When to Use](docs/when-to-use.md) for detailed guidelines, but quick versio
 
 ---
 
-## Quick Start
+---
 
+## EXECUTION
+
+You have invoked `/session-close`. Now execute the 5-step workflow below in order.
+
+### Execute Step 1: Retrospective
+
+Run this command:
 ```
-/session-close
+/retrospective
 ```
 
-This will execute the 5-step workflow in order with confirmation at each step.
+Wait for user confirmation. If approved, skill updates are made. If skipped, continue to Step 2.
+
+### Execute Step 2: Prompt Reviewer
+
+Run this command:
+```
+/prompt-reviewer
+```
+
+Wait for user confirmation. If approved, improvements are made. If skipped, continue to Step 3.
+
+### Execute Step 3: Skill Management
+
+Run this command:
+```
+/skill-management
+```
+
+Wait for user confirmation. If approved, structure is fixed. If skipped, continue to Step 4.
+
+### Execute Step 4: Handoff
+
+Run this command:
+```
+/handoff
+```
+
+This step runs automatically — no confirmation needed. It creates the handoff document, commits, and pushes to GitHub.
+
+### Execute Step 5: Google Drive Sync
+
+This happens automatically if Google Drive MCP is configured. No action needed.
+
+---
+
+**Session close workflow complete!** All 5 steps have executed. Session is documented and backed up.
