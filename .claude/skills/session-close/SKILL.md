@@ -1,145 +1,70 @@
 ---
 name: session-close
-description: "Complete session closing workflow: analyze learnings (retrospective), review skill quality (prompt-reviewer), organize skills (skill-management), backup to GitHub + auto-sync to Google Drive. Run at end of session to consolidate work and prepare for next session. Triggers: session close, end session, closing session, cierre de sesión, cerrar sesión, session wrap-up, wrap up, end-of-session, session complete, finish session, session review workflow."
+description: "Complete session closing workflow: analyze learnings, review skills, organize structure, backup to GitHub + auto-sync to Google Drive. Triggers: session close, end session, closing session, cierre de sesión, cerrar sesión, session wrap-up, wrap up, end-of-session."
 ---
 
 # Session Close — Complete Closing Workflow
 
-Guía completo de cierre de sesión. Ejecuta 5 pasos funcionales en orden: análisis de learnings (retroactive) → revisión de skills (prompt-reviewer) → organización (skill-management) → respaldo a GitHub (handoff) → sincronización automática a Google Drive. Todos los pasos son ejecutables — cada uno que modifique contenido pide confirmación explícita.
+Automated 5-step workflow to close your session: analyze learnings, review skills, organize structure, and backup everything.
 
-**Orden del flujo:**
-1. **Retrospective** — Analiza la sesión y extrae learnings
-2. **Prompt Reviewer** — Revisa y mejora los skills creados/modificados
-3. **Skill Management** — Organiza la estructura de skills si es necesaria
-4. **Handoff** — Crea documento + respalda a GitHub (git push)
-5. **Auto-sync to Google Drive** — Sincroniza automáticamente los cambios a G:\My Drive
+**Executes in order:** Retrospective → Prompt Reviewer → Skill Management → Handoff → Google Drive sync
 
 ---
 
-## Cómo Usar
-
-Simplemente escribe:
+## Quick Start
 
 ```
 /session-close
 ```
 
-O ejecuta manualmente en orden si prefieres:
+Or run steps individually:
 
 ```
-/retrospective                    # Paso 1: Analizar aprendizajes
-/prompt-reviewer                  # Paso 2: Revisar skills
-/skill-management                 # Paso 3: Organizar estructura
-/handoff                          # Paso 4: Respaldar a GitHub
-                                  # Paso 5: Auto-sync a Google Drive (automático)
+/retrospective        # Step 1: Analyze learnings
+/prompt-reviewer      # Step 2: Review skills
+/skill-management     # Step 3: Organize structure
+/handoff              # Step 4: Document + GitHub backup
+                      # Step 5: Auto-sync to Google Drive (automatic)
 ```
 
 ---
 
-## Detalles de Cada Paso
+## 5-Step Workflow
 
-### Paso 1: Retrospective
-Analiza la sesión completa para extraer:
-- Correcciones del usuario (cambios de enfoque, feedback)
-- Trabajo que fue reiterativo (3+ versiones del mismo artifact)
-- Pasos que se improvisaron pero no están en los skills
-- Patrones que funcionaron bien
-
-**Output:** Propuestas de cambios a skills con diffs listos para aplicar
-
----
-
-### Paso 2: Prompt Reviewer
-Revisa todos los skills modificados hoy:
-- Claridad de instrucciones
-- Completitud de triggers
-- Consistencia de estructura
-- Calidad de ejemplos
-
-**Output:** Lista de mejoras sugeridas (es opcional aplicarlas)
+| Step | Skill | Purpose |
+|---|---|---|
+| 1 | Retrospective | Extract learnings, propose skill updates |
+| 2 | Prompt Reviewer | Audit and improve skills |
+| 3 | Skill Management | Verify folder structure |
+| 4 | Handoff | Generate summary doc + git push |
+| 5 | Auto-sync | Copy to Google Drive (if installed) |
 
 ---
 
-### Paso 3: Skill Management
-Verifica la organización:
-- Todos los skills en estructura correcta (.claude/skills/nombre/SKILL.md)
-- SKILL.md bajo 50 líneas con router claro
-- Workflows, templates, docs en carpetas apropiadas
-- No hay archivos .md sueltos interfiriendo
+## Execution
 
-**Output:** Recomendaciones si algo necesita reorganización
+All steps execute automatically with confirmation checkpoints where needed:
 
----
-
-### Paso 4: Handoff — Documento + GitHub Backup
-Ejecuta handoff automáticamente con dos acciones:
-
-**Acción 1: Crear documento de handoff**
-- Escribe a `.agents/handoff/YYYY-MM-DD-session-close.md`
-- Documenta qué se logró
-- Documenta dónde pausamos
-- Documenta blockers o próximos pasos
-
-**Acción 2: GitHub Backup (Automático)**
-- `git add -A` de todos los cambios
-- `git commit -m "Session: session-close [timestamp]"`
-- `git push origin main` a GitHub
-- Confirmación con commit hash
-
-**Output:** Documento de handoff + Confirmación de backup + commit hash
+- **Step 1:** Extracts learnings, asks "Apply these changes?"
+- **Step 2:** Reviews skills, suggests improvements (optional)
+- **Step 3:** Audits structure, asks "Reorganize?" (optional)
+- **Step 4:** Generates handoff doc and pushes to GitHub
+- **Step 5:** Auto-syncs to Google Drive if configured
 
 ---
 
-### Paso 5: Auto-sync to Google Drive
-Sincronización automática (requiere Google Drive for Desktop instalado):
-- Copia `.agents/handoff/` y `.claude/` a `G:\My Drive\kit-skill-creator\`
-- Google Drive for Desktop detecta cambios y sincroniza automáticamente a la nube
-- Sin intervención manual — la sincronización sucede automáticamente en background
+## Output
 
-**Output:** Confirmación que archivos fueron copiados a Google Drive
-
-**Requisito:**
-Google Drive for Desktop debe estar instalado y configurado en `G:\My Drive\`. Si no está instalado, el paso se salta (solo GitHub queda respaldado).
-
----
-
-## Flujo Recomendado
-
-**Fin de sesión productiva (recomendado):**
-```
-/session-close
-  ↓ Paso 1: Retrospective (analiza learnings)
-  ↓ Paso 2: Prompt Reviewer (revisa skills)
-  ↓ Paso 3: Skill Management (organiza)
-  ↓ Paso 4: Handoff (crea documento + git push)
-  ↓ Paso 5: Auto-sync Google Drive (automático)
-  
-✓ Todo respaldado automáticamente
-```
-
-**Fin de sesión simple:**
-```
-Si no hiciste cambios en skills, solo ejecuta:
-/handoff
-  → Crea documento de continuidad
-  → Git commit + push automáticamente
-```
-
-**Solo respaldo sin análisis:**
-```
-Si solo quieres respaldar sin retrospective/revision:
-/handoff
-```
+✓ Skill improvements (if approved)  
+✓ Structured handoff document (`.agents/handoff/YYYY-MM-DD-topic.md`)  
+✓ GitHub commit + push  
+✓ Google Drive sync (if installed)
 
 ---
 
 ## Tips
 
-- **Ejecuta al final del día** — especialmente después de crear o modificar skills
-- **No es obligatorio** — puedes ejecutar los pasos individuales en cualquier orden
-- **Handoff = Documento + Git Push** — ambas acciones suceden en el Paso 4
-- **Git push solo con cambios reales** — handoff solo pushea si hay cambios
-- **Automatización completa** — 5 pasos se ejecutan en secuencia automáticamente
-- **Triple respaldo** — después de `/session-close`: documento (.agents/), GitHub, Google Drive
-- **Sin esperas** — Google Drive for Desktop sincroniza automáticamente a la nube
-- **Limpieza de contexto** — después de session-close, puedes usar `/compact` para limpiar sesión
+- **End of day recommended** — especially after creating/modifying skills
+- **Optional** — run individual steps in any order
+- **With retrospective** — skill improvements are optional
+- **Triple backup** — document + GitHub + Google Drive

@@ -1,159 +1,53 @@
 ---
 name: prompt-reviewer-en
-description: "Evaluate and improve prompts, skills, and instructions. Find clarity issues, missing edge cases, and effectiveness gaps. Propose specific, executable fixes with reasoning. Asks for confirmation before applying changes. Better than generic tools. Triggers: review this prompt, evaluate this skill, improve these instructions, prompt audit, skill review, instruction check, is this clear, this is unclear, fix my prompt, improve my prompt."
+description: "Evaluate and improve prompts, skills, and instructions. Find clarity issues, missing edge cases, and effectiveness gaps. Propose specific, executable fixes with reasoning. Asks for confirmation before applying changes. Better than generic tools. Triggers: review prompt, evaluate skill, improve instructions, prompt audit, skill review, instruction check, is this clear, this is unclear, fix my prompt."
 ---
 
-# Prompt Reviewer — Evaluate and Improve Prompts & Skills
+# Prompt Reviewer EN — Evaluate and Improve
 
-Analyzes any prompt, skill, instruction, or documentation. Finds clarity gaps, completeness issues, and effectiveness problems. Proposes specific improvements with reasoning.
+Analyzes prompts, skills, and instructions to find clarity issues, gaps, and ineffectiveness. Proposes specific, executable fixes.
 
-**Core rule:** Return concrete, executable improvements — not vague criticism. Every finding must include: the exact problem, why it matters, and the proposed solution.
+**Core rule:** Return concrete improvements — not vague criticism. Every finding includes the exact problem, why it matters, and the solution.
 
----
-
-## Step 1 — Understand What to Review
-
-### 1.1 Detect Content Type
-
-User can pass:
-- A **prompt** (instructions for AI)
-- A **skill** (`.md` file with structured workflow)
-- An **instruction** (step-by-step procedure)
-- **Documentation** (manual, guide, README)
-
-Don't ask. Analyze the content and adapt:
-- If skill → evaluate structure, triggers, core rules, flow
-- If prompt → evaluate clarity, context, constraints, examples
-- If instruction → evaluate sequence, completeness, ambiguity
-- If documentation → evaluate navigation, examples, accuracy
-
-### 1.2 Offer Analysis Depth
-
-If user doesn't specify depth, ask:
-
-> Perfect, I'll review this. Which would you prefer?
->
-> **[1] QUICK** — 2-3 min → finds what matters most (ambiguity, missing examples, logic errors)
->
-> **[2] THOROUGH** — 5-10 min → complete analysis: clarity, completeness, edge cases, flow, redundancy, inconsistency
->
-> Which one?
+**Always asks for confirmation before applying changes.**
 
 ---
 
-## Step 2 — Quick Analysis (Default, 2-3 minutes)
-
-Find only the 3-5 highest-impact issues:
-
-### Quick Checklist:
-
-- ✓ Any ambiguous or contradictory phrases?
-- ✓ Missing a key example?
-- ✓ Missing or out-of-order step?
-- ✓ Is the objective clear or vague?
-- ✓ Inconsistent terminology?
-
-For each problem found:
-1. **What:** the exact phrase or section
-2. **Why it matters:** how it affects execution
-3. **Proposed fix:** the improved text
-
-Present as compact table:
-
-| # | Problem | Location | Impact | Solution |
-|---|---------|----------|--------|----------|
-| 1 | [problematic phrase] | [line/section] | [how affects] | [fixed version] |
-| 2 | ... | ... | ... | ... |
-
-End with:
-
-> **Quick score:** X/10 — is [clear/confusing]. Most urgent: [problem #1].
->
-> Want me to go deeper or apply these improvements?
-
----
-
-## Step 3 — Thorough Analysis
-
-Exhaustive review in 5 dimensions:
-
-### 3.1 CLARITY (10 points)
-- Does each sentence have ONE idea?
-- Are technical terms defined?
-- Are pronouns ambiguous?
-- Could a beginner understand it?
-
-### 3.2 COMPLETENESS (10 points)
-- Are all required steps present?
-- Are there missing edge cases?
-- Are examples sufficient?
-- Are assumptions documented?
-
-### 3.3 EFFECTIVENESS (10 points)
-- Does it achieve the stated goal?
-- Are there unnecessary steps?
-- Could it be more efficient?
-- Is it optimized for audience?
-
-### 3.4 CONSISTENCY (10 points)
-- Is terminology uniform?
-- Do formatting and structure match patterns?
-- Are similar concepts explained the same way?
-
-### 3.5 NAVIGABILITY (10 points)
-- Can someone find what they need?
-- Is the structure logical?
-- Are there helpful links/references?
-- Is it too long or too short?
-
-For each dimension, score 1-10 and list findings.
-
-Present as:
-
-| Dimension | Score | Issues | Severity |
-|-----------|-------|--------|----------|
-| Clarity | 7/10 | 3 ambiguous phrases, 1 undefined term | HIGH |
-| Completeness | 8/10 | Missing edge case for X, example unclear | MEDIUM |
-| ... | ... | ... | ... |
-
----
-
-## Step 4 — Ask for Confirmation
-
-**CRITICAL:** Before suggesting ANY changes, ask explicitly:
+## Quick Start
 
 ```
-Do you want me to improve this?
-
-Proposed changes:
-1. [Change 1 summary]
-2. [Change 2 summary]
-3. [Change 3 summary]
-
-Respond:
-- "yes" — Apply all improvements
-- "only X" — Apply only specific improvements
-- "no" / "skip" — Don't change anything
+/prompt-reviewer-en
 ```
 
-**Wait for explicit user confirmation.** Do not proceed unless approved.
+Or specify analysis depth:
+
+```
+/prompt-reviewer-en quick
+/prompt-reviewer-en thorough
+```
 
 ---
 
-## Step 5 — Apply Improvements
+## How It Works
 
-After user approves:
-- Apply all accepted edits
-- Show before/after for each change
-- Explain why each change improves the prompt
-- Ask if user wants further refinement
+**4-Step Workflow:**
+
+1. **Choose Mode** — Quick (5 min) or Thorough (15 min)
+2. **Audit** — Find clarity issues, gaps, ineffective patterns
+3. **Propose** — Suggest specific improvements with reasoning
+4. **Confirm** — Apply only if you approve
 
 ---
 
-## Tips
+## What It Finds
 
-- **Be specific** — "unclear" is not helpful; "this phrase could mean X or Y, recommend Y because..." is
-- **Show the fix** — Always include the improved text, not just criticism
-- **Ask before changing** — Respect that user knows their content
-- **Iterate if needed** — If improvements suggest deeper issues, offer another round
-- **Score matters** — Total score should be 0-50, user can see progress
+- **Clarity issues** — Ambiguous language, confusing structure
+- **Gaps** — Missing steps, undefined terms, no examples
+- **Ineffectiveness** — Vague instructions, missing context
+- **Pattern violations** — Inconsistent style, poor naming
+
+---
+
+## Output
+
+Problem identification + before/after examples + ready to apply or skip

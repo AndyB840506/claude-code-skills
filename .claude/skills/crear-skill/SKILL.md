@@ -1,172 +1,73 @@
 ---
 name: crear-skill
-description: "Asiste al usuario para crear sus propias skills de Claude Code personalizadas en español o inglés, automatizar flujos de trabajo, crear comandos o convertir procesos manuales en automáticos. Triggers: 'crea una skill', 'quiero una skill', 'skill personalizada', 'automatizar esto como skill', 'crear comando Claude Code', 'convertir en skill', 'hacer esto automático', 'create a skill', 'I want a skill', 'custom skill', 'automate this as a skill'."
+description: "Asiste al usuario para crear sus propias skills de Claude Code personalizadas en español o inglés, automatizar flujos de trabajo, crear comandos o convertir procesos manuales en automáticos. Triggers: 'crea una skill', 'quiero una skill', 'skill personalizada', 'automatizar esto como skill', 'crear comando Claude Code', 'convertir en skill', 'hacer esto automático'."
 ---
 
 # Crear Skill — Crea tus propias skills
 
-Le describes un proceso que quieres automatizar y Claude genera una skill completa lista para usar en español o inglés. Es la herramienta que crea herramientas.
+Le describes un proceso que quieres automatizar y Claude genera una skill completa lista para usar. Es la herramienta que crea herramientas.
 
-Las skills de Claude Code son archivos `.md` que le enseñan a Claude a hacer tareas específicas. Cualquier proceso que hagas de forma repetitiva puede convertirse en una skill. Puedes crear skills en tu idioma preferido.
-
----
-
-## Paso 1 — Entender qué necesita el usuario
-
-Pregunta de forma conversacional:
-
-- **¿En qué idioma quieres la skill?** — Español o English
-- **¿Dónde quieres guardar esta skill?** — Business (privada, solo para tu empresa) u Other (pública, se puede compartir)
-  - **Business:** Skills para proyectos internos, confidenciales o específicos de tu empresa. Se guardan en `.claude/skills/business/` y nunca se comparten públicamente.
-  - **Other:** Skills de utilidad general que se pueden compartir con otros usuarios. Se guardan en `.claude/skills/other/` y se pueden publicar en repositorios públicos.
-- **¿Qué quieres que haga Claude automáticamente?** — describe el resultado que esperas
-- **¿Qué información necesita recibir?** — URL, texto, carpeta, datos, archivo...
-- **¿Qué debe generar?** — HTML, informe, archivo, código, dashboard...
-- **¿Lo vas a usar tú o se lo vas a dar a otras personas?** (esto también puede indicar si es business u other)
-
-Si el usuario ya describió suficiente (ej: "una skill que lea un CSV de productos y genere fichas de producto en HTML"), diseña directamente.
-
-Si no sabe qué skill crear, proponle ideas:
-
-**Para negocios:**
-- Generador de propuestas comerciales (datos del cliente → propuesta PDF/HTML profesional)
-- Calculadora de presupuestos (servicio + horas → presupuesto detallado)
-- Generador de contratos (datos → contrato personalizado)
-- Creador de presentaciones de ventas (producto → slides HTML)
-- Onboarding de clientes (datos → carpeta + emails + documentos)
-
-**Para marketing:**
-- Generador de copy para ads (producto + público → variantes de anuncios)
-- Planificador de contenido (nicho → calendario de 30 días con ideas)
-- Creador de emails de venta (producto → secuencia de emails)
-- Generador de posts para redes (tema → posts para IG, LinkedIn, X)
-
-**Para desarrollo:**
-- Generador de APIs (modelo de datos → API completa)
-- Documentador de código (repositorio → documentación)
-- Generador de tests (código → suite de tests)
-- Scaffolding de proyectos (tipo de proyecto → estructura completa)
-
-**Para productividad:**
-- Resumidor de documentos (PDF → resumen ejecutivo)
-- Transcriptor de reuniones (notas → acta formal)
-- Generador de SOPs (proceso → documento de procedimiento paso a paso)
-- Analizador de datos (CSV → dashboard con insights)
+Las skills de Claude Code son archivos `.md` que le enseñan a Claude a hacer tareas específicas. Cualquier proceso que hagas de forma repetitiva puede convertirse en una skill.
 
 ---
 
-## Paso 2 — Diseñar la skill
+## Flujo de Creación
 
-Antes de escribir, planifica la estructura:
-
-1. **Input** — qué recibe la skill (qué pregunta al usuario)
-2. **Proceso** — qué pasos sigue (en orden)
-3. **Herramientas** — qué necesita usar (WebFetch, Bash, Read, Write, herramientas nativas de Claude Code)
-4. **Output** — qué genera y en qué formato
-5. **Experiencia de usuario** — cómo se siente usarla (mensajes amigables, flujo conversacional)
-
-### Principios de diseño de skills
-
-**1. No inventes datos** — si la skill necesita información del usuario, pregúntala. Nunca la inventes.
-
-**2. Datos reales primero, preguntas después** — si la skill puede obtener datos automáticamente, hazlo primero. Solo pregunta lo que no puedes encontrar solo.
-
-**3. Auto-instalación de dependencias** — si necesita herramientas, instálalas automáticamente.
-
-**4. Libertad creativa en diseño** — si genera HTML/dashboards, no dictes CSS rígido. Describe el resultado y deja que Claude diseñe.
-
-**5. Adaptación al contexto** — si la skill sirve para diferentes tipos, adapta las preguntas.
-
-**6. Flujo conversacional** — debe sentirse como conversación natural, no formulario.
-
-**7. Fallbacks amigables** — si algo falla, ofrece alternativa y sigue adelante.
-
-**8. Mensaje de bienvenida** — si la skill va en un kit, incluye mensaje de bienvenida.
-
-**9. Sin precios sugeridos** — no incluir "como servicio" ni precios al final.
-
-**10. Resultado claro** — mostrar qué se generó, qué datos se usaron, qué falta.
+1. **Entender** — ¿Qué quieres automatizar?
+2. **Diseñar** — Planifica input, proceso, output
+3. **Escribir** — Genero la skill en `.md`
+4. **Confirmar** — ¿Quieres que la guarde?
+5. **Instalar** — La skill queda lista en `.claude/skills/`
+6. **Testear** — Verificamos que funciona
+7. **Presentar** — Resumen de lo generado
 
 ---
 
-## Paso 3 — Escribir la skill
+## Quick Links
 
-Genera el archivo `.md` con estructura clara:
-
-1. Frontmatter con `name` y `description`
-2. Secciones numeradas con pasos claros
-3. Ejemplos concretos
-4. Reglas explícitas
+- [Paso 1: Entender](workflows/understand.md) — Qué necesitas
+- [Paso 2: Diseñar](workflows/design.md) — Estructura de la skill
+- [Paso 3-5: Crear e Instalar](workflows/create-install.md) — Genero y guardo
+- [Paso 6-7: Test y Presentación](workflows/test-present.md) — Verifico y presento
+- [Principios de Diseño](docs/design-principles.md) — 10+ principios de buenas skills
 
 ---
 
-## Paso 4 — Ask for User Confirmation
-
-**CRITICAL:** Before writing any skill to disk, explicitly ask the user:
+## Ejemplo
 
 ```
-¿Quieres que guarde esta skill?
+/crear-skill
 
-Skill: [nombre-skill]
-Ubicación: .claude/skills/[nombre-skill]/SKILL.md
+"Quiero una skill que lea un CSV de productos 
+y genere fichas de producto en HTML"
 
-- "sí" / "yes" — Guardar la skill
-- "no" — No guardar, quiero revisar primero
-- "cambiar X" — Cambiar algo antes de guardar
+↓ 
+
+Creo la skill completa → Te pido confirmación → 
+La instalo → Listo para usar
 ```
 
-**Wait for explicit approval.** Do not write to disk unless user confirms.
+---
 
-## Paso 5 — Instalar la skill
+## Idioma
 
-**IMPORTANTE:** Todas las skills van SIEMPRE en `.claude/skills/nombre-skill/SKILL.md` en estructura de carpeta, NO como archivos `.md` sueltos.
+Puedes crear skills en:
+- **Español** — para uso personal o equipo hispanohablante
+- **English** — para compartir globalmente
 
-Las carpetas `business/` y `other/` son SOLO para kits completos, no para skills individuales.
+---
 
-```bash
-mkdir -p .claude/skills/nombre-skill
-cat > .claude/skills/nombre-skill/SKILL.md << 'EOF'
-[contenido de la skill]
-EOF
+## Dónde se Guardan
+
+Todas las skills van en:
+```
+.claude/skills/nombre-skill/SKILL.md
 ```
 
-Claude Code detecta automáticamente cualquier skill en carpetas de `.claude/skills/` con la estructura correcta:
-```
-.claude/skills/
-├── nombre-skill/
-│   └── SKILL.md        ← Siempre así, nunca como archivo suelto
-```
-
-Si la skill incluye workflows, usa la estructura de skill-management:
+Si es muy grande, se organiza con carpetas:
 ```
 .claude/skills/nombre-skill/
-├── SKILL.md            ← Router minimal (<50 líneas)
-├── workflows/          ← Procedimientos paso a paso
-└── docs/               ← Referencias avanzadas
+├── SKILL.md (router)
+├── workflows/ (procedimientos)
+└── docs/ (referencias)
 ```
-
----
-
-## Paso 5 — Crear kit (si la compartes)
-
-Si la skill va a ser usada por otros, genera un kit completo con CLAUDE.md e INSTRUCCIONES.md.
-
----
-
-## Paso 6 — Testear
-
-1. Simula ser usuario nuevo
-2. Verifica que las instrucciones son claras
-3. Si genera archivos, verifica que funcionan
-4. Ajusta si algo no fluye
-
----
-
-## Paso 7 — Presentar al usuario
-
-Muestra:
-1. Nombre y ruta del archivo
-2. Frases que la activan
-3. Input y output
-4. Instrucciones para usarla
-5. Pregunta si quiere ajustar
