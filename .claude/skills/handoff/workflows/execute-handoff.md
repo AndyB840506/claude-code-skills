@@ -80,15 +80,7 @@ path/to/related-file.md
 
 ---
 
-## Step 3: Save Document
-
-Save to: `.agents/handoff/YYYY-MM-DD-topic-slug.md`
-
-Example: `.agents/handoff/2026-05-14-skill-fixes.md`
-
----
-
-## Step 4: Copy to Clipboard & Display
+## Step 3: Copy to Clipboard & Display
 
 Automatically copy the document to the user's clipboard, then display in chat:
 
@@ -100,18 +92,18 @@ Write-Host "✓ Handoff copied to clipboard — ready to paste"
 
 Display in chat:
 ```
-✓ Handoff document generated:
+✓ Handoff copied to clipboard:
 
 ---
 [FULL DOCUMENT CONTENT HERE]
 ---
 
-✓ Copied to clipboard — paste in new session with Ctrl+V
+✓ Paste in new session with Ctrl+V
 ```
 
 ---
 
-## Step 5: Perform GitHub Backup
+## Step 4: Perform GitHub Backup
 
 ```bash
 # Stage all changes
@@ -129,13 +121,12 @@ git rev-parse HEAD
 
 ---
 
-## Step 6: Show Confirmation
+## Step 5: Show Confirmation
 
 Display:
 ```
-✓ Handoff document created:
-  File: .agents/handoff/YYYY-MM-DD-topic.md
-  
+✓ Handoff copied to clipboard — ready to paste
+
 ✓ GitHub backup:
   Commit: [hash]
   Message: "Session: [topic] [timestamp]"
@@ -158,11 +149,10 @@ WHEN /handoff is invoked:
    - Changed files from diff
    - Pause point (ask user or infer)
    - Files to read (from changed files)
-5. SAVE to .agents/handoff/YYYY-MM-DD-topic.md
-6. COPY document to clipboard (PowerShell Set-Clipboard)
-7. DISPLAY full document in chat
-8. RUN git add -A && git commit && git push
-9. SHOW commit hash and confirmation
+5. COPY document to clipboard (PowerShell Set-Clipboard)
+6. DISPLAY full document in chat
+7. RUN git add -A && git commit && git push
+8. SHOW commit hash and confirmation
 ```
 
 ---
@@ -171,6 +161,6 @@ WHEN /handoff is invoked:
 
 ✓ Document is **automatically generated** from git data  
 ✓ Document is **automatically copied to clipboard** — no manual copy needed  
-✓ Document is **saved** to `.agents/handoff/` for record  
 ✓ GitHub **backup is automatic** with every handoff  
+✓ **Clipboard-first workflow** — no redundant files created  
 ✓ **Ready to paste** in next session with Ctrl+V for instant context
