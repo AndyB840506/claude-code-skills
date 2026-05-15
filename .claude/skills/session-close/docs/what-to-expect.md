@@ -171,9 +171,9 @@ Step 5: Backing up to Google Drive...
 - Google Drive Desktop auto-syncs to cloud (5-10 seconds)
 
 **If you see error:**
-- Displays warning but continues (backup is optional)
+- Displays warning but continues (folder doesn't exist, which is fine)
 - Local clipboard + GitHub backups still exist
-- You can manually copy the file later
+- You can manually copy the file later if needed
 
 ### Duration
 5-10 seconds

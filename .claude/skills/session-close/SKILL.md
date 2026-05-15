@@ -1,6 +1,6 @@
 ---
 name: session-close
-description: "Automated 5-step session close: retrospective + prompt review + skill audit + handoff (to clipboard, no files) + optional Google Drive backup. Triggers: session close, end session, closing session, cierre de sesión, cerrar sesión, session wrap-up, wrap up, end-of-session."
+description: "Automated 5-step session close: retrospective + prompt review + skill audit + handoff (to clipboard, no files) + Google Drive backup. Triggers: session close, end session, closing session, cierre de sesión, cerrar sesión, session wrap-up, wrap up, end-of-session."
 ---
 
 # Session Close — Automated Complete Workflow

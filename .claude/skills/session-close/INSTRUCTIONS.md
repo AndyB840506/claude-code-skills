@@ -39,7 +39,7 @@ STEP 5: Copy handoff to Google Drive
 4. **Display clear status messages** — show which step is running and when it completes
 5. **All changes are reversible** — everything goes through git
 6. **CRITICAL: Step 4 creates NO files** — Generate handoff in memory only, copy to clipboard, do NOT write `.md` files to disk
-7. **Step 5 is optional** — Only copy to Google Drive if folder exists; skip silently if not
+7. **Step 5 always executes** — Attempt to copy to Google Drive if folder exists; skip silently if not, but step itself is mandatory
 
 ## User Prompts
 

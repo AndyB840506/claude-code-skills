@@ -130,7 +130,7 @@ Claude invokes `/handoff` which automatically:
 
 ## STEP 5: Google Drive Backup (Fully Automatic)
 
-**Optional backup step:** The handoff document is already safely in:
+**Mandatory step (always executes):** Attempt to backup the handoff document to Google Drive. The document is already safely in:
 - Clipboard (from Step 4)
 - GitHub (from Step 4 git commit)
 
