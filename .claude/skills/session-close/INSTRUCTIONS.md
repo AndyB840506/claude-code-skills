@@ -38,6 +38,7 @@ STEP 5: Copy handoff to Google Drive
 3. **Each step completes before next starts** — do not run in parallel
 4. **Display clear status messages** — show which step is running and when it completes
 5. **All changes are reversible** — everything goes through git
+6. **Step 5 uses Google Drive API** — use `mcp__claude_ai_Google_Drive__create_file` tool to copy handoff
 
 ## User Prompts
 
@@ -66,16 +67,33 @@ Session closed successfully.
 
 ## Error Handling
 
-If any step fails:
-1. Display error message
-2. Show troubleshooting hint
-3. Stop sequence (do NOT continue to next step)
-4. User can retry entire `/session-close` or run individual steps
+**For Steps 1-3 (user confirmation steps):**
+- If skill invocation fails: show error, ask user to retry or skip
+- User can choose YES/NO even if results unclear
+
+**For Step 4 (handoff):**
+- If handoff creation fails: display error and stop sequence
+- User can retry with `/handoff` manually
+- Cannot proceed to Step 5 without a handoff file
+
+**For Step 5 (Google Drive):**
+- If Google Drive backup fails: show error but continue
+- Display: "⚠ Could not back up to Google Drive: [reason]"
+- Hint: "Check that `G:\My Drive\claude projects\` exists and is writable"
+- **Do NOT stop** — Step 4 succeeded, backup is optional
+- Session close still completes successfully
+- User can retry Step 5 with `/handoff` → manually copy later
+
+**General:**
+- All git commits succeed or fail atomically (can be retried)
+- All skill updates are reversible via git
+- User can always retry entire `/session-close` from the start
 
 ## Storage Paths
 
-- Handoff document: `.agents/handoff/YYYY-MM-DD-topic.md`
-- Google Drive backup: `G:\My Drive\claude projects\report-[name]-[YYYY-MM-DD].md`
+- Handoff document (local): `.agents/handoff/YYYY-MM-DD-[topic].md`
+- Handoff document (Google Drive): `G:\My Drive\claude projects\handoff-[YYYY-MM-DD].md`
+- Folder must exist beforehand: `G:\My Drive\claude projects\` (use Google Drive Desktop)
 
 ## Git Integration
 

@@ -46,11 +46,16 @@ See [When to Use](docs/when-to-use.md) for detailed guidelines, but quick versio
 
 ## EXECUTION
 
-Invokes `/session-close` to execute all 5 steps automatically.
+When `/session-close` is invoked, execute all 5 steps automatically:
 
-**Steps 1-3:** User confirms approval prompts as each step completes.  
-**Steps 4-5:** Run automatically without confirmation.
+1. Invoke `/retrospective` → ask user to confirm changes
+2. Invoke `/prompt-reviewer` → ask user to confirm improvements  
+3. Invoke `/skill-management` → ask user to confirm reorganization
+4. Invoke `/handoff` → create document & git commit (automatic, no prompt)
+5. Copy handoff to Google Drive → `G:\My Drive\claude projects\` (automatic, no prompt)
 
-See [Execution Workflow](workflows/execute.md) for detailed step-by-step instructions.  
-See [INSTRUCTIONS.md](INSTRUCTIONS.md) for implementation rules.
+**Steps 1-3:** Show results and wait for user confirmation.  
+**Steps 4-5:** Run automatically without user prompts.
+
+See [INSTRUCTIONS.md](INSTRUCTIONS.md) for implementation rules and error handling.
 

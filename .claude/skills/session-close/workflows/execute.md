@@ -1,154 +1,190 @@
-# Session Close — Automatic Execution Workflow
+# Session Close — Complete Execution Flow
 
-When you invoke `/session-close`, the skill automatically executes all 5 steps in order. You only need to confirm approval prompts when they appear.
+When you invoke `/session-close`, Claude executes all 5 steps in sequence. Steps 1-3 require your confirmation; Steps 4-5 run automatically.
 
 ---
 
-## Complete Automated Flow
+## How Claude Executes `/session-close`
 
 ```
-/session-close invoked
+/session-close invoked by user
   ↓
-Step 1: /retrospective → scan learnings → [YOU: confirm changes?] → update skills
+Step 1: Invoke /retrospective
+  Show learnings → [USER: confirm?] → continue
   ↓
-Step 2: /prompt-reviewer → review updated skills → [YOU: confirm improvements?] → improve docs
+Step 2: Invoke /prompt-reviewer  
+  Show improvements → [USER: confirm?] → continue
   ↓
-Step 3: /skill-management → audit structure → [YOU: confirm reorganize?] → fix structure
+Step 3: Invoke /skill-management
+  Show structure issues → [USER: confirm?] → continue
   ↓
-Step 4: /handoff → create document → git commit → push to GitHub → copy to clipboard
+Step 4: Invoke /handoff (automatic)
+  Create .agents/handoff/[date].md
+  Commit to git, push to GitHub
+  Copy to clipboard
   ↓
-Step 5: Google Drive Backup → copy handoff to G:\My Drive\claude projects → auto-sync
+Step 5: Copy handoff to Google Drive (automatic)
+  Read handoff file from .agents/handoff/
+  Create copy in G:\My Drive\claude projects\
+  Display completion
   ↓
-✓ DONE — Session fully closed, documented, and backed up
+✓ DONE — All 5 steps complete, session backed up
 ```
 
 ---
 
-## STEP 1: Retrospective (Automatic)
+## STEP 1: Retrospective (Show Results + Confirm)
 
-**What happens automatically:**
-1. Scans your entire conversation for: corrections, redone work, missing steps, patterns that worked
-2. Identifies which skills should be updated
-3. Proposes specific changes with reasoning
-4. Shows you a summary of learnings found
+Claude invokes `/retrospective` which scans the conversation for:
+- Corrections to existing behavior
+- Work that was redone or needed adjustment
+- Patterns that worked well
+- Missing steps in workflows
 
-**You confirm:** "Apply these changes?" → YES/NO
-- YES: Skill files updated with proposed changes
-- NO: No changes made, continue to Step 2
+**Output:** List of 2-5 learnings with proposed skill updates
 
-**Expected output:**
-- 2-5 learnings identified
-- 1-3 skill files updated (if approved)
-- Time: 2-3 minutes
+**Claude asks you:** "Apply these changes? (YES/NO)"
 
----
+**Your response determines:** Whether to update skills or skip
 
-## STEP 2: Prompt Reviewer (Automatic)
-
-**What happens automatically:**
-1. Reviews skills that were updated in Step 1 (or all skills if none updated)
-2. Scans for: clarity issues, missing edge cases, effectiveness gaps
-3. Proposes specific improvements with reasoning
-4. Shows you improvement suggestions
-
-**You confirm:** "Apply improvements?" → YES/NO
-- YES: Skill documentation improved
-- NO: No changes made, continue to Step 3
-
-**Expected output:**
-- 1-3 improvement suggestions
-- 0-2 skills improved (if approved)
-- Time: 2-3 minutes
+**Then continues to Step 2**
 
 ---
 
-## STEP 3: Skill Management (Automatic)
+## STEP 2: Prompt Reviewer (Show Results + Confirm)
 
-**What happens automatically:**
-1. Audits skill folder structure
-2. Checks each skill for proper layout: SKILL.md, workflows/, docs/
-3. Identifies issues: missing files, incorrect routing, organization problems
-4. Lists specific findings
+Claude invokes `/prompt-reviewer` which reviews skills (updated ones from Step 1, or all if none updated) for:
+- Clarity issues in documentation
+- Missing edge cases
+- Effectiveness gaps
+- Completeness of instructions
 
-**You confirm:** "Reorganize?" → YES/NO
-- YES: Creates folders, moves files, updates routing
-- NO: No changes made, continue to Step 4
+**Output:** List of 1-3 improvement suggestions
 
-**Expected output:**
-- 0-3 structural issues identified
-- 0-10 files reorganized (if approved)
-- Time: 2-3 minutes
+**Claude asks you:** "Apply these improvements? (YES/NO)"
+
+**Your response determines:** Whether to improve docs or skip
+
+**Then continues to Step 3**
+
+---
+
+## STEP 3: Skill Management (Show Results + Confirm)
+
+Claude invokes `/skill-management` which audits the skills folder for:
+- Proper file structure (SKILL.md, workflows/, docs/)
+- Missing or misplaced files
+- Incorrect routing
+- Organization issues
+
+**Output:** List of 0-3 structure issues found
+
+**Claude asks you:** "Reorganize? (YES/NO)"
+
+**Your response determines:** Whether to reorganize or skip
+
+**Then continues to Step 4**
 
 ---
 
 ## STEP 4: Handoff (Fully Automatic)
 
-**What happens automatically:**
+Claude invokes `/handoff` which automatically:
 1. Analyzes entire session from conversation
-2. Creates `.agents/handoff/YYYY-MM-DD-topic.md` with:
-   - **Accomplishments:** What was completed this session
-   - **Pause Point:** Where to resume next session
-   - **Blockers:** Any issues or decisions needed
-   - **Files Changed:** List of modified files
+2. Creates `.agents/handoff/YYYY-MM-DD-[topic].md` with:
+   - **Summary** — what was accomplished
+   - **Pause Point** — where to resume next session  
+   - **Blockers** — any unresolved issues
+   - **Files Changed** — list of modified files
 3. Creates git commit: `Session: [topic] YYYY-MM-DD HH:MM:SS`
-4. Pushes commit to GitHub
-5. Copies handoff summary to clipboard (ready to paste in next session)
+4. Pushes commit to GitHub (origin/main)
+5. Copies summary to clipboard for pasting in next session
 
-**No confirmation needed** — this step runs completely automatically
+**Output:** Confirmation that handoff is created and committed
 
-**Expected output:**
-- Handoff file created in `.agents/handoff/`
-- Git commit made and pushed
-- Summary copied to clipboard
-- Time: 1-2 minutes
+**No user confirmation needed**
+
+**Then continues to Step 5**
 
 ---
 
 ## STEP 5: Google Drive Backup (Fully Automatic)
 
-**What happens automatically:**
-1. Locates the handoff file created in Step 4
-2. Copies it to `G:\My Drive\claude projects\`
-3. Google Drive for Desktop automatically syncs to cloud (5-10 seconds)
+Claude automatically:
+1. Reads the handoff file just created in Step 4 from `.agents/handoff/[date].md`
+2. Uses Google Drive API tool to copy it to `G:\My Drive\claude projects\`
+3. Creates file with name: `handoff-[YYYY-MM-DD].md`
+4. Google Drive for Desktop automatically syncs to cloud (5-10 seconds)
 
-**No confirmation needed** — this step runs completely automatically
+**Process:**
+```
+Read: .agents/handoff/2026-05-15-[topic].md
+Create in Google Drive: G:\My Drive\claude projects\handoff-2026-05-15.md
+Sync happens automatically via Google Drive Desktop
+```
 
-**Expected output:**
-- Handoff file copied to Google Drive Desktop folder
-- Cloud sync completed
-- Confirmation: "✓ Handoff backed up to Google Drive"
-- Time: 5-10 seconds
+**Output:** "✓ Handoff backed up to Google Drive"
+
+**No user confirmation needed**
+
+**If backup fails:**
+- Display error message with reason
+- Show hint to troubleshoot
+- Continue anyway (Step 4 succeeded, backup is secondary)
+- Session still closes successfully
 
 ---
 
-## Key Points
+## Summary
 
-- **Automatic execution** — All 5 steps run sequentially when you invoke `/session-close`
-- **Approval prompts** — Steps 1-3 ask you to confirm changes, Steps 4-5 run without approval
-- **Reversible** — All changes tracked in git (use `git log` to see each step)
-- **Total time** — ~10 minutes for full run (depends on session length)
-- **Comprehensive** — Covers learnings, quality, structure, documentation, backup
+| Step | User Action | What Claude Does |
+|------|-------------|------------------|
+| 1 | Confirm changes | Invoke /retrospective → update skills if approved |
+| 2 | Confirm improvements | Invoke /prompt-reviewer → improve docs if approved |
+| 3 | Confirm reorganization | Invoke /skill-management → fix structure if approved |
+| 4 | None (automatic) | Invoke /handoff → create document & git commit |
+| 5 | None (automatic) | Copy handoff to Google Drive using API tool |
+
+---
+
+## Timing & Expectations
+
+- **Step 1:** 2-3 minutes (scans conversation)
+- **Step 2:** 2-3 minutes (reviews documentation)
+- **Step 3:** 1-2 minutes (audits structure)
+- **Step 4:** 1-2 minutes (creates handoff & commits)
+- **Step 5:** 10-30 seconds (copies to Google Drive)
+- **Total:** ~10 minutes for complete session close
+
+---
+
+## What Gets Backed Up
+
+**Local backup (git):**
+- `.agents/handoff/YYYY-MM-DD-[topic].md` — committed to git
+- All skill updates from Steps 1-3 — tracked in git history
+
+**Cloud backup (Google Drive):**
+- `G:\My Drive\claude projects\handoff-[YYYY-MM-DD].md` — synced by Google Drive Desktop
 
 ---
 
 ## Troubleshooting
 
-| Issue | Solution |
-|-------|----------|
-| "No learnings found" | Session may be too short or routine — skill continues to Step 4 |
-| "Git push failed" | Check GitHub connection, ensure `git branch -u origin/main` is set |
-| "Handoff file not created" | Check `.agents/` folder exists and has write permissions |
-| "Google Drive copy failed" | Check `G:\My Drive\claude projects\` exists and is accessible |
-| "No structure issues" | Skills are well-organized — Step 3 shows no changes needed |
+| Problem | Cause | Solution |
+|---------|-------|----------|
+| "No learnings found" | Short session or no corrections | Normal — skip to Step 4 |
+| Step 4 fails | Git or GitHub issue | Check git status, verify GitHub connection |
+| Step 5 fails | Google Drive not accessible | Ensure `G:\My Drive\claude projects\` exists, check Google Drive Desktop |
+| Whole sequence stuck | Skills not found | Ensure `/retrospective`, `/prompt-reviewer`, `/skill-management` exist |
 
 ---
 
-## Success = All 5 Steps Complete
+## Next Session
 
-✓ Step 1: Retrospective (learnings extracted, skills updated if approved)  
-✓ Step 2: Prompt Reviewer (documentation improved if approved)  
-✓ Step 3: Skill Management (structure verified, reorganized if approved)  
-✓ Step 4: Handoff (document generated, committed, pushed to GitHub)  
-✓ Step 5: Google Drive Backup (document copied to `G:\My Drive\claude projects`)
+Start by reviewing the handoff copied to clipboard:
+- It summarizes what was accomplished
+- Shows where to resume work
+- Lists any blockers or decisions needed
 
-**Session is fully closed, documented, and backed up.**
+File also stored at: `G:\My Drive\claude projects\handoff-[date].md` for easy reference.
