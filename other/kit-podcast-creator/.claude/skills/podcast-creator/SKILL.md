@@ -63,6 +63,25 @@ Este archivo se genera en `00-setup.md` y lo leen todos los workflows. Estructur
     "apple": "",
     "youtube": "",
     "rss": ""
+  },
+  "lenguaje": {
+    "region": "",
+    "estilo": "",
+    "palabras_frecuentes": [],
+    "palabras_prohibidas": [],
+    "tratamiento_oyente": "usted | tú | vos"
+  },
+  "segmento_invitado": {
+    "activo": false,
+    "nombre": "",
+    "formato": "presencial | remoto",
+    "tipos_invitados": []
+  },
+  "segmento_promo": {
+    "activo": false,
+    "conductor": "",
+    "posicion_episodio_normal": "bloque_intermedio",
+    "posicion_episodio_invitado": "al_final"
   }
 }
 ```

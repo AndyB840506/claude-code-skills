@@ -194,32 +194,32 @@ Spotify y Apple Podcasts muestran el trailer a potenciales nuevos oyentes como s
 ```
 kit-podcast-creator/
 │
-├── CLAUDE.md                          ← Configuración del kit (no modificar)
+├── CLAUDE.md                          ← Kit genérico (no modificar)
 ├── INSTRUCCIONES.md                   ← Este archivo
 │
-├── podcast-profile.json               ← Se genera en el setup (tu identidad)
+├── templates/                         ← Templates reutilizables para invitados
+│   ├── episodio-invitado-invitacion.md
+│   ├── episodio-invitado-cuestionario.md
+│   ├── episodio-invitado-prep-hosts.md
+│   └── preguntas-por-perfil.md
 │
-├── episodio-001-primer-tema.md        ← Script de cada episodio
-├── grabacion-ep001.md                 ← Plan de grabación por episodio
-├── artwork-ep001.md                   ← Prompts de artwork por episodio
-├── social-ep001.md                    ← Copy de social media por episodio
-├── shownotes-ep001.md                 ← Show notes por episodio
+├── .claude/skills/podcast-creator/    ← Skill y workflows del kit
+│   ├── SKILL.md
+│   └── workflows/
+│       ├── 00-setup.md
+│       ├── 01-episodio.md
+│       └── ...
 │
-├── production-ep001.html              ← Paquete de producción (HTML, descargable)
-├── shownotes-ep001.html               ← Página pública del episodio (HTML)
-│
-└── .claude/
-    └── skills/
-        └── podcast-creator/
-            ├── SKILL.md               ← Routing y estructura del kit
-            └── workflows/
-                ├── 00-setup.md        ← Identidad del podcast
-                ├── 01-episodio.md     ← Guion completo
-                ├── 02-grabacion.md    ← Plan de grabación
-                ├── 03-artwork.md      ← Prompts de imagen
-                ├── 04-social-media.md ← Plan de lanzamiento
-                ├── 05-show-notes.md   ← Show notes y metadatos
-                └── 06-html-export.md  ← Exportar HTML
+└── projects/                          ← Un folder por podcast creado con el kit
+    └── [nombre-podcast]/              ← Abrir como workspace para producir
+        ├── CLAUDE.md                  ← Config específica del podcast
+        ├── podcast-profile.json       ← Identidad del podcast
+        ├── scripts/                   ← Guiones en HTML por episodio
+        ├── documents/                 ← Propuestas y documentos
+        ├── audio/                     ← Intro y outro
+        ├── fichas-invitados/          ← Historial de invitados
+        ├── eventos.json               ← Eventos para segmento de promo
+        └── .claude/skills/            ← Copia de skills (workspace standalone)
 ```
 
 ---
@@ -251,7 +251,7 @@ Kit: → Lee todos los archivos del episodio → genera production-ep001.html y 
 ## Preguntas frecuentes
 
 **¿Puedo usar el kit para varios podcasts?**
-El kit está pensado para un podcast por carpeta. Para un segundo podcast, copia la carpeta y empieza el setup de nuevo.
+Sí. Cada podcast vive en `projects/[nombre]/` dentro del kit. Abre esa subcarpeta como workspace en Claude Code y tiene su propio contexto, perfil y archivos — no se mezclan entre sí.
 
 **¿Qué pasa si quiero cambiar el nombre o el formato del podcast?**
 Di "actualizar perfil" y el kit te mostrará los datos actuales para modificarlos.
@@ -261,3 +261,6 @@ No — genera los prompts listos para copiar en Google Flow (labs.google/fx/tool
 
 **¿Funciona en español e inglés?**
 El kit responde en el idioma del usuario. Los prompts de artwork se generan en inglés (los modelos de imagen funcionan mejor así).
+
+**¿Cómo descargo los documentos generados como PDF?**
+El kit genera HTML. Para convertir a PDF usa [IlovePDF](https://www.ilovepdf.com/html-to-pdf) — es la forma más confiable. El print desde el browser y la generación de Word producen resultados inferiores.
