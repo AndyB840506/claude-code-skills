@@ -1,4 +1,4 @@
-# Preguntas por Perfil de Invitado
+# La Silla Pútrida — Preguntas por Perfil de Invitado
 
 **[Claude selecciona el set correspondiente según quién viene. Estas son bases — se personalizan con la investigación Narval.]**
 

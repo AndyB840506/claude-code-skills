@@ -1,33 +1,33 @@
 # Workflow 01 — Guion Completo del Episodio
 
-Genera un script completo, palabra por palabra, para un episodio específico. Se adapta al formato del podcast (solo, entrevista, co-host, silla_putrida).
+Genera un script completo, palabra por palabra, para un episodio específico. Se adapta al formato del podcast (solo, interview, co-host, episodio con invitado especial).
 
 **Regla fundamental: Lee `podcast-profile.json` primero. Si no existe, lanza `00-setup.md` antes de continuar.**
-**Regla de lenguaje: Consulta `glosario-cachaco.md` antes de escribir cualquier guión.**
-**Regla de eventos: Consulta `eventos.json` para el Segmento de Promoción.**
 
 ---
 
-## Paso -1 — ¿Hay Silla Pútrida esta semana?
+## Paso -1 — ¿Hay episodio con invitado especial esta semana?
 
-**SIEMPRE pregunta esto antes de cualquier otra cosa:**
+**Solo si el perfil tiene `segmento_invitado.activo = true`**, pregunta primero:
 
-> ¿Esta semana hay Silla Pútrida? (¿Tienen invitado especial en el show?)
+> ¿Esta semana hay [nombre del segmento_invitado]? ¿Tienen invitado especial?
 
-- **SÍ** → `formato_episodio = "silla_putrida"`. Ir a **Paso 0-SP** antes de continuar.
-- **NO** → `formato_episodio = "co-host"`. Continuar con **Paso 0** normalmente.
+- **SÍ** → `formato_episodio = "invitado_especial"`. Ir a **Paso 0-IE** antes de continuar.
+- **NO** → `formato_episodio` según el perfil. Continuar con **Paso 0** normalmente.
+
+Si el perfil NO tiene `segmento_invitado` → saltar este paso.
 
 ---
 
-## Paso 0-SP — Flujo especial Silla Pútrida (solo si hay invitado)
+## Paso 0-IE — Flujo episodio con invitado especial
 
 ### A. Recopilar datos básicos
 
 Pregunta:
 
-> **¿Quién viene a La Silla Pútrida?**
+> **¿Quién viene al [nombre del segmento_invitado]?**
 > 1. Nombre del invitado
-> 2. ¿Qué hace? (músico, promotor, luthier, dueño de bar, productor, otro)
+> 2. ¿Qué hace? (tipo según los perfiles definidos en el podcast)
 > 3. ¿Tienen algún link, red social o referencia donde pueda investigarlo?
 > 4. Número del episodio
 
@@ -39,25 +39,25 @@ Con el nombre y perfil, **investiga al invitado en la web** antes de generar nad
 - Identifica momentos clave de su carrera
 - Busca entrevistas previas para no repetir preguntas ya hechas
 
-Con esa investigación, genera el **documento de prep para hosts** usando `templates/silla-putrida-prep-hosts.md`:
-- Bio real investigada (no la que el invitado escribe — la que encontraste)
+Con esa investigación, genera el **documento de prep para hosts** usando `templates/episodio-invitado-prep-hosts.md`:
+- Bio real investigada (la que encontraste, no la que el invitado escribe)
 - Los datos curiosos
 - 5-7 preguntas únicas basadas en su trayectoria real
-- Selecciona el set de preguntas base del perfil correspondiente en `templates/preguntas-por-perfil.md`
+- Selecciona el set de preguntas base del perfil correspondiente en `templates/preguntas-por-perfil.md` si existe
 
 Presenta el documento de prep al usuario y di:
-> "Acá está la investigación del invitado. Revise si falta algo antes de enviarle la carta."
+> "Acá está la investigación del invitado. Revisá si falta algo antes de enviarle la carta."
 
 ### C. Generar carta al invitado
 
-Usando `templates/silla-putrida-invitacion.md`, genera la carta personalizada con:
+Usando `templates/episodio-invitado-invitacion.md`, genera la carta personalizada con:
 - Referencia específica al trabajo del invitado (de lo investigado)
 - Los 3 temas propuestos para la conversación
 
-Genera también el documento de prep corto para el invitado usando `templates/silla-putrida-cuestionario.md` — solo pide bio libre, confirmación de temas y NO-list.
+Genera también el documento simple para el invitado usando `templates/episodio-invitado-cuestionario.md` — solo pide bio libre, confirmación de temas y lo que NO quiere que se toque.
 
 Di al usuario:
-> "Acá está la carta de invitación y el doc de preparación para enviarle al invitado. Cuando confirme y devuelva su NO-list, regrese y generamos el guión."
+> "Acá está la carta de invitación y el doc para enviarle al invitado. Cuando confirme y devuelva su NO-list, regresá y generamos el guion."
 
 ### D. Guardar ficha del invitado
 
@@ -66,7 +66,7 @@ Crea `fichas-invitados/[nombre-invitado].md` con:
 # Ficha: [Nombre del invitado]
 Episodio: EP.[NNN]
 Fecha: [fecha]
-Perfil: [artista / promotor / luthier / venue / productor]
+Perfil: [tipo según el podcast]
 Bio investigada: [resumen]
 Datos curiosos: [lista]
 Temas cubiertos: [lista — llenar después de grabar]
@@ -74,15 +74,15 @@ NO-list: [lo que pidió que no se toque]
 Redes: [links]
 ```
 
-### E. Generar guión (solo después de confirmación del invitado)
+### E. Generar guion (solo después de confirmación del invitado)
 
-**No generar el guión hasta que el usuario confirme que el invitado respondió.**
+**No generar el guion hasta que el usuario confirme que el invitado respondió.**
 
 Cuando el usuario diga que el invitado confirmó:
 - Integrar la NO-list del invitado
 - Usar las preguntas investigadas + las aprobadas por el invitado
-- Recordar: grabación **presencial** — los 3 en el mismo cuarto, ambos hosts pueden preguntar
-- Marcar los intercambios como `[ANDRÉS/JUAN — cualquiera de los dos puede preguntar esto]`
+- Si la grabación es presencial — indicar `[cualquiera de los hosts puede preguntar esto]`
+- Si es remoto — indicar qué host conduce cada pregunta
 
 ---
 
@@ -91,18 +91,21 @@ Cuando el usuario diga que el invitado confirmó:
 Lee `podcast-profile.json`. Extrae y ten disponible:
 - Nombre del podcast, host(s), formato
 - Tono y reglas de escritura (`reglas_tono`)
+- Lenguaje: región, estilo, palabras frecuentes, palabras prohibidas, tratamiento al oyente (`lenguaje`)
 - Intro y outro templates
 - Convención de numeración
 - Duración promedio (`duracion_min`)
 - Estilo de narración y word count target (`estilo_narración`, `word_count_target`)
+- Segmentos activos: `segmento_invitado`, `segmento_promo`
 
-Calcula el word count target para este episodio basado en la duración que el usuario confirme en Paso 1.
+Si existe `glosario-[podcast].md` → cargarlo también.
+Si existe `eventos.json` → cargarlo para el segmento de promo.
 
 ---
 
-## Paso 0.5 — Detectar formato de ESTE episodio (nuevo)
+## Paso 0.5 — Detectar formato de ESTE episodio
 
-El perfil del podcast tiene un formato default, pero cada episodio puede ser diferente.
+El perfil tiene un formato default, pero cada episodio puede ser diferente.
 
 Pregunta:
 
@@ -112,7 +115,7 @@ Pregunta:
 > 2. **Con co-host** — [mostrar nombres de co-hosts del perfil si existen]
 > 3. **Entrevista** — tienes un invitado especial
 
-Espera la respuesta. Guarda `formato_episodio: "solo" | "interview" | "co-host"` como override del formato del perfil para este episodio solamente.
+Espera la respuesta. Guarda `formato_episodio: "solo" | "interview" | "co-host"` como override del formato del perfil.
 
 ---
 
@@ -127,7 +130,7 @@ Pregunta en un solo mensaje adaptado al formato del perfil:
 > 4. ¿Hay alguna referencia cultural, historia, persona o evento que sirva como hilo conductor?
 > 5. ¿Cuál es el takeaway principal — qué debe llevarse el oyente al terminar?
 
-**Si formato = `interview`**, agrega al mismo mensaje:
+**Si formato = `interview`**, agrega:
 > 6. Nombre del invitado y cargo o descripción en una línea
 > 7. ¿De qué 3 temas quieres hablar con el invitado?
 > 8. ¿Hay algún tema tabú o pregunta que NO debes hacer?
@@ -138,13 +141,11 @@ Pregunta en un solo mensaje adaptado al formato del perfil:
 
 ---
 
-## Paso 1.5 — Generar cuestionario de entrevista y briefing (si es interview)
+## Paso 1.5 — Cuestionario de entrevista y briefing (si es interview)
 
 **Solo si `formato_episodio = "interview"`:**
 
-### A. Cuestionario de entrevista (10-15 preguntas escaladas)
-
-Genera un documento con estructura clara:
+Genera:
 
 ```
 CUESTIONARIO DE ENTREVISTA — EP.[NNN]
@@ -154,90 +155,35 @@ CUESTIONARIO DE ENTREVISTA — EP.[NNN]
   Duración estimada: ~[X] minutos
 ═════════════════════════════════════════════════════════
 
-BLOQUE DE BIENVENIDA (2-3 preguntas — fáciles, warm-up)
+BLOQUE DE BIENVENIDA (warm-up)
 ──────────────────────────────────────────────────────
-1. ¿Quién eres y qué haces? [OBLIGATORIA]
+1. ¿Quién sos y qué hacés? [OBLIGATORIA]
 2. ¿Cómo llegaste a esto? [OBLIGATORIA]
-3. ¿Cómo te describes en 3 palabras? [OPCIONAL]
 
-BLOQUE CENTRAL — TEMA PRINCIPAL (5-7 preguntas — escaladas)
+BLOQUE CENTRAL — TEMA PRINCIPAL (escaladas)
 ──────────────────────────────────────────────────────
-4. [Primera pregunta exploradora sobre tema 1]
-5. [Pregunta de profundidad sobre tema 1 — "¿por qué crees que...?"]
-6. [Pregun­ta sobre tema 2 — cambio de enfoque]
-7. [Pregunta provocadora — desafiar creencia o perspectiva]
-8. [Pregunta sobre tema 3 — síntesis]
-[notas de escucha activa: si el invitado menciona X, profundizar con "¿y cómo afectó eso...?"]
+3. [Pregunta exploradora — tema 1]
+4. [Pregunta de profundidad — "¿por qué creés que...?"]
+5. [Pregunta sobre tema 2]
+6. [Pregunta provocadora — desafiar perspectiva]
+7. [Pregunta sobre tema 3 — síntesis]
 
-BLOQUE DE CIERRE (2-3 preguntas)
+BLOQUE DE CIERRE
 ──────────────────────────────────────────────────────
-N-2. ¿Qué consejo le darías a alguien que está empezando en...? [OBLIGATORIA]
-N-1. ¿Cuál es tu visión para el futuro de...? [OBLIGATORIA]
-N. ¿Dónde nos pueden encontrar tus oyentes? [redes, web, email] [OBLIGATORIA]
+N-1. ¿Qué consejo le darías a alguien que está empezando? [OBLIGATORIA]
+N. ¿Dónde nos pueden encontrar? [redes, web] [OBLIGATORIA]
 
-PREGUNTAS DE RESERVA (si queda tiempo o necesitas reemplazar respuestas cortas)
+PREGUNTAS DE RESERVA (si queda tiempo)
 ──────────────────────────────────────────────────────
-R1. [Pregunta alternativa profunda]
-R2. [Pregunta sobre dato sorprendente que el invitado mencionó]
+R1. [Pregunta alternativa]
+R2. [Pregunta sobre dato sorprendente]
 ```
-
-Marca explícitamente qué preguntas son OBLIGATORIAS vs OPCIONALES. Esto permite al host adaptar según el ritmo de la conversación.
-
-### B. Documento de briefing para el invitado
-
-Genera un documento listo para enviar al invitado 3-5 días antes de la grabación:
-
-```
-──────────────────────────────────────────
-  INVITACIÓN A [NOMBRE PODCAST]
-──────────────────────────────────────────
-  Episodio:  EP.[NNN] — [Título del episodio]
-  Host:      [nombre del host]
-  Duración:  ~[X] minutos
-  Fecha:     [fecha tentativa si la hay]
-──────────────────────────────────────────
-
-DE QUÉ VAMOS A HABLAR
-
-[Descripción de 3-4 párrafos del episodio y los 3 temas principales]
-
-SOBRE [NOMBRE PODCAST]
-
-[Nombre] — [tagline]. 
-Audiencia: [descripción del oyente ideal].
-Escúchalo en: [links de plataformas del perfil]
-
-REQUISITOS TÉCNICOS
-
-✓ Micrófono USB o auriculares con micrófono (NO bocinas)
-✓ Cuarto silencioso, puertas cerradas (apaga AC/calefacción si es ruidosa)
-✓ Auriculares puestos durante TODA la grabación
-✓ Conexión a internet estable (wifi o cable, no datos móviles)
-✓ Plataforma: [Riverside.fm / Zoom / la que uses]
-✓ Link de sesión: [PENDIENTE — se enviará 24h antes]
-
-TEMAS QUE CUBRIREMOS (en orden aproximado)
-
-· [Tema 1] — contexto breve
-· [Tema 2] — contexto breve
-· [Tema 3] — contexto breve
-
-NOTA IMPORTANTE
-
-La grabación se usará para el podcast [Nombre Podcast]. Si hay algún tema que prefieras omitir o no abordar, avísame al menos 24h antes de la grabación.
-
-──────────────────────────────────────────
-```
-
-Presenta ambos documentos al usuario antes de Paso 2, con la pregunta: "¿Revisas el cuestionario y el briefing antes de que empecemos con la arquitectura?"
 
 ---
 
-## Paso 1.6 — Generar documento de sincronía pre-grabación (si es co-host)
+## Paso 1.6 — Documento de sincronía pre-grabación (si es co-host)
 
 **Solo si `formato_episodio = "co-host"`:**
-
-Genera un documento breve para que los co-hosts se sincronicen antes de grabar:
 
 ```
 SYNC PRE-GRABACIÓN — EP.[NNN]
@@ -247,42 +193,26 @@ SYNC PRE-GRABACIÓN — EP.[NNN]
 ─────────────────────────────────────────
 
 ASIGNACIÓN DE SEGMENTOS
-
-· [Host1] abre con: [hook específico — primera frase que dice]
-· [Host2] cubre: [segmento específico — ej: "Bloque principal A"]
-· [Host1] cubre: [segmento específico — ej: "Bloque principal B"]
-· Cierre a cargo de: [Host que cierra]
+· [Host1] abre con: [hook — primera frase]
+· [Host2] cubre: [Bloque A]
+· [Host1] cubre: [Bloque B]
+· Cierre a cargo de: [host que cierra]
 
 PUNTOS DE DEBATE PLANIFICADOS
-
-· [Tema donde los hosts pueden tener opiniones diferentes — dejar espacio para intercambio natural]
-· [Otro tema si aplica]
-
-DINÁMICA ESPECIAL PARA ESTE EPISODIO
-
-[Si hay algo único: un formato especial, un segmento donde intercambian mucho, un juego, etc.]
-
-COSAS A EVITAR EN ESTE EPISODIO
-
-[Si hay temas sensibles, errores de episodios anteriores, o cosas que no cuadran con el contenido, listarlas]
+· [Donde los hosts pueden tener perspectivas distintas]
 
 ─────────────────────────────────────────
 TIEMPO ESTIMADO DE HABLA POR HOST
-  [Host1]: ~[X]% del episodio
-  [Host2]: ~[X]% del episodio
+  [Host1]: ~[X]%
+  [Host2]: ~[X]%
 ─────────────────────────────────────────
 ```
-
-Presenta el documento con la pregunta: "¿Revisas la asignación de segmentos? ¿Cambias algo antes de empezar?"
 
 ---
 
 ## Paso 2 — Presentar arquitectura para aprobación
 
-**Antes de escribir el script**, calcula y muestra el word count target basado en:
-- Duración del episodio confirmada en Paso 1
-- Formato del episodio (`formato_episodio`)
-- Estilo de narración (`estilo_narración`) del perfil
+Muestra el word count target:
 
 ```
 WORD COUNT TARGET PARA ESTE EPISODIO
@@ -291,66 +221,48 @@ Duración: [X] minutos
 Formato: [formato_episodio]
 Estilo: [estilo_narración]
 → Word count target: ~[N] palabras
-
-Esto es el tamaño esperado del script para evitar quedarse corto 
-o demasiado largo.
 ════════════════════════════════════════
 ```
 
-**Después de mostrar el word count**, presenta la arquitectura adaptada a ESTE episodio y espera aprobación explícita.
+Presenta la arquitectura del episodio adaptada al formato. **Espera aprobación antes de escribir el script.**
 
-Calcula los tiempos según `duracion_min` del perfil:
+**Estructura base — episodio normal (co-host / solo):**
 
-| Duración total | Bloques principales | Tiempo por bloque |
-|---|---|---|
-| 15 min | 1 bloque | 6-7 min |
-| 30 min | 2 bloques | 5-7 min c/u |
-| 45 min | 3 bloques | 6-8 min c/u |
-| 60 min | 3-4 bloques | 8-10 min c/u |
-
-**Estructura base según tipo de episodio:**
-
-**Episodio normal (co-host):**
-
-| # | Segmento | Duración | Contenido para ESTE episodio |
-|---|----------|----------|------------------------------|
-| 1 | Intro music | 30 seg | [música de apertura] |
-| 2 | Bienvenida | 1-2 min | [Andrés y Juan abren el episodio] |
-| 3 | Contexto del tema | 3-4 min | [por qué este tema ahora] |
-| 4 | Bloque principal A | [X min] | [primer desarrollo] |
+| # | Segmento | Duración | Contenido |
+|---|----------|----------|-----------|
+| 1 | Intro music | 30 seg | música de apertura |
+| 2 | Bienvenida | 1-2 min | hosts abren el episodio |
+| 3 | Contexto del tema | 3-4 min | por qué este tema ahora |
+| 4 | Bloque principal A | [X min] | primer desarrollo |
 | 5 | [INTERCAMBIO] | — | diálogo libre entre hosts |
-| 6 | Bloque principal B | [X min] | [segundo desarrollo / giro] |
-| 7 | **Segmento de Promoción** | 3-5 min | [Juan presenta eventos de `eventos.json`] |
-| 8 | Reflexión / Takeaway | 3-4 min | [conclusión accionable] |
-| 9 | Outro + CTA | 1-2 min | [cierre + call to action] |
-| 10 | Outro music | 30 seg | [música de cierre] |
+| 6 | Bloque principal B | [X min] | segundo desarrollo |
+| 7 | Segmento de Promoción *(si activo)* | 3-5 min | eventos de `eventos.json` |
+| 8 | Reflexión / Takeaway | 3-4 min | conclusión |
+| 9 | Outro + CTA | 1-2 min | cierre + call to action |
+| 10 | Outro music | 30 seg | música de cierre |
 
-**Episodio Silla Pútrida (con invitado):**
+**Estructura — episodio con invitado especial:**
 
-| # | Segmento | Duración | Contenido para ESTE episodio |
-|---|----------|----------|------------------------------|
-| 1 | Intro especial Silla Pútrida | 30 seg | [música + anuncio de invitado] |
-| 2 | Bienvenida + presentación | 2-3 min | [Andrés presenta al invitado, Juan da contexto] |
-| 3 | Bloque preguntas A | [X min] | [preguntas aprobadas — Bloque 1 y 2] |
+| # | Segmento | Duración | Contenido |
+|---|----------|----------|-----------|
+| 1 | Intro especial | 30 seg | música + anuncio del invitado |
+| 2 | Bienvenida + presentación | 2-3 min | presentar al invitado |
+| 3 | Bloque preguntas A | [X min] | preguntas aprobadas |
 | 4 | [INTERCAMBIO natural] | — | conversación fluye libre |
-| 5 | Bloque preguntas B | [X min] | [preguntas aprobadas — Bloque 3] |
-| 6 | Cierre con invitado | 2-3 min | [dónde encontrarlo, redes, proyectos] |
-| 7 | **Segmento de Promoción** | 3-5 min | [Juan AL FINAL — eventos de `eventos.json`] |
-| 8 | Outro + CTA | 1-2 min | [cierre + agradecimiento al invitado] |
-| 9 | Outro music | 30 seg | [música de cierre] |
+| 5 | Bloque preguntas B | [X min] | preguntas aprobadas |
+| 6 | Cierre con invitado | 2-3 min | dónde encontrarlo, proyectos |
+| 7 | Segmento de Promoción *(si activo)* | 3-5 min | AL FINAL — `eventos.json` |
+| 8 | Outro + CTA | 1-2 min | cierre + agradecimiento |
+| 9 | Outro music | 30 seg | música de cierre |
 
-**Nota sobre el Segmento de Promoción:**
-- Consultar `eventos.json` para usar eventos reales — si está vacío, marcar `[PENDIENTE — Juan agrega eventos]`
-- Juan lo conduce siempre
-- Tono: entusiasta, conversacional, sin leer como publicidad
-
-Presenta esto con los temas reales del episodio en cada fila. **Espera "ok", "adelante", "perfecto" o similar antes de escribir el script.**
+**Segmento de Promoción:**
+- Solo incluir si `segmento_promo.activo = true` en el perfil
+- Conductor: el host designado en el perfil
+- Consultar `eventos.json` — si está vacío, marcar `[PENDIENTE]`
 
 ---
 
 ## Paso 3 — Escribir el script completo
-
-Una vez aprobada la arquitectura, escribe el script palabra por palabra.
 
 ### Marcadores de producción
 
@@ -363,46 +275,25 @@ Una vez aprobada la arquitectura, escribe el script palabra por palabra.
 ### Reglas de escritura
 
 - Aplica las `reglas_tono` del `podcast-profile.json`
-- **Consulta `glosario-cachaco.md` y usa lenguaje cachaco clásico bogotano de los 40's en TODO el guión**
-- Palabras permitidas: "ala", "chirriado", "pútrido", "cachifo", "sumerce", "caray", "carachas", "a la orden", "divino", "soberano"
-- Palabras prohibidas: "parcero" (muy moderno), "bacano" (moderno), "vosotros" (España), "vos" (paisa), "ché" (argentino)
-- Tratamiento al oyente: "sumerce" o "usted" — NUNCA "tú"
-- Usa el `intro_template` del perfil como base (puede adaptarlo pero no cambiarlo radicalmente)
+- **Aplica el lenguaje del perfil** (`lenguaje.estilo`, palabras frecuentes, palabras prohibidas)
+- Si existe glosario → usar los términos definidos ahí
+- Trata al oyente según `lenguaje.tratamiento_oyente` del perfil (usted / tú / vos)
+- Usa el `intro_template` del perfil como base
 - Usa el `outro_template` del perfil
 - Escribe como se habla, no como se escribe: contracciones, frases cortas, pausas naturales
 - Cada segmento debe tener una frase de transición clara al siguiente
 
 **Si formato_episodio = `interview`:**
-- Escribe las preguntas del host en orden de escalada: bienvenida → preguntas fáciles → profundas → cierre
-- Usa el cuestionario generado en Paso 1.5 como estructura, pero adapta las palabras exactas para sonar natural
-- Incluye notas de escucha activa: `[NOTA: si el invitado menciona X, profundiza con "¿y cómo afectó eso a...?"]`
+- Escribe las preguntas del host en orden de escalada
 - No escribas las respuestas del invitado — son improvisadas
-- Incluye una pregunta de cierre: "¿qué le dirías a alguien que...?"
-- Ejemplo de pregunta con nota:
-```
-[HOST: Tu nombre] ¿Qué aprendiste durante ese primer año?
-
-[NOTA: Escucha atentamente. Si menciona un fracaso específico, pregunta:
-"Cuéntame más de eso — ¿cómo lo superaste?"]
-```
+- Incluye notas de escucha activa: `[NOTA: si el invitado menciona X, preguntá "¿y cómo afectó eso a...?"]`
 
 **Si formato_episodio = `co-host`:**
 - Indica quién habla cada segmento: `[HOST: Nombre]`
-- Usa el documento de sincronía (Paso 1.6) como guía para asignar segmentos
-- Incluye momentos de intercambio marcados con `[INTERCAMBIO]` donde los hosts pueden comentar entre sí sin guion
 - Equilibra el tiempo de habla entre los hosts (±20%)
-- Ejemplo de segmento con intercambio:
-```
-[HOST: Nombre1] [lee segmento del script...]
+- Incluye momentos `[INTERCAMBIO]` donde los hosts dialogan sin guion fijo
 
-[INTERCAMBIO]
-[HOST: Nombre2] ¿Y tú qué opinás de eso?
-[HOST: Nombre1] Yo creo que...
-
-[ambos pueden dialogar naturalmente — el script solo marca dónde ocurre]
-```
-
-### Formato de entrega del script
+### Formato de entrega
 
 ```
 ══════════════════════════════════════════════════════
@@ -412,27 +303,23 @@ Una vez aprobada la arquitectura, escribe el script palabra por palabra.
 
 ─── SEGMENTO 1: INTRO + HOOK ─────────────────────────
 
-[SFX: música de apertura, fade out a los 5 segundos]
+[SFX: música de apertura]
 
-[Texto del script aquí — primera frase que engancha al oyente antes de que pueda cambiar el episodio]
+[Primera frase que engancha al oyente]
 
 [PAUSA]
 
 ─── SEGMENTO 2: BIENVENIDA ───────────────────────────
 
-[Texto del script — máximo 30 segundos, breve presentación]
-
-─── SEGMENTO 3: CONTEXTO ─────────────────────────────
-
 [Texto del script]
 
-[... continúa para cada segmento aprobado ...]
+[... continúa por cada segmento aprobado ...]
 
 ─── SEGMENTO FINAL: OUTRO + CTA ──────────────────────
 
 [Outro template adaptado]
 
-[SFX: música de cierre, fade in]
+[SFX: música de cierre]
 
 ══════════════════════════════════════════════════════
   FIN DEL SCRIPT — EP.[NNN]
@@ -443,27 +330,35 @@ Una vez aprobada la arquitectura, escribe el script palabra por palabra.
 
 ## Paso 4 — Checklist de calidad
 
-Antes de entregar, verifica internamente cada punto:
+Verifica antes de entregar:
 
-- [ ] El hook de apertura genera intriga o sorpresa en los primeros 30 segundos
-- [ ] El tono es consistente con las `reglas_tono` del perfil en todos los segmentos
-- [ ] Los `[PAUSA]` están colocados en momentos de impacto emocional o reflexión
-- [ ] El CTA del outro es claro, específico y accionable
-- [ ] La duración estimada está dentro del rango del perfil (±15%)
-- [ ] Intro y outro usan los templates del perfil como base
-- [ ] El takeaway está explicitado claramente antes del outro
-- [ ] No hay segmentos que superen el doble de la duración estimada de otro
-- [ ] [Si interview] Las preguntas escalan de fácil a profundo
-- [ ] [Si co-host] Los hosts tienen tiempos de habla equilibrados (±20%)
+- [ ] Hook de apertura genera intriga en los primeros 30 segundos
+- [ ] Tono consistente con `reglas_tono` del perfil en todos los segmentos
+- [ ] Lenguaje regional correcto — palabras del glosario, sin palabras prohibidas
+- [ ] Los `[PAUSA]` están en momentos de impacto o reflexión
+- [ ] CTA del outro es claro y accionable
+- [ ] Duración estimada dentro del rango del perfil (±15%)
+- [ ] Takeaway explicitado antes del outro
+- [ ] [Si interview] Preguntas escalan de fácil a profundo
+- [ ] [Si co-host] Hosts tienen tiempos de habla equilibrados (±20%)
+- [ ] [Si segmento_promo activo] Aparece en la posición correcta según el tipo de episodio
 
 ---
 
 ## Paso 5 — Guardar y transición
 
-1. Guarda el script como `episodio-[NNN]-[slug-del-titulo].md` en el directorio actual.
-   (slug = título en minúsculas con guiones, sin tildes: "inteligencia-artificial")
+1. Guarda el script como HTML en `scripts/EP[NNN]-[slug-del-titulo].html`
+   (slug = título en minúsculas con guiones, sin tildes)
 
-2. Muestra resumen:
+2. Ejecuta backup automático:
+   ```
+   git add scripts/EP[NNN]-[slug].html
+   git commit -m "EP.[NNN] — [título] — [fecha]"
+   git push origin main
+   ```
+   Si G: está montado → copiar también allá.
+
+3. Muestra resumen:
 
 ```
 ══════════════════════════════════════════
@@ -473,8 +368,9 @@ Antes de entregar, verifica internamente cada punto:
   Formato:    [formato]
   Duración:   ~[X] minutos estimados
   Segmentos:  [número]
-  Archivo:    episodio-[NNN]-[slug].md
+  Archivo:    scripts/EP[NNN]-[slug].html
+  Git:        ✓ commit + push
 ══════════════════════════════════════════
 ```
 
-3. Pregunta: "¿Continuamos con el plan de grabación, el artwork, o prefieres exportar el HTML ahora?"
+4. Pregunta: "¿Continuamos con el plan de grabación, el artwork, o exportar el HTML ahora?"
