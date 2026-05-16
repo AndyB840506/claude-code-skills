@@ -82,11 +82,12 @@ path/to/related-file.md
 
 ## Step 3: Copy to Clipboard & Display
 
-Automatically copy the document to the user's clipboard, then display in chat:
+Automatically copy the document to the user's clipboard using `clip.exe` (native Windows — more reliable than Set-Clipboard from subprocesses):
 
 ```powershell
-# Use PowerShell Set-Clipboard to copy document content
-$content | Set-Clipboard
+# Use clip.exe — native Windows clipboard, works reliably from Claude subprocesses
+# NOTE: Set-Clipboard does NOT work reliably from Claude's PowerShell subprocess
+$content | clip
 Write-Host "✓ Handoff copied to clipboard — ready to paste"
 ```
 
@@ -149,7 +150,8 @@ WHEN /handoff is invoked:
    - Changed files from diff
    - Pause point (ask user or infer)
    - Files to read (from changed files)
-5. COPY document to clipboard (PowerShell Set-Clipboard)
+5. COPY document to clipboard using clip.exe: `$content | clip`
+   NEVER use Set-Clipboard — it does not work from Claude's subprocess
 6. DISPLAY full document in chat
 7. RUN git add -A && git commit && git push
 8. SHOW commit hash and confirmation

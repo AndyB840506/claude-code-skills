@@ -26,9 +26,11 @@ Create structured markdown containing:
 
 ## Step 3: Copy to Clipboard
 
-Automatically copy the complete document to clipboard using:
+Automatically copy the complete document to clipboard using `clip.exe` (native Windows):
 ```powershell
-$content | Set-Clipboard
+# IMPORTANT: use clip.exe, NOT Set-Clipboard
+# Set-Clipboard does not work reliably from Claude's PowerShell subprocess
+$content | clip
 ```
 
 Result: Document is ready to paste with Ctrl+V in next session.
