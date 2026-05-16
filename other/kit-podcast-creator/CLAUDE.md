@@ -1,4 +1,8 @@
-# Podcast Creator Kit
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+# Podcast Creator Kit — Mr. Putrid's Den
 
 ## Comportamiento al iniciar
 
@@ -6,12 +10,10 @@ Cuando el usuario abra esta carpeta y escriba cualquier cosa:
 
 ### Paso A — Detectar idioma
 
-Analiza el primer mensaje del usuario:
-- Si contiene **"hola"** o está en **español** → responde en español (guardar `idioma: "es"`)
-- Si contiene **"hello"** o está en **inglés** → responde en inglés (guardar `idioma: "en"`)
-- Si no es claro → responde bilingüe: "¡Hola! / Hello! ¿En qué idioma prefieres trabajar? / Which language would you prefer?"
-
-Usar este idioma para toda la sesión.
+Analiza el primer mensaje:
+- **"hola"** o español → responde en español, guarda `idioma: "es"`
+- **"hello"** o inglés → responde en inglés, guarda `idioma: "en"`
+- Si no es claro → responde bilingüe
 
 ### Paso B — Verificar perfil existente
 
@@ -21,61 +23,18 @@ Busca `podcast-profile.json` en el directorio actual.
 
 ## Si `podcast-profile.json` NO existe
 
-**[ESPAÑOL]**
-
 > **Bienvenido al Kit de Producción de Podcast**
 >
-> Voy a ayudarte a crear tu podcast desde cero.
->
-> Pero primero, una pregunta importante: **¿ya tienes idea clara de qué va a tratar tu podcast**, o todavía estás explorando ideas?
+> ¿Ya tienes idea clara de qué va a tratar tu podcast, o todavía estás explorando ideas?
 
-### Si responde "ya lo tengo claro"
-Di: "Perfecto, vamos a darle forma" → lanza `00-setup.md`
-
-### Si responde "todavía no sé" o similar
-Muestra estas 6 categorías (breve descripción con 2-3 sub-ideas cada una):
-
-> **Elige una categoría o combina dos. Esto es solo punto de partida — puedes refinar después:**
->
-> 🎓 **Educativo / Profesional**
-> Negocios, finanzas personales, marketing, liderazgo, productividad, tecnología, freelance, startup
->
-> 🎭 **Entretenimiento / Cultura / Pasiones**
-> Cine, música, videojuegos, libros, series, moda, arte, hobbies, deportes, animales
->
-> 🌍 **Periodismo / Actualidad / Investigación**
-> Política, economía, medio ambiente, ciencia, sociología, historia, investigación, reportajes
->
-> ❤️ **Lifestyle / Bienestar / Personal**
-> Salud mental, fitness, nutrición, relaciones, crianza, viajes, cocina, sostenibilidad, mentalidad
->
-> 📖 **Narrativa / Storytelling / Crímenes**
-> True crime, historias reales, memorias, ficción dramatizada, leyendas, misterios, paranormal
->
-> 🔬 **Nicho muy específico**
-> Algo muy especializado, único, que apasiona (ej: "análisis de videjuegos retro", "historias de migrantes latinoamericanos en Europa")
-
-Una vez que el usuario **elige una o combina dos** → di "Excelente punto de partida. Ahora vamos a darle forma concreta" → lanza `00-setup.md` con ese contexto.
-
----
-
-**[ENGLISH]**
-
-> **Welcome to the Podcast Production Kit**
->
-> I'll help you create your podcast from scratch.
->
-> But first, an important question: **do you already have a clear idea of what your podcast will be about**, or are you still exploring?
-
-If exploring → show English version of the 6 categories above with the same structure and examples translated.
+- Si ya lo tiene claro → lanza `00-setup.md`
+- Si está explorando → muestra las 6 categorías de contenido (ver workflow 00-setup.md) → lanza `00-setup.md`
 
 ---
 
 ## Si `podcast-profile.json` SÍ existe
 
-Lee el archivo, extrae el nombre del podcast, y responde en el idioma guardado:
-
-**[ESPAÑOL]**
+Lee el archivo y responde en el idioma guardado:
 
 > **Bienvenido de vuelta a [nombre del podcast]**
 >
@@ -88,32 +47,99 @@ Lee el archivo, extrae el nombre del podcast, y responde en el idioma guardado:
 > 5. **Show Notes** — descripción y metadatos para Spotify y Apple
 > 6. **Exportar HTML** — paquete de producción + página pública
 > 7. **Actualizar perfil** — cambiar datos del podcast
->
-> Escribe el número, el nombre del workflow, o descríbeme qué quieres hacer.
-
-**[ENGLISH]**
-
-> **Welcome back to [podcast name]**
->
-> What are we producing today?
->
-> 1. **Script** — full episode script
-> 2. **Recording plan** — checklist and day-of guide
-> 3. **Artwork** — prompts for episode cover art
-> 4. **Social Media** — 3-day launch plan
-> 5. **Show Notes** — description and metadata for Spotify and Apple
-> 6. **Export HTML** — production packet + public episode page
-> 7. **Update profile** — change podcast settings
->
-> Type the number, the workflow name, or tell me what you want to do.
 
 ---
 
 ## Reglas globales
 
-- **No inventar datos del podcast.** Si falta información, preguntar o usar `[PENDIENTE]`.
 - **Leer `podcast-profile.json` siempre** antes de cualquier workflow. Si no existe → lanzar `00-setup.md`.
-- **Idioma:** mantener el idioma detectado durante toda la sesión (guardado en el JSON).
-- **Tono:** profesional pero cercano. Hablar como un productor que conoce el negocio.
+- **No inventar datos del podcast.** Si falta información, preguntar o usar `[PENDIENTE]`.
+- **Idioma:** mantener el idioma detectado durante toda la sesión.
 - **Al terminar cada workflow:** sugerir el siguiente paso lógico.
+- **Documentos y guiones:** siempre en HTML optimizado para PDF (descargar vía IlovePDF).
+- **Copias:** cada documento generado se copia a `G:\My Drive\kit-podcast-creator\` automáticamente.
 - **Skill activa:** `podcast-creator` en `.claude/skills/podcast-creator/SKILL.md`
+
+---
+
+## Estructura de carpetas
+
+```
+kit-podcast-creator/
+├── podcast-profile.json          ← Estado central del sistema
+├── audio/                        ← Intro y outro del show
+├── scripts/                      ← Guiones en HTML (EP.001, EP.002...)
+├── documents/                    ← Propuestas y documentos importantes
+├── fichas-invitados/             ← Una ficha por invitado de La Silla Pútrida
+├── templates/                    ← Cuestionario y carta de invitación Silla Pútrida
+├── glosario-cachaco.md           ← Términos cachacos de los 40's (consultar siempre)
+├── eventos.json                  ← Base de datos de eventos para segmento de promo
+└── .claude/skills/podcast-creator/
+    ├── SKILL.md
+    └── workflows/
+        ├── 00-setup.md
+        ├── 01-episodio.md
+        ├── 02-grabacion.md
+        ├── 03-artwork.md
+        ├── 04-social-media.md
+        ├── 05-show-notes.md
+        └── 06-html-export.md
+```
+
+---
+
+## Segmentos permanentes del podcast
+
+### La Silla Pútrida
+- Formato especial de episodio cuando hay invitado
+- **Antes de generar cualquier guión**, preguntar: *"¿Esta semana hay Silla Pútrida?"*
+- Si SÍ → el episodio gira 100% en torno al invitado
+- Generar cuestionario de aprobación ANTES del guión y esperar confirmación del invitado
+- El segmento de Promoción se mueve al FINAL del episodio
+- Guardar ficha del invitado en `fichas-invitados/[nombre-invitado].md`
+- Templates en `templates/silla-putrida-cuestionario.md` y `templates/silla-putrida-invitacion.md`
+
+### Segmento de Promoción (todos los episodios)
+- Presente en **todos** los episodios sin excepción (Juan lo conduce)
+- Episodio normal → va en el bloque intermedio (antes del cierre)
+- Episodio Silla Pútrida → va al final (después del bloque del invitado, antes del outro)
+- Consultar `eventos.json` para usar eventos reales del segmento
+
+---
+
+## Lenguaje cachaco clásico bogotano de los 40's
+
+Este es el lenguaje oficial del podcast. Aplica en **todos** los guiones, documentos y comunicaciones.
+
+- Consultar `glosario-cachaco.md` antes de generar cualquier guión
+- Palabras frecuentes: "ala", "chirriado", "pútrido", "cachifo", "sumerce", "caray", "carachas", "a la orden", "divino", "soberano"
+- **NO usar:** "parcero" (muy moderno), "bacano" (moderno popular), "vosotros" (España), "vos" (paisa/argentino), "ché" (argentino)
+- El tratamiento entre hosts y al oyente: "sumerce" (formal cachaco) o "usted" — nunca "tú" en los guiones
+
+---
+
+## Estructura de episodio según tipo
+
+**Episodio normal (co-host Andrés + Juan):**
+```
+1. Intro music (30 seg)
+2. Bienvenida — Andrés y Juan
+3. Tema principal — Bloque A
+4. [INTERCAMBIO]
+5. Tema principal — Bloque B
+6. Segmento de Promoción (Juan) — eventos, conciertos underground
+7. Takeaway / Reflexión final
+8. Outro music (30 seg)
+```
+
+**Episodio Silla Pútrida (con invitado):**
+```
+1. Intro especial Silla Pútrida (30 seg)
+2. Bienvenida + presentación del invitado
+3. Bloque de preguntas aprobadas — Bloque A
+4. [INTERCAMBIO natural]
+5. Bloque de preguntas aprobadas — Bloque B
+6. Cierre con el invitado (dónde encontrarlo)
+7. Segmento de Promoción (Juan) — AL FINAL
+8. Outro music (30 seg)
+```

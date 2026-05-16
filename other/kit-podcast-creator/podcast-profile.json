@@ -1,0 +1,154 @@
+{
+  "nombre": "Mr. Putrid's Den",
+  "tagline": "Donde los riffs encuentran el whisky",
+  "descripcion_corta": "Conversaciones entre Andrés y Juan sobre bandas, rock, metal, jazz y géneros variados. Espacio para riffs, pasión y Jack Daniel's.",
+  "descripcion_larga": "Mr. Putrid's Den es un podcast conversacional co-hosted por Andrés y Juan, un espacio dedicado a explorar rock, metal, jazz y múltiples géneros musicales. Con Juan como promotor de eventos underground, el podcast invita artistas emergentes, comparte historias de conciertos únicos, y ofrece análisis profundo de bandas y álbumes icónicos. Un lugar donde la música, la conversación natural y la pasión por los riffs se encuentran.",
+  "formato": "co-host",
+  "host": [
+    {
+      "nombre": "Andrés",
+      "bio": ""
+    },
+    {
+      "nombre": "Juan",
+      "bio": "Promotor de eventos musicales underground"
+    }
+  ],
+  "audiencia": {
+    "demografico": "Adultos jóvenes a adultos (20-45+) apasionados por la música rock, metal, jazz",
+    "intereses": "Bandas clásicas y emergentes, historia de géneros musicales, análisis profundo de álbumes, eventos de conciertos, descubrimiento de artistas underground",
+    "dolor_principal": "Dificultad para encontrar espacios conversacionales auténticos sobre música; falta de visibilidad para artistas y eventos underground"
+  },
+  "tono": "Casual, conversacional, experto pero accesible, con humor e irreverencia. Mezcla de discusión seria y entretenimiento.",
+  "categoria": "Entretenimiento / Música",
+  "duracion_min": 60,
+  "cadencia": "Semanal",
+  "plataformas": [
+    "Spotify",
+    "RSS (distribuir a otras plataformas)"
+  ],
+  "colores": {
+    "principal": "#1a1a1a",
+    "secundario": "#FF8C00",
+    "acento": "#FFD700"
+  },
+  "logo_descripcion": "Estilo vintage collage + pop art. Colores: negro, naranja/dorado cálido, con acentos de verde neón y magenta. Elementos: referencias a bandas icónicas, whisky, vinilos, estética underground/conciertos.",
+  "numeracion": "EP.001",
+  "estilo_narración": "mixto",
+  "word_count_target": 3500,
+  "intro_template": "Stevie Ray Vaughn meets Black Label Society: guitarra blues eléctrica + heavy metal, con voz femenina gutural que abre el espacio. Puro impacto sonoro de 30 segundos. Referencia: audio/WhatsApp Video 2026-05-14 Intro.mp4",
+  "outro_template": "Jazz 1950s estilo Billie Holiday + cierre con trio de mujeres de época. Lyrics: 'Mmm, that's the sound, the last chord's gone now / The den, it's still warm, a shelter from the storm / Just a velvet haze to end these golden days / Sweet dreams, until we meet'. Nostalgia, calidez, despedida elegante. Referencia: audio/WhatsApp Video 2026-05-14 Outro.mp4",
+  "lenguaje": "cachaco_clasico_40s",
+  "intro_silla_putrida_template": "Esta semana en Mr. Putrid's Den tenemos La Silla Pútrida. Caray, sumerce, hoy el episodio completo gira alrededor de un invitado soberano. Siéntese cómodo que esto va a quedar chirriado.",
+  "segmento_promocion": {
+    "conductor": "Juan",
+    "posicion_normal": "bloque_intermedio",
+    "posicion_silla_putrida": "al_final",
+    "fuente_eventos": "eventos.json"
+  },
+  "reglas_tono": [
+    "Lenguaje cachaco clásico bogotano de los 40's — Usa 'ala', 'chirriado', 'pútrido', 'cachifo', 'sumerce', 'caray', 'carachas', 'a la orden', 'divino', 'soberano'. NUNCA: 'parcero', 'bacano', 'vosotros', 'vos', 'ché'.",
+    "Conversación natural con estructura — El script es guía, no lectura. Lanza premisas, datos, anécdotas, y deja que fluya entre Andrés y Juan. Parece improviso, pero está scaffolded.",
+    "Respeta a los artistas y eventos — Cuando hables de bandas, artistas emergentes o eventos underground, hazlo con admiración y conocimiento. Evita burla superficial.",
+    "Datos + opinión + anécdota — Cada episodio debe tener: un dato sorprendente, análisis profundo, y una historia personal de concierto o música. Mezcla lo informativo con lo emocional.",
+    "Whisky, riffs y conversación — El podcast es sobre tres cosas: la música, la amistad, y el disfrute. Mantén ese balance. Auténtico, no académico ni chismoso."
+  ],
+  "hashtags_base": [
+    "#MrPutridsDen",
+    "#DondeRiffsEncuentranWhisky",
+    "#RocksMetalJazz",
+    "#ConversacionesDeRiffs",
+    "#EventosUnderground",
+    "#BogotáMusical",
+    "#PodcastRock",
+    "#ArtistasEmergentes",
+    "#CachachoRocker",
+    "#RiffsYWhisky"
+  ],
+  "links": {
+    "spotify": "[PENDIENTE — Andrés proporciona]",
+    "apple": "",
+    "youtube": "",
+    "rss": "[PENDIENTE — Andrés proporciona]"
+  },
+  "musica": {
+    "intro": "Creado",
+    "outro": "Creado",
+    "stinger": ""
+  },
+  "content_pillars": [
+    "Análisis profundo de una banda/álbum",
+    "Top 5 / Ranking de canciones",
+    "Historia de un género",
+    "Debate: ¿cuál es mejor banda/álbum/canción?",
+    "Curiosidades y historias de conciertos",
+    "Reacciones a música nueva",
+    "Entrevista/invitado artista emergente",
+    "Spotlight: eventos y conciertos underground"
+  ],
+  "roadmap_9_episodes": [
+    {
+      "ep": 2,
+      "title": "Black Sabbath: El génesis del heavy metal",
+      "pillar": "Análisis profundo",
+      "type": "co-host",
+      "description": "Desglosar Paranoid, la época de Ozzy, y cómo Sabbath definió todo lo que vino después."
+    },
+    {
+      "ep": 3,
+      "title": "Top 5: Los mejores riffs de metal de todos los tiempos",
+      "pillar": "Top 5 / Ranking",
+      "type": "co-host",
+      "description": "Andrés y Juan eligen sus 5 riffs más icónicos, debaten, y justifican cada uno."
+    },
+    {
+      "ep": 4,
+      "title": "Jazz fusion: De Herbie Hancock a hoy",
+      "pillar": "Historia de género",
+      "type": "co-host",
+      "description": "Cómo jazz y rock se fusionan, evolución del género, referencias clave."
+    },
+    {
+      "ep": 5,
+      "title": "¿The Beatles o Led Zeppelin? El debate definitivo",
+      "pillar": "Debate clásico",
+      "type": "co-host",
+      "description": "Andrés vs Juan: ¿quién cambió más la música? Discografía, influencia, legado."
+    },
+    {
+      "ep": 6,
+      "title": "Stories: Conciertos únicos que nos marcaron",
+      "pillar": "Curiosidades/historias",
+      "type": "co-host",
+      "description": "Anécdotas personales de conciertos, encuentros con bandas, momentos memorables."
+    },
+    {
+      "ep": 7,
+      "title": "Entrevista: [Artista emergente]",
+      "pillar": "Invitado artista",
+      "type": "co-host + guest",
+      "description": "Juan trae a un artista emergente. Hablamos de su proceso, influencias, planes."
+    },
+    {
+      "ep": 8,
+      "title": "Spotlight: Eventos underground que no te puedes perder",
+      "pillar": "Info conciertos",
+      "type": "co-host",
+      "description": "Juan comparte eventos, conciertos próximos, bandas locales emergentes en Bogotá."
+    },
+    {
+      "ep": 9,
+      "title": "Rock progresivo: Yes, Genesis y la complejidad sonora",
+      "pillar": "Historia de género",
+      "type": "co-host",
+      "description": "Explorar prog-rock, sintetizadores, estructuras complejas, influencia en metal moderno."
+    },
+    {
+      "ep": 10,
+      "title": "New music reaction: Escuchamos lo que nos envían",
+      "pillar": "Reacciones a música nueva",
+      "type": "co-host",
+      "description": "Reacción en vivo a música nueva de bandas, artistas emergentes, géneros variados."
+    }
+  ]
+}

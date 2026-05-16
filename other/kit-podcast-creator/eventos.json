@@ -1,0 +1,26 @@
+{
+  "ultima_actualizacion": "2026-05-16",
+  "nota": "Juan actualiza esta lista con eventos próximos. Consultar antes de generar cada guión para el segmento de Promoción.",
+  "eventos": [
+    {
+      "id": 1,
+      "nombre": "[Nombre del evento/concierto]",
+      "artistas": ["[Banda 1]", "[Banda 2]"],
+      "fecha": "2026-05-XX",
+      "lugar": "[Lugar en Bogotá]",
+      "descripcion": "[Breve descripción — quién son, por qué vale la pena]",
+      "link": "[URL del evento o redes del organizador]",
+      "visibilidad": "underground",
+      "tipo": "concierto",
+      "añadido_por": "Juan"
+    }
+  ],
+  "instrucciones": [
+    "Cada evento debe tener: nombre, artistas, fecha, lugar, descripción breve",
+    "La descripción debe ser tal que yo (Claude) pueda leerla en el segmento de promo sin sonar robótico",
+    "Incluir link a donde se compren boletas o se sepa más",
+    "Marcar visibilidad: 'underground' (poca difusión) o 'emergente' (bandas nuevas)",
+    "Tipo: 'concierto', 'festival', 'jam session', 'showcase', etc.",
+    "Juan agrega eventos conforme los conoce — no esperes a que yo los invente"
+  ]
+}

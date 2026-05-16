@@ -1,8 +1,71 @@
 # Workflow 01 — Guion Completo del Episodio
 
-Genera un script completo, palabra por palabra, para un episodio específico. Se adapta al formato del podcast (solo, entrevista, co-host).
+Genera un script completo, palabra por palabra, para un episodio específico. Se adapta al formato del podcast (solo, entrevista, co-host, silla_putrida).
 
 **Regla fundamental: Lee `podcast-profile.json` primero. Si no existe, lanza `00-setup.md` antes de continuar.**
+**Regla de lenguaje: Consulta `glosario-cachaco.md` antes de escribir cualquier guión.**
+**Regla de eventos: Consulta `eventos.json` para el Segmento de Promoción.**
+
+---
+
+## Paso -1 — ¿Hay Silla Pútrida esta semana?
+
+**SIEMPRE pregunta esto antes de cualquier otra cosa:**
+
+> ¿Esta semana hay Silla Pútrida? (¿Tienen invitado especial en el show?)
+
+- **SÍ** → `formato_episodio = "silla_putrida"`. Ir a **Paso 0-SP** antes de continuar.
+- **NO** → `formato_episodio = "co-host"`. Continuar con **Paso 0** normalmente.
+
+---
+
+## Paso 0-SP — Flujo especial Silla Pútrida (solo si hay invitado)
+
+### A. Recopilar datos del invitado
+
+Pregunta en un solo mensaje:
+
+> **Datos del invitado para La Silla Pútrida:**
+> 1. ¿Nombre completo del invitado?
+> 2. ¿Cómo lo describes en una línea? (músico, productor, artista emergente, etc.)
+> 3. ¿De qué 3 temas quieren hablar con él/ella?
+> 4. ¿Hay algún tema que NO deben tocar? (personal, sensible, polémico)
+> 5. ¿Cuál es el número del episodio?
+
+### B. Generar cuestionario de aprobación
+
+Usando el template en `templates/silla-putrida-cuestionario.md`, genera el cuestionario personalizado con las preguntas reales para ESTE invitado.
+
+Preguntas escaladas en 3 bloques:
+- **Bloque 1 — Bienvenida (3 preguntas):** quién eres, tu historia, cómo te describes
+- **Bloque 2 — Temas principales (5-6 preguntas):** escaladas sobre los 3 temas definidos
+- **Bloque 3 — Cierre (3 preguntas):** consejo, visión, dónde encontrarte
+
+Marca cada pregunta como OBLIGATORIA u OPCIONAL.
+
+**IMPORTANTE:** Genera también la invitación usando `templates/silla-putrida-invitacion.md`.
+
+### C. Guardar ficha del invitado
+
+Crea `fichas-invitados/[nombre-invitado].md` con:
+```
+# Ficha: [Nombre del invitado]
+Episodio: EP.[NNN]
+Fecha: [fecha]
+Descripción: [una línea]
+Temas cubiertos: [lista]
+Preguntas aprobadas: [lista]
+Temas prohibidos: [lista si hay]
+Redes: [links]
+```
+
+### D. Esperar aprobación
+
+Di al usuario:
+
+> "Le recomiendo enviarle el cuestionario al invitado y esperar su aprobación antes de generar el guión. Una vez confirme, regresa y decimos 'aprobado' para continuar."
+
+**No generar el guión hasta que el usuario confirme que el invitado aprobó.**
 
 ---
 
@@ -228,19 +291,41 @@ Calcula los tiempos según `duracion_min` del perfil:
 | 45 min | 3 bloques | 6-8 min c/u |
 | 60 min | 3-4 bloques | 8-10 min c/u |
 
-**Estructura base a presentar (con tiempos calculados y temas concretos):**
+**Estructura base según tipo de episodio:**
+
+**Episodio normal (co-host):**
 
 | # | Segmento | Duración | Contenido para ESTE episodio |
 |---|----------|----------|------------------------------|
-| 1 | Intro + Hook | 1-2 min | [hook específico del tema] |
-| 2 | Bienvenida | 30 seg | [breve, no más] |
+| 1 | Intro music | 30 seg | [música de apertura] |
+| 2 | Bienvenida | 1-2 min | [Andrés y Juan abren el episodio] |
 | 3 | Contexto del tema | 3-4 min | [por qué este tema ahora] |
 | 4 | Bloque principal A | [X min] | [primer desarrollo] |
-| 5 | [TRANSICIÓN] | — | música de transición |
+| 5 | [INTERCAMBIO] | — | diálogo libre entre hosts |
 | 6 | Bloque principal B | [X min] | [segundo desarrollo / giro] |
-| [si entrevista] | Bloque de preguntas | 8-10 min | [3 temas del invitado] |
-| N-1 | Reflexión / Takeaway | 3-4 min | [conclusión accionable] |
-| N | Outro + CTA | 1-2 min | [cierre + call to action] |
+| 7 | **Segmento de Promoción** | 3-5 min | [Juan presenta eventos de `eventos.json`] |
+| 8 | Reflexión / Takeaway | 3-4 min | [conclusión accionable] |
+| 9 | Outro + CTA | 1-2 min | [cierre + call to action] |
+| 10 | Outro music | 30 seg | [música de cierre] |
+
+**Episodio Silla Pútrida (con invitado):**
+
+| # | Segmento | Duración | Contenido para ESTE episodio |
+|---|----------|----------|------------------------------|
+| 1 | Intro especial Silla Pútrida | 30 seg | [música + anuncio de invitado] |
+| 2 | Bienvenida + presentación | 2-3 min | [Andrés presenta al invitado, Juan da contexto] |
+| 3 | Bloque preguntas A | [X min] | [preguntas aprobadas — Bloque 1 y 2] |
+| 4 | [INTERCAMBIO natural] | — | conversación fluye libre |
+| 5 | Bloque preguntas B | [X min] | [preguntas aprobadas — Bloque 3] |
+| 6 | Cierre con invitado | 2-3 min | [dónde encontrarlo, redes, proyectos] |
+| 7 | **Segmento de Promoción** | 3-5 min | [Juan AL FINAL — eventos de `eventos.json`] |
+| 8 | Outro + CTA | 1-2 min | [cierre + agradecimiento al invitado] |
+| 9 | Outro music | 30 seg | [música de cierre] |
+
+**Nota sobre el Segmento de Promoción:**
+- Consultar `eventos.json` para usar eventos reales — si está vacío, marcar `[PENDIENTE — Juan agrega eventos]`
+- Juan lo conduce siempre
+- Tono: entusiasta, conversacional, sin leer como publicidad
 
 Presenta esto con los temas reales del episodio en cada fila. **Espera "ok", "adelante", "perfecto" o similar antes de escribir el script.**
 
@@ -261,6 +346,10 @@ Una vez aprobada la arquitectura, escribe el script palabra por palabra.
 ### Reglas de escritura
 
 - Aplica las `reglas_tono` del `podcast-profile.json`
+- **Consulta `glosario-cachaco.md` y usa lenguaje cachaco clásico bogotano de los 40's en TODO el guión**
+- Palabras permitidas: "ala", "chirriado", "pútrido", "cachifo", "sumerce", "caray", "carachas", "a la orden", "divino", "soberano"
+- Palabras prohibidas: "parcero" (muy moderno), "bacano" (moderno), "vosotros" (España), "vos" (paisa), "ché" (argentino)
+- Tratamiento al oyente: "sumerce" o "usted" — NUNCA "tú"
 - Usa el `intro_template` del perfil como base (puede adaptarlo pero no cambiarlo radicalmente)
 - Usa el `outro_template` del perfil
 - Escribe como se habla, no como se escribe: contracciones, frases cortas, pausas naturales
