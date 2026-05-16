@@ -66,10 +66,16 @@
     "#RiffsYWhisky"
   ],
   "links": {
+    "web": "www.mrputridsden.com",
     "spotify": "[PENDIENTE — Andrés proporciona]",
     "apple": "",
     "youtube": "",
     "rss": "[PENDIENTE — Andrés proporciona]"
+  },
+  "contacto": {
+    "general": "hello@mrputridsden.com",
+    "andres": "Andres@mrputridsden.com",
+    "juan": "Juan@mrputridsden.com"
   },
   "musica": {
     "intro": "Creado",
