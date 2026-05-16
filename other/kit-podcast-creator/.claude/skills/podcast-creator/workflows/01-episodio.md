@@ -21,51 +21,68 @@ Genera un script completo, palabra por palabra, para un episodio específico. Se
 
 ## Paso 0-SP — Flujo especial Silla Pútrida (solo si hay invitado)
 
-### A. Recopilar datos del invitado
+### A. Recopilar datos básicos
 
-Pregunta en un solo mensaje:
+Pregunta:
 
-> **Datos del invitado para La Silla Pútrida:**
-> 1. ¿Nombre completo del invitado?
-> 2. ¿Cómo lo describes en una línea? (músico, productor, artista emergente, etc.)
-> 3. ¿De qué 3 temas quieren hablar con él/ella?
-> 4. ¿Hay algún tema que NO deben tocar? (personal, sensible, polémico)
-> 5. ¿Cuál es el número del episodio?
+> **¿Quién viene a La Silla Pútrida?**
+> 1. Nombre del invitado
+> 2. ¿Qué hace? (músico, promotor, luthier, dueño de bar, productor, otro)
+> 3. ¿Tienen algún link, red social o referencia donde pueda investigarlo?
+> 4. Número del episodio
 
-### B. Generar cuestionario de aprobación
+### B. Modo Narval — Investigar al invitado
 
-Usando el template en `templates/silla-putrida-cuestionario.md`, genera el cuestionario personalizado con las preguntas reales para ESTE invitado.
+Con el nombre y perfil, **investiga al invitado en la web** antes de generar nada:
+- Busca su trabajo, proyectos, trayectoria
+- Encuentra 3-5 datos curiosos o poco conocidos
+- Identifica momentos clave de su carrera
+- Busca entrevistas previas para no repetir preguntas ya hechas
 
-Preguntas escaladas en 3 bloques:
-- **Bloque 1 — Bienvenida (3 preguntas):** quién eres, tu historia, cómo te describes
-- **Bloque 2 — Temas principales (5-6 preguntas):** escaladas sobre los 3 temas definidos
-- **Bloque 3 — Cierre (3 preguntas):** consejo, visión, dónde encontrarte
+Con esa investigación, genera el **documento de prep para hosts** usando `templates/silla-putrida-prep-hosts.md`:
+- Bio real investigada (no la que el invitado escribe — la que encontraste)
+- Los datos curiosos
+- 5-7 preguntas únicas basadas en su trayectoria real
+- Selecciona el set de preguntas base del perfil correspondiente en `templates/preguntas-por-perfil.md`
 
-Marca cada pregunta como OBLIGATORIA u OPCIONAL.
+Presenta el documento de prep al usuario y di:
+> "Acá está la investigación del invitado. Revise si falta algo antes de enviarle la carta."
 
-**IMPORTANTE:** Genera también la invitación usando `templates/silla-putrida-invitacion.md`.
+### C. Generar carta al invitado
 
-### C. Guardar ficha del invitado
+Usando `templates/silla-putrida-invitacion.md`, genera la carta personalizada con:
+- Referencia específica al trabajo del invitado (de lo investigado)
+- Los 3 temas propuestos para la conversación
+
+Genera también el documento de prep corto para el invitado usando `templates/silla-putrida-cuestionario.md` — solo pide bio libre, confirmación de temas y NO-list.
+
+Di al usuario:
+> "Acá está la carta de invitación y el doc de preparación para enviarle al invitado. Cuando confirme y devuelva su NO-list, regrese y generamos el guión."
+
+### D. Guardar ficha del invitado
 
 Crea `fichas-invitados/[nombre-invitado].md` con:
 ```
 # Ficha: [Nombre del invitado]
 Episodio: EP.[NNN]
 Fecha: [fecha]
-Descripción: [una línea]
-Temas cubiertos: [lista]
-Preguntas aprobadas: [lista]
-Temas prohibidos: [lista si hay]
+Perfil: [artista / promotor / luthier / venue / productor]
+Bio investigada: [resumen]
+Datos curiosos: [lista]
+Temas cubiertos: [lista — llenar después de grabar]
+NO-list: [lo que pidió que no se toque]
 Redes: [links]
 ```
 
-### D. Esperar aprobación
+### E. Generar guión (solo después de confirmación del invitado)
 
-Di al usuario:
+**No generar el guión hasta que el usuario confirme que el invitado respondió.**
 
-> "Le recomiendo enviarle el cuestionario al invitado y esperar su aprobación antes de generar el guión. Una vez confirme, regresa y decimos 'aprobado' para continuar."
-
-**No generar el guión hasta que el usuario confirme que el invitado aprobó.**
+Cuando el usuario diga que el invitado confirmó:
+- Integrar la NO-list del invitado
+- Usar las preguntas investigadas + las aprobadas por el invitado
+- Recordar: grabación **presencial** — los 3 en el mismo cuarto, ambos hosts pueden preguntar
+- Marcar los intercambios como `[ANDRÉS/JUAN — cualquiera de los dos puede preguntar esto]`
 
 ---
 
