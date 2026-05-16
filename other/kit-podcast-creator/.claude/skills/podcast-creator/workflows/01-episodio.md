@@ -98,7 +98,7 @@ Lee `podcast-profile.json`. Extrae y ten disponible:
 - Estilo de narración y word count target (`estilo_narración`, `word_count_target`)
 - Segmentos activos: `segmento_invitado`, `segmento_promo`
 
-Si existe `glosario-[podcast].md` → cargarlo también.
+Si existe `glosario-[slug].md` (slug = nombre del podcast en minúsculas con guiones) → cargarlo y usar sus términos en el guion.
 Si existe `eventos.json` → cargarlo para el segmento de promo.
 
 ---
@@ -275,9 +275,9 @@ Presenta la arquitectura del episodio adaptada al formato. **Espera aprobación 
 ### Reglas de escritura
 
 - Aplica las `reglas_tono` del `podcast-profile.json`
-- **Aplica el lenguaje del perfil** (`lenguaje.estilo`, palabras frecuentes, palabras prohibidas)
+- **Aplica el lenguaje del perfil** — si el perfil tiene campo `lenguaje`: usar su estilo, palabras frecuentes, palabras prohibidas; si no existe el campo → usar lenguaje neutro en español
 - Si existe glosario → usar los términos definidos ahí
-- Trata al oyente según `lenguaje.tratamiento_oyente` del perfil (usted / tú / vos)
+- Trata al oyente según `lenguaje.tratamiento_oyente` del perfil — si no está definido → usar "tú"
 - Usa el `intro_template` del perfil como base
 - Usa el `outro_template` del perfil
 - Escribe como se habla, no como se escribe: contracciones, frases cortas, pausas naturales

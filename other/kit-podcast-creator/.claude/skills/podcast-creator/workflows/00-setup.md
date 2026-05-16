@@ -132,7 +132,9 @@ Escucha las respuestas y guarda en el JSON:
 
 **Si segmento_invitado = true**, crear también:
 - Carpeta `fichas-invitados/` (una ficha por invitado: preguntas aprobadas, temas cubiertos, NO-list)
-- Templates en `templates/`: carta de invitación, cuestionario simple, documento de prep para hosts
+- Copiar los templates genéricos del kit a `templates/` del proyecto:
+  `episodio-invitado-invitacion.md`, `episodio-invitado-cuestionario.md`,
+  `episodio-invitado-prep-hosts.md`, `preguntas-por-perfil.md`
 
 **Si segmento_promo = true**, crear también:
 - Archivo `eventos.json` con estructura base para que el host llene antes de cada grabación
@@ -161,7 +163,7 @@ Escucha y guarda:
 }
 ```
 
-Si tiene glosario propio → crear `glosario-[podcast].md` con los términos definidos.
+Si tiene glosario propio → crear `glosario-[slug].md` donde `[slug]` es el nombre del podcast en minúsculas con guiones (ej: `glosario-mr-putrids-den.md`).
 
 ---
 
@@ -250,8 +252,28 @@ Para generar la portada del podcast y las imágenes de cada episodio, aquí est�
 
 ## Paso 6 — Guardar y presentar
 
-1. Escribe `podcast-profile.json` en el directorio actual.
-2. Muestra un resumen visual:
+1. Genera el slug del podcast: nombre en minúsculas con guiones, sin tildes, sin espacios.
+   (Ej: "Mr. Putrid's Den" → `mrputridsden`, "El Podcast de Negocios" → `el-podcast-de-negocios`)
+
+2. Crea la carpeta del proyecto: `projects/[slug]/`
+   Dentro, crea también: `scripts/`, `documents/`, `audio/`, `fichas-invitados/` (si aplica)
+
+3. Escribe `projects/[slug]/podcast-profile.json` con todos los datos recopilados.
+   Si algún campo no fue dado, usa `""` (no inventes valores).
+
+4. Si el perfil tiene `segmento_invitado.activo = true`:
+   - Crea `projects/[slug]/templates/` y copia ahí los templates genéricos del kit:
+     `templates/episodio-invitado-invitacion.md`, `templates/episodio-invitado-cuestionario.md`,
+     `templates/episodio-invitado-prep-hosts.md`, `templates/preguntas-por-perfil.md`
+   - Copia también `.claude/skills/podcast-creator/` al workspace del proyecto para que sea standalone
+
+5. Si el perfil tiene `segmento_promo.activo = true`:
+   - Crea `projects/[slug]/eventos.json` con esta estructura base:
+     ```json
+     { "eventos": [] }
+     ```
+
+6. Muestra un resumen visual:
 
 ```
 ══════════════════════════════════════════════
@@ -264,13 +286,15 @@ Para generar la portada del podcast y las imágenes de cada episodio, aquí est�
   Plataformas: [lista]
   Numeración:  [convención elegida]
 ══════════════════════════════════════════════
-  Archivos generados:
-  ✓ podcast-profile.json
+  Proyecto creado en:
+  ✓ projects/[slug]/podcast-profile.json
 ══════════════════════════════════════════════
 ```
 
-3. Pregunta: "¿Quieres ajustar algo, o empezamos con el primer episodio?"
-4. Si dice "primer episodio" o similar → lanza `workflows/01-episodio.md`.
+7. Di al usuario:
+   > "El perfil quedó en `projects/[slug]/`. Para producir episodios, abre esa carpeta como workspace en Claude Code."
+
+8. Pregunta: "¿Quieres ajustar algo antes de cerrar el setup?"
 
 ---
 

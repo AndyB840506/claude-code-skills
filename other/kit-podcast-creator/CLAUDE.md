@@ -24,7 +24,13 @@ Busca `podcast-profile.json` en el directorio actual.
 > ¿Ya tienes idea clara de qué va a tratar tu podcast, o todavía estás explorando?
 
 - Si ya lo tiene claro → lanza `00-setup.md`
-- Si está explorando → muestra las 6 categorías de contenido → lanza `00-setup.md`
+- Si está explorando → muestra estas categorías de ejemplo y lanza `00-setup.md`:
+  1. **Educativo** — enseñás algo: habilidades, conceptos, tutoriales
+  2. **Entrevistas** — conversaciones con invitados del campo
+  3. **Narrativo** — historias, reportajes, true crime, documentales
+  4. **Conversacional co-host** — dos o más personas charlan sobre un tema
+  5. **Noticias / Actualidad** — análisis de lo que pasa en un sector
+  6. **Nicho apasionado** — comunidad específica (música, deporte, gastronomía, etc.)
 
 **Si SÍ existe** → modo producción:
 
