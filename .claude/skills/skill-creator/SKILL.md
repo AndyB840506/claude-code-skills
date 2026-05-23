@@ -49,6 +49,11 @@ install it → ready to use
 
 ---
 
+## Distinction from crear-skill
+
+- **`/skill-creator`** — This skill. English instructions, for generic or globally shareable skills.
+- **`/crear-skill`** — Spanish version, for use within this workspace.
+
 ---
 
 ## See Also

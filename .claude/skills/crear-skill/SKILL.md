@@ -78,6 +78,13 @@ Si es muy grande, se organiza con carpetas:
 
 ---
 
+## Distinción con skill-creator
+
+- **`/crear-skill`** — Esta skill. Para uso dentro de este workspace. Instrucciones en español.
+- **`/skill-creator`** — Versión en inglés, para crear skills genéricas o compartibles globalmente.
+
+---
+
 ## Secciones de EJECUCIÓN
 
 Toda skill necesita una sección `## EXECUTION` con instrucciones explícitas para que realmente funcione. Ver [Guía de EXECUTION](docs/execution-guide-es.md) para plantillas y ejemplos detallados.

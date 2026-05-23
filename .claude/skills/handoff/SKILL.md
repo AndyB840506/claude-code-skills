@@ -38,7 +38,7 @@ Or with a custom topic (brief, kebab-case):
 
 ## Workflows
 
-1. **execute-handoff** — The 5-step automatic execution flow
+1. **execute** — The 5-step automatic execution flow
 2. **generate-document** — Document template and structure
 
 ---
