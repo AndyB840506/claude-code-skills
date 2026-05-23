@@ -25,10 +25,10 @@ Analyzes the current session to extract reusable learnings and proposes updates 
 **5-Step Workflow:**
 
 1. [Extract Signals](workflows/extract.md) — Identify learnings from this session
-2. [Map to Skills](workflows/map.md) — Which skills need updating
-3. [Propose Diffs](workflows/propose.md) — Show specific changes
+2. Map to Skills — Which skills need updating
+3. Propose Diffs — Show specific changes with before/after
 4. [Ask Confirmation](workflows/confirm.md) — Wait for explicit approval
-5. [Apply Changes](workflows/apply.md) — Update skills if approved
+5. Apply Changes — Update skills if approved
 
 ---
 

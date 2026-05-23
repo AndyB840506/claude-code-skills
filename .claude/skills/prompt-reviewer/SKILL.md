@@ -3,23 +3,23 @@ name: prompt-reviewer
 description: "Audita y mejora prompts, skills e instrucciones. Encuentra problemas de claridad, gaps de completitud e inefectividad. Propone fixes específicos con razonamiento. Para inglés, usar /prompt-reviewer-en. Triggers ES: revisar prompt, evaluar skill, mejorar instrucciones, auditar prompt, revisar skill, revisar instrucciones, esto no está claro, corregir mi prompt, mejorar mi prompt, auditar instrucciones, prompt no funciona."
 ---
 
-# Prompt Reviewer — Audit and Improve
+# Prompt Reviewer — Audita y Mejora
 
-Analyzes prompts, skills, and instructions to find clarity issues, gaps, and ineffectiveness. Proposes specific, executable fixes.
+Analiza prompts, skills e instrucciones para encontrar problemas de claridad, gaps e inefectividad. Propone fixes concretos y ejecutables.
 
-**Core rule:** Return concrete improvements — not vague criticism. Every finding includes the exact problem, why it matters, and the solution.
+**Regla principal:** Devuelve mejoras concretas — no crítica vaga. Cada hallazgo incluye el problema exacto, por qué importa y la solución.
 
-**Always asks for confirmation before applying changes.**
+**Siempre pide confirmación antes de aplicar cambios.**
 
 ---
 
-## Quick Start
+## Inicio rápido
 
 ```
 /prompt-reviewer
 ```
 
-Or specify analysis depth:
+O especifica profundidad de análisis:
 
 ```
 /prompt-reviewer quick
@@ -28,39 +28,39 @@ Or specify analysis depth:
 
 ---
 
-## How It Works
+## Cómo funciona
 
-**4-Step Workflow:**
+**Flujo de 4 pasos:**
 
-1. **Choose Mode** — Quick (5 min) or Thorough (15 min)
-2. **Audit** — Find clarity issues, gaps, ineffective patterns
-3. **Propose** — Suggest specific improvements with reasoning
-4. **Confirm** — Apply only if you approve
-
----
-
-## Output
-
-Problem identification + before/after examples + ready to apply or skip
+1. **Elegir modo** — Quick (5 min) o Thorough (15 min)
+2. **Auditar** — Encontrar problemas de claridad, gaps, patrones inefectivos
+3. **Proponer** — Sugerir mejoras específicas con razonamiento
+4. **Confirmar** — Aplicar solo si apruebas
 
 ---
 
-## See Also
+## Resultado
 
-- [What It Finds](docs/findings.md) — Patterns and examples
-- [Execution Workflow](workflows/execute.md) — Step-by-step audit process
+Identificación de problemas + ejemplos antes/después + listo para aplicar o saltar
+
+---
+
+## Ver también
+
+- [Qué encuentra](docs/findings.md) — Patrones y ejemplos
+- [Flujo de ejecución](workflows/execute.md) — Paso a paso detallado
 
 ---
 
 ## EXECUTION
 
-You have invoked `/prompt-reviewer`. Now execute the 4-step audit workflow:
+Has invocado `/prompt-reviewer`. Ahora ejecuta el flujo de auditoría de 4 pasos:
 
-1. **Choose Mode** — Quick (5 min) or Thorough (15 min) analysis depth
-2. **Audit** — Scan for clarity issues, gaps, ineffectiveness, pattern violations
-3. **Propose** — Generate specific improvements with before/after examples
-4. **Confirm & Apply** — Present findings and apply only if user approves
+1. **Elegir modo** — Quick (5 min) o Thorough (15 min)
+2. **Auditar** — Escanear problemas de claridad, gaps, inefectividad, violaciones de patrón
+3. **Proponer** — Generar mejoras específicas con ejemplos antes/después
+4. **Confirmar y aplicar** — Presentar hallazgos y aplicar solo si el usuario aprueba
 
-See [Full Workflow](workflows/execute.md) for detailed step-by-step instructions.
+Ver [Flujo completo](workflows/execute.md) para instrucciones detalladas paso a paso.
 
-**Result:** Skills reviewed and improved (if approved).
+**Resultado:** Skills revisadas y mejoradas (si se aprueba).

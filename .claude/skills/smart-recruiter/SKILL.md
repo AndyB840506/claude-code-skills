@@ -42,3 +42,11 @@ The skill automatically detects mode by checking if `job-config.json` exists:
 Never invents data. Never reveals evaluation criteria to candidate. Warm, human tone. Adapts language automatically (Spanish/English). Flags dealbreakers clearly. Evidence-based recommendations.
 
 See [Evaluation Rubric](docs/evaluation-rubric.md) and [Report Template](templates/report-template.md).
+
+---
+
+## EXECUTION
+
+Cuando se invoca `/smart-recruiter`, verificar si existe `job-config.json`:
+- Si NO existe → entrar en [Recruiter Mode](workflows/recruiter-mode.md)
+- Si existe → entrar en [Candidate Interview](workflows/candidate-interview.md)

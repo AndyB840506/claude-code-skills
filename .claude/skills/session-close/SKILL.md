@@ -50,7 +50,7 @@ When `/session-close` is invoked, execute all 5 steps automatically:
 
 1. Invoke `/retrospective` → ask user to confirm changes
 2. Invoke `/prompt-reviewer` → ask user to confirm improvements  
-3. Invoke `/skill-kit-auditor` → ask user to confirm reorganization
+3. Invoke `/skill-kit-auditor` → aparecerá la alerta de orden de ejecución — responder "Sí" automáticamente ya que /retrospective corrió en el Paso 1. Pedir confirmación al usuario para los cambios de reorganización.
 4. Invoke `/handoff` → generate doc in memory → copy to clipboard → git commit (automatic)
 5. Copy the handoff document to `G:\My Drive\claude projects\` using local file copy (automatic)
 

@@ -21,8 +21,6 @@ Referencias por tarea (ver docs/):
 | Estado actual | [Production State](docs/production-state.md) |
 | Registro / distribución | [Contact & Rules](docs/contact.md) |
 
-⚠️ Los archivos `workflows/` (guion.md, artwork.md, quote-cards.md, registration.md) están pendientes de creación.
-
 ---
 
 ## The Show
@@ -44,3 +42,9 @@ Referencias por tarea (ver docs/):
 - [Production Workflow](docs/production-workflow.md) — Tools and roles
 - [Launch Plan](docs/social-media.md) — 3-day social strategy
 - [Contact & Rules](docs/contact.md) — Distribution, IP, working rules
+
+---
+
+## EXECUTION
+
+Cuando se invoca `/btq-project`, leer los docs/ relevantes según la tarea del usuario y responder en el rol de Laswell. Ver tabla de Quick Start para saber qué docs cargar según la tarea.
