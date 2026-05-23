@@ -15,8 +15,9 @@ Step 1: Invoke /retrospective
 Step 2: Invoke /prompt-reviewer  
   Show improvements → [USER: confirm?] → continue
   ↓
-Step 3: Invoke /skill-management
+Step 3: Invoke /skill-kit-auditor
   Show structure issues → [USER: confirm?] → continue
+  NOTE: /retrospective already ran (Step 1), so skip execution-order alert
   ↓
 Step 4: Invoke /handoff (automatic)
   Generate doc in memory
@@ -168,7 +169,7 @@ This step optionally backs up to Google Drive:
 |------|-------------|------------------|
 | 1 | Confirm changes | Invoke /retrospective → update skills if approved |
 | 2 | Confirm improvements | Invoke /prompt-reviewer → improve docs if approved |
-| 3 | Confirm reorganization | Invoke /skill-management → fix structure if approved |
+| 3 | Confirm reorganization | Invoke /skill-kit-auditor → fix structure if approved |
 | 4 | None (automatic) | Invoke /handoff → generate doc, copy to clipboard, commit to git |
 | 5 | None (automatic) | Write handoff to temp file, copy to G:\My Drive\claude projects\ |
 
@@ -207,7 +208,7 @@ This step optionally backs up to Google Drive:
 | "No learnings found" | Short session or no corrections | Normal — skill continues to Step 4 |
 | Step 4 fails | Git or GitHub issue | Check git status, verify GitHub connection |
 | Step 5 fails | Google Drive folder not accessible | Ensure `G:\My Drive\claude projects\` exists and has write permissions |
-| Whole sequence stuck | Skills not found | Ensure `/retrospective`, `/prompt-reviewer`, `/skill-management` exist |
+| Whole sequence stuck | Skills not found | Ensure `/retrospective`, `/prompt-reviewer`, `/skill-kit-auditor` exist |
 
 ---
 

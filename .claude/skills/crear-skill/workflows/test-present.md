@@ -2,6 +2,15 @@
 
 ## Paso 6 — Testear
 
+### Para skills que ejecutan herramientas externas (FFmpeg, scripts, APIs)
+Antes de probar el flujo completo, probar el comando mínimo primero:
+1. Comando más simple posible (sin filtros complejos)
+2. Agregar complejidad de a un paso
+3. Solo integrar todo cuando cada parte funciona sola
+
+Esto evita diagnósticos difíciles cuando todo falla junto.
+
+### General
 Después de instalar:
 
 1. Simulo ser usuario nuevo

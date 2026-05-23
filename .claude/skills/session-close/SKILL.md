@@ -7,7 +7,7 @@ description: "Automated 5-step session close: retrospective + prompt review + sk
 
 Automated 5-step workflow that executes automatically when invoked. No manual steps required.
 
-**Execution sequence:** Retrospective → Prompt Reviewer → Skill Management → Handoff → Google Drive Backup
+**Execution sequence:** Retrospective → Prompt Reviewer → Skill Kit Auditor → Handoff → Google Drive Backup
 
 ---
 
@@ -17,7 +17,7 @@ Closes your session completely in one command. Executes all 5 steps automaticall
 
 1. **Retrospective** — Extract learnings, propose skill updates
 2. **Prompt Reviewer** — Review and improve updated skills  
-3. **Skill Management** — Verify folder structure, suggest fixes
+3. **Skill Kit Auditor** — Verify folder structure, suggest fixes
 4. **Handoff** — Generate handoff document, create git commit + push
 5. **Google Drive Backup** — Copy handoff to `G:\My Drive\claude projects`
 
@@ -50,7 +50,7 @@ When `/session-close` is invoked, execute all 5 steps automatically:
 
 1. Invoke `/retrospective` → ask user to confirm changes
 2. Invoke `/prompt-reviewer` → ask user to confirm improvements  
-3. Invoke `/skill-management` → ask user to confirm reorganization
+3. Invoke `/skill-kit-auditor` → ask user to confirm reorganization
 4. Invoke `/handoff` → generate doc in memory → copy to clipboard → git commit (automatic)
 5. Copy the handoff document to `G:\My Drive\claude projects\` using local file copy (automatic)
 

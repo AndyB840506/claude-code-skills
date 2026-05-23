@@ -1,6 +1,6 @@
 ---
 name: prompt-reviewer
-description: "Audit and improve prompts, skills, and instructions. Finds clarity issues, completeness gaps, and ineffectiveness. Proposes specific fixes with reasoning. Asks for confirmation before applying changes. Better and faster than generic tools. Triggers: review prompt, evaluate skill, improve instructions, prompt audit, skill review, instruction check, this is unclear, fix my prompt."
+description: "Audita y mejora prompts, skills e instrucciones. Encuentra problemas de claridad, gaps de completitud e inefectividad. Propone fixes específicos con razonamiento. Para inglés, usar /prompt-reviewer-en. Triggers ES: revisar prompt, evaluar skill, mejorar instrucciones, auditar prompt, revisar skill, revisar instrucciones, esto no está claro, corregir mi prompt, mejorar mi prompt, auditar instrucciones, prompt no funciona."
 ---
 
 # Prompt Reviewer — Audit and Improve

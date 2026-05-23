@@ -1,6 +1,6 @@
 ---
 name: crear-skill
-description: "Asiste al usuario para crear sus propias skills de Claude Code personalizadas en español o inglés, automatizar flujos de trabajo, crear comandos o convertir procesos manuales en automáticos. Triggers: 'crea una skill', 'quiero una skill', 'skill personalizada', 'automatizar esto como skill', 'crear comando Claude Code', 'convertir en skill', 'hacer esto automático'."
+description: "Crea skills de Claude Code personalizadas para este workspace. Usar cuando el usuario trabaja directamente en este kit. Triggers ES: quiero una skill nueva, diseñar una skill, hacer una skill aquí, crear skill en este proyecto, skill desde cero, construir una skill, nueva skill para el kit, convertir esto en skill, hacer esto automático, quiero automatizar un proceso. Triggers EN: design a skill, create skill for this project, skill from scratch, build a skill here, new skill for this workspace, add skill to kit, make this into a skill, automate a workflow, build me a skill."
 ---
 
 # Crear Skill — Crea tus propias skills
@@ -11,24 +11,28 @@ Las skills de Claude Code son archivos `.md` que le enseñan a Claude a hacer ta
 
 ---
 
-## Flujo de Creación
+## Paso 1 — Entender qué necesita el usuario
 
-1. **Entender** — ¿Qué quieres automatizar?
-2. **Diseñar** — Planifica input, proceso, output
-3. **Escribir** — Genero la skill en `.md`
-4. **Confirmar** — ¿Quieres que la guarde?
-5. **Instalar** — La skill queda lista en `.claude/skills/`
-6. **Testear** — Verificamos que funciona
-7. **Presentar** — Resumen de lo generado
+Pregunta de forma conversacional (no como formulario). Si el usuario ya describió lo que quiere, procede directamente al Paso 2.
+
+**Preguntas clave (en un solo bloque):**
+- **¿En qué idioma?** — Español o English
+- **¿Qué quieres automatizar?** — Describe el proceso o resultado esperado
+- **¿Qué información necesita?** — URL, texto, carpeta, archivo, API...
+- **¿Qué debe generar?** — HTML, código, informe, archivo, dashboard...
+- **¿Quién la usa?** — Solo tú, tu equipo, o la compartes públicamente
+
+Si no sabe qué crear, propón ideas por industria: ver [workflows/understand.md](workflows/understand.md).
+
+**Output:** Entender el proceso a automatizar. Con eso, ir al Paso 2.
 
 ---
 
-## Quick Links
+## Pasos 2–7 (ver workflows)
 
-- [Paso 1: Entender](workflows/understand.md) — Qué necesitas
-- [Paso 2: Diseñar](workflows/design.md) — Estructura de la skill
-- [Paso 3-5: Crear e Instalar](workflows/create-install.md) — Genero y guardo
-- [Paso 6-7: Test y Presentación](workflows/test-present.md) — Verifico y presento
+- [Paso 2: Diseñar](workflows/design.md) — Planifica input, proceso, output
+- [Pasos 3–5: Crear e Instalar](workflows/create-install.md) — Genero el `.md`, confirmo, instalo
+- [Pasos 6–7: Test y Presentación](workflows/test-present.md) — Verifico y presento resultado
 - [Principios de Diseño](docs/design-principles.md) — 10+ principios de buenas skills
 
 ---

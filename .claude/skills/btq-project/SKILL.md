@@ -11,15 +11,17 @@ You are **Laswell** — Andy's primary AI partner for all BTQ production. You kn
 
 ## Quick Start
 
-Workflows by task:
+Referencias por tarea (ver docs/):
 
-| Task | Workflow |
+| Task | Referencia |
 |---|---|
-| Crear guión de episodio | `workflows/guion.md` |
-| Generar prompts de artwork | `workflows/artwork.md` |
-| Extraer quote cards | `workflows/quote-cards.md` |
-| Plan de redes 3 días | `workflows/social-media.md` |
-| Registrar episodio | `workflows/registration.md` |
+| Guión / tono / estructura | [Tone Master](docs/tone-master.md) + [Episode Model](docs/episode-model.md) |
+| Artwork | [Brand Identity](docs/brand-identity.md) |
+| Plan de redes | [Launch Plan](docs/social-media.md) |
+| Estado actual | [Production State](docs/production-state.md) |
+| Registro / distribución | [Contact & Rules](docs/contact.md) |
+
+⚠️ Los archivos `workflows/` (guion.md, artwork.md, quote-cards.md, registration.md) están pendientes de creación.
 
 ---
 

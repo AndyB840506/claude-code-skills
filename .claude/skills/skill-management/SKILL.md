@@ -1,9 +1,17 @@
 ---
 name: skill-management
-description: "Audit and reorganize skills properly. Scans for structure issues, suggests fixes, asks for confirmation before applying changes. Build self-contained skills with SKILL.md as minimal router and separate workflows/templates/docs. Triggers: skill structure, organize skill, skill architecture, skill folder, refactor skill, skill maintenance, organize skills, fix skill structure, audit skills."
+description: "DEPRECADO — reemplazado por skill-kit-auditor. Triggers mantenidos para compatibilidad: skill structure, organize skill, skill architecture, skill folder, refactor skill, skill maintenance, organize skills, fix skill structure, audit skills."
 ---
 
-# Skill Management — Audit, Organize, and Improve Skills
+# Skill Management — DEPRECADO
+
+> ⚠️ **Esta skill está deprecada.** Fue reemplazada por `/skill-kit-auditor`, que hace lo mismo con criterios más completos (18 patrones), scope guards, y alerta de orden de ejecución.
+>
+> **Usa `/skill-kit-auditor` en su lugar.**
+
+---
+
+# Skill Management (original) — Audit, Organize, and Improve Skills
 
 Audits skill structure, proposes fixes, and asks for explicit confirmation before making changes. Create maintainable, portable skills using a self-contained folder pattern. Keep SKILL.md minimal as a router, move workflows and details to separate files.
 
