@@ -1,6 +1,6 @@
 ---
 name: crear-skill
-description: "Crea skills de Claude Code personalizadas para este workspace. Usar cuando el usuario trabaja directamente en este kit. Triggers ES: quiero una skill nueva, diseñar una skill, hacer una skill aquí, crear skill en este proyecto, skill desde cero, construir una skill, nueva skill para el kit, convertir esto en skill, hacer esto automático, quiero automatizar un proceso. Triggers EN: design a skill, create skill for this project, skill from scratch, build a skill here, new skill for this workspace, add skill to kit, make this into a skill, automate a workflow, build me a skill."
+description: "Crea skills de Claude Code personalizadas para este workspace. Usar cuando el usuario trabaja directamente en este kit. Triggers ES: quiero una skill nueva, diseñar una skill, hacer una skill aquí, crear skill en este proyecto, skill desde cero, construir una skill, nueva skill para el kit, convertir esto en skill, hacer esto automático, quiero automatizar un proceso. Triggers EN: create skill for this project, skill from scratch, build a skill here, new skill for this workspace, add skill to kit, make this into a skill."
 ---
 
 # Crear Skill — Crea tus propias skills
@@ -11,16 +11,22 @@ Las skills de Claude Code son archivos `.md` que le enseñan a Claude a hacer ta
 
 ---
 
+## EXECUTION
+
 ## Paso 1 — Entender qué necesita el usuario
 
 Pregunta de forma conversacional (no como formulario). Si el usuario ya describió lo que quiere, procede directamente al Paso 2.
 
 **Preguntas clave (en un solo bloque):**
-- **¿En qué idioma?** — Español o English
+- **¿En qué idioma?** — Español, English, o bilingüe
 - **¿Qué quieres automatizar?** — Describe el proceso o resultado esperado
+- **¿Es de propósito general o específico para un tipo?** — Evita asumir scope
 - **¿Qué información necesita?** — URL, texto, carpeta, archivo, API...
 - **¿Qué debe generar?** — HTML, código, informe, archivo, dashboard...
 - **¿Quién la usa?** — Solo tú, tu equipo, o la compartes públicamente
+- **¿Cómo se publica/despliega el output?** — Especialmente si genera HTML o apps
+
+**Si el usuario menciona un kit similar:** leer ese kit primero antes de diseñar. Ver [workflows/understand.md](workflows/understand.md) para el procedimiento.
 
 Si no sabe qué crear, propón ideas por industria: ver [workflows/understand.md](workflows/understand.md).
 

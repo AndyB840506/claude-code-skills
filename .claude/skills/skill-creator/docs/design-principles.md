@@ -85,3 +85,14 @@ If creating a conversational agent, start warm and empathetic. Only become more 
 If creating a conversational agent, give it a human name (rotated per session). Humanizes interaction.
 
 Example: "I'm Maria" vs "I'm your assistant" → the second is cold.
+
+## 14. Geographic Validation for Location-Specific Documents
+
+Before drafting any document that depends on a specific province/state/country (government forms, grant applications, legal registrations, compliance documents):
+
+1. Extract location signals from ALL available data: phone area code (+1 587 = Alberta, +1 416 = Ontario, etc.), postal code, explicitly stated city/province/country
+2. Confirm with the user: "Confirming you operate in [inferred province]?" before starting
+3. Only then begin drafting
+
+**Anti-pattern:** Generate the document and then correct the province — requires a full rewrite of statistics, cities, laws, registration costs, and government references.  
+**Better:** Validate first, generate correctly once.

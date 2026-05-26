@@ -85,3 +85,14 @@ Si genera un agente conversacional, empezar cálido y empático. Solo volverse m
 Si creas un agente conversacional, darle nombre humano rotativo por sesión. Humaniza la interacción.
 
 Ejemplo: "Yo soy María" vs "Yo soy tu asistente" → la segunda es fría.
+
+## 14. Validación Geográfica para Documentos Específicos de Ubicación
+
+Antes de redactar cualquier documento que dependa de una provincia/estado/país (formularios de gobierno, solicitudes de becas, registros legales, documentos de cumplimiento):
+
+1. Extraer señales de ubicación de TODO lo disponible: código de área del teléfono (+1 587 = Alberta, +1 416 = Ontario, etc.), código postal, ciudad/provincia mencionada explícitamente
+2. Confirmar con el usuario: "¿Confirmas que operan en [provincia inferida]?" antes de empezar
+3. Solo entonces comenzar el borrador
+
+**Anti-patrón:** Generar el documento y luego corregir la provincia — requiere reescritura completa de estadísticas, ciudades, leyes, costos de registro, y referencias gubernamentales.  
+**Mejor:** Validar primero, generar una sola vez correctamente.

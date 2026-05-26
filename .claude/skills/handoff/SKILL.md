@@ -62,4 +62,14 @@ Or with a custom topic (brief, kebab-case):
 
 ## EXECUTION
 
-See [Execution Workflow](workflows/execute.md) for detailed step-by-step instructions.
+You have invoked `/handoff`. Now execute the 5-step workflow automatically:
+
+1. **Analyze session** — Run `git log --oneline -5` and `git diff --stat HEAD~5` to extract what was done
+2. **Generate document** — Create structured markdown: date/topic, accomplishments, files changed, pause point, next actions, blockers
+3. **Copy to clipboard** — Use `$content | clip` (clip.exe, NOT Set-Clipboard) so user can paste with Ctrl+V
+4. **Display in chat** — Show the complete document so user can see it
+5. **GitHub backup** — Run `git add -A && git commit -m "Session: [topic] YYYY-MM-DD" && git push origin main`
+
+See [Execution Workflow](workflows/execute.md) for detailed instructions.
+
+**Result:** Document in clipboard (Ctrl+V ready) + GitHub backup created.

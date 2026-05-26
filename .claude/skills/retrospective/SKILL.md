@@ -45,7 +45,6 @@ Analyzes the current session to extract reusable learnings and proposes updates 
 ## See Also
 
 - [What to Encode](docs/what-to-encode.md) — Process changes, anti-patterns, tool behavior
-- [Auto-Suggest](docs/auto-suggest.md) — When to suggest retrospective vs when to skip
 
 ---
 

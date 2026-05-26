@@ -29,7 +29,7 @@ Claude Code skills are `.md` files that teach Claude to do specific tasks. Any r
 - [Step 2: Design](workflows/design.md) — Skill structure
 - [Steps 3-5: Create & Install](workflows/create-install.md) — Generate and save
 - [Steps 6-7: Test & Present](workflows/test-present.md) — Verify and show
-- [Design Principles](docs/design-principles.md) — 13 principles of great skills
+- [Design Principles](docs/design-principles.md) — 14+ principles of great skills
 
 ---
 
@@ -60,3 +60,18 @@ install it → ready to use
 
 - [Storage & Organization](docs/storage.md) — Skill folder structure
 - [EXECUTION Sections](docs/execution-sections.md) — How to make skills actually work
+
+---
+
+## EXECUTION
+
+You have invoked `/skill-creator`. Now execute the creation flow:
+
+1. **Understand** — Ask what process to automate (language, input, output, who uses it). See [Step 1](workflows/understand.md).
+2. **Design** — Plan the skill structure (steps, outputs, triggers). See [Step 2](workflows/design.md).
+3. **Write** — Generate the complete skill `.md` file. See [Steps 3-5](workflows/create-install.md).
+4. **Confirm** — Show the generated skill and ask for approval before saving.
+5. **Install** — Save to `.claude/skills/[name]/SKILL.md` upon approval.
+6. **Test & Present** — Verify it works and summarize what was created. See [Steps 6-7](workflows/test-present.md).
+
+**Result:** A ready-to-use skill file installed in the workspace.
