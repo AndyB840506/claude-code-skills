@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Putrid's Den — EP.002: Black Sabbath: El Génesis del Heavy Metal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f0f0;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; background: white; }
+
+        /* HEADER */
+        .header {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px;
+            border-bottom: 5px solid #FF8C00;
+        }
+
+        .header .podcast { font-size: 0.95em; color: #FF8C00; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+        .header h1 { font-size: 2em; font-weight: 900; margin-bottom: 6px; }
+        .header .tagline { color: #FFD700; font-style: italic; font-size: 1.05em; margin-bottom: 20px; }
+
+        .meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .meta-item {
+            background: rgba(255,140,0,0.15);
+            border: 1px solid #FF8C00;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: #FFD700;
+        }
+
+        /* SECCIONES */
+        .section { padding: 30px 40px; border-bottom: 1px solid #eee; }
+
+        .section h2 {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #FF8C00;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #FF8C00;
+        }
+
+        /* SEGMENTOS DEL GUIÓN */
+        .segment {
+            margin: 25px 0;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .segment-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .segment-number {
+            background: #FF8C00;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .segment-title {
+            font-weight: 700;
+            font-size: 1em;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.8em;
+            color: #999;
+            background: #f5f5f5;
+            padding: 3px 10px;
+            border-radius: 10px;
+        }
+
+        /* TIPOS DE BLOQUES */
+        .sfx {
+            background: #1a1a1a;
+            color: #FFD700;
+            padding: 12px 18px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+            margin: 12px 0;
+        }
+
+        .host-block {
+            margin: 15px 0;
+            padding: 15px 18px;
+            border-left: 4px solid #FF8C00;
+            background: #fffdf8;
+        }
+
+        .host-name {
+            font-weight: 700;
+            color: #FF8C00;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .host-text {
+            color: #222;
+            line-height: 1.8;
+        }
+
+        .intercambio {
+            background: #f0f8ff;
+            border: 1px dashed #6699cc;
+            border-radius: 4px;
+            padding: 12px 18px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #336699;
+            font-size: 0.9em;
+        }
+
+        .nota {
+            background: #fffbea;
+            border-left: 3px solid #FFD700;
+            padding: 10px 16px;
+            margin: 10px 0;
+            font-size: 0.88em;
+            color: #666;
+        }
+
+        .nota strong { color: #FF8C00; }
+
+        .pausa {
+            text-align: center;
+            color: #ccc;
+            font-size: 0.8em;
+            letter-spacing: 5px;
+            margin: 8px 0;
+        }
+
+        /* ARQUITECTURA */
+        .arquitectura {
+            background: #1a1a1a;
+            color: white;
+            padding: 20px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85em;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .arquitectura .arq-row { display: flex; gap: 15px; padding: 4px 0; border-bottom: 1px solid #333; }
+        .arquitectura .arq-num { color: #FF8C00; width: 25px; flex-shrink: 0; }
+        .arquitectura .arq-seg { width: 220px; flex-shrink: 0; }
+        .arquitectura .arq-time { color: #999; width: 80px; flex-shrink: 0; }
+
+        /* FOOTER */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 25px 40px;
+            text-align: center;
+        }
+
+        .footer .logo { font-size: 1.2em; font-weight: 900; margin-bottom: 5px; }
+        .footer .tagline { color: #FFD700; font-style: italic; font-size: 0.9em; margin-bottom: 15px; }
+        .footer .contact { color: #aaa; font-size: 0.85em; line-height: 1.8; }
+        .footer .contact a { color: #FF8C00; text-decoration: none; }
+
+        @media print {
+            * { box-shadow: none !important; }
+            body { background: white; font-size: 10pt; }
+            .container { max-width: 100%; }
+            .header { background: #1a1a1a !important; color: white; padding: 20px; }
+            .header .tagline { color: #FFD700 !important; }
+            .sfx { background: #1a1a1a !important; color: #FFD700 !important; }
+            .host-block { page-break-inside: avoid; }
+            .segment { page-break-inside: avoid; }
+            .arquitectura { background: #1a1a1a !important; color: white !important; page-break-inside: avoid; }
+            .footer { background: #1a1a1a !important; color: white !important; }
+            .footer .tagline { color: #FFD700 !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Mr. Putrid's Den</div>
+        <h1>EP.002 — Black Sabbath: El Génesis del Heavy Metal</h1>
+        <div class="tagline">Donde los riffs encuentran el whisky</div>
+        <div class="meta">
+            <span class="meta-item">⏱️ ~60 minutos</span>
+            <span class="meta-item">🎙️ Co-host</span>
+            <span class="meta-item">📅 2026</span>
+            <span class="meta-item">~3,500 palabras</span>
+            <span class="meta-item">🎸 Análisis profundo</span>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row" style="color:#FF8C00; font-weight:bold;">
+                <span class="arq-num">#</span>
+                <span class="arq-seg">Segmento</span>
+                <span class="arq-time">Tiempo</span>
+                <span>Contenido</span>
+            </div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Intro music</span><span class="arq-time">0:00–0:30</span><span>Stevie Ray + BLS — fade out</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Bienvenida</span><span class="arq-time">0:30–2:30</span><span>Andrés abre, Juan entra. Referencia EP.001</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">¿Por qué Sabbath?</span><span class="arq-time">2:30–6:00</span><span>Justificación del episodio, tesis</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Bloque A — Origen</span><span class="arq-time">6:00–28:00</span><span>Birmingham, Iommi, el accidente, el primer riff</span></div>
+            <div class="arq-row"><span class="arq-num">—</span><span class="arq-seg">[INTERCAMBIO A]</span><span class="arq-time">28:00–30:00</span><span>Reacción libre, debate primer álbum</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">Bloque B — Paranoid</span><span class="arq-time">30:00–52:00</span><span>El álbum, las canciones, el legado</span></div>
+            <div class="arq-row"><span class="arq-num">—</span><span class="arq-seg">[INTERCAMBIO B]</span><span class="arq-time">52:00–55:00</span><span>Debate: canción favorita de Paranoid</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Takeaway / Reflexión</span><span class="arq-time">55:00–58:30</span><span>Lo que Sabbath nos enseña hoy</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Cierre</span><span class="arq-time">58:30–60:00</span><span>Próximo episodio, despedida</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">Outro music</span><span class="arq-time">60:00–60:30</span><span>Jazz Billie Holiday — fade in</span></div>
+        </div>
+    </div>
+
+    <!-- GUIÓN -->
+    <div class="section">
+        <h2>Guión Completo</h2>
+
+        <!-- SEG 1: INTRO MUSIC -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">1</div>
+                <div class="segment-title">Intro Music</div>
+                <div class="segment-time">0:00 — 0:30</div>
+            </div>
+            <div class="sfx">[SFX: INTRO — Stevie Ray Vaughn meets Black Label Society. Guitarra blues eléctrica + heavy metal. Voz femenina gutural. 30 segundos. Fade out lento.]</div>
+        </div>
+
+        <!-- SEG 2: BIENVENIDA -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">2</div>
+                <div class="segment-title">Bienvenida</div>
+                <div class="segment-time">0:30 — 2:30</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Bienvenido de vuelta a Mr. Putrid's Den.<br><br>
+                    [PAUSA]<br><br>
+                    Si usted escuchó el episodio anterior — el primero, el de la bienvenida — sabe que prometimos algo: que cada episodio de este podcast iba a ir directo al hueso. Sin relleno. Sin listas de canciones vacías. Música de verdad, con historia, con contexto, con todo lo que hace que un riff le cambie la forma de escuchar el mundo.<br><br>
+                    Hoy cumplimos esa promesa. Y lo hacemos con la banda que, según nosotros, más merece estar en el episodio dos de cualquier podcast de rock o metal.<br><br>
+                    Soy Andrés, y estoy con Juan —
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Juan, presente. Y ya con ganas de hablar de esto porque la verdad es que llevamos días discutiendo por mensajes sobre qué canción de estos tipos es la más importante. No la mejor — la más importante. Que son dos cosas completamente diferentes.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Exactamente. Y esa diferencia la vamos a explorar hoy. Porque de eso se trata este episodio.<br><br>
+                    Hoy hablamos de Black Sabbath.
+                </div>
+            </div>
+        </div>
+
+        <!-- SEG 3: ¿POR QUÉ SABBATH? -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">3</div>
+                <div class="segment-title">¿Por qué Black Sabbath?</div>
+                <div class="segment-time">2:30 — 6:00</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Antes de arrancar con la historia, quiero responder una pregunta que seguramente se están haciendo muchos de los que escuchan esto por primera vez: ¿por qué empezar con Black Sabbath y no con Led Zeppelin? ¿O con The Beatles? ¿O con cualquier otra banda que también podría ser "el comienzo de todo"?<br><br>
+                    Y la respuesta corta es: porque Black Sabbath inventó un género. Punto.<br><br>
+                    Led Zeppelin es extraordinario. Es una de las bandas más importantes de la historia. Pero Led Zeppelin tomó el blues, el folk, el rock and roll, y los mezcló de una manera brutal. Brillante, pero construida sobre algo que ya existía.<br><br>
+                    Black Sabbath no. Black Sabbath llegó con un sonido que no tenía precedente. Un sonido que hoy está en todas partes — en el metal moderno, en el grunge, en el doom, en el stoner rock — y muy poca gente lo sabe. Muy poca gente hace la conexión.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y esa es precisamente la historia que queremos contar hoy. Porque Black Sabbath no llegó desde un estudio lujoso en Londres. No nació de músicos de conservatorio. No tenía un productor brillante detrás.<br><br>
+                    Black Sabbath llegó desde uno de los lugares más oscuros de Inglaterra. Literalmente. Y esa oscuridad — física, económica, social — está metida en cada nota que tocaron.<br><br>
+                    Así que vamos por partes. Primero: de dónde vienen.
+                </div>
+            </div>
+        </div>
+
+        <!-- SEG 4: BLOQUE A — ORIGEN -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">4</div>
+                <div class="segment-title">Bloque A — El Origen: Birmingham, Iommi y el Primer Riff</div>
+                <div class="segment-time">6:00 — 28:00</div>
+            </div>
+
+            <div class="nota"><strong>[NOTA]</strong> Este bloque tiene tres partes. No es lectura — es conversación. Andrés lanza los datos, Juan reacciona y suma. Dejar espacio para que fluya naturalmente.</div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Corría 1968. Birmingham, Inglaterra.<br><br>
+                    Ahora, cuando decimos Birmingham, la mayoría de gente piensa en una ciudad industrial cualquiera. Pero Birmingham en los 60 era algo especial — y no en el buen sentido. Era el corazón de lo que los ingleses llamaban el Black Country: la región de las fábricas de acero, de los altos hornos, de las fundiciones. Era el lugar donde se fabricaron las armas de dos guerras mundiales. El humo era permanente. El ruido, constante. El trabajo era duro, físico, peligroso.<br><br>
+                    Y ahí, en ese contexto, crecieron cuatro muchachos que iban a cambiar la historia de la música.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y eso importa. Importa mucho. Porque el ambiente en el que creces se mete en lo que haces. No puede ser coincidencia que una banda que creció literalmente rodeada de acero, de máquinas, de ese ruido industrial constante, haya inventado el metal más pesado que existía hasta ese momento.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Exacto. Y los cuatro eran: Ozzy Osbourne en la voz, Tony Iommi en la guitarra, Geezer Butler en el bajo, y Bill Ward en la batería.<br><br>
+                    Ninguno venía de familia de músicos. Ninguno había estudiado música formalmente. Eran cuatro trabajadores jóvenes de clase obrera que encontraron en la música una salida.<br><br>
+                    Al principio se llamaban Earth. Tocaban en pequeños bares, pubs locales. Un sonido que mezclaba blues, algo de jazz, algo de rock. Pero sentían que algo faltaba. Sentían que ese sonido no representaba realmente lo que vivían.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y hay un momento específico en esa historia que me parece increíble. Geezer Butler — el bajista, que también escribía la mayoría de las letras — pasó por una época muy intensa de lecturas: ocultismo, magia negra, demonología. Y una noche tuvo una experiencia que lo marcó profundamente. Dijo que vio una figura oscura al pie de su cama.<br><br>
+                    Esa experiencia la convirtió en letra. Y ese miedo, esa oscuridad que sintió, terminó siendo la base de las primeras canciones de Black Sabbath.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    El nombre también tiene esa historia. Se llamaban Earth, pero había otra banda con ese nombre. Necesitaban uno nuevo. Y Geezer se fijó en algo: cada vez que ponían una película de terror en el cine del frente — de Boris Karloff, de ese estilo — la cola era enorme. La gente pagaba para asustarse. Para sentir algo intenso.<br><br>
+                    Y él pensó: ¿por qué la música no puede hacer eso? ¿Por qué la música no puede generar esa misma sensación de tensión, de algo oscuro y poderoso que te provoca escalofrío?<br><br>
+                    Y así nació el nombre. Black Sabbath. Tomado de una película de Boris Karloff de 1963.
+                </div>
+            </div>
+
+            <div class="intercambio">[INTERCAMBIO — Andrés y Juan reaccionan: ¿cuál fue su primera vez escuchando Black Sabbath? ¿Qué sintieron? Máximo 2-3 minutos, fluye natural.]</div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Pero ahora viene la parte de esta historia que, para mí, es la más increíble. La parte que involucra a Tony Iommi. Y si no conocen esta historia, prepárense, porque es de las que no se olvidan fácilmente.<br><br>
+                    Tony Iommi tenía 17 años. Trabajaba en una fábrica procesando láminas de metal. Y estaba por renunciar — iba a dejar esa fábrica para dedicarse completamente a la música.<br><br>
+                    En su último día de trabajo, en su último turno, una máquina se cerró sobre su mano. Le amputó las puntas de los dedos medio e índice de la mano derecha — la mano con la que pisaba los trastes.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    En su último día. No el primero, no el del medio. El último.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    El último día. Y claro, lo primero que pensó fue: se acabó. La guitarra, la música, todo. Con las puntas de los dedos amputadas, no hay forma de presionar las cuerdas con suficiente fuerza.<br><br>
+                    Pero entonces alguien le mostró grabaciones de Django Reinhardt. Un guitarrista de jazz belga que en los años 30 sufrió un accidente en un incendio de caravana y quedó con dos dedos de la mano izquierda sin movilidad. Y aun así, con dos dedos funcionales y dos paralizados, Django Reinhardt se convirtió en uno de los guitarristas más importantes de la historia del jazz.<br><br>
+                    Eso cambió la perspectiva de Iommi.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Un músico de jazz de los años 30 le salvó la carrera al hombre que iba a inventar el heavy metal. Eso es una conexión que nadie se imagina.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Nadie. Y lo que hizo Iommi después fue genial en su practicidad. Fabricó sus propias puntas de dedos de plástico — tomó botellas de plástico, las derritió, moldeó unas pequeñas fundas para sus dedos heridos. Después usó cuero de una chaqueta vieja para forrarlas y que tuvieran algo de sensibilidad.<br><br>
+                    Con esas puntas artificiales, presionar las cuerdas seguía siendo difícil. Doloroso. Así que hizo dos cosas: usó cuerdas más livianas — casi de banjo — para reducir la tensión. Y bajó la afinación de toda la guitarra. En lugar de afinar en mi estándar, bajó todo medio tono o un tono completo.<br><br>
+                    Y ahí. Ahí está el origen del sonido.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    El downtuning. Eso es lo que hace que la guitarra de Black Sabbath suene más oscura, más pesada, más amenazante que cualquier cosa que existía en ese momento. No fue una decisión estética. Fue una adaptación forzada por un accidente industrial.<br><br>
+                    Todo el metal que existe hoy — todo el down-tuning, todo el doom metal, todo el stoner rock — tiene su raíz en que a un muchacho de 17 años una máquina le aplastó los dedos en una fábrica de Birmingham.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y de ese sonido nuevo, de esa guitarra afinada más abajo de lo normal, nació el riff más importante de la historia del metal.<br><br>
+                    En 1970 entran al estudio a grabar su primer álbum. Tenían un presupuesto mínimo — unas pocas libras, tiempo de estudio limitado. Y la primera canción que graban se llama igual que la banda: Black Sabbath.<br><br>
+                    El riff de esa canción arranca con algo que en música se llama tritono. También conocido históricamente como "el intervalo del diablo" — diabolus in musica, lo llamaban en la Edad Media. Era un intervalo que la iglesia tenía prohibido en la música sagrada porque sonaba oscuro, inestable, inquietante.<br><br>
+                    Y Iommi lo pone en la apertura del primer álbum. No por conocimiento musical erudito — Iommi no había estudiado teoría. Lo puso porque sonaba exactamente como lo que querían decir.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y si usted no ha escuchado esa canción en un buen sistema de sonido, hágalo. Hay una lluvia al principio. Una campana. Y después ese riff entra lento, pesado, inevitable. Es como escuchar algo que viene de muy adentro de la tierra.<br><br>
+                    Cuando eso salió en 1970, no existía nada igual. Nada. El rock duro de la época era más rápido, más brillante. Led Zeppelin tenía un blues lleno de energía y de luz. Esto era lo contrario. Era oscuridad pura convertida en sonido.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y eso resume el primer álbum. Se llama Black Sabbath, se publicó en febrero de 1970, y según cuentan, fue grabado en menos de dos días. Con un presupuesto ridículo. Sin edición elaborada. Sin capas y capas de producción.<br><br>
+                    La crítica lo destrozó. Los críticos de música del momento dijeron que era ruido, que era simplón, que era música para gente sin criterio.<br><br>
+                    El público lo amó. Entró al top 10 en el Reino Unido en su primera semana.
+                </div>
+            </div>
+        </div>
+
+        <!-- INTERCAMBIO A -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">—</div>
+                <div class="segment-title">Intercambio A — El Primer Álbum</div>
+                <div class="segment-time">28:00 — 30:00</div>
+            </div>
+
+            <div class="intercambio">[INTERCAMBIO LIBRE — Andrés y Juan debaten: ¿cuál es la canción más importante del primer álbum? ¿"Black Sabbath" la canción, "The Wizard", "N.I.B."? Debate real, sin respuesta correcta. Máximo 2 minutos.]</div>
+
+            <div class="nota"><strong>[NOTA]</strong> Este intercambio es el puente emocional entre los dos bloques. Que fluya. No hay respuesta correcta — la idea es que el oyente sienta que está en la conversación con ustedes.</div>
+        </div>
+
+        <!-- SEG 5: BLOQUE B — PARANOID -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">5</div>
+                <div class="segment-title">Bloque B — Paranoid: El Álbum que Definió el Metal</div>
+                <div class="segment-time">30:00 — 52:00</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    El primer álbum fue la explosión. El segundo fue la confirmación.<br><br>
+                    Paranoid salió en septiembre de 1970. Apenas seis meses después del primer álbum. Seis meses.<br><br>
+                    Hoy en día una banda tarda dos o tres años entre discos. Estos tipos sacaron dos álbumes en el mismo año, y el segundo es, para muchos — incluido yo — uno de los cinco o diez mejores discos de rock de todos los tiempos.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y lo que hace especial a Paranoid no es solo que suene bien — es que en ocho canciones resuelve completamente lo que va a ser el heavy metal para los siguientes cincuenta años.<br><br>
+                    Empecemos por el comienzo. "War Pigs". La canción con la que abre el álbum.<br><br>
+                    Originalmente esa canción se llamaba "Walpurgis" — una noche del sabbat demoníaco — y tenía letras mucho más literalmente ocultistas. Pero la disquera entró en pánico cuando empezaban a sonar las noticias de Vietnam, y les pidieron que cambiaran la temática. El resultado fue una letra que en lugar de hablar de demonios, habla de políticos que mandan a los jóvenes a morir en guerras que ellos mismos no van a pelear.<br><br>
+                    "Generals gathered in their masses / just like witches at black masses."<br><br>
+                    Misma energía. Diferente blanco.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y eso es algo que se repite en todo el álbum. Las letras de Geezer Butler son mucho más inteligentes de lo que la gente les da crédito. Hay un comentario social real ahí. "Hand of Doom" habla de adicción, de la heroína que estaba destruyendo a una generación completa. "Electric Funeral" habla del miedo nuclear.<br><br>
+                    Esto no es solo ruido pesado. Hay un mensaje.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y luego está "Iron Man". Que es probablemente la canción más reconocible de todo el catálogo de Black Sabbath.<br><br>
+                    El riff de apertura de "Iron Man" es de los más famosos en la historia del rock. Casi todo el mundo lo ha escuchado alguna vez aunque no sepa de quién es.<br><br>
+                    La letra, que la escribió Geezer, cuenta una historia de ciencia ficción: un hombre viaja al futuro, ve el apocalipsis, intenta volver al presente para advertir a la humanidad, pero en el proceso de viaje en el tiempo queda atrapado, su cuerpo se convierte en acero, ya no puede comunicarse, y la humanidad lo ignora. Entonces, en un giro oscuro, él mismo provoca el apocalipsis que fue a prevenir.<br><br>
+                    Eso es la letra de "Iron Man". Años antes de que existiera el género de ciencia ficción en el metal, en el thrash metal, en el metal progresivo.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y nadie lo sabe. La gente canta "I am Iron Man" pensando que es la canción de Tony Stark de Marvel, cuando la canción existe desde 1970 y no tiene nada que ver con eso.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    [Ríe] Exactamente. Marvel tomó prestado el nombre, básicamente. Y nadie reclama porque Black Sabbath quedó tan asociado con lo oscuro que mucha gente no conecta el punto.<br><br>
+                    Pero la joya oculta de este álbum — la historia que más me gusta contar — es la canción que le da título. "Paranoid".<br><br>
+                    "Paranoid" era una canción relleno. Cuando terminaron de grabar el álbum, la disquera les dijo que faltaba tiempo, que había que completar el disco. Necesitaban una canción más. Y en literalmente unos pocos minutos — hay versiones que dicen que en veinte minutos escribieron letra y melodía completa — nació "Paranoid".<br><br>
+                    Esa canción de emergencia, esa canción relleno que hicieron para completar el tracklist, fue el primer sencillo del álbum. Llegó al puesto número cuatro en el UK Singles Chart. Es la canción más conocida de la banda.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    A veces los accidentes son mejores que los planes. Eso pasa mucho en la música y en cualquier cosa creativa. La canción que hiciste sin pensar, la foto que tomaste sin preparar, el párrafo que escribiste en cinco minutos... a veces eso es lo que más conecta.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y después del Paranoid, ¿qué pasa? La banda sigue. Vol. 4 en 1972. Sabbath Bloody Sabbath en 1973. Siguieron explorando, siguieron expandiéndose. Vol. 4 tiene un lado más experimental, más influido por lo que estaba pasando en la música en ese momento. Hay una canción que se llama "Changes" que es una balada de piano. Ozzy en una balada de piano. Nadie lo esperaba.<br><br>
+                    Pero después llegaron los años de los problemas. Las drogas, el alcohol, las peleas internas. Y en 1979, después de años de tensión, Ozzy Osbourne sale de la banda.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y acá hay algo que me parece importante decir, porque mucha gente que conoce a Black Sabbath solo conoce la era Ozzy. Pero cuando Ozzy sale, entra Ronnie James Dio. Y con Dio graban "Heaven and Hell" en 1980. Y Heaven and Hell es otro disco increíble. Diferente — Dio tiene una voz completamente distinta, más potente, más de metal clásico — pero a la altura.<br><br>
+                    Black Sabbath no fue solo Ozzy. Fue una maquinaria que funcionó con diferentes voces, en diferentes momentos, y siempre mantuvo un nivel.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Cien por ciento. Y para cerrar el bloque de historia, hay algo que vale la pena detenerse a pensar: el legado. ¿Qué le deben al sonido de Black Sabbath?<br><br>
+                    Le deben todo el doom metal. Sleep, Electric Wizard, Candlemass — todos esos sonidos lentos, pesados, oscuros. Directamente de Sabbath.<br><br>
+                    Le deben el stoner rock. Queens of the Stone Age, Monster Magnet — esa afinación sucia y lenta tiene su ADN en Iommi.<br><br>
+                    Le deben el grunge. Soundgarden, Alice in Chains — sobre todo Alice in Chains. Escuchen "Them Bones" y luego escuchen cualquier cosa de Sabbath. El parentesco es evidente.<br><br>
+                    Le deben el thrash metal. Metallica lo reconoció. Slayer lo reconoció. El riff rápido del thrash metal tiene su raíz en la oscuridad de Birmingham.<br><br>
+                    Y le deben, en algún sentido, hasta el punk. La actitud de que cualquiera puede hacer música, de que no necesitas haber estudiado, de que la autenticidad vale más que la técnica perfecta — eso también viene de Sabbath.
+                </div>
+            </div>
+        </div>
+
+        <!-- INTERCAMBIO B -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">—</div>
+                <div class="segment-title">Intercambio B — ¿Cuál es la canción de Paranoid?</div>
+                <div class="segment-time">52:00 — 55:00</div>
+            </div>
+
+            <div class="intercambio">[INTERCAMBIO LIBRE — Andrés y Juan eligen: si pudieran llevar UNA sola canción del álbum Paranoid al futuro, ¿cuál sería? ¿War Pigs? ¿Iron Man? ¿Paranoid? ¿Fairies Wear Boots? Debate honesto. Cada uno defiende la suya.]</div>
+        </div>
+
+        <!-- SEG 6: TAKEAWAY / REFLEXIÓN FINAL -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">6</div>
+                <div class="segment-title">Takeaway — Lo que Black Sabbath nos enseña hoy</div>
+                <div class="segment-time">55:00 — 58:30</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Antes de cerrar, siempre queremos dejar algo concreto. No solo la historia — sino qué hace esa historia relevante hoy.<br><br>
+                    Y lo que me llevo yo de Black Sabbath es algo sobre limitaciones. Tony Iommi perdió las puntas de sus dedos y, al adaptarse a eso, inventó un sonido nuevo. Las limitaciones no lo detuvieron — lo transformaron.<br><br>
+                    Cuando uno tiene menos opciones, a veces toma decisiones más interesantes. El downtuning no fue una búsqueda artística intelectual. Fue una solución práctica a un problema físico. Y de esa solución práctica salió algo que no existía.<br><br>
+                    Eso me parece una lección enorme para cualquiera que crea cualquier cosa — música, diseño, escritura, lo que sea. Las restricciones no son el enemigo de la creatividad. A veces son el origen.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y yo agrego algo. Black Sabbath tardó años en ser reconocido por la crítica. Los primeros años los destrozaron. Los llamaban simplones, sin talento, ruidosos. Y sin embargo el público los amaba. Vendían discos, llenaban salas.<br><br>
+                    Hay algo en eso que habla de la diferencia entre lo que la gente con criterio "oficial" dice que es bueno, y lo que realmente conecta con las personas. Black Sabbath conectaba con gente que trabajaba en fábricas, que vivía en ciudades industriales, que tenía vidas duras. Esa música era su música. Y eso vale más que cualquier crítica.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y por eso siguen vigentes más de cincuenta años después. No porque sean los mejores técnicamente. Sino porque fueron los más honestos con lo que eran y con lo que querían decir.<br><br>
+                    Eso es lo que hace duradera a una banda. Eso es lo que hace duradero a cualquier artista.
+                </div>
+            </div>
+        </div>
+
+        <!-- SEG 7: CIERRE -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">7</div>
+                <div class="segment-title">Cierre y Próximo Episodio</div>
+                <div class="segment-time">58:30 — 60:00</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Eso fue el episodio dos de Mr. Putrid's Den. Black Sabbath: el génesis del heavy metal.<br><br>
+                    Si hoy les dejamos una tarea — y siempre hay tarea — es esta: escuchen Paranoid de principio a fin. No en Spotify con skip a las canciones que ya conocen. El álbum completo. En orden. Idealmente con algo en la mano.<br><br>
+                    [Pausa] Un buen whisky sirve, pero un café también funciona.<br><br>
+                    Escúchenlo y fíjense en una sola cosa: cuántas canciones de los últimos veinte años reconocen en ese sonido. Cuántas cosas que escucharon después tienen ese ADN.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y si quieren seguir la conversación, nos pueden escribir. La dirección está al final, como siempre. Queremos saber qué piensan. Cuál es su canción favorita de Sabbath. Si son de la era Ozzy o de la era Dio. Si los conocían o fue este episodio el que los introdujo.<br><br>
+                    En el próximo episodio nos vamos al otro extremo del mapa. De lo más oscuro a lo más técnico. Vamos a hablar de los mejores riffs de metal de todos los tiempos — y ya les anticipo que Andrés y yo no estamos de acuerdo en casi nada de esa lista.<br><br>
+                    Así que prepárense para el debate.<br><br>
+                    Gracias por escucharnos. Esto es Mr. Putrid's Den. Donde los riffs encuentran el whisky.
+                </div>
+            </div>
+        </div>
+
+        <!-- SEG 8: OUTRO MUSIC -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">8</div>
+                <div class="segment-title">Outro Music</div>
+                <div class="segment-time">60:00 — 60:30</div>
+            </div>
+            <div class="sfx">[SFX: OUTRO — Jazz 1950s estilo Billie Holiday. Trío de mujeres de época. Fade in suave. "Sweet dreams, until we meet." Nostálgico, cálido, despedida elegante. 30 segundos.]</div>
+        </div>
+
+    </div><!-- /section guión -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="logo">Mr. Putrid's Den</div>
+        <div class="tagline">Donde los riffs encuentran el whisky</div>
+        <div class="contact">
+            EP.002 — Black Sabbath: El Génesis del Heavy Metal<br>
+            Producido: 2026-05-27<br><br>
+            <a href="mailto:hello@mrputridsden.com">hello@mrputridsden.com</a> ·
+            <a href="http://www.mrputridsden.com">www.mrputridsden.com</a><br>
+            <a href="mailto:Andres@mrputridsden.com">Andres@mrputridsden.com</a> ·
+            <a href="mailto:Juan@mrputridsden.com">Juan@mrputridsden.com</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
