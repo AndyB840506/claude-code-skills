@@ -59,11 +59,15 @@ Bottom bar: solid [color principal de marca] background. Brand colors throughout
 
 > **⚠️ Regla del footer:** El lado derecho del footer bar siempre muestra los logos de las **3 plataformas de streaming** (Spotify · Apple Podcasts · Amazon Music) en color plata/blanco. **NUNCA** poner redes sociales (Instagram, Facebook, TikTok) en el artwork del episodio — esas van en los flyers de social media, no en la portada.
 >
-> **⚠️ Regla de íconos de plataforma:** Los modelos de imagen NO pueden renderizar logos de marca confiablemente — confunden iconos similares (PlayStation ≡ Apple Podcasts por la forma circular). En el prompt, **describir los íconos por forma geométrica**, no por nombre de marca:
-> - ❌ `"Spotify, Apple Podcasts, Amazon Music icons"`
+> **⚠️ Regla de íconos de plataforma:** En la generación inicial NO usar nombres de marca — el modelo los puede confundir con logos similares (ej: PlayStation en lugar de Apple Podcasts). Describir por forma geométrica:
+> - ❌ `"Spotify, Apple Podcasts, Amazon Music icons"` ← en el prompt de generación
 > - ✅ `"three small minimalist audio streaming icons in silver — icon 1: circle with three curved horizontal sound-wave lines, icon 2: circle with a microphone silhouette, icon 3: circle with a musical note. NO gaming logos. NO console logos. NO PlayStation."`
 >
-> Si los íconos siguen saliendo mal: generá el footer sin íconos y añadí los logos reales en Canva.
+> **Corrección en Flow (modo edición):** Si los íconos salen incorrectos, usar la función de edición de imagen de Flow escribiendo:
+> `"replace the logos for Spotify logo, Amazon Music logo, and Apple Music logo"`
+> Flow sí puede reemplazar logos por marca en modo edición — solo no en la generación inicial.
+>
+> **Fallback final:** Si la edición tampoco funciona → añadir logos reales en Canva.
 
 ### Restricción final
 ```
