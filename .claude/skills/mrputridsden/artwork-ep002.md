@@ -154,24 +154,28 @@ Brand colors: #1a1a1a, #9B1C1C, #A8A8A8. No extra text outside specified overlay
 
 ## Prompts de animación — Omni / Flow Video
 
-**⚠️ Generar SIN texto.** Añadir overlays de título y logo en Canva o CapCut en post.
+**⚠️ Omni solo soporta formatos 9:16 y 16:9. El formato 1:1 queda descartado para animación** (workaround: añadir padding #1a1a1a para centrar la imagen en un frame 16:9).  
+Usar técnica **STATIC GRAPHIC OVERLAY** para mantener tipografía estática mientras el fondo anima.  
+Fallback si no funciona → añadir overlays en Canva o CapCut en post.
 
-### ANIMACIÓN 1:1 — Loop redes cuadradas
+### ANIMACIÓN 1:1 — ❌ NO SOPORTADO POR OMNI
 
 ```
-Cinematic slow-motion video, square 1:1 format. Industrial night scene. Massive rusted iron cross perfectly centered, Birmingham factory skyline behind. Multiple chimneys billow slow heavy smoke into a crimson-black sky. Deep red furnace glow at ground level illuminates the base of the cross from below with a pulsing warm light — slow, rhythmic, like breathing. Wisps of atmospheric fog move slowly at cobblestone level. Cold moonlight from above. Camera: very slow zoom toward the center of the cross. The composition feels like a devotional image shot from inside a nightmare. No text. Photorealistic. 35mm Kodak Tri-X film grain. 1970s color grading. Deep blacks, blood red, cold silver. Seamless loop.
+Omni no soporta el formato cuadrado 1:1. Para redes que requieren 1:1, opciones:
+- Exportar el video 9:16 y recortarlo a cuadrado en CapCut/Canva
+- Añadir relleno (#1a1a1a) en los lados del video 9:16 para crear un 1:1
 ```
 
 ### ANIMACIÓN 9:16 — Stories / Reels / TikTok
 
 ```
-Cinematic slow-motion video, vertical 9:16 format. Dark atmospheric industrial night scene. A massive rusted iron cross stands center frame, slightly below the midpoint. Behind it: factory chimneys on both sides slowly billow thick dark smoke upward into a black sky. The crimson ember glow at the base of the chimneys pulses rhythmically — like furnaces breathing in and out. Thin wisps of white fog drift slowly across wet cobblestones in the foreground, left to right. Cold blue moonlight from above creates subtle highlights on the oxidized iron surface of the cross. Camera movement: ultra slow push-in toward the cross from slightly below eye level, tilting upward. The cross grows heavier and more imposing as the shot progresses. No text. Photorealistic. 35mm film grain. Oppressive, ancient atmosphere. 1970s dark color grading — deep blacks, blood-red crimson, cold steel blue. Seamless loop.
+Cinematic slow-motion video, vertical 9:16 format. Dark atmospheric industrial night scene. A massive rusted iron cross stands center frame, slightly below the midpoint. Behind it: factory chimneys on both sides slowly billow thick dark smoke upward into a black sky. The crimson ember glow at the base of the chimneys pulses rhythmically — like furnaces breathing in and out. Thin wisps of white fog drift slowly across wet cobblestones in the foreground, left to right. Cold blue moonlight from above creates subtle highlights on the oxidized iron surface of the cross. Camera movement: ultra slow push-in toward the cross from slightly below eye level, tilting upward. The cross grows heavier and more imposing as the shot progresses. STATIC GRAPHIC OVERLAY: All typography and logos from the reference image must remain perfectly sharp, static, and unmoving throughout the entire video. The branding elements (MR. PUTRID'S DEN, MPD, footer bar) are locked in place while the background environment animates behind them. Photorealistic. 35mm film grain. Oppressive, ancient atmosphere. 1970s dark color grading — deep blacks, blood-red crimson, cold steel blue. Seamless loop.
 ```
 
 ### ANIMACIÓN 16:9 — YouTube / Web
 
 ```
-Cinematic widescreen video, 16:9 format. Night scene over industrial Birmingham, England. Opens on the Birmingham skyline at ground level — factory chimneys stretch across the horizon, smoke rising slowly in thick columns into a crimson-black sky. Orange-red furnace glow pulses at the base of each chimney. Dense atmospheric fog drifts slowly through the mid-ground. Wet cobblestones in the foreground reflect the eerie red light. Camera: slow horizontal pan from right to left, revealing the rusted iron cross standing left of center — it emerges from the fog as the pan progresses, becoming the anchor of the frame. End on a static close shot of the cross, glow pulsing from below. No text. Photorealistic. 35mm film grain. Oppressive industrial atmosphere. 1970s color grading. 10-15 seconds.
+Cinematic widescreen video, 16:9. Night in industrial Birmingham. The scene opens on the industrial skyline, with factory chimneys and smoke rising into a crimson-black sky. Camera: slow horizontal pan from right to left, revealing the massive rusted iron cross standing left of center as it emerges from the atmospheric fog. The video ends on a steady shot of the cross with the crimson furnace glow pulsing from below. STATIC GRAPHIC OVERLAY: All typography and logos from the reference image must remain perfectly sharp, static, and unmoving throughout the entire video. The branding elements (MR. PUTRID'S DEN, MPD, footer bar) are locked in place while the background environment animates behind them. Photorealistic, 35mm film grain, 1970s color grading. No extra text.
 ```
 
 ---
