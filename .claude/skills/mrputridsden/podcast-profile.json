@@ -68,8 +68,13 @@
   "links": {
     "web": "www.mrputridsden.com",
     "spotify": { "url": "https://open.spotify.com/episode/0LW93D5Q5KhQYfIX96xOEH?si=4fee5140b6934fe6", "status": "activo", "nota": "EP.001 live — EP.002 se agrega al publicar el 1 junio" },
+    "apple": { "url": "https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794", "status": "activo" },
+    "amazon_music": { "url": "https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den", "status": "activo" },
+    "iheart": { "url": "https://iheart.com/podcast/334702214/", "status": "activo" },
+    "castbox": { "url": "https://castbox.fm/app/castbox/player/id7241447", "status": "activo" },
+    "pocket_casts": { "url": "https://pca.st/36g1ew1r", "status": "activo" },
     "instagram": { "url": "https://www.instagram.com/mrputridsden", "status": "activo", "handle": "@mrputridsden" },
-    "apple": { "url": "", "status": "pendiente", "nota": "Se activa tras distribución en Spotify" },
+    "facebook": { "url": "https://www.facebook.com/share/1BZis2wXSF/", "status": "activo" },
     "youtube": { "url": "", "status": "pendiente", "nota": "Canal por crear" },
     "rss": { "url": "", "status": "pendiente", "nota": "Andrés proporciona al publicar EP.001" }
   },
