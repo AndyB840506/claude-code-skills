@@ -29,10 +29,10 @@
   ],
   "colores": {
     "principal": "#1a1a1a",
-    "secundario": "#FF8C00",
-    "acento": "#FFD700"
+    "secundario": "#9B1C1C",
+    "acento": "#A8A8A8"
   },
-  "logo_descripcion": "Estilo vintage collage + pop art. Colores: negro, naranja/dorado cálido, con acentos de verde neón y magenta. Elementos: referencias a bandas icónicas, whisky, vinilos, estética underground/conciertos.",
+  "logo_descripcion": "Estilo vintage póster de concierto + rock clásico. Colores: negro profundo, crimson/rojo profundo (#9B1C1C), plateado/acero (#A8A8A8). Elementos: referencias a bandas icónicas, whisky, vinilos, estética underground/conciertos. Sin naranja. Vibe: cuero, metal clásico, backstage.",
   "numeracion": "EP.001",
   "estilo_narración": "mixto",
   "word_count_target": 3500,
