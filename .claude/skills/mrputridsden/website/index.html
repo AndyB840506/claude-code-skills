@@ -399,6 +399,13 @@
       line-height: 1;
       pointer-events: none;
       user-select: none;
+      z-index: 0;
+    }
+
+    /* Ensure all card content sits above the ghost number */
+    .episode-card > * {
+      position: relative;
+      z-index: 1;
     }
 
     .ep-number {
@@ -417,6 +424,8 @@
       color: var(--white);
       line-height: 1.1;
       margin-bottom: 16px;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
 
     .ep-meta {
