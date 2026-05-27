@@ -179,24 +179,3 @@ Después de los 3 prompts, añade:
 
 3. Pregunta: "¿Continuamos con el plan de social media?"
 
----
-
-## Animaciones con Omni (Google Flow Video)
-
-⚠️ **Limitación de formato:** Omni solo procesa **9:16 y 16:9**. El formato 1:1 no está soportado.  
-Workaround 1:1 → exportar el video 9:16 y recortarlo a cuadrado en CapCut/Canva, o añadir padding `#1a1a1a` en los lados.
-
-### Técnica STATIC GRAPHIC OVERLAY (preferida)
-
-En lugar de generar sin texto y añadir en post, añadir al final del prompt de animación:
-
-```
-STATIC GRAPHIC OVERLAY: All typography and logos from the reference image must remain perfectly sharp, static, and unmoving throughout the entire video. The branding elements ([SHOW NAME], EP.NNN, footer bar) are locked in place while the background environment animates behind them.
-```
-
-Esta técnica mantiene el branding integrado directamente en el video generado y confirmada funcional en Flow Omni (EP.002).
-
-### Fallback
-
-Si STATIC GRAPHIC OVERLAY no respeta la tipografía correctamente:
-→ Generar sin texto (`"No text"`) y añadir overlays en Canva o CapCut en post.

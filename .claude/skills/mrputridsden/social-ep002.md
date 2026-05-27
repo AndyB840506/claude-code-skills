@@ -253,9 +253,8 @@ Episodio completo ya disponible en Spotify, Amazon Music y Apple Podcasts — li
 
   Aún necesitas:
   □ Imagen 1:1 generada en Google Flow → comprimida para Spotify
-  □ Imagen 9:16 para Stories → generada en Google Flow
+  □ Imagen 9:16 para Stories → generada en Google Flow (usar para Día 2 Stories también)
   □ Clip de audio 30-60 seg (momento más impactante del episodio)
-  □ Card visual con la quote del Día 2
   ✓ Instagram: @mrputridsden · Facebook: confirmado
   □ TikTok y X/Twitter: pendientes (cuentas no activas aún)
   □ Links de Spotify, Amazon Music y Apple Podcasts (disponibles al publicar)
