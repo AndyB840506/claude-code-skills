@@ -149,3 +149,48 @@ Brand colors: #1a1a1a, #9B1C1C, #A8A8A8. No extra text outside specified overlay
     reusar esta estructura como base.
 ══════════════════════════════════════════
 ```
+
+---
+
+## Prompts de animación — Omni / Flow Video
+
+**⚠️ Generar SIN texto.** Añadir overlays de título y logo en Canva o CapCut en post.
+
+### ANIMACIÓN 1:1 — Loop redes cuadradas
+
+```
+Cinematic slow-motion video, square 1:1 format. Industrial night scene. Massive rusted iron cross perfectly centered, Birmingham factory skyline behind. Multiple chimneys billow slow heavy smoke into a crimson-black sky. Deep red furnace glow at ground level illuminates the base of the cross from below with a pulsing warm light — slow, rhythmic, like breathing. Wisps of atmospheric fog move slowly at cobblestone level. Cold moonlight from above. Camera: very slow zoom toward the center of the cross. The composition feels like a devotional image shot from inside a nightmare. No text. Photorealistic. 35mm Kodak Tri-X film grain. 1970s color grading. Deep blacks, blood red, cold silver. Seamless loop.
+```
+
+### ANIMACIÓN 9:16 — Stories / Reels / TikTok
+
+```
+Cinematic slow-motion video, vertical 9:16 format. Dark atmospheric industrial night scene. A massive rusted iron cross stands center frame, slightly below the midpoint. Behind it: factory chimneys on both sides slowly billow thick dark smoke upward into a black sky. The crimson ember glow at the base of the chimneys pulses rhythmically — like furnaces breathing in and out. Thin wisps of white fog drift slowly across wet cobblestones in the foreground, left to right. Cold blue moonlight from above creates subtle highlights on the oxidized iron surface of the cross. Camera movement: ultra slow push-in toward the cross from slightly below eye level, tilting upward. The cross grows heavier and more imposing as the shot progresses. No text. Photorealistic. 35mm film grain. Oppressive, ancient atmosphere. 1970s dark color grading — deep blacks, blood-red crimson, cold steel blue. Seamless loop.
+```
+
+### ANIMACIÓN 16:9 — YouTube / Web
+
+```
+Cinematic widescreen video, 16:9 format. Night scene over industrial Birmingham, England. Opens on the Birmingham skyline at ground level — factory chimneys stretch across the horizon, smoke rising slowly in thick columns into a crimson-black sky. Orange-red furnace glow pulses at the base of each chimney. Dense atmospheric fog drifts slowly through the mid-ground. Wet cobblestones in the foreground reflect the eerie red light. Camera: slow horizontal pan from right to left, revealing the rusted iron cross standing left of center — it emerges from the fog as the pan progresses, becoming the anchor of the frame. End on a static close shot of the cross, glow pulsing from below. No text. Photorealistic. 35mm film grain. Oppressive industrial atmosphere. 1970s color grading. 10-15 seconds.
+```
+
+---
+
+## Card visual — Quote Día 2 (Social Media)
+
+**Para el post del Día 2 (Sábado 31 mayo) — formato 1:1**
+
+```
+Square format, 1080x1080 pixels. Minimalist typographic poster. Dark background #1a1a1a — nearly black, with subtle texture like aged paper or concrete.
+
+CENTER: Large quote text in WHITE condensed serif or sans-serif, bold:
+"Las restricciones no son
+el enemigo de la creatividad.
+A veces son el origen."
+
+Below the quote, a thin horizontal line in crimson #9B1C1C.
+
+Below the line: attribution in small silver #A8A8A8 — "Mr. Putrid's Den — EP.002"
+
+Bottom area: very subtle silhouette of industrial chimneys against a dark crimson glow, barely visible — like a watermark or shadow. Brand colors: #1a1a1a, #9B1C1C, #A8A8A8. Clean. No clutter. Award-winning editorial design.
+```
