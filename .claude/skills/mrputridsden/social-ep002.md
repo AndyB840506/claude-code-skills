@@ -5,7 +5,7 @@
 **Grabación:** Sábado 31 mayo  
 **Publicación:** Sábado 31 mayo a medianoche → disponible desde el domingo 1 junio
 
-> **⚠️ ANTES DE PUBLICAR:** Reemplaza los placeholders `[HANDLE_IG]`, `[HANDLE_FB]`, `[HANDLE_TK]`, `[HANDLE_TW]` con los handles reales del podcast en cada plataforma.
+> **✅ Handles actualizados:** Instagram `@mrputridsden` · Facebook: https://www.facebook.com/share/1BZis2wXSF/ · TikTok y X/Twitter: pendientes (no activos aún).
 
 ---
 
@@ -61,7 +61,7 @@ Un accidente.
 Dos dedos menos.
 Y un sonido que cambió todo. 🎸
 
-→ Viernes en [HANDLE_IG]
+→ Viernes en @mrputridsden
 ```
 
 ---
@@ -256,7 +256,8 @@ Episodio completo ya en Spotify — link en bio. 🤘
   □ Imagen 9:16 para Stories → generada en Google Flow
   □ Clip de audio 30-60 seg (momento más impactante del episodio)
   □ Card visual con la quote del Día 2
-  □ Reemplazar handles [HANDLE_IG] [HANDLE_FB] [HANDLE_TK] [HANDLE_TW]
+  ✓ Instagram: @mrputridsden · Facebook: confirmado
+  □ TikTok y X/Twitter: pendientes (cuentas no activas aún)
   □ Link de Spotify (disponible al publicar)
 ══════════════════════════════════════════════════
   Fechas:
