@@ -120,7 +120,7 @@ Y ese proceso de adaptación — esa solución práctica a un problema físico �
 
 No fue un plan. Fue una restricción que se convirtió en identidad.
 
-Mañana el episodio completo en Spotify — link en bio.
+Mañana el episodio completo en Spotify, Amazon Music y Apple Podcasts — link en bio.
 
 #MrPutridsDen #BlackSabbath #TonyIommi #HeavyMetal #DondeRiffsEncuentranWhisky #RocksMetalJazz #HistoriaDelMetal #PodcastMusica #Paranoid #OzzyOsbourne
 ```
@@ -136,7 +136,7 @@ el enemigo de la creatividad.
 A veces son el origen."
 ━━━━━━━━━━━━━━━━━━━━
 — Mr. Putrid's Den, EP.002
-🎙️ Mañana en Spotify
+🎙️ Mañana: Spotify · Amazon · Apple
 ```
 
 ---
@@ -191,7 +191,7 @@ YA DISPONIBLE 🎙️
 EP.002 — Black Sabbath:
 El Génesis del Heavy Metal
 
-→ [Sticker de link: Spotify]
+→ [Stickers de link: Spotify / Apple Podcasts / Amazon Music]
 ```
 
 ---
@@ -204,7 +204,7 @@ Un accidente le amputó las puntas de los dedos.
 Al adaptarse, inventó el heavy metal.
 
 Esta es la historia de Tony Iommi, Black Sabbath y Birmingham.
-EP.002 ya en Spotify. 🤘
+EP.002 ya en Spotify, Amazon Music y Apple Podcasts. 🤘
 
 Tweet 2:
 En este episodio hablamos de:
@@ -217,7 +217,7 @@ En este episodio hablamos de:
 Tweet 3:
 EP.002 — Black Sabbath: El Génesis del Heavy Metal
 
-Mr. Putrid's Den ya en Spotify.
+Mr. Putrid's Den en Spotify, Amazon Music y Apple Podcasts.
 [LINK]
 
 60 minutos. Sin cortes. Solo rock. 🖤
@@ -237,7 +237,7 @@ Primera línea (primer segundo del video):
 
 "El disco que cambió el heavy metal para siempre — grabado en un día, casi por accidente."
 
-Episodio completo ya en Spotify — link en bio. 🤘
+Episodio completo ya disponible en Spotify, Amazon Music y Apple Podcasts — link en bio. 🤘
 ```
 
 ---
@@ -258,7 +258,7 @@ Episodio completo ya en Spotify — link en bio. 🤘
   □ Card visual con la quote del Día 2
   ✓ Instagram: @mrputridsden · Facebook: confirmado
   □ TikTok y X/Twitter: pendientes (cuentas no activas aún)
-  □ Link de Spotify (disponible al publicar)
+  □ Links de Spotify, Amazon Music y Apple Podcasts (disponibles al publicar)
 ══════════════════════════════════════════════════
   Fechas:
   Día 1 (Intriga):     Viernes 30 mayo
