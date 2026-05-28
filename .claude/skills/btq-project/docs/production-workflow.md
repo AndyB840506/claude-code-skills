@@ -19,12 +19,12 @@
 
 1. Script planning and research (Claude)
 2. Draft script generation (Claude)
-3. Artwork prompts and quote cards (Gemini/Nani Banana)
+3. Artwork prompts (Gemini/Nani Banana)
 4. Final script review and approval (Andy)
 5. Recording (Andy + Reaper)
 6. Transcription (TurboScribe)
 7. Artwork generation (Gemini/Nani Banana)
-8. Video creation (Google Flow/Kling)
+8. Video creation (Google Flow/Kling) — opcional
 9. Social media assets (Gamma carousels)
 10. Copyright registration (Safe Creative)
 11. Publishing to Spotify and social channels

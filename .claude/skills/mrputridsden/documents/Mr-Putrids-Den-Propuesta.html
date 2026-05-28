@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Putrid's Den — Propuesta de Podcast</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            border-bottom: 5px solid #FF8C00;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 140, 0, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header h1 {
+            font-size: 4em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 900;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .tagline {
+            font-size: 1.8em;
+            color: #FFD700;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #ddd;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* SECCIONES */
+        .section {
+            padding: 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #FF8C00;
+            display: inline-block;
+        }
+
+        .section h3 {
+            font-size: 1.4em;
+            color: #FF8C00;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        /* GRID */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-left: 4px solid #FF8C00;
+            border-radius: 4px;
+        }
+
+        .card h4 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        /* COLORES */
+        .color-palette {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            align-items: center;
+        }
+
+        .color-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            font-size: 0.8em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .color-principal {
+            background: #1a1a1a;
+        }
+
+        .color-secondary {
+            background: #FF8C00;
+        }
+
+        .color-accent {
+            background: #FFD700;
+            color: #1a1a1a;
+        }
+
+        /* TABLA ROADMAP */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table thead {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tbody tr:hover {
+            background: #f5f5f5;
+        }
+
+        table tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .ep-number {
+            font-weight: bold;
+            color: #FF8C00;
+        }
+
+        /* SCRIPT */
+        .script-section {
+            background: #f0f0f0;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .script-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .meta-item {
+            background: white;
+            padding: 15px;
+            border-left: 4px solid #FF8C00;
+            border-radius: 4px;
+        }
+
+        .meta-label {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .meta-value {
+            font-size: 1.2em;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+
+        .script-block {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+            border-left: 4px solid #FFD700;
+        }
+
+        .script-speaker {
+            color: #FF8C00;
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 5px;
+        }
+
+        .script-dialogue {
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .script-note {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-top: 10px;
+            padding: 10px;
+            background: #fffaf0;
+            border-left: 3px solid #FFD700;
+        }
+
+        .time-counter {
+            color: #999;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        /* LISTA */
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.95em;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            .script-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* PRINT — ESTILOS PARA PDF */
+        @media print {
+            * {
+                margin: 0;
+                padding: 0;
+                box-shadow: none !important;
+            }
+
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            body {
+                font-size: 11pt;
+                line-height: 1.4;
+                color: #000;
+            }
+
+            .container {
+                max-width: 100%;
+                margin: 0;
+                background: white;
+            }
+
+            page {
+                margin: 0.5in;
+            }
+
+            /* HEADER EN PRINT */
+            .header {
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+                color: white;
+                padding: 20px 0;
+                border-bottom: 3px solid #FF8C00;
+                page-break-after: avoid;
+            }
+
+            .header::before {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+                margin-bottom: 5px;
+                color: white;
+            }
+
+            .header .tagline {
+                font-size: 1.4em;
+                color: #FFD700 !important;
+                margin-bottom: 10px;
+            }
+
+            .header .subtitle {
+                font-size: 1em;
+                color: #ddd;
+            }
+
+            /* SECCIONES */
+            .section {
+                padding: 15px 0;
+                margin: 10px 0;
+                page-break-inside: avoid;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+                padding-bottom: 5px;
+                border-bottom: 2px solid #FF8C00;
+                display: block;
+                page-break-after: avoid;
+            }
+
+            .section h3 {
+                font-size: 1.2em;
+                margin-top: 10px;
+                margin-bottom: 8px;
+                color: #FF8C00;
+                page-break-after: avoid;
+            }
+
+            /* GRID */
+            .grid-2, .grid-3 {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .grid-2 > *, .grid-3 > * {
+                display: block;
+                margin-bottom: 10px;
+                page-break-inside: avoid;
+            }
+
+            /* CARDS */
+            .card {
+                background: #f9f9f9 !important;
+                padding: 10px;
+                border-left: 3px solid #FF8C00;
+                margin-bottom: 10px;
+                page-break-inside: avoid;
+                border-radius: 0;
+            }
+
+            .card h4 {
+                font-size: 1em;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+            .card p {
+                font-size: 0.95em;
+                line-height: 1.4;
+            }
+
+            /* COLORES */
+            .color-palette {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .color-box {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                margin: 5px;
+                text-align: center;
+                font-size: 0.75em;
+                border: 1px solid #ccc;
+            }
+
+            /* TABLA */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 10px 0;
+                page-break-inside: avoid;
+                font-size: 0.9em;
+            }
+
+            table thead {
+                background: #1a1a1a !important;
+                color: white !important;
+                display: table-header-group;
+            }
+
+            table th {
+                padding: 8px;
+                text-align: left;
+                font-weight: bold;
+                border: 1px solid #999;
+            }
+
+            table td {
+                padding: 8px;
+                border: 1px solid #ddd;
+            }
+
+            table tbody tr:nth-child(even) {
+                background: #f5f5f5 !important;
+            }
+
+            .ep-number {
+                font-weight: bold;
+                color: #FF8C00;
+            }
+
+            /* SCRIPT */
+            .script-section {
+                background: white;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+
+            .script-meta {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .meta-item {
+                background: #f9f9f9 !important;
+                padding: 10px;
+                border-left: 3px solid #FF8C00;
+                margin-bottom: 10px;
+                page-break-inside: avoid;
+            }
+
+            .meta-label {
+                font-size: 0.85em;
+                color: #666;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .meta-value {
+                font-size: 1.05em;
+                color: #1a1a1a;
+                font-weight: bold;
+            }
+
+            .script-block {
+                background: white !important;
+                padding: 10px;
+                margin: 8px 0;
+                border-left: 3px solid #FFD700;
+                page-break-inside: avoid;
+            }
+
+            .script-speaker {
+                color: #FF8C00;
+                font-weight: bold;
+                font-size: 1em;
+                margin-bottom: 5px;
+            }
+
+            .script-dialogue {
+                color: #333;
+                margin-bottom: 8px;
+                line-height: 1.4;
+            }
+
+            .script-note {
+                color: #666;
+                font-size: 0.9em;
+                margin-top: 8px;
+                padding: 8px;
+                background: #fffaf0 !important;
+                border-left: 2px solid #FFD700;
+                page-break-inside: avoid;
+            }
+
+            .time-counter {
+                color: #999;
+                font-size: 0.8em;
+                margin-top: 5px;
+            }
+
+            /* LISTAS */
+            ul, ol {
+                margin-left: 20px;
+                margin-top: 8px;
+            }
+
+            li {
+                margin-bottom: 6px;
+                line-height: 1.4;
+            }
+
+            /* FOOTER */
+            .footer {
+                background: #1a1a1a !important;
+                color: white;
+                text-align: center;
+                padding: 15px 0;
+                margin-top: 20px;
+                border-top: 2px solid #FF8C00;
+                page-break-inside: avoid;
+            }
+
+            .footer p {
+                margin-bottom: 5px;
+                font-size: 0.9em;
+            }
+
+            /* NO IMPRIMIR */
+            a[href]:after {
+                content: "";
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Mr. Putrid's Den</h1>
+        <div class="tagline">Donde los riffs encuentran el whisky</div>
+        <div class="subtitle">Propuesta de Podcast — Conversaciones, Bandas, Eventos Underground</div>
+    </div>
+
+    <!-- PERFIL DEL PODCAST -->
+    <div class="section">
+        <h2>Perfil del Podcast</h2>
+
+        <div class="grid-2">
+            <div class="card">
+                <h4>📻 Formato</h4>
+                <p><strong>Co-host</strong><br>Andrés & Juan — conversación natural sobre música, bandas y eventos underground</p>
+            </div>
+            <div class="card">
+                <h4>⏱️ Duración & Cadencia</h4>
+                <p><strong>60 minutos | Semanal</strong><br>Un episodio nuevo cada semana</p>
+            </div>
+            <div class="card">
+                <h4>🎯 Audiencia</h4>
+                <p><strong>Bogotanos apasionados por la música</strong><br>Rock, metal, jazz, géneros variados (20-45+ años)</p>
+            </div>
+            <div class="card">
+                <h4>📱 Plataformas</h4>
+                <p><strong>Spotify + RSS</strong><br>Distribución a otras plataformas vía RSS</p>
+            </div>
+        </div>
+
+        <h3>Descripción</h3>
+        <p style="color: #555; margin-top: 10px;">
+            Mr. Putrid's Den es un podcast conversacional co-hosted por Andrés y Juan, un espacio dedicado a explorar rock, metal, jazz y múltiples géneros musicales. Con Juan como promotor de eventos underground, el podcast invita artistas emergentes, comparte historias de conciertos únicos, y ofrece análisis profundo de bandas y álbumes icónicos. Un lugar donde la música, la conversación natural y la pasión por los riffs se encuentran.
+        </p>
+    </div>
+
+    <!-- IDENTIDAD VISUAL -->
+    <div class="section">
+        <h2>Identidad Visual</h2>
+
+        <h3>Paleta de Colores</h3>
+        <div class="color-palette">
+            <div class="color-box color-principal">
+                <span>#1A1A1A<br>Negro Principal</span>
+            </div>
+            <div class="color-box color-secondary">
+                <span>#FF8C00<br>Naranja Cálido</span>
+            </div>
+            <div class="color-box color-accent">
+                <span>#FFD700<br>Dorado</span>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 30px;">Estilo Visual</h3>
+        <p style="color: #555; margin-top: 10px;">
+            <strong>Vintage collage + Pop art</strong><br>
+            Referencias a bandas icónicas, estética underground, conciertos, vinilos. Acentos de neon verde y magenta. Tono: nostálgico pero energético, profesional pero accesible.
+        </p>
+
+        <h3 style="margin-top: 30px;">Audio Branding</h3>
+        <div class="grid-2">
+            <div class="card">
+                <h4>🎸 INTRO (30 seg)</h4>
+                <p><strong>Stevie Ray Vaughn meets Black Label Society</strong><br>Guitarra blues eléctrica + heavy metal con voz femenina gutural. Puro impacto sonoro.</p>
+            </div>
+            <div class="card">
+                <h4>🎷 OUTRO (30 seg)</h4>
+                <p><strong>Jazz 1950s estilo Billie Holiday</strong><br>Cierre elegante con trio de mujeres. "The den, it's still warm, a shelter from the storm..."</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TONO Y REGLAS -->
+    <div class="section">
+        <h2>Guía de Tono</h2>
+
+        <h3>5 Reglas de Escritura</h3>
+        <ol style="margin-left: 30px; margin-top: 15px;">
+            <li style="margin-bottom: 15px;">
+                <strong>Lenguaje bogotano/colombiano neutro</strong><br>
+                Usa: "parcero/a", "hermano/a", "bacano", "qué onda", "qué vueltas". Evita: paisajismos, mexicanismos, regionalismos de otras zonas.
+            </li>
+            <li style="margin-bottom: 15px;">
+                <strong>Conversación natural con estructura</strong><br>
+                El script es guía, no lectura. Lanza premisas, datos, anécdotas, y deja que fluya entre Andrés y Juan. Parece improviso, pero está scaffolded.
+            </li>
+            <li style="margin-bottom: 15px;">
+                <strong>Respeta a los artistas y eventos</strong><br>
+                Cuando hables de bandas, artistas emergentes o eventos underground, hazlo con admiración y conocimiento. Evita burla superficial.
+            </li>
+            <li style="margin-bottom: 15px;">
+                <strong>Datos + opinión + anécdota</strong><br>
+                Cada episodio debe tener: un dato sorprendente, análisis profundo, y una historia personal de concierto o música. Mezcla lo informativo con lo emocional.
+            </li>
+            <li>
+                <strong>Whisky, riffs y conversación</strong><br>
+                El podcast es sobre tres cosas: la música, la amistad, y el disfrute. Mantén ese balance. Auténtico, no académico ni chismoso.
+            </li>
+        </ol>
+    </div>
+
+    <!-- PILARES DE CONTENIDO -->
+    <div class="section">
+        <h2>Pilares de Contenido</h2>
+        <p style="color: #555; margin-bottom: 20px;">Estos 8 pilares rotan para mantener variedad y estructura en los episodios:</p>
+
+        <div class="grid-2">
+            <div class="card">
+                <h4>🎵 Análisis Profundo</h4>
+                <p>Desglosar una banda, álbum o canción icónica. Historia, producción, influencia.</p>
+            </div>
+            <div class="card">
+                <h4>🏆 Top 5 / Rankings</h4>
+                <p>Ranking de riffs, canciones, albums. Andrés y Juan debaten y justifican cada uno.</p>
+            </div>
+            <div class="card">
+                <h4>📚 Historia de Género</h4>
+                <p>Evolución de rock, metal, jazz, fusion. Orígenes, hitos, artistas clave.</p>
+            </div>
+            <div class="card">
+                <h4>🎤 Debates Clásicos</h4>
+                <p>¿Beatles vs Led Zeppelin? ¿Vinil vs digital? Discusión apasionada y respetuosa.</p>
+            </div>
+            <div class="card">
+                <h4>🎬 Historias de Conciertos</h4>
+                <p>Anécdotas personales, encuentros con bandas, momentos memorables de shows.</p>
+            </div>
+            <div class="card">
+                <h4>👥 Invitados Artistas</h4>
+                <p>Juan trae artistas emergentes. Hablamos de su proceso, influencias, planes futuros.</p>
+            </div>
+            <div class="card">
+                <h4>🌍 Spotlight: Eventos</h4>
+                <p>Juan comparte eventos underground, conciertos próximos, bandas locales emergentes.</p>
+            </div>
+            <div class="card">
+                <h4>🎧 Reacciones a Música</h4>
+                <p>Escuchamos música nueva en vivo. Reacciones auténticas, análisis sobre la marcha.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROADMAP -->
+    <div class="section">
+        <h2>Roadmap — 10 Episodios</h2>
+        <p style="color: #555; margin-bottom: 15px;">Estructura flexible. Los títulos pueden ajustarse según vuestro feedback. La idea es tener pilares claros para mantener variedad.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th width="10%">EP</th>
+                    <th width="35%">Título</th>
+                    <th width="30%">Pilar</th>
+                    <th width="25%">Tipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="ep-number">001</td>
+                    <td><strong>Bienvenidos a Mr. Putrid's Den</strong></td>
+                    <td>Presentación</td>
+                    <td>Co-host</td>
+                </tr>
+                <tr>
+                    <td class="ep-number">002</td>
+                    <td>Black Sabbath: El génesis del heavy metal</td>
+                    <td>Análisis profundo</td>
+                    <td>Co-host</td>
+                </tr>
+                <tr>
+                    <td class="ep-number">003</td>
+                    <td>Top 5: Los mejores riffs de metal de todos los tiempos</td>
+                    <td>Top 5 / Ranking</td>
+                    <td>Co-host</td>
+                </tr>
+                <tr>
+                    <td class="ep-number">004</td>
+                    <td>Jazz fusion: De Herbie Hancock a hoy</td>
+                    <td>Historia de género</td>
+                    <td>Co-host</td>
+                </tr>
+                <tr>
+                    <td class="ep-number">005</td>
+                    <td>¿The Beatles o Led Zeppelin? El debate definitivo</td>
+                    <td>Debate clásico</td>
+                    <td>Co-host</td>
+                </tr>
+                <tr>
+                    <td class="ep-number">006</td>
+                    <td>Stories: Conciertos únicos que nos marcaron</td>
+                    <td>Historias</td>
+                    <td>Co-host</td>
+                </tr>
+                <tr>
+                    <td class="ep-number">007</td>
+                    <td>Entrevista: Artista emergente [TBD]</td>
+                    <td>Invitado artista</td>
+                    <td>Co-host + Guest</td>
+                </tr>
+                <tr>
+                    <td class="ep-number">008</td>
+                    <td>Spotlight: Eventos underground que no puedes perder</td>
+                    <td>Info conciertos</td>
+                    <td>Co-host</td>
+                </tr>
+                <tr>
+                    <td class="ep-number">009</td>
+                    <td>Rock progresivo: Yes, Genesis y la complejidad sonora</td>
+                    <td>Historia de género</td>
+                    <td>Co-host</td>
+                </tr>
+                <tr>
+                    <td class="ep-number">010</td>
+                    <td>New music reaction: Escuchamos lo que nos envían</td>
+                    <td>Reacciones</td>
+                    <td>Co-host</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- GUIÓN PILOTO -->
+    <div class="section">
+        <h2>Ejemplo: Guión del Episodio 001 (Piloto)</h2>
+        <p style="color: #666; margin-bottom: 20px; font-style: italic;">
+            Este es un ejemplo de guión para el episodio de presentación. Noten que incluye premisas para que fluya la conversación natural entre Andrés y Juan.
+        </p>
+
+        <div class="script-section">
+            <div class="script-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Episodio</div>
+                    <div class="meta-value">EP.001</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Duración Target</div>
+                    <div class="meta-value">60 min</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Word Count</div>
+                    <div class="meta-value">~3,500 palabras</div>
+                </div>
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">🎵 [INTRO MUSIC — 30 seg]</div>
+                <div class="script-note">Stevie Ray Vaughn meets Black Label Society. Guitarra blues eléctrica + heavy metal. Voz femenina gutural. Impacto total.</div>
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">ANDRÉS</div>
+                <div class="script-dialogue">
+                    Ahhhhhhhhh... [voz al final de la música]<br><br>
+                    Parceros, bienvenidos a Mr. Putrid's Den. Soy Andrés, y con mi compañero Juan — que es promotor de conciertos aquí en Bogotá — vamos a crear un espacio donde hablamos de lo que realmente nos apasiona: la música. Rock, metal, jazz, los géneros que nos mueven.
+                </div>
+                <div class="time-counter">⏱️ 0:35 — 1:10</div>
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">JUAN</div>
+                <div class="script-dialogue">
+                    [Entra natural, entusiasta]<br><br>
+                    Eso es. La idea es simple: dos bandas sonando siempre en la cabeza, tomando algo rico, hablando de lo que nos encanta. Sin filtro, sin guiones complicados. Solo riffs, historias, y la realidad de qué está pasando en la música hoy.
+                </div>
+                <div class="time-counter">⏱️ 1:10 — 1:45</div>
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">ANDRÉS</div>
+                <div class="script-dialogue">
+                    Y eso, hermano. En Mr. Putrid's Den vamos a explorar bandas clásicas — porque Black Sabbath no envejece, ¿vea? — pero también vamos a estar atentos a lo que está pasando con artistas emergentes, a qué conciertos va a estar chévere ir, y vamos a debatir esas preguntas que se hacen alrededor de una mesa con una buena cerveza o un buen whisky.
+                </div>
+                <div class="time-counter">⏱️ 1:45 — 2:30</div>
+            </div>
+
+            <div class="script-note">
+                📌 PREMISA PARA IMPROVISACIÓN: Aquí Andrés abre la puerta para que Juan cuente por qué decidió meterse en la promoción de eventos. Dejar que hable de sus primeros conciertos.
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">JUAN</div>
+                <div class="script-dialogue">
+                    [Respondiendo naturalmente]<br><br>
+                    Mira, para mí todo empezó con un concierto en [anécdota personal]. Desde ahí me metí en el mundo de promocionar eventos, y he visto de todo: bandas que explotan, bandas que desaparecen, artistas que tocan en un garaje hoy y en una sala llena mañana. Ese es el lado que quiero traer acá: la realidad del underground, ¿me entiendes?
+                </div>
+                <div class="time-counter">⏱️ 2:30 — 4:00 [IMPROVISACIÓN NATURAL]</div>
+            </div>
+
+            <div class="script-note">
+                📌 PREMISA PARA IMPROVISACIÓN: Andrés responde con su propia historia musical. ¿Cuál fue su banda favorita de adolescente? ¿Cuándo se enamoró del rock/metal?
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">ANDRÉS</div>
+                <div class="script-dialogue">
+                    [Respondiendo con entusiasmo]<br><br>
+                    [Su historia — anécdota personal sobre descubrir una banda, un concierto que lo marcó, etc.]
+                </div>
+                <div class="time-counter">⏱️ 4:00 — 6:00 [IMPROVISACIÓN NATURAL]</div>
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">ANDRÉS [Redirigiendo]</div>
+                <div class="script-dialogue">
+                    Bueno, pero eso es lo bacano. Cada persona tiene su punto de entrada. Para algunos es un riff de guitarra. Para otros, es un baterista que vuela. Para otros, es ir a un concierto y sentirse parte de algo más grande que ellos.
+                </div>
+                <div class="time-counter">⏱️ 6:00 — 6:30</div>
+            </div>
+
+            <div class="script-note">
+                📌 DATO SORPRENDENTE: Aquí Andrés introduce un dato sobre la historia de una banda o género. Algo que no es obvio pero que abre la conversación.
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">ANDRÉS</div>
+                <div class="script-dialogue">
+                    Ah, y acá va un dato que me encanta: ¿sabían que Black Sabbath nació de una grabación de una película de horror? Literalmente, Tony Martin estaba improvisando en el estudio y dijo "esto suena como una película de miedo", y ahí nació el heavy metal. Un accidente.
+                </div>
+                <div class="time-counter">⏱️ 6:30 — 7:15</div>
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">JUAN</div>
+                <div class="script-dialogue">
+                    [Con sorpresa]<br><br>
+                    ¿De verdá? No sabía eso, hermano. Eso es lo que me encanta de hablar de música — que siempre hay una historia detrás de cada nota. No es solo "pongo a escuchar metal porque es pesado". Hay un contexto, hay un lugar y una época que lo creó.
+                </div>
+                <div class="time-counter">⏱️ 7:15 — 8:00</div>
+            </div>
+
+            <div class="script-note">
+                📌 TRANSICIÓN: Aquí vienen los detalles del podcast. Cómo va a funcionar, qué pueden esperar los oyentes, dónde los van a encontrar.
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">ANDRÉS</div>
+                <div class="script-dialogue">
+                    Exacto. Eso es lo que vamos a hacer acá en Mr. Putrid's Den. Cada semana vamos a meter un episodio nuevo. A veces va a ser análisis profundo, a veces va a ser debates de esos que terminan en "no, vea, es que...". A veces vamos a traer artistas, a veces vamos a hablar de eventos que la gente no sabe que existen pero que son increíbles.
+                </div>
+                <div class="time-counter">⏱️ 8:00 — 9:00</div>
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">JUAN</div>
+                <div class="script-dialogue">
+                    Y lo más importante: vamos a estar en Spotify. Todos les vamos a pasar el link. Suscríbanse, compartan, díganle a sus parceros que existe este espacio. Porque la idea es que si eres músico, si eres productor, si eres artista emergente, sepas que existe un lugar donde te van a escuchar con atención y con respeto.
+                </div>
+                <div class="time-counter">⏱️ 9:00 — 10:00</div>
+            </div>
+
+            <div class="script-note">
+                📌 CIERRE: Aquí vuelven a los riffs, al whisky, a la vibe general del podcast. Cierre natural.
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">ANDRÉS</div>
+                <div class="script-dialogue">
+                    Así es. Mr. Putrid's Den es eso: donde los riffs encuentran el whisky, donde la conversación fluye, y donde la música de verdá importa. No es un podcast de críticos ni académicos. Es de dos parceros que aman la música y quieren hablar de eso sin que nadie les diga qué deben pensar.
+                </div>
+                <div class="time-counter">⏱️ 10:00 — 11:00</div>
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">JUAN</div>
+                <div class="script-dialogue">
+                    Perfecto, Andrés. Entonces, para el próximo episodio vamos a meternos de lleno con Black Sabbath. Vamos a desgranar Paranoid, vamos a hablar de Ozzy, y vamos a entender por qué una banda inglesa que tocaba blues pesado en los 70s sigue siendo la referencia de todo lo que vino después.
+                </div>
+                <div class="time-counter">⏱️ 11:00 — 12:00</div>
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">ANDRÉS</div>
+                <div class="script-dialogue">
+                    Eso. Entonces, hermanos, gracias por estar en Mr. Putrid's Den. Los vemos en el próximo episodio. No se lo pierdan.
+                </div>
+                <div class="time-counter">⏱️ 12:00 — 12:30</div>
+            </div>
+
+            <div class="script-block">
+                <div class="script-speaker">🎵 [OUTRO MUSIC — 30 seg]</div>
+                <div class="script-note">Jazz 1950s estilo Billie Holiday. "The den, it's still warm, a shelter from the storm... Sweet dreams, until we meet."</div>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 30px;">Notas sobre el Guión</h3>
+        <ul style="margin-left: 30px; margin-top: 15px;">
+            <li><strong>Estructura:</strong> Es más guía que script rígido. Los "📌 PREMISA PARA IMPROVISACIÓN" son puntos donde Andrés y Juan hablan de verdad.</li>
+            <li><strong>Timming:</strong> Este ejemplo suma ~12 minutos de contenido. El resto del episodio (hasta 60 min) se llena con conversación natural sobre el tema principal.</li>
+            <li><strong>Tono:</strong> Conversacional, sin "umm" editados, solo la vibe natural de dos amigos hablando de música.</li>
+            <li><strong>Datos:</strong> Incluye un dato sorprendente (Black Sabbath) que abre la conversación. Esto es la marca de cada episodio.</li>
+        </ul>
+    </div>
+
+    <!-- PRÓXIMOS PASOS -->
+    <div class="section">
+        <h2>Próximos Pasos</h2>
+
+        <div class="grid-2">
+            <div class="card">
+                <h4>✅ Revisión con Juan</h4>
+                <p>Presentar esta propuesta. Recopilar feedback sobre tono, temas, roadmap, identidad visual.</p>
+            </div>
+            <div class="card">
+                <h4>📝 Ajustes y Confirmación</h4>
+                <p>Con el feedback, volvemos a iterar. Finalizamos guión del EP.001 para grabar.</p>
+            </div>
+            <div class="card">
+                <h4>🎤 Grabación del Piloto</h4>
+                <p>Grabar EP.001 como prueba. Esto les enseña el flujo de grabación, edición, distribución.</p>
+            </div>
+            <div class="card">
+                <h4>📤 Publicación y Lanzamiento</h4>
+                <p>Publicar en Spotify. Diseñar artwork. Plan de lanzamiento social. Ir en vivo.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p><strong>Mr. Putrid's Den</strong> — Propuesta de Podcast</p>
+        <p>Generado: 2026-05-15 | Versión 1.0</p>
+        <p style="font-size: 0.9em; color: #aaa;">Donde los riffs encuentran el whisky 🥃🎸</p>
+    </div>
+</body>
+</html>

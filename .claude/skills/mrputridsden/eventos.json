@@ -1,0 +1,41 @@
+{
+  "ultima_actualizacion": "2026-05-23",
+  "nota": "Juan actualiza esta lista con eventos próximos. Consultar antes de generar cada guión para el segmento de Promoción.",
+  "eventos": [
+    {
+      "id": "EJEMPLO-1",
+      "nota_interna": "EJEMPLO — reemplazar con evento real",
+      "nombre": "Noche de Riffs en La Cantera",
+      "artistas": ["Los Silencios", "Tierra Muerta"],
+      "fecha": "2026-06-07",
+      "lugar": "La Cantera Bar, Bogotá",
+      "descripcion": "Dos bandas emergentes de metal bogotano. Los Silencios con su doom progresivo y Tierra Muerta con thrash directo. Entrada libre hasta las 9pm.",
+      "link": "https://instagram.com/lacanterabar",
+      "visibilidad": "underground",
+      "tipo": "concierto",
+      "añadido_por": "Juan"
+    },
+    {
+      "id": "EJEMPLO-2",
+      "nota_interna": "EJEMPLO — reemplazar con evento real",
+      "nombre": "Jazz Fest Chapinero",
+      "artistas": ["Cuarteto Bogotá Jazz", "Invitado sorpresa"],
+      "fecha": "2026-06-14",
+      "lugar": "Teatro Libre, Bogotá",
+      "descripcion": "Festival pequeño de jazz moderno con fusión colombiana. El Cuarteto Bogotá Jazz mezcla jazz estándar con ritmos del Pacífico. Boletas desde $25.000.",
+      "link": "https://teatrolibre.com.co",
+      "visibilidad": "emergente",
+      "tipo": "festival",
+      "añadido_por": "Juan"
+    }
+  ],
+  "instrucciones": [
+    "Cada evento debe tener: nombre, artistas, fecha, lugar, descripción breve",
+    "La descripción debe ser tal que yo (Claude) pueda leerla en el segmento de promo sin sonar robótico",
+    "Incluir link a donde se compren boletas o se sepa más",
+    "Marcar visibilidad: 'underground' (poca difusión) o 'emergente' (bandas nuevas)",
+    "Tipo: 'concierto', 'festival', 'jam session', 'showcase', etc.",
+    "Juan agrega eventos conforme los conoce — no esperes a que yo los invente",
+    "Borrar los eventos EJEMPLO antes de grabar el primer episodio con eventos reales"
+  ]
+}

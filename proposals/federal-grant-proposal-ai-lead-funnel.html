@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grant Proposal — Kuma Group AI Platform — NRC IRAP — DRAFT</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #1a1a1a;
+      background: #f4f4f0;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 64px 76px;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.10);
+    }
+
+    .draft-banner {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-left: 5px solid #e07b00;
+      color: #5a3e00;
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+      padding: 14px 20px;
+      margin-bottom: 36px;
+      border-radius: 0 4px 4px 0;
+    }
+    .draft-banner strong { display: block; margin-bottom: 4px; font-size: 14px; }
+
+    .cover {
+      border-bottom: 4px solid #0d3b6e;
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+    }
+    .cover .grant-label {
+      font-family: 'Arial', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 10px;
+    }
+    .cover h1 {
+      font-size: 26px;
+      color: #0d3b6e;
+      line-height: 1.3;
+      margin-bottom: 6px;
+      border: none;
+      padding: 0;
+    }
+    .cover .subtitle {
+      font-size: 15px;
+      color: #555;
+      font-style: italic;
+      margin-bottom: 28px;
+    }
+    .cover .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 30px;
+      font-family: 'Arial', sans-serif;
+      font-size: 13.5px;
+    }
+    .cover .meta-item .meta-label { font-weight: bold; color: #0d3b6e; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .cover .meta-item .meta-value { color: #333; }
+    .cover .meta-item.warning .meta-value { color: #c0392b; font-style: italic; }
+    .cover .highlight-box {
+      grid-column: 1 / -1;
+      background: #0d3b6e;
+      color: #ffffff;
+      padding: 14px 20px;
+      border-radius: 4px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+    }
+    .cover .highlight-box span { font-size: 13px; color: #a0bcd8; }
+    .cover .highlight-box strong { font-size: 16px; }
+
+    .toc {
+      background: #f8f9fa;
+      border: 1px solid #d0d7e0;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      font-family: 'Arial', sans-serif;
+      font-size: 13.5px;
+    }
+    .toc h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 12px; border: none; padding: 0; }
+    .toc ol { margin-left: 18px; }
+    .toc li { margin-bottom: 4px; color: #0d3b6e; }
+
+    h1 {
+      font-size: 20px;
+      color: #0d3b6e;
+      margin: 48px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #0d3b6e;
+    }
+    h2 {
+      font-size: 16px;
+      color: #0d3b6e;
+      margin: 30px 0 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #d0d7e0;
+    }
+    h3 {
+      font-size: 14.5px;
+      color: #333;
+      margin: 22px 0 8px;
+      font-style: italic;
+    }
+
+    p { margin-bottom: 14px; }
+    ul, ol { margin: 10px 0 16px 26px; }
+    li { margin-bottom: 6px; }
+    strong { color: #111; }
+    em { color: #444; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 24px;
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+    }
+    th {
+      background: #0d3b6e;
+      color: #ffffff;
+      padding: 10px 13px;
+      text-align: left;
+      font-weight: bold;
+    }
+    td {
+      padding: 9px 13px;
+      border-bottom: 1px solid #e0e0e0;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #f8f9fa; }
+    .check { text-align: center; font-size: 16px; color: #2e7d32; }
+    td.total-row { font-weight: bold; background: #eef3f8 !important; }
+    th.right, td.right { text-align: right; }
+    .grand-total th { background: #061e38; font-size: 14px; }
+
+    .callout {
+      border-left: 4px solid #e07b00;
+      background: #fff8f0;
+      padding: 14px 18px;
+      margin: 18px 0;
+      font-family: 'Arial', sans-serif;
+      font-size: 13.5px;
+      border-radius: 0 4px 4px 0;
+    }
+    .callout.info { border-left-color: #0d3b6e; background: #f0f6ff; }
+    .callout.success { border-left-color: #2e7d32; background: #f0faf0; }
+    .callout.warning { border-left-color: #c0392b; background: #fff5f5; }
+    .callout .callout-title {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .callout ul { margin-top: 6px; }
+
+    .phase {
+      border: 1px solid #d0d7e0;
+      border-top: 4px solid #0d3b6e;
+      padding: 20px 24px;
+      margin: 20px 0;
+      border-radius: 0 0 4px 4px;
+    }
+    .phase .phase-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+    .phase .phase-title { font-weight: bold; font-family: 'Arial', sans-serif; font-size: 15px; color: #0d3b6e; }
+    .phase .phase-time { font-family: 'Arial', sans-serif; font-size: 12px; color: #888; background: #f0f0f0; padding: 2px 10px; border-radius: 10px; }
+    .phase .phase-deliverable { font-family: 'Arial', sans-serif; font-size: 13px; color: #555; font-style: italic; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+    .phase ul { margin-top: 8px; font-size: 14px; }
+
+    .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+    .tier-card {
+      border: 1px solid #d0d7e0;
+      border-top: 4px solid #0d3b6e;
+      padding: 18px;
+      font-family: 'Arial', sans-serif;
+      font-size: 13px;
+    }
+    .tier-card .tier-name { font-weight: bold; font-size: 15px; color: #0d3b6e; margin-bottom: 6px; }
+    .tier-card .tier-price { font-size: 22px; font-weight: bold; color: #0d3b6e; margin: 8px 0 4px; }
+    .tier-card .tier-price span { font-size: 13px; color: #888; font-weight: normal; }
+    .tier-card .tier-includes { color: #555; font-size: 12.5px; }
+
+    .action-list {
+      background: #fff8f0;
+      border: 1px solid #ffc107;
+      padding: 18px 24px;
+      margin: 18px 0;
+      font-family: 'Arial', sans-serif;
+      font-size: 13.5px;
+    }
+    .action-list .action-title { font-weight: bold; color: #856404; margin-bottom: 10px; }
+    .action-list ol { margin-left: 18px; }
+    .action-list li { margin-bottom: 10px; }
+    .action-list li strong { color: #5a3e00; }
+
+    .commitment-list { list-style: none; margin: 10px 0 20px; padding: 0; }
+    .commitment-list li {
+      padding: 8px 0 8px 32px;
+      position: relative;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+    }
+    .commitment-list li::before { content: '✓'; position: absolute; left: 6px; color: #2e7d32; font-weight: bold; }
+
+    .doc-footer {
+      margin-top: 60px;
+      padding-top: 16px;
+      border-top: 2px solid #0d3b6e;
+      font-family: 'Arial', sans-serif;
+      font-size: 11.5px;
+      color: #888;
+      line-height: 1.6;
+    }
+    .doc-footer .footer-top { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: bold; color: #555; font-size: 12px; }
+
+    @media print {
+      body { background: white; font-size: 13px; }
+      .page { box-shadow: none; margin: 0; padding: 40px 50px; }
+      h1 { page-break-before: always; }
+      h1:first-of-type { page-break-before: avoid; }
+      .phase, .tier-card { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Draft Banner -->
+  <div class="draft-banner">
+    <strong>⚠ DRAFT — For internal review by Andres Bermudez and Hugo Lancheros</strong>
+    This version targets NRC IRAP. Before submitting, consult with an IRAP Industrial Technology Advisor (ITA) to confirm project eligibility and eligible labour cost scope. Items marked ⚠ require action or verification before submission.
+  </div>
+
+  <!-- Cover -->
+  <div class="cover">
+    <div class="grant-label">Grant Proposal — NRC IRAP — National Research Council Industrial Research Assistance Program</div>
+    <h1>Kuma Group AI Platform for Canadian Small and Medium Enterprises</h1>
+    <div class="subtitle">Module 1: Kuma Flow — Multi-Channel AI Lead Engagement &nbsp;|&nbsp; Module 2: AI-Powered Text Candidate Screening</div>
+
+    <div class="meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Submitted To</div>
+        <div class="meta-value">NRC IRAP — Industrial Research Assistance Program</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Submission Date</div>
+        <div class="meta-value">May 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Applicant Organization</div>
+        <div class="meta-value">Kuma Group (Ontario-registered)</div>
+      </div>
+      <div class="meta-item warning">
+        <div class="meta-label">Business Registration</div>
+        <div class="meta-value">⚠ Pending — must be registered in Ontario before submission</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Primary Contacts</div>
+        <div class="meta-value">Hugo Lancheros, Marketing &amp; Sales Director (Ontario)<br>Andres Bermudez, Lead Developer (Remote — Colombia)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Contact</div>
+        <div class="meta-value">hello@kumatalent.com<br>+1 (587) 894-9527</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Project Duration</div>
+        <div class="meta-value">12 months</div>
+      </div>
+      <div class="highlight-box">
+        <div><span>Total Requested Funding</span><br><strong>$58,500 CAD</strong></div>
+        <div><span>Time to Full Deployment</span><br><strong>10 Weeks</strong></div>
+        <div><span>Canadian SMEs in Pilot</span><br><strong>15 – 25 Businesses</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IRAP Note -->
+  <div class="callout warning">
+    <div class="callout-title">⚠ IRAP Labour Eligibility Note</div>
+    NRC IRAP reimburses eligible Canadian R&D labour costs. Hugo Lancheros's Ontario-based hours are fully IRAP-eligible. Andres Bermudez's hours, performed remotely from Colombia, may not qualify as eligible Canadian labour under IRAP guidelines. Before submission, confirm the eligible labour portion with your assigned ITA (Industrial Technology Advisor). The budget figures reflect total project costs — the IRAP contribution should be scoped to the Canadian-based eligible portion only.
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li>Executive Summary</li>
+      <li>The Team</li>
+      <li>The Problem: Two Gaps Costing Canadian SMEs Every Day</li>
+      <li>The Innovation: Why This Qualifies as Canadian R&amp;D</li>
+      <li>The Solution: A Dual-Module Canadian AI Platform</li>
+      <li>Why This Is Canadian Technology — Not Another Foreign Subscription</li>
+      <li>Economic and National Impact</li>
+      <li>Implementation Plan</li>
+      <li>Budget</li>
+      <li>Sustainability After the Grant Period</li>
+      <li>Measurable Outcomes and Evaluation</li>
+      <li>Organizational Capacity</li>
+      <li>Statement of Canadian Technology Commitment</li>
+      <li>Conclusion</li>
+    </ol>
+  </div>
+
+  <!-- 1. Executive Summary -->
+  <h1>1. Executive Summary</h1>
+
+  <p>Canada's small and medium enterprises face two challenges that together define whether a business survives or grows: <strong>finding customers</strong> and <strong>finding the right people to serve them.</strong> Both require speed, consistency, and intelligent engagement that most SMEs cannot deliver with the limited staff and budgets available to them.</p>
+
+  <p>Kuma Group proposes the development of a dual-module, Canadian-built AI platform that addresses both challenges simultaneously:</p>
+
+  <ul>
+    <li><strong>Module 1 — Kuma Flow:</strong> Captures leads from any digital channel (SMS, email, WhatsApp, Instagram, Facebook, Telegram), responds to each customer within seconds, and manages a smart follow-up cadence until a sale is made or the lead enters a long-term nurture cycle.</li>
+    <li><strong>Module 2 — Hiresignal Text Candidate Screening:</strong> When a Canadian SME needs to hire, AI conducts a conversational text-based pre-screening with every applicant — automatically, at any hour — ranking candidates by fit before a business owner reads a single resume. No voice calls. No scheduling. No agency fees.</li>
+  </ul>
+
+  <p>Both modules are built on AI technology Kuma Group has already developed and proven through our existing <strong>Hiresignal</strong> platform. This is not speculative R&amp;D — it is the disciplined extension of a working, made-in-Canada AI system into a commercially viable, nationally deployable platform.</p>
+
+  <!-- 2. The Team -->
+  <h1>2. The Team</h1>
+
+  <p><strong>Andres Bermudez — Lead Developer</strong> <em>(Remote — Colombia)</em><br>
+  Andres is the architect and primary developer of Hiresignal, Kuma Group's existing AI interview platform. He has hands-on experience building conversational AI systems using Anthropic's Claude API, PHP backend infrastructure, and multi-channel messaging integrations. He leads all technical development for this project.</p>
+
+  <p><strong>Hugo Lancheros — Marketing &amp; Sales Director</strong> <em>(Ontario, Canada)</em><br>
+  Hugo leads Kuma Group's go-to-market strategy and client relationships. He manages the Canadian SME pilot cohort, leads stakeholder communications, and oversees the commercialization pathway. Hugo is the primary Canadian-based team member and IRAP point of contact.</p>
+
+  <div class="callout">
+    <div class="callout-title">⚠ Hugo — Action Required</div>
+    Add 2–3 sentences about your background, sales/marketing experience, and any industry-specific knowledge relevant to Canadian SMEs.
+  </div>
+
+  <!-- 3. The Problem -->
+  <h1>3. The Problem: Two Gaps Costing Canadian SMEs Every Day</h1>
+
+  <h2>Gap 1 — The Customer Response Gap</h2>
+
+  <p>Modern consumers expect a response within minutes. A potential customer who clicks a Facebook ad at 9:30 PM and gets no reply until the next morning has, in most cases, already called a competitor. Large businesses solve this with enterprise CRM platforms and dedicated after-hours teams — tools that cost $3,000–$10,000 CAD per month, well beyond what a small Canadian business can justify.</p>
+
+  <p>The result: Canadian SMEs spend real money driving traffic through digital ads and social media, then lose a significant portion of those leads because no one was available to respond in time, on the right channel.</p>
+
+  <h2>Gap 2 — The Hiring Gap</h2>
+
+  <p>Labour shortages are one of the most consistently cited challenges facing Canadian small businesses. Across skilled trades, hospitality, retail, healthcare support, childcare, manufacturing, and logistics, SMEs struggle to hire efficiently. The standard SME hiring process — post a job, read dozens of resumes, attempt phone screens, schedule interviews — consumes hours of a business owner's time and still often fails to produce the right hire.</p>
+
+  <p>Recruitment agencies charge 15–25% of a candidate's annual salary per placement. For a $50,000/year role, that's <strong>$7,500–$12,500 CAD per hire.</strong></p>
+
+  <div class="callout info">
+    <div class="callout-title">The R&amp;D Opportunity</div>
+    Building AI that conducts genuinely useful, contextually adaptive, multi-turn text conversations for both lead qualification and candidate screening — at any hour, at no marginal cost per interaction — requires meaningful technical innovation. Kuma Group is addressing unsolved problems in conversational AI scoring, cross-channel session persistence, and adaptive tone management for non-technical SME contexts.
+  </div>
+
+  <!-- 4. The Innovation -->
+  <h1>4. The Innovation: Why This Qualifies as Canadian R&amp;D</h1>
+
+  <p>This project is not an integration of existing commercial AI tools. It involves the development of novel technical capabilities with genuine technical uncertainty:</p>
+
+  <table>
+    <thead>
+      <tr><th>Technical Challenge</th><th>Why It Is Novel R&amp;D</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Adaptive conversation scoring</strong></td><td>Evaluating lead quality or candidate fit from unstructured, multi-turn text exchanges — inferring implicit signals (tone, specificity, responsiveness) alongside explicit responses. No off-the-shelf solution exists.</td></tr>
+      <tr><td><strong>Cross-channel session management</strong></td><td>Maintaining conversational context and follow-up state across six messaging platforms without requiring unified identity from the customer or applicant.</td></tr>
+      <tr><td><strong>Tone-calibrated AI for SME industries</strong></td><td>Calibrating conversation flows for the varied registers required across trades, food service, healthcare, and professional services — without per-business model fine-tuning.</td></tr>
+      <tr><td><strong>Cooling and re-engagement logic</strong></td><td>Developing the state machine and timing system that determines when to follow up, when to pause, and when to re-engage after silence, without appearing intrusive.</td></tr>
+    </tbody>
+  </table>
+
+  <p>These solutions, once built, will be owned entirely by a Canadian company and deployable nationally and internationally.</p>
+
+  <!-- 5. The Solution -->
+  <h1>5. The Solution: A Dual-Module Canadian AI Platform</h1>
+
+  <h2>Module 1 — Kuma Flow</h2>
+
+  <p>A local contractor runs a Facebook ad. A homeowner in Oakville clicks "Get a Quote" at 8:15 PM. That click opens a WhatsApp conversation. Within 10 seconds, Kuma Flow responds: <em>"Hi! Thanks for reaching out about your project. To make sure we connect you with the right person — is this for a renovation, a repair, or something new?"</em></p>
+
+  <p>The conversation continues naturally. If the homeowner stops responding, the system sends a friendly follow-up the next day, then again on Day 4 — always on WhatsApp, always in a non-pushy tone. After four attempts without a response, the lead enters a 30-day rest period, then the system re-engages automatically. The business owner wakes up to a dashboard showing qualified leads, conversation history, and recommended next actions — with zero after-hours effort required.</p>
+
+  <h3>Supported Channels</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Channel</th>
+        <th>Capture</th>
+        <th>AI Response</th>
+        <th>Auto Follow-Up</th>
+        <th>Ad-Triggered Entry</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>SMS</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Email</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>WhatsApp</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Instagram Direct</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Facebook Messenger</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+      <tr><td>Telegram</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Module 2 — Hiresignal Text Candidate Screening</h2>
+
+  <p>A restaurant owner in Mississauga needs to hire two line cooks. She posts the job and receives 47 applications over three days. Within minutes of each application arriving, Hiresignal sends the candidate a text and conducts a structured text screening — availability, experience, compensation expectations, and culture signals. Each candidate is scored on fit. The owner opens her dashboard, sees the top five ranked candidates, and calls the top two that afternoon. She hires one the next day.</p>
+
+  <p><strong>No voice calls required.</strong> Candidates respond on their own schedule, from any phone, via SMS or WhatsApp.</p>
+
+  <!-- 6. Canadian Technology -->
+  <h1>6. Why This Is Canadian Technology — Not Another Foreign Subscription</h1>
+
+  <p>Canadian SMEs currently spend a significant portion of their technology budgets on US-headquartered platforms: Salesforce, HubSpot, Indeed, LinkedIn, ZipRecruiter. These subscriptions remove capital from the Canadian economy, store Canadian resident data on US-jurisdiction servers, generate no Canadian intellectual property, and create no Canadian jobs.</p>
+
+  <table>
+    <thead>
+      <tr><th>Dimension</th><th>Foreign SaaS Platform</th><th>Kuma Group Platform</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>IP ownership</td><td>US corporation</td><td>Canadian company</td></tr>
+      <tr><td>Data jurisdiction</td><td>US servers (PIPEDA compliance concerns)</td><td>Canadian hosting (PIPEDA-aligned by design)</td></tr>
+      <tr><td>Jobs created</td><td>None in Canada</td><td>Ontario-based operations and support</td></tr>
+      <tr><td>Revenue destination</td><td>US shareholders</td><td>Canadian economy</td></tr>
+      <tr><td>Monthly cost to SME</td><td>$500 – $5,000+ CAD</td><td>$349 – $999 CAD</td></tr>
+    </tbody>
+  </table>
+
+  <p>Canada's federal AI strategy explicitly calls for domestic AI capability — not dependency on foreign platforms. This project is a direct expression of that mandate.</p>
+
+  <!-- 7. Economic Impact -->
+  <h1>7. Economic and National Impact</h1>
+
+  <h2>Direct Impact: Canadian SME Pilot Cohort</h2>
+  <p>Pilot businesses will be selected across sectors where both gaps are most acute: skilled trades, professional services, retail, food service, childcare, and personal care services. Each pilot SME gains access to both modules and will be measured before and after deployment.</p>
+
+  <h2>Canadian Job Creation</h2>
+  <table>
+    <thead>
+      <tr><th>Role</th><th>Type</th><th>Count</th><th>Duration</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Andres Bermudez — Lead Developer</td><td>Remote — Colombia</td><td>1 FTE</td><td>10 months</td></tr>
+      <tr><td>Hugo Lancheros — Marketing &amp; Sales</td><td>Direct — Ontario</td><td>1 FTE</td><td>12 months</td></tr>
+      <tr><td>Junior Developer / QA</td><td>Direct — Ontario</td><td>1 part-time</td><td>6 months</td></tr>
+      <tr><td>SME Onboarding Specialist</td><td>Direct — Ontario</td><td>1 part-time</td><td>8 months</td></tr>
+    </tbody>
+  </table>
+  <p>Conservative projections for the 15–25 pilot businesses suggest <strong>20–45 indirect jobs</strong> created or retained within 18 months, as those businesses operate more efficiently and competitively.</p>
+
+  <h2>Alignment with Canada's Digital Innovation Priorities</h2>
+  <table>
+    <thead>
+      <tr><th>Federal Priority</th><th>How This Project Delivers</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Canadian AI sovereignty and innovation</td><td>Canadian-built, Canadian-hosted, Canadian IP — directly advances Canada's national AI strategy</td></tr>
+      <tr><td>SME productivity and digital transformation</td><td>Addresses the productivity gap for approximately 1.2 million Canadian SMEs through AI automation</td></tr>
+      <tr><td>Canadian labour market modernization</td><td>AI screening improves hiring quality, speed, and consistency for SMEs nationwide</td></tr>
+      <tr><td>PIPEDA-compliant data infrastructure</td><td>Canadian data residency by design; no US jurisdiction exposure for Canadian citizen data</td></tr>
+      <tr><td>Export-ready Canadian technology</td><td>Scalable SaaS platform with international market potential, built and owned in Canada</td></tr>
+      <tr><td>R&amp;D employment and skills development</td><td>Direct R&amp;D employment in Ontario; advances Canada's applied AI development capability</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 8. Implementation -->
+  <h1>8. Implementation Plan</h1>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-title">Phase 1 — Kuma Flow Foundation</div>
+      <div class="phase-time">Weeks 1 – 3</div>
+    </div>
+    <div class="phase-deliverable">Deliverable: Kuma Flow core live — SMS and Email channels operational</div>
+    <ul>
+      <li>Extend existing database with lead management and conversation tables</li>
+      <li>Build sales qualification conversation mode within Hiresignal AI engine</li>
+      <li>GoHighLevel webhook integration</li>
+      <li>SMS and email channels end-to-end</li>
+      <li>Basic admin dashboard: lead list, status, conversation history</li>
+      <li>Submit Meta developer application (processes in parallel)</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-title">Phase 2 — Kuma Flow Full Channels + Follow-Up Engine</div>
+      <div class="phase-time">Weeks 4 – 5</div>
+    </div>
+    <div class="phase-deliverable">Deliverable: All 6 channels live; automated follow-up and cooling system operational</div>
+    <ul>
+      <li>WhatsApp and Telegram channels</li>
+      <li>Follow-up scheduler: state machine, cooling period, message cadence</li>
+      <li>Lead scoring output based on AI conversation</li>
+      <li>Ad click-to-message URL templates for all platforms</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-title">Phase 3 — Module 2: Hiresignal Text Screening</div>
+      <div class="phase-time">Weeks 5 – 7 (parallel)</div>
+    </div>
+    <div class="phase-deliverable">Deliverable: Candidate screening via text fully operational</div>
+    <ul>
+      <li>Job requisition intake form (employer defines role, must-haves, and disqualifiers)</li>
+      <li>Automated candidate outreach via SMS and WhatsApp on application receipt</li>
+      <li>AI text-based screening conversation (structured qualification, flexible tone)</li>
+      <li>Candidate scoring algorithm: availability, experience, compensation alignment, culture signals</li>
+      <li>Employer dashboard: ranked candidates, conversation summaries, recommended next actions</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-title">Phase 4 — Meta Channels + Admin Polish</div>
+      <div class="phase-time">Weeks 6 – 8</div>
+    </div>
+    <div class="phase-deliverable">Deliverable: Instagram and Facebook Messenger live; full admin dashboards for both modules</div>
+    <ul>
+      <li>Instagram DM and Facebook Messenger activated (pending Meta approval from Phase 1)</li>
+      <li>Full analytics: channel breakdown, campaign attribution, conversion tracking</li>
+      <li>Candidate pipeline view for hiring module</li>
+      <li>Security audit, rate limiting, PIPEDA compliance review</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-title">Phase 5 — Production Deployment &amp; SME Pilot Launch</div>
+      <div class="phase-time">Weeks 9 – 10 → Month 3</div>
+    </div>
+    <div class="phase-deliverable">Deliverable: 15–25 Canadian SMEs live on both modules; baseline data collection begins</div>
+    <ul>
+      <li>Production deployment on Canadian cloud infrastructure</li>
+      <li>Pilot cohort onboarded across both modules</li>
+      <li>Weekly performance reviews with pilot participants</li>
+      <li>System tuning based on real-world data</li>
+    </ul>
+  </div>
+
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-title">Phase 6 — Evaluation &amp; Commercialization</div>
+      <div class="phase-time">Months 4 – 12</div>
+    </div>
+    <div class="phase-deliverable">Deliverable: Impact report; commercial model live; IRAP completion report submitted</div>
+    <ul>
+      <li>6-month impact assessment across both modules for all pilot SMEs</li>
+      <li>Refinement of AI screening and qualification logic based on pilot data</li>
+      <li>Commercial pricing tiers launched for Canadian market</li>
+      <li>12-month IRAP project completion report submitted to NRC</li>
+    </ul>
+  </div>
+
+  <!-- 9. Budget -->
+  <h1>9. Budget</h1>
+
+  <div class="callout warning">
+    <div class="callout-title">⚠ IRAP Eligibility Note</div>
+    Only Canadian-based labour hours are eligible for IRAP reimbursement. Hugo Lancheros's Ontario-based hours and the Ontario-based junior developer and onboarding specialist hours are fully eligible. Andres Bermudez's development hours, performed from Colombia, should be confirmed with your ITA before including in the eligible labour claim. Infrastructure and third-party service costs are generally not reimbursable under IRAP.
+  </div>
+
+  <h2>Module 1 — Kuma Flow Development</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Hours</th><th class="right">Rate (CAD)</th><th class="right">Cost (CAD)</th></tr></thead>
+    <tbody>
+      <tr><td>AI engine extension + channel integration</td><td>90 hrs</td><td class="right">$115/hr</td><td class="right">$10,350</td></tr>
+      <tr><td>Follow-up engine + lead database</td><td>55 hrs</td><td class="right">$115/hr</td><td class="right">$6,325</td></tr>
+      <tr><td>Junior developer / QA</td><td>40 hrs</td><td class="right">$70/hr</td><td class="right">$2,800</td></tr>
+      <tr><td class="total-row" colspan="3">Module 1 Subtotal</td><td class="total-row right">$19,475</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Module 2 — Hiresignal Text Screening Development</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Hours</th><th class="right">Rate (CAD)</th><th class="right">Cost (CAD)</th></tr></thead>
+    <tbody>
+      <tr><td>Candidate outreach + text conversation flow</td><td>22 hrs</td><td class="right">$115/hr</td><td class="right">$2,530</td></tr>
+      <tr><td>Scoring algorithm + ranking logic</td><td>18 hrs</td><td class="right">$115/hr</td><td class="right">$2,070</td></tr>
+      <tr><td>Employer dashboard (job intake + candidate pipeline)</td><td>18 hrs</td><td class="right">$115/hr</td><td class="right">$2,070</td></tr>
+      <tr><td>Junior developer / QA</td><td>20 hrs</td><td class="right">$70/hr</td><td class="right">$1,400</td></tr>
+      <tr><td class="total-row" colspan="3">Module 2 Subtotal</td><td class="total-row right">$8,070</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Shared Development Costs</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Hours</th><th class="right">Rate (CAD)</th><th class="right">Cost (CAD)</th></tr></thead>
+    <tbody>
+      <tr><td>Project management (Andres + Hugo coordination)</td><td>20 hrs</td><td class="right">$95/hr</td><td class="right">$1,900</td></tr>
+      <tr><td>Security review, PIPEDA compliance check</td><td>10 hrs</td><td class="right">$115/hr</td><td class="right">$1,150</td></tr>
+      <tr><td>Production deployment + infrastructure setup</td><td>12 hrs</td><td class="right">$115/hr</td><td class="right">$1,380</td></tr>
+      <tr><td>Documentation + onboarding materials</td><td>10 hrs</td><td class="right">$70/hr</td><td class="right">$700</td></tr>
+      <tr><td class="total-row" colspan="3">Shared Subtotal</td><td class="total-row right">$5,130</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Platform Infrastructure — First 12 Months</h2>
+  <table>
+    <thead><tr><th>Service</th><th>Purpose</th><th class="right">Monthly (CAD)</th><th class="right">Annual (CAD)</th></tr></thead>
+    <tbody>
+      <tr><td>GoHighLevel Agency Pro</td><td>Channel backbone: SMS, Email, WhatsApp, Instagram, Facebook</td><td class="right">$407</td><td class="right">$4,884</td></tr>
+      <tr><td>Anthropic Claude API</td><td>AI engine for both modules (~1,500 conversations/month)</td><td class="right">$370</td><td class="right">$4,440</td></tr>
+      <tr><td>Canadian Cloud Hosting</td><td>Webhook server, cron scheduler</td><td class="right">$40</td><td class="right">$480</td></tr>
+      <tr><td>Database (Supabase)</td><td>Leads, candidates, conversations</td><td class="right">$35</td><td class="right">$420</td></tr>
+      <tr><td>WhatsApp conversation fees</td><td>Meta per-conversation billing</td><td class="right">$60</td><td class="right">$720</td></tr>
+      <tr><td>SMS messaging (Twilio via GHL)</td><td>Per-message charges</td><td class="right">$35</td><td class="right">$420</td></tr>
+      <tr><td class="total-row" colspan="3">Infrastructure Subtotal</td><td class="total-row right">$11,364</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Pilot Program Delivery</h2>
+  <table>
+    <thead><tr><th>Item</th><th class="right">Cost (CAD)</th></tr></thead>
+    <tbody>
+      <tr><td>SME onboarding (15–25 businesses, both modules)</td><td class="right">$4,200</td></tr>
+      <tr><td>Training workshops and reference materials</td><td class="right">$2,100</td></tr>
+      <tr><td>Pilot monitoring, reporting, and performance reviews</td><td class="right">$2,800</td></tr>
+      <tr><td class="total-row">Pilot Subtotal</td><td class="total-row right">$9,100</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Contingency (10%)</h2>
+  <table>
+    <thead><tr><th>Item</th><th class="right">Cost (CAD)</th></tr></thead>
+    <tbody>
+      <tr><td>Reserve — Meta review delays, pilot scope adjustments, additional onboarding needs</td><td class="right">$5,314</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Total Budget Summary</h2>
+  <table class="grand-total">
+    <thead><tr><th>Category</th><th class="right">Amount (CAD)</th></tr></thead>
+    <tbody>
+      <tr><td>Module 1 development</td><td class="right">$19,475</td></tr>
+      <tr><td>Module 2 development</td><td class="right">$8,070</td></tr>
+      <tr><td>Shared development costs</td><td class="right">$5,130</td></tr>
+      <tr><td>Platform infrastructure (12 months)</td><td class="right">$11,364</td></tr>
+      <tr><td>Pilot program delivery</td><td class="right">$9,100</td></tr>
+      <tr><td>Contingency (10%)</td><td class="right">$5,314</td></tr>
+      <tr><td class="total-row"><strong>Total Grant Request</strong></td><td class="total-row right"><strong>$58,453</strong></td></tr>
+      <tr><td class="total-row"><strong>Requested (rounded)</strong></td><td class="total-row right"><strong>$58,500 CAD</strong></td></tr>
+    </tbody>
+  </table>
+
+  <!-- 10. Sustainability -->
+  <h1>10. Sustainability After the Grant Period</h1>
+
+  <p>After the 12-month project period, the platform sustains itself through a tiered commercial licensing model offered to Canadian SMEs:</p>
+
+  <div class="tier-grid">
+    <div class="tier-card">
+      <div class="tier-name">Starter</div>
+      <div class="tier-price">$349 <span>CAD/month</span></div>
+      <div class="tier-includes">1 module (Lead or Hiring), up to 3 channels, 200 conversations/month</div>
+    </div>
+    <div class="tier-card" style="border-top-color: #c0392b;">
+      <div class="tier-name">Growth</div>
+      <div class="tier-price">$599 <span>CAD/month</span></div>
+      <div class="tier-includes">Both modules, all 6 channels, 1,000 conversations/month</div>
+    </div>
+    <div class="tier-card">
+      <div class="tier-name">Scale</div>
+      <div class="tier-price">$999 <span>CAD/month</span></div>
+      <div class="tier-includes">Both modules, all channels, unlimited conversations, priority support</div>
+    </div>
+  </div>
+
+  <p><strong>Break-even:</strong> Approximately 35–40 paying SME subscribers at the Growth tier.<br>
+  <strong>Canadian market potential:</strong> With approximately 1.2 million registered small businesses in Canada, even 0.01% adoption represents 120 paying customers — well above the break-even threshold. ⚠ <em>Verify current figure against the latest Statistics Canada Business Register before submission.</em></p>
+
+  <!-- 11. Outcomes -->
+  <h1>11. Measurable Outcomes and Evaluation</h1>
+
+  <p>Outcomes will be reported at the 6-month and 12-month marks, and in the IRAP project completion report:</p>
+
+  <table>
+    <thead><tr><th>Metric</th><th>Target</th></tr></thead>
+    <tbody>
+      <tr><td>Canadian SMEs in active pilot</td><td>15 – 25</td></tr>
+      <tr><td>Average lead response time (before vs. after)</td><td>Reduction from hours to under 60 seconds</td></tr>
+      <tr><td>Time-per-hire for pilot SMEs using Module 2</td><td>Reduction of 60%+ vs. manual process</td></tr>
+      <tr><td>Cost-per-qualified-candidate vs. recruitment agency</td><td>Reduction of 70%+</td></tr>
+      <tr><td>Canadian direct jobs created</td><td>3 – 4</td></tr>
+      <tr><td>Estimated indirect jobs (SME growth + stable hiring)</td><td>20 – 45</td></tr>
+      <tr><td>Platform uptime</td><td>99.5%+</td></tr>
+      <tr><td>Data hosted on Canadian infrastructure</td><td>100%</td></tr>
+      <tr><td>Paying subscribers at month 12</td><td>20+ (path to sustainability confirmed)</td></tr>
+      <tr><td>IRAP project completion report</td><td>Submitted on time</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 12. Organizational Capacity -->
+  <h1>12. Organizational Capacity</h1>
+
+  <p><strong>Kuma Group</strong> is a technology venture founded by Andres Bermudez and Hugo Lancheros, focused on applied AI solutions for business operations. The team has demonstrated capacity to build and deploy production AI systems through the development of Hiresignal — a fully operational AI conversational interview platform — built entirely in-house, currently in active use, and serving as the technical foundation for both modules proposed in this project.</p>
+
+  <p>Kuma Group is Ontario-registered with a distributed remote team. Andres Bermudez leads technical development remotely from Colombia; Hugo Lancheros manages business operations and client relationships from Ontario. This structure is consistent with IRAP's recognition that modern R&amp;D teams operate across geographic boundaries.</p>
+
+  <p><strong>Evidence of technical capacity:</strong></p>
+  <ul>
+    <li>Hiresignal platform: live, production PHP + Claude AI conversational system</li>
+    <li>Multi-turn conversation management with history, state, and scoring built and tested</li>
+    <li>Real-world validation of the AI engine's ability to conduct structured, professional text conversations</li>
+  </ul>
+
+  <p><strong>Funding history:</strong> This is Kuma Group's first external grant application. The team has self-funded all development to date, demonstrating commitment without external support.</p>
+
+  <div class="action-list">
+    <div class="action-title">⚠ Before Submission — Actions Required</div>
+    <ol>
+      <li><strong>ITA assignment:</strong> Contact NRC IRAP to be assigned an Industrial Technology Advisor. The ITA reviews the project for technical merit and innovation before a formal application is accepted. This is the first step in the IRAP process.</li>
+      <li><strong>Business registration:</strong> An active Ontario business registration is required. Register at ontario.ca/businessregistry (~$60 CAD, same day). See the companion document <em>Ontario Business Registration — Draft Reference</em> for guidance.</li>
+      <li><strong>IRAP labour eligibility confirmation:</strong> Work with your ITA to confirm which labour costs in the budget qualify as IRAP-eligible Canadian R&amp;D. Only Hugo's Canadian-based hours are clearly eligible without further documentation.</li>
+      <li><strong>Financial statement:</strong> Prepare a simple one-page summary of current assets and any existing Hiresignal revenue. IRAP requires basic financial documentation.</li>
+      <li><strong>Hugo's bio:</strong> Add 2–3 sentences about background and experience in this document.</li>
+    </ol>
+  </div>
+
+  <!-- 13. Commitment -->
+  <h1>13. Statement of Canadian Technology Commitment</h1>
+
+  <p>Kuma Group commits to the following conditions as part of this project:</p>
+
+  <ul class="commitment-list">
+    <li>All product development and client-facing work managed by Canadian-based personnel</li>
+    <li>Intellectual property developed under this project remains owned by Kuma Group, a registered Ontario business</li>
+    <li>Production data hosted on Canadian cloud infrastructure; PIPEDA compliance documented</li>
+    <li>A public impact report published at 12 months detailing measurable outcomes for pilot SMEs</li>
+    <li>The commercialization model will prioritize Canadian SME access before any international expansion</li>
+    <li>Full project accounting and IRAP progress reports provided to NRC on the agreed schedule</li>
+  </ul>
+
+  <!-- 14. Conclusion -->
+  <h1>14. Conclusion</h1>
+
+  <p>Canada's small businesses are the backbone of this country's economy, and they face the same two challenges year after year: not enough customers, and not enough of the right people to serve them. Those challenges are not going to disappear — but they can be met with better tools.</p>
+
+  <p>Kuma Group has already built the AI technology to address both. What this funding enables is not a research project or a prototype. It is the step from a working internal system to a Canadian-owned, nationally deployable platform that puts enterprise-grade capability in the hands of a trades contractor in Hamilton, a restaurant owner in Vancouver, or a childcare operator in Halifax.</p>
+
+  <p>The technology stays in Canada. The jobs stay in Canada. The intellectual property stays in Canada. And the small businesses that use it — and the people they hire and the customers they serve — stay, grow, and contribute to Canada's economy for years to come.</p>
+
+  <p>We respectfully request <strong>$58,500 CAD</strong> to make that possible.</p>
+
+  <!-- Footer -->
+  <div class="doc-footer">
+    <div class="footer-top">
+      <span>Kuma Group — hello@kumatalent.com — +1 (587) 894-9527</span>
+      <span>Andres Bermudez &amp; Hugo Lancheros — May 2026</span>
+    </div>
+    All cost estimates are in Canadian dollars. USD-denominated platform costs converted at approximately 1.37 CAD/USD. Developer rates reflect current Ontario market rates. Statistics referencing Canadian SME counts are approximate — Kuma Group recommends verifying figures against the most current Statistics Canada Business Register before final submission. IRAP eligibility determinations are subject to review by the assigned Industrial Technology Advisor. This proposal reflects the platform as designed in May 2026; voice functionality for Hiresignal is architecturally supported but excluded from this scope due to cost considerations.
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ontario Business Registration — Kuma Group</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #1a1a1a;
+      background: #f4f4f0;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 60px 70px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.10);
+    }
+
+    /* Header */
+    .doc-header {
+      border-bottom: 3px solid #1a2e4a;
+      padding-bottom: 24px;
+      margin-bottom: 36px;
+    }
+    .doc-header .org { font-size: 22px; font-weight: bold; color: #1a2e4a; letter-spacing: 1px; text-transform: uppercase; }
+    .doc-header .doc-title { font-size: 17px; color: #555; margin-top: 4px; font-style: italic; }
+    .doc-header .draft-badge {
+      display: inline-block;
+      margin-top: 12px;
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      color: #856404;
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Section headings */
+    h1 { font-size: 22px; color: #1a2e4a; margin: 40px 0 14px; padding-bottom: 6px; border-bottom: 1px solid #d0d7e0; }
+    h2 { font-size: 17px; color: #1a2e4a; margin: 28px 0 10px; }
+    h3 { font-size: 15px; color: #333; margin: 20px 0 8px; font-style: italic; }
+
+    p { margin-bottom: 14px; }
+    ul, ol { margin: 10px 0 16px 24px; }
+    li { margin-bottom: 6px; }
+
+    strong { color: #1a1a1a; }
+
+    /* Warning / action box */
+    .callout {
+      border-left: 4px solid #e07b00;
+      background: #fff8f0;
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 0 4px 4px 0;
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+    }
+    .callout.info { border-left-color: #1a6e9e; background: #f0f7ff; }
+    .callout.success { border-left-color: #2e7d32; background: #f0faf0; }
+    .callout .callout-title { font-weight: bold; margin-bottom: 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* Comparison table */
+    table { width: 100%; border-collapse: collapse; margin: 18px 0; font-family: 'Arial', sans-serif; font-size: 13.5px; }
+    th { background: #1a2e4a; color: #ffffff; padding: 10px 12px; text-align: left; font-weight: bold; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+    tr:nth-child(even) td { background: #f8f8f8; }
+    tr:hover td { background: #eef3f8; }
+    td.rec { font-weight: bold; color: #2e7d32; }
+
+    /* Form field template */
+    .form-field {
+      background: #f8f9fa;
+      border: 1px solid #d0d7e0;
+      border-radius: 4px;
+      padding: 14px 18px;
+      margin: 10px 0 18px;
+      font-family: 'Arial', sans-serif;
+      font-size: 14px;
+    }
+    .form-field .field-label { font-weight: bold; color: #1a2e4a; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .form-field .field-value { color: #333; }
+    .form-field .field-value.pending { color: #999; font-style: italic; }
+
+    /* Letter */
+    .letter {
+      border: 1px solid #ccc;
+      padding: 36px 40px;
+      margin: 20px 0;
+      font-family: 'Georgia', serif;
+      font-size: 14.5px;
+      line-height: 1.8;
+    }
+    .letter .letter-date { color: #555; margin-bottom: 20px; }
+    .letter .letter-subject { font-weight: bold; text-decoration: underline; margin: 20px 0; }
+    .letter .letter-sig { margin-top: 40px; }
+    .letter .letter-sig .sig-line { border-top: 1px solid #999; width: 200px; margin-top: 40px; margin-bottom: 4px; }
+
+    /* Checklist */
+    .checklist { list-style: none; margin: 10px 0 20px; padding: 0; font-family: 'Arial', sans-serif; font-size: 14px; }
+    .checklist li { padding: 8px 0 8px 32px; position: relative; border-bottom: 1px solid #f0f0f0; }
+    .checklist li::before { content: '☐'; position: absolute; left: 4px; font-size: 16px; color: #1a2e4a; }
+    .checklist li .step-label { font-weight: bold; }
+    .checklist li .step-detail { color: #555; font-size: 13px; }
+    .checklist .done::before { content: '✓'; color: #2e7d32; }
+
+    /* Footer */
+    .doc-footer {
+      margin-top: 60px;
+      padding-top: 16px;
+      border-top: 1px solid #d0d7e0;
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      color: #888;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; padding: 40px 50px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="doc-header">
+    <div class="org">Kuma Group</div>
+    <div class="doc-title">Ontario Business Registration — Draft Reference Document</div>
+    <div class="draft-badge">⚠ DRAFT — For review by Andres Bermudez &amp; Hugo Lancheros</div>
+  </div>
+
+  <!-- Section 1 -->
+  <h1>1. What You Need to Register</h1>
+
+  <p>Before submitting the Ontario Chamber of Commerce grant application, Kuma Group must have an active Ontario business registration. There are two practical options at this stage:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Option</th>
+        <th>What it is</th>
+        <th>Cost</th>
+        <th>Time</th>
+        <th>Best for</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rec">Business Name Registration ★ Recommended first step</td>
+        <td>Registers "Kuma Group" as a business name. You operate as yourselves, doing business as Kuma Group. Filed online through the Ontario Business Registry.</td>
+        <td>~$60 CAD (online at ontario.ca/businessregistry)</td>
+        <td>Same day (online processing)</td>
+        <td>Fast start; acceptable for many grants. Does not create a separate legal entity.</td>
+      </tr>
+      <tr>
+        <td>Ontario Business Corporation</td>
+        <td>Incorporates Kuma Group as a legal entity under the Ontario Business Corporations Act (OBCA). Provides limited liability and looks more formal to grant reviewers.</td>
+        <td>~$300 CAD filing fee + optional legal fees ($500–$1,500)</td>
+        <td>1–3 business days (online)</td>
+        <td>Stronger for grants and investors. Recommended if you plan to scale or take on outside investment.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout info">
+    <div class="callout-title">Recommendation</div>
+    Register the business name first (~$60 online through the Ontario Business Registry at ontario.ca/businessregistry) to have a valid Business Identification Number for the grant application. Hugo Lancheros, based in Ontario, handles the registration as the primary local contact. In parallel, consult an Ontario lawyer or accountant about incorporation — particularly if this grant is approved, as incorporated entities are treated more favourably in future funding rounds.
+  </div>
+
+  <!-- Section 2 -->
+  <h1>2. Business Name Registration — Draft Form Details</h1>
+
+  <p>The following reflects what you will enter on the <strong>Ontario Business Name Registration</strong> form, filed online through the <strong>Ontario Business Registry</strong> at <em>ontario.ca/businessregistry</em>. Hugo Lancheros completes this as the Ontario-based registrant. Complete in approximately 15–20 minutes.</p>
+
+  <h2>Registrant Information</h2>
+
+  <div class="form-field">
+    <div class="field-label">Business Name</div>
+    <div class="field-value">Kuma Group</div>
+  </div>
+
+  <div class="form-field">
+    <div class="field-label">Business Activity (describe in plain language)</div>
+    <div class="field-value">Development and commercialization of artificial intelligence software platforms for small and medium-sized businesses, including AI-powered customer lead management and AI-assisted candidate screening tools.</div>
+  </div>
+
+  <div class="form-field">
+    <div class="field-label">Registrant 1 — Full Legal Name</div>
+    <div class="field-value">Hugo Lancheros</div>
+  </div>
+
+  <div class="form-field">
+    <div class="field-label">Registrant 1 — Address</div>
+    <div class="field-value pending">⚠ Enter Hugo's current Ontario mailing address.</div>
+  </div>
+
+  <div class="form-field">
+    <div class="field-label">Registrant 2 — Full Legal Name (optional)</div>
+    <div class="field-value">Andres Bermudez</div>
+  </div>
+
+  <div class="form-field">
+    <div class="field-label">Registrant 2 — Address</div>
+    <div class="field-value pending">Andres is based remotely in Colombia. Ontario registration requires at least one Ontario-based registrant. Hugo's Ontario address satisfies this requirement. List Andres as co-owner if the registry form allows for a non-Canadian address; otherwise list Hugo as the sole Ontario registrant.</div>
+  </div>
+
+  <div class="form-field">
+    <div class="field-label">Business Commencement Date</div>
+    <div class="field-value">May 2026 (or the date Hiresignal development began, if earlier — whichever reflects when business activity started)</div>
+  </div>
+
+  <div class="form-field">
+    <div class="field-label">Business Address (mailing)</div>
+    <div class="field-value pending">⚠ Enter Hugo's Ontario address as the primary business mailing address for Kuma Group. This is the company's Ontario contact address for all grant correspondence.</div>
+  </div>
+
+  <div class="callout success">
+    <div class="callout-title">✓ Address Requirement — Confirmed Clear</div>
+    Hugo Lancheros is based in Ontario and serves as the primary Ontario-based registrant for Kuma Group. Ontario business name registration requires an Ontario address, which Hugo provides. Andres Bermudez participates remotely from Colombia as co-founder. This is a standard distributed-team structure for Canadian technology startups and does not complicate the registration.
+  </div>
+
+  <!-- Section 3 -->
+  <h1>3. Statement of Pending Registration</h1>
+
+  <p>If you wish to submit the grant application before registration is complete — for example, to meet a deadline — include the following letter as an attachment. Replace the bracketed fields before use.</p>
+
+  <div class="letter">
+    <div class="letter-date">May 2026</div>
+
+    <strong>Ontario Chamber of Commerce</strong><br>
+    Grant Review Committee<br>
+    [Chamber address]<br><br>
+
+    <div class="letter-subject">Re: Kuma Group — Pending Ontario Business Registration</div>
+
+    <p>Dear Grant Review Committee,</p>
+
+    <p>We are submitting this letter in connection with our grant application for the <em>Kuma Group AI Platform for Ontario Small and Medium Enterprises</em>, dated May 2026.</p>
+
+    <p>At the time of this application, Kuma Group is in the process of completing its formal Ontario business name registration through the Ontario Business Registry (ontario.ca/businessregistry). We expect registration to be confirmed within <strong>[2–5 business days]</strong> of this submission date. Upon receipt of our Ontario Business Identification Number, we will provide it immediately to the Chamber for our file.</p>
+
+    <p>The underlying business activity — including the development and active operation of our Hiresignal AI platform — has been underway since [INSERT DATE]. The delay in formal registration reflects the early-stage nature of the venture, not any uncertainty about our commitment to operating as an Ontario-based enterprise.</p>
+
+    <p>We respectfully request that the Committee accept this application subject to confirmation of our business registration within [30 days] of submission. We are fully prepared to provide any supporting documentation required.</p>
+
+    <p>Thank you for your consideration of our application.</p>
+
+    <div class="letter-sig">
+      Sincerely,<br><br>
+      <div class="sig-line"></div>
+      <strong>Hugo Lancheros</strong><br>
+      Marketing &amp; Sales Director, Kuma Group (Ontario)<br>
+      hello@kumatalent.com | +1 (587) 894-9527<br><br>
+
+      <div class="sig-line"></div>
+      <strong>Andres Bermudez</strong><br>
+      Lead Developer, Kuma Group<br>
+      hello@kumatalent.com
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <h1>4. Pre-Submission Checklist</h1>
+
+  <p>Complete these steps before submitting the grant application:</p>
+
+  <ul class="checklist">
+    <li>
+      <span class="step-label">Decide on registration type</span><br>
+      <span class="step-detail">Ontario Business Name Registration (~$60 online, same day at ontario.ca/businessregistry) for speed — or Ontario corporation under the OBCA (~$300 online) for stronger credibility. Business name registration is acceptable for most grants; incorporation is better long-term.</span>
+    </li>
+    <li>
+      <span class="step-label">Hugo registers through the Ontario Business Registry</span><br>
+      <span class="step-detail">Go to ontario.ca/businessregistry. Hugo completes the registration as the Ontario-based registrant. Have government-issued ID and Hugo's Ontario mailing address ready. Fee ~$60 payable online by credit card.</span>
+    </li>
+    <li>
+      <span class="step-label">Receive Ontario Business Identification Number</span><br>
+      <span class="step-detail">Issued immediately upon successful online registration. Add it to the grant proposal header where marked ⚠.</span>
+    </li>
+    <li>
+      <span class="step-label">Hugo fills in his bio section in the grant proposal</span><br>
+      <span class="step-detail">2–3 sentences about background, sales/marketing experience, and relevance to Ontario SMEs.</span>
+    </li>
+    <li>
+      <span class="step-label">Hugo confirms his Ontario mailing address for the proposal</span><br>
+      <span class="step-detail">Update the grant proposal header and this document with Hugo's confirmed Ontario address.</span>
+    </li>
+    <li>
+      <span class="step-label">Prepare simple financial statement</span><br>
+      <span class="step-detail">One-page summary: current assets, any Hiresignal revenue or self-funding amount, projected costs. May be required by the Chamber.</span>
+    </li>
+    <li>
+      <span class="step-label">Confirm grant program requirements with the Ontario Chamber</span><br>
+      <span class="step-detail">Verify whether the specific grant program accepts pending registrations or requires an established Business Identification Number at submission time.</span>
+    </li>
+    <li>
+      <span class="step-label">Remove DRAFT banners from grant proposal before final submission</span><br>
+      <span class="step-detail">Both the yellow draft banner and all ⚠ internal notes must be removed or resolved before the proposal is submitted.</span>
+    </li>
+  </ul>
+
+  <!-- Footer -->
+  <div class="doc-footer">
+    Kuma Group — hello@kumatalent.com — +1 (587) 894-9527<br>
+    This document is a working draft prepared for internal review by Andres Bermudez and Hugo Lancheros. It does not constitute legal advice. Consult a licensed Ontario lawyer or authorized business registry service before filing. Ontario Business Registry information should be verified at ontario.ca/businessregistry prior to submission.
+  </div>
+
+</div>
+</body>
+</html>

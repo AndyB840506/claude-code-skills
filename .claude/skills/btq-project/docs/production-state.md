@@ -3,7 +3,7 @@
 ## Completed Episodes
 
 ### EP.010 — God of War
-**Title:** "Kratos: el líder que dejó de gritar"
+**Title:** "Kratos: el líder que dejó de gritar para empezar a enseñar"
 
 ### EP.011 — Frieren
 **Title:** "Frieren: el costo de no valorar a tu equipo hasta que ya no está"  

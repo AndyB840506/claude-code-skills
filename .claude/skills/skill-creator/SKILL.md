@@ -63,6 +63,17 @@ install it → ready to use
 
 ---
 
+## Web Version
+
+`skill-creator-web` — deploy independiente en DigitalOcean que permite crear skills desde cualquier browser o celular, sin necesidad de Claude Code ni terminal activa. El skill generado se hace push automáticamente a `AndyB840506/claude-skills` via GitHub API.
+
+- URL local: `http://localhost:3001/?token=skillcreator_andyf_9p2m5x3k8`
+- Stack: Express + Claude API (SSE streaming) + GitHub REST API v3
+- Patrón clave: `PUSH_SKILL:{json}` → mismo que `SEND_QUOTE` en andyfreelancer
+- Repo de skills: `https://github.com/AndyB840506/claude-skills`
+
+---
+
 ## EXECUTION
 
 You have invoked `/skill-creator`. Now execute the creation flow:

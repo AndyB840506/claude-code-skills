@@ -25,6 +25,5 @@
 ## Asset Types
 
 - Carousel slides (Gamma generated)
-- Quote cards (Gemini/Nani Banana)
-- Static artwork (Gemini/Nani Banana)
-- Video clips (Kling/Google Flow)
+- Static artwork (Gemini/Nani Banana) — incluye 9:16 para Día 2 Stories
+- Video clips (Kling/Google Flow) — opcional, no parte del flujo estándar
