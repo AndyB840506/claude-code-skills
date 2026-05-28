@@ -86,6 +86,25 @@ If creating a conversational agent, give it a human name (rotated per session). 
 
 Example: "I'm Maria" vs "I'm your assistant" → the second is cold.
 
+## 15. Prompt Caching for All API Bots
+
+Any project that builds a chatbot or API-calling bot using Anthropic must include prompt caching on the system prompt.
+
+**Node.js (Anthropic SDK):**
+```js
+system: [{ type: 'text', text: SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }]
+```
+
+**PHP (raw cURL):**
+```php
+// Add header:
+'anthropic-beta: prompt-caching-2024-07-31'
+// Change system from string to array:
+$payload['system'] = [['type' => 'text', 'text' => $system, 'cache_control' => ['type' => 'ephemeral']]];
+```
+
+Caching activates when the system prompt exceeds ~4,096 tokens (Sonnet) or ~2,048 tokens (Haiku). Below threshold the header is harmless — add it regardless so the code is future-proof.
+
 ## 14. Geographic Validation for Location-Specific Documents
 
 Before drafting any document that depends on a specific province/state/country (government forms, grant applications, legal registrations, compliance documents):
