@@ -1,0 +1,246 @@
+{
+  "version": "1.0",
+  "created": "2026-05-12",
+  "description": "HireSignal Scoring Schema - Locked per Step 0 Requirements",
+
+  "dimensions": {
+    "technical_depth": {
+      "name": "Technical Depth",
+      "default_weight": 0.20,
+      "min_weight": 0.0,
+      "max_weight": 1.0,
+      "score_range": [0, 10],
+      "description": "Problem-solving approach, architecture reasoning, debugging capability, production experience",
+      "evidence_required": 3,
+      "include_confidence": true
+    },
+    "authenticity": {
+      "name": "Authenticity",
+      "default_weight": 0.20,
+      "min_weight": 0.0,
+      "max_weight": 1.0,
+      "score_range": [0, 10],
+      "description": "Contradiction analysis, response consistency, specificity, timeline validation, AI usage detection",
+      "evidence_required": 3,
+      "include_confidence": true
+    },
+    "english_proficiency": {
+      "name": "English Proficiency",
+      "default_weight": 0.05,
+      "min_weight": 0.0,
+      "max_weight": 1.0,
+      "score_range": [0, 10],
+      "description": "Response time, vocabulary, grammar, comprehension, complex idea expression",
+      "evidence_required": 3,
+      "include_confidence": true,
+      "threshold_adjustable": true,
+      "threshold_default": 7,
+      "threshold_min": 5,
+      "threshold_max": 10
+    },
+    "behavioral_fit": {
+      "name": "Behavioral/Cultural Fit",
+      "default_weight": 0.05,
+      "min_weight": 0.0,
+      "max_weight": 1.0,
+      "score_range": [0, 10],
+      "description": "Ownership mentality, initiative, adaptability, culture alignment (varies by JD culture_factor)",
+      "evidence_required": 3,
+      "include_confidence": true
+    },
+    "cognitive_flexibility": {
+      "name": "Cognitive Flexibility",
+      "default_weight": 0.02,
+      "min_weight": 0.0,
+      "max_weight": 1.0,
+      "score_range": [0, 10],
+      "description": "Handles ambiguity, adapts approach, considers multiple perspectives, recovers from mistakes",
+      "evidence_required": 3,
+      "include_confidence": true
+    },
+    "pressure_resilience": {
+      "name": "Pressure Resilience",
+      "default_weight": 0.01,
+      "min_weight": 0.0,
+      "max_weight": 1.0,
+      "score_range": [0, 10],
+      "description": "Handles stress, maintains composure, problem-solving under pressure",
+      "evidence_required": 3,
+      "include_confidence": true
+    },
+    "culture_specific": {
+      "name": "Culture-Specific Fit",
+      "default_weight": 0.07,
+      "min_weight": 0.0,
+      "max_weight": 1.0,
+      "score_range": [0, 10],
+      "description": "Startup bias (action/ambiguity), Leadership (delegation/vision), Corporate (process/stakeholders), Remote (communication/autonomy), Collaborative (teamwork/conflict)",
+      "evidence_required": 3,
+      "include_confidence": true,
+      "culture_factors": [
+        "startup",
+        "leadership",
+        "corporate",
+        "remote",
+        "collaborative"
+      ]
+    }
+  },
+
+  "verdict_logic": {
+    "base_threshold": 6.5,
+    "threshold_adjustable": true,
+    "threshold_by_role": {
+      "junior": 6.0,
+      "mid": 6.5,
+      "senior": 7.0,
+      "leadership": 7.5
+    },
+    "formula": "sum(dimension_score × dimension_weight) for all dimensions",
+    "verdict_rules": {
+      "fit": {
+        "condition": "overall_score >= threshold AND no CRITICAL dealbreakers",
+        "recommendation": "PASS - Proceed to next round"
+      },
+      "pass_hold": {
+        "condition": "overall_score >= threshold AND has CRITICAL warnings (non-dealbreaker)",
+        "recommendation": "CONDITIONAL - Clarify before next round"
+      },
+      "not_fit": {
+        "condition": "overall_score < threshold OR has CRITICAL dealbreaker",
+        "recommendation": "REJECT - Do not proceed"
+      }
+    }
+  },
+
+  "dealbreakers": [
+    {
+      "type": "CRITICAL_CONTRADICTION",
+      "name": "Core Timeline/Location Mismatch",
+      "severity": "CRITICAL",
+      "override": true,
+      "description": "Fundamental contradiction in timeline, location, or role"
+    },
+    {
+      "type": "UNREACHABLE",
+      "name": "Unreachable After 3 Attempts",
+      "severity": "CRITICAL",
+      "override": true,
+      "description": "Candidate cannot be reached after 3 contact attempts - disqualify"
+    },
+    {
+      "type": "INTERVIEW_ABANDONMENT",
+      "name": "Abandons Interview Mid-Process",
+      "severity": "CRITICAL",
+      "override": true,
+      "description": "Candidate abandons call or interview mid-process - disqualify"
+    },
+    {
+      "type": "ENGLISH_THRESHOLD_FAIL",
+      "name": "English Proficiency Below Threshold",
+      "severity": "CRITICAL",
+      "override": true,
+      "adjustable": true,
+      "description": "English score below job requirement (default: 7) - disqualify based on JD threshold"
+    }
+  ],
+
+  "contradiction_severity": {
+    "CRITICAL": {
+      "definition": "Core contradiction that fundamentally questions reliability",
+      "examples": [
+        "Timeline mismatch (dates don't align)",
+        "Location conflict (different stories about where they worked)",
+        "Role mismatch (claims different responsibilities)",
+        "Skill dishonesty (claims skill but cannot demonstrate)"
+      ],
+      "impact": "DEALBREAKER - triggers NOT_FIT verdict",
+      "action": "Manual review required, disqualify"
+    },
+    "WARNING": {
+      "definition": "Significant inconsistency that raises questions",
+      "examples": [
+        "Minor timeline variance (off by months)",
+        "Skill claim vs demonstrated ability discrepancy",
+        "Conflicting account of same project"
+      ],
+      "impact": "Flag for review, affects authenticity score",
+      "action": "Analyze context, may require clarification"
+    },
+    "NOTE": {
+      "definition": "Minor variation expected in human memory/storytelling",
+      "examples": [
+        "Different emphasis on same experience",
+        "Normal human memory inconsistency",
+        "Contextual differences in how story is told"
+      ],
+      "impact": "Noted but not penalized",
+      "action": "Document only"
+    }
+  },
+
+  "evidence_requirements": {
+    "quotes_per_dimension": 3,
+    "include_confidence_score": true,
+    "confidence_scale": [0, 1],
+    "minimum_confidence": 0.7,
+    "evidence_structure": {
+      "quote": "Direct text from transcript",
+      "context": "Question/topic being discussed",
+      "confidence": "0.0-1.0 how confident in this evidence",
+      "reasoning": "Why this quote supports the score"
+    }
+  },
+
+  "report_output": {
+    "format": "HTML",
+    "downloadable_as": "PDF",
+    "presentable": true,
+    "audience": "internal_staff_only",
+    "audience_roles": [
+      "recruiter",
+      "hiring_manager",
+      "team_lead",
+      "head_of_engineering",
+      "c_suite"
+    ],
+    "sections": [
+      "candidate_summary",
+      "verdict_and_recommendation",
+      "overall_score",
+      "dimension_scores_with_evidence",
+      "contradiction_analysis",
+      "next_steps",
+      "recruiter_notes"
+    ],
+    "security": "Internal staff only - do not share with candidates"
+  },
+
+  "weight_adjustment_rules": {
+    "description": "Per-JD weight customization based on role requirements",
+    "enabled": true,
+    "default_sum": 1.0,
+    "adjustment_constraint": "All weights must sum to 1.0",
+    "adjustment_example": {
+      "scenario": "Startup role prioritizes culture fit over english",
+      "default_weights": {
+        "technical_depth": 0.20,
+        "authenticity": 0.20,
+        "english_proficiency": 0.05,
+        "behavioral_fit": 0.05,
+        "cognitive_flexibility": 0.02,
+        "pressure_resilience": 0.01,
+        "culture_specific": 0.47
+      },
+      "adjusted_weights": {
+        "technical_depth": 0.25,
+        "authenticity": 0.25,
+        "english_proficiency": 0.02,
+        "behavioral_fit": 0.10,
+        "cognitive_flexibility": 0.03,
+        "pressure_resilience": 0.02,
+        "culture_specific": 0.33
+      }
+    }
+  }
+}

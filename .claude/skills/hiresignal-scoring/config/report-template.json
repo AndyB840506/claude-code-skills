@@ -1,0 +1,328 @@
+{
+  "version": "1.0",
+  "created": "2026-05-12",
+  "description": "HireSignal Report Template - HTML format, internal staff only",
+
+  "metadata": {
+    "title": "Interview Assessment Report",
+    "format": "HTML",
+    "downloadable_as": "PDF",
+    "audience": "internal_staff_only",
+    "audience_roles": ["recruiter", "hiring_manager", "team_lead", "head_of_engineering", "c_suite"],
+    "security_level": "CONFIDENTIAL - Internal Staff Only",
+    "do_not_share": "This report must not be shared with candidates or external parties"
+  },
+
+  "structure": {
+    "header": {
+      "title": "Interview Assessment Report",
+      "candidate_name": "{{ candidate.name }}",
+      "candidate_email": "{{ candidate.email }}",
+      "position_applied": "{{ job_description.title }}",
+      "interview_date": "{{ interview.date }}",
+      "report_generated_at": "{{ report.timestamp }}",
+      "interviewer": "{{ interview.interviewer_name }}"
+    },
+
+    "executive_summary": {
+      "verdict": "{{ verdict.recommendation }}",
+      "verdict_options": ["PASS", "PASS-CONDITIONAL", "REJECT"],
+      "overall_score": "{{ scores.overall_score }}/10",
+      "confidence_level": "{{ verdict.confidence }}%",
+      "key_strengths": ["{{ strength1 }}", "{{ strength2 }}", "{{ strength3 }}"],
+      "areas_of_concern": ["{{ concern1 }}", "{{ concern2 }}"],
+      "recommendation_summary": "{{ verdict.reasoning }}"
+    },
+
+    "scoring_breakdown": {
+      "dimensions": [
+        {
+          "dimension_id": "technical_depth",
+          "dimension_name": "Technical Depth",
+          "weight": "{{ jd_weights.technical_depth }}%",
+          "score": "{{ dimension_scores.technical_depth }}/10",
+          "weighted_contribution": "{{ dimension_weighted_scores.technical_depth }}",
+          "evidence": [
+            {
+              "quote": "{{ quote1 }}",
+              "context": "{{ context1 }}",
+              "confidence": "{{ confidence1 }}",
+              "reasoning": "{{ reasoning1 }}"
+            },
+            {
+              "quote": "{{ quote2 }}",
+              "context": "{{ context2 }}",
+              "confidence": "{{ confidence2 }}",
+              "reasoning": "{{ reasoning2 }}"
+            },
+            {
+              "quote": "{{ quote3 }}",
+              "context": "{{ context3 }}",
+              "confidence": "{{ confidence3 }}",
+              "reasoning": "{{ reasoning3 }}"
+            }
+          ],
+          "analysis": "{{ dimension_analysis }}"
+        },
+        {
+          "dimension_id": "authenticity",
+          "dimension_name": "Authenticity",
+          "weight": "{{ jd_weights.authenticity }}%",
+          "score": "{{ dimension_scores.authenticity }}/10",
+          "weighted_contribution": "{{ dimension_weighted_scores.authenticity }}",
+          "evidence": [
+            {
+              "quote": "{{ quote1 }}",
+              "context": "{{ context1 }}",
+              "confidence": "{{ confidence1 }}",
+              "reasoning": "{{ reasoning1 }}"
+            },
+            {
+              "quote": "{{ quote2 }}",
+              "context": "{{ context2 }}",
+              "confidence": "{{ confidence2 }}",
+              "reasoning": "{{ reasoning2 }}"
+            },
+            {
+              "quote": "{{ quote3 }}",
+              "context": "{{ context3 }}",
+              "confidence": "{{ confidence3 }}",
+              "reasoning": "{{ reasoning3 }}"
+            }
+          ],
+          "analysis": "{{ dimension_analysis }}"
+        },
+        {
+          "dimension_id": "english_proficiency",
+          "dimension_name": "English Proficiency",
+          "weight": "{{ jd_weights.english_proficiency }}%",
+          "score": "{{ dimension_scores.english_proficiency }}/10",
+          "weighted_contribution": "{{ dimension_weighted_scores.english_proficiency }}",
+          "threshold_required": "{{ jd_english_threshold }}",
+          "threshold_met": "{{ english_threshold_passed }}",
+          "evidence": [
+            {
+              "quote": "{{ quote1 }}",
+              "context": "{{ context1 }}",
+              "confidence": "{{ confidence1 }}",
+              "reasoning": "{{ reasoning1 }}"
+            },
+            {
+              "quote": "{{ quote2 }}",
+              "context": "{{ context2 }}",
+              "confidence": "{{ confidence2 }}",
+              "reasoning": "{{ reasoning2 }}"
+            },
+            {
+              "quote": "{{ quote3 }}",
+              "context": "{{ context3 }}",
+              "confidence": "{{ confidence3 }}",
+              "reasoning": "{{ reasoning3 }}"
+            }
+          ],
+          "analysis": "{{ dimension_analysis }}"
+        },
+        {
+          "dimension_id": "behavioral_fit",
+          "dimension_name": "Behavioral/Cultural Fit",
+          "weight": "{{ jd_weights.behavioral_fit }}%",
+          "score": "{{ dimension_scores.behavioral_fit }}/10",
+          "weighted_contribution": "{{ dimension_weighted_scores.behavioral_fit }}",
+          "culture_factor": "{{ jd_culture_factor }}",
+          "evidence": [
+            {
+              "quote": "{{ quote1 }}",
+              "context": "{{ context1 }}",
+              "confidence": "{{ confidence1 }}",
+              "reasoning": "{{ reasoning1 }}"
+            },
+            {
+              "quote": "{{ quote2 }}",
+              "context": "{{ context2 }}",
+              "confidence": "{{ confidence2 }}",
+              "reasoning": "{{ reasoning2 }}"
+            },
+            {
+              "quote": "{{ quote3 }}",
+              "context": "{{ context3 }}",
+              "confidence": "{{ confidence3 }}",
+              "reasoning": "{{ reasoning3 }}"
+            }
+          ],
+          "analysis": "{{ dimension_analysis }}"
+        },
+        {
+          "dimension_id": "cognitive_flexibility",
+          "dimension_name": "Cognitive Flexibility",
+          "weight": "{{ jd_weights.cognitive_flexibility }}%",
+          "score": "{{ dimension_scores.cognitive_flexibility }}/10",
+          "weighted_contribution": "{{ dimension_weighted_scores.cognitive_flexibility }}",
+          "evidence": [
+            {
+              "quote": "{{ quote1 }}",
+              "context": "{{ context1 }}",
+              "confidence": "{{ confidence1 }}",
+              "reasoning": "{{ reasoning1 }}"
+            },
+            {
+              "quote": "{{ quote2 }}",
+              "context": "{{ context2 }}",
+              "confidence": "{{ confidence2 }}",
+              "reasoning": "{{ reasoning2 }}"
+            },
+            {
+              "quote": "{{ quote3 }}",
+              "context": "{{ context3 }}",
+              "confidence": "{{ confidence3 }}",
+              "reasoning": "{{ reasoning3 }}"
+            }
+          ],
+          "analysis": "{{ dimension_analysis }}"
+        }
+      ]
+    },
+
+    "contradiction_analysis": {
+      "summary": {
+        "critical_count": "{{ contradictions.critical.count }}",
+        "warning_count": "{{ contradictions.warning.count }}",
+        "note_count": "{{ contradictions.note.count }}",
+        "overall_authenticity_assessment": "{{ authenticity_assessment }}"
+      },
+      "critical_contradictions": [
+        {
+          "type": "{{ contradiction_type }}",
+          "severity": "CRITICAL",
+          "description": "{{ description }}",
+          "evidence": [
+            {
+              "statement_1": "{{ statement_1 }}",
+              "statement_2": "{{ statement_2 }}",
+              "conflict": "{{ conflict_explanation }}"
+            }
+          ],
+          "impact": "DEALBREAKER - Disqualifies candidate",
+          "action": "Reject"
+        }
+      ],
+      "warning_contradictions": [
+        {
+          "type": "{{ contradiction_type }}",
+          "severity": "WARNING",
+          "description": "{{ description }}",
+          "evidence": [
+            {
+              "statement_1": "{{ statement_1 }}",
+              "statement_2": "{{ statement_2 }}",
+              "conflict": "{{ conflict_explanation }}"
+            }
+          ],
+          "impact": "Affects authenticity score",
+          "action": "Manual review recommended"
+        }
+      ],
+      "note_contradictions": [
+        {
+          "type": "{{ contradiction_type }}",
+          "severity": "NOTE",
+          "description": "{{ description }}",
+          "impact": "Documented but no penalty"
+        }
+      ]
+    },
+
+    "overall_assessment": {
+      "overall_score": "{{ scores.overall_score }}/10",
+      "score_calculation": {
+        "technical_depth": "{{ dimension_scores.technical_depth }} × {{ jd_weights.technical_depth }} = {{ dimension_weighted_scores.technical_depth }}",
+        "authenticity": "{{ dimension_scores.authenticity }} × {{ jd_weights.authenticity }} = {{ dimension_weighted_scores.authenticity }}",
+        "english_proficiency": "{{ dimension_scores.english_proficiency }} × {{ jd_weights.english_proficiency }} = {{ dimension_weighted_scores.english_proficiency }}",
+        "behavioral_fit": "{{ dimension_scores.behavioral_fit }} × {{ jd_weights.behavioral_fit }} = {{ dimension_weighted_scores.behavioral_fit }}",
+        "cognitive_flexibility": "{{ dimension_scores.cognitive_flexibility }} × {{ jd_weights.cognitive_flexibility }} = {{ dimension_weighted_scores.cognitive_flexibility }}",
+        "total": "{{ scores.overall_score }}"
+      },
+      "verdict": "{{ verdict.recommendation }}",
+      "verdict_threshold": "{{ verdict_threshold }}/10",
+      "dealbreakers_present": "{{ dealbreakers_present }}",
+      "confidence_percentage": "{{ verdict.confidence }}%"
+    },
+
+    "recruiter_notes": {
+      "strengths": "{{ recruiter_strengths_assessment }}",
+      "concerns": "{{ recruiter_concerns_assessment }}",
+      "questions_for_next_round": ["{{ question1 }}", "{{ question2 }}", "{{ question3 }}"],
+      "interview_duration": "{{ interview.duration_minutes }} minutes",
+      "candidate_engagement_level": "{{ engagement_level }}",
+      "overall_impression": "{{ recruiter_impression }}"
+    },
+
+    "next_steps": {
+      "recommendation": "{{ next_steps_recommendation }}",
+      "actions": [
+        {
+          "step": 1,
+          "action": "{{ action1 }}",
+          "owner": "{{ owner1 }}",
+          "timeline": "{{ timeline1 }}"
+        },
+        {
+          "step": 2,
+          "action": "{{ action2 }}",
+          "owner": "{{ owner2 }}",
+          "timeline": "{{ timeline2 }}"
+        }
+      ],
+      "follow_up_interview_recommended": "{{ follow_up_recommended }}",
+      "follow_up_topics": ["{{ topic1 }}", "{{ topic2 }}"]
+    },
+
+    "footer": {
+      "generated_at": "{{ report.timestamp }}",
+      "generated_by": "HireSignal Scoring Engine v1.0",
+      "confidentiality_notice": "CONFIDENTIAL - For Internal Staff Only. Do not share with candidates or external parties.",
+      "validity_note": "This assessment is based on the interview transcript and should be considered alongside other evaluation criteria, team feedback, and project/skill assessments."
+    }
+  },
+
+  "styling": {
+    "format": "HTML5",
+    "responsive": true,
+    "printable": true,
+    "downloadable_as_pdf": true,
+    "theme": "professional",
+    "colors": {
+      "verdict_pass": "#28a745",
+      "verdict_conditional": "#ffc107",
+      "verdict_reject": "#dc3545",
+      "neutral": "#6c757d",
+      "primary": "#0066cc"
+    },
+    "fonts": {
+      "heading": "Arial, sans-serif",
+      "body": "Segoe UI, Tahoma, sans-serif"
+    }
+  },
+
+  "conditional_rendering": {
+    "show_english_threshold_section": "if jd_weights.english_proficiency > 0 OR minimum_english_level is set",
+    "show_culture_section": "if jd_culture_factor is specified",
+    "show_critical_contradictions": "if contradictions.critical.count > 0",
+    "show_follow_up_questions": "if verdict is PASS or PASS_CONDITIONAL",
+    "show_rejection_reason": "if verdict is REJECT"
+  },
+
+  "export_options": {
+    "pdf_settings": {
+      "page_size": "A4",
+      "margins": "20mm",
+      "header": "Interview Assessment Report",
+      "footer": "Page {{ page }} of {{ total_pages }}",
+      "include_timestamp": true
+    },
+    "email_settings": {
+      "subject_template": "Assessment Report - {{ candidate.name }} for {{ job_description.title }}",
+      "body_template": "Please find attached the assessment report for {{ candidate.name }}.",
+      "attachment_format": "PDF"
+    }
+  }
+}
