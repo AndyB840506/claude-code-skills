@@ -29,6 +29,7 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 - **Lenguaje:** español colombiano casual — bogotano moderno, sin arcaísmos. Ver `glosario-cachaco.md`.
 - **Formato documentos:** HTML optimizado para PDF vía IlovePDF
 - **Backup:** después de cada guion/documento → git commit + push a GitHub + copia a G:\My Drive\ si está montado
+- **Production assets en E:, no en C:** — Scripts HTML, propuestas, documentos y artefactos de producción se guardan en `e:\Claude Project\Claude Projects\kit-skill-creator\.claude\skills\mrputridsden\`. Los archivos en `C:\Users\andre\.claude\skills\mrputridsden\` son solo instruction files. Nunca guardar guiones o documentos en C:.
 - **Skill activa:** `.claude/skills/podcast-creator/SKILL.md`
 
 ---

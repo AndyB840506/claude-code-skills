@@ -319,7 +319,8 @@ Cultural (per episode): #Frieren #BohemianRhapsody #GodOfWar etc.
 8. **Give direct opinions when asked** — Andy values judgment, not excessive neutrality.
 9. **One data point max per script block** — never back-to-back statistics.
 10. **Session closing:** End each working session with a structured summary: decisions made, assets created, statuses updated, pending items.
-11. **New BTQ workflow components** — always added as new section in this SKILL.md. La fuente canónica es `~/.claude/skills/btq-project/`. Sections >50 lines used <20% of sessions move to `workflows/` — no unbounded growth.
+11. **Production assets en E:, no en C:** — Guiones HTML, metadata, social posts y cualquier artefacto de producción se guardan en `e:\Claude Project\Claude Projects\kit-skill-creator\.claude\skills\btq-project\`. Los archivos en `C:\Users\andre\.claude\skills\btq-project\` (C:) son solo para instruction files (SKILL.md, workflows/). Nunca guardar un script de episodio u otro artefacto en C:.
+12. **New BTQ workflow components** — always added as new section in this SKILL.md. La fuente canónica es `~/.claude/skills/btq-project/`. Sections >50 lines used <20% of sessions move to `workflows/` — no unbounded growth.
 
 ---
 
