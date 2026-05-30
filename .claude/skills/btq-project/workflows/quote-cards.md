@@ -1,57 +1,70 @@
-# Quote Cards BTQ — Política
+# Workflow: Quote Cards BTQ
 
-## Las quote cards generadas por IA no son parte del workflow estándar
-
-**Razón:** Generar una quote card via Gemini/Nani Banana requiere varias iteraciones hasta que la tipografía, el layout y los colores queden bien. Cada intento consume tokens. Si el resultado no cumple, hay que regenerar. El costo supera el beneficio para un asset que se puede hacer más rápido en Canva.
+Extrae los quotes más potentes del guión y genera prompts de imagen para cada uno.
 
 ---
 
-## Día 2 de Stories — usar el artwork 9:16 ya generado
+## Step 1 — Extraer quotes del guión (orden de prioridad)
 
-Para el Día 2 del lanzamiento (Contenido — quote poderosa del episodio), **no es necesario generar una imagen nueva**. Usar directamente la imagen 9:16 del episodio que ya existe desde el workflow de artwork.
+1. **Líneas [REMATE]** — siempre las más fuertes; standalone por diseño
+2. **Línea de apertura del hook** — la que engancha antes de revelar el personaje
+3. **Cierre de Mito o Realidad** — "La realidad es..."
+4. **Mensaje directo del cierre** — el dirigido a agentes/supervisores
+5. **Frase TM del personaje** — siempre incluir como última card
 
-El 9:16 ya tiene:
-- La identidad visual del episodio
-- Los colores de marca BTQ
-- El número de episodio y el título
+Evitar: datos estadísticos aislados, transiciones, líneas de setup. Cada quote debe funcionar solo sin contexto.
 
-Para el texto de la quote: redactar el copy en el caption de Instagram/LinkedIn, no como imagen superpuesta.
+**Target: TODOS los REMATEs del guión** — no curar un subset. Extraer cada línea [REMATE] del guión completo y presentarlos todos al usuario. El usuario decide cuáles producir como cards — no Laswell.
+
+Por qué: en EP.015 se generaron 6 cards curadas → usuario esperaba los 11 REMATEs del guión. El criterio editorial es del host, no del AI.
+
+Flujo correcto:
+1. Extraer TODOS los [REMATE] del guión en orden de aparición
+2. Presentar tabla completa con segmento origen y potencial de engagement
+3. Usuario confirma selección (o dice "todos")
+4. Generar prompts para los confirmados
 
 ---
 
-## Si necesitas texto sobre imagen — usar Canva
+## Step 2 — Specs de la quote card
 
-Para casos donde el texto visual sea indispensable (una cita muy corta y poderosa, un dato), hacerlo en Canva con los specs de marca:
+- Un quote por card — nunca combinar
+- Texto grande, bold, alto contraste: off-white `#F5F2EC` sobre fondo oscuro
+- Atribución abajo: **"— Andy · Behind the Queue · EP.0XX"** en gold `#C9A84C`
+- Sin footer de íconos — usar "Behind the Queue · EP.0X" en gold bottom-center
+- Fondo: derivado del artwork del episodio, oscurecido/blureado para legibilidad
+- Formato: cuadrado 1:1, mínimo 1080×1080px
+
+---
+
+## Step 3 — Plantilla de prompt
+
+> **División de responsabilidades:** Flow agent maneja el background visual (derivado del artwork del episodio). Laswell genera solo el quote + layout de texto.
 
 ```
-──────────────────────────────────────────────────────
-  SPECS DE MARCA PARA CANVA
-──────────────────────────────────────────────────────
-  Fondo:        #0A0A0A (Void Black)
-  Texto principal: #F5F2EC (Off-white) — Playfair Display Bold
-  Acento:       #C9A84C (Signal Gold) — para la atribución o el número EP
-  Texto cuerpo: DM Sans Regular
-  Acento fuerte: Bebas Neue
+[Background visual — generado por Flow agent desde artwork del episodio]
 
-  Formato Stories (1080×1920px):
-  ├─ Quote centrada, máximo 2-3 líneas
-  ├─ Atribución en Signal Gold debajo: "— EP.[NNN] · Behind the Queue"
-  └─ Logo BTQ pequeño en esquina inferior
+QUOTE (centered, large, bold, off-white #F5F2EC):
+"[Texto del quote]"
 
-  Formato cuadrado (1080×1080px):
-  ├─ Misma lógica, composición ajustada
-  └─ Dejar espacio para caption
-──────────────────────────────────────────────────────
+Below quote: "— Andy · Behind the Queue · EP.0XX" — gold #C9A84C, smaller text.
+Bottom center: "Behind the Queue · EP.0XX" — gold #C9A84C, small.
+
+Format: square 1080×1080px.
 ```
 
 ---
 
-## Resumen de decisión
+## Step 4 — Entrega
 
-| Asset | Herramienta | Cuándo |
-|---|---|---|
-| Portada episodio (1:1) | Gemini / Nani Banana 2 | Siempre |
-| Stories visuales (9:16) | Gemini / Nani Banana 2 | Siempre — también sirve para Día 2 |
-| YouTube thumbnail (16:9) | Gemini / Nani Banana 2 | Siempre |
-| Quote card con texto superpuesto | **Canva** | Solo si es imprescindible |
-| Quote card generada por IA | ~~Gemini/Nani Banana~~ | **No usar** — costo alto, resultado inconsistente |
+Presentar quotes seleccionados en tabla antes de generar prompts:
+
+| # | Quote | Segmento origen | Por qué funciona |
+|---|---|---|---|
+| 1 | "[quote]" | [REMATE] Seg. X | Standalone, punchy, shareable |
+| 2 | "[quote]" | Hook | Curiosidad sin spoiler |
+| 3 | "[quote]" | TM personaje | Cierre memorable |
+
+Pedir confirmación de Andy antes de generar los prompts de imagen.
+
+El quote del Día 2 del plan de redes (el más shareable) se elige de esta lista.
