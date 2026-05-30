@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTQ — EP.015 — Solid Snake: cuando descubres que todo lo que te dijeron era mentira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #f0efed;
+            color: #1A1A1A;
+            line-height: 1.75;
+            font-size: 15px;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: #F5F2EC;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+        }
+
+        /* ─── HEADER ─────────────────────────────── */
+        .header {
+            background: #0A0A0A;
+            padding: 44px 48px 36px;
+            border-bottom: 4px solid #C9A84C;
+        }
+
+        .header-label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.85em;
+            letter-spacing: 5px;
+            color: #C9A84C;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.95em;
+            font-weight: 900;
+            color: #F5F2EC;
+            line-height: 1.25;
+            margin-bottom: 10px;
+        }
+
+        .header .ep-subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95em;
+            color: #C9A84C;
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+
+        .meta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+        }
+
+        .meta-item {
+            background: rgba(201,168,76,0.12);
+            border: 1px solid rgba(201,168,76,0.4);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.82em;
+            color: #C9A84C;
+            letter-spacing: 0.5px;
+        }
+
+        /* ─── ARQUITECTURA ────────────────────────── */
+        .arquitectura-wrap {
+            background: #111;
+            padding: 28px 48px;
+            border-bottom: 2px solid #1f1f1f;
+        }
+
+        .section-label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.78em;
+            letter-spacing: 4px;
+            color: #C9A84C;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .arq-grid {
+            display: grid;
+            grid-template-columns: 28px 1fr;
+            gap: 2px 16px;
+            font-family: 'DM Sans', monospace;
+            font-size: 0.85em;
+            line-height: 2;
+        }
+
+        .arq-num {
+            color: #C9A84C;
+            font-weight: 700;
+        }
+
+        .arq-seg { color: #F5F2EC; }
+        .arq-seg span { color: #888; font-style: italic; }
+
+        /* ─── PENDIENTES ──────────────────────────── */
+        .pendientes {
+            background: #1A1200;
+            border-left: 4px solid #C9A84C;
+            padding: 18px 48px;
+            margin: 0;
+        }
+
+        .pendientes .section-label { border-bottom-color: #2a2000; }
+
+        .pendiente-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 6px 0;
+            font-size: 0.88em;
+            color: #d4c89a;
+            border-bottom: 1px solid #2a2000;
+        }
+
+        .pendiente-item:last-child { border-bottom: none; }
+
+        .pendiente-num {
+            color: #C9A84C;
+            font-weight: 700;
+            flex-shrink: 0;
+            min-width: 20px;
+        }
+
+        /* ─── GUIÓN BODY ──────────────────────────── */
+        .guion-body { padding: 0 48px 48px; }
+
+        /* TM Apertura */
+        .tm-apertura {
+            background: #0A0A0A;
+            color: #C9A84C;
+            padding: 20px 28px;
+            margin: 32px 0 0;
+            border-radius: 4px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05em;
+            font-style: italic;
+            line-height: 1.7;
+            border-left: 5px solid #C9A84C;
+        }
+
+        .tm-label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.72em;
+            letter-spacing: 4px;
+            color: #888;
+            margin-bottom: 10px;
+            font-style: normal;
+        }
+
+        /* Segmento */
+        .segment {
+            margin-top: 40px;
+        }
+
+        .segment-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #C9A84C;
+        }
+
+        .segment-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2em;
+            color: #C9A84C;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .segment-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15em;
+            font-weight: 900;
+            color: #0A0A0A;
+            line-height: 1.3;
+        }
+
+        .segment-tag {
+            margin-left: auto;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.72em;
+            letter-spacing: 3px;
+            color: #C9A84C;
+            background: rgba(201,168,76,0.08);
+            border: 1px solid rgba(201,168,76,0.3);
+            padding: 4px 10px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        /* Bloque de texto principal */
+        .content-block {
+            margin: 16px 0;
+            color: #1A1A1A;
+            line-height: 1.85;
+        }
+
+        .content-block p {
+            margin-bottom: 12px;
+        }
+
+        /* Titular de entrada en negrita */
+        .anchor-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1em;
+            color: #0A0A0A;
+            display: block;
+            margin: 22px 0 10px;
+            padding-left: 12px;
+            border-left: 3px solid #C9A84C;
+        }
+
+        /* Sub-bloque */
+        .sub-bloque {
+            background: rgba(201,168,76,0.04);
+            border: 1px solid rgba(201,168,76,0.15);
+            border-radius: 4px;
+            padding: 18px 20px;
+            margin: 18px 0;
+        }
+
+        .sub-label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.72em;
+            letter-spacing: 3px;
+            color: #C9A84C;
+            margin-bottom: 10px;
+        }
+
+        /* REMATE */
+        .remate {
+            background: #1A1200;
+            border-left: 5px solid #C9A84C;
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .remate-label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.72em;
+            letter-spacing: 3px;
+            color: #C9A84C;
+            margin-bottom: 8px;
+        }
+
+        .remate-text {
+            color: #F5F2EC;
+            font-weight: 500;
+            line-height: 1.7;
+            font-size: 0.98em;
+        }
+
+        /* NOTA */
+        .nota {
+            background: #f0ede6;
+            border-left: 3px solid #bbb;
+            padding: 12px 16px;
+            margin: 14px 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .nota-label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.68em;
+            letter-spacing: 3px;
+            color: #999;
+            margin-bottom: 6px;
+        }
+
+        .nota-text {
+            color: #666;
+            font-size: 0.88em;
+            line-height: 1.65;
+            font-style: italic;
+        }
+
+        /* PAUSA */
+        .pausa {
+            text-align: center;
+            color: #bbb;
+            font-size: 0.78em;
+            letter-spacing: 6px;
+            margin: 14px 0;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .pausa-larga {
+            text-align: center;
+            color: #C9A84C;
+            font-size: 0.75em;
+            letter-spacing: 6px;
+            margin: 18px 0;
+            font-family: 'DM Sans', sans-serif;
+            opacity: 0.7;
+        }
+
+        /* Énfasis de voz (cursiva) */
+        .enfasis { font-style: italic; }
+
+        /* Cita directa */
+        .cita {
+            background: #edeae3;
+            border-left: 4px solid #C9A84C;
+            padding: 14px 18px;
+            margin: 16px 0;
+            font-style: italic;
+            color: #333;
+            font-size: 0.95em;
+            line-height: 1.75;
+        }
+
+        /* Mito o Realidad */
+        .mito-label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.72em;
+            letter-spacing: 4px;
+            color: #888;
+            margin-top: 20px;
+            margin-bottom: 4px;
+        }
+
+        .mito-text {
+            font-style: italic;
+            color: #444;
+            padding: 10px 16px;
+            background: #ede9e0;
+            border-radius: 3px;
+            margin-bottom: 12px;
+        }
+
+        /* Herramienta permanente */
+        .herramienta {
+            background: #0A0A0A;
+            border: 1px solid #C9A84C;
+            border-radius: 4px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .herramienta-label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.75em;
+            letter-spacing: 4px;
+            color: #C9A84C;
+            margin-bottom: 12px;
+        }
+
+        .herramienta-text {
+            color: #F5F2EC;
+            line-height: 1.8;
+        }
+
+        .herramienta-pregunta {
+            display: block;
+            color: #C9A84C;
+            font-weight: 700;
+            padding: 5px 0;
+            font-size: 0.98em;
+        }
+
+        /* TM Cierre */
+        .tm-cierre {
+            background: #0A0A0A;
+            padding: 28px 32px;
+            margin: 32px 0 0;
+            border-top: 3px solid #C9A84C;
+            border-radius: 4px;
+        }
+
+        .tm-cierre-label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.72em;
+            letter-spacing: 4px;
+            color: #C9A84C;
+            margin-bottom: 14px;
+        }
+
+        .tm-cierre-text {
+            color: #F5F2EC;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05em;
+            line-height: 1.75;
+        }
+
+        .tm-frase {
+            color: #C9A84C;
+            font-style: italic;
+            font-size: 1.1em;
+            margin-top: 8px;
+            display: block;
+        }
+
+        /* Audiencia separador */
+        .audiencia-label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.75em;
+            letter-spacing: 4px;
+            color: #C9A84C;
+            margin: 22px 0 8px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(201,168,76,0.3);
+        }
+
+        /* Divisor */
+        .divider {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 36px 0;
+        }
+
+        /* Recomendaciones */
+        .rec-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 14px 0;
+            border-bottom: 1px solid #e5e2da;
+        }
+
+        .rec-item:last-child { border-bottom: none; }
+
+        .rec-type {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.72em;
+            letter-spacing: 3px;
+            color: #C9A84C;
+            background: rgba(201,168,76,0.1);
+            border: 1px solid rgba(201,168,76,0.3);
+            padding: 4px 10px;
+            border-radius: 3px;
+            flex-shrink: 0;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .rec-content {
+            color: #1A1A1A;
+            font-size: 0.95em;
+            line-height: 1.65;
+        }
+
+        .rec-content strong { color: #0A0A0A; }
+
+        /* ─── FOOTER ──────────────────────────────── */
+        .footer {
+            background: #0A0A0A;
+            color: #F5F2EC;
+            padding: 28px 48px;
+            text-align: center;
+            border-top: 3px solid #C9A84C;
+        }
+
+        .footer .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3em;
+            font-weight: 900;
+            margin-bottom: 4px;
+            color: #F5F2EC;
+        }
+
+        .footer .tagline {
+            color: #C9A84C;
+            font-style: italic;
+            font-size: 0.9em;
+            margin-bottom: 16px;
+        }
+
+        .footer .contact {
+            color: #888;
+            font-size: 0.82em;
+            line-height: 2;
+        }
+
+        .footer .contact a { color: #C9A84C; text-decoration: none; }
+
+        .footer .version {
+            margin-top: 16px;
+            font-size: 0.75em;
+            color: #555;
+            letter-spacing: 1px;
+        }
+
+        /* ─── PRINT ───────────────────────────────── */
+        @media print {
+            * { box-shadow: none !important; }
+            body { background: white; font-size: 10pt; }
+            .container { max-width: 100%; box-shadow: none; }
+            .header { background: #0A0A0A !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .arquitectura-wrap { background: #111 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .remate { background: #1A1200 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .herramienta { background: #0A0A0A !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .tm-apertura, .tm-cierre, .footer { background: #0A0A0A !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .pendientes { background: #1A1200 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .segment { page-break-inside: avoid; }
+            .remate { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- ══ HEADER ══════════════════════════════════════════ -->
+    <div class="header">
+        <div class="header-label">Behind the Queue &nbsp;·&nbsp; Experiencia · Cultura · Liderazgo</div>
+        <h1>EP.015 — Solid Snake: cuando descubres que todo lo que te dijeron era mentira</h1>
+        <div class="ep-subtitle">Referencia cultural: Metal Gear Solid / Hideo Kojima (1998)</div>
+        <div class="meta">
+            <span class="meta-item">🎮 Metal Gear Solid</span>
+            <span class="meta-item">📋 10 segmentos</span>
+            <span class="meta-item">📅 Mayo 2026</span>
+            <span class="meta-item">🔬 Fuentes verificadas</span>
+            <span class="meta-item">🎙️ Andy — solo host</span>
+        </div>
+    </div>
+
+    <!-- ══ ARQUITECTURA ═════════════════════════════════════ -->
+    <div class="arquitectura-wrap">
+        <div class="section-label">Arquitectura del episodio</div>
+        <div class="arq-grid">
+            <div class="arq-num">1</div>
+            <div class="arq-seg">HOOK <span>— Snake Plissken → Solid Snake · revelar al personaje</span></div>
+            <div class="arq-num">2</div>
+            <div class="arq-seg">EL PUENTE <span>— Padre muerto · MSX2 · Konami · del Toro · fan que lo rescató</span></div>
+            <div class="arq-num">3</div>
+            <div class="arq-seg">LOS DATOS <span>— Gallup 2023 (23%) · MIT Sloan "No One Knows Your Strategy"</span></div>
+            <div class="arq-num">4</div>
+            <div class="arq-seg">LAS LECCIONES <span>— Shadow Moses · FOXDIE · Tortura · Los Genes</span></div>
+            <div class="arq-num">5</div>
+            <div class="arq-seg">REFERENCIAS CRUZADAS <span>— Dalio · Fukushima · MGS2 post-verdad · AoT</span></div>
+            <div class="arq-num">6</div>
+            <div class="arq-seg">APLICABLE HOY <span>— 3 acciones · La Prueba Snake (herramienta permanente)</span></div>
+            <div class="arq-num">7</div>
+            <div class="arq-seg">MITO O REALIDAD <span>— 3 rondas sobre narrativas en organizaciones</span></div>
+            <div class="arq-num">8</div>
+            <div class="arq-seg">RECOMENDACIONES <span>— Bowie/Nirvana · Snowden · Kahneman</span></div>
+            <div class="arq-num">9</div>
+            <div class="arq-seg">CIERRE CON ANÉCDOTA <span>— Tercera persona · líderes · agentes/supervisores</span></div>
+            <div class="arq-num">10</div>
+            <div class="arq-seg">TEASER + TM FINAL <span>— Roger Waters Berlín 21 jul 1990 → EP.016 Pink Floyd</span></div>
+        </div>
+    </div>
+
+    <!-- ══ PENDIENTES ══════════════════════════════════════ -->
+    <div class="pendientes">
+        <div class="section-label">Pendientes para Andy antes de grabar</div>
+        <div class="pendiente-item">
+            <span class="pendiente-num">1</span>
+            <span>Cita genes Snake (Seg 4) — verificada en MGS2. Elegir: citarla en español, en inglés, o parafrasear. Las tres son honestas.</span>
+        </div>
+        <div class="pendiente-item">
+            <span class="pendiente-num">2</span>
+            <span>Cita de Carpenter (Seg 1) — está en inglés: "He's a very nice man." Andy decide si la dice en inglés o la traduce.</span>
+        </div>
+        <div class="pendiente-item">
+            <span class="pendiente-num">3</span>
+            <span>Anécdota Seg 9 — dirección sugerida. Andy adapta con su propia historia o la de alguien conocido. La estructura está lista.</span>
+        </div>
+    </div>
+
+    <!-- ══ GUIÓN ════════════════════════════════════════════ -->
+    <div class="guion-body">
+
+        <!-- TM APERTURA -->
+        <div class="tm-apertura">
+            <div class="tm-label">TM — Apertura (no abreviar)</div>
+            Buenas y santas. Feliz día, feliz tarde o feliz noche. Cualquier día que éste sea.<br><br>
+            Esto es Behind the Queue, episodio quince.
+        </div>
+
+        <!-- ── SEG 1 ── -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-num">01</div>
+                <div class="segment-title">Hook</div>
+                <div class="segment-tag">Apertura</div>
+            </div>
+
+            <div class="content-block">
+                <span class="anchor-title">¿Alguna vez te mandaron a hacer algo... sin decirte para qué, realmente?</span>
+
+                <p>Piensa en ese momento. Alguien te dio una directriz. Te dijeron que era para mejorar los números, para cumplir el objetivo, para proteger al cliente. Y la ejecutaste. Porque confías en tu líder. Porque asumes que hay más contexto arriba del que tú ves. Porque eso es lo que hacemos.</p>
+            </div>
+
+            <div class="pausa">· · · [PAUSA] · · ·</div>
+
+            <div class="content-block">
+                <p>Pero, ¿y si la misión real era diferente? ¿Y si lo que te dijeron era solo parte de la historia?</p>
+                <p>Eso no es ciencia ficción. Eso ocurre todos los días en operaciones reales. Y hay un personaje que lo vivió de una manera tan brutal que se convirtió en símbolo.</p>
+            </div>
+
+            <div class="pausa">· · · [PAUSA] · · ·</div>
+
+            <div class="content-block">
+                <p>Su nombre es Solid Snake. Y su historia empieza con una mentira.</p>
+            </div>
+
+            <span class="anchor-title">"Para el que no lo conoce..."</span>
+
+            <div class="content-block">
+                <p>Metal Gear Solid es uno de los videojuegos más influyentes de la historia. Lanzado en 1998 para PlayStation, una saga de espionaje donde Snake — un soldado de élite — es enviado en misiones que siempre resultan ser algo distinto a lo que le dijeron. En cada entrega, el enemigo cambia. El objetivo cambia. La traición... esa nunca cambia.</p>
+
+                <p>Y hay un dato que casi nadie conoce: Snake no es un personaje completamente original. Está basado en Snake Plissken — el protagonista de <span class="enfasis">Escape from New York</span>, la película de John Carpenter de 1981. Un soldado enviado en una misión por un gobierno que lo usa, no confía en él, y lo sacrificaría sin pensarlo.</p>
+
+                <p>Kojima nunca lo ocultó. Antes de crear Metal Gear Solid, le escribió una carta a Carpenter pidiéndole permiso. Carpenter respondió que sí — y dijo: <span class="enfasis">"He's a very nice man."</span> En MGS2, Kojima le rindió tributo dándole a Snake el alias literal de <span class="enfasis">"Iroquois Plissken"</span>.</p>
+            </div>
+
+            <div class="nota">
+                <div class="nota-label">NOTA — no leer en voz alta</div>
+                <div class="nota-text">La similitud era tan evidente que se habló públicamente de posibles acciones legales. Carpenter eligió no demandar. Lo contó él mismo en entrevistas. Andy puede citar a Carpenter en inglés o parafrasear.</div>
+            </div>
+
+            <div class="content-block">
+                <p>El creador de un personaje que desconfía de todo... comenzó pidiendo permiso con honestidad.</p>
+                <p>Lo diseñó Hideo Kojima. Y su historia personal dice más de este episodio que cualquier cosa que Snake haya hecho en pantalla.</p>
+            </div>
+
+            <div class="remate">
+                <div class="remate-label">🔥 REMATE</div>
+                <div class="remate-text">El problema de Snake no es que sus enemigos sean más fuertes. El problema es que nunca sabe quién es realmente su enemigo.</div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ── SEG 2 ── -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-num">02</div>
+                <div class="segment-title">El Puente</div>
+                <div class="segment-tag">Detrás de</div>
+            </div>
+
+            <span class="anchor-title">"Detrás de Snake: el hombre que diseñó el engaño porque lo vivió — desde los trece años"</span>
+
+            <div class="content-block">
+                <p>Hideo Kojima perdió a su padre cuando tenía trece años. No es un detalle biográfico menor — es el núcleo emocional de toda la saga. Años después lo explicó con una claridad que pocas veces se ve en un creador:</p>
+            </div>
+
+            <div class="cita">"Quedé con algo parecido a un complejo paterno desde entonces. Todos los juegos de Metal Gear han sido historias sobre la figura paterna. En todos, de alguna manera, el protagonista tiene que matar a su padre."</div>
+
+            <div class="pausa">· · · [PAUSA] · · ·</div>
+
+            <div class="content-block">
+                <p>Big Boss no es solo un personaje de videojuego. Es la proyección del padre que Kojima perdió. Snake — el hijo que nunca lo conoció, que fue usado por él, que eventualmente tiene que enfrentarlo — es Kojima procesando ese duelo durante treinta años a través del arte.</p>
+            </div>
+
+            <div class="nota">
+                <div class="nota-label">NOTA — no leer en voz alta</div>
+                <div class="nota-text">Andy puede expandir — Kojima dijo que el cine y las novelas "lo criaron" como sustitutos del padre ausente. Sus padres eran cinéfilos que le ponían todo tipo de películas desde pequeño — horror, westerns, cine europeo — sin filtros de edad. Precisamente por eso sus juegos intentan "educar" al jugador de la misma forma que el cine lo educó a él.</div>
+            </div>
+
+            <div class="content-block">
+                <p>En 1986 entró a Konami — no porque quisiera, sino porque era la puerta disponible. Le encargaron hacer un shooter de acción para el MSX2. El problema era concreto: ese hardware no podía manejar demasiados sprites en la misma línea horizontal. Cuando había muchos, empezaban a <span class="enfasis">parpadear</span>. Un shooter era técnicamente imposible.</p>
+
+                <p>Tenía 24 años. Su jefe le había dado una misión que no podía cumplir tal como se la dieron.</p>
+
+                <p>Entonces recordó una película de su infancia: <span class="enfasis">The Great Escape</span> (1963), Steve McQueen. Prisioneros de guerra que sobreviven no atacando — sino evitando ser detectados. Transformó la limitación en concepto. Nació el stealth genre.</p>
+            </div>
+
+            <div class="pausa">· · · [PAUSA] · · ·</div>
+
+            <div class="content-block">
+                <p>Tres décadas después, Konami anunció Metal Gear Solid V — el proyecto más ambicioso de la saga. Y el nombre de Kojima desapareció de toda la publicidad. No solo de las portadas: de las webs, los trailers, los comunicados. Lo reclasificaron de empleado permanente a contratista externo. Lo aislaron en un piso separado del edificio durante los últimos seis meses del desarrollo. Su equipo perdió acceso a internet. Le prohibieron asistir a The Game Awards 2015 pese a que el juego tenía múltiples nominaciones. Terminó el proyecto más importante de su carrera comunicándose con su propio equipo a través de intermediarios.</p>
+
+                <p>Konami publicó el juego. Borró su nombre. Y Kojima está contractualmente prohibido de hablar de lo que ocurrió — hasta hoy.</p>
+            </div>
+
+            <div class="pausa">· · · [PAUSA] · · ·</div>
+
+            <div class="content-block">
+                <p>Y eso no fue todo. En ese mismo período, Konami canceló Silent Hills — el proyecto que Kojima construía con Guillermo del Toro, el mangaka de horror Junji Ito, y Norman Reedus. Un demo de 15 minutos, P.T., había generado más de un millón de descargas en dos semanas. Cerca de 200.000 personas firmaron una petición pidiendo que no lo cancelaran.</p>
+
+                <p>Konami lo canceló. Y eliminó el demo de todas las plataformas.</p>
+
+                <p>Del Toro dijo después: <span class="enfasis">"La amistad que se estaba desarrollando era hermosa."</span></p>
+            </div>
+
+            <div class="pausa-larga">— — — [PAUSA LARGA] — — —</div>
+
+            <div class="content-block">
+                <p>Después de salir, los bancos no le prestaban dinero. Las oficinas lo rechazaban — como independiente era tratado como si nunca hubiera creado nada. El edificio donde hoy opera Kojima Productions se lo consiguió el dueño del edificio, que era fan de Metal Gear. La institución lo borró. Un fan lo rescató.</p>
+
+                <p>Y Death Stranding — creado fuera de Konami — reunió a Kojima, del Toro y Reedus. Los mismos tres. Veinte millones de jugadores. Y hoy hay una película en desarrollo con A24.</p>
+            </div>
+
+            <div class="nota">
+                <div class="nota-label">NOTA — no leer en voz alta</div>
+                <div class="nota-text">La institución puede cancelar un proyecto. No puede cancelar una relación.</div>
+            </div>
+
+            <div class="remate">
+                <div class="remate-label">🔥 REMATE</div>
+                <div class="remate-text">Kojima diseñó una saga de treinta años sobre traición institucional porque la vivió — primero cuando perdió a su padre, y después cuando la empresa para la que trabajó toda su vida lo trató exactamente como el sistema trató a Snake.</div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ── SEG 3 ── -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-num">03</div>
+                <div class="segment-title">Los Datos</div>
+                <div class="segment-tag">Evidencia</div>
+            </div>
+
+            <span class="anchor-title">"Lo que los números dicen sobre la brecha entre lo que se comunica y lo que se recibe"</span>
+
+            <div class="sub-bloque">
+                <div class="sub-label">Sub-bloque A — Gallup 2023</div>
+                <div class="content-block">
+                    <p>El reporte Gallup State of the Global Workplace 2023 tiene un dato que debería estar pegado en toda sala de operaciones: solo el 23% de los empleados a nivel mundial están verdaderamente comprometidos con su trabajo.</p>
+                </div>
+
+                <div class="nota">
+                    <div class="nota-label">NOTA — Fuente verificada</div>
+                    <div class="nota-text">Gallup State of the Global Workplace 2023. Era récord histórico ese año — lo que hace el número más impactante, no menos.</div>
+                </div>
+
+                <div class="content-block">
+                    <p>El 23%. Y uno de los factores más directamente correlacionados con ese número es la confianza en el líder inmediato — no en la organización, no en el CEO. En la persona que te da la misión.</p>
+                </div>
+
+                <div class="pausa">· · · [PAUSA] · · ·</div>
+
+                <div class="content-block">
+                    <p>En la mayoría de los equipos del mundo, la gente no está completamente comprometida. No porque el trabajo sea malo. Sino porque no confían del todo en que lo que les dicen es la historia completa.</p>
+                </div>
+
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">El engagement no cae porque la paga sea baja. Cae cuando la gente empieza a sentir que la narrativa oficial no cuadra con lo que ven.</div>
+                </div>
+            </div>
+
+            <div class="sub-bloque">
+                <div class="sub-label">Sub-bloque B — MIT Sloan MR</div>
+
+                <div class="pausa">· · · [PAUSA] · · ·</div>
+
+                <div class="content-block">
+                    <p>Un estudio de MIT Sloan Management Review — titulado <span class="enfasis">"No One Knows Your Strategy — Not Even Your Top Leaders"</span> — encontró algo que debería incomodar a cualquier líder: solo el 28% de los ejecutivos y gerentes responsables de ejecutar la estrategia podían nombrar tres de las prioridades estratégicas de su propia empresa.</p>
+                </div>
+
+                <div class="nota">
+                    <div class="nota-label">NOTA — Fuente verificada</div>
+                    <div class="nota-text">Donald Sull, MIT Sloan Management Review. Título exacto disponible si Andy quiere citarlo completo en grabación.</div>
+                </div>
+
+                <div class="content-block">
+                    <p>No tres de veinte. Solo tres. Las más básicas. Y estamos hablando de la gente que <span class="enfasis">debería</span> ejecutar esa estrategia.</p>
+                    <p>Como Snake.</p>
+                </div>
+
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">La misión más peligrosa no es la que nadie sabe cómo ejecutar. Es la que todos ejecutan sin saber por qué.</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ── SEG 4 ── -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-num">04</div>
+                <div class="segment-title">Las Lecciones</div>
+                <div class="segment-tag">4 momentos</div>
+            </div>
+
+            <span class="anchor-title">"Cuatro momentos de Metal Gear que nadie te dijo que eran sobre tu trabajo"</span>
+
+            <div class="sub-bloque">
+                <div class="sub-label">Lección 1 — La misión de Shadow Moses (MGS1, 1998)</div>
+                <div class="content-block">
+                    <p>Snake es enviado a Shadow Moses con un objetivo claro: rescatar rehenes, neutralizar una amenaza nuclear. Lo que no le dicen: uno de los rehenes es Meryl — la sobrina del coronel Campbell, su propio comandante. Campbell lo manda en esa misión con un conflicto de interés que no revela.</p>
+                </div>
+                <div class="nota">
+                    <div class="nota-label">NOTA — no leer en voz alta</div>
+                    <div class="nota-text">Campbell no mintió con palabras falsas: omitió. Y en operaciones, la omisión estratégica es la mentira más común. Cuando Snake lo descubre, la confrontación es una de las más tensas de la saga.</div>
+                </div>
+                <div class="content-block">
+                    <p>La lección no es que Campbell sea el villano. Es que incluso las personas que te mandan en una misión con buenas intenciones pueden tener un conflicto de interés que colorea lo que te dicen. Y si no lo sabes, ejecutas sin el contexto completo.</p>
+                </div>
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">No toda omisión es maliciosa. Pero toda omisión tiene consecuencias para el que ejecuta sin ella.</div>
+                </div>
+            </div>
+
+            <div class="sub-bloque">
+                <div class="sub-label">Lección 2 — FOXDIE (MGS1, 1998)</div>
+                <div class="content-block">
+                    <p>Snake fue inoculado sin su conocimiento con un virus diseñado para matar a personas con cierto perfil genético. Lo usaron como vector biológico. Ejecutó su misión perfectamente... y en el proceso fue un arma sin saberlo.</p>
+                </div>
+                <div class="nota">
+                    <div class="nota-label">NOTA — no leer en voz alta</div>
+                    <div class="nota-text">Pregunta para el oyente — ¿cuántas veces en tu carrera ejecutaste una directriz que beneficiaba a algo o alguien que no te dijeron? No como acusación — como pregunta honesta.</div>
+                </div>
+                <div class="content-block">
+                    <p>La idea de que puedes ser instrumento de algo que no comprendes completamente no es paranoica. Es estructural. Las organizaciones tienen objetivos que no siempre coinciden con los objetivos que le comunican a cada rol.</p>
+                </div>
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">Ser un buen ejecutor no te protege de ser usado para algo que no entiendes.</div>
+                </div>
+            </div>
+
+            <div class="sub-bloque">
+                <div class="sub-label">Lección 3 — La escena de la tortura (MGS1, 1998)</div>
+                <div class="content-block">
+                    <p>Kojima hace algo que ningún juego había hecho: te da la opción de rendirte para salvar a alguien que amas. No hay respuesta correcta. El juego no te dice qué hacer. Te deja solo con la decisión.</p>
+                </div>
+                <div class="nota">
+                    <div class="nota-label">NOTA — no leer en voz alta</div>
+                    <div class="nota-text">Ese momento de soledad decisional es liberador y aterrador. La mayoría de las personas en operaciones espera que alguien más les diga qué es correcto. Kojima les quitó esa muleta. ¿Cuántas decisiones difíciles pasan de largo porque "así son las reglas"?</div>
+                </div>
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">Cuando nadie te da la respuesta correcta, descubres si tienes criterio propio — o si solo sabías seguir instrucciones.</div>
+                </div>
+            </div>
+
+            <div class="sub-bloque">
+                <div class="sub-label">Lección 4 — El monólogo de los genes (saga completa)</div>
+                <div class="content-block">
+                    <p>Snake descubre que es un clon de Big Boss. Todo el mundo lo define por eso. El antagonista le dice que su destino genético está sellado.</p>
+                    <p>Snake no acepta esa narrativa. A lo largo de la saga, su posición es consistente. En MGS2 lo dice directamente:</p>
+                </div>
+                <div class="cita">"La vida no se trata solo de pasar tus genes. Podemos dejar mucho más que ADN."<br><span style="font-size:0.85em;color:#888;font-style:normal;">— Metal Gear Solid 2: Sons of Liberty (en inglés: "Life isn't just about passing on your genes. We can leave behind much more than just DNA.")</span></div>
+                <div class="nota">
+                    <div class="nota-label">NOTA — no leer en voz alta</div>
+                    <div class="nota-text">Cita verificada — MGS2. Andy puede citarla en español, en inglés, o parafrasearla — las tres opciones son honestas.</div>
+                </div>
+
+                <div class="pausa-larga">— — — [PAUSA LARGA] — — —</div>
+
+                <div class="content-block">
+                    <p>En operaciones, el equivalente genético eres tú cuando dices: "Es que así somos acá", "Es que así funciona esta empresa", "Es que mi perfil siempre ha sido así". La narrativa que heredaste no tiene que ser la narrativa que construyes.</p>
+                </div>
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">Lo que te dijeron que eres no determina lo que decides ser.</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ── SEG 5 ── -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-num">05</div>
+                <div class="segment-title">Referencias Cruzadas</div>
+                <div class="segment-tag">Negocios + Cultural</div>
+            </div>
+
+            <span class="anchor-title">"El patrón de Metal Gear no es ficción — está en los negocios y en la historia"</span>
+
+            <div class="sub-bloque">
+                <div class="sub-label">Negocios 1 — Ray Dalio y Bridgewater</div>
+                <div class="content-block">
+                    <p>Ray Dalio construyó Bridgewater Associates sobre un principio: transparencia radical. Todas las reuniones se graban. Todos pueden cuestionar cualquier decisión. El objetivo declarado: eliminar la narrativa incompleta.</p>
+                </div>
+                <div class="nota">
+                    <div class="nota-label">NOTA — no leer en voz alta</div>
+                    <div class="nota-text">Caso documentado — "Principles" (Dalio, 2017). Andy puede mencionar que el modelo tiene críticos — el punto no es que Bridgewater sea perfecto, sino que reconoció el problema y construyó un sistema para atacarlo.</div>
+                </div>
+                <div class="content-block">
+                    <p>¿Funcionó perfectamente? No siempre. Pero el intento revela algo: una organización que reconoce que la información incompleta es su mayor riesgo estructural vale más que una que ni siquiera lo admite.</p>
+                </div>
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">Dalio entendió lo que Konami nunca entendió — la narrativa controlada desde arriba destruye la confianza desde abajo.</div>
+                </div>
+            </div>
+
+            <div class="sub-bloque">
+                <div class="sub-label">Negocios 2 — Fukushima, 2011</div>
+                <div class="pausa">· · · [PAUSA] · · ·</div>
+                <div class="content-block">
+                    <p>El 11 de marzo de 2011, la planta de Fukushima Daiichi sufrió un desastre después del tsunami. Lo que se documentó después fue una cadena de decisiones donde operadores de primera línea ejecutaron protocolos basados en información incompleta que venía de arriba.</p>
+                </div>
+                <div class="nota">
+                    <div class="nota-label">NOTA — no leer en voz alta</div>
+                    <div class="nota-text">La Comisión Independiente de Investigación de Fukushima (2012) documentó fallas de comunicación sistémica entre TEPCO y los operadores en planta. Andy puede simplificar si el tema se siente muy técnico.</div>
+                </div>
+                <div class="content-block">
+                    <p>No era incompetencia. Era gente entrenada, comprometida, ejecutando con la información que tenía — que no era toda la información — con consecuencias que todos conocemos.</p>
+                </div>
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">La tragedia de Fukushima no fue falta de talento. Fue la brecha entre lo que se sabía arriba y lo que se comunicó abajo.</div>
+                </div>
+            </div>
+
+            <div class="sub-bloque">
+                <div class="sub-label">Cultural 1 — Metal Gear Solid 2 predijo la era post-verdad</div>
+                <div class="pausa">· · · [PAUSA] · · ·</div>
+                <div class="content-block">
+                    <p>En 2001, Kojima publicó Metal Gear Solid 2. El juego describía un mundo donde la información en internet era manipulada, las teorías de conspiración controlaban la narrativa pública, y la línea entre ficción y realidad había desaparecido.</p>
+                    <p>Hoy es citado por investigadores de comunicación como uno de los textos predictivos más precisos de los últimos 25 años.</p>
+                </div>
+                <div class="nota">
+                    <div class="nota-label">NOTA — no leer en voz alta</div>
+                    <div class="nota-text">Fuente — Nippon.com, perspectiva japonesa sobre la obra de Kojima. El dato es la predicción en sí — no agregar estadísticas adicionales.</div>
+                </div>
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">Veinte años antes de que "post-verdad" fuera la palabra del año en el diccionario Oxford, Kojima ya había diseñado el manual.</div>
+                </div>
+            </div>
+
+            <div class="sub-bloque">
+                <div class="sub-label">Cultural 2 — Ataque a los Titanes</div>
+                <div class="pausa">· · · [PAUSA] · · ·</div>
+                <div class="content-block">
+                    <p>Eren Jaeger vivió convencido de que los titanes eran el enemigo externo, que los muros eran protección, que la humanidad estaba unida. Cuando descubrió que la narrativa oficial era incompleta — que había más mundo, más historia, más agenda detrás — su identidad colapsó antes de reconstruirse.</p>
+                </div>
+                <div class="nota">
+                    <div class="nota-label">NOTA — no leer en voz alta</div>
+                    <div class="nota-text">Andy puede conectar rápido — "el equivalente en operaciones es el momento en que descubres que el objetivo real de ese proyecto no era el del kickoff". No alargar — es referencia, no lección principal.</div>
+                </div>
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">La crisis de Eren es la misma que experimenta cualquier profesional que descubre que ejecutó años bajo una narrativa que no era completa.</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ── SEG 6 ── -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-num">06</div>
+                <div class="segment-title">Aplicable Hoy</div>
+                <div class="segment-tag">3 acciones</div>
+            </div>
+
+            <span class="anchor-title">"Tres cosas concretas — y una que usas el resto de tu carrera"</span>
+
+            <div class="sub-bloque">
+                <div class="sub-label">Acción 1 — Identificar una "verdad" no cuestionada</div>
+                <div class="content-block">
+                    <p>Esta semana, identifica una directriz, proceso o política en tu operación que todo el mundo ejecuta pero nadie puede explicar por qué existe. No para sabotearla. Para entenderla. La pregunta es simple: "¿Cuál es el origen de esta regla?" Si nadie lo sabe, eso ya es información valiosa.</p>
+                </div>
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">Lo que no se puede explicar no se puede mejorar. Y lo que no se puede mejorar se convierte en tradición sin propósito.</div>
+                </div>
+            </div>
+
+            <div class="sub-bloque">
+                <div class="sub-label">Acción 2 — La pregunta de contexto antes de ejecutar</div>
+                <div class="content-block">
+                    <p>Antes de ejecutar la próxima directriz que recibas, una sola cosa: "¿Entiendo <span class="enfasis">por qué</span> existe esto, o solo <span class="enfasis">sé que</span> existe?" No es cuestionamiento — es diagnóstico. Un cirujano que no entiende por qué hace una incisión es un riesgo. Un líder que ejecuta sin entender el propósito también.</p>
+                </div>
+                <div class="nota">
+                    <div class="nota-label">NOTA — no leer en voz alta</div>
+                    <div class="nota-text">Andy puede enmarcar esto como reflexión interna, no necesariamente una pregunta en voz alta al jefe. El objetivo es tener criterio propio antes de actuar.</div>
+                </div>
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">La diferencia entre ejecutar con convicción y ejecutar por inercia es saber por qué estás haciendo lo que haces.</div>
+                </div>
+            </div>
+
+            <div class="herramienta">
+                <div class="herramienta-label">⚡ Herramienta Mental Permanente — La Prueba Snake</div>
+                <div class="herramienta-text">
+                    <p style="color:#d4c89a;margin-bottom:14px;">Esta es la herramienta que te llevas para el resto de tu carrera.</p>
+                    <p style="color:#d4c89a;margin-bottom:14px;">Cada vez que recibas información importante — en una reunión, una directriz, un informe — antes de actuar, tres preguntas:</p>
+                    <span class="herramienta-pregunta">Uno: ¿Quién controla este mensaje?</span>
+                    <span class="herramienta-pregunta">Dos: ¿Qué no me están diciendo?</span>
+                    <span class="herramienta-pregunta">Tres: ¿Qué pasaría si esto es parcialmente falso?</span>
+                </div>
+            </div>
+
+            <div class="pausa">· · · [PAUSA] · · ·</div>
+
+            <div class="content-block">
+                <p>No es paranoia. Es criterio. Snake sobrevivió no porque era el más fuerte. Sobrevivió porque aprendió a cuestionar la narrativa <span class="enfasis">antes</span> de confiar en ella.</p>
+            </div>
+
+            <div class="pausa-larga">— — — [PAUSA LARGA] — — —</div>
+
+            <div class="content-block">
+                <p>La Prueba Snake funciona en cualquier reunión, en cualquier empresa, en cualquier industria, por el resto de tu carrera.</p>
+            </div>
+
+            <div class="remate">
+                <div class="remate-label">🔥 REMATE</div>
+                <div class="remate-text">No mañana. Esta semana. En la próxima reunión donde alguien te presente "los datos".</div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ── SEG 7 ── -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-num">07</div>
+                <div class="segment-title">Mito o Realidad</div>
+                <div class="segment-tag">3 rondas</div>
+            </div>
+
+            <span class="anchor-title">"Tres creencias sobre la información en las organizaciones"</span>
+
+            <div class="sub-bloque">
+                <div class="mito-label">RONDA 1 — MITO</div>
+                <div class="mito-text">"La lealtad profesional significa ejecutar sin cuestionar."</div>
+                <div class="pausa">· · · [PAUSA] · · ·</div>
+                <div class="content-block">
+                    <p>La lealtad real es comprometerte con el resultado, no con la narrativa que te dieron para llegar a él. Un soldado leal no es el que ejecuta sin preguntar — es el que avisa cuando la misión está mal planteada antes de que cueste vidas. Campbell mandó a Snake sin decirle todo, y esa lealtad mal entendida casi destruyó la misión.</p>
+                </div>
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">La realidad es que ejecutar sin cuestionar no es lealtad — es dependencia disfrazada de profesionalismo.</div>
+                </div>
+            </div>
+
+            <div class="sub-bloque">
+                <div class="mito-label">RONDA 2 — MITO</div>
+                <div class="mito-text">"Mi jefe tiene más contexto que yo — por eso toma las decisiones."</div>
+                <div class="pausa">· · · [PAUSA] · · ·</div>
+                <div class="content-block">
+                    <p>Parcialmente cierto. Tu jefe tiene contexto estratégico que tú no tienes. Pero tú tienes contexto operativo que tu jefe no tiene. La brecha de información va en ambas direcciones. El problema es que en la mayoría de las organizaciones solo se gestiona de arriba hacia abajo — nunca de abajo hacia arriba.</p>
+                </div>
+                <div class="nota">
+                    <div class="nota-label">NOTA — no leer en voz alta</div>
+                    <div class="nota-text">Andy puede dar ejemplo — un agente que ve algo en el piso que el supervisor no ve porque está mirando métricas. Ese contexto operativo, si no sube, se pierde.</div>
+                </div>
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">La realidad es que el contexto está distribuido, no concentrado. Un líder que no escucha hacia abajo opera con la mitad de la información.</div>
+                </div>
+            </div>
+
+            <div class="sub-bloque">
+                <div class="mito-label">RONDA 3 — MITO</div>
+                <div class="mito-text">"Cuestionar una directriz es ser difícil o insubordinado."</div>
+                <div class="pausa">· · · [PAUSA] · · ·</div>
+                <div class="content-block">
+                    <p>Esta creencia mata la innovación más que cualquier presupuesto recortado. La diferencia entre cuestionar para sabotear y cuestionar para mejorar es el propósito. Snake no cuestiona para desobedecer — cuestiona para ejecutar mejor. Eso es exactamente lo que necesitas en tu equipo.</p>
+                </div>
+                <div class="remate">
+                    <div class="remate-label">🔥 REMATE</div>
+                    <div class="remate-text">La realidad es que el equipo que nunca cuestiona no es un equipo disciplinado — es un equipo que dejó de pensar.</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ── SEG 8 ── -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-num">08</div>
+                <div class="segment-title">Recomendaciones de Andy</div>
+                <div class="segment-tag">3 formatos</div>
+            </div>
+
+            <span class="anchor-title">"Tres formatos, el mismo tema"</span>
+
+            <div class="rec-item">
+                <div class="rec-type">Canción</div>
+                <div class="rec-content">
+                    <strong>"The Man Who Sold the World"</strong> — David Bowie (1970) / Nirvana, MTV Unplugged (1993)
+                    <div class="nota" style="margin-top:10px;">
+                        <div class="nota-label">NOTA</div>
+                        <div class="nota-text">El título es una confesión — identidad vendida, narrativa propia entregada a otro. Conecta directo con el episodio. La versión de Nirvana: Cobain eligió esa canción por algo personal, no comercial. Paralelo con Lección 4 — el protagonista encuentra una versión de sí mismo que no reconoce.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rec-item">
+                <div class="rec-type">Película</div>
+                <div class="rec-content">
+                    <strong>"Snowden"</strong> (2016) — Oliver Stone
+                    <div class="nota" style="margin-top:10px;">
+                        <div class="nota-label">NOTA</div>
+                        <div class="nota-text">Snowden no era un rebelde — era alguien que ejecutó con convicción hasta que descubrió que la misión real no era la que le habían dicho. Dato para Andy si quiere profundizar: Oliver Stone es uno de los directores que Kojima ha citado como influencia directa. El círculo se cierra.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rec-item">
+                <div class="rec-type">Libro</div>
+                <div class="rec-content">
+                    <strong>"Pensar rápido, pensar despacio"</strong> — Daniel Kahneman (2011)
+                    <div class="nota" style="margin-top:10px;">
+                        <div class="nota-label">NOTA</div>
+                        <div class="nota-text">El Sistema 1 (automático) es exactamente el modo en que ejecutamos directrices sin cuestionarlas. La Prueba Snake activa el Sistema 2. Kojima cita obras de ciencias cognitivas frecuentemente en entrevistas — este libro entra en esa tradición.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="remate">
+                <div class="remate-label">🔥 REMATE</div>
+                <div class="remate-text">Tres formatos, la misma pregunta — ¿qué narrativas estás aceptando sin cuestionarlas?</div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ── SEG 9 ── -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-num">09</div>
+                <div class="segment-title">Cierre con Anécdota</div>
+                <div class="segment-tag">Tercera persona</div>
+            </div>
+
+            <span class="anchor-title">"Una operación que aprendió la lección de Snake de la manera difícil"</span>
+
+            <div class="nota">
+                <div class="nota-label">NOTA — Andy cuenta en tercera persona, sin nombres. Dirección sugerida — adaptar con historia propia o conocida.</div>
+                <div class="nota-text">Esta es la dirección del bloque. Andy lo cuenta en sus propias palabras.</div>
+            </div>
+
+            <div class="content-block">
+                <p>Conozco una operación donde durante meses el equipo ejecutó un protocolo de atención que nadie podía explicar completamente. La directriz venía de arriba, los números se veían bien, el cliente no se quejaba formalmente.</p>
+                <p>Entonces llegó una auditoría externa.</p>
+                <p>Lo que encontraron: el protocolo resolvía el problema superficial del cliente, pero generaba recontactos invisibles. Clientes que no se quejaban... pero tampoco volvían. La narrativa oficial era "estamos cumpliendo". La realidad operativa era diferente.</p>
+            </div>
+
+            <div class="pausa">· · · [PAUSA] · · ·</div>
+
+            <div class="content-block">
+                <p>Cuando le preguntaron al equipo de primera línea, varios habían visto señales. Pero nadie había cuestionado. Porque la directriz "venía de arriba". Porque preguntar era "ser difícil".</p>
+            </div>
+
+            <div class="pausa-larga">— — — [PAUSA LARGA] — — —</div>
+
+            <div class="content-block">
+                <p>La misión estaba bien ejecutada.<br>La misión estaba mal definida.</p>
+            </div>
+
+            <div class="audiencia-label">Para los líderes</div>
+            <div class="content-block">
+                <p>¿Cuándo fue la última vez que bajaste al piso a preguntar qué no te están contando?</p>
+                <p>¿Qué pasaría si tu equipo supiera algo hoy que no ha llegado a ti porque aprendió que no es seguro subirlo?</p>
+                <p>¿Qué va a cambiar en cómo gestionas la información después de escuchar esto?</p>
+            </div>
+
+            <div class="pausa-larga">— — — [PAUSA LARGA] — — —</div>
+
+            <div class="audiencia-label">Para agentes y supervisores</div>
+            <div class="content-block">
+                <p>Ustedes son los que tienen el contexto real. El que está en el piso, en la llamada, en el cliente. Ese contexto vale — pero solo si encuentra la manera de subir.</p>
+                <p>No tienes que cuestionar todo. Pero tienes que confiar en lo que ves. Porque lo que ves desde el piso es información que tu operación necesita.</p>
+            </div>
+
+            <div class="remate">
+                <div class="remate-label">🔥 REMATE</div>
+                <div class="remate-text">La información que no sube no desaparece. Se convierte en el problema que nadie vio venir.</div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ── SEG 10 ── -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-num">10</div>
+                <div class="segment-title">Teaser + TM Final</div>
+                <div class="segment-tag">EP.016 → Pink Floyd</div>
+            </div>
+
+            <span class="anchor-title">Conector orgánico EP.015 → EP.016</span>
+
+            <div class="content-block">
+                <p>La historia que contamos hoy tiene un contexto: la Guerra Fría. Un mundo dividido en dos narrativas. Snake existe en ese mundo. Metal Gear nació en ese mundo — Kojima lo diseñó exactamente en los años en que ese mundo se partía en dos.</p>
+            </div>
+
+            <div class="pausa">· · · [PAUSA] · · ·</div>
+
+            <div class="content-block">
+                <p>Y hay una obra que nació en ese mismo contexto. No como videojuego — como álbum. El 21 de julio de 1990, meses después de la caída del Muro de Berlín, Roger Waters ejecutó <span class="enfasis">The Wall</span> completo en el sitio exacto donde el muro había estado. El mismo mundo dividido. La misma Guerra Fría que Kojima convirtió en escenario.</p>
+            </div>
+
+            <div class="nota">
+                <div class="nota-label">NOTA — Dato verificado</div>
+                <div class="nota-text">Roger Waters, Potsdamer Platz, Berlín, 21 de julio de 1990. Concierto benéfico transmitido en vivo internacionalmente. Andy puede mencionar la fecha con total confianza.</div>
+            </div>
+
+            <div class="content-block">
+                <p>En el próximo episodio vamos a hablar de un líder que construyó el muro más famoso de la música para no sentir nada — y casi se destruye haciéndolo.</p>
+            </div>
+
+            <div class="pausa-larga">— — — [PAUSA LARGA] — — —</div>
+
+            <!-- TM CIERRE -->
+            <div class="tm-cierre">
+                <div class="tm-cierre-label">TM — Cierre (EP.015)</div>
+                <div class="tm-cierre-text">
+                    Esto fue Behind the Queue, episodio quince.<br><br>
+                    Yo soy Andy. Y como diría Snake:
+                    <span class="tm-frase">"Piensa por ti mismo. Decide por ti mismo."</span>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /guion-body -->
+
+    <!-- ══ FOOTER ════════════════════════════════════════ -->
+    <div class="footer">
+        <div class="logo">Behind the Queue</div>
+        <div class="tagline">Experiencia · Cultura · Liderazgo</div>
+        <div class="contact">
+            andy@behind-thequeue.com &nbsp;·&nbsp; <a href="https://behind-thequeue.com">behind-thequeue.com</a><br>
+            <a href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP">Spotify</a> &nbsp;·&nbsp;
+            <a href="https://linkedin.com/company/behind-the-queue">LinkedIn</a> &nbsp;·&nbsp;
+            @behindthequeue84
+        </div>
+        <div class="version">EP.015 · Guión v1.0 · Mayo 2026 · Datos verificados · Listo para grabar</div>
+    </div>
+
+</div><!-- /container -->
+</body>
+</html>
