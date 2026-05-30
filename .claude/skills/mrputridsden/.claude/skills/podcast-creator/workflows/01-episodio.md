@@ -5,6 +5,8 @@ Genera un script completo, palabra por palabra, para un episodio específico. Se
 **Regla fundamental: Lee `podcast-profile.json` primero. Si no existe, lanza `00-setup.md` antes de continuar.**
 **Regla de lenguaje: Consulta `glosario-cachaco.md` antes de escribir cualquier guión (contiene guía de tono actualizada — español colombiano casual).**
 **Regla de eventos: Consulta `eventos.json` para el Segmento de Promoción.**
+**Regla de rotación de género: Revisar el género del episodio anterior antes de proponer el tema. No repetir el mismo género back-to-back. Si el EP anterior fue metal → el siguiente no puede ser metal. Géneros contiguos válidos: rock clásico, blues, jazz, soul, reggae, punk, alternativo, electrónico, folclore, salsa/afro-latino, etc.**
+**Regla del conector de género (EP.003 en adelante): Durante la investigación del episodio, identificar un dato real dentro del material — un artista, una influencia, un cruce histórico — que conecte orgánicamente con el género del siguiente episodio. Ese dato se convierte en el puente del cierre: el host lo nombra como anticipo del próximo capítulo. El conector NO se inventa — se descubre en la investigación. Si no existe un conector natural, revisar el orden del roadmap antes de forzarlo. Ejemplo: EP.002 (metal) → Iommi se inspiró en Django Reinhardt (jazz) → ese dato es el puente hacia un episodio de jazz. EP.003 (rock roots) → el árbol africano tiene dos ramas, una fue al Caribe → ese dato es el puente hacia EP.004 (salsa).**
 
 ---
 
@@ -370,6 +372,17 @@ Una vez aprobada la arquitectura, escribe el script palabra por palabra.
 - Usa el `outro_template` del perfil
 - Escribe como se habla, no como se escribe: contracciones, frases cortas, pausas naturales
 - Cada segmento debe tener una frase de transición clara al siguiente
+- **Conectores conversacionales entre hosts** — el guion de co-host no es Host A habla / Host B reacciona / Host A habla. Los bloques deben conectarse con puentes que suenen como conversación real, no como turnos de debate:
+  - ✅ "Y ese dato es clave, porque lo que viene después..." (retoma el hilo del otro)
+  - ✅ "Mirá, yo añadiría algo a eso..." (suma sin interrumpir)
+  - ✅ "Que es una locura, porque..." (reacción emocional + continuación)
+  - ✅ "Claro — y si a eso le sumás que..." (construye sobre lo anterior)
+  - ❌ [Host A: bloque de hechos] / [Host B: "¿Cómo?"] / [Host A: otro bloque] — mecánico, suena a interrogatorio
+  - La regla: cada vez que cambia el host, la primera línea del nuevo bloque debe recoger algo de lo que dijo el anterior
+
+**Audit retroactivo obligatorio** — Si en esta sesión se agrega o modifica una regla de calidad (conectores, tono, estructura) porque un guion existente la viola, revisar y corregir ese guion en el mismo turno antes de entregar. No basta con actualizar la regla — el artefacto existente debe quedar corregido también.
+
+**Confirmación de entrega obligatoria** — Al terminar de escribir cualquier archivo (script, metadata, checklist), confirmar al usuario la ruta exacta donde quedó guardado: "Guardado en: E:\Claude Project\Claude Projects\kit-skill-creator\.claude\skills\mrputridsden\scripts\EP00X-titulo.html". Nunca asumir que el usuario sabe dónde está el archivo.
 
 **Si formato_episodio = `interview`:**
 - Escribe las preguntas del host en orden de escalada: bienvenida → preguntas fáciles → profundas → cierre

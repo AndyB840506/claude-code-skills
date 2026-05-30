@@ -2,8 +2,8 @@
 ## Mr. Putrid's Den
 
 **Generado:** 2026-05-27  
-**Grabación:** Sábado 31 mayo  
-**Publicación:** Sábado 31 mayo a medianoche → disponible desde el domingo 1 junio
+**Grabación:** Jueves 29 mayo  
+**Publicación:** Sábado 31 mayo
 
 > **✅ Handles actualizados:** Instagram `@mrputridsden` · Facebook: https://www.facebook.com/share/1BZis2wXSF/ · TikTok y X/Twitter: pendientes (no activos aún).
 
@@ -13,9 +13,9 @@
 
 | Día | Fecha | Objetivo | Firma |
 |---|---|---|---|
-| **Día 1 — Intriga** | Viernes 30 mayo | Curiosidad. SIN revelar el episodio todavía | Andrés |
-| **Día 2 — Contenido** | Sábado 31 mayo | Quote poderosa del episodio. Dan valor real | Juan |
-| **Día 3 — Lanzamiento** | Domingo 1 junio | Episodio disponible. CTA directo | Andrés |
+| **Día 1 — Intriga** | Jueves 29 mayo | Curiosidad. SIN revelar el episodio todavía | Andrés |
+| **Día 2 — Contenido** | Viernes 30 mayo | Quote poderosa del episodio. Dan valor real | Juan |
+| **Día 3 — Lanzamiento** | Sábado 31 mayo | Episodio disponible. CTA directo | Andrés |
 
 ---
 
@@ -28,7 +28,7 @@
 
 ---
 
-## DÍA 1 — INTRIGA | Viernes 30 mayo | Firma: Andrés
+## DÍA 1 — INTRIGA | Jueves 29 mayo | Firma: Andrés
 
 **Objetivo:** Generar curiosidad sin revelar que el episodio es sobre Black Sabbath.
 
@@ -94,7 +94,7 @@ La historia completa ya casi.
 
 ---
 
-## DÍA 2 — CONTENIDO | Sábado 31 mayo | Firma: Juan
+## DÍA 2 — CONTENIDO | Viernes 30 mayo | Firma: Juan
 
 **Objetivo:** Dar valor real con la quote más poderosa del episodio.
 
@@ -153,7 +153,7 @@ Mañana el episodio completo — Mr. Putrid's Den EP.002. 🤘
 
 ---
 
-## DÍA 3 — LANZAMIENTO | Domingo 1 junio | Firma: Andrés
+## DÍA 3 — LANZAMIENTO | Sábado 31 mayo | Firma: Andrés
 
 **Objetivo:** Tráfico al episodio. CTA directo y claro.
 
@@ -260,9 +260,9 @@ Episodio completo ya disponible en Spotify, Amazon Music y Apple Podcasts — li
   □ Links de Spotify, Amazon Music y Apple Podcasts (disponibles al publicar)
 ══════════════════════════════════════════════════
   Fechas:
-  Día 1 (Intriga):     Viernes 30 mayo
-  Día 2 (Contenido):   Sábado 31 mayo (día de grabación)
-  Día 3 (Lanzamiento): Domingo 1 junio (episodio live)
+  Día 1 (Intriga):     Jueves 29 mayo (día de grabación)
+  Día 2 (Contenido):   Viernes 30 mayo
+  Día 3 (Lanzamiento): Sábado 31 mayo (episodio live)
 ══════════════════════════════════════════════════
 ```
 
