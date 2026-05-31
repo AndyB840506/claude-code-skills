@@ -42,6 +42,7 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 - Entre hosts: tuteo natural
 - **PROHIBIDO:** "sumerce", "ala", "chirriado", "cachifo", "caray", "carachas" (arcaísmos) + "parcero", "bacano" (muy coloquiales) + "vosotros", "vos", "ché", "tío" (otros regionalismos)
 - Claude al hablar con Andrés: español colombiano moderno, casual y directo
+- ⚠️ **EP001 usa el tono cachaco ANTIGUO** (sumerce, caray, chirriado, cachifo) — ese tono fue removido desde EP002. NUNCA modelar el tono de EP002+ desde EP001. La fuente canónica de tono es `glosario-cachaco.md`, no el script del EP001.
 
 ---
 
@@ -145,6 +146,12 @@ git commit -m "EP.XXX — [título] — YYYY-MM-DD"
 git push origin main
 ```
 Si G: está montado → copiar también a `G:\My Drive\kit-podcast-creator\projects\mrputridsden\`
+
+## Recovery de scripts
+
+Si un guion aparece como `deleted` en `git status`:
+1. **Primero ofrecer:** `git restore .claude/skills/mrputridsden/scripts/<archivo>` — recupera en segundos
+2. Solo proponer regeneración completa si el usuario prefiere versión nueva o el archivo nunca fue commiteado
 
 ---
 
