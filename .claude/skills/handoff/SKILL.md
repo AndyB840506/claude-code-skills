@@ -52,7 +52,7 @@ Follow these steps in order:
 1. **Update docs first** - the vault/project is the source of truth, not the clipboard
 2. **User's direction > agent's analysis** - if user said what to focus on next, that's the priority. If the user's direction is incomplete, supplement with agent's analysis but prioritize user input when clear.
 3. **Progress = handoff data** - same structure everywhere, canonical location
-4. **Scan for pending markers before Next Steps** - grep for `USER-COMMENT`, `NEEDS USER INPUT`, `TODO`, `FIXME` in the active session's files. Every marker found must appear explicitly in the handoff's Next Steps with where it lives, what's being asked, and who must act
+4. **Scan for pending markers before Next Steps** - grep for `USER-COMMENT`, `NEEDS USER INPUT`, `[TODO]`, `FIXME` in the active session's files. Every marker found must appear explicitly in the handoff's Next Steps with where it lives, what's being asked, and who must act
 5. **Verificar estado real al retomar** — Al iniciar una sesión con handoff, preguntar explícitamente: "¿Alguno de los next steps del handoff ya fue completado?" antes de proponer acciones. El handoff captura el estado al momento de escribirse — el usuario puede haber continuado trabajando después. No asumir que los "Next Steps" siguen pendientes.
 
 ## Platform Notes
@@ -175,7 +175,7 @@ The session already has Goal, Context, Progress, Definition of Done. A separate 
 
 ```bash
 # Example: search active session files
-grep -nH 'USER-COMMENT\|NEEDS USER INPUT\|TODO\|FIXME\|NEEDS CLARIFICATION' Notes/Sessions/*.md
+grep -nH 'USER-COMMENT\|NEEDS USER INPUT\|FIXME\|NEEDS CLARIFICATION' Notes/Sessions/*.md
 ```
 
 > Note: grep may match markers inside skill documentation text itself. Only flag markers that appear in project files (code, notes, plans) — not inside `.claude/skills/` files.
