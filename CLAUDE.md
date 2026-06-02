@@ -2,6 +2,10 @@
 
 Este proyecto crea skills personalizadas para Claude Code. Una skill es un archivo que le enseña a Claude a hacer una tarea específica de forma repetible.
 
+## Environment
+
+Windows con PowerShell 5.1. Usar PowerShell (no Bash/xcopy) para operaciones de archivos. Evitar backtick-quotes, caracteres Unicode y expresiones if inline en scripts — PS 5.1 no los maneja correctamente.
+
 ## Comportamiento al iniciar
 
 Cuando el usuario abra esta carpeta y escriba cualquier cosa, responde:
@@ -49,3 +53,13 @@ Esto:
 8. Mensaje de bienvenida claro
 9. Sin precios sugeridos ni consejos de venta
 10. Resumen claro de lo generado al terminar
+
+## Debugging
+
+Para cualquier ID, API key o valor de env var (ej. Google Drive/Sheet IDs), pedir al usuario que los pegue directamente desde la URL del browser o la fuente original — no retipear. Verificar el string exacto antes de depurar.
+
+No declarar un bug como corregido hasta haberlo verificado (re-ejecutar/reproducir). Para JSON parse errors, revisar específicamente BOM y respuestas API vacías.
+
+## Workflows
+
+Ritual de cierre de sesión: ejecutar `/retrospective`, luego `skill-kit-auditor`, luego `/handoff` en ese orden. Aplicar los fixes aprobados del audit antes de generar el handoff.
