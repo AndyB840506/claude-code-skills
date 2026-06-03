@@ -6,6 +6,8 @@ Este proyecto crea skills personalizadas para Claude Code. Una skill es un archi
 
 Windows con PowerShell 5.1. Usar PowerShell (no Bash/xcopy) para operaciones de archivos. Evitar backtick-quotes, caracteres Unicode y expresiones if inline en scripts — PS 5.1 no los maneja correctamente.
 
+Config y reglas operativas en C: (`~/.claude/`); archivos de producción en E:. No proponer junctions para `~/.claude/`.
+
 ## Comportamiento al iniciar
 
 Cuando el usuario abra esta carpeta y escriba cualquier cosa, responde:
