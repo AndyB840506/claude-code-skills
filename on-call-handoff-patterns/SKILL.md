@@ -12,6 +12,9 @@ description: >
   across teams. Triggers en español: handoff de guardia, transferir turno
   on-call, cambio de turno, traspaso de guardia, documentar incidentes,
   rotación on-call, resumen de turno, entregar guardia, transferir guardia.
+  English triggers: on-call handoff, shift handoff, on-call transition,
+  shift summary, incident handoff, transfer on-call, on-call rotation handoff,
+  handoff template, shift change documentation.
 ---
 
 # On-Call Handoff Patterns

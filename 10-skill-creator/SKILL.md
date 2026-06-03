@@ -209,17 +209,35 @@ Una línea describiendo qué hace en lenguaje simple.
 
 Después de generarla, instálala automáticamente:
 
-```bash
-mkdir -p .claude/skills/[nombre-skill]
-cp [nombre-skill].md .claude/skills/[nombre-skill]/SKILL.md
+```powershell
+# PowerShell (Windows)
+New-Item -ItemType Directory -Force ".claude/skills/[nombre-skill]"
+Copy-Item "[nombre-skill].md" ".claude/skills/[nombre-skill]/SKILL.md"
+
+# Bash / Git Bash
+# mkdir -p .claude/skills/[nombre-skill]
+# cp [nombre-skill].md .claude/skills/[nombre-skill]/SKILL.md
 ```
 
 Si el usuario quiere que la skill esté disponible en todos sus proyectos (no solo en esta carpeta):
 
-```bash
-mkdir -p ~/.claude/skills/[nombre-skill]
-cp [nombre-skill].md ~/.claude/skills/[nombre-skill]/SKILL.md
+```powershell
+# PowerShell (Windows)
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills\[nombre-skill]"
+Copy-Item "[nombre-skill].md" "$env:USERPROFILE\.claude\skills\[nombre-skill]\SKILL.md"
+
+# Bash / Git Bash
+# mkdir -p ~/.claude/skills/[nombre-skill]
+# cp [nombre-skill].md ~/.claude/skills/[nombre-skill]/SKILL.md
 ```
+
+Si el proyecto tiene un repositorio git, agregar a `.gitignore`:
+
+```
+.claude/scheduled_tasks.lock
+```
+
+Claude Code genera este archivo de runtime al usar scheduled tasks — no debe committearse.
 
 ---
 
@@ -259,6 +277,11 @@ Después de instalar:
 2. Verifica que las instrucciones son claras y completas
 3. Si genera archivos, verifica que funcionan
 4. Ajusta si algo no fluye bien
+
+**Criterios mínimos de PASS:**
+- La skill responde sin pedir datos que ya tiene en contexto
+- Genera el output en el formato prometido (archivo, HTML, texto estructurado)
+- No hay pasos bloqueantes sin fallback definido
 
 ---
 
