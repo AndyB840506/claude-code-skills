@@ -6,8 +6,6 @@ description: >
   title/tags/thumbnail text, cover-art prompts (1:1 · 9:16 · 16:9), and git commit + push.
   Triggers: /episode-launch, lanzar episodio, launch EP, publicar episodio BTQ,
   generar assets episodio, metadata episodio, social plan BTQ, portada episodio.
-version: "1.0.0"
-author: "Andrés Bermúdez Rodríguez (Andy)"
 ---
 
 # BTQ Episode Launch Orchestrator

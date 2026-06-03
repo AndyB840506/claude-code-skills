@@ -2,16 +2,16 @@
 name: btq-project
 description: >
   Master context skill for Behind the Queue (BTQ) podcast production. Use for everything
-  EXCEPT writing episode scripts — for scripts use btq-guion. Use this skill for: social
-  media plans, artwork prompts, quote cards, brand consistency, episode registration,
-  production checklists, roadmap, or any non-script BTQ production task.
+  EXCEPT writing episode scripts (use btq-guion) and EXCEPT generating full launch asset
+  packages — social plans, cover-art prompts, Spotify SEO (use episode-launch for those).
+  Use this skill for: brand consistency, quote cards, episode registration, production
+  checklists, roadmap, TurboScribe corrections, show notes, and any BTQ project context.
   Triggers: BTQ artwork prompt, BTQ brand context, BTQ production, Andy podcast, Laswell,
-  social launch plan BTQ, REMATE, quote cards BTQ, show notes BTQ, Spotify title BTQ,
-  Safe Creative BTQ, TurboScribe correction, prompt para Flow, prompt para Nani Banana,
-  imagen del capítulo, portada episodio, plan de lanzamiento BTQ, 3 días redes BTQ,
-  intriga lunes lanzamiento, quotes del episodio, citas memorables BTQ, tarjetas de cita BTQ,
-  registrar episodio, subir a Spotify, descripción episodio, ficha del episodio EP.0XX,
-  Frieren BTQ, Bohemian Rhapsody BTQ, BTQ roadmap, BTQ checklist, BTQ brand.
+  REMATE, quote cards BTQ, show notes BTQ, Spotify title BTQ, Safe Creative BTQ,
+  TurboScribe correction, prompt para Flow, prompt para Nani Banana, imagen del capítulo,
+  quotes del episodio, citas memorables BTQ, tarjetas de cita BTQ, registrar episodio,
+  subir a Spotify, descripción episodio, ficha del episodio EP.0XX, Frieren BTQ,
+  Bohemian Rhapsody BTQ, BTQ roadmap, BTQ checklist, BTQ brand.
 ---
 
 # Behind the Queue (BTQ) — Master Project Skill
