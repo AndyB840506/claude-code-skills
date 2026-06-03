@@ -7,7 +7,71 @@ Para que tu skill *realmente ejecute* (no solo mostrar documentación), el SKILL
 
 ---
 
-## Plantilla
+## Patrón Estándar de 4 Pasos
+
+Toda skill de producción debe seguir este patrón. No lo desvíes sin razón explícita.
+
+```markdown
+## EXECUTION
+
+Has invocado `/tu-skill`. Ejecuta el proceso en 4 pasos:
+
+### Paso 1 — Recopilar inputs
+
+Pide exactamente lo que necesitas, en un solo bloque. Nombra cada campo.
+Una vez confirmados, NO hagas más preguntas — procede al Paso 2.
+
+```
+Campo A: [descripción]
+Campo B: [descripción]
+Campo C: [descripción]
+```
+
+Si el usuario ya proporcionó la información en la invocación, salta directamente al Paso 2.
+
+---
+
+### Paso 2 — Generar (en paralelo cuando sea posible)
+
+Genera todos los outputs en una sola respuesta. Etiqueta cada bloque claramente.
+Tareas independientes van en paralelo — no serialices lo que puede ir en paralelo.
+
+**A · [Bloque de output 1]**
+[contenido]
+
+**B · [Bloque de output 2]**
+[contenido]
+
+**C · [Bloque de output 3]**
+[contenido]
+
+---
+
+### Paso 3 — Aprobación
+
+Antes de cualquier acción irreversible (commit, deploy, llamada a API, envío de email):
+
+> "¿Apruebas o ajustas algo antes de [commit/deploy/enviar]?"
+
+Espera aprobación explícita. Si el usuario dice "ajustar [bloque]" — revisa solo ese bloque.
+Si dice "sí" o "aprobado" — procede al Paso 4.
+
+---
+
+### Paso 4 — Ejecutar + Resumen
+
+Ejecuta la acción aprobada. Termina con una tabla de estado:
+
+| Entregable | Estado |
+|------------|--------|
+| [Asset A] | Listo |
+| [Asset B] | Listo |
+| [Commit/Deploy] | Listo / Falló (razón) |
+```
+
+---
+
+## Plantilla mínima (skills simples sin commit/deploy)
 
 ```markdown
 ## EXECUTION
