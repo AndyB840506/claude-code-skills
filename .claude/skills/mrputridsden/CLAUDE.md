@@ -163,3 +163,23 @@ Si un guion aparece como `deleted` en `git status`:
 - Juan: Juan@mrputridsden.com
 - GitHub: https://github.com/AndyB840506/claude-code-skills.git
 - Google Drive: drive.google.com/drive/folders/1_gblT3LGmOIyY5Ia7NllqrK7VYMJ2ikR
+
+---
+
+## Environment
+
+- OS: Windows. Use PowerShell for all shell/file operations, NOT Bash/xcopy. PowerShell version is 5.1, so avoid backtick-quotes, Unicode chars, and inline if-expressions.
+- Claude config and operational rules live on C: (`~/.claude/`); project files live on E:. Do not propose junctions for `~/.claude/`.
+
+## Verification
+
+- When the user reports an error (e.g., JSON parse, BOM), do NOT claim it is fixed after a single edit—reproduce/test the fix and confirm the error is actually gone before reporting success.
+- For env-var/ID issues, have the user copy IDs directly from the browser URL to avoid typos.
+
+## Transcripts & Subtitles
+
+- When generating timed transcript/subtitle output, use SRT format directly; do not post-process TXT output, which loses lines and timestamps.
+
+## Approvals
+
+- Present a plan and wait for explicit approval before executing multi-step work; respect 'no' on enrichment/bypass steps and never bypass private profiles.
