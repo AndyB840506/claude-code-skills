@@ -4,13 +4,16 @@
 
 ## Paso 1 — Verificación rápida de Whisper
 
-Antes de pedir el archivo, verificar que Whisper esté disponible:
+Antes de pedir el archivo, verificar que el ejecutable exista:
 
 ```powershell
-whisper --help
+Test-Path "C:\Users\andre\AppData\Local\Python\pythoncore-3.14-64\Scripts\whisper.exe"
 ```
 
-Si falla, informar al usuario y lanzar `00-setup.md`. No continuar hasta que el setup esté completo.
+Si retorna `True` → continuar. Si retorna `False` → informar al usuario y lanzar `00-setup.md`.
+
+> **Nota:** No usar `whisper --help` como verificación. En Windows con Python 3.14 y consola cp1252, el texto de ayuda contiene caracteres japoneses que causan UnicodeEncodeError — aunque Whisper esté correctamente instalado.
+> Ruta válida para Python 3.14. Si `Test-Path` retorna `False` pero Whisper fue instalado, verificar la ruta actual con `(Get-Command whisper).Source` en terminal y actualizar este paso.
 
 ---
 
