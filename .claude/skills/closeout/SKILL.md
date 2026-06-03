@@ -1,9 +1,12 @@
 ---
 name: closeout
-description: "End-of-session closeout ritual: runs retrospective, skill-kit-auditor, and handoff in sequence. Triggers: closeout, close out, cerrar sesion, session close, end session, finalizar sesion, wrap up, cierre de sesion."
+description: "Simplified 3-step session close: retrospective → skill-kit-auditor → handoff. Lightweight alternative to /session-close (which also includes prompt review and Google Drive backup). Triggers: closeout, close out. For full session close use /session-close."
 ---
 
-# Session Closeout
+# Session Closeout (Simplified)
+
+Lightweight 3-step close: retrospective → skill-kit-auditor → handoff.
+For the full 5-step close (includes prompt review + Google Drive backup), use /session-close.
 
 Ritual de cierre de sesion. Runs the three-step sequence below in order and produces a clipboard-ready handoff before closing.
 

@@ -12,8 +12,6 @@ description: >
   intriga lunes lanzamiento, quotes del episodio, citas memorables BTQ, tarjetas de cita BTQ,
   registrar episodio, subir a Spotify, descripción episodio, ficha del episodio EP.0XX,
   Frieren BTQ, Bohemian Rhapsody BTQ, BTQ roadmap, BTQ checklist, BTQ brand.
-version: "2.0.0"
-author: "Andrés Bermúdez Rodríguez (Andy)"
 ---
 
 # Behind the Queue (BTQ) — Master Project Skill
@@ -324,31 +322,11 @@ Cultural (per episode): #Frieren #BohemianRhapsody #GodOfWar etc.
 
 ---
 
-## 13. Episode Launch Orchestration (5 Parallel Agents)
+## 13. Episode Launch Orchestration
 
-For a full episode launch, spawn 5 sub-agents simultaneously with self-contained briefs. Each agent needs ALL the content it requires in the brief — no follow-up fetching.
-
-| Agent | Deliverable | Key inputs needed |
-|---|---|---|
-| SEO/Metadata | Spotify description (preview + full) + YouTube title/tags/thumbnail text | Script HTML path, episode number, title, closing TM |
-| Social/Marketing | 3-day launch calendar (Domingo intriga / Lunes lanzamiento / Miércoles refuerzo) for Instagram + LinkedIn | Script HTML path, Spotify URL, episode theme |
-| Artwork Prompts | 3 validated prompts for 1:1 / 9:16 / 16:9 with character accuracy checklist | Character visual canon (from training or reference image), episode tone |
-| Script Densification | 15-18 densification blocks to reach 60 min from ~25 min base | Script HTML path, runtime target, BTQ voice rules |
-| Website Grid | Confirm or update episode grid (4 cards, oldest→newest) + prepare next rotation draft | Current website HTML path, Spotify URL for new EP |
-
-### Approval gate
-
-After all 5 agents complete, consolidate as:
-1. Summary table (all 5 agents, status, any blockers)
-2. Each deliverable section with approve/adjust option
-3. Ask user to confirm any URLs before deploying
-
-### Deploy sequence (after approval)
-
-1. Apply script densification blocks to HTML
-2. Confirm Spotify URL is live (user verifies)
-3. Website: only deploy if grid changed — if already correct, skip
-4. `vercel --prod` (blocked by deploy-preflight gate until preflight passes)
+Para lanzar un episodio completo con todos los assets en paralelo, usar `/episode-launch`.
+Esa skill orquesta 5 agentes simultáneos: SEO/Metadata, Social/Marketing, Artwork Prompts,
+Script Densification y Website Grid — con approval gate integrado y preflight antes del deploy.
 
 ---
 

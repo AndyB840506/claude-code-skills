@@ -57,7 +57,8 @@ Follow these steps in order:
 
 ## Platform Notes
 
-- **Windows:** Use `clip` instead of `pbcopy` for clipboard: `cat << 'EOF' | clip`
+- **Windows (PowerShell 5.1):** Use `Set-Clipboard` — `@'...'@ | Set-Clipboard`. The `cat << 'EOF' | clip` syntax is Bash (Git Bash only) and fails in PS 5.1.
+- **Windows (Git Bash):** `cat << 'EOF' | clip`
 - **Mac:** Use `pbcopy` (as shown in examples below)
 - **Linux:** Use `xclip -selection clipboard`
 
@@ -102,9 +103,9 @@ Copy work context to clipboard for pasting into a new session.
 
 5. **Write to clipboard:**
 
-   Windows:
-   ```bash
-   cat << 'EOF' | clip
+   Windows — PowerShell 5.1:
+   ```powershell
+   @'
    ## Continue: [brief title]
 
    **IMPORTANT: Before executing anything, present:**
@@ -133,10 +134,10 @@ Copy work context to clipboard for pasting into a new session.
 
    ### Relevant Files
    [From Progress > Files]
-   EOF
+   '@ | Set-Clipboard
    ```
 
-   Mac: replace `clip` with `pbcopy` in the command above.
+   Windows (Git Bash) / Mac: replace `Set-Clipboard` block with `cat << 'EOF' | clip` / `cat << 'EOF' | pbcopy`.
 
 6. **Confirm:**
    > Handoff ready. Paste into new session with Ctrl+V (Windows) or Cmd+V (Mac).
@@ -173,8 +174,13 @@ The session already has Goal, Context, Progress, Definition of Done. A separate 
 
 **Always** grep the active session's content/plan/research files for pending-review markers BEFORE drafting the Next Steps list. Don't let them silently carry forward between sessions.
 
+```powershell
+# PowerShell 5.1 — search active session files
+Select-String -Pattern 'USER-COMMENT|NEEDS USER INPUT|FIXME|NEEDS CLARIFICATION' -Path "Notes\Sessions\*.md"
+```
+
 ```bash
-# Example: search active session files
+# Git Bash alternative
 grep -nH 'USER-COMMENT\|NEEDS USER INPUT\|FIXME\|NEEDS CLARIFICATION' Notes/Sessions/*.md
 ```
 
