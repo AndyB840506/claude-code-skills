@@ -9,72 +9,74 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f0f0;
-            color: #222;
-            line-height: 1.7;
+            background: #ebebeb;
+            color: #1e1e1e;
+            line-height: 1.75;
+            font-size: 15px;
         }
 
-        .container { max-width: 900px; margin: 0 auto; background: white; }
+        .container { max-width: 780px; margin: 0 auto; background: white; }
 
         .header {
             background: #1a1a1a;
             color: white;
-            padding: 40px;
+            padding: 40px 44px;
             border-bottom: 5px solid #9B1C1C;
         }
 
-        .header .podcast { font-size: 0.95em; color: #FF8C00; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
-        .header h1 { font-size: 2em; font-weight: 900; margin-bottom: 6px; }
-        .header .tagline { color: #FFD700; font-style: italic; font-size: 1.05em; margin-bottom: 20px; }
+        .header .podcast { font-size: 0.85em; color: #FF8C00; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+        .header h1 { font-size: 1.9em; font-weight: 900; margin-bottom: 6px; }
+        .header .tagline { color: #FFD700; font-style: italic; font-size: 1em; margin-bottom: 20px; }
 
-        .meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px; }
+        .meta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
         .meta-item {
             background: rgba(155,28,28,0.2);
             border: 1px solid #9B1C1C;
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.85em;
+            font-size: 0.8em;
             color: #FFD700;
         }
 
-        .section { padding: 30px 40px; border-bottom: 1px solid #eee; }
+        .section { padding: 28px 44px; border-bottom: 1px solid #eee; }
 
         .section h2 {
-            font-size: 0.8em;
+            font-size: 0.72em;
             text-transform: uppercase;
             letter-spacing: 3px;
             color: #9B1C1C;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
+            margin-bottom: 18px;
+            padding-bottom: 7px;
             border-bottom: 2px solid #9B1C1C;
         }
 
-        .segment { margin: 25px 0; padding: 20px; border-radius: 6px; }
+        .segment { margin: 36px 0; padding-bottom: 24px; border-bottom: 1px solid #f0f0f0; }
+        .segment:last-child { border-bottom: none; }
 
         .segment-header {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .segment-number {
             background: #9B1C1C;
             color: white;
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8em;
+            font-size: 0.75em;
             font-weight: bold;
             flex-shrink: 0;
         }
 
         .segment-title {
             font-weight: 700;
-            font-size: 1em;
+            font-size: 0.95em;
             color: #1a1a1a;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -82,164 +84,177 @@
 
         .segment-time {
             margin-left: auto;
-            font-size: 0.8em;
-            color: #999;
+            font-size: 0.78em;
+            color: #aaa;
             background: #f5f5f5;
-            padding: 3px 10px;
+            padding: 2px 10px;
             border-radius: 10px;
+            white-space: nowrap;
         }
 
         .sfx {
             background: #1a1a1a;
             color: #FFD700;
-            padding: 12px 18px;
+            padding: 11px 16px;
             border-radius: 4px;
             font-family: monospace;
-            font-size: 0.9em;
-            margin: 12px 0;
+            font-size: 0.88em;
+            margin: 14px 0;
         }
 
+        /* Diálogo limpio — sin fondos */
         .host-block {
-            margin: 15px 0;
-            padding: 15px 18px;
-            border-left: 4px solid #9B1C1C;
-            background: #fffdf8;
+            margin: 18px 0;
+            padding: 0 0 0 18px;
+            border-left: 3px solid #ddd;
         }
 
         .host-block.juan {
-            border-left-color: #2C5F8A;
-            background: #f8fbff;
+            border-left-color: #b0cce4;
         }
 
         .host-name {
             font-weight: 800;
-            font-size: 0.85em;
+            font-size: 0.78em;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #9B1C1C;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .host-block.juan .host-name { color: #2C5F8A; }
 
-        .host-text { font-size: 0.97em; line-height: 1.8; color: #333; }
+        .host-text {
+            font-size: 1em;
+            line-height: 1.85;
+            color: #2a2a2a;
+        }
 
+        /* Intercambio — borde sutil, fondo casi blanco */
         .intercambio {
-            background: #f0f8e8;
-            border: 2px dashed #5a8a3a;
-            border-radius: 6px;
-            padding: 16px 20px;
-            margin: 15px 0;
+            background: #f6faf2;
+            border-left: 3px solid #6aaa44;
+            border-radius: 0 4px 4px 0;
+            padding: 14px 18px;
+            margin: 18px 0;
             font-size: 0.92em;
-            color: #3a5a2a;
+            color: #2a3a1a;
         }
 
         .intercambio::before {
             content: "INTERCAMBIO";
             display: block;
             font-weight: 800;
-            font-size: 0.75em;
+            font-size: 0.7em;
             letter-spacing: 2px;
             color: #5a8a3a;
             margin-bottom: 8px;
         }
 
+        /* Dato — fondo crema claro */
         .dato {
-            background: #1a1a1a;
-            color: #A8A8A8;
-            padding: 16px 20px;
+            background: #fdfaf3;
+            color: #3a3018;
+            padding: 14px 18px;
             border-radius: 4px;
-            margin: 12px 0;
-            border-left: 4px solid #FFD700;
+            margin: 16px 0;
+            border-left: 4px solid #c8a830;
         }
 
         .dato-label {
-            font-size: 0.75em;
+            font-size: 0.7em;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #FFD700;
-            margin-bottom: 6px;
+            color: #9a7a10;
+            margin-bottom: 5px;
+            font-weight: 700;
         }
 
+        /* Leyenda — fondo lavanda claro */
         .leyenda {
-            background: #2a1a2a;
-            color: #d4a8d4;
-            padding: 16px 20px;
+            background: #faf5ff;
+            color: #2e1a2e;
+            padding: 14px 18px;
             border-radius: 4px;
-            margin: 12px 0;
+            margin: 16px 0;
             border-left: 4px solid #9B1C1C;
         }
 
         .leyenda-label {
-            font-size: 0.75em;
+            font-size: 0.7em;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #cc88cc;
-            margin-bottom: 6px;
+            color: #7a1a7a;
+            margin-bottom: 5px;
+            font-weight: 700;
         }
 
+        /* Recomendacion — fondo verde muy claro */
         .recomendacion {
-            background: #1a2a1a;
-            color: #a8d4a8;
-            padding: 16px 20px;
+            background: #f3faf3;
+            color: #1a2e1a;
+            padding: 14px 18px;
             border-radius: 4px;
-            margin: 12px 0;
+            margin: 16px 0;
             border-left: 4px solid #5a8a3a;
         }
 
         .recomendacion-label {
-            font-size: 0.75em;
+            font-size: 0.7em;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #88cc88;
-            margin-bottom: 6px;
+            color: #3a6a1a;
+            margin-bottom: 5px;
+            font-weight: 700;
         }
 
+        /* Promo — fondo azul muy claro */
         .promo {
-            background: #1a1a2a;
-            color: #a8a8d4;
-            padding: 16px 20px;
+            background: #f3f7fd;
+            color: #1a1e2e;
+            padding: 14px 18px;
             border-radius: 4px;
-            margin: 12px 0;
+            margin: 16px 0;
             border-left: 4px solid #2C5F8A;
         }
 
         .promo-label {
-            font-size: 0.75em;
+            font-size: 0.7em;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #8888cc;
-            margin-bottom: 6px;
+            color: #1a4a7a;
+            margin-bottom: 5px;
+            font-weight: 700;
         }
 
         .nota-produccion {
-            background: #fff8e6;
-            border: 1px solid #e6c84a;
+            background: #fffaed;
+            border: 1px solid #e0bb3a;
             border-radius: 4px;
-            padding: 10px 16px;
-            margin: 8px 0;
-            font-size: 0.85em;
-            color: #6b5a1a;
+            padding: 9px 14px;
+            margin: 10px 0;
+            font-size: 0.84em;
+            color: #5a4a10;
         }
 
         .nota-produccion::before {
-            content: "NOTA PRODUCCION: ";
+            content: "NOTA PRODUCCIÓN: ";
             font-weight: 700;
             text-transform: uppercase;
         }
 
-        .arquitectura { font-size: 0.9em; }
+        .arquitectura { font-size: 0.88em; }
         .arq-row {
             display: grid;
-            grid-template-columns: 30px 180px 90px 1fr;
+            grid-template-columns: 26px 170px 85px 1fr;
             gap: 10px;
-            padding: 8px 0;
+            padding: 7px 0;
             border-bottom: 1px solid #f0f0f0;
             align-items: start;
         }
         .arq-num { color: #9B1C1C; font-weight: bold; }
         .arq-seg { font-weight: 600; }
-        .arq-time { color: #999; font-family: monospace; }
+        .arq-time { color: #aaa; font-family: monospace; }
     </style>
 </head>
 <body>
@@ -286,7 +301,7 @@
     </div>
 
     <!-- GUION -->
-    <div class="section">
+    <div class="section" style="padding-top:32px; padding-bottom:40px;">
         <h2>Guion Completo</h2>
 
         <!-- SEG 1 -->
@@ -419,29 +434,22 @@
                 <div class="segment-time">12:00 — 22:00</div>
             </div>
 
-            <div class="host-block">
-                <div class="host-name">Andrés</div>
-                <div class="host-text">
-                    Pero antes de llegar a la mujer que lo cambió todo, hay una leyenda. Y esta leyenda es tan parte del blues que es imposible hablar de las raíces del rock sin contarla.<br><br>
-                    Imagínense. Mississippi. 1930. Un muchacho de 19 años llamado Robert Johnson quiere tocar guitarra como nadie la ha tocado. Toca en bares, en esquinas, en donde lo dejen. Pero no es bueno. Sus compañeros se ríen de él. Le dicen que se vaya a casa, que deje la guitarra.<br><br>
-                    Y entonces Robert Johnson desaparece varios meses.<br><br>
-                    Cuando vuelve, toca como si fuera poseído. Nadie entiende cómo mejoró tan rápido, tanto. Y la leyenda dice esto: a medianoche, Robert Johnson fue a una intersección. La intersección de las Highways 61 y 49, en Clarksdale, Mississippi. Y ahí, en ese cruce de caminos — el Crossroads — le vendió el alma al diablo a cambio de tocar la guitarra mejor que nadie.
-                </div>
-            </div>
-
             <div class="host-block juan">
                 <div class="host-name">Juan</div>
                 <div class="host-text">
-                    O sea, esa historia es la que define toda la mitología del blues. El pacto con el diablo. Y todavía hoy ese cruce de caminos existe en Clarksdale, Mississippi. La gente va ahí.
+                    Bueno. Antes de llegar a la protagonista, yo quiero contar una historia. Y la quiero contar yo porque es la historia que más le ha servido a la música para construir una mitología. Y como promotor de eventos, yo sé exactamente lo que una buena mitología le hace a una carrera.<br><br>
+                    Mississippi. 1930. Hay un muchacho de 19 años que se llama Robert Johnson. Quiere ser guitarrista de blues. Toca en bares, en esquinas, en donde lo dejen. Y es malo. Sus compañeros se ríen de él. Los músicos mayores le dicen que deje la guitarra y se vaya a la casa.<br><br>
+                    Y entonces Robert Johnson desaparece. Varios meses. Nadie sabe dónde está. Y cuando vuelve — toca como si fuera poseído. No como si hubiera practicado más. Como si algo en él hubiera cambiado de raíz. Nadie entiende cómo mejoró así, tan rápido, tanto.<br><br>
+                    Y la explicación que la gente encontró fue esta: a medianoche, Robert Johnson fue a una intersección. La intersección de las Highways 61 y 49, en Clarksdale, Mississippi. El Crossroads. Y ahí, en ese cruce de caminos, le vendió el alma al diablo a cambio de tocar mejor que nadie.
                 </div>
             </div>
 
             <div class="host-block">
                 <div class="host-name">Andrés</div>
                 <div class="host-text">
-                    Todavía hoy hay una señal en ese cruce. Y eso, Juanito, tiene que ver con algo que ya vimos el episodio pasado — el <em>diabolus in musica</em>, el tritono. La música oscura siempre ha tenido esa asociación con el diablo. Desde la Edad Media hasta Black Sabbath. El blues no fue la excepción.<br><br>
-                    Ahora, ¿la historia del crossroads es verdad? Nadie lo sabe. Lo que sí es verdad es que Robert Johnson grabó 29 canciones entre 1936 y 1937, y esas 29 canciones cambiaron la historia de la música para siempre. "Cross Road Blues", "Sweet Home Chicago", "Love in Vain". Canciones que los Rolling Stones, Led Zeppelin y Eric Clapton grabaron décadas después.<br><br>
-                    Y Robert Johnson murió a los 27 años. En circunstancias misteriosas. Sin diagnóstico oficial. Algunos dicen que lo envenenaron. Otros dicen que fue el diablo cobrando la deuda.
+                    Y eso, Juanito, conecta directo con lo que vimos el episodio pasado. El <em>diabolus in musica</em>. El tritono. La Edad Media llamando oscuro al sonido que sonaba demasiado bien. La leyenda del crossroads no salió de la nada — salió de una tradición de siglos que asocia la música que emociona demasiado con algo prohibido.<br><br>
+                    En el sur de los Estados Unidos de los años 30, para un predicador bautista, el blues era literalmente la música del diablo. Los mismos ritmos del gospel, pero para el placer, para el baile, para el sábado en la noche. Y Robert Johnson tocaba ese blues mejor que nadie. La leyenda del crossroads era la única explicación que encontraban.<br><br>
+                    Lo que sí es verdad: Johnson grabó 29 canciones entre 1936 y 1937. "Cross Road Blues", "Sweet Home Chicago", "Love in Vain". Canciones que los Rolling Stones y Led Zeppelin grabaron décadas después, casi nota por nota. Y murió a los 27 años. Sin diagnóstico oficial.
                 </div>
             </div>
 
@@ -453,29 +461,22 @@
             <div class="host-block juan">
                 <div class="host-name">Juan</div>
                 <div class="host-text">
-                    Vea pues. Caramba. O sea que el 27 Club no empezó con Hendrix o con Morrison. Empezó con Robert Johnson en 1938. Y ese hombre lleva muerto 88 años y sus canciones todavía suenan en discos de bandas de hoy.
-                </div>
-            </div>
-
-            <div class="host-block">
-                <div class="host-name">Andrés</div>
-                <div class="host-text">
-                    Y para los que quieren ver la leyenda del crossroads dramatizada — bien hecha, además — hay dos referencias que les recomendamos.<br><br>
-                    La primera es <em>Crossroads</em>, la película de 1986 con Ralph Macchio — sí, el mismo de Karate Kid. Un estudiante de guitarra clásica que busca una canción perdida de Robert Johnson y termina en un duelo de guitarras con el diablo. Es entretenida, tiene buena música, y captura el espíritu de la leyenda.<br><br>
-                    La segunda es <em>O Brother, Where Art Thou?</em>, de los hermanos Coen, del año 2000. George Clooney, Tim Blake Nelson, John Turturro, huyendo de la ley en el Mississippi de los 30s. Hay un personaje — Tommy Johnson — que le vendió el alma al diablo en un cruce de caminos. El soundtrack de esa película es una clase magistral de folk y blues del delta. Produjola T Bone Burnett. Ganó el Grammy al mejor álbum del año.
+                    Y eso es lo que hace la historia tan poderosa todavía hoy. El crossroads todavía existe en Clarksdale, Mississippi. Con señal y todo. La gente va ahí de peregrinación — músicos, fans del blues, turistas. Es un lugar de culto.<br><br>
+                    Y Robert Johnson lleva muerto 88 años y sus canciones siguen sonando en discos de bandas de hoy. Eso es lo que una buena mitología hace. No necesita ser verificable para ser real. El mito vive en la música. Y cuando la música dura 90 años, el mito dura también.<br><br>
+                    Para los que quieren ver esa leyenda en pantalla: <em>Crossroads</em> (1986) con Ralph Macchio — el mismo de Karate Kid — buscando una canción perdida de Johnson y terminando en un duelo de guitarras con el diablo. Entretenida, bien musicalizada. Y <em>O Brother, Where Art Thou?</em> de los Coen, del 2000 — George Clooney escapando de la ley en el Mississippi de los 30s. Hay un personaje que también vendió el alma en el crossroads. El soundtrack producido por T Bone Burnett ganó el Grammy al mejor álbum del año.
                 </div>
             </div>
 
             <div class="recomendacion">
                 <div class="recomendacion-label">Referencia Cultural</div>
-                <strong>Crossroads (1986)</strong> — Dir. Walter Hill. La leyenda del crossroads dramatizada con Ralph Macchio. Recomendada para entrar al mito.<br><br>
-                <strong>O Brother, Where Art Thou? (2000)</strong> — Dir. Coen Brothers. Blues del delta como contexto narrativo. Soundtrack: T Bone Burnett.
+                <strong>Crossroads (1986)</strong> — Dir. Walter Hill. La leyenda dramatizada con Ralph Macchio.<br><br>
+                <strong>O Brother, Where Art Thou? (2000)</strong> — Dir. Coen Brothers. Blues del delta como contexto narrativo. Soundtrack: T Bone Burnett. Grammy al mejor álbum.
             </div>
 
             <div class="intercambio">
-                <strong>Andrés pregunta:</strong> "Juanito, ¿usted conocía esa leyenda? ¿Había escuchado lo del cruce de caminos antes?"<br><br>
-                <strong>Juan responde:</strong> su relación con la leyenda — si la conocía, de dónde, qué pensaba de ella. Como promotor de eventos, ¿ha visto artistas que cultiven ese tipo de mito?<br><br>
-                <strong>Andrés cierra:</strong> "Pero ojo — y aquí viene lo que más me importa de toda esta historia — la leyenda del crossroads existe porque el blues que tocaba Robert Johnson era tan imposiblemente bueno que la gente necesitaba una explicación sobrenatural. Y la persona que tomó ese blues y lo llevó más lejos que nadie — sin ningún pacto con el diablo — fue una mujer."
+                <strong>Juan lanza la pregunta:</strong> "Andrés, usted que estudia esta historia — ¿usted cree que la leyenda del crossroads le hizo bien o mal a Robert Johnson? O sea, ¿le robó el mérito musical? ¿O le dio una vida extra que sin el mito no hubiera tenido?"<br><br>
+                <strong>Andrés responde:</strong> su lectura del mito vs. el mérito real. Libre — puede ir en cualquier dirección.<br><br>
+                <strong>Andrés cierra el pase:</strong> "Pero lo que más me interesa no es Johnson — es la mujer que vino después. La que tomó todo ese blues y lo llevó más lejos que nadie, sin ningún pacto con el diablo."
             </div>
         </div>
 
@@ -490,70 +491,46 @@
             <div class="host-block">
                 <div class="host-name">Andrés</div>
                 <div class="host-text">
-                    Agárrense bien de la silla porque ahora sí viene el personaje central de este episodio.<br><br>
-                    Sister Rosetta Tharpe. Nació en 1915 en Cotton Plant, Arkansas. Hija de una predicadora del gospel. A los 6 años ya tocaba guitarra en la iglesia. A los 23 años llegó a Nueva York, firmó con Decca Records, y lanzó canciones que mezclaban gospel con swing. La gente no sabía cómo llamar a eso. Era demasiado sagrado para ser jazz, demasiado divertido para ser solo gospel.<br><br>
-                    Pero eso no es lo que la hace histórica. Lo que la hace histórica es esto: en los años 40, cuando ningún hombre blanco de rock había tocado una nota, esta mujer negra, en iglesias y teatros, tocaba guitarra eléctrica con distorsión, con overdrive, con ese sonido pesado y sucio que décadas después se llamaría rock.
+                    Agárrense bien de la silla porque ahora sí viene la protagonista.<br><br>
+                    Sister Rosetta Tharpe. Nació en 1915 en Cotton Plant, Arkansas. Hija de una predicadora del gospel. A los 6 años ya tocaba guitarra en la iglesia. A los 23 llegó a Nueva York, firmó con Decca Records, y empezó a grabar canciones que mezclaban gospel con swing. Nadie sabía cómo llamar a eso — era demasiado sagrado para ser jazz, demasiado divertido para ser solo gospel.<br><br>
+                    Pero lo que la hace histórica no es eso. Es que en los años 40, cuando ningún hombre blanco de rock había tocado una nota, esta mujer negra tocaba guitarra eléctrica con distorsión, con overdrive, con ese sonido pesado y sucio que décadas después se llamaría rock. En iglesias. En teatros. En 1945. Estaba usando una Gibson ES-150 — la misma guitarra del jazz — pero no la usaba como se suponía. La tocaba fuerte, con la intensidad de la predicadora que era. Y sonaba diferente a todo lo que existía.
                 </div>
             </div>
 
             <div class="host-block juan">
                 <div class="host-name">Juan</div>
                 <div class="host-text">
-                    O sea, ¿guitarra eléctrica con distorsión en los años 40? Eso no existía. Ese sonido se supone que lo inventaron en los 60s con el rock. ¿Cómo así que esta mujer lo estaba haciendo 20 años antes?
+                    Y yo quiero contar el show. Porque hay un evento específico en la vida de Sister Rosetta Tharpe que a mí, como promotor, me tiene completamente descolocado. Y la primera vez que Andrés me lo contó, no lo creía.<br><br>
+                    Era 1951. Rosetta Tharpe decide casarse por tercera vez. El novio se llama Russell Morrison. Y en lugar de hacer una ceremonia tranquila, hace esto: vende boletas.<br><br>
+                    No diez, no cien — vende 7.000 boletas. El matrimonio fue en el estadio de béisbol de los Blues en Manchester, Inglaterra. La gente pagó entrada para ver a una artista casarse. Ella llegó en limusina, con el vestido de novia, caminó por el campo del estadio, llegó al altar frente a 7.000 personas, se casó, y luego — se quitó el velo y tocó guitarra eléctrica en su propio matrimonio.<br><br>
+                    Eso en 1951. Siendo una mujer negra. En una época donde en su propio país no podía sentarse en la parte delantera de un bus. Y ella llenando estadios en Europa.<br><br>
+                    Eso no es solo una artista. Eso es alguien que entendía exactamente lo que hacía y adónde iba.
                 </div>
             </div>
 
             <div class="host-block">
                 <div class="host-name">Andrés</div>
                 <div class="host-text">
-                    Exactamente eso, Juanito. Exactamente eso. Ella lo estaba haciendo 20 años antes. Estaba tocando con una Gibson ES-150 — la misma guitarra de Charlie Christian, el guitarrista de jazz — pero no la usaba como se suponía que había que usarla. La tocaba fuerte, con esa energía del gospel, con esa intensidad de la predicadora que era. Y sonaba diferente a todo lo que existía.<br><br>
-                    Chuck Berry la vio en vivo. Elvis la escuchó. Little Richard. Jerry Lee Lewis. Eric Clapton después dijo en entrevistas que ella lo cambió todo para él. Keith Richards también. Johnny Cash.<br><br>
-                    ¿Cómo la ve?
+                    Y la cadena de influencia que dejó es directa. Chuck Berry la vio en vivo. Elvis la escuchó. Little Richard. Jerry Lee Lewis. Eric Clapton dijo en entrevistas que ella lo cambió todo. Keith Richards también. Johnny Cash.<br><br>
+                    Pero hay algo en Rosetta Tharpe que va más allá de la guitarra — es el espacio que habitaba. Ella vivía en una grieta que nadie más se atrevía a pisar. Por un lado era artista de gospel, tocaba en iglesias, su madre era predicadora. Por el otro tocaba en clubes de Chicago con Cab Calloway, con Lucky Millinder, para la gente que bailaba y bebía el sábado en la noche.<br><br>
+                    Los predicadores la atacaron. Le dijeron que mezclaba lo sagrado con lo profano. Que tocaba la música del diablo. Y ella siguió haciendo exactamente lo que hacía.
                 </div>
             </div>
 
             <div class="dato">
                 <div class="dato-label">Dato</div>
-                Sister Rosetta Tharpe es reconocida como influencia directa por Chuck Berry, Little Richard, Elvis Presley, Jerry Lee Lewis, Eric Clapton y Keith Richards — todos los fundadores del rock & roll clásico. Sin embargo, entró al Rock and Roll Hall of Fame en 2018, décadas después de que sus discípulos ya llevaban años siendo inmortalizados.
-            </div>
-
-            <div class="host-block">
-                <div class="host-name">Andrés</div>
-                <div class="host-text">
-                    Ahora, aquí viene una historia que a mí me parece una de las más increíbles de la historia del rock. Y es la historia del matrimonio de Sister Rosetta Tharpe.<br><br>
-                    Era 1951. Rosetta Tharpe decide casarse por tercera vez. El novio se llamaba Russell Morrison. Y ella, en lugar de hacer una ceremonia tranquila, hace esto: vende boletas.<br><br>
-                    No una, no diez — vende 7,000 boletas. El matrimonio fue en Manchester, Inglaterra, en el estadio de béisbol de los Blues, y la gente pagó entrada para verla casarse. Ella llegó en limusina, con el vestido de novia, caminó por el campo del estadio, llegó al altar frente a 7,000 personas, se casó, y luego tocó guitarra eléctrica en su propio matrimonio.<br><br>
-                    ¿Cómo la ve, Juanito?
-                </div>
-            </div>
-
-            <div class="host-block juan">
-                <div class="host-name">Juan</div>
-                <div class="host-text">
-                    Vea pues. O sea, esta mujer convirtió su matrimonio en un concierto con 7,000 personas, en 1951, en una época donde una mujer negra en Estados Unidos no podía sentarse en la parte delantera de un bus. Y ella llenando estadios en Europa.<br><br>
-                    Eso es una artista, mejor dicho.
-                </div>
-            </div>
-
-            <div class="host-block">
-                <div class="host-name">Andrés</div>
-                <div class="host-text">
-                    Y hay algo en Rosetta Tharpe que no es solo la guitarra — es lo que representaba. Ella vivía en una grieta que nadie más se atrevía a habitar.<br><br>
-                    Por un lado, era una artista de gospel. Cantaba para Dios, tocaba en iglesias, su madre era predicadora. Por el otro, tocaba en los clubes de Chicago con Cab Calloway, con Lucky Millinder. Tocaba para la gente que bailaba y bebía los sábados por la noche.<br><br>
-                    Y los predicadores la atacaron por eso. Le dijeron que estaba mezclando lo sagrado con lo profano. Que estaba tocando la música del diablo. Y ella siguió haciendo lo que hacía.<br><br>
-                    Esa tensión — esa grieta entre lo sagrado y lo profano — es exactamente el mismo conflicto que define el blues. Y es el corazón del rock & roll. La energía de la iglesia con la libertad de la calle. Rosetta Tharpe vivió ese conflicto en carne propia.
-                </div>
+                Sister Rosetta Tharpe es reconocida como influencia directa por Chuck Berry, Little Richard, Elvis, Jerry Lee Lewis, Eric Clapton y Keith Richards — los fundadores del rock & roll clásico. Entró al Rock and Roll Hall of Fame en 2018, décadas después de que todos sus discípulos ya llevaban años inmortalizados.
             </div>
 
             <div class="leyenda">
                 <div class="leyenda-label">La "Música del Diablo"</div>
-                En el sur de los Estados Unidos, durante los años 30 y 40, los predicadores bautistas llamaban al blues "la música del diablo" porque usaba los mismos ritmos africanos que el gospel, pero para el placer y el baile — no para Dios. La misma nota. El mismo ritmo. Dos destinos completamente diferentes.
+                En el sur de los Estados Unidos, los predicadores bautistas llamaban al blues "la música del diablo" porque usaba los mismos ritmos africanos del gospel, pero para el placer y el baile — no para Dios. La misma nota. El mismo ritmo. Dos destinos completamente distintos.
             </div>
 
             <div class="intercambio">
-                <strong>Andrés lanza la pregunta:</strong> "Juanito, usted que ha promovido conciertos, que ha trabajado con artistas — ¿usted ha visto artistas que vivan esa misma tensión? Entre lo que quieren hacer y lo que la industria, la familia o el medio les dice que deben hacer?"<br><br>
-                <strong>Juan responde:</strong> anécdota de la escena underground bogotana. Artistas que mezclan géneros que "no deberían" mezclarse. Libre.<br><br>
-                <strong>Andrés cierra:</strong> "Y ese es el legado de Rosetta Tharpe. No solo la guitarra. También eso: el coraje de tocar en la grieta. Y lo que hizo en esa grieta cambió todo lo que vino después."
+                <strong>Juan lanza la pregunta:</strong> "Andrés, esa tensión que vivió Tharpe — entre la iglesia y el club, entre lo sagrado y lo profano — ¿usted la ve en artistas de hoy? ¿Gente que se mete en géneros donde 'no debería' estar, y eso mismo es lo que los hace interesantes?"<br><br>
+                <strong>Andrés responde:</strong> ejemplos concretos — artistas contemporáneos que mezclan géneros que "no deberían" mezclarse. Libre.<br><br>
+                <strong>Juan cierra:</strong> "Ese es el legado de Rosetta Tharpe. No solo la guitarra. También eso: el coraje de tocar en la grieta. Y lo que hizo en esa grieta cambió todo lo que vino después."
             </div>
         </div>
 
@@ -565,29 +542,22 @@
                 <div class="segment-time">36:00 — 42:00</div>
             </div>
 
-            <div class="host-block">
-                <div class="host-name">Andrés</div>
-                <div class="host-text">
-                    Bien. Juntemos todo. Porque esto es lo que más me gusta de este episodio — la cadena directa.<br><br>
-                    Sister Rosetta Tharpe toca en Nueva York a finales de los 40. Chuck Berry la ve. Chuck Berry toma esa energía, le pone un ritmo de backbeat, lo llama rock & roll, y en 1958 graba "Johnny B. Goode". Keith Richards escucha a Chuck Berry siendo niño en Inglaterra y decide aprender guitarra. Keith Richards y Mick Jagger forman los Rolling Stones. Jimmy Page, que estaba en la misma escena de Londres, forma Led Zeppelin. Y en Birmingham, a unas horas de Londres, cuatro muchachos de clase obrera escuchan todo eso, lo pasan por el ambiente de las fábricas, lo afinan más bajo, y crean Black Sabbath.<br><br>
-                    África → Mississippi → Nueva York → Londres → Birmingham.<br><br>
-                    Eso es Iron Man. Eso es el riff de Black Sabbath. Tiene raíces africanas que llegaron a América en un barco de esclavos 300 años antes.
-                </div>
-            </div>
-
             <div class="host-block juan">
                 <div class="host-name">Juan</div>
                 <div class="host-text">
-                    Así es. Y agrego algo. Lo que hace eso tan poderoso no es que sea una conexión intelectual interesante. Es que está en el cuerpo. Cuando uno escucha un riff de Sabbath, algo en el cuerpo responde. Eso no es teórico — es físico. Y ese impulso físico viene de los mismos ritmos que hacían bailar a la gente en las plantaciones del Mississippi. El cuerpo lo reconoce aunque la mente no sepa de dónde viene.
+                    Bien. Déjenme hacer algo. Voy a trazar la cadena. Porque los promotores sabemos algo que los historiadores a veces olvidan: la música se transmite en vivo. Artista ve a artista. Concierto a concierto. Cara a cara.<br><br>
+                    Sister Rosetta Tharpe toca en Nueva York a finales de los 40. Chuck Berry la ve. Chuck Berry toma esa energía del gospel eléctrico, le mete un backbeat, lo llama rock & roll, y en 1958 graba "Johnny B. Goode". Keith Richards escucha a Chuck Berry de niño en Inglaterra y aprende guitarra. Richards y Jagger forman los Rolling Stones. Jimmy Page, en la misma escena de Londres, forma Led Zeppelin. Y en Birmingham, a unas horas de ahí, cuatro muchachos de clase obrera escuchan todo eso, lo pasan por el ambiente de las fábricas de metal, lo afinan más abajo, y crean Black Sabbath.<br><br>
+                    África → Mississippi → Nueva York → Londres → Birmingham.<br><br>
+                    Eso es "Iron Man". Ese riff de Sabbath tiene raíces africanas que llegaron a América en un barco de esclavos 300 años antes. Y lo que hace eso tan poderoso no es que sea una conexión intelectual interesante — es que está en el cuerpo. Cuando uno escucha ese riff, algo responde físicamente. Ese impulso viene de los mismos ritmos que hacían bailar a la gente en el Mississippi. El cuerpo lo reconoce aunque la mente no sepa de dónde viene.
                 </div>
             </div>
 
             <div class="host-block">
                 <div class="host-name">Andrés</div>
                 <div class="host-text">
-                    Exactamente. Y hay una anécdota puntual que me parece perfecta para cerrar esta parte. Keith Richards, en una entrevista, habló de Sister Rosetta Tharpe. Dijo algo así: "Antes de nosotros, antes de los Beatles, antes de Elvis, estaba ella. Nosotros solo tomamos lo que ella dejó."<br><br>
-                    Y Rosetta Tharpe entró al Rock and Roll Hall of Fame en 2018. Ochenta años después de que empezó a tocar. Décadas después de que Chuck Berry, Elvis, Little Richard — todos sus discípulos — ya llevaban años inmortalizados.<br><br>
-                    Hay algo ahí que dice mucho sobre quién recibe el crédito en la historia de la música. Pero bueno — esa es otra conversación.
+                    Y lo que me parece más poderoso de esa cadena es que operaba sin que nadie la viera como cadena. Cuando Tony Iommi tocaba ese riff en Birmingham en 1970, no estaba pensando en África. Estaba pensando en el blues que escuchó de niño, que venía de alguien que lo escuchó de alguien, que lo escuchó de alguien. Cada eslabón transmitió sin saber que transmitía.<br><br>
+                    Keith Richards lo dijo en una entrevista hablando de Tharpe: "Antes de nosotros, antes de los Beatles, antes de Elvis, estaba ella. Nosotros solo tomamos lo que ella dejó."<br><br>
+                    Y Rosetta Tharpe entró al Rock and Roll Hall of Fame en 2018. Ochenta años después de que empezó. Décadas después de que todos sus discípulos ya llevaban años inmortalizados. Eso dice algo sobre quién recibe el crédito en la historia de la música. Pero esa es otra conversación.
                 </div>
             </div>
 
