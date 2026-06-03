@@ -33,7 +33,7 @@
     "acento": "#A8A8A8"
   },
   "logo_descripcion": "Estilo vintage póster de concierto + rock clásico. Colores: negro profundo, crimson/rojo profundo (#9B1C1C), plateado/acero (#A8A8A8). Elementos: referencias a bandas icónicas, whisky, vinilos, estética underground/conciertos. Sin naranja. Vibe: cuero, metal clásico, backstage.",
-  "numeracion": "EP.001",
+  "numeracion": "EP.002",
   "estilo_narración": "mixto",
   "word_count_target": 3500,
   "intro_template": "Stevie Ray Vaughn meets Black Label Society: guitarra blues eléctrica + heavy metal, con voz femenina gutural que abre el espacio. Puro impacto sonoro de 30 segundos. Referencia: audio/WhatsApp Video 2026-05-14 Intro.mp4",
@@ -67,7 +67,7 @@
   ],
   "links": {
     "web": "www.mrputridsden.com",
-    "spotify": { "url": "https://open.spotify.com/episode/0LW93D5Q5KhQYfIX96xOEH?si=4fee5140b6934fe6", "status": "activo", "nota": "EP.001 live — EP.002 se agrega al publicar el 1 junio" },
+    "spotify": { "url": "https://open.spotify.com/episode/0LW93D5Q5KhQYfIX96xOEH?si=4fee5140b6934fe6", "status": "activo", "nota": "EP.001 live — EP.002 live desde semana del 2026-05-27" },
     "apple": { "url": "https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794", "status": "activo" },
     "amazon_music": { "url": "https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den", "status": "activo" },
     "iheart": { "url": "https://iheart.com/podcast/334702214/", "status": "activo" },

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Putrid's Den — EP.003: Las Raíces del Rock: Sister Rosetta Tharpe</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f0f0;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; background: white; }
+
+        .header {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px;
+            border-bottom: 5px solid #9B1C1C;
+        }
+
+        .header .podcast { font-size: 0.95em; color: #FF8C00; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+        .header h1 { font-size: 2em; font-weight: 900; margin-bottom: 6px; }
+        .header .tagline { color: #FFD700; font-style: italic; font-size: 1.05em; margin-bottom: 20px; }
+
+        .meta { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 15px; }
+        .meta-item {
+            background: rgba(155,28,28,0.2);
+            border: 1px solid #9B1C1C;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: #FFD700;
+        }
+
+        .section { padding: 30px 40px; border-bottom: 1px solid #eee; }
+
+        .section h2 {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #9B1C1C;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #9B1C1C;
+        }
+
+        .segment { margin: 25px 0; padding: 20px; border-radius: 6px; }
+
+        .segment-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .segment-number {
+            background: #9B1C1C;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .segment-title {
+            font-weight: 700;
+            font-size: 1em;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.8em;
+            color: #999;
+            background: #f5f5f5;
+            padding: 3px 10px;
+            border-radius: 10px;
+        }
+
+        .sfx {
+            background: #1a1a1a;
+            color: #FFD700;
+            padding: 12px 18px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+            margin: 12px 0;
+        }
+
+        .host-block {
+            margin: 15px 0;
+            padding: 15px 18px;
+            border-left: 4px solid #9B1C1C;
+            background: #fffdf8;
+        }
+
+        .host-block.juan {
+            border-left-color: #2C5F8A;
+            background: #f8fbff;
+        }
+
+        .host-name {
+            font-weight: 800;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #9B1C1C;
+            margin-bottom: 8px;
+        }
+
+        .host-block.juan .host-name { color: #2C5F8A; }
+
+        .host-text { font-size: 0.97em; line-height: 1.8; color: #333; }
+
+        .intercambio {
+            background: #f0f8e8;
+            border: 2px dashed #5a8a3a;
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin: 15px 0;
+            font-size: 0.92em;
+            color: #3a5a2a;
+        }
+
+        .intercambio::before {
+            content: "INTERCAMBIO";
+            display: block;
+            font-weight: 800;
+            font-size: 0.75em;
+            letter-spacing: 2px;
+            color: #5a8a3a;
+            margin-bottom: 8px;
+        }
+
+        .dato {
+            background: #1a1a1a;
+            color: #A8A8A8;
+            padding: 16px 20px;
+            border-radius: 4px;
+            margin: 12px 0;
+            border-left: 4px solid #FFD700;
+        }
+
+        .dato-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #FFD700;
+            margin-bottom: 6px;
+        }
+
+        .leyenda {
+            background: #2a1a2a;
+            color: #d4a8d4;
+            padding: 16px 20px;
+            border-radius: 4px;
+            margin: 12px 0;
+            border-left: 4px solid #9B1C1C;
+        }
+
+        .leyenda-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #cc88cc;
+            margin-bottom: 6px;
+        }
+
+        .recomendacion {
+            background: #1a2a1a;
+            color: #a8d4a8;
+            padding: 16px 20px;
+            border-radius: 4px;
+            margin: 12px 0;
+            border-left: 4px solid #5a8a3a;
+        }
+
+        .recomendacion-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #88cc88;
+            margin-bottom: 6px;
+        }
+
+        .promo {
+            background: #1a1a2a;
+            color: #a8a8d4;
+            padding: 16px 20px;
+            border-radius: 4px;
+            margin: 12px 0;
+            border-left: 4px solid #2C5F8A;
+        }
+
+        .promo-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #8888cc;
+            margin-bottom: 6px;
+        }
+
+        .nota-produccion {
+            background: #fff8e6;
+            border: 1px solid #e6c84a;
+            border-radius: 4px;
+            padding: 10px 16px;
+            margin: 8px 0;
+            font-size: 0.85em;
+            color: #6b5a1a;
+        }
+
+        .nota-produccion::before {
+            content: "NOTA PRODUCCION: ";
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .arquitectura { font-size: 0.9em; }
+        .arq-row {
+            display: grid;
+            grid-template-columns: 30px 180px 90px 1fr;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            align-items: start;
+        }
+        .arq-num { color: #9B1C1C; font-weight: bold; }
+        .arq-seg { font-weight: 600; }
+        .arq-time { color: #999; font-family: monospace; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Mr. Putrid's Den</div>
+        <h1>EP.003: Las Raíces del Rock</h1>
+        <div class="tagline">Sister Rosetta Tharpe y el árbol que conecta el rock con la salsa</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 003</span>
+            <span class="meta-item">Historia de Género</span>
+            <span class="meta-item">Gospel / Blues / Rock Origins / Afro-Latino</span>
+            <span class="meta-item">~60 min</span>
+            <span class="meta-item">Co-host</span>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row" style="color:#9B1C1C; font-weight:bold;">
+                <span class="arq-num">#</span>
+                <span class="arq-seg">Segmento</span>
+                <span class="arq-time">Tiempo</span>
+                <span>Contenido</span>
+            </div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Intro music</span><span class="arq-time">00:00</span><span>Stevie Ray + BLS — fade out</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Bienvenida</span><span class="arq-time">00:30</span><span>Andrés abre, referencia a EP.002, teaser Tharpe. [INTERCAMBIO: ¿Juan la conocía?]</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">El Hook</span><span class="arq-time">02:30</span><span>La pregunta improbable: Black Sabbath y la salsa. El árbol africano.</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Las Blue Notes</span><span class="arq-time">06:00</span><span>Notas que los europeos no podían escribir. La raíz musical africana. [INTERCAMBIO]</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">La Leyenda del Crossroads</span><span class="arq-time">12:00</span><span>Robert Johnson, el diablo, el 27 Club original. Películas: Crossroads (1986), O Brother (2000).</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Sister Rosetta Tharpe</span><span class="arq-time">22:00</span><span>La abuela del rock. La iglesia, el matrimonio-concierto, la cadena de influencia. [INTERCAMBIO]</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">La Cadena hasta el Metal</span><span class="arq-time">36:00</span><span>Tharpe → Chuck Berry → Stones/Zeppelin → Sabbath. El ADN africano en Iron Man.</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">La Guarida Recomienda</span><span class="arq-time">42:00</span><span>Puerta de entrada para nuevos fans: canción, álbum, película.</span></div>
+            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Segmento de Promoción</span><span class="arq-time">45:00</span><span>Juan — eventos underground (ver eventos.json).</span></div>
+            <div class="arq-row"><span class="arq-num">10</span><span class="arq-seg">La Otra Rama — EP.004</span><span class="arq-time">49:00</span><span>El árbol africano que fue al Caribe. Setup para salsa.</span></div>
+            <div class="arq-row"><span class="arq-num">11</span><span class="arq-seg">Takeaway</span><span class="arq-time">54:00</span><span>Lo que parece opuesto viene del mismo lugar. La lección del episodio.</span></div>
+            <div class="arq-row"><span class="arq-num">12</span><span class="arq-seg">Cierre + La Tarea</span><span class="arq-time">57:30</span><span>Juan da la tarea. Andrés cierra. Teaser EP.004.</span></div>
+            <div class="arq-row"><span class="arq-num">13</span><span class="arq-seg">Outro music</span><span class="arq-time">60:00</span><span>Jazz Billie Holiday — fade in.</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion Completo</h2>
+
+        <!-- SEG 1 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">1</div>
+                <div class="segment-title">Intro Music</div>
+                <div class="segment-time">00:00 — 00:30</div>
+            </div>
+            <div class="sfx">[SFX: INTRO — Stevie Ray Vaughn meets Black Label Society. Guitarra blues eléctrica + heavy metal. Voz femenina gutural. 30 segundos. Fade out lento.]</div>
+        </div>
+
+        <!-- SEG 2 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">2</div>
+                <div class="segment-title">Bienvenida</div>
+                <div class="segment-time">00:30 — 02:30</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Bienvenidos de vuelta a Mr. Putrid's Den.<br><br>
+                    [PAUSA]<br><br>
+                    Soy Andrés, y con Juan, esto es el episodio 003. Y si llegaron hasta aquí, ya escucharon el de Black Sabbath — y al final de ese episodio les dejé una tarea. Esa tarea era buscar a una mujer que se llama Sister Rosetta Tharpe.<br><br>
+                    Juanito, pregunta honesta antes de arrancar: ¿usted la conocía?
+                </div>
+            </div>
+
+            <div class="intercambio">
+                <strong>Andrés pregunta directamente:</strong> "¿Usted la conocía, Juanito? Antes de que empezáramos a hablar de esto, ¿había escuchado ese nombre?"<br><br>
+                <strong>Juan responde:</strong> honestamente — sí o no. Si no la conocía, contar cómo se enteró cuando Andrés se la mencionó. Si sí, qué sabía.<br><br>
+                <strong>Andrés cierra el intercambio:</strong> "Pues bien, hoy la van a conocer. Y les prometo que al final de este episodio van a escuchar Black Sabbath diferente. Vamos."
+            </div>
+        </div>
+
+        <!-- SEG 3 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">3</div>
+                <div class="segment-title">El Hook — La Pregunta Improbable</div>
+                <div class="segment-time">02:30 — 06:00</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Bien. Arrancamos con una pregunta. Y les pido que no la respondan todavía, que solo se la dejen quedar dando vueltas en la cabeza.<br><br>
+                    ¿Qué tiene en común un riff de Black Sabbath con la clave de la salsa?<br><br>
+                    [PAUSA LARGA]<br><br>
+                    Piénsenlo. Un riff de metal pesado de Birmingham, Inglaterra, 1970. Y la clave de la salsa, de los barrios del Bronx, de La Habana, del Caribe. Dos cosas que parecen completamente opuestas. Géneros distintos, continentes distintos, idiomas distintos, épocas distintas.<br><br>
+                    La respuesta es: el mismo ADN. La misma raíz. Exactamente la misma fuente.<br><br>
+                    Y la persona que conecta esos dos mundos es alguien que casi nadie conoce. Una mujer negra de Arkansas que tocaba guitarra eléctrica con distorsión — en la iglesia — en 1945. Antes de Chuck Berry. Antes de Elvis. Antes de todos.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Vea pues. O sea, usted está diciendo que lo mismo que hace que un riff de metal se sienta pesado y lo mismo que hace que una clave de salsa te mueva los pies — es la misma cosa.<br><br>
+                    Eso no es lo que la mayoría de la gente se imagina cuando compara esos dos géneros.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Exactamente eso. Y ese es el hilo de hoy. Vamos por partes.<br><br>
+                    Imagínense un árbol. Un árbol musical con raíces africanas. Ese árbol, cuando llega a América, se divide en dos ramas grandes. Una rama va al norte — al Mississippi, al sur de los Estados Unidos. De ahí sale el blues, el gospel, el rock. La otra rama va al sur — al Caribe, a Cuba, a Puerto Rico. De ahí sale el son, el mambo, la salsa.<br><br>
+                    Hoy vamos con la primera rama. La del blues. La que llegó hasta Birmingham. La que está en cada riff de metal que han escuchado en su vida. Y la semana que viene — que ya les anticipo — vamos con la otra rama. La que fue al Caribe.
+                </div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">Contexto</div>
+                El árbol africano llegó a América en los siglos XVII y XVIII con la esclavitud. Las tradiciones musicales — call-and-response, percusión polirrítmica, las blue notes — sobrevivieron en dos formas: en las iglesias del sur de Estados Unidos (gospel/blues) y en las plantaciones del Caribe (ritmos que derivaron en son cubano y salsa).
+            </div>
+        </div>
+
+        <!-- SEG 4 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">4</div>
+                <div class="segment-title">Las Blue Notes — Notas que Europa No Podía Escribir</div>
+                <div class="segment-time">06:00 — 12:00</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Para entender de dónde viene todo esto, hay que entender un concepto que suena técnico pero no lo es. Juanito, páreme bolas aquí porque esto es la base de todo lo que viene después.<br><br>
+                    Los esclavos africanos que llegaron a América cantaban. Cantaban en el trabajo, cantaban en las iglesias que les permitían construir, cantaban en los campos. Y cuando cantaban, usaban notas — inflexiones vocales — que no existían en la música europea. En la escala occidental, hay notas definidas, puntos fijos. Pero la música africana usaba lo que hay entre esos puntos. Notas que van de un lugar a otro, que se doblan, que se arrastran.<br><br>
+                    Los músicos europeos escuchaban eso y no podían escribirlo en una partitura. No tenían cómo notarlo. Entonces le pusieron nombre: las llamaron <em>blue notes</em>. Notas azules. Como si el color pudiera describir lo que el pentagrama no alcanzaba a capturar.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Vea pues. O sea que la música africana tenía notas que los europeos ni siquiera podían escribir. No es que no les gustara — es que literalmente no tenían el sistema para capturarlas.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Exactamente. Y esas blue notes son la firma del blues. Son lo que hace que una guitarra de blues <em>llore</em> — ese sonido que usted siente en el pecho. Ese bend de cuerda, esa nota que va de un punto a otro. Eso es africano puro.<br><br>
+                    Y están en todas partes. Están en B.B. King, están en Muddy Waters, están en Chuck Berry, están en Jimi Hendrix. Y están — agárrense bien de esto — en cada solo de guitarra de Black Sabbath. Tony Iommi, sin saberlo, estaba tocando música africana pasada por Birmingham.
+                </div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">Dato musical</div>
+                Las blue notes son típicamente el tercer, quinto y séptimo grado de la escala, tocados ligeramente más bajos de lo "correcto" según la teoría occidental. Este concepto es la base del blues, el jazz, el soul, el R&B, y — por extensión — del rock y el metal.
+            </div>
+
+            <div class="intercambio">
+                <strong>Andrés lanza la pregunta:</strong> "Juanito, usted que ha escuchado toda la vida esos géneros — ¿en qué canción usted escucha esa nota que le llega al pecho? No tiene que ser metal, puede ser cualquier cosa."<br><br>
+                <strong>Juan responde:</strong> una canción o momento específico donde sintió esa nota. Anécdota personal. Libre.<br><br>
+                <strong>Andrés cierra:</strong> "Eso que usted está describiendo. Esa nota. Eso tiene 400 años. Viene de África. Y la historia de cómo llegó hasta los oídos de todo el mundo la escribió principalmente una persona."
+            </div>
+        </div>
+
+        <!-- SEG 5 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">5</div>
+                <div class="segment-title">La Leyenda del Crossroads — Robert Johnson y el Diablo</div>
+                <div class="segment-time">12:00 — 22:00</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Pero antes de llegar a la mujer que lo cambió todo, hay una leyenda. Y esta leyenda es tan parte del blues que es imposible hablar de las raíces del rock sin contarla.<br><br>
+                    Imagínense. Mississippi. 1930. Un muchacho de 19 años llamado Robert Johnson quiere tocar guitarra como nadie la ha tocado. Toca en bares, en esquinas, en donde lo dejen. Pero no es bueno. Sus compañeros se ríen de él. Le dicen que se vaya a casa, que deje la guitarra.<br><br>
+                    Y entonces Robert Johnson desaparece varios meses.<br><br>
+                    Cuando vuelve, toca como si fuera poseído. Nadie entiende cómo mejoró tan rápido, tanto. Y la leyenda dice esto: a medianoche, Robert Johnson fue a una intersección. La intersección de las Highways 61 y 49, en Clarksdale, Mississippi. Y ahí, en ese cruce de caminos — el Crossroads — le vendió el alma al diablo a cambio de tocar la guitarra mejor que nadie.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    O sea, esa historia es la que define toda la mitología del blues. El pacto con el diablo. Y todavía hoy ese cruce de caminos existe en Clarksdale, Mississippi. La gente va ahí.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Todavía hoy hay una señal en ese cruce. Y eso, Juanito, tiene que ver con algo que ya vimos el episodio pasado — el <em>diabolus in musica</em>, el tritono. La música oscura siempre ha tenido esa asociación con el diablo. Desde la Edad Media hasta Black Sabbath. El blues no fue la excepción.<br><br>
+                    Ahora, ¿la historia del crossroads es verdad? Nadie lo sabe. Lo que sí es verdad es que Robert Johnson grabó 29 canciones entre 1936 y 1937, y esas 29 canciones cambiaron la historia de la música para siempre. "Cross Road Blues", "Sweet Home Chicago", "Love in Vain". Canciones que los Rolling Stones, Led Zeppelin y Eric Clapton grabaron décadas después.<br><br>
+                    Y Robert Johnson murió a los 27 años. En circunstancias misteriosas. Sin diagnóstico oficial. Algunos dicen que lo envenenaron. Otros dicen que fue el diablo cobrando la deuda.
+                </div>
+            </div>
+
+            <div class="leyenda">
+                <div class="leyenda-label">Leyenda</div>
+                Robert Johnson — el primer miembro del 27 Club, antes de que existiera el concepto. Jimi Hendrix, Janis Joplin, Jim Morrison, Kurt Cobain, Amy Winehouse. Todos murieron a los 27. Johnson los precedió por décadas.
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Vea pues. Caramba. O sea que el 27 Club no empezó con Hendrix o con Morrison. Empezó con Robert Johnson en 1938. Y ese hombre lleva muerto 88 años y sus canciones todavía suenan en discos de bandas de hoy.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y para los que quieren ver la leyenda del crossroads dramatizada — bien hecha, además — hay dos referencias que les recomendamos.<br><br>
+                    La primera es <em>Crossroads</em>, la película de 1986 con Ralph Macchio — sí, el mismo de Karate Kid. Un estudiante de guitarra clásica que busca una canción perdida de Robert Johnson y termina en un duelo de guitarras con el diablo. Es entretenida, tiene buena música, y captura el espíritu de la leyenda.<br><br>
+                    La segunda es <em>O Brother, Where Art Thou?</em>, de los hermanos Coen, del año 2000. George Clooney, Tim Blake Nelson, John Turturro, huyendo de la ley en el Mississippi de los 30s. Hay un personaje — Tommy Johnson — que le vendió el alma al diablo en un cruce de caminos. El soundtrack de esa película es una clase magistral de folk y blues del delta. Produjola T Bone Burnett. Ganó el Grammy al mejor álbum del año.
+                </div>
+            </div>
+
+            <div class="recomendacion">
+                <div class="recomendacion-label">Referencia Cultural</div>
+                <strong>Crossroads (1986)</strong> — Dir. Walter Hill. La leyenda del crossroads dramatizada con Ralph Macchio. Recomendada para entrar al mito.<br><br>
+                <strong>O Brother, Where Art Thou? (2000)</strong> — Dir. Coen Brothers. Blues del delta como contexto narrativo. Soundtrack: T Bone Burnett.
+            </div>
+
+            <div class="intercambio">
+                <strong>Andrés pregunta:</strong> "Juanito, ¿usted conocía esa leyenda? ¿Había escuchado lo del cruce de caminos antes?"<br><br>
+                <strong>Juan responde:</strong> su relación con la leyenda — si la conocía, de dónde, qué pensaba de ella. Como promotor de eventos, ¿ha visto artistas que cultiven ese tipo de mito?<br><br>
+                <strong>Andrés cierra:</strong> "Pero ojo — y aquí viene lo que más me importa de toda esta historia — la leyenda del crossroads existe porque el blues que tocaba Robert Johnson era tan imposiblemente bueno que la gente necesitaba una explicación sobrenatural. Y la persona que tomó ese blues y lo llevó más lejos que nadie — sin ningún pacto con el diablo — fue una mujer."
+            </div>
+        </div>
+
+        <!-- SEG 6 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">6</div>
+                <div class="segment-title">Sister Rosetta Tharpe — La Abuela del Rock</div>
+                <div class="segment-time">22:00 — 36:00</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Agárrense bien de la silla porque ahora sí viene el personaje central de este episodio.<br><br>
+                    Sister Rosetta Tharpe. Nació en 1915 en Cotton Plant, Arkansas. Hija de una predicadora del gospel. A los 6 años ya tocaba guitarra en la iglesia. A los 23 años llegó a Nueva York, firmó con Decca Records, y lanzó canciones que mezclaban gospel con swing. La gente no sabía cómo llamar a eso. Era demasiado sagrado para ser jazz, demasiado divertido para ser solo gospel.<br><br>
+                    Pero eso no es lo que la hace histórica. Lo que la hace histórica es esto: en los años 40, cuando ningún hombre blanco de rock había tocado una nota, esta mujer negra, en iglesias y teatros, tocaba guitarra eléctrica con distorsión, con overdrive, con ese sonido pesado y sucio que décadas después se llamaría rock.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    O sea, ¿guitarra eléctrica con distorsión en los años 40? Eso no existía. Ese sonido se supone que lo inventaron en los 60s con el rock. ¿Cómo así que esta mujer lo estaba haciendo 20 años antes?
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Exactamente eso, Juanito. Exactamente eso. Ella lo estaba haciendo 20 años antes. Estaba tocando con una Gibson ES-150 — la misma guitarra de Charlie Christian, el guitarrista de jazz — pero no la usaba como se suponía que había que usarla. La tocaba fuerte, con esa energía del gospel, con esa intensidad de la predicadora que era. Y sonaba diferente a todo lo que existía.<br><br>
+                    Chuck Berry la vio en vivo. Elvis la escuchó. Little Richard. Jerry Lee Lewis. Eric Clapton después dijo en entrevistas que ella lo cambió todo para él. Keith Richards también. Johnny Cash.<br><br>
+                    ¿Cómo la ve?
+                </div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">Dato</div>
+                Sister Rosetta Tharpe es reconocida como influencia directa por Chuck Berry, Little Richard, Elvis Presley, Jerry Lee Lewis, Eric Clapton y Keith Richards — todos los fundadores del rock & roll clásico. Sin embargo, entró al Rock and Roll Hall of Fame en 2018, décadas después de que sus discípulos ya llevaban años siendo inmortalizados.
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Ahora, aquí viene una historia que a mí me parece una de las más increíbles de la historia del rock. Y es la historia del matrimonio de Sister Rosetta Tharpe.<br><br>
+                    Era 1951. Rosetta Tharpe decide casarse por tercera vez. El novio se llamaba Russell Morrison. Y ella, en lugar de hacer una ceremonia tranquila, hace esto: vende boletas.<br><br>
+                    No una, no diez — vende 7,000 boletas. El matrimonio fue en Manchester, Inglaterra, en el estadio de béisbol de los Blues, y la gente pagó entrada para verla casarse. Ella llegó en limusina, con el vestido de novia, caminó por el campo del estadio, llegó al altar frente a 7,000 personas, se casó, y luego tocó guitarra eléctrica en su propio matrimonio.<br><br>
+                    ¿Cómo la ve, Juanito?
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Vea pues. O sea, esta mujer convirtió su matrimonio en un concierto con 7,000 personas, en 1951, en una época donde una mujer negra en Estados Unidos no podía sentarse en la parte delantera de un bus. Y ella llenando estadios en Europa.<br><br>
+                    Eso es una artista, mejor dicho.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y hay algo en Rosetta Tharpe que no es solo la guitarra — es lo que representaba. Ella vivía en una grieta que nadie más se atrevía a habitar.<br><br>
+                    Por un lado, era una artista de gospel. Cantaba para Dios, tocaba en iglesias, su madre era predicadora. Por el otro, tocaba en los clubes de Chicago con Cab Calloway, con Lucky Millinder. Tocaba para la gente que bailaba y bebía los sábados por la noche.<br><br>
+                    Y los predicadores la atacaron por eso. Le dijeron que estaba mezclando lo sagrado con lo profano. Que estaba tocando la música del diablo. Y ella siguió haciendo lo que hacía.<br><br>
+                    Esa tensión — esa grieta entre lo sagrado y lo profano — es exactamente el mismo conflicto que define el blues. Y es el corazón del rock & roll. La energía de la iglesia con la libertad de la calle. Rosetta Tharpe vivió ese conflicto en carne propia.
+                </div>
+            </div>
+
+            <div class="leyenda">
+                <div class="leyenda-label">La "Música del Diablo"</div>
+                En el sur de los Estados Unidos, durante los años 30 y 40, los predicadores bautistas llamaban al blues "la música del diablo" porque usaba los mismos ritmos africanos que el gospel, pero para el placer y el baile — no para Dios. La misma nota. El mismo ritmo. Dos destinos completamente diferentes.
+            </div>
+
+            <div class="intercambio">
+                <strong>Andrés lanza la pregunta:</strong> "Juanito, usted que ha promovido conciertos, que ha trabajado con artistas — ¿usted ha visto artistas que vivan esa misma tensión? Entre lo que quieren hacer y lo que la industria, la familia o el medio les dice que deben hacer?"<br><br>
+                <strong>Juan responde:</strong> anécdota de la escena underground bogotana. Artistas que mezclan géneros que "no deberían" mezclarse. Libre.<br><br>
+                <strong>Andrés cierra:</strong> "Y ese es el legado de Rosetta Tharpe. No solo la guitarra. También eso: el coraje de tocar en la grieta. Y lo que hizo en esa grieta cambió todo lo que vino después."
+            </div>
+        </div>
+
+        <!-- SEG 7 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">7</div>
+                <div class="segment-title">La Cadena hasta el Metal — El ADN Africano en Iron Man</div>
+                <div class="segment-time">36:00 — 42:00</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Bien. Juntemos todo. Porque esto es lo que más me gusta de este episodio — la cadena directa.<br><br>
+                    Sister Rosetta Tharpe toca en Nueva York a finales de los 40. Chuck Berry la ve. Chuck Berry toma esa energía, le pone un ritmo de backbeat, lo llama rock & roll, y en 1958 graba "Johnny B. Goode". Keith Richards escucha a Chuck Berry siendo niño en Inglaterra y decide aprender guitarra. Keith Richards y Mick Jagger forman los Rolling Stones. Jimmy Page, que estaba en la misma escena de Londres, forma Led Zeppelin. Y en Birmingham, a unas horas de Londres, cuatro muchachos de clase obrera escuchan todo eso, lo pasan por el ambiente de las fábricas, lo afinan más bajo, y crean Black Sabbath.<br><br>
+                    África → Mississippi → Nueva York → Londres → Birmingham.<br><br>
+                    Eso es Iron Man. Eso es el riff de Black Sabbath. Tiene raíces africanas que llegaron a América en un barco de esclavos 300 años antes.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Así es. Y agrego algo. Lo que hace eso tan poderoso no es que sea una conexión intelectual interesante. Es que está en el cuerpo. Cuando uno escucha un riff de Sabbath, algo en el cuerpo responde. Eso no es teórico — es físico. Y ese impulso físico viene de los mismos ritmos que hacían bailar a la gente en las plantaciones del Mississippi. El cuerpo lo reconoce aunque la mente no sepa de dónde viene.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Exactamente. Y hay una anécdota puntual que me parece perfecta para cerrar esta parte. Keith Richards, en una entrevista, habló de Sister Rosetta Tharpe. Dijo algo así: "Antes de nosotros, antes de los Beatles, antes de Elvis, estaba ella. Nosotros solo tomamos lo que ella dejó."<br><br>
+                    Y Rosetta Tharpe entró al Rock and Roll Hall of Fame en 2018. Ochenta años después de que empezó a tocar. Décadas después de que Chuck Berry, Elvis, Little Richard — todos sus discípulos — ya llevaban años inmortalizados.<br><br>
+                    Hay algo ahí que dice mucho sobre quién recibe el crédito en la historia de la música. Pero bueno — esa es otra conversación.
+                </div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">La Cadena</div>
+                Africa → Mississippi Gospel/Blues (1800s-1930s) → Sister Rosetta Tharpe (1940s) → Chuck Berry / Little Richard (1950s) → Rolling Stones / Led Zeppelin (1960s) → Black Sabbath (1970) → todo el metal moderno
+            </div>
+        </div>
+
+        <!-- SEG 8 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">8</div>
+                <div class="segment-title">La Guarida Recomienda — Puerta de Entrada</div>
+                <div class="segment-time">42:00 — 45:00</div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Bien. Para los que escucharon este episodio y quieren saber más — o para los que nunca han escuchado blues en su vida y este episodio los picó la curiosidad — acá van tres puntos de entrada. Tres cosas concretas. Están libres de ignorarlas, pero si las siguen, en dos horas van a entender de dónde viene toda la música que escuchan.<br><br>
+                    <strong>La canción:</strong> "Strange Things Happening Every Day" de Sister Rosetta Tharpe, 1944. Escúchenla y díganme si no suena a rock. Eso fue grabado 12 años antes de que Elvis existiera.<br><br>
+                    <strong>El álbum:</strong> "The Complete Recordings" de Robert Johnson. Son 41 canciones. No tienen que escucharlas todas de un solo golpe. Pongan "Cross Road Blues" y "Love in Vain". Dos canciones. Diez minutos. Y después escuchen "Gimme Shelter" de los Stones o "Since I've Been Loving You" de Zeppelin. Vean lo que sienten.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y la película, que es obligatoria: <em>O Brother, Where Art Thou?</em> de los hermanos Coen. Año 2000. George Clooney escapando de una prisión en el Mississippi de los 30s. El soundtrack — producido por T Bone Burnett — es una clase magistral de blues y folk del delta. Ganó el Grammy. Está en Netflix, en las plataformas. Y si después de verla quieren más, vean también <em>Crossroads</em> de 1986 con Ralph Macchio. Más entretenida que educativa, pero la leyenda del crossroads está ahí.
+                </div>
+            </div>
+
+            <div class="recomendacion">
+                <div class="recomendacion-label">La Guarida Recomienda — EP.003</div>
+                <strong>Canción:</strong> "Strange Things Happening Every Day" — Sister Rosetta Tharpe (1944)<br>
+                <strong>Para comparar:</strong> "Cross Road Blues" — Robert Johnson (1936)<br>
+                <strong>Álbum:</strong> "The Complete Recordings" — Robert Johnson<br>
+                <strong>Película 1:</strong> O Brother, Where Art Thou? (2000) — Coen Brothers<br>
+                <strong>Película 2:</strong> Crossroads (1986) — Walter Hill
+            </div>
+        </div>
+
+        <!-- SEG 9 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">9</div>
+                <div class="segment-title">Segmento de Promoción</div>
+                <div class="segment-time">45:00 — 49:00</div>
+            </div>
+
+            <div class="nota-produccion">Juan — actualizar eventos.json antes de grabar este episodio. Los eventos actuales son de ejemplo. Reemplazar con eventos reales. El guion abajo usa los eventos de ejemplo como referencia de formato.</div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Bueno, antes de cerrar, como siempre, algo concreto para los que estén en Bogotá o por aquí cerca. Porque toda esta historia de la música que estamos contando también vive hoy, en vivo, en los escenarios de la ciudad. Y usted sabe que a mí eso me parece lo más importante — que la música no sea solo historia, sino que también esté pasando ahora.<br><br>
+                    [ACTUALIZAR CON EVENTOS REALES DE eventos.json]<br><br>
+                    <em>— Formato de referencia con eventos de ejemplo —</em><br><br>
+                    El primero: este <strong>7 de junio</strong> en La Cantera Bar en Bogotá hay una noche de riffs que no se pueden perder. Dos bandas emergentes: Los Silencios, doom progresivo, y Tierra Muerta, thrash directo. Entrada libre hasta las 9 de la noche. Búscalos en Instagram como @lacanterabar.<br><br>
+                    Y el <strong>14 de junio</strong>, el Jazz Fest Chapinero en el Teatro Libre. El Cuarteto Bogotá Jazz mezclando jazz estándar con ritmos del Pacífico colombiano. Boletas desde 25 mil pesos. Entren a teatrolibre.com.co.<br><br>
+                    Eso es lo que hay. Dense una vuelta, apoyen la escena local, que sin ustedes no existe.
+                </div>
+            </div>
+
+            <div class="promo">
+                <div class="promo-label">Fuente de Eventos</div>
+                Consultar eventos.json antes de grabar. Juan actualiza la lista con eventos reales. El formato arriba es el modelo — nombre del evento, fecha, lugar, descripción breve y dónde conseguir boletas o info.
+            </div>
+        </div>
+
+        <!-- SEG 10 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">10</div>
+                <div class="segment-title">La Otra Rama — Setup para EP.004</div>
+                <div class="segment-time">49:00 — 54:00</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Bien. Prometí algo al inicio del episodio y lo cumplo ahora.<br><br>
+                    Dijimos que el árbol africano tiene dos ramas. Hoy hablamos de la que fue al Mississippi — la del blues, el gospel, el rock. Pero la otra rama existe. Y es igual de importante.<br><br>
+                    Los mismos ritmos africanos que fueron al Mississippi también fueron al Caribe. A Cuba, a Puerto Rico, a Jamaica. Y ahí pasó algo distinto pero igualmente poderoso. Los ritmos africanos se mezclaron con la música española, con la influencia indígena, con el trabajo de los puertos. Y de ahí salió el son cubano, el mambo, el chachachá. Y décadas después, en los barrios del Bronx en Nueva York, inmigrantes puertorriqueños y cubanos tomaron todo eso y lo electrificaron, lo urbanizaron, lo hicieron político. Y a eso le llamaron salsa.<br><br>
+                    La clave de la salsa y el backbeat del rock. Dos formas distintas de decir lo mismo con el cuerpo. Dos respuestas distintas al mismo ADN africano.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Vea pues. O sea que Celia Cruz y Tony Iommi son primos musicales.<br><br>
+                    Eso es algo que la mayoría de la gente no se imagina. Uno en el metal, la otra en la salsa, y los dos bebiendo del mismo río africano.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Exactamente, Juanito. Exactamente eso. Celia Cruz y Tony Iommi. Primos musicales.<br><br>
+                    Y esa historia — la de la rama caribeña, la que fue del son cubano a Fania Records, de Celia Cruz a Willie Colón, de Cuba al Bronx — esa es la historia del próximo episodio. EP.004. Salsa: de África al Caribe.<br><br>
+                    Les anticipo que es una historia llena de inmigrantes, de sobrevivencia, de Héctor Lavoe, de una disquera que nació en un garaje, y de cómo la misma raíz que está en un riff de metal también está en la clave que mueve todo un barrio.
+                </div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">Conexión con EP.004</div>
+                La narrativa de los cuatro episodios (EP.002-005): Black Sabbath como punto de llegada del metal → las raíces africanas que lo originaron → la misma raíz que dio origen a la salsa → jazz fusion como síntesis. Un solo hilo conductor a través de géneros que parecen no tener nada que ver.
+            </div>
+        </div>
+
+        <!-- SEG 11 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">11</div>
+                <div class="segment-title">Takeaway — Lo que Parece Opuesto Viene del Mismo Lugar</div>
+                <div class="segment-time">54:00 — 57:30</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Antes de cerrar, siempre queremos dejarlos con algo concreto. No solo historia — algo que diga algo sobre hoy.<br><br>
+                    Lo que más me quedo pensando de todo esto es esto: la música que más separa a la gente — metal versus salsa, rock versus gospel, lo sagrado versus lo profano — tiene la misma raíz. Los mismos ritmos. Las mismas notas que los europeos no sabían cómo escribir.<br><br>
+                    Sister Rosetta Tharpe vivió en esa grieta y la convirtió en arte. Robert Johnson tomó el dolor de una vida dura y lo volvió canciones que sobrevivieron 90 años. Y los cuatro muchachos de Birmingham que escuchamos el episodio pasado — sin saberlo — estaban tocando África pasada por una fábrica de acero.<br><br>
+                    La lección que me deja eso es que lo que parece opuesto muchas veces viene del mismo lugar. Y que las divisiones que ponemos entre los géneros, entre las culturas, entre lo popular y lo clásico — son divisiones que nosotros inventamos. La música no las tiene.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Así es. Y agrego algo: Rosetta Tharpe tardó 80 años en entrar al Rock and Roll Hall of Fame. Ochenta años. Eso dice algo sobre cómo la historia decide quién merece ser recordado y quién no. Pero el hecho de que sus discípulos la mencionaran siempre, que Keith Richards hablara de ella, que los Rolling Stones grabaran sus canciones — eso es otro tipo de permanencia. Uno que no depende de los premios.<br><br>
+                    Lo que hizo no necesitó validación oficial para importar. Importó igual.
+                </div>
+            </div>
+        </div>
+
+        <!-- SEG 12 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">12</div>
+                <div class="segment-title">Cierre + La Tarea</div>
+                <div class="segment-time">57:30 — 60:00</div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Bueno, mi gente putrida. Eso fue el episodio 003 de Mr. Putrid's Den. Y como siempre, hay tarea.<br><br>
+                    Y esta tarea es un experimento. Dos canciones. Cinco minutos en total.<br><br>
+                    Primera: escuchen "Strange Things Happening Every Day" de Sister Rosetta Tharpe, 1944. Escúchenla completa. Y luego, inmediatamente después, pongan "Johnny B. Goode" de Chuck Berry, 1958.<br><br>
+                    Y díganme: ¿escuchan a la misma persona? ¿Sienten de dónde viene Chuck Berry? Escríbannos, cuéntennos qué sintieron. Eso es la tarea. Simple, rápida, y creo que los va a sorprender.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y si quieren seguir la conversación, ya saben dónde encontrarnos. La información está al final de este episodio. Escríbannos, cuéntennos si conocían a Rosetta Tharpe, si sabían la historia del crossroads, o si este episodio los llevó a escuchar algo que no habían escuchado antes. Eso es exactamente para lo que existe este podcast.<br><br>
+                    La semana que viene: salsa. De África al Caribe. Celia Cruz, Willie Colón, Héctor Lavoe, Fania Records. Y la conexión que nadie espera con el árbol que estuvimos hablando hoy.<br><br>
+                    Esto fue Mr. Putrid's Den, episodio 003. Aquí es donde los riffs encuentran el whisky. Que tengan una buena semana.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Chau. Bye.
+                </div>
+            </div>
+
+            <div class="sfx">[SFX: OUTRO — Jazz 1950s estilo Billie Holiday. Trío de mujeres de época. Fade in lento. "Sweet dreams, until we meet." Cierra el episodio.]</div>
+        </div>
+
+    </div><!-- /GUION -->
+
+    <!-- CONTACTO -->
+    <div class="section" style="background:#1a1a1a; color:#A8A8A8;">
+        <h2 style="color:#9B1C1C; border-bottom-color:#9B1C1C;">Contacto</h2>
+        <p style="margin-top:10px;">
+            <strong style="color:#FFD700;">Web:</strong> www.mrputridsden.com &nbsp;|&nbsp;
+            <strong style="color:#FFD700;">General:</strong> hello@mrputridsden.com &nbsp;|&nbsp;
+            <strong style="color:#FFD700;">Andrés:</strong> Andres@mrputridsden.com &nbsp;|&nbsp;
+            <strong style="color:#FFD700;">Juan:</strong> Juan@mrputridsden.com
+        </p>
+        <p style="margin-top:8px; font-size:0.85em;">
+            Instagram: @mrputridsden &nbsp;|&nbsp; Facebook: facebook.com/share/1BZis2wXSF/ &nbsp;|&nbsp;
+            Spotify · Apple Podcasts · Amazon Music · iHeart · Castbox · Pocket Casts
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
