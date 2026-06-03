@@ -40,6 +40,19 @@ Asistente para crear tus propias skills personalizadas.
 - **Valida:** Estructura, triggers, documentación
 - **Ubicación:** `.claude/skills/crear-skill/` y `.claude/skills/skill-creator/`
 
+### **transcriptor** — Ejemplo: skill de herramienta local
+Transcribe audio a texto con Whisper local — offline, gratis, sin límite de duración.
+- **Formatos:** MP3, MP4, M4A, WAV, OGG, FLAC, WEBM, MKV
+- **Salida:** SRT (con timestamps), VTT, o todos los formatos
+- **GPU:** Soporte CUDA para RTX (10× más rápido que CPU)
+- **Diarización:** Identifica hablantes con WhisperX (`[SPEAKER_01]`, `[SPEAKER_02]`)
+- **Ubicación:** `transcriptor/`
+- **Triggers:** `transcribir`, `audio a texto`, `transcribe audio`, `transcribe this`
+
+> **Patrón enseñado:** Esta skill requiere software local instalado (Whisper + ffmpeg).
+> El workflow `00-setup.md` maneja la instalación automáticamente con `winget`. Es el modelo
+> a seguir para skills que dependen de herramientas del sistema.
+
 ### **Más skills**
 - **handoff** — Respalda sesiones con git + documentación
 - **ai-lead-generator** — Busca leads de negocio con scoring automático
@@ -144,6 +157,7 @@ El repositorio completo incluye:
 - Aprende a estructurar skills complejos
 - Contribuye mejoras a skills públicos
 - Crea skills privados en tu empresa usando este patrón
+- Estudia `transcriptor/` para ver el patrón de "skill de herramienta local" (instalación automática de dependencias, verificación previa, fallback amigable)
 
 ---
 
