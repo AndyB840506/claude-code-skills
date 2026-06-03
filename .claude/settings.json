@@ -1,1 +1,15 @@
-{}
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NonInteractive -ExecutionPolicy Bypass -Command \"Get-ChildItem -Recurse -Filter *.json | ForEach-Object { $c = Get-Content $_.FullName -Raw; if ($c -and $c[0] -eq [char]0xFEFF) { [System.IO.File]::WriteAllText($_.FullName, $c.Substring(1), [System.Text.UTF8Encoding]::new($false)) } }\""
+          }
+        ]
+      }
+    ]
+  }
+}

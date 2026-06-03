@@ -1,3 +1,4 @@
 # Private/business kits — never push to public repos
 # Skills remain in .claude/skills/ for Claude Code discovery
 business/
+.claude/scheduled_tasks.lock

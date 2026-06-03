@@ -86,6 +86,44 @@ Si creas un agente conversacional, darle nombre humano rotativo por sesión. Hum
 
 Ejemplo: "Yo soy María" vs "Yo soy tu asistente" → la segunda es fría.
 
+## 15. Aprobación Antes de Acciones Irreversibles
+
+Toda skill que haga commit, deploy, llamada a API externa, o envío de email debe
+presentar los resultados y esperar aprobación explícita **antes** de ejecutar.
+
+**Patrón:**
+> "Assets listos. ¿Apruebas o ajustas algún bloque antes de hacer commit?"
+
+**Regla:** Si el usuario dice "ajustar [X]", revisa solo ese bloque — no regeneres todo.
+Si dice "sí", procede.
+
+**Anti-patrón:** Hacer commit automáticamente después de generar sin gate de aprobación.
+
+---
+
+## 16. Generación en Paralelo
+
+Si la skill genera múltiples outputs independientes (ej: SEO + redes sociales + artwork),
+generarlos todos en una sola respuesta con etiquetas claras — no en turnos separados.
+
+**Bien:**
+```
+**A · Spotify SEO**
+...
+
+**B · Social plan**
+...
+
+**C · Prompts de artwork**
+...
+```
+
+**Mal:** "Primero el SEO. ¿Listo? Ahora el social. ¿Listo? Ahora el artwork."
+
+**Por qué:** Reduce turnos de conversación, mantiene contexto completo visible para aprobación.
+
+---
+
 ## 14. Validación Geográfica para Documentos Específicos de Ubicación
 
 Antes de redactar cualquier documento que dependa de una provincia/estado/país (formularios de gobierno, solicitudes de becas, registros legales, documentos de cumplimiento):

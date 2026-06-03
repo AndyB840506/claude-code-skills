@@ -29,7 +29,8 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 - **Lenguaje:** español colombiano casual — bogotano moderno, sin arcaísmos. Ver `glosario-cachaco.md`.
 - **Formato documentos:** HTML optimizado para PDF vía IlovePDF
 - **Backup:** después de cada guion/documento → git commit + push a GitHub + copia a G:\My Drive\ si está montado
-- **Skill activa:** `.claude/skills/podcast-creator/SKILL.md`
+- **Production assets en E:, no en C:** — Scripts HTML, propuestas, documentos y artefactos de producción se guardan en `e:\Claude Project\Claude Projects\kit-skill-creator\.claude\skills\mrputridsden\`. Los archivos en `C:\Users\andre\.claude\skills\mrputridsden\` son solo instruction files. Nunca guardar guiones o documentos en C:.
+- **Skill activa:** `C:\Users\andre\.claude\skills\podcast-creator\SKILL.md` (global user skills)
 
 ---
 
@@ -41,6 +42,7 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 - Entre hosts: tuteo natural
 - **PROHIBIDO:** "sumerce", "ala", "chirriado", "cachifo", "caray", "carachas" (arcaísmos) + "parcero", "bacano" (muy coloquiales) + "vosotros", "vos", "ché", "tío" (otros regionalismos)
 - Claude al hablar con Andrés: español colombiano moderno, casual y directo
+- ⚠️ **EP001 usa el tono cachaco ANTIGUO** (sumerce, caray, chirriado, cachifo) — ese tono fue removido desde EP002. NUNCA modelar el tono de EP002+ desde EP001. La fuente canónica de tono es `glosario-cachaco.md`, no el script del EP001.
 
 ---
 
@@ -145,6 +147,12 @@ git push origin main
 ```
 Si G: está montado → copiar también a `G:\My Drive\kit-podcast-creator\projects\mrputridsden\`
 
+## Recovery de scripts
+
+Si un guion aparece como `deleted` en `git status`:
+1. **Primero ofrecer:** `git restore .claude/skills/mrputridsden/scripts/<archivo>` — recupera en segundos
+2. Solo proponer regeneración completa si el usuario prefiere versión nueva o el archivo nunca fue commiteado
+
 ---
 
 ## Datos de contacto
@@ -155,3 +163,23 @@ Si G: está montado → copiar también a `G:\My Drive\kit-podcast-creator\proje
 - Juan: Juan@mrputridsden.com
 - GitHub: https://github.com/AndyB840506/claude-code-skills.git
 - Google Drive: drive.google.com/drive/folders/1_gblT3LGmOIyY5Ia7NllqrK7VYMJ2ikR
+
+---
+
+## Environment
+
+- OS: Windows. Use PowerShell for all shell/file operations, NOT Bash/xcopy. PowerShell version is 5.1, so avoid backtick-quotes, Unicode chars, and inline if-expressions.
+- Claude config and operational rules live on C: (`~/.claude/`); project files live on E:. Do not propose junctions for `~/.claude/`.
+
+## Verification
+
+- When the user reports an error (e.g., JSON parse, BOM), do NOT claim it is fixed after a single edit—reproduce/test the fix and confirm the error is actually gone before reporting success.
+- For env-var/ID issues, have the user copy IDs directly from the browser URL to avoid typos.
+
+## Transcripts & Subtitles
+
+- When generating timed transcript/subtitle output, use SRT format directly; do not post-process TXT output, which loses lines and timestamps.
+
+## Approvals
+
+- Present a plan and wait for explicit approval before executing multi-step work; respect 'no' on enrichment/bypass steps and never bypass private profiles.

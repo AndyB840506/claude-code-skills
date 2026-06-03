@@ -15,6 +15,21 @@
 | Spotify for Podcasters | Primary distribution |
 | Safe Creative | Copyright registration per episode |
 
+## Website Update — Episode Grid
+
+The homepage grid always shows the **4 most recently published** episodes. Rule: oldest → newest, slot 1 = oldest, slot 4 = newest. Drop the oldest card each time a new episode publishes.
+
+**Worked example:**
+| Published | Slot 1 | Slot 2 | Slot 3 | Slot 4 |
+|-----------|--------|--------|--------|--------|
+| EP.011–014 (current) | EP.011 | EP.012 | EP.013 | EP.014 |
+| EP.015 publishes | EP.012 | EP.013 | EP.014 | EP.015 |
+| EP.016 publishes | EP.013 | EP.014 | EP.015 | EP.016 |
+
+**To update:** edit `.claude/skills/btq-project/website/index.html` → find the `ep-grid` section → remove the top card, add the new episode at the bottom → `vercel --prod` from the `website/` folder.
+
+---
+
 ## Workflow Order
 
 1. Script planning and research (Claude)

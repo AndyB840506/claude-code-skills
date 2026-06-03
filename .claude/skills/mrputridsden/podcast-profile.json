@@ -98,67 +98,87 @@
     "Entrevista/invitado artista emergente",
     "Spotlight: eventos y conciertos underground"
   ],
+  "genre_rotation_rule": "No repetir el mismo género en episodios consecutivos. Verificar 'genre' del episodio anterior antes de asignar el siguiente.",
   "roadmap_9_episodes": [
     {
       "ep": 2,
       "title": "Black Sabbath: El génesis del heavy metal",
       "pillar": "Análisis profundo",
+      "genre": "heavy metal",
       "type": "co-host",
       "description": "Desglosar Paranoid, la época de Ozzy, y cómo Sabbath definió todo lo que vino después."
     },
     {
       "ep": 3,
-      "title": "Top 5: Los mejores riffs de metal de todos los tiempos",
-      "pillar": "Top 5 / Ranking",
+      "title": "Las raíces del rock: Sister Rosetta Tharpe y el árbol musical que conecta el rock con la salsa",
+      "pillar": "Historia de género",
+      "genre": "gospel / blues / rock origins / afro-latino",
       "type": "co-host",
-      "description": "Andrés y Juan eligen sus 5 riffs más icónicos, debaten, y justifican cada uno."
+      "description": "De la esclavitud africana al blues del Mississippi: cómo las tradiciones musicales africanas dieron origen al rock & roll y (por otro camino) a la salsa. Hilo conductor: Sister Rosetta Tharpe, la abuela del rock & roll. Conexión improbable: la misma raíz africana que está en cada riff de metal también está en la clave de la salsa.",
+      "rotation_ok": "EP anterior fue metal — este episodio es raíces afro-americanas/gospel/blues. Rotación válida."
     },
     {
       "ep": 4,
+      "title": "Salsa: de África al Caribe",
+      "pillar": "Historia de género",
+      "genre": "afro-latino / salsa",
+      "type": "co-host",
+      "description": "Continuación directa de EP.003 — la otra rama del árbol africano. Los mismos ritmos que fueron al Mississippi también llegaron al Caribe, y de ahí al Bronx. Del son cubano al mambo, de la orquesta de baile a Fania Records: cómo Celia Cruz, Willie Colón y Héctor Lavoe tomaron África, la mezclaron con Cuba y Puerto Rico, y crearon algo completamente nuevo en Nueva York. La misma raíz que está en cada riff de metal también está en la clave.",
+      "rotation_ok": "EP anterior fue gospel/blues/rock origins — este episodio es afro-latino/salsa. Rotación válida."
+    },
+    {
+      "ep": 5,
       "title": "Jazz fusion: De Herbie Hancock a hoy",
       "pillar": "Historia de género",
+      "genre": "jazz / jazz fusion",
       "type": "co-host",
       "description": "Cómo jazz y rock se fusionan, evolución del género, referencias clave."
     },
     {
-      "ep": 5,
+      "ep": 6,
       "title": "¿The Beatles o Led Zeppelin? El debate definitivo",
       "pillar": "Debate clásico",
+      "genre": "rock clásico / pop",
       "type": "co-host",
       "description": "Andrés vs Juan: ¿quién cambió más la música? Discografía, influencia, legado."
     },
     {
-      "ep": 6,
+      "ep": 7,
       "title": "Stories: Conciertos únicos que nos marcaron",
       "pillar": "Curiosidades/historias",
+      "genre": "formato especial — multi-género",
       "type": "co-host",
       "description": "Anécdotas personales de conciertos, encuentros con bandas, momentos memorables."
     },
     {
-      "ep": 7,
+      "ep": 8,
       "title": "Entrevista: [Artista emergente]",
       "pillar": "Invitado artista",
+      "genre": "según el invitado — confirmar antes de grabar",
       "type": "co-host + guest",
       "description": "Juan trae a un artista emergente. Hablamos de su proceso, influencias, planes."
     },
     {
-      "ep": 8,
+      "ep": 9,
       "title": "Spotlight: Eventos underground que no te puedes perder",
       "pillar": "Info conciertos",
+      "genre": "formato especial — multi-género",
       "type": "co-host",
       "description": "Juan comparte eventos, conciertos próximos, bandas locales emergentes en Bogotá."
     },
     {
-      "ep": 9,
+      "ep": 10,
       "title": "Rock progresivo: Yes, Genesis y la complejidad sonora",
       "pillar": "Historia de género",
+      "genre": "prog rock",
       "type": "co-host",
       "description": "Explorar prog-rock, sintetizadores, estructuras complejas, influencia en metal moderno."
     },
     {
-      "ep": 10,
+      "ep": 11,
       "title": "New music reaction: Escuchamos lo que nos envían",
       "pillar": "Reacciones a música nueva",
+      "genre": "formato especial — multi-género",
       "type": "co-host",
       "description": "Reacción en vivo a música nueva de bandas, artistas emergentes, géneros variados."
     }

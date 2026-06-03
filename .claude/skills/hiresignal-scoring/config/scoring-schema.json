@@ -220,6 +220,27 @@
     "description": "Per-JD weight customization based on role requirements",
     "enabled": true,
     "default_sum": 1.0,
-    "adjustment_constraint": "All weights must sum to 1.0"
+    "adjustment_constraint": "All weights must sum to 1.0",
+    "adjustment_example": {
+      "scenario": "Startup role prioritizes culture fit over english",
+      "default_weights": {
+        "technical_depth": 0.20,
+        "authenticity": 0.20,
+        "english_proficiency": 0.05,
+        "behavioral_fit": 0.05,
+        "cognitive_flexibility": 0.02,
+        "pressure_resilience": 0.01,
+        "culture_specific": 0.47
+      },
+      "adjusted_weights": {
+        "technical_depth": 0.25,
+        "authenticity": 0.25,
+        "english_proficiency": 0.02,
+        "behavioral_fit": 0.10,
+        "cognitive_flexibility": 0.03,
+        "pressure_resilience": 0.02,
+        "culture_specific": 0.33
+      }
+    }
   }
 }

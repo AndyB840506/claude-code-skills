@@ -82,6 +82,8 @@ Si es muy grande, se organiza con carpetas:
 └── docs/ (referencias)
 ```
 
+**Regla de entrega mínima:** `SKILL.md` es obligatorio el mismo día que se crea la carpeta — no se puede "completar después". Una carpeta con solo archivos de `config/` o `workflows/` sin `SKILL.md` es una skill invisible: Claude no puede invocarla.
+
 ---
 
 ## Distinción con skill-creator

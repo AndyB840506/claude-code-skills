@@ -1,0 +1,71 @@
+{
+  "suite": "BF6 Meta Configurator — Self-Test Suite v1",
+  "skill_path": "C:/Users/andre/.claude/skills/bf6-meta-configurator/SKILL.md",
+  "assertions": {
+    "A1_LANG_QUESTION": "First response includes both 'English' and 'Español' options simultaneously",
+    "A2_THREE_QUESTIONS": "Step 0.2 message contains exactly 3 labeled questions: Platform, Class, Playstyle — in a single message",
+    "A3_STEP0_BEFORE_STEP1": "Step 0.2 questions are generated BEFORE any web search or Step 1 begins",
+    "A4_WEAPON_NAMES_NON_EMPTY": "At least 1 weapon per category has a real weapon name (not placeholder, not blank)",
+    "A5_ATTACHMENTS_FILLED": "Each weapon has all attachment slots populated — inferred (*) is acceptable, blank is not",
+    "A6_SOURCE_BADGE": "Each weapon entry carries a source tier: CONFIRMED, COMMUNITY, INFERRED, or PENDING",
+    "A7_CONTROLLER_PLATFORM_MATCH": "Controller settings section content matches the platform specified in the scenario",
+    "A8_PLAYSTYLE_REFLECTED": "Optic choices and attachment rationale reflect the playstyle in the scenario (CQC -> red dot/holo; Long Range -> 4x+; Versatile -> 2-3x)"
+  },
+  "scenarios": [
+    {
+      "id": "S01",
+      "label": "PC / All classes / Versatile (default path, English)",
+      "inputs": {
+        "language": "English",
+        "platform": "PC gamepad",
+        "class": "All classes",
+        "playstyle": "Versatile"
+      },
+      "critical_assertions": ["A1_LANG_QUESTION", "A2_THREE_QUESTIONS", "A3_STEP0_BEFORE_STEP1", "A4_WEAPON_NAMES_NON_EMPTY", "A5_ATTACHMENTS_FILLED", "A7_CONTROLLER_PLATFORM_MATCH", "A8_PLAYSTYLE_REFLECTED"]
+    },
+    {
+      "id": "S02",
+      "label": "PS5 / Assault / Aggressive (CQC focus)",
+      "inputs": {
+        "language": "English",
+        "platform": "PS5 DualSense",
+        "class": "Assault",
+        "playstyle": "Aggressive"
+      },
+      "critical_assertions": ["A1_LANG_QUESTION", "A2_THREE_QUESTIONS", "A3_STEP0_BEFORE_STEP1", "A4_WEAPON_NAMES_NON_EMPTY", "A5_ATTACHMENTS_FILLED", "A7_CONTROLLER_PLATFORM_MATCH", "A8_PLAYSTYLE_REFLECTED"]
+    },
+    {
+      "id": "S03",
+      "label": "Xbox / Recon / Long Range (Spanish)",
+      "inputs": {
+        "language": "Español",
+        "platform": "Xbox gamepad",
+        "class": "Recon",
+        "playstyle": "Long Range"
+      },
+      "critical_assertions": ["A1_LANG_QUESTION", "A2_THREE_QUESTIONS", "A3_STEP0_BEFORE_STEP1", "A4_WEAPON_NAMES_NON_EMPTY", "A5_ATTACHMENTS_FILLED", "A7_CONTROLLER_PLATFORM_MATCH", "A8_PLAYSTYLE_REFLECTED"]
+    },
+    {
+      "id": "S04",
+      "label": "PS5 / Support / Versatile",
+      "inputs": {
+        "language": "English",
+        "platform": "PS5 DualSense",
+        "class": "Support",
+        "playstyle": "Versatile"
+      },
+      "critical_assertions": ["A1_LANG_QUESTION", "A2_THREE_QUESTIONS", "A3_STEP0_BEFORE_STEP1", "A4_WEAPON_NAMES_NON_EMPTY", "A5_ATTACHMENTS_FILLED", "A6_SOURCE_BADGE", "A7_CONTROLLER_PLATFORM_MATCH"]
+    },
+    {
+      "id": "S05",
+      "label": "PS5 / All classes / defaults shortcut (Spanish)",
+      "inputs": {
+        "language": "Español",
+        "platform": "PS5 DualSense",
+        "class": "defaults",
+        "playstyle": "defaults"
+      },
+      "critical_assertions": ["A1_LANG_QUESTION", "A2_THREE_QUESTIONS", "A3_STEP0_BEFORE_STEP1", "A4_WEAPON_NAMES_NON_EMPTY", "A5_ATTACHMENTS_FILLED", "A6_SOURCE_BADGE", "A7_CONTROLLER_PLATFORM_MATCH"]
+    }
+  ]
+}

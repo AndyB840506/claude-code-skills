@@ -9,7 +9,7 @@ EP.002 — Black Sabbath: El Génesis del Heavy Metal | Mr. Putrid's Den
 ```
 Andrés y Juan se sumergen en la historia de la banda que inventó el heavy metal. De las fábricas de Birmingham al estudio de grabación: cómo un accidente industrial en las manos de Tony Iommi cambió para siempre el sonido de la música pesada. Paranoid, Iron Man, War Pigs — y la historia detrás de cada una. Por qué todo el metal que existe hoy le debe algo a estos cuatro muchachos de clase obrera que decidieron que la oscuridad también podía sonar.
 
-Siguiente episodio: Top 5 de los mejores riffs de metal de todos los tiempos.
+Siguiente episodio: Las raíces del rock — Sister Rosetta Tharpe y el árbol musical que conecta el rock con la salsa.
 
 🎙️ Escúchanos en:
    Spotify: https://open.spotify.com/show/[show-url-EP002]
@@ -35,7 +35,7 @@ Black Sabbath, heavy metal, Tony Iommi, Paranoid, Ozzy Osbourne, origen del meta
 - **Hosts:** Andrés & Juan
 - **Duración aprox.:** 60 minutos
 - **Fecha de producción:** 2026-05-27
-- **Fecha de publicación:** TBD
+- **Fecha de publicación:** 2026-05-31
 - **Categoría Spotify:** Music / Music Commentary
 - **Idioma:** Español (Colombia)
 - **Pillar de contenido:** Análisis profundo
@@ -65,4 +65,4 @@ Black Sabbath, heavy metal, Tony Iommi, Paranoid, Ozzy Osbourne, origen del meta
 - Script generado: 2026-05-27
 - Cambio de tono aplicado: español colombiano casual (removido cachaco 40's)
 - Sin Segmento de Promoción — Juan no tiene eventos reales aún
-- Siguiente episodio: EP.003 — Top 5: Los mejores riffs de metal de todos los tiempos
+- Siguiente episodio: EP.003 — Las raíces del rock: Sister Rosetta Tharpe, esclavitud, blues, gospel y la conexión con la salsa (rotación de género — no repetir metal back-to-back)
