@@ -97,6 +97,18 @@ Usar `templates/checklist-produccion-episodio.md` para trackear cada entregable.
 8. Outro music (30 seg)
 ```
 
+**Regla de balance co-host:**
+- Cada host lidera ~50% de los segmentos de contenido. Un host que solo reacciona no es co-host.
+- **Juan lidera:** segmentos sobre shows en vivo, mitología de artistas, genealogía musical (su expertise como promotor). Abre con autoridad ("Yo quiero contar esta historia porque..."), no con reacciones.
+- **Andrés lidera:** hilo narrativo intelectual, historia musicológica, conectores de episodio a episodio.
+- Verificar al terminar el guión: contar bloques donde cada host abre el segmento.
+
+**Formato HTML de scripts (EP.003 v2 en adelante):**
+- Bloques de diálogo: sin fondo, solo borde izquierdo sutil (gris Andrés, azul claro Juan)
+- Bloques info (dato, leyenda, recomendacion): tint muy claro, no fondos oscuros
+- Container: 780px · Fuente base: 15px · Line-height: 1.85
+- Referencia CSS canónica: `scripts/EP003-raices-del-rock-sister-rosetta-tharpe.html`
+
 **Episodio Silla Pútrida:**
 ```
 1. Intro especial Silla Pútrida (30 seg)
@@ -120,6 +132,7 @@ mrputridsden/
 ├── eventos.json                  ← Eventos para segmento de promo
 ├── audio/                        ← Intro y outro del show
 ├── scripts/                      ← Guiones en HTML (EP.001, EP.002...)
+├── episodios/                    ← Metadata, social y artwork por episodio (ep001-metadata.md, social-ep002.md...)
 ├── documents/                    ← Propuesta y documentos importantes
 ├── fichas-invitados/             ← Una ficha por invitado Silla Pútrida
 ├── templates/                    ← Templates: cuestionario, invitación, prep hosts

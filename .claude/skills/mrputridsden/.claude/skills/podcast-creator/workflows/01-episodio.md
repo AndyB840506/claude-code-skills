@@ -403,6 +403,7 @@ Una vez aprobada la arquitectura, escribe el script palabra por palabra.
 - Usa el documento de sincronía (Paso 1.6) como guía para asignar segmentos
 - Incluye momentos de intercambio marcados con `[INTERCAMBIO]` donde los hosts pueden comentar entre sí sin guion
 - Equilibra el tiempo de habla entre los hosts (±20%)
+- **Asigna ownership de segmentos por expertise del host, no solo por porcentaje de palabras.** Para Mr. Putrid's Den: Juan lidera segmentos de shows en vivo, mitología de artistas y genealogía musical (su expertise como promotor). Andrés lidera historia musicológica, hilo narrativo e hilo entre episodios. Cuando Juan abre un segmento, su primera línea es de autoridad ("Yo quiero contar esta historia porque...") — no de reacción ("Vea pues, o sea..."). Verificar al terminar: ¿cuántos segmentos de contenido abre cada host? Debe ser ~50/50.
 - Ejemplo de segmento con intercambio:
 ```
 [HOST: Nombre1] [lee segmento del script...]
