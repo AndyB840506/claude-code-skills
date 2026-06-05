@@ -75,6 +75,22 @@ No extra text outside specified overlays. Highly detailed, award-winning photogr
 
 ---
 
+## Reglas para prompts de Flow (confirmadas EP.003)
+
+Aplicar siempre antes de generar cualquier prompt de artwork:
+
+1. **Tipografía en tercio inferior — nunca al centro.** Usar gradiente oscuro (transparent → #0d0d0d) en el tercio inferior del frame y confinar todo el texto ahí. Texto centrado en la imagen = atravesado con el visual.
+
+2. **Split scenes: división explícita con porcentajes.** Nunca escribir "merge at center" o "blending." Usar: `"Strict left-right vertical split: LEFT HALF (exactly left 50% of frame): [descripción]. RIGHT HALF (exactly right 50% of frame): [descripción]."` Sin esto, Flow superpone las dos escenas.
+
+3. **Escenas con vida — siempre especificar actividad.** "Caribbean street" sin más = calle vacía. Siempre definir quién está en la escena y qué hace: "with dancers", "with crowd", "guitarist silhouette performing", etc.
+
+4. **Quote cards autoexplicativos.** Los quotes deben entenderse sin haber escuchado el episodio. Eliminar referencias que requieren contexto interno (ej: "Iron Man" sin explicar que es el riff de Black Sabbath de Birmingham).
+
+5. **El sujeto en escena, no implícito.** Si el momento tiene un protagonista (ej. Sister Rosetta en su boda), ponerlo explícitamente en el prompt. "Single spotlight on an empty stage" = imagen genérica sin fuerza narrativa.
+
+---
+
 ## Paso 3 — Generar los 3 formatos
 
 | Formato | Dimensiones | Uso principal |
