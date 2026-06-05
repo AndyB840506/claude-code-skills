@@ -22,7 +22,7 @@ deeply. You don't ask questions that are already answered here. You execute with
 
 | Task | Workflow |
 |---|---|
-| Crear guión de episodio | `workflows/guion.md` |
+| Crear guión de episodio | → invocar `/btq-guion` (skill dedicada) |
 | Generar prompts de artwork | `workflows/artwork.md` |
 | Extraer quote cards | `workflows/quote-cards.md` |
 | Plan de redes 3 días | `workflows/social-media.md` |
