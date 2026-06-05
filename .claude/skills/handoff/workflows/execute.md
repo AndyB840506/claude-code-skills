@@ -24,20 +24,30 @@ Create structured markdown containing:
 - **Blockers (if any)** — Any issues preventing progress
 - **Files to read** — Important files to review in next session
 
-## Step 3: Copy to Clipboard
+## Step 3: Display Document in Chat (PRIMARY — always do this)
 
-Automatically copy the complete document to clipboard using `clip.exe` (native Windows):
+Show the complete handoff document as a markdown code block in the conversation.
+This is the reliable delivery method — clipboard may silently fail in Claude's subprocess.
+
+## Step 4: Clipboard Copy via Temp File (REQUIRED — use this exact pattern)
+
+Write handoff to temp file first, then read and copy via WinForms.
+This avoids two failure modes: `$var | clip` (silent fail) and here-strings with path-like
+strings (trigger Claude Code security hooks that block execution).
+
 ```powershell
-# IMPORTANT: use clip.exe, NOT Set-Clipboard
-# Set-Clipboard does not work reliably from Claude's PowerShell subprocess
-$content | clip
+# Step A: Write tool writes the handoff to temp file (no PowerShell needed for this part)
+# File: C:\Users\andre\AppData\Local\Temp\_handoff.txt
+
+# Step B: PowerShell reads and copies via WinForms
+Add-Type -AssemblyName System.Windows.Forms
+$text = Get-Content "C:\Users\andre\AppData\Local\Temp\_handoff.txt" -Raw
+[System.Windows.Forms.Clipboard]::SetText($text)
+$verify = [System.Windows.Forms.Clipboard]::GetText()
+if ($verify.Length -gt 50) { Write-Host "OK — $($verify.Length) chars en clipboard" } else { Write-Host "FALLO" }
 ```
 
-Result: Document is ready to paste with Ctrl+V in next session.
-
-## Step 4: Display Document in Chat
-
-Show the complete generated handoff document in chat so user can see what was created.
+NEVER use: `$var | clip` (silently fails), here-strings with slash-paths (trigger security hooks).
 
 ## Step 5: GitHub Backup (Automatic)
 

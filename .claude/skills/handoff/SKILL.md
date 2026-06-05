@@ -101,46 +101,25 @@ Copy work context to clipboard for pasting into a new session.
 
 4. **Build handoff from session** - Combine session header + this conversation's work into the format below.
 
-5. **Write to clipboard:**
+5. **Display handoff in chat** — always, regardless of OS. This is the primary delivery:
 
-   Windows — PowerShell 5.1:
+   Output the full handoff document as a markdown code block in the conversation so the user can copy it manually if needed.
+
+6. **Attempt clipboard copy** — secondary, may silently fail in Claude's subprocess:
+
+   Windows PowerShell 5.1:
    ```powershell
-   @'
-   ## Continue: [brief title]
-
-   **IMPORTANT: Before executing anything, present:**
-   1. What you understand was done
-   2. Your proposed next steps
-   3. Wait for approval before acting
-
-   ---
-
-   ### Active Session
-   - `Notes/Sessions/YYYY-MM-DD-HHMM-Title.md` (read this first - Progress section is up to date)
-
-   ### Context
-   [From session Goal + Context. 2-3 sentences max.]
-
-   ### Key Learnings
-   [From Progress > Learned]
-
-   ### Current State
-   [From Progress > Done + Stopped at]
-
-   ### Next Steps
-   1. [User's stated priority, if given]
-   2. [From Progress > Next]
-   3. ...
-
-   ### Relevant Files
-   [From Progress > Files]
-   '@ | Set-Clipboard
+   $handoff = @'
+   [handoff content here]
+   '@
+   Add-Type -AssemblyName System.Windows.Forms
+   [System.Windows.Forms.Clipboard]::SetText($handoff)
    ```
 
-   Windows (Git Bash) / Mac: replace `Set-Clipboard` block with `cat << 'EOF' | clip` / `cat << 'EOF' | pbcopy`.
+   Mac: `echo "content" | pbcopy`
 
-6. **Confirm:**
-   > Handoff ready. Paste into new session with Ctrl+V (Windows) or Cmd+V (Mac).
+7. **Confirm:**
+   > Handoff listo — aparece arriba en el chat. Cópialo con Ctrl+C o pégalo con Ctrl+V si el clipboard funcionó.
 
 ### Clipboard Format Rules
 

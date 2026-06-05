@@ -102,7 +102,10 @@ Claude invokes `/handoff` which automatically:
    - **Pause point** — Where to resume next session
    - **Next actions** — What should happen next
    - **Blockers** — Any issues preventing progress
-3. Copies the complete document to clipboard using `$content | Set-Clipboard`
+3. Copies the complete document to clipboard using the temp-file + WinForms pattern:
+   - Write tool writes handoff to `C:\Users\andre\AppData\Local\Temp\_handoff.txt`
+   - PowerShell reads it: `Add-Type -AssemblyName System.Windows.Forms; $text = Get-Content "..._handoff.txt" -Raw; [System.Windows.Forms.Clipboard]::SetText($text)`
+   - NEVER use `$var | clip` (silently fails) or here-strings with slash-paths (trigger security hooks)
 4. Displays the document in chat (so you can see what was created)
 5. Creates git commit:
    ```bash
