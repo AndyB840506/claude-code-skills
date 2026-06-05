@@ -112,7 +112,7 @@ When `/web-page-kit` is invoked:
 
 3. **Detect intent** → route to matching workflow (routing table above)
 
-4. **Before generating any HTML** → verify real data exists. If missing, ask — never invent.
+4. **Before generating any HTML** → verify real data exists. If missing, ask — never invent. Then apply `frontend-design` principles: commit to a specific aesthetic direction (tone, typography, composition) before writing a single line of CSS. Never fall back to generic fonts or predictable layouts — every page must have a deliberate, context-specific design identity. If integration with an external tool is proposed (e.g. a search CLI, API, or library), verify the tool is installed first (glob for key files, check PATH) before designing any workflow around it — do not assume availability.
 
 5. **After each step** → show updated progress map (which steps are ✅ done, which are ⬜ next)
 

@@ -59,3 +59,21 @@ When `/session-close` is invoked, execute all 5 steps automatically:
 
 See [INSTRUCTIONS.md](INSTRUCTIONS.md) for implementation rules and error handling.
 
+---
+
+## Auto-trigger via SessionEnd Hook
+
+Configure in `~/.claude/settings.json` to prompt automatically at session end:
+
+```json
+{
+  "hooks": {
+    "SessionEnd": [{
+      "hooks": [{ "type": "command", "command": "echo 'Session ended — run /session-close'" }]
+    }]
+  }
+}
+```
+
+**Note:** Do NOT also configure `/retrospective` or `/handoff` as `SessionEnd` hooks — `session-close` already invokes both. Configuring all three creates duplication.
+

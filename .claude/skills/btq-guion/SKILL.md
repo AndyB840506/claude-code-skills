@@ -25,12 +25,14 @@ automáticamente todas las reglas de tono, estructura y marca. Andy habla; tú e
 
 | Paso | Tarea | Dónde |
 |---|---|---|
+| 0 | **Leer** `btq-project/SKILL.md` §4 (Tone Master) y §7 (Roadmap) — obligatorio antes de cualquier paso | `Read` tool |
 | 1 | Confirmar datos del episodio | inline — ver abajo |
 | 2 | Diseñar arquitectura | inline — ver abajo |
-| 3–3.5 | Escribir anchor points + estilo narrativo | [workflows/03-escribir.md](workflows/03-escribir.md) |
-| 4 | Aplicar Tone Master | btq-project/SKILL.md sección 4 |
+| 3a | Escribir anchor points | [workflows/03-escribir.md](workflows/03-escribir.md) |
+| 3b | Aplicar estilo narrativo | [workflows/03-escribir.md](workflows/03-escribir.md) |
+| 4 | Aplicar Tone Master (cargado en Paso 0) | btq-project/SKILL.md §4 |
 | 5 | Desarrollar 7 segmentos en detalle | [workflows/04-segmentos.md](workflows/04-segmentos.md) |
-| 6–7 | Revisión de calidad + entrega | [workflows/05-revision.md](workflows/05-revision.md) |
+| 6 | Revisión de calidad + entrega | [workflows/05-revision.md](workflows/05-revision.md) |
 
 ---
 

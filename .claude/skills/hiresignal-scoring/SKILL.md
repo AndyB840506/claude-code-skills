@@ -36,13 +36,13 @@ Score each dimension (0–10) with exactly 3 evidence quotes per dimension:
 
 | Dimension | Default weight |
 |-----------|---------------|
-| Technical Depth | 0.20 |
-| Authenticity | 0.20 |
-| English Proficiency | 0.05 |
-| Behavioral Fit | 0.05 |
-| Cognitive Flexibility | 0.02 |
-| Pressure Resilience | 0.01 |
-| Culture-Specific Fit | 0.07 |
+| Technical Depth | 0.34 |
+| Authenticity | 0.33 |
+| English Proficiency | 0.08 |
+| Behavioral Fit | 0.08 |
+| Cognitive Flexibility | 0.03 |
+| Pressure Resilience | 0.02 |
+| Culture-Specific Fit | 0.12 |
 
 Adjust weights based on the JD if role-specific priorities are evident.
 All weights must sum to 1.0.

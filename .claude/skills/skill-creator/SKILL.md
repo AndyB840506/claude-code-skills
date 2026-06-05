@@ -1,6 +1,6 @@
 ---
 name: skill-creator
-description: "Create custom Claude Code skills from scratch. The skill that makes skills. Build your own automation, workflow, or command. Triggers EN: 'create a skill', 'I want a skill', 'custom skill', 'automate this as a skill', 'create a command', 'convert to a skill', 'make this automatic'."
+description: "Create custom Claude Code skills from scratch. The skill that makes skills. Build your own automation, workflow, or command. Triggers EN: 'create a skill', 'I want a skill', 'custom skill', 'automate this as a skill', 'create a command', 'convert to a skill', 'make this automatic'. Triggers ES: crear skill, nueva skill, crear habilidad, quiero una skill, automatizar proceso, convertir en skill."
 ---
 
 # Skill Creator — Build Your Own Skills

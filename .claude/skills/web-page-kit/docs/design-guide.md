@@ -215,22 +215,34 @@ window.addEventListener('scroll', () => {
 
 ---
 
-## Rule 8: Visual Design by Site Type
+## Rule 8: Visual Design Direction (frontend-design)
 
-Match the design mood to the business:
+**Do not use lookup tables.** Generic font-by-industry assignments produce predictable, forgettable pages. Instead, commit to a deliberate aesthetic direction for every site.
 
-| Site Type | Theme | Fonts | Vibe |
-|---|---|---|---|
-| Tech / SaaS | Dark (#0D0D0D + cyan/blue accent) | Space Grotesk, Inter | Futuristic, precise |
-| Creative / Portfolio | Dark or high-contrast | Bebas Neue, Inter | Bold, visual |
-| Health / Wellness | Light (#FAFAFA + green/earth) | Lato, Playfair Display | Calm, natural |
-| Business / Corporate | Light (#FFFFFF + navy/grey) | Inter, Roboto | Professional, clean |
-| Food / Hospitality | Warm (cream + earthy tones) | Playfair Display, Lato | Inviting, warm |
-| Events | High energy (dark + vibrant accent) | Bebas Neue, Open Sans | Energetic, urgent |
-| Blog / Editorial | Clean neutral | Georgia, Inter | Readable, calm |
-| E-commerce | Light, conversion-optimized | Inter, Helvetica | Clean, CTA-focused |
+### Step 1 — Choose a Tone (pick one, commit fully)
 
-Choose Google Fonts that match the vibe — 2 fonts max (one serif/display, one sans-serif for body).
+Brutally minimal · Maximalist · Retro-futuristic · Organic/natural · Luxury/refined · Playful/toy-like · Editorial/magazine · Brutalist/raw · Art deco/geometric · Soft/pastel · Industrial/utilitarian · Dark & dramatic · Warm & handcrafted
+
+### Step 2 — Choose Typography with Intent
+
+- Pair a **distinctive display font** (headings) with a **refined body font** — 2 fonts max
+- **Never use**: Inter, Roboto, Arial, Helvetica, Space Grotesk as the primary display font
+- **Ask**: what would this brand print on a business card? That's the font energy to match
+- Source from Google Fonts — look beyond the top-20 popular list
+
+### Step 3 — Build a Color Story
+
+- Dominant color + sharp accent — avoid timid, evenly-distributed palettes
+- Commit to light OR dark — never a weak middle ground
+- Use CSS variables for every color (`--primary`, `--accent`, `--bg`, `--text`)
+
+### Step 4 — Design Something Memorable
+
+- One detail that makes the page unforgettable: a texture, an unexpected layout, a micro-interaction, a typographic choice
+- Asymmetry > symmetry · Overlap > separation · Diagonal flow > horizontal stacking
+- Backgrounds with atmosphere (gradient mesh, noise, geometric pattern) > solid colors
+
+**Every page must have a unique design identity. No two pages should look the same.**
 
 ---
 
@@ -578,3 +590,90 @@ Small links in footer — visible but not prominent — let users override the d
 - `localStorage` persists user override across visits
 - Footer override handles edge case: browser set to wrong language
 - Single HTML file stays fully self-contained (no server-side rendering needed)
+
+---
+
+## Rule 16: Design Reference Database
+
+Use this table in **Rule 8 Step 2 & 3** to make concrete, non-generic choices. Pick a tone → grab the font pair and palette that fit → commit.
+
+### Font Pairings by Tone
+
+| Tone | Display Font | Body Font | Google Fonts Import |
+|---|---|---|---|
+| Editorial / Magazine | Fraunces | Outfit | `Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Outfit:wght@300;400;600` |
+| Editorial / Magazine | Playfair Display | DM Sans | `Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500` |
+| Luxury / Refined | Cormorant Garamond | Jost | `Cormorant+Garamond:ital,wght@0,600;1,400&family=Jost:wght@300;400;500` |
+| Luxury / Refined | Bodoni Moda | Mulish | `Bodoni+Moda:ital,opsz,wght@0,6..96,700;1,6..96,400&family=Mulish:wght@300;400` |
+| Brutalist / Raw | Bebas Neue | Space Mono | `Bebas+Neue&family=Space+Mono:wght@400;700` |
+| Brutalist / Raw | Barlow Condensed | IBM Plex Mono | `Barlow+Condensed:wght@700;900&family=IBM+Plex+Mono:wght@400` |
+| Minimalist | DM Serif Display | DM Sans | `DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500` |
+| Minimalist | Libre Baskerville | Source Sans 3 | `Libre+Baskerville:ital,wght@0,700;1,400&family=Source+Sans+3:wght@300;400` |
+| Retro-futuristic | Syne | DM Mono | `Syne:wght@700;800&family=DM+Mono:wght@400;500` |
+| Retro-futuristic | Chakra Petch | Space Mono | `Chakra+Petch:wght@600;700&family=Space+Mono:wght@400` |
+| Organic / Natural | Lora | Nunito | `Lora:ital,wght@0,600;1,400&family=Nunito:wght@300;400;600` |
+| Organic / Natural | Crimson Pro | Source Sans 3 | `Crimson+Pro:ital,wght@0,600;1,400&family=Source+Sans+3:wght@400;600` |
+| Playful / Toy-like | Baloo 2 | Quicksand | `Baloo+2:wght@500;700;800&family=Quicksand:wght@400;500;600` |
+| Playful / Toy-like | Fredoka | Nunito | `Fredoka:wght@500;600;700&family=Nunito:wght@400;600` |
+| Art Deco / Geometric | Cinzel | Raleway | `Cinzel:wght@700;900&family=Raleway:wght@300;400;500` |
+| Art Deco / Geometric | Poiret One | Josefin Sans | `Poiret+One&family=Josefin+Sans:wght@300;400;600` |
+| Dark & Dramatic | Abril Fatface | Lato | `Abril+Fatface&family=Lato:wght@300;400;700` |
+| Dark & Dramatic | Yeseva One | Josefin Sans | `Yeseva+One&family=Josefin+Sans:wght@300;400;600` |
+| Industrial / Utilitarian | Oswald | IBM Plex Sans | `Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500` |
+| Warm & Handcrafted | Playfair Display | Lato | `Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@300;400` |
+
+---
+
+### Color Palettes by Industry + Tone
+
+Each entry: `--bg` · `--text` · `--accent` · `--surface`
+
+| Industry | Tone | Palette |
+|---|---|---|
+| Freelancer / Consultor | Dark editorial | `#0C0C0A` · `#EDE8DE` · `#C8A96E` · `#141410` |
+| Freelancer / Consultor | Light minimal | `#F9F7F3` · `#1A1A16` · `#2D5BE3` · `#FFFFFF` |
+| Tech / SaaS | Dark cyber | `#0A0E1A` · `#E8EEFF` · `#4D9EFF` · `#111827` |
+| Tech / SaaS | Light clean | `#F5F7FF` · `#0F172A` · `#6366F1` · `#FFFFFF` |
+| Health / Wellness | Organic light | `#F5F0E8` · `#2D2A25` · `#6B8C6B` · `#FEFCF8` |
+| Health / Wellness | Calm dark | `#121A14` · `#E8F0E8` · `#7EC8A0` · `#1A2B1C` |
+| Restaurante / Food | Warm dark | `#110B07` · `#F5EDD8` · `#D4622A` · `#1C1208` |
+| Restaurante / Food | Rich editorial | `#1A0A10` · `#F2E8E8` · `#C94040` · `#250F18` |
+| Creativo / Diseño | Acid contrast | `#0A0A0A` · `#F0FF44` · `#FF3C38` · `#161616` |
+| Creativo / Diseño | Clean white | `#FAFAFA` · `#111111` · `#FF3C38` · `#F0F0F0` |
+| Moda / Luxury | Black gold | `#0A0A08` · `#F5F0E3` · `#C9A84C` · `#141412` |
+| Moda / Luxury | Ivory refined | `#FAF8F3` · `#1A1816` · `#8B7355` · `#FFFFFF` |
+| Bienes Raíces | Navy brass | `#0D1B2A` · `#EEE8DF` · `#B8975A` · `#162233` |
+| Bienes Raíces | Light stone | `#F7F5F0` · `#1C1C1A` · `#4A6741` · `#FFFFFF` |
+| Eventos | Electric dark | `#08060F` · `#EDE8FF` · `#8B5CF6` · `#110F1C` |
+| Eventos | Warm fiesta | `#0F0800` · `#FFF5E6` · `#F59E0B` · `#1A1000` |
+| Podcast / Media | Mono editorial | `#111111` · `#F2F2F0` · `#E84545` · `#1C1C1C` |
+| Personal Brand | Warm neutral | `#F5F2ED` · `#2A2520` · `#C0714F` · `#FFFFFF` |
+
+---
+
+### CSS Pattern Keywords by Tone
+
+Quick reference for spatial decisions — radius, spacing, border style, shadows:
+
+| Tone | Border Radius | Spacing Feel | Border Style | Shadow |
+|---|---|---|---|---|
+| Editorial | 0px – 4px | Generous vertical, tight horizontal | None or 1px hairline | Minimal |
+| Luxury | 0px – 2px | Wide margins, sparse content | Thin gold/brass lines | Soft glow or none |
+| Brutalist | 0px – 2px | Dense, compressed | Thick 2-4px solid black | Hard offset shadows |
+| Minimalist | 8px – 12px | Maximum whitespace | Subtle 1px `rgba` | Light diffuse |
+| Retro-futuristic | 0px or full (pill) | Geometric grid | Neon thin lines | Colored glow |
+| Organic | 16px – 32px | Breathing room, soft rhythm | Dotted or none | Warm diffuse |
+| Playful | 16px – 32px (mixed) | Bouncy, variable | Bold colored | Playful offset |
+| Art Deco | 0px | Structured columns | Double lines, ornamental | None |
+| Dark & Dramatic | 0px – 6px | High contrast, large type | None or colored accent | Deep dramatic |
+| Industrial | 0px | Compact, utilitarian | Monochrome solid | None |
+
+---
+
+**How to use this table in practice:**
+
+1. Commit to a tone (Rule 8 Step 1)
+2. Pick a font pair from the tone row → paste the Google Fonts import string
+3. Pick a palette from the industry + tone row → assign to CSS variables
+4. Use the CSS pattern keywords to guide radius, spacing, and border decisions
+5. Add one memorable detail (Rule 8 Step 4) that goes beyond the table

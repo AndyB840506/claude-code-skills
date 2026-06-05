@@ -126,7 +126,7 @@ Next steps:
 - Run workflow 02 → Add content pages
 ```
 
-**Optional:** "Want a visual brand guide?" → generate `brand-guidelines.md`
+**Optional:** "Want a visual brand guide?" → generate `docs/brand-guidelines.md`
 
 ---
 

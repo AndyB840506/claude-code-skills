@@ -6,10 +6,9 @@ description: >
   packages — social plans, cover-art prompts, Spotify SEO (use episode-launch for those).
   Use this skill for: brand consistency, quote cards, episode registration, production
   checklists, roadmap, TurboScribe corrections, show notes, and any BTQ project context.
-  Triggers: BTQ artwork prompt, BTQ brand context, BTQ production, Andy podcast, Laswell,
+  Triggers: BTQ brand context, BTQ production, Andy podcast, Laswell,
   REMATE, quote cards BTQ, show notes BTQ, Spotify title BTQ, Safe Creative BTQ,
-  TurboScribe correction, prompt para Flow, prompt para Nani Banana, imagen del capítulo,
-  quotes del episodio, citas memorables BTQ, tarjetas de cita BTQ, registrar episodio,
+  TurboScribe correction, quotes del episodio, citas memorables BTQ, tarjetas de cita BTQ, registrar episodio,
   subir a Spotify, descripción episodio, ficha del episodio EP.0XX, Frieren BTQ,
   Bohemian Rhapsody BTQ, BTQ roadmap, BTQ checklist, BTQ brand.
 ---
@@ -160,45 +159,9 @@ of experience, leadership, or human design.
 
 ## 6. Current Production State
 
-### EP.011 — Frieren
-- **Title:** "Frieren: el costo de no valorar a tu equipo hasta que ya no está"
-- **Status:** Guión v1 complete. Full publication assets created.
-- **Closing TM:** "Y como diría Frieren: Lo que tienes hoy no va a estar para siempre. Valóralo antes de que se convierta en recuerdo."
-- **Pending:** Nani Banana 2 artwork approval → Flow animation → recording → Spotify upload → Safe Creative
+See [docs/production-state.md](docs/production-state.md) for current episode status, pending items per EP, and musical system.
 
-### EP.014 — Diarios de la Boticaria (Maomao)
-- **Title:** "MAOMAO: Cuando el talento no tiene título"
-- **Status:** Grabado — en post-producción
-- **Google Doc v2.0:** https://docs.google.com/document/d/17FHpURd9WbLdO43GMYWN80NKiI4mCM-oqe2Lubd_w2w/edit
-- **Cambios v2.0:** Seg 2 reescrito con historia de Natsu Hyuuga · 4 lecciones con doble ancla · Referencias cruzadas (Johnson/Ohno/Cerati) · Aplicable Hoy con herramientas permanentes · Recomendaciones actualizadas (Bowie/Moneyball/48 Leyes)
-- **Closing TM:** "No necesitas el título más alto para ser la persona más valiosa del cuarto."
-- **Pending:** artwork (Nani Banana 2) → Flow animation → Spotify upload → Safe Creative → redes 3 días
-
-### EP.015 — Metal Gear Solid (Solid Snake)
-- **Title:** "Solid Snake: cuando descubres que todo lo que te dijeron era mentira"
-- **Status:** Pre-producción completa — pendiente grabación
-- **Assets:** Guión HTML · Artwork 1:1 triptych · 11 quote cards (16:9)
-- **Closing TM:** "Piensa por ti mismo. Decide por ti mismo."
-- **Pending:** Grabación → TurboScribe → social plan 3 días → Spotify → Safe Creative
-
-### EP.012 — Bohemian Rhapsody (Queen)
-- **Title:** "Bohemian Rhapsody: la experiencia que nadie pidió — y todos recordaron para siempre"
-- **Status:** Guión v3.0 FINAL complete
-- **Closing TM:** "Y como diría Freddie: Las reglas son útiles. Romperlas con propósito es arte."
-- **Production cycle begins after EP.011 launch**
-
-### EP.013 — Back to the Future
-- **Title:** "Back to the Future: la mentoría que cambió el futuro"
-- **Status:** Guión v4.0 FINAL complete (Google Doc)
-- **Closing TM:** "Y como diría Doc Brown: tu futuro todavía no está escrito. Hazlo uno bueno."
-- **Pending:** artwork → Flow animation → Spotify upload → Safe Creative → redes 3 días
-
-### Musical system (BTQ, May 2026 — from EP.012 forward):
-| Track | BPM | Genre | Use |
-|---|---|---|---|
-| "Flickering Fires" | 128 | Synthwave | INTRO / STINGER — first 8s |
-| "Desk Lamp Hours" | 105 | Ambient | BGM/BED at -20dB under voice, loopable |
-| "Shedding the Fear" | 110 | D minor | OUTRO |
+**Always read this file at session start** — it is updated each session and is the canonical source of truth for what is done vs. pending.
 
 ---
 
@@ -244,48 +207,13 @@ of experience, leadership, or human design.
 
 ## 9. Post-Production Checklist
 
-### TurboScribe artifact corrections (BTQ-specific):
-| TurboScribe artifact | Correct term |
-|---|---|
-| Behind the Cube/Cue/Cure/King/Q | Behind the Queue |
-| VPO | BPO |
-| CISAD | CSAT |
-| C-Level / sea level / sílable | C-Level |
-| flor | floor |
-| CHRM | SHRM |
-| la TAM | LATAM |
-| a Shark / HHRR | HHRR |
-
-### Post-recording checklist:
-1. TurboScribe artifact review (table above)
-2. Forbidden word audit: "obviamente" and "pero bueno" — zero tolerance
-3. REMATE delivery check — were they said complete without softening?
-4. Organic adaptations — note what Andy changed vs. script (often improvements)
-5. EP number check — stated in intro AND closing?
-6. Contact info check — said `andy@behind-thequeue.com` correctly?
+See [docs/production-state.md](docs/production-state.md) for TurboScribe artifact corrections table and post-recording checklist.
 
 ---
 
 ## 10. Social Media — 3-Day Launch Plan
 
-| Day | When | Goal |
-|---|---|---|
-| 1 | Sunday (recording day) | Intriga — don't reveal full topic |
-| 2 | Monday | Contenido — one real insight, shareable |
-| 3 | Wednesday (launch day) | Lanzamiento — direct conversion, listen now |
-
-**Platform rules — LinkedIn:** 5–8 hashtags max · Spotify link in FIRST COMMENT · Longer copy
-**Instagram / Facebook:** 10–15 hashtags · Link in bio · Day 2 ends with a question
-**Stories:** 3 slides per day · Day 2: countdown sticker · Day 3: link sticker direct to Spotify
-**TikTok:** Ultra short copy · link in bio · vertical video with Flow (Omni) animation
-
-### Core hashtags:
-```
-Español/LATAM: #BPO #ContactCenter #ServicioAlCliente #Operaciones #LATAM #Colombia #CustomerExperience
-Show: #BehindTheQueue #PodcastEnEspañol #NuevoEpisodio
-LinkedIn only: #Liderazgo + topic-specific
-Cultural (per episode): #Frieren #BohemianRhapsody #GodOfWar etc.
-```
+See [docs/social-media.md](docs/social-media.md) for 3-day launch calendar, platform rules, and core hashtag sets.
 
 ---
 
