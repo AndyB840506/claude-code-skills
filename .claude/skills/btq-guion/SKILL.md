@@ -84,6 +84,8 @@ ARQUITECTURA — 7 SEGMENTOS:
 
 Esperar confirmación antes de desarrollar.
 
+**Paso 3 → [workflows/03-escribir.md](workflows/03-escribir.md)** — escribir anchor points y aplicar estilo narrativo.
+
 ---
 
 ## Paso 4 — Aplicar el Tone Master (TM)

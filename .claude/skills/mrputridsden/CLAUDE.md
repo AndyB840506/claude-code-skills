@@ -52,7 +52,7 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 1. Guion
 2. Plan de grabación
 ── GRABACIÓN ──
-3. Show Notes / Metadata
+3. Show Notes / Metadata  ⚠️ ep00X-metadata.md puede ya existir con estimados del script — actualizar, no crear nuevo
 4. Artwork del episodio  (Spotify 1:1 + Stories 9:16 + YouTube 16:9)
 5. Arte para redes       (cuando redes estén activas)
 6. Social Media          (cuando redes estén activas)

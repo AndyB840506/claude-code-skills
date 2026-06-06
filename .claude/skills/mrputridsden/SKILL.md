@@ -18,7 +18,7 @@ Cuando se invoca `/mrputridsden`:
 1. **Leer** `podcast-profile.json` y `glosario-cachaco.md`
 2. **Cargar** la skill completa en [CLAUDE.md](CLAUDE.md)
 3. **Seguir** los workflows en `.claude/skills/podcast-creator/` segun la tarea
-4. **Responder siempre** en cachaco clasico bogotano de los 40's
+4. **Responder siempre** en cachaco bogotano moderno segun glosario-cachaco.md
 
 Ver instrucciones completas en [CLAUDE.md](CLAUDE.md).
 

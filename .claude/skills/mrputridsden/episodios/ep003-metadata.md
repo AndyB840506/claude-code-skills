@@ -37,29 +37,34 @@ Sister Rosetta Tharpe, raíces del rock, blues, gospel, Robert Johnson, crossroa
 - **Tipo:** Full
 - **Título:** Las Raíces del Rock: Sister Rosetta Tharpe
 - **Hosts:** Andrés & Juan
-- **Duración aprox.:** 60 minutos
-- **Fecha de producción:** 2026-06-03
-- **Fecha de publicación:** pendiente (post-grabación)
+- **Duración real:** 1:04:17
+- **Fecha de producción:** 2026-06-05
+- **Fecha de publicación:** pendiente
 - **Categoría Spotify:** Music / Music Commentary
 - **Idioma:** Español (Colombia)
 - **Pillar de contenido:** Historia de género
-- **Formato:** Co-host, sin invitado, con Segmento de Promoción
+- **Formato:** Co-host, sin invitado, sin Segmento de Promoción (no se grabó)
 
-## Capítulos sugeridos
+## Capítulos (timestamps verificados del SRT)
 ```
-00:00 — Intro
-00:30 — Bienvenida
-02:30 — El Hook: ¿qué tienen en común Black Sabbath y la salsa?
-06:00 — Las Blue Notes: las notas que Europa no podía escribir
-12:00 — La leyenda del Crossroads: Robert Johnson y el diablo
-22:00 — Sister Rosetta Tharpe: la abuela del rock
-36:00 — La cadena: de África a Birmingham
-42:00 — La Guarida Recomienda: puerta de entrada al blues
-45:00 — Segmento de Promoción
-49:00 — La otra rama: setup para EP.004
-54:00 — Takeaway: lo que parece opuesto viene del mismo lugar
-57:30 — Cierre y la tarea
-60:00 — Outro
+00:00 — Intro y bienvenida
+04:32 — Narrador: apertura sonora
+05:01 — El Hook: ¿qué tienen en común un riff de Black Sabbath y la clave de la salsa?
+08:28 — El árbol africano: las dos ramas
+11:22 — Las Blue Notes: las notas que Europa no podía escribir
+15:10 — La leyenda del Crossroads: Robert Johnson y el diablo
+20:55 — Robert Johnson: el primer miembro del Club de los 27
+24:41 — Sister Rosetta Tharpe: la abuela del rock
+28:00 — 1951: el matrimonio de 7.000 entradas
+31:56 — La grieta: lo sagrado y lo profano
+37:09 — La cadena: África → Mississippi → NY → Londres → Birmingham
+41:33 — Lo que hace poderoso al riff de Iron Man
+44:22 — La Guarida Recomienda: puerta de entrada al blues
+49:10 — La otra rama: setup para EP.004 (salsa, Caribe)
+56:44 — Takeaway: lo que parece opuesto viene del mismo lugar
+01:00:35 — La tarea del episodio
+01:01:41 — Cierre
+01:03:52 — Outro
 ```
 
 ## La tarea del episodio
