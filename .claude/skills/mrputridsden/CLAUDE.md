@@ -60,7 +60,7 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 ── BACKUP ──
 ```
 
-Usar `templates/checklist-produccion-episodio.md` para trackear cada entregable.
+Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para trackear cada entregable.
 
 ---
 
@@ -71,9 +71,9 @@ Usar `templates/checklist-produccion-episodio.md` para trackear cada entregable.
 - Si SÍ → episodio gira 100% en torno al invitado, formato presencial (los 3 en el mismo cuarto)
 - Flujo Narval: Claude investiga al invitado → genera doc prep para hosts → carta simple al invitado → bio + temas + NO-list → guion
 - Segmento de Promoción al FINAL en este formato
-- Guardar ficha en `fichas-invitados/[nombre].md`
-- Templates: `templates/silla-putrida-*.md`
-- Perfiles de invitado: `templates/preguntas-por-perfil.md`
+- Guardar ficha en `mrputridsden-production\fichas-invitados\[nombre].md`
+- Templates: `mrputridsden-production\templates\silla-putrida-*.md`
+- Perfiles de invitado: `mrputridsden-production\templates\preguntas-por-perfil.md`
 
 ### Segmento de Promoción
 - En **todos** los episodios sin excepción (Juan lo conduce)
@@ -107,7 +107,7 @@ Usar `templates/checklist-produccion-episodio.md` para trackear cada entregable.
 - Bloques de diálogo: sin fondo, solo borde izquierdo sutil (gris Andrés, azul claro Juan)
 - Bloques info (dato, leyenda, recomendacion): tint muy claro, no fondos oscuros
 - Container: 780px · Fuente base: 15px · Line-height: 1.85
-- Referencia CSS canónica: `scripts/EP003-raices-del-rock-sister-rosetta-tharpe.html`
+- Referencia CSS canónica: `mrputridsden-production\scripts\EP003-raices-del-rock-sister-rosetta-tharpe.html`
 
 **Episodio Silla Pútrida:**
 ```
@@ -125,17 +125,14 @@ Usar `templates/checklist-produccion-episodio.md` para trackear cada entregable.
 
 ## Estructura de carpetas
 
+**Skill (instrucciones — esta carpeta):**
 ```
 mrputridsden/
 ├── podcast-profile.json          ← Estado central del sistema
 ├── glosario-cachaco.md           ← Consultar siempre antes de guiones
 ├── eventos.json                  ← Eventos para segmento de promo
-├── audio/                        ← Intro y outro del show
-├── scripts/                      ← Guiones en HTML (EP.001, EP.002...)
-├── episodios/                    ← Metadata, social y artwork por episodio (ep001-metadata.md, social-ep002.md...)
-├── documents/                    ← Propuesta y documentos importantes
-├── fichas-invitados/             ← Una ficha por invitado Silla Pútrida
-├── templates/                    ← Templates: cuestionario, invitación, prep hosts
+├── SKILL.md
+├── CLAUDE.md
 └── .claude/skills/podcast-creator/
     ├── SKILL.md
     └── workflows/
@@ -147,6 +144,20 @@ mrputridsden/
         ├── 05-show-notes.md
         └── 06-html-export.md
 ```
+
+**Producción (assets — carpeta propia, separada de la skill):**
+```
+e:\Claude Project\Claude Projects\kit-skill-creator\mrputridsden-production\
+├── audio/                        ← Intro y outro del show
+├── scripts/                      ← Guiones en HTML (EP.001, EP.002...)
+├── episodios/                    ← Metadata, social y artwork por episodio (ep001-metadata.md, social-ep002.md...)
+├── documents/                    ← Propuesta y documentos importantes
+├── fichas-invitados/             ← Una ficha por invitado Silla Pútrida
+├── templates/                    ← Templates: cuestionario, invitación, prep hosts
+└── website/                      ← Sitio web (mrputridsden.com), incluye .vercel/
+```
+
+**Por qué están separadas:** producción anidada dentro de la carpeta de skill creó copias huérfanas del SKILL.md cuando se exportó/copió el proyecto (detectado y corregido 2026-06-07 — ver memoria `assets-on-e-drive`). La skill SOLO contiene instrucciones; los assets viven en su propia carpeta.
 
 ---
 
@@ -163,7 +174,7 @@ Si G: está montado → copiar también a `G:\My Drive\kit-podcast-creator\proje
 ## Recovery de scripts
 
 Si un guion aparece como `deleted` en `git status`:
-1. **Primero ofrecer:** `git restore .claude/skills/mrputridsden/scripts/<archivo>` — recupera en segundos
+1. **Primero ofrecer:** `git restore mrputridsden-production/scripts/<archivo>` — recupera en segundos
 2. Solo proponer regeneración completa si el usuario prefiere versión nueva o el archivo nunca fue commiteado
 
 ---

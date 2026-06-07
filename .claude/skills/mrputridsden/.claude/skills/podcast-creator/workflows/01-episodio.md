@@ -41,29 +41,29 @@ Con el nombre y perfil, **investiga al invitado en la web** antes de generar nad
 - Identifica momentos clave de su carrera
 - Busca entrevistas previas para no repetir preguntas ya hechas
 
-Con esa investigación, genera el **documento de prep para hosts** usando `templates/silla-putrida-prep-hosts.md`:
+Con esa investigación, genera el **documento de prep para hosts** usando `mrputridsden-production/templates/silla-putrida-prep-hosts.md`:
 - Bio real investigada (no la que el invitado escribe — la que encontraste)
 - Los datos curiosos
 - 5-7 preguntas únicas basadas en su trayectoria real
-- Selecciona el set de preguntas base del perfil correspondiente en `templates/preguntas-por-perfil.md`
+- Selecciona el set de preguntas base del perfil correspondiente en `mrputridsden-production/templates/preguntas-por-perfil.md`
 
 Presenta el documento de prep al usuario y di:
 > "Acá está la investigación del invitado. Revise si falta algo antes de enviarle la carta."
 
 ### C. Generar carta al invitado
 
-Usando `templates/silla-putrida-invitacion.md`, genera la carta personalizada con:
+Usando `mrputridsden-production/templates/silla-putrida-invitacion.md`, genera la carta personalizada con:
 - Referencia específica al trabajo del invitado (de lo investigado)
 - Los 3 temas propuestos para la conversación
 
-Genera también el documento de prep corto para el invitado usando `templates/silla-putrida-cuestionario.md` — solo pide bio libre, confirmación de temas y NO-list.
+Genera también el documento de prep corto para el invitado usando `mrputridsden-production/templates/silla-putrida-cuestionario.md` — solo pide bio libre, confirmación de temas y NO-list.
 
 Di al usuario:
 > "Acá está la carta de invitación y el doc de preparación para enviarle al invitado. Cuando confirme y devuelva su NO-list, regrese y generamos el guión."
 
 ### D. Guardar ficha del invitado
 
-Crea `fichas-invitados/[nombre-invitado].md` con:
+Crea `mrputridsden-production/fichas-invitados/[nombre-invitado].md` con:
 ```
 # Ficha: [Nombre del invitado]
 Episodio: EP.[NNN]
@@ -506,4 +506,4 @@ Social Media           →  workflows/04-social-media.md  (plan lanzamiento 3 d�
 HTML Export            →  workflows/06-html-export.md
 ```
 
-Usar `templates/checklist-produccion-episodio.md` para trackear cada entregable.
+Usar `mrputridsden-production/templates/checklist-produccion-episodio.md` para trackear cada entregable.

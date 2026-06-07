@@ -55,9 +55,14 @@ Location: .claude/skills/[skill-name]/SKILL.md
 Once approved, I create the structure:
 
 ```bash
+# Bash / Git Bash
 mkdir -p .claude/skills/skill-name
-# Save content to SKILL.md
 ```
+```powershell
+# PowerShell
+New-Item -ItemType Directory -Force -Path ".claude\skills\skill-name"
+```
+Save content to SKILL.md.
 
 **Important rule:** Skills always go in a folder, never as loose files:
 

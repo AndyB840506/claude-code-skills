@@ -126,14 +126,14 @@ Once approved, proceed to Step 4.
 
 Save generated assets as a markdown file at:
 ```
-btq-project/launch-assets/EP0XX-[slug]-launch.md
+btq-production/launch-assets/EP0XX-[slug]-launch.md
 ```
 
 Where `slug` = kebab-case of the cultural reference (e.g., `EP016-pink-floyd-launch.md`).
 
 Then run:
 ```
-git add btq-project/launch-assets/EP0XX-[slug]-launch.md
+git add btq-production/launch-assets/EP0XX-[slug]-launch.md
 git commit -m "feat(EP.0XX): launch assets — Spotify SEO, social plan, YouTube, artwork prompts
 
 Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
