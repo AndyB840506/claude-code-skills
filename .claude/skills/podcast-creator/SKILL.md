@@ -22,6 +22,7 @@ Guía todo el ciclo de producción de un podcast: desde la identidad de marca ha
 | "social", "redes", "social media", "plan de lanzamiento", "posts", "instagram", "linkedin" | `workflows/04-social-media.md` |
 | "show notes", "notas del episodio", "descripción episodio", "descripción spotify", "metadatos" | `workflows/05-show-notes.md` |
 | "html", "exportar", "descargar", "production packet", "paquete de producción", "exportar todo" | `workflows/06-html-export.md` |
+| "youtube", "metadata youtube", "título youtube", "tags youtube", "miniatura", "thumbnail", "capítulos", "timestamps" | `workflows/07-youtube.md` |
 
 ---
 
@@ -74,5 +75,7 @@ Este archivo se genera en `00-setup.md` y lo leen todos los workflows. Estructur
 ```
 00-setup → 01-episodio → 02-grabacion → 03-artwork → 04-social-media → 05-show-notes → 06-html-export
 ```
+
+`07-youtube` es opcional y corre en paralelo a `05-show-notes` — reutiliza la descripción de Spotify como base, adaptada para SEO de YouTube (más densa en keywords, capítulos extraídos del script).
 
 Puedes saltar a cualquier workflow — solo asegúrate de tener el perfil creado primero.

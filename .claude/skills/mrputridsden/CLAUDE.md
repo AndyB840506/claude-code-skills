@@ -30,7 +30,7 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 - **Formato documentos:** HTML optimizado para PDF vía IlovePDF
 - **Backup:** después de cada guion/documento → git commit + push a GitHub + copia a G:\My Drive\ si está montado
 - **Production assets en E:, no en C:** — Scripts HTML, propuestas, documentos y artefactos de producción se guardan en `e:\Claude Project\Claude Projects\kit-skill-creator\.claude\skills\mrputridsden\`. Los archivos en `C:\Users\andre\.claude\skills\mrputridsden\` son solo instruction files. Nunca guardar guiones o documentos en C:.
-- **Skill activa:** `C:\Users\andre\.claude\skills\podcast-creator\SKILL.md` (global user skills)
+- **Skill activa:** `e:\Claude Project\Claude Projects\kit-skill-creator\.claude\skills\mrputridsden\.claude\skills\podcast-creator\SKILL.md` (project-scoped, vive junto a esta carpeta)
 
 ---
 
@@ -142,7 +142,8 @@ mrputridsden/
         ├── 03-artwork.md
         ├── 04-social-media.md
         ├── 05-show-notes.md
-        └── 06-html-export.md
+        ├── 06-html-export.md
+        └── 07-youtube.md
 ```
 
 **Producción (assets — carpeta propia, separada de la skill):**
@@ -158,6 +159,20 @@ e:\Claude Project\Claude Projects\kit-skill-creator\mrputridsden-production\
 ```
 
 **Por qué están separadas:** producción anidada dentro de la carpeta de skill creó copias huérfanas del SKILL.md cuando se exportó/copió el proyecto (detectado y corregido 2026-06-07 — ver memoria `assets-on-e-drive`). La skill SOLO contiene instrucciones; los assets viven en su propia carpeta.
+
+---
+
+## Sitio web (mrputridsden.com)
+
+### Regla de actualización del grid "Episodios recientes" — espeja la regla de BTQ
+- Siempre 4 cards (`<div class="episode-card" data-ep="0XX">` dentro de `.episodes-grid`), orden oldest -> newest
+- Muestra los 4 episodios ANTERIORES al que está en circulación — **NO incluye el nuevo** (su propio link/embed ya lo cubre)
+- Al lanzar nuevo EP: rotar — entra el anterior al nuevo, sale el más antiguo del grid
+- **Visual propio de MPD** — la lógica de rotación espeja a BTQ pero NUNCA su tipografía ni estilo de card (ver memoria `feedback_mpd_vs_btq_typography`); usa siempre el componente `.episode-card` existente
+- Documentado también como comentario HTML en `website/index.html` justo antes de `<div class="episodes-grid">`
+
+### Deploy
+Desde `mrputridsden-production/website/`: `$env:NODE_OPTIONS="--use-system-ca"; vercel --prod` (bypass Avast SSL, igual que BTQ)
 
 ---
 
