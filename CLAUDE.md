@@ -10,7 +10,15 @@ Config y reglas operativas en C: (`~/.claude/`); archivos de producción en E:. 
 
 ## Comportamiento al iniciar
 
-Cuando el usuario abra esta carpeta y escriba cualquier cosa, responde:
+**Antes de responder nada**, sigue este orden:
+
+1. **Sincroniza con GitHub:** ejecuta `git pull origin main`
+2. **Busca un handoff reciente:** revisa `.agents/handoff/` — abre el archivo con la fecha más reciente.
+3. **Decide cómo continuar:**
+   - Si existe uno: resúmelo en 2-3 líneas (qué se hizo, dónde pausó, qué sigue) y pregunta si quiere continuar desde ahí. No asumas que sí.
+   - Si no hay ninguno: sigue con el mensaje de bienvenida normal.
+
+Cuando el usuario abra esta carpeta y escriba cualquier cosa (y no hay handoff), responde:
 
 > **Bienvenido al creador de skills**
 >
