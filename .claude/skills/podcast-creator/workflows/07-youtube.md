@@ -2,7 +2,19 @@
 
 Genera título, descripción, tags, texto de miniatura y capítulos optimizados para YouTube.
 
-**Regla fundamental: El título no puede superar 60 caracteres. Verificar el conteo explícitamente antes de entregar.**
+**Antes de generar, revisa el formato real del episodio publicado más reciente del show**
+(p.ej. BTQ EP.015 — `https://youtu.be/DsRGtiimlAg`). En la práctica el título no sigue un
+límite estricto de 60 caracteres — BTQ usa títulos largos tipo
+`[Hook]: [frase] | EP.0XX | [Nombre del show]` (~95 chars). Si el show tiene su propio
+perfil/skill (p.ej. `episode-launch` para BTQ), ese formato real tiene prioridad sobre
+la plantilla genérica de abajo.
+
+**Regla fundamental sobre tags vs. hashtags — nunca confundirlos:**
+- **Tags / keywords** (campo Tags de YouTube Studio, keywords de Spotify, listas de tags
+  en redes) = lista separada por comas para búsqueda/SEO. Formato: `tag1, tag2, tag3, ...`
+- **Hashtags dentro de la descripción** = un set separado, más pequeño, separado por
+  espacios con prefijo `#`, para descubribilidad en feed. Formato: `#Tag1 #Tag2 #Tag3`
+- Genera ambos — no sustituyas la lista de tags por hashtags ni viceversa.
 
 ---
 
@@ -71,7 +83,14 @@ Mezcla español + inglés — la audiencia de YouTube es bilingüe por naturalez
 
 ### E. Capítulos / Timestamps
 
-Si el script tiene bloques `<h2>`, extrae los tiempos y títulos automáticamente. Si no, usa los momentos que indique el usuario.
+Si el script tiene bloques `<h2>`, extrae los tiempos y títulos automáticamente.
+
+Si no — **antes de decirle al usuario que no hay timestamps disponibles, revisa la
+transcripción diarizada** en `E:\Transcriptor\transcripciones\[Show] Ep.[NNN].srt` —
+localiza las transiciones de sección buscando frases clave por tema (nombres de
+frameworks/autores, nombres de segmentos como "Aplicable Hoy", referencias culturales).
+Timestamps reales del transcript superan rangos estimados. Solo si tampoco existe
+transcripción, pide los momentos clave al usuario.
 
 ```
 00:00 Intro

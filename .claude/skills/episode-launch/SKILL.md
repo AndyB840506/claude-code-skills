@@ -2,8 +2,9 @@
 name: episode-launch
 description: >
   BTQ Episode Launch Orchestrator — generates all publication assets for a single episode
-  in one pass: Spotify SEO (description + preview), social plan 3-day calendar, YouTube
-  title/tags/thumbnail text, cover-art prompts (1:1 · 9:16 · 16:9), and git commit + push.
+  in one pass: Spotify SEO (description + preview), social plan 4-day calendar, YouTube
+  title/description/tags/thumbnail/chapters, SafeCreative registration metadata,
+  cover-art prompts (1:1 · 9:16 · 16:9), and git commit + push.
   Triggers: /episode-launch, lanzar episodio, launch EP, publicar episodio BTQ,
   generar assets episodio, metadata episodio, social plan BTQ, portada episodio.
 ---
@@ -17,7 +18,8 @@ commits the result. It does NOT write the guión — for that use `btq-guion`.
 
 ## Step 1 — Collect inputs
 
-Ask for exactly these if not already provided in the invocation:
+Before asking, check `btq-production/pipeline-state-ep[NNN].md` — it usually already has
+EP number, title, cultural ref, and Spotify URL confirmed. Ask only for what's still missing:
 
 ```
 EP number:       EP.0XX
@@ -91,12 +93,39 @@ Cultural: episode-specific tag
 
 ### C · YouTube Metadata
 
-- **Title:** 60 chars max · lead with character name · include BTQ show name
-- **Description (first 3 lines visible before fold):** Hook, episode number, listen on Spotify link
-- **Full description:** Same structure as Spotify but adapted for YouTube search (more keyword-dense)
-- **Tags (15–20):** Mix Spanish + English since YouTube is bilingual
+**Before generating, check the most recently published episode's actual YouTube page**
+(e.g. EP.015 — `https://youtu.be/DsRGtiimlAg`) — the format below reflects real production
+practice, which may keep evolving past what's written here. If WebFetch can't render the
+page (YouTube is a JS-heavy SPA and often returns unusable HTML), fall back to the format
+documented here — it was captured directly from a YouTube Studio screenshot, not scraped.
+
+- **Title:** Long, hook-style — `[Hook / cultural reference]: [punch line] | EP.0XX | Behind the Queue`.
+  No hard 60-char limit in practice (EP.015's title runs ~95 chars).
+- **Description structure** (matches EP.015 exactly — 5 blocks in this order):
+  1. Hook paragraph (2–3 sentences, the "honest question")
+  2. Episode summary paragraph (cultural reference as lens + leadership lesson)
+  3. `📋 CONTENIDO DEL EPISODIO` — timestamped chapter list (see Chapter timestamps below)
+  4. `🔗 ENCUENTRA BTQ EN` — links block: 🌐 website · 🎵 Spotify · 📩 email · 💼 LinkedIn (full name) · 📸 Instagram
+  5. Hashtags (space-separated `#Tag`, NOT comma-separated — see Tags vs. hashtags below)
+- **Tags field** (YouTube Studio metadata box, separate from the description): 15–20
+  keywords, comma-separated — see Tags vs. hashtags below
 - **Thumbnail text:** 3–5 words max · high contrast · brand voice (Bebas Neue / uppercase style)
-- **Chapter timestamps:** Only if script path was provided — extract from HTML `<h2>` blocks
+
+**Chapter timestamps:**
+Before saying timestamps aren't available, check the diarized transcript at
+`E:\Transcriptor\transcripciones\[Show] Ep.[N].srt` — note the show uses **no zero-padding**
+(e.g. `Behind The Queue Ep.16.srt`, not `Ep.016.srt`). Locate section transitions by
+searching for topic-keyword phrases (framework/author names, segment names like
+"Aplicable Hoy", cultural references). Real timestamps from the transcript beat guessed ranges.
+
+**Tags vs. hashtags — never conflate these, both belong in the metadata:**
+- **Tags / keywords** (distinct SEO metadata fields: YouTube Studio Tags box, Spotify
+  keyword/SEO tags, SafeCreative tags — NOT the hashtags inside post copy) = comma-separated
+  list. Format: `tag1, tag2, tag3, ...`
+- **In-content hashtags** (inside YouTube/description text AND the §B social posts) = a
+  separate, smaller set, space-separated with `#` prefix, for in-feed discoverability.
+  Format: `#Tag1 #Tag2 #Tag3`
+- Generate both where the platform has both — don't drop one in favor of the other.
 
 ---
 
@@ -135,7 +164,9 @@ Save generated assets as a markdown file at:
 btq-production/launch-assets/EP0XX-[slug]-launch.md
 ```
 
-Where `slug` = kebab-case of the cultural reference (e.g., `EP016-pink-floyd-launch.md`).
+Where `slug` = kebab-case of the cultural reference as confirmed in Step 1 — can be the
+album/character/film title, not necessarily the artist (e.g., EP.016's cultural ref was
+the album "The Wall", giving `EP016-the-wall-launch.md`).
 
 Then run:
 ```
@@ -151,6 +182,26 @@ and do not retry destructively.
 
 ---
 
+## Step 4b — SafeCreative Registration Metadata (on request, post-publish)
+
+Generated separately — typically once the episode has a confirmed Spotify/YouTube URL,
+NOT part of the Step 2 parallel batch. Format reference: EP.015 registration
+(work ID 2605315837136).
+
+- **Title:** `Behind the Queue · EP.0XX · [Cultural reference]: [hook]`
+- **Work type:** Podcast
+- **Summary** (one paragraph): `Episodio [N] del podcast Behind the Queue, conducido por
+  Andrés Ricardo Bermúdez Rodríguez. En este episodio se analiza [cultural reference] como
+  punto de entrada para explorar [organizational/leadership lesson] — y qué hace el líder
+  que decide [actionable insight]. Producción original en español para audiencias de
+  operaciones, servicio al cliente y liderazgo en BPO/contact center.`
+- **Tags (~20–25, comma-separated):** mix of recurring brand tags (behind the queue,
+  andrés bermúdez, liderazgo, bpo, español, podcast, latam, colombia, contact center,
+  servicio al cliente, cultura, operaciones, información organizacional, experiencia)
+  + episode-specific (cultural reference name, themes, named frameworks/authors)
+
+---
+
 ## Output summary
 
 End with a compact status table:
@@ -158,7 +209,7 @@ End with a compact status table:
 | Asset | Status |
 |-------|--------|
 | Spotify SEO | Done |
-| Social plan (3 days) | Done |
+| Social plan (4 days) | Done |
 | YouTube metadata | Done |
 | Cover-art prompts (3 formats) | Done |
 | Git commit + push | Done / Failed (reason) |
