@@ -12,7 +12,7 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.013 | Back to the Future | publicado |
 | EP.014 | Maomao | publicado |
 | EP.015 | Solid Snake (Metal Gear Solid) | publicado — https://open.spotify.com/episode/6fpGqMqaLozmWB4ABOlO3S |
-| EP.016 | Pink Floyd / The Wall | publicado — https://open.spotify.com/episode/6GoODyUOac1rKLZR83yllR |
+| EP.016 | Pink Floyd / The Wall | publicado — https://open.spotify.com/episode/3CNyTkA6OCLoCrmNEh0LVR |
 | EP.017 | Soda Stereo / Cerati | en roadmap |
 
 ---

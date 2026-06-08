@@ -66,7 +66,7 @@
 - Archivos generados: btq-production/launch-assets/EP016-the-wall-launch.md
 - Gate heredado: aprobado por el usuario (incluyendo corrección del bloque de contacto
   para incluir redes sociales completas, no solo correo)
-- Checkpoint Spotify: URL confirmada — https://open.spotify.com/episode/6GoODyUOac1rKLZR83yllR
+- Checkpoint Spotify: URL confirmada — https://open.spotify.com/episode/3CNyTkA6OCLoCrmNEh0LVR
   (el usuario pasó primero un shortlink de spotifycreators-web.app.link; se resolvió el
   redirect y se le pidió el link público canónico desde Share → Copy link to episode)
 - Resultado: OK — Macro-Stage B cerrada (stage_b: complete). Pendiente para después de

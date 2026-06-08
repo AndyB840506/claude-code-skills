@@ -21,6 +21,15 @@ commits the result. It does NOT write the guión — for that use `btq-guion`.
 Before asking, check `btq-production/pipeline-state-ep[NNN].md` — it usually already has
 EP number, title, cultural ref, and Spotify URL confirmed. Ask only for what's still missing:
 
+**Re-push caveat:** if the episode had to be re-uploaded to the podcast hosting/
+distribution tool because it didn't appear live on Spotify on the first attempt,
+treat any Spotify URL recorded before that re-upload as **unverified** — Spotify
+can assign a new episode URL when a re-published feed item propagates. Confirmed
+in EP.016 (`pipeline-state-ep016.md` recorded `episode/6GoODy...` as "confirmed",
+but the live Spotify URL after the re-upload was `episode/3CNyTkA6...`). Ask the
+user to paste the live URL from the Spotify browser page before propagating it
+anywhere downstream (website, social posts, pipeline-state).
+
 ```
 EP number:       EP.0XX
 Title:           Full episode title
@@ -182,7 +191,7 @@ and do not retry destructively.
 
 ---
 
-## Step 4b — SafeCreative Registration Metadata (on request, post-publish)
+## Step 4a — SafeCreative Registration Metadata (on request, post-publish)
 
 Generated separately — typically once the episode has a confirmed Spotify/YouTube URL,
 NOT part of the Step 2 parallel batch. Format reference: EP.015 registration
@@ -199,6 +208,36 @@ NOT part of the Step 2 parallel batch. Format reference: EP.015 registration
   andrés bermúdez, liderazgo, bpo, español, podcast, latam, colombia, contact center,
   servicio al cliente, cultura, operaciones, información organizacional, experiencia)
   + episode-specific (cultural reference name, themes, named frameworks/authors)
+
+---
+
+## Step 4b — Update website episode grid (post-publish, once Spotify URL is live-verified)
+
+The site at `behind-thequeue.com` (Vercel project `website`) shows the 4 most recently
+published episodes in its `<div class="ep-list">` grid, oldest→newest (slot 1 = oldest,
+slot 4 = newest — drop the oldest each time a new episode publishes).
+
+1. Edit `btq-production/website/index.html` — the grid keeps the 4 most recent episodes
+   ordered oldest→newest by EP number (slot 1 = lowest EP number = oldest, slot 4 = highest
+   = newest; see the `GRID RULE` comment above `<div class="ep-list">`). Drop the row with
+   the lowest EP number and append a new entry for the latest episode: `ep-num`,
+   `ep-ref-tag` (cultural reference), `ep-row-title`, `ep-row-quote`, and `href` pointing
+   to the **live-verified** Spotify URL (see re-push caveat in Step 1 — never reuse a URL
+   only "confirmed" pre-re-upload).
+2. Redeploy from `btq-production/website/`: run `vercel --prod`.
+3. **Git commit alone does NOT update the live site** — Vercel deploy is manual via CLI,
+   not auto-deploy from git push. Confirmed in EP.016: the HTML had the correct grid in the
+   commit, but the live site kept showing the stale grid until `vercel --prod` ran.
+4. Verify live (run via Bash tool — uses `$(date +%s)` and `grep`, not available in
+   native PowerShell 5.1):
+   ```
+   curl -s "https://behind-thequeue.com/?v=$(date +%s)" | grep -o "episode/[a-zA-Z0-9]*"
+   ```
+   PowerShell alternative:
+   ```
+   (Invoke-WebRequest -Uri "https://behind-thequeue.com/?v=$(Get-Random)").Content -split '"' | Select-String "episode/"
+   ```
+   Confirm the new episode's URL appears and matches the live-verified Spotify URL.
 
 ---
 
