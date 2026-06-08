@@ -53,25 +53,31 @@ Punchy hook — use the cultural reference as the entry point. No quotes. No spo
 
 ---
 
-### B · Social Plan — 3-Day Calendar
+### B · Social Plan — 4-Day Calendar
+
+Regla de producción: grabación los sábados, lanzamiento en Spotify los domingos a las
+8:00 PM hora Colombia (la audiencia escucha el domingo de noche en modo "preparación
+para la semana" — ver `btq-project/SKILL.md` §10, fuente canónica de este calendario).
 
 | Day | Platform | Copy |
 |-----|----------|------|
-| Domingo (intriga) | LinkedIn | ... |
-| Domingo (intriga) | Instagram / Facebook | ... |
-| Domingo (intriga) | Story slides (3) | [slide 1] · [slide 2] · [slide 3] |
-| Lunes (lanzamiento) | LinkedIn | ... |
-| Lunes (lanzamiento) | Instagram / Facebook | ... |
-| Miércoles (refuerzo) | LinkedIn | ... |
-| Miércoles (refuerzo) | Instagram / Facebook | ... |
+| Jueves (intriga) | LinkedIn | ... |
+| Jueves (intriga) | Instagram / Facebook | ... |
+| Jueves (intriga) | Story slides (3) | [slide 1] · [slide 2] · [slide 3] |
+| Sábado (calentamiento) | Instagram / Facebook | behind the scenes mientras graba |
+| Domingo 8:00 PM (lanzamiento) | LinkedIn | ... |
+| Domingo 8:00 PM (lanzamiento) | Instagram / Facebook | ... |
+| Martes (refuerzo) | LinkedIn | ... |
+| Martes (refuerzo) | Instagram / Facebook | ... |
 
 **Rules:**
-- Domingo: don't reveal the full topic — create tension
-- Lunes: one real insight from the episode, shareable on its own
-- Miércoles: direct conversion — "escúchalo" call to action
+- Jueves: don't reveal the full topic — sembrar la pregunta, crear tensión
+- Sábado: contenido orgánico, costo cero — detrás de cámaras de la grabación
+- Domingo 8PM: lanzamiento — episodio disponible, CTA directo
+- Martes: refuerzo/herramienta — profundiza para quien ya escuchó, engancha a quien no
 - LinkedIn: 5–8 hashtags · Spotify link goes in FIRST COMMENT (write comment text separately)
-- Instagram/Facebook: 10–15 hashtags · ends Day 2 with a question
-- TikTok copy: ultra short (2–3 lines) for all three days
+- Instagram/Facebook: 10–15 hashtags · día de lanzamiento termina con una pregunta
+- TikTok copy: ultra short (2–3 lines) for all four days
 
 **Core hashtags (always include):**
 ```
