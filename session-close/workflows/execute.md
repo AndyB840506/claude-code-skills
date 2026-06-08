@@ -1,6 +1,6 @@
 # Session Close — Complete Execution Flow
 
-When you invoke `/session-close`, Claude executes all 5 steps in sequence. Steps 1-3 require your confirmation; Steps 4-5 run automatically.
+When you invoke `/session-close`, Claude executes all 6 steps in sequence. Steps 1-3 require your confirmation; Steps 4-6 run automatically.
 
 ---
 
@@ -19,10 +19,9 @@ Step 3: Invoke /skill-kit-auditor (Mode A — full kit)
   Show audit issues → [USER: confirm?] → continue
   ↓
 Step 4: Invoke /handoff (automatic)
-  Generate doc in memory
-  Copy to clipboard (Ctrl+V ready)
-  Display in chat
-  Commit to git, push to GitHub
+  Write .agents/handoff/YYYY-MM-DD-<topic>.md
+  git commit + push to GitHub
+  Display handoff in chat
   ↓
 Step 5: Copy handoff to Google Drive (automatic)
   Write handoff content to temp file locally
@@ -30,7 +29,11 @@ Step 5: Copy handoff to Google Drive (automatic)
   Delete temp file
   Display completion
   ↓
-✓ DONE — All 5 steps complete, session backed up
+Step 6: Bootstrap sync (automatic)
+  Push-Location claude-bootstrap; .\sync.ps1; Pop-Location
+  Copies ~/.claude/ config + memory to GitHub
+  ↓
+✓ DONE — All 6 steps complete, session backed up
 ```
 
 ---
@@ -185,16 +188,17 @@ This step optionally backs up to Google Drive:
 
 ## What Gets Backed Up
 
-**Clipboard backup (immediate, next session):**
-- Full handoff document ready to paste with Ctrl+V
+**Git backup (GitHub — primary):**
+- `.agents/handoff/YYYY-MM-DD-<topic>.md` committed and pushed
+- Any machine with the repo cloned can pull and resume
 
-**Git backup (GitHub):**
-- Session commit with all file changes
-- Full conversation history in local git repository
-
-**Cloud backup (Google Drive):**
+**Cloud backup (Google Drive — optional):**
 - `G:\My Drive\claude projects\handoff-[YYYY-MM-DD].md`
 - Automatically synced by Google Drive Desktop
+
+**Bootstrap backup (config + memory):**
+- `~/.claude/` config, skills, and memory pushed to `claude-bootstrap` repo
+- Restores full Claude environment on any new machine
 
 ---
 

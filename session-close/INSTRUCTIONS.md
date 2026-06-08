@@ -1,6 +1,6 @@
 # Session Close — Implementation Instructions
 
-This document defines how `/session-close` executes all 5 steps automatically.
+This document defines how `/session-close` executes all 6 steps automatically.
 
 ## Auto-Execution Sequence
 

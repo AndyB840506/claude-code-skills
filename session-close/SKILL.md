@@ -1,11 +1,11 @@
 ---
 name: session-close
-description: "Automated 5-step session close: retrospective + prompt review + skill audit + handoff (writes .agents/handoff/*.md, commits, pushes to GitHub) + Google Drive backup. Triggers: session close, end session, closing session, session wrap-up, wrap up, end-of-session, cierre de sesión, cerrar sesión, finalizar sesión, terminar sesión, fin de sesión, cerrar proyecto, guardar y cerrar."
+description: "Automated 6-step session close: retrospective + prompt review + skill audit + handoff (writes .agents/handoff/*.md, commits, pushes to GitHub) + Google Drive backup + bootstrap sync. Triggers: session close, end session, closing session, session wrap-up, wrap up, end-of-session, cierre de sesión, cerrar sesión, finalizar sesión, terminar sesión, fin de sesión, cerrar proyecto, guardar y cerrar."
 ---
 
 # Session Close — Automated Complete Workflow
 
-Automated 5-step workflow that executes automatically when invoked. No manual steps required.
+Automated 6-step workflow. Steps 1-3 require user confirmation; Steps 4-6 run automatically.
 
 **Execution sequence:** Retrospective → Prompt Reviewer → Skill Kit Auditor → Handoff → Google Drive Backup → Bootstrap Sync
 
