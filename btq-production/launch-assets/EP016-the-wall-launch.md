@@ -35,12 +35,115 @@ liderazgo, seguridad psicológica, Pink Floyd, The Wall, Roger Waters, gestión 
 
 ## B. Social Media — Plan de lanzamiento (4 días, lanzamiento domingo 8PM Colombia)
 
-| Día | Cuándo | Objetivo | Copy / idea |
-|---|---|---|---|
-| 1 | Jueves | Intriga | "¿Cuándo fue la última vez que alguien de tu equipo te dijo algo importante — y tú realmente lo escuchaste?" Sin revelar el tema. Solo la pregunta, formato carrusel o quote card simple. CTA: "El domingo lo hablamos." |
-| 2 | Sábado | Calentamiento (detrás de cámaras, grabación) | Behind the scenes del proceso de grabación — clip corto / foto del setup. "Grabando el episodio 16 — esta vez con Pink Floyd de fondo 🎙️" |
-| 3 | Domingo 8:00 PM | Lanzamiento | Episodio en vivo. CTA directo: "Episodio 16 ya está disponible — 'The Wall: el muro que construiste ladrillo por ladrillo'. Link en bio / primer comentario." |
-| 4 | Martes | Refuerzo / herramienta | La herramienta "mapea tus ladrillos" del segmento Aplicable Hoy — formato lista o carrusel: "3 momentos específicos. 20 minutos. Sin terapia — diagnóstico." Engancha a quien no escuchó, profundiza para quien sí. |
+**Spotify (link a usar en todos los CTAs):** https://open.spotify.com/episode/3CNyTkA6OCLoCrmNEh0LVR
+
+### Día 1 — Jueves — Intriga (sin revelar el tema)
+
+**LinkedIn**
+> ¿Cuándo fue la última vez que alguien de tu equipo te contó algo importante — y de verdad lo escuchaste?
+>
+> No un reporte. No una escalación. Algo importante — y te tardaste en responder.
+>
+> Esto no le pasa a los malos líderes. Le pasa a los buenos. A los que empezaron con toda la energía del mundo.
+>
+> El domingo lo hablamos en Behind The Queue. 🎧
+
+`#Liderazgo #SeguridadPsicológica #BehindTheQueue #BPO #ContactCenter`
+
+**Instagram / Facebook** (quote card)
+> ¿Cuándo fue la última vez que alguien de tu equipo te dijo algo importante... y tú realmente lo escuchaste?
+>
+> El domingo lo hablamos. 👀
+
+`#BehindTheQueue #PodcastEnEspañol #Liderazgo #BPO #ContactCenter #ServicioAlCliente #Operaciones #LATAM #Colombia #CustomerExperience #NuevoEpisodio #SeguridadPsicológica`
+
+**TikTok**
+> ¿De verdad escuchaste la última vez que alguien de tu equipo te contó algo importante? 👀 El domingo lo hablamos.
+
+**Stories (3 slides):** 1) la pregunta sola · 2) "¿te ha pasado?" · 3) "Domingo 8PM 🎧"
+
+### Día 2 — Sábado — Behind the scenes
+
+**LinkedIn**
+> Grabando el episodio 16 de Behind The Queue — esta vez con Pink Floyd de fondo 🎙️
+>
+> Cuando Roger Waters escribió *The Wall* en 1979, hablaba del aislamiento progresivo de un personaje llamado Pink. Nosotros lo vimos como espejo de algo que le pasa a casi cualquier carrera de liderazgo larga.
+>
+> Mañana contamos por qué. 🧱
+
+`#BehindTheQueue #PinkFloyd #TheWall #Liderazgo #Podcast`
+
+**Instagram / Facebook**
+> Detrás de cámaras del episodio 16 🎙️🧱 Esta vez, Pink Floyd nos prestó la metáfora. Mañana sale todo.
+
+(+ mismo set de 10–15 hashtags del Día 1)
+
+**TikTok**
+> Grabando con Pink Floyd de fondo 🎸 Episodio 16 sale mañana.
+
+**Stories:** sticker de countdown — "1 día para el episodio 16"
+
+### Día 3 — Domingo 8:00 PM — Lanzamiento
+
+**LinkedIn**
+> 🎧 Ya está disponible el episodio 16 de Behind The Queue: "The Wall — el muro que construiste ladrillo por ladrillo"
+>
+> Exploramos *The Wall* (Pink Floyd, 1979) — el álbum conceptual de Roger Waters sobre el aislamiento progresivo de un personaje llamado Pink — como espejo de algo que le pasa a casi cualquier carrera de liderazgo larga: los "ladrillos" que se acumulan sin darnos cuenta hasta convertirse en un muro entre nosotros y las personas que más necesitamos cerca.
+>
+> Hablamos de los cinco ladrillos que Roger Waters nombró con canciones específicas — y su versión real en el liderazgo de equipos. Cruzamos esto con investigación de Amy Edmondson (Harvard) sobre seguridad psicológica, el Gallup State of the Global Workplace 2024, McKinsey Global Survey 2024, Google Project Aristotle, *The Five Dysfunctions of a Team* de Patrick Lencioni, y el trabajo de Brené Brown sobre vulnerabilidad y liderazgo.
+>
+> Y cerramos con algo accionable: un ejercicio concreto para "mapear tus ladrillos" — sin presupuesto, sin pedir permiso, esta misma semana.
+>
+> 🎧 Link en el primer comentario.
+
+*(Spotify URL en primer comentario)* · `#BehindTheQueue #Liderazgo #SeguridadPsicológica #PinkFloyd #TheWall #BPO #ContactCenter`
+
+**Instagram / Facebook**
+> 🎧 Episodio 16 ya está disponible: "The Wall — el muro que construiste ladrillo por ladrillo"
+>
+> ¿Cuándo fue la última vez que alguien de tu equipo te contó algo importante... y tú realmente lo escuchaste?
+>
+> Hoy hablamos de los "ladrillos" que se acumulan sin darnos cuenta — hasta convertirse en un muro. Y de cómo empezar a derribarlo esta semana.
+>
+> Link en bio 🔗
+>
+> ¿Cuál de tus ladrillos reconociste primero? Cuéntanos en los comentarios 👇
+
+(+ 10–15 hashtags)
+
+**TikTok**
+> 🧱 Episodio 16 ya está afuera. Pink Floyd + liderazgo + 5 ladrillos que probablemente tienes sin saberlo. Link en bio.
+
+**Stories:** 1) portada del episodio · 2) sticker de link directo a Spotify · 3) pregunta abierta "¿cuál ladrillo reconociste?"
+
+### Día 4 — Martes — Refuerzo / herramienta
+
+**LinkedIn**
+> Si ya escuchaste el episodio 16 de Behind The Queue, esto es para ti. Si no, esto te puede convencer de hacerlo.
+>
+> La herramienta del segmento "Aplicable Hoy": mapear tus ladrillos.
+>
+> 3 momentos específicos. 20 minutos. Sin terapia — diagnóstico.
+>
+> 1. Piensa en 3 momentos en los últimos meses donde alguien de tu equipo intentó decirte algo y no lo recibiste como debía.
+> 2. Nómbralos — no en abstracto, con fecha y nombre.
+> 3. Pregúntate: ¿qué hice (o no hice) en ese momento que pudo sumar un ladrillo más al muro?
+>
+> No se trata de culpa. Se trata de ver el patrón antes de que se vuelva estructura.
+>
+> 🎧 Episodio completo en el link del primer comentario.
+
+`#Liderazgo #SeguridadPsicológica #BehindTheQueue #DesarrolloDeEquipos`
+
+**Instagram / Facebook**
+> 🧱 La herramienta del episodio 16: mapear tus ladrillos
+>
+> 3 momentos. 20 minutos. Sin terapia — diagnóstico.
+>
+> ¿Ya la probaste? Cuéntanos cómo te fue 👇 (o escucha el episodio completo — link en bio)
+
+**TikTok**
+> 3 momentos. 20 minutos. Así se mapean los "ladrillos" que estás construyendo sin darte cuenta. Episodio 16 completo en el link.
 
 **Plataformas:**
 - **LinkedIn:** copy más largo, 5–8 hashtags, link de Spotify en primer comentario
