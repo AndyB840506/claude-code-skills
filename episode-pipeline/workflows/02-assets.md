@@ -1,0 +1,110 @@
+# Workflow 02 — Generación de assets
+
+Genera todos los assets de publicación. **La ruta depende del show** — cada uno tiene
+su propio orquestador/conjunto de workflows ya construidos; este pipeline los invoca
+sin duplicar su lógica.
+
+---
+
+## Ruta BTQ — invoca `episode-launch`
+
+`episode-launch` ya genera en un solo paso: SEO de Spotify, plan social de 4 días,
+metadata de YouTube, prompts de cover-art (1:1/9:16/16:9), corre su propio gate de
+aprobación, y hace commit + push del archivo consolidado.
+
+**Invócalo directamente, supliendo sus 6 inputs desde el episode brief — sin que
+vuelva a preguntarlos:**
+
+| Input que pide `episode-launch` | Viene de |
+|---|---|
+| EP number | `ep_number` |
+| Title | `title` |
+| Cultural ref | `cultural_ref` |
+| Closing TM | `closing_tm` |
+| Script path | busca `episodio-[NNN]-*.md`; si no existe, usa el SRT de Stage 1 como fuente y pasa "none" |
+| Spotify URL | `spotify_url` |
+
+Una vez los 6 campos estén confirmados, `episode-launch` genera los 4 bloques de
+assets y presenta **su propio gate**: *"Assets listos para EP.0XX. ¿Apruebas o ajustas
+algún bloque antes de hacer commit?"* — **deja que aparezca con normalidad**, no es un
+error del pipeline. Espera la aprobación del usuario igual que lo haría `episode-launch`
+solo.
+
+Tras la aprobación, `episode-launch` guarda `btq-production/launch-assets/EP0XX-[slug]-launch.md`
+y hace commit + push. **El pipeline no repite ninguna de estas acciones.**
+
+**Lo único que el pipeline extrae de la salida**: los 3 prompts de cover-art (sección D
+del output de `episode-launch`) — son el insumo de Stage 3.
+
+---
+
+## Ruta MPD — invoca workflows individuales de `podcast-creator`
+
+MPD no tiene un orquestador equivalente, así que se invocan tres workflows por
+separado, alimentados con el episode brief + el SRT del Stage 1:
+
+1. **`podcast-creator/workflows/05-show-notes.md`** ("show notes" / "metadatos")
+   → genera `shownotes-ep[NNN].md` (Spotify + Apple + Amazon + SEO keywords)
+2. **`podcast-creator/workflows/07-youtube.md`** ("youtube metadata")
+   → genera `youtube-ep[NNN].md` (título, descripción, tags, capítulos, miniatura)
+   — reutiliza la descripción de Spotify recién generada como base
+3. **`podcast-creator/workflows/03-artwork.md`** ("artwork")
+   → genera `artwork-ep[NNN].md` con los 3 prompts (1:1/9:16/16:9)
+
+Para cada uno: si el episode brief ya tiene el dato que el Paso 1 del workflow pediría,
+sáltalo — pasa directo al paso de generación. Solo pregunta lo que genuinamente falte
+(ej. vibe del artwork, si no se especificó).
+
+**Lo único que el pipeline extrae de la salida**: los 3 prompts de `artwork-ep[NNN].md`
+— son el insumo de Stage 3, igual que en la ruta BTQ.
+
+---
+
+## Cierre de Macro-Stage B — checkpoint de publicación en Spotify
+
+Ambas rutas convergen aquí: la metadata de Spotify (descripción, título, SEO) que
+acabas de generar es justo lo que el usuario necesita para publicar el episodio. Este
+es el momento de resolverlo — **antes** de seguir a Stage C, donde tanto la rotación
+del grid como el deploy-verify necesitan una URL real, no "pending".
+
+**Si `spotify_url` en el brief ya es una URL real** (el episodio se publicó antes de
+correr el pipeline), salta este checkpoint por completo — actualiza
+`pipeline-state-ep[NNN].md` a `stage_b: complete, spotify_url: [URL]` y continúa.
+
+**Si sigue como "pending"**, presenta la metadata lista para copiar/pegar y pide:
+
+> "Aquí está la metadata de Spotify para EP.0XX. Súbela junto con el audio a Spotify
+> for Podcasters y publícalo — vale la pena hacerlo ya, porque Spotify puede tardar en
+> procesar el episodio antes de que quede en vivo, y la necesitamos para rotar el grid
+> y verificar el deploy. Avísame la URL pública (open.spotify.com/episode/...) cuando
+> esté disponible — mientras tanto seguimos con la validación de imágenes en paralelo."
+
+Esto dispara el pedido (potencialmente lento, por el tiempo de procesamiento de
+Spotify) **lo antes posible**, justo junto con la pausa de generación de imágenes de
+Stage 3 — así el tiempo de espera de Spotify se solapa con el trabajo de imágenes en
+vez de bloquear en serie.
+
+- Si el usuario entrega la URL ahora: actualiza el brief y
+  `pipeline-state-ep[NNN].md` → `stage_b: complete, spotify_url: [URL]`.
+- Si el usuario sigue sin tenerla: marca `stage_b: complete, spotify_url: pending` de
+  todas formas (la metadata y los assets ya están generados — eso es lo que define el
+  cierre de esta etapa) y continúa. El checkpoint del Paso 0 de `00-intake.md`
+  detectará el `pending` la próxima vez que se invoque el pipeline para este episodio
+  y se detendrá ahí a pedir la URL — exactamente el caso de BTQ EP.16.
+
+---
+
+## Al terminar (ambas rutas)
+
+1. Confirma: "Assets generados — [N] archivos. Prompts de cover-art listos para
+   generación de imagen. [Spotify: URL confirmada / pendiente — te la pido más tarde]."
+   y continúa a `03-image-validation.md`.
+2. Agrega a la bitácora:
+   ```
+   ## Stage 2 — Generación de assets
+   - Qué se hizo: [episode-launch invocado | podcast-creator workflows 05/07/03 invocados]
+   - Archivos generados: [rutas]
+   - Gate heredado: [aprobado por el usuario / N-A]
+   - Checkpoint Spotify: [URL confirmada: ... / pendiente — usuario va a publicar]
+   - Resultado: OK — 3 prompts de cover-art listos para Stage 3
+   ```
