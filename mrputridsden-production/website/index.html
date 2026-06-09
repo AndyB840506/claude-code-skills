@@ -254,7 +254,8 @@
       font-family: var(--font-head); font-size: 19px; letter-spacing: 3px;
       fill: var(--cream); text-anchor: middle;
     }
-    .vinyl .label-sub { font-family: var(--font-mono); font-size: 7px; letter-spacing: 2px; fill: rgba(15,14,12,.6); }
+    .vinyl .label-sub { font-family: var(--font-mono); font-size: 5px; letter-spacing: .5px; fill: rgba(15,14,12,.6); }
+    .listen-embed { border-radius: 8px; overflow: hidden; max-width: 420px; margin-top: 28px; }
     .vinyl .hole { fill: var(--bg); }
     .vinyl-arm {
       position: absolute; top: 6%; right: 2%;
@@ -608,7 +609,7 @@
       </h1>
 
       <p class="hero-tagline">"Donde los riffs encuentran el whisky"</p>
-      <p class="hero-sub">Andrés &amp; Juan — 2 episodios disponibles</p>
+      <p class="hero-sub">Andrés &amp; Juan — 3 episodios disponibles</p>
 
       <div class="hero-actions">
         <a href="https://open.spotify.com/episode/0LW93D5Q5KhQYfIX96xOEH?si=4fee5140b6934fe6" target="_blank" rel="noopener" class="btn-primary">
@@ -616,6 +617,14 @@
           Escuchar en Spotify
         </a>
         <a href="#episodes" class="btn-outline">Ver episodios →</a>
+      </div>
+
+      <div class="listen-embed reveal">
+        <iframe style="border-radius:8px"
+          src="https://open.spotify.com/embed/episode/3c5wrMaA5Yqp4TOFwHAf6Y?utm_source=generator&theme=0"
+          width="100%" height="152" frameBorder="0"
+          allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
       </div>
     </div>
 
@@ -628,7 +637,8 @@
         <circle class="groove" cx="100" cy="100" r="50"/>
         <circle class="label-circle" cx="100" cy="100" r="38"/>
         <text x="100" y="98">MPD</text>
-        <text class="label-sub" x="100" y="112">EST. 2026 · BOGOTÁ</text>
+        <text class="label-sub" x="100" y="108">EST. 2026</text>
+        <text class="label-sub" x="100" y="116">BOGOTÁ</text>
         <circle class="hole" cx="100" cy="100" r="4"/>
       </svg>
       <div class="vinyl-arm"></div>
@@ -677,6 +687,21 @@
             </a>
           </div>
           <div class="ep-stub"><span>60 MIN</span><b>ADMIT ONE</b></div>
+        </div>
+
+        <!-- EP.003 -->
+        <div class="episode-card reveal" data-ep="003" style="transition-delay:.16s">
+          <div class="ep-main">
+            <p class="ep-number">EP. 003</p>
+            <h3 class="ep-title">Las Raíces del Rock: Sister Rosetta Tharpe</h3>
+            <p class="ep-description">
+              ¿Qué tiene en común un riff de Black Sabbath con la clave de la salsa? La misma raíz. Andrés y Juan trazan la cadena completa: de los ritmos africanos que llegaron al Mississippi, pasando por el blues del delta y la leyenda del crossroads de Robert Johnson, hasta Sister Rosetta Tharpe — la abuela del rock & roll — y de ahí a Chuck Berry, los Rolling Stones y Black Sabbath en Birmingham.
+            </p>
+            <a href="https://open.spotify.com/episode/3c5wrMaA5Yqp4TOFwHAf6Y?si=1a16e0e093f94361" target="_blank" rel="noopener" class="ep-link">
+              Escuchar en Spotify →
+            </a>
+          </div>
+          <div class="ep-stub"><span>64 MIN</span><b>ADMIT ONE</b></div>
         </div>
 
       </div>
