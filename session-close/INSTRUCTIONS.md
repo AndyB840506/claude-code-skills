@@ -11,11 +11,11 @@ STEP 1: Invoke /retrospective
   → User confirms: "Apply these changes?" YES/NO
   → Continue to STEP 2
 
-STEP 2: Invoke /prompt-reviewer
+STEP 2: Invoke /prompt-reviewer-en
   → User confirms: "Apply improvements?" YES/NO
   → Continue to STEP 3
 
-STEP 3: Invoke /skill-kit-auditor
+STEP 3: Invoke /skill-management
   → User confirms: "Apply fixes?" YES/NO
   → Continue to STEP 4
 

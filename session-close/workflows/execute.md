@@ -12,10 +12,10 @@ When you invoke `/session-close`, Claude executes all 6 steps in sequence. Steps
 Step 1: Invoke /retrospective
   Show learnings → [USER: confirm?] → continue
   ↓
-Step 2: Invoke /prompt-reviewer  
+Step 2: Invoke /prompt-reviewer-en  
   Show improvements → [USER: confirm?] → continue
   ↓
-Step 3: Invoke /skill-kit-auditor (Mode A — full kit)
+Step 3: Invoke /skill-management (Mode A — full kit)
   Show audit issues → [USER: confirm?] → continue
   ↓
 Step 4: Invoke /handoff (automatic)
@@ -58,7 +58,7 @@ Claude invokes `/retrospective` which scans the conversation for:
 
 ## STEP 2: Prompt Reviewer (Show Results + Confirm)
 
-Claude invokes `/prompt-reviewer` which reviews skills (updated ones from Step 1, or all if none updated) for:
+Claude invokes `/prompt-reviewer-en` which reviews skills (updated ones from Step 1, or all if none updated) for:
 - Clarity issues in documentation
 - Missing edge cases
 - Effectiveness gaps
@@ -74,9 +74,9 @@ Claude invokes `/prompt-reviewer` which reviews skills (updated ones from Step 1
 
 ---
 
-## STEP 3: Skill Kit Auditor (Show Results + Confirm)
+## STEP 3: Skill Management Audit (Show Results + Confirm)
 
-Claude invokes `/skill-kit-auditor` in **Mode A** (full kit audit). When skill-kit-auditor asks "Mode A or B?", respond **A** automatically — no need to wait for user input on mode selection.
+Claude invokes `/skill-management` in **Mode A** (full kit audit). When skill-management asks "Mode A or B?", respond **A** automatically — no need to wait for user input on mode selection.
 
 Audits the full skill kit for:
 - Trigger overlaps between skills
@@ -168,8 +168,8 @@ This step optionally backs up to Google Drive:
 | Step | User Action | What Claude Does |
 |------|-------------|------------------|
 | 1 | Confirm changes | Invoke /retrospective → update skills if approved |
-| 2 | Confirm improvements | Invoke /prompt-reviewer → improve docs if approved |
-| 3 | Confirm fixes | Invoke /skill-kit-auditor (Mode A) → apply fixes if approved |
+| 2 | Confirm improvements | Invoke /prompt-reviewer-en → improve docs if approved |
+| 3 | Confirm fixes | Invoke /skill-management (Mode A) → apply fixes if approved |
 | 4 | None (automatic) | Invoke /handoff → write .agents/handoff/*.md, commit, push to GitHub |
 | 5 | None (automatic) | Write handoff to temp file, copy to G:\My Drive\claude projects\ |
 
@@ -209,7 +209,7 @@ This step optionally backs up to Google Drive:
 | "No learnings found" | Short session or no corrections | Normal — skill continues to Step 4 |
 | Step 4 fails | Git or GitHub issue | Check git status, verify GitHub connection |
 | Step 5 fails | Google Drive folder not accessible | Ensure `G:\My Drive\claude projects\` exists and has write permissions |
-| Whole sequence stuck | Skills not found | Ensure `/retrospective`, `/prompt-reviewer`, `/skill-kit-auditor` exist |
+| Whole sequence stuck | Skills not found | Ensure `/retrospective`, `/prompt-reviewer-en`, `/skill-management` exist |
 
 ---
 

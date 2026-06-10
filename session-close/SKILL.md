@@ -7,7 +7,7 @@ description: "Automated 6-step session close: retrospective + prompt review + sk
 
 Automated 6-step workflow. Steps 1-3 require user confirmation; Steps 4-6 run automatically.
 
-**Execution sequence:** Retrospective → Prompt Reviewer → Skill Management → Handoff → Bootstrap Sync
+**Execution sequence:** Retrospective → Prompt Reviewer → Skill Management → Handoff → Google Drive Backup → Bootstrap Sync
 
 ---
 
@@ -19,7 +19,8 @@ Closes your session completely in one command. Executes all 6 steps automaticall
 2. **Prompt Reviewer** — Review and improve updated skills  
 3. **Skill Management** — Full audit of the skill kit (redundancies, structure, circular flows)
 4. **Handoff** — Write `.agents/handoff/YYYY-MM-DD-<topic>.md`, commit, push to GitHub
-5. **Bootstrap Sync** (Automatic) — Run `sync.ps1` in `claude-bootstrap` to push latest config + memory to GitHub
+5. **Google Drive Backup** (Automatic) — Copy the handoff document to `G:\My Drive\claude projects\` if the folder exists
+6. **Bootstrap Sync** (Automatic) — Run `sync.ps1` in `claude-bootstrap` to push latest config + memory to GitHub
 
 All steps run sequentially. Each step completes before the next begins.
 
@@ -69,7 +70,8 @@ When `/session-close` is invoked, execute all 6 steps automatically:
 2. Invoke `/prompt-reviewer` → ask user to confirm improvements  
 3. Invoke `/skill-management` → it asks audit mode first (Modo A: kit completo / Modo B: skill individual) per its own Paso 0 — let that question surface, then show results and ask user to confirm fixes
 4. Invoke `/handoff` → write `.agents/handoff/YYYY-MM-DD-<topic>.md`, commit, push to GitHub (automatic)
-5. Run bootstrap sync (automatic):
+5. Copy the handoff document to Google Drive (automatic): if `G:\My Drive\claude projects\` exists, write the handoff to a temp file, copy it there, then delete the temp file. Skip silently if the folder doesn't exist.
+6. Run bootstrap sync (automatic):
    ```powershell
    Push-Location "$env:USERPROFILE\claude-bootstrap"; .\sync.ps1; Pop-Location
    ```
