@@ -1,5 +1,6 @@
 {
   "buildCommand": null,
   "outputDirectory": null,
-  "framework": null
+  "framework": null,
+  "ignoreCommand": "exit 0"
 }
