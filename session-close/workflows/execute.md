@@ -1,6 +1,6 @@
 # Session Close — Complete Execution Flow
 
-When you invoke `/session-close`, Claude executes all 6 steps in sequence. Steps 1-3 require your confirmation; Steps 4-6 run automatically.
+When you invoke `/session-close`, Claude executes 3 steps in sequence. Steps 1-2 require your confirmation; Step 3 runs automatically.
 
 ---
 
@@ -12,28 +12,15 @@ When you invoke `/session-close`, Claude executes all 6 steps in sequence. Steps
 Step 1: Invoke /retrospective
   Show learnings → [USER: confirm?] → continue
   ↓
-Step 2: Invoke /prompt-reviewer-en  
-  Show improvements → [USER: confirm?] → continue
-  ↓
-Step 3: Audit the skill kit against skill-management's checklist
+Step 2: Audit the skill kit against skill-management's checklist
   Show audit issues → [USER: confirm?] → continue
   ↓
-Step 4: Invoke /handoff (automatic)
+Step 3: Invoke /handoff (automatic)
   Write .agents/handoff/YYYY-MM-DD-<topic>.md
   git commit + push to GitHub
   Display handoff in chat
   ↓
-Step 5: Copy handoff to Google Drive (automatic)
-  Write handoff content to temp file locally
-  Copy to G:\My Drive\claude projects\ using cp
-  Delete temp file
-  Display completion
-  ↓
-Step 6: Bootstrap sync (automatic)
-  Push-Location claude-bootstrap; .\sync.ps1; Pop-Location
-  Copies ~/.claude/ config + memory to GitHub
-  ↓
-✓ DONE — All 6 steps complete, session backed up
+DONE — session backed up to GitHub
 ```
 
 ---
@@ -56,33 +43,15 @@ Claude invokes `/retrospective` which scans the conversation for:
 
 ---
 
-## STEP 2: Prompt Reviewer (Show Results + Confirm)
+## STEP 2: Skill Management Audit (Show Results + Confirm)
 
-Claude invokes `/prompt-reviewer-en` which reviews skills (updated ones from Step 1, or all if none updated) for:
-- Clarity issues in documentation
-- Missing edge cases
-- Effectiveness gaps
-- Completeness of instructions
-
-**Output:** List of 1-3 improvement suggestions
-
-**Claude asks you:** "Apply these improvements? (YES/NO)"
-
-**Your response determines:** Whether to improve docs or skip
-
-**Then continues to Step 3**
-
----
-
-## STEP 3: Skill Management Audit (Show Results + Confirm)
-
-Claude audits the full skill kit directly, using the checklist in `skill-management/SKILL.md` as the rubric. No separate audit-mode skill is invoked.
+Claude audits the full skill kit directly, using the checklist in `skill-management/SKILL.md` as the rubric.
 
 Audits the full skill kit for:
 - Trigger overlaps between skills
 - Duplicate content across skills
-- Circular flows and missing steps
-- Structure and design principle violations (18 criteria)
+- Oversized SKILL.md files (>50 lines)
+- Structure violations and missing steps
 
 **Output:** Prioritized issue table (CRITICAL / HIGH / MEDIUM / NOTE)
 
@@ -90,11 +59,11 @@ Audits the full skill kit for:
 
 **Your response determines:** Whether to apply fixes or skip
 
-**Then continues to Step 4**
+**Then continues to Step 3**
 
 ---
 
-## STEP 4: Handoff (Fully Automatic)
+## STEP 3: Handoff (Fully Automatic)
 
 Claude invokes `/handoff` via `Skill("handoff")` tool call (NOT inline text generation) which automatically:
 
@@ -119,47 +88,7 @@ Claude invokes `/handoff` via `Skill("handoff")` tool call (NOT inline text gene
 - GitHub: committed and pushed to origin/main
 - Any machine with the repo cloned can pull and resume from this point
 
-**Output:** 
-- Document displayed in chat
-- Confirmation: "Handoff saved to .agents/handoff/..., committed and pushed."
-
 **No user confirmation needed.**
-
-**Then continues to Step 5**
-
----
-
-## STEP 5: Google Drive Backup (Fully Automatic)
-
-**Mandatory step (always executes):** Attempt to backup the handoff document to Google Drive. The document is already safely in:
-- Clipboard (from Step 4)
-- GitHub (from Step 4 git commit)
-
-This step optionally backs up to Google Drive:
-
-1. Takes the handoff document from clipboard (already in memory from Step 4)
-2. **If `G:\My Drive\claude projects\` exists:**
-   - Writes temp file to disk
-   - Copies to Google Drive backup folder
-   - Deletes temp file
-   - Google Drive Desktop auto-syncs (5-10 seconds)
-3. **If folder doesn't exist:**
-   - Skip silently or show optional message
-   - Session close still completes successfully
-
-**Storage after Step 5:**
-- Clipboard: ✓ Document ready to paste (Ctrl+V)
-- GitHub: ✓ Automatic commit from Step 4
-- Google Drive: ✓ Optional backup (if folder exists)
-
-**Output:** "✓ Handoff backed up to Google Drive" (or silent skip)
-
-**No user confirmation needed**
-
-**If Google Drive folder doesn't exist:**
-- **Do NOT create files** — just skip
-- Session close still completes successfully
-- Handoff is already safe in clipboard and GitHub
 
 ---
 
@@ -168,37 +97,28 @@ This step optionally backs up to Google Drive:
 | Step | User Action | What Claude Does |
 |------|-------------|------------------|
 | 1 | Confirm changes | Invoke /retrospective → update skills if approved |
-| 2 | Confirm improvements | Invoke /prompt-reviewer-en → improve docs if approved |
-| 3 | Confirm fixes | Audit kit against skill-management checklist → apply fixes if approved |
-| 4 | None (automatic) | Invoke /handoff → write .agents/handoff/*.md, commit, push to GitHub |
-| 5 | None (automatic) | Write handoff to temp file, copy to G:\My Drive\claude projects\ |
+| 2 | Confirm fixes | Audit kit against skill-management checklist → apply fixes if approved |
+| 3 | None (automatic) | Invoke /handoff → write .agents/handoff/*.md, commit, push to GitHub |
 
 ---
 
 ## Timing & Expectations
 
 - **Step 1:** 2-3 minutes (scans conversation)
-- **Step 2:** 2-3 minutes (reviews documentation)
-- **Step 3:** 1-2 minutes (audits structure)
-- **Step 4:** 1-2 minutes (generates handoff & commits)
-- **Step 5:** 5-10 seconds (copies to Google Drive folder)
-- **Total:** ~10 minutes for complete session close
+- **Step 2:** 1-2 minutes (audits structure)
+- **Step 3:** 1-2 minutes (generates handoff & commits)
+- **Total:** ~5 minutes for complete session close
 
 ---
 
 ## What Gets Backed Up
 
-**Git backup (GitHub — primary):**
+**Git backup (GitHub — primary and only):**
 - `.agents/handoff/YYYY-MM-DD-<topic>.md` committed and pushed
 - Any machine with the repo cloned can pull and resume
 
-**Cloud backup (Google Drive — optional):**
-- `G:\My Drive\claude projects\handoff-[YYYY-MM-DD].md`
-- Automatically synced by Google Drive Desktop
-
-**Bootstrap backup (config + memory):**
-- `~/.claude/` config, skills, and memory pushed to `claude-bootstrap` repo
-- Restores full Claude environment on any new machine
+**Config + memory backup:**
+- Handled separately by `claude-bootstrap` (run its own sync when you want to push `~/.claude/` config/memory updates)
 
 ---
 
@@ -206,10 +126,9 @@ This step optionally backs up to Google Drive:
 
 | Problem | Cause | Solution |
 |---------|-------|----------|
-| "No learnings found" | Short session or no corrections | Normal — skill continues to Step 4 |
-| Step 4 fails | Git or GitHub issue | Check git status, verify GitHub connection |
-| Step 5 fails | Google Drive folder not accessible | Ensure `G:\My Drive\claude projects\` exists and has write permissions |
-| Whole sequence stuck | Skills not found | Ensure `/retrospective`, `/prompt-reviewer-en` exist |
+| "No learnings found" | Short session or no corrections | Normal — skill continues to Step 3 |
+| Step 3 fails | Git or GitHub issue | Check git status, verify GitHub connection |
+| Whole sequence stuck | Skills not found | Ensure `/retrospective` exists |
 
 ---
 
@@ -217,4 +136,3 @@ This step optionally backs up to Google Drive:
 
 1. **Open the project in VS Code** — CLAUDE.md auto-resume pulls the latest handoff from GitHub and asks if you want to continue
 2. **Or read manually** — Check `.agents/handoff/` for the most recent `.md` file
-3. **Optional: Check Google Drive** — Backup copy at `G:\My Drive\claude projects\` if Step 5 ran
