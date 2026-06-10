@@ -15,7 +15,7 @@ STEP 2: Invoke /prompt-reviewer-en
   → User confirms: "Apply improvements?" YES/NO
   → Continue to STEP 3
 
-STEP 3: Invoke /skill-management
+STEP 3: Audit the skill kit against skill-management's checklist
   → User confirms: "Apply fixes?" YES/NO
   → Continue to STEP 4
 

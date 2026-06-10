@@ -15,7 +15,7 @@ Step 1: Invoke /retrospective
 Step 2: Invoke /prompt-reviewer-en  
   Show improvements → [USER: confirm?] → continue
   ↓
-Step 3: Invoke /skill-management (Mode A — full kit)
+Step 3: Audit the skill kit against skill-management's checklist
   Show audit issues → [USER: confirm?] → continue
   ↓
 Step 4: Invoke /handoff (automatic)
@@ -76,7 +76,7 @@ Claude invokes `/prompt-reviewer-en` which reviews skills (updated ones from Ste
 
 ## STEP 3: Skill Management Audit (Show Results + Confirm)
 
-Claude invokes `/skill-management` in **Mode A** (full kit audit). When skill-management asks "Mode A or B?", respond **A** automatically — no need to wait for user input on mode selection.
+Claude audits the full skill kit directly, using the checklist in `skill-management/SKILL.md` as the rubric. No separate audit-mode skill is invoked.
 
 Audits the full skill kit for:
 - Trigger overlaps between skills
@@ -169,7 +169,7 @@ This step optionally backs up to Google Drive:
 |------|-------------|------------------|
 | 1 | Confirm changes | Invoke /retrospective → update skills if approved |
 | 2 | Confirm improvements | Invoke /prompt-reviewer-en → improve docs if approved |
-| 3 | Confirm fixes | Invoke /skill-management (Mode A) → apply fixes if approved |
+| 3 | Confirm fixes | Audit kit against skill-management checklist → apply fixes if approved |
 | 4 | None (automatic) | Invoke /handoff → write .agents/handoff/*.md, commit, push to GitHub |
 | 5 | None (automatic) | Write handoff to temp file, copy to G:\My Drive\claude projects\ |
 
@@ -209,7 +209,7 @@ This step optionally backs up to Google Drive:
 | "No learnings found" | Short session or no corrections | Normal — skill continues to Step 4 |
 | Step 4 fails | Git or GitHub issue | Check git status, verify GitHub connection |
 | Step 5 fails | Google Drive folder not accessible | Ensure `G:\My Drive\claude projects\` exists and has write permissions |
-| Whole sequence stuck | Skills not found | Ensure `/retrospective`, `/prompt-reviewer-en`, `/skill-management` exist |
+| Whole sequence stuck | Skills not found | Ensure `/retrospective`, `/prompt-reviewer-en` exist |
 
 ---
 
