@@ -28,29 +28,16 @@ Si `vercel.json` existe, repórtalo (no hace falta validar su contenido a fondo,
 
 Corre un `curl -sI` (o equivalente) contra la URL de produccion del proyecto para confirmar que esta respondiendo `200 OK` ANTES del deploy. Esto da una baseline para detectar si el proximo deploy rompe algo.
 
-## Paso 5 — Crear el flag de desbloqueo
-
-Si todos los checks anteriores pasan, crea/actualiza el archivo flag (vacio, solo importa el timestamp):
-
-```powershell
-New-Item -ItemType File -Path "C:\Users\andre\.claude\.preflight-passed" -Force | Out-Null
-```
-
-Confirma al usuario:
-- Que checks pasaron (repo.json, directorio, vercel.json, baseline de produccion).
-- Que el deploy esta desbloqueado por 60 minutos.
-- Recuerda que el flag se vence solo (el hook revisa `LastWriteTime < 60 min`).
-
-## Paso 6 — Resumen
+## Paso 5 — Resumen
 
 Da un resumen corto de:
-- Proyecto y directorio validados.
+- Proyecto y directorio validados (repo.json, directorio, vercel.json).
 - Baseline de produccion (status code).
 - Que comando `vercel` se puede correr ahora (build/--prod).
 
-No corras el deploy tu mismo en este paso — solo desbloquea. El usuario o el flujo principal decide cuando correr `vercel build` / `vercel --prod`.
+No corras el deploy tu mismo en este paso — solo valida. El usuario o el flujo principal decide cuando correr `vercel build` / `vercel --prod`.
 
-## Paso 7 — Post-push check (si el flujo incluye `git push origin main/master`)
+## Paso 6 — Post-push check (si el flujo incluye `git push origin main/master`)
 
 **Riesgo conocido:** si el proyecto tiene la integracion de GitHub de Vercel activa (deploys automaticos en push), un `git push` a `main`/`master` puede disparar un build automatico con deteccion de framework que **sobrescribe un deploy prebuilt** y rompe produccion (404). Esto paso el 2026-06-09 con MPD (`directory: "."` en `.vercel/repo.json`) y el 2026-06-10 con `lucca-tech-web` (proyecto standalone, push de `b553039`).
 
