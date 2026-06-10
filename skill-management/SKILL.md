@@ -24,6 +24,7 @@ Create maintainable, portable skills using a self-contained folder pattern. Keep
 - **Self-contained**: everything a skill needs lives in its own folder (templates, scripts, docs) — never in shared `.claude/templates/` or `.claude/scripts/`.
 - **Naming**: folder name = frontmatter `name:` (lowercase-with-hyphens). Main file is always `SKILL.md`. Workflows use descriptive names (`extract-data.md`, not `w1.md`).
 - **Storage**: project-specific skills go in `.claude/skills/`; reusable skills go in `~/.claude/skills/`.
+  - In this repo (which *is* `~/.claude/skills/`): skills at the **repo root** (e.g. `session-close/`, `handoff/`) are global, available in every project. Skills under **`.claude/skills/`** (e.g. `crear-skill/`, `deploy-preflight/`) are project-specific to this skill-creator project only.
 - **Skip the folder pattern** for micro-skills (<30 lines), always-needed context (use `AGENTS.md`/`CLAUDE.md`), or one-off prompts (use slash commands).
 
 ## Skill Detection Issues
@@ -40,5 +41,6 @@ If skills aren't showing up: check `.claude/skills/` for loose `.md` files mixed
 - [ ] `templates/` — all templates inside the skill folder
 - [ ] `docs/` — advanced/reference material only, not front-loaded
 - [ ] No loose `.md` files alongside folder-based skills
+- [ ] No mid-word line breaks or garbled text (sign of a corrupted save)
 
 If a skill passes these checks, it's maintainable.
