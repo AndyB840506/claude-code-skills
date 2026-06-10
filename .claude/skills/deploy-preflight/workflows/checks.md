@@ -16,6 +16,8 @@ Lee `c:\Users\andre\.claude\skills\.vercel\repo.json`. Para el proyecto que se v
 
 Si `directory` es `"."` o no coincide con el folder esperado, **STOP** — reporta el problema, no crees el flag, y pregunta al usuario si corrige el mapeo (no lo edites sin confirmacion si ya esta apuntado a un directorio especifico distinto al esperado, podria ser intencional).
 
+**Pitfall conocido:** nunca corras `vercel link --project X --yes` desde un subdirectorio de este monorepo — puede agregar una entrada corrupta a `.vercel/repo.json` (root) con `"directory": "."` para ese proyecto, causando que deploys posteriores suban el repo completo en vez del subdirectorio (esto le paso a BTQ el 2026-06-10). Si un proyecto necesita su propio link, crea `.vercel/project.json` directamente dentro de ese subdirectorio con el formato `{"projectId":..., "orgId":..., "projectName":...}` (ver `btq-production/website/.vercel/project.json` o `lucca-tech-web/.vercel/project.json` como ejemplo).
+
 ## Paso 3 — Verificar el directorio de deploy
 
 Confirma que el directorio (`<directory>` del paso 2) existe y contiene:
@@ -37,14 +39,15 @@ Da un resumen corto de:
 
 No corras el deploy tu mismo en este paso — solo valida. El usuario o el flujo principal decide cuando correr `vercel build` / `vercel --prod`.
 
-## Paso 6 — Post-push check (si el flujo incluye `git push origin main/master`)
+## Paso 6 — Estado actual: Git auto-deploy desconectado (MPD, BTQ, Lucca)
 
-**Riesgo conocido:** si el proyecto tiene la integracion de GitHub de Vercel activa (deploys automaticos en push), un `git push` a `main`/`master` puede disparar un build automatico con deteccion de framework que **sobrescribe un deploy prebuilt** y rompe produccion (404). Esto paso el 2026-06-09 con MPD (`directory: "."` en `.vercel/repo.json`) y el 2026-06-10 con `lucca-tech-web` (proyecto standalone, push de `b553039`).
+**Contexto:** un `git push` a `main`/`master` con la integracion de GitHub de Vercel activa puede disparar un build automatico con deteccion de framework que **sobrescribe un deploy prebuilt** y rompe produccion (404). Esto paso el 2026-06-09 con MPD (`directory: "."` en `.vercel/repo.json`) y el 2026-06-10 con `lucca-tech-web` (proyecto standalone, push de `b553039`) y con BTQ (ver pitfall de `vercel link` arriba).
 
-Si el flujo de esta sesion incluye un `git push` a `main`/`master` de un proyecto deployado via prebuilt:
+**Fix de raiz ya aplicado (2026-06-10):** los 3 proyectos (`v0-mr-putrids-den`/MPD, `website`/BTQ, `lucca-tech-web`) tienen el auto-deploy de GitHub **desconectado** (`vercel git disconnect`). `git push` a este repo ya NO dispara builds para ninguno de los tres. Los deploys a produccion son manuales: corre `vercel --prod --yes` desde el directorio del proyecto cuando haya cambios que publicar.
 
-1. Espera ~30-60s despues del push (el auto-deploy de Vercel tarda en correr).
-2. Corre `curl -sI` contra la URL de produccion del proyecto.
-3. Si el status cambio de `200` a `404`/error, **repite el deploy prebuilt** (recrea `.vercel/output/static` + `config.json`, `vercel deploy --prebuilt --prod --yes`) y re-apunta el alias con `vercel alias set`.
+Si en el futuro se agrega un proyecto nuevo deployado via prebuilt, aplica el mismo patron antes de confiar en deploys automaticos: `vercel git disconnect` y/o `"ignoreCommand": "exit 0"` en su `vercel.json`.
 
-**Fix de raiz (recomendado, requiere confirmacion del usuario):** para proyectos deployados via prebuilt, desactivar el auto-deploy de Vercel en la integracion de GitHub, o agregar `"ignoreCommand": "exit 0"` a `vercel.json` para que los builds disparados por push se salten. Sin esto, el problema se repetira en cada push a main/master.
+Si por algun motivo el auto-deploy se reconecta y un push rompe produccion (status `200`->`404`):
+
+1. Corre `curl -sI` contra la URL de produccion del proyecto para confirmar el 404.
+2. **Repite el deploy prebuilt** (recrea `.vercel/output/static` + `config.json`, `vercel deploy --prebuilt --prod --yes`) y re-apunta el alias con `vercel alias set`.
