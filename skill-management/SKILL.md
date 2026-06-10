@@ -26,6 +26,7 @@ Create maintainable, portable skills using a self-contained folder pattern. Keep
 - **Storage**: project-specific skills go in `.claude/skills/`; reusable skills go in `~/.claude/skills/`.
   - In this repo (which *is* `~/.claude/skills/`): skills at the **repo root** (e.g. `session-close/`, `handoff/`) are global, available in every project. Skills under **`.claude/skills/`** (e.g. `crear-skill/`, `deploy-preflight/`) are project-specific to this skill-creator project only.
 - **Skip the folder pattern** for micro-skills (<30 lines), always-needed context (use `AGENTS.md`/`CLAUDE.md`), or one-off prompts (use slash commands).
+- **No speculative bolt-ons**: before adding a new step to an existing workflow skill, confirm it's regularly used. Unconfirmed "automatic" steps tend to drift out of sync with the rest of the skill and cause recurring inconsistency bugs.
 
 ## Skill Detection Issues
 
