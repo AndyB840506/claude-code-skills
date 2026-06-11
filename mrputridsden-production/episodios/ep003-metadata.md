@@ -16,7 +16,7 @@ Andrés y Juan trazan la cadena completa: de los ritmos africanos que llegaron e
 Siguiente episodio: Salsa — de África al Caribe. La otra rama del mismo árbol.
 
 🎙️ Escúchanos en:
-   Spotify: https://open.spotify.com/show/[show-url-EP003]
+   Spotify: https://open.spotify.com/episode/3c5wrMaA5Yqp4TOFwHAf6Y
    Apple Podcasts: https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794
    Amazon Music: https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den
    + iHeart, Castbox, Pocket Casts y más
@@ -39,7 +39,7 @@ Sister Rosetta Tharpe, raíces del rock, blues, gospel, Robert Johnson, crossroa
 - **Hosts:** Andrés & Juan
 - **Duración real:** 1:04:17
 - **Fecha de producción:** 2026-06-05
-- **Fecha de publicación:** pendiente
+- **Fecha de publicación:** live (semana del 2026-06-02, fecha aproximada — verificar exacta en Spotify for Podcasters)
 - **Categoría Spotify:** Music / Music Commentary
 - **Idioma:** Español (Colombia)
 - **Pillar de contenido:** Historia de género

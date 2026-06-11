@@ -11,42 +11,23 @@ Conducts structured candidate screening interviews on behalf of a recruiter.
 - **Candidate** opens the same project → interview runs automatically
 - Output: **fit verdict + full markdown report** saved as `report-[name]-[date].md`
 
----
+## Workflow
 
-## Quick Start
+On invocation, check if `job-config.json` exists:
 
-The skill automatically detects mode by checking if `job-config.json` exists:
-
-- **No file** → Enter [RECRUITER MODE](workflows/recruiter-mode.md)
-- **File exists** → Enter [CANDIDATE MODE](workflows/candidate-interview.md)
-
----
-
-## Workflows
-
-1. **recruiter-mode** — Configure the position (must-haves, culture, compensation)
-2. **candidate-interview** — Run the structured interview (~10–14 exchanges)
-3. **evaluation** — Score and generate fit verdict + full report
-
----
-
-## Output Files
-
-- `job-config.json` — Position configuration (created by recruiter)
-- `report-[name]-[YYYY-MM-DD].md` — Full screening report (created after candidate interview)
-
----
+- **No file** → [Recruiter Mode](workflows/recruiter-mode.md) — configure the position
+  (must-haves, culture, compensation)
+- **File exists** → [Candidate Interview](workflows/candidate-interview.md) — run the
+  structured interview (~10–14 exchanges), then **evaluation** scores it and generates
+  the fit verdict + full report
 
 ## Core Principles
 
-Never invents data. Never reveals evaluation criteria to candidate. Warm, human tone. Adapts language automatically (Spanish/English). Flags dealbreakers clearly. Evidence-based recommendations.
+Never invents data. Never reveals evaluation criteria to candidate. Warm, human tone.
+Adapts language automatically (Spanish/English). Flags dealbreakers clearly.
+Evidence-based recommendations.
 
-See [Evaluation Rubric](docs/evaluation-rubric.md) and [Report Template](templates/report-template.md).
+## Reference
 
----
-
-## EXECUTION
-
-Cuando se invoca `/smart-recruiter`, verificar si existe `job-config.json`:
-- Si NO existe → entrar en [Recruiter Mode](workflows/recruiter-mode.md)
-- Si existe → entrar en [Candidate Interview](workflows/candidate-interview.md)
+- `docs/evaluation-rubric.md` — scoring rubric
+- `templates/report-template.md` — report format
