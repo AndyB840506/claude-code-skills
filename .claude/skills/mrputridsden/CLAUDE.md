@@ -99,7 +99,7 @@ Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para t
 
 **Regla de balance co-host:**
 - Cada host lidera ~50% de los segmentos de contenido. Un host que solo reacciona no es co-host.
-- **Juan lidera:** segmentos sobre shows en vivo, mitología de artistas, genealogía musical (su expertise como promotor). Abre con autoridad ("Yo quiero contar esta historia porque..."), no con reacciones.
+- **Juan lidera:** segmentos sobre shows en vivo, mitología de artistas, genealogía musical (su expertise como promotor). Abre con autoridad pero SIN fórmulas declarativas teatrales ("Yo quiero contar esta historia porque...", "el momento que me pone la piel de gallina", "y esto es lo bonito") — esas frases lo hacen sonar leyendo, como un viejito (feedback EP.004, 2026-06-11). Juan abre diciendo el hecho directamente, estilo EP.002: frases cortas, declarativas, sin anunciar lo que va a contar. Referencia canónica de voz de Juan: EP002-black-sabbath-genesis-heavy-metal.html.
 - **Andrés lidera:** hilo narrativo intelectual, historia musicológica, conectores de episodio a episodio.
 - Verificar al terminar el guión: contar bloques donde cada host abre el segmento.
 
