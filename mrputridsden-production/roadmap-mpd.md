@@ -9,8 +9,8 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 |---|---|---|
 | EP.001 | Bienvenidos a la Guarida | publicado |
 | EP.002 | Black Sabbath: El Génesis del Heavy Metal | publicado |
-| EP.003 | Las raíces del rock: Sister Rosetta Tharpe | guion listo — v2 completo, próximo a grabar |
-| EP.004 | Salsa: de África al Caribe | en roadmap — conecta directamente con EP.003 |
+| EP.003 | Las raices del rock: Sister Rosetta Tharpe | publicado - rendimiento bajo vs EP.002 (ver nota de audiencia) |
+| EP.004 | Kraken: el Titan del Rock colombiano | guion listo - grabacion 2026-06-12 |
 
 ---
 
@@ -21,3 +21,19 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
   producción activa (no listar los 11 de una vez para no quedar desactualizado).
 - Mantener esta tabla actualizada manualmente o vía `episode-pipeline` — es la fuente
   que Stage A consulta para decidir cuál episodio sigue.
+
+---
+
+## Regla de audiencia (aprendida EP.003, 2026-06-11)
+
+EP.003 (Sister Rosetta Tharpe, musicologia/raices) rindio por debajo de EP.002
+(Black Sabbath, banda iconica). Leccion aplicada desde EP.004:
+
+- **El ancla de cada episodio es una banda o artista con nombre reconocible
+  para la audiencia metalera/rockera.** La musicologia y la genealogia van
+  DENTRO del episodio como contexto, no como tema titular.
+- Bandas locales/latinas con peso historico (Kraken, etc.) conectan doble:
+  identidad + nostalgia.
+- Antes de fijar el siguiente episodio del roadmap: revisar plays de Spotify
+  del episodio anterior (checkpoint post-launch, ~1-2 semanas despues de
+  publicar) y registrar el dato en esta tabla.

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EP.004: Kraken — El Titán del Rock Colombiano | Mr. Putrid's Den</title>
+<style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ebebeb;
+            color: #1e1e1e;
+            line-height: 1.75;
+            font-size: 15px;
+        }
+
+        .container { max-width: 780px; margin: 0 auto; background: white; }
+
+        .header {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 44px;
+            border-bottom: 5px solid #9B1C1C;
+        }
+
+        .header .podcast { font-size: 0.85em; color: #FF8C00; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+        .header h1 { font-size: 1.9em; font-weight: 900; margin-bottom: 6px; }
+        .header .tagline { color: #FFD700; font-style: italic; font-size: 1em; margin-bottom: 20px; }
+
+        .meta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
+        .meta-item {
+            background: rgba(155,28,28,0.2);
+            border: 1px solid #9B1C1C;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            color: #FFD700;
+        }
+
+        .section { padding: 28px 44px; border-bottom: 1px solid #eee; }
+
+        .section h2 {
+            font-size: 0.72em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #9B1C1C;
+            margin-bottom: 18px;
+            padding-bottom: 7px;
+            border-bottom: 2px solid #9B1C1C;
+        }
+
+        .segment { margin: 36px 0; padding-bottom: 24px; border-bottom: 1px solid #f0f0f0; }
+        .segment:last-child { border-bottom: none; }
+
+        .segment-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .segment-number {
+            background: #9B1C1C;
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75em;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .segment-title {
+            font-weight: 700;
+            font-size: 0.95em;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.78em;
+            color: #aaa;
+            background: #f5f5f5;
+            padding: 2px 10px;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+
+        .sfx {
+            background: #1a1a1a;
+            color: #FFD700;
+            padding: 11px 16px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.88em;
+            margin: 14px 0;
+        }
+
+        /* Diálogo limpio — sin fondos */
+        .host-block {
+            margin: 18px 0;
+            padding: 0 0 0 18px;
+            border-left: 3px solid #ddd;
+        }
+
+        .host-block.juan {
+            border-left-color: #b0cce4;
+        }
+
+        .host-name {
+            font-weight: 800;
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #9B1C1C;
+            margin-bottom: 6px;
+        }
+
+        .host-block.juan .host-name { color: #2C5F8A; }
+
+        .host-text {
+            font-size: 1em;
+            line-height: 1.85;
+            color: #2a2a2a;
+        }
+
+        /* Intercambio — borde sutil, fondo casi blanco */
+        .intercambio {
+            background: #f6faf2;
+            border-left: 3px solid #6aaa44;
+            border-radius: 0 4px 4px 0;
+            padding: 14px 18px;
+            margin: 18px 0;
+            font-size: 0.92em;
+            color: #2a3a1a;
+        }
+
+        .intercambio::before {
+            content: "INTERCAMBIO";
+            display: block;
+            font-weight: 800;
+            font-size: 0.7em;
+            letter-spacing: 2px;
+            color: #5a8a3a;
+            margin-bottom: 8px;
+        }
+
+        /* Dato — fondo crema claro */
+        .dato {
+            background: #fdfaf3;
+            color: #3a3018;
+            padding: 14px 18px;
+            border-radius: 4px;
+            margin: 16px 0;
+            border-left: 4px solid #c8a830;
+        }
+
+        .dato-label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #9a7a10;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        /* Leyenda — fondo lavanda claro */
+        .leyenda {
+            background: #faf5ff;
+            color: #2e1a2e;
+            padding: 14px 18px;
+            border-radius: 4px;
+            margin: 16px 0;
+            border-left: 4px solid #9B1C1C;
+        }
+
+        .leyenda-label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #7a1a7a;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        /* Recomendacion — fondo verde muy claro */
+        .recomendacion {
+            background: #f3faf3;
+            color: #1a2e1a;
+            padding: 14px 18px;
+            border-radius: 4px;
+            margin: 16px 0;
+            border-left: 4px solid #5a8a3a;
+        }
+
+        .recomendacion-label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #3a6a1a;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        /* Promo — fondo azul muy claro */
+        .promo {
+            background: #f3f7fd;
+            color: #1a1e2e;
+            padding: 14px 18px;
+            border-radius: 4px;
+            margin: 16px 0;
+            border-left: 4px solid #2C5F8A;
+        }
+
+        .promo-label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #1a4a7a;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .nota-produccion {
+            background: #fffaed;
+            border: 1px solid #e0bb3a;
+            border-radius: 4px;
+            padding: 9px 14px;
+            margin: 10px 0;
+            font-size: 0.84em;
+            color: #5a4a10;
+        }
+
+        .nota-produccion::before {
+            content: "NOTA PRODUCCIÓN: ";
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .arquitectura { font-size: 0.88em; }
+        .arq-row {
+            display: grid;
+            grid-template-columns: 26px 170px 85px 1fr;
+            gap: 10px;
+            padding: 7px 0;
+            border-bottom: 1px solid #f0f0f0;
+            align-items: start;
+        }
+        .arq-num { color: #9B1C1C; font-weight: bold; }
+        .arq-seg { font-weight: 600; }
+        .arq-time { color: #aaa; font-family: monospace; }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Mr. Putrid's Den</div>
+        <h1>EP.004: Kraken — El Titán del Rock Colombiano</h1>
+        <div class="tagline">La banda que se atrevió a cantar metal en español cuando nadie creía que se podía</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 004</span>
+            <span class="meta-item">Análisis Profundo</span>
+            <span class="meta-item">Heavy Metal Colombiano</span>
+            <span class="meta-item">~60 min</span>
+            <span class="meta-item">Co-host</span>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row" style="color:#9B1C1C; font-weight:bold;">
+                <span class="arq-num">#</span>
+                <span class="arq-seg">Segmento</span>
+                <span class="arq-time">Tiempo</span>
+                <span>Contenido</span>
+            </div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Intro music</span><span class="arq-time">00:00</span><span>Stevie Ray + BLS — fade out</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Bienvenida</span><span class="arq-time">00:30</span><span>Andrés conecta desde EP.003: de las raíces del rock al rock con raíces nuestras. [INTERCAMBIO]</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Medellín, 1984</span><span class="arq-time">04:00</span><span>JUAN lidera: la ciudad más dura del continente pare una banda de metal. Teatro Lux, 980 personas.</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">El Idioma del Rock</span><span class="arq-time">14:00</span><span>JUAN: el manifiesto — metal en español cuando todos cantaban en inglés. [INTERCAMBIO: primer contacto con Kraken]</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">Vestido de Cristal</span><span class="arq-time">24:00</span><span>ANDRÉS lidera: Kraken I, II y el #1 que cruzó océanos. La polémica de los teclados. Kraken III.</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">El Titán</span><span class="arq-time">38:00</span><span>JUAN lidera: la batalla final de Elkin, "Sobre esta tierra", el Teatro Lido, el legado vivo.</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">La Guarida Recomienda</span><span class="arq-time">48:00</span><span>Puerta de entrada: canción, álbum, documental.</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">Promoción</span><span class="arq-time">52:00</span><span>Juan — eventos próximos (PENDIENTE: eventos reales).</span></div>
+            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Takeaway</span><span class="arq-time">55:00</span><span>"Todo hombre es una historia" — hacer lo tuyo en tu idioma.</span></div>
+            <div class="arq-row"><span class="arq-num">10</span><span class="arq-seg">Outro music</span><span class="arq-time">58:00</span><span>Jazz 1950s — despedida elegante</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- SEGMENTO 1 -->
+        <div class="segment">
+            <div class="segment-header">
+                <span class="segment-number">1</span>
+                <span class="segment-title">Intro Music</span>
+                <span class="segment-time">00:00 – 00:30</span>
+            </div>
+            <div class="sfx">▶ INTRO: Stevie Ray Vaughn meets Black Label Society — 30 seg, fade out al entrar voces</div>
+        </div>
+
+        <!-- SEGMENTO 2 -->
+        <div class="segment">
+            <div class="segment-header">
+                <span class="segment-number">2</span>
+                <span class="segment-title">Bienvenida — el hilo desde EP.003</span>
+                <span class="segment-time">00:30 – 04:00</span>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">Bienvenidos de vuelta a la Guarida. En el episodio pasado nos fuimos hasta las raíces: Sister Rosetta Tharpe, las blue notes, el árbol africano del que salió todo el rock. Y hoy quiero hacer algo que llevábamos tiempo debiendo: traer esa historia a casa. Porque el rock también echó raíces aquí, en este país, y la historia que vamos a contar hoy es probablemente la más grande de todas las que tiene el rock colombiano.</div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">Y no es exageración. Hoy hablamos de Kraken. Y yo le digo una cosa al que nos esté escuchando por primera vez: si usted es colombiano y le gusta el rock, esta banda está en su ADN aunque usted no lo sepa. Y si nos escucha desde otro país — quédese, porque esta es la historia de cómo se construye una leyenda sin permiso de nadie.</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">Kraken: el monstruo marino de las leyendas nórdicas. Pero en Colombia, Kraken significa otra cosa. Significa Elkin Ramírez. Significa "Vestido de Cristal" sonando en una emisora de Japón. Y significa una pregunta que me encanta: ¿cómo hace una banda de metal para nacer en la Medellín de 1984 — en plena guerra — y terminar siendo patrimonio emocional de un país entero?</div>
+            </div>
+
+            <div class="intercambio">
+                Juan: ¿tú te acuerdas de la primera vez que escuchaste el nombre "Kraken"? No la canción — el nombre. ¿Dónde estabas? — Dejar que fluya 1-2 minutos. Andrés remata: "Guarden esa imagen, porque al final del episodio vuelve."
+            </div>
+        </div>
+
+        <!-- SEGMENTO 3 -->
+        <div class="segment">
+            <div class="segment-header">
+                <span class="segment-number">3</span>
+                <span class="segment-title">Medellín, 1984 — lidera Juan</span>
+                <span class="segment-time">04:00 – 14:00</span>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">Yo quiero contar esta historia porque es la historia de un escenario. Y los que me conocen saben que para mí todo empieza y termina en un escenario. Medellín, 1984. Pongámonos en contexto, porque sin contexto esto no pesa lo que tiene que pesar: estamos hablando de una ciudad que estaba entrando en los años más oscuros de su historia. Violencia en las calles, miedo en las casas. Y en medio de eso, en junio de 1984, cinco músicos deciden fundar una banda de heavy metal.</div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">Dato — La formación original</div>
+                Kraken se funda en Medellín en junio de 1984: <strong>Elkin Ramírez</strong> (voz), <strong>Hugo Restrepo</strong> (guitarra líder), <strong>Jaime Tobón</strong> (guitarra rítmica), <strong>Jorge Atehortúa</strong> (bajo) y <strong>Gonzalo Vásquez</strong> (batería).
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">Y ahora el momento que a mí me pone la piel de gallina. 22 de septiembre de 1984. Teatro Lux, barrio Manrique. Ocho y media de la noche. Elkin Ramírez agarra el micrófono y presenta por primera vez en público el proyecto de su vida. ¿Saben cuánta gente había al frente? Novecientas ochenta personas. Una banda debutante. Sin disco. Sin radio. Sin nada. Novecientas ochenta personas en Manrique un sábado por la noche en 1984.</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">Eso es una locura. Para dimensionarlo: hay bandas hoy, con Spotify, con Instagram, con toda la maquinaria, que no meten 980 personas en su debut. Ellos lo hicieron con afiches y voz a voz, en una ciudad donde salir de noche era un acto de fe.</div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">Y eso te dice algo del público también. Esa gente no fue a ver una banda — fue a buscar un refugio. El metal en Medellín en los ochenta no era entretenimiento, era supervivencia emocional. Los pelados necesitaban un lugar donde el ruido de afuera se convirtiera en otra cosa. Y Kraken les construyó ese lugar.</div>
+            </div>
+
+            <div class="leyenda">
+                <div class="leyenda-label">Leyenda — El nombre</div>
+                El Kraken: el monstruo marino gigante de las leyendas escandinavas, capaz de hundir barcos enteros. Una banda que nace en una ciudad hundida en violencia y se pone el nombre del monstruo que hunde — pero lo voltea: acá el monstruo no destruye, carga a la gente encima.
+            </div>
+        </div>
+
+        <!-- SEGMENTO 4 -->
+        <div class="segment">
+            <div class="segment-header">
+                <span class="segment-number">4</span>
+                <span class="segment-title">El Idioma del Rock — lidera Juan</span>
+                <span class="segment-time">14:00 – 24:00</span>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">Ahora viene la decisión que para mí define a Kraken más que cualquier riff. En 1984, si usted quería ser una banda de metal "seria", cantaba en inglés. Punto. Era la regla no escrita: el metal se cantaba en el idioma de Iron Maiden y de Judas Priest, así el cantante no supiera ni pedir agua en inglés. ¿Y qué hizo Elkin? Dijo no. Nosotros cantamos en español. En NUESTRO idioma.</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">Y eso convirtió a Kraken en la primera banda nacional en hacer heavy metal con letras en español. La verdad es que es fácil decirlo hoy, pero en ese momento era casi un suicidio comercial. Te cerraba las puertas del circuito "internacional" y te exponía a la burla de los puristas locales que pensaban que el metal en español sonaba a chiste.</div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">Y la respuesta de Elkin a eso fue una canción que es básicamente un manifiesto: "El Idioma del Rock". O sea, el man no solo tomó la decisión — escribió una canción defendiendo la decisión. Eso es tener una convicción y subirla al escenario.</div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">Dato — Los primeros sencillos</div>
+                Entre 1986 y 1987 Kraken lanza sus primeras composiciones originales en sencillo: <strong>"Todo Hombre es una Historia"</strong> y <strong>"Muere Libre"</strong>. En octubre de 1987 llega el primer álbum, <strong>"Kraken"</strong> (conocido como Kraken I), con "El Idioma del Rock" como bandera.
+            </div>
+
+            <div class="intercambio">
+                Andrés pregunta: ¿cuál fue TU primera canción de Kraken, y dónde la escuchaste? — Anécdota personal de cada uno (radio, casete prestado, concierto, un hermano mayor...). Dejar fluir 3-4 minutos. Este es el momento emocional del bloque: la conexión personal antes de entrar a la discografía.
+            </div>
+        </div>
+
+        <!-- SEGMENTO 5 -->
+        <div class="segment">
+            <div class="segment-header">
+                <span class="segment-number">5</span>
+                <span class="segment-title">Vestido de Cristal — lidera Andrés</span>
+                <span class="segment-time">24:00 – 38:00</span>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">Bueno, ahora déjenme contarles cómo esta banda pasó de Manrique al mundo, porque la progresión musical de Kraken es de las más interesantes del rock latino. Kraken I, 1987: heavy metal directo, crudo, declarativo. Funciona, suena en la escena, la banda crece. Pero el salto viene en 1989 con Kraken II. Y ese salto vino con una polémica deliciosa: metieron teclados.</div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">Uy, los puristas. Me imagino la pelea. "¿Teclados en una banda de metal? ¡Vendidos!" — esa discusión es tan vieja como el género.</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">Exactamente la que te imaginas. Pero lo que pasa es que esa decisión "impura" produjo la canción más importante de la historia del rock colombiano: "Vestido de Cristal". Primer número uno de la banda en Colombia. Primera vez que una canción de metal hecho en casa le gana a la música comercial en las emisoras juveniles del país.</div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">Dato — El alcance de "Vestido de Cristal"</div>
+                Entre 1989 y 1990, "Vestido de Cristal" fue #1 en las principales emisoras juveniles de Colombia y cruzó fronteras: sonó en radios de <strong>España, Holanda, Alemania, Italia, Japón</strong> y en emisoras de música latina en <strong>Estados Unidos</strong>. Una balada metalera cantada en español, compuesta en Medellín, dándole la vuelta al mundo sin internet.
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">Y aquí está la lección musicológica del episodio, para amarrarla con lo que venimos hablando desde el episodio de Tharpe: los géneros no se mantienen puros, se mantienen vivos. Kraken II demostró que podías ser pesado y melódico, visceral y poético al mismo tiempo. Y en 1990 doblaron la apuesta con Kraken III: un disco más progresivo, más ambicioso, con "Rostros Ocultos" sosteniéndose semanas en los primeros lugares del airplay.</div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">Tres discos en cuatro años, cada uno distinto al anterior, y la base de fans creciendo en vez de fragmentarse. Eso casi no pasa. Eso es una banda que confía en su público.</div>
+            </div>
+
+            <div class="leyenda">
+                <div class="leyenda-label">Leyenda — Por qué "el Titán"</div>
+                A Elkin Ramírez se le conoce como <strong>"el Titán del Rock"</strong>: por la potencia de su registro vocal, sí, pero sobre todo por la coherencia — décadas sosteniendo un proyecto artístico en un país sin industria para el metal, sin ceder ni al mercado ni a la moda. El apodo se volvió tan canónico que así se llama el documental de RTVC sobre su vida (2024).
+            </div>
+        </div>
+
+        <!-- SEGMENTO 6 -->
+        <div class="segment">
+            <div class="segment-header">
+                <span class="segment-number">6</span>
+                <span class="segment-title">El Titán — lidera Juan</span>
+                <span class="segment-time">38:00 – 48:00</span>
+            </div>
+
+            <div class="nota-produccion">Este bloque es el más emocional del episodio. Bajar la energía, sin solemnidad forzada. Es una despedida entre amigos, no un obituario.</div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">Yo quiero contar esta parte porque creo que es donde la historia de Kraken deja de ser historia musical y se vuelve otra cosa. A Elkin le detectaron un tumor cerebral. Y aquí viene el detalle que a mí me parte: estando ya gravemente enfermo, el man se metió al estudio y grabó un disco. "Sobre esta tierra". Su último álbum. Grabado contra el reloj, contra el cuerpo, contra todo.</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">¿Usted se imagina? El mismo hombre que en el 84 decidió cantar en español contra la corriente, en sus últimos años decide que ni el diagnóstico le quita el estudio de grabación. Es la misma decisión, treinta años después: nadie me dice cuándo parar.</div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">Elkin murió el 29 de enero de 2017, en Medellín, rodeado de su familia. En los últimos días ya no podía comunicarse con palabras, pero la gente que estuvo ahí cuenta que entendía cada gesto, cada mensaje de cariño que llegaba de todo el país. Y luego vino la despedida: cientos de personas en el Teatro Lido de Medellín, gente que viajó desde Bogotá y desde todo el país, y una procesión hasta el cementerio Campos de Paz entre cantos. Una ciudad despidiendo a su monstruo marino.</div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">Pero ojo — y esto es lo bonito — el Kraken no se hundió. La familia de Elkin y los músicos decidieron seguir, y desde 2019 la banda tiene una nueva voz: Roxana Restrepo. Y en 2025 Kraken estaba girando por España. Cuarenta años después del Teatro Lux, la banda sigue subiéndose a escenarios al otro lado del océano.</div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">Dato — El legado en pantalla</div>
+                Dos documentales mantienen viva la historia: <strong>"Huella y Camino: Kraken, la historia"</strong> (2020) y <strong>"El Titán"</strong> (2024, RTVC) — este último disponible en RTVCPlay, gratis.
+            </div>
+        </div>
+
+        <!-- SEGMENTO 7 -->
+        <div class="segment">
+            <div class="segment-header">
+                <span class="segment-number">7</span>
+                <span class="segment-title">La Guarida Recomienda</span>
+                <span class="segment-time">48:00 – 52:00</span>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">Para el que llegó hasta aquí sin haber escuchado nunca a Kraken, su puerta de entrada en tres pasos.</div>
+            </div>
+
+            <div class="recomendacion">
+                <div class="recomendacion-label">Recomendación — Puerta de entrada</div>
+                <strong>La canción:</strong> "Vestido de Cristal" — el punto exacto donde el metal colombiano se volvió de todos.<br>
+                <strong>El álbum:</strong> Kraken II (1989) — el salto creativo, la polémica de los teclados, la consagración.<br>
+                <strong>El documental:</strong> "El Titán" (RTVCPlay, 2024) — la vida de Elkin contada completa, gratis y legal.
+            </div>
+
+            <div class="intercambio">
+                Cada uno agrega su "pick personal" fuera de la lista oficial: una canción de Kraken que les guste por razones propias. Sin guion — honesto y rápido.
+            </div>
+        </div>
+
+        <!-- SEGMENTO 8 -->
+        <div class="segment">
+            <div class="segment-header">
+                <span class="segment-number">8</span>
+                <span class="segment-title">Segmento de Promoción — Juan</span>
+                <span class="segment-time">52:00 – 55:00</span>
+            </div>
+
+            <div class="nota-produccion">PENDIENTE: eventos.json solo tiene eventos de EJEMPLO. Juan: pasar 1-2 eventos reales antes de grabar, o grabar el segmento como recomendación general de apoyar la escena local.</div>
+
+            <div class="promo">
+                <div class="promo-label">Promoción — Eventos próximos</div>
+                [JUAN — eventos reales de la semana: nombre, artistas, fecha, lugar, dónde comprar boletas. Cierre sugerido: "Y ya saben — si esta historia de Kraken les enseñó algo, es que las leyendas empiezan en escenarios pequeños. Vayan a verlas nacer."]
+            </div>
+        </div>
+
+        <!-- SEGMENTO 9 -->
+        <div class="segment">
+            <div class="segment-header">
+                <span class="segment-number">9</span>
+                <span class="segment-title">Takeaway — cierre</span>
+                <span class="segment-time">55:00 – 58:00</span>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">Cerremos con la frase que Elkin nos dejó a todos, el título de aquel primer sencillo del 86: "Todo hombre es una historia". Y la historia de Kraken deja una herramienta que sirve para la música y para la vida: lo que usted tenga que hacer, hágalo en su idioma. Literal y figurado. En el 84 todo el mundo sabía que el metal "serio" se cantaba en inglés — todo el mundo menos cinco tipos de Medellín. Y los cinco tipos tenían razón.</div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">Y mi remate es este: 980 personas en el Teatro Lux. Antes del disco, antes de la radio, antes de todo. El público sabe primero. Así que apoye a su banda local — puede que esté viendo el primer capítulo de la próxima leyenda. Gracias por acompañarnos en la Guarida. Nos vemos en la próxima.</div>
+            </div>
+        </div>
+
+        <!-- SEGMENTO 10 -->
+        <div class="segment">
+            <div class="segment-header">
+                <span class="segment-number">10</span>
+                <span class="segment-title">Outro Music</span>
+                <span class="segment-time">58:00 – 60:00</span>
+            </div>
+            <div class="sfx">▶ OUTRO: Jazz 1950s estilo Billie Holiday — "Sweet dreams, until we meet" — fade out completo</div>
+        </div>
+
+    </div>
+
+    <!-- VERIFICACIÓN DE BALANCE -->
+    <div class="section">
+        <h2>Verificación de Balance Co-host</h2>
+        <div class="arquitectura">
+            <div class="arq-row"><span class="arq-num">A</span><span class="arq-seg">Andrés abre/lidera</span><span class="arq-time">3 bloques</span><span>Bienvenida (2) · Vestido de Cristal (5) · Takeaway (9)</span></div>
+            <div class="arq-row"><span class="arq-num">J</span><span class="arq-seg">Juan abre/lidera</span><span class="arq-time">4 bloques</span><span>Medellín 1984 (3) · El Idioma del Rock (4) · El Titán (6) · Promoción (8)</span></div>
+            <div class="arq-row"><span class="arq-num">=</span><span class="arq-seg">Compartidos</span><span class="arq-time">2</span><span>La Guarida Recomienda (7) · Intercambios (2, 4, 7)</span></div>
+        </div>
+        <div class="nota-produccion">Juan lidera los bloques de escenario/mitología/genealogía (su expertise como promotor); Andrés lleva el hilo narrativo e historia musicológica. Balance: Juan tiene un bloque líder más porque el Takeaway lo cierran ambos.</div>
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section">
+        <h2>Fuentes verificadas (no leer al aire)</h2>
+        <div class="arquitectura" style="font-size:0.82em; color:#666;">
+            <p>· Señal Colombia — "Kraken: el legado eterno del heavy metal" · El Colombiano — "Así fue el primer concierto de Kraken" (Teatro Lux, 22 sept 1984, 980 personas) · krakencolombia.net — biografía oficial (formación original, discografía) · El Tiempo — documental "Huella y Camino" · RTVC/RTVCPlay — documental "El Titán" (2024) · Las2Orillas — últimos días de Elkin Ramírez · Ruta 66 / Hellpress — gira España 2025 · Wikipedia ES — Kraken (banda), Elkin Ramírez (29 enero 2017).</p>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
