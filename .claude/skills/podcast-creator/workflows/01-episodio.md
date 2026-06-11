@@ -382,7 +382,7 @@ Una vez aprobada la arquitectura, escribe el script palabra por palabra.
 
 **Audit retroactivo obligatorio** — Si en esta sesión se agrega o modifica una regla de calidad (conectores, tono, estructura) porque un guion existente la viola, revisar y corregir ese guion en el mismo turno antes de entregar. No basta con actualizar la regla — el artefacto existente debe quedar corregido también.
 
-**Confirmación de entrega obligatoria** — Al terminar de escribir cualquier archivo (script, metadata, checklist), confirmar al usuario la ruta exacta donde quedó guardado: "Guardado en: E:\Claude Project\Claude Projects\kit-skill-creator\.claude\skills\mrputridsden\scripts\EP00X-titulo.html". Nunca asumir que el usuario sabe dónde está el archivo.
+**Confirmación de entrega obligatoria** — Al terminar de escribir cualquier archivo (script, metadata, checklist), confirmar al usuario la ruta exacta donde quedó guardado: "Guardado en: C:\Users\andre\repos\kit-skill-creator\mrputridsden-production\scripts\EP00X-titulo.html". Nunca asumir que el usuario sabe dónde está el archivo.
 
 **Si formato_episodio = `interview`:**
 - Escribe las preguntas del host en orden de escalada: bienvenida → preguntas fáciles → profundas → cierre
