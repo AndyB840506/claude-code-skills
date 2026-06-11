@@ -29,8 +29,8 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 - **Lenguaje:** español colombiano casual — bogotano moderno, sin arcaísmos. Ver `glosario-cachaco.md`.
 - **Formato documentos:** HTML optimizado para PDF vía IlovePDF
 - **Backup:** después de cada guion/documento → git commit + push a GitHub + copia a G:\My Drive\ si está montado
-- **Production assets en E:, no en C:** — Scripts HTML, propuestas, documentos y artefactos de producción se guardan en `e:\Claude Project\Claude Projects\kit-skill-creator\.claude\skills\mrputridsden\`. Los archivos en `C:\Users\andre\.claude\skills\mrputridsden\` son solo instruction files. Nunca guardar guiones o documentos en C:.
-- **Skill activa:** `e:\Claude Project\Claude Projects\kit-skill-creator\.claude\skills\mrputridsden\.claude\skills\podcast-creator\SKILL.md` (project-scoped, vive junto a esta carpeta)
+- **Production assets en mrputridsden-production, no en la skill** — Scripts HTML, propuestas, documentos y artefactos de producción se guardan en `C:\Users\andre\repos\kit-skill-creator\mrputridsden-production\`. La carpeta de la skill (`.claude\skills\mrputridsden\`) es solo instruction files. (E: ya no existe — máquina anterior.)
+- **Skill activa:** `C:\Users\andre\repos\kit-skill-creator\.claude\skills\mrputridsden\.claude\skills\podcast-creator\SKILL.md` (project-scoped, vive junto a esta carpeta)
 
 ---
 
@@ -148,7 +148,7 @@ mrputridsden/
 
 **Producción (assets — carpeta propia, separada de la skill):**
 ```
-e:\Claude Project\Claude Projects\kit-skill-creator\mrputridsden-production\
+C:\Users\andre\repos\kit-skill-creator\mrputridsden-production\
 ├── audio/                        ← Intro y outro del show
 ├── scripts/                      ← Guiones en HTML (EP.001, EP.002...)
 ├── episodios/                    ← Metadata, social y artwork por episodio (ep001-metadata.md, social-ep002.md...)
@@ -208,7 +208,7 @@ Si un guion aparece como `deleted` en `git status`:
 ## Environment
 
 - OS: Windows. Use PowerShell for all shell/file operations, NOT Bash/xcopy. PowerShell version is 5.1, so avoid backtick-quotes, Unicode chars, and inline if-expressions.
-- Claude config and operational rules live on C: (`~/.claude/`); project files live on E:. Do not propose junctions for `~/.claude/`.
+- Claude config and operational rules live in `~/.claude/`; project files live in `C:\Users\andre\repos\`. Do not propose junctions for `~/.claude/`.
 
 ## Verification
 
