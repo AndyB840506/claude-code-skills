@@ -97,11 +97,11 @@ Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para t
 8. Outro music (30 seg)
 ```
 
-**Regla de balance co-host:**
-- Cada host lidera ~50% de los segmentos de contenido. Un host que solo reacciona no es co-host.
-- **Juan lidera:** segmentos sobre shows en vivo, mitología de artistas, genealogía musical (su expertise como promotor). Abre con autoridad pero SIN fórmulas declarativas teatrales ("Yo quiero contar esta historia porque...", "el momento que me pone la piel de gallina", "y esto es lo bonito") — esas frases lo hacen sonar leyendo, como un viejito (feedback EP.004, 2026-06-11). Juan abre diciendo el hecho directamente, estilo EP.002: frases cortas, declarativas, sin anunciar lo que va a contar. Referencia canónica de voz de Juan: EP002-black-sabbath-genesis-heavy-metal.html.
-- **Andrés lidera:** hilo narrativo intelectual, historia musicológica, conectores de episodio a episodio.
-- Verificar al terminar el guión: contar bloques donde cada host abre el segmento.
+**Regla de balance co-host (actualizada 2026-06-11):**
+- **Andrés lidera ~70% de los segmentos de contenido** mientras Juan gana experiencia al micrófono (decisión de Andrés, EP.004). Juan NO debe quedar mudo: tiene reacciones cortas en todos los bloques.
+- **Juan lidera:** su segmento de Promoción (siempre) + 1-2 bloques puntuales de su expertise como promotor (shows en vivo, escena local). NO darle los bloques emocionales pesados ni los de mayor carga narrativa. Abre con autoridad pero SIN fórmulas declarativas teatrales ("Yo quiero contar esta historia porque...", "el momento que me pone la piel de gallina", "y esto es lo bonito") — esas frases lo hacen sonar leyendo, como un viejito (feedback EP.004, 2026-06-11). Juan abre diciendo el hecho directamente, estilo EP.002: frases cortas, declarativas, sin anunciar lo que va a contar. Referencia canónica de voz de Juan: EP002-black-sabbath-genesis-heavy-metal.html.
+- **Andrés lidera:** hilo narrativo, historia musicológica, conectores de episodio a episodio, bloques emocionales.
+- Verificar al terminar el guión: contar bloques donde cada host abre el segmento — proporción objetivo ~70/30 a favor de Andrés.
 
 **Formato HTML de scripts (EP.003 v2 en adelante):**
 - Bloques de diálogo: sin fondo, solo borde izquierdo sutil (gris Andrés, azul claro Juan)
