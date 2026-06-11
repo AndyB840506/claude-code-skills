@@ -66,7 +66,7 @@ This fires a reminder at session end. If both `handoff` and `session-close` are 
 When `/session-close` is invoked, execute all 6 steps automatically:
 
 1. Invoke `/retrospective` → ask user to confirm changes
-2. Invoke `/prompt-reviewer` → ask user to confirm improvements  
+2. Invoke `/prompt-reviewer-en` → ask user to confirm improvements  
 3. Invoke `/skill-management` → it asks audit mode first (Modo A: kit completo / Modo B: skill individual) per its own Paso 0 — let that question surface, then show results and ask user to confirm fixes
 4. Invoke `/handoff` → write `.agents/handoff/YYYY-MM-DD-<topic>.md`, commit, push to GitHub (automatic)
 5. Run bootstrap sync (automatic):
