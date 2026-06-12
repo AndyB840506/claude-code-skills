@@ -29,7 +29,7 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 - **Lenguaje:** español colombiano casual — bogotano moderno, sin arcaísmos. Ver `glosario-cachaco.md`.
 - **Formato documentos:** HTML optimizado para PDF vía IlovePDF
 - **Backup:** después de cada guion/documento → git commit + push a GitHub + copia a G:\My Drive\ si está montado
-- **Production assets en mrputridsden-production, no en la skill** — Scripts HTML, propuestas, documentos y artefactos de producción se guardan en `C:\Users\andre\repos\kit-skill-creator\mrputridsden-production\`. La carpeta de la skill (`.claude\skills\mrputridsden\`) es solo instruction files. (E: ya no existe — máquina anterior.)
+- **Production assets en mrputridsden-production, no en la skill** — Scripts HTML, propuestas, documentos y artefactos de producción se guardan en `C:\Users\andre\repos\kit-skill-creator\mrputridsden-production\`. La carpeta de la skill (`.claude\skills\mrputridsden\`) es solo instruction files. (Andres usa dos PCs: el escritorio SÍ tiene E: — ahí vive E:\Transcriptor; el portátil solo C:/D:.)
 - **Skill activa:** `C:\Users\andre\repos\kit-skill-creator\.claude\skills\mrputridsden\.claude\skills\podcast-creator\SKILL.md` (project-scoped, vive junto a esta carpeta)
 
 ---
@@ -100,8 +100,20 @@ Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para t
 **Regla de balance co-host (actualizada 2026-06-11):**
 - **Andrés lidera ~70% de los segmentos de contenido** mientras Juan gana experiencia al micrófono (decisión de Andrés, EP.004). Juan NO debe quedar mudo: tiene reacciones cortas en todos los bloques.
 - **Juan lidera:** su segmento de Promoción (siempre) + 1-2 bloques puntuales de su expertise como promotor (shows en vivo, escena local). NO darle los bloques emocionales pesados ni los de mayor carga narrativa. Abre con autoridad pero SIN fórmulas declarativas teatrales ("Yo quiero contar esta historia porque...", "el momento que me pone la piel de gallina", "y esto es lo bonito") — esas frases lo hacen sonar leyendo, como un viejito (feedback EP.004, 2026-06-11). Juan abre diciendo el hecho directamente, estilo EP.002: frases cortas, declarativas, sin anunciar lo que va a contar. Referencia canónica de voz de Juan: EP002-black-sabbath-genesis-heavy-metal.html.
+- **Escribir PARA la entrega de Juan, no contra ella (feedback 2026-06-12):** Juan habla muy pausado, registro de narrador de documental. Cuando se le escriben líneas de hype o exclamación ("¡Eso es una locura!") intenta imitar los improvs de Andrés y se queda corto — suena plano. Darle las frases que MEJORAN con pausa y gravedad: remates secos, sentencias, datos con peso, silencios dramáticos. NUNCA escribirle exclamaciones de energía ni reacciones de asombro improvisado. El contraste de entregas (Andrés energía/improv · Juan gravedad/pausa) es el sello del show, no un defecto a corregir.
 - **Andrés lidera:** hilo narrativo, historia musicológica, conectores de episodio a episodio, bloques emocionales.
 - Verificar al terminar el guión: contar bloques donde cada host abre el segmento — proporción objetivo ~70/30 a favor de Andrés.
+
+**Reglas anti-repetición de guion (feedback 2026-06-12, derivado de comparar guiones vs. transcripción real EP.003):**
+1. **Presupuesto de muletillas:** máximo 1 "imagínense" y 1 "me vuela la cabeza"/"les va a volar la cabeza" por episodio. No escribir "o sea", "básicamente", "totalmente", "agárrense de la silla" — los hosts ya los improvisan de sobra al aire.
+2. **Prohibidas las réplicas de pura validación** ("Eso es una locura", "Total", "Exactamente eso", "No, totalmente"): toda réplica debe aportar un dato nuevo, una imagen o un contrapunto. Mínimo un desacuerdo o corrección genuina entre hosts por episodio — sin tensión, todo suena plano.
+3. **Léxico firmado por host:** Andrés habla en imágenes y escenas; Juan en números, plata, venues, fechas, aforos. No compartir muletillas ni expresiones de firma entre los dos.
+4. **No anunciar el hype — dejar que el dato aterrice solo:** "Y llegaron a Noruega" pega más que "el dato que les va a volar la cabeza es que llegaron a Noruega".
+5. **Apertura:** no volcar la agenda completa del episodio ("hoy vamos a ver A, B, C, D"); un solo gancho. Variar el dispositivo de apertura entre episodios (cold open dentro de una escena es opción válida).
+6. **Listas → una escena:** en vez de enumerar 5-7 nombres/hitos, elegir UNO y darle una escena vívida; el resto va a show notes. Nunca recitar la misma cadena/secuencia dos veces en un episodio.
+7. **Transiciones de contenido, no meta-anuncios:** prohibido "nos vamos a recomendaciones" / "ya vamos a avanzar"; la última frase de un segmento contiene el gancho del siguiente.
+8. **Turnos cortos:** bloques escritos largos invitan a rellenar con muletillas al improvisar — preferir turnos más cortos con interrupciones diseñadas.
+9. **Lint al terminar el guion:** contar ocurrencias de muletillas (regla 1) y réplicas de validación (regla 2) antes de entregar; reportar el conteo junto con el balance 70/30.
 
 **Formato HTML de scripts (EP.003 v2 en adelante):**
 - Bloques de diálogo: sin fondo, solo borde izquierdo sutil (gris Andrés, azul claro Juan)
