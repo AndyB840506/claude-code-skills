@@ -236,6 +236,172 @@ abajo — es lo que le da la emoción a la imagen.
 
 ---
 
+## PORTADA — derivación 9:16 (Story del domingo de lanzamiento)
+
+NO se genera desde cero — sobre la portada 1:1 aprobada, en Flow:
+
+```
+same image, extend to 9:16 vertical format — fill the new top and bottom
+space with void black #0A0A0A and a soft continuation of the golden haze,
+keeping the band, all text and the footer identical and centered
+```
+
+**Checklist:** (1) siguen siendo 3 siluetas; (2) texto y footer intactos tras la
+extensión; (3) el negro nuevo arriba/abajo es uniforme (ahí van los stickers de link).
+
+---
+
+## QUOTE CARDS — 16:9 (LinkedIn · 1080×1920 derivable después)
+
+> ⚠️ **ANTES DE PUBLICAR cualquier quote card:** confirmar contra el audio grabado
+> (sábado) que la frase salió así o parecida. El texto en imagen va comprimido y en
+> mayúsculas SIN tildes (punto débil de Flow); la frase completa y correcta va en el
+> caption del post.
+>
+> 💡 **Si Flow genera la escena pero ignora el texto** (pasó con el thumbnail):
+> no regenerar — modo edición sobre la misma imagen: "On this same image, keep
+> everything identical and add text..." + las líneas exactas.
+
+### Q1 — "El legado" (la tesis del episodio)
+
+**Caption (frase completa):** "El legado no se mide en cuánto tiempo estuviste
+presente. Se mide en cuánto tiempo sigue funcionando, sin ti, lo que dejaste
+construido." — Behind the Queue, EP.017
+
+```
+Wide image, 16:9, 1920x1080px. Graphic editorial poster design —
+NOT photorealistic 3D.
+
+COMPOSITION: split for a wide frame —
+  RIGHT HALF (exactly right 50% of frame): a sea of thousands of tiny
+  golden lights (lighters held up by a crowd) floating in darkness,
+  out of focus, warm golden glow (#C9A84C), gently denser toward the
+  bottom. No stage, no people visible — only the lights in the dark.
+  Analog film grain, halation, muted retro color grading, screen-print
+  poster texture.
+  LEFT HALF (exactly left 50% of frame): void black #0A0A0A, reserved
+  for the text.
+
+TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
+  LEFT HALF, vertically centered, left-aligned, bold condensed
+  sans-serif, uppercase:
+    Line 1: "EL LEGADO NO SE MIDE" — white
+    Line 2: "EN CUANTO TIEMPO ESTUVISTE." — white
+    Line 3: "SE MIDE EN LO QUE SIGUE" — signal gold #C9A84C, bigger
+    Line 4: "FUNCIONANDO SIN TI." — signal gold #C9A84C, bigger
+    Line 5: "BEHIND THE QUEUE · EP.017" — silver, small, letter-spaced
+
+FOOTER: full-width strip at the very bottom, on the void black background.
+  Left: "Behind the Queue" in small white sans-serif
+  Center: "EP.017" in bold signal gold #C9A84C
+  Right: small silver platform icons — Spotify (circle with three curved
+  lines) and YouTube (rounded rectangle with play triangle)
+```
+
+**Checklist:** (1) cero personas/escenario visibles — solo las luces; (2) texto letra
+por letra (5 líneas); (3) la mitad izquierda negro casi puro, sin luces invadiendo
+el texto.
+
+### Q2 — "¿Que se apaga?" (el cierre comentable — usar el martes o como segundo post del lunes)
+
+**Caption (frase completa):** "Si mañana no llegas a tu operación — ¿qué de lo que
+construiste sigue sonando sin ti? Y sé honesto: ¿qué se apaga?" — Behind the Queue, EP.017
+
+```
+Wide image, 16:9, 1920x1080px. Graphic editorial poster design —
+NOT photorealistic 3D.
+
+COMPOSITION: a dark stadium stage in the exact moment the lights go out —
+  RIGHT HALF (exactly right 50% of frame): still lit by the wall of warm
+  golden stage light (#C9A84C) with haze: a drum kit and a bass leaning
+  on a stand as black silhouettes. No people anywhere.
+  LEFT HALF (exactly left 50% of frame): the same stage already in
+  darkness, void black #0A0A0A — the lights on this side are off.
+  The contrast between the lit half and the dark half is the concept.
+Analog film grain, halation, muted retro color grading, screen-print
+poster texture. No modern elements.
+
+TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
+  LEFT HALF (the dark side), vertically centered, left-aligned, bold
+  condensed sans-serif, uppercase:
+    Line 1: "SI TU NO ESTAS," — white
+    Line 2: "¿QUE SIGUE SONANDO?" — signal gold #C9A84C, bigger
+    Line 3: "¿QUE SE APAGA?" — white, same size as Line 2
+    Line 4: "BEHIND THE QUEUE · EP.017" — silver, small, letter-spaced
+
+FOOTER: full-width strip at the very bottom, on the void black background.
+  Left: "Behind the Queue" in small white sans-serif
+  Center: "EP.017" in bold signal gold #C9A84C
+  Right: small silver platform icons — Spotify (circle with three curved
+  lines) and YouTube (rounded rectangle with play triangle)
+```
+
+**Checklist:** (1) mitad iluminada / mitad apagada bien diferenciadas — si Flow
+ilumina todo, regenerar; (2) signos "¿" presentes y derechos (si los daña dos veces,
+quitarlos); (3) cero personas en escena.
+
+### Q3 — "Cualquier voz" (el dato de la gira 2020)
+
+**Caption (frase completa):** "Lo que Cerati construyó no era su presencia en el
+escenario. Era algo que cualquier voz podía encender." — Behind the Queue, EP.017
+
+```
+Wide image, 16:9, 1920x1080px. Graphic editorial poster design —
+NOT photorealistic 3D.
+
+COMPOSITION: split for a wide frame —
+  RIGHT HALF (exactly right 50% of frame): a single arm rising from a
+  dark crowd, holding up a vintage microphone that glows with warm
+  golden light (#C9A84C) — the only bright object, like a torch being
+  passed. Around and below it, very dim out-of-focus crowd lights.
+  The arm and hand are a pure black silhouette with thin golden rim
+  light. Analog film grain, halation, muted retro grading, screen-print
+  poster texture. 1980s aesthetic, no modern elements.
+  LEFT HALF (exactly left 50% of frame): void black #0A0A0A, reserved
+  for the text.
+
+TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
+  LEFT HALF, vertically centered, left-aligned, bold condensed
+  sans-serif, uppercase:
+    Line 1: "SU OBRA NO ERA" — white
+    Line 2: "SU PRESENCIA." — white
+    Line 3: "ERA ALGO QUE CUALQUIER VOZ" — signal gold #C9A84C, bigger
+    Line 4: "PODIA ENCENDER." — signal gold #C9A84C, bigger
+    Line 5: "BEHIND THE QUEUE · EP.017" — silver, small, letter-spaced
+
+FOOTER: full-width strip at the very bottom, on the void black background.
+  Left: "Behind the Queue" in small white sans-serif
+  Center: "EP.017" in bold signal gold #C9A84C
+  Right: small silver platform icons — Spotify (circle with three curved
+  lines) and YouTube (rounded rectangle with play triangle)
+```
+
+**Checklist:** (1) UN solo brazo con el micrófono — si Flow pone una persona completa
+o varias manos, regenerar; (2) texto letra por letra; (3) el micrófono es la única
+fuente de luz fuerte.
+
+### Derivar cualquier quote card a 1:1 o 9:16
+
+Sobre la imagen aprobada, en Flow:
+```
+same image, reframe to [1:1 square / 9:16 vertical] — keep the scene on
+top and move all text below it over void black, same fonts and colors,
+keep the footer at the very bottom
+```
+
+---
+
+## Alternates (banca — generar solo si algún asset falla)
+
+1. **River Plate 1997** — el estadio desde arriba, una marea de luces doradas y el
+   escenario diminuto al fondo. Texto: "GRACIAS TOTALES" / "20 DE SEPTIEMBRE DE 1997".
+   *(para nostalgia pura si el martes necesita refuerzo extra)*
+2. **La persiana** — luz dorada entrando por una persiana americana en un cuarto
+   oscuro 80s. Texto: "HAY CANCIONES QUE NO ENVEJECEN. / ¿Y TU OPERACION?" *(guiño a
+   Persiana Americana sin nombrarla — solo si la audiencia ya mordió el episodio)*
+
+---
+
 ## 16:9 — YouTube thumbnail (prioridad: se necesita al subir el video)
 
 Regla de thumbnail (step2 §C): máximo 3-5 palabras, contraste alto. La composición
