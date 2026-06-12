@@ -4,14 +4,25 @@ Generate all four blocks in a single response. Label each block clearly.
 
 ## A · Spotify SEO
 
+**Episode title (formula obligatoria — analytics 2026-06-12):**
+`EP.XX — [Referente]: [frase con keyword BPO / liderazgo / call center]`
+- La keyword buscable NO es opcional: los títulos pop-culture sin keyword ganan algoritmo
+  pero son invisibles en Search (EP.01 sigue #1 all-time por las búsquedas de "BPO").
+- Numeración `EP.XX` exacta (dos dígitos, mayúsculas). Nunca "Ep.X", "EP.0XX de tres
+  dígitos" ni sufijo "| Behind the Queue" en Spotify.
+
 **Preview (first 100 chars shown before "...more"):**
 Punchy hook — use the cultural reference as the entry point. No quotes. No spoilers.
 
 **Full description (250–400 words):**
 - Opens with the cultural reference connection
-- States the operational/leadership question the episode answers
+- States the operational/leadership question the episode answers — keyword (BPO/liderazgo)
+  dentro de las primeras 2 líneas
 - Lists 3 concrete takeaways without numbering them
 - Closes with the Closing TM phrase verbatim
+- Antes del CTA: una **pregunta personal y comentable** dirigida al oyente (efecto
+  EP.016 "The Wall" — 7 comentarios en un día porque el título lo interpelaba a él,
+  no al personaje)
 - Ends with: "Escúchalo ahora en Spotify."
 
 **Tags (8–12):** Mix of Spanish-language operational + show + cultural + LATAM
@@ -43,6 +54,15 @@ para la semana" — ver `btq-project/SKILL.md` §10, fuente canónica de este ca
 - LinkedIn: 5–8 hashtags · Spotify link goes in FIRST COMMENT (write comment text separately)
 - Instagram/Facebook: 10–15 hashtags · día de lanzamiento termina con una pregunta
 - TikTok copy: ultra short (2–3 lines) for all four days
+- **LinkedIn es la plataforma prioritaria** — la audiencia núcleo es hombre 35–44
+  supervisor/gerente BPO (43% del total), y 15% escucha en desktop en el trabajo.
+  El copy de LinkedIn se escribe primero y con más cuidado; IG/FB derivan de él.
+- **La pregunta del día de lanzamiento interpela al oyente, no al personaje** — "¿qué
+  muro construiste tú?" funciona; "¿qué opinas de Pink Floyd?" no (efecto EP.016:
+  7 comentarios). Aplicar el mismo principio en las 4 plataformas.
+- **Clips/quotes para redes salen del episodio que el algoritmo ya empuja** (hoy:
+  EP.012 Bohemian Rhapsody, 149 impresiones Home) — al promocionar el catálogo, usar
+  ese como puerta de entrada, no el más reciente.
 
 **Core hashtags (always include):**
 ```
@@ -63,7 +83,9 @@ page (YouTube is a JS-heavy SPA and often returns unusable HTML), fall back to t
 documented here — it was captured directly from a YouTube Studio screenshot, not scraped.
 
 - **Title:** Long, hook-style — `[Hook / cultural reference]: [punch line] | EP.0XX | Behind the Queue`.
-  No hard 60-char limit in practice (EP.015's title runs ~95 chars).
+  No hard 60-char limit in practice (EP.015's title runs ~95 chars). El punch line
+  lleva al menos una keyword buscable (BPO / liderazgo / call center) — misma regla
+  que el título de Spotify (§A).
 - **Description structure** (matches EP.015 exactly — 5 blocks in this order):
   1. Hook paragraph (2–3 sentences, the "honest question")
   2. Episode summary paragraph (cultural reference as lens + leadership lesson)
@@ -93,6 +115,11 @@ searching for topic-keyword phrases (framework/author names, segment names like
 ---
 
 ## D · Cover-Art Prompts (Nani Banana 2 / AI)
+
+**Principio de nostalgia (analytics 2026-06-12):** la audiencia núcleo (hombre 35–44)
+responde a la estética FIEL A LA ÉPOCA del referente — el visual debe gritar "su
+adolescencia", no una reinterpretación moderna. Queen con estética 70s/80s real, no
+Queen estilizado 2026.
 
 Generate one density-first prompt for each format. Each prompt must:
 - Name the character and exact visual canon (source, era, costume)

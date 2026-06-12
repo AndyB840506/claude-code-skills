@@ -20,6 +20,11 @@ Lee `roadmap-[show].md` (`btq-production/roadmap-btq.md` o
 
 Si el usuario corrige, usa el que indique — y si no aparece en la tabla, agrégalo.
 
+**BTQ:** antes de confirmar el candidato, revisa la sección "Estrategia editorial"
+de `roadmap-btq.md` (referentes 80s/90s primero, un pilar SEO al mes, fórmula de
+título con keyword, cadencia ≥7 días) y verifica que el episodio propuesto cumpla.
+Si el roadmap lleva 3–4 pop-culture seguidos sin pilar SEO, propónselo al usuario.
+
 ---
 
 ## Paso 2 — Generar el guión de grabación
@@ -31,6 +36,18 @@ escritura de guiones aquí**:
 |---|---|
 | BTQ | `/btq-guion` (skill dedicada — 8 pasos, Tone Master, checklist de calidad) |
 | MPD | `podcast-creator/workflows/01-episodio.md` (recuerda leer `glosario-cachaco.md` y `podcast-profile.json` primero, y preguntar "¿esta semana hay Silla Pútrida?") |
+
+**Requisitos adicionales para guiones BTQ** (analytics 2026-06-12 — pásalos a
+`/btq-guion` como parte del encargo, complementan su checklist propio):
+1. **Re-enganche al ~60% del guion:** los completion rates rondan 50–67% — el dato o
+   giro más fuerte del episodio NO va en el primer tercio; reservar uno explícitamente
+   para la segunda mitad.
+2. **Cierre con pregunta comentable** que interpele al oyente sobre SU situación (no un
+   resumen, no una pregunta sobre el referente) — efecto EP.016: 7 comentarios.
+3. **Checklist anti-repetición** (mismo estándar que MPD, ver
+   `.claude/skills/mrputridsden/CLAUDE.md` §Reglas anti-repetición): presupuesto de
+   muletillas, sin réplicas de pura validación, sin meta-transiciones, listas → una
+   escena, lint final antes de entregar.
 
 Espera a que el guión quede completo y aprobado por el usuario antes de seguir.
 
