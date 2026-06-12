@@ -236,6 +236,72 @@ abajo — es lo que le da la emoción a la imagen.
 
 ---
 
+## 16:9 — YouTube thumbnail (prioridad: se necesita al subir el video)
+
+Regla de thumbnail (step2 §C): máximo 3-5 palabras, contraste alto. La composición
+ancha pone a la banda a la DERECHA y el texto a la IZQUIERDA.
+
+```
+Wide image, 16:9, 1920x1080px. Graphic editorial poster design with
+strong backlit silhouettes — NOT photorealistic 3D.
+
+COMPOSITION: split for a wide frame —
+  RIGHT HALF (exactly right 50% of frame): the silhouettes of EXACTLY
+  THREE male musicians — a rock trio — as pure black shapes with thin
+  golden rim light (#C9A84C): the frontman center-forward singing into
+  a microphone stand while playing electric guitar, the bassist behind
+  him, the drummer at his kit. Count check: three people, no more,
+  no less. NO visible face detail.
+  Behind them, a wall of warm golden stage light (#C9A84C) with haze
+  and smoke. Very dim crowd lights (lighters) in the far background.
+  LEFT HALF (exactly left 50% of frame): mostly void black #0A0A0A,
+  reserved for the text.
+
+ERA: late 1980s Latin American rock aesthetic, era-correct hair and
+clothing. Analog film grain, halation, muted retro color grading,
+screen-print poster texture. No modern elements.
+
+TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
+  LEFT HALF, vertically centered, left-aligned:
+    Line 1: "LA GIRA" — white, uppercase, ultra-bold condensed
+            sans-serif, huge
+    Line 2: "SIN CERATI" — signal gold #C9A84C, uppercase, same font,
+            same size or bigger
+  No other text anywhere in the image. No footer bar on this format —
+  YouTube crops thumbnails and the footer would be cut.
+```
+
+**Checklist:** (1) exactamente 3 siluetas en la mitad derecha; (2) "LA GIRA / SIN
+CERATI" letra por letra, legible en miniatura (verlo en zoom-out al 10%); (3) la mitad
+izquierda es negro casi puro — si Flow mete humo o luz que compita con el texto,
+regenerar. Sin footer en este formato a propósito.
+
+---
+
+## 16:9 — LinkedIn (lanzamiento domingo y refuerzo)
+
+NO se generan desde cero — se derivan por edición en Flow de los assets ya aprobados,
+igual que el teaser de lanzamiento 9:16:
+
+1. **Lanzamiento (domingo):** sobre la portada 1:1 aprobada:
+   `"same image, extend to 16:9 wide format — fill the new side space with the
+   golden stage light, haze and dim crowd lights, keeping the band and all text
+   identical and centered"`
+   Luego: `"replace the line EL LIDERAZGO QUE SIGUE SONANDO with YA DISPONIBLE,
+   same font, same position, same color"`
+2. **Lunes ("la gira sin Cerati"):** la card 1:1 del lunes ya está en el formato que
+   LinkedIn muestra mejor en feed — solo derivar 16:9 si se quiere variante para
+   artículo/banner: mismo comando de extensión que arriba.
+3. **Martes ("Gracias Totales"):** sobre la 9:16 del martes:
+   `"same image, reframe to 16:9 wide format — keep the open-arms silhouette on the
+   RIGHT half, move all text to the LEFT half over void black, same fonts and colors"`
+
+**Checklist tras cada extensión:** (1) el conteo de figuras sobrevivió la edición;
+(2) el texto no se deformó ni se duplicó; (3) el footer sigue completo y derecho
+(en LinkedIn sí va footer — solo el thumbnail de YouTube va sin él).
+
+---
+
 ## TEASER 9:16 — Lanzamiento (domingo 8PM)
 
 NO se genera desde cero: se reusa la portada aprobada. En Flow, sobre la imagen
