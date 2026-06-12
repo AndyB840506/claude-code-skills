@@ -75,6 +75,56 @@ No extra text outside specified overlays. Highly detailed, award-winning photogr
 
 ---
 
+## Dirección visual del show (CONGELADA 2026-06-12 — validada con EP.004 Kraken)
+
+**MPD = fotograma cinematográfico.** Cada portada debe parecer un still de película de
+los 80s en 35mm — NUNCA diseño gráfico ni póster ilustrado. Si una imagen podría pasar
+por portada de BTQ (póster gráfico negro+dorado), falló.
+
+Bloques que se copian VERBATIM en todo prompt de portada (solo cambia la escena central):
+
+**[BLOQUE CONGELADO — ATMÓSFERA MPD]**
+```
+This must look like a film still from a 1980s movie shot on 35mm —
+NOT a graphic design, NOT illustration.
+Lit from one side by deep crimson light #9B1C1C and from the other by
+warm golden light, the two colors meeting on the edges of the silhouette.
+NO visible face detail anywhere — silhouette and rim light only.
+Heavy smoke, dust floating in the light beams, deep shadows,
+35mm film grain, high contrast, cinematic.
+The bottom quarter of the image fades to near-black #0d0d0d.
+```
+
+**[BLOQUE CONGELADO — FOOTER MPD]**
+```
+FOOTER BAR: solid #1a1a1a strip at the very bottom, full width.
+  Left: "Mr. Putrid's Den" in small white text
+  Center: "EP.0XX" in crimson #9B1C1C with a small kraken tentacle icon
+  Right (silver #A8A8A8): Spotify icon (circle with three curved lines),
+  Apple Podcasts icon (rounded square with microphone), and the
+  "amazon music" wordmark with small orange curved arrow below
+```
+
+**Reglas de la dirección:**
+1. **NUNCA rostros reconocibles en portadas** — siluetas y rim light solamente. Resuelve
+   dos problemas: Flow renderiza caras mal, y evita usar la imagen de artistas reales
+   (Elkin, etc.) en material promocional. ⚠️ Esta regla SUPERSEDE la instrucción del
+   Paso 2 de describir rasgos físicos de personas reales — esa aplica solo si el usuario
+   pide explícitamente un retrato.
+2. **Tipografía:** texto exacto entre comillas + "render text EXACTLY as written, letter
+   by letter, no changes". Máximo ~5 palabras por línea, pocas líneas. Las tildes y eñes
+   son el punto débil de Flow — verificar con zoom letra por letra; si daña una tilde dos
+   veces seguidas, fallback: quitarla en mayúsculas.
+3. **Checklist antes de aprobar cualquier generación:** (a) texto letra por letra sin
+   palabras inventadas, (b) cero detalle facial, (c) parece foto de película, no póster.
+4. Si la generación sale perfecta salvo el texto: usar el modo edición de Flow sobre esa
+   misma imagen ("same image, fix only the text") en vez de regenerar desde cero.
+
+Prompt de referencia validado: portada EP.004 (escena Teatro de Manrique 1984) — ver
+`mrputridsden-production/episodios/artwork-ep004.md`.
+
+---
+
 ## Reglas para prompts de Flow (confirmadas EP.003)
 
 Aplicar siempre antes de generar cualquier prompt de artwork:

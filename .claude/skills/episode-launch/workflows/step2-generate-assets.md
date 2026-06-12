@@ -120,6 +120,12 @@ searching for topic-keyword phrases (framework/author names, segment names like
 
 ## D · Cover-Art Prompts (Nani Banana 2 / AI)
 
+**Dirección visual congelada (2026-06-12, validada con EP.017):** todo prompt de portada
+arranca de los bloques verbatim en `docs/brand-constants.md` § "Dirección de artwork"
+(atmósfera de póster gráfico con siluetas a contraluz + footer). Solo se redacta nuevo
+el sujeto central del episodio. Seguir su checklist (conteo de figuras, texto letra por
+letra, cero caras) antes de aprobar cualquier generación.
+
 **Principio de nostalgia (analytics 2026-06-12):** la audiencia núcleo (hombre 35–44)
 responde a la estética FIEL A LA ÉPOCA del referente — el visual debe gritar "su
 adolescencia", no una reinterpretación moderna. Queen con estética 70s/80s real, no
