@@ -288,6 +288,44 @@ FOOTER BAR: solid #1a1a1a strip at very bottom, full width.
 
 ---
 
+## PORTADA v2 — dirección congelada (APROBADA 2026-06-12)
+
+Esta es la portada vigente del EP.004 — reemplaza los prompts de portada de arriba.
+Sigue la dirección visual congelada del show (ver workflow 03-artwork.md).
+
+```
+Square cinematic image, 1:1, 3000x3000px. This must look like a film still
+from a 1980s movie shot on 35mm — NOT a graphic design, NOT illustration.
+
+SCENE: interior of a small neighborhood theater in Medellin, Colombia, 1984.
+On a modest wooden stage, the silhouette of a long-haired male rock singer,
+head back, mid-note at a microphone stand, framed from the knees up.
+Lit from stage-left by deep crimson light #9B1C1C and from stage-right by
+warm golden light, the two colors meeting on the edges of his silhouette.
+NO visible face detail anywhere — silhouette and rim light only.
+Heavy smoke, dust floating in the light beams, deep shadows, worn theater
+curtains barely visible behind him. 35mm film grain, high contrast,
+cinematic. The bottom quarter of the image fades to near-black #0d0d0d.
+
+TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
+  BOTTOM QUARTER, centered, over the dark fade:
+    Line 1: "KRAKEN" — huge ultra-bold white condensed sans-serif, uppercase
+    Line 2: "EL TITÁN DEL ROCK COLOMBIANO" — silver #A8A8A8, uppercase,
+            small, letter-spaced
+
+FOOTER BAR: solid #1a1a1a strip at the very bottom, full width.
+  Left: "Mr. Putrid's Den" in small white text
+  Center: "EP.004" in crimson #9B1C1C with a small kraken tentacle icon
+  Right (silver #A8A8A8): Spotify icon (circle with three curved lines),
+  Apple Podcasts icon (rounded square with microphone), and the
+  "amazon music" wordmark with small orange curved arrow below
+```
+
+**Checklist:** (1) zoom a "TITÁN" — si Flow daña la Á dos veces, fallback "EL TITAN
+DEL ROCK COLOMBIANO"; (2) cero detalle facial; (3) parece foto de película, no póster.
+
+---
+
 ## TEASER CARDS — 9:16 (1080×1920px) — Stories
 
 Para el plan social (social-ep004.md): T1 = Día 1 Intriga · T2 = Día 2 Quote.
@@ -307,18 +345,20 @@ on the props.
 Dark gradient overlay at bottom third of image, from transparent at
 top to #0d0d0d at bottom.
 
-TYPOGRAPHY:
+TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
   TOP CENTER:
     Five small silver dots in a horizontal row: · · · · ·
     Below dots: "MR. PUTRID'S DEN" — ultra-bold white condensed sans-serif
     Below that: "MPD" — small, crimson (#9B1C1C)
 
   BOTTOM THIRD, centered, over the dark gradient:
-    Line 1 (white bold condensed): "Los pioneros del black metal noruego"
-    Line 2 (same style): "esperaban cartas."
-    Line 3 (white italic, smaller): "Venían de Medellín."
-    Line 4 (silver #A8A8A8, small uppercase tracked): "SÁBADO · @MRPUTRIDSDEN"
-    Use exactly these words, no changes.
+    Line 1 (white bold condensed, uppercase): "EL BLACK METAL NORUEGO"
+    Line 2 (same style): "ESPERABA CARTAS."
+    Line 3 (signal: crimson #9B1C1C, uppercase, slightly bigger): "VENIAN DE MEDELLIN."
+    Line 4 (silver #A8A8A8, small uppercase tracked): "SABADO · @MRPUTRIDSDEN"
+
+  (Tildes omitidas a propósito — mayúsculas sin acento, punto débil de Flow.
+   La frase completa con tildes va en el caption del post, no en la imagen.)
 
 FOOTER BAR: solid #1a1a1a strip at very bottom, full width.
   Left: "Mr. Putrid's Den" in white small
