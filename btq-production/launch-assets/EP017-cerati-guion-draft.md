@@ -1,6 +1,8 @@
 # GUIÓN — EP.017 — Behind The Queue
 
-**Título:** Cerati: lo que construyes para que siga sonando cuando ya no estés
+**Título:** EP.17 — Soda Stereo: el liderazgo que sigue sonando cuando ya no estás
+*(fórmula nueva 2026-06-12: referente + keyword "liderazgo" buscable — el título anterior
+"Cerati: lo que construyes..." no tenía ninguna keyword de Search)*
 **Referencia cultural:** Gustavo Cerati / Soda Stereo
 **Tema central:** el liderazgo que se mide en lo que dejas, no en cuánto duras
 **Frase TM de cierre:** "Gracias... totales" (Gustavo Cerati, último show de Soda Stereo, River Plate, 20 de septiembre de 1997)
@@ -391,6 +393,18 @@ Tres mitos sobre liderazgo, cambio y legado que circulan en cualquier piso de op
 
 [PAUSA LARGA]
 
+Y aquí va el dato que me guardé todo el episodio para este momento exacto.
+
+[PAUSA]
+
+En 2020, Zeta Bosio y Charly Alberti anunciaron una gira de Soda Stereo. Sin Cerati. Se llamó — escuchen bien el nombre — "Gracias Totales". Los estadios se llenaron, con vocalistas invitados de toda Latinoamérica turnándose para cantar las canciones que él dejó escritas.
+
+[PAUSA]
+
+Piensen en lo que eso significa: la banda salió de gira sin su líder, sin su voz, sin su compositor — y funcionó. Porque lo que Cerati construyó no era su presencia en el escenario. Era algo que cualquier voz podía encender. Esa gira es la demostración literal, en estadios llenos, de todo lo que hemos hablado durante una hora.
+
+[PAUSA LARGA]
+
 [REMATE] Ninguno de estos mitos es mentira por maldad. Son mentiras cómodas — las que nos decimos para no tener que tomar la decisión difícil hoy.
 
 ---
@@ -501,6 +515,18 @@ Como diría él mismo: lo que hacemos en vida, resuena en la eternidad.
 
 ## CIERRE Y TM CANÓNICO
 
+Antes de irme, les dejo la pregunta del episodio — y esta sí quiero que la respondan.
+
+[PAUSA]
+
+Si mañana no llegas a tu operación — tres meses, sin aviso, como la gerente de la historia — ¿qué de lo que construiste sigue sonando sin ti? Y sé honesto: ¿qué se apaga?
+
+[PAUSA LARGA]
+
+Escríbanlo en los comentarios del episodio ahí mismo en Spotify — los leo todos, y los del episodio pasado estuvieron buenísimos.
+
+[PAUSA]
+
 Si este episodio los hizo pensar en alguien — en su equipo, en una decisión que tienen pendiente, o en ustedes mismos en algún punto de su carrera — escríbanme. Estoy en LinkedIn como Andrés Bermúdez Rodríguez. También en andy arroba behind-thequeue punto com.
 
 [PAUSA]
@@ -539,7 +565,16 @@ Duración total estimada: ~57 minutos al ritmo natural de Andy.
 
 ## PENDIENTES DE COMPLETAR ANTES DE GRABAR
 
-- Confirmar si Andy quiere ajustar el tono del teaser hacia EP.018 (Gladiator/Máximo).
+- **DECIDIR EP.018: ¿Mundial o Gladiator?** El teaser actual apunta a Gladiator/Máximo.
+  Si EP.018 pasa a ser el episodio del Mundial (ventana de oportunidad: el torneo está
+  en curso), reescribir el teaser antes de grabar el sábado.
+- **VERIFICAR antes de grabar:** lista de vocalistas invitados de la gira "Gracias
+  Totales" 2020 (dato nuevo en Mito 3) — la gira y el formato con invitados están
+  confirmados; si Andy quiere nombrar invitados específicos al aire, verificar la
+  lista exacta primero (hubo artistas colombianos entre ellos — confirmar cuáles).
+- **Ritmo del refrán:** la frase-tesis "que siga sonando/funcionando cuando ya no estés"
+  aparece ~6 veces casi textual. Tres anclas están bien (hook, mitad, cierre) — en las
+  demás, variar la formulación al aire para que no suene a coletilla.
 - Validar en grabación el ritmo de las preguntas y pausas — Andy adapta libremente sobre el esqueleto.
 - Si se requiere más densidad para llegar a los 60 min, expandir: ejemplos de trabajo concretos en el Hook, un cuarto ejemplo operativo en Referencias Cruzadas, y una pregunta de diagnóstico adicional por mito en Mito o Realidad.
 
