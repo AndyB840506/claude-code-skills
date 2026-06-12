@@ -6,7 +6,7 @@ Este proyecto crea skills personalizadas para Claude Code. Una skill es un archi
 
 Windows con PowerShell 5.1. Usar PowerShell (no Bash/xcopy) para operaciones de archivos. Evitar backtick-quotes, caracteres Unicode y expresiones if inline en scripts — PS 5.1 no los maneja correctamente.
 
-Config y reglas operativas en `~/.claude/`; proyectos y archivos de producción en `C:\Users\andre\repos\`. No proponer junctions para `~/.claude/`. (E: ya no existe — máquina anterior.)
+Config y reglas operativas en `~/.claude/`; proyectos y archivos de producción en `C:\Users\andre\repos\`. No proponer junctions para `~/.claude/`. Output de producción (imágenes, audios, transcripciones, cachés) va a `E:\` en el desktop y `D:\` en el portátil — nunca a `C:\`.
 
 ## Comportamiento al iniciar
 
@@ -73,3 +73,12 @@ No declarar un bug como corregido hasta haberlo verificado (re-ejecutar/reproduc
 ## Workflows
 
 Ritual de cierre de sesión: ejecutar `/retrospective`, luego `skill-kit-auditor`, luego `/handoff` en ese orden. Aplicar los fixes aprobados del audit antes de generar el handoff.
+
+## Regla de transición de modelo (vigente desde 2026-06-12)
+
+Este proyecto fue calibrado con Fable 5, que infiere mucho desde contexto. Cualquier modelo que ejecute aquí (en especial Opus 4.8 después del 2026-06-22) debe compensar siguiendo lo escrito de forma literal:
+
+1. **Seguir los checklists al pie de la letra.** El estándar de calidad por entregable vive en `docs/estandar-de-entregables.md` — correr el checklist de la sección que aplique ANTES de declarar algo listo. Si un ítem falla, corregir y re-verificar.
+2. **Correr los lints de las skills antes de entregar** (greps de muletillas, conteos, fórmulas de título). Los criterios son verificables a propósito: verificarlos, no estimarlos.
+3. **Consultar MEMORY.md y el handoff más reciente antes de actuar.** Las decisiones de juicio ya tomadas están escritas ahí y en `docs/roadmap-future-proofing.md`; no re-derivarlas ni contradecirlas sin preguntar.
+4. **Si una tarea requiere juicio que no está escrito, preguntar al usuario** en vez de improvisar — y al resolverla, escribir la regla nueva donde corresponde.

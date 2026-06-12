@@ -355,7 +355,7 @@ TYPOGRAPHY:
     Line 2 (same style): "no es una debilidad."
     Line 3 (same style): "Es la materia prima."
     Line 4 (silver #A8A8A8, small italic): "— Mr. Putrid's Den, EP.004"
-    Line 5 (silver #A8A8A8, small uppercase tracked): "MAÑANA · SPOTIFY · AMAZON · APPLE"
+    Line 5 (silver #A8A8A8, small uppercase tracked): "YA DISPONIBLE · SPOTIFY · AMAZON · APPLE"
     Use exactly these words, no changes.
 
 FOOTER BAR: solid #1a1a1a strip at very bottom, full width.
