@@ -59,6 +59,9 @@ FOOTER: full-width strip at the very bottom, on the void black background.
    by letter, no changes". Máximo ~5 palabras por línea. Evitar tildes/eñes en el texto
    dentro de la imagen cuando haya alternativa (la frase completa con tildes va en el
    caption del post); verificar letra por letra con zoom antes de aprobar.
+   Si Flow genera la escena pero OMITE el texto (pasó con el thumbnail EP.017): NO
+   regenerar — se pierde la escena aprobada. Modo edición sobre la misma imagen:
+   "On this same image, keep everything identical and add text..." + las líneas exactas.
 4. **Checklist antes de aprobar:** (a) conteo de figuras correcto, (b) texto letra por
    letra, (c) cero caras + estética fiel a la época del referente (sin LEDs, smartphones,
    in-ears si la era no los tenía).

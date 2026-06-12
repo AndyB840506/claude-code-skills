@@ -24,18 +24,30 @@
   incluye re-evaluación de graphify), regla de transición de modelo en CLAUDE.md del proyecto.
 - **Retrospectiva aplicada:** regla "referente en escena, no implícito" agregada a la
   dirección BTQ (feedback "simplón"); CLAUDE.md ahora referencia `/session-close`.
+- **(Post-primer cierre) Paquete artwork EP.017 COMPLETO** en
+  `btq-production/launch-assets/EP017-cerati-artwork.md`: portada aprobada + derivación
+  9:16, 4 teasers 9:16 (intriga, countdown sábado, lanzamiento, Gracias Totales martes),
+  card 1:1 LinkedIn lunes (gira sin Cerati), thumbnail YouTube 16:9 (sin footer a
+  propósito), 3 quote cards 16:9 con frases del guion real (caption completo + texto
+  comprimido sin tildes), derivaciones 16:9 LinkedIn y alternates en banca.
+- **Lección Flow encodada:** si genera la escena pero omite el texto, NO regenerar —
+  edición sobre la misma imagen (regla 3 de brand-constants + nota en el archivo EP.017).
 
 ## Where We Paused
-**Last action:** audit del kit (limpio salvo 4 SKILL.md marginalmente >50 líneas, diferidos)
-y este handoff.
-**Next action (esta noche, post-grabación):** copiar el audio de EP.004 a
+**Last action:** segundo cierre — paquete artwork EP.017 completo commiteado; Andrés
+quedó generando los teasers en Flow.
+**Next action (esta noche, post-grabación MPD):** copiar el audio de EP.004 a
 `E:\Transcriptor\audios\` y correr el transcriptor (comando en
 `transcriptor/docs/environment.md`). Con el SRT: (1) confirmar la quote del Día 3
 ("la materia prima") contra el audio — si cambió, ajustar entrega-juan-ep004.md Y el
 prompt T2 antes de generarla; (2) elegir clip 30-60 seg para Reel (candidatos: cartas
 de Noruega o Batalla de las Bandas).
-**Blockers:** ninguno técnico. Dependen de Andrés: generar en Flow HOY la portada Kraken 1:1
-y la Teaser T1 (Juan publica la intriga hoy); grabación esta noche.
+**Sábado 13 (post-grabación EP.017):** correr transcriptor sobre el audio de BTQ y
+revisar TODAS las quote cards (Q1-Q3 + Gracias Totales) contra el SRT antes de generar
+las que faltan — decisión explícita de Andrés: quotes se validan el sábado, hoy solo
+genera teasers.
+**Blockers:** ninguno técnico. Dependen de Andrés: portada Kraken 1:1 + Teaser T1 hoy
+(Juan publica la intriga hoy); grabaciones (MPD hoy, BTQ sábado).
 
 ## Files to Read First
 - `.agents/handoff/2026-06-12-artwork-direccion-future-proofing.md` — este archivo
