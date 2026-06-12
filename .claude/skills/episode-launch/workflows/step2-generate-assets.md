@@ -43,6 +43,7 @@ para la semana" — ver `btq-project/SKILL.md` §10, fuente canónica de este ca
 | Sábado (calentamiento) | Instagram / Facebook | behind the scenes mientras graba |
 | Domingo 8:00 PM (lanzamiento) | LinkedIn | ... |
 | Domingo 8:00 PM (lanzamiento) | Instagram / Facebook | ... |
+| Lunes 7–8 AM (pico de escucha) | LinkedIn | "arrancando la semana" — el episodio como herramienta para la semana que empieza |
 | Martes (refuerzo) | LinkedIn | ... |
 | Martes (refuerzo) | Instagram / Facebook | ... |
 
@@ -50,6 +51,9 @@ para la semana" — ver `btq-project/SKILL.md` §10, fuente canónica de este ca
 - Jueves: don't reveal the full topic — sembrar la pregunta, crear tensión
 - Sábado: contenido orgánico, costo cero — detrás de cámaras de la grabación
 - Domingo 8PM: lanzamiento — episodio disponible, CTA directo
+- Lunes 7–8 AM Colombia: post de LinkedIn montado sobre el pico real de escucha
+  (analytics EP.016: lunes = día récord de impresiones, 124; la audiencia escucha
+  lunes-martes en el trabajo, no el domingo en la noche) — aprobado 2026-06-12
 - Martes: refuerzo/herramienta — profundiza para quien ya escuchó, engancha a quien no
 - LinkedIn: 5–8 hashtags · Spotify link goes in FIRST COMMENT (write comment text separately)
 - Instagram/Facebook: 10–15 hashtags · día de lanzamiento termina con una pregunta
