@@ -501,13 +501,21 @@ Ella no construyó un mal equipo. Construyó un equipo que dependía completamen
 
 ## TEASER — EP.018
 
-[NOTA: Andy menciona el próximo episodio con intriga, conectando con un dato real]
+[NOTA: EP.018 confirmado = El Mundial (2026-06-12). Gladiator se corre a EP.019.]
 
-Y hablando de legados que se sostienen solos — la próxima semana vamos a hablar de un personaje que tampoco quiso el poder que terminó cargando. Alguien que construyó algo tan grande, que terminó resonando muchísimo después de que él dejó de estar al frente.
+Y la próxima semana nos vamos a meter con lo que está pasando ahora mismo en todas las pantallas del continente.
 
 [PAUSA]
 
-Como diría él mismo: lo que hacemos en vida, resuena en la eternidad.
+El Mundial.
+
+[PAUSA]
+
+Pero tranquilos — no me volví comentarista deportivo. Vamos a hablar de algo que ustedes viven todos los días sin darse cuenta: once personas en la cancha, millones de ojos encima, y un líder parado en la raya que no puede tocar el balón. Solo puede preparar, decidir quién entra, y confiar.
+
+[PAUSA]
+
+¿Les suena familiar? Eso es un piso de operaciones con el cliente mirando.
 
 [PAUSA LARGA]
 
@@ -557,7 +565,7 @@ Yo soy Andy. Y como diría Gustavo Cerati: "Gracias… totales".
 | Mito o Realidad | 3 mitos sobre cambio, cierre y legado | 38:00 – 43:00 |
 | Recomendaciones de Andy | Canción, documental, artículo con contexto completo | 43:00 – 48:00 |
 | Cierre con anécdota | La gerente que volvió de licencia | 48:00 – 54:00 |
-| Teaser EP.018 + Cierre TM | Gladiator/Máximo + frase de Cerati | 54:00 – 57:00 |
+| Teaser EP.018 + Cierre TM | El Mundial (DT/liderazgo bajo presión) + pregunta comentable + frase de Cerati | 54:00 – 57:00 |
 
 Duración total estimada: ~57 minutos al ritmo natural de Andy.
 
@@ -565,9 +573,8 @@ Duración total estimada: ~57 minutos al ritmo natural de Andy.
 
 ## PENDIENTES DE COMPLETAR ANTES DE GRABAR
 
-- **DECIDIR EP.018: ¿Mundial o Gladiator?** El teaser actual apunta a Gladiator/Máximo.
-  Si EP.018 pasa a ser el episodio del Mundial (ventana de oportunidad: el torneo está
-  en curso), reescribir el teaser antes de grabar el sábado.
+- ~~DECIDIR EP.018~~ **RESUELTO (2026-06-12): EP.018 = El Mundial.** Teaser reescrito,
+  Gladiator corrido a EP.019, roadmap actualizado.
 - **VERIFICAR antes de grabar:** lista de vocalistas invitados de la gira "Gracias
   Totales" 2020 (dato nuevo en Mito 3) — la gira y el formato con invitados están
   confirmados; si Andy quiere nombrar invitados específicos al aire, verificar la
