@@ -288,6 +288,87 @@ FOOTER BAR: solid #1a1a1a strip at very bottom, full width.
 
 ---
 
+## TEASER CARDS — 9:16 (1080×1920px) — Stories
+
+Para el plan social (social-ep004.md): T1 = Día 1 Intriga · T2 = Día 2 Quote.
+
+### T1 — Intriga: Las Cartas (Día 1 — NO revela a Kraken)
+
+```
+Vertical cinematic image, 9:16, 1080×1920px.
+Dark atmospheric scene: close-up of a wooden desk at night lit by a
+single warm lamp. On the desk: airmail envelopes with red-and-blue
+striped borders, cassette tapes with handwritten labels, a steaming
+mug. Snow visible through a dark window behind the desk. A hand
+holding one opened letter. Nordic winter mood. 35mm film grain,
+high contrast, moody and mysterious. No band names or readable text
+on the props.
+
+Dark gradient overlay at bottom third of image, from transparent at
+top to #0d0d0d at bottom.
+
+TYPOGRAPHY:
+  TOP CENTER:
+    Five small silver dots in a horizontal row: · · · · ·
+    Below dots: "MR. PUTRID'S DEN" — ultra-bold white condensed sans-serif
+    Below that: "MPD" — small, crimson (#9B1C1C)
+
+  BOTTOM THIRD, centered, over the dark gradient:
+    Line 1 (white bold condensed): "Los pioneros del black metal noruego"
+    Line 2 (same style): "esperaban cartas."
+    Line 3 (white italic, smaller): "Venían de Medellín."
+    Line 4 (silver #A8A8A8, small uppercase tracked): "SÁBADO · @MRPUTRIDSDEN"
+    Use exactly these words, no changes.
+
+FOOTER BAR: solid #1a1a1a strip at very bottom, full width.
+  Left: "Mr. Putrid's Den" in white small
+  Center: "EP.004" in crimson (#9B1C1C) + small kraken tentacle icon
+  Right (silver #A8A8A8):
+    1. Spotify: circle with three curved horizontal lines
+    2. Apple Podcasts: rounded square with microphone and signal arc
+    3. Amazon Music: wordmark "amazon music" with small orange curved arrow below
+```
+
+### T2 — Quote: La Materia Prima (Día 2)
+
+```
+Vertical cinematic image, 9:16, 1080×1920px.
+Dark dramatic scene: a long-haired male rock singer in his twenties,
+1980s style, mid-note at a microphone, head back, powerful presence,
+framed from the chest up in the upper half of the vertical frame.
+Lit from one side by deep crimson (#9B1C1C) stage light and from the
+other by warm golden light, the two colors meeting on his silhouette.
+No visible face detail — silhouette and rim light only. Smoke and
+deep shadows. 35mm film grain, high contrast, cinematic.
+
+Dark gradient overlay at bottom third of image, from transparent at
+top to #0d0d0d at bottom.
+
+TYPOGRAPHY:
+  TOP CENTER:
+    Five small silver dots in a horizontal row: · · · · ·
+    Below dots: "MR. PUTRID'S DEN" — ultra-bold white condensed sans-serif
+    Below that: "MPD" — small, crimson (#9B1C1C)
+
+  BOTTOM THIRD, centered, over the dark gradient:
+    Line 1 (white bold condensed): "Lo que usted es"
+    Line 2 (same style): "no es una debilidad."
+    Line 3 (same style): "Es la materia prima."
+    Line 4 (silver #A8A8A8, small italic): "— Mr. Putrid's Den, EP.004"
+    Line 5 (silver #A8A8A8, small uppercase tracked): "MAÑANA · SPOTIFY · AMAZON · APPLE"
+    Use exactly these words, no changes.
+
+FOOTER BAR: solid #1a1a1a strip at very bottom, full width.
+  Left: "Mr. Putrid's Den" in white small
+  Center: "EP.004" in crimson (#9B1C1C) + small kraken tentacle icon
+  Right (silver #A8A8A8):
+    1. Spotify: circle with three curved horizontal lines
+    2. Apple Podcasts: rounded square with microphone and signal arc
+    3. Amazon Music: wordmark "amazon music" with small orange curved arrow below
+```
+
+---
+
 ## Alternates (ideas en banca — generar solo si algún Q falla)
 
 1. **Teatro Lux** — "980 personas. Teatro Lux, Manrique. 1984. Antes del disco, antes de la radio, antes de todo." *(imagen: teatro ochentas lleno, luz cálida de marquesina)*
