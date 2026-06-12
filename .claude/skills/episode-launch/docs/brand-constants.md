@@ -62,5 +62,10 @@ FOOTER: full-width strip at the very bottom, on the void black background.
 4. **Checklist antes de aprobar:** (a) conteo de figuras correcto, (b) texto letra por
    letra, (c) cero caras + estética fiel a la época del referente (sin LEDs, smartphones,
    in-ears si la era no los tenía).
+5. **El referente en escena, no implícito (feedback EP.017):** las portadas llevan al
+   sujeto/banda presente y en acción — el concepto abstracto ("micrófono solo",
+   "escenario vacío") se percibe simplón como portada. Lo abstracto se reserva para
+   teasers de INTRIGA, donde no revelar es el objetivo. (Regla hermana de la #5 del
+   workflow 03-artwork de MPD, confirmada allá desde EP.003.)
 
 Prompt de referencia validado: portada EP.017 (trío en silueta contra pared de luz dorada).

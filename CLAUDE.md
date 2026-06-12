@@ -72,7 +72,7 @@ No declarar un bug como corregido hasta haberlo verificado (re-ejecutar/reproduc
 
 ## Workflows
 
-Ritual de cierre de sesión: ejecutar `/retrospective`, luego `skill-kit-auditor`, luego `/handoff` en ese orden. Aplicar los fixes aprobados del audit antes de generar el handoff.
+Ritual de cierre de sesión: `/session-close` lo automatiza completo (retrospective → skill-kit-auditor → handoff). Equivale a ejecutar `/retrospective`, luego `skill-kit-auditor`, luego `/handoff` en ese orden. Aplicar los fixes aprobados del audit antes de generar el handoff.
 
 ## Regla de transición de modelo (vigente desde 2026-06-12)
 
