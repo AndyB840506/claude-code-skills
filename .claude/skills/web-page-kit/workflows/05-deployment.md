@@ -68,6 +68,14 @@ After the initial deploy:
 
 Domain cost: ~$10-15/year from Namecheap, Google Domains, or Porkbun.
 
+> ⚠️ **Before ANY nameserver change:** switching nameservers replaces the entire DNS zone —
+> the new provider does NOT import existing records. If the domain has email (MX records)
+> or SPF/verification TXT records, the mailbox goes dark and outgoing mail lands in spam
+> until they're re-created. Always snapshot first (`Resolve-DnsName domain.com -Type MX`
+> and `-Type TXT`, or an online DNS lookup), save the records to a file, and re-create
+> them in the new provider's DNS panel immediately after the switch. Prefer a simple
+> CNAME/A record at the current DNS provider when possible — it avoids the problem entirely.
+
 ---
 
 ## Alternative: Direct File Sharing
