@@ -56,6 +56,13 @@ Máximo 150 caracteres. Debe incluir el beneficio concreto para el oyente.
 
 ### C. Descripción completa para Spotify (HTML)
 
+**OBLIGATORIO entregar la descripción en HTML markup** (`<p>` por párrafo, `<a>` en links),
+NUNCA en texto plano: Spotify acepta HTML y así el espaciado se mantiene; al pegar texto
+plano con saltos manuales a mitad de párrafo, Spotify los colapsa y pega palabras
+("la crisis" → "lacrisis"). Nota: EP.001–003 quedaron en plano por error — corregido en
+ep003-metadata.md como referencia. El bloque de contacto (§G) también va en HTML cuando
+es para Spotify.
+
 ```html
 <p><strong>[Primera frase que engancha — el hook del episodio en 1-2 líneas]</strong></p>
 

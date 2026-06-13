@@ -25,6 +25,17 @@ Siguiente episodio: Salsa — de África al Caribe. La otra rama del mismo árbo
 ✉️ hello@mrputridsden.com | Andres@mrputridsden.com | Juan@mrputridsden.com
 ```
 
+## Descripción (HTML — pegar en Spotify)
+*(Spotify acepta HTML; `<p>` por párrafo garantiza el espaciado y evita que se peguen palabras al pegar. YouTube/otras que no acepten HTML: usar el texto plano de arriba.)*
+```html
+<p>¿Qué tiene en común un riff de Black Sabbath con la clave de la salsa? La misma raíz. El mismo árbol. Y la persona que conecta esos dos mundos es alguien que casi nadie conoce: una mujer negra de Arkansas que tocaba guitarra eléctrica con distorsión —en la iglesia— en 1945. Antes de Chuck Berry. Antes de Elvis. Antes de todos.</p>
+<p>Andrés y Juan trazan la cadena completa: de los ritmos africanos que llegaron en barcos de esclavos al Mississippi, pasando por el blues del delta, la leyenda del crossroads de Robert Johnson, hasta Sister Rosetta Tharpe —la abuela del rock & roll— y de ahí a Chuck Berry, los Rolling Stones, Led Zeppelin y Black Sabbath en Birmingham.</p>
+<p>África → Mississippi → Nueva York → Londres → Birmingham. Ese es el ADN de todo el rock que han escuchado en su vida.</p>
+<p>Siguiente episodio: Salsa — de África al Caribe. La otra rama del mismo árbol.</p>
+<p>🎙️ Escúchanos en:<br>Spotify: <a href="https://open.spotify.com/episode/3c5wrMaA5Yqp4TOFwHAf6Y">abrir en Spotify</a><br>Apple Podcasts: <a href="https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794">abrir en Apple</a><br>Amazon Music: <a href="https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den">abrir en Amazon</a><br>+ iHeart, Castbox, Pocket Casts y más</p>
+<p>🌐 <a href="https://www.mrputridsden.com">www.mrputridsden.com</a><br>✉️ hello@mrputridsden.com | Andres@mrputridsden.com | Juan@mrputridsden.com</p>
+```
+
 ## Tags / Keywords
 *(para plataformas que los soporten — Apple Podcasts, Pocket Casts)*
 ```
