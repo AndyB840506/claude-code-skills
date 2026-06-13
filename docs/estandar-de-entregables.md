@@ -33,6 +33,11 @@ Checklist obligatorio antes de entregar (correr greps literales sobre el guion):
       El contraste Andrés-energía / Juan-gravitas es el sello del show.
 - [ ] **BTQ además:** re-enganche con dato guardado al ~60% del guion + cierre con
       pregunta comentable que interpela AL OYENTE (no al personaje).
+- [ ] **Dato climático / payoff verificado:** el dato que se guarda para el final
+      (el "re-enganche") debe tener fuente real confirmada ANTES de grabar — no dar
+      por buena una cifra/evento sin verificar. Lección EP.017: la gira "Gracias
+      Totales" 2020 no tenía fuente; verificarla evitó un error al aire y destapó el
+      gancho local (debut El Campín Bogotá, audiencia 70% CO).
 
 ## 2 · Títulos y SEO (BTQ)
 
