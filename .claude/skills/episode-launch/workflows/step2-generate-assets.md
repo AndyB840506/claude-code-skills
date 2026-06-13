@@ -14,11 +14,12 @@ Generate all four blocks in a single response. Label each block clearly.
 **Preview (first 100 chars shown before "...more"):**
 Punchy hook — use the cultural reference as the entry point. No quotes. No spoilers.
 
-**Formato copy-safe (OBLIGATORIO):** generar la metadata también como HTML con botón
-Copiar (`EP0XX-[ref]-metadata.html`) — cada párrafo en UNA sola línea, separados por
-línea en blanco. Razón: al copiar texto con saltos manuales a mitad de párrafo, Spotify
+**Formato copy-safe (OBLIGATORIO):** la descripción de Spotify se entrega también en
+**HTML markup** (Spotify acepta HTML en el campo descripción) — cada párrafo en `<p>…</p>`,
+links en `<a href>`. Razón: al pegar texto con saltos manuales a mitad de párrafo, Spotify
 los colapsa y pega palabras ("a que la\ncrisis" → "lacrisis"). Detectado en EP.017.
-No partir párrafos con saltos manuales en ningún campo de descripción.
+La versión texto plano se mantiene en una sola línea por párrafo (sin saltos manuales
+internos) como fallback. YouTube NO acepta HTML — ahí va solo texto plano.
 
 **Full description (250–400 words):**
 - Opens with the cultural reference connection
