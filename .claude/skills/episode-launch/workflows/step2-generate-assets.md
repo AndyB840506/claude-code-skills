@@ -24,6 +24,12 @@ Punchy hook — use the cultural reference as the entry point. No quotes. No spo
   EP.016 "The Wall" — 7 comentarios en un día porque el título lo interpelaba a él,
   no al personaje)
 - Ends with: "Escúchalo ahora en Spotify."
+- **Bloque de contacto OBLIGATORIO al final** (igual que YouTube — se omitió por error en EP.017):
+  ```
+  📩 andy@behind-thequeue.com | 🌐 behind-thequeue.com
+  📸 Instagram: @behindthequeue84 | 🎵 TikTok: @behind.the.queue | 📘 Facebook: facebook.com/behindthequeue
+  💼 LinkedIn: linkedin.com/company/behind-the-queue
+  ```
 
 **Tags (8–12):** Mix of Spanish-language operational + show + cultural + LATAM
 

@@ -50,6 +50,10 @@ construiste sigue funcionando sin ti… y qué se apaga? Te leo en los comentari
 Yo soy Andy. Y como diría el gran Gustavo Cerati: "Gracias… totales".
 
 Escúchalo ahora en Spotify.
+
+📩 andy@behind-thequeue.com | 🌐 behind-thequeue.com
+📸 Instagram: @behindthequeue84 | 🎵 TikTok: @behind.the.queue | 📘 Facebook: facebook.com/behindthequeue
+💼 LinkedIn: linkedin.com/company/behind-the-queue
 ```
 
 **Tags / keywords Spotify (comma-separated):**
