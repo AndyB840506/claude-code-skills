@@ -21,31 +21,19 @@ En la cima, Cerati cambió lo que ya funcionaba. La lección de liderazgo que tu
 ```
 
 **Descripción completa (~320 palabras):**
+
+> ⚠️ **Para pegar en Spotify, COPIAR desde [EP017-cerati-metadata.html](EP017-cerati-metadata.html)** (botón Copiar). Abajo cada párrafo es UNA sola línea a propósito: si se parte con saltos manuales, Spotify los colapsa y pega palabras ("la crisis" → "lacrisis"). No re-wrappear.
+
 ```
-Gustavo Cerati llevó a Soda Stereo a reinventarse en el punto más alto de su
-carrera —con Canción Animal vendiendo medio millón de copias— hacia un disco que
-nadie le pidió. Treinta años después, esa decisión es una de las lecciones de
-liderazgo más completas que vas a encontrar fuera de un libro de management.
+Gustavo Cerati llevó a Soda Stereo a reinventarse en el punto más alto de su carrera —con Canción Animal vendiendo medio millón de copias— hacia un disco que nadie le pidió. Treinta años después, esa decisión es una de las lecciones de liderazgo más completas que vas a encontrar fuera de un libro de management.
 
-Este episodio usa la historia de Cerati como espejo para una pregunta incómoda de
-liderazgo que todo supervisor o gerente de un call center o BPO termina enfrentando:
-¿estás cambiando lo que todavía funciona antes de que se rompa, o esperas a que la
-crisis decida por ti? Y la más dura de todas: ¿qué de lo que construiste en tu
-operación seguiría sonando si mañana ya no estuvieras ahí?
+Este episodio usa la historia de Cerati como espejo para una pregunta incómoda de liderazgo que todo supervisor o gerente de un call center o BPO termina enfrentando: ¿estás cambiando lo que todavía funciona antes de que se rompa, o esperas a que la crisis decida por ti? Y la más dura de todas: ¿qué de lo que construiste en tu operación seguiría sonando si mañana ya no estuvieras ahí?
 
-Vas a salir con tres herramientas concretas para esta semana: la pregunta de los
-viernes para detectar lo que funciona por inercia y no por criterio; cómo escribir
-el final de un proceso antes de necesitarlo, como Soda Stereo planeó su propia
-despedida; y por qué agradecer a tu gente en el momento alto —no en la entrevista
-de salida— es lo que separa un buen desempeño de un legado real.
+Vas a salir con tres herramientas concretas para esta semana: la pregunta de los viernes para detectar lo que funciona por inercia y no por criterio; cómo escribir el final de un proceso antes de necesitarlo, como Soda Stereo planeó su propia despedida; y por qué agradecer a tu gente en el momento alto —no en la entrevista de salida— es lo que separa un buen desempeño de un legado real.
 
-Por el camino: el giro de Dynamo, la noche de "Gracias Totales" en River Plate, el
-regreso de 2007 que convocó a más de un millón de personas, y el dato que lo cierra
-todo —la gira de 2020 que arrancó en El Campín de Bogotá, sin Cerati, y aun así
-llenó estadios. Con guiños a Steve Jobs, Jim Collins y David Bowie.
+Por el camino: el giro de Dynamo, la noche de "Gracias Totales" en River Plate, el regreso de 2007 que convocó a más de un millón de personas, y el dato que lo cierra todo —la gira de 2020 que arrancó en El Campín de Bogotá, sin Cerati, y aun así llenó estadios. Con guiños a Steve Jobs, Jim Collins y David Bowie.
 
-Y dime, sin adornos: si mañana faltaras tres meses sin aviso, ¿qué de lo que
-construiste sigue funcionando sin ti… y qué se apaga? Te leo en los comentarios.
+Y dime, sin adornos: si mañana faltaras tres meses sin aviso, ¿qué de lo que construiste sigue funcionando sin ti… y qué se apaga? Te leo en los comentarios.
 
 Yo soy Andy. Y como diría el gran Gustavo Cerati: "Gracias… totales".
 
