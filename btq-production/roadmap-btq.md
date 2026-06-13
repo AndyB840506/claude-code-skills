@@ -13,7 +13,7 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.014 | Maomao | publicado |
 | EP.015 | Solid Snake (Metal Gear Solid) | publicado — https://open.spotify.com/episode/6fpGqMqaLozmWB4ABOlO3S |
 | EP.016 | Pink Floyd / The Wall | publicado — https://open.spotify.com/episode/3CNyTkA6OCLoCrmNEh0LVR |
-| EP.017 | Soda Stereo / Cerati | guion listo — grabación sáb 13-jun, live dom 14-jun 8PM |
+| EP.017 | Soda Stereo / Cerati | grabado (13-jun) — live dom 14-jun 8PM; SRT en E:\Transcriptor\transcripciones\BTQ EP 17.srt; quotes Q1–Q4 validados contra audio |
 | EP.018 | El Mundial — liderazgo bajo presión (momento cultural: fase de grupos en curso; objetivo: adquisición de oyentes nuevos vía reach social) | en roadmap |
 | EP.019 | Gladiator / Máximo (corrido desde EP.018 por la ventana del Mundial) | en roadmap |
 | EP.020 | Pilar SEO — tema evergreen buscable por definir (rotación / métricas / IA en BPO) | en roadmap |

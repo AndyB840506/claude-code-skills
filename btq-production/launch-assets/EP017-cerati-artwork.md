@@ -342,8 +342,9 @@ quitarlos); (3) cero personas en escena.
 
 ### Q3 — "Cualquier voz" (el dato de la gira 2020)
 
-**Caption (frase completa):** "Lo que Cerati construyó no era su presencia en el
+**Caption (frase completa):** "Lo que Cerati construyó no era una presencia en el
 escenario. Era algo que cualquier voz podía encender." — Behind the Queue, EP.017
+*(fiel a la grabación: Andy dijo "una presencia", no "su presencia" — SRT 1889s)*
 
 ```
 Wide image, 16:9, 1920x1080px. Graphic editorial poster design —
@@ -364,7 +365,7 @@ TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
   LEFT HALF, vertically centered, left-aligned, bold condensed
   sans-serif, uppercase:
     Line 1: "SU OBRA NO ERA" — white
-    Line 2: "SU PRESENCIA." — white
+    Line 2: "UNA PRESENCIA." — white
     Line 3: "ERA ALGO QUE CUALQUIER VOZ" — signal gold #C9A84C, bigger
     Line 4: "PODIA ENCENDER." — signal gold #C9A84C, bigger
     Line 5: "BEHIND THE QUEUE · EP.017" — silver, small, letter-spaced
@@ -379,6 +380,49 @@ FOOTER: full-width strip at the very bottom, on the void black background.
 **Checklist:** (1) UN solo brazo con el micrófono — si Flow pone una persona completa
 o varias manos, regenerar; (2) texto letra por letra; (3) el micrófono es la única
 fuente de luz fuerte.
+
+### Q4 — "Éxito vs legado" (frase fuerte ad-lib confirmada en grabación)
+
+**Caption (frase completa):** "El éxito necesita que tú estés presente para
+sostenerlo. El legado sigue funcionando cuando tú ya te fuiste — a otra sala, a otro
+turno, a otra etapa de tu carrera." — Behind the Queue, EP.017
+*(confirmada contra el audio: SRT 908s / 922s — salió casi textual)*
+
+```
+Wide image, 16:9, 1920x1080px. Graphic editorial poster design —
+NOT photorealistic 3D.
+
+COMPOSITION: split for a wide frame —
+  RIGHT HALF (exactly right 50% of frame): an empty stadium stage right
+  after the show — the wall of warm golden stage light (#C9A84C) and
+  haze are still glowing over abandoned instruments (a lone microphone
+  stand and an amplifier) as pure black silhouettes, as if the band just
+  walked off but the music still hangs in the air. Very dim out-of-focus
+  crowd lights far in the background. No people anywhere. Analog film
+  grain, halation, muted retro color grading, screen-print poster
+  texture. 1980s aesthetic, no modern elements.
+  LEFT HALF (exactly left 50% of frame): void black #0A0A0A, reserved
+  for the text.
+
+TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
+  LEFT HALF, vertically centered, left-aligned, bold condensed
+  sans-serif, uppercase:
+    Line 1: "EL EXITO TE NECESITA" — white
+    Line 2: "PRESENTE PARA DURAR." — white
+    Line 3: "EL LEGADO SIGUE SONANDO" — signal gold #C9A84C, bigger
+    Line 4: "CUANDO YA TE FUISTE." — signal gold #C9A84C, bigger
+    Line 5: "BEHIND THE QUEUE · EP.017" — silver, small, letter-spaced
+
+FOOTER: full-width strip at the very bottom, on the void black background.
+  Left: "Behind the Queue" in small white sans-serif
+  Center: "EP.017" in bold signal gold #C9A84C
+  Right: small silver platform icons — Spotify (circle with three curved
+  lines) and YouTube (rounded rectangle with play triangle)
+```
+
+**Checklist:** (1) escenario VACÍO con instrumentos como siluetas — cero personas;
+(2) texto letra por letra (5 líneas, sin tildes); (3) la mitad izquierda negro casi
+puro, las luces doradas no invaden el texto.
 
 ### Derivar cualquier quote card a 1:1 o 9:16
 
