@@ -397,7 +397,7 @@ Y aquí va el dato que me guardé todo el episodio para este momento exacto.
 
 [PAUSA]
 
-En 2020, Zeta Bosio y Charly Alberti anunciaron una gira de Soda Stereo. Sin Cerati. Se llamó — escuchen bien el nombre — "Gracias Totales". Los estadios se llenaron, con vocalistas invitados de toda Latinoamérica turnándose para cantar las canciones que él dejó escritas.
+En 2020, Zeta Bosio y Charly Alberti salieron de gira con Soda Stereo. Sin Cerati. Se llamó — escuchen bien el nombre — "Gracias Totales". Y arrancó precisamente acá, en Colombia: el 29 de febrero de 2020, en el estadio El Campín de Bogotá, ante treinta mil personas — la primera vez en la historia que esa banda se subía a un escenario sin su voz. Los estadios se llenaron, con vocalistas invitados turnándose para cantar las canciones que él dejó escritas — desde Chris Martin, el de Coldplay, hasta dos colombianos de esta casa: Juanes, y Andrea Echeverri, la de Aterciopelados.
 
 [PAUSA]
 
@@ -575,17 +575,23 @@ Duración total estimada: ~57 minutos al ritmo natural de Andy.
 
 - ~~DECIDIR EP.018~~ **RESUELTO (2026-06-12): EP.018 = El Mundial.** Teaser reescrito,
   Gladiator corrido a EP.019, roadmap actualizado.
-- **VERIFICAR antes de grabar:** lista de vocalistas invitados de la gira "Gracias
-  Totales" 2020 (dato nuevo en Mito 3) — la gira y el formato con invitados están
-  confirmados; si Andy quiere nombrar invitados específicos al aire, verificar la
-  lista exacta primero (hubo artistas colombianos entre ellos — confirmar cuáles).
-- **Ritmo del refrán:** la frase-tesis "que siga sonando/funcionando cuando ya no estés"
-  aparece ~6 veces casi textual. Tres anclas están bien (hook, mitad, cierre) — en las
-  demás, variar la formulación al aire para que no suene a coletilla.
+- ~~VERIFICAR invitados gira 2020~~ **RESUELTO (2026-06-13):** la gira "Gracias Totales"
+  arrancó el 29-feb-2020 en El Campín, Bogotá, ante 30.000 personas (primera vez sin
+  Cerati). Invitados verificados — colombianos: **Juanes** y **Andrea Echeverri**
+  (Aterciopelados); internacionales: Chris Martin (Coldplay), Benito Cerati, León
+  Larregui (Zoé), Mon Laferte, Rubén Albarrán (Café Tacvba), entre otros. El guion ya
+  nombra a los dos colombianos + Chris Martin (gancho local para la audiencia 70% CO).
+  COVID interrumpió la gira; corrió 2020–2022 — NO decir que fue una sola tanda continua.
+  (Fuente: Wikipedia "Gracias Totales - Soda Stereo"; El Universal; Diario de Cuyo.)
+- **Ritmo del refrán (pasada de entrega de Andy — sigue pendiente):** la frase-tesis
+  "que siga sonando/funcionando cuando ya no estés" aparece ~9 veces casi textual,
+  sobre todo en los [REMATE] (líneas 60, 124, 162, 198, 296, 392, 498). Tres anclas
+  están bien (hook, mitad, cierre) — en las demás VARIAR la formulación al aire para
+  que no suene a coletilla. Es el único cambio de contenido que queda por resolver.
 - Validar en grabación el ritmo de las preguntas y pausas — Andy adapta libremente sobre el esqueleto.
 - Si se requiere más densidad para llegar a los 60 min, expandir: ejemplos de trabajo concretos en el Hook, un cuarto ejemplo operativo en Referencias Cruzadas, y una pregunta de diagnóstico adicional por mito en Mito o Realidad.
 
 ---
-*Fuentes consultadas y verificadas: sopitas.com, Radiónica, Infobae, Billboard (datos biográficos de Cerati), búsquedas verificadas de discografía de Soda Stereo y de la gira "Me Verás Volver" 2007, biografía "Steve Jobs" de Walter Isaacson (2011), "Good to Great" de Jim Collins (2001).*
+*Fuentes consultadas y verificadas: sopitas.com, Radiónica, Infobae, Billboard (datos biográficos de Cerati), búsquedas verificadas de discografía de Soda Stereo y de la gira "Me Verás Volver" 2007, biografía "Steve Jobs" de Walter Isaacson (2011), "Good to Great" de Jim Collins (2001), gira "Gracias Totales" 2020 (Wikipedia "Gracias Totales - Soda Stereo"; El Universal; Diario de Cuyo — debut El Campín Bogotá 29-feb-2020, 30.000 personas, invitados verificados).*
 
 [NOTA: se reemplazó la referencia de HBR "Leading After the Founder" (ene-feb 2026) por Steve Jobs/Apple y Jim Collins/"Good to Great" — la cita de HBR no se pudo verificar con una fuente confirmable; las dos nuevas son casos ampliamente documentados y verificables.]

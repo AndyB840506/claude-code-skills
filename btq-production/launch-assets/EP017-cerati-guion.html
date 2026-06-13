@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EP.17 — Soda Stereo: el liderazgo que sigue sonando | Behind the Queue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+        :root {
+            --bg: #0A0A0A;
+            --card: #141414;
+            --card2: #1b1b1b;
+            --gold: #C9A84C;
+            --gold-dim: #8a7331;
+            --offwhite: #F5F2EC;
+            --muted: #9a968c;
+            --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --sans: 'DM Sans', system-ui, -apple-system, Segoe UI, sans-serif;
+            --accent: 'Bebas Neue', 'Arial Narrow', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--sans);
+            background: #050505;
+            color: var(--offwhite);
+            line-height: 1.8;
+            font-size: 15.5px;
+        }
+
+        .container { max-width: 820px; margin: 0 auto; background: var(--bg); }
+
+        /* ---------- HEADER ---------- */
+        .header {
+            background: linear-gradient(160deg, #161208 0%, #0A0A0A 70%);
+            padding: 46px 48px 40px;
+            border-bottom: 3px solid var(--gold);
+        }
+        .header .podcast {
+            font-family: var(--accent);
+            font-size: 1.15em;
+            color: var(--gold);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .header .epnum {
+            font-family: var(--accent);
+            font-size: 2.6em;
+            color: var(--gold);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+        .header h1 {
+            font-family: var(--serif);
+            font-size: 2em;
+            font-weight: 900;
+            margin: 6px 0 10px;
+            color: var(--offwhite);
+            line-height: 1.18;
+        }
+        .header .tagline {
+            font-family: var(--serif);
+            font-style: italic;
+            color: var(--gold);
+            font-size: 1.05em;
+            margin-bottom: 22px;
+        }
+        .meta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .meta-item {
+            background: rgba(201,168,76,0.10);
+            border: 1px solid var(--gold-dim);
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            color: var(--gold);
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------- SECTIONS ---------- */
+        .section { padding: 32px 48px; border-bottom: 1px solid #222; }
+        .section h2 {
+            font-family: var(--accent);
+            font-size: 1.15em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid var(--gold-dim);
+        }
+
+        /* ---------- ARQUITECTURA ---------- */
+        .arquitectura { font-size: 0.9em; }
+        .arq-row {
+            display: grid;
+            grid-template-columns: 30px 1.1fr 95px 1.6fr;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid #1c1c1c;
+            align-items: start;
+        }
+        .arq-row.head { color: var(--gold); font-weight: 700; border-bottom: 1px solid var(--gold-dim); }
+        .arq-num { color: var(--gold); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--offwhite); }
+        .arq-time { color: var(--muted); font-family: monospace; font-size: 0.92em; }
+        .arq-row span:last-child { color: var(--muted); }
+
+        /* ---------- GUION SEGMENTS ---------- */
+        .segment { margin: 40px 0; padding-bottom: 26px; border-bottom: 1px solid #1a1a1a; }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+        .segment-number {
+            font-family: var(--accent);
+            background: var(--gold);
+            color: #0A0A0A;
+            min-width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1em; font-weight: bold;
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+        .segment-title {
+            font-family: var(--accent);
+            font-weight: 400;
+            font-size: 1.15em;
+            color: var(--offwhite);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.78em;
+            color: var(--muted);
+            background: #181818;
+            padding: 3px 11px;
+            border-radius: 10px;
+            white-space: nowrap;
+            font-family: monospace;
+        }
+        .sub { font-family: var(--serif); font-style: italic; font-size: 1.12em; color: var(--gold); margin: 26px 0 8px; }
+
+        p.line { margin: 0 0 4px; color: #e9e6dd; }
+
+        /* PAUSA chips */
+        .pausa {
+            display: inline-block;
+            font-family: var(--accent);
+            letter-spacing: 2px;
+            font-size: 0.72em;
+            color: var(--gold-dim);
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 0 8px;
+            margin: 8px 0;
+            background: #111;
+        }
+        .pausa.larga { color: var(--gold); border-color: var(--gold-dim); }
+
+        /* REMATE — the signature punch line */
+        .remate {
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(90deg, rgba(201,168,76,0.07), transparent);
+            padding: 14px 20px;
+            margin: 18px 0;
+            font-family: var(--serif);
+            font-size: 1.08em;
+            color: var(--offwhite);
+        }
+        .remate::before {
+            content: "REMATE";
+            display: block;
+            font-family: var(--accent);
+            font-size: 0.62em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        /* NOTA producción — not printable */
+        .nota {
+            background: #15130c;
+            border: 1px dashed var(--gold-dim);
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 14px 0;
+            font-size: 0.85em;
+            color: #cdbb88;
+        }
+        .nota::before { content: "NOTA · "; font-family: var(--accent); letter-spacing: 2px; color: var(--gold); }
+
+        /* DATO callout */
+        .dato {
+            background: var(--card2);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 5px 5px 0;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .dato-label {
+            font-family: var(--accent);
+            font-size: 0.78em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        /* MITO / REALIDAD */
+        .mito {
+            background: #1a1010;
+            border-left: 4px solid #8a3b2f;
+            padding: 11px 16px; margin: 16px 0 0; border-radius: 0 5px 5px 0;
+            color: #e6c9c2;
+        }
+        .realidad {
+            background: #101a12;
+            border-left: 4px solid #4a7a4a;
+            padding: 11px 16px; margin: 0 0 16px; border-radius: 0 5px 5px 0;
+            color: #d7e6d3;
+        }
+        .mito strong, .realidad strong { color: #fff; }
+
+        em { color: var(--gold); font-style: italic; }
+        strong { color: var(--offwhite); }
+
+        /* FUENTES */
+        .fuentes p { font-size: 0.83em; color: var(--muted); line-height: 1.7; }
+
+        .checklist-box {
+            background: var(--card);
+            border: 1px solid #262011;
+            border-radius: 6px;
+            padding: 6px 18px;
+        }
+        .checklist-box .row { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #1a1a1a; align-items: baseline; }
+        .checklist-box .row:last-child { border-bottom: none; }
+        .ck { color: #4a7a4a; font-weight: 700; }
+        .warn { color: var(--gold); font-weight: 700; }
+
+        footer { padding: 26px 48px; color: var(--muted); font-size: 0.8em; text-align: center; }
+        footer .gold { color: var(--gold); font-family: var(--accent); letter-spacing: 3px; }
+
+        @media print {
+            body { background: #fff; color: #111; }
+            .container { background: #fff; }
+            .nota { display: none; }
+            .header { background: #111; }
+            .remate { color: #111; }
+            p.line, .segment-title, strong { color: #111; }
+        }
+        @media (max-width: 640px) {
+            .section, .header, footer { padding-left: 22px; padding-right: 22px; }
+            .arq-row { grid-template-columns: 24px 1fr; }
+            .arq-row .arq-time, .arq-row span:last-child { grid-column: 2; }
+        }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Behind the Queue</div>
+        <div class="epnum">EP.17</div>
+        <h1>Soda Stereo: el liderazgo que sigue sonando cuando ya no estás</h1>
+        <div class="tagline">El liderazgo se mide en lo que dejas, no en cuánto duras.</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 017</span>
+            <span class="meta-item">Solo host · Andy</span>
+            <span class="meta-item">Referente: Gustavo Cerati</span>
+            <span class="meta-item">~57 min</span>
+            <span class="meta-item">Liderazgo · BPO</span>
+            <span class="meta-item">Graba sáb 13-jun · live dom 14-jun 8PM</span>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Hook</span><span class="arq-time">0:45–5:00</span><span>Pregunta inicial + reveal de Cerati</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Para el que no lo conoce</span><span class="arq-time">5:00–11:00</span><span>Historia completa de Cerati y Soda Stereo</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">El Puente</span><span class="arq-time">11:00–16:30</span><span>De Dynamo al piso de operaciones</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Los Datos</span><span class="arq-time">16:30–21:00</span><span>Canción Animal + Me Verás Volver, desarrollados</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">Las Lecciones</span><span class="arq-time">21:00–28:00</span><span>Persiana Americana / River Plate / regreso 2007</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Referencias Cruzadas</span><span class="arq-time">28:00–33:00</span><span>Steve Jobs/Apple · Jim Collins · Bowie/Berlín</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Aplicable Hoy</span><span class="arq-time">33:00–38:00</span><span>3 herramientas concretas para esta semana</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">Mito o Realidad</span><span class="arq-time">38:00–43:00</span><span>3 mitos + dato guardado (gira 2020 sin Cerati)</span></div>
+            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Recomendaciones de Andy</span><span class="arq-time">43:00–48:00</span><span>Canción · documental · libro + regalo</span></div>
+            <div class="arq-row"><span class="arq-num">10</span><span class="arq-seg">Cierre con anécdota</span><span class="arq-time">48:00–54:00</span><span>La gerente que volvió de licencia</span></div>
+            <div class="arq-row"><span class="arq-num">11</span><span class="arq-seg">Teaser EP.018 + Cierre TM</span><span class="arq-time">54:00–57:00</span><span>El Mundial + pregunta comentable + "Gracias totales"</span></div>
+        </div>
+    </div>
+
+    <!-- PENDIENTE DESTACADO -->
+    <div class="section">
+        <h2>Antes de grabar · checklist</h2>
+        <div class="checklist-box">
+            <div class="row"><span class="ck">✓</span><span>Título con keyword buscable ("liderazgo") + referente. Numeración EP.17 (2 díg, estándar SEO).</span></div>
+            <div class="row"><span class="ck">✓</span><span>Muletillas dentro de presupuesto: 1 "imagínense", 0 "me vuela la cabeza".</span></div>
+            <div class="row"><span class="ck">✓</span><span>Re-enganche con dato guardado (gira 2020) + cierre con pregunta comentable al oyente.</span></div>
+            <div class="row"><span class="ck">✓</span><span>Dato climático verificado: gira "Gracias Totales" 2020 — debut El Campín, Bogotá, 30.000 personas. Invitados CO: Juanes, Andrea Echeverri.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Pasada de entrega:</strong> variar el refrán-tesis "seguir sonando/funcionando cuando ya no estés" — aparece ~9× casi textual (sobre todo en los REMATE). 3 anclas bien; variar las demás al aire.</span></div>
+            <div class="row"><span class="warn">⚠</span><span>Verificar lista de invitados de gira "Gracias Totales" 2020 si se nombran más artistas al aire (COVID la corrió a 2020–2022; no decir que fue tanda continua).</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- APERTURA -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Apertura</span><span class="segment-time">0:00</span></div>
+            <p class="line">Buenas y santas. Feliz día, feliz tarde o feliz noche. Cualquier día que éste sea.</p>
+            <p class="line">Esto es Behind the Queue, episodio diecisiete.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+        </div>
+
+        <!-- SEGMENTO 1 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">1</span><span class="segment-title">Hook</span><span class="segment-time">0:45 – 5:00</span></div>
+            <p class="line">Hoy quiero arrancar con una pregunta. Y como siempre, quiero que sea la honesta — no la que suena bien en una presentación a la gerencia.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Cuándo fue la última vez que cambiaste algo en tu operación que todavía estaba funcionando — no porque alguien te lo exigiera, no porque los números hubieran empezado a caer, sino porque tú viste, antes que nadie más, que ese "funcionando bien" tenía fecha de vencimiento?</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Piénsenlo de verdad. No el ajuste que les tocó hacer cuando el CSAT empezó a bajar. No el cambio de guion que ordenó el cliente después de una auditoría. Algo que ustedes decidieron mover — un proceso, un protocolo, una forma de operar — mientras todavía les estaba dando resultados.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Se acuerdan de cuándo fue la última vez que hicieron eso?</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Si les costó responder — si lo que les vino a la mente fue, en realidad, un cambio que les tocó <em>reaccionando</em> a algo, no <em>anticipándolo</em> — quédense en este episodio. Porque hoy no vamos a hablar de gestión del cambio. Vamos a hablar de algo más profundo: de la diferencia entre un líder que espera a que algo se rompa, y un líder que construye lo que sigue mientras lo de ahora todavía respira.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y vamos a hablar de algo más, todavía más incómodo: de qué le queda a tu equipo, a tu operación, a todo lo que construiste — el día que tú ya no estés ahí para sostenerlo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">La historia que vamos a usar de espejo hoy es la de un músico que, según buena parte de la crítica especializada en rock latinoamericano, terminó definiendo el sonido de toda una generación en español — y que, sin proponérselo, dejó una de las lecciones de liderazgo más completas que yo he encontrado fuera de un libro de management.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Se llama Gustavo Cerati. Su banda se llamaba Soda Stereo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y antes de que sigan pensando "esto es solo nostalgia musical de los noventa" — déjenme decirles que no. Esto es la historia de alguien que entendió, mucho antes que cualquier consultor de Harvard se lo explicara con gráficas, tres cosas que casi ningún líder logra dominar al mismo tiempo: cuándo cambiar lo que funciona, cuándo cerrar un ciclo en su mejor momento, y qué dejar construido para que siga sonando — incluso cuando tú ya no puedas estar ahí para encenderlo.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="remate">Esta no es la historia de una banda que se volvió gigante. Es la historia de un líder que entendió que su trabajo más importante no era estar siempre presente — era construir algo que no necesitara su presencia para seguir funcionando.</div>
+        </div>
+
+        <!-- SEGMENTO 2 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">2</span><span class="segment-title">Para el que no lo conoce</span><span class="segment-time">5:00 – 11:00</span></div>
+            <p class="line">Para el que no lo conoce — o para el que lo escuchó toda su vida y nunca conoció la historia completa.</p>
+            <div class="nota">Andy arma la línea de tiempo completa, sin saltarse el giro de Dynamo — esa es la parte "invisible" que más vale la pena explicar.</div>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Gustavo Cerati nació el 11 de agosto de 1959, en Buenos Aires. A los doce años ya tenía su primera banda — tocaba en fiestas de barrio, en eventos de colegio, en cualquier lugar donde lo dejaran enchufar una guitarra. En 1979 entró a la Universidad del Salvador a estudiar Publicidad. Y ahí, entre clases, conoció a un compañero llamado Héctor "Zeta" Bosio.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Tres años después sumaron a un baterista llamado Charly Alberti. Y con eso, en 1982, nació Soda Stereo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Lo que pasó después es una de las cronologías más estudiadas del rock en español — siete discos de estudio, y aquí está lo importante: cada uno sonando <em>distinto</em> al anterior. No con pequeños ajustes de producción. Con giros completos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line"><em>Soda Stereo</em>, de 1984, y <em>Nada Personal</em>, de 1985, los pusieron en el radar de toda Argentina, con canciones como "Nada Personal" y "El Cuento del Griego" sonando en cada radio del país. Pero el verdadero salto llegó con <em>Signos</em>, en 1986 — el disco de "Persiana Americana" y "En la Ciudad de la Furia", dos canciones que, casi cuarenta años después, todavía suenan en cualquier fiesta de habla hispana sin que nadie tenga que preguntar quiénes son.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">En 1990 llegó <em>Canción Animal</em>. La crítica suele llamarlo su disco capital — y los números lo confirman: superó las quinientas mil copias certificadas solo en Argentina, la cifra más alta de toda su discografía. Era, sin discusión, el momento más alto de su carrera hasta ese punto.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aquí está el momento que define todo lo que vamos a hablar hoy.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Justo ahí — en el pico más alto, con el público comiendo de su mano, con la fórmula perfectamente afinada — Cerati llevó a la banda a un lugar que nadie esperaba.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">En 1992 publicaron <em>Dynamo</em>. Un disco que abandonaba el pop accesible que los había hecho gigantes y se metía de lleno en sonidos experimentales — rock alternativo, dream pop, texturas que en ese momento ni siquiera tenían un nombre establecido en español. Mucha gente no lo entendió. Una parte de su propio público se sintió traicionado. Y tres años después, en 1995, llegó <em>Sueño Stereo</em> — todavía más lejos, en esa misma dirección.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">En 1997, después de quince años activos, Soda Stereo se separó. Lo hicieron con una gira de despedida que llamaron "Gracias Totales", que cerró el 20 de septiembre de ese año en el estadio de River Plate, en Buenos Aires — frente a decenas de miles de personas que sabían, mientras estaban ahí, que estaban presenciando el final de algo irrepetible.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Diez años después, en 2007, volvieron. Hicieron una gira llamada "Me Verás Volver" — y terminó siendo mucho más grande de lo que habían planeado en un inicio. Volvemos sobre esos números más adelante, porque son de los datos más importantes de todo este episodio.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Cerati continuó con su carrera solista. Su último disco, <em>Fuerza Natural</em>, salió en 2009. Y el 15 de mayo de 2010, después de un concierto en Caracas, Venezuela, sufrió un accidente cerebrovascular que lo dejó en coma.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Estuvo así cuatro años. Murió el 4 de septiembre de 2014.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Quince años de carrera activa con la banda que lo hizo gigante. Diez años de silencio entre esa banda y su regreso. Una reunión que rompió récords de convocatoria. Y cuatro años de despedida lenta, pública, dolorosa — antes del final.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="remate">Cerati no fue solamente un cantante con una voz reconocible. Fue alguien que, en cada etapa de su vida, tomó decisiones que parecían ir en contra de su propio éxito — y que terminaron siendo, exactamente, las decisiones que construyeron algo capaz de sobrevivirlo.</div>
+        </div>
+
+        <!-- SEGMENTO 3 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">El Puente</span><span class="segment-time">11:00 – 16:30</span></div>
+            <p class="line">Detengámonos en el momento de <em>Dynamo</em>, en 1992.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Soda Stereo venía de <em>Canción Animal</em> — su disco más vendido, el que los había consolidado como la banda más grande del rock en español. Tenían la fórmula resuelta. Tenían al público rendido. Lo más fácil del mundo habría sido grabar "Canción Animal, segunda parte" y dejar que la maquinaria siguiera funcionando sola, sin fricción, durante años.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Cerati hizo exactamente lo contrario. Llevó a la banda a un terreno que parte de su propio público no entendió en ese momento. <em>Dynamo</em> no fue el disco más vendido. No fue el más querido al salir. Pero hoy, treinta años después, buena parte de la crítica especializada lo señala como el momento en que Soda Stereo dejó de ser "una banda exitosa" — y empezó a ser "una banda que importaba".</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y aquí está el puente con tu operación. Con tu piso. Con la silla en la que estás sentado escuchando esto ahora mismo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Hay un momento — y la mayoría de los líderes de operaciones lo viven sin darse cuenta — en el que un guion de atención, un flujo de escalación, una forma de medir desempeño, deja de estar resolviendo el problema para el que se diseñó, y empieza simplemente a funcionar por inercia. Nadie lo cuestiona, porque "así se ha hecho siempre" y los números siguen saliendo en verde.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y ese — exactamente ese momento — es el más peligroso de todos. Porque es el que menos alarmas dispara.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Piensen en su propio piso. En ese guion de atención que llevan usando hace tres años, que ya nadie cuestiona porque "convierte bien". En ese flujo de escalación que se diseñó para un volumen de hace dos contrataciones, y que sigue funcionando — a duras penas — porque el equipo aprendió a sortearlo. En esa métrica que se sigue reportando cada semana, aunque hace meses dejó de decirles algo nuevo sobre la operación.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Nada de eso está roto. Todo eso "funciona". Y esa es exactamente la trampa: lo que funciona hoy es precisamente lo que menos atención recibe — porque no genera ninguna urgencia para revisarlo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">El líder que espera a que algo se rompa para cambiarlo, ya llegó tarde. El líder que cambia algo que todavía funciona — porque vio hacia dónde iba el terreno antes que los demás — es el que sigue construyendo algo capaz de durar más que él.</div>
+        </div>
+
+        <!-- SEGMENTO 4 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">Los Datos</span><span class="segment-time">16:30 – 21:00</span></div>
+            <div class="nota">Andy desarrolla cada dato con interpretación — uno por bloque, sin encadenarlos.</div>
+            <p class="line">Voy a darles los datos con su lectura, porque un dato suelto no le sirve a nadie. Lo que importa es lo que ese dato significa para la silla en la que están sentados.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato uno · Canción Animal (1990)</div>Superó las quinientas mil copias certificadas solo en Argentina — la cifra más alta de toda la discografía de la banda.</div>
+            <p class="line">Deténganse un segundo en lo que implica esa cifra. No se logró con el disco más arriesgado, ni con el más experimental. Se logró con el disco que vino <em>justo antes</em> del giro hacia <em>Dynamo</em>. Es decir: Cerati decidió cambiar de rumbo desde la cima — no desde la caída. No esperó a que las ventas empezaran a bajar para reinventarse. Cambió cuando todavía tenía todas las razones del mundo para no hacerlo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ahora tradúzcanlo a su operación: ¿cuántas veces han visto a un líder esperar a que el cliente amenace con cancelar el contrato para finalmente revisar el proceso que lo viene frustrando hace meses? Cerati no operó así. Cambió cuando el contrato — en su caso, el contrato con su público — todavía estaba en su mejor momento.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato dos · Me Verás Volver (2007)</div>Diez años después de separarse, dieron veintidós conciertos en trece ciudades de nueve países distintos, y juntaron en total a más de un millón de personas.</div>
+            <p class="line">Una banda que llevaba una década completa sin tocar junta convocó a más de un millón de personas en pocos meses. Eso no sucede por nostalgia pasajera. Sucede porque lo que esa banda construyó — el sonido, la música, el momento — siguió vivo durante diez años enteros, sin que nadie estuviera presente manteniéndolo encendido.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Llévenlo a su piso: ¿qué de lo que ustedes construyeron hoy seguiría funcionando si, por cualquier razón, no estuvieran ahí mañana durante diez meses? ¿La forma de operar que diseñaron sobreviviría sin ustedes presentes recordándosela a todos cada semana? Esa pregunta — incómoda, directa — es la que separa un buen desempeño de un verdadero legado operativo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">Eso es lo que distingue un éxito de un legado. El éxito necesita que tú estés presente para sostenerlo. El legado sigue funcionando cuando tú ya te fuiste a otra sala, a otro turno, a otra etapa de tu carrera.</div>
+        </div>
+
+        <!-- SEGMENTO 5 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">Las Lecciones</span><span class="segment-time">21:00 – 28:00</span></div>
+            <p class="line">Cada una de estas lecciones está anclada en un momento exacto, nombrado, de la carrera de Cerati. No son ideas sueltas extraídas "de la obra en general" — son momentos específicos que, si se buscan, se pueden encontrar y escuchar.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Lección uno — el momento de "Persiana Americana"</div>
+            <p class="line">En 1986, Soda Stereo lanzó <em>Signos</em> — el disco de "Persiana Americana", una de las canciones más reconocibles del rock en español hasta hoy. Lo interesante no es solo el éxito de esa canción. Es el momento exacto en que llegó: justo cuando la banda empezaba a moverse de un sonido más ligero, más pop, hacia composiciones con más capas, más atmósfera, más ambición sonora.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No esperaron a "asegurar" la fórmula que ya les estaba funcionando. Empezaron a construir la siguiente versión de sí mismos <em>mientras</em> la versión anterior todavía estaba en su mejor momento.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">En tu operación, esa lección tiene una cara muy concreta: el supervisor que empieza a entrenar a su reemplazo <em>antes</em> de que el ascenso esté confirmado. El líder que documenta su proceso <em>mientras</em> todavía lo está ejecutando — no cuando ya está por irse y alguien se lo pide con afán.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">La lección no es "cambia todo todo el tiempo". La lección es: empieza a construir lo que sigue <em>antes</em> de que lo que tienes hoy deje de funcionar — porque cuando deje de funcionar, ya será tarde para construir con calma.</div>
+
+            <div class="sub">Lección dos — la noche del 20 de septiembre de 1997, River Plate</div>
+            <p class="line">Esa noche, en el estadio de River Plate, en Buenos Aires, Soda Stereo dio su último concierto como banda activa. No lo hicieron porque las cosas estuvieran yendo mal. Lo hicieron en el pico de su carrera, frente a un estadio que sabía perfectamente que estaba presenciando un final.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Esa noche Cerati dijo algo que, casi treinta años después, la gente todavía repite, todavía tatúa, todavía comparte en redes: "Gracias… totales". Una frase de agradecimiento genuino, dicha en el momento exacto en que decidieron cerrar el ciclo — no cuando ya estaba desgastado, sino cuando todavía dolía terminarlo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Piensen en cuántas campañas, cuántos proyectos, cuántas posiciones dentro de una operación se mantienen vivas mucho después de que dejaron de tener sentido — solo porque nadie quiere ser quien levante la mano y diga "esto ya cumplió su ciclo". Y piensen, también, en cuántas veces un buen colaborador se va de una operación sin que nadie le haya dicho, de frente, lo que su trabajo significó — porque ese tipo de conversación "se deja para la salida".</p>
+            <span class="pausa">PAUSA</span>
+            <div class="remate">Cualquiera puede cerrar un proyecto cuando ya nadie lo quiere. La verdadera prueba de liderazgo es cerrarlo — o agradecerlo — cuando todavía te están pidiendo que sigas. Porque ahí es cuando realmente <em>eliges</em>, en lugar de dejar que la circunstancia elija por ti.</div>
+
+            <div class="sub">Lección tres — el regreso de 2007</div>
+            <p class="line">Diez años después de ese final, Soda Stereo volvió a juntarse para la gira "Me Verás Volver". No volvieron porque necesitaran el dinero — los tres tenían carreras propias funcionando bien. No volvieron porque alguien se los exigiera. Volvieron porque, después de una década completa, sintieron que todavía había algo real que decir juntos — y que valía la pena decirlo bien, una vez más, antes de cerrar la historia definitivamente.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">En tu piso, esa lección se ve cuando alguien que ya se fue de la operación regresa — no porque no consiguió nada mejor, sino porque entendió, con perspectiva, lo que sí tenía valor en lo que dejó. Y se ve, también, cuando un líder retoma una idea que archivó hace tiempo — no por capricho, sino porque ahora sí tiene el contexto, el equipo y el momento para hacerla bien.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">Volver no es lo opuesto de saber irse. Volver, cuando se hace por las razones correctas y no por presión ni nostalgia vacía, es la prueba de que sabías exactamente por qué te habías ido la primera vez.</div>
+        </div>
+
+        <!-- SEGMENTO 6 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">Referencias Cruzadas</span><span class="segment-time">28:00 – 33:00</span></div>
+            <div class="nota">Andy desarrolla cada referencia con nombre, hecho concreto y conexión explícita — historia-nivel, no name-drop.</div>
+
+            <div class="sub">Referencia uno — los doce años que Steve Jobs pasó fuera de Apple</div>
+            <p class="line">En 1985, la junta directiva de Apple — la empresa que él mismo había cofundado en un garage en 1976 — lo apartó del control operativo. Jobs se fue. Y en lugar de quedarse esperando a que lo llamaran de vuelta, fundó dos compañías nuevas: NeXT, dedicada a computadoras, y compró una pequeña división de efectos visuales de Lucasfilm que terminó llamándose Pixar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Doce años después, en 1997, Apple — al borde de la quiebra — lo trajo de vuelta. Y lo que la salvó no fue solamente su regreso: fue lo que él había construido durante esos doce años <em>fuera</em>. La tecnología de NeXT terminó siendo la base del sistema operativo que Apple usa hasta hoy. Y Pixar, mientras tanto, se había convertido en la productora detrás de <em>Toy Story</em> — la primera película de la historia animada completamente por computadora, estrenada en 1995.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Walter Isaacson lo cuenta con detalle en la biografía que publicó en 2011: ese regreso solo funcionó porque Jobs no se quedó esperando con las manos cruzadas. Construyó. Y cuando volvió, no volvió con la nostalgia de lo que había sido — volvió con algo nuevo que ofrecer. Es exactamente la misma diferencia que separa al que vuelve a una operación porque "no le salió nada más", del que vuelve porque, con perspectiva, construyó algo que ahora sí encaja.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Referencia dos — el "líder de Nivel 5", de Jim Collins</div>
+            <p class="line">En <em>Good to Great</em>, el libro que publicó en 2001 después de años de investigación sobre qué separaba a las empresas que pasan de buenas a verdaderamente grandes — y que se <em>mantienen</em> grandes, no solo durante un buen trimestre — Jim Collins describió un tipo de liderazgo que llamó "Nivel 5": alguien con una ambición feroz por la organización, pero con la humildad suficiente para construir, a propósito, un equipo de sucesores capaz de sostener ese nivel cuando esa persona ya no esté.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Collins lo resume con una frase que vale la pena escribir en algún lado: el verdadero examen de la grandeza no es lo que logras mientras estás presente. Es lo que sigue pasando cuando ya no estás. Es, casi palabra por palabra, la diferencia entre <em>Canción Animal</em> — el disco más vendido de Soda Stereo — y <em>Dynamo</em>, el disco que nadie pidió, pero que terminó definiendo lo que esa banda significaría para siempre.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Referencia tres — David Bowie, y la Trilogía de Berlín</div>
+            <p class="line">A mediados de los años setenta, Bowie se mudó a Berlín Occidental — en parte para alejarse de una etapa muy dura de adicción que estaba viviendo en Los Ángeles. Ahí, junto al productor Brian Eno, grabó lo que hoy se conoce como su "Trilogía de Berlín": <em>Low</em>, <em>"Heroes"</em> y <em>Lodger</em>, publicados entre 1977 y 1979. Una parte de su público no entendió, al principio, qué estaba pasando — el sonido era más frío, más experimental, muy distinto al Bowie que los había hecho fanáticos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Hoy esos discos se consideran entre los más influyentes de toda su carrera — la semilla de géneros enteros que vendrían después. Bowie no se reinventó cuando ya no tenía opción. Se reinventó cuando todavía podía elegir seguir siendo el de antes — y decidió, de todas formas, construir algo distinto.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">Jobs construyendo en el exilio lo que terminaría salvando a la empresa que lo había echado. Collins documentando, con años de datos, lo que separa una buena racha de un legado real. Bowie reinventándose en Berlín cuando todavía podía quedarse siendo el mismo. Tres historias, tres mundos completamente distintos — y la misma idea repitiéndose desde cada ángulo: lo que construyes solo importa de verdad si puede seguir sonando — como esa ciudad que nunca para, en esa canción de <em>Signos</em> — el día en que tú ya no estés ahí para sostenerlo.</div>
+        </div>
+
+        <!-- SEGMENTO 7 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Aplicable Hoy</span><span class="segment-time">33:00 – 38:00</span></div>
+            <div class="nota">Andy presenta esto como herramientas concretas para esta semana — no como tareas vagas ni terapéuticas.</div>
+            <p class="line">Aquí es donde Behind the Queue deja de ser teoría.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Tres cosas concretas. Sin presupuesto. Sin pedir permiso. Esta semana.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Aplicable uno — la pregunta de los viernes</div>
+            <p class="line">Antes de cerrar la semana, hazte una sola pregunta sobre cualquier proceso, guion o rutina de tu equipo: "¿Esto sigue funcionando porque es lo correcto, o porque nadie se ha detenido a cuestionarlo?"</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No tienes que cambiar nada todavía. Solo tienes que hacerte esa pregunta — cada viernes, durante el resto de tu carrera — antes de que algo deje de funcionar y te obligue a revisarlo de urgencia, en medio de una crisis, sin tiempo para hacerlo bien.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Aplicable dos — escribe el final antes de necesitarlo</div>
+            <p class="line">Esto es algo que casi nadie hace — y que Soda Stereo sí hizo, de una manera que todavía hoy se estudia. No esperaron a que alguien más decidiera, por ellos, que el ciclo se había acabado. Se sentaron, lo planearon, y hasta le pusieron nombre a su propia despedida — <em>Gracias Totales</em> — meses antes de que sonara la última nota en River Plate.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Esta semana, elige un proceso, un protocolo o un rol de tu equipo que lleve tiempo funcionando, y escribe — solo para ti, en privado — en qué condiciones específicas decidirías cerrarlo, cambiarlo de raíz, o entregárselo a alguien más.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No para hacerlo ahora. Para tener esa claridad lista <em>antes</em> de que la presión del momento — un cliente molesto, una auditoría, una crisis de rotación — intente decidir por ti, sin que tú hayas pensado realmente qué es lo correcto.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">Soda Stereo no dejó que el final los agarrara desprevenidos. Lo planearon con el mismo cuidado con que habían planeado cualquier disco. Esa es la diferencia entre un final que te pasa, y un final que tú decides cómo se cuenta.</div>
+
+            <div class="sub">Aplicable tres — agradece en el momento alto, no en el de salida</div>
+            <p class="line">Imagínense la escena exacta: 20 de septiembre de 1997, estadio de River Plate, decenas de miles de personas cantando cada palabra de cada canción — sabiendo, mientras lo hacían, que estaban ahí para despedirse. Y en medio de todo ese ruido, frente a todo ese estadio, Cerati eligió decir solamente dos palabras.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">"Gracias… totales."</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">No lo guardó para la última entrevista. No lo dejó para un comunicado de prensa, ni para un documental que saldría años después. Lo dijo <em>ahí</em> — en el escenario, en el momento más alto posible, frente a la gente que más merecía escucharlo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No esperes a la última reunión, a la entrevista de salida, al día en que alguien ya decidió irse, para decirle lo que su trabajo significó para el equipo. Dilo cuando todavía está ahí. Cuando todavía importa. Cuando todavía puede sentirlo y hacer algo con eso.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">No la próxima evaluación de desempeño. Esta semana — mientras todavía cuenta.</div>
+        </div>
+
+        <!-- SEGMENTO 8 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">8</span><span class="segment-title">Mito o Realidad</span><span class="segment-time">38:00 – 43:00</span></div>
+            <div class="nota">Energía distinta — directo, sin rodeos.</div>
+            <p class="line">Tres mitos sobre liderazgo, cambio y legado que circulan en cualquier piso de operaciones — frases que la gente repite con seguridad, sin pararse a cuestionarlas.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="mito"><strong>❌ MITO:</strong> "Si algo está funcionando, no hay que tocarlo."</div>
+            <div class="realidad"><strong>✅ REALIDAD:</strong> Bajo esa lógica, hoy estaríamos escuchando "Canción Animal, segunda parte" — y <em>Dynamo</em>, el disco que partió en dos a su propio público pero que la crítica señala hoy como el momento en que esa banda dejó de ser "exitosa" para empezar a ser "importante", jamás habría existido. Lo que "funciona hoy" tiene una fecha de caducidad que no avisa con anticipación — y esperar a verla llegar es, de lejos, la forma más cara de "no arriesgar nada". La realidad es que lo que funciona hoy es precisamente lo que más urgente es revisar, porque es lo que menos atención está recibiendo en este momento.</div>
+
+            <div class="mito"><strong>❌ MITO:</strong> "Cerrar algo en su mejor momento es desperdiciar el éxito que tiene."</div>
+            <div class="realidad"><strong>✅ REALIDAD:</strong> Casi treinta años después, hay gente que ni siquiera había nacido en 1997 y que se sabe, casi palabra por palabra, lo que pasó esa noche en River Plate — qué canciones tocaron, en qué orden, y qué dijo Cerati al final. Eso no le pasa a un show cualquiera. Le pasa a un final que alguien tuvo el valor de cerrar <em>a tiempo</em>. La realidad es que el momento exacto en que decides terminar algo es, muchas veces, lo que la gente más recuerda — y lo que termina definiendo cómo se cuenta esa historia para siempre.</div>
+
+            <div class="mito"><strong>❌ MITO:</strong> "El legado de un líder se mide en cuánto tiempo estuvo al frente."</div>
+            <div class="realidad"><strong>✅ REALIDAD:</strong> Cerati lleva más de una década muerto. Y mientras grabo este episodio — ahora mismo, en este instante — hay alguien, en algún lugar del mundo de habla hispana, escuchando "Persiana Americana" por primera vez en su vida, sin saber todavía que esa canción tiene casi cuarenta años. Cerati no está ahí para verlo. No lo necesita. La realidad es que el legado no se mide en cuánto tiempo estuviste presente. Se mide en cuánto tiempo sigue funcionando, sin ti, lo que dejaste construido.</div>
+
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y aquí va el dato que me guardé todo el episodio para este momento exacto.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato guardado · gira "Gracias Totales" 2020 (verificado)</div>En 2020, Zeta Bosio y Charly Alberti salieron de gira con Soda Stereo. <strong>Sin Cerati.</strong> Se llamó "Gracias Totales" — y arrancó precisamente en Colombia: el 29 de febrero de 2020, en El Campín de Bogotá, ante <strong>30.000 personas</strong>. Invitados: desde Chris Martin (Coldplay) hasta dos colombianos — <strong>Juanes</strong> y <strong>Andrea Echeverri</strong> (Aterciopelados). <span style="color:var(--muted)">COVID la corrió a 2020–2022; no decir que fue una tanda continua.</span></div>
+            <p class="line">En 2020, Zeta Bosio y Charly Alberti salieron de gira con Soda Stereo. Sin Cerati. Se llamó — escuchen bien el nombre — "Gracias Totales". Y arrancó precisamente acá, en Colombia: el 29 de febrero de 2020, en el estadio El Campín de Bogotá, ante treinta mil personas — la primera vez en la historia que esa banda se subía a un escenario sin su voz. Los estadios se llenaron, con vocalistas invitados turnándose para cantar las canciones que él dejó escritas — desde Chris Martin, el de Coldplay, hasta dos colombianos de esta casa: Juanes, y Andrea Echeverri, la de Aterciopelados.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Piensen en lo que eso significa: la banda salió de gira sin su líder, sin su voz, sin su compositor — y funcionó. Porque lo que Cerati construyó no era su presencia en el escenario. Era algo que cualquier voz podía encender. Esa gira es la demostración literal, en estadios llenos, de todo lo que hemos hablado durante una hora.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">Ninguno de estos mitos es mentira por maldad. Son mentiras cómodas — las que nos decimos para no tener que tomar la decisión difícil hoy.</div>
+        </div>
+
+        <!-- SEGMENTO 9 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">9</span><span class="segment-title">Recomendaciones de Andy</span><span class="segment-time">43:00 – 48:00</span></div>
+            <div class="nota">Cada recomendación con sus tres partes obligatorias — dónde, qué buscar exactamente, por qué conecta con ESTE episodio.</div>
+            <p class="line">Si este episodio los movió — si pensaron en algo de su operación, en alguien de su equipo, o en ustedes mismos mientras escuchaban — hay tres cosas que los van a llevar más lejos en esta misma conversación.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Uno — canción: "Persiana Americana", Soda Stereo · Signos (1986)</div>
+            <p class="line">Está en Spotify, Apple Music y cualquier plataforma de streaming. Búsquenla, y pongan atención específicamente a la transición entre el primer estribillo y el segundo verso — ese cambio de textura es, en miniatura, exactamente lo que la banda estaba a punto de hacer a gran escala con toda su carrera: moverse hacia algo más complejo justo cuando lo simple todavía les estaba funcionando.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si esta semana sienten que están a punto de tomar una decisión que "no hace falta" porque las cosas van bien en su piso, escuchen esa transición de tres segundos — y pregúntense qué versión de su operación está esperando del otro lado de esa decisión.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Dos — documental: Me Verás Volver (reencuentro 2007)</div>
+            <p class="line">Está disponible para consulta en plataformas de streaming, y también en clips extendidos en YouTube bajo ese mismo nombre. Busquen específicamente los testimonios de los tres integrantes hablando sobre la decisión de volver a juntarse — no el material de los conciertos en vivo, sino las entrevistas previas a la gira.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ahí se escucha, en sus propias palabras, la diferencia entre volver porque "no queda de otra" y volver porque genuinamente queda algo real por decir. Esa diferencia es la misma que separa al líder que regresa a una idea archivada por las razones correctas, del que la retoma solo porque no se le ocurrió nada más nuevo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Tres — libro: Good to Great, de Jim Collins (2001)</div>
+            <p class="line">Está disponible en Audible, Kindle y librerías físicas. Lean — o escuchen — específicamente el capítulo sobre el "líder de Nivel 5". No el resumen ejecutivo que circula en internet: el capítulo completo, donde Collins describe los casos reales que estudió para llegar a esa conclusión.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ahí está, con años de investigación detrás, la misma idea que Soda Stereo demostró sobre un escenario sin escribir un solo informe al respecto: que el verdadero examen de la grandeza es lo que sigue pasando cuando la persona que la construyó ya no está presente para sostenerla.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Y una más — de regalo, porque dura menos de un minuto</div>
+            <p class="line">Busquen en YouTube "Soda Stereo Gracias Totales River Plate 1997" y encuentren el clip de los segundos finales de ese show — el momento exacto en que Cerati dice esas dos palabras frente al estadio completo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Son apenas unos segundos. Y en esos segundos está, de cuerpo completo, todo lo que hablamos en este episodio: alguien que entendió que el final también se construye, se cuida — y se agradece, en el momento exacto, frente a la gente correcta.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">Estas recomendaciones no les van a resolver la decisión que tienen pendiente. Pero les van a mostrar, desde ángulos distintos, qué se siente tomarla en el momento correcto — y no dos años tarde.</div>
+        </div>
+
+        <!-- SEGMENTO 10 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">10</span><span class="segment-title">Cierre con anécdota</span><span class="segment-time">48:00 – 54:00</span></div>
+            <div class="nota">Única anécdota del episodio. Tercera persona, sin nombres propios. Remate emocional de cierre.</div>
+            <p class="line">Antes de despedirme, quiero hablarles directamente a los que llevan tiempo en esto. A los líderes de larga data — los que tienen cinco, ocho, doce años construyendo equipos, procesos, culturas dentro de una operación.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Hay algo que casi nadie les dice, y que creo que merece decirse en voz alta: el verdadero examen de su liderazgo no se toma mientras ustedes están presentes. Se toma el día que no lo están.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Conozco el caso de una gerente de operaciones — más de una década liderando campañas de atención al cliente, alguien que genuinamente se preocupaba por su gente — que tuvo que tomar una licencia médica de tres meses, sin previo aviso, en plena temporada alta.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Antes de irse, no alcanzó a dejar nada por escrito. Ningún protocolo documentado de cómo ella resolvía las crisis del día a día — porque, en su cabeza, "eso ya todo el mundo lo sabía". Confiaba en que su equipo había absorbido, con los años, su forma de pensar las cosas.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Cuando volvió, encontró la operación funcionando. Pero funcionando distinto. Las decisiones que antes pasaban por ella en minutos ahora tomaban días — porque nadie sabía exactamente con qué criterio resolverlas, y nadie quería equivocarse asumiendo uno propio. Dos supervisores que ella consideraba piezas clave habían recibido ofertas externas durante esos tres meses — y, sin tener a quién preguntarle "¿esto vale la pena?", simplemente se fueron.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y lo más difícil de escuchar: cuando finalmente preguntó por qué nadie la había buscado para resolver ciertas situaciones mientras estuvo fuera, la respuesta de su equipo fue honesta y, a la vez, devastadora: "Es que nunca supimos cómo pensabas las cosas. Solo sabíamos que, cuando estabas, salían bien."</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ella no construyó un mal equipo. Construyó un equipo que dependía completamente de su presencia para pensar bien. Y esa diferencia — entre formar personas que ejecutan lo que tú decides, y formar personas que pueden decidir como tú lo harías incluso cuando no estás — es exactamente la diferencia entre dejar un buen desempeño y dejar un legado real.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">Tu trabajo más importante como líder no es estar siempre presente para que las cosas salgan bien. Es construir algo capaz de seguir saliendo bien — incluso el día en que tú ya no estés ahí para sostenerlo con tus propias manos.</div>
+        </div>
+
+        <!-- SEGMENTO 11 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">11</span><span class="segment-title">Teaser EP.018 + Cierre TM</span><span class="segment-time">54:00 – 57:00</span></div>
+            <div class="nota">EP.018 confirmado = El Mundial (2026-06-12). Gladiator se corre a EP.019.</div>
+            <p class="line">Y la próxima semana nos vamos a meter con lo que está pasando ahora mismo en todas las pantallas del continente.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line"><strong>El Mundial.</strong></p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Pero tranquilos — no me volví comentarista deportivo. Vamos a hablar de algo que ustedes viven todos los días sin darse cuenta: once personas en la cancha, millones de ojos encima, y un líder parado en la raya que no puede tocar el balón. Solo puede preparar, decidir quién entra, y confiar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Les suena familiar? Eso es un piso de operaciones con el cliente mirando.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Cierre y TM canónico</div>
+            <p class="line">Antes de irme, les dejo la pregunta del episodio — y esta sí quiero que la respondan.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si mañana no llegas a tu operación — tres meses, sin aviso, como la gerente de la historia — ¿qué de lo que construiste sigue sonando sin ti? Y sé honesto: ¿qué se apaga?</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Escríbanlo en los comentarios del episodio ahí mismo en Spotify — los leo todos, y los del episodio pasado estuvieron buenísimos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si este episodio los hizo pensar en alguien — en su equipo, en una decisión que tienen pendiente, o en ustedes mismos en algún punto de su carrera — escríbanme. Estoy en LinkedIn como Andrés Bermúdez Rodríguez. También en andy arroba behind-thequeue punto com.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si el episodio les dejó algo, compártanlo con alguien de su equipo o de su red. Esta conversación debería estar pasando más seguido en los pisos de operación de toda Latinoamérica.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Esto fue Behind the Queue, episodio diecisiete.</p>
+            <p class="line">Yo soy Andy. Y como diría Gustavo Cerati: "Gracias… totales".</p>
+            <div class="nota">OUTRO MUSICAL — fade suave a silencio.</div>
+        </div>
+
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section fuentes">
+        <h2>Fuentes verificadas (no leer al aire)</h2>
+        <p>· Datos biográficos de Cerati: sopitas.com, Radiónica, Infobae, Billboard · Discografía de Soda Stereo y gira "Me Verás Volver" 2007 (búsquedas verificadas) · Biografía "Steve Jobs", Walter Isaacson (2011) · "Good to Great", Jim Collins (2001) · Gira "Gracias Totales" 2020: Wikipedia "Gracias Totales - Soda Stereo"; El Universal ("Chris Martin y Juanes, invitados…"); Diario de Cuyo — debut El Campín, Bogotá, 29-feb-2020, 30.000 personas, primera vez sin Cerati; invitados verificados (Juanes, Andrea Echeverri/Aterciopelados, Chris Martin/Coldplay, Benito Cerati, León Larregui/Zoé, Mon Laferte, Rubén Albarrán/Café Tacvba).</p>
+        <p style="margin-top:10px">Nota: se reemplazó la referencia de HBR "Leading After the Founder" (no verificable) por Steve Jobs/Apple y Jim Collins/"Good to Great" — casos ampliamente documentados.</p>
+    </div>
+
+    <footer>
+        <span class="gold">Behind the Queue</span> · EP.017 — Soda Stereo / Cerati<br>
+        Production packet · guion de grabación · ~57 min · genera sáb 13-jun-2026
+    </footer>
+
+</div>
+</body>
+</html>
