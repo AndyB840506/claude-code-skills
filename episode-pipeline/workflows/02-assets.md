@@ -6,6 +6,23 @@ sin duplicar su lógica.
 
 ---
 
+## Episodio dividido en partes (grabación larga)
+
+Si un episodio se grabó tan largo que se publica en 2+ partes (ej. MPD EP.004 Kraken,
+~2h45m → Parte 1 / Parte 2), confirma con el usuario la numeración y trátalo así:
+
+- **Mismo número de episodio**, sufijo de parte en el título: `EP.0NN — Título (Parte 1)`.
+- **Una sola metadata compartida; lo único que cambia es el título** (descripción, tags,
+  datos = iguales). Incluye **una línea** que avise la continuación (ej. "el episodio salió
+  tan largo que lo partimos en dos; la Parte 2 sale el próximo sábado") — el oyente de la
+  P1 no sabe que hay más si no se lo dices.
+- **Transcribe cada parte por separado** (Stage 1) → capítulos + duración **por parte**.
+- **Quote cards:** al dividir, la frase fuente de una card puede caer en la OTRA parte.
+  Valida cada card contra el SRT de la parte donde realmente se dijo, no asumas P1.
+- Un placeholder de URL de Spotify **por parte**; cada parte se publica/despliega por separado.
+
+---
+
 ## Ruta BTQ — invoca `episode-launch`
 
 `episode-launch` ya genera en un solo paso: SEO de Spotify, plan social de 4 días,

@@ -5,66 +5,17 @@ description: "Master orchestrator skill. Loads project context, detects task com
 
 # Megamind — Master Orchestrator
 
-The unified entry point for Claude Megamind. Loads workspace context and automatically routes tasks to the right execution mode.
-
----
+The unified entry point for Claude Megamind. Loads workspace context and automatically
+routes tasks to the right execution mode.
 
 ## What It Does
 
-```
-/megamind
-    ↓
-Load project-map (workspace context)
-    ↓
-Analyze task complexity
-    ↓
-Simple task → handle directly
-Large task  → /parallel-workflow (multi-agent)
-```
+Carga `project-map` (contexto del workspace) → analiza la complejidad de la tarea →
+enruta: tarea simple = la maneja directo; tarea grande = `/parallel-workflow` (multi-agente).
 
----
+## Workflow
 
-## Execution Modes
-
-| Task Type | Mode | Example |
-|-----------|------|---------|
-| Single file / single answer | Direct | "Fix this bug in auth.js" |
-| Multiple independent items | Parallel | "Audit all 10 repos for security issues" |
-| Sequential steps | Pipeline | "Generate → Review → Deploy" |
-| Mixed | Hybrid | "Audit 5 repos, then summarize findings" |
-
----
-
-## EXECUTION
-
-When `/megamind` is invoked:
-
-### Step 1 — Load context
-Read `~/.claude/project-map.md` if it exists.
-If it doesn't exist, suggest running `/project-map` first.
-Use the map to identify which repos and projects are relevant to the task before decomposing it — this prevents unnecessary agent spawns on unrelated projects.
-
-### Step 2 — Understand the task
-Ask what needs to be done if not clear from context.
-
-### Step 3 — Assess complexity
-Determine:
-- How many independent items are involved?
-- Can subtasks run in parallel?
-- Is there a dependency chain?
-
-### Step 4 — Route
-- **1 item or sequential steps** → handle directly
-- **2+ independent items** → invoke `/parallel-workflow` with decomposed subtasks
-- **Unknown scope** → ask clarifying question before routing
-
-### Step 5 — Execute and synthesize
-Run the work. Collect all outputs. Present a unified final result.
-
----
-
-## Tips
-
-- Run `/project-map` once after setting up to build your workspace index
-- `/megamind` gets smarter the more complete your `project-map.md` is
-- For very large tasks (10+ subtasks), Megamind will batch agents automatically
+Sigue `workflows/orchestrate.md` — carga `~/.claude/project-map.md` (si no existe,
+sugiere `/project-map`), entiende la tarea, evalúa la complejidad y enruta (1 item o
+pasos secuenciales = directo; 2+ items independientes = `/parallel-workflow`), luego
+ejecuta y sintetiza en un resultado unificado. Incluye la tabla de modos de ejecución.

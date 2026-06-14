@@ -43,11 +43,34 @@ No corras el deploy tu mismo en este paso — solo valida. El usuario o el flujo
 
 **Contexto:** un `git push` a `main`/`master` con la integracion de GitHub de Vercel activa puede disparar un build automatico con deteccion de framework que **sobrescribe un deploy prebuilt** y rompe produccion (404). Esto paso el 2026-06-09 con MPD (`directory: "."` en `.vercel/repo.json`) y el 2026-06-10 con `lucca-tech-web` (proyecto standalone, push de `b553039`) y con BTQ (ver pitfall de `vercel link` arriba).
 
-**Fix de raiz ya aplicado (2026-06-10):** los 3 proyectos (`v0-mr-putrids-den`/MPD, `website`/BTQ, `lucca-tech-web`) tienen el auto-deploy de GitHub **desconectado** (`vercel git disconnect`). `git push` a este repo ya NO dispara builds para ninguno de los tres. Los deploys a produccion son manuales: corre `vercel --prod --yes` desde el directorio del proyecto cuando haya cambios que publicar.
+**Fix de raiz ya aplicado (2026-06-10):** los 3 proyectos (`v0-mr-putrids-den`/MPD, `website`/BTQ, `lucca-tech-web`) tienen el auto-deploy de GitHub **desconectado** (`vercel git disconnect`). `git push` a este repo ya NO dispara builds para ninguno de los tres.
+
+**Los deploys a produccion son manuales. OJO con `vercel --prod` (build remoto):** si el `vercel.json` del proyecto tiene `"ignoreCommand": "exit 0"` (es el caso de MPD/`v0-mr-putrids-den`), el build remoto se SALTA y el deployment queda VACIO -> al re-apuntar el alias, produccion devuelve **404** (incidente 2026-06-14, deploy EP.004). Para esos proyectos usa el **flujo prebuilt del Paso 7**. Si el proyecto NO tiene `ignoreCommand`, `vercel --prod --yes` desde el directorio del proyecto funciona.
 
 Si en el futuro se agrega un proyecto nuevo deployado via prebuilt, aplica el mismo patron antes de confiar en deploys automaticos: `vercel git disconnect` y/o `"ignoreCommand": "exit 0"` en su `vercel.json`.
 
 Si por algun motivo el auto-deploy se reconecta y un push rompe produccion (status `200`->`404`):
 
 1. Corre `curl -sI` contra la URL de produccion del proyecto para confirmar el 404.
-2. **Repite el deploy prebuilt** (recrea `.vercel/output/static` + `config.json`, `vercel deploy --prebuilt --prod --yes`) y re-apunta el alias con `vercel alias set`.
+2. **Repite el deploy prebuilt** (Paso 7) y re-apunta el alias con `vercel alias set`.
+
+## Paso 7 — Deploy prebuilt (metodo estandar para proyectos con `ignoreCommand`)
+
+Verificado 2026-06-14 (deploy EP.004 P1 de MPD). Aplica a `v0-mr-putrids-den` y a
+cualquier proyecto cuyo `vercel.json` tenga `"ignoreCommand": "exit 0"`. Desde el
+directorio del proyecto (`<dir>`, ej. `mrputridsden-production/website`):
+
+1. **Asegurar el output prebuilt** en `<dir>/.vercel/output/`:
+   - `config.json` = `{"version":3}`
+   - `static/index.html` = copia del `index.html` ACTUAL del proyecto. Copialo a mano
+     (PowerShell `Copy-Item ...\index.html ...\.vercel\output\static\index.html -Force`).
+     **No confies en `vercel build`** aqui: si el proyecto no esta "pulled" deja el
+     `index.html` viejo en el output sin avisar.
+2. **Crear `<dir>/.vercel/project.json` a mano** (NO `vercel link` desde subdir — corrompe
+   el `repo.json` root). Usa los IDs de `.vercel/repo.json` (root):
+   `{"projectId":...,"orgId":...,"projectName":...}`. (`.vercel/` esta gitignored -> no se commitea.)
+3. `vercel deploy --prebuilt --prod` desde `<dir>` -> devuelve la URL del deployment.
+4. `vercel alias set <deployment-url> www.<dominio>` — **`--prod` NO reapunta solo el
+   dominio custom**; este paso es obligatorio.
+5. **Verificar:** `curl -sI https://www.<dominio>/` debe dar `200`, y
+   `curl -s https://www.<dominio>/ | grep "<marcador nuevo>"` debe encontrar el cambio.
