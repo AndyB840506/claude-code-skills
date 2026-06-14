@@ -10,7 +10,8 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.001 | Bienvenidos a la Guarida | publicado |
 | EP.002 | Black Sabbath: El Génesis del Heavy Metal | publicado |
 | EP.003 | Las raices del rock: Sister Rosetta Tharpe | publicado - rendimiento bajo vs EP.002 (ver nota de audiencia) |
-| EP.004 | Kraken: el Titan del Rock colombiano | guion listo - grabacion 2026-06-12 |
+| EP.004 P1 | Kraken: el Titan del Rock colombiano (Parte 1) | en Spotify - programado viernes 2026-06-19 (link listo) |
+| EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | grabado - sale ~2026-06-20 |
 
 ---
 
