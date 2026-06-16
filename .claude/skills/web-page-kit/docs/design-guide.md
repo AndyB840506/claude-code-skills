@@ -677,3 +677,21 @@ Quick reference for spatial decisions — radius, spacing, border style, shadows
 3. Pick a palette from the industry + tone row → assign to CSS variables
 4. Use the CSS pattern keywords to guide radius, spacing, and border decisions
 5. Add one memorable detail (Rule 8 Step 4) that goes beyond the table
+
+---
+
+## Rule 17: Reskin ≠ Overhaul (improving an existing page)
+
+When a user calls an existing page "basic", "generic", or "not premium", changing
+only colors and fonts on the same layout is a reskin — it will be rejected. A real
+premium upgrade changes the ARCHITECTURE:
+
+- Layout: asymmetric, full-bleed, editorial — not centered hero + uniform card grid
+- Type scale: oversized display headlines (clamp up to 6–11rem), not 2–3rem
+- Interaction: editorial interactive list (hover-expand rows) instead of identical
+  cards; marquee; custom cursor; scroll-driven reveals
+- A dramatic moment: a dark↔light section break, one signature accent color
+- Replace emoji icons with line SVGs
+
+Fastest way to lock direction: ask the user for ONE concrete reference (Awwwards /
+Dribbble). One real reference beats three rounds of guessing.
