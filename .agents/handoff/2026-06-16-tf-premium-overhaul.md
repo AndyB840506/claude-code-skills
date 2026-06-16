@@ -15,7 +15,8 @@
 - **Removed** orphaned `one-pager/andres-bermudez.html`.
 - **Contact = email only** (removed WhatsApp/Instagram/LinkedIn chips).
 - **Marketing docs** added under `marketing/` (commit `30b9234`): `seo-content-plan.md`, `google-business-profile.md`, `social-media-plan.md` — all paste-ready, no fabricated metrics.
-- **Burrous Brothers cleanup:** deleted local repo `repos/estimador` (was the base for the now-standalone `kit-estimador-servicios`). User confirmed it's dead and the committed Gmail App Password was already revoked.
+- **Burrous Brothers cleanup:** deleted local repo `repos/estimador` (was the base for the now-standalone `kit-estimador-servicios`). User confirmed it's dead and the committed Gmail App Password was already revoked. **GitHub repo deletion done by the user.**
+- **Professional contact email** (`5cbab7c`): user created a Porkbun forward `hello@andyfreelancer.com` → `berandre2@gmail.com` (receive-only). Swapped all DISPLAY occurrences (landing, samples, bot replies, email footers) from the personal Gmail to `hello@`. SMTP **sending** still uses the Gmail backend (`SMTP_USER` unchanged) — the forward can't send.
 
 ### Skills kit (this repo)
 - Retrospective applied: **Rule 17 "Reskin ≠ Overhaul"** added to `web-page-kit/docs/design-guide.md`.
@@ -46,8 +47,10 @@
 - GBP description currently has BOTH ES+EN pasted (EN cut off) — should be trimmed to Spanish only.
 
 ## Questions to Answer / Open Next Steps
-- **[USER — manual]** Delete the Burrous Brothers GitHub repo: https://github.com/AndyB840506/estimador/settings (Danger Zone). `gh` CLI is NOT installed locally, so this must be done by hand (or install `gh`).
-- **[USER]** Publish the LinkedIn launch post (from social-media-plan.md) on the Company Page + reshare from personal profile for reach.
+**Done since first draft:** Burrous Brothers GitHub repo deleted ✅ · LinkedIn launch post published ✅ · LinkedIn profile + page set up ✅ · pro email `hello@` live on site ✅.
+
+Still open:
+- **[Email]** (optional) create one more forward `andres@andyfreelancer.com`; set up Gmail "Send mail as" so replies go OUT from `hello@` (Porkbun forward is receive-only); update displayed email on GBP + LinkedIn to `hello@`.
 - **[GBP]** Trim description to Spanish only; add the 7 services (Edit services); upload logo/cover/sample photos; add Bogotá to service area; request first review from real order `AB-20260527-852`.
 - **[Site]** Create/fix `og-image.png` (charcoal + orange, big type).
 - **[Credibility]** Turn order `AB-20260527-852` into a real anonymized case study (needs client consent + testimonial) — biggest trust lever.
