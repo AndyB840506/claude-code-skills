@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Putrid's Den — EP.005: Aterciopelados</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ebebeb;
+            color: #1e1e1e;
+            line-height: 1.75;
+            font-size: 15px;
+        }
+
+        .container { max-width: 780px; margin: 0 auto; background: white; }
+
+        .header {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 44px;
+            border-bottom: 5px solid #9B1C1C;
+        }
+
+        .header .podcast { font-size: 0.85em; color: #FF8C00; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+        .header h1 { font-size: 1.9em; font-weight: 900; margin-bottom: 6px; }
+        .header .tagline { color: #FFD700; font-style: italic; font-size: 1em; margin-bottom: 20px; }
+
+        .meta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
+        .meta-item {
+            background: rgba(155,28,28,0.2);
+            border: 1px solid #9B1C1C;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            color: #FFD700;
+        }
+
+        .section { padding: 28px 44px; border-bottom: 1px solid #eee; }
+
+        .section h2 {
+            font-size: 0.72em;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #9B1C1C;
+            margin-bottom: 18px;
+            padding-bottom: 7px;
+            border-bottom: 2px solid #9B1C1C;
+        }
+
+        .segment { margin: 36px 0; padding-bottom: 24px; border-bottom: 1px solid #f0f0f0; }
+        .segment:last-child { border-bottom: none; }
+
+        .segment-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .segment-number {
+            background: #9B1C1C;
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75em;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .segment-title {
+            font-weight: 700;
+            font-size: 0.95em;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.78em;
+            color: #aaa;
+            background: #f5f5f5;
+            padding: 2px 10px;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+
+        .sfx {
+            background: #1a1a1a;
+            color: #FFD700;
+            padding: 11px 16px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.88em;
+            margin: 14px 0;
+        }
+
+        /* Diálogo limpio — sin fondos */
+        .host-block {
+            margin: 18px 0;
+            padding: 0 0 0 18px;
+            border-left: 3px solid #ddd;
+        }
+
+        .host-block.juan {
+            border-left-color: #b0cce4;
+        }
+
+        .host-name {
+            font-weight: 800;
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #9B1C1C;
+            margin-bottom: 6px;
+        }
+
+        .host-block.juan .host-name { color: #2C5F8A; }
+
+        .host-text {
+            font-size: 1em;
+            line-height: 1.85;
+            color: #2a2a2a;
+        }
+
+        /* Intercambio — borde sutil, fondo casi blanco */
+        .intercambio {
+            background: #f6faf2;
+            border-left: 3px solid #6aaa44;
+            border-radius: 0 4px 4px 0;
+            padding: 14px 18px;
+            margin: 18px 0;
+            font-size: 0.92em;
+            color: #2a3a1a;
+        }
+
+        .intercambio::before {
+            content: "INTERCAMBIO";
+            display: block;
+            font-weight: 800;
+            font-size: 0.7em;
+            letter-spacing: 2px;
+            color: #5a8a3a;
+            margin-bottom: 8px;
+        }
+
+        /* Dato — fondo crema claro */
+        .dato {
+            background: #fdfaf3;
+            color: #3a3018;
+            padding: 14px 18px;
+            border-radius: 4px;
+            margin: 16px 0;
+            border-left: 4px solid #c8a830;
+        }
+
+        .dato-label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #9a7a10;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        /* Leyenda — fondo lavanda claro */
+        .leyenda {
+            background: #faf5ff;
+            color: #2e1a2e;
+            padding: 14px 18px;
+            border-radius: 4px;
+            margin: 16px 0;
+            border-left: 4px solid #9B1C1C;
+        }
+
+        .leyenda-label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #7a1a7a;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        /* Recomendacion — fondo verde muy claro */
+        .recomendacion {
+            background: #f3faf3;
+            color: #1a2e1a;
+            padding: 14px 18px;
+            border-radius: 4px;
+            margin: 16px 0;
+            border-left: 4px solid #5a8a3a;
+        }
+
+        .recomendacion-label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #3a6a1a;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        /* Promo — fondo azul muy claro */
+        .promo {
+            background: #f3f7fd;
+            color: #1a1e2e;
+            padding: 14px 18px;
+            border-radius: 4px;
+            margin: 16px 0;
+            border-left: 4px solid #2C5F8A;
+        }
+
+        .promo-label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #1a4a7a;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .nota-produccion {
+            background: #fffaed;
+            border: 1px solid #e0bb3a;
+            border-radius: 4px;
+            padding: 9px 14px;
+            margin: 10px 0;
+            font-size: 0.84em;
+            color: #5a4a10;
+        }
+
+        .nota-produccion::before {
+            content: "NOTA PRODUCCIÓN: ";
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .arquitectura { font-size: 0.88em; }
+        .arq-row {
+            display: grid;
+            grid-template-columns: 26px 170px 85px 1fr;
+            gap: 10px;
+            padding: 7px 0;
+            border-bottom: 1px solid #f0f0f0;
+            align-items: start;
+        }
+        .arq-num { color: #9B1C1C; font-weight: bold; }
+        .arq-seg { font-weight: 600; }
+        .arq-time { color: #aaa; font-family: monospace; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Mr. Putrid's Den</div>
+        <h1>EP.005: Aterciopelados</h1>
+        <div class="tagline">Dos punks bogotanos que le inventaron una voz al rock colombiano</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 005</span>
+            <span class="meta-item">Análisis profundo</span>
+            <span class="meta-item">Rock alternativo / Rock en español</span>
+            <span class="meta-item">~60 min</span>
+            <span class="meta-item">Co-host</span>
+        </div>
+    </div>
+
+    <!-- NOTA DE VERIFICACIÓN -->
+    <div class="section">
+        <div class="nota-produccion">Verificar antes de grabar — fechas de discografía, productor de "El Dorado" (Phil Manzanera) y años exactos de Latin Grammy. Los datos del guion están como referencia, pero confírmenlos en una fuente primaria (la banda, Discogs, la base de los Latin Grammy) para no soltar un dato torcido al aire.</div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row" style="color:#9B1C1C; font-weight:bold;">
+                <span class="arq-num">#</span>
+                <span class="arq-seg">Segmento</span>
+                <span class="arq-time">Tiempo</span>
+                <span>Contenido</span>
+            </div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Intro music</span><span class="arq-time">00:00</span><span>Intro del show — fade out</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Bienvenida</span><span class="arq-time">00:30</span><span>Andrés abre con un gancho seco. Juan entra corto.</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">El Hook</span><span class="arq-time">02:30</span><span>La escena: un país que cantaba "Florecita rockera" sin saber que la cantaban dos punks.</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Orígenes — de punk a Aterciopelados</span><span class="arq-time">06:30</span><span>La Pestilencia, Delia y los Aminoácidos, Bogotá underground. Juan abre la escena en vivo. [INTERCAMBIO]</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">El Dorado (1995) + la voz de Andrea</span><span class="arq-time">18:00</span><span>Phil Manzanera, "Bolero falaz", "Florecita rockera", MTV Latino. La voz que no se parecía a nada.</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Segmento de Promoción</span><span class="arq-time">31:00</span><span>Juan — eventos reales (ver eventos.json).</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Identidad latinoamericana + legado</span><span class="arq-time">35:00</span><span>Caribe Atómico, Gozo Poderoso, Latin Grammy. El debate: ¿cuál es el disco que de verdad importa? [INTERCAMBIO]</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">La Guarida Recomienda</span><span class="arq-time">48:00</span><span>Puerta de entrada: canción, álbum, dónde empezar.</span></div>
+            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Takeaway + conector</span><span class="arq-time">51:00</span><span>La lección + el puente al próximo episodio (la raíz punk).</span></div>
+            <div class="arq-row"><span class="arq-num">10</span><span class="arq-seg">Cierre + La Tarea</span><span class="arq-time">56:30</span><span>Juan da la tarea. Andrés cierra.</span></div>
+            <div class="arq-row"><span class="arq-num">11</span><span class="arq-seg">Outro music</span><span class="arq-time">59:30</span><span>Outro del show — fade in.</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section" style="padding-top:32px; padding-bottom:40px;">
+        <h2>Guion Completo</h2>
+
+        <!-- SEG 1 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">1</div>
+                <div class="segment-title">Intro Music</div>
+                <div class="segment-time">00:00 — 00:30</div>
+            </div>
+            <div class="sfx">[SFX: INTRO — Stevie Ray Vaughn meets Black Label Society. Guitarra blues eléctrica + heavy metal. Voz femenina gutural. 30 segundos. Fade out lento.]</div>
+        </div>
+
+        <!-- SEG 2 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">2</div>
+                <div class="segment-title">Bienvenida</div>
+                <div class="segment-time">00:30 — 02:30</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Bienvenidos de vuelta a Mr. Putrid's Den.<br><br>
+                    [PAUSA]<br><br>
+                    Soy Andrés, con Juan al lado, y este es el episodio 005. Hoy nos quedamos en casa. Bogotá. Una banda que ustedes seguro tararearon en algún momento de su vida sin pensar dos veces de dónde venía.<br><br>
+                    Aterciopelados.<br><br>
+                    Y la historia de cómo llegaron a sonar en cada emisora del continente empieza en el lugar menos pensado: empieza en un bar oscuro, con dos personas que no querían gustarle a nadie.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Juan a la orden. Dato para arrancar: cuando Aterciopelados sacó la canción que los volvió famosos, ninguno de los dos había cumplido treinta años, y venían de tocar para salas de cincuenta personas que la mitad del tiempo los abucheaba.<br><br>
+                    De ahí a llenar plazas. Esa es la distancia que vamos a recorrer hoy.
+                </div>
+            </div>
+        </div>
+
+        <!-- SEG 3 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">3</div>
+                <div class="segment-title">El Hook — Un País Cantando sin Saber</div>
+                <div class="segment-time">02:30 — 06:30</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Quiero que se ubiquen en un momento. Mediados de los noventa. Usted prende el televisor, pone MTV Latino, y entre un video de rock argentino y uno de pop mexicano aparece una mujer de pelo corto, de mirada directa, cantando con una voz que no se parece a ninguna otra que estuviera sonando en ese momento.<br><br>
+                    No era una voz dulce hecha para gustar. Era una voz con filo, con acento bogotano sin disimular, cantando "estoy aquí calientita en mi nidito". Y de repente medio continente estaba cantando eso. En Colombia, en México, en Argentina, en Chile.<br><br>
+                    Y acá está lo que casi nadie pensaba en ese momento: esa mujer y el tipo del bajo al lado de ella no venían del pop. Venían del punk. De lo más áspero, lo más sucio y lo más antisistema que tenía Bogotá en los ochenta. La banda que medio continente cantaba en la radio había nacido para no sonar nunca en la radio.<br><br>
+                    Esa contradicción es todo el episodio de hoy.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y hay que decir lo que era Bogotá en ese momento, porque sin eso no se entiende nada. Finales de los ochenta. No había circuito. No había una industria que te firmara. Si usted quería tocar rock en esta ciudad, lo hacía en un bar pequeño, con un equipo prestado, frente a la misma gente de siempre.<br><br>
+                    De ahí salieron. No de una disquera. De un bar.
+                </div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">Contexto</div>
+                Aterciopelados se forma en Bogotá a comienzos de los años noventa alrededor de dos figuras: <strong>Andrea Echeverri</strong> (voz y guitarra) y <strong>Héctor Buitrago</strong> (bajo). Son considerados pioneros del rock en español y una de las bandas que puso al rock colombiano en el mapa internacional durante la ola del rock latino de los noventa.
+            </div>
+        </div>
+
+        <!-- SEG 4 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">4</div>
+                <div class="segment-title">Orígenes — De Punk a Aterciopelados</div>
+                <div class="segment-time">06:30 — 18:00</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Vamos al principio. Y el principio no es Andrea — es Héctor.<br><br>
+                    Héctor Buitrago venía del hardcore punk. Tocó en una de las bandas más pesadas y más importantes de ese movimiento en Colombia: La Pestilencia. Estamos hablando de punk de verdad, rápido, agresivo, con letras de rabia. Nada que ver con la florecita rockera que vino después.<br><br>
+                    Y por otro lado estaba Andrea Echeverri. Andrea no era una cantante de formación. Era artista plástica, ceramista. Trabajaba con las manos, con el barro. Y tenía una voz cruda, sin pulir, sin escuela — y precisamente por eso, única.<br><br>
+                    Esos dos mundos se cruzan en la escena bogotana. Y antes de Aterciopelados arman juntos un proyecto anterior, con un nombre que ya les dice todo el sentido del humor que tenían: Delia y los Aminoácidos.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Acá quiero contar el lado que conozco, que es el del escenario. Porque la gente recuerda los discos, pero una banda se hace en vivo, noche tras noche, frente a poca gente.<br><br>
+                    Estos dos no llegaron arriba por una canción de suerte. Llegaron tocando en bares de la ciudad cuando tocar rock acá no daba un peso. Salas pequeñas. Equipos prestados. Públicos de cuarenta, cincuenta personas. Y un público que en esa época no perdonaba: si no le gustabas, te lo decía en la cara.<br><br>
+                    Esa escuela es la que no se ve en MTV. Pero es la que les dio el cuero para aguantar todo lo que vino después.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y ese cuero es clave, porque lo que Andrea y Héctor hicieron fue tomar la energía del punk — la actitud, el no pedir permiso — y empezar a abrirla. Le metieron melodía. Le metieron raíces colombianas. Le metieron a Andrea cantando de cosas que el rock en español casi no tocaba: el cuerpo de la mujer, el deseo, la rabia, la ternura, todo desde una mirada que no era la del rockero hombre de siempre.<br><br>
+                    El primer disco como Aterciopelados, "Con el corazón en la mano", del 93, ya tiene eso. Todavía suena crudo, todavía con un pie en el bar. Pero ahí ya está la fórmula: punk con corazón, rock con acento propio.
+                </div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">Dato</div>
+                Antes de Aterciopelados, Andrea Echeverri y Héctor Buitrago tocaron juntos en el proyecto <strong>Delia y los Aminoácidos</strong>. Héctor venía del hardcore punk colombiano (La Pestilencia). El primer álbum de Aterciopelados, <strong>"Con el corazón en la mano"</strong>, es de 1993.
+            </div>
+
+            <div class="intercambio">
+                <strong>Andrés pasa la pregunta:</strong> "Juanito, usted que ha visto nacer bandas en vivo — ¿qué le pasa a un grupo cuando viene del punk y de repente le empieza a ir bien? ¿Eso se traiciona o se madura?"<br><br>
+                <strong>Juan responde:</strong> su lectura, desde la experiencia de promotor — qué le pasa a una banda underground cuando cruza al mainstream. Libre, con ejemplos.<br><br>
+                <strong>Andrés cierra el pase, montando el siguiente bloque:</strong> "Porque a Aterciopelados eso justamente le pasó. Y el momento exacto en que pasó tiene nombre y año: El Dorado, 1995."
+            </div>
+        </div>
+
+        <!-- SEG 5 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">5</div>
+                <div class="segment-title">El Dorado (1995) + La Voz de Andrea</div>
+                <div class="segment-time">18:00 — 31:00</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    El Dorado es el disco que lo cambió todo. 1995. Y lo interesante es quién lo produjo: un músico inglés llamado Phil Manzanera, el guitarrista de Roxy Music. Un tipo con un oído de primer mundo y, además, con sangre colombiana por el lado de su mamá. Es decir: entendía las dos orillas, el pop británico sofisticado y la raíz latinoamericana.<br><br>
+                    Y lo que hace Manzanera con Aterciopelados no es alisarlos, no es volverlos pop de plástico. Es enfocarlos. Toma esa energía cruda del bar y la mete en canciones que entran al primer golpe y no se te salen de la cabeza.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y de ahí salen dos canciones que se vuelven himnos.<br><br>
+                    "Bolero falaz" — esa mezcla de despecho colombiano con guitarra rockera. Un bolero roto, traicionero, cantado con rabia. Eso era nuevo: tomar el género del corazón partido de toda la vida y pasarlo por una banda de rock.<br><br>
+                    Y "Florecita rockera". Que es casi un manifiesto. Andrea cantándose a sí misma, cantándole a la mujer que hace rock en un mundo que no la esperaba ahí.<br><br>
+                    [PAUSA]<br><br>
+                    Y acá tengo que parar en la voz. Porque la voz de Andrea Echeverri es el centro de todo. En una época donde la radio quería voces femeninas dulces, afinaditas, hechas para no incomodar, llega esta voz con cuerpo, con acento, que se permite sonar áspera, que se permite sonar enojada, que se permite sonar deseante. No pedía permiso para existir. Y eso, para una generación entera de mujeres que oían rock, fue una puerta que se abrió.<br><br>
+                    Y no fue solo cosa de mujeres. Fue para cualquiera que sintiera que no cabía en el molde de lo que el rock decía que uno tenía que ser. Andrea cantaba desde la incomodidad, sin maquillarla, y miles de personas se reconocieron ahí. Eso es lo que hace que una canción dure treinta años: no que sea perfecta, sino que alguien se vea entero en ella.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y el dato del impacto es medible. El Dorado fue el disco que metió a Aterciopelados en la rotación de MTV Latino, que en esa época era el único canal que de verdad movía una banda por todo el continente. No era la radio de un país. Era la pantalla que veía un adolescente en Bogotá, en Monterrey y en Buenos Aires el mismo día.<br><br>
+                    Eso convirtió a una banda de bar de Bogotá en una banda de continente. Y abrió la puerta para que después llegaran las nominaciones a los Grammy y las giras afuera. Sin El Dorado, esa puerta no se abre.
+                </div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">El Disco Clave</div>
+                <strong>"El Dorado" (1995)</strong> — producido por Phil Manzanera (guitarrista de Roxy Music, de ascendencia colombiana). Es el álbum que internacionaliza a la banda. Sencillos icónicos: <strong>"Bolero falaz"</strong> y <strong>"Florecita rockera"</strong>, con rotación fuerte en MTV Latino a mediados de los noventa.
+            </div>
+
+            <div class="leyenda">
+                <div class="leyenda-label">La Voz</div>
+                La voz de Andrea Echeverri rompió el molde de lo que se esperaba de una mujer en el rock en español: ni dulce ni decorativa, sino cruda, con acento bogotano marcado y temática propia (el cuerpo, el deseo, la rabia, lo femenino sin pedir permiso). Para una generación de oyentes fue una referencia que antes no existía en la radio.
+            </div>
+        </div>
+
+        <!-- SEG 6 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">6</div>
+                <div class="segment-title">Segmento de Promoción</div>
+                <div class="segment-time">31:00 — 35:00</div>
+            </div>
+
+            <div class="nota-produccion">Juan — actualizar eventos.json antes de grabar. Los eventos actuales son de ejemplo. Reemplazar con eventos reales. El guion abajo usa el formato de referencia.</div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Antes de cerrar el disco, algo concreto para los que estén en Bogotá o por aquí cerca. Porque la escena de la que salió Aterciopelados sigue viva hoy, en los mismos bares pequeños, con bandas que todavía nadie conoce.<br><br>
+                    [ACTUALIZAR CON EVENTOS REALES DE eventos.json]<br><br>
+                    <em>— Formato de referencia con eventos de ejemplo —</em><br><br>
+                    Este <strong>[fecha]</strong>, en <strong>[lugar]</strong>, tocan <strong>[bandas]</strong>. <strong>[Entrada / boletas]</strong>. <strong>[Dónde conseguir info]</strong>.<br><br>
+                    Eso es lo que hay. Dense la vuelta, apoyen la escena local — que de ahí salen los próximos Aterciopelados.
+                </div>
+            </div>
+
+            <div class="promo">
+                <div class="promo-label">Fuente de Eventos</div>
+                Consultar eventos.json antes de grabar. Juan actualiza la lista con eventos reales. Formato: nombre del evento, fecha, lugar, descripción breve, y dónde conseguir boletas o info.
+            </div>
+        </div>
+
+        <!-- SEG 7 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">7</div>
+                <div class="segment-title">Identidad Latinoamericana + Legado</div>
+                <div class="segment-time">35:00 — 48:00</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Acá viene la parte que para mí los vuelve grandes de verdad. Porque después de El Dorado, lo fácil hubiera sido repetir la fórmula. Sacar otro disco de "boleros falaces" cada dos años y vivir tranquilos del éxito.<br><br>
+                    Hicieron lo contrario. En el 98 sacan "Caribe Atómico", un disco mucho más electrónico, más experimental, más raro. Y en el 2000, "Gozo Poderoso". Y en esos discos pasa algo importante: empiezan a meter de forma consciente sonidos colombianos, raíces latinoamericanas, electrónica, una mezcla que ya no era solo rock. Era una búsqueda de identidad. Como diciendo: no tenemos que sonar a banda gringa cantada en español. Podemos sonar a lo que somos.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Acá te voy a contradecir en una cosa.<br><br>
+                    Todo el mundo dice que El Dorado es el gran disco de Aterciopelados. Y entiendo por qué: los himnos, MTV, la fama. Pero para mí el disco que de verdad importa es Caribe Atómico. Y te doy el argumento de promotor: en el 98 estos tipos tenían la fórmula del éxito en la mano, comprobada, vendida. Y la botaron a la basura para meterse en electrónica y experimentación, sabiendo que iban a perder parte del público que los seguía por "Florecita rockera".<br><br>
+                    Eso no lo hace una banda que quiere vender. Eso lo hace una banda de artistas. El Dorado los hizo famosos. Caribe Atómico demostró que no les importaba la fama. Y para mí ese segundo gesto vale más.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    No estoy de acuerdo, y te digo por qué. El gesto valiente de botar la fórmula solo existe porque antes existió El Dorado. Sin esa fama, arriesgarse no tiene peso — los desconocidos se arriesgan todo el tiempo y nadie se entera. El Dorado fue el que le abrió la puerta a una generación entera de mujeres y de bandas latinas. Ese impacto cultural, esa puerta, es más grande que un disco valiente que escuchamos los que ya éramos fans.<br><br>
+                    Caribe Atómico es el disco del músico. El Dorado es el disco del país. Y a mí me importa más el que cambió al país.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Ahí podemos quedar en desacuerdo. Pero coincidimos en una cosa: que una banda dé para esta discusión, treinta años después, ya dice lo grande que es.<br><br>
+                    Y el reconocimiento llegó. Aterciopelados terminó ganando Latin Grammy y volviéndose referencia obligatoria del rock en español. No como una banda de un país. Como una banda del continente.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y el legado tiene dos caras que vale la pena nombrar. Andrea siguió su camino propio, sacó disco solista, siguió siendo ceramista, siguió siendo una voz feminista fuerte en Colombia. Héctor se fue por el lado de la electrónica y de las raíces, explorando los sonidos ancestrales colombianos en proyectos por fuera de la banda.<br><br>
+                    Dos punks de bar que terminaron, cada uno por su lado, cuidando algo de la cultura colombiana. Esa es la línea completa: del hardcore al barro y a los sonidos ancestrales. Todo es la misma búsqueda.<br><br>
+                    Y fíjate en el detalle: ninguno se quedó quieto repitiendo el éxito. Andrea volvió su voz una herramienta política, una de las pocas figuras del rock colombiano que habla de feminismo sin pedir disculpas. Héctor se fue a buscar los tambores y los cantos que estaban acá antes de que existiera Colombia como país. Dos caminos opuestos que salen del mismo punto: la necesidad de decir algo propio, no algo prestado.
+                </div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">La Evolución</div>
+                Después de El Dorado, Aterciopelados se arriesga con discos más electrónicos y experimentales — <strong>"Caribe Atómico"</strong> (1998) y <strong>"Gozo Poderoso"</strong> (2000) — incorporando raíces colombianas y latinoamericanas. La banda ha sido reconocida con Latin Grammy y es referente del rock en español. (Verificar años y categorías exactas de los premios antes de grabar.)
+            </div>
+        </div>
+
+        <!-- SEG 8 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">8</div>
+                <div class="segment-title">La Guarida Recomienda — Puerta de Entrada</div>
+                <div class="segment-time">48:00 — 51:00</div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Para el que escuchó este episodio y nunca le puso atención de verdad a Aterciopelados, acá van los puntos de entrada. Concretos. Tres pasos.<br><br>
+                    <strong>La canción:</strong> "Bolero falaz". Cuatro minutos. Es la puerta perfecta — entra rápido y resume todo lo que la banda es.<br><br>
+                    <strong>El álbum:</strong> "El Dorado", del 95, completo, en orden. No salteado. Así fue pensado.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y el paso para el que ya conoce los himnos y quiere ir más hondo: pónganse "Caribe Atómico". Escúchenlo sin esperar otro El Dorado, escúchenlo como otra cosa. Ahí está la banda arriesgándose. Y si después de eso quieren cerrar el círculo, busquen algo de La Pestilencia — el punk de donde salió Héctor. Oigan el principio y el después seguidos. Es la misma gente. Esa es la sorpresa.
+                </div>
+            </div>
+
+            <div class="recomendacion">
+                <div class="recomendacion-label">La Guarida Recomienda — EP.005</div>
+                <strong>Canción:</strong> "Bolero falaz" — Aterciopelados (El Dorado, 1995)<br>
+                <strong>Álbum:</strong> "El Dorado" (1995), completo y en orden<br>
+                <strong>Para ir más hondo:</strong> "Caribe Atómico" (1998)<br>
+                <strong>La raíz:</strong> La Pestilencia — el hardcore punk de donde viene Héctor Buitrago
+            </div>
+        </div>
+
+        <!-- SEG 9 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">9</div>
+                <div class="segment-title">Takeaway + Conector</div>
+                <div class="segment-time">51:00 — 56:30</div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Lo que me quedo pensando de toda esta historia es esto.<br><br>
+                    Aterciopelados no sonó a nadie más porque no quiso sonar a nadie más. Venían del punk, de lo que no le gustaba a nadie, y en vez de cambiarse para encajar, hicieron que el continente se acomodara a ellos. A la voz de Andrea sin pulir. Al acento bogotano sin disimular. Al bolero pasado por rock. A lo colombiano metido en la electrónica.<br><br>
+                    La lección es esa: a veces la única forma de sonar universal es sonar profundamente a lo que uno es. No copiaron al rock gringo cantado en español. Cantaron desde Bogotá, y por eso los entendió todo el mundo.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y dejo el puente al próximo episodio, que estaba escondido en este toda la hora.<br><br>
+                    Héctor Buitrago venía del punk. La Pestilencia. Y eso no fue un accidente colombiano aislado: en los ochenta, en toda Latinoamérica, había chicos en garajes y bares tocando rápido y fuerte contra todo. Esa rabia es la raíz de media música que amamos. El próximo capítulo lo dedicamos a eso: al punk y al rock en español que cambió un continente. De dónde salió esa rabia, y a dónde fue a parar.
+                </div>
+            </div>
+
+            <div class="dato">
+                <div class="dato-label">Conector — Próximo Episodio (propuesto)</div>
+                El hilo descubierto: la raíz <strong>punk</strong> de Héctor Buitrago (La Pestilencia) abre el puente hacia un episodio sobre el <strong>punk / rock en español</strong> latinoamericano (Soda Stereo, Café Tacvba, la escena hardcore del continente). Confirmar con Andy cuál episodio sigue antes de cerrar el teaser.
+            </div>
+        </div>
+
+        <!-- SEG 10 -->
+        <div class="segment">
+            <div class="segment-header">
+                <div class="segment-number">10</div>
+                <div class="segment-title">Cierre + La Tarea</div>
+                <div class="segment-time">56:30 — 59:30</div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Eso fue el episodio 005 de Mr. Putrid's Den. Y hay tarea. Un experimento, cinco minutos.<br><br>
+                    Pongan "Florecita rockera" de Aterciopelados. Y justo después, pongan cualquier cosa de La Pestilencia. La misma persona está detrás de las dos. Díganme si lo escuchan. Escríbannos qué sintieron.
+                </div>
+            </div>
+
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y si conocían a Aterciopelados de otra forma, si crecieron con ellos, si esta es la primera vez que oyen de dónde vienen — cuéntennos. Para eso existe este podcast: para que la música deje de ser solo fondo y empiece a tener historia.<br><br>
+                    La información para escribirnos está al final de este episodio. La próxima semana nos vamos por la raíz punk de toda esta historia.<br><br>
+                    Esto fue Mr. Putrid's Den, episodio 005. Aquí es donde los riffs encuentran el whisky. Que tengan buena semana.
+                </div>
+            </div>
+
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Chau. Bye.
+                </div>
+            </div>
+
+            <div class="sfx">[SFX: OUTRO — Jazz 1950s estilo Billie Holiday. Trío de mujeres de época. Fade in lento. "Sweet dreams, until we meet." Cierra el episodio.]</div>
+        </div>
+
+    </div><!-- /GUION -->
+
+    <!-- CONTACTO -->
+    <div class="section" style="background:#1a1a1a; color:#A8A8A8;">
+        <h2 style="color:#9B1C1C; border-bottom-color:#9B1C1C;">Contacto</h2>
+        <p style="margin-top:10px;">
+            <strong style="color:#FFD700;">Web:</strong> www.mrputridsden.com &nbsp;|&nbsp;
+            <strong style="color:#FFD700;">General:</strong> hello@mrputridsden.com &nbsp;|&nbsp;
+            <strong style="color:#FFD700;">Andrés:</strong> Andres@mrputridsden.com &nbsp;|&nbsp;
+            <strong style="color:#FFD700;">Juan:</strong> Juan@mrputridsden.com
+        </p>
+        <p style="margin-top:8px; font-size:0.85em;">
+            Instagram: @mrputridsden &nbsp;|&nbsp; Facebook: facebook.com/share/1BZis2wXSF/ &nbsp;|&nbsp;
+            Spotify · Apple Podcasts · Amazon Music · iHeart · Castbox · Pocket Casts
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
