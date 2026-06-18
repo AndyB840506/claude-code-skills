@@ -12,6 +12,8 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.003 | Las raices del rock: Sister Rosetta Tharpe | publicado - rendimiento bajo vs EP.002 (ver nota de audiencia) |
 | EP.004 P1 | Kraken: el Titan del Rock colombiano (Parte 1) | en Spotify - programado viernes 2026-06-19 (link listo) |
 | EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | grabado - sale ~2026-06-20 |
+| EP.005 P1 | Aterciopelados: una gomela, un punkero (Parte 1) | guion listo (2 partes) - plan de grabacion + artwork listos; sin grabar |
+| EP.005 P2 | Aterciopelados (Parte 2) | guion listo - mismo guion; sin grabar |
 
 ---
 
