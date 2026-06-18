@@ -62,6 +62,8 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 
 Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para trackear cada entregable.
 
+**Default de 2 partes (decisión Andy 2026-06-17):** los episodios MPD se producen por defecto en 2 partes, porque la investigación profunda + anécdotas ciertas poco conocidas pasan la hora (EP.004 Kraken ~2h45; EP.005 Aterciopelados escrito como ~90 min/2 partes). Estructurar el corte P1/P2 desde el guion, cada parte con apertura/cierre y recap de ~20 seg al abrir la P2. Metadata compartida; solo cambia el título "(Parte 1)"/"(Parte 2)". Ver `01-episodio.md` (regla de 2 partes) y memoria `project-mpd-episodes-two-parts`.
+
 ---
 
 ## Segmentos permanentes

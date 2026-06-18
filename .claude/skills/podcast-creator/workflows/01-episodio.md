@@ -7,6 +7,8 @@ Genera un script completo, palabra por palabra, para un episodio específico. Se
 **Regla de eventos: Consulta `eventos.json` para el Segmento de Promoción.**
 **Regla de rotación de género: Revisar el género del episodio anterior antes de proponer el tema. No repetir el mismo género back-to-back. Si el EP anterior fue metal → el siguiente no puede ser metal. Géneros contiguos válidos: rock clásico, blues, jazz, soul, reggae, punk, alternativo, electrónico, folclore, salsa/afro-latino, etc.**
 **Regla del conector de género (EP.003 en adelante): Durante la investigación del episodio, identificar un dato real dentro del material — un artista, una influencia, un cruce histórico — que conecte orgánicamente con el género del siguiente episodio. Ese dato se convierte en el puente del cierre: el host lo nombra como anticipo del próximo capítulo. El conector NO se inventa — se descubre en la investigación. Si no existe un conector natural, revisar el orden del roadmap antes de forzarlo. Ejemplo: EP.002 (metal) → Iommi se inspiró en Django Reinhardt (jazz) → ese dato es el puente hacia un episodio de jazz. EP.003 (rock roots) → el árbol africano tiene dos ramas, una fue al Caribe → ese dato es el puente hacia EP.004 (salsa).**
+**Regla de investigación y verificación (OBLIGATORIA, antes de escribir): investigar el tema en la web y reunir datos verificables (fechas, cifras, anécdotas reales, evolución del sonido, álbumes emblemáticos Y los menos conocidos, canciones). NUNCA inventar fuentes, fechas, productores ni quotes — marcar lo no confirmado como `[VERIFICAR]` para chequear antes de grabar. Igualar la profundidad de los episodios fuertes (Black Sabbath / Kraken): dato duro + escena de la época + anécdota cierta poco conocida. Lección EP.005 (Aterciopelados): el primer borrador acreditó mal al productor de "El Dorado" (era Federico López, no Manzanera) — el error solo salió al investigar.**
+**Regla de 2 partes (default para episodios con investigación profunda): si la data con chispa pasa de ~60 min, estructurar el guion en 2 partes DESDE EL INICIO — corte natural, cada parte con su apertura/cierre corto, recap de ~20 seg al abrir la Parte 2. Metadata compartida; solo cambia el título "(Parte 1)"/"(Parte 2)". Ver memoria `project-mpd-episodes-two-parts`.**
 
 ---
 
@@ -379,6 +381,7 @@ Una vez aprobada la arquitectura, escribe el script palabra por palabra.
   - ✅ "Claro — y si a eso le sumás que..." (construye sobre lo anterior)
   - ❌ [Host A: bloque de hechos] / [Host B: "¿Cómo?"] / [Host A: otro bloque] — mecánico, suena a interrogatorio
   - La regla: cada vez que cambia el host, la primera línea del nuevo bloque debe recoger algo de lo que dijo el anterior
+  - **Calibrar los conectores contra la transcripción REAL del episodio anterior** (ej. el SRT en `E:\Transcriptor\transcripciones\`): los pases deben sonar a como los hosts hablan de verdad — name-checks ("¿sí o no, Juanito?", "como bien dijiste"), recoger lo anterior, callbacks ("¿se acuerdan de X? ahora sí") — no a turnos escritos de debate
 
 **Audit retroactivo obligatorio** — Si en esta sesión se agrega o modifica una regla de calidad (conectores, tono, estructura) porque un guion existente la viola, revisar y corregir ese guion en el mismo turno antes de entregar. No basta con actualizar la regla — el artefacto existente debe quedar corregido también.
 
