@@ -6,252 +6,43 @@
     <title>Mr. Putrid's Den — EP.005: Aterciopelados</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #ebebeb;
-            color: #1e1e1e;
-            line-height: 1.75;
-            font-size: 15px;
-        }
-
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #ebebeb; color: #1e1e1e; line-height: 1.75; font-size: 15px; }
         .container { max-width: 780px; margin: 0 auto; background: white; }
-
-        .header {
-            background: #1a1a1a;
-            color: white;
-            padding: 40px 44px;
-            border-bottom: 5px solid #9B1C1C;
-        }
-
+        .header { background: #1a1a1a; color: white; padding: 40px 44px; border-bottom: 5px solid #9B1C1C; }
         .header .podcast { font-size: 0.85em; color: #FF8C00; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
         .header h1 { font-size: 1.9em; font-weight: 900; margin-bottom: 6px; }
         .header .tagline { color: #FFD700; font-style: italic; font-size: 1em; margin-bottom: 20px; }
-
         .meta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
-        .meta-item {
-            background: rgba(155,28,28,0.2);
-            border: 1px solid #9B1C1C;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            color: #FFD700;
-        }
-
+        .meta-item { background: rgba(155,28,28,0.2); border: 1px solid #9B1C1C; padding: 5px 12px; border-radius: 20px; font-size: 0.8em; color: #FFD700; }
         .section { padding: 28px 44px; border-bottom: 1px solid #eee; }
-
-        .section h2 {
-            font-size: 0.72em;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #9B1C1C;
-            margin-bottom: 18px;
-            padding-bottom: 7px;
-            border-bottom: 2px solid #9B1C1C;
-        }
-
+        .section h2 { font-size: 0.72em; text-transform: uppercase; letter-spacing: 3px; color: #9B1C1C; margin-bottom: 18px; padding-bottom: 7px; border-bottom: 2px solid #9B1C1C; }
+        .parte-divider { background: #9B1C1C; color: white; padding: 14px 44px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85em; }
         .segment { margin: 36px 0; padding-bottom: 24px; border-bottom: 1px solid #f0f0f0; }
         .segment:last-child { border-bottom: none; }
-
-        .segment-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
-
-        .segment-number {
-            background: #9B1C1C;
-            color: white;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75em;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        .segment-title {
-            font-weight: 700;
-            font-size: 0.95em;
-            color: #1a1a1a;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .segment-time {
-            margin-left: auto;
-            font-size: 0.78em;
-            color: #aaa;
-            background: #f5f5f5;
-            padding: 2px 10px;
-            border-radius: 10px;
-            white-space: nowrap;
-        }
-
-        .sfx {
-            background: #1a1a1a;
-            color: #FFD700;
-            padding: 11px 16px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.88em;
-            margin: 14px 0;
-        }
-
-        /* Diálogo limpio — sin fondos */
-        .host-block {
-            margin: 18px 0;
-            padding: 0 0 0 18px;
-            border-left: 3px solid #ddd;
-        }
-
-        .host-block.juan {
-            border-left-color: #b0cce4;
-        }
-
-        .host-name {
-            font-weight: 800;
-            font-size: 0.78em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #9B1C1C;
-            margin-bottom: 6px;
-        }
-
+        .segment-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+        .segment-number { background: #9B1C1C; color: white; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75em; font-weight: bold; flex-shrink: 0; }
+        .segment-title { font-weight: 700; font-size: 0.95em; color: #1a1a1a; text-transform: uppercase; letter-spacing: 1px; }
+        .segment-time { margin-left: auto; font-size: 0.78em; color: #aaa; background: #f5f5f5; padding: 2px 10px; border-radius: 10px; white-space: nowrap; }
+        .sfx { background: #1a1a1a; color: #FFD700; padding: 11px 16px; border-radius: 4px; font-family: monospace; font-size: 0.88em; margin: 14px 0; }
+        .host-block { margin: 18px 0; padding: 0 0 0 18px; border-left: 3px solid #ddd; }
+        .host-block.juan { border-left-color: #b0cce4; }
+        .host-name { font-weight: 800; font-size: 0.78em; text-transform: uppercase; letter-spacing: 2px; color: #9B1C1C; margin-bottom: 6px; }
         .host-block.juan .host-name { color: #2C5F8A; }
-
-        .host-text {
-            font-size: 1em;
-            line-height: 1.85;
-            color: #2a2a2a;
-        }
-
-        /* Intercambio — borde sutil, fondo casi blanco */
-        .intercambio {
-            background: #f6faf2;
-            border-left: 3px solid #6aaa44;
-            border-radius: 0 4px 4px 0;
-            padding: 14px 18px;
-            margin: 18px 0;
-            font-size: 0.92em;
-            color: #2a3a1a;
-        }
-
-        .intercambio::before {
-            content: "INTERCAMBIO";
-            display: block;
-            font-weight: 800;
-            font-size: 0.7em;
-            letter-spacing: 2px;
-            color: #5a8a3a;
-            margin-bottom: 8px;
-        }
-
-        /* Dato — fondo crema claro */
-        .dato {
-            background: #fdfaf3;
-            color: #3a3018;
-            padding: 14px 18px;
-            border-radius: 4px;
-            margin: 16px 0;
-            border-left: 4px solid #c8a830;
-        }
-
-        .dato-label {
-            font-size: 0.7em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #9a7a10;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        /* Leyenda — fondo lavanda claro */
-        .leyenda {
-            background: #faf5ff;
-            color: #2e1a2e;
-            padding: 14px 18px;
-            border-radius: 4px;
-            margin: 16px 0;
-            border-left: 4px solid #9B1C1C;
-        }
-
-        .leyenda-label {
-            font-size: 0.7em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #7a1a7a;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        /* Recomendacion — fondo verde muy claro */
-        .recomendacion {
-            background: #f3faf3;
-            color: #1a2e1a;
-            padding: 14px 18px;
-            border-radius: 4px;
-            margin: 16px 0;
-            border-left: 4px solid #5a8a3a;
-        }
-
-        .recomendacion-label {
-            font-size: 0.7em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #3a6a1a;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        /* Promo — fondo azul muy claro */
-        .promo {
-            background: #f3f7fd;
-            color: #1a1e2e;
-            padding: 14px 18px;
-            border-radius: 4px;
-            margin: 16px 0;
-            border-left: 4px solid #2C5F8A;
-        }
-
-        .promo-label {
-            font-size: 0.7em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #1a4a7a;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        .nota-produccion {
-            background: #fffaed;
-            border: 1px solid #e0bb3a;
-            border-radius: 4px;
-            padding: 9px 14px;
-            margin: 10px 0;
-            font-size: 0.84em;
-            color: #5a4a10;
-        }
-
-        .nota-produccion::before {
-            content: "NOTA PRODUCCIÓN: ";
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
+        .host-text { font-size: 1em; line-height: 1.85; color: #2a2a2a; }
+        .intercambio { background: #f6faf2; border-left: 3px solid #6aaa44; border-radius: 0 4px 4px 0; padding: 14px 18px; margin: 18px 0; font-size: 0.92em; color: #2a3a1a; }
+        .intercambio::before { content: "INTERCAMBIO"; display: block; font-weight: 800; font-size: 0.7em; letter-spacing: 2px; color: #5a8a3a; margin-bottom: 8px; }
+        .dato { background: #fdfaf3; color: #3a3018; padding: 14px 18px; border-radius: 4px; margin: 16px 0; border-left: 4px solid #c8a830; }
+        .dato-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; color: #9a7a10; margin-bottom: 5px; font-weight: 700; }
+        .leyenda { background: #faf5ff; color: #2e1a2e; padding: 14px 18px; border-radius: 4px; margin: 16px 0; border-left: 4px solid #9B1C1C; }
+        .leyenda-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; color: #7a1a7a; margin-bottom: 5px; font-weight: 700; }
+        .recomendacion { background: #f3faf3; color: #1a2e1a; padding: 14px 18px; border-radius: 4px; margin: 16px 0; border-left: 4px solid #5a8a3a; }
+        .recomendacion-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; color: #3a6a1a; margin-bottom: 5px; font-weight: 700; }
+        .promo { background: #f3f7fd; color: #1a1e2e; padding: 14px 18px; border-radius: 4px; margin: 16px 0; border-left: 4px solid #2C5F8A; }
+        .promo-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; color: #1a4a7a; margin-bottom: 5px; font-weight: 700; }
+        .nota-produccion { background: #fffaed; border: 1px solid #e0bb3a; border-radius: 4px; padding: 9px 14px; margin: 10px 0; font-size: 0.84em; color: #5a4a10; }
+        .nota-produccion::before { content: "NOTA PRODUCCIÓN: "; font-weight: 700; text-transform: uppercase; }
         .arquitectura { font-size: 0.88em; }
-        .arq-row {
-            display: grid;
-            grid-template-columns: 26px 170px 85px 1fr;
-            gap: 10px;
-            padding: 7px 0;
-            border-bottom: 1px solid #f0f0f0;
-            align-items: start;
-        }
+        .arq-row { display: grid; grid-template-columns: 26px 200px 80px 1fr; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f0f0f0; align-items: start; }
         .arq-num { color: #9B1C1C; font-weight: bold; }
         .arq-seg { font-weight: 600; }
         .arq-time { color: #aaa; font-family: monospace; }
@@ -264,396 +55,471 @@
     <div class="header">
         <div class="podcast">Mr. Putrid's Den</div>
         <h1>EP.005: Aterciopelados</h1>
-        <div class="tagline">Dos punks bogotanos que le inventaron una voz al rock colombiano</div>
+        <div class="tagline">Una gomela, un punkero, y el dúo que le abrió la puerta del mundo al rock colombiano</div>
         <div class="meta">
             <span class="meta-item">Episodio 005</span>
             <span class="meta-item">Análisis profundo</span>
             <span class="meta-item">Rock alternativo / Rock en español</span>
-            <span class="meta-item">~60 min</span>
+            <span class="meta-item">~90 min · 2 PARTES</span>
             <span class="meta-item">Co-host</span>
         </div>
     </div>
 
     <!-- NOTA DE VERIFICACIÓN -->
     <div class="section">
-        <div class="nota-produccion">Verificar antes de grabar — fechas de discografía, productor de "El Dorado" (Phil Manzanera) y años exactos de Latin Grammy. Los datos del guion están como referencia, pero confírmenlos en una fuente primaria (la banda, Discogs, la base de los Latin Grammy) para no soltar un dato torcido al aire.</div>
+        <div class="nota-produccion">Datos verificados vía Wikipedia (ES/EN), sitio oficial, Discogs, AllMusic, RateYourMusic, prensa internacional (Time, Rolling Stone, NPR, Washington Post, Billboard) y prensa/entrevistas (Semana, Infobae, Caracol, El Tiempo-BOCAS, El Colombiano, Remezcla, 2014–2025). TRES cuidados al aire: (1) confirmar el conteo final de Latin Grammys antes de soltar un número exacto; (2) NO afirmar que una canción específica "es sobre la ruptura" de Andrea y Héctor — ellos nunca lo dijeron así; (3) el episodio del concierto de Cerati en 2010 fue su show SOLISTA en Bogotá (Palacio de los Deportes), no un concierto de Soda — contarlo con esa precisión.</div>
     </div>
 
     <!-- ARQUITECTURA -->
     <div class="section">
-        <h2>Arquitectura del Episodio</h2>
+        <h2>Arquitectura del Episodio (2 partes)</h2>
         <div class="arquitectura">
             <div class="arq-row" style="color:#9B1C1C; font-weight:bold;">
-                <span class="arq-num">#</span>
-                <span class="arq-seg">Segmento</span>
-                <span class="arq-time">Tiempo</span>
-                <span>Contenido</span>
+                <span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span>
             </div>
+            <div class="arq-row" style="color:#9B1C1C;"><span class="arq-num">P1</span><span class="arq-seg">PARTE 1 — EL ASCENSO</span><span class="arq-time"></span><span></span></div>
             <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Intro music</span><span class="arq-time">00:00</span><span>Intro del show — fade out</span></div>
-            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Bienvenida</span><span class="arq-time">00:30</span><span>Andrés abre con un gancho seco. Juan entra corto.</span></div>
-            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">El Hook</span><span class="arq-time">02:30</span><span>La escena: un país que cantaba "Florecita rockera" sin saber que la cantaban dos punks.</span></div>
-            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Orígenes — de punk a Aterciopelados</span><span class="arq-time">06:30</span><span>La Pestilencia, Delia y los Aminoácidos, Bogotá underground. Juan abre la escena en vivo. [INTERCAMBIO]</span></div>
-            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">El Dorado (1995) + la voz de Andrea</span><span class="arq-time">18:00</span><span>Phil Manzanera, "Bolero falaz", "Florecita rockera", MTV Latino. La voz que no se parecía a nada.</span></div>
-            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Segmento de Promoción</span><span class="arq-time">31:00</span><span>Juan — eventos reales (ver eventos.json).</span></div>
-            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Identidad latinoamericana + legado</span><span class="arq-time">35:00</span><span>Caribe Atómico, Gozo Poderoso, Latin Grammy. El debate: ¿cuál es el disco que de verdad importa? [INTERCAMBIO]</span></div>
-            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">La Guarida Recomienda</span><span class="arq-time">48:00</span><span>Puerta de entrada: canción, álbum, dónde empezar.</span></div>
-            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Takeaway + conector</span><span class="arq-time">51:00</span><span>La lección + el puente al próximo episodio (la raíz punk).</span></div>
-            <div class="arq-row"><span class="arq-num">10</span><span class="arq-seg">Cierre + La Tarea</span><span class="arq-time">56:30</span><span>Juan da la tarea. Andrés cierra.</span></div>
-            <div class="arq-row"><span class="arq-num">11</span><span class="arq-seg">Outro music</span><span class="arq-time">59:30</span><span>Outro del show — fade in.</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Bienvenida</span><span class="arq-time">00:30</span><span>Andrés abre con la paradoja. Juan, el dato seco.</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">El Hook</span><span class="arq-time">02:30</span><span>Un país cantando sin saber que la cantaban un punkero y una gomela.</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">La escena — Bogotá 1986</span><span class="arq-time">06:00</span><span>Juan: La Pestilencia, el DJ punk, el barrio Restrepo, el sótano.</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">El romance y el nacimiento</span><span class="arq-time">13:00</span><span>La gomela y el punkero, La Casona, Delia, 2 años, la sociedad. [INTERCAMBIO]</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">La transformación — El Dorado</span><span class="arq-time">21:00</span><span>Punk+salsa+bossa → llaneros. Federico López, 1M copias, la voz de Andrea.</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Segmento de Promoción</span><span class="arq-time">32:00</span><span>Juan — eventos reales (eventos.json).</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">El salto al mundo + el riesgo</span><span class="arq-time">36:00</span><span>Pipa/Manzanera/Londres, Caribe Atómico, Gozo Poderoso (Billboard #7), Time 2001. El debate. [INTERCAMBIO]</span></div>
+            <div class="arq-row" style="color:#9B1C1C;"><span class="arq-num">P2</span><span class="arq-seg">PARTE 2 — LA MUJER, LA MUTACIÓN Y EL LEGADO</span><span class="arq-time"></span><span></span></div>
+            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">El embarazo y Andrea solista</span><span class="arq-time">48:00</span><span>Milagros (2002), disco 2005, "A Eme O", maternidad. La hija que no es de Héctor.</span></div>
+            <div class="arq-row"><span class="arq-num">10</span><span class="arq-seg">Cerati — el amor platónico y la espina</span><span class="arq-time">56:00</span><span>El Unplugged, "Platónico", el remordimiento de 2010, el ACV.</span></div>
+            <div class="arq-row"><span class="arq-num">11</span><span class="arq-seg">La mutación del sonido</span><span class="arq-time">65:00</span><span>Los discos menos sonados que la prensa de afuera amó: Oye, Río, Claroscura.</span></div>
+            <div class="arq-row"><span class="arq-num">12</span><span class="arq-seg">Legado e influencia</span><span class="arq-time">74:00</span><span>La puerta que abrieron, colaboraciones globales, Andrea y Héctor hoy.</span></div>
+            <div class="arq-row"><span class="arq-num">13</span><span class="arq-seg">La Guarida Recomienda</span><span class="arq-time">81:00</span><span>Puerta de entrada + un deep cut.</span></div>
+            <div class="arq-row"><span class="arq-num">14</span><span class="arq-seg">Takeaway + conector</span><span class="arq-time">84:00</span><span>La lección + el puente al próximo (la raíz punk).</span></div>
+            <div class="arq-row"><span class="arq-num">15</span><span class="arq-seg">Cierre + La Tarea</span><span class="arq-time">88:00</span><span>Juan da la tarea. Andrés cierra.</span></div>
+            <div class="arq-row"><span class="arq-num">16</span><span class="arq-seg">Outro music</span><span class="arq-time">90:30</span><span>Outro del show — fade in.</span></div>
         </div>
+        <div class="nota-produccion">Corte P1/P2 después del Bloque 8. Cada parte recibe su propia bienvenida/cierre corto al grabar (la P2 abre recapitulando en 20 seg dónde quedamos). Metadata compartida, solo cambia el título: "(Parte 1)" / "(Parte 2)" — igual que EP.004 Kraken.</div>
     </div>
 
     <!-- GUION -->
-    <div class="section" style="padding-top:32px; padding-bottom:40px;">
+    <div class="section" style="padding-top:32px; padding-bottom:10px;">
         <h2>Guion Completo</h2>
+    </div>
+
+    <div class="parte-divider">Parte 1 — El Ascenso</div>
+
+    <div class="section" style="padding-top:24px; padding-bottom:40px;">
 
         <!-- SEG 1 -->
         <div class="segment">
-            <div class="segment-header">
-                <div class="segment-number">1</div>
-                <div class="segment-title">Intro Music</div>
-                <div class="segment-time">00:00 — 00:30</div>
-            </div>
+            <div class="segment-header"><div class="segment-number">1</div><div class="segment-title">Intro Music</div><div class="segment-time">00:00 — 00:30</div></div>
             <div class="sfx">[SFX: INTRO — Stevie Ray Vaughn meets Black Label Society. Guitarra blues eléctrica + heavy metal. Voz femenina gutural. 30 segundos. Fade out lento.]</div>
         </div>
 
         <!-- SEG 2 -->
         <div class="segment">
-            <div class="segment-header">
-                <div class="segment-number">2</div>
-                <div class="segment-title">Bienvenida</div>
-                <div class="segment-time">00:30 — 02:30</div>
-            </div>
-
+            <div class="segment-header"><div class="segment-number">2</div><div class="segment-title">Bienvenida</div><div class="segment-time">00:30 — 02:30</div></div>
             <div class="host-block">
                 <div class="host-name">Andrés</div>
                 <div class="host-text">
                     Bienvenidos de vuelta a Mr. Putrid's Den.<br><br>
                     [PAUSA]<br><br>
-                    Soy Andrés, con Juan al lado, y este es el episodio 005. Hoy nos quedamos en casa. Bogotá. Una banda que ustedes seguro tararearon en algún momento de su vida sin pensar dos veces de dónde venía.<br><br>
-                    Aterciopelados.<br><br>
-                    Y la historia de cómo llegaron a sonar en cada emisora del continente empieza en el lugar menos pensado: empieza en un bar oscuro, con dos personas que no querían gustarle a nadie.
+                    Soy Andrés, con Juan al lado, y este es el episodio 005. Hoy nos quedamos en casa. Bogotá. Y vamos a hablar de una banda tan grande que se nos volvió dos partes. Aterciopelados.<br><br>
+                    Y arranco con la imagen que tiene todo adentro: imagínense a una niña de familia bien, de colegio bueno, una gomela en toda regla. Y al otro lado, a un tipo de barrio obrero que ponía discos de punk en la radio y armaba conciertos donde la gente se daba en la cara. Esos dos no tenían por qué cruzarse nunca. Se cruzaron. Se enamoraron. Terminaron. Y siguieron juntos treinta años haciendo la música más importante del rock colombiano.
                 </div>
             </div>
-
             <div class="host-block juan">
                 <div class="host-name">Juan</div>
                 <div class="host-text">
-                    Juan a la orden. Dato para arrancar: cuando Aterciopelados sacó la canción que los volvió famosos, ninguno de los dos había cumplido treinta años, y venían de tocar para salas de cincuenta personas que la mitad del tiempo los abucheaba.<br><br>
-                    De ahí a llenar plazas. Esa es la distancia que vamos a recorrer hoy.
+                    Juan a la orden. El dato que pone todo en escala: El Dorado, el disco que los volvió enormes, vendió más de un millón de copias. Un dúo de Bogotá, cantando en español, a mediados de los noventa.<br><br>
+                    Empezaron en salas de cincuenta personas. Terminaron en una lista de la revista Time, al lado de U2 y los Rolling Stones. Eso es lo que vamos a desarmar hoy.
                 </div>
             </div>
         </div>
 
         <!-- SEG 3 -->
         <div class="segment">
-            <div class="segment-header">
-                <div class="segment-number">3</div>
-                <div class="segment-title">El Hook — Un País Cantando sin Saber</div>
-                <div class="segment-time">02:30 — 06:30</div>
-            </div>
-
+            <div class="segment-header"><div class="segment-number">3</div><div class="segment-title">El Hook — Un País Cantando sin Saber</div><div class="segment-time">02:30 — 06:00</div></div>
             <div class="host-block">
                 <div class="host-name">Andrés</div>
                 <div class="host-text">
-                    Quiero que se ubiquen en un momento. Mediados de los noventa. Usted prende el televisor, pone MTV Latino, y entre un video de rock argentino y uno de pop mexicano aparece una mujer de pelo corto, de mirada directa, cantando con una voz que no se parece a ninguna otra que estuviera sonando en ese momento.<br><br>
-                    No era una voz dulce hecha para gustar. Era una voz con filo, con acento bogotano sin disimular, cantando "estoy aquí calientita en mi nidito". Y de repente medio continente estaba cantando eso. En Colombia, en México, en Argentina, en Chile.<br><br>
-                    Y acá está lo que casi nadie pensaba en ese momento: esa mujer y el tipo del bajo al lado de ella no venían del pop. Venían del punk. De lo más áspero, lo más sucio y lo más antisistema que tenía Bogotá en los ochenta. La banda que medio continente cantaba en la radio había nacido para no sonar nunca en la radio.<br><br>
-                    Esa contradicción es todo el episodio de hoy.
+                    Ubíquense. Mediados de los noventa. Usted pone MTV Latino — que en esa época era la única ventana que veía un pelado en Bogotá, en Monterrey y en Buenos Aires el mismo día — y entre un video de rock argentino y uno de pop mexicano aparece una mujer de pelo corto, mirada de frente, con una voz que no se parecía a ninguna otra que estuviera sonando.<br><br>
+                    No era una voz dulce hecha para gustar. Era una voz con filo, con acento bogotano sin disimular. Y de repente medio continente la estaba cantando. Colombia, México, Argentina, Chile.<br><br>
+                    Y acá está lo que casi nadie pensaba: esa mujer y el tipo del bajo al lado de ella no venían del pop. Él venía del punk. Del hardcore. De lo más áspero y antisistema que tenía Bogotá en los ochenta. La banda que medio continente cantó en la radio había nacido, literalmente, para no sonar nunca en la radio.<br><br>
+                    Cómo el punk se volvió aterciopelado. Ese es el viaje de hoy.
                 </div>
             </div>
-
             <div class="host-block juan">
                 <div class="host-name">Juan</div>
                 <div class="host-text">
-                    Y hay que decir lo que era Bogotá en ese momento, porque sin eso no se entiende nada. Finales de los ochenta. No había circuito. No había una industria que te firmara. Si usted quería tocar rock en esta ciudad, lo hacía en un bar pequeño, con un equipo prestado, frente a la misma gente de siempre.<br><br>
-                    De ahí salieron. No de una disquera. De un bar.
+                    Y para entenderlo, la historia no empieza con Andrea. Empieza tres o cuatro años antes, en un barrio obrero del sur de Bogotá, con una banda que se llamaba La Pestilencia. Ese es el verdadero punto de partida. Y ahí arranco, porque esa escena la conozco.
                 </div>
-            </div>
-
-            <div class="dato">
-                <div class="dato-label">Contexto</div>
-                Aterciopelados se forma en Bogotá a comienzos de los años noventa alrededor de dos figuras: <strong>Andrea Echeverri</strong> (voz y guitarra) y <strong>Héctor Buitrago</strong> (bajo). Son considerados pioneros del rock en español y una de las bandas que puso al rock colombiano en el mapa internacional durante la ola del rock latino de los noventa.
             </div>
         </div>
 
         <!-- SEG 4 -->
         <div class="segment">
-            <div class="segment-header">
-                <div class="segment-number">4</div>
-                <div class="segment-title">Orígenes — De Punk a Aterciopelados</div>
-                <div class="segment-time">06:30 — 18:00</div>
-            </div>
-
-            <div class="host-block">
-                <div class="host-name">Andrés</div>
-                <div class="host-text">
-                    Vamos al principio. Y el principio no es Andrea — es Héctor.<br><br>
-                    Héctor Buitrago venía del hardcore punk. Tocó en una de las bandas más pesadas y más importantes de ese movimiento en Colombia: La Pestilencia. Estamos hablando de punk de verdad, rápido, agresivo, con letras de rabia. Nada que ver con la florecita rockera que vino después.<br><br>
-                    Y por otro lado estaba Andrea Echeverri. Andrea no era una cantante de formación. Era artista plástica, ceramista. Trabajaba con las manos, con el barro. Y tenía una voz cruda, sin pulir, sin escuela — y precisamente por eso, única.<br><br>
-                    Esos dos mundos se cruzan en la escena bogotana. Y antes de Aterciopelados arman juntos un proyecto anterior, con un nombre que ya les dice todo el sentido del humor que tenían: Delia y los Aminoácidos.
-                </div>
-            </div>
-
+            <div class="segment-header"><div class="segment-number">4</div><div class="segment-title">La Escena — Bogotá, 1986</div><div class="segment-time">06:00 — 13:00</div></div>
             <div class="host-block juan">
                 <div class="host-name">Juan</div>
                 <div class="host-text">
-                    Acá quiero contar el lado que conozco, que es el del escenario. Porque la gente recuerda los discos, pero una banda se hace en vivo, noche tras noche, frente a poca gente.<br><br>
-                    Estos dos no llegaron arriba por una canción de suerte. Llegaron tocando en bares de la ciudad cuando tocar rock acá no daba un peso. Salas pequeñas. Equipos prestados. Públicos de cuarenta, cincuenta personas. Y un público que en esa época no perdonaba: si no le gustabas, te lo decía en la cara.<br><br>
-                    Esa escuela es la que no se ve en MTV. Pero es la que les dio el cuero para aguantar todo lo que vino después.
+                    1986. Bogotá. Héctor Buitrago es un pelado que tiene un programa de radio poniendo discos de punk — discos que en este país no conseguía nadie, que tocaba traer de afuera. Desde Medellín, un man llamado Dilson Díaz lo escucha, le escribe, y se cuadran para conocerse y mostrarse los discos que cada uno tenía.<br><br>
+                    De ese encuentro — dos tipos enseñándose discos de punk — nace La Pestilencia. Reclutan guitarrista y baterista, y ensayan en la casa de la mamá de Héctor, en el barrio Restrepo. Sur de Bogotá. Barrio obrero. La Pestilencia se vuelve una de las bandas fundadoras del hardcore punk y el metal en Colombia. Cuarenta años después, leyenda. Y Héctor, el del bajo, es uno de los que prende esa mecha.
                 </div>
             </div>
-
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y entiendan qué era tocar rock en Bogotá en esa época. No había industria. No había disquera esperándote. No había circuito. Usted tocaba en un bar pequeño, con equipo prestado, frente a cuarenta personas, y la mitad lo abucheaba. El rock acá era cosa de sótano, mal visto. Y el punk era lo más bajo del escalafón: ruido, rabia, pelados con crestas en una ciudad que no los quería.<br><br>
+                    Apenas en 1995 nace Rock al Parque, el festival gratuito de Bogotá, y por fin le da un escenario grande a todo ese mundo subterráneo. Pero eso fue después. La escena de la que sale Héctor es la de antes: la del sótano, la del equipo prestado.
+                </div>
+            </div>
             <div class="host-block">
                 <div class="host-name">Andrés</div>
                 <div class="host-text">
-                    Y ese cuero es clave, porque lo que Andrea y Héctor hicieron fue tomar la energía del punk — la actitud, el no pedir permiso — y empezar a abrirla. Le metieron melodía. Le metieron raíces colombianas. Le metieron a Andrea cantando de cosas que el rock en español casi no tocaba: el cuerpo de la mujer, el deseo, la rabia, la ternura, todo desde una mirada que no era la del rockero hombre de siempre.<br><br>
-                    El primer disco como Aterciopelados, "Con el corazón en la mano", del 93, ya tiene eso. Todavía suena crudo, todavía con un pie en el bar. Pero ahí ya está la fórmula: punk con corazón, rock con acento propio.
+                    Y ese sótano es la escuela. La actitud del punk — no pedir permiso, hacerlo con lo que haya, no esperar la bendición de nadie — esa actitud es la que Héctor se lleva cuando deja La Pestilencia. No se lleva el sonido. Se lleva la actitud. Porque lo que viene no es punk. Es otra cosa. Pero esa otra cosa solo pudo nacer de alguien que primero pasó por el punk.
                 </div>
             </div>
-
             <div class="dato">
-                <div class="dato-label">Dato</div>
-                Antes de Aterciopelados, Andrea Echeverri y Héctor Buitrago tocaron juntos en el proyecto <strong>Delia y los Aminoácidos</strong>. Héctor venía del hardcore punk colombiano (La Pestilencia). El primer álbum de Aterciopelados, <strong>"Con el corazón en la mano"</strong>, es de 1993.
-            </div>
-
-            <div class="intercambio">
-                <strong>Andrés pasa la pregunta:</strong> "Juanito, usted que ha visto nacer bandas en vivo — ¿qué le pasa a un grupo cuando viene del punk y de repente le empieza a ir bien? ¿Eso se traiciona o se madura?"<br><br>
-                <strong>Juan responde:</strong> su lectura, desde la experiencia de promotor — qué le pasa a una banda underground cuando cruza al mainstream. Libre, con ejemplos.<br><br>
-                <strong>Andrés cierra el pase, montando el siguiente bloque:</strong> "Porque a Aterciopelados eso justamente le pasó. Y el momento exacto en que pasó tiene nombre y año: El Dorado, 1995."
+                <div class="dato-label">La Pestilencia — Dato</div>
+                Banda colombiana de hardcore punk, fundada en <strong>1986 en Bogotá</strong> por Héctor Buitrago y Dilson Díaz. Héctor era DJ de discos punk en la radio; Dilson, fan desde Medellín, lo contactó. Ensayaban en casa de la mamá de Héctor, barrio <strong>Restrepo</strong>. Pioneros del hardcore punk y el metal en Colombia. Héctor dejó la banda para fundar Aterciopelados; Dilson Díaz siguió al frente hasta hoy.
             </div>
         </div>
 
         <!-- SEG 5 -->
         <div class="segment">
-            <div class="segment-header">
-                <div class="segment-number">5</div>
-                <div class="segment-title">El Dorado (1995) + La Voz de Andrea</div>
-                <div class="segment-time">18:00 — 31:00</div>
-            </div>
-
+            <div class="segment-header"><div class="segment-number">5</div><div class="segment-title">El Romance y el Nacimiento</div><div class="segment-time">13:00 — 21:00</div></div>
             <div class="host-block">
                 <div class="host-name">Andrés</div>
                 <div class="host-text">
-                    El Dorado es el disco que lo cambió todo. 1995. Y lo interesante es quién lo produjo: un músico inglés llamado Phil Manzanera, el guitarrista de Roxy Music. Un tipo con un oído de primer mundo y, además, con sangre colombiana por el lado de su mamá. Es decir: entendía las dos orillas, el pop británico sofisticado y la raíz latinoamericana.<br><br>
-                    Y lo que hace Manzanera con Aterciopelados no es alisarlos, no es volverlos pop de plástico. Es enfocarlos. Toma esa energía cruda del bar y la mete en canciones que entran al primer golpe y no se te salen de la cabeza.
+                    Ahora entra Andrea. Y entra desde el otro lado completo de la ciudad. Andrea Echeverri venía de familia acomodada — ella misma se dice gomela, con humor. Estudiaba arte, era ceramista, trabajaba el barro. No venía del sótano del rock. Venía del mundo del arte plástico bogotano.<br><br>
+                    Un amigo en común sabía que Andrea cantaba y andaba buscando meterse en un grupo. Así se conocen, en un ensayo en la casa de él. Pero el romance — esto lo contaron los dos, hace poco — no nació en el ensayo. Nació bailando, en un sitio que se llamaba La Casona. Ahí se enamoraron. La gomela y el punkero.
                 </div>
             </div>
-
-            <div class="host-block">
-                <div class="host-name">Andrés</div>
-                <div class="host-text">
-                    Y de ahí salen dos canciones que se vuelven himnos.<br><br>
-                    "Bolero falaz" — esa mezcla de despecho colombiano con guitarra rockera. Un bolero roto, traicionero, cantado con rabia. Eso era nuevo: tomar el género del corazón partido de toda la vida y pasarlo por una banda de rock.<br><br>
-                    Y "Florecita rockera". Que es casi un manifiesto. Andrea cantándose a sí misma, cantándole a la mujer que hace rock en un mundo que no la esperaba ahí.<br><br>
-                    [PAUSA]<br><br>
-                    Y acá tengo que parar en la voz. Porque la voz de Andrea Echeverri es el centro de todo. En una época donde la radio quería voces femeninas dulces, afinaditas, hechas para no incomodar, llega esta voz con cuerpo, con acento, que se permite sonar áspera, que se permite sonar enojada, que se permite sonar deseante. No pedía permiso para existir. Y eso, para una generación entera de mujeres que oían rock, fue una puerta que se abrió.<br><br>
-                    Y no fue solo cosa de mujeres. Fue para cualquiera que sintiera que no cabía en el molde de lo que el rock decía que uno tenía que ser. Andrea cantaba desde la incomodidad, sin maquillarla, y miles de personas se reconocieron ahí. Eso es lo que hace que una canción dure treinta años: no que sea perfecta, sino que alguien se vea entero en ella.
-                </div>
-            </div>
-
             <div class="host-block juan">
                 <div class="host-name">Juan</div>
                 <div class="host-text">
-                    Y el dato del impacto es medible. El Dorado fue el disco que metió a Aterciopelados en la rotación de MTV Latino, que en esa época era el único canal que de verdad movía una banda por todo el continente. No era la radio de un país. Era la pantalla que veía un adolescente en Bogotá, en Monterrey y en Buenos Aires el mismo día.<br><br>
-                    Eso convirtió a una banda de bar de Bogotá en una banda de continente. Y abrió la puerta para que después llegaran las nominaciones a los Grammy y las giras afuera. Sin El Dorado, esa puerta no se abre.
+                    Y ese choque de mundos era real. Él, Restrepo, punk, clase obrera. Ella, familia bien, arte. Héctor ha contado que para los papás de ella la cosa fue dura — el novio punkero del sur no era lo que esos papás tenían en mente.<br><br>
+                    Dos universos opuestos que se atraen. Y de esa tensión sale primero una banda con un nombre que les dice el humor que tenían: Delia y los Aminoácidos. Dos años después, eso se transforma y se vuelve Aterciopelados.
                 </div>
             </div>
-
-            <div class="dato">
-                <div class="dato-label">El Disco Clave</div>
-                <strong>"El Dorado" (1995)</strong> — producido por Phil Manzanera (guitarrista de Roxy Music, de ascendencia colombiana). Es el álbum que internacionaliza a la banda. Sencillos icónicos: <strong>"Bolero falaz"</strong> y <strong>"Florecita rockera"</strong>, con rotación fuerte en MTV Latino a mediados de los noventa.
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Pero acá viene lo más interesante de toda la historia humana de la banda. El romance duró poco. Como dos años. Ellos mismos lo aclaran, porque mucha gente todavía cree que son esposos, que tienen una hija juntos, que siguen casados. Y no. Eran dos personalidades intensas, explosivas, con formas de ver el mundo demasiado distintas. Como pareja, no funcionó.<br><br>
+                    Y aquí está el giro: en vez de que la banda muriera con el romance — que es lo que pasa el noventa por ciento de las veces — hicieron lo contrario. Terminaron como novios y siguieron como sociedad creativa. Treinta años. Una de las duplas más largas y exitosas del rock en español, construida sobre una relación que como pareja se acabó rapidísimo.
+                </div>
             </div>
-
             <div class="leyenda">
-                <div class="leyenda-label">La Voz</div>
-                La voz de Andrea Echeverri rompió el molde de lo que se esperaba de una mujer en el rock en español: ni dulce ni decorativa, sino cruda, con acento bogotano marcado y temática propia (el cuerpo, el deseo, la rabia, lo femenino sin pedir permiso). Para una generación de oyentes fue una referencia que antes no existía en la radio.
+                <div class="leyenda-label">La Sociedad</div>
+                Andrea Echeverri y Héctor Buitrago fueron pareja al comienzo (un romance de cerca de dos años). Tras la ruptura, en vez de disolverse, mantuvieron la sociedad creativa por más de tres décadas. En 2024 contaron su historia en el proyecto "Dúo". Aclaración de ellos mismos: no están casados ni tienen una hija juntos, como cree parte del público.
+            </div>
+            <div class="intercambio">
+                <strong>Andrés pasa la pregunta:</strong> "Juanito, ¿qué es más difícil — armar una banda con tu pareja, o seguir en la banda después de que terminaron? Porque lo segundo es lo que hicieron ellos, y me parece casi imposible."<br><br>
+                <strong>Juan responde:</strong> desde su experiencia con artistas — qué le pasa a un grupo cuando hay una relación de por medio y se rompe. Por qué casi siempre se acaba todo. Libre.<br><br>
+                <strong>Andrés cierra montando el siguiente bloque:</strong> "Y esa sociedad rara, recién rota como pareja, es la que se mete a un estudio en Bogotá a finales del 94 a grabar el disco que lo cambió todo."
             </div>
         </div>
 
         <!-- SEG 6 -->
         <div class="segment">
-            <div class="segment-header">
-                <div class="segment-number">6</div>
-                <div class="segment-title">Segmento de Promoción</div>
-                <div class="segment-time">31:00 — 35:00</div>
+            <div class="segment-header"><div class="segment-number">6</div><div class="segment-title">La Transformación — El Dorado</div><div class="segment-time">21:00 — 32:00</div></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Para entender El Dorado hay que oír lo que vino antes. El primer disco, "Con el corazón en la mano", del 93, todavía tiene el pie metido en el punk: batería punk obsesiva, guitarras distorsionadas, crudo. Pero ya asoma lo que los iba a hacer únicos — porque sobre ese beat punk se cuelan cosas que no tenían nada que ver: salsa, bossanova, ritmos de acá. Punk con salsa. Eso no se le había ocurrido a nadie.<br><br>
+                    Y del primero al segundo disco pasa la transformación completa. Abren el sonido. Le meten melodía, despecho, y — esto es lo clave — ritmos llaneros, sonidos colombianos al frente, ya no escondidos. Dejan de sonar a banda gringa cantada en español y empiezan a sonar a Colombia. Del hardcore al aterciopelado. De la rabia pura a la rabia con melodía y raíz.<br><br>
+                    Y los números de ese disco son de no creer. Esos te los dejo a ti, Juanito, que para los datos eres el bueno.
+                </div>
             </div>
-
-            <div class="nota-produccion">Juan — actualizar eventos.json antes de grabar. Los eventos actuales son de ejemplo. Reemplazar con eventos reales. El guion abajo usa el formato de referencia.</div>
-
             <div class="host-block juan">
                 <div class="host-name">Juan</div>
                 <div class="host-text">
-                    Antes de cerrar el disco, algo concreto para los que estén en Bogotá o por aquí cerca. Porque la escena de la que salió Aterciopelados sigue viva hoy, en los mismos bares pequeños, con bandas que todavía nadie conoce.<br><br>
-                    [ACTUALIZAR CON EVENTOS REALES DE eventos.json]<br><br>
-                    <em>— Formato de referencia con eventos de ejemplo —</em><br><br>
-                    Este <strong>[fecha]</strong>, en <strong>[lugar]</strong>, tocan <strong>[bandas]</strong>. <strong>[Entrada / boletas]</strong>. <strong>[Dónde conseguir info]</strong>.<br><br>
-                    Eso es lo que hay. Dense la vuelta, apoyen la escena local — que de ahí salen los próximos Aterciopelados.
+                    Y vaya que importan. El Dorado se graba entre octubre y diciembre del 94, en el estudio Audiovisión, en Bogotá. Lo produce Federico López, que se vino desde Medellín para esas sesiones. Sale el 24 de octubre del 95.<br><br>
+                    Y revienta. Más de un millón de copias. Conquista Latinoamérica y el Caribe. Con los años lo nombran una y otra vez como uno de los mejores discos de la historia del rock en español. No del rock colombiano — del rock en español, completo.
                 </div>
             </div>
-
-            <div class="promo">
-                <div class="promo-label">Fuente de Eventos</div>
-                Consultar eventos.json antes de grabar. Juan actualiza la lista con eventos reales. Formato: nombre del evento, fecha, lugar, descripción breve, y dónde conseguir boletas o info.
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y de ahí salen los himnos. "Bolero falaz" — despecho colombiano con guitarra rockera, un bolero traicionero cantado con rabia. Agarrar el bolero, el género del corazón partido de las abuelas, y pasarlo por una banda de rock. Eso era nuevo. "Candela". Y "Florecita rockera", casi un manifiesto: Andrea cantándole a la mujer que hace rock en un mundo que no la esperaba ahí.<br><br>
+                    [PAUSA]<br><br>
+                    Y tengo que parar en la voz, porque la voz de Andrea es el centro de todo. En una época donde la radio quería voces femeninas dulces, afinaditas, hechas para no incomodar, llega esta voz con cuerpo, con acento, que se permite sonar áspera, brava, deseante. No pedía permiso. Y no fue solo cosa de mujeres: fue para cualquiera que sintiera que no cabía en el molde. Andrea cantaba desde la incomodidad, sin maquillarla, y miles se reconocieron ahí. Eso es lo que hace que un disco dure treinta años: no que sea perfecto, sino que alguien se vea entero en él.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">El Dorado (1995) — Ficha</div>
+                Segundo álbum. Grabado oct–dic 1994 en estudio <strong>Audiovisión</strong> (Bogotá), producido por <strong>Federico López</strong>. Lanzado <strong>24 de octubre de 1995</strong>. Más de <strong>un millón de copias</strong>. Sencillos: "Florecita rockera", "Bolero falaz", "Candela". Considerado de forma recurrente uno de los mejores discos del rock en español. Incorpora ritmos llaneros — el giro hacia la raíz colombiana.
             </div>
         </div>
 
         <!-- SEG 7 -->
         <div class="segment">
-            <div class="segment-header">
-                <div class="segment-number">7</div>
-                <div class="segment-title">Identidad Latinoamericana + Legado</div>
-                <div class="segment-time">35:00 — 48:00</div>
-            </div>
-
-            <div class="host-block">
-                <div class="host-name">Andrés</div>
-                <div class="host-text">
-                    Acá viene la parte que para mí los vuelve grandes de verdad. Porque después de El Dorado, lo fácil hubiera sido repetir la fórmula. Sacar otro disco de "boleros falaces" cada dos años y vivir tranquilos del éxito.<br><br>
-                    Hicieron lo contrario. En el 98 sacan "Caribe Atómico", un disco mucho más electrónico, más experimental, más raro. Y en el 2000, "Gozo Poderoso". Y en esos discos pasa algo importante: empiezan a meter de forma consciente sonidos colombianos, raíces latinoamericanas, electrónica, una mezcla que ya no era solo rock. Era una búsqueda de identidad. Como diciendo: no tenemos que sonar a banda gringa cantada en español. Podemos sonar a lo que somos.
-                </div>
-            </div>
-
+            <div class="segment-header"><div class="segment-number">7</div><div class="segment-title">Segmento de Promoción</div><div class="segment-time">32:00 — 36:00</div></div>
+            <div class="nota-produccion">Juan — actualizar eventos.json antes de grabar. Los eventos actuales son de ejemplo. El guion abajo usa el formato de referencia.</div>
             <div class="host-block juan">
                 <div class="host-name">Juan</div>
                 <div class="host-text">
-                    Acá te voy a contradecir en una cosa.<br><br>
-                    Todo el mundo dice que El Dorado es el gran disco de Aterciopelados. Y entiendo por qué: los himnos, MTV, la fama. Pero para mí el disco que de verdad importa es Caribe Atómico. Y te doy el argumento de promotor: en el 98 estos tipos tenían la fórmula del éxito en la mano, comprobada, vendida. Y la botaron a la basura para meterse en electrónica y experimentación, sabiendo que iban a perder parte del público que los seguía por "Florecita rockera".<br><br>
-                    Eso no lo hace una banda que quiere vender. Eso lo hace una banda de artistas. El Dorado los hizo famosos. Caribe Atómico demostró que no les importaba la fama. Y para mí ese segundo gesto vale más.
+                    Antes de seguir, algo concreto para los que estén en Bogotá o cerca. Porque la escena de la que salió Aterciopelados sigue viva, en los mismos bares pequeños, con bandas que todavía nadie conoce.<br><br>
+                    [ACTUALIZAR CON EVENTOS REALES DE eventos.json]<br><br>
+                    <em>— Formato de referencia —</em><br><br>
+                    Este <strong>[fecha]</strong>, en <strong>[lugar]</strong>, tocan <strong>[bandas]</strong>. <strong>[Entrada / boletas]</strong>. <strong>[Dónde conseguir info]</strong>.<br><br>
+                    Dense la vuelta, apoyen la escena local — que de un sótano así salió Héctor Buitrago.
                 </div>
             </div>
-
-            <div class="host-block">
-                <div class="host-name">Andrés</div>
-                <div class="host-text">
-                    No estoy de acuerdo, y te digo por qué. El gesto valiente de botar la fórmula solo existe porque antes existió El Dorado. Sin esa fama, arriesgarse no tiene peso — los desconocidos se arriesgan todo el tiempo y nadie se entera. El Dorado fue el que le abrió la puerta a una generación entera de mujeres y de bandas latinas. Ese impacto cultural, esa puerta, es más grande que un disco valiente que escuchamos los que ya éramos fans.<br><br>
-                    Caribe Atómico es el disco del músico. El Dorado es el disco del país. Y a mí me importa más el que cambió al país.
-                </div>
-            </div>
-
-            <div class="host-block juan">
-                <div class="host-name">Juan</div>
-                <div class="host-text">
-                    Ahí podemos quedar en desacuerdo. Pero coincidimos en una cosa: que una banda dé para esta discusión, treinta años después, ya dice lo grande que es.<br><br>
-                    Y el reconocimiento llegó. Aterciopelados terminó ganando Latin Grammy y volviéndose referencia obligatoria del rock en español. No como una banda de un país. Como una banda del continente.
-                </div>
-            </div>
-
-            <div class="host-block">
-                <div class="host-name">Andrés</div>
-                <div class="host-text">
-                    Y el legado tiene dos caras que vale la pena nombrar. Andrea siguió su camino propio, sacó disco solista, siguió siendo ceramista, siguió siendo una voz feminista fuerte en Colombia. Héctor se fue por el lado de la electrónica y de las raíces, explorando los sonidos ancestrales colombianos en proyectos por fuera de la banda.<br><br>
-                    Dos punks de bar que terminaron, cada uno por su lado, cuidando algo de la cultura colombiana. Esa es la línea completa: del hardcore al barro y a los sonidos ancestrales. Todo es la misma búsqueda.<br><br>
-                    Y fíjate en el detalle: ninguno se quedó quieto repitiendo el éxito. Andrea volvió su voz una herramienta política, una de las pocas figuras del rock colombiano que habla de feminismo sin pedir disculpas. Héctor se fue a buscar los tambores y los cantos que estaban acá antes de que existiera Colombia como país. Dos caminos opuestos que salen del mismo punto: la necesidad de decir algo propio, no algo prestado.
-                </div>
-            </div>
-
-            <div class="dato">
-                <div class="dato-label">La Evolución</div>
-                Después de El Dorado, Aterciopelados se arriesga con discos más electrónicos y experimentales — <strong>"Caribe Atómico"</strong> (1998) y <strong>"Gozo Poderoso"</strong> (2000) — incorporando raíces colombianas y latinoamericanas. La banda ha sido reconocida con Latin Grammy y es referente del rock en español. (Verificar años y categorías exactas de los premios antes de grabar.)
+            <div class="promo">
+                <div class="promo-label">Fuente de Eventos</div>
+                Consultar eventos.json antes de grabar. Juan actualiza la lista con eventos reales.
             </div>
         </div>
 
         <!-- SEG 8 -->
         <div class="segment">
-            <div class="segment-header">
-                <div class="segment-number">8</div>
-                <div class="segment-title">La Guarida Recomienda — Puerta de Entrada</div>
-                <div class="segment-time">48:00 — 51:00</div>
-            </div>
-
-            <div class="host-block juan">
-                <div class="host-name">Juan</div>
-                <div class="host-text">
-                    Para el que escuchó este episodio y nunca le puso atención de verdad a Aterciopelados, acá van los puntos de entrada. Concretos. Tres pasos.<br><br>
-                    <strong>La canción:</strong> "Bolero falaz". Cuatro minutos. Es la puerta perfecta — entra rápido y resume todo lo que la banda es.<br><br>
-                    <strong>El álbum:</strong> "El Dorado", del 95, completo, en orden. No salteado. Así fue pensado.
-                </div>
-            </div>
-
+            <div class="segment-header"><div class="segment-number">8</div><div class="segment-title">El Salto al Mundo + El Riesgo</div><div class="segment-time">36:00 — 48:00</div></div>
             <div class="host-block">
                 <div class="host-name">Andrés</div>
                 <div class="host-text">
-                    Y el paso para el que ya conoce los himnos y quiere ir más hondo: pónganse "Caribe Atómico". Escúchenlo sin esperar otro El Dorado, escúchenlo como otra cosa. Ahí está la banda arriesgándose. Y si después de eso quieren cerrar el círculo, busquen algo de La Pestilencia — el punk de donde salió Héctor. Oigan el principio y el después seguidos. Es la misma gente. Esa es la sorpresa.
+                    Con El Dorado vendiendo como vendió, la disquera les da algo que casi ningún artista consigue: libertad creativa total. Y lo primero que hacen con esa libertad es irse a Londres a grabar el tercer disco, "La Pipa de la Paz", del 96, con Phil Manzanera.<br><br>
+                    Manzanera es el guitarrista de Roxy Music — leyenda del rock británico — y tiene sangre colombiana por el lado de su mamá. Había producido a Héroes del Silencio, a Draco Rosa. De ese disco salen clásicos como "Cosita seria" y "Baracunatana", y les trae la nominación al Grammy en el 98. De los bares de la séptima a grabar en Londres y estar nominados al Grammy. En tres años. Y en ese mismo disco hay una canción llamada "Platónico" que tiene una historia que les vamos a contar en la segunda parte — porque esa canción esconde una de las historias más bonitas y más tristes de Andrea.
                 </div>
             </div>
-
-            <div class="recomendacion">
-                <div class="recomendacion-label">La Guarida Recomienda — EP.005</div>
-                <strong>Canción:</strong> "Bolero falaz" — Aterciopelados (El Dorado, 1995)<br>
-                <strong>Álbum:</strong> "El Dorado" (1995), completo y en orden<br>
-                <strong>Para ir más hondo:</strong> "Caribe Atómico" (1998)<br>
-                <strong>La raíz:</strong> La Pestilencia — el hardcore punk de donde viene Héctor Buitrago
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y acá te voy a contradecir, porque sé para dónde vas.<br><br>
+                    Todo el mundo dice que El Dorado es el gran disco. Y entiendo: el millón de copias, los himnos, MTV. Pero para mí el que de verdad importa es el siguiente: Caribe Atómico, del 98. Te doy el argumento. En el 98 tenían la fórmula del éxito comprobada, en la mano. Lo fácil era repetirla. ¿Y qué hicieron? Se fueron a grabar a Manhattan, metieron electrónica, loops, samplers, bajaron la distorsión, e hicieron un disco conceptual con mensaje ambiental, de defensa del planeta. De ahí sale "El Estuche". Botaron la fórmula sabiendo que iban a perder parte del público de "Florecita rockera". Eso lo hace una banda de artistas, no una banda que quiere vender.
+                </div>
             </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    No estoy de acuerdo, y te digo por qué. El gesto valiente de botar la fórmula solo tiene peso porque antes existió El Dorado. Sin esa fama, arriesgarse no significa nada — los desconocidos se arriesgan todos los días y a nadie le importa. El Dorado fue el que derrumbó la frontera, el que le abrió la puerta a una generación de mujeres y de bandas latinas. Ese impacto cultural es más grande que un disco valiente que disfrutamos los que ya éramos fans.<br><br>
+                    Caribe Atómico es el disco del músico. El Dorado es el disco del país. A mí me importa más el que le cambió la cabeza a un país entero.
+                </div>
+            </div>
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Ahí quedamos en desacuerdo. Pero coincidimos en una cosa: que una banda dé para esta pelea, treinta años después, ya dice lo grande que es.<br><br>
+                    Y el mundo lo reconoció. En el 2000, con Gozo Poderoso — su disco más vendido e internacional, que llegó al puesto 7 de la lista de Pop Latino de Billboard — se ganan el Latin Grammy. Y en el 2001 pasa algo que pocos colombianos pueden contar: la revista Time los nombra entre las diez mejores bandas del mundo. En la misma lista que U2 y los Rolling Stones. Un dúo de Bogotá, al lado de U2.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">El Salto — Datos</div>
+                <strong>La Pipa de la Paz</strong> (1996): tercer álbum, grabado en Londres, producido por <strong>Phil Manzanera</strong> (Roxy Music) → nominación al Grammy 1998. Clásicos: "Cosita seria", "Baracunatana", "Platónico".<br>
+                <strong>Caribe Atómico</strong> (1998): grabado en Manhattan; electrónica, loops, samplers, menos distorsión; primer disco conceptual, mensaje ambiental → nominación Latin Grammy. Sencillo: "El Estuche".<br>
+                <strong>Gozo Poderoso</strong> (2000): su disco más vendido e internacional; #7 en Billboard Latin Pop Albums; Latin Grammy 2001.<br>
+                <strong>Time (2001):</strong> Aterciopelados entre las 10 mejores bandas del mundo, junto a U2 y los Rolling Stones.
+            </div>
+            <div class="nota-produccion">FIN PARTE 1. Cerrar con un gancho corto de Andrés hacia la Parte 2: "La próxima parte: el embarazo que paró la banda, el amor platónico de Andrea con Cerati, y los discos que la prensa gringa amó y acá casi nadie nombra."</div>
         </div>
+
+    </div><!-- /Parte 1 -->
+
+    <div class="parte-divider">Parte 2 — La Mujer, la Mutación y el Legado</div>
+
+    <div class="section" style="padding-top:24px; padding-bottom:40px;">
 
         <!-- SEG 9 -->
         <div class="segment">
-            <div class="segment-header">
-                <div class="segment-number">9</div>
-                <div class="segment-title">Takeaway + Conector</div>
-                <div class="segment-time">51:00 — 56:30</div>
-            </div>
-
+            <div class="segment-header"><div class="segment-number">9</div><div class="segment-title">El Embarazo y Andrea Solista</div><div class="segment-time">48:00 — 56:00</div></div>
             <div class="host-block">
                 <div class="host-name">Andrés</div>
                 <div class="host-text">
-                    Lo que me quedo pensando de toda esta historia es esto.<br><br>
-                    Aterciopelados no sonó a nadie más porque no quiso sonar a nadie más. Venían del punk, de lo que no le gustaba a nadie, y en vez de cambiarse para encajar, hicieron que el continente se acomodara a ellos. A la voz de Andrea sin pulir. Al acento bogotano sin disimular. Al bolero pasado por rock. A lo colombiano metido en la electrónica.<br><br>
-                    La lección es esa: a veces la única forma de sonar universal es sonar profundamente a lo que uno es. No copiaron al rock gringo cantado en español. Cantaron desde Bogotá, y por eso los entendió todo el mundo.
+                    [Recap corto de 20 seg: "En la primera parte vimos cómo un punkero y una gomela armaron la banda más importante del rock colombiano y llegaron hasta la revista Time. Ahora la parte humana."]<br><br>
+                    Después de Gozo Poderoso, en el pico absoluto de la banda, Andrea hace algo que casi ningún artista hace en su mejor momento: pone la carrera en pausa. En abril de 2002 nace su hija, Milagros. Y la maternidad le da un giro completo a lo que escribe.<br><br>
+                    En 2005 saca su primer disco solista, "Andrea Echeverri", por Nacional Records — el sello gringo de música alternativa latina. Es un disco casi entero sobre ser mamá. El primer sencillo se llama "A Eme O" — que deletreado dice "amo". Y ella lo explicó bonito: "algunas canciones están escritas para Milagros, pero suenan como si fueran para un amante." Hasta se da el gusto de burlarse de lo sexualizado de la champeta con una canción que llama "Lactochampeta" — champeta para amamantar.<br><br>
+                    Y eso, para mí, es de lo más valiente que hizo. Porque el rock está lleno de hombres cantándole a sus amantes y a sus broncas, pero casi nadie había puesto la maternidad en el centro de un disco de rock y la había tratado con el mismo peso, la misma sensualidad y la misma rabia que cualquier otro tema. Andrea agarró lo más íntimo y doméstico — dar teta, criar una hija — y lo volvió arte sin pedir disculpas. Eso, en pleno año dos mil cinco, era casi un acto político.
                 </div>
             </div>
-
             <div class="host-block juan">
                 <div class="host-name">Juan</div>
                 <div class="host-text">
-                    Y dejo el puente al próximo episodio, que estaba escondido en este toda la hora.<br><br>
-                    Héctor Buitrago venía del punk. La Pestilencia. Y eso no fue un accidente colombiano aislado: en los ochenta, en toda Latinoamérica, había chicos en garajes y bares tocando rápido y fuerte contra todo. Esa rabia es la raíz de media música que amamos. El próximo capítulo lo dedicamos a eso: al punk y al rock en español que cambió un continente. De dónde salió esa rabia, y a dónde fue a parar.
+                    Y no fue un capricho de descanso: ese disco solista lo nominaron al Latin Grammy y al Grammy gringo, y se ganó el premio MTV a artista nueva. En pleno parón de la banda, Andrea sola se metió otra vez en las grandes ligas.<br><br>
+                    Y un dato que aclara la confusión de la que hablamos en la primera parte: Milagros no es hija de Héctor. Andrea la tuvo con su pareja de ese momento. Pero como Andrea y Héctor llevan treinta años pegados, todavía hoy hay gente convencida de que son esposos y de que esa niña es de los dos. No lo es. Y a ellos les da risa.
                 </div>
             </div>
-
             <div class="dato">
-                <div class="dato-label">Conector — Próximo Episodio (propuesto)</div>
-                El hilo descubierto: la raíz <strong>punk</strong> de Héctor Buitrago (La Pestilencia) abre el puente hacia un episodio sobre el <strong>punk / rock en español</strong> latinoamericano (Soda Stereo, Café Tacvba, la escena hardcore del continente). Confirmar con Andy cuál episodio sigue antes de cerrar el teaser.
+                <div class="dato-label">Andrea Solista — Datos</div>
+                Hija de Andrea, <strong>Milagros</strong>, nace en abril de 2002 (no es hija de Héctor Buitrago). Disco debut solista <strong>"Andrea Echeverri" (2005)</strong>, por Nacional Records, centrado en la maternidad. Primer sencillo: <strong>"A Eme O"</strong> ("amo"). Otra canción: "Lactochampeta". Nominado a Latin Grammy (Mejor Álbum Vocal Pop Femenino) y a Grammy; premio MTV Latinoamérica a Artista Nueva.
             </div>
         </div>
 
         <!-- SEG 10 -->
         <div class="segment">
-            <div class="segment-header">
-                <div class="segment-number">10</div>
-                <div class="segment-title">Cierre + La Tarea</div>
-                <div class="segment-time">56:30 — 59:30</div>
-            </div>
-
-            <div class="host-block juan">
-                <div class="host-name">Juan</div>
-                <div class="host-text">
-                    Eso fue el episodio 005 de Mr. Putrid's Den. Y hay tarea. Un experimento, cinco minutos.<br><br>
-                    Pongan "Florecita rockera" de Aterciopelados. Y justo después, pongan cualquier cosa de La Pestilencia. La misma persona está detrás de las dos. Díganme si lo escuchan. Escríbannos qué sintieron.
-                </div>
-            </div>
-
+            <div class="segment-header"><div class="segment-number">10</div><div class="segment-title">Cerati — El Amor Platónico y la Espina</div><div class="segment-time">56:00 — 65:00</div></div>
             <div class="host-block">
                 <div class="host-name">Andrés</div>
                 <div class="host-text">
-                    Y si conocían a Aterciopelados de otra forma, si crecieron con ellos, si esta es la primera vez que oyen de dónde vienen — cuéntennos. Para eso existe este podcast: para que la música deje de ser solo fondo y empiece a tener historia.<br><br>
-                    La información para escribirnos está al final de este episodio. La próxima semana nos vamos por la raíz punk de toda esta historia.<br><br>
-                    Esto fue Mr. Putrid's Den, episodio 005. Aquí es donde los riffs encuentran el whisky. Que tengan buena semana.
+                    Ahora sí, la historia de "Platónico", esa canción de La Pipa de la Paz que les dije que dejaba pendiente.<br><br>
+                    Para entenderla hay que ir a marzo de 1996. Soda Stereo — la banda más grande del rock en español, con Gustavo Cerati al frente — está grabando su MTV Unplugged, ese disco que se llamó "Comfort y música para volar". Y en una de las canciones más sagradas de Soda, "En la ciudad de la furia", Cerati hace algo que nadie esperaba: anuncia que va a subir a una invitada a cantarla con él. Y la invitada es Andrea Echeverri.<br><br>
+                    Una colombiana de Aterciopelados, cantando a dúo con Cerati, una de las voces más veneradas de toda Latinoamérica, en su disco más íntimo. La versión quedó distinta a todo: más lenta, hipnótica, psicodélica. Una de esas noches en que el tiempo se suspende, como lo describió la propia banda años después.
                 </div>
             </div>
-
             <div class="host-block juan">
                 <div class="host-name">Juan</div>
                 <div class="host-text">
-                    Chau. Bye.
+                    Y de ahí viene lo de "platónico". Entre Cerati y Aterciopelados — y en especial con Andrea — siempre hubo una corriente. La prensa lo llamó "un amor platónico y real". Nunca pasó a más, pero quedó en la música: la canción "Platónico", del disco del 96, estaba inspirada en Cerati. Eso se confirmó después, cuando él murió.<br><br>
+                    Piénsenlo: mientras medio continente cantaba "Florecita rockera", Andrea estaba escribiendo, en clave, una canción para el roquero más grande del continente. Y nadie lo supo hasta el final.
                 </div>
             </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y la historia tiene un final que a mí me parte. Salten a 2010. Cerati está de gira solista y toca en Bogotá, en el Palacio de los Deportes. Esa noche tenía planeado subir a Andrea a cantar con él, como en los viejos tiempos. Pero Andrea ya se había ido del concierto — se tuvo que ir temprano por una incomodidad de su hija. No estuvo cuando él la buscó.<br><br>
+                    [PAUSA]<br><br>
+                    Pocos días después, Cerati da su siguiente concierto en Caracas. Y ahí, al terminar, sufre el accidente cerebrovascular que lo dejó en coma cuatro años, hasta que murió en 2014. Aquella noche en Bogotá fue la última oportunidad. Y Andrea lo ha dicho con todas las letras: "Cerati me invitó a cantar con él y yo no estaba. Al otro día le pasó eso. Es como una espina clavada en el corazón."<br><br>
+                    Esa espina sigue ahí. Y por eso, cuando hoy Aterciopelados toca "En la ciudad de la furia" en vivo, sin él, no es un cover. Es una manera de no soltar esa noche.
+                </div>
+            </div>
+            <div class="leyenda">
+                <div class="leyenda-label">Cerati y Andrea</div>
+                Marzo 1996: Andrea Echeverri canta "En la ciudad de la furia" a dúo con Gustavo Cerati en el MTV Unplugged de Soda Stereo ("Comfort y música para volar"). La canción <strong>"Platónico"</strong> (La Pipa de la Paz, 1996) estaba inspirada en Cerati — revelado tras su muerte. En 2010, en el último concierto de Cerati en Bogotá, él quiso subirla a cantar pero ella ya se había ido; días después sufrió el ACV en Caracas (coma de 4 años; murió en 2014). Andrea lo recuerda como "una espina clavada en el corazón".
+            </div>
+            <div class="nota-produccion">Bloque emocional pesado — territorio de Andrés. Juan entra con el dato (la canción inspirada en Cerati), no con la emoción. Dejar respirar la PAUSA antes de la cita de Andrea.</div>
+        </div>
 
+        <!-- SEG 11 -->
+        <div class="segment">
+            <div class="segment-header"><div class="segment-number">11</div><div class="segment-title">La Mutación del Sonido — Los Discos que No Te Nombran</div><div class="segment-time">65:00 — 74:00</div></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y acá quiero hacer algo que casi nadie hace con Aterciopelados: hablar de los discos que vinieron después de los himnos. Porque la gente se queda en "Florecita rockera" y "Bolero falaz", y se pierde que esta banda nunca dejó de mutar.<br><br>
+                    Sigan la línea del sonido completa. Empiezan en punk con salsa. Pasan a la fusión con ritmos llaneros en El Dorado. Se sofistican en Londres con Manzanera. Se vuelven electrónicos y ambientales en Caribe Atómico. Y de ahí en adelante se convierten en algo más raro y más libre: una banda que usa el rock para hablar del país, del río, del cuerpo, del medio ambiente, mezclando lo ancestral colombiano con lo moderno.
+                </div>
+            </div>
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y los discos de esa etapa, que acá casi nadie nombra, son los que la prensa de afuera más respetó. Tres datos.<br><br>
+                    "Oye", del 2006: un disco de canción protesta. Tan directo que Amnistía Internacional escogió una de sus canciones para su aniversario número 60. Ese disco les dio el Latin Grammy del 2007 y el premio Lo Nuestro a álbum del año.<br><br>
+                    "Río", del 2008: salió por Nacional Records, sello gringo, mezclado en Nueva York. Un disco ecológico, dedicado al río Bogotá. Y oigan esto: la revista Rolling Stone lo metió entre los diez discos más importantes de la historia de la música latina. Lo reseñaron NPR y el Washington Post. Prensa gringa de primera línea, hablando de un disco colombiano que acá pasó casi sin ruido.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y eso es lo que más respeto les tengo. No se quedaron viviendo de El Dorado. "Claroscura" hasta es honesto en el nombre: es el choque de las dos visiones, la de Andrea y la de Héctor, que ya para entonces eran dos artistas muy distintos obligados a encontrarse en el mismo disco. Y siguen: sacaron "Tropiplop", y en 2025 un disco nuevo, "Genes Rebeldes", que los tiene nominados otra vez al Grammy en 2026. Treinta y pico de años después, todavía compitiendo de igual a igual.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">La Mutación — Datos</div>
+                <strong>Oye</strong> (2006): canción protesta; Amnistía Internacional usó un tema para su aniversario 60; Latin Grammy 2007 + Premio Lo Nuestro álbum del año.<br>
+                <strong>Río</strong> (2008): sello Nacional Records, mezclado en NYC, temática ecológica (río Bogotá). <strong>Rolling Stone</strong> lo incluyó entre los 10 discos latinos más importantes de la historia; reseñas en NPR, Washington Post, Billboard.<br>
+                <strong>Claroscura</strong> (2018): Latin Grammy a Mejor Álbum Alternativo; canciones "Cuerpo", "Ay Ombe", "Tumbao".<br>
+                <strong>Tropiplop</strong> (2021) y <strong>Genes Rebeldes</strong> (2025): siguen vigentes; nominación al Grammy 2026.
+            </div>
+        </div>
+
+        <!-- SEG 12 -->
+        <div class="segment">
+            <div class="segment-header"><div class="segment-number">12</div><div class="segment-title">Legado e Influencia</div><div class="segment-time">74:00 — 81:00</div></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y esa vigencia, Juanito — treinta años y todavía ganando — es justo lo que me lleva al legado, que es lo que de verdad los vuelve históricos. Porque Aterciopelados fue la primera banda de rock colombiano que rompió la frontera de verdad. Antes de ellos, el rock de acá era un asunto interno. Después de ellos, Colombia podía sonar afuera sin disfrazarse. La puerta que cruzaron luego la cruzaron, cada uno a su manera, los que vinieron. Billboard, años después, los puso entre las diez bandas de rock en español más influyentes de la historia. No de Colombia. De la historia.
+                </div>
+            </div>
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y el peso de su nombre se mide en con quién terminaron tocando. No solo acá. Colaboraron con Café Tacvba, con Julieta Venegas, con Carlos Vives, con Bomba Estéreo. Y por fuera del mundo latino: con Stephen Marley, el hijo de Bob Marley. Con Natalie Merchant, la gringa de 10,000 Maniacs. La realeza del mundo busca a este dúo de Bogotá.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y el legado tiene dos caras, una por cada uno. Andrea convirtió su voz en herramienta: sigue siendo ceramista, y es una de las pocas figuras del rock colombiano que habla de feminismo, del cuerpo de la mujer, de la maternidad, sin pedir disculpas. Héctor agarró el otro camino: se fue a buscar los tambores, la electrónica, los cantos ancestrales — los sonidos que estaban acá antes de que existiera Colombia como país.<br><br>
+                    Del hardcore del Restrepo a los cantos ancestrales. Del barro de Andrea a su voz política. Dos punks que terminaron, cada uno por su lado, cuidando algo de la cultura colombiana. Y todo salió del mismo punto: la necesidad de decir algo propio, no algo prestado.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Legado — Datos</div>
+                Primera banda de rock colombiano en romper la frontera internacional. <strong>Billboard</strong> los incluye entre las 10 bandas de rock en español más influyentes de la historia. Múltiples <strong>Latin Grammy</strong> (Gozo Poderoso 2001, Oye 2007, Claroscura 2018, entre otros). Colaboraciones: Café Tacvba, Julieta Venegas, Carlos Vives, Bomba Estéreo, y por fuera del mundo latino <strong>Stephen Marley</strong> y <strong>Natalie Merchant</strong>.
+            </div>
+        </div>
+
+        <!-- SEG 13 -->
+        <div class="segment">
+            <div class="segment-header"><div class="segment-number">13</div><div class="segment-title">La Guarida Recomienda — Puerta de Entrada</div><div class="segment-time">81:00 — 84:00</div></div>
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Para el que oyó este episodio y nunca le puso atención de verdad, los puntos de entrada. Concretos.<br><br>
+                    <strong>La canción:</strong> "Bolero falaz". Cuatro minutos. La puerta perfecta.<br><br>
+                    <strong>El álbum:</strong> "El Dorado", del 95, completo y en orden. Así fue pensado.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y dos pasos para ir más hondo, para el que ya se sabe los himnos. Primero: "Caribe Atómico", la banda arriesgándose. Y el deep cut, el que casi nadie les nombra: "Río", del 2008 — el disco que Rolling Stone puso entre los más importantes de la historia latina. Pónganlo completo, una noche, con calma. Y si quieren cerrar el círculo de todo el episodio: busquen "Platónico", de La Pipa de la Paz, y escúchenla sabiendo para quién está escrita. Y después, La Pestilencia, el hardcore de donde salió Héctor. El principio y el después seguidos. Es la misma persona.
+                </div>
+            </div>
+            <div class="recomendacion">
+                <div class="recomendacion-label">La Guarida Recomienda — EP.005</div>
+                <strong>Canción:</strong> "Bolero falaz" (El Dorado, 1995)<br>
+                <strong>Álbum:</strong> "El Dorado" (1995), completo<br>
+                <strong>Para ir más hondo:</strong> "Caribe Atómico" (1998)<br>
+                <strong>Deep cut:</strong> "Río" (2008) — entre los mejores discos latinos según Rolling Stone<br>
+                <strong>La canción secreta:</strong> "Platónico" (1996) — inspirada en Cerati<br>
+                <strong>La raíz:</strong> La Pestilencia — el hardcore punk de donde viene Héctor
+            </div>
+        </div>
+
+        <!-- SEG 14 -->
+        <div class="segment">
+            <div class="segment-header"><div class="segment-number">14</div><div class="segment-title">Takeaway + Conector</div><div class="segment-time">84:00 — 88:00</div></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Lo que me quedo pensando de toda esta historia es esto. Aterciopelados no sonó a nadie más porque no quiso. Venían de mundos opuestos — el sur obrero y el norte acomodado, el punk y el arte — y en vez de limar esas diferencias para encajar, las metieron todas adentro y dejaron que chocaran. La voz cruda de Andrea, el oído punkero de Héctor, el bolero, el ritmo llanero, la electrónica, el río, el barro, hasta una canción secreta para Cerati. Todo junto.<br><br>
+                    La lección es esa: a veces la única forma de sonar universal es sonar profundamente a lo que uno es. No copiaron al rock gringo cantado en español. Cantaron desde Bogotá, con todas sus contradicciones — y por eso los entendió el mundo, hasta la revista Time, al lado de U2.
+                </div>
+            </div>
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Y dejo el puente al próximo episodio, que estuvo escondido toda la hora. Todo esto empezó con un pelado poniendo discos de punk en una radio de Bogotá. Y eso no fue un accidente colombiano aislado: en los ochenta, en toda Latinoamérica, había pelados en garajes tocando rápido y fuerte contra todo. Esa rabia es la raíz escondida de media música que hoy amamos. El próximo capítulo lo dedicamos a eso: al punk y al rock en español que cambió un continente.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Conector — Próximo Episodio (propuesto)</div>
+                La raíz <strong>punk</strong> de Héctor Buitrago (La Pestilencia, 1986) abre el puente hacia un episodio de <strong>punk / rock en español</strong> latinoamericano (Soda Stereo — que además ya quedó sembrado con Cerati —, Café Tacvba, la escena hardcore del continente). Confirmar con Andy cuál episodio sigue.
+            </div>
+        </div>
+
+        <!-- SEG 15 -->
+        <div class="segment">
+            <div class="segment-header"><div class="segment-number">15</div><div class="segment-title">Cierre + La Tarea</div><div class="segment-time">88:00 — 90:30</div></div>
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">
+                    Eso fue el episodio 005 de Mr. Putrid's Den, en dos partes, porque Aterciopelados se las merecía. Y hay tarea. Un experimento, cinco minutos.<br><br>
+                    Pongan "Florecita rockera" de Aterciopelados. Y justo después, pongan cualquier cosa de La Pestilencia. La misma persona, Héctor Buitrago, está detrás de las dos. Díganme si oyen el punk debajo de la florecita. Escríbannos qué sintieron.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y si esta es la primera vez que oyen de dónde vienen, o si crecieron con ellos — cuéntennos. Para eso existe este podcast: para que la música deje de ser solo fondo y empiece a tener historia.<br><br>
+                    La información para escribirnos está al final del episodio. La próxima semana nos vamos por la raíz punk de toda esta historia.<br><br>
+                    Esto fue Mr. Putrid's Den, episodio 005. Aquí es donde los riffs encuentran el whisky. Que tengan buena semana.
+                </div>
+            </div>
+            <div class="host-block juan">
+                <div class="host-name">Juan</div>
+                <div class="host-text">Chau. Bye.</div>
+            </div>
             <div class="sfx">[SFX: OUTRO — Jazz 1950s estilo Billie Holiday. Trío de mujeres de época. Fade in lento. "Sweet dreams, until we meet." Cierra el episodio.]</div>
         </div>
 
-    </div><!-- /GUION -->
+        <!-- SEG 16 -->
+        <div class="segment">
+            <div class="segment-header"><div class="segment-number">16</div><div class="segment-title">Outro Music</div><div class="segment-time">90:30</div></div>
+            <div class="sfx">[SFX: OUTRO music — fade in completo, cierre del episodio.]</div>
+        </div>
+
+    </div><!-- /Parte 2 -->
 
     <!-- CONTACTO -->
     <div class="section" style="background:#1a1a1a; color:#A8A8A8;">
