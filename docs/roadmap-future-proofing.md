@@ -45,10 +45,13 @@ aquí para ejecutar esto bien?" y escribirlo.
 - [ ] **Dry-run con Opus 4.8:** tomar una tarea real (ej. assets de EP.018 Mundial)
       y ejecutarla con Opus 4.8 siguiendo solo los docs escritos. Donde se quede corto,
       esa es una regla que falta — escribirla.
-- [ ] **Re-evaluar graphify bajo el lente future-proofing.** Fue descartado antes
-      ("herramienta dev, escala incorrecta, quema tokens") pero la intención de Andrés
-      era este panorama: grafo de conocimiento del proyecto como respaldo externo al
-      modelo. Decidir: ¿aporta algo que MEMORY.md + docs + handoffs no cubren ya?
+- [ ] **Explorar un "graphify ligero/visual" — NO descartado (re-confirmado 19-jun).**
+      El graphify completo no aplica a la escala actual (workspace personal, no proyectos
+      grandes) — eso sigue cierto. PERO Andrés SÍ quiere "algo similar y visual": una
+      representación visual del conocimiento del proyecto, no un grafo dev pesado que queme
+      tokens. Pendiente: proponer la opción más barata que dé el beneficio visual sin el
+      overhead (ej. mapa de notas con [[wikilinks]] renderizable, diagrama del project-map,
+      o un grafo liviano generado on-demand). No re-litigar como "descartado".
 - [ ] Verificar que el estándar de entregables cubre todos los tipos que se producen
       de verdad (¿faltó alguno? ej. propuestas, informes HTML).
 

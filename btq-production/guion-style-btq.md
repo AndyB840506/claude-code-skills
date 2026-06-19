@@ -52,6 +52,12 @@ liderazgo para un supervisor/gerente de BPO de ~40 años. La chispa no viene de 
    versión de EP.017 se había citado un artículo HBR inexistente — se reemplazó por casos reales
    Jobs/Apple y Collins. Investigar en web antes de escribir; marcar lo no confirmado como
    [VERIFICAR]).
+   **Episodios atados a un momento cultural en curso** (un Mundial, unos premios, una serie del
+   momento): anclar el guion en hechos históricos ya verificables y tratar el evento vivo solo como
+   telón de fondo. NUNCA afirmar resultados del evento en curso si caen más allá del corte de
+   conocimiento — marcarlos `[ACTUALIZAR AL GRABAR]` para que el host meta UN dato fresco y real al
+   grabar, sin inventar (visto en EP.018 / Mundial 2026: las anécdotas son de 1950/1993/2014/2019;
+   nada del torneo en curso se afirma como resultado).
 
 7. **Mete humor, guiño y autoconciencia.** Andy solo, una hora — necesita contraste. Un chiste
    seco, admitir lo obvio ("sí, ya sé, otro que les habla de Cerati"), una exageración, un aparte.
@@ -74,6 +80,40 @@ poco conocidas suelen pasarse de la hora (ver memoria `project-mpd-episodes-two-
 el corte natural desde el inicio; cada parte con su propia apertura/cierre y un recap de ~20 seg al
 abrir la Parte 2. Ojo: BTQ tiene cadencia semanal estricta (≥7 días entre episodios) — 2 partes =
 2 semanas, encaja con el roadmap.
+
+---
+
+## Calibración de duración — dimensionar en PALABRAS, no en minutos adivinados
+
+Regla medida (no de gusto). El guion se dimensiona contando **palabras habladas** y dividiendo por
+el ritmo real de Andy, **no** estimando minutos "a ojo" por segmento. Las marcas de minutos por ojo
+salen infladas y hacen que Andy termine ~15 min antes de lo marcado y tenga que estirar.
+
+**Ritmo real de Andy ≈ 143 palabras/min** (medido contra el SRT del EP.17: 6.062 palabras habladas /
+42,3 min de audio). Ese número **ya incluye sus pausas** — es ritmo de entrega, no de lectura en seco.
+Diagnóstico EP.17: estaba marcado a "57 min" (≈90 wpm imaginario) y cayó en ~42-45. EP.18 v1 tenía
+4.213 palabras = ~29 min reales aunque estaba marcado a 52.
+
+**Tabla de dimensionamiento (palabras habladas → minutos a 143 wpm):**
+
+| Objetivo real | Palabras habladas |
+|---|---|
+| ~45 min | ~6.400 |
+| ~50 min | ~7.150 |
+| ~55 min | ~7.900 |
+| ~60 min (techo → evaluar 2 partes) | ~8.600 |
+
+**Ajuste por expansión en vivo:** Andy suele decir **~15% más** de lo escrito (EP.17: guion 5.265
+palabras → habló 6.062). Por eso conviene escribir el guion para que **en seco** caiga ~7-8% por debajo
+del objetivo, y dejar que su expansión natural lo lleve al número. Ej.: para ~57 min reales, escribir
+~7.000 palabras (≈49 min en seco; con +15% ≈ 57). **Siempre dejar colchón para CORTAR, no para estirar.**
+
+**Cómo medir** (excluir lo que no se lee: bloques `NOTA`, chips `PAUSA`, encabezados de segmento,
+tabla de arquitectura): contar palabras de `p.line` + `remate` + `dato` + `mito/realidad` + `sub`,
+y dividir por 143. Marcar los tiempos de la arquitectura en consecuencia.
+
+**Recalibrar** el 143 wpm cada pocos episodios contra el SRT más reciente (los SRT viven en
+`E:\Transcriptor\transcripciones\`); si su ritmo cambia, actualizar este número y la tabla.
 
 ---
 
@@ -109,4 +149,4 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
 - [ ] Al menos 2-3 momentos de humor/guiño/autoconciencia repartidos.
 - [ ] Datos verificados (fuentes reales, nada inventado); lo dudoso marcado [VERIFICAR].
 - [ ] Aperturas y conectores de contenido (sin meta-anuncios tipo "ahora vamos a…").
-- [ ] Duración estimada: si pasa de ~60 min con chispa, evaluar partir en 2.
+- [ ] Duración: contar **palabras habladas / 143 wpm** (ver "Calibración de duración"), NO estimar minutos a ojo. Verificar que el guion en seco caiga ~7-8% bajo el objetivo (la expansión en vivo de Andy lo sube ~15%). Si pasa de ~60 min con chispa, evaluar partir en 2.

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EP.18 — El Mundial: liderazgo cuando no puedes tocar el balón | Behind the Queue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+        :root {
+            --bg: #0A0A0A;
+            --card: #141414;
+            --card2: #1b1b1b;
+            --gold: #C9A84C;
+            --gold-dim: #8a7331;
+            --offwhite: #F5F2EC;
+            --muted: #9a968c;
+            --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --sans: 'DM Sans', system-ui, -apple-system, Segoe UI, sans-serif;
+            --accent: 'Bebas Neue', 'Arial Narrow', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--sans);
+            background: #050505;
+            color: var(--offwhite);
+            line-height: 1.8;
+            font-size: 15.5px;
+        }
+
+        .container { max-width: 820px; margin: 0 auto; background: var(--bg); }
+
+        /* ---------- HEADER ---------- */
+        .header {
+            background: linear-gradient(160deg, #161208 0%, #0A0A0A 70%);
+            padding: 46px 48px 40px;
+            border-bottom: 3px solid var(--gold);
+        }
+        .header .podcast {
+            font-family: var(--accent);
+            font-size: 1.15em;
+            color: var(--gold);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .header .epnum {
+            font-family: var(--accent);
+            font-size: 2.6em;
+            color: var(--gold);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+        .header h1 {
+            font-family: var(--serif);
+            font-size: 2em;
+            font-weight: 900;
+            margin: 6px 0 10px;
+            color: var(--offwhite);
+            line-height: 1.18;
+        }
+        .header .tagline {
+            font-family: var(--serif);
+            font-style: italic;
+            color: var(--gold);
+            font-size: 1.05em;
+            margin-bottom: 22px;
+        }
+        .meta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .meta-item {
+            background: rgba(201,168,76,0.10);
+            border: 1px solid var(--gold-dim);
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            color: var(--gold);
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------- SECTIONS ---------- */
+        .section { padding: 32px 48px; border-bottom: 1px solid #222; }
+        .section h2 {
+            font-family: var(--accent);
+            font-size: 1.15em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid var(--gold-dim);
+        }
+
+        /* ---------- ARQUITECTURA ---------- */
+        .arquitectura { font-size: 0.9em; }
+        .arq-row {
+            display: grid;
+            grid-template-columns: 30px 1.1fr 95px 1.6fr;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid #1c1c1c;
+            align-items: start;
+        }
+        .arq-row.head { color: var(--gold); font-weight: 700; border-bottom: 1px solid var(--gold-dim); }
+        .arq-num { color: var(--gold); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--offwhite); }
+        .arq-time { color: var(--muted); font-family: monospace; font-size: 0.92em; }
+        .arq-row span:last-child { color: var(--muted); }
+
+        /* ---------- GUION SEGMENTS ---------- */
+        .segment { margin: 40px 0; padding-bottom: 26px; border-bottom: 1px solid #1a1a1a; }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+        .segment-number {
+            font-family: var(--accent);
+            background: var(--gold);
+            color: #0A0A0A;
+            min-width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1em; font-weight: bold;
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+        .segment-title {
+            font-family: var(--accent);
+            font-weight: 400;
+            font-size: 1.15em;
+            color: var(--offwhite);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.78em;
+            color: var(--muted);
+            background: #181818;
+            padding: 3px 11px;
+            border-radius: 10px;
+            white-space: nowrap;
+            font-family: monospace;
+        }
+        .sub { font-family: var(--serif); font-style: italic; font-size: 1.12em; color: var(--gold); margin: 26px 0 8px; }
+
+        p.line { margin: 0 0 4px; color: #e9e6dd; }
+
+        /* PAUSA chips */
+        .pausa {
+            display: inline-block;
+            font-family: var(--accent);
+            letter-spacing: 2px;
+            font-size: 0.72em;
+            color: var(--gold-dim);
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 0 8px;
+            margin: 8px 0;
+            background: #111;
+        }
+        .pausa.larga { color: var(--gold); border-color: var(--gold-dim); }
+
+        /* REMATE — the signature punch line */
+        .remate {
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(90deg, rgba(201,168,76,0.07), transparent);
+            padding: 14px 20px;
+            margin: 18px 0;
+            font-family: var(--serif);
+            font-size: 1.08em;
+            color: var(--offwhite);
+        }
+        .remate::before {
+            content: "REMATE";
+            display: block;
+            font-family: var(--accent);
+            font-size: 0.62em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        /* NOTA producción — not printable */
+        .nota {
+            background: #15130c;
+            border: 1px dashed var(--gold-dim);
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 14px 0;
+            font-size: 0.85em;
+            color: #cdbb88;
+        }
+        .nota::before { content: "NOTA · "; font-family: var(--accent); letter-spacing: 2px; color: var(--gold); }
+
+        /* DATO callout */
+        .dato {
+            background: var(--card2);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 5px 5px 0;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .dato-label {
+            font-family: var(--accent);
+            font-size: 0.78em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        /* MITO / REALIDAD */
+        .mito {
+            background: #1a1010;
+            border-left: 4px solid #8a3b2f;
+            padding: 11px 16px; margin: 16px 0 0; border-radius: 0 5px 5px 0;
+            color: #e6c9c2;
+        }
+        .realidad {
+            background: #101a12;
+            border-left: 4px solid #4a7a4a;
+            padding: 11px 16px; margin: 0 0 16px; border-radius: 0 5px 5px 0;
+            color: #d7e6d3;
+        }
+        .mito strong, .realidad strong { color: #fff; }
+
+        em { color: var(--gold); font-style: italic; }
+        strong { color: var(--offwhite); }
+
+        /* FUENTES */
+        .fuentes p { font-size: 0.83em; color: var(--muted); line-height: 1.7; }
+
+        .checklist-box {
+            background: var(--card);
+            border: 1px solid #262011;
+            border-radius: 6px;
+            padding: 6px 18px;
+        }
+        .checklist-box .row { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #1a1a1a; align-items: baseline; }
+        .checklist-box .row:last-child { border-bottom: none; }
+        .ck { color: #4a7a4a; font-weight: 700; }
+        .warn { color: var(--gold); font-weight: 700; }
+
+        footer { padding: 26px 48px; color: var(--muted); font-size: 0.8em; text-align: center; }
+        footer .gold { color: var(--gold); font-family: var(--accent); letter-spacing: 3px; }
+
+        @media print {
+            body { background: #fff; color: #111; }
+            .container { background: #fff; }
+            .nota { display: none; }
+            .header { background: #111; }
+            .remate { color: #111; }
+            p.line, .segment-title, strong { color: #111; }
+        }
+        @media (max-width: 640px) {
+            .section, .header, footer { padding-left: 22px; padding-right: 22px; }
+            .arq-row { grid-template-columns: 24px 1fr; }
+            .arq-row .arq-time, .arq-row span:last-child { grid-column: 2; }
+        }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Behind the Queue</div>
+        <div class="epnum">EP.18</div>
+        <h1>El Mundial: liderazgo cuando no puedes tocar el balón</h1>
+        <div class="tagline">El técnico no juega. Por eso todo lo que puede hacer, lo hace antes — o confiando.</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 018</span>
+            <span class="meta-item">Solo host · Andy</span>
+            <span class="meta-item">Referente: El Mundial / los técnicos</span>
+            <span class="meta-item">~58 min (a 143 wpm)</span>
+            <span class="meta-item">Liderazgo · BPO</span>
+            <span class="meta-item">Momento cultural: Mundial 2026 en curso</span>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Hook</span><span class="arq-time">0:45–6:00</span><span>El hombre en la raya · la pregunta · el reveal del ángulo</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">El que no toca el balón</span><span class="arq-time">6:00–11:30</span><span>Las 4 únicas palancas: preparar, elegir, ajustar, confiar</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">El Puente</span><span class="arq-time">11:30–16:30</span><span>El DT y el supervisor: dos que dirigen sin jugar</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">La preparación · Bielsa</span><span class="arq-time">16:30–24:00</span><span>El Spygate · las 1.800 cintas · el partido se gana el martes</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">La decisión · Van Gaal y Obdulio</span><span class="arq-time">24:00–34:00</span><span>El cambio de Krul · el Maracanazo · liderar bajo presión</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">El equipo · Pékerman y Maturana</span><span class="arq-time">34:00–42:00</span><span>Colombia 2014 · el gol de James · confiar · la derrota</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Referencias Cruzadas</span><span class="arq-time">42:00–48:00</span><span>Zander (el director que no hace ruido) · Ferguson (26 años)</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">Aplicable Hoy</span><span class="arq-time">48:00–52:30</span><span>3 herramientas concretas para esta semana</span></div>
+            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Mito o Realidad</span><span class="arq-time">52:30–56:00</span><span>4 mitos del piso + dato guardado (Krul / los números)</span></div>
+            <div class="arq-row"><span class="arq-num">10</span><span class="arq-seg">Recomendaciones de Andy</span><span class="arq-time">56:00–58:30</span><span>TED de Zander · el partido · el libro</span></div>
+            <div class="arq-row"><span class="arq-num">11</span><span class="arq-seg">Cierre con anécdota + Teaser EP.019</span><span class="arq-time">58:30–60:30</span><span>El supervisor que se quedó en la cancha · Gladiator · cierre</span></div>
+        </div>
+    </div>
+
+    <!-- PENDIENTE DESTACADO -->
+    <div class="section">
+        <h2>Antes de grabar · checklist</h2>
+        <div class="checklist-box">
+            <div class="row"><span class="ck">✓</span><span><strong>Tiempos calibrados a TU ritmo real (143 wpm):</strong> medido contra el SRT del EP.17 (6.062 palabras / 42 min). El EP.17 estaba marcado a 57 y cayó en ~42-45. Este guion tiene ~8.200 palabras = ~58 min reales SIN estirar.</span></div>
+            <div class="row"><span class="ck">✓</span><span>Título con keyword buscable ("liderazgo") + referente cultural (Mundial). Numeración EP.18 (2 díg).</span></div>
+            <div class="row"><span class="ck">✓</span><span>Datos históricos verificados (1950 / 1993 / 2014 / 2019). Nada del Mundial 2026 en curso se afirma como resultado.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>[ACTUALIZAR AL GRABAR]:</strong> el guiño de apertura sobre "lo que pasa esta semana en el Mundial" — Andy mete UN dato fresco del torneo en curso sin inventar resultados. Verificar el día de grabar.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Frase de Maturana:</strong> "perder es ganar un poco" — él aclaró que no es suya y que en Colombia se distorsionó. Decirlo así, no como lema de resignación.</span></div>
+            <div class="row"><span class="warn">⚠</span><span>Muletillas: máx 1 "imagínense", 0 "me vuela la cabeza". Revisar en la pasada de voz. Si sobra tiempo, cortar antes de estirar.</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- APERTURA -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Apertura</span><span class="segment-time">0:00</span></div>
+            <p class="line">Buenas y santas. Feliz día, feliz tarde o feliz noche. Cualquier día que éste sea.</p>
+            <p class="line">Esto es Behind the Queue, episodio dieciocho.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+        </div>
+
+        <!-- SEGMENTO 1 — HOOK -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">1</span><span class="segment-title">Hook</span><span class="segment-time">0:45 – 6:00</span></div>
+            <p class="line">Hay un tipo, parado en una raya pintada en el pasto.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Detrás de él, ochenta mil personas gritando. Delante, once jugadores corriendo. Y un balón que él no puede tocar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Puede gritar. Puede señalar. Puede hacer mímica como si estuviera dirigiendo el tráfico de una avenida en hora pico. El balón no lo escucha. Los jugadores, a veces, tampoco.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Durante noventa minutos, el hombre que armó todo esto, el que la prensa va a crucificar o a subir a hombros mañana en la primera página, no puede meter ni un pie a la cancha.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si entra, lo expulsan. Esa es la regla. El que dirige tiene prohibido jugar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aun así, lo llamamos el líder del equipo. Y aun así, cuando el equipo pierde, el primero que rueda es él.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Fíjense en el detalle más cruel. Esa raya, ese rectángulo pintado donde el técnico puede pararse, tiene un nombre técnico: el área técnica. Es, literalmente, una jaula dibujada en el pasto. El hombre más poderoso del equipo tiene asignado un cajón del que no puede salir. Camina de un lado a otro como león enjaulado, gastando suela, y por dentro sabe la verdad incómoda: en este momento, ya no depende de él.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Hoy estamos en plena fiesta. Mientras grabo esto hay un Mundial en marcha — el primero con cuarenta y ocho selecciones, repartido entre tres países. Medio planeta viendo lo mismo a la misma hora, peleándose por el televisor de la oficina.</p>
+            <div class="nota">[ACTUALIZAR AL GRABAR] Andy mete aquí UN dato fresco del torneo en curso — un resultado, una sorpresa, un equipo que sacó a otro. Sin inventar. Si el día de grabar no hay nada limpio, se queda solo con lo de arriba.</div>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y no, tranquilos. No me volví comentarista deportivo de un día para otro. Sigo sin entender bien el fuera de lugar, igual que la mitad de ustedes que están asintiendo ahora mismo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Lo que me interesa del Mundial no pasa en la cancha. Pasa en esa raya. Pasa en ese tipo de saco, o de sudadera, que no puede tocar el balón — y que, sin embargo, decidió de antemano casi todo lo que va a pasar en el partido.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Porque ese tipo es exactamente usted. Un lunes a las dos de la tarde. Con la cola de llamadas en rojo. Viendo a su equipo atender, uno por uno — sin poder contestar la llamada por ellos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Usted prepara. Usted decide quién entra. Usted hace un cambio cuando la cosa se tuerce. Y después, durante el turno entero, le toca lo más difícil del mundo: mirar. Aguantarse. Confiar.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Esa es la pregunta de hoy, y quiero que se la hagan en serio, no como quien oye la radio en el carro: cuando el partido ya empezó — cuando su gente ya está en la línea, en el chat, en el caso que se complicó — ¿qué le queda a usted por hacer? ¿De verdad cuánto de lo que va a pasar hoy todavía está en sus manos?</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Les tengo una respuesta incómoda: muchísimo menos de lo que cree. Y eso, bien entendido, es la mejor noticia que les van a dar esta semana.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Porque significa que su trabajo de verdad — el que mueve la aguja — no es el de hoy con el incendio. Es el de antes. El invisible. El que nadie filma.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="remate">El técnico no toca el balón. Todo lo que puede hacer, ya lo hizo durante la semana — o lo está confiando en este instante. Y dirigir una operación es lo mismo: su mejor jugada ya pasó cuando empieza el turno. Hoy solo se ve el resultado de lo que sembró.</div>
+        </div>
+
+        <!-- SEGMENTO 2 — EL QUE NO TOCA EL BALÓN -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">2</span><span class="segment-title">El que no toca el balón</span><span class="segment-time">6:00 – 11:30</span></div>
+            <p class="line">Vamos a pensar, en serio, qué puede hacer un director técnico. No lo que parece desde la tribuna. Lo que de verdad puede.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Son cuatro cosas. Solo cuatro. Y cuando las pongan una al lado de la otra, van a reconocer su propia semana de trabajo en ellas.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line"><strong>Uno: preparar.</strong> Toda la semana. Entrenar, estudiar al rival hasta el cansancio, ensayar la jugada, decidir cómo va a jugar el equipo mucho antes de que el equipo pise la cancha.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line"><strong>Dos: elegir quién entra.</strong> La alineación. Quién arranca, quién se queda en la banca, en qué posición pongo a cada uno. Once nombres salidos de una lista de veintitrés. Catorce que se quedan por fuera, mirando.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line"><strong>Tres: ajustar sobre la marcha.</strong> Unos pocos cambios. Un grito a tiempo. Mover una pieza cuando el partido se está torciendo, y rezar para que entre quien tiene que entrar antes de que sea tarde.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line"><strong>Y cuatro: confiar.</strong> Que es una manera fina de decir aguantarse. Soltar el balón y ver qué hace con él la persona a la que usted preparó. Sin meter las manos.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Eso es todo. Preparar, elegir, ajustar, confiar. No hay una quinta palanca escondida. No existe el botón de "déjenme entrar a mí, que yo lo hago mejor". Para el técnico, ese botón está prohibido por reglamento.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y fíjense en algo que casi nadie dice en voz alta: de esas cuatro cosas, tres ocurren <em>antes</em> de que ruede el balón. La cuarta consiste, literalmente, en no hacer nada con las manos mientras el corazón le late a mil.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">El mejor partido de un técnico no se juega el domingo, con la cámara encima. Se jugó el martes, en un entrenamiento que nadie transmitió, a las once de la mañana, bajo un sol que no sale en ninguna foto. El domingo solo se ve el resultado de ese martes.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Les suena de algo? Porque su mejor turno como líder no es el de hoy, con la cola en rojo. Es el de esa capacitación de hace tres semanas. Esa que se sintió como una pérdida de tiempo. Esa a la que su gente entró arrastrando los pies.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Hoy vamos a recorrer esas cuatro palancas, una por una. Con gente que las usó frente a millones de personas, con un país entero encima. Va a haber un argentino obsesivo, un holandés de hielo, un capitán uruguayo de hace setenta y cinco años, y dos técnicos que hicieron historia con Colombia.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y todos, sin excepción, tuvieron que aprender lo mismo que a usted le está costando: cómo ganar un partido sin poder tocar el balón.</p>
+        </div>
+
+        <!-- SEGMENTO 3 — EL PUENTE -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">El Puente</span><span class="segment-time">11:30 – 16:30</span></div>
+            <p class="line">Pongamos a dos personas, lado a lado, por un segundo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">A la izquierda, un director técnico en un Mundial. A la derecha, usted: supervisor, team leader, coordinador, gerente de operaciones, jefe de piso. El título que le toque cargar esta semana.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">El técnico no patea el balón. Usted no contesta la llamada. Los dos viven de un trabajo que, en el minuto que de verdad importa, lo ejecuta otra persona.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y los dos cargan con la misma injusticia de fondo: cuando sale bien, el aplauso es para el que está en la cancha. El delantero que metió el gol, el agente que salvó la cuenta. Cuando sale mal, la culpa es del que está en la raya. Así es el cargo. Nadie firmó el contrato esperando otra cosa — aunque a muchos se les olvida el día que los ascienden.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y ahí está, justamente, el error que define a casi todo líder nuevo. Llega al puesto y hace lo único que tiene prohibido: trata de meterse a la cancha.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Piensen en el supervisor que era el mejor agente del piso. El número uno, el que todos admiraban. Lo ascienden — claro, por eso lo ascienden. Y ahora, cada vez que entra una llamada difícil, ¿qué hace? Se la quita a su gente y la atiende él. Le sale espectacular. Obvio. Para eso era el mejor.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y mientras tanto, sus doce personas miran. Aprenden una sola cosa: que cuando la cosa se pone fea, aparece el jefe y resuelve. Nunca aprenden a resolverla ellas. ¿Para qué? Si siempre llega el héroe.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Eso, traducido al fútbol, es un técnico que salta de la raya a la cancha a patear el penalti, porque no confía en su delantero. Lo expulsan en el acto. El estadio entero lo abuchea. Y con toda la razón del mundo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Pero en una operación nadie lo expulsa. Al contrario: lo felicitan. "Qué berraco el jefe, salvó la llamada." Y nadie ve el costo, porque el costo no se cobra hoy. Se cobra el día que el jefe no está — y ya vamos a llegar a ese día, porque es el final de este episodio.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Métanse esto en la cabeza, porque es el corazón de todo lo de hoy. Dirigir no es jugar mejor que su equipo. Para eso ya tuvieron su época de jugadores estrella — por eso están donde están. Dirigir es lograr que once personas que no son ustedes ganen un partido que ustedes tienen prohibido jugar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El día que lo ascendieron, le quitaron el balón de los pies y lo pararon en la raya. El sueldo nuevo no es por jugar mejor. Es por aguantarse las ganas de entrar a la cancha — y por preparar tan bien a los que sí entran, que ganen sin usted.</p>
+        </div>
+
+        <!-- SEGMENTO 4 — LA PREPARACIÓN · BIELSA -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">La preparación · Bielsa</span><span class="segment-time">16:30 – 24:00</span></div>
+            <div class="nota">Palanca 1: preparar. Tono: admiración con humor por la obsesión. Spygate primero (escena fuerte), luego la idea.</div>
+            <p class="line">Palanca número uno: preparar. Y para esto, en todo el planeta, no hay mejor ejemplo que un argentino al que le dicen, con cariño y con un poquito de miedo, "El Loco".</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Marcelo Bielsa. Si siguen fútbol, ya saben quién es. Si no, quédense, porque este señor es un caso de estudio de algo que ustedes viven todos los lunes sin ponerle nombre.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Les cuento una historia que lo pinta de cuerpo entero. Año 2019. Bielsa dirige al Leeds, en Inglaterra. Al día siguiente juegan contra el Derby County. Y la policía, escuchen bien, la policía, encuentra a un señor merodeando afuera del entrenamiento del Derby. Mirando por entre la reja. Resulta que era un empleado del Leeds. Bielsa lo había mandado a espiar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Se arma un escándalo nacional. Lo llaman "Spygate". Y aquí viene lo que lo vuelve leyenda. En vez de esconderse o pedir disculpas con la cabeza agachada, Bielsa convoca una rueda de prensa. Y monta una presentación. Con diapositivas.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Durante más de una hora, delante de periodistas que esperaban un pedido de perdón, Bielsa les muestra, con PowerPoint, cómo analiza a cada rival. Y de paso confiesa, sin un gramo de vergüenza: sí, mandé espiar al Derby. Y al anterior. Y al anterior. Los espié a todos. Me sé sus entrenamientos de memoria.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Al Leeds lo multaron con doscientas mil libras. Y Bielsa, que insistía en que no había roto ninguna regla escrita, dijo que la pagaba él, de su propio bolsillo. Después tuvieron que inventar una regla nueva para prohibir lo que él hizo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ahora, ¿de dónde sale esa obsesión? Porque esto no era nuevo. Es el mismo señor del que se dice que, cuando dirigió a Chile en el Mundial de 2010, viajó con cerca de mil ochocientas cintas de video para estudiar rivales.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · la obsesión de Bielsa</div>Suele ver alrededor de <strong>treinta partidos</strong> de un equipo antes de enfrentarlo. Es capaz de ver dos partidos a la vez, en dos pantallas. Y hay una anécdota que lo resume: estaba de vacaciones con la familia de su esposa, y se pasó el fin de semana entero viendo cintas de fútbol en vez de bajar a la playa.</div>
+            <p class="line">Sí, es demasiado. A Bielsa nadie lo va a poner de ejemplo de equilibrio entre el trabajo y la vida personal. En eso no lo imiten, por favor. Quédense con la idea, no con la locura.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y la idea es esta: para Bielsa, el partido se gana o se pierde durante la semana. El domingo, cuando rueda el balón, él ya casi no puede hacer nada nuevo. Solo puede ver si lo que ensayó mil veces aparece, o no, en la cancha.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Por eso prepara como un maniático. Porque entendió algo que a ustedes nadie les ha dicho con todas las letras: el momento en que más control tiene un líder es <em>antes</em> de que empiece la acción. Cuando empieza, el control se le escapa de las manos. Lo único que queda en la cancha es lo que usted ya metió en la cabeza de su gente.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y hay una cosa más, que es la que de verdad me gusta de Bielsa. Esa preparación obsesiva no es desconfianza en los jugadores. Es lo contrario. Es respeto. Es llegar el lunes y poder mirarlos a la cara sabiendo que usted hizo absolutamente toda su parte, que no los mandó a la cancha a improvisar para tapar su propia pereza. La preparación es la forma más concreta que tiene un líder de decirle a su equipo: yo ya hice lo mío, ahora confío en que ustedes hagan lo suyo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y ahora la pregunta fea, la que de verdad importa. ¿Cuánto prepara usted a su equipo, de verdad, antes de que empiece el turno?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No le pido mil ochocientas cintas. Ni que mande a espiar a nadie, por favor. Le pido honestidad por treinta segundos. Su gente entró hoy al piso, ¿sabiendo exactamente qué hacer con la llamada rara? ¿Con el cliente que llega gritando? ¿Con el caso que no está en ningún guion? ¿O entró a improvisar, cruzando los dedos para que usted ande por ahí, libre, para apagar el incendio cuando aparezca?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Porque si su plan para las llamadas difíciles es "yo estoy cerca por si me necesitan", déjeme decirle algo: usted no tiene un plan. Tiene un técnico con ganas de saltar a la cancha. Y ya hablamos de cómo termina ese cuento.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Lo que de verdad prepara a un equipo es lo más aburrido del mundo. La capacitación que da pereza armar. El rol-play que da pena hacer porque todos se ríen al principio. El documento de escalación que lleva cuatro meses "pendiente de actualizar" en una pestaña abierta. La reunión de cinco minutos antes del turno que siempre se salta porque "hoy no hay tiempo".</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Eso es ver las mil ochocientas cintas. Eso es lo que gana el partido del lunes — el martes anterior. Bielsa no es un fenómeno porque grite bonito en la raya. Es que llega al partido con el partido ya resuelto en la cabeza. Y cuando rueda el balón, él casi que podría sentarse a ver, tranquilo, porque ya hizo el noventa por ciento de su trabajo cuando nadie lo estaba mirando.</p>
+        </div>
+
+        <!-- SEGMENTO 5 — LA DECISIÓN · VAN GAAL Y OBDULIO -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">La decisión · Van Gaal y Obdulio</span><span class="segment-time">24:00 – 34:00</span></div>
+            <div class="nota">Palancas 2 y 3: elegir quién entra (Krul) y liderar bajo presión (Obdulio). Aquí va el segundo REMATE permitido (Obdulio).</div>
+            <p class="line">Bien. Ya preparó toda la semana, como Bielsa. Empieza el partido. Y ahora vienen las dos palancas que se usan con el reloj corriendo y el corazón en la boca: a quién meto, y qué hago cuando esto se está cayendo a pedazos.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">La jugada más fría que vi en un Mundial</div>
+            <p class="line">Brasil, 2014. Cuartos de final. Holanda contra Costa Rica. Cero a cero. Se acaban los noventa minutos. Se acaban los treinta del alargue. Y esto se va a definir por penaltis — la lotería más cruel del fútbol.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El técnico de Holanda era Louis van Gaal. Un señor holandés que no es precisamente famoso por su humildad. Y justo antes del pitazo final, hace algo que nadie había hecho en la historia entera de los Mundiales.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Saca a su arquero titular, Jasper Cillessen. Y mete a uno suplente, Tim Krul. Solamente para la tanda de penaltis. Para nada más.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Párense un segundo en el tamaño de esa decisión. Está sacando a su portero titular — un profesional, en pleno Mundial, delante del mundo entero — para meter al de la banca en el momento más tenso del partido. Si le sale mal, Van Gaal es el hazmerreír del planeta al otro día. Lo destrozan en cada periódico. Le van a recordar ese cambio hasta el día que se muera.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Y por qué se atreve? Porque hizo la tarea. Su cuerpo técnico había estudiado a cada cobrador de Costa Rica. Sabían que Krul era mejor específicamente en la tanda de penaltis. Más alto, mejor ubicado, mejor cabeza para ese momento puntual. No era el mejor arquero en general. Era el mejor para <em>esa</em> tarea, y solo para esa.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y hay un detalle delicioso. Krul, apenas entra, se les acerca a los jugadores de Costa Rica y les dice que sabe hacia dónde van a patear. Les mete la duda en la cabeza antes de que pateen. Eso tampoco fue bravuconería. Fue preparación disfrazada de calle.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · el cambio de Krul (2014, verificado)</div>Primera vez en la historia de los Mundiales que un técnico cambia al arquero solo para la tanda de penaltis. Krul atajó <strong>dos</strong> — a Bryan Ruiz y a Michael Umaña — y metió a Holanda en semifinales.</div>
+            <p class="line">Funcionó. Krul atajó dos, Holanda pasó, y Van Gaal quedó de genio. Pero el punto no es que le salió bien. Le pudo salir mal y seguiría siendo la decisión correcta. El punto es <em>cómo</em> eligió.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No metió al jugador con más galones ni al más querido. Metió a la persona correcta para el momento correcto. Y tuvo el estómago de bancarse la decisión impopular delante de ochenta mil personas y de su propio arquero titular, que seguramente no le habló por una semana.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Pásenlo a su martes por la tarde. Entra la llamada del cliente más complicado de la cuenta. El que ya escaló dos veces, el que pidió hablar con un supervisor, el que tiene a todo el mundo asustado. ¿A quién se la pasa?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El reflejo es dársela al de más experiencia, o atenderla usted mismo y acabar rápido. El movimiento de Van Gaal es otro, y es más difícil: ¿quién de mi equipo es, hoy, específicamente bueno para <em>este</em> tipo de llamada? Y a veces la respuesta no es el más antiguo. A veces es la persona callada que nadie voltea a mirar, pero que tiene exactamente la paciencia, o el tono, o la sangre fría que ese cliente necesita.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Elegir quién entra no es premiar trayectoria. Es conocer tan bien a los suyos que puede poner a la persona correcta en el minuto exacto — aunque a todos los demás les parezca raro, y aunque al que dejó en la banca no le guste.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Y cuando todo se está cayendo: Obdulio agarra el balón</div>
+            <p class="line">La otra palanca con el reloj corriendo es más difícil que un cambio. Es liderar cuando el piso se está incendiando y todos lo miran a usted. Y para eso me voy bien atrás. A 1950.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Final del Mundial. Estadio Maracaná, en Río de Janeiro. Brasil contra Uruguay. Pónganse en el contexto, porque es de no creer.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · el Maracanazo (16 de julio de 1950, verificado)</div>Casi <strong>200 mil personas</strong> en el estadio — el partido más concurrido de la historia del fútbol. A Brasil le bastaba con empatar para ser campeón. La confianza era tal que los <strong>periódicos ya estaban impresos</strong> coronando a Brasil. Y Jules Rimet, el presidente de la FIFA, ya tenía escrito y ensayado, en portugués, su discurso de felicitación al campeón.</div>
+            <p class="line">Léanlo otra vez. Los periódicos ya estaban impresos. El discurso ya estaba escrito. Doscientas mil personas celebrando un título que todavía no se había jugado. Para todo el mundo, el partido ya estaba ganado antes de empezar.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">El capitán de Uruguay se llamaba Obdulio Varela. Y aquí viene lo grande. Obdulio no estaba en la raya — estaba adentro, en la cancha, era el líder que sí juega. Pero lo que hizo es la mejor clase del mundo de cómo se sostiene un equipo bajo una presión que parte a cualquiera por la mitad.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Empieza el segundo tiempo y Brasil mete el primer gol. El estadio explota. Doscientas mil gargantas rugiendo al tiempo. En ese punto, un equipo normal se derrumba. Se acabó, piensan todos. Hasta los propios jugadores uruguayos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Qué hace Obdulio? Agarra el balón. Y en vez de devolverlo rápido al centro para reanudar, camina despacio, despacísimo, hasta el árbitro. Y se pone a discutir que el gol fue en fuera de lugar. Años después confesó que sabía perfectamente que no había sido fuera de lugar. Se lo inventó.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Estaba ganando tiempo. A propósito. Dejando que el rugido del estadio se enfriara. Que la euforia de Brasil bajara un grado. Que sus propios compañeros respiraran y se les quitara el temblor de las piernas. Un minuto entero de calma, robado a la fuerza, en medio del infierno.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Cuando por fin pone el balón en el centro, mira a sus compañeros y les dice, más o menos: ahora sí, muchachos, a ganar. Y antes, en el túnel, ya les había soltado la frase que lo hizo leyenda para siempre. Mientras doscientas mil personas gritaban afuera, Obdulio les dijo: "los de afuera son de palo". Los de la tribuna no juegan. No patean. No cuentan. Olvídense del ruido.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Uruguay le dio vuelta al partido. Ghiggia metió el segundo a falta de once minutos. Ganó dos a uno. En el estadio más lleno de la historia, contra una nación entera que ya estaba celebrando. Le dicen el Maracanazo. Y setenta y cinco años después, todavía duele en Brasil. El arquero de esa tarde, Barbosa, cargó la culpa el resto de su vida.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ahora, su versión de doscientas mil personas gritando. Es un lunes de pico. Un sistema se cayó. La cola está reventada. Hay tres clientes furiosos, el cliente de la cuenta escribiendo cada cinco minutos, y el chat interno explotando con "¿alguien sabe qué está pasando?". Su equipo lo mira a usted. Y lo que usted haga en los siguientes treinta segundos define las próximas dos horas.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Obdulio no salió corriendo a apagar el incendio él solo, gritando órdenes. Hizo algo más inteligente y mucho más difícil: bajó la temperatura. Caminó despacio justo cuando todos esperaban que corriera. Le quitó el ruido de encima al equipo para que el equipo pudiera volver a pensar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Porque el líder que en plena crisis transmite pánico, multiplica el pánico por doce. Y el que respira hondo, habla bajo, y camina despacio con el balón en la mano, le devuelve a su gente la única cosa que de verdad necesitan en ese momento: la sensación de que alguien, ahí, tiene la cabeza fría.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">En la crisis, su equipo no le copia las palabras. Le copia el pulso. Si usted se acelera, todos se aceleran. Si usted, como Obdulio, camina despacio con el balón en la mano cuando el estadio entero le grita en contra, le está dando a su gente permiso para volver a respirar — y para volver a ganar.</div>
+        </div>
+
+        <!-- SEGMENTO 6 — EL EQUIPO · PÉKERMAN Y MATURANA -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">El equipo · Pékerman y Maturana</span><span class="segment-time">34:00 – 42:00</span></div>
+            <div class="nota">Palanca 4: confiar / construir grupo. Sabor colombiano para la audiencia núcleo (CO 70%). Cuidado con la frase de Maturana.</div>
+            <p class="line">Sí, ya sé. Un colombiano hablándoles del fútbol colombiano. Qué original. Aguántenme un par de minutos, porque no es por donde ustedes creen que voy.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">La última palanca era la más difícil de todas: confiar. Soltar el balón de verdad. Y para esto quiero contarles la mejor versión de la selección Colombia que muchos de ustedes vieron en su vida.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Brasil, 2014. El técnico era José Pékerman. Argentino, callado, casi un monje. De los que hablan poco y miran mucho. Pero antes del relato, hay que tener clarísimo de dónde venía Colombia, porque si no, no se entiende la dimensión.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · Colombia 2014 (verificado)</div>Antes de ese Mundial, Colombia había ganado, en toda su historia mundialista entera, apenas <strong>tres partidos</strong>. En Brasil 2014 ganó <strong>cuatro seguidos</strong>: Grecia, Costa de Marfil, Japón y Uruguay. James Rodríguez se llevó la Bota de Oro como goleador del torneo, con seis goles. Cayeron en cuartos contra Brasil, dos a uno.</div>
+            <p class="line">Léanlo despacio. En toda la historia, tres victorias. En un solo Mundial, cuatro seguidas. Eso no es suerte. Eso no es que se alinearon los planetas. Eso es un técnico que construyó algo de verdad.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y déjenme contarles el momento exacto en que ese equipo le dijo al mundo que existía. Octavos de final, contra Uruguay. Minuto veintiocho. Le llega un balón a James, de espaldas al arco, como a veinticinco metros. Lejísimos. De espaldas.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">James lo baja con el pecho, gira, y de zurda, de primera, sin dejarlo caer, lo revienta. El balón pega en el palo de arriba y entra. Un golazo imposible, de esos que uno ve y no entiende cómo se hizo.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · el gol de James (verificado)</div>Ese gol fue elegido el <strong>mejor del torneo</strong> y ganó el <strong>Premio Puskás</strong> de la FIFA — el único gol marcado en un Mundial que ha ganado ese premio en la historia. James tenía veintidós años.</div>
+            <p class="line">Y aquí está lo que me importa para ustedes. Un pelado de veintidós años no se atreve a intentar esa jugada — de espaldas, lejísimos, en un Mundial, con un país encima — si siente que, si la falla, el técnico lo va a fulminar desde la raya. Esa jugada solo la intenta alguien que se siente con permiso de equivocarse.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y eso fue lo notable de Pékerman. No gritaba. No se peleaba con los árbitros. Hacía lo contrario: le daba a un grupo de jugadores la estructura y la calma para que brillaran solos. Le dio confianza a ese pelado para que se parara en el centro de la cancha de un Mundial y jugara sin miedo. El mejor torneo de la historia del país lo firmó una camada que jugaba suelta — porque sentía que atrás había alguien que de verdad confiaba en ella.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Pékerman no jugó ni un minuto. No tocó un solo balón en todo el Mundial. Y ese, justamente, fue su mérito más grande.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">La traducción a su silla es incómoda, pero es la verdad: un equipo rinde por encima de su nivel cuando siente que el jefe le confía el balón de verdad. No de boca, en la reunión de los lunes. De verdad, en la práctica, cuando algo sale mal.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El agente que sabe que usted no le va a caer encima por cada error pequeño, atiende mejor. Se atreve a intentar la jugada difícil con el cliente. El que siente que lo están vigilando para pillarlo en una falla, atiende a la defensiva. Tieso. Midiendo cada palabra, leyendo el guion como un robot. Y un equipo tieso no remonta un día difícil — igual que no lo remonta un equipo de fútbol al que el técnico le grita en cada pase que da.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Piénsenlo con una escena de su piso. El agente que tiene al cliente furioso al teléfono y, en vez de leer el guion palabra por palabra, se sale un poco del libreto. Baja la voz, le habla como persona, se inventa una salida que no estaba escrita en ningún lado. Y la salva. Esa improvisación — la buena, la que salva cuentas — solo aparece en alguien que se siente con permiso de salirse del guion sin que lo crucifiquen después. Es la chilena de James. Y nace del mismo lugar: de un técnico, atrás, que confía.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El que vive con miedo a equivocarse, nunca se sale del guion. Y el que nunca se sale del guion, nunca salva la llamada imposible. La mata despacio, con un "lamento la situación, señor" repetido hasta que el cliente cuelga.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y ahora la otra cara, porque no todo es subir al técnico a hombros.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Hay una frase que en Colombia perseguimos durante años, de otro técnico histórico, Francisco Maturana: "perder es ganar un poco". La usamos para burlarnos. Para acusar de conformista a cualquiera que se atreviera a decirla.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Pero hay que ser justos con el dato. El propio Maturana ha aclarado que la frase ni siquiera es de él, y que en el país se distorsionó hasta volverla un chiste. Lo que él quería decir nunca fue "perder está bien, no pasa nada". Era algo más serio: que de una derrota bien leída uno aprende lo que ninguna victoria le va a enseñar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y conviene recordar quién dirigía a la Colombia del cinco a cero contra Argentina, en Buenos Aires, en el 93. Era él. Maturana. Cinco a cero en el estadio del rival, con Maradona viéndolo desde la tribuna. Ese hombre no era ningún conformista. Era alguien que entendía que perder, leído bien, no es una vergüenza que hay que esconder. Es información que hay que usar.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Entonces, pregunta directa: ¿cuándo fue la última vez que su equipo tuvo un día malo — las métricas en rojo, un cliente que se quejó feo, una encuesta por el piso — y usted, en vez de salir a buscar a quién regañar, se sentó a leer qué les estaba enseñando ese mal día?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Porque ahí, en ese partido perdido, casi siempre está el dato que ninguna semana buena le iba a mostrar. La grieta en el proceso. El entrenamiento que faltó. La persona que estaba pidiendo ayuda en silencio.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Confiar de verdad incluye esto que duele: dejar que su gente pierda un partido sin que sienta que se le acabó la carrera. Para que tenga el coraje de volver a intentar la jugada difícil mañana. Un equipo al que castigan cada derrota, deja de arriesgar. Y un equipo que no arriesga, no mete goles de chilena de veinticinco metros.</p>
+        </div>
+
+        <!-- SEGMENTO 7 — REFERENCIAS CRUZADAS -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Referencias Cruzadas</span><span class="segment-time">42:00 – 48:00</span></div>
+            <div class="nota">Sacar el tema del fútbol para que la tesis aterrice como universal. Zander = apex temático; aquí va el tercer REMATE.</div>
+            <p class="line">Hasta aquí todo ha sido fútbol. Pero esta idea — la del líder que no toca el balón — es demasiado grande para que sea solo de los técnicos. Quiero sacarla de la cancha un momento, con dos personas que no tienen nada que ver con un estadio.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Uno — el director de orquesta que no hace ningún sonido</div>
+            <p class="line">Hay un director de orquesta que se llama Benjamin Zander. En 2008 dio una charla TED sobre música clásica que han visto más de veinte millones de personas. Pero lo que dijo no era sobre música. Era, sin que él usara la palabra, la mejor definición de liderazgo que yo he escuchado.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Zander cuenta que pasó años creyéndose importantísimo, parado ahí adelante con su batuta. Hasta que un día cayó en cuenta de algo que lo sacudió.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · Benjamin Zander, TED 2008 (verificado)</div>"El director de una orquesta no produce ningún sonido. Depende, para su poder, de su capacidad de hacer poderosos a los demás."</div>
+            <p class="line">Deténganse en esa frase. El director de orquesta no toca ningún instrumento durante el concierto. No hace ni un solo sonido. Si se queda mudo toda la noche, la música igual suena. Su poder entero, todo su trabajo, consiste en hacer que las otras cien personas suenen mejor de lo que sonarían solas.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Les suena? Es exactamente el técnico que no patea. Es exactamente usted, que no contesta la llamada. El director de orquesta es el primo elegante del director técnico — y los dos viven de lo mismo: de hacer que otros brillen.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y Zander remata con algo que quiero que se lleven pegado a la frente. Le preguntaron cómo sabía si estaba haciendo bien su trabajo, si no produce ningún sonido. Y él dijo: es fácil. Uno mira los ojos de los músicos. Si los ojos les brillan, lo está haciendo bien. Y si no les brillan, toca hacerse una pregunta dura: ¿quién soy yo para que los ojos de mi gente no brillen?</p>
+            <span class="pausa">PAUSA</span>
+            <div class="remate">El mejor termómetro de su liderazgo no está en el dashboard. Está en los ojos de su equipo. Si a su gente le brillan los ojos cuando entra al turno, usted está dirigiendo bien — aunque no haya tocado un solo balón. Y si están apagados, ningún número en verde lo va a salvar de esa verdad.</div>
+
+            <div class="sub">Dos — los veintiséis años de Alex Ferguson</div>
+            <p class="line">El otro caso es de fútbol, pero de la raya, no de la cancha. Sir Alex Ferguson dirigió al Manchester United veintiséis años. Veintiséis. Ganó prácticamente todo lo que se podía ganar. Y cuando escribió un libro, no lo escribió sobre tácticas ni sobre goles. Lo escribió sobre liderazgo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Una de las cosas que más lo obsesionaba no era el partido del fin de semana. Era construir lo que venía. Ferguson armó, a propósito, una camada de jugadores jóvenes de la cantera del club — la famosa generación del 92 — pensando no en ganar ese año, sino en tener equipo para los próximos diez.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Estaba sembrando un bosque cuya sombra él, en buena parte, no iba a disfrutar. Preparando al club para seguir ganando incluso cuando él ya no estuviera en la raya. Que es, palabra por palabra, lo que hablamos en el episodio pasado sobre Cerati: construir algo que siga sonando cuando uno ya no está.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Un director de orquesta que no hace ruido. Un técnico que pasó veintiséis años pensando en el equipo que iba a dejar. Dos mundos lejísimos del piso de operaciones. Y la misma idea, repitiéndose: el que dirige no se mide por lo que hace con sus propias manos. Se mide por lo que logra que hagan los demás — y por lo que queda funcionando cuando él se va.</p>
+        </div>
+
+        <!-- SEGMENTO 8 — APLICABLE HOY -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">8</span><span class="segment-title">Aplicable Hoy</span><span class="segment-time">48:00 – 52:30</span></div>
+            <div class="nota">Tres herramientas concretas, sin presupuesto, para esta semana. Cero relleno, cero terapia.</div>
+            <p class="line">Tres cosas concretas. Sin presupuesto, sin pedir permiso, esta misma semana. Una por cada palanca que de verdad está en sus manos.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Uno — su sesión Bielsa de quince minutos</div>
+            <p class="line">No le pido mil ochocientas cintas ni que espíe a la competencia. Le pido quince minutos. Antes del próximo turno difícil, junte a su gente y preparen <em>una</em> sola jugada: la llamada o el caso que más se les complica. Qué decir, qué no decir, en qué punto exacto escalar y a quién.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Quince minutos de ensayar lo que va a pasar, valen más que dos horas suyas apagando el incendio el día que pase. Esa es toda la idea de Bielsa, en tamaño de bolsillo, sin la parte de la locura.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Dos — su cambio de Van Gaal</div>
+            <p class="line">Esta semana, en la próxima situación difícil, frene el reflejo. El de dársela al de siempre, o el de atenderla usted para acabar rápido. Pare tres segundos y hágase la pregunta de Van Gaal: ¿quién, hoy, es específicamente el mejor para <em>esto</em>?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y déle la oportunidad a esa persona, aunque no sea la obvia, aunque a los demás les extrañe. Una vez. A ver qué pasa. Lo peor que le puede pasar es descubrir que tenía un Tim Krul sentado en la banca, y no lo sabía.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Tres — la regla del balón</div>
+            <p class="line">Esta es la más difícil, porque es la de aguantarse. Elija una cosa, una sola, que usted hoy hace por su equipo porque "le sale más rápido". Una llamada que siempre toma usted. Un correo delicado que siempre redacta usted. Un reporte que nadie más sabe armar porque nunca enseñó.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Esta semana, no la haga. Pásesela a alguien y explíquele cómo. Va a salir peor que si la hace usted — la primera vez. Va a doler verlo. Va a tener que sentarse encima de sus propias manos. Aguántese.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Porque esa incomodidad, esa exacta, es la diferencia entre un jugador estrella con galones y un director técnico de verdad. El jugador resuelve. El técnico enseña a resolver, y se aguanta el verlos aprender.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Tres cosas. Preparar una jugada. Elegir distinto una vez. Y soltar un balón que le cuesta soltar. Ninguna cuesta un peso. Todas cuestan algo más caro: cambiar la costumbre de querer entrar a la cancha.</p>
+        </div>
+
+        <!-- SEGMENTO 9 — MITO O REALIDAD -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">9</span><span class="segment-title">Mito o Realidad</span><span class="segment-time">52:30 – 56:00</span></div>
+            <div class="nota">Energía distinta — directo, rápido, sin rodeos.</div>
+            <p class="line">Cuatro frases que se repiten en cualquier piso de operaciones, dichas con toda la seguridad del mundo. Vamos a ponerlas a prueba, rápido.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="mito"><strong>❌ MITO:</strong> "Un buen líder es el que se mete y resuelve."</div>
+            <div class="realidad"><strong>✅ REALIDAD:</strong> Ese es un buen jugador, no un buen líder. Un técnico que salta a la cancha a patear el balón es expulsado en el acto. El que "se mete y resuelve" todo, lo que está construyendo, sin darse cuenta, es un equipo que no sabe resolver sin él — y que se cae el día que él falta. Resolver es de jugador. Hacer que otros resuelvan es de director técnico. Le pagan por lo segundo.</div>
+
+            <div class="mito"><strong>❌ MITO:</strong> "Si quiero que algo salga bien, lo tengo que hacer yo."</div>
+            <div class="realidad"><strong>✅ REALIDAD:</strong> Van Gaal no se puso los guantes para atajar él los penaltis. Metió a Krul. Pékerman no metió ni un gol del mejor Mundial de Colombia. Zander no toca un solo instrumento en todo el concierto. El trabajo del que dirige nunca fue hacerlo mejor que el equipo — fue poner a la persona correcta y bancarse el no tocar el balón. Si todo lo bueno de su operación depende de sus manos, usted no tiene un equipo. Tiene una dependencia peligrosa, con su nombre y apellido.</div>
+
+            <div class="mito"><strong>❌ MITO:</strong> "En una crisis hay que moverse rápido y hacer mucho ruido."</div>
+            <div class="realidad"><strong>✅ REALIDAD:</strong> Obdulio Varela, con doscientas mil personas gritándole en contra y un gol de Brasil recién encajado, hizo exactamente lo opuesto: caminó despacio. Bajó la temperatura a propósito. En una crisis, el líder que corre y grita contagia el pánico; el que respira y camina despacio le devuelve al equipo la cabeza fría. La velocidad no es lo mismo que la prisa. A veces el movimiento más rápido para salir del hueco es, primero, calmarse.</div>
+
+            <div class="mito"><strong>❌ MITO:</strong> "Mi equipo está bien; las métricas están en verde."</div>
+            <div class="realidad"><strong>✅ REALIDAD:</strong> El dashboard mide lo que pasó, no lo que su gente siente entrando al turno. Zander no miraba la partitura para saber si lo hacía bien: miraba los ojos de los músicos. Un equipo con todos los números en verde y los ojos apagados es un equipo que ya está renunciando por dentro — usted solo no lo ha visto todavía, porque el verde le tapó la cara.</div>
+
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y aquí va el dato que me guardé todo el episodio para este momento exacto.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato guardado · lo que Krul nunca atajó solo</div>Cuando Krul entró a atajar esos penaltis, ya tenía hechos los deberes de toda la semana: el cuerpo técnico le había pasado el estudio de cada cobrador de Costa Rica. Él no adivinó hacia dónde tirarse. <strong>Lo sabía.</strong> El "instinto" del héroe del partido era, en realidad, preparación de la semana — disfrazada de talento del momento.</div>
+            <p class="line">Eso es lo que más me gusta de toda esta historia. Lo que parece magia en el minuto noventa, casi siempre es tarea hecha el martes. El héroe del domingo se construyó en un entrenamiento que nadie aplaudió, que nadie filmó, que nadie le agradeció.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Su mejor agente, en la llamada imposible, no tuvo "calle" ni nació con un don. Tuvo capacitación. La pregunta, la única que importa, es si esa capacitación se la dio usted — o si simplemente tuvo la suerte de que alguien, antes que usted, se la hubiera dado.</p>
+        </div>
+
+        <!-- SEGMENTO 10 — RECOMENDACIONES -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">10</span><span class="segment-title">Recomendaciones de Andy</span><span class="segment-time">56:00 – 58:30</span></div>
+            <div class="nota">Cada una con sus tres partes: dónde, qué buscar exactamente, por qué conecta con ESTE episodio.</div>
+            <p class="line">Si el episodio los movió, tres cosas para seguir en esta misma conversación.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Uno — la charla: Benjamin Zander, TED 2008</div>
+            <p class="line">Búsquenla en YouTube como "Benjamin Zander TED" — son veinte minutos y está subtitulada al español. No la vean por la música. Véanla por el final, cuando habla de los ojos que brillan.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Es la clase de liderazgo más bonita que van a ver este mes, dada por alguien que, igual que ustedes, dirige sin tocar el instrumento. Cuando la terminen, miren a su equipo en el próximo turno y háganse la pregunta de Zander.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Dos — el partido: Holanda contra Costa Rica, cuartos, Mundial 2014</div>
+            <p class="line">En YouTube está la tanda completa de penaltis, bajo "Netherlands Costa Rica penalty shootout 2014". Vean específicamente el minuto del cambio: la cara de Cillessen cuando lo sacan, y la frialdad de Van Gaal dando la orden.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No vean los penaltis. Vean esa decisión. Es la cara que pone un líder cuando toma una decisión correcta e impopular al mismo tiempo. La que a ustedes les va a tocar poner algún martes de estos.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Tres — el libro: "Líder", de Sir Alex Ferguson (2015)</div>
+            <div class="nota">[VERIFICAR] Título exacto en español de "Leading" (Ferguson, 2015) y disponibilidad en la plataforma de Andy antes de nombrarlo al aire. Si no se confirma, reemplazar por "Good to Great" de Jim Collins (capítulo del líder de Nivel 5), que aplica igual.</div>
+            <p class="line">El técnico que dirigió al Manchester United veintiséis años escribió un libro sobre liderazgo, no sobre fútbol. Está en Audible y en librerías. Vayan al capítulo sobre delegar y construir equipo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Es el mismo tema, contado desde la silla de alguien que ganó todo lo que se podía ganar: que el trabajo del que dirige no es jugar, es construir un equipo que siga ganando incluso cuando él ya no esté parado en la raya.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+        </div>
+
+        <!-- SEGMENTO 11 — CIERRE + TEASER -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">11</span><span class="segment-title">Cierre con anécdota + Teaser EP.019</span><span class="segment-time">58:30 – 60:30</span></div>
+            <div class="nota">Única anécdota del episodio. Tercera persona, sin nombres propios. Cuarto y último REMATE. EP.019 = Gladiator.</div>
+            <p class="line">Les dejo una imagen para terminar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Conozco el caso de un supervisor que fue el mejor agente de su cuenta. El número uno, dos años seguidos, con diploma en la pared. Lo ascendieron, obvio. Y siguió haciendo lo mismo que lo hizo grande: cada llamada difícil que entraba, la tomaba él. Cada cliente furioso, lo calmaba él. Su equipo lo adoraba. "Con él al lado, aquí no se cae nada", decían.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y era verdad. No se caía nada. Mientras él estuvo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Un día lo movieron a otra cuenta. Un ascenso más, bien merecido. Y su equipo viejo, el que lo adoraba, el que tenía las métricas en verde, se desplomó en dos semanas. Nadie sabía atender la llamada difícil. Nadie había tenido que aprender — porque el balón, al final, siempre lo terminaba tocando él.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Les habían brillado los ojos durante dos años. Pero era el brillo de tener cerca a alguien que resolvía por ellos. No el de saber resolver. Y esos dos brillos se parecen muchísimo — hasta el día que el técnico se va, y uno ve cuál era cuál.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ese supervisor no había construido un equipo. Había construido una tribuna que dependía de que él jugara cada pelota. Fue un crack adentro de la cancha. Nunca aprendió a pararse en la raya. Y el día que le tocó la raya de verdad, su obra se deshizo a sus espaldas.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="remate">Su mejor jugada como líder no la va a ver nadie aplaudir. Es el día que prepara a alguien tan bien, que gana el partido sin usted en la cancha. El técnico no toca el balón. Resulta que ese, justamente, todo este tiempo, era el trabajo.</div>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Teaser EP.019</div>
+            <p class="line">La próxima vez nos vamos del estadio a la arena. A Roma. A un general que lo pierde todo — su ejército, su familia, su nombre — y termina peleando por su vida en el piso de un coliseo, frente a cincuenta mil personas que pagaron por verlo morir.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Gladiator. Máximo. Y una pregunta que les va a doler: ¿qué hace un líder cuando le quitan absolutamente todo — el título, el equipo, el poder, los galones — y aun así le toca seguir liderando, desde lo más bajo? Nos vemos la otra semana.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Cierre y TM canónico</div>
+            <p class="line">Antes de irme, la pregunta del episodio. Y esta sí quiero que la respondan, de verdad.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Cuál es ese balón que usted no suelta? Esa cosa que sigue haciendo usted mismo porque "le sale más rápido" — y que, en el fondo, ya sabe que le está quitando a alguien de su equipo la oportunidad de aprender a jugarla.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Escríbanlo en los comentarios del episodio, ahí mismo en Spotify. Los leo todos, de verdad — y los del episodio pasado, el de Cerati, estuvieron buenísimos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si esto les hizo pensar en alguien de su equipo — o en ustedes mismos en algún momento de su carrera — compártanlo con esa persona. Y si quieren seguir la conversación, estoy en LinkedIn como Andrés Bermúdez Rodríguez.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Esto fue Behind the Queue, episodio dieciocho.</p>
+            <p class="line">Yo soy Andy. Y recuerden: el balón no es suyo. Su trabajo es preparar tan bien a quien lo va a patear, que pueda ganar el partido sin usted.</p>
+            <div class="nota">OUTRO MUSICAL — fade suave a silencio.</div>
+        </div>
+
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section fuentes">
+        <h2>Fuentes verificadas (no leer al aire)</h2>
+        <p>· <strong>Tim Krul / Van Gaal 2014:</strong> FIFA (entrevista Tim Krul, Brasil 2014), GiveMeSport, Bleacher Report — primer cambio de arquero solo para la tanda en la historia de los Mundiales; Krul atajó a Bryan Ruiz y a Michael Umaña; Holanda a semifinales. · <strong>Obdulio Varela / Maracanazo 1950:</strong> Wikipedia "Uruguay v Brazil (1950 FIFA World Cup)" y "Obdulio Varela", FIFA, beIN Sports, ExtraTime — 16-jul-1950, Maracaná, ~199.954 personas; periódicos pre-impresos coronando a Brasil; Jules Rimet con discurso de felicitación escrito y ensayado en portugués; Obdulio agarró el balón y discutió un fuera de lugar inexistente para ganar tiempo; "los de afuera son de palo"; Uruguay 2–1 (Friaça / Schiaffino / Ghiggia); arquero Barbosa. · <strong>Bielsa:</strong> Goal, FIFA, Sky Sports, CNN, CBS Sports — "El Loco"; "Spygate" 2019 (espió al Derby y admitió haber espiado a todos los rivales en rueda de prensa de ~70 min con PowerPoint; Leeds multado £200.000; nueva regla EFL); reportadas ~1.800 cintas al Mundial 2010 con Chile, ~30 partidos por rival, ver dos partidos a la vez. · <strong>Pékerman / Colombia 2014:</strong> ESPN, Goal, Britannica, FIFA, Wikipedia (James Rodríguez) — antes de 2014 Colombia había ganado solo 3 partidos de Mundial en su historia; en 2014 ganó 4 seguidos; gol de James vs Uruguay (min 28, control de pecho + volea, octavos) elegido Gol del Torneo y Premio Puskás (único gol de Mundial que lo ha ganado); James Bota de Oro (6 goles); eliminados en cuartos por Brasil 2–1. · <strong>Maturana / 5-0 1993:</strong> Infobae, ESPN Deportes, El País Cali, Noticias Caracol — Argentina 0–5 Colombia, 5-sep-1993, Monumental (River); Maturana ha aclarado que "perder es ganar un poco" no es originalmente suya y que en Colombia se distorsionó. · <strong>Benjamin Zander:</strong> TED 2008 "The Transformative Power of Classical Music" (+20M visualizaciones); cita "el director de orquesta no produce ningún sonido… hacer poderosos a los demás"; "if their eyes are shining". · <strong>Alex Ferguson:</strong> 26 años dirigiendo el Manchester United; libro "Leading" (2015); generación / cantera del 92.</p>
+        <p style="margin-top:10px">Notas: (1) El Mundial 2026 (48 selecciones, sedes EE.UU./México/Canadá) es el telón cultural — NO se afirma ningún resultado del torneo en curso; el dato fresco lo mete Andy al grabar, marcado [ACTUALIZAR AL GRABAR]. (2) Verificar el título en español y la disponibilidad del libro de Ferguson "Leading" (2015) antes de nombrarlo; fallback: "Good to Great" de Collins. (3) La frase exacta de Obdulio en el túnel ("los de afuera son de palo") es ampliamente atribuida; decirla como cita célebre, no textual jurada.</p>
+    </div>
+
+    <footer>
+        <span class="gold">Behind the Queue</span> · EP.018 — El Mundial: liderazgo cuando no puedes tocar el balón<br>
+        Production packet · guion de grabación · ~58 min a 143 wpm · estilo con chispa (guion-style-btq.md)
+    </footer>
+
+</div>
+</body>
+</html>

@@ -301,6 +301,17 @@ o demasiado largo.
 ════════════════════════════════════════
 ```
 
+**Cómo calcular el word count target (NO adivinar minutos):** usa un **wpm MEDIDO** contra el
+SRT real del show, no una suposición. El supuesto típico de ~100-110 wpm está muy por debajo de
+la realidad: un host leyendo en voz alta corre mucho más rápido (BTQ/Andy solo host = **~143 wpm**
+medido, ver `btq-production/guion-style-btq.md` → "Calibración de duración"). Fórmula:
+`palabras ≈ minutos objetivo × wpm_medido`. Si el host suele expandir en vivo, escribe ~7-8% por
+debajo del objetivo y deja colchón para CORTAR, no para estirar.
+
+**Verificar después de grabar:** comparar la duración real del SRT contra la marcada en el guion.
+Si difieren, recalibrar el wpm del show con `palabras_habladas_del_SRT / minutos_de_audio` y
+actualizar el número en la guía de estilo del show. Los SRT viven en `E:\Transcriptor\transcripciones\`.
+
 **Después de mostrar el word count**, presenta la arquitectura adaptada a ESTE episodio y espera aprobación explícita.
 
 Calcula los tiempos según `duracion_min` del perfil:
