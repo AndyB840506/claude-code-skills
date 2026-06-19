@@ -27,7 +27,7 @@
   - graphify reencuadrado en `docs/roadmap-future-proofing.md` (NO descartado; quiere algo
     visual y ligero).
 - **Memorias guardadas:** `reference-andyfreelancer-infra`, `feedback-menus-welcome`,
-  `feedback-parallel-sessions`, `project-graphify-interest`.
+  `feedback-parallel-sessions`, `project-graphify-interest`, `feedback-validate-before-theorizing`.
 
 ## Where We Paused
 
