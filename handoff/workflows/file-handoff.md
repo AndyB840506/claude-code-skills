@@ -72,7 +72,8 @@ model. Two risks, and how this workflow handles them:
 - **The real overwrite risk is two sessions sharing one working tree** — one session's
   broad `git add` captures the other's uncommitted edits into the wrong commit. Defenses:
   scoped `git add` (step 5), `git pull --rebase` before push (step 5), and ideally a
-  **separate `git worktree` per session** so each has its own working directory.
+  **separate `git worktree` per session** so each has its own working directory
+  (routine: `docs/parallel-sessions-worktree.md`).
 - An agent **cannot close another running session** — sessions are isolated. To close both,
   the user runs `/session-close` in each. Sequencing them (finish one, let it push, then
   the other) lets the second rebase cleanly on the first.
