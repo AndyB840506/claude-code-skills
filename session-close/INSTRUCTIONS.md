@@ -79,7 +79,7 @@ First line summary
 
 Body line.
 
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
 '@
 ```
 
