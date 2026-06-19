@@ -43,17 +43,39 @@ Write handoff doc to a file, commit, and push so any machine can resume.
    - [open items that need resolution]
    ```
 
-5. **Commit and push**
+5. **Commit and push** — use a **scoped add** and **pull --rebase before pushing**
    ```
-   git add .agents/handoff/YYYY-MM-DD-<topic>.md
+   git add .agents/handoff/YYYY-MM-DD-<topic>.md   # scoped: only the handoff file
    git commit -m "handoff: <topic> YYYY-MM-DD"
+   git pull --rebase origin main                   # integrate parallel work first
    git push origin main
    ```
    Use PowerShell on Windows, bash on Mac/Linux.
+   - **Never `git add .` / `git add -A` here** — a broad add can absorb another
+     parallel session's uncommitted changes into your commit (see Parallel sessions).
+   - The `pull --rebase` makes a second session integrate instead of getting a
+     non-fast-forward rejection. Handoff files have distinct names, so the rebase is clean.
+   - If the rebase reports a real conflict (both sessions edited the same shared file,
+     e.g. `MEMORY.md`), stop and resolve it with the user — do not force-push.
 
 6. **Confirm**
    > Handoff saved to `.agents/handoff/YYYY-MM-DD-<topic>.md` — committed and pushed.
    > Resume on any machine: open this repo in VS Code, Claude will auto-resume from the handoff.
+
+## Parallel sessions (avoid "crossed wires")
+
+Andrés sometimes runs **two sessions at once** to keep unrelated work from confusing the
+model. Two risks, and how this workflow handles them:
+
+- **Handoff files do NOT overwrite each other** — each gets a distinct `YYYY-MM-DD-<topic>.md`.
+  Just make sure the topic slug is specific to *this* session's work, not generic.
+- **The real overwrite risk is two sessions sharing one working tree** — one session's
+  broad `git add` captures the other's uncommitted edits into the wrong commit. Defenses:
+  scoped `git add` (step 5), `git pull --rebase` before push (step 5), and ideally a
+  **separate `git worktree` per session** so each has its own working directory.
+- An agent **cannot close another running session** — sessions are isolated. To close both,
+  the user runs `/session-close` in each. Sequencing them (finish one, let it push, then
+  the other) lets the second rebase cleanly on the first.
 
 ## When No Session File Exists
 
