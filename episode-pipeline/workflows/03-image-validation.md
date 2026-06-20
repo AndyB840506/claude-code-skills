@@ -39,10 +39,15 @@ Espera la respuesta del usuario con las rutas. **No continúes sin ellas.**
 
 ---
 
-## Paso 2 — Spawn del subagent de validación
+## Paso 2 — Validar las imágenes contra las reglas estándar
 
-Lanza un agente `general-purpose` (tiene acceso a `Read`, que puede ver imágenes) con
-un prompt autocontenido que incluya:
+El agente principal puede ver imágenes con `Read` — **valida directamente tú mismo**
+leyendo las 3 imágenes y aplicando las reglas de abajo. Es lo más eficiente y respeta la
+guía de no spawnear subagentes sin necesidad (validado EP.018: 3/3 PASS leyendo directo).
+
+Spawnea un `general-purpose` con el prompt autocontenido de abajo **solo si** quieres un
+chequeo independiente (sin el sesgo del contexto que generó los prompts) o si tu contexto
+ya está muy cargado. En cualquiera de los dos modos, verifica:
 
 - Las rutas de las 3 imágenes generadas
 - Las reglas estándar a verificar (cópialas del archivo de referencia — no las

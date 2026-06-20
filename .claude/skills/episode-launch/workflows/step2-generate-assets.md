@@ -144,6 +144,16 @@ responde a la estética FIEL A LA ÉPOCA del referente — el visual debe gritar
 adolescencia", no una reinterpretación moderna. Queen con estética 70s/80s real, no
 Queen estilizado 2026.
 
+**Título del episodio en la portada (OBLIGATORIO — feedback EP.018):** los formatos
+**1:1 y 9:16** llevan un bloque de tipografía con el TÍTULO del episodio en el tercio
+superior, aparte del footer — NO basta con el `EP.0XX` del footer. Patrón validado
+(EP.017 / EP.018): Línea 1 = referente cultural en gold ultra-bold (ej. "SODA STEREO",
+"EL MUNDIAL"); Línea 2 = tagline con la keyword buscable, en blanco a un tercio del
+tamaño (ej. "EL LIDERAZGO QUE SIGUE SONANDO", "LIDERAZGO SIN TOCAR EL BALON"). El
+formato **16:9** es la excepción: usa un hook de thumbnail de 3-5 palabras (ej. "LA GIRA
+/ SIN CERATI", "EL BALON / NO ES TUYO"), no el título completo. Texto de imagen sin
+tildes; la frase con tildes va en el caption.
+
 Generate one density-first prompt for each format. Each prompt must:
 - Name the character and exact visual canon (source, era, costume)
 - State the mood / color palette

@@ -54,12 +54,18 @@ hace falta pedirle la ruta al usuario:
 
 | Show | Carpeta | Patrón de nombre |
 |---|---|---|
-| BTQ | `E:\Podcast\` | `Behind The Queue Ep.NN.mp3` (ej. `Behind The Queue Ep.16.mp3`) |
+| BTQ (nuevo) | `E:\Podcast\BTQ\EP NN\` | `BTQ EP NN.wav` (ej. `E:\Podcast\BTQ\EP 18\BTQ EP 18.wav`) — subcarpeta por episodio + .wav |
+| BTQ (viejo) | `E:\Podcast\` | `Behind The Queue Ep.NN.mp3` (ej. `Behind The Queue Ep.16.mp3`) |
 | MPD | `E:\Podcast\Mr.Putrid\` | `Mr Putrid N.mp3` (ej. `Mr Putrid 3.mp3`) |
+
+**Nota BTQ:** desde EP.018 la grabadora deja la sesión fragmentada en ~130 clips
+sueltos; Andy los consolida en `E:\Podcast\BTQ\EP NN\BTQ EP NN.wav`. Busca SIEMPRE primero
+ese archivo consolidado (.wav, subcarpeta por episodio) antes que el patrón viejo de
+`E:\Podcast\`. Los clips sueltos `02-My Vocal-*.mp3` NO son el audio a transcribir.
 
 Una vez tengas `show` y `ep_number`:
 
-1. Lista los `*.mp3` de la carpeta correspondiente (Glob o `Get-ChildItem`).
+1. Lista los `*.wav`/`*.mp3` de la carpeta correspondiente (Glob o `Get-ChildItem`).
 2. Busca el archivo cuyo nombre contenga el número del episodio (los dígitos de
    `ep_number` — ej. `EP.017` → `17`). Acepta tanto formato con ceros (`Ep.16`) como
    sin ceros (`Mr Putrid 3`).
