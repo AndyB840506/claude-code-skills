@@ -189,8 +189,16 @@ single football rests on the white touchline in front of him, JUST out of his
 reach. Behind him, a packed stadium reads as a glowing wall of golden light
 and tiny blurred crowd specks — no individual faces. The painted touchline
 glows faint gold like a line he cannot cross.
-COMPOSITION: centered square, the lone coach silhouette dead-center, the ball
-on the line in the lower third, stadium halo filling the upper two-thirds.
+COMPOSITION: centered square, the lone coach silhouette in the lower-center,
+the ball on the line in the lower third, stadium halo filling the middle, the
+TOP THIRD kept open over void black for the title typography.
+
+TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
+  TOP THIRD, centered, above the coach:
+    Line 1: "EL MUNDIAL" — huge ultra-bold condensed sans-serif, uppercase,
+            signal gold #C9A84C
+    Line 2: "LIDERAZGO SIN TOCAR EL BALON" — white, uppercase, same font,
+            one third the size of Line 1, letter-spaced
 
 FOOTER: full-width strip at the very bottom, on the void black background.
   Left: "Behind the Queue" in small white sans-serif
@@ -200,7 +208,7 @@ FOOTER: full-width strip at the very bottom, on the void black background.
 
 Accuracy checklist (verify before approving):
 - EXACTLY 1 human silhouette, zero visible faces, solid black shape + gold rim only
-- Footer text reads letter by letter: "Behind the Queue" / "EP.018" / icons
+- Title reads letter by letter "EL MUNDIAL" / "LIDERAZGO SIN TOCAR EL BALON" (no tildes); footer "Behind the Queue" / "EP.018" / icons
 - A single ball sits on the touchline just out of the coach's reach (the core metaphor)
 ```
 
@@ -225,7 +233,14 @@ wall of golden haze above him; the void-black floor with the painted gold
 line anchors the bottom.
 COMPOSITION: vertical 9:16, coach silhouette occupying the lower-center,
 tall column of golden stadium light above, generous black headroom at top
-for story text/stickers.
+for the title typography (leave room above it for story stickers).
+
+TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
+  UPPER THIRD, centered:
+    Line 1: "EL MUNDIAL" — huge ultra-bold condensed sans-serif, uppercase,
+            signal gold #C9A84C
+    Line 2: "LIDERAZGO SIN TOCAR EL BALON" — white, uppercase, same font,
+            one third the size of Line 1, letter-spaced
 
 FOOTER: full-width strip at the very bottom, on the void black background.
   Left: "Behind the Queue" in small white sans-serif
@@ -235,8 +250,8 @@ FOOTER: full-width strip at the very bottom, on the void black background.
 
 Accuracy checklist (verify before approving):
 - EXACTLY 1 human silhouette, zero visible faces, solid black shape + gold rim only
-- Footer text reads letter by letter: "Behind the Queue" / "EP.018" / icons
-- The ball on the touchline is just out of the coach's reach; clear top headroom for text
+- Title reads letter by letter "EL MUNDIAL" / "LIDERAZGO SIN TOCAR EL BALON" (no tildes); footer "Behind the Queue" / "EP.018" / icons
+- The ball on the touchline is just out of the coach's reach
 ```
 
 **Format: 16:9 (LinkedIn / miniatura YouTube)**
@@ -281,6 +296,144 @@ Accuracy checklist (verify before approving):
 letra con zoom · cero caras · sin tildes en el texto de imagen (la frase con tildes va en el
 caption) · si Flow genera la escena pero omite el texto, NO regenerar — modo edición "On this
 same image, keep everything identical and add text…".
+
+---
+
+## E · Quote Cards (16:9 · LinkedIn primario · derivable a 1:1 / 9:16)
+
+Las 4 salen del guion (validadas contra la grabación). Texto en imagen comprimido, en
+mayúsculas SIN tildes (la frase completa con tildes va en el caption). Composición split:
+mitad izquierda negro con el texto, mitad derecha escena dorada del motivo fútbol/estadio.
+Si Flow genera la escena pero ignora el texto: NO regenerar — modo edición "On this same
+image, keep everything identical and add text…".
+
+### Q1 — "Su mejor jugada ya pasó" (preparar / Bielsa)
+
+**Caption (frase completa):** "El técnico no toca el balón: todo lo que puede hacer ya lo hizo durante la semana. Dirigir una operación es lo mismo —su mejor jugada ya pasó cuando empieza el turno." — Behind the Queue, EP.018
+
+```
+Wide image, 16:9, 1920x1080px. Graphic editorial poster design — NOT photorealistic 3D.
+
+COMPOSITION: split for a wide frame —
+  RIGHT HALF (exactly right 50% of frame): a lone football head coach silhouette
+  standing inside the technical-area rectangle at kickoff, seen from behind, pure
+  black shape with thin golden rim light (#C9A84C), watching an empty pitch that
+  recedes into a wall of warm golden stadium light (#C9A84C) and haze. A single
+  ball rests on the glowing white touchline near his feet. NO visible face detail.
+  Analog film grain, halation, muted retro color grading, screen-print poster texture.
+  LEFT HALF (exactly left 50% of frame): void black #0A0A0A, reserved for the text.
+
+TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
+  LEFT HALF, vertically centered, left-aligned, bold condensed sans-serif, uppercase:
+    Line 1: "EL TECNICO NO TOCA EL BALON." — white
+    Line 2: "SU MEJOR JUGADA YA PASO" — signal gold #C9A84C, bigger
+    Line 3: "CUANDO EMPIEZA EL TURNO." — signal gold #C9A84C, bigger
+    Line 4: "BEHIND THE QUEUE · EP.018" — silver, small, letter-spaced
+
+FOOTER: full-width strip at the very bottom, on the void black background.
+  Left: "Behind the Queue" in small white sans-serif
+  Center: "EP.018" in bold signal gold #C9A84C
+  Right: small silver platform icons — Spotify and YouTube
+```
+**Checklist:** (1) 1 silueta, cero caras, balón en la línea; (2) texto letra por letra sin tildes (4 líneas); (3) mitad izquierda negro casi puro, las luces no invaden el texto.
+
+### Q2 — "Le copia el pulso" (crisis / Obdulio)
+
+**Caption (frase completa):** "En la crisis, tu equipo no te copia las palabras. Te copia el pulso. Si tú te aceleras, todos se aceleran." — Behind the Queue, EP.018
+
+```
+Wide image, 16:9, 1920x1080px. Graphic editorial poster design — NOT photorealistic 3D.
+
+COMPOSITION: split for a wide frame —
+  RIGHT HALF (exactly right 50% of frame): a single football captain silhouette
+  walking slowly, calmly, holding a ball under one arm, pure black shape with thin
+  golden rim light (#C9A84C), against a roaring stadium that reads as a wall of warm
+  golden light (#C9A84C) and haze with tiny out-of-focus crowd specks — chaos around
+  one calm figure. NO visible face detail. Analog film grain, halation, muted retro
+  color grading, screen-print poster texture.
+  LEFT HALF (exactly left 50% of frame): void black #0A0A0A, reserved for the text.
+
+TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
+  LEFT HALF, vertically centered, left-aligned, bold condensed sans-serif, uppercase:
+    Line 1: "EN LA CRISIS, SU EQUIPO" — white
+    Line 2: "NO LE COPIA LAS PALABRAS." — white
+    Line 3: "LE COPIA EL PULSO." — signal gold #C9A84C, bigger
+    Line 4: "BEHIND THE QUEUE · EP.018" — silver, small, letter-spaced
+
+FOOTER: full-width strip at the very bottom, on the void black background.
+  Left: "Behind the Queue" in small white sans-serif
+  Center: "EP.018" in bold signal gold #C9A84C
+  Right: small silver platform icons — Spotify and YouTube
+```
+**Checklist:** (1) UNA silueta caminando con el balón bajo el brazo — gesto calmo, no de hype; (2) texto letra por letra sin tildes; (3) la calma de la figura contrasta con el estadio encendido detrás.
+
+### Q3 — "En los ojos de su equipo" (Zander / termómetro)
+
+**Caption (frase completa):** "El mejor termómetro de tu liderazgo no está en el dashboard. Está en los ojos de tu equipo. Si les brillan al entrar al turno, lo estás haciendo bien." — Behind the Queue, EP.018
+
+```
+Wide image, 16:9, 1920x1080px. Graphic editorial poster design — NOT photorealistic 3D.
+
+COMPOSITION: split for a wide frame —
+  RIGHT HALF (exactly right 50% of frame): a sea of thousands of tiny warm golden
+  lights (#C9A84C) floating in darkness, out of focus, like eyes shining in a dark
+  stadium — only the points of light, no stage and no people visible. Gently denser
+  toward the center. Analog film grain, halation, muted retro color grading,
+  screen-print poster texture.
+  LEFT HALF (exactly left 50% of frame): void black #0A0A0A, reserved for the text.
+
+TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
+  LEFT HALF, vertically centered, left-aligned, bold condensed sans-serif, uppercase:
+    Line 1: "EL MEJOR TERMOMETRO" — white
+    Line 2: "DE SU LIDERAZGO NO ESTA" — white
+    Line 3: "EN EL DASHBOARD." — white
+    Line 4: "ESTA EN LOS OJOS DE SU EQUIPO." — signal gold #C9A84C, bigger
+    Line 5: "BEHIND THE QUEUE · EP.018" — silver, small, letter-spaced
+
+FOOTER: full-width strip at the very bottom, on the void black background.
+  Left: "Behind the Queue" in small white sans-serif
+  Center: "EP.018" in bold signal gold #C9A84C
+  Right: small silver platform icons — Spotify and YouTube
+```
+**Checklist:** (1) cero personas/escenario — solo las luces como ojos en la oscuridad; (2) texto letra por letra sin tildes (5 líneas); (3) la mitad izquierda negro casi puro.
+
+### Q4 — "Gana el partido sin usted" (cierre / la tesis)
+
+**Caption (frase completa):** "Tu mejor jugada como líder no la va a ver nadie aplaudir. Es el día que preparas a alguien tan bien, que gana el partido sin ti en la cancha." — Behind the Queue, EP.018
+
+```
+Wide image, 16:9, 1920x1080px. Graphic editorial poster design — NOT photorealistic 3D.
+
+COMPOSITION: split for a wide frame —
+  RIGHT HALF (exactly right 50% of frame): an EMPTY technical-area rectangle at the
+  edge of a pitch — the coach is gone. A single ball rests on the glowing white
+  touchline. Beyond it, the pitch glows under a wall of warm golden stadium light
+  (#C9A84C) and haze, as if the team is still playing and winning without him. No
+  people anywhere. Analog film grain, halation, muted retro color grading,
+  screen-print poster texture.
+  LEFT HALF (exactly left 50% of frame): void black #0A0A0A, reserved for the text.
+
+TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
+  LEFT HALF, vertically centered, left-aligned, bold condensed sans-serif, uppercase:
+    Line 1: "SU MEJOR JUGADA COMO LIDER" — white
+    Line 2: "NADIE LA VA A APLAUDIR." — white
+    Line 3: "ES PREPARAR A ALGUIEN" — signal gold #C9A84C, bigger
+    Line 4: "QUE GANE SIN USTED." — signal gold #C9A84C, bigger
+    Line 5: "BEHIND THE QUEUE · EP.018" — silver, small, letter-spaced
+
+FOOTER: full-width strip at the very bottom, on the void black background.
+  Left: "Behind the Queue" in small white sans-serif
+  Center: "EP.018" in bold signal gold #C9A84C
+  Right: small silver platform icons — Spotify and YouTube
+```
+**Checklist:** (1) área técnica VACÍA con el balón en la línea — cero personas; (2) texto letra por letra sin tildes (5 líneas); (3) la mitad izquierda negro casi puro.
+
+### Derivar cualquier quote card a 1:1 o 9:16
+Sobre la imagen aprobada, en Flow:
+```
+same image, reframe to [1:1 square / 9:16 vertical] — keep the scene on top and move
+all text below it over void black, same fonts and colors, keep the footer at the bottom
+```
 
 ---
 
