@@ -65,9 +65,9 @@ Kraken, Elkin Ramírez, el Titán, metal colombiano, rock colombiano, metal en e
 - **Tipo:** Full
 - **Título:** Kraken: el Titán del Rock Colombiano
 - **Hosts:** Andrés & Juan
-- **Duración real:** Parte 1 = 1:32:15 · Parte 2 = [PENDIENTE]
+- **Duración real:** Parte 1 = 1:32:15 · Parte 2 = 1:16:14
 - **Fecha de producción:** grabado 2026-06-13 (regrabación; la del 2026-06-12 falló)
-- **Fecha de publicación:** Parte 1 = semana del 2026-06-14 · Parte 2 = ~2026-06-20
+- **Fecha de publicación:** Parte 1 = semana del 2026-06-14 · Parte 2 = 2026-06-19
 - **Categoría Spotify:** Music / Music Commentary
 - **Idioma:** Español (Colombia)
 - **Pillar de contenido:** Banda ancla / historia del rock latino (ver regla de audiencia EP.003)
@@ -103,7 +103,35 @@ Kraken, Elkin Ramírez, el Titán, metal colombiano, rock colombiano, metal en e
 
 ## Capítulos — Parte 2 (timestamps verificados del SRT)
 ```
-[PENDIENTE — la Parte 2 se transcribe la próxima semana antes de publicar]
+00:00 — Bienvenida a la Parte 2: continuamos donde quedamos
+00:52 — Recap: 50.000 copias de metal, sin radio comercial
+01:32 — Kraken 2 (1989): los teclados y la polémica purista
+03:25 — Vestido de Cristal: el #1 que nació de esos teclados
+06:38 — La canción cruza fronteras: España, Holanda, Japón
+07:13 — Radio Garden: música latina sonando en emisoras de Japón
+09:09 — Bajar música sin internet (Napster, LimeWire, eMule)
+10:44 — Cuña: el player y los enlaces en mrputridsden.com
+13:16 — Kraken 3 (1990): Rostros Ocultos, más progresivo
+13:56 — Del Teatro Lux al Poliedro de Caracas: 20.000 personas
+16:25 — Lección: los géneros no se mantienen puros, se mantienen vivos
+19:18 — ¿Por qué le dicen el Titán a Elkin?
+22:11 — La voz: tenor y contratenor en una misma frase
+24:27 — Sabú, el baladista argentino detrás del falsete
+26:00 — Música clásica por consejo del papá
+28:30 — La única constante: Elkin de principio a fin
+32:39 — Kraken 4, Piel de Cobre (1993): raíces indígenas
+35:19 — Kraken 5, el en vivo y el Filarmónico (2006)
+38:33 — Repaso de la discografía completa
+41:02 — Kraken 6 (2016): el último álbum, grabado gravemente enfermo
+44:29 — "Nadie me dice cuándo parar": murió en su ley
+45:05 — 29 de enero de 2017: muere Elkin Ramírez en Medellín
+47:12 — El bar Aslan y la servilleta firmada
+56:27 — El legado: Masacre, Ekhymosis, La Pestilencia, IRA, Kronos
+59:21 — La ciudad que los apedreó termina condecorándolos
+01:00:12 — Kraken sigue: Roxana Restrepo y el proyecto Titán
+01:02:58 — Documentales en RTVC Play: "Huella y Camino" y "El Titán"
+01:04:43 — Recomendaciones: Vestido de Cristal, Kraken 2, Parabellum
+01:08:15 — Cierre: "Todo hombre es una historia", háganlo en su idioma
 ```
 
 ## Notas de producción

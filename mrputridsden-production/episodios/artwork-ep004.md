@@ -131,6 +131,13 @@ Prompts completos basados en el guión v4 (284467f). ⚠️ Confirmar el wording
 el audio grabado antes de publicar — si una frase salió distinta al aire, ajustar
 el texto del card a lo que realmente se dijo.
 
+> **VALIDADO contra audio real (PT2 SRT, 2026-06-19):** Q1/Q2/Q3 OK; Q3 verbatim
+> (01:08:40). **Q4 y T2 corregidos:** al aire fue "no es un OBSTÁCULO… es la materia
+> prima" (01:09:17), no "debilidad" → texto ya actualizado abajo. ⚠️ **REGENERAR en
+> Flow las imágenes Q4 (16:9) y T2 (9:16)** — las generadas el 2026-06-12 aún dicen
+> "debilidad". **Q5:** año de nacimiento **1962 confirmado por Andrés** (2026-06-19);
+> el card queda "1962–2017".
+
 ### Q1 — Las Cartas de Noruega
 
 ```
@@ -244,7 +251,7 @@ TYPOGRAPHY — bottom third, centered horizontally, small-medium size:
   Line 1 (silver #A8A8A8, small uppercase tracked): "MR. PUTRID'S DEN · EP.004"
   Line 2 (white bold condensed): "Una voz entrenada con Judas Priest, Led Zeppelin y Dio."
   Line 3 (same style): "Y con las baladas que sonaban en la casa."
-  Line 4 (white italic, smaller): "Eso no era una debilidad. Era la materia prima."
+  Line 4 (white italic, smaller): "Eso no era un obstáculo. Era la materia prima."
   Use exactly these words, no changes.
 
 FOOTER BAR: solid #1a1a1a strip at very bottom, full width.
@@ -392,7 +399,7 @@ TYPOGRAPHY:
 
   BOTTOM THIRD, centered, over the dark gradient:
     Line 1 (white bold condensed): "Lo que usted es"
-    Line 2 (same style): "no es una debilidad."
+    Line 2 (same style): "no es un obstáculo."
     Line 3 (same style): "Es la materia prima."
     Line 4 (silver #A8A8A8, small italic): "— Mr. Putrid's Den, EP.004"
     Line 5 (silver #A8A8A8, small uppercase tracked): "YA DISPONIBLE · SPOTIFY · AMAZON · APPLE"
