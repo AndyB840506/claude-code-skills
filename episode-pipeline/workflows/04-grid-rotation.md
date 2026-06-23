@@ -24,6 +24,16 @@ La lógica de rotación es idéntica en ambos sitios. Lo único que cambia es el
   Spotify (cierre de Stage B en `02-assets.md`) no se resolvió todavía — no asumas que
   ya se resolvió solo porque la sesión sigue corriendo.
 
+**OJO — también revisa la URL del episodio que ENTRA al grid (el anterior al que se
+lanza).** La card que se agrega NO es la del episodio que se lanza, es la del anterior
+(que estaba en circulación, ver Paso 2). Su URL de Spotify puede estar `pending` /
+sin registrar aunque la del episodio nuevo ya esté en vivo — pasó con EP.017 el
+2026-06-22 (su URL nunca se anotó desde su propio lanzamiento). Si el `spotify_url`
+del episodio que entra no está registrado en su launch file / roadmap, pídela al
+usuario (verificada desde el browser, regla EP.016) **antes** de tocar el markup —
+no pongas "pending" en un `href`. Al obtenerla, propágala también al launch file +
+roadmap de ESE episodio, no solo úsala en la card.
+
 ---
 
 ## Paso 1 — Leer el grid actual

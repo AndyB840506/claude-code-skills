@@ -16,6 +16,12 @@ Lee `c:\Users\andre\.claude\skills\.vercel\repo.json`. Para el proyecto que se v
 
 Si `directory` es `"."` o no coincide con el folder esperado, **STOP** — reporta el problema, no crees el flag, y pregunta al usuario si corrige el mapeo (no lo edites sin confirmacion si ya esta apuntado a un directorio especifico distinto al esperado, podria ser intencional).
 
+**Maquina nueva / sin link (post cambio de PC):** si `repo.json` (y/o el `.vercel/` del proyecto) NO existe, no es un STOP — es setup. El `.vercel/` esta gitignored, asi que se pierde con cada cambio de PC. Ruta de recuperacion (verificada 2026-06-22, deploy EP.018 BTQ en portatil):
+1. Si falta el CLI: `npm install -g vercel`. Si falta auth: el usuario corre `vercel login` (interactivo, su cuenta).
+2. Saca el `projectId`: `vercel project inspect <proyecto> --scope <team>` (ej. `vercel project inspect website --scope mrputridsden`).
+3. Saca el `orgId` (team id `team_...`): token en `C:\Users\andre\AppData\Roaming\xdg.data\com.vercel.cli\auth.json` -> `Invoke-RestMethod -Uri https://api.vercel.com/v2/teams -Headers @{Authorization="Bearer $token"}`. (El `vercel teams ls` muestra el slug, no el `team_...`.)
+4. Escribe `<dir>/.vercel/project.json` a mano: `{"projectId":...,"orgId":...,"projectName":...}`. **No uses `vercel link`** (corrompe el repo.json del monorepo, ver pitfall abajo). Verifica que NO se creo un `.vercel` en la raiz y que sigue gitignored.
+
 **Pitfall conocido:** nunca corras `vercel link --project X --yes` desde un subdirectorio de este monorepo — puede agregar una entrada corrupta a `.vercel/repo.json` (root) con `"directory": "."` para ese proyecto, causando que deploys posteriores suban el repo completo en vez del subdirectorio (esto le paso a BTQ el 2026-06-10). Si un proyecto necesita su propio link, crea `.vercel/project.json` directamente dentro de ese subdirectorio con el formato `{"projectId":..., "orgId":..., "projectName":...}` (ver `btq-production/website/.vercel/project.json` o `lucca-tech-web/.vercel/project.json` como ejemplo).
 
 ## Paso 3 — Verificar el directorio de deploy
