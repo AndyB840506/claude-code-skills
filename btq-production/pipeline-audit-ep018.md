@@ -35,3 +35,21 @@
 - Archivos generados: seccion E de btq-production/launch-assets/EP018-mundial-launch.md (Q1 preparar/Bielsa, Q2 Obdulio/pulso, Q3 Zander/ojos, Q4 cierre/tesis) — 16:9 split-scene, derivables a 1:1/9:16
 - Pendiente: Andy genera las 4 en Flow y pasa rutas (revision visual rapida, no requiere subagent de Stage 3)
 - Resultado: OK
+
+## Stage 4 — Rotacion de grid
+- Que se hizo: grid BTQ rotado de [013, 014, 015, 016] a [014, 015, 016, 017]
+- Episodio que entra: EP.017 (Soda Stereo/Cerati, URL https://open.spotify.com/episode/0LJ22lLMgfWh3wLbbgNhxC) | Episodio que sale: EP.013
+- EP.018 NO entra al grid (su propio embed/link ya lo cubre)
+- Archivo modificado: btq-production/website/index.html
+- Propagacion: URL EP.017 -> launch file EP.017 (linea 5 + 3 CTAs) + roadmap; URL EP.018 -> launch file EP.018 (linea 5 + 3 CTAs) + roadmap
+- Nota: la URL en vivo del EP.017 nunca se habia registrado (figuraba pending desde el 14-jun); Andy la confirmo desde el browser el 2026-06-22
+- Resultado: OK
+
+## Stage 5 — Deploy + verificacion
+- Entorno: portatil nuevo (sin E:, sin setup de deploy). Se instalo Vercel CLI 54.15.0, Andy hizo login (team mrputridsden), y se recreo el link a mano: btq-production/website/.vercel/project.json (projectId prj_SIXnUYNlwet3DbAVlKpDrV353f3U, orgId team_hF19vFjfS0vMqSqSM4W8YQCy) -- NO se uso vercel link (evita corromper repo.json del monorepo); no se creo .vercel en la raiz; .vercel gitignored
+- Preflight: PASS (proyecto website, dir btq-production/website, vercel.json valido sin ignoreCommand, baseline prod HTTP 200)
+- Gate de aprobacion: aprobado por Andy ("si")
+- Deploy: vercel --prod --yes --cwd btq-production/website (NODE_OPTIONS=--use-system-ca) -> dpl_AvNRVRptjCCPbXxVTYF6jYyMVftD, aliased a behind-thequeue.com
+- Verificacion HTTP: https://behind-thequeue.com -> HTTP 200; grid en vivo confirma EP.017 PRESENT, EP.013 GONE, ref "Soda Stereo" PRESENT
+- Verificacion Spotify: PASS (informativa) -- EP.018 confirmado en vivo por Andy desde el browser; URL https://open.spotify.com/episode/6PC4QIDiAwmVZJ1BV5PYcx resuelve
+- Resultado: OK -- episodio publicado y verificado en vivo

@@ -2,7 +2,7 @@
 
 **Generado:** 2026-06-19 (vie, día de grabación) · Laswell / episode-launch
 **Live:** domingo 21-jun 8:00 PM (hora Colombia)
-**Spotify URL:** pending — actualizar al publicar (ojo regla EP.016: si hay re-upload, la URL puede cambiar; pegar la URL en vivo desde el browser antes de propagarla)
+**Spotify URL:** https://open.spotify.com/episode/6PC4QIDiAwmVZJ1BV5PYcx (en vivo, confirmada por Andy 2026-06-22)
 **Fuentes:** guion [EP018-mundial-guion.html](EP018-mundial-guion.html) · SRT `E:\Transcriptor\transcripciones\BTQ EP 18.srt`
 
 ---
@@ -84,12 +84,12 @@ operaciones, Mundial, fútbol, Behind the Queue, podcast en español, LATAM, Col
 | Sáb 20 (calentamiento) | Story | Clip/foto real del setup + sticker countdown a domingo 8 PM |
 | Sáb 20 | TikTok | "Editando el episodio de mañana 👀 pista: Mundial + liderazgo. #podcast #bts #liderazgo" |
 | **Dom 21 · 8:00 PM (lanzamiento)** | LinkedIn | *(prioritaria — link de Spotify en PRIMER COMENTARIO)* "Durante 90 minutos, el director técnico no puede tocar el balón. Puede gritar, puede señalar, puede caminar como león enjaulado en su rectángulo pintado. Pero el balón no lo escucha. Y sin embargo, cuando el equipo pierde, el que rueda es él. Hay una versión de esto en tu piso de operaciones todos los lunes: tú preparas, tú eliges quién entra, tú ajustas cuando la cosa se tuerce… y después te toca lo más difícil del mundo: mirar, aguantarte y confiar. Hoy estrenamos un episodio sobre liderar cuando ya no depende de ti —con Bielsa, Van Gaal, el Maracanazo y un golazo de James de por medio. 👇 Link en el primer comentario. Y dime: ¿cuál es ese balón que no sueltas porque 'te sale más rápido'? #Liderazgo #BPO #ContactCenter #BehindTheQueue #Operaciones" |
-| Dom 21 · 8 PM | Primer comentario (LinkedIn) | "🎧 Episodio completo aquí: [URL SPOTIFY EP.018]" |
+| Dom 21 · 8 PM | Primer comentario (LinkedIn) | "🎧 Episodio completo aquí: https://open.spotify.com/episode/6PC4QIDiAwmVZJ1BV5PYcx" |
 | Dom 21 · 8 PM (lanzamiento) | Instagram / Facebook | "🎙️ NUEVO EPISODIO — El Mundial: liderazgo cuando no puedes tocar el balón. El técnico no patea, el director de orquesta no suena, y tú no atiendes la llamada… y aun así, de los tres depende que el equipo gane. Link en bio 🔗 Y cuéntame: ¿cuál es el balón que TÚ no sueltas? #BehindTheQueue #PodcastEnEspañol #NuevoEpisodio #Mundial #Fútbol #Liderazgo #BPO #ContactCenter #ServicioAlCliente #Operaciones #LATAM #Colombia #CustomerExperience" |
 | Dom 21 · 8 PM | Story (3) | 1) portada del episodio · 2) sticker link directo a Spotify · 3) pregunta abierta "¿cuál es tu balón?" |
 | Dom 21 · 8 PM | TikTok | "Van Gaal cambió el arquero SOLO para los penaltis. Y ganó. Por qué eso es liderazgo ⚽ Nuevo episodio. #liderazgo #mundial #bpo" |
 | **Lun 22 · 7–8 AM (pico de escucha)** | LinkedIn | *(arrancando la semana — link en primer comentario)* "Arrancando la semana con una pregunta para tu piso: cuando entre la llamada más difícil hoy, ¿tu reflejo va a ser quitársela a tu agente y resolverla tú… o aguantarte y dejar que aprenda a jugarla? En el episodio de ayer lo llamo 'la regla del balón'. El técnico que salta a la cancha a patear el penalti es expulsado. En tu operación nadie te expulsa —pero el costo se cobra el día que no estás. 🎧 Episodio en el primer comentario. #Liderazgo #BPO #ContactCenter #BehindTheQueue #Delegar" |
-| Lun 22 | Primer comentario | "🎧 'El Mundial: liderazgo cuando no puedes tocar el balón' — [URL SPOTIFY EP.018]" |
+| Lun 22 | Primer comentario | "🎧 'El Mundial: liderazgo cuando no puedes tocar el balón' — https://open.spotify.com/episode/6PC4QIDiAwmVZJ1BV5PYcx" |
 | **Mar 23 (refuerzo)** | LinkedIn | *(quote card — link en primer comentario)* "'En la crisis, tu equipo no te copia las palabras. Te copia el pulso. Si tú te aceleras, todos se aceleran.' Cuando Brasil le metió el gol a Uruguay en el Maracanazo, con 200.000 personas gritando, Obdulio Varela hizo lo contrario a lo esperado: agarró el balón y caminó despacio. Le bajó la temperatura al equipo para que volviera a pensar. ¿Qué pulso transmites tú cuando se cae el sistema un lunes de pico? 🎧 Episodio completo en el primer comentario. #Liderazgo #BehindTheQueue #BPO #ContactCenter #Operaciones" |
 | Mar 23 (refuerzo) | Instagram / Facebook | *(quote card)* "El líder que en plena crisis transmite pánico, lo multiplica por 12. El que respira y camina despacio, le devuelve a su gente la cabeza fría. 🎙️ EP.18 disponible — link en bio. ¿Cuál de los dos eres en un lunes de pico? #BehindTheQueue #PodcastEnEspañol #Liderazgo #Mundial #Fútbol #BPO #ContactCenter #ServicioAlCliente #Operaciones #LATAM #Colombia #CustomerExperience #NuevoEpisodio" |
 | Mar 23 | TikTok | "El truco de Obdulio en el Maracanazo: cuando todo se cae, camina despacio. #liderazgo #futbol #podcast" |
@@ -143,7 +143,7 @@ CONTENIDO DEL EPISODIO
 
 ENCUENTRA BTQ EN
 🌐 behind-thequeue.com
-🎧 Spotify: [URL SPOTIFY EP.018]
+🎧 Spotify: https://open.spotify.com/episode/6PC4QIDiAwmVZJ1BV5PYcx
 📩 andy@behind-thequeue.com
 💼 LinkedIn: Andrés Bermúdez Rodríguez · linkedin.com/company/behind-the-queue
 📸 Instagram: @behindthequeue84

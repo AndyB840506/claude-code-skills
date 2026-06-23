@@ -2,7 +2,7 @@
 
 **Generado:** 2026-06-13 (sáb, día de grabación) · Laswell / episode-launch
 **Live:** domingo 14-jun 8:00 PM (hora Colombia)
-**Spotify URL:** pending — actualizar al publicar (ojo regla EP.016: si hay re-upload, la URL puede cambiar; pegar la URL en vivo desde el browser antes de propagarla)
+**Spotify URL:** https://open.spotify.com/episode/0LJ22lLMgfWh3wLbbgNhxC (en vivo, confirmada por Andy 2026-06-22)
 **Fuentes:** guion [EP017-cerati-guion.html](EP017-cerati-guion.html) · SRT `E:\Transcriptor\transcripciones\BTQ EP 17.srt` · artwork [EP017-cerati-artwork.md](EP017-cerati-artwork.md)
 
 ---
@@ -88,12 +88,12 @@ Behind the Queue, podcast en español, LATAM, Colombia
 | Sáb 13 (calentamiento) | Story | Foto/clip real del setup de grabación + sticker countdown a domingo 8 PM |
 | Sáb 13 | TikTok | "Grabando el episodio de mañana 👀 pista: rock en español + liderazgo. #podcast #bts #liderazgo" |
 | **Dom 14 · 8:00 PM (lanzamiento)** | LinkedIn | *(prioritaria — link de Spotify en PRIMER COMENTARIO)* "En 1990 Soda Stereo tenía la fórmula perfecta: su disco más vendido, el público rendido. Y justo ahí, Cerati la rompió. Grabó Dynamo —el disco que nadie le pidió y que partió en dos a su público. Treinta años después, la crítica lo señala como el momento en que dejaron de ser 'una banda exitosa' para ser 'una banda que importaba'. Hay una versión de esto en tu piso de operaciones: ese guion, ese flujo, esa métrica que 'convierte bien' y que por eso nadie cuestiona. El líder que espera a que algo se rompa para cambiarlo, ya llegó tarde. Hoy estrenamos un episodio sobre cambiar a tiempo, cerrar bien y construir algo que siga sonando cuando tú ya no estés. 👇 Link en el primer comentario. Y dime: ¿qué de lo que construiste seguiría funcionando si faltaras tres meses sin aviso? #Liderazgo #BPO #ContactCenter #BehindTheQueue #Operaciones" |
-| Dom 14 · 8 PM | Primer comentario (LinkedIn) | "🎧 Episodio completo aquí: [URL SPOTIFY EP.017]" |
+| Dom 14 · 8 PM | Primer comentario (LinkedIn) | "🎧 Episodio completo aquí: https://open.spotify.com/episode/0LJ22lLMgfWh3wLbbgNhxC" |
 | Dom 14 · 8 PM (lanzamiento) | Instagram / Facebook | "🎙️ NUEVO EPISODIO — Soda Stereo: el liderazgo que sigue sonando cuando ya no estás. La historia de Cerati como espejo de una pregunta que todo líder de operaciones evita: ¿qué dejas construido para cuando ya no estés? Link en bio 🔗 Y cuéntame: ¿qué de lo que construiste sigue sonando sin ti? #BehindTheQueue #PodcastEnEspañol #NuevoEpisodio #SodaStereo #Cerati #Liderazgo #BPO #ContactCenter #ServicioAlCliente #Operaciones #LATAM #Colombia #CustomerExperience" |
 | Dom 14 · 8 PM | Story (3) | 1) portada del episodio · 2) sticker link directo a Spotify · 3) pregunta abierta "¿qué sigue sonando sin ti?" |
 | Dom 14 · 8 PM | TikTok | "Soda Stereo hizo una gira SIN Cerati… y llenó estadios. Por qué eso es liderazgo 🎤 Nuevo episodio. #liderazgo #sodastereo #bpo" |
 | **Lun 15 · 7–8 AM (pico de escucha)** | LinkedIn | *(arrancando la semana — link en primer comentario)* "Arrancando la semana con una sola pregunta para tu piso de operaciones: ese proceso que llevas tres años usando porque 'convierte bien'… ¿sigue ahí porque es lo correcto, o porque nadie se ha detenido a cuestionarlo? En el episodio de ayer la llamo 'la pregunta de los viernes'. Pruébala esta semana —antes de que una crisis te obligue a revisarlo con afán. 🎧 Episodio en el primer comentario. #Liderazgo #BPO #ContactCenter #BehindTheQueue #GestiónDelCambio" |
-| Lun 15 | Primer comentario | "🎧 'Soda Stereo: el liderazgo que sigue sonando' — [URL SPOTIFY EP.017]" |
+| Lun 15 | Primer comentario | "🎧 'Soda Stereo: el liderazgo que sigue sonando' — https://open.spotify.com/episode/0LJ22lLMgfWh3wLbbgNhxC" |
 | **Mar 16 (refuerzo)** | LinkedIn | *(quote card Q1 — link en primer comentario)* "'El legado no se mide en cuánto tiempo estuviste presente. Se mide en cuánto tiempo sigue funcionando, sin ti, lo que dejaste construido.' Soda Stereo salió de gira en 2020 sin Cerati —arrancó en El Campín, Bogotá, ante 30.000 personas— y llenó estadios. Lo que él construyó no era su presencia: era algo que cualquier voz podía encender. ¿Tu operación está construida así? 🎧 Episodio completo en el primer comentario. #Liderazgo #Legado #BehindTheQueue #BPO #ContactCenter" |
 | Mar 16 (refuerzo) | Instagram / Facebook | *(quote card Q1 o Q4)* "El éxito necesita que estés presente. El legado sigue funcionando cuando ya te fuiste. 🎙️ EP.17 disponible — link en bio. ¿Qué estás construyendo: éxito o legado? #BehindTheQueue #PodcastEnEspañol #Liderazgo #Legado #SodaStereo #Cerati #BPO #ContactCenter #ServicioAlCliente #Operaciones #LATAM #Colombia #CustomerExperience #NuevoEpisodio" |
 | Mar 16 | TikTok | "'Era algo que cualquier voz podía encender.' La gira de Soda Stereo sin Cerati explica qué es el legado. #liderazgo #legado #podcast" |
@@ -143,7 +143,7 @@ CONTENIDO DEL EPISODIO
 
 ENCUENTRA BTQ EN
 🌐 behind-thequeue.com
-🎧 Spotify: [URL SPOTIFY EP.017]
+🎧 Spotify: https://open.spotify.com/episode/0LJ22lLMgfWh3wLbbgNhxC
 📩 andy@behind-thequeue.com
 💼 LinkedIn: Andrés Bermúdez Rodríguez · linkedin.com/company/behind-the-queue
 📸 Instagram: @behindthequeue84
