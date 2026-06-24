@@ -1,6 +1,38 @@
-# Design Guide — Animations, HTML Rules & Visual Patterns
+# Design Guide — Art Direction First, then Patterns
 
-Apply these patterns to every generated page. They come from the instagram-web kit and are proven to produce professional, engaging results.
+These rules are a **TOOLKIT, not a checklist.** Art direction (Rule 0) decides which patterns apply. Most pages should use only a few of the mechanical patterns below — **stacking all of them is exactly what produces generic, interchangeable "AI-looking" pages.**
+
+---
+
+## Rule 0 — Art direction is mandatory and comes FIRST (non-negotiable)
+
+Before writing any HTML, commit to a distinctive design concept. A page that skips this and just stacks the defaults (centered hero + 3 feature cards + alternating backgrounds + count-up stats + parallax + rotating gradient ring) will look like every other AI site — that is a **FAIL**, not a deliverable.
+
+### Process (every page, no exceptions)
+1. **Get ONE real reference first.** Ask the user for one Awwwards / Dribbble / site they admire. One concrete reference beats three rounds of guessing. If they have none, pick a clear tone (Rule 8) and state it out loud before coding.
+2. **Commit to a concept:** tone (Rule 8) + a layout *architecture* + one signature idea. Write it down first.
+3. **Design the layout to serve the concept** — do not reach for the default skeleton. Hero shape, section order, and grids must follow the concept.
+4. **Run the anti-generic checklist below before declaring it done.**
+
+### Banned by default — use ONLY if the chosen concept genuinely calls for it
+- ❌ Centered hero with a big gradient + two buttons
+- ❌ A row of 3 identical feature cards
+- ❌ Auto-rotating carousel / slider
+- ❌ Rotating conic/hue gradient ring around a photo (Rule 9)
+- ❌ Alternating white / light-grey / white section backgrounds
+- ❌ Inter / Roboto / Arial / Helvetica / Space Grotesk as the display font
+- ❌ Parallax hero + count-up stats applied by reflex on every page
+- ❌ Emoji used as icons (use line SVGs)
+
+### Anti-generic checklist — must pass before delivery
+- [ ] Committed to a named concept + anchored to one real reference?
+- [ ] Layout is asymmetric / editorial / unexpected — NOT centered-hero-then-uniform-card-grid?
+- [ ] Display type is oversized and distinctive (clamp up to 5–11rem), not 2–3rem Inter?
+- [ ] One signature moment a stock template wouldn't have?
+- [ ] Avoided every banned item above (or can justify each one I kept)?
+- [ ] Motion is intentional and concept-driven — not fade-up on everything?
+
+If you can't tick these, it isn't done. Everything below (Rules 1–17) is how to execute the concept — not a sequence to apply wholesale.
 
 ---
 
@@ -22,6 +54,8 @@ Every generated file must be a **single, self-contained HTML file**:
 - Framework dependencies (React, Vue, Angular)
 
 **Why:** A self-contained file works offline, deploys with one drag-and-drop, and never breaks due to missing dependencies.
+
+> **Premium-tier exception:** when the brief is explicitly *ultra-premium / agency-grade*, external CDN libs (GSAP/ScrollTrigger/Lenis) are allowed — see **Rule 18**. Standard pages stay self-contained.
 
 ---
 
@@ -695,3 +729,70 @@ premium upgrade changes the ARCHITECTURE:
 
 Fastest way to lock direction: ask the user for ONE concrete reference (Awwwards /
 Dribbble). One real reference beats three rounds of guessing.
+
+---
+
+## Rule 18 — Premium / agency tier (when "ultra-premium" is the brief)
+
+When the user explicitly wants an **agency-grade, ultra-premium, "break the mold"** page
+(not a standard business/portfolio site), the flat single-file recipe is not enough —
+fade-up-on-scroll + Google Fonts is exactly what reads as "AI-generated." Promote to this
+tier. **This is opt-in** — only for pages where distinctiveness is the whole point. Standard
+pages stay on Rule 1's self-contained recipe.
+
+> ### ⚠️ This is a TECHNIQUE tier, not a LOOK. Do not copy-paste it.
+> The BTQ liner-notes page (black + gold, Boska serif, fbm gold shader, vinyl/record metaphor)
+> is **one expression** of this tier — it is **not the template**. Cloning that exact palette,
+> font, shader, and metaphor onto the next page produces a *new* generic clone, which is the
+> very failure Rule 0 exists to prevent. **Always re-run Rule 0 first:** the page's *type*,
+> brand, and one real reference decide the concept (tone, palette, type, the signature metaphor
+> and what the background field actually *is*). Rule 18 only supplies the **class of capabilities**
+> — a reactive global field, momentum scroll, scrubbed motion, tactile feedback — to *express*
+> that concept. The capabilities endure; the look is rebuilt every time.
+>
+> **Adapt by page type, e.g.:** a fintech/SaaS page → the "reactive field" might be a precise
+> data-grid/particle mesh in its brand color, type a clean grotesk, motion crisp and snappy.
+> A restaurant → warm film-grain photography parallax, a serif with appetite, slow dissolves.
+> An events page → kinetic typography + a strobe/pulse field. Same *engine*, different *vehicle*.
+> If two pages from this tier could swap palettes and fonts and look interchangeable, the concept
+> step was skipped.
+
+### What separates premium from "nice template"
+The gap is almost never *more sections* — it's **continuous, reactive motion + a signature
+moment + non-default type.** The page should feel alive *after* the hero, not just during it.
+
+### The stack that works (validated on the BTQ liner-notes page)
+1. **A global reactive background, not a hero-only one.** A `position:fixed` WebGL canvas
+   (`z-index:0`, `pointer-events:none`) behind the WHOLE page — a raw fragment shader
+   (fbm noise, brand colors) reacting to `uTime` + an eased pointer. Body is `background:transparent`,
+   the dark base color sits on `<html>` so it degrades cleanly. Putting atmosphere only behind
+   the hero is the #1 reason "everything after the scroll feels dead."
+2. **Momentum scroll.** Lenis with `smoothWheel:true` **and `syncTouch:true`** — touch must feel
+   inertial, not the dry native scroll. Drive `ScrollTrigger.update` from Lenis; run via
+   `gsap.ticker` with `lagSmoothing(0)`.
+3. **Scrubbed, concept-driven motion — not uniform fade-up.** GSAP ScrollTrigger: one pinned
+   kinetic hero moment (type splitting/scaling on scrub) + gentle scrubbed parallax on the
+   lower half (drifting numerals, scaling pull-quote, drawing section rules) so nothing sits static.
+4. **Tactile feedback.** Click/tap spawns a feedback gesture — a DOM ripple at the point AND a
+   pulse fed into the shader at that coordinate (decaying uniform). Use `pointerdown`/`pointermove`
+   (covers mouse + finger), not `mousedown`/`mousemove`.
+5. **Non-default type.** Source from **Fontshare** (Boska, Satoshi, Clash Display, General Sans…)
+   or another non-Google foundry — sidesteps the Inter/Roboto/Fraunces "AI tell." Oversized display
+   (clamp up to ~11–15rem).
+6. **Custom cursor** behind `@media (pointer:fine)` only — never on touch.
+
+### Rule 1 exception (premium tier only)
+External CDN libraries **are allowed** here (GSAP, ScrollTrigger, Lenis via jsdelivr) — the
+self-contained constraint is relaxed because the motion quality is the deliverable. Everything
+else (CSS, shaders, fonts link) still lives in the one file.
+
+### Non-negotiable guardrails (still apply)
+- Everything degrades: wrap GSAP/Lenis in `if (window.gsap && window.ScrollTrigger && !reduce)`;
+  the WebGL IIFE must `canvas.remove()` on context/compile/link failure → CSS background shows.
+  No JS = clean static editorial layout, never a broken page.
+- Full `prefers-reduced-motion` branch: kill scrub/pin, ripple `display:none`, shader draws one frame.
+- Passive listeners; cap `devicePixelRatio` (~1.5) in the shader; `will-change` only on animated nodes.
+
+**Tell, not template:** the goal is that *we* are the differentiator. If the page could be
+swapped with another AI page by changing the logo, it failed Rule 0 — this tier is how you make
+that impossible.

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Behind the Queue — Liner Notes · Podcast de liderazgo y cultura pop</title>
+  <meta name="description" content="Podcast en español para líderes de BPO y Contact Center. Cultura pop, datos reales y lecciones de liderazgo. Conducido por Andy. Nuevo episodio cada semana.">
+  <link rel="canonical" href="https://behind-thequeue.com/">
+
+  <meta property="og:title" content="Behind the Queue">
+  <meta property="og:description" content="Podcast en español para líderes de BPO y Contact Center. Cultura pop, datos reales y lecciones aplicables hoy.">
+  <meta property="og:url" content="https://behind-thequeue.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://behind-thequeue.com/og-image.png">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://behind-thequeue.com/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PodcastSeries",
+    "name": "Behind the Queue",
+    "description": "Podcast en español para líderes de BPO y Contact Center. Cultura pop, datos reales y lecciones aplicables hoy.",
+    "url": "https://behind-thequeue.com/",
+    "webFeed": "https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP",
+    "author": { "@type": "Person", "name": "Andrés Bermúdez Rodríguez" },
+    "inLanguage": "es"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fontshare, not the usual Google suspects: Boska (high-contrast editorial serif) + Satoshi (clean grotesk) -->
+  <link href="https://api.fontshare.com/v2/css?f[]=boska@300,400,500,700,900&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    :root{
+      --bg:#080806;
+      --bg-2:#100F0C;
+      --ink:#F4EFE5;
+      --body:#ADA593;          /* AA on dark */
+      --faint:#6E6860;         /* decorative labels only */
+      --gold:#C9A84C;
+      --gold-hi:#E7CB7C;
+      --gold-dim:rgba(201,168,76,.08);
+      --line:rgba(244,239,229,.09);
+      --line-2:rgba(244,239,229,.16);
+      --disp:'Boska',Georgia,'Times New Roman',serif;
+      --body-f:'Satoshi',system-ui,sans-serif;
+      --mono:'Satoshi',system-ui,sans-serif;
+    }
+
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;background:var(--bg)}
+    body{
+      background:transparent;color:var(--ink);
+      font-family:var(--body-f);
+      line-height:1.65;overflow-x:hidden;position:relative;
+    }
+    ::selection{background:var(--gold);color:var(--bg)}
+    ::-webkit-scrollbar{width:3px}
+    ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:var(--gold)}
+    a{color:inherit}
+
+    /* film grain — the "pressed vinyl / print" texture */
+    .grain{
+      position:fixed;inset:0;z-index:3;pointer-events:none;opacity:.05;
+      mix-blend-mode:overlay;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .wrap{max-width:1180px;margin:0 auto;padding:0 44px}
+
+    /* mono liner-notes meta voice */
+    .meta{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+    .meta b{color:var(--gold);font-weight:500}
+
+    /* ── TOP BAR ── */
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:50;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:20px 44px;transition:all .35s ease;
+      mix-blend-mode:difference;
+    }
+    header.docked{
+      mix-blend-mode:normal;background:rgba(8,8,6,.82);
+      backdrop-filter:blur(16px);padding:14px 44px;border-bottom:1px solid var(--line);
+    }
+    .cat{font-family:var(--disp);font-size:1.05rem;letter-spacing:.22em;color:var(--ink);text-decoration:none}
+    .cat i{color:var(--gold);font-style:normal}
+    .top-mid{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);opacity:.7}
+    .onair{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+    .onair .led{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:blink 1.8s ease-in-out infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+    @media(max-width:760px){.top-mid{display:none}header,header.docked{padding-left:22px;padding-right:22px}}
+
+    /* ── MASTHEAD ── */
+    .mast{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;padding:120px 44px 60px}
+    .mast::after{content:'';position:absolute;left:0;right:0;bottom:0;height:40vh;background:radial-gradient(120% 100% at 20% 100%,var(--gold-dim),transparent 70%);pointer-events:none}
+    .mast-kicker{display:flex;gap:20px;align-items:center;margin-bottom:30px;flex-wrap:wrap}
+    .mast-kicker .rule{width:60px;height:1px;background:var(--gold)}
+    .title{position:relative;z-index:2}
+    .title .ln{
+      display:block;font-family:var(--disp);
+      font-size:clamp(4.2rem,18vw,15.5rem);line-height:.82;letter-spacing:.005em;
+      color:var(--ink);will-change:transform;
+    }
+    .title .ln.two{color:transparent;-webkit-text-stroke:1.4px var(--gold);text-stroke:1.4px var(--gold);padding-left:.12em}
+    .title .ln.three{padding-left:.04em}
+    .mast-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-top:48px;position:relative;z-index:2;flex-wrap:wrap}
+    .mast-line{font-family:var(--disp);font-size:clamp(1.15rem,2vw,1.55rem);font-weight:400;font-style:italic;color:var(--body);max-width:30ch;line-height:1.45}
+    .mast-line b{color:var(--ink);font-style:normal;font-weight:500}
+    .latest{
+      display:inline-flex;align-items:center;gap:14px;text-decoration:none;
+      border:1px solid var(--line-2);border-radius:2px;padding:12px 18px;transition:.25s;flex-shrink:0;
+    }
+    .latest:hover{border-color:var(--gold);background:var(--gold-dim)}
+    .latest .lt-n{font-family:var(--disp);font-size:1.9rem;line-height:.8;color:var(--gold)}
+    .latest .lt-t{font-size:.8rem;color:var(--ink)}
+    .latest .lt-k{font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:3px}
+    .latest .lt-a{color:var(--gold);font-size:1.1rem}
+
+    /* ── SEASON REFERENCES (static editorial index) ── */
+    .refs{padding:96px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .refs-kick{font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+    .refs-line{font-family:var(--disp);font-weight:500;font-size:clamp(1.9rem,5.4vw,4.6rem);line-height:1.08;letter-spacing:-.015em;color:var(--ink);max-width:20ch}
+    .refs-line span{font-style:italic;color:var(--gold)}
+
+    /* ── WebGL atmosphere — now a GLOBAL reactive field behind the WHOLE page ── */
+    #atmo{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block;pointer-events:none}
+    .mast-kicker{position:relative;z-index:2}
+
+    /* ── SECTION SHELL ── */
+    section{position:relative;z-index:2}
+    .sec-tag{display:flex;align-items:center;gap:16px;margin-bottom:40px}
+    .sec-tag .n{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+    .sec-tag .bar{flex:1;height:1px;background:var(--line)}
+
+    /* ── PREMISE ── */
+    .premise{padding:120px 0;border-bottom:1px solid var(--line)}
+    .premise-grid{display:grid;grid-template-columns:1.55fr .9fr;gap:72px;align-items:start}
+    .premise h2{font-family:var(--disp);font-weight:400;font-size:clamp(2.1rem,4.4vw,3.7rem);line-height:1.08;letter-spacing:-.01em;margin-bottom:34px}
+    .premise h2 em{font-style:italic;color:var(--gold)}
+    .premise p{color:var(--body);font-size:1.02rem;line-height:1.95;margin-bottom:20px;max-width:54ch}
+    .premise p b{color:var(--ink);font-weight:500}
+    /* liner credits sidebar */
+    .credits{border:1px solid var(--line);border-radius:3px}
+    .credits .row{display:flex;justify-content:space-between;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line)}
+    .credits .row:last-child{border-bottom:none}
+    .credits .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+    .credits .v{font-size:.84rem;color:var(--ink);text-align:right;font-weight:500}
+    .credits .v.gold{color:var(--gold)}
+
+    /* ── TRACKLIST ── */
+    .side{padding:118px 0;position:relative}
+    .side-rot{position:absolute;left:-4px;top:118px;font-family:var(--mono);font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--faint);writing-mode:vertical-rl;transform:rotate(180deg)}
+    .track{
+      display:grid;grid-template-columns:130px 1fr auto;gap:36px;align-items:center;
+      padding:30px 24px 30px 0;border-bottom:1px solid var(--line);
+      text-decoration:none;color:inherit;position:relative;transition:background .3s ease;
+    }
+    .track:first-of-type{border-top:1px solid var(--line)}
+    .track::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform .35s ease}
+    .track:hover{background:linear-gradient(90deg,var(--gold-dim),transparent 60%)}
+    .track:hover::before{transform:scaleY(1)}
+    .track:hover .t-num{color:var(--gold);opacity:1}
+    .track:hover .t-title{color:var(--gold-hi)}
+    .track:hover .t-go{color:var(--gold);transform:translateX(5px)}
+    .track:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+    .t-num{font-family:var(--disp);font-size:4.6rem;line-height:.78;color:var(--ink);opacity:.14;transition:.3s;padding-left:18px}
+    .t-ref{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
+    .t-title{font-family:var(--disp);font-weight:500;font-size:1.22rem;line-height:1.32;margin-bottom:10px;transition:color .3s}
+    .t-quote{font-family:var(--disp);font-style:italic;font-size:.92rem;color:var(--body);line-height:1.55;max-width:62ch}
+    .t-right{display:flex;align-items:center;gap:18px;flex-shrink:0}
+    .t-listen{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+    .t-go{font-size:1.3rem;color:var(--body);transition:.3s}
+
+    /* ── QUOTE SPREAD ── */
+    .spread{padding:130px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(16,15,12,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);text-align:center}
+    .spread .mk{font-family:var(--disp);font-size:5rem;line-height:0;color:var(--gold);opacity:.5;display:block;height:32px}
+    .spread blockquote{font-family:var(--disp);font-style:italic;font-weight:300;font-size:clamp(1.6rem,4vw,2.9rem);line-height:1.42;max-width:18ch;margin:18px auto 28px;letter-spacing:-.01em}
+    @media(min-width:760px){.spread blockquote{max-width:24ch}}
+    .spread blockquote em{font-style:normal;color:var(--gold);font-weight:400}
+    .spread cite{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);font-style:normal}
+    .spread cite b{color:var(--gold);font-weight:500}
+
+    /* ── LISTEN ── */
+    .listen{padding:120px 0;border-bottom:1px solid var(--line)}
+    .listen-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+    .listen h2{font-family:var(--disp);font-weight:400;font-size:clamp(1.9rem,3.4vw,2.8rem);line-height:1.1;margin-bottom:30px}
+    .listen h2 em{font-style:italic;color:var(--gold)}
+    .embed{border-radius:5px;overflow:hidden;border:1px solid var(--line)}
+    .plat{display:flex;flex-direction:column;gap:10px}
+    .plat a{display:flex;align-items:center;gap:15px;padding:15px 20px;border:1px solid var(--line);border-radius:2px;text-decoration:none;color:var(--ink);font-size:.85rem;font-weight:500;transition:.22s}
+    .plat a:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim);transform:translateX(4px)}
+    .plat svg{width:18px;height:18px;flex-shrink:0}
+    .plat .pm{margin-left:auto;font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;color:var(--faint)}
+
+    /* ── HOST / CREDITS ── */
+    .host{padding:120px 0}
+    .host-grid{display:grid;grid-template-columns:330px 1fr;gap:72px;align-items:start}
+    .host-photo{position:relative}
+    .host-photo .frame{aspect-ratio:4/5;border:1px solid var(--line);overflow:hidden;background:var(--bg-2);border-radius:2px}
+    .host-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.3) contrast(1.05)}
+    .host-photo .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-size:9rem;color:var(--gold);opacity:.14}
+    .host-photo::after{content:'BTQ-T2';position:absolute;bottom:14px;left:14px;font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--gold);background:rgba(8,8,6,.7);padding:5px 9px;border-radius:2px}
+    .host h2{font-family:var(--disp);font-weight:400;font-size:clamp(2rem,3.4vw,3rem);line-height:1.08;margin-bottom:8px}
+    .host h2 em{font-style:italic;color:var(--gold)}
+    .host .role{font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:30px}
+    .host p{color:var(--body);font-size:1rem;line-height:1.95;margin-bottom:18px;max-width:58ch}
+    .host p b{color:var(--ink);font-weight:500}
+    .host-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+    .host-tags span{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--body);border:1px solid var(--line);padding:6px 13px;border-radius:1px}
+
+    /* ── COLOPHON ── */
+    footer{border-top:1px solid var(--line);padding:64px 0 40px;background:var(--bg)}
+    .colo{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:48px}
+    .colo h3{font-family:var(--disp);font-size:2.2rem;letter-spacing:.12em;margin-bottom:12px}
+    .colo h3 i{color:var(--gold);font-style:normal}
+    .colo p{color:var(--body);font-size:.86rem;line-height:1.7;max-width:38ch}
+    .colo .ct{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+    .colo a.mail{font-family:var(--disp);font-style:italic;color:var(--gold);text-decoration:none;font-size:1rem;border-bottom:1px solid var(--line-2);padding-bottom:3px}
+    .colo a.mail:hover{color:var(--gold-hi)}
+    .colo .soc{display:flex;flex-direction:column;gap:9px}
+    .colo .soc a{color:var(--body);text-decoration:none;font-size:.84rem;display:flex;align-items:center;gap:10px;transition:.2s}
+    .colo .soc a:hover{color:var(--gold)}
+    .colo .soc svg{width:15px;height:15px}
+    .colo-base{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:24px;border-top:1px solid var(--line);flex-wrap:wrap}
+    .colo-base p{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;color:var(--faint)}
+    .colo-base a{color:var(--gold);text-decoration:none}
+
+    /* ── REVEAL — GSAP-driven. No CSS hidden state on purpose: if the CDN
+       libs fail or reduced-motion is on, content still shows (graceful). ── */
+    .mast{overflow:hidden}
+
+    /* ── CUSTOM CURSOR (agency signal · pointer:fine only) ── */
+    @media(pointer:fine){
+      body.cursor-on, body.cursor-on a, body.cursor-on button{cursor:none}
+      .cur-dot{position:fixed;top:0;left:0;width:7px;height:7px;border-radius:50%;background:var(--gold);z-index:90;pointer-events:none;transform:translate(-50%,-50%)}
+      .cur-ring{position:fixed;top:0;left:0;width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;z-index:90;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s ease,height .25s ease,background .25s ease;mix-blend-mode:difference}
+      .cur-ring.hover{width:60px;height:60px;background:var(--gold-dim)}
+      .cur-ring.label{width:92px;height:92px;background:var(--gold);mix-blend-mode:normal;border-color:var(--gold)}
+      .cur-label{position:fixed;top:0;left:0;z-index:91;pointer-events:none;transform:translate(-50%,-50%);font-family:var(--mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bg);opacity:0;transition:opacity .2s}
+      .cur-label.show{opacity:1}
+    }
+
+    /* ── TAP / CLICK FEEDBACK — gold ripple wherever you touch ── */
+    .ripple{position:fixed;z-index:4;pointer-events:none;border:1px solid var(--gold);border-radius:50%;transform:translate(-50%,-50%);mix-blend-mode:screen;will-change:width,height,opacity}
+    .ripple.go{animation:ripple .62s cubic-bezier(.2,.7,.3,1) forwards}
+    @keyframes ripple{from{width:8px;height:8px;opacity:.75}to{width:180px;height:180px;opacity:0}}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:980px){
+      .premise-grid,.listen-grid,.host-grid,.colo{grid-template-columns:1fr;gap:44px}
+      .host-photo .frame{max-width:300px}
+      .side-rot{display:none}
+    }
+    @media(max-width:680px){
+      .wrap,.mast{padding-left:22px;padding-right:22px}
+      .title .ln.two{-webkit-text-stroke-width:1px;text-stroke-width:1px}
+      .track{grid-template-columns:64px 1fr;gap:18px;padding-right:0}
+      .t-num{font-size:2.6rem;padding-left:0}
+      .t-right{display:none}
+      .premise,.side,.listen,.host{padding:80px 0}
+      .spread{padding:90px 0}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+      .rv,.stag>*{opacity:1!important;transform:none!important}
+      .marq-row{animation:none}
+      .title .ln{transform:none!important}
+      .ripple{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<canvas id="atmo" aria-hidden="true"></canvas>
+
+<!-- TOP BAR -->
+<header id="bar">
+  <a href="#top" class="cat">BTQ<i>·</i></a>
+  <span class="top-mid">Liner Notes — Temporada 2</span>
+  <a href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP" target="_blank" rel="noopener" class="onair"><span class="led"></span>On Air</a>
+</header>
+
+<!-- MASTHEAD -->
+<section class="mast" id="top">
+  <div class="mast-kicker rv">
+    <span class="meta"><b>Cat.</b> BTQ-T2</span>
+    <span class="rule"></span>
+    <span class="meta">Podcast · Liderazgo &amp; Cultura Pop · LATAM</span>
+  </div>
+
+  <h1 class="title" aria-label="Behind the Queue">
+    <span class="ln one"  data-speed="-1">BEHIND</span>
+    <span class="ln two"  data-speed="1.6">THE</span>
+    <span class="ln three" data-speed="-.6">QUEUE</span>
+  </h1>
+
+  <div class="mast-foot">
+    <p class="mast-line rv">Donde la <b>cultura pop</b> entra al contact center. Una referencia — un videojuego, una película, una banda — y la lección de liderazgo que nadie te enseñó en el trabajo.</p>
+    <a class="latest rv" href="https://open.spotify.com/episode/0LJ22lLMgfWh3wLbbgNhxC" target="_blank" rel="noopener">
+      <span class="lt-n">017</span>
+      <span><span class="lt-k">Última pista · Soda Stereo</span><span class="lt-t">El liderazgo que sigue sonando cuando ya no estás</span></span>
+      <span class="lt-a">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- SEASON REFERENCES — static editorial index (no carousel) -->
+<section class="refs">
+  <div class="wrap">
+    <p class="refs-kick rv">Sampleado esta temporada</p>
+    <h2 class="refs-line rv">Soda Stereo, Pink Floyd, Metal Gear Solid, los Diarios de la Boticaria, Back to the Future <span>&amp;</span> Queen.</h2>
+  </div>
+</section>
+
+<!-- PREMISE -->
+<section class="premise">
+  <div class="wrap">
+    <div class="sec-tag rv"><span class="n">A1 · El show</span><span class="bar"></span></div>
+    <div class="premise-grid">
+      <div>
+        <h2 class="rv">No es teoría de management.<br>Es <em>Kratos aprendiendo a liderar sin gritar.</em></h2>
+        <p class="rv"><b>Behind the Queue</b> es un podcast en español para líderes de BPO, Contact Center y experiencia del cliente. Cada episodio toma una referencia cultural y extrae las lecciones que nadie te enseñó en la operación.</p>
+        <p class="rv">Es Freddie Mercury demostrando que romper las reglas con propósito es arte. Es Marty McFly recordándonos que la mentoría cambia el futuro. Es Soda Stereo sonando cuando el líder ya no está.</p>
+        <p class="rv">Datos reales, referencias que reconoces y lecciones aplicables el lunes por la mañana — desde la trinchera, no desde un libro.</p>
+      </div>
+      <div class="credits rv">
+        <div class="row"><span class="k">Género</span><span class="v">Liderazgo / Cultura pop</span></div>
+        <div class="row"><span class="k">Idioma</span><span class="v">Español</span></div>
+        <div class="row"><span class="k">Audiencia</span><span class="v">Líderes BPO · CX · LATAM</span></div>
+        <div class="row"><span class="k">Conduce</span><span class="v gold">Andy Bermúdez</span></div>
+        <div class="row"><span class="k">Frecuencia</span><span class="v">Semanal · T2</span></div>
+        <div class="row"><span class="k">Desde</span><span class="v">Bogotá, Colombia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKLIST -->
+<section class="side" id="tracklist">
+  <span class="side-rot" aria-hidden="true">Lado A · Temporada 2</span>
+  <div class="wrap">
+    <div class="sec-tag rv"><span class="n">A2 · Tracklist</span><span class="bar"></span></div>
+
+    <div class="stag">
+      <a class="track" href="https://open.spotify.com/episode/0LJ22lLMgfWh3wLbbgNhxC" target="_blank" rel="noopener">
+        <div class="t-num">017</div>
+        <div>
+          <div class="t-ref">Soda Stereo · Cerati</div>
+          <div class="t-title">El liderazgo que sigue sonando cuando ya no estás</div>
+          <div class="t-quote">"El éxito necesita que estés presente. El legado sigue funcionando cuando ya te fuiste."</div>
+        </div>
+        <div class="t-right"><span class="t-listen">Escuchar</span><span class="t-go">→</span></div>
+      </a>
+
+      <a class="track" href="https://open.spotify.com/episode/3CNyTkA6OCLoCrmNEh0LVR" target="_blank" rel="noopener">
+        <div class="t-num">016</div>
+        <div>
+          <div class="t-ref">Pink Floyd · The Wall</div>
+          <div class="t-title">El muro que construiste ladrillo por ladrillo — y ya no recuerdas cuándo lo levantaste</div>
+          <div class="t-quote">"El primer ladrillo rara vez se siente como un muro. Se siente como sabiduría."</div>
+        </div>
+        <div class="t-right"><span class="t-listen">Escuchar</span><span class="t-go">→</span></div>
+      </a>
+
+      <a class="track" href="https://open.spotify.com/episode/6fpGqMqaLozmWB4ABOlO3S" target="_blank" rel="noopener">
+        <div class="t-num">015</div>
+        <div>
+          <div class="t-ref">Metal Gear Solid · Solid Snake</div>
+          <div class="t-title">Cuando descubres que todo lo que te dijeron era mentira</div>
+          <div class="t-quote">"Piensa por ti mismo. Decide por ti mismo."</div>
+        </div>
+        <div class="t-right"><span class="t-listen">Escuchar</span><span class="t-go">→</span></div>
+      </a>
+
+      <a class="track" href="https://open.spotify.com/episode/1S2sikyvN8scmcJ5knbcW1" target="_blank" rel="noopener">
+        <div class="t-num">014</div>
+        <div>
+          <div class="t-ref">Diarios de la Boticaria · MaoMao</div>
+          <div class="t-title">Cuando el talento no tiene título</div>
+          <div class="t-quote">"No necesitas el título más alto para ser la persona más valiosa del cuarto."</div>
+        </div>
+        <div class="t-right"><span class="t-listen">Escuchar</span><span class="t-go">→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE SPREAD -->
+<section class="spread">
+  <div class="wrap">
+    <span class="mk rv" aria-hidden="true">&ldquo;</span>
+    <blockquote class="rv">Lo que tienes hoy no va a estar para siempre. <em>Valóralo antes de que se convierta en recuerdo.</em></blockquote>
+    <cite class="rv">EP.011 · <b>Behind the Queue</b></cite>
+  </div>
+</section>
+
+<!-- LISTEN -->
+<section class="listen" id="escucha">
+  <div class="wrap">
+    <div class="sec-tag rv"><span class="n">B1 · Pon el disco</span><span class="bar"></span></div>
+    <div class="listen-grid">
+      <div>
+        <h2 class="rv">Escucha <em>donde prefieras</em></h2>
+        <div class="embed rv">
+          <iframe style="border-radius:5px" src="https://open.spotify.com/embed/show/5figtqa6zJxW1pE1sWJeEP?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Behind the Queue en Spotify"></iframe>
+        </div>
+      </div>
+      <div>
+        <p class="meta rv" style="margin-bottom:20px">Plataformas</p>
+        <div class="plat stag">
+          <a href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Spotify <span class="pm">Show</span>
+          </a>
+          <a href="https://podcasts.apple.com/us/podcast/behind-the-queue/id1891677775" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.313a7.687 7.687 0 110 15.374A7.687 7.687 0 0112 4.313zm0 1.875a5.812 5.812 0 100 11.624A5.812 5.812 0 0012 6.188zm.563 2.812c.31 0 .562.252.562.563v4.5l2.438 1.406a.563.563 0 01-.563.97l-2.718-1.57a.563.563 0 01-.282-.486V9.563c0-.311.252-.563.563-.563z"/></svg>
+            Apple Podcasts <span class="pm">iOS</span>
+          </a>
+          <a href="https://www.instagram.com/behindthequeue84/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram <span class="pm">@behindthequeue84</span>
+          </a>
+          <a href="https://www.tiktok.com/@behind.the.queue" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+            TikTok <span class="pm">@behind.the.queue</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOST / CREDITS -->
+<section class="host" id="andy">
+  <div class="wrap">
+    <div class="sec-tag rv"><span class="n">B2 · Créditos</span><span class="bar"></span></div>
+    <div class="host-grid">
+      <div class="host-photo rv">
+        <div class="frame">
+          <img src="1000092965.png" alt="Andrés Bermúdez Rodríguez, host de Behind the Queue" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ph" style="display:none">A</div>
+        </div>
+      </div>
+      <div>
+        <h2 class="rv">Andrés Bermúdez <em>Rodríguez</em></h2>
+        <p class="role rv">Conducido &amp; producido por — Ing. Industrial · 15+ años BPO/CX</p>
+        <p class="rv"><b>Ingeniero Industrial</b> con más de 15 años en operaciones de BPO y Contact Center en Latinoamérica. Ha liderado equipos de servicio al cliente, operaciones y calidad en Colombia y la región.</p>
+        <p class="rv">Behind the Queue nació de una pregunta simple: <b>¿por qué las lecciones más útiles de liderazgo no vienen de los libros de management, sino de los personajes que más amamos?</b></p>
+        <p class="rv">Cada episodio es una conversación con esa pregunta. Y la respuesta siempre sorprende.</p>
+        <div class="host-tags stag">
+          <span>BPO / CX</span><span>Ingeniería Industrial</span><span>Liderazgo Operativo</span><span>LATAM</span><span>Bogotá</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLOPHON FOOTER -->
+<footer id="contacto">
+  <div class="wrap">
+    <div class="colo">
+      <div>
+        <h3>BEHIND THE QUEUE<i>·</i></h3>
+        <p>Una producción independiente sobre liderazgo y cultura pop para quienes dirigen la operación en Latinoamérica.</p>
+      </div>
+      <div>
+        <p class="ct">Contacto</p>
+        <a class="mail" href="mailto:andy@behind-thequeue.com">andy@behind-thequeue.com →</a>
+        <p style="margin-top:14px;color:var(--body);font-size:.82rem">Colaboraciones, apariciones en el show, o simplemente para decir hola.</p>
+      </div>
+      <div>
+        <p class="ct">Síguelo</p>
+        <div class="soc">
+          <a href="https://www.instagram.com/behindthequeue84/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z"/></svg> @behindthequeue84</a>
+          <a href="https://www.tiktok.com/@behind.the.queue" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg> @behind.the.queue</a>
+          <a href="https://www.linkedin.com/in/andres-bermudez-rodriguez" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Andrés Bermúdez R.</a>
+        </div>
+      </div>
+    </div>
+    <div class="colo-base">
+      <p>© 2026 <a href="https://behind-thequeue.com">Behind the Queue</a> · Bogotá, Colombia</p>
+      <p>Podcast semanal · BPO/CX LATAM · Cat. BTQ-T2</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script>
+  // top bar dock
+  const bar = document.getElementById('bar');
+  addEventListener('scroll', () => bar.classList.toggle('docked', scrollY > 80), { passive: true });
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // PREMIUM SCROLL — Lenis (inertia) + GSAP ScrollTrigger (scrubbed motion).
+  // Guarded: if the CDN libs fail or reduced-motion is on, the page is a clean
+  // static editorial layout (content fully visible) — never broken.
+  if (window.gsap && window.ScrollTrigger && !reduce) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (window.Lenis) {
+      // syncTouch = momentum-smoothed scrolling on a finger, not the dry native scroll.
+      const lenis = new Lenis({ duration: 1.1, smoothWheel: true, syncTouch: true, touchInertiaMultiplier: 18, touchMultiplier: 1.6 });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(t => lenis.raf(t * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    // Pinned kinetic masthead: the type splits apart, scales down and fades
+    // as you scroll through the first screen — the signature moment.
+    gsap.timeline({ scrollTrigger: { trigger: '.mast', start: 'top top', end: '+=110%', pin: true, scrub: 1 } })
+      .to('.ln.one',     { xPercent: -16, ease: 'none' }, 0)
+      .to('.ln.two',     { xPercent: 24,  ease: 'none' }, 0)
+      .to('.ln.three',   { xPercent: -8,  ease: 'none' }, 0)
+      .to('.title',      { scale: .8, opacity: .1, ease: 'none' }, 0)
+      .to('.mast-foot',  { yPercent: 70, opacity: 0, ease: 'none' }, 0)
+      .to('.mast-kicker',{ opacity: 0, ease: 'none' }, 0);
+
+    // Depth — big track numerals drift against the scroll (parallax layer)
+    gsap.utils.toArray('.t-num').forEach(n => {
+      gsap.fromTo(n, { yPercent: -26 }, { yPercent: 26, ease: 'none',
+        scrollTrigger: { trigger: n.closest('.track'), start: 'top bottom', end: 'bottom top', scrub: true } });
+    });
+
+    // Reveals — eased, triggered (not the old uniform fade-up)
+    gsap.utils.toArray('.rv').forEach(el => {
+      gsap.from(el, { y: 42, opacity: 0, duration: .9, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' } });
+    });
+    gsap.utils.toArray('.stag').forEach(g => {
+      gsap.from(g.children, { y: 28, opacity: 0, duration: .7, stagger: .08, ease: 'power3.out',
+        scrollTrigger: { trigger: g, start: 'top 86%' } });
+    });
+
+    // Keep the LOWER HALF alive — gentle scrubbed motion so nothing sits static after the hero.
+    gsap.utils.toArray('.refs-line').forEach(el =>
+      gsap.fromTo(el, { xPercent: -3 }, { xPercent: 3, ease: 'none',
+        scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } }));
+    gsap.fromTo('.spread blockquote', { scale: .92 }, { scale: 1.05, ease: 'none',
+      scrollTrigger: { trigger: '.spread', start: 'top bottom', end: 'bottom top', scrub: true } });
+    gsap.utils.toArray('.sec-tag .bar').forEach(b =>
+      gsap.fromTo(b, { scaleX: 0 }, { scaleX: 1, transformOrigin: 'left center', ease: 'none',
+        scrollTrigger: { trigger: b, start: 'top 94%', end: 'top 64%', scrub: true } }));
+    gsap.fromTo('.host-photo', { yPercent: -7 }, { yPercent: 7, ease: 'none',
+      scrollTrigger: { trigger: '.host', start: 'top bottom', end: 'bottom top', scrub: true } });
+  }
+
+  // WebGL atmosphere behind the masthead — flowing dark/gold field for depth.
+  // Raw WebGL (no Three.js): light, fails gracefully to the CSS background.
+  (function(){
+    const cv = document.getElementById('atmo'); if (!cv) return;
+    const gl = cv.getContext('webgl') || cv.getContext('experimental-webgl'); if (!gl) return;
+    const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const vs = `attribute vec2 p; void main(){ gl_Position = vec4(p,0.0,1.0); }`;
+    const fs = `
+      precision highp float;
+      uniform vec2 uRes; uniform float uTime; uniform vec2 uMouse; uniform vec3 uClick;
+      float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+      float noise(vec2 p){vec2 i=floor(p),f=fract(p);float a=hash(i),b=hash(i+vec2(1.,0.)),c=hash(i+vec2(0.,1.)),d=hash(i+vec2(1.,1.));vec2 u=f*f*(3.-2.*f);return mix(mix(a,b,u.x),mix(c,d,u.x),u.y);}
+      float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*noise(p);p*=2.02;a*=.5;}return v;}
+      void main(){
+        vec2 uv=gl_FragCoord.xy/uRes.xy;
+        vec2 p=uv; p.x*=uRes.x/uRes.y; p+=uMouse*0.12;
+        float n=fbm(p*2.1+vec2(uTime*0.025,uTime*0.015));
+        float n2=fbm(p*4.3-uTime*0.012);
+        vec3 bg=vec3(0.031,0.031,0.024);
+        vec3 gold=vec3(0.79,0.66,0.30);
+        float glow=smoothstep(0.40,0.95,n)*0.5+n2*0.10;
+        glow*=smoothstep(1.15,0.0,length(uv-vec2(0.22,0.12)));
+        vec3 col=mix(bg,gold,clamp(glow*0.75,0.,1.));
+        col*=smoothstep(1.35,0.15,length(uv-0.5));
+        float cpulse=uClick.z*smoothstep(0.34,0.0,length(uv-uClick.xy));
+        col+=gold*cpulse*0.75;
+        gl_FragColor=vec4(col,1.0);
+      }`;
+    function sh(t,s){const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return gl.getShaderParameter(o,gl.COMPILE_STATUS)?o:null;}
+    const v=sh(gl.VERTEX_SHADER,vs), f=sh(gl.FRAGMENT_SHADER,fs);
+    if(!v||!f){cv.remove();return;}
+    const pr=gl.createProgram();gl.attachShader(pr,v);gl.attachShader(pr,f);gl.linkProgram(pr);
+    if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){cv.remove();return;}
+    gl.useProgram(pr);
+    const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+    const loc=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+    const uRes=gl.getUniformLocation(pr,'uRes'),uTime=gl.getUniformLocation(pr,'uTime'),uMouse=gl.getUniformLocation(pr,'uMouse'),uClick=gl.getUniformLocation(pr,'uClick');
+    let mouse=[0,0], click=[0,0,0], mt=[0,0];
+    // pointermove covers mouse AND a dragging finger on touch — the field follows you either way
+    addEventListener('pointermove',e=>{mt=[(e.clientX/innerWidth-0.5)*2,(0.5-e.clientY/innerHeight)*2];},{passive:true});
+    addEventListener('pointerdown',e=>{click=[e.clientX/innerWidth,1-e.clientY/innerHeight,1];mt=[(e.clientX/innerWidth-0.5)*2,(0.5-e.clientY/innerHeight)*2];},{passive:true});
+    function size(){const dpr=Math.min(devicePixelRatio||1,1.5);cv.width=Math.max(1,cv.clientWidth*dpr);cv.height=Math.max(1,cv.clientHeight*dpr);gl.viewport(0,0,cv.width,cv.height);}
+    addEventListener('resize',size,{passive:true});size();
+    const t0=performance.now();
+    function draw(now){
+      mouse[0]+=(mt[0]-mouse[0])*0.06;mouse[1]+=(mt[1]-mouse[1])*0.06; // eased follow = fluid, not jumpy
+      gl.uniform2f(uRes,cv.width,cv.height);gl.uniform1f(uTime,(now-t0)/1000);
+      gl.uniform2f(uMouse,mouse[0],mouse[1]);gl.uniform3f(uClick,click[0],click[1],click[2]);
+      click[2]*=0.93; // click pulse decays each frame
+      gl.drawArrays(gl.TRIANGLES,0,6);if(!rm)requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  })();
+
+  // TAP/CLICK FEEDBACK — quick gold ripple at the touch point (works on touch + mouse)
+  (function(){
+    if (reduce) return;
+    addEventListener('pointerdown', e => {
+      const r = document.createElement('div');
+      r.className = 'ripple';
+      r.style.left = e.clientX + 'px';
+      r.style.top  = e.clientY + 'px';
+      document.body.appendChild(r);
+      requestAnimationFrame(() => r.classList.add('go'));
+      setTimeout(() => r.remove(), 700);
+    }, { passive: true });
+  })();
+
+  // custom cursor — refined agency signal, perf-light, pointer:fine only
+  (function(){
+    if (!matchMedia('(pointer:fine)').matches) return;
+    const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('.track').forEach(t => t.setAttribute('data-cursor', 'Reproducir'));
+    const dot = document.createElement('div'); dot.className = 'cur-dot';
+    const ring = document.createElement('div'); ring.className = 'cur-ring';
+    const label = document.createElement('div'); label.className = 'cur-label';
+    document.body.append(dot, ring, label);
+    document.body.classList.add('cursor-on');
+    let mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my;
+    addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.left = label.style.left = mx + 'px';
+      dot.style.top  = label.style.top  = my + 'px';
+      if (rm) { ring.style.left = mx + 'px'; ring.style.top = my + 'px'; }
+    }, { passive: true });
+    if (!rm) (function loop(){ rx += (mx-rx)*.18; ry += (my-ry)*.18; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(loop); })();
+    document.querySelectorAll('a, button, [data-cursor]').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        ring.classList.add('hover');
+        const t = el.getAttribute('data-cursor');
+        if (t) { ring.classList.add('label'); label.textContent = t; label.classList.add('show'); }
+      });
+      el.addEventListener('mouseleave', () => { ring.classList.remove('hover','label'); label.classList.remove('show'); });
+    });
+  })();
+</script>
+</body>
+</html>

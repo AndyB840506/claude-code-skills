@@ -89,9 +89,11 @@ Ask only for the sections relevant to the site type.
 
 ## Paso 5: Generate Homepage HTML
 
-**ACTION:** Generate a complete, professional `homepage.html`:
+**FIRST — apply Rule 0 from [docs/design-guide.md](../docs/design-guide.md):** commit to a concept (tone + layout *architecture* + one signature idea), anchored to ONE real reference, BEFORE writing any HTML. The elements below are building blocks — the concept decides which appear and how they look. Do **not** emit the default skeleton (centered hero + 3 cards + alternating backgrounds + ring + parallax + counters) by reflex; that is a generic-page fail.
 
-### Required Elements (all pages):
+**ACTION:** Generate a complete `homepage.html` that expresses the chosen concept:
+
+### Building blocks (the concept decides which to use and how they look):
 
 **Navigation:**
 - Fixed top navbar
@@ -102,12 +104,12 @@ Ask only for the sections relevant to the site type.
 **Hero Section:**
 - Headline (H1) + sub-headline + CTA button(s)
 - Background (from user choice)
-- Profile photo or brand mark (with animated gradient ring if portrait photo)
-- Immediately visible stats/highlights if user provided them
+- Profile photo or brand mark (the rotating gradient ring in Rule 9 is OPT-IN — only if it genuinely fits the concept)
+- Immediately visible stats/highlights only if user provided them
 
 **Core Sections** (from Paso 3 confirmed list):
 - Each section semantically structured with proper headings
-- Alternating background for visual rhythm (e.g., white / light grey / white)
+- Section rhythm driven by the concept — vary type scale, full-bleed vs contained, dark/light breaks. Avoid the reflexive white / grey / white alternation.
 
 **Conditional Section** (from Paso 4):
 - Only include if user provided the required data
@@ -129,8 +131,8 @@ Ask only for the sections relevant to the site type.
 - Schema.org structured data matching `site_type`
 - Scroll reveal animations via Intersection Observer (no libraries — see design-guide.md Rules 2-3)
 - Hover effects on cards and buttons (Rule 6)
-- Counter animation for any stats — count from 0 on scroll reveal (Rule 4)
-- At least one parallax element (Rule 5)
+- Counter animation for stats — OPT-IN, only if the concept actually uses stats (Rule 4)
+- Parallax / scroll-driven motion — OPT-IN, only when it serves the concept (Rule 5)
 - Passive scroll listeners `{ passive: true }` (Rule 13)
 - `@media (prefers-reduced-motion: reduce)` block — disables all animations (Rule 12)
 - WCAG AA contrast, 16px min font, visible focus states, semantic HTML (Rule 14)
