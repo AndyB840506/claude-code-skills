@@ -732,6 +732,27 @@ premium upgrade changes the ARCHITECTURE:
 Fastest way to lock direction: ask the user for ONE concrete reference (Awwwards /
 Dribbble). One real reference beats three rounds of guessing.
 
+### Feature-parity audit before replacing a live page (don't drop OR bury function)
+A redesign is not just a new look — it replaces a working page. Two failures hit in the
+BTQ liner-notes swap (validated 2026-06-24), and the user reported both as "missing":
+
+1. **Don't silently drop functional affordances.** Before swapping `index-redesign.html`
+   → `index.html`, diff the OLD page for things the new one must keep: contact form / email,
+   **social links**, RSS/podcast platform links, nav anchors, i18n toggle, form POST endpoints,
+   analytics/widgets, schema.org. Grep the old file (`git show HEAD~1:path`) for `mailto:`,
+   `instagram|tiktok|linkedin|spotify|youtube`, `#contacto`, form `action=` — anything present
+   before must be present after, or it's a regression.
+2. **Present ≠ findable — surface contact + social, don't just leave them in the footer.**
+   The redesign technically *had* email + social in the bottom colophon, but a minimal premium
+   top bar with no "Contacto" link meant the user "couldn't find them anywhere." Fixes that
+   worked: a **nav link** to the contact area, and a dedicated **contact section** that bundles
+   email + a working form + social icons together (not scattered). If the nav can't reach it in
+   one click, assume the user won't find it.
+
+**Static-site contact forms:** a static host (Vercel/Netlify) has no backend to receive a POST.
+Use a form service (Web3Forms — no account, key in the markup, AJAX + graceful no-JS fallback) or
+a serverless function. A `mailto:` link alone is not "a form." See [[reference_btq_contact_form]].
+
 ---
 
 ## Rule 18 — Premium / agency tier (when "ultra-premium" is the brief)
