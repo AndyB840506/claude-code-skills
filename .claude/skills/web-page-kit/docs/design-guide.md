@@ -22,6 +22,8 @@ Before writing any HTML, commit to a distinctive design concept. A page that ski
 - ❌ Alternating white / light-grey / white section backgrounds
 - ❌ Inter / Roboto / Arial / Helvetica / Space Grotesk as the display font
 - ❌ Parallax hero + count-up stats applied by reflex on every page
+- ❌ A row of oversized "big-number" stats (e.g. 7 / 3 / 9 / <24h) — a recognizable AI tell; prefer a quiet inline caption
+- ❌ Em-dashes (—) sprinkled through the copy as the default connector — overuse is an AI tell; prefer periods, commas, or colons (keep — only for genuine number ranges)
 - ❌ Emoji used as icons (use line SVGs)
 
 ### Anti-generic checklist — must pass before delivery
@@ -796,3 +798,32 @@ else (CSS, shaders, fonts link) still lives in the one file.
 **Tell, not template:** the goal is that *we* are the differentiator. If the page could be
 swapped with another AI page by changing the logo, it failed Rule 0 — this tier is how you make
 that impossible.
+
+### Full-bleed reactive background — gotchas (validated on the Andyfreelancer redesign)
+The "reactive field" of point 1 doesn't have to be a shader. On Andyfreelancer it became an
+**interactive SVG world map** (every country glows brand-red + shows its name on hover/tap) — same
+*engine* (global reactive field), different *vehicle*. Whatever the field is, these traps recur:
+
+- **Fixed, not absolute — and pan it on scroll.** A field anchored with `position:absolute` (or only
+  behind the hero) **gets lost after a full scroll** — the exact "fondo de BTQ se pierde" bug. Use
+  `position:fixed; z-index:0` so it's always behind the viewport, then add a *gentle* GSAP
+  scroll-driven pan (`yPercent:-5`, `scrub:0.6`) so it feels alive without drifting off. Big pan +
+  high scrub (`-8`/`1.1`) reads **stiff** ("más tieso"); keep the travel small and the scrub loose.
+- **`preserveAspectRatio="…meet"`, not `slice`, for maps/wide art.** `slice` (cover) **crops the top
+  and bottom** on wide/ultrawide screens — the southern hemisphere disappears. `meet` (fit-whole)
+  keeps the full geometry visible; pair with `height:calc(100vh - <navH>)`.
+- **Unify the theme across every section.** An opaque cream/orange block dropped mid-page makes the
+  color transition "pega demasiado fuerte" and the samples "chocan porque no es el mismo oscuro."
+  Sections over a global field should be **transparent or same-family translucent** (`rgba(bg,0.5)` +
+  `backdrop-filter:blur`), including nav and footer — let the one field carry the whole page.
+- **Real geometry for an interactive map.** Use Natural Earth via **world-atlas**
+  (`countries-110m.json`, public domain) + **d3-geo** (`geoNaturalEarth1`, `geoPath`, `fitSize`) +
+  **topojson-client** (`topojson.feature`) — not a hand-traced blob. Degrade to the plain dark
+  background if the fetch/CDN fails.
+- **pointer-events pass-through.** So hover reaches a fixed field behind the content:
+  `header,section,footer{pointer-events:none}` then re-enable the interactive children
+  (`a,button,input,select,textarea,summary,label,nav` + the map paths). Empty content areas then let
+  the cursor light up the field behind them.
+- **Live font specimen beats a Canva mockup** when the user is unfamiliar with a typeface — build a
+  tiny standalone HTML specimen with the real Fontshare faces rather than rendering a Canva image
+  (Canva bakes in un-editable garbled microtext). See [[feedback_named_concept_drives_render]].
