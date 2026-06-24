@@ -97,6 +97,9 @@
     .onair{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none}
     .onair .led{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:blink 1.8s ease-in-out infinite}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+    .bar-right{display:flex;align-items:center;gap:24px}
+    .bar-contact{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none;opacity:.82;transition:.2s}
+    .bar-contact:hover{color:var(--gold);opacity:1}
     @media(max-width:760px){.top-mid{display:none}header,header.docked{padding-left:22px;padding-right:22px}}
 
     /* ── MASTHEAD ── */
@@ -217,6 +220,29 @@
     .host-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
     .host-tags span{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--body);border:1px solid var(--line);padding:6px 13px;border-radius:1px}
 
+    /* ── CONTACT ── */
+    .contact{padding:118px 0 30px;border-top:1px solid var(--line)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:72px;align-items:start}
+    .contact .kicker{font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:16px}
+    .contact h2{font-family:var(--disp);font-weight:400;font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.08;margin-bottom:16px}
+    .contact h2 em{font-style:italic;color:var(--gold)}
+    .contact .lead{color:var(--body);font-size:1rem;line-height:1.9;max-width:40ch;margin-bottom:24px}
+    .contact .alt{font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;color:var(--faint)}
+    .contact .alt a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
+    .contact .alt a:hover{color:var(--gold-hi)}
+    .cform{display:flex;flex-direction:column;gap:20px}
+    .cform .frow{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .cform label{display:flex;flex-direction:column;gap:8px;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+    .cform input,.cform textarea{background:transparent;border:none;border-bottom:1px solid var(--line-2);color:var(--ink);font-family:var(--body-f);font-size:.95rem;padding:10px 0;transition:border-color .22s;resize:vertical}
+    .cform input::placeholder,.cform textarea::placeholder{color:var(--faint)}
+    .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--gold)}
+    .cform button{align-self:flex-start;margin-top:6px;background:var(--gold);color:var(--bg);border:none;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding:15px 30px;border-radius:2px;cursor:pointer;transition:background .22s}
+    .cform button:hover{background:var(--gold-hi)}
+    .cform button:disabled{opacity:.5;cursor:default}
+    .fstatus{font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;min-height:1.1em;margin-top:2px}
+    .fstatus.ok{color:var(--gold)}
+    .fstatus.err{color:#d98a6a}
+
     /* ── COLOPHON ── */
     footer{border-top:1px solid var(--line);padding:64px 0 40px;background:var(--bg)}
     .colo{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:48px}
@@ -256,9 +282,10 @@
 
     /* ── RESPONSIVE ── */
     @media(max-width:980px){
-      .premise-grid,.listen-grid,.host-grid,.colo{grid-template-columns:1fr;gap:44px}
+      .premise-grid,.listen-grid,.host-grid,.colo,.contact-grid{grid-template-columns:1fr;gap:44px}
       .host-photo .frame{max-width:300px}
       .side-rot{display:none}
+      .cform .frow{grid-template-columns:1fr}
     }
     @media(max-width:680px){
       .wrap,.mast{padding-left:22px;padding-right:22px}
@@ -288,7 +315,10 @@
 <header id="bar">
   <a href="#top" class="cat">BTQ<i>·</i></a>
   <span class="top-mid">Liner Notes — Temporada 2</span>
-  <a href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP" target="_blank" rel="noopener" class="onair"><span class="led"></span>On Air</a>
+  <div class="bar-right">
+    <a href="#contacto" class="bar-contact">Contacto</a>
+    <a href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP" target="_blank" rel="noopener" class="onair"><span class="led"></span>On Air</a>
+  </div>
 </header>
 
 <!-- MASTHEAD -->
@@ -466,8 +496,35 @@
   </div>
 </section>
 
+<!-- CONTACT -->
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <p class="kicker">Contacto / B-Side</p>
+        <h2>¿Una idea, una <em>colaboración</em>, o salir en el show?</h2>
+        <p class="lead">Escríbele a Behind the Queue. Propuestas de episodio, apariciones como invitado, alianzas — o simplemente para decir hola.</p>
+        <p class="alt">También directo a <a href="mailto:andy@behind-thequeue.com">andy@behind-thequeue.com</a></p>
+      </div>
+      <form class="cform" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="ab1c343f-9cb6-4183-9bd7-caa307db5265">
+        <input type="hidden" name="subject" value="Nuevo mensaje desde behind-thequeue.com">
+        <input type="hidden" name="from_name" value="Behind the Queue">
+        <input type="checkbox" name="botcheck" class="hp" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="frow">
+          <label>Nombre<input type="text" name="name" placeholder="Tu nombre" required></label>
+          <label>Email<input type="email" name="email" placeholder="tu@correo.com" required></label>
+        </div>
+        <label>Mensaje<textarea name="message" rows="4" placeholder="Cuéntame en qué piensas…" required></textarea></label>
+        <button type="submit">Enviar mensaje →</button>
+        <p class="fstatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- COLOPHON FOOTER -->
-<footer id="contacto">
+<footer>
   <div class="wrap">
     <div class="colo">
       <div>
@@ -502,6 +559,39 @@
   // top bar dock
   const bar = document.getElementById('bar');
   addEventListener('scroll', () => bar.classList.toggle('docked', scrollY > 80), { passive: true });
+
+  // contact form — AJAX submit to Web3Forms, inline status.
+  // Degrades to a normal POST (Web3Forms success page) if JS is disabled.
+  const cform = document.querySelector('.cform');
+  if (cform) {
+    cform.addEventListener('submit', async e => {
+      e.preventDefault();
+      const st = cform.querySelector('.fstatus');
+      const btn = cform.querySelector('button');
+      st.className = 'fstatus'; st.textContent = 'Enviando…'; btn.disabled = true;
+      try {
+        const payload = JSON.stringify(Object.fromEntries(new FormData(cform)));
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: payload
+        });
+        const json = await res.json();
+        if (json.success) {
+          cform.reset();
+          st.className = 'fstatus ok';
+          st.textContent = '¡Gracias! Tu mensaje llegó. Te responderé pronto.';
+        } else {
+          st.className = 'fstatus err';
+          st.textContent = 'No se pudo enviar. Escríbeme a andy@behind-thequeue.com';
+        }
+      } catch (err) {
+        st.className = 'fstatus err';
+        st.textContent = 'No se pudo enviar. Escríbeme a andy@behind-thequeue.com';
+      }
+      btn.disabled = false;
+    });
+  }
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
