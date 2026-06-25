@@ -1,928 +1,766 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mr. Putrid's Den — Donde los riffs encuentran el whisky</title>
-  <meta name="description" content="Mr. Putrid's Den: conversaciones entre Andrés y Juan sobre rock, metal, jazz y géneros variados. Un espacio para riffs, pasión y Jack Daniel's." />
-  <meta name="keywords" content="podcast rock, podcast metal, podcast jazz, podcast colombia, bogota, heavy metal, podcast musica, Mr Putrids Den" />
-  <meta property="og:title" content="Mr. Putrid's Den" />
-  <meta property="og:description" content="Donde los riffs encuentran el whisky." />
-  <meta property="og:url" content="https://www.mrputridsden.com" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Mr. Putrid's Den, donde los riffs encuentran el whisky · Podcast de rock y metal</title>
+  <meta name="description" content="Mr. Putrid's Den: conversaciones entre Andrés y Juan sobre rock, metal, jazz y underground bogotano. Riffs, historia musical y Jack Daniel's, desde Bogotá.">
+  <meta name="keywords" content="podcast rock, podcast metal, podcast jazz, podcast colombia, bogota, heavy metal, podcast musica, Mr Putrids Den, Black Sabbath, Kraken">
+  <link rel="canonical" href="https://www.mrputridsden.com/">
+
+  <meta property="og:title" content="Mr. Putrid's Den">
+  <meta property="og:description" content="Donde los riffs encuentran el whisky. Podcast de rock, metal y underground desde Bogotá.">
+  <meta property="og:url" content="https://www.mrputridsden.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.mrputridsden.com/og-image.png">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.mrputridsden.com/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PodcastSeries",
+    "name": "Mr. Putrid's Den",
+    "description": "Podcast conversacional sobre rock, metal, jazz y underground bogotano. Conducido por Andrés y Juan desde Bogotá, Colombia.",
+    "url": "https://www.mrputridsden.com/",
+    "inLanguage": "es"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ─── RESET ────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-    /* ─── TOKENS ────────────────────────────────────────── */
-    :root {
-      --bg:         #0F0E0C;
-      --surface:    #19170F;
-      --surface-2:  #211E15;
-      --surface-3:  #2A261A;
-      --cream:      #F1E8D6;
-      --cream-dim:  #E3D8C0;
-      --crimson:    #B23B3B;
-      --crimson-h:  #CB4848;
-      --gold:       #C9A227;
-      --silver:     #ADA493;
-      --white:      #F5F0E5;
-      --muted:      #756C5C;
-      --border:     rgba(241,232,214,0.09);
-
-      --font-head:  'Bebas Neue', 'Impact', sans-serif;
-      --font-body:  'Spectral', Georgia, serif;
-      --font-mono:  'Space Mono', monospace;
-
-      --max:        1100px;
-      --nav-h:      64px;
+    :root{
+      --bg:#0D0A09;
+      --ink:#F1E8D6;
+      --ink-2:#E3D8C0;
+      --body:#ADA493;
+      --faint:#776D5D;
+      --crimson:#B23B3B;
+      --crimson-hi:#CB4848;
+      --crimson-dim:rgba(178,59,59,.10);
+      --paper:#ECE2CD;
+      --paper-ink:#191310;
+      --line:rgba(241,232,214,.09);
+      --line-2:rgba(241,232,214,.17);
+      --disp:'Bebas Neue','Impact',sans-serif;
+      --serif:'Spectral',Georgia,'Times New Roman',serif;
+      --mono:'Space Mono',monospace;
+      --max:1080px;
     }
 
-    /* ─── BASE ──────────────────────────────────────────── */
-    body {
-      background: var(--bg);
-      color: var(--white);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;background:var(--bg)}
+    body{background:transparent;color:var(--ink);font-family:var(--serif);font-size:16px;line-height:1.7;overflow-x:hidden;position:relative}
+    ::selection{background:var(--crimson);color:var(--ink)}
+    ::-webkit-scrollbar{width:3px}
+    ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:var(--crimson)}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+
+    .grain{position:fixed;inset:0;z-index:3;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+    /* THE DEN — full-bleed AI bar background + hidden easter-egg hotspots */
+    #atmo{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:#0a0605}
+    .den-img{position:absolute;inset:0;background:url('bar-bg.png') center/cover no-repeat}
+    .den-glow{position:absolute;inset:0;pointer-events:none;
+      background:
+        linear-gradient(90deg,rgba(9,5,4,.94) 0%,rgba(9,5,4,.6) 30%,rgba(9,5,4,0) 58%),
+        radial-gradient(80% 70% at 74% 30%,rgba(150,28,24,.16),transparent 60%),
+        radial-gradient(125% 125% at 50% 46%,transparent 52%,rgba(0,0,0,.5) 100%)}
+    #eggs{position:fixed;inset:0;z-index:40;pointer-events:none;transition:opacity .4s ease}
+    #eggs.hidden{opacity:0;pointer-events:none}
+    .egg{position:absolute;width:36px;height:36px;transform:translate(-50%,-50%);pointer-events:auto;cursor:pointer;background:none;border:none;padding:0;outline:none}
+    .egg .dot{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(231,201,195,.5);opacity:.4;
+      animation:eggpulse 2.6s ease-in-out infinite;transition:opacity .25s ease,border-color .25s ease,background .25s ease,box-shadow .25s ease}
+    .egg:hover .dot,.egg:focus-visible .dot,.egg.lit .dot{opacity:1;border-color:var(--crimson-hi);background:rgba(203,72,72,.14);box-shadow:0 0 16px rgba(203,72,72,.75);animation:none}
+    @keyframes eggpulse{0%,100%{box-shadow:0 0 0 0 rgba(203,72,72,.4)}50%{box-shadow:0 0 0 7px rgba(203,72,72,0)}}
+    .egg .tag{position:absolute;left:50%;bottom:100%;margin-bottom:10px;transform:translate(-50%,4px);opacity:0;pointer-events:none;
+      white-space:nowrap;font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;
+      background:rgba(12,7,6,.94);border:1px solid var(--crimson);padding:5px 10px;border-radius:2px;box-shadow:0 0 16px rgba(178,59,59,.6);
+      transition:opacity .25s ease,transform .25s ease}
+    .egg:hover .tag,.egg:focus-visible .tag,.egg.lit .tag{opacity:1;transform:translate(-50%,0)}
+    .den-hint{position:absolute;left:24px;bottom:18px;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);opacity:.5}
+    @media(max-width:760px){#eggs{display:none}}
+
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 36px}
+
+    .label{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:.66rem;font-weight:700;
+      letter-spacing:.22em;text-transform:uppercase;color:var(--crimson);margin-bottom:14px}
+    .label::before{content:'';width:26px;height:1px;background:var(--crimson)}
+    .sec-title{font-family:var(--disp);font-size:clamp(40px,6vw,64px);letter-spacing:.05em;color:var(--ink);line-height:1}
+    .sec-head{margin-bottom:54px;max-width:46ch}
+
+    /* reveals: content is visible by default. JS only enhances. */
+    .rv{will-change:opacity,transform}
+
+    /* ── TOP BAR ── */
+    header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+      padding:16px 36px;transition:all .35s ease}
+    header.docked{background:rgba(13,10,9,.9);backdrop-filter:blur(14px);padding:11px 36px;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:11px}
+    .mono-badge{width:36px;height:36px;border:1.5px solid var(--crimson);border-radius:50%;display:flex;align-items:center;
+      justify-content:center;font-family:var(--disp);font-size:14px;letter-spacing:1px;color:var(--crimson);flex-shrink:0}
+    .brand-name{font-family:var(--disp);font-size:20px;letter-spacing:3px;color:var(--ink)}
+    .bar-nav{display:flex;align-items:center;gap:26px}
+    .bar-nav a{font-family:var(--mono);font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--body);transition:color .2s}
+    .bar-nav a:hover{color:var(--crimson)}
+    .onair{display:inline-flex;align-items:center;gap:9px;border:1.5px solid var(--crimson);padding:7px 15px;color:var(--ink)!important}
+    .onair:hover{background:var(--crimson);color:var(--bg)!important}
+    .onair .led{width:7px;height:7px;border-radius:50%;background:var(--crimson);box-shadow:0 0 9px var(--crimson);animation:blink 1.8s ease-in-out infinite}
+    .onair:hover .led{background:var(--ink);box-shadow:none}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+    .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:60}
+    .burger span{width:22px;height:2px;background:var(--ink);display:block;transition:.25s}
+    .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .burger.open span:nth-child(2){opacity:0}
+    .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    /* ── HERO ── */
+    #hero{min-height:100vh;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:44px;
+      max-width:var(--max);margin:0 auto;padding:132px 36px 76px;position:relative;overflow:hidden}
+    #hero::after{content:'';position:absolute;top:-14%;left:-10%;width:55%;height:62%;
+      background:radial-gradient(ellipse at center,rgba(178,59,59,.13),transparent 70%);pointer-events:none;z-index:0}
+    .hero-inner{position:relative;z-index:2;min-width:0}
+    .hero-kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:28px;font-family:var(--mono);font-size:.66rem;
+      font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--crimson);border:1px dashed var(--crimson);padding:6px 14px}
+    .hero-kicker::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--crimson);box-shadow:0 0 8px var(--crimson)}
+
+    /* neon sign: WHITE tubes with a red halo. The middle word burns red. */
+    .neon-sign{position:relative;z-index:2;max-width:100%}
+    .neon-sign .ln{display:block;font-family:var(--disp);line-height:.84;letter-spacing:.02em}
+    .neon-sign .white{color:#fff;animation:flicker 6s linear infinite}
+    /* small word: tight white glow so it reads white, not salmon */
+    .neon-sign .one{font-size:clamp(2.4rem,6.2vw,4.6rem);animation-delay:-1.3s;
+      filter:drop-shadow(0 0 2px rgba(255,255,255,.95)) drop-shadow(0 0 8px rgba(255,238,233,.45))}
+    .neon-sign .three{font-size:clamp(3.8rem,11.5vw,9.6rem);animation-delay:-.4s;
+      filter:drop-shadow(0 0 3px rgba(255,255,255,.92)) drop-shadow(0 0 12px rgba(255,232,227,.5)) drop-shadow(0 0 26px rgba(203,72,72,.22))}
+    .neon-sign .red{font-size:clamp(3.8rem,11.5vw,9.6rem);color:transparent;
+      -webkit-text-stroke:2px var(--crimson-hi);text-stroke:2px var(--crimson-hi);
+      filter:drop-shadow(0 0 5px var(--crimson-hi)) drop-shadow(0 0 15px var(--crimson)) drop-shadow(0 0 28px rgba(178,59,59,.4));
+      animation:flicker 6s linear infinite;animation-delay:-3.2s}
+    @keyframes flicker{0%,100%{opacity:1}40%{opacity:1}41%{opacity:.34}42%{opacity:1}44%{opacity:.6}45%{opacity:1}
+      67%{opacity:1}68%{opacity:.24}69%{opacity:1}71%{opacity:.7}72%{opacity:1}88%{opacity:1}89%{opacity:.45}90%{opacity:1}}
+
+    .tagline{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.1rem,2vw,1.5rem);color:var(--ink-2);margin:28px 0 6px}
+    .hero-sub{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:30px}
+
+    .vu{display:flex;align-items:flex-end;gap:3px;height:24px;margin-bottom:32px}
+    .vu i{width:4px;height:30%;background:linear-gradient(to top,var(--crimson),var(--crimson-hi));opacity:.9;transition:height .09s linear}
+    .vu-label{font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-left:11px;align-self:center}
+
+    .hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--crimson);color:var(--ink);padding:14px 28px;
+      font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--crimson);cursor:pointer;transition:.2s}
+    .btn-primary:hover{background:var(--crimson-hi);border-color:var(--crimson-hi);transform:translateY(-2px)}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--body);padding:14px 28px;
+      font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--line-2);cursor:pointer;transition:.2s}
+    .btn-outline:hover{border-color:var(--ink);color:var(--ink)}
+
+    .deck{position:relative;z-index:2;aspect-ratio:1/1;max-width:420px;margin:0 auto;width:100%}
+    .deck::before{content:'';position:absolute;inset:-9%;border-radius:50%;
+      background:radial-gradient(circle at 50% 50%,rgba(178,59,59,.15),transparent 62%);pointer-events:none}
+    .vinyl{width:100%;height:100%;animation:spin 16s linear infinite;filter:drop-shadow(0 22px 55px rgba(0,0,0,.7))}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .vinyl .platter{fill:#080605;stroke:#2c2622;stroke-width:1.5}
+    .vinyl .disc{fill:#100c0b}
+    .vinyl .groove{fill:none;stroke:#34302b;stroke-width:.8}
+    .vinyl .sheen{fill:url(#sheen)}
+    .vinyl .label-circle{fill:var(--crimson)}
+    .vinyl .label-ring{fill:none;stroke:rgba(13,10,9,.35);stroke-width:1}
+    .vinyl .lbl{font-family:var(--disp);font-size:18px;letter-spacing:3px;fill:var(--ink);text-anchor:middle}
+    .vinyl .lbl-sub{font-family:var(--mono);font-size:5px;letter-spacing:.5px;fill:rgba(13,10,9,.65);text-anchor:middle}
+    .vinyl .hole{fill:#080605}
+    .tonearm{position:absolute;top:4%;right:2%;width:46%;height:46%;border:3px solid var(--body);
+      border-radius:0 100% 0 0;border-bottom:none;border-left:none;opacity:.5}
+    .tonearm::after{content:'';position:absolute;top:-7px;right:-7px;width:15px;height:15px;border-radius:50%;background:var(--body)}
+
+    /* shared section rhythm — continuous atmosphere, only thin rules separate */
+    .band{padding:108px 0;border-top:1px solid var(--line)}
+
+    /* ── EPISODIOS: a roll of concert tickets, stacked ── */
+    .tickets{display:flex;flex-direction:column;gap:30px}
+    .ticket{position:relative;display:grid;grid-template-columns:112px 1fr 152px;align-items:stretch;
+      background:var(--paper);color:var(--paper-ink);box-shadow:0 16px 40px rgba(0,0,0,.5);
+      transform:rotate(var(--rot,-.45deg));transition:transform .3s ease,box-shadow .3s ease}
+    .ticket:nth-child(even){--rot:.5deg}
+    .ticket:hover{transform:rotate(0) translateY(-4px);box-shadow:0 24px 58px rgba(0,0,0,.6)}
+    .ticket::before,.ticket::after{content:'';position:absolute;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:var(--bg)}
+    .ticket::before{left:-10px}.ticket::after{right:-10px}
+    .tk-no{border-right:2px dashed rgba(25,19,16,.28);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:24px 6px}
+    .tk-no .big{font-family:var(--disp);font-size:50px;line-height:.8;color:var(--crimson)}
+    .tk-no .word{font-family:var(--mono);font-size:.54rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(25,19,16,.5);writing-mode:vertical-rl;transform:rotate(180deg)}
+    .tk-body{padding:28px 32px;min-width:0}
+    .tk-ep{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--crimson);margin-bottom:10px}
+    .tk-title{font-family:var(--disp);font-size:clamp(25px,2.8vw,32px);letter-spacing:.04em;line-height:1.04;color:var(--paper-ink);margin-bottom:13px}
+    .tk-desc{font-size:13.5px;line-height:1.72;color:rgba(25,19,16,.74);margin-bottom:20px;max-width:60ch}
+    .tk-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--crimson);transition:gap .2s}
+    .tk-link:hover{gap:13px}
+    .tk-stub{border-left:2px dashed rgba(25,19,16,.28);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:22px 12px;text-align:center}
+    .tk-stub .min{font-family:var(--disp);font-size:24px;letter-spacing:1px;color:var(--paper-ink);line-height:.9}
+    .tk-stub .min small{display:block;font-family:var(--mono);font-size:.5rem;font-weight:700;letter-spacing:.2em;color:rgba(25,19,16,.5);margin-top:4px}
+    .tk-stub .barcode{width:100%;height:34px;background:repeating-linear-gradient(90deg,var(--paper-ink) 0 2px,transparent 2px 4px,var(--paper-ink) 4px 7px,transparent 7px 8px,var(--paper-ink) 8px 11px,transparent 11px 13px)}
+    .tk-stub .seat{font-family:var(--mono);font-size:.52rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--crimson)}
+
+    /* ── EL SHOW + LA CARTA ── */
+    .show-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .show-text p{font-size:1rem;line-height:1.92;color:var(--body);margin-bottom:16px;max-width:50ch}
+    .show-text p b{color:var(--ink);font-weight:600}
+    .carta-h{font-family:var(--disp);font-size:1.7rem;letter-spacing:.08em;color:var(--ink);margin-bottom:5px}
+    .carta-note{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:22px}
+    .carta-row{display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px dashed var(--line)}
+    .carta-row:last-child{border-bottom:none}
+    .carta-row .dish{font-family:var(--disp);font-size:1.4rem;letter-spacing:.06em;color:var(--ink);white-space:nowrap}
+    .carta-row .dots{flex:1;border-bottom:1px dotted var(--line-2);transform:translateY(-3px)}
+    .carta-row .tag{font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--crimson);white-space:nowrap}
+
+    /* ── RESIDENTES (editorial, no boxes) ── */
+    .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px}
+    .res{display:flex;gap:22px;align-items:flex-start;padding-top:26px;border-top:1px solid var(--line-2)}
+    .res-av{flex-shrink:0;width:68px;height:68px;border:1.5px dashed var(--crimson);border-radius:50%;display:flex;align-items:center;
+      justify-content:center;font-family:var(--disp);font-size:28px;letter-spacing:2px;color:var(--crimson)}
+    .res-name{font-family:var(--disp);font-size:1.8rem;letter-spacing:.1em;color:var(--ink);margin-bottom:4px}
+    .res-role{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--crimson);margin-bottom:14px}
+    .res-bio{font-size:.92rem;line-height:1.8;color:var(--body)}
+
+    /* ── SINTONIZA ── */
+    .tune-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    .embed{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+    .plat{display:flex;flex-direction:column;gap:10px}
+    .plat a{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid var(--line);
+      font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--ink);transition:.22s}
+    .plat a:hover{border-color:var(--crimson);color:var(--crimson);background:var(--crimson-dim);transform:translateX(4px)}
+    .plat svg{width:18px;height:18px;flex-shrink:0}
+    .plat .pm{margin-left:auto;font-size:.56rem;letter-spacing:.08em;color:var(--faint)}
+    .tune-cap{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:16px}
+
+    /* ── CONTACT ── */
+    .contact{padding:116px 0 40px;text-align:center;border-top:1px solid var(--line)}
+    .contact .label{justify-content:center}
+    .contact .label::before{display:none}
+    .neon-head{font-family:var(--disp);font-size:clamp(2.8rem,7vw,5.2rem);letter-spacing:.04em;line-height:.96;margin:6px 0 16px;
+      color:#fff;text-shadow:0 0 6px rgba(255,255,255,.85),0 0 18px rgba(255,235,230,.6),0 0 42px rgba(178,59,59,.45)}
+    .neon-head span{color:transparent;-webkit-text-stroke:1.5px var(--crimson-hi);text-stroke:1.5px var(--crimson-hi);
+      text-shadow:none;filter:drop-shadow(0 0 8px var(--crimson)) drop-shadow(0 0 26px rgba(178,59,59,.5))}
+    .contact-lead{font-family:var(--serif);font-style:italic;color:var(--body);font-size:1.05rem;margin-bottom:46px}
+    .social-label{font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--crimson);margin-bottom:16px}
+    .social{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+    .social a{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border:1px solid var(--crimson);border-radius:2px;
+      font-family:var(--mono);font-size:.74rem;font-weight:700;letter-spacing:.06em;color:var(--ink);background:var(--crimson-dim);transition:.2s}
+    .social a:hover{color:var(--crimson-hi);background:rgba(178,59,59,.18);transform:translateY(-2px);box-shadow:0 6px 18px rgba(178,59,59,.25)}
+    .social svg{width:18px;height:18px;color:var(--crimson-hi)}
+    .foot-social{display:flex;align-items:center;gap:16px}
+    .foot-social a{color:var(--body);transition:color .2s}
+    .foot-social a:hover{color:var(--crimson)}
+    .foot-social svg{width:18px;height:18px}
+    .email-block{margin-top:44px;padding-top:38px;border-top:1px dashed var(--line-2)}
+    .email-label{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:12px}
+    .email-link{font-family:var(--disp);font-size:1.9rem;letter-spacing:.06em;color:var(--ink);transition:color .2s}
+    .email-link:hover{color:var(--crimson)}
+
+    /* ── FOOTER ── */
+    footer{border-top:1px solid var(--line);padding:30px 0;background:var(--bg)}
+    .foot-inner{max-width:var(--max);margin:0 auto;padding:0 36px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .foot-brand{display:flex;align-items:center;gap:10px}
+    .foot-mono{width:30px;height:30px;border:1.5px solid var(--crimson);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-size:12px;color:var(--crimson)}
+    .foot-name{font-family:var(--disp);font-size:16px;letter-spacing:3px;color:var(--body)}
+    .foot-copy{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;color:var(--faint)}
+
+    @media(pointer:fine){
+      body.cursor-on,body.cursor-on a,body.cursor-on button{cursor:none}
+      .cur-dot{position:fixed;top:0;left:0;width:7px;height:7px;border-radius:50%;background:var(--crimson);z-index:90;pointer-events:none;transform:translate(-50%,-50%)}
+      .cur-ring{position:fixed;top:0;left:0;width:34px;height:34px;border:1px solid var(--crimson);border-radius:50%;z-index:90;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s;mix-blend-mode:difference}
+      .cur-ring.hover{width:58px;height:58px;background:var(--crimson-dim)}
+      .cur-ring.label{width:86px;height:86px;background:var(--crimson);mix-blend-mode:normal;border-color:var(--crimson)}
+      .cur-label{position:fixed;top:0;left:0;z-index:91;pointer-events:none;transform:translate(-50%,-50%);font-family:var(--mono);font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);opacity:0;transition:opacity .2s}
+      .cur-label.show{opacity:1}
     }
+    .ripple{position:fixed;z-index:4;pointer-events:none;border:1px solid var(--crimson);border-radius:50%;transform:translate(-50%,-50%);mix-blend-mode:screen;will-change:width,height,opacity}
+    .ripple.go{animation:ripple .6s cubic-bezier(.2,.7,.3,1) forwards}
+    @keyframes ripple{from{width:8px;height:8px;opacity:.7}to{width:170px;height:170px;opacity:0}}
 
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 24px;
+    @media(max-width:960px){
+      #hero{grid-template-columns:1fr;gap:36px}
+      .deck{max-width:280px;order:-1}
+      .show-grid,.res-grid,.tune-grid{grid-template-columns:1fr;gap:40px}
+      .show-grid{gap:48px}
     }
-
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
-    .reveal.in-view { opacity: 1; transform: none; }
-
-    /* ─── NAV ───────────────────────────────────────────── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      height: var(--nav-h);
-      background: rgba(15, 14, 12, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+    @media(max-width:720px){
+      .bar-nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;
+        background:rgba(13,10,9,.97);border-bottom:1px solid var(--line);padding:8px 36px 16px}
+      .bar-nav.open{display:flex}
+      .bar-nav a{padding:14px 0;width:100%;border-bottom:1px dashed var(--line)}
+      .bar-nav a:last-child{border-bottom:none}
+      .bar-nav .onair{border:none;padding:14px 0}
+      .burger{display:flex}
+      .wrap,#hero,.foot-inner{padding-left:22px;padding-right:22px}
+      .neon-sign .red,.neon-sign .three{-webkit-text-stroke-width:1.5px}
+      .band{padding:74px 0}
+      .ticket{grid-template-columns:1fr}
+      .tk-no{flex-direction:row;justify-content:flex-start;gap:16px;border-right:none;border-bottom:2px dashed rgba(25,19,16,.28);padding:18px 30px}
+      .tk-no .word{writing-mode:horizontal-tb;transform:none}
+      .tk-stub{flex-direction:row;justify-content:space-between;border-left:none;border-top:2px dashed rgba(25,19,16,.28);padding:18px 30px}
+      .tk-stub .barcode{width:90px}
+      .social{flex-direction:column;align-items:stretch}
     }
-
-    .nav-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-brand { display: flex; align-items: center; gap: 12px; }
-
-    .nav-monogram {
-      width: 38px; height: 38px;
-      border: 1.5px solid var(--crimson);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-head);
-      font-size: 15px; letter-spacing: 1px;
-      color: var(--crimson);
-    }
-
-    .nav-name {
-      font-family: var(--font-head);
-      font-size: 20px;
-      letter-spacing: 3px;
-      color: var(--white);
-    }
-
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-
-    .nav-links a {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--silver);
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--crimson); }
-
-    .nav-cta {
-      border: 1.5px solid var(--crimson) !important;
-      color: var(--crimson) !important;
-      padding: 8px 18px;
-      transition: all 0.2s !important;
-    }
-
-    .nav-cta:hover { background: var(--crimson) !important; color: var(--bg) !important; }
-
-    .nav-burger {
-      display: none; flex-direction: column; gap: 5px; background: none; border: none;
-      cursor: pointer; padding: 6px; z-index: 110;
-    }
-    .nav-burger span { width: 22px; height: 2px; background: var(--white); display: block; transition: .25s; }
-    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-burger.open span:nth-child(2) { opacity: 0; }
-    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* ─── HERO ──────────────────────────────────────────── */
-    #hero {
-      position: relative;
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      overflow: hidden;
-      padding: calc(var(--nav-h) + 40px) 24px 60px;
-      max-width: var(--max);
-      margin: 0 auto;
-      gap: 40px;
-    }
-
-    #hero::after {
-      content: '';
-      position: absolute;
-      top: -10%;
-      left: -10%;
-      width: 60%;
-      height: 70%;
-      background: radial-gradient(ellipse at center, rgba(178, 59, 59, 0.16) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-inner { position: relative; z-index: 1; }
-
-    .ticket-tag {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
-      letter-spacing: 3px; text-transform: uppercase; color: var(--crimson);
-      border: 1px dashed var(--crimson); padding: 6px 14px;
-      margin-bottom: 28px;
-    }
-    .ticket-tag::before { content: '●'; font-size: 8px; }
-
-    .hero-title {
-      font-family: var(--font-head);
-      font-size: clamp(64px, 10vw, 132px);
-      line-height: 0.92;
-      letter-spacing: 3px;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-
-    .hero-title span {
-      display: block;
-      color: var(--crimson);
-      -webkit-text-stroke: 2px var(--crimson);
-      color: transparent;
-    }
-
-    .hero-tagline {
-      font-size: clamp(17px, 2vw, 22px);
-      font-style: italic;
-      color: var(--cream-dim);
-      letter-spacing: .3px;
-      margin: 28px 0 8px;
-      font-weight: 500;
-    }
-
-    .hero-sub {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: 2px;
-      margin-bottom: 44px;
-      text-transform: uppercase;
-    }
-
-    .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--crimson); color: var(--bg);
-      padding: 15px 32px;
-      font-family: var(--font-mono);
-      font-size: 12px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase;
-      border: 2px solid var(--crimson);
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-primary:hover { background: var(--crimson-h); border-color: var(--crimson-h); transform: translateY(-2px); }
-
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: transparent; color: var(--cream-dim);
-      padding: 15px 32px;
-      font-family: var(--font-mono);
-      font-size: 12px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase;
-      border: 2px solid var(--border);
-      cursor: pointer;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-outline:hover { border-color: var(--cream-dim); color: var(--white); }
-
-    /* ─── VINYL ─────────────────────────────────────────── */
-    .vinyl-wrap {
-      position: relative; aspect-ratio: 1/1; max-width: 460px; margin: 0 auto;
-    }
-    .vinyl {
-      width: 100%; height: 100%; animation: spin 18s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .vinyl .groove { fill: none; stroke: var(--surface-3); stroke-width: 1; }
-    .vinyl .disc { fill: var(--surface); stroke: var(--border); stroke-width: 1; }
-    .vinyl .label-circle { fill: var(--crimson); }
-    .vinyl text {
-      font-family: var(--font-head); font-size: 19px; letter-spacing: 3px;
-      fill: var(--cream); text-anchor: middle;
-    }
-    .vinyl .label-sub { font-family: var(--font-mono); font-size: 5px; letter-spacing: .5px; fill: rgba(15,14,12,.6); }
-    .listen-embed { border-radius: 8px; overflow: hidden; max-width: 420px; margin-top: 28px; }
-    .vinyl .hole { fill: var(--bg); }
-    .vinyl-arm {
-      position: absolute; top: 6%; right: 2%;
-      width: 46%; height: 46%;
-      border: 3px solid var(--cream-dim);
-      border-radius: 0 100% 0 0;
-      border-bottom: none; border-left: none;
-      opacity: .35;
-    }
-    .vinyl-arm::after {
-      content: ''; position: absolute; top: -7px; right: -7px;
-      width: 16px; height: 16px; border-radius: 50%;
-      background: var(--cream-dim);
-    }
-
-    /* ─── SECTION COMMONS ───────────────────────────────── */
-    section { padding: 110px 0; }
-
-    .section-header { margin-bottom: 60px; }
-
-    .section-label {
-      display: inline-flex; align-items: center; gap: 12px;
-      font-family: var(--font-mono);
-      font-size: 11px; font-weight: 700; letter-spacing: 4px;
-      text-transform: uppercase; color: var(--crimson);
-      margin-bottom: 14px;
-    }
-    .section-label::before { content: ''; width: 28px; height: 1px; background: var(--crimson); }
-
-    .section-title {
-      font-family: var(--font-head);
-      font-size: clamp(42px, 6vw, 68px);
-      letter-spacing: 3px;
-      color: var(--white);
-      line-height: 1;
-    }
-
-    /* ─── EPISODES (TICKET STUBS) ──────────────────────── */
-    #episodes {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .episodes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
-      gap: 36px;
-    }
-
-    .episode-card {
-      position: relative;
-      background: var(--cream);
-      color: var(--bg);
-      padding: 36px 40px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      transition: transform 0.25s;
-      transform: rotate(var(--rot, -.6deg));
-    }
-    .episode-card:nth-child(even) { --rot: .6deg; }
-    .episode-card:hover { transform: rotate(0deg) translateY(-4px); }
-
-    /* perforation notches */
-    .episode-card::before, .episode-card::after {
-      content: ''; position: absolute; top: 50%; transform: translateY(-50%);
-      width: 22px; height: 22px; border-radius: 50%; background: var(--bg);
-    }
-    .episode-card::before { left: -11px; }
-    .episode-card::after { right: -11px; }
-
-    .ep-main { border-right: 1px dashed rgba(15,14,12,.25); padding-right: 24px; }
-
-    .ep-number {
-      font-family: var(--font-mono);
-      font-size: 11px; font-weight: 700; letter-spacing: 4px;
-      text-transform: uppercase; color: var(--crimson);
-      margin-bottom: 10px;
-    }
-
-    .ep-title {
-      font-family: var(--font-head);
-      font-size: clamp(26px, 3vw, 34px);
-      letter-spacing: 1px;
-      color: var(--bg);
-      line-height: 1.05;
-      margin-bottom: 14px;
-    }
-
-    .ep-description {
-      font-size: 14px; line-height: 1.75; color: rgba(15,14,12,.72);
-      margin-bottom: 22px;
-    }
-
-    .ep-link {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--font-mono);
-      font-size: 11px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--crimson);
-      transition: gap 0.2s;
-    }
-    .ep-link:hover { gap: 12px; }
-
-    .ep-stub {
-      writing-mode: vertical-rl; transform: rotate(180deg);
-      display: flex; align-items: center; justify-content: space-between;
-      font-family: var(--font-mono); font-size: 10px; font-weight: 700;
-      letter-spacing: 3px; text-transform: uppercase; color: rgba(15,14,12,.5);
-      padding: 4px 0;
-    }
-    .ep-stub b { color: var(--crimson); font-size: 13px; }
-
-    /* ─── HOSTS ─────────────────────────────────────────── */
-    #hosts { background: var(--bg); }
-
-    .hosts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-      gap: 32px;
-    }
-
-    .host-card {
-      display: flex; gap: 28px; align-items: flex-start;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 36px;
-      transition: border-color 0.2s;
-    }
-    .host-card:hover { border-color: var(--crimson); }
-
-    .host-avatar {
-      flex-shrink: 0; width: 76px; height: 76px;
-      border: 1.5px dashed var(--crimson);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-head); font-size: 30px; letter-spacing: 2px;
-      color: var(--crimson);
-    }
-
-    .host-info { flex: 1; }
-
-    .host-name {
-      font-family: var(--font-head); font-size: 32px; letter-spacing: 3px;
-      color: var(--white); margin-bottom: 6px;
-    }
-
-    .host-role {
-      font-family: var(--font-mono);
-      font-size: 11px; font-weight: 700; letter-spacing: 3px;
-      text-transform: uppercase; color: var(--crimson);
-      margin-bottom: 16px;
-    }
-
-    .host-bio { font-size: 14px; line-height: 1.8; color: var(--silver); }
-
-    /* ─── ABOUT ─────────────────────────────────────────── */
-    #about {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .about-layout {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-    }
-
-    .about-text h3 {
-      font-family: var(--font-head); font-size: 36px; letter-spacing: 3px;
-      color: var(--white); margin-bottom: 20px;
-    }
-
-    .about-text p { font-size: 15px; line-height: 1.85; color: var(--silver); margin-bottom: 16px; }
-
-    .about-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-
-    .pillar { text-align: center; padding: 8px; }
-
-    .pillar-stamp {
-      width: 64px; height: 64px; margin: 0 auto 14px;
-      border: 1.5px dashed var(--crimson); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-head); font-size: 22px; letter-spacing: 1px;
-      color: var(--crimson); transform: rotate(-8deg);
-    }
-    .pillar:nth-child(2n) .pillar-stamp { transform: rotate(6deg); }
-
-    .pillar-title {
-      font-family: var(--font-mono);
-      font-size: 11px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--white); margin-bottom: 8px;
-    }
-
-    .pillar-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
-
-    /* ─── CONTACT ───────────────────────────────────────── */
-    #contact {
-      background: var(--cream); color: var(--bg);
-      text-align: center;
-    }
-    #contact .section-label { color: var(--crimson); }
-    #contact .section-label::before { background: var(--crimson); }
-    #contact .section-title { color: var(--bg); }
-
-    .contact-tagline {
-      font-size: 17px; color: rgba(15,14,12,.65);
-      margin-bottom: 48px; font-style: italic;
-    }
-
-    .contact-links { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
-
-    .contact-link {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 13px 26px;
-      border: 1.5px solid rgba(15,14,12,.18);
-      font-family: var(--font-mono);
-      font-size: 12px; font-weight: 700; letter-spacing: 1px;
-      color: rgba(15,14,12,.7);
-      transition: border-color 0.2s, color 0.2s, background 0.2s;
-    }
-    .contact-link:hover { border-color: var(--crimson); color: var(--crimson); background: rgba(178,59,59,.06); }
-
-    .contact-link.spotify { background: #1DB954; border-color: #1DB954; color: #0F0E0C; }
-    .contact-link.spotify:hover { background: #1ed760; border-color: #1ed760; }
-    .contact-link.apple { background: #6B36AF; border-color: #6B36AF; color: #fff; }
-    .contact-link.apple:hover { background: #7D42C9; border-color: #7D42C9; }
-
-    .platform-groups { display: flex; flex-direction: column; gap: 32px; margin-bottom: 56px; }
-
-    .platform-group-label {
-      font-family: var(--font-mono);
-      font-size: 11px; font-weight: 700; letter-spacing: 4px;
-      text-transform: uppercase; color: rgba(15,14,12,.45); margin-bottom: 16px;
-    }
-
-    .contact-email-block {
-      margin-top: 40px; padding-top: 40px;
-      border-top: 1px dashed rgba(15,14,12,.2);
-    }
-
-    .contact-email-label {
-      font-family: var(--font-mono);
-      font-size: 11px; font-weight: 700; letter-spacing: 4px;
-      text-transform: uppercase; color: rgba(15,14,12,.45); margin-bottom: 12px;
-    }
-
-    .contact-email-link {
-      font-family: var(--font-head); font-size: 30px; letter-spacing: 2px;
-      color: var(--bg); transition: color 0.2s;
-    }
-    .contact-email-link:hover { color: var(--crimson); }
-
-    /* ─── FOOTER ────────────────────────────────────────── */
-    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 0; }
-
-    .footer-inner {
-      max-width: var(--max); margin: 0 auto; padding: 0 24px;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px;
-    }
-
-    .footer-brand { display: flex; align-items: center; gap: 10px; }
-
-    .footer-monogram {
-      width: 30px; height: 30px;
-      border: 1.5px solid var(--crimson); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-head); font-size: 12px; color: var(--crimson);
-    }
-
-    .footer-name {
-      font-family: var(--font-head); font-size: 16px; letter-spacing: 3px; color: var(--silver);
-    }
-
-    .footer-copy { font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: 1px; }
-
-    /* ─── RESPONSIVE ────────────────────────────────────── */
-    @media (max-width: 900px) {
-      #hero { grid-template-columns: 1fr; }
-      .vinyl-wrap { max-width: 320px; margin-top: 32px; }
-      .episode-card { grid-template-columns: 1fr; }
-      .ep-main { border-right: none; border-bottom: 1px dashed rgba(15,14,12,.25); padding-right: 0; padding-bottom: 18px; }
-      .ep-stub { writing-mode: horizontal-tb; transform: none; justify-content: flex-start; gap: 12px; padding-top: 14px; }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links { display: none; position: absolute; top: var(--nav-h); left: 0; right: 0;
-        background: var(--bg); border-bottom: 1px solid var(--border);
-        flex-direction: column; align-items: flex-start; gap: 0; padding: 8px 24px 16px; }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 14px 0; width: 100%; border-bottom: 1px dashed var(--border); }
-      .nav-links a:last-child { border-bottom: none; }
-      .nav-burger { display: flex; }
-
-      section { padding: 76px 0; }
-
-      .episodes-grid { grid-template-columns: 1fr; }
-      .hosts-grid { grid-template-columns: 1fr; }
-
-      .about-layout { grid-template-columns: 1fr; gap: 44px; }
-      .about-pillars { grid-template-columns: 1fr 1fr; }
-
-      .host-card { flex-direction: column; gap: 20px; }
-
-      .footer-inner { flex-direction: column; text-align: center; }
-
-      .contact-links { flex-direction: column; align-items: stretch; }
-      .contact-link { justify-content: center; }
-    }
-
-    @media (max-width: 520px) {
-      .about-pillars { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+      .vinyl{animation:none}
+      .ripple{display:none}
     }
   </style>
 </head>
-
 <body>
 
-  <!-- ══════════════════════════════════════════════════════
-       NAV
-  ══════════════════════════════════════════════════════ -->
-  <nav>
-    <div class="nav-inner">
-      <a href="#hero" class="nav-brand">
-        <div class="nav-monogram">MPD</div>
-        <span class="nav-name">MR. PUTRID'S DEN</span>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#episodes">Episodios</a></li>
-        <li><a href="#hosts">Los Hosts</a></li>
-        <li><a href="#about">El Show</a></li>
-        <li><a href="#contact">Contacto</a></li>
-        <li><a href="https://open.spotify.com/episode/0LW93D5Q5KhQYfIX96xOEH?si=4fee5140b6934fe6" target="_blank" rel="noopener" class="nav-cta">Escuchar</a></li>
-      </ul>
-      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
+<div class="grain" aria-hidden="true"></div>
+<div id="atmo" aria-hidden="true">
+  <div class="den-img"></div>
+  <div class="den-glow"></div>
+</div>
+<div id="eggs">
+  <button class="egg" style="left:6.5%;top:20%" aria-label="Black Sabbath"><span class="dot"></span><span class="tag">Black Sabbath</span></button>
+  <button class="egg" style="left:12%;top:58%" aria-label="Pink Floyd"><span class="dot"></span><span class="tag">Pink Floyd</span></button>
+  <button class="egg" style="left:27%;top:48%" aria-label="Led Zeppelin"><span class="dot"></span><span class="tag">Led Zeppelin</span></button>
+  <button class="egg" style="left:46%;top:32%" aria-label="The Rolling Stones"><span class="dot"></span><span class="tag">The Rolling Stones</span></button>
+  <button class="egg" style="left:60%;top:26%" aria-label="AC DC"><span class="dot"></span><span class="tag">AC DC</span></button>
+  <button class="egg" style="left:79%;top:22%" aria-label="Motorhead"><span class="dot"></span><span class="tag">Motorhead</span></button>
+  <button class="egg" style="left:93%;top:41%" aria-label="Jack Daniels"><span class="dot"></span><span class="tag">Jack Daniel's</span></button>
+  <button class="egg" style="left:66%;top:80%" aria-label="Kraken"><span class="dot"></span><span class="tag">Kraken</span></button>
+  <div class="den-hint">Psst... toca el bar, hay secretos</div>
+</div>
+
+<!-- TOP BAR -->
+<header id="bar">
+  <a href="#hero" class="brand">
+    <span class="mono-badge">MPD</span>
+    <span class="brand-name">MR. PUTRID'S DEN</span>
+  </a>
+  <nav class="bar-nav" id="navLinks">
+    <a href="#episodios">Episodios</a>
+    <a href="#residentes">Los Hosts</a>
+    <a href="#show">El Show</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://open.spotify.com/episode/0LW93D5Q5KhQYfIX96xOEH?si=4fee5140b6934fe6" target="_blank" rel="noopener" class="onair"><span class="led"></span>On Air</a>
   </nav>
+  <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+</header>
 
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <span class="hero-kicker">Temporada 1, Bogotá</span>
 
-  <!-- ══════════════════════════════════════════════════════
-       HERO
-  ══════════════════════════════════════════════════════ -->
-  <section id="hero">
-    <div class="hero-inner reveal in-view">
-      <p class="ticket-tag">Temporada 1 · Bogotá</p>
+    <h1 class="neon-sign" aria-label="Mr. Putrid's Den">
+      <span class="ln one white">MR.</span>
+      <span class="ln red">PUTRID'S</span>
+      <span class="ln three white">DEN</span>
+    </h1>
 
-      <h1 class="hero-title">
-        MR. PUTRID'S
-        <span>DEN</span>
-      </h1>
+    <p class="tagline">"Donde los riffs encuentran el whisky"</p>
+    <p class="hero-sub">Andrés y Juan. 5 episodios disponibles</p>
 
-      <p class="hero-tagline">"Donde los riffs encuentran el whisky"</p>
-      <p class="hero-sub">Andrés &amp; Juan — 5 episodios disponibles</p>
-
-      <div class="hero-actions">
-        <a href="https://open.spotify.com/episode/0LW93D5Q5KhQYfIX96xOEH?si=4fee5140b6934fe6" target="_blank" rel="noopener" class="btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.622.622 0 01-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.871 7.077-.496 9.712 1.115a.623.623 0 01.207.857zm1.223-2.722a.779.779 0 01-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.778.778 0 01-.966-.519.779.779 0 01.519-.966c3.632-1.102 8.147-.568 11.228 1.322a.78.78 0 01.256 1.072zm.105-2.835c-3.223-1.914-8.54-2.09-11.617-1.156a.935.935 0 11-.543-1.79c3.532-1.073 9.404-.865 13.115 1.338a.935.935 0 01-.955 1.608z"/></svg>
-          Escuchar en Spotify
-        </a>
-        <a href="#episodes" class="btn-outline">Ver episodios →</a>
-      </div>
-
-      <div class="listen-embed reveal">
-        <iframe style="border-radius:8px"
-          src="https://open.spotify.com/embed/episode/1QRXaL85TszCpwo2pfmEPw?utm_source=generator&theme=0"
-          width="100%" height="152" frameBorder="0"
-          allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-        </iframe>
-      </div>
+    <div class="vu" aria-hidden="true" id="vu">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <span class="vu-label">Señal en vivo</span>
     </div>
 
-    <div class="vinyl-wrap reveal in-view" style="transition-delay:.1s">
-      <svg class="vinyl" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <circle class="disc" cx="100" cy="100" r="98"/>
-        <circle class="groove" cx="100" cy="100" r="86"/>
-        <circle class="groove" cx="100" cy="100" r="74"/>
-        <circle class="groove" cx="100" cy="100" r="62"/>
-        <circle class="groove" cx="100" cy="100" r="50"/>
-        <circle class="label-circle" cx="100" cy="100" r="38"/>
-        <text x="100" y="98">MPD</text>
-        <text class="label-sub" x="100" y="108">EST. 2026</text>
-        <text class="label-sub" x="100" y="116">BOGOTÁ</text>
-        <circle class="hole" cx="100" cy="100" r="4"/>
-      </svg>
-      <div class="vinyl-arm"></div>
+    <div class="hero-actions">
+      <a href="https://open.spotify.com/episode/0LW93D5Q5KhQYfIX96xOEH?si=4fee5140b6934fe6" target="_blank" rel="noopener" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.622.622 0 01-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.871 7.077-.496 9.712 1.115a.623.623 0 01.207.857zm1.223-2.722a.779.779 0 01-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.778.778 0 01-.966-.519.779.779 0 01.519-.966c3.632-1.102 8.147-.568 11.228 1.322a.78.78 0 01.256 1.072zm.105-2.835c-3.223-1.914-8.54-2.09-11.617-1.156a.935.935 0 11-.543-1.79c3.532-1.073 9.404-.865 13.115 1.338a.935.935 0 01-.955 1.608z"/></svg>
+        Escuchar en Spotify
+      </a>
+      <a href="#episodios" class="btn-outline">Ver episodios →</a>
     </div>
-  </section>
+  </div>
 
+  <div class="deck">
+    <svg class="vinyl" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="sheen" cx="38%" cy="30%" r="65%">
+          <stop offset="0%" stop-color="rgba(241,232,214,.10)"/>
+          <stop offset="55%" stop-color="rgba(241,232,214,0)"/>
+        </radialGradient>
+      </defs>
+      <circle class="platter" cx="100" cy="100" r="98"/>
+      <circle class="disc" cx="100" cy="100" r="96"/>
+      <circle class="groove" cx="100" cy="100" r="88"/>
+      <circle class="groove" cx="100" cy="100" r="80"/>
+      <circle class="groove" cx="100" cy="100" r="72"/>
+      <circle class="groove" cx="100" cy="100" r="64"/>
+      <circle class="groove" cx="100" cy="100" r="56"/>
+      <circle class="groove" cx="100" cy="100" r="48"/>
+      <circle class="sheen" cx="100" cy="100" r="96"/>
+      <circle class="label-circle" cx="100" cy="100" r="38"/>
+      <circle class="label-ring" cx="100" cy="100" r="33"/>
+      <text class="lbl" x="100" y="98">MPD</text>
+      <text class="lbl-sub" x="100" y="108">EST. 2026</text>
+      <text class="lbl-sub" x="100" y="116">BOGOTÁ</text>
+      <circle class="hole" cx="100" cy="100" r="4"/>
+    </svg>
+    <div class="tonearm"></div>
+  </div>
+</section>
 
-  <!-- ══════════════════════════════════════════════════════
-       EPISODES
-  ══════════════════════════════════════════════════════ -->
-  <section id="episodes">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Temporada 1</span>
-        <h2 class="section-title">EPISODIOS</h2>
-      </div>
-
-      <!-- GRID RULE (mirrors BTQ): "Episodios recientes" = siempre 4 cards, muestra los 4 ANTERIORES al episodio en circulación (NO incluye el nuevo — su propio embed/link ya lo cubre). Al lanzar nuevo EP: rota — entra el anterior al nuevo, sale el más antiguo. Orden oldest -> newest, izquierda a derecha. -->
-      <div class="episodes-grid">
-
-        <!-- EP.001 -->
-        <div class="episode-card reveal" data-ep="001">
-          <div class="ep-main">
-            <p class="ep-number">EP. 001</p>
-            <h3 class="ep-title">Bienvenidos a la Guarida</h3>
-            <p class="ep-description">
-              El primer episodio. Andrés y Juan se presentan, cuentan sus primeros conciertos y responden una sola pregunta — ¿cuál fue el riff que cambió su relación con la música para siempre? Soda Stereo, Led Zeppelin, B.B. King, Nirvana. Rock, metal, jazz, underground bogotano. Conozca la guarida.
-            </p>
-            <a href="https://open.spotify.com/episode/0LW93D5Q5KhQYfIX96xOEH?si=4fee5140b6934fe6" target="_blank" rel="noopener" class="ep-link">
-              Escuchar en Spotify →
-            </a>
-          </div>
-          <div class="ep-stub"><span>21 MIN</span><b>ADMIT ONE</b></div>
-        </div>
-
-        <!-- EP.002 -->
-        <div class="episode-card reveal" data-ep="002" style="transition-delay:.08s">
-          <div class="ep-main">
-            <p class="ep-number">EP. 002</p>
-            <h3 class="ep-title">Black Sabbath: El Génesis del Heavy Metal</h3>
-            <p class="ep-description">
-              De las fábricas de Birmingham al estudio de grabación: cómo un accidente industrial en las manos de Tony Iommi cambió para siempre el sonido de la música pesada. Paranoid, Iron Man, War Pigs — y la historia detrás de cada una. Por qué todo el metal que existe hoy le debe algo a estos cuatro muchachos de clase obrera.
-            </p>
-            <a href="https://open.spotify.com/episode/3SLocBBNewAJUOE6EZDk7V" target="_blank" rel="noopener" class="ep-link">
-              Escuchar en Spotify →
-            </a>
-          </div>
-          <div class="ep-stub"><span>60 MIN</span><b>ADMIT ONE</b></div>
-        </div>
-
-        <!-- EP.003 -->
-        <div class="episode-card reveal" data-ep="003" style="transition-delay:.16s">
-          <div class="ep-main">
-            <p class="ep-number">EP. 003</p>
-            <h3 class="ep-title">Las Raíces del Rock: Sister Rosetta Tharpe</h3>
-            <p class="ep-description">
-              ¿Qué tiene en común un riff de Black Sabbath con la clave de la salsa? La misma raíz. Andrés y Juan trazan la cadena completa: de los ritmos africanos que llegaron al Mississippi, pasando por el blues del delta y la leyenda del crossroads de Robert Johnson, hasta Sister Rosetta Tharpe — la abuela del rock & roll — y de ahí a Chuck Berry, los Rolling Stones y Black Sabbath en Birmingham.
-            </p>
-            <a href="https://open.spotify.com/episode/3c5wrMaA5Yqp4TOFwHAf6Y?si=1a16e0e093f94361" target="_blank" rel="noopener" class="ep-link">
-              Escuchar en Spotify →
-            </a>
-          </div>
-          <div class="ep-stub"><span>64 MIN</span><b>ADMIT ONE</b></div>
-        </div>
-
-        <!-- EP.004 P1 -->
-        <div class="episode-card reveal" data-ep="004" style="transition-delay:.24s">
-          <div class="ep-main">
-            <p class="ep-number">EP. 004 · Parte 1</p>
-            <h3 class="ep-title">Kraken: el Titán del Rock Colombiano</h3>
-            <p class="ep-description">
-              Una banda de Medellín se atrevió a cantar metal en español cuando todo el mundo "sabía" que eso no se hacía. Andrés y Juan cuentan la historia de Kraken y de Elkin Ramírez, el Titán: el ultra metal paisa que llegó a Noruega por correo postal, la Batalla de las Bandas de 1985 en La Macarena y el camino hasta "Vestido de Cristal". Primera de dos partes.
-            </p>
-            <a href="https://open.spotify.com/episode/0Zf7egfYOQFP3E8Af9b4fr" target="_blank" rel="noopener" class="ep-link">
-              Escuchar en Spotify →
-            </a>
-          </div>
-          <div class="ep-stub"><span>92 MIN</span><b>ADMIT ONE</b></div>
-        </div>
-
-      </div>
+<!-- EPISODIOS (concert tickets, stacked) -->
+<section class="band" id="episodios">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label">En cartel, Temporada 1</span>
+      <h2 class="sec-title">EPISODIOS</h2>
     </div>
-  </section>
 
+    <!-- GRID RULE: siempre los episodios anteriores al que está en circulación. Orden del más viejo al más nuevo. Al lanzar nuevo EP: entra el anterior, sale el más antiguo. -->
+    <div class="tickets">
 
-  <!-- ══════════════════════════════════════════════════════
-       HOSTS
-  ══════════════════════════════════════════════════════ -->
-  <section id="hosts">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Detrás del micrófono</span>
-        <h2 class="section-title">LOS HOSTS</h2>
+      <article class="ticket rv">
+        <div class="tk-no"><span class="big">01</span><span class="word">Admit One</span></div>
+        <div class="tk-body">
+          <p class="tk-ep">Episodio 001, La Guarida</p>
+          <h3 class="tk-title">Bienvenidos a la Guarida</h3>
+          <p class="tk-desc">El primer episodio. Andrés y Juan se presentan, cuentan sus primeros conciertos y responden una sola pregunta: ¿cuál fue el riff que cambió su relación con la música para siempre? Soda Stereo, Led Zeppelin, B.B. King, Nirvana. Rock, metal, jazz y underground bogotano.</p>
+          <a href="https://open.spotify.com/episode/0LW93D5Q5KhQYfIX96xOEH?si=4fee5140b6934fe6" target="_blank" rel="noopener" class="tk-link" data-cursor="Reproducir">Escuchar en Spotify →</a>
+        </div>
+        <div class="tk-stub"><span class="seat">General</span><span class="barcode" aria-hidden="true"></span><span class="min">21<small>min</small></span></div>
+      </article>
+
+      <article class="ticket rv">
+        <div class="tk-no"><span class="big">02</span><span class="word">Admit One</span></div>
+        <div class="tk-body">
+          <p class="tk-ep">Episodio 002, Birmingham</p>
+          <h3 class="tk-title">Black Sabbath: El Génesis del Heavy Metal</h3>
+          <p class="tk-desc">De las fábricas de Birmingham al estudio de grabación: cómo un accidente industrial en las manos de Tony Iommi cambió para siempre el sonido de la música pesada. Paranoid, Iron Man, War Pigs, y por qué todo el metal que existe hoy le debe algo a estos cuatro muchachos de clase obrera.</p>
+          <a href="https://open.spotify.com/episode/3SLocBBNewAJUOE6EZDk7V" target="_blank" rel="noopener" class="tk-link" data-cursor="Reproducir">Escuchar en Spotify →</a>
+        </div>
+        <div class="tk-stub"><span class="seat">General</span><span class="barcode" aria-hidden="true"></span><span class="min">60<small>min</small></span></div>
+      </article>
+
+      <article class="ticket rv">
+        <div class="tk-no"><span class="big">03</span><span class="word">Admit One</span></div>
+        <div class="tk-body">
+          <p class="tk-ep">Episodio 003, Las Raíces</p>
+          <h3 class="tk-title">Las Raíces del Rock: Sister Rosetta Tharpe</h3>
+          <p class="tk-desc">¿Qué tiene en común un riff de Black Sabbath con la clave de la salsa? La misma raíz. Andrés y Juan trazan la cadena completa: de los ritmos africanos que llegaron al Mississippi, pasando por el blues del delta y el crossroads de Robert Johnson, hasta Sister Rosetta Tharpe, la abuela del rock and roll.</p>
+          <a href="https://open.spotify.com/episode/3c5wrMaA5Yqp4TOFwHAf6Y?si=1a16e0e093f94361" target="_blank" rel="noopener" class="tk-link" data-cursor="Reproducir">Escuchar en Spotify →</a>
+        </div>
+        <div class="tk-stub"><span class="seat">General</span><span class="barcode" aria-hidden="true"></span><span class="min">64<small>min</small></span></div>
+      </article>
+
+      <article class="ticket rv">
+        <div class="tk-no"><span class="big">04</span><span class="word">Admit One</span></div>
+        <div class="tk-body">
+          <p class="tk-ep">Episodio 004, Parte 1, Medellín</p>
+          <h3 class="tk-title">Kraken: el Titán del Rock Colombiano</h3>
+          <p class="tk-desc">Una banda de Medellín se atrevió a cantar metal en español cuando todo el mundo "sabía" que eso no se hacía. La historia de Kraken y de Elkin Ramírez, el Titán: el ultra metal paisa que llegó a Noruega por correo postal, la Batalla de las Bandas de 1985 y el camino hasta "Vestido de Cristal". Primera de dos partes.</p>
+          <a href="https://open.spotify.com/episode/0Zf7egfYOQFP3E8Af9b4fr" target="_blank" rel="noopener" class="tk-link" data-cursor="Reproducir">Escuchar en Spotify →</a>
+        </div>
+        <div class="tk-stub"><span class="seat">General</span><span class="barcode" aria-hidden="true"></span><span class="min">92<small>min</small></span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- EL SHOW + LA CARTA -->
+<section class="band" id="show">
+  <div class="wrap">
+    <div class="show-grid">
+      <div class="show-text rv">
+        <span class="label">Qué es esto</span>
+        <h2 class="sec-title" style="margin-bottom:24px">EL SHOW</h2>
+        <p><b>Mr. Putrid's Den</b> es un podcast conversacional donde Andrés y Juan se sientan a hablar de música, sin filtro, sin guion rígido, con el respeto que se le tiene a los artistas y la pasión que se le tiene a los riffs.</p>
+        <p>Mitad estudio de grabación, mitad bar de whisky: rock clásico, heavy metal, jazz y underground bogotano. Artistas emergentes, conciertos legendarios, álbumes que cambiaron todo. Un lugar donde la conversación importa tanto como la música misma.</p>
       </div>
 
-      <div class="hosts-grid">
-
-        <div class="host-card reveal">
-          <div class="host-avatar">A</div>
-          <div class="host-info">
-            <h3 class="host-name">ANDRÉS</h3>
-            <p class="host-role">Co-host</p>
-            <p class="host-bio">
-              Fan del rock clásico, el blues y los caminos inesperados que lleva la música. De Nirvana al blues, de la guitarra eléctrica al vinilo de madrugada. Co-creador de la guarida.
-            </p>
-          </div>
-        </div>
-
-        <div class="host-card reveal" style="transition-delay:.08s">
-          <div class="host-avatar">J</div>
-          <div class="host-info">
-            <h3 class="host-name">JUAN</h3>
-            <p class="host-role">Co-host · Promotor de eventos</p>
-            <p class="host-bio">
-              Promotor de eventos musicales underground en Bogotá. Conoce el escenario, los camerinos y la gente que mueve la escena. El que tiene los contactos — y los mejores chismes del circuito.
-            </p>
-          </div>
-        </div>
-
+      <div class="rv">
+        <p class="carta-h">LA CARTA DE LA CASA</p>
+        <p class="carta-note">Lo que se sirve en la guarida</p>
+        <div class="carta-row"><span class="dish">Rock clásico</span><span class="dots"></span><span class="tag">la base</span></div>
+        <div class="carta-row"><span class="dish">Heavy metal</span><span class="dots"></span><span class="tag">doble</span></div>
+        <div class="carta-row"><span class="dish">Jazz</span><span class="dots"></span><span class="tag">de la casa</span></div>
+        <div class="carta-row"><span class="dish">Blues</span><span class="dots"></span><span class="tag">añejo</span></div>
+        <div class="carta-row"><span class="dish">Underground bogotano</span><span class="dots"></span><span class="tag">especial</span></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <!-- ══════════════════════════════════════════════════════
-       ABOUT
-  ══════════════════════════════════════════════════════ -->
-  <section id="about">
-    <div class="container">
-      <div class="about-layout">
-
-        <div class="about-text reveal">
-          <span class="section-label">Qué es esto</span>
-          <h3>EL SHOW</h3>
-          <p>
-            Mr. Putrid's Den es un podcast conversacional donde Andrés y Juan se sientan a hablar de música — sin filtro, sin guion rígido, con el respeto que se le tiene a los artistas y la pasión que se le tiene a los riffs.
-          </p>
-          <p>
-            Rock clásico, heavy metal, jazz, underground bogotano. Artistas emergentes, conciertos legendarios, álbumes que cambiaron todo. Un lugar donde la conversación importa tanto como la música misma.
-          </p>
+<!-- RESIDENTES -->
+<section class="band" id="residentes">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label">Detrás de la barra</span>
+      <h2 class="sec-title">LOS RESIDENTES</h2>
+    </div>
+    <div class="res-grid">
+      <div class="res rv">
+        <div class="res-av">A</div>
+        <div>
+          <div class="res-name">ANDRÉS</div>
+          <p class="res-role">Anfitrión</p>
+          <p class="res-bio">Fan del rock clásico, el blues y los caminos inesperados que lleva la música. De Nirvana al blues, de la guitarra eléctrica al vinilo de madrugada. Co creador de la guarida.</p>
         </div>
-
-        <div class="about-pillars reveal" style="transition-delay:.08s">
-          <div class="pillar">
-            <div class="pillar-stamp">RIFF</div>
-            <p class="pillar-title">Análisis profundo</p>
-            <p class="pillar-desc">Bandas, álbumes e historias que van más allá de lo obvio.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar-stamp">LIVE</div>
-            <p class="pillar-title">Conversación real</p>
-            <p class="pillar-desc">Dos fanáticos hablando como fanáticos. Sin poses. Sin guion.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar-stamp">U/G</div>
-            <p class="pillar-title">Underground</p>
-            <p class="pillar-desc">Artistas emergentes, eventos y la escena que no sale en Google.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar-stamp">VOL</div>
-            <p class="pillar-title">Historia musical</p>
-            <p class="pillar-desc">Del blues al doom metal. Géneros, eras y por qué importan.</p>
-          </div>
+      </div>
+      <div class="res rv">
+        <div class="res-av">J</div>
+        <div>
+          <div class="res-name">JUAN</div>
+          <p class="res-role">Anfitrión y promotor de eventos</p>
+          <p class="res-bio">Promotor de eventos musicales underground en Bogotá. Conoce el escenario, los camerinos y la gente que mueve la escena. El que tiene los contactos, y los mejores chismes del circuito.</p>
         </div>
-
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <!-- ══════════════════════════════════════════════════════
-       CONTACT
-  ══════════════════════════════════════════════════════ -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-header reveal" style="text-align: center;">
-        <span class="section-label" style="margin: 0 auto 14px; justify-content: center;">Encuéntranos</span>
-        <h2 class="section-title">LA GUARIDA<br>ESTÁ ABIERTA</h2>
-      </div>
-
-      <p class="contact-tagline">Disponible en las principales plataformas de podcasting.</p>
-
-      <div class="platform-groups">
-
-        <!-- Streaming -->
-        <div class="reveal">
-          <p class="platform-group-label">Escúchanos en</p>
-          <div class="contact-links">
-
-            <a href="https://open.spotify.com/episode/0LW93D5Q5KhQYfIX96xOEH?si=4fee5140b6934fe6" target="_blank" rel="noopener" class="contact-link spotify">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.622.622 0 01-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 01-.277-1.215c3.809-.871 7.077-.496 9.712 1.115a.623.623 0 01.207.857zm1.223-2.722a.779.779 0 01-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.778.778 0 01-.966-.519.779.779 0 01.519-.966c3.632-1.102 8.147-.568 11.228 1.322a.78.78 0 01.256 1.072zm.105-2.835c-3.223-1.914-8.54-2.09-11.617-1.156a.935.935 0 11-.543-1.79c3.532-1.073 9.404-.865 13.115 1.338a.935.935 0 01-.955 1.608z"/></svg>
-              Spotify
-            </a>
-
-            <a href="https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794" target="_blank" rel="noopener" class="contact-link apple">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3z"/><path d="M3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
-              Apple Podcasts
-            </a>
-
-            <a href="https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den" target="_blank" rel="noopener" class="contact-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-              Amazon Music
-            </a>
-
-            <a href="https://iheart.com/podcast/334702214/" target="_blank" rel="noopener" class="contact-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-              iHeart Radio
-            </a>
-
-            <a href="https://castbox.fm/app/castbox/player/id7241447" target="_blank" rel="noopener" class="contact-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6C1 6 5 2 12 2s11 4 11 4"/><path d="M5 10s2-2 7-2 7 2 7 2"/><path d="M9 14s1-1 3-1 3 1 3 1"/><circle cx="12" cy="18" r="1"/></svg>
-              Castbox
-            </a>
-
-            <a href="https://pca.st/36g1ew1r" target="_blank" rel="noopener" class="contact-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
-              Pocket Casts
-            </a>
-
-          </div>
+<!-- SINTONIZA -->
+<section class="band" id="escucha">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label">Pon el disco</span>
+      <h2 class="sec-title">SINTONIZA</h2>
+    </div>
+    <div class="tune-grid">
+      <div class="rv">
+        <p class="tune-cap">Último episodio</p>
+        <div class="embed">
+          <iframe style="border-radius:8px" src="https://open.spotify.com/embed/episode/1QRXaL85TszCpwo2pfmEPw?utm_source=generator&theme=0" width="100%" height="232" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Mr. Putrid's Den en Spotify"></iframe>
         </div>
-
-        <!-- Social -->
-        <div class="reveal" style="transition-delay:.08s">
-          <p class="platform-group-label">Síguenos en</p>
-          <div class="contact-links">
-
-            <a href="https://www.instagram.com/mrputridsden" target="_blank" rel="noopener" class="contact-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              Instagram @mrputridsden
-            </a>
-
-            <a href="https://www.facebook.com/share/1BZis2wXSF/" target="_blank" rel="noopener" class="contact-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-              Facebook
-            </a>
-
-          </div>
-        </div>
-
       </div>
-
-      <div class="contact-email-block reveal">
-        <p class="contact-email-label">Escríbenos</p>
-        <a href="mailto:hello@mrputridsden.com" class="contact-email-link">
-          hello@mrputridsden.com
-        </a>
+      <div class="rv">
+        <p class="tune-cap">Disponible en</p>
+        <div class="plat">
+          <a href="https://open.spotify.com/episode/0LW93D5Q5KhQYfIX96xOEH?si=4fee5140b6934fe6" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Spotify <span class="pm">Episodios</span>
+          </a>
+          <a href="https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.313a7.687 7.687 0 110 15.374A7.687 7.687 0 0112 4.313zm0 1.875a5.812 5.812 0 100 11.624A5.812 5.812 0 0012 6.188zm.563 2.812c.31 0 .562.252.562.563v4.5l2.438 1.406a.563.563 0 01-.563.97l-2.718-1.57a.563.563 0 01-.282-.486V9.563c0-.311.252-.563.563-.563z"/></svg>
+            Apple Podcasts <span class="pm">iOS</span>
+          </a>
+          <a href="https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            Amazon Music <span class="pm">Prime</span>
+          </a>
+          <a href="https://iheart.com/podcast/334702214/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            iHeart Radio <span class="pm">US</span>
+          </a>
+          <a href="https://castbox.fm/app/castbox/player/id7241447" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6C1 6 5 2 12 2s11 4 11 4"/><path d="M5 10s2-2 7-2 7 2 7 2"/><path d="M9 14s1-1 3-1 3 1 3 1"/><circle cx="12" cy="18" r="1"/></svg>
+            Castbox <span class="pm">App</span>
+          </a>
+          <a href="https://pca.st/36g1ew1r" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>
+            Pocket Casts <span class="pm">App</span>
+          </a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
+<!-- CONTACT -->
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <span class="label">Encuéntranos</span>
+    <h2 class="neon-head">LA GUARIDA<br><span>ESTÁ ABIERTA</span></h2>
+    <p class="contact-lead">Pásate por la barra. Síguenos, escríbenos, o solo ven a escuchar.</p>
 
-  <!-- ══════════════════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════════════════ -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="footer-monogram">MPD</div>
-        <span class="footer-name">MR. PUTRID'S DEN</span>
-      </div>
-      <p class="footer-copy">© 2026 Mr. Putrid's Den · Bogotá, Colombia</p>
+    <p class="social-label">Síguenos en redes</p>
+    <div class="social">
+      <a href="https://www.instagram.com/mrputridsden" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>Instagram @mrputridsden</a>
+      <a href="https://www.facebook.com/share/1BZis2wXSF/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>Facebook</a>
     </div>
-  </footer>
 
-  <script>
-    const burger = document.getElementById('navBurger');
-    const navLinks = document.getElementById('navLinks');
-    burger.addEventListener('click', () => {
-      burger.classList.toggle('open');
-      navLinks.classList.toggle('open');
-    });
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      burger.classList.remove('open');
-      navLinks.classList.remove('open');
-    }));
+    <div class="email-block">
+      <p class="email-label">Escríbenos</p>
+      <a href="mailto:hello@mrputridsden.com" class="email-link">hello@mrputridsden.com</a>
+    </div>
+  </div>
+</section>
 
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); }
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <span class="foot-mono">MPD</span>
+      <span class="foot-name">MR. PUTRID'S DEN</span>
+    </div>
+    <div class="foot-social">
+      <a href="https://www.instagram.com/mrputridsden" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="https://www.facebook.com/share/1BZis2wXSF/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+    </div>
+    <p class="foot-copy">© 2026 Mr. Putrid's Den. Bogotá, Colombia.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script>
+  // mobile nav
+  var burger = document.getElementById('burger');
+  var navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', function(){ burger.classList.toggle('open'); navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ burger.classList.remove('open'); navLinks.classList.remove('open'); }); });
+
+  // dock
+  var bar = document.getElementById('bar');
+  addEventListener('scroll', function(){ bar.classList.toggle('docked', scrollY > 80); }, { passive: true });
+
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // VU meter
+  (function(){
+    var vu = document.getElementById('vu'); if (!vu) return;
+    var bars = [].slice.call(vu.querySelectorAll('i'));
+    if (reduce) { bars.forEach(function(b){ b.style.height = '45%'; }); return; }
+    var ph = bars.map(function(_,i){ return i * 0.6; });
+    var t0 = performance.now();
+    (function tick(now){
+      var t = (now - t0) / 1000;
+      bars.forEach(function(b,i){
+        var v = (Math.sin(t*7 + ph[i]) * 0.5 + 0.5) * (0.55 + Math.sin(t*2.3 + i)*0.2);
+        b.style.height = Math.max(12, Math.min(100, v*100)) + '%';
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  </script>
+      requestAnimationFrame(tick);
+    })(t0);
+  })();
 
+  // Reveals as pure enhancement — content is visible by default, so a failure here
+  // can never hide the page. GSAP sets the start state only when present.
+  try {
+    if (window.gsap && window.ScrollTrigger && !reduce) {
+      gsap.registerPlugin(ScrollTrigger);
+      if (window.Lenis) {
+        var lenis = new Lenis({ duration: 1.1, smoothWheel: true, syncTouch: true, touchInertiaMultiplier: 18, touchMultiplier: 1.6 });
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
+        gsap.ticker.lagSmoothing(0);
+      }
+      gsap.utils.toArray('.rv').forEach(function(el){
+        gsap.from(el, { y: 30, opacity: 0, duration: .8, ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 90%' } });
+      });
+      gsap.to('.deck', { yPercent: 14, ease: 'none',
+        scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
+    }
+  } catch (e) { /* content already visible; nothing to recover */ }
+
+  // THE DEN — easter eggs hidden in the bar: hover/click lights them and names the band.
+  // Shown only on the first screen (the bar); they fade as you scroll into the content.
+  (function(){
+    var box = document.getElementById('eggs'); if (!box) return;
+    box.querySelectorAll('.egg').forEach(function(b){
+      b.addEventListener('click', function(){ b.classList.toggle('lit'); });
+    });
+    function onScroll(){ box.classList.toggle('hidden', scrollY > innerHeight*0.7); }
+    addEventListener('scroll', onScroll, { passive:true }); onScroll();
+  })();
+
+  // WebGL atmosphere — RED smoke (dominant) + faint warm ember, follows the cursor.
+  (function(){
+    var cv = document.getElementById('atmo'); if (!cv || !cv.getContext) return;
+    var gl = cv.getContext('webgl') || cv.getContext('experimental-webgl'); if (!gl) return;
+    var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var vs = 'attribute vec2 p; void main(){ gl_Position = vec4(p,0.0,1.0); }';
+    var fs = [
+      'precision highp float;',
+      'uniform vec2 uRes; uniform float uTime; uniform vec2 uMouse; uniform vec3 uClick;',
+      'float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}',
+      'float noise(vec2 p){vec2 i=floor(p),f=fract(p);float a=hash(i),b=hash(i+vec2(1.,0.)),c=hash(i+vec2(0.,1.)),d=hash(i+vec2(1.,1.));vec2 u=f*f*(3.-2.*f);return mix(mix(a,b,u.x),mix(c,d,u.x),u.y);}',
+      'float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*noise(p);p*=2.02;a*=.5;}return v;}',
+      'void main(){',
+      ' vec2 uv=gl_FragCoord.xy/uRes.xy;',
+      ' vec2 p=uv; p.x*=uRes.x/uRes.y; p+=uMouse*0.12;',
+      ' float n=fbm(p*2.1+vec2(uTime*0.025,uTime*0.015));',
+      ' float n2=fbm(p*4.1-uTime*0.012);',
+      ' vec3 bg=vec3(0.045,0.028,0.026);',
+      ' vec3 red=vec3(0.66,0.13,0.11);',
+      ' vec3 ember=vec3(0.80,0.36,0.15);',
+      ' float glow=smoothstep(0.38,0.95,n)*0.55+n2*0.10;',
+      ' glow*=smoothstep(1.28,0.0,length(uv-vec2(0.70,0.68)));',
+      ' vec3 col=mix(bg,red,clamp(glow*0.95,0.,1.));',
+      ' float eg=smoothstep(0.5,1.0,fbm(p*3.0+uTime*0.02));',
+      ' eg*=smoothstep(0.80,0.0,length(uv-vec2(0.20,0.18)));',
+      ' col=mix(col,ember,clamp(eg*0.16,0.,1.));',
+      ' col*=smoothstep(1.45,0.12,length(uv-0.5));',
+      ' float cpulse=uClick.z*smoothstep(0.34,0.0,length(uv-uClick.xy));',
+      ' col+=red*cpulse*0.8;',
+      ' gl_FragColor=vec4(col,1.0);',
+      '}'
+    ].join('\n');
+    function sh(t,s){var o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return gl.getShaderParameter(o,gl.COMPILE_STATUS)?o:null;}
+    var v=sh(gl.VERTEX_SHADER,vs), f=sh(gl.FRAGMENT_SHADER,fs);
+    if(!v||!f){cv.remove();return;}
+    var pr=gl.createProgram();gl.attachShader(pr,v);gl.attachShader(pr,f);gl.linkProgram(pr);
+    if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){cv.remove();return;}
+    gl.useProgram(pr);
+    var buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+    var loc=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+    var uRes=gl.getUniformLocation(pr,'uRes'),uTime=gl.getUniformLocation(pr,'uTime'),uMouse=gl.getUniformLocation(pr,'uMouse'),uClick=gl.getUniformLocation(pr,'uClick');
+    var mouse=[0,0], click=[0,0,0], mt=[0,0];
+    addEventListener('pointermove',function(e){mt=[(e.clientX/innerWidth-0.5)*2,(0.5-e.clientY/innerHeight)*2];},{passive:true});
+    addEventListener('pointerdown',function(e){click=[e.clientX/innerWidth,1-e.clientY/innerHeight,1];mt=[(e.clientX/innerWidth-0.5)*2,(0.5-e.clientY/innerHeight)*2];},{passive:true});
+    function size(){var dpr=Math.min(devicePixelRatio||1,1.5);cv.width=Math.max(1,cv.clientWidth*dpr);cv.height=Math.max(1,cv.clientHeight*dpr);gl.viewport(0,0,cv.width,cv.height);}
+    addEventListener('resize',size,{passive:true});size();
+    var t0=performance.now();
+    function draw(now){
+      mouse[0]+=(mt[0]-mouse[0])*0.06;mouse[1]+=(mt[1]-mouse[1])*0.06;
+      gl.uniform2f(uRes,cv.width,cv.height);gl.uniform1f(uTime,(now-t0)/1000);
+      gl.uniform2f(uMouse,mouse[0],mouse[1]);gl.uniform3f(uClick,click[0],click[1],click[2]);
+      click[2]*=0.93;
+      gl.drawArrays(gl.TRIANGLES,0,6);if(!rm)requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  })();
+
+  // tap ripple (crimson)
+  (function(){
+    if (reduce) return;
+    addEventListener('pointerdown', function(e){
+      var r = document.createElement('div'); r.className = 'ripple';
+      r.style.left = e.clientX + 'px'; r.style.top = e.clientY + 'px';
+      document.body.appendChild(r);
+      requestAnimationFrame(function(){ r.classList.add('go'); });
+      setTimeout(function(){ r.remove(); }, 680);
+    }, { passive: true });
+  })();
+
+  // custom cursor (pointer:fine)
+  (function(){
+    if (!matchMedia('(pointer:fine)').matches) return;
+    var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var dot = document.createElement('div'); dot.className = 'cur-dot';
+    var ring = document.createElement('div'); ring.className = 'cur-ring';
+    var label = document.createElement('div'); label.className = 'cur-label';
+    document.body.appendChild(dot); document.body.appendChild(ring); document.body.appendChild(label);
+    document.body.classList.add('cursor-on');
+    var mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my;
+    addEventListener('mousemove', function(e){
+      mx = e.clientX; my = e.clientY;
+      dot.style.left = label.style.left = mx + 'px';
+      dot.style.top  = label.style.top  = my + 'px';
+      if (rm) { ring.style.left = mx + 'px'; ring.style.top = my + 'px'; }
+    }, { passive: true });
+    if (!rm) (function loop(){ rx += (mx-rx)*.18; ry += (my-ry)*.18; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(loop); })();
+    document.querySelectorAll('a, button, [data-cursor]').forEach(function(el){
+      el.addEventListener('mouseenter', function(){
+        ring.classList.add('hover');
+        var t = el.getAttribute('data-cursor');
+        if (t) { ring.classList.add('label'); label.textContent = t; label.classList.add('show'); }
+      });
+      el.addEventListener('mouseleave', function(){ ring.classList.remove('hover','label'); label.classList.remove('show'); });
+    });
+  })();
+</script>
 </body>
 </html>
