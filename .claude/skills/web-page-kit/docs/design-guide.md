@@ -23,7 +23,11 @@ Before writing any HTML, commit to a distinctive design concept. A page that ski
 - ❌ Inter / Roboto / Arial / Helvetica / Space Grotesk as the display font
 - ❌ Parallax hero + count-up stats applied by reflex on every page
 - ❌ A row of oversized "big-number" stats (e.g. 7 / 3 / 9 / <24h) — a recognizable AI tell; prefer a quiet inline caption
-- ❌ Em-dashes (—) sprinkled through the copy as the default connector — overuse is an AI tell; prefer periods, commas, or colons (keep — only for genuine number ranges)
+- ❌ Punctuation-as-filler — the whole family is an AI tell, not just em-dashes:
+  - Em-dashes (—) as the default connector — prefer periods, commas, or colons (keep — only for genuine number ranges)
+  - Middot "·" separators in meta lines (e.g. "8 yrs · Bilingual · Remote", "AI screening · no ghost apps") — they read as slashes; use commas or plain words
+  - Hyphen-buzzword pileups (interview-ready, time-to-hire, pre-screened, AI-administered, role-specific) — rewrite as plain phrases ("ready to interview", "faster hiring")
+  - This exact "I see a lot of - and /" feedback recurred across multiple builds (Lucca, Kuma) — strip it on the FIRST pass. Verify: grep the copy for `—`, `·`, and `[a-z]-[a-z]` and reduce to near-zero.
 - ❌ Emoji used as icons (use line SVGs)
 
 ### Anti-generic checklist — must pass before delivery
