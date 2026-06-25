@@ -17,15 +17,23 @@ STEP 3: Invoke /handoff via Skill("handoff") tool call — NEVER generate handof
   → Writes .agents/handoff/YYYY-MM-DD-<topic>.md, commits, pushes to origin/main
   → No user confirmation needed
   → Display the document in chat
+  → Continue to STEP 4
+
+STEP 4: Run the claude-continuity sync (backs up ~/.claude memory + config)
+  → Windows: cd "C:\Users\andre\repos\claude-continuity"; .\sync.ps1
+  → Mac/Linux: cd <repo path> && bash sync.sh
+  → No user confirmation needed — it only copies ~/.claude state and pushes
+  → Report which memory folders synced (or "nothing changed")
 ```
 
 ## Implementation Rules
 
 1. **Steps 1-2 require user approval** — show results and ask for confirmation before applying any edits
-2. **Step 3 runs automatically** — write, commit, push, then display; no prompt needed
+2. **Steps 3-4 run automatically** — no prompt needed (Step 3 writes/commits/pushes the handoff; Step 4 syncs ~/.claude to GitHub)
 3. **Each step completes before the next starts** — do not run in parallel
 4. **All changes are reversible** — everything goes through git
 5. **CRITICAL: Step 3 must use the Skill tool** — call `Skill("handoff")`. Never write handoff content inline as text output; that bypasses the skill's git logic.
+6. **Step 4 backs up what the handoff push does NOT** — `~/.claude/` memory lives outside the project/skills repos, so the continuity sync is the only thing that backs it up. Don't skip it. See [[feedback_always_backup_github]].
 
 ## User Prompts
 
@@ -56,6 +64,12 @@ Session closed successfully.
 - Writes `.agents/handoff/YYYY-MM-DD-<topic>.md`, commits, and pushes to origin/main
 - If git commit/push fails: display error but continue (handoff file is still written to disk)
 - Confirm: "Handoff saved to .agents/handoff/..., pushed to GitHub"
+
+**For Step 4:**
+- `sync.ps1`/`sync.sh` must be run from the `claude-continuity` repo root (it uses relative paths). The script handles its own `git add`/commit/push to `origin master`.
+- If the repo isn't cloned or `local-settings.json` is missing, the script prints a hint to run `install.ps1` first — relay it, don't fail the whole close.
+- If push fails (no network): the memory copy + local commit still happened; report it and tell the user to re-run `sync.ps1` when back online.
+- Confirm: "Continuity sync: backed up <N> memory folders + config to GitHub."
 
 **General:**
 - All git commits succeed or fail atomically (can be retried)
