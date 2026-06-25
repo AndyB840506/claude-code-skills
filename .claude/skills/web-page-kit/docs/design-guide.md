@@ -28,7 +28,7 @@ Before writing any HTML, commit to a distinctive design concept. A page that ski
   - Middot "·" separators in meta lines (e.g. "8 yrs · Bilingual · Remote", "AI screening · no ghost apps") — they read as slashes; use commas or plain words
   - Hyphen-buzzword pileups (interview-ready, time-to-hire, pre-screened, AI-administered, role-specific) — rewrite as plain phrases ("ready to interview", "faster hiring")
   - This exact "I see a lot of - and /" feedback recurred across multiple builds (Lucca, Kuma) — strip it on the FIRST pass. Verify: grep the copy for `—`, `·`, and `[a-z]-[a-z]` and reduce to near-zero.
-- ❌ Emoji used as icons (use line SVGs)
+- ❌ Emoji used as icons (use line SVGs). Flag/regional-indicator emojis (🇨🇦 etc.) are worse — they DON'T render on Windows (show as "CA" letters); always use an inline SVG flag.
 
 ### Anti-generic checklist — must pass before delivery
 - [ ] Committed to a named concept + anchored to one real reference?
@@ -756,6 +756,12 @@ BTQ liner-notes swap (validated 2026-06-24), and the user reported both as "miss
 **Static-site contact forms:** a static host (Vercel/Netlify) has no backend to receive a POST.
 Use a form service (Web3Forms — no account, key in the markup, AJAX + graceful no-JS fallback) or
 a serverless function. A `mailto:` link alone is not "a form." See [[reference_btq_contact_form]].
+
+**Capturing files / CVs for free (no respondent login):** Web3Forms' free plan **can't attach files**,
+and a Google Form's file-upload question **forces respondents to sign into Google**. To capture a file
+(e.g. a CV) free, with no login and no exposed email: an on-site form reads the file as base64 and
+`fetch(..., {mode:'no-cors'})` POSTs JSON to a **Google Apps Script web app** (deployed Execute-as-Me /
+access Anyone) that saves the file to Drive + appends a row to a Sheet. See [[reference_kuma_infra]].
 
 ---
 
