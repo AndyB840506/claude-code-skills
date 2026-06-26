@@ -16,11 +16,12 @@
 - **Deployed live** to www.mrputridsden.com via the PREBUILT flow (verified 200, bar-bg.png 200, markers present). Committed as `e41f76e`.
 - **Session close Step 1 (Retrospective):** saved 4 learnings to memory (see below).
 - **Session close Step 2 (Skill Audit):** clean — all 21 SKILL.md under 50 lines, no loose-file detection risks, no skills modified this session.
+- **Session close Step 4 (Continuity Sync):** done — config + memory pushed to `claude-continuity/master` (`46f3d79`); 2 new memories + 3 updated files backed up.
 
 ## Where We Paused
 
-**Last action:** Wrote this handoff (session-close Step 3).
-**Next action:** Run session-close Step 4 — Continuity Sync (`C:\Users\andre\repos\claude-continuity\sync.ps1`) to back up `~/.claude/` memory to GitHub.
+**Last action:** Completed session-close (all 4 steps) — continuity sync pushed.
+**Next action:** Nothing pending. Fresh session can pick the next MPD/BTQ task or a new project.
 **Blockers:** None.
 
 ## Files to Read First
