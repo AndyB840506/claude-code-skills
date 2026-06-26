@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EP.19 — Gladiator: la huella que deja un líder | Behind the Queue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+        :root {
+            --bg: #0A0A0A;
+            --card: #141414;
+            --card2: #1b1b1b;
+            --gold: #C9A84C;
+            --gold-dim: #8a7331;
+            --offwhite: #F5F2EC;
+            --muted: #9a968c;
+            --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --sans: 'DM Sans', system-ui, -apple-system, Segoe UI, sans-serif;
+            --accent: 'Bebas Neue', 'Arial Narrow', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--sans);
+            background: #050505;
+            color: var(--offwhite);
+            line-height: 1.8;
+            font-size: 15.5px;
+        }
+
+        .container { max-width: 820px; margin: 0 auto; background: var(--bg); }
+
+        /* ---------- HEADER ---------- */
+        .header {
+            background: linear-gradient(160deg, #161208 0%, #0A0A0A 70%);
+            padding: 46px 48px 40px;
+            border-bottom: 3px solid var(--gold);
+        }
+        .header .podcast {
+            font-family: var(--accent);
+            font-size: 1.15em;
+            color: var(--gold);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .header .epnum {
+            font-family: var(--accent);
+            font-size: 2.6em;
+            color: var(--gold);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+        .header h1 {
+            font-family: var(--serif);
+            font-size: 2em;
+            font-weight: 900;
+            margin: 6px 0 10px;
+            color: var(--offwhite);
+            line-height: 1.18;
+        }
+        .header .tagline {
+            font-family: var(--serif);
+            font-style: italic;
+            color: var(--gold);
+            font-size: 1.05em;
+            margin-bottom: 22px;
+        }
+        .meta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .meta-item {
+            background: rgba(201,168,76,0.10);
+            border: 1px solid var(--gold-dim);
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            color: var(--gold);
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------- SECTIONS ---------- */
+        .section { padding: 32px 48px; border-bottom: 1px solid #222; }
+        .section h2 {
+            font-family: var(--accent);
+            font-size: 1.15em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid var(--gold-dim);
+        }
+
+        /* ---------- ARQUITECTURA ---------- */
+        .arquitectura { font-size: 0.9em; }
+        .arq-row {
+            display: grid;
+            grid-template-columns: 30px 1.1fr 95px 1.6fr;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid #1c1c1c;
+            align-items: start;
+        }
+        .arq-row.head { color: var(--gold); font-weight: 700; border-bottom: 1px solid var(--gold-dim); }
+        .arq-num { color: var(--gold); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--offwhite); }
+        .arq-time { color: var(--muted); font-family: monospace; font-size: 0.92em; }
+        .arq-row span:last-child { color: var(--muted); }
+
+        /* ---------- GUION SEGMENTS ---------- */
+        .segment { margin: 40px 0; padding-bottom: 26px; border-bottom: 1px solid #1a1a1a; }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+        .segment-number {
+            font-family: var(--accent);
+            background: var(--gold);
+            color: #0A0A0A;
+            min-width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1em; font-weight: bold;
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+        .segment-title {
+            font-family: var(--accent);
+            font-weight: 400;
+            font-size: 1.15em;
+            color: var(--offwhite);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.78em;
+            color: var(--muted);
+            background: #181818;
+            padding: 3px 11px;
+            border-radius: 10px;
+            white-space: nowrap;
+            font-family: monospace;
+        }
+        .sub { font-family: var(--serif); font-style: italic; font-size: 1.12em; color: var(--gold); margin: 26px 0 8px; }
+
+        p.line { margin: 0 0 4px; color: #e9e6dd; }
+
+        /* PAUSA chips */
+        .pausa {
+            display: inline-block;
+            font-family: var(--accent);
+            letter-spacing: 2px;
+            font-size: 0.72em;
+            color: var(--gold-dim);
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 0 8px;
+            margin: 8px 0;
+            background: #111;
+        }
+        .pausa.larga { color: var(--gold); border-color: var(--gold-dim); }
+
+        /* REMATE — the signature punch line */
+        .remate {
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(90deg, rgba(201,168,76,0.07), transparent);
+            padding: 14px 20px;
+            margin: 18px 0;
+            font-family: var(--serif);
+            font-size: 1.08em;
+            color: var(--offwhite);
+        }
+        .remate::before {
+            content: "REMATE";
+            display: block;
+            font-family: var(--accent);
+            font-size: 0.62em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        /* NOTA producción — not printable */
+        .nota {
+            background: #15130c;
+            border: 1px dashed var(--gold-dim);
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 14px 0;
+            font-size: 0.85em;
+            color: #cdbb88;
+        }
+        .nota::before { content: "NOTA · "; font-family: var(--accent); letter-spacing: 2px; color: var(--gold); }
+
+        /* DATO callout */
+        .dato {
+            background: var(--card2);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 5px 5px 0;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .dato-label {
+            font-family: var(--accent);
+            font-size: 0.78em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        /* MITO / REALIDAD */
+        .mito {
+            background: #1a1010;
+            border-left: 4px solid #8a3b2f;
+            padding: 11px 16px; margin: 16px 0 0; border-radius: 0 5px 5px 0;
+            color: #e6c9c2;
+        }
+        .realidad {
+            background: #101a12;
+            border-left: 4px solid #4a7a4a;
+            padding: 11px 16px; margin: 0 0 16px; border-radius: 0 5px 5px 0;
+            color: #d7e6d3;
+        }
+        .mito strong, .realidad strong { color: #fff; }
+
+        em { color: var(--gold); font-style: italic; }
+        strong { color: var(--offwhite); }
+
+        /* FUENTES */
+        .fuentes p { font-size: 0.83em; color: var(--muted); line-height: 1.7; }
+
+        .checklist-box {
+            background: var(--card);
+            border: 1px solid #262011;
+            border-radius: 6px;
+            padding: 6px 18px;
+        }
+        .checklist-box .row { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #1a1a1a; align-items: baseline; }
+        .checklist-box .row:last-child { border-bottom: none; }
+        .ck { color: #4a7a4a; font-weight: 700; }
+        .warn { color: var(--gold); font-weight: 700; }
+
+        footer { padding: 26px 48px; color: var(--muted); font-size: 0.8em; text-align: center; }
+        footer .gold { color: var(--gold); font-family: var(--accent); letter-spacing: 3px; }
+
+        @media print {
+            body { background: #fff; color: #111; }
+            .container { background: #fff; }
+            .nota { display: none; }
+            .header { background: #111; }
+            .remate { color: #111; }
+            p.line, .segment-title, strong { color: #111; }
+        }
+        @media (max-width: 640px) {
+            .section, .header, footer { padding-left: 22px; padding-right: 22px; }
+            .arq-row { grid-template-columns: 24px 1fr; }
+            .arq-row .arq-time, .arq-row span:last-child { grid-column: 2; }
+        }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Behind the Queue</div>
+        <div class="epnum">EP.19</div>
+        <h1>Gladiator: la huella que deja un líder</h1>
+        <div class="tagline">Máximo no manda por el cargo. Manda por lo que deja en su gente — y eso es lo único que sobrevive cuando usted ya no está.</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 019</span>
+            <span class="meta-item">Solo host · Andy</span>
+            <span class="meta-item">Referente: Gladiator / Máximo</span>
+            <span class="meta-item">~58 min (medido · 143 wpm)</span>
+            <span class="meta-item">Liderazgo · BPO</span>
+            <span class="meta-item">Legado · autoridad ganada</span>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Hook</span><span class="arq-time">0:45–6:00</span><span>"¿No están entretenidos?" · el espectáculo vs. lo que queda · la pregunta del legado</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">El Puente</span><span class="arq-time">6:00–10:30</span><span>El que sí está en la arena · contraste con el DT del EP.18</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Autoridad ganada vs. cargo</span><span class="arq-time">10:30–18:00</span><span>Máximo sin rango vs. Cómodo con el trono · poder posicional vs. ganado</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Si nos mantenemos juntos</span><span class="arq-time">18:00–25:30</span><span>La escena del Coliseo · desconocidos en equipo bajo presión</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">Lo que hacemos resuena</span><span class="arq-time">25:30–34:00</span><span>RE-ENGANCHE · la huella / el legado · el líder que deja gente, no números</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Dos legados</span><span class="arq-time">34:00–42:30</span><span>Caída real de Cómodo (poder por miedo) vs. Marco Aurelio (el líder-legado) · Meditaciones</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Mito o Realidad</span><span class="arq-time">42:30–47:30</span><span>Qué es histórico y qué es ficción en Gladiator · la frase y Marco Aurelio</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">Referencias Cruzadas</span><span class="arq-time">47:30–53:30</span><span>Legado FUERA de Roma · Sócrates (huella vía su alumno) · John Wooden (el que no hablaba de ganar)</span></div>
+            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Aplicable Hoy</span><span class="arq-time">53:30–58:00</span><span>3 maneras concretas de dejar huella esta semana</span></div>
+            <div class="arq-row"><span class="arq-num">10</span><span class="arq-seg">Recomendaciones de Andy</span><span class="arq-time">58:00–60:30</span><span>Mezcla fuera de Roma: Gladiator (referente) · "Good to Great" de Collins (libro) · TED de John Wooden (charla)</span></div>
+            <div class="arq-row"><span class="arq-num">11</span><span class="arq-seg">Cierre + Teaser EP.20 + TM canónico</span><span class="arq-time">60:30–63:00</span><span>Pregunta comentable · comentarios Spotify · LinkedIn · teaser métricas · firma + TM</span></div>
+        </div>
+    </div>
+
+    <!-- PENDIENTE DESTACADO -->
+    <div class="section">
+        <h2>Antes de grabar · checklist</h2>
+        <div class="checklist-box">
+            <div class="row"><span class="ck">✓</span><span><strong>Tiempos calibrados a TU ritmo real (143 wpm) — MEDIDOS, no a ojo:</strong> este guion tiene ~7.273 palabras habladas = ~51 min en seco. Con tu expansión natural (+15%) cae en ~58 min en vivo (sin contar intro/outro musical ni las pausas). Mismo largo que el EP.18. Colchón para CORTAR, no para estirar.</span></div>
+            <div class="row"><span class="ck">✓</span><span>Título con keyword buscable ("líder/liderazgo") + referente cultural (Gladiator). Numeración EP.19 (2 díg, guion largo).</span></div>
+            <div class="row"><span class="ck">✓</span><span>Datos verificados: Máximo es ficticio; Cómodo y Marco Aurelio reales; Cómodo sí peleó en la arena (Cassius Dio / Herodiano). La frase "lo que hacemos resuena en la eternidad" es del guion de la peli, NO de las Meditaciones.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>[VERIFICAR antes de grabar]:</strong> el detalle de la muerte de Cómodo (estrangulado por el luchador Narciso en su baño, 192 d.C.) — confirmar nombre y año si lo vas a decir al aire. Si hay duda, decirlo más general ("lo asesinaron sus propios cercanos, no murió en la arena").</span></div>
+            <div class="row"><span class="warn">⚠</span><span>Muletillas: máx 1 "imagínense", 0 "me vuela la cabeza". Refrán-tesis ("resuena/lo que dejamos") anclado 3×, no más. Revisar en la pasada de voz.</span></div>
+            <div class="row"><span class="warn">⚠</span><span>El teaser final del EP.20 (pilar SEO de métricas) es opcional — sólo si ya está confirmado. Si no, cerrar sin teaser específico.</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- APERTURA -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Apertura</span><span class="segment-time">0:00</span></div>
+            <p class="line">Buenas y santas. Feliz día, feliz tarde o feliz noche. Cualquier día que éste sea.</p>
+            <p class="line">Esto es Behind the Queue, episodio diecinueve.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+        </div>
+
+        <!-- SEGMENTO 1 — HOOK -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">1</span><span class="segment-title">Hook</span><span class="segment-time">0:45 – 6:00</span></div>
+            <p class="line">Arena del Coliseo. Roma. La multitud rugiendo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Hay un hombre en el centro, con una espada en la mano y tres rivales muertos en la tierra. Acaba de hacer exactamente lo que cincuenta mil personas vinieron a ver. Sangre. Espectáculo. Un show.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y en vez de levantar los brazos para que lo aplaudan, se voltea hacia la tribuna, abre los brazos, y les grita una pregunta con asco en la cara: ¿No están entretenidos? ¿No están entretenidos?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿No es para esto que vinieron?</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y el estadio se queda callado. Porque les acaba de poner un espejo en la cara. Les dio el número que pedían, y de paso les dijo: lo que ustedes celebran no vale nada.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Esa escena es de Gladiator. La película del año dos mil, con Russell Crowe. Ganó cinco premios Óscar, incluido mejor película. Y sí, ya sé. Otro que les viene a hablar de la peli de romanos con faldita y espada. Aguántenme, porque esto no va de Roma.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">El personaje se llama Máximo. Era el general más respetado del imperio. Y de un día para otro lo pierde todo: le matan a la familia, lo venden como esclavo, lo meten a pelear en una arena de provincia para entretener a borrachos. Le quitaron el rango. Le quitaron el nombre. Le quitaron el uniforme que le decía a todo el mundo "este manda".</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aquí está lo único que me interesa de toda la película. Sin rango, sin título, sin nada que lo respalde — la gente lo sigue igual. En la arena, los otros gladiadores, que no lo conocen de nada, terminan obedeciéndole a él. ¿Por qué? Esa es la pregunta de hoy.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Porque a usted, en algún momento, también le van a quitar el cargo. No de forma tan dramática, tranquilo, nadie lo va a vender como esclavo un martes. Pero lo van a mover de cuenta. Lo van a ascender y le van a dar gente nueva que no lo conoce. O simplemente se va a ir, a otra empresa, a otro proyecto. Y el día que eso pase, su título deja de existir. Ya no es "el supervisor". Es un nombre que la gente o recuerda, o no.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y ahí es donde se ve la verdad incómoda de este oficio: cuando le quitan el cargo, lo único que queda es lo que usted dejó en la gente. La huella. Lo que les enseñó. Cómo los trató. Si los hizo mejores, o si solo los usó para que el dashboard saliera en verde mientras usted estuvo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Hay una frase en la película, la más famosa, la que sale en el tráiler y en las camisetas: "lo que hacemos en vida, resuena en la eternidad". Suena épica, suena a tatuaje. Pero tradúzcanla a un piso de operación y deja de ser épica y se vuelve terrorífica de lo cierta que es.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Lo que usted hace con su equipo esta semana — la forma en que le habló a esa persona que se equivocó, el dato que se tomó el trabajo de explicar en vez de solo regañar — eso resuena. Sigue sonando en la cabeza de esa gente mucho después de que usted se fue. Para bien o para mal.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="remate">El número de hoy se borra mañana. Sale otro reporte y nadie se acuerda. Lo que no se borra es la huella que usted deja en la gente que dirigió. Esa es la única parte de su trabajo que sobrevive cuando usted ya no está.</div>
+        </div>
+
+        <!-- SEGMENTO 2 — EL PUENTE -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">2</span><span class="segment-title">El Puente</span><span class="segment-time">6:00 – 10:30</span></div>
+            <p class="line">La semana pasada, los que estuvieron, hablamos de un técnico de fútbol. De ese hombre parado en la raya que no puede tocar el balón. El que dirige sin jugar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Máximo es lo contrario. Y por eso quería seguir con él justo ahora.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">El técnico está afuera, en la raya, gritando. Máximo está adentro, en la arena, con la espada, peleando al lado de su gente. Misma cancha, mismo polvo, mismo riesgo. No los manda desde una oficina con vista. Está ahí, sudando lo mismo que ellos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aquí no les voy a vender que uno es bueno y el otro es malo. Los dos modos de liderar existen, y los dos son legítimos. Hay momentos en que a usted le toca pararse en la raya, soltar el balón y confiar. Y hay momentos en que le toca meterse al barro y pelear al lado de su gente. El error es confundir cuál toca, cuándo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">¿Y cuándo le toca ser Máximo? Cuándo le toca meterse a la arena, en serio?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No cuando hay que quitarle la llamada a su agente para lucirse usted. Eso ya lo hablamos, eso es el técnico que salta a la cancha a patear el penalti y lo expulsan. Eso no es estar en la arena. Eso es robarle la arena a su gente.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">A usted le toca ser Máximo cuando viene lo feo y nadie quiere dar la cara. El cliente que llegó a destrozar a todo el mundo y el equipo entero está mirando el piso para que no le toque. La decisión impopular que hay que comunicar y que sabe que lo va a hacer el malo del paseo. El error grave que se cometió y que alguien tiene que pararse a asumir delante del cliente.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ahí. Ahí es donde el líder de verdad agarra la espada primero. No para lucirse. Para que su gente vea que usted no los manda a un lugar al que usted no entraría.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Piénsenlo desde el lado del agente, por un segundo. ¿A quién sigue uno de verdad? ¿Al que da órdenes desde lejos y desaparece cuando la cosa se calienta? ¿O al que, cuando llegó el momento horrible, estuvo ahí, en el barro, con uno?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Nadie deja huella desde la oficina con la puerta cerrada. La huella se deja en el barro. Y de eso se trata todo lo de hoy.</p>
+        </div>
+
+        <!-- SEGMENTO 3 — AUTORIDAD GANADA VS. CARGO -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">Autoridad ganada vs. cargo</span><span class="segment-time">10:30 – 18:00</span></div>
+            <div class="nota">Hilo 1: poder posicional vs. poder ganado. Máximo (sin rango, lo siguen) contra Cómodo (todo el rango, nadie lo respeta). Tono: claro, con un guiño de humor en Cómodo.</div>
+            <p class="line">Para entender por qué la gente sigue a Máximo, hay que mirar al otro lado de la película. Al villano. Porque la película es, en el fondo, una pelea entre dos formas de tener poder.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">El villano se llama Cómodo. Y Cómodo lo tiene todo. Es el emperador. Literalmente el hombre más poderoso del planeta conocido. Tiene el trono, tiene el ejército, tiene el oro, tiene el derecho de vida y muerte sobre cualquiera. En el organigrama, está en la casilla de más arriba. No hay casilla más arriba.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aun así, en toda la película, Cómodo está desesperado por una sola cosa que no puede comprar ni ordenar: que lo quieran. Que lo respeten de verdad. Se muere por el amor del pueblo, por la aprobación de los senadores, por el cariño que su propio papá le tenía a Máximo y no a él.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Tiene todo el poder del cargo. Y no tiene ni una gota del otro poder. El que importa.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Hay una escena que lo resume, y es casi un chiste de lo triste que es. Cómodo, ya como emperador, baja él mismo a pelear a la arena. Quiere ser visto como un gladiador, como un héroe, como Máximo. Pero todo el mundo sabe que las peleas están arregladas para que él gane. Nadie se lo cree. Tiene la corona y se disfraza de guerrero, y el estadio entero, por dentro, sabe que es de mentiras.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Máximo es exactamente al revés. No tiene nada. Es un esclavo. Y la gente lo sigue de verdad, hasta la muerte.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y esto que separa a Máximo de Cómodo no es cosa de película. Usted lo vive todos los días, lo tenga claro o no. Existen dos autoridades, y son distintas. Una viene con el cargo — alguien se la dio, está en su firma de correo, y se la pueden quitar mañana con un memo. La otra se la gana — y a esa no hay empresa que se la dé ni empresa que se la quite, porque no vive en ningún organigrama: vive en la cabeza de la gente que trabajó con usted.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">La primera hace que la gente le obedezca. La segunda hace que la gente lo siga. Y no son lo mismo, ni de lejos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Obedecer es: hago lo que me dijo porque puede afectarme el sueldo, la evaluación, el horario. Lo mínimo. Con el reloj puesto. Seguir es otra cosa: hago lo que me dijo porque confío en él, porque me ha demostrado que sabe, porque cuando yo estuve en problemas él respondió. Eso no se ordena. Eso se gana, llamada por llamada, semana por semana.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y aquí viene la trampa en la que cae casi todo líder nuevo, y se lo digo porque yo caí en ella. Cuando a uno lo ascienden, le entregan la autoridad del cargo de un día para otro. De un viernes a un lunes, usted ya es "el jefe". Y es facilísimo confundir esa autoridad prestada con respeto de verdad.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Usted dice "hagan esto" y la gente lo hace, y usted piensa: qué buen líder soy, miren cómo me obedecen. No. Lo obedecen porque usted tiene el botón de la evaluación de desempeño. Eso es Cómodo en el trono. El día que le quiten el botón — porque lo cambian de cuenta, porque la estructura se reorganiza — va a descubrir, de golpe, cuánto de eso era respeto y cuánto era miedo al memo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Le voy a dar la prueba más honesta que conozco para medir cuál de las dos autoridades tiene usted. Una sola pregunta. ¿Su gente le dice la verdad cuando algo está mal?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Porque a Cómodo nadie le decía la verdad. Le tenían demasiado miedo. Todos le decían lo que él quería oír, y por eso vivía rodeado de mentiras y se le cayó todo encima sin verlo venir. Si a usted su equipo le esconde los errores, le maquilla los números, le dice "todo bien" cuando usted sabe que no todo está bien — usted tiene el cargo, pero no tiene el respeto. Tiene obediencia con miedo. Y eso, el día de la crisis de verdad, no le sirve para nada.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El líder al que sí siguen es al que uno le puede decir "jefe, la embarré" sin que se le acabe el mundo. Esa confianza es la huella. Y se construye con cómo usted reacciona la primera vez que alguien le trae un error.</p>
+        </div>
+
+        <!-- SEGMENTO 4 — SI NOS MANTENEMOS JUNTOS -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">Si nos mantenemos juntos</span><span class="segment-time">18:00 – 25:30</span></div>
+            <div class="nota">Hilo 2: equipo de desconocidos bajo presión (escena del Coliseo). Aquí va uno de los remates fuertes.</div>
+            <p class="line">Hay dos minutos en la película que son, para mí, la mejor clase de liderazgo de equipos que se ha filmado. Dos minutos. Ubíquense conmigo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">El Coliseo de Roma. El de verdad, el gigante. Cincuenta mil personas encima de usted, gritando, pidiendo sangre. Se abre una reja y empujan hacia adentro a un grupo de gladiadores que pisan ese monstruo por primera vez. Máximo entre ellos. Y a estos los metieron ahí para una sola cosa: para que mueran.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El show del día es la recreación de una batalla famosa — la caída de Cartago. A Máximo y a los suyos les tocó el papel de los que pierden. Los que, según el libreto, tienen que ser masacrados para que la gente aplauda. Y enfrente, en cualquier segundo, se va a abrir la otra reja. Por ahí van a salir los ganadores del show: en carros de guerra, con caballos, con armadura, ensayados, en formación. Una máquina de matar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Y del lado de Máximo? Un puñado de tipos a pie que se conocieron... ayer. Porque eso son. No son un equipo. Son un montón de desconocidos, de distintos lugares, juntados a la fuerza. No se eligieron. No se hablan. No tienen una sola razón para confiar el uno en el otro. Y están a segundos de entrar a un lugar hecho para que los maten.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Las rejas tiemblan. Se van a abrir. El miedo se huele en el polvo. Y Máximo, en vez de rezar, en vez de salir corriendo a lo loco, hace una sola cosa. Habla. Corto. Una frase: lo que sea que salga por esas puertas, tenemos mejor chance si nos quedamos juntos. ¿Me entienden? Si nos mantenemos juntos, sobrevivimos.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Si nos mantenemos juntos, sobrevivimos. Eso es todo lo que dijo. Y funcionó. En vez de salir corriendo cada uno por su lado — que es lo que el rival esperaba, porque a un grupo regado, suelto, lo barren los carros uno por uno — se cerraron en bloque, espalda con espalda, aguantando el golpe juntos. Y en un momento hasta voltean uno de los carros de guerra. El bando que tenía todo para ganar, ensayado y armado, se desordena. Y el puñado de esclavos a pie, que solo tenía una cosa — que se mantuvieron juntos — gana una batalla que estaba escrita para que la perdieran.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Párense en el detalle, porque es lo que lo vuelve liderazgo de verdad y no una frase bonita. Máximo no les prometió que iban a estar bien. No mintió. No dijo "tranquilos, esto es fácil". Les dijo la verdad — esto está feo — y al mismo tiempo les dio una manera de enfrentarlo juntos. Honestidad y dirección, en la misma frase. Eso es lo difícil.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y ahora hagamos el ejercicio que importa. Su Coliseo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Lunes. Se cayó un sistema, o entró un volumen que nadie pronosticó, o se fue medio equipo de incapacidad y los que quedan están viendo la cola crecer en rojo. Y usted tiene, como Máximo, un grupo que a lo mejor ni se eligió. Gente nueva mezclada con gente cansada. Algunos que se llevan bien y otros que no se hablan. Y las puertas se están abriendo igual.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El líder mediocre, en ese momento, hace una de dos cosas. O desaparece — se mete a "una reunión" y deja que el piso arda solo. O entra en pánico y empieza a gritar números: ¡la cola, la cola, bajen el tiempo! Las dos multiplican el miedo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El movimiento Máximo es otro, y es incómodo porque es sencillo. Parar tres segundos. Mirar a la gente a los ojos, no a la pantalla. Decir la verdad sin maquillar: esto está duro hoy, lo sé, no les voy a decir que no. Y darles el cómo: hoy nos cubrimos entre todos, nadie se queda solo con un caso embolatado, el que se ahogue levanta la mano y entramos. Si nos mantenemos juntos, salimos de esta.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">No es magia. Es darle a un grupo asustado dos cosas al tiempo: la verdad, para que confíen en usted, y un plan, para que dejen de sentirse solos. Eso convierte a un montón de gente asustada en un equipo. Aunque sea por las próximas dos horas. Que a veces es justo lo que se necesita.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="remate">El día más difícil no se gana con el agente más rápido. Se gana con el equipo que no se rompió. Y un equipo no se rompe cuando alguien, en el peor momento, fue capaz de decir la verdad y dar el siguiente paso al mismo tiempo. Esa persona es usted, o no es nadie.</div>
+        </div>
+
+        <!-- SEGMENTO 5 — LO QUE HACEMOS RESUENA (RE-ENGANCHE) -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">Lo que hacemos resuena</span><span class="segment-time">25:30 – 34:00</span></div>
+            <div class="nota">RE-ENGANCHE al ~55-60%: la espina del episodio. El dato/giro más fuerte va aquí, no al principio. La huella / el legado. Tono: más bajo, más íntimo.</div>
+            <p class="line">Volvamos a la frase. La de las camisetas. Porque ya pasamos por la autoridad y por el equipo, y ahora sí estamos listos para lo que de verdad les quería decir hoy.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">"Lo que hacemos en vida, resuena en la eternidad."</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Quítenle la eternidad y el mármol romano por un segundo. Bájenla al piso. Lo que usted hace como líder, esta semana, con esta gente, no se queda en esta semana. Sigue sonando. En la cabeza de cada persona que trabajó con usted, mucho después de que usted se fue de esa cuenta, de esa empresa, de la vida de esa persona.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y les voy a hacer la pregunta que a mí me cambió la forma de ver este trabajo. Piensen en su mejor jefe. El mejor que han tenido en la vida laboral. Ya lo tienen en la cabeza. Ahora díganme: ¿qué es lo que recuerdan de esa persona?</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Les apuesto lo que quieran a que no se acuerdan de las métricas de ese señor o esa señora. No se acuerdan de si su equipo cumplía el nivel de servicio. No tienen ni idea de cuál era el tiempo medio de manejo de su operación. Eso se evaporó. No quedó nada de eso.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Qué les quedó? Una frase que les dijo en el momento justo. Una vez que los respaldó delante de un cliente cuando usted la había embarrado. Algo que les enseñó y que todavía usan hoy. La forma en que los trató un día que usted estaba hundido. Eso es lo que queda. Eso es lo único que sobrevivió.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y ahora la versión incómoda de la misma pregunta, la que duele. Dentro de cinco años, cuando su gente de hoy piense en usted — porque van a pensar en usted, así como ustedes están pensando en su jefe ahora mismo — ¿qué van a recordar?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Van a recordar al que vivía detrás de ellos por el tiempo de la llamada y nada más? ¿Al que solo aparecía para señalar el rojo en el tablero? ¿O van a recordar al que se tomó veinte minutos un día malo para enseñarles algo que todavía usan? Porque una de esas dos huellas la está dejando usted, ahora, hoy. No hay una tercera opción de "no dejar huella". El que no enseña, también deja huella: deja el recuerdo de un jefe del que no se aprendió nada.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y aquí está el giro, lo que de verdad quiero que se lleven hoy. Porque suena bonito esto del legado, pero tiene un filo bien práctico que cambia cómo trabaja usted mañana.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El legado y los números no están peleados. Es al revés. Cuando usted deja de perseguir solo el número del mes y empieza a construir gente — gente que sabe, que se atreve, que resuelve sin llamarlo a usted cada cinco minutos — el número del mes mejora solo. Y mejora cuando usted no está. Esa es la prueba.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Un líder que solo persigue la métrica de hoy tiene un equipo que se desinfla el día que él sale de vacaciones. Un líder que construyó gente tiene un equipo que funciona igual de bien cuando él no está, porque lo que él dejó sembrado sigue ahí, trabajando, dando fruto. Esa es la diferencia entre alguien que produjo números, y alguien que construyó algo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Déjenme ponerles una cara, porque esto en abstracto se queda en aire. Piensen en una supervisora — la llamo Andrea, me la estoy inventando, pero todos conocen una. Andrea no era la de mejores números del piso. Estaba ahí, en el montón, a veces un poquito por debajo. Y cuando uno miraba el tablero del mes, no saltaba.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Pero pasaba algo raro con Andrea. La gente que pasaba por su equipo, dos años después, en otra cuenta, en otra empresa, seguía escribiéndole. "Andrea, ¿me ayudas con una hoja de vida?". "Andrea, me ascendieron, gracias por lo que me enseñó". Los agentes que ella formó terminaron siendo supervisores en media ciudad. Su equipo no era el de mejor número del mes. Era el que producía líderes.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y al lado, el otro. El de números espectaculares, el que ganaba el incentivo casi siempre, el que salía en la foto. Pero su equipo vivía quemado, rotaba cada tres meses, y el día que lo cambiaron de cuenta, su operación se cayó en dos semanas porque todo dependía de que él estuviera encima. Números preciosos. Cero huella. La gente que pasó por ahí no aprendió nada; solo aguantó.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Cuál de los dos quiere ser usted dentro de cinco años? Porque la empresa, hoy, premia al segundo. El tablero solo ve el número del mes. Pero la vida, el largo, la huella de verdad — esa la está construyendo Andrea. Y la diferencia no se nota este mes. Se nota cuando usted ya no está, que es exactamente cuando se mide un líder.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Máximo muere al final de la película. No es spoiler, la peli tiene veinticinco años. Pero fíjense cómo muere y para qué. Lo último que hace no es por él. Es dejar las cosas mejor de como las encontró para la gente que queda. Su pelea, hasta el último segundo, es por algo que él ya no va a ver. Ese es exactamente el trabajo de un líder, sin la espada y sin la sangre: trabajar por un piso que va a seguir funcionando bien cuando usted ya no esté ahí para verlo.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="remate">Su métrica del mes muere a fin de mes. Su gente, no. Lo que usted les enseñó se va con ellos a la siguiente cuenta, a la siguiente empresa, a la siguiente vida laboral entera. Construya números y tendrá un buen mes. Construya gente y dejará una huella que sigue sonando cuando usted ya cambió de trabajo. Eso es lo que resuena.</div>
+        </div>
+
+        <!-- SEGMENTO 6 — DOS LEGADOS -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">Dos legados</span><span class="segment-time">34:00 – 42:30</span></div>
+            <div class="nota">Profundidad histórica verificada: Cómodo (poder por miedo que colapsa) vs. Marco Aurelio (el líder-legado real). Sin remate nuevo — ya hay 4 en el episodio. Datos vía Cassio Dión / Herodiano y Meditaciones; ver Fuentes.</div>
+            <p class="line">Y para que esto del legado no se quede en frase de tatuaje, déjenme ponerles dos emperadores de verdad, uno al lado del otro. Dos hombres que se sentaron en el mismo trono, el más poderoso del mundo conocido. Y que dejaron dos huellas opuestas. Uno es el villano de la película. El otro es su papá. Y la historia real de los dos dice más sobre liderazgo que la película entera.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">El que murió a manos de los suyos</div>
+            <p class="line">Cómodo. El de verdad, no el de la peli. ¿Se acuerdan que les dije que a Cómodo nadie le decía la verdad, que vivía rodeado de gente que le tenía pánico? Métanse en la última noche de su vida conmigo. Porque parece guion de cine. Y pasó de verdad.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Roma. Treinta y uno de diciembre del año 192. Noche de fin de año. El hombre más poderoso del mundo se está alistando para salir a celebrar. Se va a meter a un baño antes de la fiesta.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No sabe que no va a salir vivo de ese cuarto.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Retrocedamos unas horas. Esa misma tarde, su mujer — se llamaba Marcia — encuentra un papel. Una lista, escrita por el propio Cómodo. Una lista de gente que va a mandar a matar. Y Marcia lee, en esa lista, tres nombres que conoce de memoria. El de ella. El del jefe de la guardia personal del emperador. El del mayordomo de confianza. Los tres seres más cercanos al hombre más poderoso del planeta.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Imagínense el frío que baja por la espalda. La persona con la que usted duerme acaba de escribir su nombre en una lista de muerte. No hay a dónde huir. No hay a quién acudir: él ES la ley. Solo queda una salida, y los tres lo saben sin decirlo. Él, o nosotros.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Esa noche le ponen veneno en la comida. Y aquí la cosa se tuerce: el cuerpo de Cómodo, fuerte de tanto entrenar como gladiador, lo vomita. No muere. El veneno falla.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y el miedo se vuelve desespero. Si este hombre amanece, mañana estamos muertos los tres. Así que llaman a la única persona que puede entrar al baño del emperador sin levantar una sola sospecha. Su compañero de entrenamiento. El tipo con el que Cómodo sudaba y luchaba todos los días. Un hombre llamado Narciso.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Narciso entra al baño. Y al hombre más poderoso del mundo lo estrangula, con las manos, su propio compañero de gimnasio. En una bañera. La noche de fin de año.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato · esto no es Hollywood</div>La conspiración de fin de año contra Cómodo (31 dic. 192), el veneno fallido y el estrangulamiento a manos de su compañero de lucha Narciso lo cuentan dos historiadores que vivieron por esos años: Cassio Dión y Herodiano. Es historia, no guion.</div>
+            <p class="line">Y fíjense en lo más brutal de todo. A Cómodo no lo tumbó un enemigo. No fue un ejército, no fue el pueblo en las calles, no fue un general traidor. Lo mató la gente que tenía pegada a la piel. Su pareja. Su guardaespaldas. Su compañero de entrenamiento. Para ellos, matarlo no fue una traición. Fue, literalmente, sobrevivir.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ese es el precio final del liderazgo por miedo. Préstenle atención, porque es la parte que nadie les cuenta cuando los ascienden. El miedo funciona. Funciona perfecto. La gente le obedece, le sonríe, le cumple. Funciona... hasta que deja de funcionar, de un día para otro, y casi siempre por la espalda.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Cómodo tuvo obediencia absoluta toda su vida. Y tuvo cero lealtad el único día en que de verdad la necesitó. Su gente no lo cuidó. Lo eliminó. Porque en años de poder absoluto, nunca les dio una sola razón para quererlo vivo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y el remate de la historia, por si quedaba duda de la huella que dejó: cuando murió, el Senado de Roma ordenó borrarlo. Tumbar sus estatuas, raspar su nombre de los monumentos, hacer como si nunca hubiera existido. Esa fue su herencia. Un vacío que todo el mundo celebró llenar. El hombre más poderoso del planeta, y nadie lo lloró.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ahora, ¿cuántos jefes así han conocido? No tan extremos, claro, nadie manda a estrangular a nadie en la oficina. Pero el del tipo que gobierna por miedo, al que todos le sonríen en la reunión y le rajan en el chat, al que nadie le avisa cuando algo se va a caer porque "que se fregue, por bravo". El día que ese jefe necesita que su equipo dé la milla extra por él, no la da nadie. Y él no entiende por qué. La respuesta es esta historia.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">El que seguimos leyendo dos mil años después</div>
+            <p class="line">Ahora el otro. El papá. Marco Aurelio. El mismo trono, el mismo poder absoluto, la misma posibilidad de podrirse — porque el poder absoluto pudre a casi cualquiera. Y miren para dónde se fue este.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Una tienda de campaña, en la frontera norte del imperio, donde hace un frío que corta. Afuera, la guerra. En su propio territorio, una peste que está matando gente por millones. Y adentro de esa tienda, en mitad de la noche, un hombre ya viejo, cansado, dueño literal del mundo conocido, hace algo rarísimo para alguien con tanto poder.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Agarra un cuaderno. Y se pone a escribir.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No escribe órdenes. No escribe discursos para que lo aplaudan. No escribe para que nadie lo lea — de hecho, jamás quiso que nadie lo leyera. Escribe notas para sí mismo. Recordatorios. Cosas como: no te vuelvas un monstruo. No te creas el cuento de que eres un dios. Acuérdate de que te vas a morir como cualquiera. Un hombre con poder absoluto, peleando cada noche, a solas, contra el único enemigo que de verdad lo podía tumbar: él mismo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ese cuaderno, que era solo para sus ojos, hoy se llama "Meditaciones". Y dos mil años después, justo ahora, mientras grabamos esto, hay alguien abriéndolo en un bus, en un descanso del turno, buscando exactamente lo mismo que buscaba él: cómo no enloquecer cuando todo se le viene encima al tiempo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">¿Y saben qué se escribía ese hombre, el dueño del mundo, a sí mismo, en esas noches? Tres cosas. Apúntenselas, porque valen más que cualquier curso de liderazgo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">La primera: que la fama no vale gran cosa, porque al final todo termina en el olvido. Escribió, más o menos, cuánta gente fue famosísima en su día y hoy no la recuerda nadie. Y se lo repetía a sí mismo el hombre más famoso de su época, ojo, para no marearse con el aplauso. El tipo que lo tenía todo, recordándose que el aplauso es humo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">La segunda, y esta es para enmarcar: cuando uno hace algo bien y a otra persona le sirve, ¿por qué encima anda buscando que se lo reconozcan, que se lo agradezcan, que lo aplaudan? Hiciste lo correcto. Ese era tu trabajo. Punto. No necesitas un premio por hacer bien aquello para lo que estás.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y la tercera, corta y brutal: no vivas como si tuvieras mil años por delante. Haz bien lo que puedes hoy. Ya.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Bájenlo al piso, porque aquí está el oro. El líder estilo Cómodo trabaja para el aplauso de hoy: el reconocimiento en la reunión de la mañana, el dashboard en verde para que el jefe lo felicite por chat, la foto, el crédito. Vive pendiente de que lo vean. El líder estilo Marco Aurelio hace bien su trabajo aunque nadie lo esté mirando, aunque el tablero no le dé las gracias — porque entendió que eso, hacerlo bien, es simplemente el trabajo, no un favor que merece premio.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aquí está la ironía que lo cambia todo: al que no persigue el aplauso es, justamente, al que la gente termina recordando. Cómodo persiguió la admiración con todo el poder del imperio, y lo borraron. Marco Aurelio hizo su trabajo en silencio, llenando un cuaderno que era solo para él, y lo leemos dos mil años después. El que corrió detrás del reconocimiento se quedó sin nada. El que no lo necesitaba se quedó con todo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Dos hombres. El mismo trono. El mismo poder. Uno persiguió que lo admiraran y murió a manos de los suyos, raspado de la historia. El otro hizo bien su trabajo sin pedir aplausos, y todavía hoy alguien, en algún lado, subraya su cuaderno un domingo en la noche para sacar fuerzas para el lunes.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">La diferencia no fue el cargo. Los dos tuvieron exactamente el mismo. La diferencia fue qué dejaron en la gente. Y eso, otra vez, es lo único que de verdad cuenta.</p>
+        </div>
+
+        <!-- SEGMENTO 7 — MITO O REALIDAD -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Mito o Realidad</span><span class="segment-time">42:30 – 47:30</span></div>
+            <div class="nota">Segmento de respiro + carne verificada. Separa historia de ficción. La muerte de Cómodo ya se contó en el segmento 6; aquí solo se referencia, no se repite.</div>
+            <p class="line">Ya que estuvimos toda la hora en la Roma de la película, hagamos algo que me gusta: separar lo que de verdad pasó de lo que se inventó Hollywood. Porque la película mezcla las dos cosas, y vale la pena saber cuál es cuál.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="mito"><strong>Mito:</strong> Máximo, el general convertido en gladiador, existió de verdad.</div>
+            <div class="realidad"><strong>Realidad:</strong> Máximo es un personaje de ficción. No existió. Los guionistas lo armaron inspirándose en varias figuras sueltas de la época, pero ese general específico, con esa historia, es invento. Así que el héroe de la peli es ficción. Hasta ahí, normal.</div>
+
+            <p class="line">Pero ojo, porque ahora viene lo interesante. Los villanos y el mundo donde pasa todo esto sí son reales.</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="mito"><strong>Mito:</strong> el emperador Cómodo y su papá, Marco Aurelio, son también personajes inventados para la película.</div>
+            <div class="realidad"><strong>Realidad:</strong> los dos existieron, y son tal cual. Marco Aurelio — el del cuaderno del que les acabo de hablar — fue emperador de Roma y uno de los filósofos más importantes de la historia. Su hijo Cómodo también fue emperador de verdad. Y fue, por todas las cuentas que nos llegaron, exactamente el desastre que sale en la película.</div>
+
+            <p class="line">Y aquí va el dato que más me gusta, porque parece inventado para la película y resulta que es verdad.</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="dato"><div class="dato-label">Dato · Cómodo en la arena (histórico)</div>El emperador Cómodo de verdad bajaba a pelear a la arena como gladiador. No es invento del guion. Lo cuentan historiadores de la época, como Cassio Dión y Herodiano, que vivieron por esos años. Se creía una especie de héroe, una reencarnación de Hércules. Y sí, como en la película, todo el mundo sabía que sus peleas eran un show arreglado para que él ganara.</div>
+
+            <p class="line">O sea que la imagen más loca de la película — un emperador disfrazado de gladiador, peleando en la arena para que lo admiren — no es exageración de Hollywood. Eso pasó. La realidad fue tan rara como la ficción.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Lo que sí cambió la película es el final. En la peli, Máximo mata a Cómodo en la arena, en combate, como un héroe. En la vida real ya vimos cómo murió: no en la arena, sino a manos de su propio círculo, el último día del 192. Hollywood le dio una muerte épica. La historia le dio la que de verdad se había ganado.</p>
+
+            <p class="line">Y cierro este segmento con el mito más bonito, el de la frase.</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="mito"><strong>Mito:</strong> "lo que hacemos en vida resuena en la eternidad" es una cita real de Marco Aurelio, sacada de su libro.</div>
+            <div class="realidad"><strong>Realidad:</strong> esa frase la escribió el guionista de la película. No está en las "Meditaciones". Marco Aurelio, eso sí, escribió muchísimo sobre lo mismo en el fondo: sobre hacer bien tu trabajo sin esperar el aplauso, sobre que la fama se la lleva el tiempo, sobre vivir cada día como si dejara algo. Así que el espíritu es suyo. Las palabras exactas, de Hollywood. Las dos cosas pueden ser ciertas a la vez.</div>
+
+            <p class="line">Lo digo por una razón práctica: si la van a citar — y es buenísima para citar — díganla bien. "Como decían en Gladiator", no "como dijo Marco Aurelio". El dato correcto también es parte de dejar buena huella. Sobre todo si en su equipo hay alguien que se las sabe todas y los va a corregir. Y siempre hay alguien.</p>
+        </div>
+
+        <!-- SEGMENTO 8 — REFERENCIAS CRUZADAS -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">8</span><span class="segment-title">Referencias Cruzadas</span><span class="segment-time">47:30 – 53:30</span></div>
+            <div class="nota">Dos ejemplos de legado FUERA de Roma, para que la idea no se quede en la película. Sócrates y John Wooden — ambos verificados, ver Fuentes. Sin remate nuevo (ya hay 4 en el episodio).</div>
+            <p class="line">Y para que esto no se les quede como cosa de romanos de hace dos mil años, déjenme sacarlos de la película un momento. Porque esto del legado — que lo único que queda es lo que usted dejó en la gente — no es una idea vieja de un emperador. Es casi una ley física. Se repite en todas las épocas, en todos los oficios, en todo el mundo. Les traigo dos.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">El maestro que no escribió ni una línea</div>
+            <p class="line">Pónganse en Grecia. Hace dos mil cuatrocientos años. Hay un señor caminando descalzo por las calles de Atenas, parando a la gente para hacerle preguntas incómodas hasta sacarla de quicio. Se llama Sócrates. Para media humanidad, es el papá de toda la filosofía occidental.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aquí está lo increíble. Sócrates no escribió ni una sola línea en toda su vida. Nada. Ni un libro, ni un papel, ni una nota. Si esto dependiera de lo que él dejó por escrito, hoy no sabríamos ni que existió.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Por qué lo conocemos, entonces? Por una sola razón. Por un alumno. Un muchacho que lo escuchó en esas calles, que aprendió de él, y que después escribió todo: Platón. Y Platón formó a otro, Aristóteles. Y Aristóteles fue el maestro de un pelado que ustedes sí conocen de sobra: Alejandro Magno. El que conquistó medio mundo conocido.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · la cadena (histórico)</div>Sócrates no dejó textos: lo conocemos por su alumno Platón. Platón enseñó a Aristóteles. Aristóteles fue tutor de Alejandro Magno. Un hilo de maestro a alumno que terminó moldeando el pensamiento de Occidente entero — y arrancó con un hombre que no escribió nada. Solo enseñó.</div>
+            <p class="line">Léanlo despacio. El hombre más influyente de la historia de la filosofía no dejó ni una página. Dejó un alumno. Y ese alumno cargó su huella dos mil cuatrocientos años, hasta hoy. Esa es, exactamente, la apuesta de un líder. Usted no va a dejar un reporte que alguien relea en cinco años. Va a dejar gente. Y esa gente lleva lo que usted les enseñó a la siguiente cuenta, a la siguiente empresa, muchísimo más lejos de donde usted va a llegar con sus propias manos.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">El entrenador que nunca hablaba de ganar</div>
+            <p class="line">Ahora saltemos a los Estados Unidos, baloncesto universitario, hace medio siglo. John Wooden. Si no siguen deporte gringo, quédense, que este señor es oro puro para lo de hoy.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Wooden es, con números en la mano, el entrenador más ganador de la historia del baloncesto universitario gringo. Diez campeonatos nacionales en doce años. Siete seguidos. Una racha de ochenta y ocho partidos sin perder uno. Marcas que cincuenta años después nadie ha vuelto ni a rozar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aquí está lo que lo vuelve leyenda de verdad. Wooden contaba que a sus jugadores nunca, jamás, les habló de ganar. Ni una sola vez. Lo decía así: en el momento en que te obsesionas con ganar, pierdes de vista hacer bien tu trabajo. Él les hablaba de otra cosa: de dar lo mejor que tuvieran adentro, de ser mejores personas. Los diez títulos llegaron solos, de añadidura, como consecuencia de lo otro.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y lo que de verdad lo pinta entero: sus jugadores — estrellas de la NBA, millonarios, hombres hechos — cuarenta años después hablaban de él con los ojos aguados. No por los campeonatos que ganaron con él. Por lo que les enseñó para la vida. Lo recordaban no como el que los hizo campeones, sino como el que los hizo hombres. Esa es la huella en su forma más pura.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">¿Ven el patrón? Sócrates, en una calle de Atenas, hace milenios. Wooden, en una cancha de básquet, hace cincuenta años. Marco Aurelio, en una tienda de campaña en la frontera del imperio. Tres mundos que no se tocan en nada. Y los tres dejaron lo mismo, exactamente lo mismo: gente. No monumentos, no trofeos, no números en verde. Gente, que cargó lo que ellos sembraron mucho más lejos de donde ellos mismos llegaron.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y si el patrón se repite igualito en Atenas, en Roma y en una cancha de Los Ángeles, le tengo una noticia: también se repite en su piso de operación. Usted está dejando gente, ahora mismo, esta semana, lo quiera o no. La única pregunta es qué van a cargar de usted cuando ya no esté.</p>
+        </div>
+
+        <!-- SEGMENTO 9 — APLICABLE HOY -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">9</span><span class="segment-title">Aplicable Hoy</span><span class="segment-time">53:30 – 58:00</span></div>
+            <p class="line">Bueno. Roma, espadas, emperadores. Bajemos esto a su semana, que es para lo que están aquí. Tres cosas concretas. Nada de filosofía. Cosas para hacer esta semana.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line"><strong>Uno: la pregunta del jefe que recordamos, pero al revés.</strong> Esta semana, escoja una persona de su equipo y enséñele algo. Una sola cosa, bien enseñada. No un correo masivo, no "suban todos su productividad". Siéntese al lado de una persona, veinte minutos, y muéstrele cómo resolver ese tipo de caso que siempre se le atora. Esa persona, dentro de cinco años, va a recordar eso. No va a recordar el rojo del tablero de hoy. Va a recordar que usted se sentó. Eso es sembrar huella, en concreto, en veinte minutos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line"><strong>Dos: agarre la espada primero, una vez.</strong> Esta semana va a pasar algo feo — un cliente bravo, un error que asumir, una vuelta que nadie quiere dar. Cuando pase, en vez de delegar el muerto, dé usted la cara primero, con su gente mirando. No para resolverlo en lugar de ellos. Para que lo vean entrar al barro. Una vez basta. Su equipo guarda esa imagen por meses: el día que la cosa se puso fea, el jefe no salió corriendo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y déjeme aterrizarlo, porque "dar la cara" suena bonito pero es vago. Es algo así: entra el cliente que llamó a pelear, el que tiene a media operación rezando para que no le caiga. Usted no se la quita a su agente para lucirse, ya dijimos que eso es lo otro. Usted se sienta al lado, se pone un audífono, y le dice al cliente: "buenas, soy el supervisor, estoy con mi compañera en esta llamada, vamos a resolverlo". Y lo resuelven los dos, juntos, con su agente al volante y usted de copiloto. El cliente siente el respaldo. Pero su agente siente algo más grande: que no lo dejaron solo en la peor llamada del día. Esa persona se la juega por usted el resto del mes. Eso es agarrar la espada bien.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line"><strong>Tres: la prueba de Cómodo.</strong> Esta es la más difícil, porque es sobre usted. Pregúntese, en serio: ¿cuándo fue la última vez que alguien de mi equipo me trajo un error, o me llevó la contraria, sin miedo? Si no se acuerda, tiene un problema, y no es de ellos, es suyo. Esta semana, cuando alguien le traiga una mala noticia, fíjese en su propia primera reacción. Si explota, les está enseñando a esconderle las cosas. Si respira y dice "gracias por decirme, resolvamos", les está enseñando a confiar. Esa reacción suya, repetida, es la huella. Para bien o para mal.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Tres cosas. Enseñar a uno. Dar la cara una vez. Cuidar su reacción cuando le traen lo malo. Ninguna le va a mover el tablero esta semana. Todas le van a cambiar la huella que está dejando. Y la huella, ya lo dijimos, es lo único que dura.</p>
+        </div>
+
+        <!-- SEGMENTO 10 — RECOMENDACIONES DE ANDY -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">10</span><span class="segment-title">Recomendaciones de Andy</span><span class="segment-time">58:00 – 60:30</span></div>
+            <div class="nota">Tres: la peli (con ojo nuevo), el libro, y una externa fuera del tema (TED de Wooden). Cada una con su porqué conectado a ESTE episodio.</div>
+            <p class="line">Si el episodio los movió, tres cosas para seguir en esta misma conversación.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Uno — la peli: Gladiator, con otro ojo</div>
+            <p class="line">Si no la han visto, o no la ven hace años, vuélvanla a ver este fin de semana. Pero no miren las peleas. Miren las dos formas de tener poder, Máximo y Cómodo, una al lado de la otra. Y si solo tienen dos minutos, busquen en YouTube la escena del "¿no están entretenidos?" — el espectáculo que todos aplauden contra lo que de verdad importa. Esos dos minutos valen el episodio entero.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Dos — el libro: "Empresas que sobresalen", de Jim Collins</div>
+            <p class="line">Nada de romanos en esta. Es un libro de negocios, y se llama "Empresas que sobresalen" — en inglés "Good to Great". Collins estudió compañías que pasaron de buenas a extraordinarias, y encontró un patrón rarísimo en los que las dirigían. No eran los jefes estrella, carismáticos, que salen en la portada de las revistas. Eran líderes humildes, callados, obsesionados con dejar la empresa mejor de como la encontraron — incluso para el que llegara después de ellos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Él le puso nombre: liderazgo de Nivel 5. Y la prueba que propone es la misma de hoy: el líder estrella deja una empresa que se derrumba apenas se va — porque todo dependía de su brillo. El líder de Nivel 5 deja una que sigue creciendo sin él. Busquen el capítulo de "Nivel 5". Es este episodio, en versión de oficina, con datos.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Tres — la charla: John Wooden, TED 2001</div>
+            <p class="line">Esta es la que de verdad quiero que vean. Búsquenla como "John Wooden TED" — son diecisiete minutos, está subtitulada. Es el entrenador del que les hablé, el de los diez títulos. Pero la charla no va de baloncesto. Va de la diferencia entre ganar y tener éxito, contada por un viejito de noventa años que entendió, mejor que nadie, que lo que uno deja en la gente vale más que cualquier marcador. Véanla, y miren a su equipo distinto el lunes.</p>
+        </div>
+
+        <!-- SEGMENTO 11 — CIERRE + TEASER + TM CANÓNICO -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">11</span><span class="segment-title">Cierre + Teaser + TM canónico</span><span class="segment-time">60:30 – 63:00</span></div>
+            <p class="line">Volvamos al hombre en la arena, para cerrar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Máximo lo perdió todo. El rango, el nombre, el uniforme. Todo lo que, en el organigrama, decía "este manda". Y la gente lo siguió igual, hasta el final. Porque lo que él era de verdad no estaba en el cargo. Estaba en cómo trataba a la gente que tenía al lado, en el barro, cuando ya no tenía nada que ofrecer más que su palabra.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">A usted le van a quitar el cargo. Algún día. Lo van a mover, lo van a ascender, lo van a sacar, o se va a ir usted. Y ese día, su título se evapora. Lo único que queda — lo único — es lo que dejó sembrado en la gente que dirigió. Si los hizo mejores. Si les enseñó algo. Si, cuando lo recuerden, sonríen.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">La pregunta del episodio</div>
+            <p class="line">Así que la pregunta de hoy no es sobre Máximo. Es sobre usted. Y esta sí quiero que me la contesten de verdad.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El mejor jefe que usted ha tenido — ese que ya pensó hace un rato — ¿qué fue lo que le dejó? ¿Cuál es la huella que todavía carga, años después? Escríbanlo en los comentarios del episodio, ahí mismo en Spotify. Los leo todos, de verdad — y los del episodio pasado, el del Mundial, estuvieron buenísimos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y si esto les hizo pensar en alguien — en ese jefe que les dejó huella, o en alguien de su equipo a quien se la están dejando ustedes ahora — compártanlo con esa persona. Si quieren seguir la conversación, estoy en LinkedIn como Andrés Bermúdez Rodríguez.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="remate">No lo van a recordar por su mejor mes. Lo van a recordar por lo que les enseñó el peor día. Esa es la huella. Empiece a dejarla mañana.</div>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Teaser EP.20</div>
+            <p class="line">Y la otra semana damos un volantazo. Nos salimos de Roma, nos olvidamos de las películas, y nos vamos de cabeza a los números. A las métricas del call center: las que de verdad importan, las que le están mintiendo en la cara, y esa que todo el mundo mira mal y los está volviendo locos a usted y a su equipo. El reverso exacto de lo de hoy. Nos vemos.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Firma de cierre</div>
+            <p class="line">Esto fue Behind the Queue, episodio diecinueve.</p>
+            <p class="line">Yo soy Andy. Y recuerden: el cargo se lo prestaron. La huella es suya. Construyan gente, no números — porque la gente es lo único que se queda cuando usted ya no está.</p>
+            <div class="nota">OUTRO MUSICAL — fade suave a silencio.</div>
+        </div>
+
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section fuentes">
+        <h2>Fuentes y verificación</h2>
+        <p><strong>Película:</strong> <em>Gladiator</em> (2000), dir. Ridley Scott; Russell Crowe como Máximo. Ganó 5 premios Óscar incluido Mejor Película (ceremonia 2001). Máximo Décimo Meridio es personaje de ficción.</p>
+        <p><strong>Histórico:</strong> Marco Aurelio (emperador 161–180 d.C., autor de las <em>Meditaciones</em>) y Cómodo (emperador 180–192 d.C.) son figuras reales. Que Cómodo combatía en la arena como gladiador y se identificaba con Hércules está documentado por Cassio Dión y Herodiano, historiadores contemporáneos.</p>
+        <p><strong>Caída de Cómodo (31 dic. 192 d.C.):</strong> conspiración de su círculo íntimo — su compañera Marcia, el prefecto del pretorio Quinto Emilio Leto y el chambelán Eclecto — tras hallar Marcia una lista de ejecuciones que los incluía. Intento de envenenamiento fallido; lo estrangula su compañero de lucha Narciso en el baño. Fuentes antiguas: Cassio Dión y Herodiano. Tras su muerte recibió <em>damnatio memoriae</em> del Senado. <strong>[VERIFICAR nombres/año antes de grabar si se dan al aire; si hay duda, usar la versión general "lo traicionaron los suyos".]</strong></p>
+        <p><strong>Meditaciones (paráfrasis, no citas literales):</strong> los temas usados en el segmento 6 — la fama termina en el olvido; hacer el bien sin esperar reconocimiento porque "es tu trabajo"; vivir y obrar bien hoy, no como si tuvieras mil años — corresponden a ideas reales de las <em>Meditaciones</em> de Marco Aurelio. Se dicen como paráfrasis ("escribió, más o menos…"), no como cita textual; el fraseo exacto varía según la traducción.</p>
+        <p><strong>Frase de la película:</strong> "lo que hacemos en vida resuena en la eternidad" es línea del guion de <em>Gladiator</em>, no una cita literal de las <em>Meditaciones</em>. El espíritu es afín a Marco Aurelio; las palabras exactas son de Hollywood.</p>
+        <p><strong>Referencias cruzadas (seg 8) — Sócrates:</strong> Sócrates no dejó textos escritos; lo conocemos principalmente por su alumno Platón. Platón enseñó a Aristóteles; Aristóteles fue tutor de Alejandro Magno. Cadena de mentoría ampliamente documentada en la historia de la filosofía griega.</p>
+        <p><strong>Referencias cruzadas (seg 8) — John Wooden:</strong> entrenador de baloncesto de UCLA; 10 campeonatos NCAA en 12 años, 7 consecutivos, racha de 88 partidos invicto. TED 2001, "The Difference Between Winning and Succeeding" (~17 min). Frase verificada: "I never talked about winning to our players… when you start fixating on winning, you lose sight of doing your job." Recordado por sus jugadores por sus lecciones de vida más que por los títulos.</p>
+        <p><strong>Recomendación (seg 10) — Jim Collins:</strong> <em>Good to Great</em> (2001); concepto de "Liderazgo de Nivel 5" = humildad personal + voluntad profesional; líderes que construyen grandeza duradera que sobrevive a su salida. <strong>[VERIFICAR título exacto en español antes de grabar: la edición en castellano es "Empresas que sobresalen". Si no se confirma, nombrarlo en inglés "Good to Great".]</strong></p>
+    </div>
+
+    <footer>
+        <div class="gold">BEHIND THE QUEUE · EP.19</div>
+        <p>Gladiator: la huella que deja un líder · Guion para grabación · ~58 min medidos a 143 wpm</p>
+    </footer>
+
+</div>
+</body>
+</html>
