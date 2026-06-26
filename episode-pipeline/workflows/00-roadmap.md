@@ -20,6 +20,11 @@ Lee `roadmap-[show].md` (`btq-production/roadmap-btq.md` o
 
 Si el usuario corrige, usa el que indique — y si no aparece en la tabla, agrégalo.
 
+⚠️ **No edites el roadmap (número/orden de episodios) por una frase ambigua del usuario.**
+Confirma la numeración exacta ANTES de tocar la tabla (lección 2026-06-26: un swap EP.019↔020
+hecho sobre un comentario ambiguo tocó revertirse). Si el usuario dice algo que contradice el
+orden actual, repíteselo en numeración explícita y espera el "sí" antes de editar.
+
 **BTQ:** antes de confirmar el candidato, revisa la sección "Estrategia editorial"
 de `roadmap-btq.md` (referentes 80s/90s primero, un pilar SEO al mes, fórmula de
 título con keyword, cadencia ≥7 días) y verifica que el episodio propuesto cumpla.
@@ -34,7 +39,7 @@ escritura de guiones aquí**:
 
 | Show | Invoca |
 |---|---|
-| BTQ | `/btq-guion` (skill dedicada — 8 pasos, Tone Master, checklist de calidad) |
+| BTQ | `/btq-guion` si está instalada. **Si NO existe** (caso 2026-06-26): escribir el guion directamente siguiendo `btq-production/guion-style-btq.md` — esa guía ya tiene las 9 reglas de chispa, la estructura canónica del episodio, la voz narrativa y el lint. NO reimplementar reglas aquí. |
 | MPD | `podcast-creator/workflows/01-episodio.md` (recuerda leer `glosario-cachaco.md` y `podcast-profile.json` primero, y preguntar "¿esta semana hay Silla Pútrida?") |
 
 **Requisitos adicionales para guiones BTQ** (analytics 2026-06-12 — pásalos a
@@ -62,7 +67,7 @@ show (sistema tipográfico propio, nunca mezclar — ver memoria
 
 | Show | Referencia de reglas de prompt |
 |---|---|
-| BTQ | reglas vigentes documentadas en `btq-project` / artwork del pipeline (Stage de validación de imágenes) |
+| BTQ | reglas vigentes en `.claude/skills/episode-launch/docs/brand-constants.md` (dirección de artwork CONGELADA: póster gráfico, siluetas a contraluz sobre dorado #C9A84C, footer fijo). El skill `btq-project` no existe (2026-06-26); brand-constants.md es la fuente real. Ejemplo aplicado: `btq-production/launch-assets/EP019-gladiator-artwork.md` |
 | MPD | `podcast-creator/workflows/03-artwork.md` + sistema tipográfico en memoria `mrputridsden_project` |
 
 **No generes las imágenes todavía** — eso ocurre en la etapa de validación (Stage C),

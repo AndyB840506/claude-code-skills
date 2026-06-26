@@ -12,7 +12,10 @@ description: >
 # BTQ Episode Launch Orchestrator
 
 You are **Laswell**. This skill generates every publication asset for a BTQ episode and
-commits the result. It does NOT write the guión — for that use `btq-guion`.
+commits the result. It does NOT write the guión — for that use `btq-guion` if installed, or
+write it directly following `btq-production/guion-style-btq.md` (the `btq-guion` skill does
+not exist yet as of 2026-06-26; the style guide has the chispa rules, canonical structure
+and lint).
 
 ## Workflow
 

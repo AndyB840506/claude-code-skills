@@ -72,6 +72,50 @@ liderazgo para un supervisor/gerente de BPO de ~40 años. La chispa no viene de 
 
 ---
 
+## Estructura canónica del episodio (pop-culture) — seguir desde el primer borrador
+
+Derivado de comparar EP.018 (completo) vs. un primer borrador de EP.019 que se quedó corto
+(feedback Andy 2026-06-26: "se encasilló en el referente, le faltó el cierre"). Un episodio
+BTQ pop-culture lleva, en orden, estos bloques. No omitir ninguno al escribir el borrador:
+
+1. **Apertura** (ritual: "Buenas y santas…") + **Hook** en escena.
+2. **El Puente** referente → supervisor BPO (a veces enlaza con el episodio anterior).
+3. **Cuerpo** (2-4 segmentos): la tesis desarrollada con el referente.
+4. **Re-enganche al ~60%**: el dato/giro más fuerte va en la segunda mitad, no en el primer
+   tercio (completion rates 50-67%).
+5. **Mito o Realidad**: separar lo histórico de lo ficticio del referente (textura de respiro).
+6. **Referencias Cruzadas — FUERA del referente.** Traer 2 ejemplos reales y verificados del
+   MISMO tema pero de otro mundo (otra época, otro oficio, otro país). NO quedarse solo dentro
+   de la película/banda del episodio. Ej. EP.018: Zander (director de orquesta) + Ferguson.
+   EP.019: Sócrates + John Wooden. Es lo que hace el episodio universal y no un resumen del
+   referente.
+7. **Aplicable Hoy**: 3 cosas concretas para esta semana.
+8. **Recomendaciones de Andy — diversificadas.** Máximo UNA atada al referente (la peli/disco
+   del episodio); las otras saltan fuera (un libro de otro mundo, una charla, otra peli). NO
+   las tres dentro del mismo tema/época. Mezclar medios: película + libro + charla.
+9. **Cierre canónico** (NO omitir nada de esto — es la firma de BTQ):
+   - **Pregunta comentable** que interpela al oyente sobre SU situación.
+   - **CTA de comentarios:** "escríbanlo en los comentarios del episodio, en Spotify, los leo
+     todos" (+ guiño a los comentarios del episodio anterior).
+   - **CTA de compartir** ("si esto les hizo pensar en alguien, compártanlo").
+   - **Redes:** LinkedIn — "estoy en LinkedIn como Andrés Bermúdez Rodríguez".
+   - **Teaser** del próximo episodio (bien armado, no una nota suelta).
+   - **Firma + TM canónico:** "Yo soy Andy. Y recuerden: [tesis del episodio en una frase
+     memorable]" + nota OUTRO MUSICAL.
+
+## Voz narrativa — "MPD meets TED", no documental BBC (feedback Andy 2026-06-26)
+
+Los tramos históricos/expositivos son los que más fácil caen en modo informe ("esto pasó,
+luego esto, esto significa X"). Reescribirlos en voz narrativa de escena:
+
+- **Presente, no pasado.** "Roma. 31 de diciembre del 192. El hombre más poderoso del mundo
+  se está alistando…" mete al oyente AHÍ; "el último día del 192 lo mataron" solo lo reporta.
+- **Ritmo staccato emocional** en los beats clave: frases cortas, declarativas, encadenadas.
+- **"Ubíquense / Métanse en esto"** para poner al oyente en la escena (sin gastar el
+  presupuesto de "imagínense").
+- **El giro descubierto** ("Y aquí está lo que casi nadie ve…") en vez de explicar la lección.
+- Referencia de técnica: los guiones de MPD (`mrputridsden-production/scripts/`).
+
 ## Regla de 2 partes (igual que MPD)
 
 Si la data y las anécdotas dan para más de ~55-60 min de contenido con chispa (sin relleno),
@@ -148,5 +192,14 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
 - [ ] Frase larga: ninguna oración que no se pueda decir de un respiro; partir las cadenas de guiones.
 - [ ] Al menos 2-3 momentos de humor/guiño/autoconciencia repartidos.
 - [ ] Datos verificados (fuentes reales, nada inventado); lo dudoso marcado [VERIFICAR].
+- [ ] **Vocabulario accesible:** cero palabras que el host/audiencia no usen al hablar
+      (regionalismos raros, cultismos, tecnicismos). Cazar y reemplazar por habla natural —
+      ej. rechazados: "galones", "desperdigado", "embestida", "factura final", "telón de
+      fondo". Si dudas si una palabra "se entiende", cámbiala.
+- [ ] **Estructura canónica completa** (ver sección arriba): ¿están Referencias Cruzadas
+      FUERA del referente, recomendaciones diversificadas, y el cierre canónico entero
+      (comentarios Spotify · compartir · LinkedIn · teaser · firma + TM · outro)? No omitir.
+- [ ] **Voz narrativa, no documental:** los tramos históricos en presente/escena, no en
+      modo informe.
 - [ ] Aperturas y conectores de contenido (sin meta-anuncios tipo "ahora vamos a…").
 - [ ] Duración: contar **palabras habladas / 143 wpm** (ver "Calibración de duración"), NO estimar minutos a ojo. Verificar que el guion en seco caiga ~7-8% bajo el objetivo (la expansión en vivo de Andy lo sube ~15%). Si pasa de ~60 min con chispa, evaluar partir en 2.
