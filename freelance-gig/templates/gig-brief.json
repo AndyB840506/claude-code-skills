@@ -1,0 +1,32 @@
+{
+  "slug": "",
+  "source": {
+    "platform": "",
+    "url": "",
+    "capturedAt": ""
+  },
+  "client": {
+    "name": "",
+    "company": "",
+    "existingSite": "",
+    "existingSocials": []
+  },
+  "request": {
+    "rawText": "",
+    "summary": "",
+    "deadlineSignal": "",
+    "budgetSignal": "",
+    "language": ""
+  },
+  "classification": {
+    "matchedServiceId": null,
+    "matchedServiceName": null,
+    "matchConfidence": "",
+    "customJobNotes": ""
+  },
+  "stage": {
+    "wantsProposal": false,
+    "wantsBuild": false
+  },
+  "pendingQuestions": []
+}

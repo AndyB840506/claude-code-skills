@@ -89,3 +89,31 @@ Checklist obligatorio antes de entregar (correr greps literales sobre el guion):
 - [ ] Documentar trampas encontradas en el doc de entorno correspondiente
       (ej.: transcriptor/docs/environment.md).
 - [ ] Output y cachés a E:\ (desktop) / D:\ (portátil), nunca C:.
+
+## 8 · Propuestas y entregables freelance (skill `freelance-gig`)
+
+- [ ] **Ningún precio inventado:** si el gig matcheó uno de los 7 servicios de
+      `services.config.js`, el rango citado es el real de ese archivo — nunca un
+      número estimado. Si no matcheó (custom job), no se sugiere precio.
+- [ ] **Cada dato factual trazado** a la JD / brief / resultado de web_fetch —
+      lo que no se puede verificar va a una sección visible de preguntas
+      pendientes, nunca se adivina.
+- [ ] **Voz (propuestas):** ningún par de aperturas consecutivas idéntico, cero
+      anuncio de hype, cero descuento por debajo del rango (reframe a valor en
+      su lugar).
+- [ ] **Entregables HTML siguen el output contract `BASE_RULES`** de
+      `the-freelancer/freelancer/deliverable.js` cuando se reutiliza esa ruta
+      (single-file, brand frame salvo excepción de sitio propio del cliente,
+      idioma del cliente).
+- [ ] **Sin indicios de IA — visual:** correr la imagen/página/logo contra el
+      patrón "esqueleto IA" (hero centrado + 3 cards + carrusel + anillo
+      degradado, fuentes Inter/Roboto + gradiente morado). Si aparece, no se
+      entrega así — se nombra un ángulo creativo específico del cliente y se
+      reconstruye sobre ese ángulo.
+- [ ] **Sin indicios de IA — texto:** revisar contra muletillas típicas de IA
+      ("no solo es X, es Y", listas de tres, transiciones genéricas tipo "en
+      el mundo actual...", acumulación de calificadores, párrafos de largo
+      uniforme). Si aparece, corregir antes de entregar.
+- [ ] **Self-check explícito antes de declarar listo:** una pasada final
+      preguntando "¿algo aquí se ve/lee como plantilla o como IA en automático?"
+      — nombrar el indicio específico y corregirlo, no solo anotarlo.
