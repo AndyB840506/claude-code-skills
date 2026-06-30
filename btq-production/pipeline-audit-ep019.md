@@ -64,9 +64,11 @@
 - **Deploys:** `vercel --prod` x2 desde btq-production/website — ambos aliased a
   behind-thequeue.com, verificados HTTP 200 y contenido correcto (`curl` confirmó
   badge `019` y orden de grid `018,017,016,015`).
-- **Pendiente:** las 7 imágenes (portada 1:1, teaser 9:16, thumbnail 16:9, 4 quote
-  cards) — prompts ya listos, Andy las genera en Flow cuando pueda. Marketing
-  material (Stage C.3b) y el gate final de `05-deploy-verify.md` quedan abiertos
-  hasta entonces, aunque el sitio ya refleja el lanzamiento de EP.019.
-- **Resultado:** OK — sitio en vivo correcto sin imágenes nuevas; retomar Stage C.3
-  cuando Andy tenga las imágenes generadas.
+- **Decisión de cierre (2026-06-29):** Andy confirmó CERRAR el episodio sin generar
+  las 7 imágenes (portada 1:1, teaser 9:16, thumbnail 16:9, 4 quote cards) — decisión
+  definitiva, no parcial. Los prompts quedan documentados en `EP019-gladiator-artwork.md`
+  y `EP019-gladiator-launch.md` §E por si se reutilizan en el futuro, pero no son un
+  pendiente abierto de este episodio.
+- **Resultado:** OK — EP.019 CERRADO. `pipeline-state-ep019.md` → `stage_c: complete`;
+  `roadmap-btq.md` → `publicado`. Pipeline completo: guion → transcripción → assets →
+  sitio rotado y deployado (sin imágenes nuevas, por decisión de Andy).

@@ -15,7 +15,7 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.016 | Pink Floyd / The Wall | publicado — https://open.spotify.com/episode/3CNyTkA6OCLoCrmNEh0LVR |
 | EP.017 | Soda Stereo / Cerati | publicado — https://open.spotify.com/episode/0LJ22lLMgfWh3wLbbgNhxC |
 | EP.018 | El Mundial — liderazgo bajo presión (adquisición de oyentes vía reach social) | publicado — https://open.spotify.com/episode/6PC4QIDiAwmVZJ1BV5PYcx |
-| EP.019 | Gladiator / Máximo — "la huella que deja un líder" (teaser ya grabado; guion ~58 min listo 2026-06-26) | guion listo |
+| EP.019 | Gladiator / Máximo — "la huella que deja un líder" | publicado — https://open.spotify.com/episode/0nNg2ngSzEVxKk7awLe5AK |
 | EP.020 | Pilar SEO — Métricas / KPIs de call center (evergreen, keyword-first, sin referente pop) | en roadmap |
 
 ---
