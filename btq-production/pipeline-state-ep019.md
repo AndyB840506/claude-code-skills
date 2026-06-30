@@ -1,6 +1,6 @@
 EPISODE: EP.019 (BTQ — Gladiator: la huella que deja un líder)
 stage_a: complete — 2026-06-26
-stage_b: pending
+stage_b: complete — 2026-06-29 (intake + transcripción WhisperX + assets episode-launch generados; quote cards revalidadas contra audio real)
 stage_c: pending
-spotify_url: pending
+spotify_url: https://open.spotify.com/episode/0nNg2ngSzEVxKk7awLe5AK (confirmada por Andy 2026-06-29)
 notes: Guion aprobado por Andy en btq-production/launch-assets/EP019-gladiator-guion.html (~7.350 palabras = ~58 min en vivo a 143 wpm; 12 segmentos). Voz narrativa "MPD meets TED" (escenas en presente, suspenso). Lint OK: 4 remates, 1 "imagínense", cita exacta 3x, datos verificados (Cómodo/Marco Aurelio/Sócrates/Wooden/Collins en Fuentes; muerte de Cómodo y título ES de "Good to Great" marcados [VERIFICAR]). Incluye segmento Referencias Cruzadas (Sócrates + Wooden, legado fuera de Roma), recomendaciones diversificadas (Gladiator + Good to Great + TED Wooden) y cierre canónico (comentarios Spotify + LinkedIn Andrés Bermúdez Rodríguez + teaser EP.20 + TM canónico + outro). Prompts de artwork preparados en btq-production/launch-assets/EP019-gladiator-artwork.md (portada 1:1 + teaser intriga 9:16 + thumbnail 16:9 + derivaciones; quote cards a confirmar contra audio en Stage C). Teaser ya grabado por Andy. Pendiente: GRABAR el episodio completo. Siguiente: al tener el audio, retomar el pipeline ("corre el pipeline para EP.019") → Stage B (intake + transcripción + assets vía episode-launch).
