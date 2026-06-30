@@ -88,6 +88,13 @@ el SVG existente, solo cambia el texto y el href).
 En ambos casos: edita las 4 cards para que reflejen el grid rotado — no agregues una
 quinta ni dejes la que sale.
 
+**No olvides el badge "Última pista" / hero del episodio más reciente** (BTQ: `<a
+class="latest">` cerca del top de `index.html`, fuera del contenedor del grid de 4
+cards) — es un elemento SEPARADO que también debe apuntar al episodio que se está
+lanzando ahora (EP.0XX), no al que entra al grid. Confirmado como hueco real: tras el
+lanzamiento de EP.018 (2026-06-22) el grid de 4 cards se rotó correctamente pero este
+badge quedó apuntando a EP.017 hasta que se detectó y corrigió el 2026-06-29.
+
 ---
 
 ## Al terminar
