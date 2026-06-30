@@ -24,8 +24,17 @@ Large task  → /parallel-workflow (multi-agent)
 
 When `/megamind` is invoked:
 
+### Step 0 — Check for a dedicated skill first
+Before loading context or assessing complexity: does a named skill already cover this
+task (episode-launch, freelance-gig, web-page-kit, episode-pipeline, etc. — check the
+available-skills list)? If yes, use that skill directly and stop here — don't run the
+rest of this workflow. Megamind only continues past this step for ad-hoc tasks with no
+dedicated skill, or tasks that explicitly span 2+ independent repos/projects.
+
 ### Step 1 — Load context
-Read `~/.claude/project-map.md` if it exists. If it doesn't, suggest running
+Read `~/.claude/project-map.md` if it exists. Check its `Generated:` date — if it's
+more than 14 days old, tell the user it may be stale and offer to run `/project-map`
+before relying on it for routing decisions. If the file doesn't exist, suggest running
 `/project-map` first. Use the map to identify which repos/projects are relevant before
 decomposing — this prevents unnecessary agent spawns on unrelated projects.
 
