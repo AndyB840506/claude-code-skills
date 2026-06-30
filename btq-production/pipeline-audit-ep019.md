@@ -45,5 +45,28 @@
   - btq-production/pipeline-state-ep019.md actualizado (stage_b: complete, spotify_url resuelto)
 - **Verificación:** quote cards cruzadas línea por línea contra el SRT (timestamps citados).
   Dato corregido (Jim Collins) confirmado explícitamente por Andy antes de publicar en assets.
-- **Resultado:** OK — pendiente aprobación de Andy para commit + push; sigue a Stage C
-  (validación de imágenes en Flow) tras la aprobación.
+- **Resultado:** OK — aprobado por Andy, commit + push hechos (`5a5a493`).
+
+## Stage C — Sitio web: fix de badge + rotación de grid (2026-06-29)
+- **Qué se hizo:** Andy reportó que el tracklist de behind-thequeue.com no estaba
+  actualizado. Investigación encontró 2 problemas distintos:
+  1. El grid de 4 tarjetas SÍ estaba correcto para el lanzamiento de EP.018, pero el
+     badge hero "Última pista" nunca se actualizó de EP.017 a EP.018 (hueco no cubierto
+     por `04-grid-rotation.md`, que solo documenta el grid de 4 cards) — corregido y
+     deployado primero, por separado.
+  2. Documentado el hueco en `episode-pipeline/workflows/04-grid-rotation.md` para que
+     no se repita.
+  3. Andy pidió saltar la generación/validación de imágenes (Stage C.3) por ahora y
+     seguir directo con grid + deploy. Badge actualizado a EP.019 (Gladiator); grid
+     rotado de `[017,016,015,014]` a `[018,017,016,015]` — entra EP.018, sale EP.014.
+- **Archivos modificados:** btq-production/website/index.html (2 deploys separados:
+  fix del badge a EP.018, luego rotación completa a EP.019).
+- **Deploys:** `vercel --prod` x2 desde btq-production/website — ambos aliased a
+  behind-thequeue.com, verificados HTTP 200 y contenido correcto (`curl` confirmó
+  badge `019` y orden de grid `018,017,016,015`).
+- **Pendiente:** las 7 imágenes (portada 1:1, teaser 9:16, thumbnail 16:9, 4 quote
+  cards) — prompts ya listos, Andy las genera en Flow cuando pueda. Marketing
+  material (Stage C.3b) y el gate final de `05-deploy-verify.md` quedan abiertos
+  hasta entonces, aunque el sitio ya refleja el lanzamiento de EP.019.
+- **Resultado:** OK — sitio en vivo correcto sin imágenes nuevas; retomar Stage C.3
+  cuando Andy tenga las imágenes generadas.
