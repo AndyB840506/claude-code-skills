@@ -2,6 +2,14 @@
 
 Generate all four blocks in a single response. Label each block clearly.
 
+**Fact-check real-world claims before finalizing (confirmed EP.019 — "Tim Collins" said
+on air for the real author Jim Collins).** Verbatim-matching the transcript only confirms
+the words were actually said; it doesn't confirm they're correct. Before publishing, scan
+the transcript for named real-world entities the episode cites — authors, historical
+figures, dates, attributed quotes — and verify each is accurate. If something said on air
+is wrong, don't silently propagate it into public assets, and don't silently "correct" it
+either: ask the user to confirm before using the corrected version.
+
 ## A · Spotify SEO
 
 **Episode title (formula obligatoria — analytics 2026-06-12):**
