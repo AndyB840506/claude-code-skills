@@ -6,7 +6,7 @@ Take any existing website design you like and adapt it to your brand. Analyze co
 
 ---
 
-## Paso -1: Context Check
+## Step -1: Context Check
 
 **If called from `00-welcome.md`:** `site_type` and `language` are already set. Skip Step 3 (site info questions that duplicate setup) if config already exists.
 
@@ -14,7 +14,7 @@ Take any existing website design you like and adapt it to your brand. Analyze co
 
 ---
 
-## Paso 0: What This Does & Target URL
+## Step 0: What This Does & Target URL
 
 > "Give me a URL of any website you like — a competitor, a template, anything. I'll analyze the design, extract the style, and recreate it with YOUR content and brand.
 >
@@ -29,7 +29,7 @@ Ask:
 
 ---
 
-## Paso 1: Design Extraction
+## Step 1: Design Extraction
 
 **ACTION:** Extract and report:
 
@@ -60,7 +60,7 @@ Animations: Fade-in on scroll, hover lift on cards
 
 ---
 
-## Paso 2: What to Keep vs. Replace
+## Step 2: What to Keep vs. Replace
 
 Ask:
 
@@ -72,9 +72,9 @@ Ask:
 
 ---
 
-## Paso 3: Your Site Information
+## Step 3: Your Site Information
 
-Ask for the user's actual content (run Paso 1 from workflow 00-setup if no config exists):
+Ask for the user's actual content (run Step 1 from workflow 00-setup if no config exists):
 
 1. **Site/Business Name**
 2. **Tagline**
@@ -88,7 +88,7 @@ Ask for the user's actual content (run Paso 1 from workflow 00-setup if no confi
 
 ---
 
-## Paso 4: Section Content Mapping
+## Step 4: Section Content Mapping
 
 For each section being kept, collect real content:
 
@@ -109,7 +109,7 @@ For each section being kept, collect real content:
 
 ---
 
-## Paso 5: Generate Adapted Homepage
+## Step 5: Generate Adapted Homepage
 
 **ACTION:** Recreate the site as a self-contained HTML file:
 
@@ -124,7 +124,7 @@ For each section being kept, collect real content:
 
 ---
 
-## Paso 6: Auto-Open
+## Step 6: Auto-Open
 
 **ACTION:** Open in browser:
 ```powershell
@@ -133,7 +133,7 @@ Start-Process "homepage.html"
 
 ---
 
-## Paso 7: Review & Sources
+## Step 7: Review & Sources
 
 Show:
 ```

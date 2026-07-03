@@ -4,7 +4,7 @@ Enhance all generated pages with SEO best practices — meta tags, structured da
 
 ---
 
-## Paso 0: Load Config & Inventory
+## Step 0: Load Config & Inventory
 
 **ACTION:** Read `website-config.json`. Identify all `.html` files in the working directory.
 
@@ -12,7 +12,7 @@ List pages found and ask: "Apply SEO to all pages, or a specific one?"
 
 ---
 
-## Paso 1: Global SEO Settings
+## Step 1: Global SEO Settings
 
 Ask:
 
@@ -24,7 +24,7 @@ Ask:
 
 ---
 
-## Paso 2: Per-Page SEO
+## Step 2: Per-Page SEO
 
 For each page targeted, ask:
 
@@ -36,7 +36,7 @@ For each page targeted, ask:
 
 ---
 
-## Paso 3: Schema.org by Page Type
+## Step 3: Schema.org by Page Type
 
 **ACTION:** Detect or ask the page type for each file, then inject the correct structured data:
 
@@ -56,7 +56,7 @@ Always include at minimum: `@context`, `@type`, `name`, `description`, `url`.
 
 ---
 
-## Paso 4: Open Graph & Twitter Cards
+## Step 4: Open Graph & Twitter Cards
 
 **ACTION:** Add to every page:
 
@@ -78,7 +78,7 @@ Always include at minimum: `@context`, `@type`, `name`, `description`, `url`.
 
 ---
 
-## Paso 5: Technical SEO
+## Step 5: Technical SEO
 
 **ACTION:** Verify and add to each page:
 
@@ -92,7 +92,7 @@ Always include at minimum: `@context`, `@type`, `name`, `description`, `url`.
 
 ---
 
-## Paso 6: Generate sitemap.xml + robots.txt
+## Step 6: Generate sitemap.xml + robots.txt
 
 **ACTION:** Create:
 
@@ -116,7 +116,7 @@ If `site_url` is blank: use placeholder `https://example.com` with a note to upd
 
 ---
 
-## Paso 7: SEO Report
+## Step 7: SEO Report
 
 **ACTION:** Generate audit for each page:
 
@@ -136,7 +136,7 @@ Overall: Ready for indexing
 
 ---
 
-## Paso 8: Deliverables
+## Step 8: Deliverables
 
 - ✅ Updated HTML files (all with SEO applied)
 - ✅ `sitemap.xml`

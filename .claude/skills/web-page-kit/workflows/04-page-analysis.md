@@ -2,13 +2,13 @@
 
 Analyze an existing podcast webpage or any competitor site for SEO, design, and performance issues. Provides detailed audit report with actionable improvements.
 
-## Paso 0: Optional Workflow
+## Step 0: Optional Workflow
 
 This is **optional** — only needed if analyzing an existing page.
 
 ---
 
-## Paso 1: Target Page
+## Step 1: Target Page
 
 Ask:
 
@@ -19,7 +19,7 @@ Ask:
 
 ---
 
-## Paso 2: SEO Analysis
+## Step 2: SEO Analysis
 
 Analyze and report on:
 
@@ -38,7 +38,7 @@ Analyze and report on:
 
 ---
 
-## Paso 3: Design & UX Review
+## Step 3: Design & UX Review
 
 Ask & analyze:
 
@@ -50,7 +50,7 @@ Ask & analyze:
 
 ---
 
-## Paso 4: Performance Metrics
+## Step 4: Performance Metrics
 
 Estimate & report:
 
@@ -61,7 +61,7 @@ Estimate & report:
 
 ---
 
-## Paso 5: Generate Audit Report
+## Step 5: Generate Audit Report
 
 **ACTION:** Create structured audit report:
 
@@ -100,7 +100,7 @@ LOW IMPACT:
 
 ---
 
-## Paso 6: Recommendations
+## Step 6: Recommendations
 
 Provide:
 - ✅ Detailed audit report (PDF-style or markdown)

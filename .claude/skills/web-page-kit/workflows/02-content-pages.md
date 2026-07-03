@@ -7,14 +7,14 @@ Create individual pages for your site — blog posts, product pages, service pag
 
 ---
 
-## Paso 0: Load Config
+## Step 0: Load Config
 
 **ACTION:** Read `website-config.json`. Extract brand colors, fonts, site type, and social links.
 If missing → route to workflow 00-setup.
 
 ---
 
-## Paso 1: Page Type
+## Step 1: Page Type
 
 Ask:
 
@@ -35,7 +35,7 @@ Store selection as `page_type` for this session.
 
 ---
 
-## Paso 2: Page Content
+## Step 2: Page Content
 
 Ask questions relevant to the selected page type:
 
@@ -104,7 +104,7 @@ Ask questions relevant to the selected page type:
 
 ---
 
-## Paso 3: Schema.org Selection
+## Step 3: Schema.org Selection
 
 **ACTION:** Apply schema type matching `page_type`:
 
@@ -121,7 +121,7 @@ Ask questions relevant to the selected page type:
 
 ---
 
-## Paso 4: Generate Page HTML
+## Step 4: Generate Page HTML
 
 **ACTION:** Create self-contained HTML page:
 
@@ -141,7 +141,7 @@ Examples: `blog-how-to-design-logos.html`, `product-leather-wallet.html`, `servi
 
 ---
 
-## Paso 5: Batch Mode
+## Step 5: Batch Mode
 
 Ask: "Create one page or multiple?"
 
@@ -150,7 +150,7 @@ Ask: "Create one page or multiple?"
 
 ---
 
-## Paso 6: Auto-Open
+## Step 6: Auto-Open
 
 **ACTION:** Open the file in the browser:
 ```powershell
@@ -163,7 +163,7 @@ open "[filename].html"
 
 ---
 
-## Paso 7: Review & Data Sources
+## Step 7: Review & Data Sources
 
 Show:
 ```

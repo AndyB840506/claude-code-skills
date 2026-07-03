@@ -33,7 +33,7 @@ Once config exists, route based on user intent:
 | "analyze", "audit", "check URL", "competitor" | `workflows/04-page-analysis.md` |
 | "publish", "deploy", "go live", "netlify", "upload" | `workflows/05-deployment.md` |
 | "export", "download", "package" | `workflows/06-html-export.md` |
-| "scroll video", "cinematic", "scroll animation", "scroll effects" | `workflows/01-homepage.md` (Paso 2 scroll-video option) |
+| "scroll video", "cinematic", "scroll animation", "scroll effects" | `workflows/01-homepage.md` (Step 2 scroll-video option) |
 
 ## Execution
 

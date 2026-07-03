@@ -6,17 +6,17 @@ Establishes brand identity, site type, colors, and SEO. All saved to `website-co
 
 ---
 
-## Paso -1: Context Check
+## Step -1: Context Check
 
-**If called from `00-welcome.md`:** `site_type` and `language` are already set. Skip Paso 1 (site type) entirely — go directly to Paso 2.
+**If called from `00-welcome.md`:** `site_type` and `language` are already set. Skip Step 1 (site type) entirely — go directly to Step 2.
 
 **If called directly:** Check for `website-config.json`:
 - **Config exists** → Show current values. Ask (in config language): "Update anything, or proceed to workflow 01?"
-- **No config** → Proceed to Paso 0.
+- **No config** → Proceed to Step 0.
 
 ---
 
-## Paso 0: Orientation
+## Step 0: Orientation
 
 Respond in the language from config (`language: "en"` or `"es"`).
 
@@ -26,7 +26,7 @@ Respond in the language from config (`language: "en"` or `"es"`).
 
 ---
 
-## Paso 1: Site Type *(skip if pre-filled from welcome)*
+## Step 1: Site Type *(skip if pre-filled from welcome)*
 
 **EN:** "What kind of site is this?"
 **ES:** "¿Qué tipo de sitio es este?"
@@ -37,7 +37,7 @@ Store as `site_type` in config.
 
 ---
 
-## Paso 2: Brand Identity
+## Step 2: Brand Identity
 
 Respond in the config language throughout. Ask in one block:
 
@@ -50,7 +50,7 @@ Respond in the config language throughout. Ask in one block:
 
 ---
 
-## Paso 3: Visual Identity
+## Step 3: Visual Identity
 
 Ask:
 
@@ -68,7 +68,7 @@ Ask:
 
 ---
 
-## Paso 4: Keywords & Contact
+## Step 4: Keywords & Contact
 
 Ask:
 
@@ -78,7 +78,7 @@ Ask:
 
 ---
 
-## Paso 5: Social Links *(optional)*
+## Step 5: Social Links *(optional)*
 
 Ask for any relevant social links:
 
@@ -88,7 +88,7 @@ Only ask for links relevant to the site type (e.g., GitHub for Portfolio/Dev, Sp
 
 ---
 
-## Paso 6: Site Structure
+## Step 6: Site Structure
 
 Ask based on site type:
 
@@ -106,7 +106,7 @@ Store as `page_types` in config. User can add or remove pages.
 
 ---
 
-## Paso 7: Generate Config & Summary
+## Step 7: Generate Config & Summary
 
 **ACTION:** Write `website-config.json` with all gathered data.
 

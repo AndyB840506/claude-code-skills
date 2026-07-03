@@ -2,6 +2,8 @@
 
 Use this structure for all candidate reports. File saved as `report-[candidate-name]-[YYYY-MM-DD].md`
 
+**Language:** Render every section heading and label in the report's language — the same language the interview was conducted in (`interview_language`, or the auto-detected language). The English labels below are the structural reference, not fixed output: translate them. Candidate quotes stay verbatim in the language they were spoken.
+
 ---
 
 ```markdown

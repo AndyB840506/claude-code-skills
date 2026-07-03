@@ -9,7 +9,7 @@ See [docs/design-guide.md](../docs/design-guide.md) for animation patterns and v
 
 ---
 
-## Paso 0: Load Config
+## Step 0: Load Config
 
 **ACTION:** Read `website-config.json`. If missing → route to workflow 00-setup.
 
@@ -17,7 +17,7 @@ Extract: `site_name`, `site_type`, `tagline`, `description`, `primary_color`, `s
 
 ---
 
-## Paso 1: Homepage Content
+## Step 1: Homepage Content
 
 Ask in one message:
 
@@ -28,7 +28,7 @@ Ask in one message:
 
 ---
 
-## Paso 2: Hero Visual
+## Step 2: Hero Visual
 
 **If `site_type` is `scroll`:** The scroll-video hero is automatically selected. Ask:
 1. **Video file** — Path or URL to your hero video (MP4). No video? I'll use a cinematic gradient hero instead.
@@ -46,7 +46,7 @@ Ask in one message:
 
 ---
 
-## Paso 3: Sections to Include
+## Step 3: Sections to Include
 
 Ask based on `site_type` from config — suggest relevant defaults:
 
@@ -64,7 +64,7 @@ User confirms or adjusts the list.
 
 ---
 
-## Paso 4: Conditional Sections by Site Type
+## Step 4: Conditional Sections by Site Type
 
 Based on confirmed site type:
 
@@ -87,7 +87,7 @@ Ask only for the sections relevant to the site type.
 
 ---
 
-## Paso 5: Generate Homepage HTML
+## Step 5: Generate Homepage HTML
 
 **FIRST — apply Rule 0 from [docs/design-guide.md](../docs/design-guide.md):** commit to a concept (tone + layout *architecture* + one signature idea), anchored to ONE real reference, BEFORE writing any HTML. The elements below are building blocks — the concept decides which appear and how they look. Do **not** emit the default skeleton (centered hero + 3 cards + alternating backgrounds + ring + parallax + counters) by reflex; that is a generic-page fail.
 
@@ -107,11 +107,11 @@ Ask only for the sections relevant to the site type.
 - Profile photo or brand mark (the rotating gradient ring in Rule 9 is OPT-IN — only if it genuinely fits the concept)
 - Immediately visible stats/highlights only if user provided them
 
-**Core Sections** (from Paso 3 confirmed list):
+**Core Sections** (from Step 3 confirmed list):
 - Each section semantically structured with proper headings
 - Section rhythm driven by the concept — vary type scale, full-bleed vs contained, dark/light breaks. Avoid the reflexive white / grey / white alternation.
 
-**Conditional Section** (from Paso 4):
+**Conditional Section** (from Step 4):
 - Only include if user provided the required data
 
 **Footer:**
@@ -141,7 +141,7 @@ Ask only for the sections relevant to the site type.
 
 ---
 
-## Paso 6: Auto-Open
+## Step 6: Auto-Open
 
 **ACTION:** After saving, open the file in the default browser:
 
@@ -156,7 +156,7 @@ open homepage.html
 
 ---
 
-## Paso 7: Review & Data Sources
+## Step 7: Review & Data Sources
 
 Show:
 ```

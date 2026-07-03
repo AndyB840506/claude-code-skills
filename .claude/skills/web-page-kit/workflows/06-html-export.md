@@ -4,7 +4,7 @@ Bundle all generated pages into a clean, portable package ready to deploy, archi
 
 ---
 
-## Paso 0: Inventory
+## Step 0: Inventory
 
 **ACTION:** Scan the working directory and list all generated files:
 
@@ -24,7 +24,7 @@ Ask: "Export all files, or select specific ones?"
 
 ---
 
-## Paso 1: Package Structure
+## Step 1: Package Structure
 
 **ACTION:** Organize into export folder:
 
@@ -45,7 +45,7 @@ Ask: "Export all files, or select specific ones?"
 
 ---
 
-## Paso 2: Generate README.md
+## Step 2: Generate README.md
 
 **ACTION:** Write a clear `README.md`:
 
@@ -91,7 +91,7 @@ Generated: [date]
 
 ---
 
-## Paso 3: Integrity Check
+## Step 3: Integrity Check
 
 **ACTION:** Verify:
 - All internal links point to correct files ✅
@@ -106,7 +106,7 @@ Report: "Package ready: [N] files, all validated."
 
 ---
 
-## Paso 4: Version Note
+## Step 4: Version Note
 
 Ask: "Want to log this version?"
 
@@ -121,7 +121,7 @@ If YES, create `CHANGELOG.md`:
 
 ---
 
-## Paso 5: Deliver
+## Step 5: Deliver
 
 Provide the complete folder/file list to the user.
 

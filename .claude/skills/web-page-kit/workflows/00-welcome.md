@@ -101,7 +101,7 @@ Map selection:
 
 ---
 
-## Paso 4A — Setup from Scratch
+## Step 4A — Setup from Scratch
 
 **ACTION:** Pre-fill context in session memory:
 - `site_type`: [from Step 2]
@@ -129,19 +129,19 @@ Let's start with Step 2. I'll ask you a few questions about your site.
 ```
 📋 Tu flujo de producción:
 
-  ✅ Paso 1 — Bienvenida (estás aquí)
-  ⬜ Paso 2 — Configuración: Marca e identidad
-  ⬜ Paso 3 — Página de inicio
-  ⬜ Paso 4 — Páginas de contenido (opcional)
-  ⬜ Paso 5 — Optimización SEO
-  ⬜ Paso 6 — Publicar → En línea en minutos
+  ✅ Step 1 — Bienvenida (estás aquí)
+  ⬜ Step 2 — Configuración: Marca e identidad
+  ⬜ Step 3 — Página de inicio
+  ⬜ Step 4 — Páginas de contenido (opcional)
+  ⬜ Step 5 — Optimización SEO
+  ⬜ Step 6 — Publicar → En línea en minutos
 
-Empecemos con el Paso 2. Te haré unas preguntas sobre tu sitio.
+Empecemos con el Step 2. Te haré unas preguntas sobre tu sitio.
 ```
 
 ---
 
-## Paso 4B — Import Existing Site
+## Step 4B — Import Existing Site
 
 **ACTION:** Pre-fill context:
 - `site_type`: [from Step 2]
@@ -177,12 +177,12 @@ Ready to build your homepage? Just say "homepage" or "next step".
 ✅ ¡Configuración lista!
 
 📋 Flujo de producción:
-  ✅ Paso 1 — Bienvenida
-  ✅ Paso 2 — Configuración lista
-  ⬜ Paso 3 — Página de inicio  ← siguiente
-  ⬜ Paso 4 — Páginas de contenido
-  ⬜ Paso 5 — SEO
-  ⬜ Paso 6 — Publicar
+  ✅ Step 1 — Bienvenida
+  ✅ Step 2 — Configuración lista
+  ⬜ Step 3 — Página de inicio  ← siguiente
+  ⬜ Step 4 — Páginas de contenido
+  ⬜ Step 5 — SEO
+  ⬜ Step 6 — Publicar
 
 ¿Listo para crear tu página de inicio? Solo di "homepage" o "siguiente paso".
 ```
