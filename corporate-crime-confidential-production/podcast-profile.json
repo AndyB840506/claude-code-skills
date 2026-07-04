@@ -1,0 +1,58 @@
+{
+  "nombre": "Corporate Crime Confidential",
+  "tagline": "What if the criminal told the story?",
+  "descripcion_corta": "A true crime podcast that lets corporate fraudsters tell you exactly how they did it — and what should've stopped them.",
+  "descripcion_larga": "A true-crime podcast that reconstructs real corporate fraud cases from the perpetrator's own first-person voice, built strictly from verified court records, depositions, and testimony — narrated through an operations/leadership lens on how the fraud was actually executed and what controls failed to catch it.",
+  "formato": "solo",
+  "formato_nota": "Solo por defecto. Antes de escribir el guion de cada episodio, preguntar si ese caso amerita sumar un invitado (ej. investigador, periodista, ex-empleado).",
+  "host": [
+    {
+      "nombre": "Andrés \"Andy\" Bermúdez Rodríguez",
+      "bio": "15+ años en liderazgo de operaciones BPO/CX (Bogotá, Colombia). También host de Behind The Queue."
+    }
+  ],
+  "audiencia": {
+    "demografico": "Profesionales angloparlantes, 28-50 años",
+    "intereses": "White-collar crime, corporate accountability, true crime narrativo",
+    "dolor_principal": "Quiere entender cómo ocurre realmente el fraude corporativo por dentro — no solo un recuento sensacionalista del crimen"
+  },
+  "tono": "Mezcla de precisión clínica/fría de true crime con atmósfera cinemática/dramática noir",
+  "categoria": "True Crime / Business (crossover)",
+  "duracion_min": 45,
+  "cadencia": "biweekly",
+  "plataformas": ["Spotify", "RSS (expandir a Apple Podcasts y otros)"],
+  "colores": {
+    "principal": "#141414",
+    "secundario": "#E8DCC4",
+    "acento": "#8B1A2B"
+  },
+  "logo_descripcion": "1940s detective pulp comic cover illustration, noir style, moody dark color palette (ink black, aged cream, deep crimson red accent), a detective in a trench coat and fedora sitting at a cluttered wooden desk under a single hanging lamp, reading an open case file/ledger, cigarette smoke curling in the lamplight, halftone dot texture like vintage comic printing, dramatic hard-edged shadows and venetian blind light stripes on the wall, cinematic noir lighting, high contrast, professional podcast cover art, space reserved at top for bold vintage pulp typography, no rendered text",
+  "numeracion": "CASE FILE No. 001",
+  "intro_template": "You're about to hear how they did it — in their own words. Welcome to Corporate Crime Confidential. Case File [NUMBER], opening now.",
+  "outro_template": "Case closed. New file drops in two weeks. Follow Corporate Crime Confidential so you don't miss it.",
+  "reglas_tono": [
+    "Narrate strictly in first person as the perpetrator — the audience hears their internal logic, not a narrator's judgment of them.",
+    "Every line traces to a documented source (court record, deposition, testimony, verified reporting) — never invent a thought that isn't grounded in the record.",
+    "Use detective/noir vocabulary for atmosphere (file, ledger, the take, the tell) — sparingly, so style doesn't bury clarity.",
+    "Close every episode on the operational lesson: what control failed, what would've caught it. That's what separates this from generic true crime.",
+    "No moralizing narration — let the villain's own logic expose the wrongness; don't editorialize on top of it."
+  ],
+  "hashtags_base": [
+    "#truecrime",
+    "#truecrimepodcast",
+    "#truecrimecommunity",
+    "#podcast",
+    "#podcastersofinstagram",
+    "#whitecollarcrime",
+    "#corporatecrime",
+    "#corporatefraud",
+    "#fraudpodcast",
+    "#scandal"
+  ],
+  "links": {
+    "spotify": "",
+    "apple": "",
+    "youtube": "",
+    "rss": ""
+  }
+}
