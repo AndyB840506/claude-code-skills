@@ -19,3 +19,10 @@
 - **Nunca mezclar sistemas tipográficos entre shows** — MPD tiene su propio sistema
   visual; la rotación de grid en Stage C.4 usa la lógica de BTQ pero NUNCA su tipografía
   (ver memoria `feedback_mpd_vs_btq_typography`).
+- **Al "restaurar" una dirección de arte anterior a partir de un prompt de texto
+  pegado por el usuario**: no inferir reglas de composición rígidas (ej. "siempre 2
+  figuras") solo del texto del prompt — la generación real incluye decisiones del
+  modelo que el prompt no fija del todo. Pedir o verificar la imagen real generada
+  ANTES de congelar una regla como estándar (caso BTQ EP.019/EP.10, 2026-07-04: se
+  sobre-especificó "siempre 2 figuras" hasta ver la imagen real y corregir a
+  "estilo/textura/tipografía", no composición fija).

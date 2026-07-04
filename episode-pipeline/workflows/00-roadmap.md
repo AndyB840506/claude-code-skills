@@ -56,6 +56,14 @@ escritura de guiones aquí**:
 
 Espera a que el guión quede completo y aprobado por el usuario antes de seguir.
 
+**Publícalo también como Artifact** para que el usuario lo vea renderizado (el diseño
+propio del show — fondo oscuro/dorado en BTQ, callouts de dato/remate/pausa) en vez de
+HTML crudo (precedente: BTQ EP.020, 2026-07-04). El archivo de producción completo
+(con `<!DOCTYPE>`/`<html>`/`<head>`/`<body>`) se queda igual en `launch-assets/` — para
+el Artifact, arma una copia temporal en el scratchpad SIN esas etiquetas envolventes
+(mismo `<style>` + el `<div class="container">` de adentro, tal como pide la tool
+`Artifact`) y publícala. Esa copia es solo para visualización, no hace falta versionarla.
+
 ---
 
 ## Paso 3 — Generar prompts de artwork

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EP.20 — Métricas y KPIs en Call Center: cuando el número deja de medir lo que importa | Behind the Queue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+        :root {
+            --bg: #0A0A0A;
+            --card: #141414;
+            --card2: #1b1b1b;
+            --gold: #C9A84C;
+            --gold-dim: #8a7331;
+            --offwhite: #F5F2EC;
+            --muted: #9a968c;
+            --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --sans: 'DM Sans', system-ui, -apple-system, Segoe UI, sans-serif;
+            --accent: 'Bebas Neue', 'Arial Narrow', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--sans);
+            background: #050505;
+            color: var(--offwhite);
+            line-height: 1.8;
+            font-size: 15.5px;
+        }
+
+        .container { max-width: 820px; margin: 0 auto; background: var(--bg); }
+
+        /* ---------- HEADER ---------- */
+        .header {
+            background: linear-gradient(160deg, #161208 0%, #0A0A0A 70%);
+            padding: 46px 48px 40px;
+            border-bottom: 3px solid var(--gold);
+        }
+        .header .podcast {
+            font-family: var(--accent);
+            font-size: 1.15em;
+            color: var(--gold);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .header .epnum {
+            font-family: var(--accent);
+            font-size: 2.6em;
+            color: var(--gold);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+        .header h1 {
+            font-family: var(--serif);
+            font-size: 2em;
+            font-weight: 900;
+            margin: 6px 0 10px;
+            color: var(--offwhite);
+            line-height: 1.18;
+        }
+        .header .tagline {
+            font-family: var(--serif);
+            font-style: italic;
+            color: var(--gold);
+            font-size: 1.05em;
+            margin-bottom: 22px;
+        }
+        .meta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .meta-item {
+            background: rgba(201,168,76,0.10);
+            border: 1px solid var(--gold-dim);
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            color: var(--gold);
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------- SECTIONS ---------- */
+        .section { padding: 32px 48px; border-bottom: 1px solid #222; }
+        .section h2 {
+            font-family: var(--accent);
+            font-size: 1.15em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid var(--gold-dim);
+        }
+
+        /* ---------- ARQUITECTURA ---------- */
+        .arquitectura { font-size: 0.9em; }
+        .arq-row {
+            display: grid;
+            grid-template-columns: 30px 1.1fr 95px 1.6fr;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid #1c1c1c;
+            align-items: start;
+        }
+        .arq-row.head { color: var(--gold); font-weight: 700; border-bottom: 1px solid var(--gold-dim); }
+        .arq-num { color: var(--gold); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--offwhite); }
+        .arq-time { color: var(--muted); font-family: monospace; font-size: 0.92em; }
+        .arq-row span:last-child { color: var(--muted); }
+
+        /* ---------- GUION SEGMENTS ---------- */
+        .segment { margin: 40px 0; padding-bottom: 26px; border-bottom: 1px solid #1a1a1a; }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+        .segment-number {
+            font-family: var(--accent);
+            background: var(--gold);
+            color: #0A0A0A;
+            min-width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1em; font-weight: bold;
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+        .segment-title {
+            font-family: var(--accent);
+            font-weight: 400;
+            font-size: 1.15em;
+            color: var(--offwhite);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.78em;
+            color: var(--muted);
+            background: #181818;
+            padding: 3px 11px;
+            border-radius: 10px;
+            white-space: nowrap;
+            font-family: monospace;
+        }
+        .sub { font-family: var(--serif); font-style: italic; font-size: 1.12em; color: var(--gold); margin: 26px 0 8px; }
+
+        p.line { margin: 0 0 4px; color: #e9e6dd; }
+
+        /* PAUSA chips */
+        .pausa {
+            display: inline-block;
+            font-family: var(--accent);
+            letter-spacing: 2px;
+            font-size: 0.72em;
+            color: var(--gold-dim);
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 0 8px;
+            margin: 8px 0;
+            background: #111;
+        }
+        .pausa.larga { color: var(--gold); border-color: var(--gold-dim); }
+
+        /* REMATE — the signature punch line */
+        .remate {
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(90deg, rgba(201,168,76,0.07), transparent);
+            padding: 14px 20px;
+            margin: 18px 0;
+            font-family: var(--serif);
+            font-size: 1.08em;
+            color: var(--offwhite);
+        }
+        .remate::before {
+            content: "REMATE";
+            display: block;
+            font-family: var(--accent);
+            font-size: 0.62em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        /* NOTA producción — not printable */
+        .nota {
+            background: #15130c;
+            border: 1px dashed var(--gold-dim);
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 14px 0;
+            font-size: 0.85em;
+            color: #cdbb88;
+        }
+        .nota::before { content: "NOTA · "; font-family: var(--accent); letter-spacing: 2px; color: var(--gold); }
+
+        /* DATO callout */
+        .dato {
+            background: var(--card2);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 5px 5px 0;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .dato-label {
+            font-family: var(--accent);
+            font-size: 0.78em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        em { color: var(--gold); font-style: italic; }
+        strong { color: var(--offwhite); }
+
+        /* FUENTES */
+        .fuentes p { font-size: 0.83em; color: var(--muted); line-height: 1.7; }
+
+        .checklist-box {
+            background: var(--card);
+            border: 1px solid #262011;
+            border-radius: 6px;
+            padding: 6px 18px;
+        }
+        .checklist-box .row { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #1a1a1a; align-items: baseline; }
+        .checklist-box .row:last-child { border-bottom: none; }
+        .ck { color: #4a7a4a; font-weight: 700; }
+        .warn { color: var(--gold); font-weight: 700; }
+
+        footer { padding: 26px 48px; color: var(--muted); font-size: 0.8em; text-align: center; }
+        footer .gold { color: var(--gold); font-family: var(--accent); letter-spacing: 3px; }
+
+        @media print {
+            body { background: #fff; color: #111; }
+            .container { background: #fff; }
+            .nota { display: none; }
+            .header { background: #111; }
+            .remate { color: #111; }
+            p.line, .segment-title, strong { color: #111; }
+        }
+        @media (max-width: 640px) {
+            .section, .header, footer { padding-left: 22px; padding-right: 22px; }
+            .arq-row { grid-template-columns: 24px 1fr; }
+            .arq-row .arq-time, .arq-row span:last-child { grid-column: 2; }
+        }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Behind the Queue</div>
+        <div class="epnum">EP.20</div>
+        <h1>Métricas y KPIs en Call Center: cuando el número deja de medir lo que importa</h1>
+        <div class="tagline">La Ley de Goodhart explica por qué perseguir el KPI, sin querer, termina rompiéndolo.</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 020</span>
+            <span class="meta-item">Solo host · Andy</span>
+            <span class="meta-item">Pilar SEO · sin referente pop</span>
+            <span class="meta-item">~37 min (medido · 143 wpm)</span>
+            <span class="meta-item">Métricas · KPIs · Liderazgo BPO</span>
+            <span class="meta-item">Evergreen — no atado a coyuntura</span>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Hook</span><span class="arq-time">0:45–5:20</span><span>Dos agentes gameando su número, sin nombrar el fenómeno todavía</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Nombrar el fenómeno</span><span class="arq-time">5:20–10:05</span><span>Ley de Goodhart — Charles Goodhart (1975) + Marilyn Strathern (1997)</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Cuerpo 1 · Wells Fargo</span><span class="arq-time">10:05–14:50</span><span>"Eight is Great", metas imposibles, 3.5M cuentas falsas</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Cuerpo 2 · el dato SQM</span><span class="arq-time">14:50–20:40</span><span>Correlación real FCR-CSAT + cómo se gamea el KPI en el piso</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">Re-enganche · VA Hospital</span><span class="arq-time">20:40–25:55</span><span>Cuando el número no es plata — es gente esperando</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Referencias Cruzadas</span><span class="arq-time">25:55–30:05</span><span>Atlanta Public Schools — mismo patrón, fuera del BPO y de los negocios</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Aplicable Hoy</span><span class="arq-time">30:05–32:50</span><span>3 acciones concretas para esta semana</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">Recomendaciones de Andy</span><span class="arq-time">32:50–35:05</span><span>Libro (Tyranny of Metrics) · charla (Chip Conley, TED) · película (Moneyball)</span></div>
+            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Cierre canónico + Teaser EP.021</span><span class="arq-time">35:05–37:20</span><span>Pregunta comentable · CTAs · firma + TM</span></div>
+        </div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="section">
+        <h2>Antes de grabar · checklist</h2>
+        <div class="checklist-box">
+            <div class="row"><span class="ck">✓</span><span><strong>Tiempos calibrados a 143 wpm — MEDIDOS, no a ojo:</strong> guion tiene ~4.600 palabras escritas = ~37 min reales con la expansión natural de +15% en vivo (mismo método que EP.17-19). Es más corto que los episodios pop-culture (~56-58 min) porque el tema tiene menos material narrativo/biográfico — decisión consciente tras medir, no un recorte de última hora (ver conversación 2026-07-04 sobre retención y duración).</span></div>
+            <div class="row"><span class="ck">✓</span><span>Título keyword-first (Métricas, KPIs, Call Center) sin referente pop, según regla editorial de "un pilar SEO al mes".</span></div>
+            <div class="row"><span class="ck">✓</span><span>Todos los datos verificados por web antes de escribir: Ley de Goodhart (Goodhart 1975 / Strathern 1997), SQM Group (correlación FCR-CSAT 1:1), Wells Fargo (2016), VA Hospital (2014), Atlanta Public Schools (2011). Ver Fuentes al final.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Conteo de muertes del caso VA Hospital:</strong> la cifra de "40 veteranos" viene de una denuncia inicial y NUNCA se confirmó oficialmente — el guion lo dice así, como alegación disputada, no como hecho cerrado. No leer esa cifra como confirmada.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>[PENDIENTE DEFINIR]</strong> el teaser del cierre asume que EP.021 vuelve a un referente pop (según la regla de alternar pilar SEO / pop-culture) pero el tema exacto todavía no está elegido — dejar el teaser genérico hasta confirmar con Andy, o grabar esa parte aparte.</span></div>
+            <div class="row"><span class="warn">⚠</span><span>Sin bloque "Mito o Realidad" al final — los datos de interés van distribuidos dentro del Cuerpo (cambio aplicado 2026-07-04 a guion-style-btq.md).</span></div>
+            <div class="row"><span class="warn">⚠</span><span>Muletillas: máx 1 "imagínense", 0 "me vuela la cabeza". Revisar en la pasada de voz.</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- APERTURA -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Apertura</span><span class="segment-time">0:00</span></div>
+            <p class="line">Buenas y santas. Feliz día, feliz tarde o feliz noche. Cualquier día que éste sea.</p>
+            <p class="line">Esto es Behind the Queue, episodio veinte.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+        </div>
+
+        <!-- SEGMENTO 1 — HOOK -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">1</span><span class="segment-title">Hook</span><span class="segment-time">0:45 – 5:20</span></div>
+            <p class="line">Hay un agente, en un piso de operaciones, un martes cualquiera a las tres y cuarenta y siete de la tarde.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Tiene al cliente en la línea. El problema, de hecho, ya está resuelto. Pero antes de colgar, hace algo curioso: espera. Dos segundos. Tres. Cuatro.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Porque si cuelga antes de los cuatro minutos con veinte segundos, el sistema marca la llamada en amarillo. Y si la marca en amarillo, su tiempo promedio de atención — su AHT, para el que no vive en este mundo — se ve mal en el reporte del viernes.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Así que no cuelga. Deja correr el reloj. El cliente, del otro lado, ya dijo gracias, ya se quiere ir. Y el agente, con el problema resuelto hace rato, sigue ahí, respirando, mirando subir el contador en la pantalla, como quien espera que hierva el agua.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Cuando el reloj por fin marca cuatro veinte, cuelga. Llamada exitosa. Métrica en verde.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ahora vamos a la mesa de al lado. Mismo piso, mismo martes. A este agente el número que le pesa no es el tiempo. Es la resolución en la primera llamada — el famoso FCR. Y tiene enfrente un caso raro, de esos que de verdad necesitan escalar a otra área.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y en vez de escalarlo, que es lo correcto, le dice al cliente que ya quedó resuelto. Le da una solución a medias, cruza los dedos, y cuelga. Porque si escala el caso, esa llamada no cuenta como resuelta por él. Cuenta en contra de su número.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Dos agentes. Dos métricas distintas. La misma exacta enfermedad.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ninguno de los dos es mal empleado. Ninguno se levantó hoy pensando en sabotear el servicio. Los dos, sencillamente, aprendieron —rápido, como aprende cualquiera que quiere seguir teniendo trabajo— qué es lo que de verdad se premia ahí. Y no era servir bien al cliente.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Era el número.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y aquí está la parte que les va a doler, porque esto no es un problema de dos agentes flojos en un piso cualquiera. Es lo que le pasa, tarde o temprano, a toda métrica que alguien decide perseguir con suficiente fuerza. Tiene setenta años de historia, el nombre de un economista inglés bastante aburrido, y ya le ha explotado en la cara a bancos completos, a hospitales, y a colegios enteros.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Hoy, y es la última vez que se los prometo con estas palabras, vamos a hablar de números. Pero no de los que ustedes creen.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y antes de que sigan de largo pensando "a mí esto no me aplica, mi dashboard está limpio", déjenme advertirles algo: este episodio no es sobre encontrar al agente tramposo de su equipo y regañarlo el lunes. Si se quedan con eso, se perdieron el episodio entero.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Es sobre entender que, si usted diseñó una meta con suficiente premio o suficiente castigo colgando de ella, la trampa no es una posibilidad remota que un empleado deshonesto podría cometer. Es, casi, una certeza matemática. Alguien, en algún momento, va a encontrar la forma más barata de subir el número —y casi nunca esa forma más barata se parece a hacer mejor el trabajo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">El dashboard no miente. Pero tampoco cuenta toda la verdad. Cuando un número se vuelve lo único que se premia, la gente no deja de trabajar — empieza a trabajarle al número, en vez de trabajarle al cliente. Y esa diferencia, chiquita en la pantalla, es enorme en la vida real.</div>
+        </div>
+
+        <!-- SEGMENTO 2 — NOMBRAR EL FENÓMENO -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">2</span><span class="segment-title">Nombrar el fenómeno</span><span class="segment-time">5:20 – 10:05</span></div>
+            <div class="nota">Ley de Goodhart. Tono: casi de clase, pero con humor — es la parte más "teórica" del episodio, hay que aligerarla.</div>
+            <p class="line">Ese fenómeno de hace un momento tiene nombre. Y nace, no me lo van a creer, en la oficina más aburrida que se puedan imaginar: el Banco de Inglaterra, en 1975.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Un economista llamado Charles Goodhart estaba mirando cómo el gobierno británico manejaba su política monetaria. Y notó algo raro: cada vez que el banco central agarraba un indicador económico —digamos, cuánto dinero circulaba en la economía— y lo convertía en una meta oficial a perseguir, ese indicador dejaba de comportarse como antes. Como si el mercado entero, sin ponerse de acuerdo, empezara a jugarle trucos al número apenas se enteraba de que alguien lo estaba vigilando.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Goodhart lo escribió en un lenguaje de economista, seco y casi ilegible. Y no, tranquilos, no me volví economista de un día para otro — sigo sin entender bien un balance general, así que descuiden, esto no se convierte en un pódcast de finanzas.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Pero vale la pena quedarse un segundo en el contexto, porque no es un dato suelto de laboratorio. Era el Reino Unido de finales de los setenta, con una inflación altísima, y el gobierno agarrándose de cualquier número que sonara a solución milagrosa. Goodhart estaba, literalmente, adentro del banco central, viendo en tiempo real cómo el gobierno elegía un indicador, lo anunciaba como la meta oficial de la política económica —y cómo, apenas eso pasaba, el indicador empezaba a comportarse distinto a como se había comportado toda la década anterior. No porque la economía hubiera cambiado. Porque ahora todo el mundo, bancos, empresas, ciudadanos, sabía que ese número en particular estaba siendo vigilado, y ajustaba su comportamiento alrededor de él.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Tuvo que llegar, veintidós años después, en 1997, una antropóloga llamada Marilyn Strathern —estudiando algo completamente distinto, cómo se evaluaban las universidades en Inglaterra— para ponerlo en una frase que sí se le queda a cualquiera.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato · la frase (Strathern, 1997, verificado)</div>"Cuando una medida se convierte en objetivo, deja de ser una buena medida." No es de Goodhart —es la reformulación de Marilyn Strathern, veintidós años después, y es la versión que se hizo famosa.</div>
+            <p class="line">Léanla otra vez, despacio, porque es la frase más importante de todo el episodio. Cuando una medida se convierte en objetivo, deja de ser una buena medida.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Hoy eso se conoce, en su conjunto, como la Ley de Goodhart. Y aunque nació hablando de bancos centrales, no habla de bancos centrales. Habla de cualquier número que alguien decide perseguir con suficiente premio, o suficiente castigo, detrás.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Al principio, un número sirve para medir algo real. El tiempo promedio de atención, en teoría, mide qué tan eficiente es su operación. La resolución en la primera llamada, en teoría, mide qué tan bien resuelve su gente. Son termómetros. Le dicen qué temperatura tiene el cuerpo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Pero en el momento exacto en que ese termómetro deja de ser información y se vuelve la meta —el número que hay que subir o bajar cueste lo que cueste, el que decide bonos, el que decide a quién regañan el viernes— pasa algo curioso. La gente dentro del sistema deja de intentar estar sana. Empieza, sencillamente, a calentar el termómetro.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Eso hizo el agente de la llamada de cuatro veinte. No mejoró su atención. Calentó el termómetro. Eso hizo el otro, con la llamada que nunca escaló. Tampoco mejoró nada. Solo aprendió a maquillar la fiebre.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aquí es donde el episodio se pone serio, porque esto no se queda en anécdotas de piso. Cuando esta ley se le olvida a alguien con el poder de fijar una meta —un gerente, un directorio, un gobierno entero— las consecuencias dejan de ser un número feo en un reporte. Empiezan a ser gente de verdad, pagando por un termómetro que alguien confundió con la enfermedad.</p>
+        </div>
+
+        <!-- SEGMENTO 3 — CUERPO 1 · WELLS FARGO -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">Cuerpo 1 · Wells Fargo</span><span class="segment-time">10:05 – 14:50</span></div>
+            <div class="nota">Caso ancla de negocios. Presente/escena, no informe. Datos de interés incrustados aquí, no en bloque aparte.</div>
+            <p class="line">Estados Unidos. Cualquier sucursal de un banco enorme, en algún momento entre 2011 y 2016.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Un empleado de ventanilla tiene, colgado casi literalmente sobre la cabeza, un número. No es una sugerencia suave. Es el mantra que repite el propio director general de la compañía en cada reunión, en cada memo, en cada video motivacional: ocho. Ocho productos financieros, por cada cliente. Una cuenta de ahorros, una tarjeta de crédito, un seguro, un fondo de inversión —lo que sea, pero ocho.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato · "Eight is Great" (verificado)</div>El banco es Wells Fargo, uno de los más grandes de Estados Unidos. El mantra tenía hasta nombre publicitario interno: <strong>"Eight is Great"</strong> —ocho es grandioso— y lo repetía el CEO, John Stumpf, como visión oficial de la empresa entera.</div>
+            <p class="line">Imagínense ser ese empleado de ventanilla. Su sueldo, su bono, hasta si lo dejan seguir en el trabajo, dependen de acercarse a ese ocho. Y la mayoría de los clientes, gente normal que solo quería abrir una cuenta de ahorros, no necesita ni quiere ocho productos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Qué hace un ser humano normal, bajo esa presión, todos los días, durante años?</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Lo que hizo, en miles de sucursales, fue tan simple como perverso: abrió las cuentas de todos modos. Sin que el cliente lo supiera. Sin que lo pidiera. Usando datos que ya tenía en el sistema, generando tarjetas de crédito fantasma, cuentas de ahorro que nadie iba a usar, solo para que el número interno subiera un poquito más.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · la escala del fraude (verificado)</div>Se estima que fueron más de <strong>tres millones y medio</strong> de cuentas y tarjetas falsas, abiertas entre 2011 y 2016. El banco terminó despidiendo a cerca de <strong>cinco mil trescientos</strong> empleados. Y pagó <strong>ciento ochenta y cinco millones de dólares</strong> en multas al gobierno de Estados Unidos —solo el primer golpe; vinieron más después.</div>
+            <p class="line">Y aquí quiero que frenen un segundo, porque el reflejo fácil es pensar "qué empleados corruptos". No. Miren la cifra otra vez: cinco mil trescientos. Eso no es un empleado corrupto suelto en una sucursal perdida. Eso es un sistema entero, de arriba hacia abajo, respondiendo exactamente como estaba diseñado para responder.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y hay algo todavía más incómodo. No todos los cinco mil trescientos despedidos eran los que hacían trampa. Varios de los que denunciaron el problema por dentro —empleados que se quejaron con sus jefes, o con la línea de ética de la empresa, diciendo "esta meta es imposible sin hacer trampa"— también terminaron despedidos. No por hacer fraude. Por incomodar al sistema que dependía del fraude para verse bien.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Piensen en eso un segundo, porque es la parte que casi nadie cuenta de este caso: cuando una meta se vuelve suficientemente sagrada, el sistema no solo premia a los que le hacen trampa. Empieza, además, a castigar a los que se atreven a decir en voz alta que la meta no tiene sentido.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Nadie construyó una fábrica de fraude a propósito. Construyeron una meta imposible, la ataron al sueldo y a la permanencia de la gente, y el fraude fue lo que esa meta produjo, casi automáticamente, como efecto secundario. Es la Ley de Goodhart, funcionando a la perfección, a escala de banco nacional.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Stumpf, el CEO del "ocho es grandioso", terminó renunciando. Le prohibieron de por vida volver a trabajar en la industria bancaria. Y el banco, después de todo esto, hizo lo único que debió haber hecho desde el principio: eliminó las cuotas de venta individuales por sucursal.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ahora la pregunta que de verdad importa para usted, en su piso, sin ningún banco de por medio: ¿cuál es su "ocho es grandioso"? ¿Qué número persigue tan fuerte, con tanto premio o tanto castigo detrás, que si lo mira con honestidad, sospecha que su gente ya le está haciendo trampa —no porque sean deshonestos, sino porque usted, sin darse cuenta, montó el mismo tipo de presión, en miniatura?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Porque la trampa de Wells Fargo y la trampa del agente que no escala una llamada nacen exactamente del mismo lugar. La única diferencia es la escala del titular en el periódico.</p>
+        </div>
+
+        <!-- SEGMENTO 4 — CUERPO 2 · EL DATO SQM -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">Cuerpo 2 · el dato SQM</span><span class="segment-time">14:50 – 20:40</span></div>
+            <div class="nota">Aterrizaje directo al call center. Aquí vive el corazón "aplicable" del episodio.</div>
+            <p class="line">Bajemos del banco hasta la operación exacta donde ustedes trabajan, porque ahí el mismo problema tiene nombre, apellido, y hasta un número preciso detrás.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Hay una firma que se llama SQM Group, que lleva más de dos décadas midiendo, en serio, la relación entre cómo atiende un call center y qué tan contento queda el cliente. Y encontraron algo que cualquier gerente de operaciones debería tener pegado en la pantalla del computador.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato · la correlación FCR-CSAT (SQM Group, verificado)</div>Por cada <strong>un por ciento</strong> que sube la resolución en la primera llamada —el FCR— la satisfacción del cliente, el CSAT, sube también, casi exactamente, <strong>un uno por ciento</strong>. Es una correlación de uno a uno, medida durante años, en cientos de operaciones distintas.</div>
+            <p class="line">Eso, entiéndanlo bien, es una gran noticia. Significa que el FCR no es un número inventado por una consultora para venderle un dashboard. Es un termómetro de verdad. Cuando sube, es porque de verdad está pasando algo bueno: el cliente cuelga con su problema resuelto, sin tener que volver a llamar, sin repetir su historia tres veces a tres personas distintas.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El problema no es el número. El número está bien hecho. El problema es lo que pasa el día en que una operación deja de usarlo como termómetro, y lo convierte en la única meta que le importa a alguien de recursos humanos a la hora de calcular bonos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aquí va un dato que la propia SQM viene señalando en los últimos años, y que a mí me parece la prueba más silenciosa de todo este episodio.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato · la brecha que se abre (SQM Group, verificado)</div>Desde 2013, cuando el FCR sube o baja, el CSAT lo sigue casi al mismo ritmo. Pero en los últimos años, esa brecha entre los dos números ha empezado a <strong>ensancharse</strong>: el FCR reportado sigue subiendo bonito en los dashboards, mientras el CSAT real ya no lo acompaña igual que antes.</div>
+            <p class="line">Piénsenlo despacio. Si el termómetro estuviera midiendo lo mismo de siempre, los dos números tendrían que moverse pegados, como llevan haciéndolo por más de una década. Que empiecen a separarse es exactamente la huella que deja un número cuando la gente empieza a maquillarlo en vez de mejorarlo. El FCR sigue subiendo. La satisfacción real del cliente, la que de verdad importa, se quedó atrás.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Porque ahí, exactamente ahí, aparecen los dos personajes con los que abrimos el episodio. El agente que no escala un caso que sí necesitaba escalar, porque escalar le baja su número personal. El que da una solución a medias y cuelga rápido, cruzando los dedos para que el cliente no vuelva a llamar esta semana —porque si vuelve por el mismo motivo, eso sí cuenta en contra suyo, así que mejor que llame la semana que entra, cuando ya no se lo cuenten a él.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Hay operaciones —y esto lo han visto ustedes, no hace falta que se los jure un estudio— donde el agente transfiere la llamada a un buzón que nadie contesta, solo para que dentro del sistema deje de ser "su" llamada sin resolver. Donde se cierra el caso aunque el cliente siga con el problema, porque lo que se mide es que el caso esté cerrado, no que el cliente esté bien. Donde el tiempo promedio de atención baja bonito en el reporte, mientras la cantidad de gente que vuelve a llamar por lo mismo, tres días después, sube calladita, en una columna que casi nadie mira.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y aquí está la ironía que de verdad debería quitarles el sueño: la meta que se persigue tan agresivo, termina rompiendo exactamente lo que esa meta estaba midiendo. Si el FCR de verdad correlaciona uno a uno con el CSAT, un agente que hace trampa con el FCR —que finge resolver para que el número suba— no está mejorando la satisfacción del cliente. La está bajando. Está inflando el termómetro mientras el paciente, del otro lado del teléfono, se sigue sintiendo pésimo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y la trampa se paga dos veces. Primero, con el cliente que cuelga sintiéndose ignorado. Y segundo, con usted, el gerente, que mira el dashboard en verde el viernes y se cree, de verdad, que todo anda bien —hasta que la cuenta se cae, o el cliente se va con la competencia, y nadie entiende por qué, si las métricas siempre estuvieron perfectas.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Pregúntese algo, con honestidad, antes de seguir. La última vez que revisó el FCR de su equipo y lo vio subir, ¿le preguntó a alguien cómo se logró? ¿O simplemente lo celebró, felicitó al de arriba de la tabla, y siguió con la reunión?</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">El número de SQM no está mal hecho. Lo que está mal es cómo lo tratamos una vez lo colgamos en la pared. Un termómetro que se convierte en trofeo deja de servir para lo único que sirve un termómetro: decir la verdad, aunque esa verdad, esta semana, no nos guste.</p>
+        </div>
+
+        <!-- SEGMENTO 5 — RE-ENGANCHE · VA HOSPITAL -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">Re-enganche · VA Hospital</span><span class="segment-time">20:40 – 25:55</span></div>
+            <div class="nota">El giro más fuerte del episodio, en la segunda mitad. Manejar con cuidado el conteo de muertes — presentarlo como alegación disputada, no como hecho cerrado.</div>
+            <p class="line">Y si todavía piensan que esto se queda en plata —un banco que pierde reputación, una llamada mal resuelta— quiero llevarlos a un lugar donde el mismo error, exactamente el mismo, se pagó con algo que no se arregla con una disculpa pública.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Estados Unidos, 2014. El sistema de hospitales para veteranos de guerra —el VA, como le dicen ahí— tenía una meta, en papel, muy razonable: que ningún veterano esperara más de catorce días para una cita médica.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Catorce días suena a una meta sensata, ¿cierto? El problema es lo que el sistema hizo con esa meta: la convirtió en el número que definía si un hospital, y su director, se veían bien o mal delante de Washington. Bonos, ascensos, reputación —todo atado a que ese catorce apareciera cumplido en el reporte.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y en el hospital de Phoenix, Arizona, empezó a pasar algo que ningún manual de gestión enseña, pero que la Ley de Goodhart predice con precisión aterradora.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · las listas ocultas (verificado)</div>Investigadores encontraron que el personal administrativo llevaba, por fuera del sistema oficial, listas de espera secretas —en papel, escondidas del registro electrónico. A los veteranos se les decía que su cita ya estaba agendada. En la práctica, esperaban semanas, a veces más de <strong>cien días</strong>, sin que ese tiempo real quedara registrado en ningún lado.</div>
+            <p class="line">Solo en Phoenix, cerca de <strong>mil setecientos</strong> pacientes terminaron en esas listas ocultas. Y cuando el inspector general del gobierno investigó el sistema completo, encontró más de <strong>cincuenta y siete mil</strong> veteranos cuyas citas habían sido manipuladas o extraviadas a propósito, en hospitales de todo el país.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Un empleado denunciante llegó a decir que hasta cuarenta veteranos habían muerto esperando una cita que, en el papel, ya figuraba como agendada. Esa cifra exacta —cuarenta— nunca se confirmó del todo; investigaciones posteriores no lograron establecer con certeza cuántas muertes, si alguna, se debieron directamente a la demora.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Pero esto sí quedó confirmado, sin discusión: hubo veteranos que murieron mientras estaban en esas listas de espera nunca registradas. Y el secretario a cargo de todo el sistema, un general retirado de cuatro estrellas, terminó renunciando por el escándalo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Deténganse en la mecánica exacta, porque es idéntica a la de Wells Fargo, solo que con un precio distinto. Nadie, en ningún memo, escribió "vamos a mentir para que la gente se muera esperando". Lo que escribieron fue una meta —catorce días— con demasiado premio y demasiado castigo enganchado. Y el sistema, con seres humanos normales adentro, tratando de conservar su trabajo y quedar bien con sus jefes, respondió exactamente como Goodhart predijo hace cincuenta años: dejó de mejorar el servicio real, y se dedicó, con una eficiencia asombrosa, a maquillar el número.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Esa es la diferencia entre un termómetro y una meta. El termómetro le dice la verdad aunque duela. La meta, cuando el premio es suficientemente grande, encuentra la manera de mentirle a usted en la cara —y de que usted le crea.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y no les cuento este caso para que se sientan culpables, ni para poner su piso de operaciones al mismo nivel que un hospital de veteranos. La distancia entre una llamada mal cerrada y una cita médica falsificada es enorme, y hay que respetarla.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Se los cuento porque el mecanismo de adentro —el que convierte a gente decente en gente que falsifica un registro— es idéntico, así cambie el tamaño del daño. Y porque, del otro lado de una llamada suya que se cierra como "resuelta" sin estarlo, también hay alguien esperando algo real: que le devuelvan la plata de un cobro duplicado, que le activen un servicio que necesita para trabajar, que le resuelvan algo que a usted, desde su silla, le suena pequeño —y a esa persona no se lo parece en absoluto.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">Nadie diseña un sistema para que la gente muera esperando, ni para que un banco le robe la confianza a sus clientes. Diseñan una meta, le cuelgan demasiado premio o demasiado castigo, y dejan que la naturaleza humana haga el resto. La Ley de Goodhart no es una teoría de economista aburrido. Es la explicación de por qué, tarde o temprano, cualquier número que usted persiga con suficiente fuerza va a terminar mintiéndole a la cara —con una sonrisa, y en verde.</div>
+        </div>
+
+        <!-- SEGMENTO 6 — REFERENCIAS CRUZADAS -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">Referencias Cruzadas</span><span class="segment-time">25:55 – 30:05</span></div>
+            <div class="nota">Universaliza la tesis fuera de negocios/salud. Datos de interés incrustados.</div>
+            <p class="line">Salgamos de los hospitales y de los bancos, porque quiero que esta idea les quede clarísima como algo universal, no como una rareza de call centers y finanzas. Y para eso nos vamos a un salón de clases.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Atlanta, Estados Unidos, mediados de los años 2000. El distrito escolar tenía una superintendente, Beverly Hall, celebrada en su momento como una de las mejores administradoras de educación del país. Y tenía una meta clara, medible, aparentemente noble: subir los puntajes de los exámenes estandarizados, año tras año, en las escuelas más pobres del distrito.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">La meta venía con premio de verdad. Bonos, en dinero, para directores y maestros, atados directamente a cuánto subían esos puntajes.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y en decenas de escuelas, durante casi una década, pasó lo que ya deberían estar esperando a estas alturas del episodio. Maestros y directores, gente que había elegido esa profesión para enseñar, no para hacer trampa, empezaron a corregir las respuestas de sus propios estudiantes después del examen. Borrando lo malo, marcando lo correcto, antes de entregar las hojas.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · el escándalo de Atlanta (verificado)</div>En una sola escuela, los puntajes subieron <strong>cuarenta y cinco por ciento</strong> en un año —un salto que debería haber encendido todas las alarmas. En cambio, se celebró. <strong>Ciento setenta y ocho</strong> educadores terminaron implicados; <strong>ochenta y dos</strong> confesaron directamente. En algunas escuelas, el equipo se reunía los fines de semana —con pizza, en un ambiente casi festivo— a corregir respuestas antes de entregarlas.</div>
+            <p class="line">Pizza. Para hacer trampa en exámenes de niños de escuela pública. Léanlo otra vez y díganme si no suena a la escena más absurda y más triste que han escuchado en este pódcast.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Beverly Hall, la superintendente, había recibido cientos de miles de dólares en bonos atados a esos puntajes que resultaron, en buena parte, inflados a mano. Once personas terminaron condenadas penalmente, bajo una ley pensada originalmente para el crimen organizado. La misma ley que se usa contra mafias, aplicada a un distrito escolar completo, por corregir exámenes.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y hay una parte de este caso que casi nadie recuerda, y que a mí me parece la más triste de las tres historias de hoy: había maestros, en ese mismo distrito, que se negaron a corregir respuestas. Que denunciaron lo que estaba pasando. Y que, en varios casos documentados, terminaron señalados, aislados, o presionados a renunciar —por ser los raros que no querían jugar con el número.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Otra vez la misma sombra de Wells Fargo: el sistema no solo premia al que hace trampa. Termina castigando, con el tiempo, al que se atreve a decir que la meta está mal planteada.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Un banco. Un hospital de veteranos. Un distrito escolar entero. Tres mundos que no se hablan entre sí, tres industrias completamente distintas, y exactamente el mismo patrón, letra por letra: alguien arriba fija una meta con demasiado premio o demasiado castigo enganchado, y la gente de abajo —que no es mala gente, que en su enorme mayoría entró a ese trabajo queriendo hacerlo bien— termina, casi sin darse cuenta, gastando su energía en maquillar el número en vez de mejorar lo que el número decía medir.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y si le pasa a banqueros, a médicos y administradores de hospital, y a maestros de escuela pública —tres gremios que uno pensaría que tienen estándares éticos altísimos— no hay ninguna razón para creer que su operación de call center está hecha de un material humano especial, inmune a la misma física. La Ley de Goodhart no le pregunta a qué industria pertenece antes de aplicarse.</p>
+        </div>
+
+        <!-- SEGMENTO 7 — APLICABLE HOY -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Aplicable Hoy</span><span class="segment-time">30:05 – 32:50</span></div>
+            <div class="nota">Tres herramientas concretas, sin presupuesto, para esta semana.</div>
+            <p class="line">Tres cosas concretas, esta semana, sin comprar ningún software nuevo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Uno — nunca un número solo</div>
+            <p class="line">Cualquier métrica que use para evaluar a alguien, acompáñela siempre de una segunda que sea difícil de maquillar al mismo tiempo. Si mide tiempo promedio de atención, mida también cuántas veces ese mismo cliente vuelve a llamar por el mismo motivo en los próximos siete días. Si mide FCR, mida también el CSAT real de esa misma llamada, no solo el conteo de "resuelto en el sistema". Es mucho más difícil hacerle trampa a dos números que se contradicen entre sí, que a uno solo, aislado, mirando para otro lado.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Dos — pregunte "cómo", no solo "cuánto"</div>
+            <p class="line">La próxima vez que un agente le entregue un número espectacular, no se limite a felicitarlo. Pregúntele, con curiosidad real, no con sospecha: ¿cómo lo logró? Cuénteme la última llamada difícil que resolvió rápido. El maquillaje casi siempre se nota en la respuesta, mucho antes de que se note en el reporte. Y de paso, le manda un mensaje distinto a todo el equipo: aquí no solo se premia el número, se entiende el número.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Tres — escuche también las llamadas perfectas</div>
+            <p class="line">La mayoría de los gerentes solo escuchan grabaciones cuando algo salió mal. Escuche también, de vez en cuando, una llamada que se ve perfecta en el papel —la de cuatro minutos con veinte segundos exactos, la que cerró como resuelta a la primera. A veces ahí, en la llamada que se ve perfecta, es exactamente donde está escondido el termómetro calentado a mano.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y si la escucha completa y de verdad estaba perfecta, mejor todavía — ahora sabe con certeza qué se está haciendo bien, en vez de solo confiar en un número que se lo estaba prometiendo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ninguna de las tres cuesta un peso. Ninguna necesita un software nuevo, ni una reunión con la gerencia general, ni un rediseño del dashboard. Todas cuestan lo mismo: la incomodidad de mirar más de cerca de lo que el reporte del viernes le exige mirar.</p>
+        </div>
+
+        <!-- SEGMENTO 8 — RECOMENDACIONES -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">8</span><span class="segment-title">Recomendaciones de Andy</span><span class="segment-time">32:50 – 35:05</span></div>
+            <div class="nota">Sin referente pop que diversificar — mezclar medios igual: libro, charla, película.</div>
+            <p class="line">Si este episodio los dejó pensando, tres cosas para seguir la conversación.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Uno — el libro: "The Tyranny of Metrics", de Jerry Muller (2018)</div>
+            <p class="line">Está en inglés, aunque hay reseñas larguísimas en español si buscan el título. Muller hizo lo que hicimos hoy en miniatura, pero con cien casos: bancos, hospitales, colegios, policías, hasta el ejército. Vayan directo al capítulo de negocios, y de ahí salten al de salud —les va a sonar incómodamente parecido a lo de hoy.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Dos — la charla: "Measuring What Makes Life Worthwhile", Chip Conley, TED</div>
+            <p class="line">Búsquenla en YouTube. Arranca con un discurso de Robert Kennedy de 1968 sobre el PIB —cómo ese número cuenta la contaminación, cuenta hasta la publicidad de cigarrillos, pero no cuenta la salud de los niños ni la honestidad de los funcionarios. Es la misma idea de hoy, mirada desde la economía de un país entero, no desde un piso de call center. Veinte minutos, y se los prometo: van a mirar su propio dashboard distinto al día siguiente.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Tres — la película: "Moneyball" (2011)</div>
+            <p class="line">Con Brad Pitt. Es sobre béisbol, sobre un gerente de equipo que decide medir todo distinto, ignorando las estadísticas de siempre para fijarse en las que de verdad predicen victorias —y créanme, aunque suene contradictorio con todo lo que hablamos hoy, ahí está la otra cara de la misma moneda: medir bien, con el número correcto, y sin dejar que ese número se coma el criterio, también puede cambiarlo todo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El problema nunca fue medir. Nunca lo va a ser. Fue medir lo que no importa, y perseguirlo ciegamente hasta que se le olvida a uno para qué servía el número, en primer lugar.</p>
+        </div>
+
+        <!-- SEGMENTO 9 — CIERRE + TEASER -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">9</span><span class="segment-title">Cierre canónico + Teaser EP.021</span><span class="segment-time">35:05 – 37:20</span></div>
+            <div class="nota">Quinto REMATE del episodio (contando el de arriba serían 3 en total — Hook, VA Hospital, Cierre). Teaser EP.021 genérico — tema aún no definido, ver checklist.</div>
+            <p class="line">Antes de irme, la pregunta del episodio. Y quiero que esta vez la piensen con el número exacto en la cabeza, no en abstracto.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Cuál es el número que persigue tan fuerte en su operación, que sospecha —aunque nadie se lo diga en voz alta— que su gente ya le está calentando el termómetro? ¿Y qué pasaría si esta semana lo acompaña de una segunda pregunta, en vez de solo premiarlo?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No necesito que me cuenten el número exacto ni el nombre de nadie. Necesito que se lo respondan a ustedes mismos, en la ducha, en el carro, donde sea que piensen mejor —porque casi siempre, ya lo saben. Solo les faltaba que alguien se lo preguntara en voz alta.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Escríbanlo en los comentarios del episodio, ahí mismo en Spotify. Los leo todos —y los del episodio pasado, el de Gladiator, me tienen todavía pensando en un par de respuestas.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si este episodio les sirvió, o si conocen a alguien que dirige un equipo y persigue un número sin preguntarse qué le está costando perseguirlo, compártanselo. Y si quieren seguir la conversación, estoy en LinkedIn como Andrés Bermúdez Rodríguez.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Teaser EP.021</div>
+            <div class="nota">[PENDIENTE DEFINIR] Tema de EP.021 sin confirmar al momento de escribir este guion. Dejar este bloque genérico o grabarlo por separado cuando se confirme el episodio siguiente — NO inventar un referente todavía.</div>
+            <p class="line">La próxima semana volvemos al referente —todavía no les puedo adelantar cuál, porque ni yo lo tengo del todo decidido— pero les prometo que, otra vez, va a ser algo que ustedes ya conocen, mirado desde un ángulo que no se esperan.</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="sub">Cierre y TM canónico</div>
+            <p class="line">Esto fue Behind the Queue, episodio veinte.</p>
+            <p class="line">Yo soy Andy. Y recuerden: el número no es la meta. El número es apenas un termómetro —y el día que se le olvide la diferencia, va a terminar curando la fiebre a punta de romper el termómetro.</p>
+            <div class="nota">OUTRO MUSICAL — fade suave a silencio.</div>
+        </div>
+
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section fuentes">
+        <h2>Fuentes verificadas (no leer al aire)</h2>
+        <p>· <strong>Ley de Goodhart:</strong> Wikipedia "Goodhart's law"; Charles Goodhart, 1975, Bank of England, sobre política monetaria del Reino Unido — formulación original: "cualquier regularidad estadística observada tenderá a colapsar en cuanto se le presione con fines de control". La frase popular ("cuando una medida se convierte en objetivo, deja de ser una buena medida") es de la antropóloga Marilyn Strathern, 1997, en su paper "'Improving ratings': audit in the British University system" — no de Goodhart. · <strong>SQM Group:</strong> sqmgroup.com (blog "FCR Metric Operating Philosophy" y comparativos FCR/CSAT por industria) — correlación de 1:1 verificada entre mejora de FCR y mejora de CSAT, consistente desde 2013. · <strong>Wells Fargo:</strong> Wikipedia "Wells Fargo cross-selling scandal", Harvard Law School Forum on Corporate Governance, Stanford GSB — mantra "Eight is Great" del CEO John Stumpf; ~3.5M cuentas y tarjetas falsas (2011-2016); ~5.300 empleados despedidos; multa de $185M (sep. 2016); Stumpf renunció y fue inhabilitado de por vida para la industria bancaria; el banco eliminó las cuotas de venta individuales. · <strong>VA Hospital 2014:</strong> Wikipedia "2014 Veterans Health Administration controversy", NPR, reporte del Inspector General del VA — meta oficial de 14 días para citas; ~1.700 pacientes en listas ocultas solo en Phoenix, demoras de hasta 115 días; >57.000 veteranos con citas manipuladas o extraviadas a nivel nacional; denuncia inicial de ~40 muertes vinculadas, cifra nunca confirmada oficialmente (investigaciones posteriores no establecieron causalidad directa, aunque sí hubo veteranos fallecidos mientras estaban en listas no registradas); renuncia del secretario Eric Shinseki. · <strong>Atlanta Public Schools:</strong> ABC News, Wikipedia "Atlanta Public Schools cheating scandal", NPR — 178 educadores implicados, 82 confesiones, una escuela con alza de 45% en un año, superintendente Beverly Hall con bonos atados a los puntajes, 11 condenados bajo la ley RICO de Georgia en 2015. · <strong>Recomendaciones:</strong> "The Tyranny of Metrics", Jerry Z. Muller (Princeton University Press, 2018); "Measuring What Makes Life Worthwhile", Chip Conley, TED (referencia al discurso de Robert Kennedy sobre el PIB, 1968); "Moneyball" (2011, dir. Bennett Miller, con Brad Pitt).</p>
+        <p style="margin-top:10px">Notas: (1) La cifra de muertes del caso VA Hospital se presenta en el guion como alegación disputada, no como hecho confirmado — no leer "40 veteranos murieron" como dato cerrado. (2) El teaser de EP.021 queda genérico a propósito porque el tema del próximo episodio no estaba confirmado al escribir este guion — actualizar o regrabar ese bloque cuando se defina.</p>
+    </div>
+
+    <footer>
+        <span class="gold">Behind the Queue</span> · EP.020 — Métricas y KPIs en Call Center<br>
+        Production packet · guion de grabación · ~37 min medidos a 143 wpm · estilo con chispa (guion-style-btq.md)
+    </footer>
+
+</div>
+</body>
+</html>

@@ -116,7 +116,12 @@ vez de bloquear en serie.
 1. Confirma: "Assets generados — [N] archivos. Prompts de cover-art listos para
    generación de imagen. [Spotify: URL confirmada / pendiente — te la pido más tarde]."
    y continúa a `03-image-validation.md`.
-2. Agrega a la bitácora:
+2. **Publica el paquete de lanzamiento como Artifact** (precedente: BTQ EP.020,
+   2026-07-04). Son archivos `.md` planos — pásalos directo a la tool `Artifact` sin
+   stripping (soporta Markdown nativo). BTQ: un solo Artifact para
+   `EP0XX-[slug]-launch.md`. MPD: uno por archivo (`shownotes-`, `youtube-`, `artwork-`)
+   salvo que el usuario prefiera verlos combinados en uno solo.
+3. Agrega a la bitácora:
    ```
    ## Stage 2 — Generación de assets
    - Qué se hizo: [episode-launch invocado | podcast-creator workflows 05/07/03 invocados]

@@ -80,20 +80,27 @@ BTQ pop-culture lleva, en orden, estos bloques. No omitir ninguno al escribir el
 
 1. **Apertura** (ritual: "Buenas y santas…") + **Hook** en escena.
 2. **El Puente** referente → supervisor BPO (a veces enlaza con el episodio anterior).
-3. **Cuerpo** (2-4 segmentos): la tesis desarrollada con el referente.
+3. **Cuerpo** (2-4 segmentos): la tesis desarrollada con el referente. Dentro de estos
+   segmentos, meter **datos de interés** puntuales — verificados, poco conocidos, con ángulo
+   de "esto no te lo esperabas, cuéntaselo a alguien" (incluye separar mito de realidad del
+   referente cuando aplique, ej. qué inventó Hollywood vs. qué pasó de verdad). Van pegados al
+   momento de la anécdota, no en un bloque aparte. No forzar uno por segmento — solo donde el
+   dato realmente sorprenda (evitar volverlo fórmula, ver regla 2).
+   [Cambio 2026-07-04: antes vivía como bloque final "Mito o Realidad"; la curva de retención
+   de EP.012 y EP.018 mostraba que ahí es exactamente donde el oyente abandona — se movió al
+   cuerpo y se reencuadró de corrección académica a dato compartible.]
 4. **Re-enganche al ~60%**: el dato/giro más fuerte va en la segunda mitad, no en el primer
    tercio (completion rates 50-67%).
-5. **Mito o Realidad**: separar lo histórico de lo ficticio del referente (textura de respiro).
-6. **Referencias Cruzadas — FUERA del referente.** Traer 2 ejemplos reales y verificados del
+5. **Referencias Cruzadas — FUERA del referente.** Traer 2 ejemplos reales y verificados del
    MISMO tema pero de otro mundo (otra época, otro oficio, otro país). NO quedarse solo dentro
    de la película/banda del episodio. Ej. EP.018: Zander (director de orquesta) + Ferguson.
    EP.019: Sócrates + John Wooden. Es lo que hace el episodio universal y no un resumen del
    referente.
-7. **Aplicable Hoy**: 3 cosas concretas para esta semana.
-8. **Recomendaciones de Andy — diversificadas.** Máximo UNA atada al referente (la peli/disco
+6. **Aplicable Hoy**: 3 cosas concretas para esta semana.
+7. **Recomendaciones de Andy — diversificadas.** Máximo UNA atada al referente (la peli/disco
    del episodio); las otras saltan fuera (un libro de otro mundo, una charla, otra peli). NO
    las tres dentro del mismo tema/época. Mezclar medios: película + libro + charla.
-9. **Cierre canónico** (NO omitir nada de esto — es la firma de BTQ):
+8. **Cierre canónico** (NO omitir nada de esto — es la firma de BTQ):
    - **Pregunta comentable** que interpela al oyente sobre SU situación.
    - **CTA de comentarios:** "escríbanlo en los comentarios del episodio, en Spotify, los leo
      todos" (+ guiño a los comentarios del episodio anterior).
@@ -199,6 +206,8 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
 - [ ] **Estructura canónica completa** (ver sección arriba): ¿están Referencias Cruzadas
       FUERA del referente, recomendaciones diversificadas, y el cierre canónico entero
       (comentarios Spotify · compartir · LinkedIn · teaser · firma + TM · outro)? No omitir.
+- [ ] **Sin bloque "Mito o Realidad" al final:** los datos de interés / mito-vs-realidad van
+      distribuidos dentro del Cuerpo, no como segmento aparte antes del cierre.
 - [ ] **Voz narrativa, no documental:** los tramos históricos en presente/escena, no en
       modo informe.
 - [ ] Aperturas y conectores de contenido (sin meta-anuncios tipo "ahora vamos a…").
