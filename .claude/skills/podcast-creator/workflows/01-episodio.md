@@ -10,9 +10,26 @@ Genera un script completo, palabra por palabra, para un episodio específico. Se
 **Regla de investigación y verificación (OBLIGATORIA, antes de escribir): investigar el tema en la web y reunir datos verificables (fechas, cifras, anécdotas reales, evolución del sonido, álbumes emblemáticos Y los menos conocidos, canciones). NUNCA inventar fuentes, fechas, productores ni quotes — marcar lo no confirmado como `[VERIFICAR]` para chequear antes de grabar. Igualar la profundidad de los episodios fuertes (Black Sabbath / Kraken): dato duro + escena de la época + anécdota cierta poco conocida. Lección EP.005 (Aterciopelados): el primer borrador acreditó mal al productor de "El Dorado" (era Federico López, no Manzanera) — el error solo salió al investigar.**
 **Regla de 2 partes (default para episodios con investigación profunda): si la data con chispa pasa de ~60 min, estructurar el guion en 2 partes DESDE EL INICIO — corte natural, cada parte con su apertura/cierre corto, recap de ~20 seg al abrir la Parte 2. Metadata compartida; solo cambia el título "(Parte 1)"/"(Parte 2)". Ver memoria `project-mpd-episodes-two-parts`.**
 
+> **⚠️ Alcance de este workflow — qué es genérico y qué es específico de MPD/BTQ:**
+> Este archivo se usa para cualquier show creado con `podcast-creator`, pero acumuló
+> reglas específicas de Mr. Putrid's Den y BTQ que NO aplican a un show nuevo salvo que
+> comparta ese perfil. Específicamente son **solo MPD/BTQ** (sáltalos para otros shows,
+> a menos que el `podcast-profile.json` del show diga lo contrario):
+> - Todo Paso -1 y Paso 0-SP (Silla Pútrida — formato de invitado de MPD)
+> - Las reglas de lenguaje/`glosario-cachaco.md`, rotación de género, y conector de
+>   género de arriba (específicas del formato musical de MPD)
+> - El tratamiento "usted/ustedes, nunca tú" y las palabras prohibidas del Paso 3
+>   (español colombiano — no aplica a shows en otro idioma)
+> - Las tablas de segmentos "co-host" y el Segmento de Promoción (Andrés/Juan de MPD)
+>
+> Lo genérico y aplicable a cualquier show: Paso 0 (cargar perfil), Paso 0.5 (formato
+> del episodio), Paso 1 (datos del episodio), Paso 1.5 (cuestionario si es interview),
+> Paso 2 (arquitectura + word count), la disciplina de investigación/verificación de
+> arriba (aplica a cualquier género, no solo música), y el formato de entrega del Paso 3.
+
 ---
 
-## Paso -1 — ¿Hay Silla Pútrida esta semana?
+## Paso -1 — ¿Hay Silla Pútrida esta semana? [MPD-específico — ver nota de alcance arriba]
 
 **SIEMPRE pregunta esto antes de cualquier otra cosa:**
 
