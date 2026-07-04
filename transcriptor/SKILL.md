@@ -1,11 +1,11 @@
 ---
 name: transcriptor
-description: "Transcribe podcast audio to SRT using WhisperX (large-v2, Spanish, speaker diarization). Triggers: transcribir, transcripción, transcribe audio, procesar audio, pasar a texto, transcribe, process audio, run whisperx."
+description: "Transcribe podcast audio to SRT using WhisperX (large-v2, Spanish or English, speaker diarization). Triggers: transcribir, transcripción, transcribe audio, procesar audio, pasar a texto, transcribe, process audio, run whisperx."
 ---
 
 # Transcriptor — WhisperX con diarización
 
-Transcribe audios de podcast a SRT usando WhisperX (large-v2, español, diarización por speakers).
+Transcribe audios de podcast a SRT usando WhisperX (large-v2, español o inglés, diarización por speakers).
 
 Funciona en dos modos:
 - **Standalone:** el usuario pide transcribir un audio
@@ -13,10 +13,10 @@ Funciona en dos modos:
 
 ## Workflow
 
-Sigue `workflows/transcribe.md` — determina modo y ruta del audio, verifica el HF
+Sigue `workflows/transcribe.md` — determina modo, ruta del audio e idioma, verifica el HF
 token, corre WhisperX, confirma el output.
 
 ## Reference
 
-- `docs/environment.md` — rutas de venv/audios/transcripciones, modelo, idioma, e
+- `docs/environment.md` — rutas de venv/audios/transcripciones, modelo, idiomas soportados, e
   integración con pipelines

@@ -4,6 +4,8 @@
 
 **Si fue llamado desde el pipeline** (el mensaje incluye una ruta de audio explícita como argumento):
 - Tomar esa ruta directamente
+- Si el mensaje incluye también un idioma explícito (`es` o `en`), usarlo
+- Si no incluye idioma, usar `es` por default (compatibilidad con BTQ/MPD, ambos en español)
 - Saltar al Paso 2 sin hacer preguntas
 
 **Si fue invocado standalone:**
@@ -13,6 +15,8 @@
   ```
 - Si hay archivos: mostrar la lista y preguntar cuál transcribir (o confirmar el más reciente)
 - Si la carpeta está vacía: pedir al usuario que pegue la ruta completa del audio
+- Preguntar el idioma del audio: **español o inglés** (default español si no especifica).
+  No usar autodetección de whisperx — con acentos/mezclas es menos confiable que preguntar directo.
 
 ## Paso 2 — Verificar HF token
 
@@ -35,7 +39,7 @@ Ejecutar con PowerShell:
 $env:PYTHONUTF8 = "1"
 & "E:\Transcriptor\venv-whisperx\Scripts\Activate.ps1"
 whisperx "<RUTA_AUDIO>" `
-  --language es `
+  --language <es|en> `
   --model large-v2 `
   --diarize `
   --hf_token $env:HF_TOKEN `
@@ -43,7 +47,12 @@ whisperx "<RUTA_AUDIO>" `
   --output_format srt
 ```
 
-Reemplazar `<RUTA_AUDIO>` con la ruta real del archivo.
+Reemplazar `<RUTA_AUDIO>` con la ruta real del archivo y `<es|en>` con el idioma
+determinado en el Paso 1.
+
+La primera vez que se transcribe en un idioma nuevo, WhisperX descarga el
+alineador correspondiente (wav2vec2) a `TORCH_HOME` — puede tardar un poco más
+esa primera corrida. Ver `docs/environment.md`.
 
 Esperar a que termine (puede tardar varios minutos dependiendo del largo del audio).
 
