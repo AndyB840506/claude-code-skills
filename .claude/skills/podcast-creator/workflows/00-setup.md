@@ -11,6 +11,14 @@ Busca `podcast-profile.json` en el directorio actual.
 - Si **existe**: muéstrale al usuario los datos actuales en formato legible y pregunta qué sección quiere actualizar. Salta al bloque correspondiente.
 - Si **no existe**: di "Vamos a configurar tu podcast desde cero. Te haré algunas preguntas en bloques cortos — no debería tomarte más de 15 minutos." y continúa al Paso 1.
 
+**Antes de crear el directorio del proyecto:** si este es un show nuevo en la misma
+familia que BTQ/MPD (producción de podcast), el patrón establecido es crear
+`[nombre-show]-production/` como carpeta hermana dentro de este mismo workspace de
+skills (junto a `btq-production/`, `mrputridsden-production/`) — no en `C:\Users\andre\repos\`,
+aunque esa sea la regla general del CLAUDE.md global para otros artefactos de
+producción. Esto es una excepción confirmada, no un error a corregir. Si hay duda sobre
+si aplica (ej. un show fuera de este ecosistema), pregunta antes de asumir.
+
 ---
 
 ## Paso 1 — Concepto del podcast (Bloque 1 de 4)
@@ -29,6 +37,14 @@ Escucha las respuestas. Si el nombre no está definido, genera 3 opciones con ju
 - Opción 3 (corta/memorable): Cómo es corta (1-3 palabras), fácil de pronunciar, diferenciada
 
 Justificación de cada opción debe incluir: palabra clave principal que incluye, por qué es memorable, por qué es SEO-friendly. Espera que el usuario elija antes de continuar.
+
+**Antes de dar el nombre por definitivo (obligatorio):** corre una búsqueda web del
+nombre + "podcast" para verificar que no colisiona con un show existente. Una
+colisión real no es solo un problema estético — puede significar que el nombre ya
+está posicionado en el género equivocado (ej. un show de negocios/contabilidad
+existente bajo el mismo nombre) o saturado por múltiples shows activos. Si aparece una
+colisión, repórtala con la fuente encontrada y propone alternativas antes de que el
+usuario lo bloquee en `podcast-profile.json`.
 
 ---
 
@@ -142,7 +158,15 @@ Presenta recomendaciones de fuentes de música sin derechos de autor:
 > - **ccMixter** (ccmixter.org) — Creative Commons, comunidad de músicos
 >
 > **Para un podcast nuevo:** Empieza con YouTube Audio Library o Pixabay (gratis, suficiente calidad). Upgrade a Epidemic Sound cuando el podcast crezca.
->
+
+**Si no hay una herramienta de generación de audio conectada en la sesión** (caso
+típico — ninguna de las integraciones estándar genera audio): en vez de intentar
+producir el audio, escribe briefs creativos listos para pegar en un generador (Suno,
+Udio) más términos de búsqueda reales para las librerías gratuitas de arriba. Mismo
+patrón que los prompts de artwork — se escribe aquí, se ejecuta en la plataforma real.
+Cubre como mínimo: intro, outro, stinger de transición, y cualquier cama de fondo que
+el tono del show necesite. Guarda como `score-requisition.md`.
+
 > **Necesitas generar/descargar:**
 > - **Intro** (5-15 seg) — tema que se repite al inicio de cada episodio
 > - **Outro** (10-30 seg) — tema que se repite al cierre de cada episodio

@@ -77,6 +77,14 @@ No extra text outside specified overlays. Highly detailed, award-winning photogr
 
 ## Dirección visual del show (CONGELADA 2026-06-12 — validada con EP.004 Kraken)
 
+> **⚠️ Esta sección es específica de MPD (Mr. Putrid's Den) — no la apliques a otros
+> shows.** El estilo fotorrealista "film still" y la prohibición de ilustración de
+> abajo son decisiones de dirección de arte de MPD, no una regla general de la skill.
+> Para cualquier otro show, usa la dirección visual definida en su propio
+> `podcast-profile.json` (`logo_descripcion`, `colores`, `estilo visual` del Paso 3 de
+> `00-setup.md`) en su lugar — incluso si eso significa ilustración, cómic, u otro
+> estilo que esta sección de abajo prohíbe para MPD específicamente.
+
 **MPD = fotograma cinematográfico.** Cada portada debe parecer un still de película de
 los 80s en 35mm — NUNCA diseño gráfico ni póster ilustrado. Si una imagen podría pasar
 por portada de BTQ (póster gráfico negro+dorado), falló.
