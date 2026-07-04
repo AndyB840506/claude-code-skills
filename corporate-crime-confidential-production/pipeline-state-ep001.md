@@ -33,3 +33,10 @@ around. Do not generate Stage B content (transcription, show notes, YouTube meta
 until real recorded audio exists. When it does, resume at `00-intake.md`-equivalent:
 gather the audio + confirm nothing changed since this checkpoint, then move to
 transcription (via the `transcriptor` skill) and assets/metadata.
+
+**Transcription note (2026-07-04):** `transcriptor` now explicitly supports English
+(`--language en`), confirmed in `transcriptor/SKILL.md` and `docs/environment.md` — pass
+it as the language when invoked (standalone mode asks; pipeline mode takes it as an
+optional second argument, e.g. `/transcriptor <path> en`). The still-open item is which
+machine to run it on: the WhisperX venv/model cache/HF token live on the desktop's
+`E:\Transcriptor\`, not this laptop.
