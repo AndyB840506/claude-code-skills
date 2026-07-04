@@ -52,8 +52,10 @@
 - Transcription machine decision pending: WhisperX setup lives on the desktop
   (`E:\Transcriptor\`), not this laptop — needs either switching machines or a fresh
   laptop install (weaker GPU, RTX 3060 6GB vs. desktop's 3080 Ti)
-- Transcription language defaults to Spanish (`--language es`) — must be explicitly set
-  to English for this show
+- ~~Transcription language defaults to Spanish~~ — **resolved 2026-07-04**: a parallel
+  session updated `transcriptor` to explicitly support English (`--language en`,
+  confirmed in `transcriptor/SKILL.md` and `docs/environment.md`). Pass it explicitly
+  when invoking (standalone asks; pipeline mode takes it as an optional second argument).
 - No audio-generation tool connected — intro/outro/stinger/tension beds are still just
   written briefs; user needs to run them through Suno/Udio or pull stock tracks
 - Three `[VERIFICAR]` fact-check flags remain in the script — must be resolved before
@@ -91,6 +93,7 @@
 ## Questions to Answer
 
 - Which machine will be used for WhisperX transcription (desktop vs. laptop setup)?
+  (Language is no longer a question — English is confirmed supported.)
 - Resolve the 3 `[VERIFICAR]` flags in the script before recording: exact "King of
   Cross-Sell" report coining, exact fake-email address format reported, current status
   of the $2.6B class action
