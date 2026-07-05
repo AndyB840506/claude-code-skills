@@ -120,3 +120,48 @@ primer plano de cara.
 Prompt de referencia validado: EP.10 (Kratos/Atreus, Omega griego de fondo) — ver bloque de
 arriba, es el prompt real usado. El primer prompt v3 aplicado a un episodio nuevo se prueba
 contra Gladiator EP.019 — ver `btq-production/launch-assets/EP019-gladiator-artwork-v3-test.md`.
+
+---
+
+## Quote Cards — mismo tratamiento cinematográfico que la portada (desde 2026-07-05, EP.020)
+
+**Cambio de dirección:** hasta EP.019 las quote cards usaban un estilo propio —
+"Graphic editorial poster design — NOT photorealistic 3D" (más plano, tipo póster/
+halftone). Desde EP.020 quedan retiradas: las quote cards usan el MISMO render
+cinematográfico/con volumen real que la portada (bloque congelado de ATMÓSFERA BTQ v3
+de arriba), no un estilo aparte. Razón: el usuario calificó el estilo póster plano de
+"boring/sketchy" al compararlo lado a lado con la portada — quiere una sola identidad
+visual consistente entre portada y quote cards, no dos.
+
+**Cómo aplicar a partir de EP.021:**
+- Composición: se mantiene el split 50/50 (mitad negro con texto, mitad escena) — eso
+  no cambió, solo el render de la escena.
+- Escena: cualquier objeto/entorno que ilustre la cita, renderizado con volumen y
+  textura de material real (vidrio, metal, tela, madera — lo que aplique), sombreado
+  oscuro + luz dorada de contorno ambiental, "like a dark statue lit from behind" —
+  igual que la figura de la portada, no una silueta plana ni textura de póster/
+  halftone/screen-print.
+- Encabezar cada prompt con: "Dark cinematic editorial image, rendered with real
+  volume and material texture — NOT a flat graphic poster, NOT a silhouette cutout."
+  y cerrar con "No circuit boards. No cartoon style. No flat poster texture. Cinematic."
+  (mismo patrón que el bloque congelado de portada).
+- Checklist de aprobación: agregar el ítem "render con volumen/textura real — NO plano
+  ni tipo póster" a la lista existente de cada card (texto letra por letra, mitad negro
+  reservada, etc.).
+- **NO agregar el anillo/círculo concéntrico dorado (diana) de fondo en las quote
+  cards** — ese motivo es específico de la portada (y de escenas donde la diana ES el
+  sujeto central, ej. Q2 de EP.020). Como elemento de fondo repetido en cada card es
+  innecesario/redundante; cada escena ya lleva su propio objeto como metáfora, no hace
+  falta reforzarlo con el anillo dorado detrás.
+- **Sí darle a cada card un elemento de fondo propio, desenfocado (profundidad de
+  campo), relevante al tema específico de esa cita** — sin el anillo, un objeto solo
+  flotando en negro puro puede sentirse repetitivo entre las 4 cards del mismo
+  episodio. El fondo debe ser distinto por card (no reciclar el mismo elemento en dos
+  cards), muy fuera de foco para no competir con el objeto principal ni el texto, y
+  coherente con el mundo del episodio (ej. EP.020: bullpen de contact center, pared de
+  medidores, display de turnos, fila de escritorios — cuatro variantes del mismo
+  universo, cuatro objetos distintos).
+
+Ver `btq-production/launch-assets/EP020-metricas-launch.md` §E como primera aplicación
+de esta dirección (las 4 quote cards reescritas 2026-07-05, anillo de fondo retirado en
+la misma sesión).

@@ -190,26 +190,43 @@ Ley de Goodhart.
 
 Las 4 se validaron contra el **audio real** (SRT diarizado), no contra el guion escrito —
 hubo variación natural al grabar. Texto en imagen comprimido, mayúsculas SIN tildes (ñ se
-conserva), la frase completa con tildes va en el caption. Dirección visual: misma paleta y
-motivo de diana v3 del cover (`EP020-metricas-artwork-v3.md`), adaptado a composición split
-para quote card — mitad negro con texto, mitad escena con el agente/dashboard/diana dorada.
-Si Flow genera la escena pero ignora el texto: NO regenerar — modo edición "On this same
-image, keep everything identical and add text…".
+conserva), la frase completa con tildes va en el caption.
+
+**Dirección visual (actualizada 2026-07-05):** las quote cards ahora usan el MISMO
+tratamiento cinematográfico/fotorrealista de la portada v3 (`EP020-metricas-artwork-v3.md`)
+— render con volumen y textura de material real, luz dorada de contorno, diana v3 de fondo
+— NO el estilo "graphic editorial poster / flat" usado en EP.017–EP.019. Composición split:
+mitad negro con texto, mitad escena cinematográfica con el objeto/escena renderizado con
+volumen real (nunca plano ni tipo póster). Ver regla nueva en `brand-constants.md` §Quote
+Cards. Si Flow genera la escena pero ignora el texto: NO regenerar — modo edición "On this
+same image, keep everything identical and add text…".
 
 ### Q1 — "Calentar el termómetro" (00:11:51)
 
 **Caption (verbatim del audio):** "La gente dentro del sistema deja de intentar estar sana y empieza sencillamente a calentar el termómetro." — Behind the Queue, EP.020
 
 ```
-Wide image, 16:9, 1920x1080px. Graphic editorial poster design — NOT photorealistic 3D.
+Wide image, 16:9, 1920x1080px. Dark cinematic editorial image, rendered with real
+volume and material texture — NOT a flat graphic poster, NOT a silhouette cutout.
 
 COMPOSITION: split for a wide frame —
   RIGHT HALF (exactly right 50% of frame): a single analog medical thermometer,
-  glowing warm gold (#C9A84C) as if being heated from below by an unseen flame,
-  floating against void black #0A0A0A. Thin concentric gold target/bullseye rings
-  radiate behind it, echoing the episode cover. Analog film grain, halation, muted
-  retro color grading, screen-print poster texture.
+  photorealistic glass and brushed-metal casing, mercury column visibly risen,
+  real specular highlights on the glass — glowing warm gold (#C9A84C) as if being
+  heated from below by an unseen flame, in sharp focus against void black #0A0A0A.
+  Deep in the background, heavily out of focus (shallow depth of field): the faint
+  silhouette of a contact-center bullpen — rows of desks and monitor glow dissolving
+  into the dark, barely legible, just enough to place the thermometer "inside the
+  system." Dark, moody shading with warm golden rim light and ambient glow, like a
+  dark statue lit from behind.
   LEFT HALF (exactly left 50% of frame): void black #0A0A0A, reserved for the text.
+
+No circuit boards. No cartoon style. No flat poster texture. Cinematic.
+
+DO NOT render any concentric ring, circle, or archery-target pattern anywhere in
+this image — that motif is reserved exclusively for a different card in this set.
+The background element here is a blurred contact-center bullpen (desks, monitor
+glow), never a ring or halo shape.
 
 TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
   LEFT HALF, vertically centered, left-aligned, bold condensed sans-serif, uppercase:
@@ -223,22 +240,29 @@ FOOTER: full-width strip at the very bottom, on the void black background.
   Center: "EP.020" in bold signal gold #C9A84C
   Right: small silver platform icons — Spotify and YouTube
 ```
-**Checklist:** (1) un solo termómetro, sin figuras humanas; (2) texto letra por letra sin tildes (4 líneas); (3) mitad izquierda negro casi puro; (4) diana visible pero sutil, no compite con el termómetro.
+**Checklist:** (1) un solo termómetro, sin figuras humanas; (2) render con volumen/textura real (vidrio, mercurio, metal) — NO plano ni tipo póster; (3) texto letra por letra sin tildes (4 líneas); (4) mitad izquierda negro casi puro; (5) fondo (bullpen desenfocado) apenas legible, no compite con el termómetro ni repite el motivo de otra card.
 
 ### Q2 — La frase de Strathern (00:10:35)
 
 **Caption (verbatim del audio):** "Cuando una medida se convierte en objetivo, deja de ser una buena medida." — Marilyn Strathern (1997), citada en Behind the Queue, EP.020
 
 ```
-Wide image, 16:9, 1920x1080px. Graphic editorial poster design — NOT photorealistic 3D.
+Wide image, 16:9, 1920x1080px. Dark cinematic editorial image, rendered with real
+volume and material texture — NOT a flat graphic poster, NOT a silhouette cutout.
 
 COMPOSITION: split for a wide frame —
-  RIGHT HALF (exactly right 50% of frame): an archery/dart target (concentric gold
-  #C9A84C rings on void black) with a single arrow that has bent the bullseye ring
-  itself out of shape on impact — the ring closest to the arrow is visibly warped,
-  not a clean circle anymore. Subtle haze, analog film grain, halation, muted retro
-  color grading, screen-print poster texture.
+  RIGHT HALF (exactly right 50% of frame): a real archery/dart target, concentric
+  gold #C9A84C rings with brushed-metal/engraved material depth, in sharp focus
+  against void black. A single arrow embedded in it has physically bent and warped
+  the bullseye ring on impact — real metal deformation, dust caught in the golden
+  rim light, visibly not a clean circle anymore. Deep in the background, heavily out
+  of focus: a faint wall of small vintage analog gauges and dials, warm gold needles
+  barely legible in the dark — a different measurement motif from Q1, reinforcing
+  "measurement" without repeating the thermometer or a desk. Dark, moody shading with
+  warm golden rim light and ambient glow, like a dark statue lit from behind.
   LEFT HALF (exactly left 50% of frame): void black #0A0A0A, reserved for the text.
+
+No circuit boards. No cartoon style. No flat poster texture. Cinematic.
 
 TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
   LEFT HALF, vertically centered, left-aligned, bold condensed sans-serif, uppercase:
@@ -253,23 +277,34 @@ FOOTER: full-width strip at the very bottom, on the void black background.
   Center: "EP.020" in bold signal gold #C9A84C
   Right: small silver platform icons — Spotify and YouTube
 ```
-**Checklist:** (1) diana con un anillo visiblemente deformado por el impacto — la metáfora central; (2) texto letra por letra sin tildes (5 líneas); (3) mitad izquierda negro casi puro; (4) atribución correcta a Strathern (no propagar el lapsus del audio).
+**Checklist:** (1) diana con un anillo visiblemente deformado por el impacto — la metáfora central; (2) render con volumen/textura real (metal, deformación física) — NO plano ni tipo póster; (3) texto letra por letra sin tildes (5 líneas); (4) mitad izquierda negro casi puro; (5) atribución correcta a Strathern (no propagar el lapsus del audio); (6) fondo (pared de medidores) apenas legible, no compite con la diana ni repite el motivo de otra card.
 
 ### Q3 — "¿Cuál es su 8 es grandioso?" (00:17:07)
 
 **Caption (verbatim del audio):** "¿Cuál es su 8 es grandioso? ¿Qué número persigue tan fuerte, con tanto premio, tanto castigo detrás, que si lo mira con honestidad sospecha que su gente ya le está haciendo trampa?" — Behind the Queue, EP.020
 
 ```
-Wide image, 16:9, 1920x1080px. Graphic editorial poster design — NOT photorealistic 3D.
+Wide image, 16:9, 1920x1080px. Dark cinematic editorial image, rendered with real
+volume and material texture — NOT a flat graphic poster, NOT a silhouette cutout.
 
 COMPOSITION: split for a wide frame —
   RIGHT HALF (exactly right 50% of frame): a bank teller's counter window, seen from
-  the customer side, empty — no people. A small engraved plaque on the counter reads
-  "8" in gold relief. Warm golden rim light (#C9A84C) outlines the counter edge.
-  Concentric gold target rings faintly visible in the dark background behind the
-  window. Analog film grain, halation, muted retro color grading, screen-print
-  poster texture.
+  the customer side, empty — no people. Photorealistic materials: brushed wood/marble
+  counter, glass partition with real reflections. A small engraved plaque on the
+  counter reads "8" in gold relief, real metal sheen. Warm golden rim light (#C9A84C)
+  outlines the counter edge. Through the glass partition, deep in the background and
+  heavily out of focus: a softly glowing queue-number display board, other digits
+  dim except a bright "8" — echoing the plaque without duplicating it outright. Dark,
+  moody shading with warm golden ambient glow, like a dark statue lit from behind.
+  Cinematic depth of field.
+
+DO NOT render any concentric ring, circle, or archery-target pattern anywhere in
+this image — that motif is reserved exclusively for a different card in this set.
+The background element here is a queue-number display board (rectangular, digits),
+never a ring or halo shape.
   LEFT HALF (exactly left 50% of frame): void black #0A0A0A, reserved for the text.
+
+No circuit boards. No cartoon style. No flat poster texture. Cinematic.
 
 TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
   LEFT HALF, vertically centered, left-aligned, bold condensed sans-serif, uppercase:
@@ -285,22 +320,34 @@ FOOTER: full-width strip at the very bottom, on the void black background.
   Center: "EP.020" in bold signal gold #C9A84C
   Right: small silver platform icons — Spotify and YouTube
 ```
-**Checklist:** (1) ventanilla vacía, cero personas, placa "8" legible; (2) texto letra por letra sin tildes (6 líneas — la más larga de las 4, revisar legibilidad); (3) mitad izquierda negro casi puro.
+**Checklist:** (1) ventanilla vacía, cero personas, placa "8" legible; (2) render con volumen/textura real (madera, mármol, vidrio, metal) — NO plano ni tipo póster; (3) texto letra por letra sin tildes (6 líneas — la más larga de las 4, revisar legibilidad); (4) mitad izquierda negro casi puro; (5) display de turnos al fondo desenfocado, no compite con la placa "8" ni repite el motivo de otra card.
 
 ### Q4 — "El número no es la meta" (TM / 00:42:38)
 
 **Caption (verbatim del audio):** "Yo soy Andy. Y recuerden: el número no es la meta. El número es apenas el termómetro. Y el día que se les olvide la diferencia, van a terminar curando la fiebre a punta de romper el mismo termómetro." — Behind the Queue, EP.020
 
 ```
-Wide image, 16:9, 1920x1080px. Graphic editorial poster design — NOT photorealistic 3D.
+Wide image, 16:9, 1920x1080px. Dark cinematic editorial image, rendered with real
+volume and material texture (fabric, headset, desk) — NOT a flat graphic poster,
+NOT a silhouette cutout — same rendering style as the episode cover art.
 
 COMPOSITION: split for a wide frame —
   RIGHT HALF (exactly right 50% of frame): the same contact-center desk scene as the
   episode cover, but now empty — chair pushed back, headset resting on the desk,
-  monitor dark. Concentric gold target/bullseye rings glow faintly behind the empty
-  desk. Warm golden rim light (#C9A84C) on the desk edge and headset. Analog film
-  grain, halation, muted retro color grading, screen-print poster texture.
+  monitor dark. Real material shading on chair fabric, headset and desk surface.
+  Deep in the background, heavily out of focus: a receding row of identical desks on
+  the same floor, monitors dim or dark, no people anywhere in frame — the emptiness
+  extends past this one desk into the whole floor, not just a single spot. Warm
+  golden rim light (#C9A84C) on the desk edge and headset. Dark, moody shading with
+  ambient glow, like a dark statue lit from behind.
   LEFT HALF (exactly left 50% of frame): void black #0A0A0A, reserved for the text.
+
+No circuit boards. No cartoon style. No flat poster texture. Cinematic.
+
+DO NOT render any concentric ring, circle, or archery-target pattern anywhere in
+this image — that motif is reserved exclusively for a different card in this set.
+The background element here is a receding row of empty desks, never a ring or halo
+shape.
 
 TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
   LEFT HALF, vertically centered, left-aligned, bold condensed sans-serif, uppercase:
@@ -310,12 +357,17 @@ TYPOGRAPHY (render text EXACTLY as written, letter by letter, no changes):
     Line 4: "TRATANDO DE CURAR LA FIEBRE." — signal gold #C9A84C, bigger
     Line 5: "BEHIND THE QUEUE · EP.020" — silver, small, letter-spaced
 
+CRITICAL SPELLING NOTE: "NUMERO" and "TERMOMETRO" above are spelled WITHOUT any
+accent mark — this is deliberate brand styling (no diacritics inside card
+typography), NOT a typo to auto-correct. Do not render "NÚMERO" or "TERMÓMETRO"
+with an accent over the U/O. Render exactly the letters given, no diacritics.
+
 FOOTER: full-width strip at the very bottom, on the void black background.
   Left: "Behind the Queue" in small white sans-serif
   Center: "EP.020" in bold signal gold #C9A84C
   Right: small silver platform icons — Spotify and YouTube
 ```
-**Checklist:** (1) escritorio vacío, cero personas, headset y monitor apagado visibles; (2) texto letra por letra sin tildes (5 líneas); (3) mitad izquierda negro casi puro.
+**Checklist:** (1) escritorio vacío, cero personas (incluido el fondo — filas de escritorios igual de vacías, sin figuras), headset y monitor apagado visibles; (2) render con volumen/textura real (tela, headset, escritorio) — NO plano ni tipo póster; (3) texto letra por letra sin tildes (5 líneas); (4) mitad izquierda negro casi puro; (5) fondo (fila de escritorios) desenfocado, no compite con el escritorio principal ni repite el motivo de otra card.
 
 ### Derivar cualquier quote card a 1:1 o 9:16
 Sobre la imagen aprobada, en Flow:

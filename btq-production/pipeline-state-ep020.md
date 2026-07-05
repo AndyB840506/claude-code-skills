@@ -1,6 +1,6 @@
 EPISODE: EP.020 (BTQ)
 stage_a: complete — guion aprobado 2026-07-04, artwork v3 generado y aprobado 2026-07-04 (1:1, 16:9, 9:16 en E:\Podcast\BTQ\EP 20\BTQ Artwork EP 20)
 stage_b: complete — re-transcripción completa (audio corregido, duración real ~44min38s), assets generados y aprobados por Andy 2026-07-04, commit+push OK (b8e065d). Cover-art ya resuelto en Stage A, no queda pendiente para Stage 3.
-stage_c: pending
-spotify_url: pending — Andy va a publicar y avisar la URL
+stage_c: complete — cover-art (Stage 3) OK, quote cards 4/4 con escena aprobada (Q4 pendiente overlay manual de texto "NUMERO" sin tilde, fuera de Flow, no bloqueante), grid de website rotado (019 entra, 015 sale, hero→020), deploy a producción OK (vercel --prod, https://behind-thequeue.com HTTP 200), Spotify confirmado (EP.20 visible en la página pública del show). Pipeline completo 2026-07-05.
+spotify_url: https://open.spotify.com/episode/6gRVIWVI3jBUAJarLJ7AsQ?si=50f8830a8029439f — publicado 2026-07-05
 notes: guion aprobado en btq-production/launch-assets/EP020-metricas-guion.html (~37 min medidos, ~4.600 palabras — más corto que el promedio pop-culture por decisión consciente, tema sin referente tiene menos material narrativo). Artwork v3 (prompts en btq-production/launch-assets/EP020-metricas-artwork-v3.md): primer episodio sin referente pop en la dirección v3 — resuelto usando el motivo de diana de tiro al blanco (conexión literal con la Ley de Goodhart) como el patrón geométrico circular que exige la marca. Las 3 imágenes pasaron el checklist completo. Teaser de EP.021 queda genérico — tema del próximo episodio sin definir todavía.
