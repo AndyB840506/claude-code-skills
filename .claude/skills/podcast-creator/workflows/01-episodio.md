@@ -117,6 +117,14 @@ Lee `podcast-profile.json`. Extrae y ten disponible:
 - Duración promedio (`duracion_min`)
 - Estilo de narración y word count target (`estilo_narración`, `word_count_target`)
 
+**Si existe un archivo `guion-style-[show].md` en la carpeta de producción del show**
+(ej. `btq-production/guion-style-btq.md`, `corporate-crime-confidential-production/guion-style-ccc.md`),
+consúltalo antes de escribir — ahí vive el wpm real medido del show (no adivinado) y
+cualquier regla de atribución/formato específica de ese show (ej. la distinción cita-real
+vs narración-dramatizada de CCC). Si no existe todavía y este es el episodio piloto, no
+hay wpm medido aún — usar el estimado del perfil y crear el archivo de calibración
+después de la primera grabación real (ver Paso 4).
+
 Calcula el word count target para este episodio basado en la duración que el usuario confirme en Paso 1.
 
 ---
@@ -499,6 +507,21 @@ Antes de entregar, verifica internamente cada punto:
 - [ ] No hay segmentos que superen el doble de la duración estimada de otro
 - [ ] [Si interview] Las preguntas escalan de fácil a profundo
 - [ ] [Si co-host] Los hosts tienen tiempos de habla equilibrados (±20%)
+- [ ] **Word count real verificado programáticamente** (NO estimado a ojo): contar las
+      palabras habladas del script terminado — excluyendo `[marcadores]`, headers y la
+      sección de fuentes — y confirmar que cae dentro de ±15% del target calculado en
+      Paso 2. Lección de Corporate Crime Confidential EP.001 (2026-07-04): un script
+      declaró ~6.700 palabras en su propio footer sin verificarlo nunca; el conteo real
+      era ~3.000, la mitad del target de 45 min — el guion quedó "completo" con la mitad
+      del contenido necesario y esto solo se detectó después de grabar. No confiar en un
+      conteo autoreportado — contar de verdad antes de guardar como completo.
+- [ ] **Si este fue el episodio piloto (primer wpm real medido del show):** crear
+      `guion-style-[show].md` en la carpeta de producción del show con el wpm medido
+      (`palabras_habladas_del_SRT / minutos_de_audio`) y la tabla de dimensionamiento,
+      siguiendo el patrón de `btq-production/guion-style-btq.md` o
+      `corporate-crime-confidential-production/guion-style-ccc.md`. Si el show ya tiene
+      ese archivo, actualízalo solo si el wpm medido de este episodio difiere
+      significativamente del ya registrado.
 
 ---
 
