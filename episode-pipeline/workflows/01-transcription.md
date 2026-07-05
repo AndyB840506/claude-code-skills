@@ -34,6 +34,22 @@ sin hacer preguntas al usuario. Los parámetros están fijos: large-v2, español
    - Resultado: OK
    ```
 
+## Si el audio cambia después de transcribir
+
+Puede pasar que Andy reexporte el audio ya transcrito (ej. arregló un bug de timing en la
+música de intro/outro que corrió todos los números) — confirmado en BTQ EP.020. Señales:
+mismo `audio_path` pero tamaño de archivo distinto, o el usuario dice explícitamente que
+hubo que re-grabar/re-exportar algo.
+
+1. Sobrescribe el audio en `E:\Transcriptor\audios\` con `Copy-Item -Force` y respalda el
+   SRT viejo (`[nombre] (pre-fix backup).srt`) antes de que WhisperX lo sobrescriba.
+2. Repite la ejecución completa del Paso 3 sobre el archivo nuevo.
+3. Si ya se habían generado capítulos de YouTube o quote cards con timestamps del SRT
+   viejo (Stage 2), **no los descartes ni los regeneres desde cero** — solo recalcula los
+   timestamps contra el SRT nuevo. El contenido/copy no cambia, solo dónde ancla cada cita.
+4. Anota el re-run en la bitácora como sub-paso (ej. "Stage 1b — Re-transcripción") en vez
+   de sobreescribir la entrada original de Stage 1.
+
 ## Si algo falla
 
 Si `transcriptor` no está instalado o whisperx no está disponible, NO intentes

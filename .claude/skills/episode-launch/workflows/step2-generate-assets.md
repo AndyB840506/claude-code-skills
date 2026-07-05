@@ -121,6 +121,11 @@ documented here — it was captured directly from a YouTube Studio screenshot, n
   keywords, comma-separated — see Tags vs. hashtags below
 - **Thumbnail text:** 3–5 words max · high contrast · brand voice (Bebas Neue / uppercase style)
 
+**If the audio gets re-transcribed after chapters/quote cards were already generated**
+(e.g. Andy re-exported to fix an intro/outro timing bug — confirmed BTQ EP.020): don't
+regenerate the assets from scratch. Recalculate only the timestamps against the new SRT —
+the copy/text of every block stays the same, only where each quote/chapter anchors moves.
+
 **Chapter timestamps:**
 Before saying timestamps aren't available, check the diarized transcript at
 `E:\Transcriptor\transcripciones\[Show] Ep.[N].srt` — note the show uses **no zero-padding**
