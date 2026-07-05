@@ -1,9 +1,20 @@
 # Workflow 04 — Rotación del grid "Episodios recientes"
 
-**Misma regla para ambos shows** (confirmada con el usuario): el grid de 4 cards
-muestra los 4 episodios ANTERIORES al que está en circulación — el nuevo NO se agrega
-al grid porque su propio embed/link ya lo cubre. Al lanzar: rota — entra el anterior al
-nuevo, sale el más antiguo. Orden oldest -> newest, izquierda a derecha / arriba a abajo.
+**Misma regla de ROTACIÓN para ambos shows** (confirmada con el usuario): el grid de 4
+cards muestra los 4 episodios ANTERIORES al que está en circulación — el nuevo NO se
+agrega al grid porque su propio embed/link ya lo cubre. Al lanzar: rota — entra el
+anterior al nuevo, sale el más antiguo.
+
+**El ORDEN VISUAL sí difiere por show — verificar el archivo real, no asumir:**
+- **MPD** (`mrputridsden-production/website/index.html`): ascendente, oldest → newest,
+  arriba a abajo (verificado en vivo: 001, 002, 003, 004 — comentario `GRID RULE` en el
+  propio HTML lo confirma).
+- **BTQ** (`btq-production/website/index.html`): descendente, el más reciente de los 4
+  primero, arriba a abajo (verificado en vivo 2026-07-05 al lanzar EP.020: grid pasó de
+  `018,017,016,015` a `019,018,017,016` — 019 arriba, no abajo).
+
+Antes de editar el markup, confirma el orden real leyendo las 4 cards actuales del show
+correspondiente (Paso 1) — no reutilices el orden del otro show ni un ejemplo genérico.
 
 La lógica de rotación es idéntica en ambos sitios. Lo único que cambia es el markup —
 **cada show usa su propio sistema visual, nunca el del otro** (ver memoria
@@ -60,11 +71,16 @@ Dado que el episodio que se está lanzando es EP.0XX (el `ep_number` del episode
 3. El más antiguo de las 4 cards actuales **sale**.
 4. Las otras 3 cards se mantienen, recorriéndose una posición hacia "más antiguo".
 
-**Ejemplo concreto** (mismo patrón documentado para BTQ en
-[btq-project/SKILL.md:254-257](C:\Users\andre\.claude\skills\btq-project\SKILL.md#L254-L257)):
-si el grid actual muestra `012, 013, 014, 015` y se lanza `EP.017` (lo que significa que
-`EP.016` era el que estaba en circulación), el grid rotado queda `013, 014, 015, 016`
-— `012` sale, `016` entra, `017` NO aparece (su embed ya lo cubre).
+**La lógica de qué entra/sale es igual en ambos shows — el ejemplo de abajo usa el orden
+visual real de cada uno, no lo intercambies:**
+
+- **MPD (ascendente):** si el grid actual muestra `001, 002, 003, 004` y se lanza el
+  episodio cuyo anterior-en-circulación era `005`, el grid rotado queda
+  `002, 003, 004, 005` — `001` sale, `005` entra al final (posición más reciente).
+- **BTQ (descendente, verificado en vivo 2026-07-05, lanzamiento EP.020):** el grid
+  mostraba `018, 017, 016, 015` y se lanzó `EP.020` (lo que significa que `EP.019` era
+  el que estaba en circulación) → el grid rotado quedó `019, 018, 017, 016` — `015`
+  sale, `019` entra AL PRINCIPIO (posición más reciente, no al final).
 
 Si tienes dudas sobre cuál era "el episodio en circulación" antes de este lanzamiento
 (por ejemplo, hay un salto de números o el grid está desactualizado), **pregunta al

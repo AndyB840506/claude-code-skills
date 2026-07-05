@@ -165,3 +165,22 @@ visual consistente entre portada y quote cards, no dos.
 Ver `btq-production/launch-assets/EP020-metricas-launch.md` §E como primera aplicación
 de esta dirección (las 4 quote cards reescritas 2026-07-05, anillo de fondo retirado en
 la misma sesión).
+
+**Patrones de fallo conocidos de Flow (aplicar preventivamente, no esperar a que falle):**
+- **Reinserta el anillo genérico solo:** aunque el prompt pida otro fondo (bullpen,
+  medidores, display de turnos, fila de escritorios), Flow tiende a devolver el anillo
+  dorado de la portada igual — pasó en Q1, Q3 y Q4 de EP.020 en su primer intento. Por
+  eso, todo prompt de quote card (salvo la card donde el anillo/diana ES el sujeto)
+  debe incluir DESDE EL PRIMER intento la línea explícita: "DO NOT render any
+  concentric ring, circle, or archery-target pattern anywhere in this image — that
+  motif is reserved exclusively for [la card que sí lo usa]." No esperar a la primera
+  falla para agregarla.
+- **Autocorrige palabras deliberadamente sin tilde:** si el texto de una card pide una
+  palabra sin acento por regla de marca (ej. "NUMERO", "TERMOMETRO") pero es la
+  ortografía estándar del español con tilde, Flow puede seguir renderizándola acentuada
+  pese a instrucciones explícitas — en EP.020 sobrevivió al prompt original + 2 rondas
+  de edición dirigida sobre la misma palabra. **Regla de corte:** si after 2 intentos de
+  edición dirigida ("keep everything identical, only fix word X") la palabra sigue mal,
+  DEJAR de reintentar en Flow — la escena ya validada se aprueba, y esa palabra puntual
+  se corrige por fuera (overlay/recorte en un editor simple como Canva) en vez de seguir
+  quemando generaciones en el mismo punto.

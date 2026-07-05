@@ -113,9 +113,11 @@ página:
 
 ## Al terminar
 
-0. Actualiza `pipeline-state-ep[NNN].md` → `stage_c: complete` y
-   `roadmap-[show].md` → estado de la fila de este episodio a `publicado`. Esto cierra
-   el ciclo completo del episodio en el sistema de checkpoints.
+0. Actualiza `pipeline-state-ep[NNN].md` → `stage_c: complete`. Esto cierra el ciclo
+   completo del episodio en el sistema de checkpoints. (Si en el futuro existe un
+   `roadmap-[show].md` para ese show, actualiza también su fila a `publicado` — verificado
+   2026-07-05 que ese archivo NO existe todavía para ningún show; `pipeline-state-ep[NNN].md`
+   es hoy la única fuente de verdad.)
 1. Si todo pasó, confirma:
    > **EP.0XX publicado y verificado — [show].**
    > URL: [url] → HTTP 200 confirmado.
