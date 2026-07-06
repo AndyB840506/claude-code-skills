@@ -6,6 +6,8 @@ Este proyecto crea skills personalizadas para Claude Code. Una skill es un archi
 
 Windows con PowerShell 5.1. Usar PowerShell (no Bash/xcopy) para operaciones de archivos. Evitar backtick-quotes, caracteres Unicode y expresiones if inline en scripts — PS 5.1 no los maneja correctamente.
 
+**Excepción (escrituras byte-exactas):** para contenido que otras herramientas parsean (frontmatter de skills, JSON, restaurar archivos desde git), usar Bash con redirección (`git show X > file`) — `Set-Content -Encoding UTF8` en PS 5.1 escribe BOM y corrompe el archivo (mordió el 2026-07-06: el harness cargó una skill restaurada con el frontmatter ilegible).
+
 Config y reglas operativas en `~/.claude/`; proyectos y archivos de producción en `C:\Users\andre\repos\`. No proponer junctions para `~/.claude/`. Output de producción (imágenes, audios, transcripciones, cachés) va a `E:\` en el desktop y `D:\` en el portátil — nunca a `C:\`.
 
 ## Comportamiento al iniciar
@@ -69,6 +71,8 @@ Esto:
 Para cualquier ID, API key o valor de env var (ej. Google Drive/Sheet IDs), pedir al usuario que los pegue directamente desde la URL del browser o la fuente original — no retipear. Verificar el string exacto antes de depurar.
 
 No declarar un bug como corregido hasta haberlo verificado (re-ejecutar/reproducir). Para JSON parse errors, revisar específicamente BOM y respuestas API vacías.
+
+Con `curl -L` no forzar `-X POST`: tras un redirect 302 curl reenvía el POST sin body (Google responde 411). Omitir `-X` y dejar que curl convierta a GET después del redirect (mordió 2 veces el 2026-07-06 probando el Apps Script de Kuma).
 
 ## Workflows
 
