@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EP.21 — Los Simpson: el precio real de mantener un equipo treinta años sin quemarlo | Behind the Queue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+        :root {
+            --bg: #0A0A0A;
+            --card: #141414;
+            --card2: #1b1b1b;
+            --gold: #C9A84C;
+            --gold-dim: #8a7331;
+            --offwhite: #F5F2EC;
+            --muted: #9a968c;
+            --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --sans: 'DM Sans', system-ui, -apple-system, Segoe UI, sans-serif;
+            --accent: 'Bebas Neue', 'Arial Narrow', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--sans);
+            background: #050505;
+            color: var(--offwhite);
+            line-height: 1.8;
+            font-size: 15.5px;
+        }
+
+        .container { max-width: 820px; margin: 0 auto; background: var(--bg); }
+
+        .header {
+            background: linear-gradient(160deg, #161208 0%, #0A0A0A 70%);
+            padding: 46px 48px 40px;
+            border-bottom: 3px solid var(--gold);
+        }
+        .header .podcast {
+            font-family: var(--accent);
+            font-size: 1.15em;
+            color: var(--gold);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .header .epnum {
+            font-family: var(--accent);
+            font-size: 2.6em;
+            color: var(--gold);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+        .header h1 {
+            font-family: var(--serif);
+            font-size: 2em;
+            font-weight: 900;
+            margin: 6px 0 10px;
+            color: var(--offwhite);
+            line-height: 1.18;
+        }
+        .header .tagline {
+            font-family: var(--serif);
+            font-style: italic;
+            color: var(--gold);
+            font-size: 1.05em;
+            margin-bottom: 22px;
+        }
+        .meta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .meta-item {
+            background: rgba(201,168,76,0.10);
+            border: 1px solid var(--gold-dim);
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            color: var(--gold);
+            letter-spacing: 0.5px;
+        }
+
+        .section { padding: 32px 48px; border-bottom: 1px solid #222; }
+        .section h2 {
+            font-family: var(--accent);
+            font-size: 1.15em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid var(--gold-dim);
+        }
+
+        .arquitectura { font-size: 0.9em; }
+        .arq-row {
+            display: grid;
+            grid-template-columns: 30px 1.1fr 95px 1.6fr;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid #1c1c1c;
+            align-items: start;
+        }
+        .arq-row.head { color: var(--gold); font-weight: 700; border-bottom: 1px solid var(--gold-dim); }
+        .arq-num { color: var(--gold); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--offwhite); }
+        .arq-time { color: var(--muted); font-family: monospace; font-size: 0.92em; }
+        .arq-row span:last-child { color: var(--muted); }
+
+        .segment { margin: 40px 0; padding-bottom: 26px; border-bottom: 1px solid #1a1a1a; }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+        .segment-number {
+            font-family: var(--accent);
+            background: var(--gold);
+            color: #0A0A0A;
+            min-width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1em; font-weight: bold;
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+        .segment-title {
+            font-family: var(--accent);
+            font-weight: 400;
+            font-size: 1.15em;
+            color: var(--offwhite);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.78em;
+            color: var(--muted);
+            background: #181818;
+            padding: 3px 11px;
+            border-radius: 10px;
+            white-space: nowrap;
+            font-family: monospace;
+        }
+        .sub { font-family: var(--serif); font-style: italic; font-size: 1.12em; color: var(--gold); margin: 26px 0 8px; }
+
+        p.line { margin: 0 0 4px; color: #e9e6dd; }
+
+        .pausa {
+            display: inline-block;
+            font-family: var(--accent);
+            letter-spacing: 2px;
+            font-size: 0.72em;
+            color: var(--gold-dim);
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 0 8px;
+            margin: 8px 0;
+            background: #111;
+        }
+        .pausa.larga { color: var(--gold); border-color: var(--gold-dim); }
+
+        .remate {
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(90deg, rgba(201,168,76,0.07), transparent);
+            padding: 14px 20px;
+            margin: 18px 0;
+            font-family: var(--serif);
+            font-size: 1.08em;
+            color: var(--offwhite);
+        }
+        .remate::before {
+            content: "REMATE";
+            display: block;
+            font-family: var(--accent);
+            font-size: 0.62em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        .nota {
+            background: #15130c;
+            border: 1px dashed var(--gold-dim);
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 14px 0;
+            font-size: 0.85em;
+            color: #cdbb88;
+        }
+        .nota::before { content: "NOTA · "; font-family: var(--accent); letter-spacing: 2px; color: var(--gold); }
+
+        .dato {
+            background: var(--card2);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 5px 5px 0;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .dato-label {
+            font-family: var(--accent);
+            font-size: 0.78em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        em { color: var(--gold); font-style: italic; }
+        strong { color: var(--offwhite); }
+
+        .fuentes p { font-size: 0.83em; color: var(--muted); line-height: 1.7; }
+
+        .checklist-box {
+            background: var(--card);
+            border: 1px solid #262011;
+            border-radius: 6px;
+            padding: 6px 18px;
+        }
+        .checklist-box .row { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #1a1a1a; align-items: baseline; }
+        .checklist-box .row:last-child { border-bottom: none; }
+        .ck { color: #4a7a4a; font-weight: 700; }
+        .warn { color: var(--gold); font-weight: 700; }
+
+        footer { padding: 26px 48px; color: var(--muted); font-size: 0.8em; text-align: center; }
+        footer .gold { color: var(--gold); font-family: var(--accent); letter-spacing: 3px; }
+
+        @media print {
+            body { background: #fff; color: #111; }
+            .container { background: #fff; }
+            .nota { display: none; }
+            .header { background: #111; }
+            .remate { color: #111; }
+            p.line, .segment-title, strong { color: #111; }
+        }
+        @media (max-width: 640px) {
+            .section, .header, footer { padding-left: 22px; padding-right: 22px; }
+            .arq-row { grid-template-columns: 24px 1fr; }
+            .arq-row .arq-time, .arq-row span:last-child { grid-column: 2; }
+        }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Behind the Queue</div>
+        <div class="epnum">EP.21</div>
+        <h1>Los Simpson: el precio real de mantener un equipo treinta años sin quemarlo</h1>
+        <div class="tagline">"Zombie Simpsons" no es un chiste de fans — es la advertencia real de lo que pasa cuando un equipo sigue prendido, pero nadie decide mantenerlo vivo.</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 021</span>
+            <span class="meta-item">Solo host · Andy</span>
+            <span class="meta-item">Pop-culture · nostalgia 90s</span>
+            <span class="meta-item">~42 min (medido · 150 wpm / +35.5% expansión, verificado contra SRT real de EP.020)</span>
+            <span class="meta-item">Retención de talento · Burnout · Liderazgo BPO</span>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Hook</span><span class="arq-time">0:12–4:54</span><span>Estudio de grabación, 1998 — Fox audicionando reemplazos para el elenco original</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">El Puente</span><span class="arq-time">4:54–7:55</span><span>De los números (EP.020) a la gente detrás del número — retención real</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Cuerpo 1 · La disputa de 1998</span><span class="arq-time">7:55–15:08</span><span>$30.000 → amenaza de recasting → Groening respalda al elenco → $125.000/episodio</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Cuerpo 2 · Al Jean, 25 años</span><span class="arq-time">15:08–19:36</span><span>El showrunner que volvió en 2001 y no se soltó hasta 2024/25</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">Re-enganche · Zombie Simpsons</span><span class="arq-time">19:36–25:18</span><span>La ironía verificada: la estabilidad que salvó el show es la misma que critican (giro cae a ~60% del episodio)</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Referencias Cruzadas</span><span class="arq-time">25:18–31:53</span><span>SNL / Lorne Michaels (mecanismo opuesto) + Toyota (heijunka, jinji-ido)</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Aplicable Hoy</span><span class="arq-time">31:53–34:50</span><span>3 acciones concretas para esta semana</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">Recomendaciones de Andy</span><span class="arq-time">34:50–36:41</span><span>Libro (Springfield Confidential) · charla (Simon Sinek, TED) · película (Won't You Be My Neighbor?)</span></div>
+            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Cierre canónico + Teaser</span><span class="arq-time">36:41–40:21</span><span>Pregunta comentable · CTAs · firma + TM</span></div>
+        </div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="section">
+        <h2>Antes de grabar · checklist</h2>
+        <div class="checklist-box">
+            <div class="row"><span class="ck">✓</span><span><strong>Tiempos MEDIDOS contra el SRT real de EP.020, no a ojo:</strong> el SRT de EP.020 (E:\Transcriptor\transcripciones\BTQ EP 20.srt) dio 6.192 palabras habladas por el host en 41.28 min = <strong>150 wpm reales</strong> (recalibrado, ya no 143), sobre un guion escrito de 4.570 palabras = <strong>+35.5% de expansión en vivo</strong> (recalibrado, ya no +15%). Aplicando esa calibración, este guion (~4.600 palabras escritas) da <strong>~41.6 min reales estimados</strong>.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Estándar editorial de duración (fijado 2026-07-06, BTQ y CCC):</strong> episodio debe caer entre 40 y 45 min de contenido hablado, sin intro/outro musical. Este guion (~41.6 min) cae dentro del rango.</span></div>
+            <div class="row"><span class="ck">✓</span><span>Referente pop-culture (no SEO pillar) — cadencia editorial respetada: EP.020 fue el pilar SEO del mes.</span></div>
+            <div class="row"><span class="ck">✓</span><span>Todos los datos verificados por web antes de escribir: disputa salarial 1998 (Hollywood Reporter), tenencia de Al Jean 2001-2024/25 (Wikipedia/ScreenRant/AWN), "Zombie Simpsons"/Dead Homer Society (sitio original), SNL/Lorne Michaels (Wikipedia/Britannica), Toyota heijunka/jinji-ido (TMI, Michel Baudin's Blog, Japan Intercultural Consulting). Ver Fuentes al final.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Fecha exacta de salida de Al Jean como showrunner:</strong> las fuentes ubican su salida en la temporada 37 (2024/25) tras compartir el puesto con Matt Selman desde la temporada 33 — decir "más de dos décadas, hasta hace muy poco" en vez de un año exacto si no se confirma antes de grabar.</span></div>
+            <div class="row"><span class="warn">⚠</span><span>Sin bloque "Mito o Realidad" al final — los datos de interés van distribuidos dentro del Cuerpo (regla vigente desde 2026-07-04).</span></div>
+            <div class="row"><span class="warn">⚠</span><span>Muletillas: máx 1 "imagínense", 0 "me vuela la cabeza". Revisar en la pasada de voz.</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- APERTURA -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Apertura</span><span class="segment-time">0:00</span></div>
+            <p class="line">Buenas y santas. Feliz día, feliz tarde o feliz noche. Cualquier día que éste sea.</p>
+            <p class="line">Esto es Behind the Queue, episodio veintiuno.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+        </div>
+
+        <!-- SEGMENTO 1 — HOOK -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">1</span><span class="segment-title">Hook</span><span class="segment-time">0:12 – 4:54</span></div>
+            <p class="line">Un estudio de grabación en Los Ángeles. 1998.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Del otro lado del vidrio, un actor de voz que ustedes no conocen se sienta frente al micrófono. Le pasan un guion. Le piden que lea unas líneas con la voz de un papá gordo, torpe, de piel amarilla, que dice "d'oh" cuando algo le sale mal.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No es una parodia. No es una broma de fan grabando en su casa. Es una audición real, pagada por el estudio, en un edificio real de la cadena, para reemplazar a Homero Simpson.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Al mismo tiempo, un par de pisos más arriba del mismo edificio, seis actores están sentados en una sala de juntas. Son los seis que le pusieron voz a esa familia amarilla desde el primer episodio, casi diez años atrás. Y no han firmado nada. No van a grabar una sola línea más hasta que alguien se siente a hablar de plata en serio.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No están pidiendo un capricho de estrella de cine. Llevan una década ganando treinta mil dólares por episodio —una cifra que, en 1989, cuando arrancó todo, sonaba perfectamente razonable para un programa nuevo del que nadie sabía si iba a durar una temporada.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El problema es que para 1998 ya no era un programa nuevo de destino incierto. Era la franquicia más rentable de toda la cadena: camisetas, muñecos, tazas, la serie repitiéndose en canales de todo el mundo, generando plata todos los días, mucho después de que cada episodio se grababa. Y de esa otra plata —la de licencias, la de mercancía, la de sindicación— el elenco no veía casi nada. Solo su cheque fijo de treinta mil.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Así que pidieron su parte. Y la cadena, en vez de sentarse a negociar de una, hizo algo mucho más frío: contrató a un director de casting. Y empezó, en serio, a buscar quién podía reemplazarlos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Piensen en eso un segundo. El programa más exitoso de la cadena. El que ya llevaba nueve años en el aire. El que prácticamente definía la marca de todo un canal de televisión.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Estuvo, literalmente, a una firma de distancia de perder a la gente que lo había hecho grande desde el primer día. No a un actor secundario. A las seis voces principales, al mismo tiempo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y no fue por un escándalo. No fue por un error grosero de nadie en particular.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Fue por lo más común y, al mismo tiempo, lo más evitable que existe en cualquier operación que dura más de un par de años: alguien, en algún momento, dejó de mirar si su gente clave todavía se sentía valorada.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y siguió sin mirarlo. Hasta que la conversación ya no era una charla tranquila de pasillo. Sino un director de casting, grabando audiciones de reemplazo.</p>
+            <div class="remate">Un programa no se cae por perder rating. Se cae, primero, por perder a la gente que nadie más sabe hacer lo que ellos hacen — y casi siempre eso pasa en silencio, mucho antes de que se note en ningún reporte.</div>
+        </div>
+
+        <!-- SEGMENTO 2 — EL PUENTE -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">2</span><span class="segment-title">El Puente</span><span class="segment-time">5:30 – 9:00</span></div>
+            <div class="nota">Enlaza con EP.020 (métricas/KPIs) — de los números a la gente detrás del número.</div>
+            <p class="line">La semana pasada hablamos de números. De cómo un KPI mal diseñado puede volver loca a toda una operación, sin que nadie lo haya hecho a propósito.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Hoy quiero hablarles de algo que ningún dashboard mide bien, por más completo que sea el reporte del viernes: cuánto le queda a su gente antes de apagarse. Y de una familia amarilla de Springfield que, sin querer, lleva treinta y seis años dándonos el manual completo de cómo se hace eso —y de cómo, un par de veces, casi se arruina en el intento.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Piensen en el supervisor que lleva quince años en su operación. No el que más grita en las reuniones, ni el que más veces sale mencionado en el reporte de desempeño. El que, calladito, conoce cada excepción del sistema, cada cliente difícil de memoria, cada historia detrás de cada proceso que en el papel se ve perfectamente simple pero que en la vida real tiene tres atajos que solo él sabe.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ese es el que, si renuncia un viernes cualquiera sin avisar con tiempo, se lleva con él algo que ningún manual de inducción, por bien escrito que esté, puede reemplazar en menos de un año.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ahora pregúntese, con la mano en el corazón, no con la respuesta que suena bien: ¿cuándo fue la última vez que le preguntó a esa persona si todavía se sentía valorada? No si estaba cumpliendo la meta del mes. Si se sentía valorada, en serio, como persona.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si le cuesta responder rápido, tranquilo —no es el único. Y ese es exactamente el punto de partida de esta historia: Los Simpson no es solo la historia de un programa que llegó a los treinta y seis años en el aire. Es la historia de lo cerca que estuvo, más de una vez, de no lograrlo —y de lo que tuvo que pasar, en cada ocasión, para que siguiera vivo en vez de solo prendido.</p>
+        </div>
+
+        <!-- SEGMENTO 3 — CUERPO 1 · LA DISPUTA DE 1998 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">Cuerpo 1 · La disputa de 1998</span><span class="segment-time">9:00 – 16:00</span></div>
+            <div class="nota">Caso ancla. Presente/escena, datos incrustados en el relato, no en bloque aparte.</div>
+            <p class="line">Volvamos al estudio de grabación. Para entender por qué seis actores llegaron al punto de plantarse, sin firmar nada, hay que entender primero qué estaban ganando hasta ese momento —y qué estaba ganando, mientras tanto, todo el resto de la operación a su alrededor.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · el sueldo original (verificado)</div>Hasta 1998, los seis actores principales —las voces de Homero, Marge, Bart, Lisa, y los actores detrás de decenas de personajes secundarios— ganaban <strong>treinta mil dólares</strong> por episodio. Sonaba a mucho dinero, hasta que alguien hacía la cuenta de cuánto generaba el programa completo en licencias, mercancía y repeticiones alrededor del mundo.</div>
+            <p class="line">Y no estaban pidiendo un aumento cualquiera, del tipo que se negocia en un correo y ya. Estaban pidiendo una tajada de esa otra plata: la de las camisetas, los muñecos, las tazas con la cara de Homero, la sindicación que la cadena vendía a otros países, año tras año, muchísimo después de que cada episodio ya estaba grabado y pagado.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Es la misma plata, dicho sea de paso, que en su operación casi nunca se ve —los ahorros que su equipo le genera a la empresa por resolver bien en la primera llamada, por no perder al cliente, por evitarle a la compañía una demanda o una mala reseña pública. Plata real, generada por gente real, que casi nunca vuelve a esa misma gente en forma de reconocimiento.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">La cadena dijo que no. Y ahí fue cuando, en vez de sentarse a negociar de una, decidió jugar la carta más dura que existe en cualquier negociación: si ustedes no quieren grabar, buscamos a alguien más.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Contrataron un director de casting. Empezaron audiciones reales para encontrar nuevas voces. No como amenaza vacía, de esas que se dicen en una reunión tensa y después nadie ejecuta. Como plan B en serio, con actores de carne y hueso sentados frente al micrófono, grabando líneas de prueba, mientras las voces originales seguían, técnicamente, contratadas.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Imagínense estar del otro lado de esa mesa. Diez años construyendo, con su propia voz y nada más que su voz, un personaje que millones de personas reconocen en la calle, en un centro comercial, en la fila de un banco. Y enterarse de que, mientras usted negocia de buena fe, alguien más está sentado frente a un micrófono, grabando de prueba, para quitarle exactamente ese puesto.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No es solo plata lo que se siente amenazado en ese momento. Es la sensación, bastante concreta, de que diez años de trabajo pueden borrarse con una sola firma ajena, sin que a usted le toque siquiera estar en la sala donde se decide.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aquí es donde entra el dato que casi nadie recuerda de esta historia, porque no es el dato jugoso que se repite en internet: el que se paró frente a la cadena a defender al elenco no fue un abogado de Hollywood contratado para la ocasión. Fue el propio creador del programa.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · quién respaldó al elenco (verificado)</div>Matt Groening, el creador de Los Simpson, se puso del lado de los actores en plena disputa —el mismo hombre que, en teoría, más tenía que perder si el programa se quedaba sin sus voces originales y se caía toda la producción por el camino.</div>
+            <p class="line">Groening pudo quedarse callado. Pudo dejar que la cadena resolviera esto a su manera, mientras él seguía cobrando tranquilo como creador, sin meterse en un problema que no era técnicamente suyo. En cambio, respaldó públicamente a la gente que llevaba una década construyendo, con su voz y solo con su voz, el alma completa del programa.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y ese respaldo cambió el peso de la balanza por completo. Porque ya no era la cadena contra seis actores reemplazables. Era la cadena contra el creador del programa más rentable de su parrilla, defendiendo públicamente a la gente que él mismo consideraba insustituible.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Con el creador del lado del elenco, y las audiciones de reemplazo sonando cada vez más a mal negocio y peor titular de prensa, la cadena cedió.</p>
+            <div class="dato"><div class="dato-label">Dato · la resolución (verificado)</div>Los seis actores volvieron a firmar por aproximadamente <strong>ciento veinticinco mil dólares</strong> por episodio, sueldo que se mantuvo entre 1998 y 2004 —más de cuatro veces lo que ganaban antes de plantarse, y sin necesidad de que ni una sola audición de reemplazo llegara jamás al aire.</div>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ahora, la pregunta que de verdad importa para usted, sin ningún estudio de grabación de por medio: ¿cuánto tiempo llevaría su operación dándose cuenta de que su gente clave está a punto de irse, si nadie se los dice primero con todas sus letras?</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Porque la cadena casi pierde a los seis actores no por tacaña de nacimiento. Los casi pierde porque esperó a que la crisis fuera pública y las audiciones ya estuvieran grabándose, en vez de sentarse a hablar de plata dos años antes —cuando todavía era una conversación tranquila de oficina, y no un ultimátum con casting de por medio.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y hay una lección más, todavía más incómoda para cualquiera que lidere gente, escondida en esta historia. La cadena, durante años, había estado tratando a esas seis voces como si fueran intercambiables —un actor de doblaje es un actor de doblaje, pensaban, y si uno se va, se contrata a otro y el público ni se entera. Fue solo cuando estuvieron a punto de perderlos de verdad que entendieron lo que Groening ya sabía desde el principio: no eran intercambiables. Eran, sin que nadie lo hubiera puesto nunca en un organigrama, la parte más insustituible de toda la operación.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y esa confusión —tratar como reemplazable a la gente que en realidad sostiene todo por dentro— no es un error exclusivo de ejecutivos de televisión en los noventa. Es, probablemente, el error más común y más caro que se comete en cualquier piso de operaciones, todos los días, sin que nadie lo note hasta que ya es tarde.</p>
+        </div>
+
+        <!-- SEGMENTO 4 — CUERPO 2 · AL JEAN, 25 AÑOS -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">Cuerpo 2 · Al Jean, 25 años</span><span class="segment-time">16:00 – 22:00</span></div>
+            <div class="nota">Segundo caso ancla — pieza que prepara el giro del Segmento 5 (re-enganche).</div>
+            <p class="line">Salvar el elenco resolvió la mitad del problema. La otra mitad es más silenciosa, y tiene que ver con una pregunta que casi ningún supervisor se hace en voz alta: quién queda a cargo, de verdad, cuando algo tiene que durar décadas, y no solo un par de años buenos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Un programa de televisión, casi siempre, cambia de showrunner —la persona que decide, semana a semana, hacia dónde va todo, qué chiste se queda y cuál se corta, qué historia vale la pena contar— cada pocos años. Es lo normal, y hasta cierto punto es sano. La gente se cansa, se va a otros proyectos, el estudio quiere una mirada nueva antes de que la fórmula se sienta repetida.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Los Simpson tuvo varios showrunners distintos en su primera década larga: gente que llegaba, imprimía su estilo durante unas temporadas, y se iba a construir otra cosa. Así funciona la industria. Y entonces, en el año 2001, volvió alguien que ya había pasado por ahí antes —y esta vez no se movió.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato · Al Jean (verificado)</div>Al Jean había sido co-showrunner en la tercera temporada, a principios de los noventa, junto a Mike Reiss. Volvió al equipo de planta en 1998 —el mismo año exacto de la disputa salarial— y en el 2001, con la temporada trece, tomó el timón por su cuenta, sin socio. Y no lo soltó por más de dos décadas seguidas.</div>
+            <p class="line">Piensen en lo que eso significa, traducido a cualquier operación real que ustedes conozcan: la misma persona, tomando las decisiones finales, sesión tras sesión, durante más de veinte años ininterrumpidos. Ni el gerente más querido, más antiguo, más "de la casa" de su propio piso, probablemente lleva ahí ni la mitad de ese tiempo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y no es que Jean simplemente "aguantó" ahí veinte años por inercia, cobrando un cheque cómodo sin mover un dedo. Dirigir la sala de guionistas de un programa que sale cada semana, con el mismo nivel de exigencia, dos décadas seguidas, es de las cosas más difíciles de sostener que existen en cualquier industria creativa. Ese tipo de tenencia —tan larga, tan poco común— es exactamente el tipo de estabilidad que uno esperaría encontrar detrás de un programa que sigue vivo, de verdad, después de tres décadas.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y noten algo más, porque tiene su propia lección aparte: Jean no llegó de la nada. Había estado ahí antes, se había ido, había vuelto en el peor momento posible —el año exacto de la crisis salarial— y terminó siendo, con el tiempo, la persona que le dio al programa la columna vertebral que necesitaba para sobrevivir otras dos décadas.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">A veces el mejor líder para sostener algo a largo plazo no es la cara nueva y prometedora que trae ideas frescas de otro lado. Es alguien que ya conoce el lugar por dentro, que ya vivió una crisis ahí mismo, y que decide, con los ojos abiertos, quedarse a construir en vez de irse a probar suerte en otro lado.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Piénsenlo en su propia operación: cuando alguien de su equipo se va y después vuelve, meses o años después, casi siempre lo reciben con desconfianza, como si "haberse ido" fuera una traición que hay que pagar despacio. Pero esa misma persona, la que se fue y volvió, suele traer algo que nadie más en el equipo tiene: sabe exactamente qué se siente estar del otro lado, y sabe, mejor que nadie, cuáles de los problemas de siempre en realidad sí tienen arreglo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Esa es la parte bonita de la historia, la que se cuenta fácil en cualquier entrevista de aniversario. Ahora viene la parte incómoda —la que casi ningún fan del programa, ni casi ningún artículo celebratorio, cuenta completa.</p>
+        </div>
+
+        <!-- SEGMENTO 5 — RE-ENGANCHE · ZOMBIE SIMPSONS -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">Re-enganche · Zombie Simpsons</span><span class="segment-time">22:00 – 29:00</span></div>
+            <div class="nota">Giro más fuerte del episodio — colocado deliberadamente pasado el 60% (regla de re-enganche).</div>
+            <p class="line">Justo cuando Al Jean volvió a tomar el timón, en el 2001, un grupo de fans empezó a decir algo. De esos que se conocían cada capítulo casi de memoria. Y con los años, eso que decían se volvió casi un chiste interno de toda una comunidad.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Le pusieron nombre a lo que sentían que le estaba pasando al programa. Y el nombre que eligieron no fue suave.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Zombie Simpsons.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato · Zombie Simpsons (verificado)</div>El término nació en un blog de fans dedicado por completo a documentar la caída de calidad del programa desde, aproximadamente, la temporada doce en adelante. La explicación que dieron sus propios creadores fue simple y bastante cruel: un zombi está muerto por dentro, pero sigue caminando porque algo externo lo mantiene en pie —en este caso, según ellos, el contrato con la cadena. Decían que el programa, para ellos, era exactamente eso: seguía moviéndose, seguía estrenando episodios cada semana, pero ya no estaba, en el fondo, vivo.</div>
+            <p class="line">Deténganse un segundo en la fecha, porque es la parte que casi nadie conecta. Temporada doce. Año 2000, 2001.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Justo cuando Al Jean volvía a tomar el control, de forma estable, para quedarse ahí por dos décadas completas.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y aquí está lo que casi nadie ve, porque suena contradictorio hasta que uno lo piensa con calma, sin la primera reacción defensiva.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">La misma estabilidad que salvó al programa de perderse en demasiados cambios de mando seguidos, es —para una parte real de su audiencia más fiel— exactamente lo que lo dejó sonando repetido, predecible. Funcionando en piloto automático.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y no, esto no es solo la queja de un puñado de fanáticos exigentes con demasiado tiempo libre. Es una tensión real, documentada durante años, sobre qué le pasa a cualquier cosa que dura mucho tiempo bajo la misma mano: en algún punto, lo que la hizo estable puede volverse, sin que nadie lo decida a propósito, lo mismo que la vuelve predecible.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">No fue que Al Jean hiciera mal su trabajo —nadie sostiene una sala de guionistas veinte años haciéndolo mal. Es que la estabilidad, sola, sin algo más que la acompañe activamente, no alcanza. Un equipo puede tener la misma gente, el mismo líder, el mismo proceso, durante veinte años —con la calidad sostenida en el papel, con el calendario cumplido semana tras semana— y aun así, sin que nadie lo note a tiempo, dejar de estar vivo y solo seguir prendido.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y esto se ve exactamente igual en un piso de call center, solo que ahí no hay fans de internet documentándolo con nombre propio. Se ve en el supervisor que lleva ocho años dando el mismo discurso de bienvenida a cada agente nuevo, palabra por palabra, sin haberlo actualizado ni una vez desde que lo escribió. Se ve en el script de atención que en algún momento fue innovador, y que hoy nadie recuerda por qué dice lo que dice.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">Zombie Simpsons no significa que el programa se murió. Significa que se quedó prendido, funcionando, cumpliendo el calendario de estrenos —sin que nadie, en el momento justo, decidiera activamente revivirlo.</div>
+            <p class="line">Y esa es la trampa exacta en la que cae cualquier operación que dura suficiente tiempo sin quemarse del todo: confundir que el equipo sigue ahí, cumpliendo la meta, con que el equipo sigue vivo de verdad.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Su piso puede llevar la misma gente, el mismo supervisor, los mismos procesos, durante años —con los números en verde todo ese tiempo, con cada reporte del viernes viéndose exactamente igual de bien— y aun así estar exactamente ahí: prendido, no vivo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y la diferencia entre esas dos cosas casi nunca se nota en un reporte. Se nota en cómo habla su gente de su trabajo cuando cree que usted no está escuchando —en el pasillo, en el chat interno, en la fila del café. Ahí es donde se sabe si un equipo sigue vivo, o si simplemente nadie se ha atrevido todavía a apagarlo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y para ser justos con la historia completa: no todo el mundo está de acuerdo con el diagnóstico de "Zombie Simpsons". El programa sigue teniendo defensores fieles temporada tras temporada, y "calidad" en una comedia, al final, siempre va a ser en parte cuestión de gusto y de nostalgia por la época en que uno lo empezó a ver. Pero el debate en sí —tan largo, tan documentado, tan sostenido durante veinte años por gente que en serio ama el programa— ya es, por sí solo, la prueba de que algo cambió de verdad cuando la estabilidad dejó de venir acompañada de reinvención activa.</p>
+        </div>
+
+        <!-- SEGMENTO 6 — REFERENCIAS CRUZADAS -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">Referencias Cruzadas</span><span class="segment-time">29:00 – 36:30</span></div>
+            <div class="nota">Fuera del referente — dos mundos distintos, mismo patrón.</div>
+            <p class="line">Si esto fuera solo un problema de caricaturas amarillas, no valdría la pena un episodio entero. Así que salgamos de Springfield, y busquemos el mismo patrón en dos mundos que no tienen nada que ver ni entre sí, ni con un call center.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="sub">Nueva York, un estudio de televisión en vivo, 1975</div>
+            <p class="line">Otro programa, en otro canal, arrancaba casi al mismo tiempo que a Homero Simpson todavía ni se le ocurría a nadie. Un show de sketches en vivo. Sin red de seguridad, sin poder editar un error a mitad de transmisión. Saliendo al aire cada sábado, casi a la medianoche.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · Lorne Michaels y SNL (verificado)</div>Saturday Night Live salió al aire por primera vez el 11 de octubre de 1975, creado por Lorne Michaels. Cincuenta años después, en 2025, seguía en el aire —el programa semanal más longevo y con más nominaciones al Emmy en la historia de la televisión estadounidense. Michaels, solo, acumula 24 premios Emmy de 112 nominaciones: la persona más nominada en la historia de ese premio.</div>
+            <p class="line">Cincuenta años. Ahí ya le gana, y por mucho, a Los Simpson en tiempo en el aire. Y sin embargo, resolvió exactamente el mismo problema —cómo no volverse un zombi— de una manera casi opuesta a la de Springfield.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Porque mientras Los Simpson protegieron, casi a toda costa, a las mismas seis voces desde el primer episodio hasta hoy, Saturday Night Live hizo lo contrario, y lo hizo a propósito: renovar el elenco completo, cada pocos años, sin excepciones sentimentales. Nadie se queda ahí para siempre. Ni siquiera los más queridos por el público, ni siquiera los que se volvieron estrellas de cine gracias a ese escenario.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y Michaels no deja esa renovación al azar, ni contrata a la primera cara graciosa que le pasan. Lleva medio siglo yendo, personalmente, a ver comedia en vivo en teatros pequeños de improvisación —los mismos circuitos, una y otra vez— buscando con sus propios ojos a quién va a traer después. La renovación del elenco no es una crisis que le cae encima cada cierto tiempo. Es un trabajo activo, constante, que él mismo se echó al hombro desde el primer día.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Dos programas, dos maneras completamente distintas de no volverse zombis. Uno protegió a su gente clave hasta las últimas consecuencias, y dejó que el liderazgo, con el tiempo, encontrara su propia estabilidad. El otro hizo lo opuesto: mantuvo casi siempre la misma visión al mando, y renovó constantemente a la gente de abajo, a propósito, antes de que el cansancio o la comodidad se instalaran del todo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ninguna de las dos maneras es la única correcta, y ninguna es aplicable letra por letra a su operación. Lo que sí tienen en común las dos, y esto sí le sirve a cualquier supervisor que esté escuchando, es que ninguna fue automática. Alguien, en cada caso, decidió activamente cómo evitar que la rutina se comiera al equipo. Nadie lo dejó simplemente pasar.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="sub">Una planta de Toyota, en cualquier año de las últimas cuatro décadas</div>
+            <p class="line">Salgamos por completo de la televisión. Vamos a una fábrica, a un mundo donde nadie está pensando en audiencias ni en calificaciones de crítica.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Toyota tiene una palabra para esto, y la usa en serio, no como frase bonita pegada en la pared de la sala de descanso: heijunka. Nivelar la carga de trabajo. Y la frase que la resume, dicha por gente de la propia compañía, es casi cómica de tan directa y de tan poco corporativa.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · heijunka (verificado)</div>La describen así, textual: "trabajar como la tortuga, no como la liebre". Ergonomistas de la propia planta monitorean, de forma activa y constante, patrones de lesiones y agotamiento por cada puesto de trabajo —no esperan a que alguien se queje. Van a buscar el problema antes de que existan.</div>
+            <p class="line">Piensen en la diferencia con la mayoría de operaciones que conocemos: ahí, el desgaste se detecta cuando alguien ya renunció, o cuando ya se enfermó, o cuando ya explotó en una reunión. En Toyota, alguien tiene el trabajo específico de ir a buscar la señal de agotamiento antes de que se vuelva una crisis.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y tienen otra práctica, todavía más directa, que en Japón llaman jinji-ido: rotación anual de personal, incluso entre distintas áreas de la misma compañía. No es un castigo escondido, ni una forma elegante de decir "usted ya no nos sirve aquí". Es estructura, decidida desde arriba, a propósito.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato · jinji-ido (verificado)</div>La rotación expone a la gente a áreas distintas de la empresa, la vuelve más completa como profesional, mejora la comunicación entre departamentos que normalmente ni se hablan —y, esto es lo que casi nadie menciona cuando se habla de Toyota como ejemplo de eficiencia, reparte el desgaste, para que nadie quede pegado para siempre en el puesto más pesado, más repetitivo, más ingrato de toda la operación. Toyota, además, entrena directamente a sus gerentes para reconocer señales tempranas de agotamiento y angustia emocional en su gente —no lo deja a la intuición de cada jefe.</div>
+            <p class="line">Ahí está, exactamente, la pieza que le faltaba a Springfield —y que Toyota resolvió con estructura repetible, no con un golpe de suerte ni con un creador generoso apareciendo justo a tiempo. No basta con proteger a la gente clave en el momento en que la crisis ya explotó, como tuvo que hacer Groening en el 98, casi de emergencia. Hay que construir, todo el tiempo, silenciosamente, mecanismos que eviten que ese mismo desgaste se vuelva a acumular sin que nadie lo note.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Tres mundos completamente distintos —una caricatura, un show de comedia en vivo, una fábrica de carros— y los tres llegaron, cada uno por su cuenta, a la misma conclusión incómoda: nada se mantiene vivo por default. Ni el talento, ni la cultura, ni la buena voluntad inicial alcanzan solos. Alguien tiene que decidir, activamente y sin descanso, que ese algo siga vivo —y ese alguien, casi siempre, es quien está liderando.</p>
+        </div>
+
+        <!-- SEGMENTO 7 — APLICABLE HOY -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Aplicable Hoy</span><span class="segment-time">36:30 – 40:00</span></div>
+            <p class="line">Todavía les debo la pregunta de esta semana —esa se la dejo para el final, y quiero que la piensen con calma. Pero antes, tres cosas concretas, con nombre y apellido —nada de "reflexione sobre esto", cosas que se pueden hacer un martes cualquiera.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Uno: identifique a su Homero, a su Marge y a su Bart. La gente que, si se va un viernes sin avisar, se lleva con ella algo que ningún manual de inducción reemplaza en menos de un año. Y pregúnteles, esta misma semana, no si están cumpliendo la meta del mes —si todavía se sienten valorados, como personas, no como número en el reporte. Antes de que la única conversación posible sea una negociación con audiciones grabándose a sus espaldas.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Dos: mire un proceso que lleva tres años exactamente igual, sostenido con la frase de siempre: "porque así se ha hecho toda la vida". Pregúntese, con la misma honestidad incómoda de hace un momento: ¿ese proceso sigue vivo, resolviendo hoy el problema para el que se diseñó en su día? ¿O simplemente sigue prendido, cumpliendo el calendario, mientras nadie se detiene el tiempo suficiente para mirarlo de verdad?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si la respuesta la tuvo que pensar más de tres segundos, ya tiene ahí su primer candidato a revisar esta semana.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y tres: adopte, aunque sea en miniatura, el heijunka de Toyota. Elija a la persona de su equipo con el rol más pesado, más repetitivo, el que nadie más quiere hacer —y rótela, aunque sea por dos semanas, con alguien más del equipo. No es debilidad organizacional, ni una señal de que usted no sabe organizar turnos. Es, literalmente, la diferencia entre trabajar como la tortuga y quemar a alguien tratándolo como si fuera liebre.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ninguna de estas tres cosas cuesta presupuesto extra. Ninguna requiere aprobación de nadie más arriba de usted. Las tres dependen, únicamente, de que alguien decida hacerlas esta semana, y no "cuando haya más tiempo" —porque ese momento, en la mayoría de operaciones, nunca termina de llegar solo.</p>
+        </div>
+
+        <!-- SEGMENTO 8 — RECOMENDACIONES DE ANDY -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">8</span><span class="segment-title">Recomendaciones de Andy</span><span class="segment-time">40:00 – 43:00</span></div>
+            <p class="line">Como siempre, tres recomendaciones. Ninguna se parece a la anterior a propósito —un libro, una charla, una película, tres mundos distintos para la misma idea.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line"><strong>Libro:</strong> "Springfield Confidential", de Mike Reiss —uno de los guionistas y productores más antiguos del programa, contando desde adentro, con humor y sin filtro corporativo, treinta años de decisiones, crisis y momentos de pura sobrevivencia que la mayoría del público jamás vio en pantalla.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line"><strong>Charla:</strong> Simon Sinek, en TED, "Por qué los buenos líderes te hacen sentir seguro". Habla de la diferencia entre un equipo que rinde por miedo a corto plazo, y uno que rinde durante años porque de verdad confía en quien lo lidera. Misma línea de hoy, contada desde un escritorio bien distinto al de Springfield.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line"><strong>Película:</strong> el documental "Won't You Be My Neighbor?", sobre Fred Rogers, el presentador de un programa infantil que se mantuvo igual de gentil, sin fingir ni un solo día, durante más de tres décadas en el aire. Sin dejar nunca que se le apagara el propósito por dentro.</p>
+        </div>
+
+        <!-- SEGMENTO 9 — CIERRE CANÓNICO + TEASER -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">9</span><span class="segment-title">Cierre canónico + Teaser</span><span class="segment-time">43:00 – 47:00</span></div>
+            <div class="nota">Tercer y último REMATE del episodio (Hook, Zombie Simpsons, y este cierre).</div>
+            <p class="line">Así que aquí les dejo la pregunta de esta semana, y quiero que de verdad la piensen en serio esta vez, no de pasada mientras manejan de regreso a casa.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">¿Qué parte de su equipo lleva tanto tiempo funcionando "porque siempre se ha hecho así" —que ya ni se acuerda de cuándo fue la última vez que alguien, usted incluido, preguntó si de verdad sigue viva, y no solo prendida?</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Escríbanlo en los comentarios del episodio, en Spotify. Los leo todos, con calma —como leí los que me dejaron la semana pasada sobre sus propios "ocho es grandioso" particulares; varios me sorprendieron con lo específicos y lo honestos que fueron, más de lo que esperaba.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si este episodio les hizo pensar en alguien de su equipo en particular —esa persona que lleva años sosteniendo, en silencio, cosas que nadie más ve ni agradece en voz alta— compártanselo. Mándenle el episodio, o mejor, díganselo con sus propias palabras. A veces ese gesto solo, sincero, vale más que cualquier bono de fin de año.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y si usted es esa persona escuchando esto ahora mismo, camino a casa o en su escritorio un rato después del turno —la que lleva años sosteniendo cosas que nadie más nota— quiero que sepa que se nota, aunque a veces no se lo digan. Y que está bien, de vez en cuando, preguntarse en voz alta si todavía se siente valorado usted también, y no solo esperar a que alguien más lo pregunte primero.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Estoy en LinkedIn como Andrés Bermúdez Rodríguez, por si quieren seguir esta conversación por allá, con más calma de la que da un audio.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="sub">Teaser EP.022</div>
+            <p class="line">La próxima semana seguimos con esto mismo, desde otro ángulo —les tengo otra historia real que la mayoría no conoce, esta vez de un grupo que estuvo a nada de destruirse a sí mismo por dentro, antes de encontrar, casi de milagro, la forma de reinventarse. Todavía no les puedo confirmar cuál es exactamente, porque ni yo lo tengo cerrado del todo. Pero les prometo que, otra vez, va a ser algo que ustedes ya conocen, visto desde un ángulo que no se esperan para nada.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">Yo soy Andy. Y recuerden: que su equipo dure treinta años no depende de la suerte. Depende de que alguien, todos los días, decida que siga vivo — y no solo prendido.</div>
+            <div class="nota">OUTRO MUSICAL</div>
+        </div>
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section fuentes">
+        <h2>Fuentes verificadas (no leer al aire)</h2>
+        <p>· <strong>Disputa salarial 1998:</strong> The Hollywood Reporter ("'Simpsons' Cast Blinks in Salary Showdown With Fox"; "The 'Simpsons' Pay Disputes") — sueldo previo de $30.000/episodio para los seis actores principales; Fox contrató un director de casting y audicionó reemplazos; Matt Groening respaldó públicamente al elenco; resolución a ~$125.000/episodio, vigente 1998-2004. · <strong>Al Jean:</strong> Wikipedia "Al Jean"; ScreenRant y Animation World Network ("Al Jean Steps Down As The Simpsons Showrunner After 25 Years") — co-showrunner temporada 3 (con Mike Reiss); regresó de planta en la temporada 10 (1998-99); showrunner en solitario desde la temporada 13 (2001); compartió el puesto con Matt Selman desde la temporada 33 hasta dejarlo en la temporada 37. · <strong>Zombie Simpsons:</strong> Dead Homer Society (deadhomersociety.wordpress.com, sección "What Is Zombie Simpsons?" y "Appendix A") — término acuñado por ese blog de fans, describe la percepción de caída de calidad desde aprox. la temporada 12 (2000-2001) en adelante. · <strong>SNL / Lorne Michaels:</strong> Wikipedia "Lorne Michaels"; Britannica — creador de Saturday Night Live (estreno 11 oct. 1975, con George Carlin), programa semanal más longevo y más nominado al Emmy en TV estadounidense (150+ nominaciones), 50º aniversario en 2025; Michaels acumula 24 Emmys de 112 nominaciones, el individuo más nominado en la historia del premio. · <strong>Toyota (heijunka / jinji-ido):</strong> TMI ("Toyota's Winning Formula for Employee Engagement"); Michel Baudin's Blog ("Toyota's job rotation policy"); Japan Intercultural Consulting ("Dealing with frequent rotations in Japanese companies") — heijunka como nivelación de carga ("trabajar como la tortuga, no la liebre"), ergonomistas monitoreando lesiones/agotamiento, jinji-ido como rotación anual de personal, entrenamiento de gerentes para detectar señales de burnout. · <strong>Recomendaciones:</strong> "Springfield Confidential" (Mike Reiss con Mathew Klickstein, 2018); Simon Sinek, TED, "Why good leaders make you feel safe" (2014); "Won't You Be My Neighbor?" (2018, dir. Morgan Neville).</p>
+        <p style="margin-top:10px">Notas: (1) La fecha exacta de salida de Al Jean como showrunner en solitario (temporada 37) no se verificó con precisión de mes/año exacto — decir "más de dos décadas" al grabar si no se confirma antes. (2) El teaser de EP.022 queda deliberadamente genérico porque el tema del próximo episodio no está confirmado al escribir este guion (candidatos en roadmap-btq.md: Metallica, Matrix, Star Wars) — no comprometerse con un referente hasta que Andy lo apruebe.</p>
+    </div>
+
+    <footer>
+        <span class="gold">Behind the Queue</span> · EP.021 — Los Simpson<br>
+        Production packet · guion de grabación · ~48 min medidos a 143 wpm · estilo con chispa (guion-style-btq.md)
+    </footer>
+
+</div>
+</body>
+</html>

@@ -110,6 +110,32 @@ BTQ pop-culture lleva, en orden, estos bloques. No omitir ninguno al escribir el
    - **Firma + TM canónico:** "Yo soy Andy. Y recuerden: [tesis del episodio en una frase
      memorable]" + nota OUTRO MUSICAL.
 
+## No dar señales de cierre falso antes del Cierre real (retención Spotify, fijado 2026-07-06)
+
+Según la data de permanencia/completion de Spotify, cualquier momento del episodio que **suene**
+a final —una frase que cierra un círculo, un tono de aplauso, un remate demasiado conclusivo, un
+segmento que "resuelve" del todo— le da al oyente el permiso mental de dejar de escuchar ahí,
+aunque el episodio siga. El oyente no abandona solo por aburrimiento; abandona en el momento exacto
+en que algo *suena* a que ya terminó.
+
+**Los puntos de mayor riesgo, por diseño de la estructura canónica, son los REMATES de segmentos
+intermedios y el tramo Aplicable Hoy → Recomendaciones** (posiciones 6-7 de 8) — ambos, en casi
+cualquier pódcast, funcionan culturalmente como "señal de que ya casi se acaba".
+
+**Mitigación obligatoria — condición → acción → verificación:**
+- Cuando un REMATE de un segmento que NO es el cierre final quede redactado con tono de conclusión
+  total (una frase que "amarra" el tema sin dejar nada abierto), reescribirlo para que tire hacia
+  adelante — una pregunta sin responder, un hilo que se retoma después, nunca un punto final
+  emocional. Verificar releyendo cada REMATE fuera del Cierre y preguntando: "¿esto suena a que el
+  episodio podría terminar aquí?" Si la respuesta es sí, reescribirlo.
+- Antes de entrar a Aplicable Hoy o a Recomendaciones, meter una línea corta de enganche que le
+  diga al oyente, sin sonar a anuncio de índice (regla 8, sin meta-anuncios), que todavía viene algo
+  que vale la pena — ej. una referencia a la pregunta del cierre, un "todavía no les he dicho la
+  parte que más le tocó a X" — nunca un simple "y ahora, unas recomendaciones" que suena a que el
+  contenido real ya se acabó.
+- Verificar en la lectura final: ningún bloque antes del Cierre canónico debe poder funcionar,
+  por sí solo, como final satisfactorio del episodio si se cortara ahí.
+
 ## Voz narrativa — "MPD meets TED", no documental BBC (feedback Andy 2026-06-26)
 
 Los tramos históricos/expositivos son los que más fácil caen en modo informe ("esto pasó,
@@ -125,9 +151,11 @@ luego esto, esto significa X"). Reescribirlos en voz narrativa de escena:
 
 ## Regla de 2 partes (igual que MPD)
 
-Si la data y las anécdotas dan para más de ~55-60 min de contenido con chispa (sin relleno),
-**partir en 2 episodios** desde el guion. Razón: la investigación profunda + anécdotas ciertas
-poco conocidas suelen pasarse de la hora (ver memoria `project-mpd-episodes-two-parts`). Estructurar
+Si la data y las anécdotas dan para más de ~50 min de contenido con chispa (sin relleno) — es decir,
+si no caben cómodos dentro del estándar de 40-45 min sin recortar material real — **partir en 2
+episodios** desde el guion, en vez de forzar el recorte o pasarse del estándar. Razón: la
+investigación profunda + anécdotas ciertas poco conocidas suelen pasarse del rango objetivo (ver
+memoria `project-mpd-episodes-two-parts`). Estructurar
 el corte natural desde el inicio; cada parte con su propia apertura/cierre y un recap de ~20 seg al
 abrir la Parte 2. Ojo: BTQ tiene cadencia semanal estricta (≥7 días entre episodios) — 2 partes =
 2 semanas, encaja con el roadmap.
@@ -140,30 +168,48 @@ Regla medida (no de gusto). El guion se dimensiona contando **palabras habladas*
 el ritmo real de Andy, **no** estimando minutos "a ojo" por segmento. Las marcas de minutos por ojo
 salen infladas y hacen que Andy termine ~15 min antes de lo marcado y tenga que estirar.
 
-**Ritmo real de Andy ≈ 143 palabras/min** (medido contra el SRT del EP.17: 6.062 palabras habladas /
-42,3 min de audio). Ese número **ya incluye sus pausas** — es ritmo de entrega, no de lectura en seco.
-Diagnóstico EP.17: estaba marcado a "57 min" (≈90 wpm imaginario) y cayó en ~42-45. EP.18 v1 tenía
-4.213 palabras = ~29 min reales aunque estaba marcado a 52.
+**Estándar editorial de duración (BTQ y CCC, fijado 2026-07-06):** el episodio debe caer **entre 40
+y 45 minutos de contenido hablado**, sin contar intro ni outro musical. No es un mínimo sugerido ni
+un techo aspiracional — es el rango objetivo. Si el guion mide por debajo de 40 o por encima de 45
+(con la fórmula de abajo), expandir o cortar antes de aprobar el guion para grabación, no dejarlo
+para la edición.
 
-**Tabla de dimensionamiento (palabras habladas → minutos a 143 wpm):**
+**Ritmo real de Andy ≈ 150 palabras/min** (recalibrado 2026-07-06 contra el SRT del EP.20:
+`E:\Transcriptor\transcripciones\BTQ EP 20.srt` — 6.192 palabras habladas por el host / 41,28 min de
+habla efectiva, sin contar intro/outro musical. Cifra anterior de 143 wpm venía del SRT del EP.17,
+sigue siendo la referencia correcta si el ritmo de Andy vuelve a bajar). Ese número **ya incluye sus
+pausas** — es ritmo de entrega, no de lectura en seco. Diagnóstico EP.17: estaba marcado a "57 min"
+(≈90 wpm imaginario) y cayó en ~42-45. EP.18 v1 tenía 4.213 palabras = ~29 min reales aunque estaba
+marcado a 52.
 
-| Objetivo real | Palabras habladas |
-|---|---|
-| ~45 min | ~6.400 |
-| ~50 min | ~7.150 |
-| ~55 min | ~7.900 |
-| ~60 min (techo → evaluar 2 partes) | ~8.600 |
+**Expansión real en vivo recalibrada:** el EP.20 tenía un guion escrito de 4.570 palabras y terminó
+en 6.192 palabras habladas — una expansión real de **+35.5%**, no el +15% que se asumía antes (ver
+"Ajuste por expansión" abajo, cifra vieja basada solo en EP.17). Usar +35.5% como referencia actual;
+recalibrar de nuevo si el patrón cambia en 2-3 episodios más.
 
-**Ajuste por expansión en vivo:** Andy suele decir **~15% más** de lo escrito (EP.17: guion 5.265
-palabras → habló 6.062). Por eso conviene escribir el guion para que **en seco** caiga ~7-8% por debajo
-del objetivo, y dejar que su expansión natural lo lleve al número. Ej.: para ~57 min reales, escribir
-~7.000 palabras (≈49 min en seco; con +15% ≈ 57). **Siempre dejar colchón para CORTAR, no para estirar.**
+**Tabla de dimensionamiento (palabras habladas → minutos a 150 wpm, recalibrado 2026-07-06):**
+
+| Objetivo real | Palabras habladas | Palabras ESCRITAS (con +35.5% expansión) |
+|---|---|---|
+| 40 min (piso del estándar) | ~6.000 | ~4.430 |
+| 42.5 min (centro del estándar) | ~6.375 | ~4.705 |
+| 45 min (techo del estándar) | ~6.750 | ~4.980 |
+| >50 min (fuera del estándar → evaluar 2 partes) | ~7.500+ | ~5.535+ |
+
+**Ajuste por expansión en vivo (recalibrado 2026-07-06):** el dato de EP.17 (guion 5.265 → habló
+6.062, +15%) resultó ser un piso, no el promedio — el SRT real de EP.20 mostró **+35.5%** (guion 4.570
+→ habló 6.192). Usar +35.5% como referencia actual hasta la próxima recalibración. Por eso conviene
+escribir el guion para que **en seco** caiga bien por debajo del objetivo hablado, y dejar que la
+expansión natural de Andy lo lleve al número real — ver tabla arriba para la conversión ya aplicada.
+**Siempre dejar colchón para CORTAR, no para estirar.**
 
 **Cómo medir** (excluir lo que no se lee: bloques `NOTA`, chips `PAUSA`, encabezados de segmento,
 tabla de arquitectura): contar palabras de `p.line` + `remate` + `dato` + `mito/realidad` + `sub`,
-y dividir por 143. Marcar los tiempos de la arquitectura en consecuencia.
+multiplicar por 1.355 (expansión verificada) y dividir por 150 (wpm verificado) — no dividir
+directo por 143 sin aplicar la expansión, ese método subestima la duración real. Marcar los tiempos
+de la arquitectura en consecuencia.
 
-**Recalibrar** el 143 wpm cada pocos episodios contra el SRT más reciente (los SRT viven en
+**Recalibrar** el 150 wpm y el +35.5% cada pocos episodios contra el SRT más reciente (los SRT viven en
 `E:\Transcriptor\transcripciones\`); si su ritmo cambia, actualizar este número y la tabla.
 
 ---
@@ -208,7 +254,11 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
       (comentarios Spotify · compartir · LinkedIn · teaser · firma + TM · outro)? No omitir.
 - [ ] **Sin bloque "Mito o Realidad" al final:** los datos de interés / mito-vs-realidad van
       distribuidos dentro del Cuerpo, no como segmento aparte antes del cierre.
+- [ ] **Sin señales de cierre falso antes del Cierre real** (ver sección dedicada arriba): releer
+      cada REMATE que no sea el del Cierre y confirmar que tira hacia adelante, no que suena a
+      final. Confirmar que hay una línea de enganche antes de Aplicable Hoy o Recomendaciones,
+      no un salto directo que suene a que el contenido real ya terminó.
 - [ ] **Voz narrativa, no documental:** los tramos históricos en presente/escena, no en
       modo informe.
 - [ ] Aperturas y conectores de contenido (sin meta-anuncios tipo "ahora vamos a…").
-- [ ] Duración: contar **palabras habladas / 143 wpm** (ver "Calibración de duración"), NO estimar minutos a ojo. Verificar que el guion en seco caiga ~7-8% bajo el objetivo (la expansión en vivo de Andy lo sube ~15%). Si pasa de ~60 min con chispa, evaluar partir en 2.
+- [ ] Duración: contar **palabras escritas × 1.355 (expansión) / 150 (wpm)** (ver "Calibración de duración", recalibrado 2026-07-06 contra SRT real de EP.20) — NO estimar minutos a ojo, NO usar 143 wpm / +15% (cifras viejas, basadas solo en EP.17). El resultado debe caer **entre 40 y 45 minutos** (estándar editorial, sin contar intro/outro musical) — si queda fuera de ese rango, expandir o cortar antes de grabar, no dejarlo para después.

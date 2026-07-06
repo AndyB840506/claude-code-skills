@@ -2,19 +2,27 @@
 
 ## Calibración de duración — dimensionar en PALABRAS, no en minutos adivinados
 
+**Estándar editorial de duración (BTQ y CCC, fijado 2026-07-06):** el episodio debe caer **entre 40
+y 45 minutos de contenido hablado**, sin contar intro ni outro musical. No es un mínimo sugerido —
+es el rango objetivo. Case File No. 001 quedó en ~23 min, muy por debajo del estándar (ver la
+lección de abajo); no repetir ese patrón en episodios futuros.
+
 **Ritmo real de Andy en CCC ≈ 137 palabras/min** (medido contra el SRT de Case File No. 001:
 ~3.104 palabras habladas / 22,7 min de audio, ver `pipeline-state-ep001.md`). Ese número
-ya incluye pausas naturales — es ritmo de entrega, no de lectura en seco. Muy cercano al
-ritmo medido de BTQ (~143 wpm, ver `btq-production/guion-style-btq.md`), así que la misma
-fórmula aplica: `palabras ≈ minutos objetivo × 137`.
+ya incluye pausas naturales — es ritmo de entrega, no de lectura en seco. Cercano al
+ritmo medido de BTQ (**~150 wpm**, recalibrado 2026-07-06 — ver `btq-production/guion-style-btq.md`),
+así que la misma fórmula aplica: `palabras ≈ minutos objetivo × 137`. Ojo: a diferencia de BTQ, esta
+cifra de CCC viene de comparar palabras HABLADAS reales contra minutos de audio real — no aplica un
+factor de expansión aparte porque no se comparó todavía contra el guion escrito de ese episodio;
+recalibrar cuando haya más de un SRT de CCC disponible.
 
 **Tabla de dimensionamiento (palabras habladas → minutos a 137 wpm):**
 
 | Objetivo real | Palabras habladas |
 |---|---|
-| ~23 min | ~3.150 |
-| ~30 min | ~4.100 |
-| ~45 min | ~6.300 |
+| 40 min (piso del estándar) | ~5.480 |
+| 42.5 min (centro del estándar) | ~5.825 |
+| 45 min (techo del estándar) | ~6.165 |
 
 **Lección de Case File No. 001 (2026-07-04):** el script de este episodio declaró en su
 propio footer "~6.700 palabras" para un objetivo de 45 min — nunca se verificó

@@ -17,7 +17,7 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.018 | El Mundial — liderazgo bajo presión (adquisición de oyentes vía reach social) | publicado — https://open.spotify.com/episode/6PC4QIDiAwmVZJ1BV5PYcx |
 | EP.019 | Gladiator / Máximo — "la huella que deja un líder" | publicado — https://open.spotify.com/episode/0nNg2ngSzEVxKk7awLe5AK |
 | EP.020 | Pilar SEO — Métricas / KPIs de call center (evergreen, keyword-first, sin referente pop) | publicado — https://open.spotify.com/episode/6gRVIWVI3jBUAJarLJ7AsQ |
-| EP.021 | Los Simpson — 30 años en el aire: cómo evitar el burnout de un equipo a largo plazo | en roadmap |
+| EP.021 | Los Simpson — 30 años en el aire: cómo evitar el burnout de un equipo a largo plazo | guion listo |
 
 ---
 

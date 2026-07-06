@@ -326,16 +326,27 @@ o demasiado largo.
 ════════════════════════════════════════
 ```
 
+**Regla obligatoria, antes de escribir CUALQUIER guion (BTQ, CCC, MPD, o show nuevo) — condición →
+acción → verificación:** cuando vaya a calcular el word count target, medir el wpm y el % de
+expansión en vivo contra el SRT real más reciente de ESE show (`E:\Transcriptor\transcripciones\`),
+NO asumir un número de una guía vieja ni reusar el de otro show. Verificar comparando el resultado
+contra la duración real reportada de ese episodio (si el usuario la menciona) antes de aceptar la
+cifra como correcta — esto nace de un caso real (BTQ EP.021, 2026-07-06) donde se asumió 143 wpm /
++15% de expansión de una guía desactualizada, y el SRT real de EP.020 mostró **150 wpm / +35.5%** —
+casi el doble de expansión asumida. No repetir ese error en ningún show.
+
 **Cómo calcular el word count target (NO adivinar minutos):** usa un **wpm MEDIDO** contra el
 SRT real del show, no una suposición. El supuesto típico de ~100-110 wpm está muy por debajo de
-la realidad: un host leyendo en voz alta corre mucho más rápido (BTQ/Andy solo host = **~143 wpm**
-medido, ver `btq-production/guion-style-btq.md` → "Calibración de duración"). Fórmula:
-`palabras ≈ minutos objetivo × wpm_medido`. Si el host suele expandir en vivo, escribe ~7-8% por
-debajo del objetivo y deja colchón para CORTAR, no para estirar.
+la realidad: un host leyendo en voz alta corre mucho más rápido (BTQ/Andy solo host = **~150 wpm**
++ **~35.5% de expansión en vivo**, recalibrado 2026-07-06 contra el SRT de EP.20 — ver
+`btq-production/guion-style-btq.md` → "Calibración de duración" para la cifra vigente de cada show,
+nunca copiar la de otro). Fórmula: `palabras_escritas ≈ (minutos objetivo × wpm_medido) / (1 + expansión_medida)`.
+Deja colchón para CORTAR, no para estirar.
 
 **Verificar después de grabar:** comparar la duración real del SRT contra la marcada en el guion.
-Si difieren, recalibrar el wpm del show con `palabras_habladas_del_SRT / minutos_de_audio` y
-actualizar el número en la guía de estilo del show. Los SRT viven en `E:\Transcriptor\transcripciones\`.
+Si difieren, recalibrar el wpm Y el % de expansión del show con `palabras_habladas_del_SRT /
+minutos_de_audio` (wpm) y `palabras_habladas_del_SRT / palabras_escritas_del_guion` (expansión), y
+actualizar ambos números en la guía de estilo del show. Los SRT viven en `E:\Transcriptor\transcripciones\`.
 
 **Después de mostrar el word count**, presenta la arquitectura adaptada a ESTE episodio y espera aprobación explícita.
 
