@@ -17,7 +17,7 @@ Automated workflow. Each step shows results and waits for your confirmation befo
 2. **Skill Management Audit** — Audit the skill kit against `skill-management/SKILL.md`'s checklist (structure, redundancies, oversized files)
 3. **Handoff** — Write `.agents/handoff/YYYY-MM-DD-<topic>.md`, commit, push to GitHub
 4. **Continuity Sync** — Run the `claude-continuity` sync so `~/.claude/` memory + config are backed up to GitHub (memory lives OUTSIDE the skills repo, so the handoff push alone does NOT cover it)
-5. **Memory Audit check** — Count memory files vs `memory/.audit-baseline.json`; if grown ≥15, auto-invoke `Skill("memory-audit")` right here (no confirmation needed to trigger it — `memory-audit` itself still gates applying any change on your approval)
+5. **Memory + Skill-Kit Audit check** — Count memory files AND `SKILL.md` files vs `memory/.audit-baseline.json`; if memory grew ≥15 OR the skill count changed, auto-invoke `Skill("memory-audit")` right here (no confirmation needed to trigger it — `memory-audit` itself still gates applying any change on your approval, and now also scans the skill kit for corruption, not just memory)
 
 The handoff commit backs up the project repo. The continuity sync (Step 4) backs up `~/.claude/` memory + config — the two together mean a fresh machine (or Mac) can be fully restored. See [[feedback_always_backup_github]].
 
@@ -42,10 +42,10 @@ When `/session-close` is invoked, run all 5 steps in order:
    - Windows: `cd "C:\Users\andre\repos\claude-continuity"; .\sync.ps1`
    - Mac/Linux: `cd ~/<path>/claude-continuity && bash sync.sh`
    - This copies `~/.claude/` memory + config into the `claude-continuity` repo and pushes to `origin master`. Report what it synced.
-5. Memory audit check (no confirmation needed to run the check itself):
-   - Count `.md` files in `C:\Users\andre\.claude\projects\<workspace>\memory\` (excluding `MEMORY.md`)
-   - Compare against `lastAuditFileCount` in `memory/.audit-baseline.json`
-   - If growth ≥15: invoke `Skill("memory-audit")` directly — do not just print a suggestion, actually run it. It will show its own findings and ask for approval before applying anything.
-   - If growth <15 or the baseline file doesn't exist yet: report the current count, no action needed
+5. Memory + skill-kit audit check (no confirmation needed to run the check itself):
+   - Count `.md` files in `C:\Users\andre\.claude\projects\<workspace>\memory\` (excluding `MEMORY.md`), and count `SKILL.md` files via `Glob "**/SKILL.md"` in `c:\Users\andre\.claude\skills`
+   - Compare both against `lastAuditFileCount` / `lastSkillCount` in `memory/.audit-baseline.json`
+   - If memory growth ≥15 OR the skill count differs from `lastSkillCount`: invoke `Skill("memory-audit")` directly — do not just print a suggestion, actually run it. It will show its own findings (memory AND skill-kit corruption) and ask for approval before applying anything.
+   - Otherwise: report the current counts, no action needed
 
 See [INSTRUCTIONS.md](INSTRUCTIONS.md) for implementation rules and error handling.

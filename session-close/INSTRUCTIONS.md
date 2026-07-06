@@ -25,13 +25,16 @@ STEP 4: Run the claude-continuity sync (backs up ~/.claude memory + config)
   → No user confirmation needed — it only copies ~/.claude state and pushes
   → Report which memory folders synced (or "nothing changed")
 
-STEP 5: Memory audit check
+STEP 5: Memory + skill-kit audit check
   → Count *.md files in C:\Users\andre\.claude\projects\<workspace>\memory\ (exclude MEMORY.md)
-  → Read memory\.audit-baseline.json for lastAuditFileCount (if missing, create it with
-    the current count and skip the trigger this time — nothing to compare against yet)
-  → If (current count - lastAuditFileCount) >= 15: invoke Skill("memory-audit") now,
-    no confirmation prompt to trigger it (memory-audit gates its own apply step)
-  → Otherwise: report "Memoria: N archivos (+M desde la última auditoría, umbral 15)"
+  → Count SKILL.md files via Glob "**/SKILL.md" in c:\Users\andre\.claude\skills
+  → Read memory\.audit-baseline.json for lastAuditFileCount/lastSkillCount (if missing,
+    create it with current counts and skip the trigger this time — nothing to compare yet)
+  → If (current memory count - lastAuditFileCount) >= 15 OR (current skill count !=
+    lastSkillCount): invoke Skill("memory-audit") now, no confirmation prompt to trigger
+    it (memory-audit gates its own apply step; now also scans skill files for corruption)
+  → Otherwise: report "Memoria: N archivos (+M), Skills: K archivos (umbral: memoria +15
+    o cambio en K)"
   → No user confirmation needed for this step itself
 ```
 
