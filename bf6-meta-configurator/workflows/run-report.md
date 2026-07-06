@@ -20,10 +20,29 @@ sequentially). Use the CURRENT month/year in queries:
 - `Battlefield 6 best controller settings aim deadzone <month year>`
 
 Then WebFetch the most promising URLs — **max 10 fetches total**. Two are
-mandatory: **`bfhub.gg/meta/mp` and `bfhub.gg/meta/br`** — as of 2026-07-06 they
-are the only found source publishing full attachment loadouts with exact names
-(wzstats/battlefieldmeta hide them behind JS subpages; VGC/boostmatch 403).
-Prefer sources that show a publish/update date. Record: patch version + date, buffs/nerfs,
+mandatory: **`bfhub.gg/meta/mp` and `bfhub.gg/meta/br`** — bulk source of full
+attachment loadouts with exact names (wzstats/battlefieldmeta hide theirs
+behind JS subpages; VGC/boostmatch 403). Prefer sources that show a date.
+
+**Pass 2 — per-weapon loadout searches (this is where proper names live):**
+for EVERY top-ranked weapon still missing a named build after the bfhub fetch,
+run `"<weapon>" best loadout attachments Battlefield 6` — the search summaries
+themselves usually return full builds (GameRant, Dexerto, Dot Esports,
+Battlefinity, PCGamesN, fdaytalk). Battlefinity publishes **per-playstyle
+builds** (close-range / versatile / mid-range) — capture all variants so the
+app's playstyle switch changes builds visibly.
+
+**Pass 3 — community pulse (user requirement 2026-07-06: not just "official"
+sources):** at least one Reddit/social-flavored search per run (e.g. `reddit
+REDSEC meta loadout settings`, include YouTube/TikTok results). This is what
+surfaced the 1.3.1.0 controller-recoil nerf counter-tune and the BR-vs-Gauntlet
+(plate count) meta split — flavor intel official sites don't carry. Label it
+`COMMUNITY`.
+
+**Controller settings need per-platform sources** — one generic guide is NOT
+enough (user: "no one size fits all"): SCUF (PC/Xbox), a PS5/DualSense-specific
+guide (thecontrollerpeople), and a REDSEC-specific preset (mitchcactus). The
+app shows a different table per platform + a REDSEC override block. Record: patch version + date, buffs/nerfs,
 attachment data, aim/deadzone changes, every URL used.
 
 **Staleness rule:** if the newest usable source is >60 days old, the report and
@@ -43,22 +62,24 @@ TTK/DPS **only if a source states them**, source tier.
 
 ### Attachment slots — the no-blanks / no-inventions contract
 
-For every slot (muzzle, barrel, optic, underbarrel, magazine, specialty),
-exactly ONE of these three states — never an empty cell, never "TBD":
+Every weapon card carries a click-to-expand build. Priority order per weapon:
 
-1. **Sourced name** — a source names the attachment → use it + tier badge.
-2. **Pattern pick** (`INFERRED` badge, name marked `*`) — no build published
-   for this weapon → assemble one from attachment names that RECUR across the
-   current meta builds fetched this run (e.g. `Standard Suppressor*`,
-   `Ribbed Vertical*`, `RO-M 1.75X*`, `FMJ*`). Real names only — seen in
-   sources this run — never fabricated. Weapon-specific slots with unknowable
-   names (barrels) get generic phrasing ("Factory barrel*"). Optic follows
-   playstyle.
-3. **`SIN DATOS` chip** — the slot may not exist for this weapon / nothing can
-   be responsibly recommended → an explicit gray chip, styled, not a blank.
+1. **Per-playstyle sourced builds** (best) — Battlefinity/fdaytalk style
+   variants; the app picks the build matching the user's playstyle.
+2. **Single sourced build** — used for all playstyles, labeled
+   "one published build".
+3. **Pattern pick** (`INFERRED`, names marked `*`) — assembled from attachment
+   names that RECUR across this run's meta builds. Real names only — seen in
+   sources this run — never fabricated. Unknowable weapon-specific slots
+   (barrels) get generic phrasing ("Factory barrel*"). Optic follows playstyle.
 
-Optic always follows playstyle: Aggressive → 1x; Versatile → 2–3x;
-Long Range → 4x+ (snipers may take 4x+ regardless — note it when sources agree).
+After Pass 2, pattern picks should be the rare exception, not the norm — if a
+top-3 weapon is still on a pattern build, say so in the chat summary.
+
+**No ghost cards** (user feedback 2026-07-06): render only weapons that exist
+in sources — a category with one sourced weapon shows one card, never
+"NO DATA" placeholders. Fill thin categories with additional meta-tier weapons
+from bfhub (ranks #4/#5, neutral chip) when available.
 
 ## Step 3 — Controller settings (searched, never canned)
 
