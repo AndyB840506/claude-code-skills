@@ -581,6 +581,17 @@ Every `<img>` must have `alt`:
 
 When a site needs to serve multiple languages without page reload:
 
+### Content rule (non-negotiable, applies before writing any string below)
+Write each `data-en`/`data-es`/`data-pt` value **natively in that language** —
+never a mechanical translation of the English draft carried over word-for-word
+(word order, idioms, and register that read as "translated" are the tell).
+Draft the English version first if that's the working language, then write
+the Spanish/Portuguese versions as a copywriter native to that language would,
+reusing only facts, not phrasing. Same rule freelance-gig's deliverable
+contract uses for client deliverables — see
+`c:\Users\andre\.claude\skills\freelance-gig\docs\reuse-map.md` "Output
+language" section.
+
 ### Data Attributes
 Add `data-en`, `data-es`, `data-pt` to every text element and input placeholder:
 ```html
