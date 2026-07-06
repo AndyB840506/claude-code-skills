@@ -34,6 +34,14 @@ Natural, directo, con humor e irreverencia. Accesible para cualquier hispanohabl
 | "Eso es una locura" | Para datos sorprendentes |
 | "Espérate que..." | Para interrupciones naturales |
 
+> **⚠️ Contradicción resuelta (2026-07-06):** "Exactamente" / "Total" / "Eso es una
+> locura" suenan naturales en abstracto, pero `CLAUDE.md` §Reglas anti-repetición regla 2
+> las PROHÍBE explícitamente como "réplicas de pura validación" cuando no van seguidas de
+> un dato o contrapunto nuevo. Regla de desempate: nunca usarlas SOLAS como réplica
+> completa de un turno; son aceptables solo como muletilla de arranque seguida
+> inmediatamente de información nueva (ej. "Eso es una locura, porque..." + dato). La
+> regla de CLAUDE.md manda sobre esta tabla en caso de duda.
+
 ---
 
 ## Lo que se evita

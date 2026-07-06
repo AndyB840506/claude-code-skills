@@ -4,6 +4,17 @@ Get your site live. Primary method: **Netlify drag-and-drop** — no account req
 
 ---
 
+## Pre-Deploy Gate (verify before publishing anything)
+
+Do not deploy until all of these are checked. If any item fails, fix it and re-check — don't deploy with a known gap.
+
+- [ ] No `[PLACEHOLDER]` markers remain anywhere in the HTML (grep the file for `PLACEHOLDER` — zero matches required, per the No-Fabrication Rule in SKILL.md)
+- [ ] Every nav link and CTA points to a real, existing page/anchor (no dead `href="#"` left over from scaffolding)
+- [ ] All images referenced actually exist at their path/URL (no broken image icons)
+- [ ] Site opens correctly in Local Preview (above) in both light/dark if the design supports it
+
+---
+
 ## Local Preview Before Deploying
 
 Test before publishing. Pick whichever option matches your setup:
@@ -135,6 +146,8 @@ After adding the domain in Vercel Dashboard → Settings → Domains, use the **
 |---|---|---|
 | A | `@` | *(IP shown in Vercel dashboard)* |
 | CNAME | `www` | `cname.vercel-dns.com` |
+
+> ⚠️ **Before touching DNS, domain, or SSL cert on a site that is ALREADY live:** confirm the change is non-destructive before running it. Specifically — removing/re-adding a domain in Vercel (domain "churn") resets its SSL certificate and causes a few minutes of downtime/cert warning; never move a live domain's nameservers away from its current DNS provider just to add it to Vercel/Netlify (prefer a CNAME/A record at the existing provider, per the nameserver warning above). If unsure whether an action is destructive, say so explicitly and ask the user to confirm before proceeding, rather than assuming it's safe.
 
 ---
 

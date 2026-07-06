@@ -35,6 +35,12 @@ Focus on:
 
 NEVER use generic AI-generated aesthetics like overused font families (Inter, Roboto, Arial, system fonts), cliched color schemes (particularly purple gradients on white backgrounds), predictable layouts and component patterns, and cookie-cutter design that lacks context-specific character.
 
+**Generic AI skeleton checklist (verify before shipping):** reject the design if it matches 2+ of these default patterns — (1) centered hero with headline + subhead + single CTA button, (2) exactly 3 feature cards in a row, (3) a carousel/slider for featured content, (4) a decorative gradient ring/blob behind the hero art, (5) Inter/system-font body text. If any of these are present, redesign that section with an asymmetric layout, a different content count (2, 4, 5+), or a different attention-grabbing device before calling the work done.
+
+## Pre-Build Research (mandatory before first line of code)
+
+Before building or improving any web page, look at current design references for the target industry/tone — Dribbble, Awwwards, Pinterest, or equivalent. Ground the "BOLD aesthetic direction" chosen above in something concrete you've actually looked at, not a generic mental template. Skip this only for tiny isolated components (a single button, a form field) where there's no page-level composition to differentiate.
+
 Interpret creatively and make unexpected choices that feel genuinely designed for the context. No design should be the same. Vary between light and dark themes, different fonts, different aesthetics. NEVER converge on common choices (Space Grotesk, for example) across generations.
 
 **IMPORTANT**: Match implementation complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations and effects. Minimalist or refined designs need restraint, precision, and careful attention to spacing, typography, and subtle details. Elegance comes from executing the vision well.

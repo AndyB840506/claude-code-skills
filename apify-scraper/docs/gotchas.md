@@ -78,6 +78,13 @@ Different Actors use different limit field names. Common variants:
 - `maxCrawledPages`, `maxRequestsPerCrawl` — limit pages visited
 Always fetch the input schema to find the correct field for the specific Actor.
 
+**Ephemeral media URLs**
+Image/video URLs returned by social scrapers (Instagram, Facebook, TikTok CDN
+links) are often signed and expire, typically within hours. If the user needs
+to keep the media, download each file to local disk right after the run
+(don't just save the dataset with the raw URLs — they'll 404 later). This
+applies especially to `apify/instagram-*` Actors.
+
 **Deprecated Actors**
 Check `.isDeprecated` in `apify actors info "ACTOR_ID" --json`. If `true`:
 1. Search for alternatives: `apify actors search "SIMILAR_KEYWORDS" --json`

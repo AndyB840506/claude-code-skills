@@ -33,6 +33,14 @@ Scan the skill files for:
 - Missing edge case handling
 - Incomplete decision trees
 
+**Verifiability (critical for models that infer less from context, e.g. Opus vs. Fable):**
+- Every judgment rule should have the shape "when [condition], do [action], verify with
+  [check]" — flag any rule that states WHAT to do but never HOW to confirm it happened
+  (no explicit trigger condition, or no way to check compliance).
+- A rule like "make sure it's clear" or "review before delivering" with no named
+  verification step (a grep, a checklist, a re-read against a source) is unverifiable —
+  propose the concrete condition → action → verification triple as the fix.
+
 **Ineffectiveness:**
 - Overly wordy explanations (should be concise)
 - Missing context about when to use something

@@ -10,7 +10,9 @@ al directorio correcto antes de correr `vercel build` / `vercel --prod`.
 
 ## Workflow
 
-Sigue `workflows/checks.md` (Pasos 1–6): identifica el proyecto, verifica
-`.vercel/repo.json` y el directorio de deploy, confirma la baseline de produccion,
-resume, y — si el flujo incluye un `git push` a main/master — corre el post-push
-check para detectar auto-deploys que rompan produccion.
+Sigue `workflows/checks.md` (Pasos 1–7): identifica el proyecto, verifica
+`.vercel/repo.json` y el directorio de deploy, verifica que no haya secrets en
+los archivos a deployar, confirma la baseline de produccion, resume, y — si el
+flujo incluye un `git push` a main/master — corre el post-push check para
+detectar auto-deploys que rompan produccion (mas el flujo prebuilt si el
+proyecto usa `ignoreCommand`).

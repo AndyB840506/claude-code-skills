@@ -23,6 +23,10 @@ C — Lanzamiento:       validación de imágenes → marketing → grid → dep
 
 **No reimplementa nada que ya exista** — invoca y encadena `transcriptor`,
 `episode-launch`, `podcast-creator`, `btq-project`, `btq-guion`, `deploy-preflight`.
+⚠️ `btq-project` y `btq-guion` NO existen en disco (confirmado 2026-06-26) — donde un
+workflow los referencie, cae en fallback documentado ahí mismo (típicamente
+`guion-style-btq.md` o `episode-launch/docs/brand-constants.md`). No los busques como
+skills invocables.
 
 ## Regla fundamental y routing
 

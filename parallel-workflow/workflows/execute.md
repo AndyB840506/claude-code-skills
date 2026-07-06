@@ -37,9 +37,18 @@ instead of in parallel. Each agent receives:
 - The expected output format
 - Instruction to return a concise result
 
+**Required report format from each agent** — instruct every agent to return: a header
+naming its subtask, a bullet list of findings/outputs, and explicit file paths or IDs
+touched (if any). Reject/re-request a bare prose paragraph with no structure — that is
+exactly what gets silently dropped during Step 4's synthesis.
+
 ## Step 4 — Synthesize
 Collect all agent results and combine into the final output.
-Present as a unified response — not a list of raw agent outputs.
+Present as a unified response — not a list of raw agent outputs, but do not compress away
+specific findings: every file path, issue, or exact detail an agent reported must still be
+traceable in the final output (grouped/organized is fine; summarized-into-nothing is not).
+Verify before reporting: count of findings in the unified output ≥ sum of findings across
+agent reports — if it's lower, something was silently dropped.
 
 ## Step 5 — Summary
 Report: how many agents ran, what was processed, what was produced.

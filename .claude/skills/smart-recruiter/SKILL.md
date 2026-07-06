@@ -21,6 +21,20 @@ On invocation, check if `job-config.json` exists:
   structured interview (~10–14 exchanges), then **evaluation** scores it and generates
   the fit verdict + full report
 
+## Working folder
+
+Save `job-config.json` and `report-[name]-[date].md` in the project folder
+shared between recruiter and candidate — never inside `~/.claude/skills`
+(production artifacts belong under `C:\Users\andre\repos\`, not `.claude`; see
+global rule on artifact location). If no project folder exists yet, ask Andy
+where to create one before saving anything (e.g.
+`C:\Users\andre\repos\smart-recruiter-jobs\<role-slug>\`) rather than
+defaulting to the skill's own directory.
+
+The mode switch in "Workflow" above (`job-config.json` exists → Candidate
+Mode, missing → Recruiter Mode) checks that file **in this project folder**,
+not inside the skill folder itself.
+
 ## Core Principles
 
 Never invents data. Never reveals evaluation criteria to candidate. Warm, human tone.

@@ -21,18 +21,31 @@ que se pueda.
 
 ## Sesiones dedicadas (ventana 15–19 junio)
 
-### Sesión 1 — Auditoría de conocimiento implícito: skills de producción
+### Sesión 1 — Auditoría de conocimiento implícito: skills de producción ✅ (2026-07-06)
 Revisar skill por skill preguntando: "¿qué hace falta saber que NO está escrito
 aquí para ejecutar esto bien?" y escribirlo.
 
-- [ ] `mrputridsden` (guiones MPD) — ¿el checklist anti-repetición es autosuficiente?
-      ¿Las voces de Andrés y Juan están descritas con ejemplos de turnos buenos/malos?
-- [ ] `episode-launch` (assets BTQ) — ¿los 4 bloques (SEO/social/YouTube/artwork)
-      tienen criterios de done verificables?
-- [ ] `episode-pipeline` — ¿los handoffs entre stages dicen exactamente qué archivo
-      leer y qué estado verificar?
-- [ ] `/btq-guion` (vive en otro repo) — pasarle los 3 requisitos nuevos
-      (re-enganche ~60%, cierre comentable, checklist anti-repetición) si aún no los tiene.
+**Ampliada en ejecución:** el alcance real cubrió los 24 skills del workspace
+(no solo los 4 de producción) en 4 grupos paralelos. 13 huecos reales
+corregidos de forma aditiva, 12 skills sin hallazgos. Detalle completo en
+`.agents/handoff/` de esa fecha.
+
+- [x] `mrputridsden` (guiones MPD) — contradicción real encontrada:
+      `glosario-cachaco.md` listaba frases ("Exactamente", "Total") como buenas
+      que `CLAUDE.md` prohíbe como "réplicas de pura validación". Resuelto con
+      nota de precedencia (CLAUDE.md manda).
+- [x] `episode-launch` (assets BTQ) — 3/4 bloques ya verificables; faltaba check
+      de conteo de palabras en la descripción Spotify (250–400). Agregado.
+- [x] `episode-pipeline` — handoffs entre stages ya excepcionalmente explícitos.
+      Gap real: 2 workflows citaban `btq-project/workflows/artwork.md`, archivo
+      inexistente (conocido desde handoff 2026-06-26, nunca corregido hasta ahora).
+      También corregida una afirmación obsoleta sobre validación de quote cards.
+- [x] `guion-style-btq.md` (el "btq-guion" real — no vive en otro repo, está en
+      `btq-production/`) — sin hallazgos, los 3 requisitos ya estaban presentes.
+- [x] `podcast-creator` — hallazgo extra no listado originalmente: ejemplo
+      genérico de apertura de Juan usaba la frase que la regla 70/30 de
+      mrputridsden prohíbe. Resuelto con nota de precedencia.
+- [x] `transcriptor` — sin hallazgos, ya cubre parámetros WhisperX completos.
 
 ### Sesión 2 — Auditoría: skills de sistema y rituales
 - [ ] `crear-skill` — ¿produce skills que cumplen el estándar de verificabilidad?

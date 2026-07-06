@@ -14,9 +14,9 @@ fall back to generic handling (don't fail silently, don't guess at a replacement
 `deliverableType`.
 
 Classify a JD against this catalog the same way `resolveServiceId()` does in
-`freelancer/deliverable.js` (lines ~26–35): normalize both sides (lowercase,
-strip accents, strip non-alphanumerics) and match against `id`, English `name`,
-or Spanish `name` via substring containment.
+`freelancer/deliverable.js` (see exact line range under "Deliverable output
+contract" below — kept in one place so it doesn't drift out of sync in two
+spots).
 
 ## Voice playbook
 
@@ -35,12 +35,36 @@ estimation.
 ## Deliverable output contract
 
 `C:\Users\andre\repos\the-freelancer\freelancer\deliverable.js` —
-`BASE_RULES` constant (lines ~12–23): single self-contained HTML file, inline
-CSS/JS, print-safe colors, brand frame ("The Freelancer", teal #0d9488) for
-reports/audits, EXCEPTION: client's own branding when the deliverable IS their
-website (Web Page Kit, Social Profile to Web). Write in the client's language.
+`BASE_RULES` constant (lines ~12–37): single self-contained HTML file, inline
+CSS/JS, print-safe colors, brand frame ("The Freelancer", dark #0e1113 /
+orange #ff3d00) for reports/audits, EXCEPTION: client's own branding when the
+deliverable IS their website (Web Page Kit, Social Profile to Web).
+
+**Output language (non-negotiable, added 2026-07-03 — verify this section
+still exists before trusting the summary below, line numbers drift):** render
+the ENTIRE deliverable in the order's language — every heading/label/marker,
+not just the body copy. Content (findings, scores, copy, recommendations) must
+be written natively in the target language, never translated from an English
+draft. Section names in the per-service prompt files are a structural
+reference in English for the model, not output text.
+
+**Markers (unified across all services):** `[TODO: ...]` for missing/
+unverified facts, `[IMAGE: ...]` for image placeholders — the tag word stays
+in English so it's grep-able, only the description inside is localized. Don't
+invent other marker vocabulary.
+
+`resolveServiceId()` (lines ~40–49, not ~26–35 — drifted after the 2026-07-03
+edit): normalize both sides (lowercase, strip accents, strip
+non-alphanumerics) and match against `id`, English `name`, or Spanish `name`
+via substring containment.
+
 Truth rules: only facts from the transcript/JD/tools actually used; unknowns go
 in a visible "Preguntas pendientes / Pending questions" section, never guessed.
+
+**Maintenance note:** line numbers in this doc are a convenience, not a
+contract — they will drift again after the next edit to `deliverable.js`. If
+a referenced line doesn't match what's described, trust the live file and
+flag the drift rather than assuming the doc is right.
 
 ## Per-service deliverable prompts
 

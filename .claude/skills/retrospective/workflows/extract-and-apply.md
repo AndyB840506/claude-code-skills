@@ -4,7 +4,16 @@
 
 Scan the conversation for these patterns:
 
-**Corrections** (highest priority):
+**Silent judgment calls** (check this even if the user never objected):
+- Ask explicitly: "What did I decide today by my own judgment that isn't written
+  anywhere as a rule?" — e.g. picking a default when the request was ambiguous, filling
+  a gap the user didn't spell out, resolving a naming/format/scope choice without asking.
+- These are the highest-value learnings for a model that infers less from context: an
+  undocumented judgment call is invisible until the next session (or a different model)
+  gets it wrong. Absence of a user correction does NOT mean there's nothing to encode —
+  it may just mean the judgment call happened to be right this time.
+
+**Corrections** (highest priority when present):
 - User rejected output: "this is not great", "remove this", "bullshit", "wrong"
 - User redirected approach: "no, do it this way", "don't do that", "let's not"
 - User added context the agent didn't have: "we have a skill for that", "follow the playbook"

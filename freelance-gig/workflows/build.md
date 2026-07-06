@@ -26,6 +26,16 @@ If `classification.matchedServiceId` is set:
   `C:\Users\andre\repos\` matching Andy's real stack (Express/Node, DO App
   Platform — see `reference_deploy_mechanisms.md`), not a generic boilerplate
   unrelated to how Andy actually deploys.
+- Any deliverable with a live backend/API (contact forms with server logic,
+  admin panels, chat widgets, quote endpoints) → apply the same security
+  baseline `the-freelancer` itself runs in production, not just static-HTML
+  gates. Read `C:\Users\andre\repos\the-freelancer\server.js` live as the
+  reference pattern (helmet security headers; per-IP rate limiting on
+  public-facing endpoints; input validation to block path traversal; auth via
+  `Authorization: Bearer` only, never in URLs/logs; escape user input embedded
+  in HTML emails; SMTP TLS verification; CORS via an explicit allow-list, not
+  wide open). A client site with a form-handling backend and no rate limiting
+  or input validation is not done, even if the design gate above passed.
 - Still apply the same truth rules: every claim sourced from the brief/JD, no
   invented facts, no invented price.
 

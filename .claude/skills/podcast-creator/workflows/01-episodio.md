@@ -442,7 +442,15 @@ Una vez aprobada la arquitectura, escribe el script palabra por palabra.
 - Usa el documento de sincronía (Paso 1.6) como guía para asignar segmentos
 - Incluye momentos de intercambio marcados con `[INTERCAMBIO]` donde los hosts pueden comentar entre sí sin guion
 - Equilibra el tiempo de habla entre los hosts (±20%)
-- **Asigna ownership de segmentos por expertise del host, no solo por porcentaje de palabras.** Para Mr. Putrid's Den: Juan lidera segmentos de shows en vivo, mitología de artistas y genealogía musical (su expertise como promotor). Andrés lidera historia musicológica, hilo narrativo e hilo entre episodios. Cuando Juan abre un segmento, su primera línea es de autoridad ("Yo quiero contar esta historia porque...") — no de reacción ("Vea pues, o sea..."). Verificar al terminar: ¿cuántos segmentos de contenido abre cada host? Debe ser ~50/50.
+- **Asigna ownership de segmentos por expertise del host, no solo por porcentaje de palabras.** Para Mr. Putrid's Den: Juan lidera segmentos de shows en vivo, mitología de artistas y genealogía musical (su expertise como promotor). Andrés lidera historia musicológica, hilo narrativo e hilo entre episodios.
+  > ⚠️ **Desactualizado para MPD — ver `.claude/skills/mrputridsden/CLAUDE.md` §Regla de
+  > balance co-host (la fuente vigente, no este archivo):** la proporción real es
+  > **~70/30 a favor de Andrés** (no 50/50 — decisión de Andrés en EP.004), y la frase
+  > "Yo quiero contar esta historia porque..." está **prohibida** para Juan (feedback
+  > EP.004, 2026-06-11: lo hace sonar leyendo). Juan abre con el hecho directo, sin
+  > fórmula declarativa — ver ejemplos concretos en `mrputridsden/CLAUDE.md`. Este bullet
+  > queda como ejemplo genérico de "ownership por expertise, no por %" para shows NUEVOS
+  > sin reglas propias — para MPD, siempre gana el archivo de CLAUDE.md citado arriba.
 - Ejemplo de segmento con intercambio:
 ```
 [HOST: Nombre1] [lee segmento del script...]

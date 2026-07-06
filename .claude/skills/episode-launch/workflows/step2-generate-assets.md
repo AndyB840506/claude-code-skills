@@ -48,6 +48,14 @@ internos) como fallback. YouTube NO acepta HTML — ahí va solo texto plano.
 
 **Tags (8–12):** Mix of Spanish-language operational + show + cultural + LATAM
 
+**Word count check (OBLIGATORIO, verificar antes de entregar el bloque):** contar las
+palabras reales de la "Full description" con una herramienta programática (no a ojo, no
+confiar en un conteo autoreportado) y confirmar que cae entre 250 y 400. Lección de
+Corporate Crime Confidential EP.001 (2026-07-04, ver `podcast-creator/workflows/01-episodio.md`
+Paso 4): un script declaró un word count en su propio texto sin verificarlo nunca y quedó
+a la mitad del target real. Si el conteo real cae fuera de 250–400, ajustar antes de
+presentar el bloque para aprobación.
+
 ---
 
 ## B · Social Plan — 4-Day Calendar

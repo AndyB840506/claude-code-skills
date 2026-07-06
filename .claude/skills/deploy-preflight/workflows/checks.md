@@ -32,6 +32,16 @@ Confirma que el directorio (`<directory>` del paso 2) existe y contiene:
 
 Si `vercel.json` existe, repórtalo (no hace falta validar su contenido a fondo, solo que exista y sea JSON valido).
 
+## Paso 3b — Verificar que no se filtren secrets
+
+Antes de deployar (y antes de cualquier `git push` que dispare el flujo), corre un grep basico sobre los archivos del directorio a deployar buscando patrones de credenciales:
+
+```bash
+grep -RniE "sk-[a-zA-Z0-9]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA|EC|OPENSSH) PRIVATE KEY-----|password\s*=\s*['\"]" <directory>
+```
+
+Si hay match, **STOP** — no deployes ni hagas push hasta confirmar con el usuario si es una key real (rotarla/moverla a env var) o un falso positivo (ej. un access key publico como el de Web3Forms en el form de contacto de BTQ, que es seguro exponer por diseño). No asumas que un match es benigno sin preguntar.
+
 ## Paso 4 — Verificar estado de produccion actual
 
 Corre un `curl -sI` (o equivalente) contra la URL de produccion del proyecto para confirmar que esta respondiendo `200 OK` ANTES del deploy. Esto da una baseline para detectar si el proximo deploy rompe algo.

@@ -16,6 +16,10 @@ anything else.
 
 ## Step 1 — Understand goal and select Actor
 
+**First, run the ethics gate from `SKILL.md`** (robots.txt / AI-crawler
+exclusion check for the target site) — required before selecting an Actor,
+not only when the user is trying to avoid Apify's cost.
+
 Identify the target platform and use case. Check `docs/actor-index.md` first
 for a known Actor. If the task matches one of the playbooks listed in
 `SKILL.md`, read that playbook instead of building the pipeline from scratch —

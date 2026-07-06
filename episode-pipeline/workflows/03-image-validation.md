@@ -51,7 +51,13 @@ ya está muy cargado. En cualquiera de los dos modos, verifica:
 
 - Las rutas de las 3 imágenes generadas
 - Las reglas estándar a verificar (cópialas del archivo de referencia — no las
-  resumas de memoria, las reglas exactas viven en `btq-project/workflows/artwork.md`):
+  resumas de memoria):
+  > ⚠️ **`btq-project/workflows/artwork.md` NO existe en disco** (confirmado 2026-06-26,
+  > ver `episode-pipeline/workflows/00-roadmap.md` Paso 3) — la fuente real y vigente de
+  > las reglas de artwork BTQ es `.claude/skills/episode-launch/docs/brand-constants.md`
+  > § "Dirección de artwork". Usa el checklist de ahí (render con volumen/textura real,
+  > número de figuras justificado, patrón geométrico correcto de fondo, texto letra por
+  > letra, footer completo) en vez de buscar el archivo de abajo.
   1. **Regla de margen** ("Regla de margen — la tipografía vive en zonas muertas"):
      tipografía debe estar en tercio superior/inferior, sujeto/visual focal en tercio
      central — nunca texto centrado sobre rostros o props icónicos
@@ -62,7 +68,7 @@ ya está muy cargado. En cualquiera de los dos modos, verifica:
      workflow de artwork (Step 0) usó una imagen de referencia oficial, el agente debe
      cargarla y comparar specs críticos (colores, accesorios, proporciones) contra la
      imagen generada — el mismo tipo de chequeo que detectó los errores de Old Snake /
-     MGS RAY documentados en `btq-project/workflows/artwork.md`
+     MGS RAY en un episodio anterior (ejemplo histórico, no un archivo vivo a consultar)
 
 El agente debe devolver, **por cada imagen**, un veredicto estructurado:
 ```

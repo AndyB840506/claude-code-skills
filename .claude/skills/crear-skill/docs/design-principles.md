@@ -134,3 +134,20 @@ Antes de redactar cualquier documento que dependa de una provincia/estado/país 
 
 **Anti-patrón:** Generar el documento y luego corregir la provincia — requiere reescritura completa de estadísticas, ciudades, leyes, costos de registro, y referencias gubernamentales.  
 **Mejor:** Validar primero, generar una sola vez correctamente.
+
+## 17. Reglas Verificables — Condición → Acción → Verificación
+
+Cada regla de juicio que agregues a una skill (no los pasos de `## EXECUTION`, sino las
+reglas de "cuándo hacer qué" que vive junto a ellos) debe tener forma explícita:
+
+**"Cuando [condición disparadora], hacer [acción concreta], verificar con [método
+comprobable]."**
+
+**Mal:** "Revisa que el texto sea claro antes de entregar."
+**Bien:** "Cuando el output incluya una cita textual, verificar contra el audio/fuente
+original antes de aprobar — no aceptar de memoria."
+
+Una regla sin condición de disparo explícita o sin método de verificación es prosa, no
+regla: un modelo que infiere menos del contexto (ej. Opus vs. Fable) la va a pasar por
+alto o aplicarla de forma inconsistente. Antes de dar una skill por terminada, revisa
+cada regla de juicio y confirma que tenga las tres partes.
