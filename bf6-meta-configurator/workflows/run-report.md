@@ -1,24 +1,12 @@
-# Run Report — main flow
+# Run Report — data refresh flow
 
-## Step 0 — Setup (ONE menu, no ping-pong)
+## Step 0 — No setup menu (app model, 2026-07-06)
 
-Detect language from the user's invoking message (Spanish message → todo en
-español; English → English). Never ask which language.
-
-**If `last-run.json` exists** in the skill folder, first offer a one-tap rerun
-via `AskUserQuestion` (single question): "¿Usar tu última config? — {platform} ·
-{mode} · {class} · {playstyle}" with options **Sí, igual** / **Cambiar algo**.
-If "Sí" → skip straight to Step 1.
-
-**Full menu** (first run, or "Cambiar algo"): ONE `AskUserQuestion` call with
-all 4 questions:
-
-1. **Platform** — PS5 (DualSense) / Xbox / PC gamepad
-2. **Mode** — Multiplayer / REDSEC (battle royale) / Both *(default: Both)*
-3. **Class** — All (default) / Assault / Engineer / Support / Recon
-4. **Playstyle** — Versatile (default) / Aggressive (CQC) / Long Range
-
-After the run completes, write the four answers + date to `last-run.json`.
+Preferences (mode, playstyle, class filter, platform) are selected INSIDE the
+app and persist via localStorage — do NOT ask for them. Detect language from
+the user's message for CHAT replies only; **the app is ALWAYS in English**
+(native game terms — translations read awkward; user decision 2026-07-06).
+Always fetch data for BOTH modes and ALL platforms — the app filters locally.
 
 ## Step 1 — Fresh data sweep (parallel, capped)
 
@@ -31,8 +19,11 @@ sequentially). Use the CURRENT month/year in queries:
 - `REDSEC battlefield meta best weapons loadout <month year>` (skip if mode = MP only)
 - `Battlefield 6 best controller settings aim deadzone <month year>`
 
-Then WebFetch the most promising URLs — **max 8 fetches total**. Prefer sources
-that show a publish/update date. Record: patch version + date, buffs/nerfs,
+Then WebFetch the most promising URLs — **max 10 fetches total**. Two are
+mandatory: **`bfhub.gg/meta/mp` and `bfhub.gg/meta/br`** — as of 2026-07-06 they
+are the only found source publishing full attachment loadouts with exact names
+(wzstats/battlefieldmeta hide them behind JS subpages; VGC/boostmatch 403).
+Prefer sources that show a publish/update date. Record: patch version + date, buffs/nerfs,
 attachment data, aim/deadzone changes, every URL used.
 
 **Staleness rule:** if the newest usable source is >60 days old, the report and
@@ -56,10 +47,13 @@ For every slot (muzzle, barrel, optic, underbarrel, magazine, specialty),
 exactly ONE of these three states — never an empty cell, never "TBD":
 
 1. **Sourced name** — a source names the attachment → use it + tier badge.
-2. **Generic effect recommendation** (`INFERRED` badge) — no source → describe
-   the effect to pick, e.g. "supresor con menor penalización de retroceso que
-   tengas desbloqueado", "mira 1x (red dot/holo) por tu estilo CQC". NEVER
-   fabricate a proper name.
+2. **Pattern pick** (`INFERRED` badge, name marked `*`) — no build published
+   for this weapon → assemble one from attachment names that RECUR across the
+   current meta builds fetched this run (e.g. `Standard Suppressor*`,
+   `Ribbed Vertical*`, `RO-M 1.75X*`, `FMJ*`). Real names only — seen in
+   sources this run — never fabricated. Weapon-specific slots with unknowable
+   names (barrels) get generic phrasing ("Factory barrel*"). Optic follows
+   playstyle.
 3. **`SIN DATOS` chip** — the slot may not exist for this weapon / nothing can
    be responsibly recommended → an explicit gray chip, styled, not a blank.
 
@@ -81,23 +75,23 @@ This section burned the user before — it shipped hardcoded values. Rules:
   value labeled `BASELINE` (amber badge) — and say in the section header that
   baseline rows are starting points, not current meta.
 
-## Step 4 — HTML report
+## Step 4 — Regenerate the app
 
-Follow [html-spec.md](html-spec.md). Filename `bf6-meta-YYYY-MM-DD.html`, saved
-to `E:\Claude Output\bf6\` (desktop) or `D:\Claude Output\bf6\` (laptop) —
-create the folder if missing, detect which drive exists. Open it:
-`Start-Process "<path>"` (PowerShell). Old reports are kept.
+Follow [html-spec.md](html-spec.md). **Stable path — same file every time** (the
+user's bookmark must keep working): `E:\Claude Output\bf6\bf6-meta-app.html`
+(desktop) or `D:\Claude Output\bf6\bf6-meta-app.html` (laptop) — create the
+folder if missing, detect which drive exists. Embed ALL fetched data (both
+modes, all platforms' settings) in the JSON block; the app renders and filters
+client-side. Open it: `Start-Process "<path>"` (PowerShell).
 
 ## Step 5 — Chat summary (compact, user's language)
 
 ```
-✓ Reporte: <path> (abierto)
-✓ Fuente: <patch/source + fecha> [STALE si aplica]
-✓ Setup: <platform · mode · class · playstyle>
+✓ App actualizada: <path> (abierta)
+✓ Parche: <version + fecha> · datos de hoy
+✓ Cambios vs datos anteriores: <top movers / "primer llenado">
 
 #1 por categoría — MP:      #1 por categoría — REDSEC:
   AR  → <arma>                AR  → <arma>
   SMG → <arma>                ...
-
-¿Filtrar por clase, cambiar estilo, o profundizar en un arma?
 ```

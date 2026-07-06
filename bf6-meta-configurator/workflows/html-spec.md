@@ -1,9 +1,18 @@
-# HTML Report Spec — "Field Ops Terminal"
+# App Spec — "Field Ops Terminal" (interactive)
 
 One self-contained file (inline CSS/JS, Google Fonts CDN allowed). The named
 concept is **Field Ops Terminal**: a military intel console rendering a live
 briefing — not a gamer landing page. If it looks like a generic dark dashboard
 with three cards, it's wrong.
+
+**It is an APP, not a report** (user decision 2026-07-06): a controls row at
+the top — Mode (MP/REDSEC) · Playstyle · Class filter · Platform — as tactical
+segmented buttons; every choice re-renders client-side from the embedded JSON
+and persists in `localStorage` (key `bf6ops`). Playstyle switches the optic on
+pattern-pick builds; platform filters the controller-settings rows; class
+filter hides non-matching weapon categories. A data-age chip in the header
+computes age from the JSON `generated` date and self-marks **STALE — RE-RUN THE
+SKILL** past 60 days. All copy in English.
 
 ## Banned (generic-AI tells)
 
@@ -36,10 +45,13 @@ decorative progress rings.
 4. **Weapon cards** — per category, 3 cards in `grid-template-columns:
    repeat(auto-fit, minmax(280px, 1fr))`. Card anatomy: rank chip top-left,
    source badge top-right (`✓ CONFIRMED` green / `⚙ COMMUNITY` blue /
-   `◈ INFERRED` amber / `SIN DATOS` gray / `STALE` red-outline), weapon name in
-   condensed caps, one-line reason, TTK/DPS as mono stat pair, attachment table
-   (slot | value | badge). Inferred rows show the generic-effect text in amber
-   italics. No cell is ever empty — see run-report.md's contract.
+   `◈ INFERRED` amber / `NO DATA` gray / `STALE` red-outline), weapon name in
+   condensed caps, one-line reason, TTK/DPS as mono stat pair, and a
+   **"LOADOUT ▸" affordance: clicking the card expands the full attachment
+   loadout in place** (accordion; slot | attachment name | build source line
+   with its own badge + date). Pattern-pick names carry `*` and render amber.
+   No cell is ever empty — see run-report.md's contract. All report copy in
+   English.
 5. **Controller settings** — 5-column table (Setting | Value | Reason | Where |
    Source). On ≤480px hide "Reason" (`display:none`), keep the rest. Rows that
    changed this patch get a green left-border.
