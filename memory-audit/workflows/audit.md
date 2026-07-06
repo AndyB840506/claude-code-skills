@@ -102,7 +102,9 @@ ni descripción, invisible para futuras búsquedas | Le devuelvo el nombre y la
 descripción`.
 
 Pregunta explícitamente: "¿Aplico estos cambios? (todos / seleccionar cuáles / ninguno)".
-**No toques ningún archivo antes de esta aprobación** — ver Rules en `SKILL.md`.
+**No toques ningún archivo antes de esta aprobación.** Preferir fusionar sobre borrar
+cuando dos memorias no se contradicen; verificar contra el estado real antes de marcar
+algo obsoleto (no basta con que "suene" desactualizado).
 
 ### Paso 5 — Aplicar + actualizar línea base
 
