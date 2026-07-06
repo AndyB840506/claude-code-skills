@@ -1,6 +1,6 @@
 # Session Close — Implementation Instructions
 
-This document defines how `/session-close` executes its 3 steps.
+This document defines how `/session-close` executes its 5 steps.
 
 ## Execution Sequence
 
@@ -24,6 +24,15 @@ STEP 4: Run the claude-continuity sync (backs up ~/.claude memory + config)
   → Mac/Linux: cd <repo path> && bash sync.sh
   → No user confirmation needed — it only copies ~/.claude state and pushes
   → Report which memory folders synced (or "nothing changed")
+
+STEP 5: Memory audit check
+  → Count *.md files in C:\Users\andre\.claude\projects\<workspace>\memory\ (exclude MEMORY.md)
+  → Read memory\.audit-baseline.json for lastAuditFileCount (if missing, create it with
+    the current count and skip the trigger this time — nothing to compare against yet)
+  → If (current count - lastAuditFileCount) >= 15: invoke Skill("memory-audit") now,
+    no confirmation prompt to trigger it (memory-audit gates its own apply step)
+  → Otherwise: report "Memoria: N archivos (+M desde la última auditoría, umbral 15)"
+  → No user confirmation needed for this step itself
 ```
 
 ## Implementation Rules
@@ -71,6 +80,14 @@ Session closed successfully.
 - If push fails (no network): the memory copy + local commit still happened; report it and tell the user to re-run `sync.ps1` when back online.
 - Confirm: "Continuity sync: backed up <N> memory folders + config to GitHub."
 
+**For Step 5:**
+- If `memory\.audit-baseline.json` doesn't exist yet: create it with the current file
+  count and skip the trigger this time (no baseline to compare against, not a failure)
+- If `Skill("memory-audit")` invocation fails: report the error, do not fail the whole
+  close — the check itself already ran and reported the count
+- Confirm: "Memoria: N archivos (+M desde la última auditoría)" — plus "memory-audit
+  disparado" if the threshold was crossed
+
 **General:**
 - All git commits succeed or fail atomically (can be retried)
 - All skill updates are reversible via git
@@ -103,9 +120,12 @@ Do NOT use Bash-style heredoc (`<<'EOF'`) — it fails in PowerShell 5.1.
 
 To verify implementation:
 1. Invoke `/session-close` in a test session
-2. Confirm all 3 steps execute in order
+2. Confirm all 5 steps execute in order
 3. Verify approval prompts appear for Steps 1-2
 4. Verify Step 3 runs without a prompt
 5. **CRITICAL:** Verify `.agents/handoff/YYYY-MM-DD-<topic>.md` was created in the repo
 6. **CRITICAL:** Verify git commit and push succeeded (`git log -1`)
 7. Verify git commit message uses the `handoff: <topic> YYYY-MM-DD` format
+8. Verify Step 5 runs without a prompt and reports the memory file count
+9. Verify `Skill("memory-audit")` actually fires (not just a printed suggestion) when
+   the count grown since `.audit-baseline.json` is ≥15
