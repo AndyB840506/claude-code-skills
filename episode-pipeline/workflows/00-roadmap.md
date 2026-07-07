@@ -20,6 +20,15 @@ Lee `roadmap-[show].md` (`btq-production/roadmap-btq.md` o
 
 Si el usuario corrige, usa el que indique — y si no aparece en la tabla, agrégalo.
 
+**Si el tema llega como idea suelta** (ej. "capítulo 2: VA hospital" — un dominio, no un
+caso/referente concreto): antes de proponer nada, investigar en la web los candidatos
+reales dentro de ese dominio (verificar hechos básicos de cada uno — no pitchear de
+memoria), y presentarlos como menú de AskUserQuestion con una recomendación marcada y
+el trade-off de cada opción en una línea. Solo después de que el usuario elija se
+arranca Stage A. Precedente: CCC EP002 (2026-07-07) — "VA hospital" tenía 3 casos
+documentados posibles; el menú evitó adivinar y el research del menú se reutilizó en
+el guion.
+
 ⚠️ **No edites el roadmap (número/orden de episodios) por una frase ambigua del usuario.**
 Confirma la numeración exacta ANTES de tocar la tabla (lección 2026-06-26: un swap EP.019↔020
 hecho sobre un comentario ambiguo tocó revertirse). Si el usuario dice algo que contradice el

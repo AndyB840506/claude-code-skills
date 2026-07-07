@@ -534,6 +534,9 @@ Antes de entregar, verifica internamente cada punto:
       era ~3.000, la mitad del target de 45 min — el guion quedó "completo" con la mitad
       del contenido necesario y esto solo se detectó después de grabar. No confiar en un
       conteo autoreportado — contar de verdad antes de guardar como completo.
+      Gotcha PS 5.1 (mordió en CCC EP002, 2026-07-07): al leer el guion para contar,
+      usar `Get-Content -Raw -Encoding UTF8` — sin el flag, PS 5.1 lee ANSI y corrompe
+      los headers Unicode (──/══) del guion, y el conteo falla o incluye basura.
 - [ ] **Si este fue el episodio piloto (primer wpm real medido del show):** crear
       `guion-style-[show].md` en la carpeta de producción del show con el wpm medido
       (`palabras_habladas_del_SRT / minutos_de_audio`) y la tabla de dimensionamiento,

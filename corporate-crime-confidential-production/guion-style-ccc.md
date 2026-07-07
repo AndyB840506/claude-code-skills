@@ -36,6 +36,28 @@ encodeado como paso obligatorio en `podcast-creator/workflows/01-episodio.md` (P
 
 ---
 
+## Pase de fact-check [VERIFICAR] — orden y reglas (fijado 2026-07-07, EP002)
+
+Los guiones CCC nacen con flags `[VERIFICAR: ...]` inline para todo dato no confirmado
+contra fuente primaria. El pase que los resuelve tiene reglas:
+
+1. **Correrlo ANTES de renderizar el HTML de producción y el Artifact.** En EP002 el
+   render se hizo primero y las correcciones tocaron espejarse a mano en 3 archivos
+   (~10 ediciones duplicadas). El .md es la fuente; el HTML es derivado — se construye
+   cuando el texto ya está cerrado.
+2. **Resolver = editar el texto, no anotar al margen.** El flag se elimina y el dato
+   queda confirmado, corregido o suavizado en el guion mismo. No se graba con flags
+   abiertos.
+3. **Cifras de prensa sin fuente primaria se suavizan al piso verificado.** Precedente
+   EP002: el "$16.3B" del Choice Act citado en prensa no se confirmó contra fuente
+   primaria; la apropiación documentada era $15B → el guion dice "more than fifteen
+   billion". Mejor un número defendible que uno citable.
+4. **Loguear el pase en la sección Sources** del guion: fecha, cuántos flags se
+   resolvieron, cuáles se corrigieron y por qué — con las fuentes nuevas agregadas a
+   la lista. El pipeline-state del episodio refleja "fact-check completo".
+
+---
+
 ## Atribución en quote cards — formato docu-drama, no narración directa
 
 CCC no es un show de narración directa como BTQ/MPD (donde el host simplemente cuenta la
