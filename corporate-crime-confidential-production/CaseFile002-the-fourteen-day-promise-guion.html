@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case File No. 002 — The Fourteen-Day Promise | Corporate Crime Confidential</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Special+Elite&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+        :root {
+            --ink: #141414;
+            --ink2: #1c1a17;
+            --card: #201d19;
+            --parchment: #E8DCC4;
+            --parchment-dim: #b8ad92;
+            --crimson: #8B1A2B;
+            --crimson-bright: #b8283e;
+            --silver: #A8A8A8;
+            --serif: Georgia, 'Times New Roman', serif;
+            --type: 'Courier New', Courier, monospace;
+            --sans: 'Arial Narrow', Arial, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--type);
+            background: #0b0a09;
+            color: var(--parchment);
+            line-height: 1.85;
+            font-size: 15.5px;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            background:
+                repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px),
+                var(--ink);
+        }
+
+        .header {
+            background:
+                linear-gradient(160deg, #241a17 0%, var(--ink) 75%);
+            padding: 46px 48px 40px;
+            border-bottom: 3px solid var(--crimson);
+            position: relative;
+        }
+        .header::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(100deg, rgba(0,0,0,0.25) 0px, rgba(0,0,0,0.25) 2px, transparent 2px, transparent 26px);
+            pointer-events: none;
+        }
+        .header .podcast {
+            font-family: var(--sans);
+            font-size: 1.05em;
+            color: var(--silver);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .header .casefile {
+            font-family: var(--serif);
+            font-weight: 900;
+            font-style: italic;
+            font-size: 2.1em;
+            color: var(--crimson-bright);
+            letter-spacing: 1px;
+            line-height: 1;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.4);
+        }
+        .header h1 {
+            font-family: var(--serif);
+            font-size: 2em;
+            font-weight: 900;
+            margin: 10px 0 10px;
+            color: var(--parchment);
+            line-height: 1.18;
+        }
+        .header .tagline {
+            font-family: var(--serif);
+            font-style: italic;
+            color: var(--parchment-dim);
+            font-size: 1.05em;
+            margin-bottom: 22px;
+        }
+        .meta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .meta-item {
+            background: rgba(139,26,43,0.15);
+            border: 1px solid var(--crimson);
+            padding: 5px 13px;
+            border-radius: 2px;
+            font-family: var(--sans);
+            font-size: 0.78em;
+            letter-spacing: 0.5px;
+            color: var(--parchment);
+            text-transform: uppercase;
+        }
+
+        .sourcing {
+            padding: 22px 48px;
+            background: #17110f;
+            border-bottom: 1px solid #2a2119;
+            font-size: 0.85em;
+            color: var(--parchment-dim);
+            line-height: 1.7;
+        }
+        .sourcing strong { color: var(--parchment); }
+
+        .section { padding: 32px 48px; border-bottom: 1px solid #23201b; }
+        .section h2 {
+            font-family: var(--sans);
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--crimson-bright);
+            margin-bottom: 20px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid var(--crimson);
+        }
+
+        .segment { margin: 40px 0; padding-bottom: 26px; border-bottom: 1px dashed #2a251f; }
+        .segment:first-child { margin-top: 0; }
+        .segment:last-child { border-bottom: none; }
+        .segment-header {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+        }
+        .segment-title {
+            font-family: var(--sans);
+            font-weight: 600;
+            font-size: 1.05em;
+            color: var(--parchment);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-left: 3px solid var(--crimson);
+            padding-left: 10px;
+        }
+        .segment-time {
+            font-size: 0.78em;
+            color: var(--silver);
+            font-family: var(--sans);
+            letter-spacing: 1px;
+        }
+
+        p.line { margin: 0 0 14px; color: #ece5d3; }
+
+        .sfx {
+            display: block;
+            font-family: var(--sans);
+            font-size: 0.78em;
+            letter-spacing: 1px;
+            color: var(--silver);
+            font-style: italic;
+            margin: 10px 0 16px;
+        }
+        .sfx::before { content: "♪ "; color: var(--crimson-bright); font-style: normal; }
+
+        .pausa {
+            display: inline-block;
+            font-family: var(--sans);
+            letter-spacing: 2px;
+            font-size: 0.68em;
+            color: var(--parchment-dim);
+            border: 1px solid #362c22;
+            border-radius: 2px;
+            padding: 1px 8px;
+            margin: 2px 0 14px;
+            background: #17130f;
+            text-transform: uppercase;
+        }
+
+        .transicion {
+            text-align: center;
+            font-family: var(--sans);
+            letter-spacing: 6px;
+            font-size: 0.72em;
+            color: var(--crimson);
+            text-transform: uppercase;
+            margin: 30px 0;
+            opacity: 0.75;
+        }
+        .transicion::before, .transicion::after { content: "— — —"; margin: 0 14px; opacity: 0.5; }
+
+        .nota {
+            background: #17130f;
+            border: 1px dashed #4a3a2a;
+            border-radius: 2px;
+            padding: 10px 15px;
+            margin: 14px 0 20px;
+            font-family: var(--sans);
+            font-size: 0.82em;
+            color: #cdbb9a;
+        }
+        .nota::before { content: "NOTE · "; font-weight: 600; letter-spacing: 1px; color: var(--crimson-bright); }
+
+        .verificar {
+            background: rgba(139,26,43,0.08);
+            border-left: 4px solid var(--crimson);
+            border-radius: 0 3px 3px 0;
+            padding: 10px 16px;
+            margin: 12px 0 18px;
+            font-family: var(--sans);
+            font-size: 0.8em;
+            color: #d9b8b8;
+        }
+        .verificar-label {
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--crimson-bright);
+            text-transform: uppercase;
+            margin-right: 6px;
+        }
+
+        em.enfasis { color: var(--crimson-bright); font-style: normal; font-weight: 700; }
+        strong { color: var(--parchment); }
+
+        .fuentes p { font-size: 0.82em; color: var(--parchment-dim); line-height: 1.8; font-family: var(--sans); }
+        .fuentes a { color: var(--crimson-bright); text-decoration: none; word-break: break-all; }
+        .fuentes a:hover { text-decoration: underline; }
+        .fuentes ul { padding-left: 18px; margin-top: 8px; }
+        .fuentes li { margin-bottom: 6px; font-size: 0.82em; color: var(--parchment-dim); font-family: var(--sans); }
+
+        .word-count {
+            font-family: var(--sans);
+            font-size: 0.8em;
+            color: var(--silver);
+            margin-top: 10px;
+        }
+
+        footer { padding: 26px 48px; color: var(--silver); font-size: 0.8em; text-align: center; font-family: var(--sans); }
+        footer .crimson { color: var(--crimson-bright); letter-spacing: 3px; text-transform: uppercase; }
+
+        @media print {
+            body { background: #fff; color: #111; }
+            .container { background: #fff; }
+            .nota, .verificar { display: none; }
+            .header { background: #111; }
+            p.line, .segment-title, strong { color: #111; }
+        }
+        @media (max-width: 640px) {
+            .section, .header, .sourcing, footer { padding-left: 22px; padding-right: 22px; }
+        }
+</style>
+<div class="container">
+
+<div class="header">
+    <div class="podcast">Corporate Crime Confidential</div>
+    <div class="casefile">CASE FILE No. 002</div>
+    <h1>The Fourteen-Day Promise</h1>
+    <div class="tagline">What if the criminal told the story?</div>
+    <div class="meta">
+        <span class="meta-item">Format: Solo · Word-for-word</span>
+        <span class="meta-item">5,730 spoken words · ~42 min @ 137 wpm</span>
+        <span class="meta-item">Recording script</span>
+    </div>
+</div>
+
+<div class="sourcing">
+    <strong>Sourcing note (read before recording):</strong> Every fact, figure, date, and quoted
+    line in this script is drawn from the VA Office of Inspector General's interim and final
+    Phoenix reports, Merit Systems Protection Board rulings, court records, congressional
+    testimony, and verified reporting — see the source list at the end. The two first-person
+    sections are dramatized narration: they voice documented conduct and public-record outcomes
+    as internal monologue. Where a real name is used (Sharon Helman, Dr. Sam Foote, William
+    Schoenhard), the actions and quoted lines are real and cited; the interior voice around them
+    is a reconstruction, not a transcript. The scheduler character in Part A is a composite
+    built from the documented scheduling practices described in the OIG reports and
+    whistleblower accounts — not a named individual. <strong>One legal guardrail is load-bearing
+    for this episode:</strong> Sharon Helman was never convicted of falsifying wait lists, and
+    this script never puts that admission in her mouth. Her documented conduct — and the
+    striking absence of any conviction for the fraud itself — is the story.
+</div>
+
+<div class="section">
+
+<div class="segment">
+<div class="segment-header"><span class="segment-title">Segment 1 · Cold Open + Hook</span><span class="segment-time">~1 min</span></div>
+<span class="sfx">A printer running in an empty office, fluorescent hum, fades under voice</span>
+<p class="line">There were two lists.</p>
+<p class="line">The first one lived in the computer. Clean. Official. Every veteran on it seen within fourteen days, just like Washington wanted. That's the list that went up the chain. That's the list that got people bonuses.</p>
+<span class="pausa">Pausa</span>
+<p class="line">The second list didn't live in the computer. It lived in a desk drawer, in a folder, on a screenshot somebody printed and never entered. Seventeen hundred names, at one hospital, in one city. Veterans. Waiting. Some of them for months. Some of them until it didn't matter anymore.</p>
+<span class="pausa">Pausa</span>
+<p class="line">I kept both lists. I can tell you exactly how it worked — and why, on paper, I never did anything wrong.</p>
+<p class="line"><em class="enfasis">That's the scary part. On paper, none of us did.</em></p>
+<span class="sfx">Music sting, cuts to black</span>
+</div>
+
+<div class="segment">
+<div class="segment-header"><span class="segment-title">Segment 2 · Intro</span><span class="segment-time">~1 min</span></div>
+<span class="sfx">Intro music, 10 sec, fades under voice</span>
+<p class="line">You're about to hear how they did it — in their own words. Welcome to Corporate Crime Confidential. Case File No. 002, opening now.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Before we start: everything in this file is built from federal inspector general reports, personnel board rulings, court records, and congressional testimony. Where you hear a thought, it's reconstructed from that record — not invented. Where a person is named, that's a matter of public record. Where they're not, the practices are real; the identity is a composite, because the record documents the scheme, not one scheduler's name.</p>
+<p class="line">Tonight's file: the Phoenix VA. A government hospital that ran itself like the worst kind of corporation — and the metric that quietly buried seventeen hundred veterans in a drawer.</p>
+<span class="sfx">Music fades out</span>
+</div>
+
+<div class="segment">
+<div class="segment-header"><span class="segment-title">Segment 3 · Context</span><span class="segment-time">~4.5 min</span></div>
+<p class="line">Here's the number this whole file turns on: fourteen.</p>
+<p class="line">The Department of Veterans Affairs promised that a veteran asking for a new appointment would be seen within fourteen days. Not as a hope. As a performance measure — the kind that shows up in executives' performance plans, the kind that feeds ratings, salary increases, bonuses. The people running VA hospitals were graded, in part, on hitting fourteen.</p>
+<span class="pausa">Pausa</span>
+<p class="line">And fourteen wasn't even the original promise. For years the standard had been thirty days; the department tightened it to fourteen even as people inside warned the target wasn't attainable with the staffing they actually had.</p>
+<div class="verificar"><span class="verificar-label">Verificar</span>The 30-to-14 tightening and internal warnings, per NBC's "Performance Mismanagement" reporting — confirm the exact year before recording.</div>
+<p class="line">Think about that sequence: the goal was already being missed, so leadership made the goal <em class="enfasis">harder</em> — and attached more of everyone's pay to it.</p>
+<p class="line">Now hold that number against reality. Phoenix, Arizona — one of the fastest-growing veteran populations in the country. Vietnam-era patients aging into heavy care. New patients coming home from Iraq and Afghanistan. And a primary-care operation that did not have anywhere near the doctors to see every new patient in two weeks. The demand and the capacity didn't match. Everyone inside could see it.</p>
+<span class="pausa">Pausa</span>
+<p class="line">So the metric had a choice to make, and metrics always make the same choice: it stopped measuring reality and started replacing it.</p>
+<p class="line">Here's what makes this file different from an ordinary scandal, though. The VA <em class="enfasis">knew</em>. In writing. On April 26, 2010 — four years before any of this became news — a VA deputy under secretary named William Schoenhard sent a memo to the entire system. His words: "It has come to my attention that in order to improve scores on assorted access measures, certain facilities have adopted use of inappropriate scheduling practices." Attached to the memo: eight pages describing <em class="enfasis">twenty-four distinct tricks</em> — his office called them "gaming strategies" — that facilities were using to make wait times look shorter than they were. Twenty-four. Cataloged. Named. With a warning that they would not be tolerated.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Think about what that memo actually is. It's the institution writing down, in detail, every way its own people were faking the number — and then keeping the number, keeping the incentives attached to the number, and filing the memo. If you're trying to stop a fraud, that's a warning. If you're not — it reads like a manual.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Four years later, at Phoenix, it was the manual.</p>
+<p class="line">If you heard Case File No. 001 — the bank, the whiteboard, the eight products — you already know the disease we're looking at tonight. Same pathogen, different organ. A target nobody can hit honestly, tied to pay, checked by nobody. The only real difference is what was sitting at the bottom of the funnel. At the bank it was fake accounts.</p>
+<p class="line"><em class="enfasis">Here it was people.</em></p>
+<p class="line">Let me introduce you to the person holding the fourteen every single day. Not a director. Not a doctor. A scheduling clerk, at a desk, with a phone that never stopped ringing.</p>
+<div class="transicion">Transición</div>
+</div>
+
+<div class="segment">
+<div class="segment-header"><span class="segment-title">Segment 4 · Part A — The Scheduler</span><span class="segment-time">~15 min</span></div>
+<div class="nota">Composite voice — first person, conversational, rationalizing. Built from the scheduling practices documented in the OIG reports and whistleblower accounts.</div>
+<p class="line">My name doesn't matter. I was a scheduling clerk at the Phoenix VA. GS-5, GS-6 — the bottom of the federal ladder. My job was simple: veteran calls, veteran needs a doctor, I put the veteran in the system, the system gives them a date. That's the job I was hired for.</p>
+<p class="line">That is not the job I was trained for.</p>
+<span class="pausa">Pausa</span>
+<p class="line">My first week, someone walked me through what they called — and I want you to hear the phrase, because the phrase is doing a lot of work — <em class="enfasis">"how we do it here."</em> Nobody said falsify. Nobody said hide. In four years, I never once heard a word that would sound bad in a deposition. What I heard was: this is how we manage access. This is how we keep the numbers where they need to be. This is how we do it here.</p>
+<p class="line">Here's how we did it here.</p>
+<span class="pausa">Pausa</span>
+<p class="line">A veteran calls. New patient. Needs primary care. The honest move is to put him straight into the electronic waiting list — the official one, the one Washington can see — with today's date. The clock starts today. And if the first open slot is in July, the system records the truth: this man waited seven months.</p>
+<p class="line">We did not do the honest move.</p>
+<p class="line">Instead, you take his information and you set it aside. Maybe you print the screen and it goes in a folder. Maybe it goes on a paper list, or a spreadsheet, or a shared drive — every office had its own flavor. What matters is one thing: <em class="enfasis">he does not go into the official system today.</em> Officially, as far as the Department of Veterans Affairs knows, this man does not exist yet.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Then you wait. Weeks. Months. You watch the schedule, and when a slot finally opens up inside the next fourteen days — that's when you enter him. You create him in the system on Monday, you book him for the following Thursday, and the computer does the math it was built to do: this veteran waited ten days.</p>
+<p class="line">Ten days. For a man who sat in my folder since March.</p>
+<span class="pausa">Pausa</span>
+<p class="line">The clock doesn't start when the veteran asks for help. The clock starts when I say he asked. That's the entire scheme. That's it. No hacked computers, no shredded ledgers, no offshore anything. Just a delay in when a name gets typed in. It doesn't even feel like lying while you're doing it — it feels like <em class="enfasis">timing</em>.</p>
+<p class="line">And there was a second trick, for the veterans we did enter right away. The system asked for the patient's "desired date" — when does he want to be seen. You'd have him on the phone, he'd say "as soon as possible," and you would look at the calendar, find the first open slot — say, June the tenth — and you'd ask him, gently: "Does June the tenth work for you?" He says yes. And you type June the tenth into the box marked <em class="enfasis">desired date</em>.</p>
+<p class="line">Do you see it? On paper, this veteran got exactly what he wanted, on exactly the day he wanted it. Wait time: zero. The seven months between his phone call and that slot never happened, statistically. He wanted June the tenth. We gave him June the tenth. The Schoenhard memo had a name for that one — it was in the twenty-four. It was still running, four years after the memo said it wouldn't be tolerated.</p>
+<span class="pausa">Pausa</span>
+<p class="line">And those were just our house specialties. That eight-page catalog had tricks we never even needed. Somewhere in the system, facilities were canceling appointments on fine print — show up less than ten or fifteen minutes early, lose your slot — and every cancellation, conveniently, could restart a clock. Twenty-four ways to make a waiting room disappear into a database, and the memo itself admitted the list probably wasn't complete. When the tricks outnumber the fingers you have to count them on, you're not looking at bad apples. You're looking at a <em class="enfasis">craft</em>. A trade skill, passed desk to desk, with its own vocabulary and its own apprenticeship — mine started my first week, remember.</p>
+<p class="line">And here's the thing about a craft: it survives inspection, because inspection is part of the craft. When word came down that someone from the region was coming through, the office got careful. Not honest — <em class="enfasis">careful</em>. You learn the difference fast. The folder got thinner for a week. Anyone who might have said something out loud already knew better; you didn't need to threaten people, you just needed everyone to understand that the numbers were the facility's numbers, and the facility signed your performance review. The people who eventually did talk — you'll notice, when we get there — talked <em class="enfasis">after they retired</em>. That's not a coincidence. That's the design.</p>
+<span class="pausa">Pausa</span>
+<p class="line">I want to walk you through why I did it, because "she was evil" is a lazy answer and this show doesn't do lazy answers.</p>
+<p class="line">First: I was trained to do it, by people who were trained to do it, in an office where it was as normal as the coffee machine. When every colleague you have does a thing, and your supervisor teaches the thing, and the facility's numbers depend on the thing, it stops looking like a decision. It looks like the job.</p>
+<p class="line">Second: the number was watched. Not casually — <em class="enfasis">structurally</em>. The fourteen-day figure rolled up from my keyboard into the clinic's numbers, from the clinic into the facility's scorecard, from the facility to the region, from the region to Washington. Somewhere up that chain, people I never met had performance plans, ratings, and bonus money tied to what I typed. Nobody up there called to ask if the veterans were okay. The phone rang when the number slipped. And when the number slipped, the pressure came back down the same chain it went up, and it landed on the last person holding it — which was me.</p>
+<p class="line">Third — and this is the one I actually told myself at the time — <em class="enfasis">I never denied anyone care.</em> That was my line. I wasn't canceling appointments. I wasn't turning anyone away. Every man and woman in that folder was going to get seen, eventually, the same day they would have gotten seen anyway — the capacity didn't change because of where I wrote their name. All I moved was paperwork. All I shifted was when a database found out. That's what I told myself, and I want to be honest with you: for about three and a half years, it worked. I slept fine.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Here's what that line ignores, and I knew it ignored it.</p>
+<p class="line">The waiting list wasn't just a queue. It was the <em class="enfasis">visibility</em>. A veteran on the official list is a data point someone in Washington can count, question, staff against. Seventeen hundred veterans in folders and spreadsheets are invisible. Nobody allocates doctors for a folder. Nobody flags the chest-pain patient in a drawer. The inspector general would later use a phrase for those seventeen hundred that I think about more than I'd like to: <em class="enfasis">"at risk of being lost or forgotten."</em> Not a metaphor. An operational description. We had built a system whose entire function was to make waiting veterans statistically invisible — and then we were surprised that some of them slipped through it.</p>
+<span class="pausa">Pausa</span>
+<p class="line">And the calls came in. That's the part that doesn't fit in a spreadsheet. The same veteran, calling back, month after month: "Still nothing?" You learn phrases. "You're in our system." True — my system, not the system. "We'll call you as soon as something opens up." Also true. And the big one, the release valve, the sentence that let all of us sleep: "If you feel this is an emergency, hang up and go to the emergency room." Which sounds like care, until you understand what it actually is — it's the queue outsourcing its conscience. Anything truly urgent will self-select out of my folder and into the ER, so whatever stays in the folder must, by definition, be fine. Every sentence technically true. I got very good at sentences that were technically true.</p>
+<span class="pausa">Pausa</span>
+<p class="line">CNN later told the country about a Navy veteran in his seventies — Thomas Breen. He came into our emergency room with blood in his urine and a history of cancer. Seen, stabilized, sent home with a note in his chart: follow-up needed, urgent. The follow-up call came <em class="enfasis">after he was dead</em>. Bladder cancer. His family got to hear the VA calling to schedule an appointment for a man they had already buried.</p>
+<div class="verificar"><span class="verificar-label">Verificar</span>Breen case details as reported by CNN's original April 2014 investigation — confirm name, age, and sequence against the CNN piece before recording.</div>
+<p class="line">I'm not going to claim him for my folder — I don't know whose queue he sat in. I'm telling you about him because "urgent" was a word our system could read, print, and file — and still convert into a phone call to a dead man. That's what a gamed queue does that a slow queue doesn't: a slow queue at least knows <em class="enfasis">who it's failing</em>.</p>
+<p class="line">Some of the men on my list were in their eighties. Korea. Vietnam. Some had caregivers calling for them, daughters, wives, and the wives were always politer than they had any right to be. You'd hang up and the folder was right there in the drawer, and you'd think: he's number two hundred and something. And then the phone rang again and you stopped thinking it.</p>
+<span class="pausa">Pausa</span>
+<p class="line">The day it cracked for me was small. They're always small. I was updating the list — housekeeping, we maintained our shadow list like professionals, that's the detail that should tell you everything — and there was a name I couldn't reach. Phone disconnected. And a colleague, not even looking up, said maybe check the obituaries. Like it was a known step. Like it had happened before.</p>
+<p class="line"><em class="enfasis">It had happened before.</em></p>
+<span class="pausa">Pausa</span>
+<p class="line">I don't know if the men on my particular list who died would have lived with faster care. Neither do you. Neither, it turns out, does the inspector general of the United States — and we'll get to exactly what his report could and couldn't say, because that sentence is the darkest thing in this file.</p>
+<p class="line">What I know is this: the number fourteen went up the chain from my desk, every week, clean and green. And it was fiction. I wrote fiction, for four years, with a government keyboard — and my performance reviews were <em class="enfasis">excellent</em>.</p>
+<span class="sfx">Brief silence, one beat</span>
+<p class="line">That's the floor of this file. A folder, a desired-date box, and seventeen hundred people who officially weren't waiting.</p>
+<p class="line">Now let's climb.</p>
+<div class="transicion">Transición</div>
+</div>
+
+<div class="segment">
+<div class="segment-header"><span class="segment-title">Segment 5 · The Data Bridge</span><span class="segment-time">~5.5 min</span></div>
+<p class="line">Here's what the record actually shows, in dates and numbers, no dramatization needed.</p>
+<p class="line">Fall 2013: a doctor named Sam Foote — twenty-four years at the Phoenix VA, newly retired, which matters, because the people still inside were afraid — writes to the VA's Office of Inspector General. He describes the scheme: an official list showing timely care, and veterans parked off the books, waiting months, some dying before they were ever seen. The response does not end the practice. So in March 2014, he writes <em class="enfasis">again</em>.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Then he stops writing letters. On April 23, 2014, Dr. Foote goes on CNN and says it on camera: as many as forty veterans may have died waiting for care at Phoenix, hidden on a secret list. And what two letters to an inspector general couldn't do, one television interview does in weeks.</p>
+<p class="line">May 16, 2014: Dr. Robert Petzel, the VA's top health official, retires early — at the request of Secretary Eric Shinseki.</p>
+<p class="line">May 28, 2014: the inspector general publishes an interim report, and it is worse than the allegation. About <em class="enfasis">seventeen hundred veterans</em> at Phoenix, waiting for primary care, are on no official waiting list at all — in the OIG's own words, "at risk of being lost or forgotten." The veterans the OIG sampled had waited an average of 115 days for their first appointment, while the facility reported waits of about 24 days.</p>
+<div class="verificar"><span class="verificar-label">Verificar</span>The 115-day sample average is in the interim report; confirm the reported ~24-day official figure against the report text before recording.</div>
+<p class="line">And the report says the word that turns a local story into a national one: the manipulation is <em class="enfasis">"systemic."</em> Within days, 42 VA medical centers are under investigation. Phoenix wasn't the crime. Phoenix was the sample.</p>
+<span class="pausa">Pausa</span>
+<p class="line">May 30, 2014: Secretary Eric Shinseki — a retired four-star general, a wounded combat veteran himself — resigns.</p>
+<p class="line">June 2014: the VA's own deputy secretary tells Congress that of those seventeen hundred unlisted Phoenix veterans, <em class="enfasis">eighteen died</em> before anyone ever called them back.</p>
+<div class="verificar"><span class="verificar-label">Verificar</span>Figure attributed to Deputy Secretary Sloan Gibson in June 2014 reporting — confirm attribution before recording.</div>
+<p class="line">That same month, the VA audits itself nationwide, and Phoenix stops being the story. Across the country, tens of thousands of veterans are found waiting more than ninety days for a first appointment — and tens of thousands more, enrolled over the previous decade, had simply <em class="enfasis">never been seen at all</em>.</p>
+<div class="verificar"><span class="verificar-label">Verificar</span>The June 2014 nationwide access audit reported approximately 57,000 veterans waiting 90+ days and approximately 64,000 enrolled-but-never-seen — confirm both figures against the audit coverage before recording; do not speak the numbers without this check.</div>
+<p class="line">Whatever the exact figures, the shape was no longer in dispute: this was not one hospital's drawer. It was the drawer, everywhere.</p>
+<p class="line">August 7, 2014: Congress passes the Veterans Access, Choice, and Accountability Act — roughly sixteen billion dollars to buy the capacity the metric had been faking.</p>
+<div class="verificar"><span class="verificar-label">Verificar</span>Commonly reported as $16.3 billion — confirm figure.</div>
+<span class="pausa">Pausa</span>
+<p class="line">And then, August 26, 2014: the final OIG report. This is the sentence I told you about. The inspector general confirms the scheme — the secret lists, the gamed dates, all of it. He identifies veterans who experienced "clinically significant delays" in care, and six of them died. But on the question everyone wanted answered — did the delays kill them — the report says this: "we are unable to conclusively assert that the absence of timely quality care caused the deaths of these veterans."</p>
+<span class="pausa">Pausa</span>
+<p class="line">Read that sentence the way an operations person reads it. It is not an acquittal. It's a description of what the fraud <em class="enfasis">destroyed</em>. When you erase the real waiting list, you erase the evidence chain. You can't prove the wait killed a man if the system was built so the wait officially never happened. The scheme didn't just hide the queue — it hid the body count, permanently, in both directions. Nobody can prove it. Nobody can disprove it.</p>
+<p class="line">The perfect crime isn't the one nobody can solve. It's the one nobody can <em class="enfasis">measure</em>.</p>
+<span class="pausa">Pausa</span>
+<p class="line">So: seventeen hundred invisible veterans, a systemic finding, a secretary gone, sixteen billion dollars. Somebody ran this hospital while all of that built up.</p>
+<p class="line">Let's meet her.</p>
+<div class="transicion">Transición</div>
+</div>
+
+<div class="segment">
+<div class="segment-header"><span class="segment-title">Segment 6 · Part B — The Director</span><span class="segment-time">~15 min</span></div>
+<div class="nota">Named individual — Sharon Helman, director of the Phoenix VA Health Care System, 2012–2014. Every action described below is documented conduct per the MSPB record, her 2016 guilty plea, and verified reporting. Interior reflection is dramatized narration built around that documented record — and it deliberately does NOT include any admission about wait lists, because no such admission or conviction exists.</div>
+<p class="line">My name is Sharon Helman. From 2012 to 2014, I was the director of the Phoenix VA Health Care System — the hospital you've been hearing about for the last twenty minutes. I was a career VA executive. I came up through the system, ran other facilities before this one, and I was sent to Phoenix the way you send someone with a future: it was a big, hard, visible assignment. The kind you get <em class="enfasis">rewarded</em> for surviving.</p>
+<p class="line">Let me tell you how a hospital director actually experiences a number like fourteen.</p>
+<span class="pausa">Pausa</span>
+<p class="line">I didn't schedule anyone. I never touched a desired-date box in my life. A director lives one level up, where the clerks and the folders and the phone calls arrive pre-digested — as a dashboard. Access numbers. Performance measures. The fourteen-day figure, rolling up green. My performance plan had goals tied to measures like that; that's not an accusation, that's how the Senior Executive Service works. You are handed a scorecard, your reviews and your bonus ride on the scorecard, and Phoenix's scorecard — the one my clerks manufactured downstairs — looked <em class="enfasis">good</em>.</p>
+<p class="line">For fiscal year 2013 — the exact period when, we now know, seventeen hundred veterans sat off the books downstairs — my performance review produced a bonus of nine thousand and eighty dollars.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Hold that thought. We're coming back to that nine thousand dollars, because what happens to it is the single most instructive fact in this entire file.</p>
+<p class="line">When Dr. Foote went on CNN in April 2014, my name went national within days. On May 1, the department placed me on administrative leave, along with members of my leadership team.</p>
+<div class="verificar"><span class="verificar-label">Verificar</span>May 1, 2014 leave date and who was placed on leave alongside Helman — confirm against contemporaneous reporting.</div>
+<p class="line">In November 2014, the Department of Veterans Affairs fired me — one of the most publicized firings in the history of the federal government. The new accountability law Congress had just passed, the one written in the heat of this very scandal, was used on me almost first. I was the face. Ask anyone in America that year who was responsible for veterans dying on secret wait lists, and if they knew one name, it was mine.</p>
+<span class="pausa">Pausa</span>
+<p class="line">And I understood my function perfectly, because I'd spent a career inside this machine and I knew what it needed. It needed the story to have a shape: one hospital, one director, one villain, removed. Because the alternative shape — the true shape — was unbearable for everyone still employed. The true shape was: a national target, set centrally, tied to pay centrally, warned about centrally in 2010, gamed at dozens of facilities by hundreds of people who were trained to game it by the people before them. You can't fire a shape like that. You can't put a system on administrative leave. So the machine did what machines do under threat — it found its fuse, and it blew it, loudly, in public, and called the circuit repaired.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Now let me tell you what the record actually did to me — not the headlines. The record.</p>
+<p class="line">I appealed my firing, as every federal executive can. And when the personnel board judge reviewed the government's case against me, here's what happened to it. The charges about wait-time manipulation at my hospital — the secret lists, the gamed numbers, the thing this entire scandal was <em class="enfasis">about</em>? Not sustained. The government did not prove, to its own administrative judge, that I directed it, knew about it, covered it up. Whatever you believe — and the judge who reviewed me was not kind; "blatant ineptitude" is a phrase that exists in this record — <em class="enfasis">the falsification case against the director of the falsification hospital did not hold.</em></p>
+<p class="line">What held was something else entirely.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Sit in my chair for one second, because this is the part nobody wants to inhabit. The government that employed me for decades — the same government whose own deputy under secretary cataloged twenty-four gaming strategies in 2010, whose own target made honest scheduling impossible, whose own performance system paid me on the number — that government walked into a hearing room to prove that the gaming at my hospital was <em class="enfasis">mine</em>. Personally. Directed, known, concealed by me. And it couldn't. Not because the judge was friendly — read what he wrote about my management if you want to see unfriendly. It couldn't because the machine had no fingerprints on it. That's the feature nobody talks about. A fraud that's trained instead of ordered, inherited instead of invented, spread across a hundred keyboards instead of signed in one memo — that fraud doesn't <em class="enfasis">belong</em> to anyone. Mine was simply the office it was discovered in.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Gifts. While I was director, a lobbyist — a healthcare consultant, himself a former VA official, a man positioned to benefit from relationships inside the department — gave me things. An eleven-thousand-dollar family trip to Disneyland. Concert tickets. Over time, more than thirteen thousand dollars' worth that I did not report, on the annual financial disclosure forms every senior federal executive signs. And notice what that relationship actually was, because it's the same disease at a different scale: a former insider, monetizing access to the system he used to run, investing in a rising director the way you'd invest in a stock. He read the same scorecards Washington read. My numbers looked like a career worth cultivating. <em class="enfasis">The fiction paid dividends to people I never put on any list.</em> The judge in December 2014 upheld my firing on the gifts. Not the lists. The lists couldn't be proven. The Disneyland trip could — there are receipts for Disneyland.</p>
+<p class="line">And in 2016, the criminal system arrived at the same destination. I pleaded guilty to a felony: making a false financial disclosure to the federal government — by then the total in concealed gifts was over fifty thousand dollars. My sentence: probation. No prison. Not one day.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Do you see the shape of it yet? The United States government looked at the epicenter of the biggest healthcare scandal in its modern history, at the executive who ran that hospital while seventeen hundred veterans sat invisible in drawers — and the only crime it ever made stick was that I didn't declare my presents. They got Capone on taxes. They got me on <em class="enfasis">Disneyland</em>.</p>
+<p class="line">I'm not saying that with pride. I'm saying it with precision, because this show is about what the record proves, and the record proves this: nobody — not me, not my deputies, not one scheduler, not one regional director, not one Washington official — <em class="enfasis">nobody</em> was ever criminally convicted for the wait-list fraud itself. At Phoenix or anywhere else. The scheme you heard described in Part A, the one the inspector general called systemic across dozens of hospitals? As a crime, officially, it has no author.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Now. The nine thousand and eighty dollars. I promised we'd come back.</p>
+<p class="line">After they fired me, the department tried to take back my fiscal 2013 bonus — the one awarded for the very year the fiction was thickest. And a judge ruled they <em class="enfasis">couldn't</em>. The government failed to prove the bonus was given in "administrative error." And the judge was right, in the most damning way possible: it wasn't an error. The system worked exactly as designed. My scorecard said what it said, my review reflected my scorecard, my bonus followed my review. Every link in that chain functioned perfectly. The only defective component was the truth.</p>
+<p class="line">I kept the money. It's the most honest nine thousand dollars in this story — not because I earned it, but because of what it proves: <em class="enfasis">the machine genuinely could not tell the difference between performance and the performance of performance.</em></p>
+<span class="pausa">Pausa</span>
+<p class="line">One more thing, and then you can judge me. In 2017, a federal appeals court looked at the special fast-track firing law they'd used on me — the one Congress wrote in a fury in the summer of 2014 — and struck it down as unconstitutional.</p>
+<div class="verificar"><span class="verificar-label">Verificar</span>Federal Circuit ruling, 2017 — confirm the precise constitutional grounds before recording; reported at the time as a due-process/appointments issue with the expedited SES removal procedure.</div>
+<p class="line">My removal stood, in the end. But sit with the totality. The accountability law written for this scandal: unconstitutional as applied to its most famous target. The fraud at the center of the scandal: never criminally charged against anyone. The bonus paid on the faked numbers: legally unrecoverable.</p>
+<span class="pausa">Pausa</span>
+<p class="line">You want my interior logic? Here it is, reconstructed, as honest as the record allows. I ran the hospital the way the system asked me to run it. Washington never called to ask how long veterans were actually waiting. Washington called about the measure. So the measure is what got managed. And when it all detonated, the system that built the measure, demanded the measure, and paid me for the measure needed exactly one thing from me — <em class="enfasis">a face for the cameras</em>. I gave them that too.</p>
+<p class="line">The clerks got the folders. I got the headlines. The metric got away clean.</p>
+<span class="sfx">One beat of silence</span>
+<div class="transicion">Transición</div>
+</div>
+
+<div class="segment">
+<div class="segment-header"><span class="segment-title">Segment 7 · The Verdict Gap</span><span class="segment-time">~5.5 min</span></div>
+<p class="line">Let's put every outcome in this file side by side, plainly, because this is the part that should actually bother you.</p>
+<p class="line">Dr. Sam Foote — the man who was right. He spent his last months before retirement watching veterans get buried in folders, wrote to the inspector general in the fall of 2013, was effectively ignored, wrote again in March, was ignored again, and had to walk into a CNN studio to make the United States government read its own mail. His reward was being publicly disputed by the agency he'd served for twenty-four years — and the OIG's final report, the one his letters forced into existence, spent some of its pages pushing back on <em class="enfasis">him</em>. He was retired. That detail should stop you. The only person positioned to tell the truth was the one the system could no longer punish. Everyone still inside stayed quiet, and given what you've heard tonight, can you honestly say they were wrong to be afraid?</p>
+<span class="pausa">Pausa</span>
+<p class="line">Secretary Eric Shinseki — resigned. Dr. Robert Petzel — retired early. The traditional Washington endings: the men at the very top absorbed the political cost, which is real, and which is also not a trial.</p>
+<p class="line">Sharon Helman — fired, on the gifts; felony guilty plea, on the disclosure forms; probation, no prison; bonus legally kept. Never convicted of anything involving a waiting list.</p>
+<p class="line">The schedulers, the clerks, the middle managers — across a scandal the inspector general called systemic, investigated at dozens of facilities: <em class="enfasis">zero criminal convictions</em> for the wait-time manipulation itself. Federal prosecutors looked at Phoenix and declined to bring charges over the scheme.</p>
+<div class="verificar"><span class="verificar-label">Verificar</span>DOJ/FBI reviewed the Phoenix allegations and reportedly declined criminal prosecution over the wait-list manipulation — confirm the declination reporting and its stated rationale before recording.</div>
+<p class="line">And the veterans. Six deaths with clinically significant delays that the record can name — and a sentence that says no one will ever be able to prove or disprove what the waiting cost, because the fraud consumed its own evidence.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Now compare this file to Case File No. 001, because the contrast is the lesson. At Wells Fargo, the executive who owned the metric paid twenty million dollars and wears a lifetime ban from her industry. Here — where the harm wasn't fake bank accounts but human beings in their eighties waiting for a doctor — the heaviest sanction the system produced was <em class="enfasis">probation for undeclared Disneyland tickets</em>.</p>
+<p class="line">The private sector fraud had a defendant. The public sector fraud had a resignation ceremony.</p>
+<span class="pausa">Pausa</span>
+<p class="line">And the epilogue is quieter than you'd hope. The sixteen billion dollars bought programs and promises, and five years after Phoenix, government reviewers and reporters were still finding VA wait-time data that couldn't be trusted and waits that hadn't meaningfully improved.</p>
+<div class="verificar"><span class="verificar-label">Verificar</span>Five-years-later status per 2019 coverage of GAO/OIG follow-ups — confirm the specific findings cited before recording.</div>
+<p class="line">Because the money treated the symptom the cameras could see — capacity — and the disease was never capacity alone. The disease was a measurement nobody independent ever owned. You can't buy your way out of a number that grades itself.</p>
+<span class="pausa">Pausa</span>
+<p class="line">And I want to be careful here, because outrage is cheap and this show is not. The individual outcomes have individual explanations — proof is hard, intent is harder, administrative law is its own animal. Any single verdict in this file can be defended by a reasonable lawyer. It's the <em class="enfasis">pattern</em> that can't be defended: a fraud this big, this documented, this fatal in its shadow — with no author, no defendant, and a bonus that couldn't legally be returned. Every safeguard fired exactly as designed, and the sum of them was nothing.</p>
+<div class="transicion">Transición</div>
+</div>
+
+<div class="segment">
+<div class="segment-header"><span class="segment-title">Segment 8 · The Takeaway</span><span class="segment-time">~5.5 min</span></div>
+<p class="line">Here's what I want you to take out of this file, past the anger, into whatever you actually run — a team, a clinic, a call center, a company.</p>
+<p class="line">First. When a target is impossible with the capacity you've funded, people will not miss the target. <em class="enfasis">They will fix the measurement.</em> Every time. Phoenix could not see new patients in fourteen days — that was a staffing fact, a budget fact, a geometry fact. The fourteen-day promise didn't change the geometry. It just moved the lie to the cheapest place to hide it: a data-entry field. If you remember one sentence from tonight: an impossible target doesn't produce heroic effort. It produces fiction with your logo on it.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Second. A warning memo is not a control. The VA didn't fail to notice the gaming — it cataloged the gaming, twenty-four strategies deep, four years early, and then changed <em class="enfasis">nothing</em> about the incentive that caused it. If you name the disease and keep the diet, you haven't issued a warning. You've published documentation. The Schoenhard memo should haunt every leader who's ever fired off a "reminder about our values" email and considered a risk handled. Ask yourself what your organization has already warned itself about, in writing, and left armed.</p>
+<span class="pausa">Pausa</span>
+<p class="line">Third — and this is the operational core — the control that would have caught this was almost embarrassingly simple: reconcile <em class="enfasis">demand against the queue</em>. Phone calls came in every day. Referrals came in every day. That intake existed — it just never got compared against the official waiting list. Seventeen hundred people is not a rounding error; it's a gap you'd catch in an afternoon with two spreadsheets, <em class="enfasis">if</em> anyone independent ever put the two spreadsheets side by side. Nobody did, because the only people with both spreadsheets were the people the metric was grading. Never let the graded party be the sole custodian of the measurement. That one sentence, applied, unravels this entire file — and Case File No. 001, and half the files we will ever open on this show.</p>
+<p class="line">If you want the Monday-morning version: pick the one metric your organization brags about most, and trace it backwards — not from the dashboard down, but from the <em class="enfasis">raw intake up</em>. The customer's first email. The patient's first call. The timestamp nobody's bonus depends on. If the story that raw intake tells matches the dashboard, sleep well. If there's a gap — and you'll know within an afternoon — you've found your folder in a drawer. Every organization has one. The only question is whether you find it, or a reporter does.</p>
+<span class="pausa">Pausa</span>
+<p class="line">And fourth, the uncomfortable one. Watch your best numbers, not your worst. The instinct is to audit the failing clinic, the red dashboard, the missed quota. But fraud doesn't live in the red. Fraud lives in the <em class="enfasis">green</em> — in the unit that never misses, quarter after quarter, no matter what happens to staffing or demand. Phoenix looked fine. Phoenix looked better than fine; its director was getting performance bonuses. If a number stays perfect while the world around it gets harder, that's not excellence. That's usually authorship.</p>
+<span class="pausa">Pausa</span>
+<p class="line">The men in that folder wore the uniform of this country. They did the waiting; the number never waited a day. And the system that promised them fourteen days spent years measuring, rewarding, and defending everything about that promise <em class="enfasis">except whether it was true</em>.</p>
+<p class="line">What you measure is a promise. Fund it, verify it independently, or don't make it — because someone downstream is holding your metric with a phone that won't stop ringing, and you've already taught them what happens if the number slips.</p>
+<div class="transicion">Transición</div>
+</div>
+
+<div class="segment">
+<div class="segment-header"><span class="segment-title">Final Segment · Outro + CTA</span><span class="segment-time">~1 min</span></div>
+<span class="sfx">Outro music, fades in under voice</span>
+<p class="line">That's Case File No. 002, closed — for now.</p>
+<p class="line">If this one got under your skin, that was the point. Every file in this show is built the same way: real record, first-person voice, and a lesson that's supposed to follow you back into whatever you lead or work inside of.</p>
+<p class="line">If you know someone who runs their team off a dashboard, send them this episode. Ask them what their fourteen is.</p>
+<p class="line">Case closed. New file drops in two weeks. Follow Corporate Crime Confidential so you don't miss it.</p>
+<span class="sfx">Music swells, fade to black</span>
+</div>
+
+</div>
+
+<div class="section fuentes">
+<h2>Sources — verify before recording</h2>
+<p>Items flagged <span class="verificar-label">Verificar</span> in the script need a final check pass before the session.</p>
+<ul>
+<li>VA OIG — Final report: "Review of Alleged Patient Deaths, Patient Wait Times, and Scheduling Practices at the Phoenix VA Health Care System" (Aug 26, 2014): <a href="https://www.vaoig.gov/reports/audit/review-alleged-patient-deaths-patient-wait-times-and-scheduling-practices-phoenix-va">vaoig.gov</a></li>
+<li>VA OIG — Interim report PDF (May 28, 2014; "1,700 veterans… at risk of being lost or forgotten"; 115-day sample average): <a href="https://www.vaoig.gov/sites/default/files/reports/2014-05/VAOIG-14-02603-178.pdf">vaoig.gov PDF</a></li>
+<li>NPR — "Report Finds Evidence Of Secret Wait Lists At VA Hospital" (May 28, 2014): <a href="https://www.npr.org/sections/thetwo-way/2014/05/28/316712039/report-finds-evidence-of-secret-wait-lists-at-va-hospital">npr.org</a></li>
+<li>Wikipedia — 2014 Veterans Health Administration controversy (timeline; cross-check primary sources): <a href="https://en.wikipedia.org/wiki/2014_Veterans_Health_Administration_controversy">wikipedia.org</a></li>
+<li>The American Legion — "VA memo warned of 'gaming strategies'" (Schoenhard memo, April 26, 2010; 24 tactics): <a href="https://www.legion.org/information-center/news/veterans-healthcare/2014/may/va-memo-warned-of-gaming-strategies">legion.org</a></li>
+<li>NBC News — "Performance Mismanagement: How an Unrealistic Goal Fueled VA Scandal": <a href="https://www.nbcnews.com/storyline/va-hospital-scandal/performance-mismanagement-how-unrealistic-goal-fueled-va-scandal-n139906">nbcnews.com</a></li>
+<li>CNN — "VA whistleblower Dr. Sam Foote seeks independent review" (Sept 2014): <a href="https://www.cnn.com/2014/09/16/politics/va-whistleblower-congress/index.html">cnn.com</a></li>
+<li>CNN — "Inside CNN's investigation: Fear kept the VA scandal a secret" (June 2014): <a href="https://www.cnn.com/2014/06/05/politics/va-scandal-fear-secret/index.html">cnn.com</a></li>
+<li>ACFE Fraud Magazine — "The doctor who took on Goliath" (Foote's two OIG letters): <a href="https://www.acfe.com/fraud-magazine/all-issues/issue/article?s=2017-novdec-dr-sam-foote">acfe.com</a></li>
+<li>AARP — "Dr. Sam Foote the VA Whistleblower": <a href="https://www.aarp.org/advocacy/dr-sam-foote-va-whistleblower-2014/">aarp.org</a></li>
+<li>Government Executive — "Judge Says Fired VA Senior Executive Can Keep Her Bonus" ($9,080, Nov 2015): <a href="https://www.govexec.com/pay-benefits/2015/11/judge-says-fired-va-senior-executive-can-keep-her-bonus/123905/">govexec.com</a></li>
+<li>12News — "Phoenix VA director's firing ruled unconstitutional" (2017 Federal Circuit): <a href="https://www.12news.com/article/news/politics/phoenix-va-directors-firing-ruled-unconstitutional/438319632">12news.com</a></li>
+<li>US News — "What Led to the Veterans Affairs Scandal?" (June 2014): <a href="https://www.usnews.com/news/articles/2014/06/10/what-led-to-the-veterans-affairs-scandal">usnews.com</a></li>
+<li>Helman guilty plea (2016; false financial disclosure, &gt;$50K in gifts, probation) — AP / Arizona Republic coverage; MSPB Chief Administrative Judge Stephen C. Mish, December 2014 ruling upholding removal on the gifts charge (&gt;$13,000; $11,000 Disneyland trip; concert tickets).</li>
+</ul>
+<p class="word-count"><strong>Word count:</strong> 5,730 spoken words ≈ 41.8 min at CCC's measured 137 wpm (verified programmatically 2026-07-07 — regex strip of bracketed markers + headers, SEGMENT 1 → FIN, sources excluded). Target band: 5,480–6,165 (40–45 min). Within standard.</p>
+</div>
+
+<footer>
+    <span class="crimson">Corporate Crime Confidential</span><br>
+    Case File No. 002 · The Fourteen-Day Promise · Recording script — not for publication
+</footer>
+
+</div>
+<style>
+:root { --serif: "Playfair Display", Georgia, "Times New Roman", serif; --type: "Special Elite", "Courier New", monospace; --sans: "Oswald", "Arial Narrow", sans-serif; }
+</style>
+</body>
+</html>
