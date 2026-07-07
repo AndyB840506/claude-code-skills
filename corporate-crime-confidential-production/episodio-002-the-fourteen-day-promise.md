@@ -77,12 +77,14 @@ fourteen.
 [PAUSA]
 
 And fourteen wasn't even the original promise. For years the standard had been thirty
-days; the department tightened it to fourteen even as people inside warned the target
-wasn't attainable with the staffing they actually had. [VERIFICAR: the 30-to-14
-tightening and internal warnings, per NBC's "Performance Mismanagement" reporting —
-confirm the exact year before recording.] Think about that sequence: the goal was
-already being missed, so leadership made the goal [ÉNFASIS] harder — and attached more
-of everyone's pay to it.
+days — and in 2011, the department tightened it to fourteen, because its own data
+showed the thirty-day goal being met over ninety-five percent of the time. Data that,
+as we're about to see, was already fiction. People inside warned the new target wasn't
+attainable with the staffing they actually had; the White House's own review would
+later call it flatly "unrealistic." Think about that sequence: the goal was being
+"met" on paper, so leadership made the goal [ÉNFASIS] harder — and kept everyone's
+pay attached to it. They tightened a promise based on numbers the promise itself had
+corrupted.
 
 Now hold that number against reality. Phoenix, Arizona — one of the fastest-growing
 veteran populations in the country. Vietnam-era patients aging into heavy care. New
@@ -271,17 +273,17 @@ sentence technically true. I got very good at sentences that were technically tr
 
 [PAUSA]
 
-CNN later told the country about a Navy veteran in his seventies — Thomas Breen. He
-came into our emergency room with blood in his urine and a history of cancer. Seen,
-stabilized, sent home with a note in his chart: follow-up needed, urgent. The
-follow-up call came [ÉNFASIS] after he was dead. Bladder cancer. His family got to
-hear the VA calling to schedule an appointment for a man they had already buried.
-[VERIFICAR: Breen case details as reported by CNN's original April 2014 investigation
-— confirm name, age, and sequence against the CNN piece before recording.] I'm not
-going to claim him for my folder — I don't know whose queue he sat in. I'm telling
-you about him because "urgent" was a word our system could read, print, and file —
-and still convert into a phone call to a dead man. That's what a gamed queue does
-that a slow queue doesn't: a slow queue at least knows [ÉNFASIS] who it's failing.
+CNN later told the country about a seventy-one-year-old Navy veteran — Thomas Breen.
+End of September 2013, he was rushed into our emergency room with blood in his urine
+and a history of cancer. Seen, sent home, with his chart marked [ÉNFASIS] "urgent" —
+see a doctor about this within one week. He died on November 30th. Stage four bladder
+cancer. On December 6th, the VA called his family — they finally had an appointment
+for him. His family got to say it out loud to the machine: "Really — you're a little
+too late." I'm not going to claim him for my folder — I don't know whose queue he sat
+in. I'm telling you about him because "urgent, within one week" was a sentence our
+system could read, print, and file — and still convert into a phone call to a dead
+man. That's what a gamed queue does that a slow queue doesn't: a slow queue at least
+knows [ÉNFASIS] who it's failing.
 
 Some of the men on my list were in their eighties. Korea. Vietnam. Some had caregivers
 calling for them, daughters, wives, and the wives were always politer than they had any
@@ -342,37 +344,34 @@ request of Secretary Eric Shinseki.
 May 28, 2014: the inspector general publishes an interim report, and it is worse than
 the allegation. About [ÉNFASIS] seventeen hundred veterans at Phoenix, waiting for
 primary care, are on no official waiting list at all — in the OIG's own words, "at risk
-of being lost or forgotten." The veterans the OIG sampled had waited an average of 115
-days for their first appointment, while the facility reported waits of about 24 days.
-[VERIFICAR: the 115-day sample average is in the interim report; confirm the reported
-~24-day official figure against the report text before recording.] And the report says
-the word that turns a local story into a national one: the manipulation is [ÉNFASIS]
-"systemic." Within days, 42 VA medical centers are under investigation. Phoenix wasn't
-the crime. Phoenix was the sample.
+of being lost or forgotten." The 226 veterans the OIG sampled had waited an average of
+115 days for their first appointment — 84 percent of them past the fourteen-day
+promise — while Phoenix's senior officials were reporting an average wait of [ÉNFASIS]
+24 days. And the report says the word that turns a local story into a national one:
+the manipulation is [ÉNFASIS] "systemic." Within days, 42 VA medical centers are under
+investigation. Phoenix wasn't the crime. Phoenix was the sample.
 
 [PAUSA]
 
 May 30, 2014: Secretary Eric Shinseki — a retired four-star general, a wounded combat
 veteran himself — resigns.
 
-June 2014: the VA's own deputy secretary tells Congress that of those seventeen hundred
-unlisted Phoenix veterans, [ÉNFASIS] eighteen died before anyone ever called them back.
-[VERIFICAR: figure attributed to Deputy Secretary Sloan Gibson in June 2014 reporting —
-confirm attribution before recording.]
+June 2014: the VA's acting secretary, Sloan Gibson, tells reporters that of those
+seventeen hundred unlisted Phoenix veterans, [ÉNFASIS] eighteen died before anyone
+ever called them back.
 
 That same month, the VA audits itself nationwide, and Phoenix stops being the story.
-Across the country, tens of thousands of veterans are found waiting more than ninety
-days for a first appointment — and tens of thousands more, enrolled over the previous
-decade, had simply [ÉNFASIS] never been seen at all. [VERIFICAR: the June 2014
-nationwide access audit reported approximately 57,000 veterans waiting 90+ days and
-approximately 64,000 enrolled-but-never-seen — confirm both figures against the audit
-coverage before recording; do not speak the numbers without this check.] Whatever the
-exact figures, the shape was no longer in dispute: this was not one hospital's drawer.
-It was the drawer, everywhere.
+More than 57,000 veterans across the country are found waiting over ninety days for a
+first appointment — and about 64,000 more, enrolled over the previous decade, had
+simply [ÉNFASIS] never been seen at all. And buried in that same audit, the sentence
+that vindicates everything you heard in Part A: schedulers at ninety separate clinics
+admitted altering desired dates — and, in virtually all cases, said they'd been
+[ÉNFASIS] instructed to, by supervisors. This was not one hospital's drawer. It was
+the drawer, everywhere, taught as procedure.
 
-August 7, 2014: Congress passes the Veterans Access, Choice, and Accountability Act —
-roughly sixteen billion dollars to buy the capacity the metric had been faking.
-[VERIFICAR: commonly reported as $16.3 billion — confirm figure.]
+August 7, 2014: the President signs the Veterans Access, Choice, and Accountability
+Act — more than fifteen billion dollars to buy the capacity the metric had been
+faking.
 
 [PAUSA]
 
@@ -397,7 +396,7 @@ measure.
 
 [PAUSA]
 
-So: seventeen hundred invisible veterans, a systemic finding, a secretary gone, sixteen
+So: seventeen hundred invisible veterans, a systemic finding, a secretary gone, fifteen
 billion dollars. Somebody ran this hospital while all of that built up.
 
 Let's meet her.
@@ -440,10 +439,8 @@ Hold that thought. We're coming back to that nine thousand dollars, because what
 happens to it is the single most instructive fact in this entire file.
 
 When Dr. Foote went on CNN in April 2014, my name went national within days. On May 1,
-the department placed me on administrative leave, along with members of my leadership
-team. [VERIFICAR: May 1, 2014 leave date and who was placed on leave alongside Helman —
-confirm against contemporaneous reporting.] In November 2014, the Department of
-Veterans Affairs fired me — one of the most publicized firings in the history of the
+Secretary Shinseki himself placed me on administrative leave, along with two of my
+staff. In November 2014, the Department of Veterans Affairs fired me — one of the most publicized firings in the history of the
 federal government. The new accountability law Congress had just passed, the one
 written in the heat of this very scandal, was used on me almost first. I was the face.
 Ask anyone in America that year who was responsible for veterans dying on secret wait
@@ -543,15 +540,17 @@ could not tell the difference between performance and the performance of perform
 
 [PAUSA]
 
-One more thing, and then you can judge me. In 2017, a federal appeals court looked at
-the special fast-track firing law they'd used on me — the one Congress wrote in a fury
-in the summer of 2014 — and struck it down as unconstitutional. [VERIFICAR: Federal
-Circuit ruling, 2017 — confirm the precise constitutional grounds before recording;
-reported at the time as a due-process/appointments issue with the expedited SES removal
-procedure.] My removal stood, in the end. But sit with the totality. The accountability
-law written for this scandal: unconstitutional as applied to its most famous target.
-The fraud at the center of the scandal: never criminally charged against anyone. The
-bonus paid on the faked numbers: legally unrecoverable.
+One more thing, and then you can judge me. In May 2017, a federal appeals court looked
+at the special fast-track firing procedure they'd used on me — the one Congress wrote
+in a fury in the summer of 2014, the one that let a single administrative judge decide
+my removal with no further review — and held that very feature [ÉNFASIS]
+unconstitutional. A violation of the Appointments Clause: Congress had handed final,
+unreviewable authority to someone the Constitution says can't carry it alone. The
+court severed the broken piece and sent my case back. My removal stood, in the end.
+But sit with the totality. The accountability law written for this scandal: its
+centerpiece procedure, unconstitutional, established in a case bearing [ÉNFASIS] my
+name. The fraud at the center of the scandal: never criminally charged against
+anyone. The bonus paid on the faked numbers: legally unrecoverable.
 
 [PAUSA]
 
@@ -595,12 +594,12 @@ probation, no prison; bonus legally kept. Never convicted of anything involving 
 waiting list.
 
 The schedulers, the clerks, the middle managers — across a scandal the inspector
-general called systemic, investigated at dozens of facilities: [ÉNFASIS] zero criminal
-convictions for the wait-time manipulation itself. Federal prosecutors looked at
-Phoenix and declined to bring charges over the scheme. [VERIFICAR: DOJ/FBI reviewed the
-Phoenix allegations and reportedly declined criminal prosecution over the wait-list
-manipulation — confirm the declination reporting and its stated rationale before
-recording.]
+general called systemic: [ÉNFASIS] zero criminal convictions for the wait-time
+manipulation itself. The FBI's Phoenix office opened a probe. And by the end of 2015,
+the Justice Department had declined to prosecute forty-six of the fifty-five cases the
+VA's own inspector general referred to it — with the rest still pending. Across a
+practice documented at more than a hundred facilities, the government acknowledged
+opening exactly [ÉNFASIS] one criminal investigation.
 
 And the veterans. Six deaths with clinically significant delays that the record can
 name — and a sentence that says no one will ever be able to prove or disprove what the
@@ -619,14 +618,13 @@ ceremony.
 
 [PAUSA]
 
-And the epilogue is quieter than you'd hope. The sixteen billion dollars bought
-programs and promises, and five years after Phoenix, government reviewers and
-reporters were still finding VA wait-time data that couldn't be trusted and waits
-that hadn't meaningfully improved. [VERIFICAR: five-years-later status per 2019
-coverage of GAO/OIG follow-ups — confirm the specific findings cited before
-recording.] Because the money treated the symptom the cameras could see — capacity —
-and the disease was never capacity alone. The disease was a measurement nobody
-independent ever owned. You can't buy your way out of a number that grades itself.
+And the epilogue is quieter than you'd hope. The fifteen billion dollars bought
+programs and promises — and five years after Phoenix, VA wait times were still under
+scrutiny, with government watchdogs still questioning whether the department's
+wait-time data could be trusted. Because the money treated the symptom the cameras
+could see — capacity — and the disease was never capacity alone. The disease was a
+measurement nobody independent ever owned. You can't buy your way out of a number
+that grades itself.
 
 [PAUSA]
 
@@ -731,7 +729,15 @@ FIN DEL SCRIPT — CASE FILE No. 002
 
 ---
 
-## Sources (verify before recording — items marked [VERIFICAR] in-script need a final check pass)
+## Sources
+
+**Fact-check status: COMPLETE (2026-07-07).** All nine [VERIFICAR] items from the draft were
+verified against the sources below and resolved into the script text — no open flags remain.
+Two corrections were made during the pass: the Choice Act figure was softened from "roughly
+sixteen billion" to the verified "more than fifteen billion" (the $15B appropriation is
+documented; the commonly cited $16.3B total could not be confirmed against a primary source),
+and the 2017 court ruling was made precise (Appointments Clause violation in the §713
+single-administrative-judge review, severed and remanded — the removal itself stood).
 
 - VA OIG — Final report: "Review of Alleged Patient Deaths, Patient Wait Times, and Scheduling Practices at the Phoenix VA Health Care System" (Aug 26, 2014): https://www.vaoig.gov/reports/audit/review-alleged-patient-deaths-patient-wait-times-and-scheduling-practices-phoenix-va
 - VA OIG — Interim report PDF (May 28, 2014; "1,700 veterans... at risk of being lost or forgotten"; 115-day sample average): https://www.vaoig.gov/sites/default/files/reports/2014-05/VAOIG-14-02603-178.pdf
@@ -747,9 +753,19 @@ FIN DEL SCRIPT — CASE FILE No. 002
 - 12News — "Phoenix VA director's firing ruled unconstitutional" (2017 Federal Circuit): https://www.12news.com/article/news/politics/phoenix-va-directors-firing-ruled-unconstitutional/438319632
 - US News — "What Led to the Veterans Affairs Scandal?" (June 2014): https://www.usnews.com/news/articles/2014/06/10/what-led-to-the-veterans-affairs-scandal
 - Reporting on Helman guilty plea (2016; false financial disclosure, >$50K in gifts, probation) — e.g. AP/Arizona Republic coverage; MSPB Chief Administrative Judge Stephen C. Mish's December 2014 ruling upholding removal on the gifts charge (>$13,000; $11,000 Disneyland trip; concert tickets).
+- CNN — "A fatal wait: Veterans languish and die on a VA hospital's secret list" (April 23, 2014; Thomas Breen, 71: ER Sept 28 2013, "urgent"/one week, died Nov 30, VA called Dec 6): https://www.cnn.com/2014/04/23/health/veterans-dying-health-care-delays/index.html
+- Fox News / TPM — Acting Secretary Sloan Gibson: 18 of the 1,700 unlisted Phoenix veterans died before being contacted (June 2014): https://www.foxnews.com/politics/va-acting-chief-says-18-veterans-left-off-waiting-list-have-died
+- Washington Post — VA nationwide access audit (June 9, 2014: 57,000+ waiting >90 days; ~64,000 enrolled never seen; schedulers at 90 clinics altered desired dates on supervisors' instruction): https://www.washingtonpost.com/politics/va-audit-57000-veterans-waiting-more-than-90-days-for-appointment-at-medical-facilities/2014/06/09/599d26ee-f014-11e3-9ebc-2ee6f81ed217_story.html
+- Washington Examiner — OIG interim findings recap (226-veteran sample: 115-day real average vs. 24-day reported): https://www.washingtonexaminer.com/politics/1022/inspector-general-veterans-wait-115-days-for-care-in-phoenix-veterans-affairs-system/
+- Stars and Stripes — "Did leadership by 'bold goals' spark VA wait-time crisis?" (30→14-day goal lowered in 2011 off data showing 95% compliance; goal set but not funded; Nabors: "unrealistic"): https://www.stripes.com/veterans/did-leadership-by-bold-goals-spark-va-wait-time-crisis-1.297139
+- Justia — Helman v. Department of Veterans Affairs, No. 15-3086 (Fed. Cir., May 9, 2017; §713 AJ-final-review scheme violates Appointments Clause; severed, remanded; removal stood): https://law.justia.com/cases/federal/appellate-courts/cafc/15-3086/15-3086-2017-05-09.html
+- Washington Examiner — "Justice Department shuts down 46 investigations into VA wait time scandal" (Dec 2015: DOJ declined 46 of 55 OIG-referred cases; one criminal investigation acknowledged across 110 facilities): https://www.washingtonexaminer.com/news/853593/justice-department-shuts-down-46-investigations-into-va-wait-time-scandal/
+- White House archive — Obama signs H.R. 3230 at Fort Belvoir, Aug 7, 2014 ($15B appropriation per House VA Committee summary): https://obamawhitehouse.archives.gov/blog/2014/08/07/president-obama-signs-bill-give-va-resources-it-needs
+- CNN — "Phoenix VA chief Sharon Helman fired" (Nov 24, 2014; May 1 administrative leave w/ two staffers): https://www.cnn.com/2014/11/24/politics/phoenix-va-sharon-helman-fired
+- Federal News Network — "Five years after Phoenix scandal, VA wait times still under scrutiny" (2019): https://federalnewsnetwork.com/veterans-affairs/2019/07/five-years-after-phoenix-scandal-va-wait-times-still-under-scrutiny/
 
 ## Word count
 Target: 5,480–6,165 spoken words (40–45 min at CCC's measured 137 wpm, per guion-style-ccc.md).
-**Actual count: 5,730 spoken words ≈ 41.8 min — verified programmatically 2026-07-07** (regex strip
-of [bracketed markers] + segment/header lines, count from SEGMENT 1 to FIN DEL SCRIPT, excluding
-sources). Within standard.
+**Actual count: 5,932 spoken words ≈ 43.3 min — verified programmatically 2026-07-07, post
+fact-check pass** (regex strip of [bracketed markers] + segment/header lines, count from
+SEGMENT 1 to FIN DEL SCRIPT, excluding sources). Within standard.
