@@ -46,3 +46,4 @@ detection, routing, design rules, progress map). Every session path leads to
 - `docs/website-config-schema.md` — `website-config.json` schema + site type → design defaults table
 - `docs/design-guide.md` — Animation patterns, scroll-video, self-contained HTML rules
 - `docs/content-rules.md` — No-fabrication, graceful degradation, data sourcing
+- `docs/mobile-qa-headless.md` — Verify pages at real phone widths with headless Edge on Windows (iframe harness + overflow probe; DPI/min-width gotchas). Use before delivering or when a mobile layout bug is reported.

@@ -70,7 +70,7 @@ Esto:
 
 Para cualquier ID, API key o valor de env var (ej. Google Drive/Sheet IDs), pedir al usuario que los pegue directamente desde la URL del browser o la fuente original — no retipear. Verificar el string exacto antes de depurar.
 
-No declarar un bug como corregido hasta haberlo verificado (re-ejecutar/reproducir). Para JSON parse errors, revisar específicamente BOM y respuestas API vacías.
+No declarar un bug como corregido hasta haberlo verificado (re-ejecutar/reproducir). Para JSON parse errors, revisar específicamente BOM y respuestas API vacías. Si una API LLM devuelve 400 "not valid JSON / zero-length document", sospechar de `json_encode` devolviendo `false` por UTF-8 inválido en el input (típico: texto extraído de PDF) — en PHP usar `JSON_INVALID_UTF8_SUBSTITUTE` y loguear `json_last_error_msg()` (mordió el 2026-07-07 en HireSignal).
 
 Con `curl -L` no forzar `-X POST`: tras un redirect 302 curl reenvía el POST sin body (Google responde 411). Omitir `-X` y dejar que curl convierta a GET después del redirect (mordió 2 veces el 2026-07-06 probando el Apps Script de Kuma).
 
