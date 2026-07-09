@@ -1,12 +1,13 @@
 ---
 name: deploy-preflight
-description: "Corre checks basicos antes de un deploy a Vercel (vercel build/vercel --prod). Usar antes de cualquier comando vercel que despliegue. Triggers ES: deploy preflight, valida el deploy, checks antes de deploy, preflight de vercel. Triggers EN: deploy preflight, pre-deploy checks."
+description: "Corre checks basicos antes de un deploy a produccion (Vercel, DO App Platform u otro host). Usar antes de cualquier vercel build/--prod o git push que publique. Triggers ES: deploy preflight, valida el deploy, checks antes de deploy, preflight de vercel, deploy a produccion. Triggers EN: deploy preflight, pre-deploy checks, production deploy check."
 ---
 
 # Deploy Preflight
 
-Valida que un deploy a Vercel desde este repo (monorepo con `.vercel/repo.json`) apunte
-al directorio correcto antes de correr `vercel build` / `vercel --prod`.
+Valida destino, metodo de deploy y contenido antes de publicar: detecta el host
+real de produccion (headers — no confiar en docs del repo, pueden estar stale) y
+aplica el flujo que corresponda (Vercel prebuilt, DO deploy-on-push, etc.).
 
 ## Workflow
 

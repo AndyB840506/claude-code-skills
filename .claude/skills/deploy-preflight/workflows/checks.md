@@ -42,9 +42,17 @@ grep -RniE "sk-[a-zA-Z0-9]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA|EC|OPENSSH) PRI
 
 Si hay match, **STOP** — no deployes ni hagas push hasta confirmar con el usuario si es una key real (rotarla/moverla a env var) o un falso positivo (ej. un access key publico como el de Web3Forms en el form de contacto de BTQ, que es seguro exponer por diseño). No asumas que un match es benigno sin preguntar.
 
-## Paso 4 — Verificar estado de produccion actual
+## Paso 4 — Verificar estado de produccion actual + host real
 
 Corre un `curl -sI` (o equivalente) contra la URL de produccion del proyecto para confirmar que esta respondiendo `200 OK` ANTES del deploy. Esto da una baseline para detectar si el proximo deploy rompe algo.
+
+**Identificar el host real en los mismos headers** — no confiar en runbooks/docs del repo, pueden estar stale (mordio 2026-07-09: kumatalent.com ya habia migrado de Vercel a DO y el runbook seguia diciendo Vercel prebuilt):
+
+- `x-vercel-id` / `server: Vercel` -> Vercel (aplica todo este skill).
+- `x-do-app-origin` -> DigitalOcean App Platform. Si la app tiene deploy-on-push, el metodo es `git push` — NO corras el flujo vercel; verifica el deploy con un poll del marker nuevo en produccion (static sites de DO publican en ~20-60s).
+- Otro host -> STOP y confirmar con el usuario el metodo de deploy.
+
+Si el host real no coincide con el metodo asumido, re-rutea el deploy Y actualiza el doc stale del repo en la misma sesion.
 
 ## Paso 5 — Resumen
 
