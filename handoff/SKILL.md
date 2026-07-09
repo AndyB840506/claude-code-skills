@@ -30,6 +30,7 @@ Follow these steps in order:
 2. **User's direction > agent's analysis** - if user said what to focus on next, that's the priority. Supplement with agent analysis only if user direction is incomplete
 3. **Scan for pending markers before Next Steps** - grep for `USER-COMMENT`, `NEEDS USER INPUT`, `[TODO]`, `FIXME` in active session files. Every marker found must appear explicitly in Next Steps with where it lives, what's being asked, and who must act
 4. **Verificar estado real al retomar** — Al iniciar sesión con handoff, preguntar explícitamente: "¿Alguno de los next steps del handoff ya fue completado?" El handoff captura el estado al momento de escribirse. No asumir que los Next Steps siguen pendientes.
+5. **Post-hoc handoffs son válidos** — si la sesión ya cerró/limpió contexto, reconstruir desde artefactos commiteados y marcar el archivo explícitamente como "reconstruido post-hoc" para que la próxima sesión re-verifique en vez de confiarlo como contexto vivo. Un handoff faltante suele indicar que se saltó el cierre completo — correr `/session-close`, no solo esto.
 
 ## Reference
 

@@ -6,11 +6,10 @@ description: "Periodic memory + skill-kit hygiene — finds duplicate, contradic
 # Memory Audit — Higiene de la Memoria y el Skill Kit
 
 Sin limpieza periódica, la memoria acumula redundancia y termina auto-contradiciéndose
-("teoría de los 3 chiflados": cada memoria pisando a la otra sin que nadie note el
-choque hasta que ya es un enredo). Lo mismo aplica a los archivos de skills — un
-`SKILL.md` con frontmatter vacío o una referencia rota a `workflows/` es el mismo
-patrón de corrupción, con más blast radius porque algunos skills (`freelance-gig`)
-tocan sitios de producción en vivo. Esta skill hace ambas limpiezas juntas.
+("teoría de los 3 chiflados"). Lo mismo aplica a los skills — frontmatter vacío o
+referencias rotas a `workflows/` son el mismo patrón de corrupción, con más blast
+radius porque algunos skills (`freelance-gig`) tocan producción en vivo. Esta skill
+hace ambas limpiezas juntas.
 
 ## Qué hace
 
