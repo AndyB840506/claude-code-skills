@@ -1,9 +1,12 @@
 # Stack Reference (installed 2026-07-08)
 
+Two installs with identical layout — paths below use `E:\AI`; on the laptop substitute `D:\AI`.
+
 ## Hardware
-- GPU: NVIDIA RTX 3080 Ti, 12 GB VRAM (cuda:0). System RAM 32 GB.
-- 12 GB fits SDXL fully; Z-Image bf16 (11.46 GB) partially offloads to RAM — first gen slow, rest OK.
-- iGPU (AMD Radeon) also present — ignore it; ComfyUI uses cuda:0.
+- Desktop: NVIDIA RTX 3080 Ti, 12 GB VRAM (cuda:0). System RAM 32 GB. Stack at `E:\AI`.
+- Laptop: NVIDIA RTX 3060 Laptop, 6 GB VRAM (cuda:0). System RAM 16 GB. Stack at `D:\AI` (full replica, 2026-07-08; SDXL smoke test passed — 1024², 12 steps).
+- 12 GB fits SDXL fully; Z-Image bf16 (11.46 GB) partially offloads to RAM — first gen slow, rest OK. On the laptop (6 GB / 16 GB) offload is heavier: SDXL verified OK; Z-Image untested, expect it slow or OOM-prone.
+- iGPU (AMD Radeon) also present on the desktop — ignore it; ComfyUI uses cuda:0.
 
 ## Layout
 | Thing | Path |
