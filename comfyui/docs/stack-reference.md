@@ -17,7 +17,7 @@ Two installs with identical layout — paths below use `E:\AI`; on the laptop su
 | Path mapping config | `E:\AI\ComfyUI_windows_portable\ComfyUI\extra_model_paths.yaml` — read at startup only |
 | Generated images | `E:\AI\outputs\` |
 | Offline user manual | `E:\AI\manual.html` |
-| Backup repo (workflows, configs, RESTORE.md, MODELS.md) | `C:\Users\andre\repos\comfyui-setup` — re-snapshot con `backup.ps1` + commit; GitHub privado del usuario |
+| Backup repo (workflows, configs, RESTORE.md, MODELS.md) | `C:\Users\andre\repos\comfyui-setup` — re-snapshot con `backup.ps1` + commit; GitHub privado del usuario, branch `master` (no `main`) |
 | ComfyUI's internal models dir (also valid) | `E:\AI\ComfyUI_windows_portable\ComfyUI\models\` |
 
 ## Installed models (as of 2026-07-08)

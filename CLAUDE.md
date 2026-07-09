@@ -14,7 +14,7 @@ Config y reglas operativas en `~/.claude/`; proyectos y archivos de producción 
 
 **Antes de responder nada**, sigue este orden:
 
-1. **Sincroniza con GitHub:** ejecuta `git pull origin main`
+1. **Sincroniza con GitHub:** ejecuta `git pull origin main` Y TAMBIÉN `git -C "$env:USERPROFILE\.claude\skills" pull origin main` — son 2 clones del mismo repo y el global se desactualiza solo (mordió 2026-07-08: 1 mes stale en el portátil, una skill "no existía")
 2. **Busca un handoff reciente:** revisa `.agents/handoff/` — abre el archivo con la fecha más reciente.
 3. **Decide cómo continuar:**
    - Si existe uno: resúmelo en 2-3 líneas (qué se hizo, dónde pausó, qué sigue) y pregunta si quiere continuar desde ahí. No asumas que sí.
