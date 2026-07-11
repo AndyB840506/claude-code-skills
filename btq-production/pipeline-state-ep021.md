@@ -1,6 +1,6 @@
 EPISODE: EP.021 (BTQ)
 stage_a: complete — 2026-07-06
-stage_b: pending
+stage_b: complete — 2026-07-10 (SRT + launch assets aprobados; falta solo publicar en Spotify)
 stage_c: pending
 spotify_url: pending
 notes: guion aprobado en btq-production/launch-assets/EP021-simpsons-guion.html (Los Simpson —

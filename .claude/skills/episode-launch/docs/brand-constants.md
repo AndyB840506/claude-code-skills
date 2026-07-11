@@ -57,11 +57,13 @@ ambient glow outlining the figure, like a dark statue lit from behind.
 to one side, smaller in scale, a second figure of [FIGURA SECUNDARIA]
 — creating a size contrast that tells a relationship.]
 
-Background: concentric circles of thin gold #C9A84C line art radiating
-behind the figure like a halo, framed by a geometric border pattern
-drawn from the referent's own culture/era (e.g. Greek key / meander for
-Ancient Greece) — subtle, like an engraved watermark, not competing
-with the figure.
+Background: a geometric pattern drawn from the referent's own
+culture/era (e.g. Greek key / meander for Ancient Greece), rendered in
+thin gold #C9A84C line art — subtle, like an engraved watermark, not
+competing with the figure.
+
+DO NOT render any concentric ring, circle, halo, or archery-target
+pattern anywhere in this image.
 
 No circuit boards. No cartoon style. Cinematic.
 ```
@@ -102,10 +104,14 @@ primer plano de cara.
 2. **Render con volumen y textura de material, nunca silueta plana.** Músculo, armadura,
    tela con sombreado real + luz dorada de contorno — como una estatua oscura iluminada
    desde atrás, no un recorte negro liso (esa era la falla de v1).
-3. **Fondo: círculos concéntricos dorados + patrón geométrico del universo del referente**
-   (greca griega para Kratos; para otro referente, el patrón equivalente de esa cultura/
-   época — un mosaico romano, un patrón art-deco de los 80s, etc.) en línea fina, tipo
-   marca de agua, sin competir con la figura ni el texto.
+3. **Fondo: SOLO el patrón geométrico del universo del referente** (greca griega para
+   Kratos; para otro referente, el patrón equivalente de esa cultura/época — un mosaico
+   romano, scan-lines de TV analógica, un patrón art-deco de los 80s, etc.) en línea fina,
+   tipo marca de agua, sin competir con la figura ni el texto. **Los círculos concéntricos/
+   anillos/diana están VETADOS en todas las imágenes — portadas Y quote cards (decisión de
+   Andy 2026-07-10, EP.021; antes el motivo estaba "reservado para la portada" y por eso
+   reaparecía).** Única excepción: cuando la diana ES el sujeto central de la escena (ej.
+   Q2 de EP.020). Incluir el ban explícito en el prompt desde el primer intento.
 4. **Conteo explícito de figuras:** "EXACTLY [N]" para cada silueta — sigue siendo el error
    más frecuente de Flow.
 5. **Tipografía:** texto exacto entre comillas + "render text EXACTLY as written, letter
@@ -113,9 +119,10 @@ primer plano de cara.
    genera la escena pero OMITE el texto: NO regenerar — modo edición sobre la misma imagen
    ("same image, keep everything identical, add text...").
 6. **Checklist antes de aprobar:** (a) render con volumen/textura real, no silueta plana,
-   (b) número de figuras justificado por la historia (no forzado a 2), (c) círculos
-   concéntricos + patrón geométrico del universo correcto de fondo, (d) texto letra por
-   letra, (e) footer con las 2 filas de íconos completas.
+   (b) número de figuras justificado por la historia (no forzado a 2), (c) patrón
+   geométrico del universo correcto de fondo y CERO círculos/anillos/diana (Flow los
+   reinserta solo — verificar), (d) texto letra por letra, (e) footer con las 2 filas de
+   íconos completas.
 
 Prompt de referencia validado: EP.10 (Kratos/Atreus, Omega griego de fondo) — ver bloque de
 arriba, es el prompt real usado. El primer prompt v3 aplicado a un episodio nuevo se prueba
@@ -149,10 +156,11 @@ visual consistente entre portada y quote cards, no dos.
   ni tipo póster" a la lista existente de cada card (texto letra por letra, mitad negro
   reservada, etc.).
 - **NO agregar el anillo/círculo concéntrico dorado (diana) de fondo en las quote
-  cards** — ese motivo es específico de la portada (y de escenas donde la diana ES el
-  sujeto central, ej. Q2 de EP.020). Como elemento de fondo repetido en cada card es
-  innecesario/redundante; cada escena ya lleva su propio objeto como metáfora, no hace
-  falta reforzarlo con el anillo dorado detrás.
+  cards** — desde 2026-07-10 (EP.021) el motivo está vetado en TODAS las imágenes,
+  incluida la portada (ver §Reglas de la dirección #3); ya no existe el caso "reservado
+  para la portada". Única excepción: escenas donde la diana ES el sujeto central (ej.
+  Q2 de EP.020). Cada escena ya lleva su propio objeto como metáfora, no hace falta
+  reforzarlo con el anillo dorado detrás.
 - **Sí darle a cada card un elemento de fondo propio, desenfocado (profundidad de
   campo), relevante al tema específico de esa cita** — sin el anillo, un objeto solo
   flotando en negro puro puede sentirse repetitivo entre las 4 cards del mismo
@@ -170,11 +178,10 @@ la misma sesión).
 - **Reinserta el anillo genérico solo:** aunque el prompt pida otro fondo (bullpen,
   medidores, display de turnos, fila de escritorios), Flow tiende a devolver el anillo
   dorado de la portada igual — pasó en Q1, Q3 y Q4 de EP.020 en su primer intento. Por
-  eso, todo prompt de quote card (salvo la card donde el anillo/diana ES el sujeto)
-  debe incluir DESDE EL PRIMER intento la línea explícita: "DO NOT render any
-  concentric ring, circle, or archery-target pattern anywhere in this image — that
-  motif is reserved exclusively for [la card que sí lo usa]." No esperar a la primera
-  falla para agregarla.
+  eso, TODO prompt de imagen BTQ — portada Y quote cards (salvo la escena donde el
+  anillo/diana ES el sujeto) — debe incluir DESDE EL PRIMER intento la línea explícita:
+  "DO NOT render any concentric ring, circle, halo, or archery-target pattern anywhere
+  in this image." No esperar a la primera falla para agregarla.
 - **Autocorrige palabras deliberadamente sin tilde:** si el texto de una card pide una
   palabra sin acento por regla de marca (ej. "NUMERO", "TERMOMETRO") pero es la
   ortografía estándar del español con tilde, Flow puede seguir renderizándola acentuada

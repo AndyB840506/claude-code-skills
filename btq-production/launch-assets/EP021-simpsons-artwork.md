@@ -6,9 +6,11 @@ es sobre la institución/el equipo perdurando, no sobre dos personajes).
 
 **Figura principal:** Homero Simpson, de espaldas o en tres cuartos, de pie, mirando hacia un
 resplandor — postura de alguien que lleva mucho tiempo ahí y sigue de pie, no una pose cómica.
-**Patrón geométrico de fondo:** líneas de barrido de TV analógica + círculos concéntricos tipo
-patrón de prueba de señal (test pattern) — la era de televisión de los noventa, equivalente al
-"Greek key" usado para Kratos.
+**Patrón geométrico de fondo:** líneas de barrido de TV analógica + geometría de test card
+(barras verticales tenues) — la era de televisión de los noventa, equivalente al "Greek key"
+usado para Kratos. **SIN círculos concéntricos ni anillos** (decisión de Andy 2026-07-10:
+los aros no van en el fondo de ninguna imagen — se retiró también de la portada, no solo de
+las quote cards).
 
 ---
 
@@ -26,11 +28,13 @@ in the same spot for decades and is still standing. EXACTLY 1 figure.
 Dark, moody shading with warm golden #C9A84C rim light and ambient glow
 outlining the figure's silhouette, like a dark statue lit from behind.
 
-Background: concentric circles resembling an old analog TV test
-pattern / broadcast signal rings, rendered in thin gold #C9A84C line
-art radiating behind the figure like a halo, combined with faint
-horizontal scan-line texture — subtle, like an engraved watermark, not
-competing with the figure.
+Background: faint horizontal analog TV scan-line texture plus a subtle
+vintage broadcast test-card geometry (thin vertical bars in gold
+#C9A84C line art, very desaturated) — like an engraved watermark
+behind the figure, not competing with it.
+
+DO NOT render any concentric ring, circle, halo, or archery-target
+pattern anywhere in this image.
 
 No circuit boards. No cartoon style. No bright yellow skin tone —
 figure stays in dark silhouette/shadow, only rim-lit in gold. Cinematic.
@@ -58,16 +62,17 @@ Format: square 3000x3000px.
 ## 9:16 (historias, vertical)
 
 Mismo bloque de atmósfera y tipografía que el 1:1, recomponiendo el encuadre vertical: figura
-centrada en el tercio inferior, patrón concéntrico ocupando el tercio superior/medio, título y
-footer apilados debajo — mismo texto exacto, mismo conteo "EXACTLY 1 figure", mismo footer con
-las 2 filas de íconos. Formato 1080x1920px.
+centrada en el tercio inferior, textura de scan-lines/test card ocupando el tercio
+superior/medio, título y footer apilados debajo — mismo texto exacto, mismo conteo "EXACTLY 1
+figure", mismo footer con las 2 filas de íconos, mismo ban de anillos/círculos. Formato 1080x1920px.
 
 ## 16:9 (thumbnail YouTube / horizontal)
 
 Mismo bloque de atmósfera, recomponiendo a horizontal: figura desplazada a un tercio (izquierda
-o derecha, regla de tercios), patrón concéntrico ocupando el espacio negativo del otro lado,
-título en banda inferior o lateral, footer compacto. Mismo texto exacto letra por letra. Formato
-1920x1080px.
+o derecha, regla de tercios), textura de scan-lines/test card ocupando el espacio negativo del
+otro lado, título en banda inferior o lateral, footer compacto. Texto: hook de thumbnail de 3-5
+palabras ("PRENDIDO NO ES VIVO") en vez del título completo. Mismo ban de anillos/círculos.
+Formato 1920x1080px.
 
 ---
 
@@ -75,7 +80,7 @@ título en banda inferior o lateral, footer compacto. Mismo texto exacto letra p
 
 - [ ] Render con volumen/textura real, no silueta plana ni amarillo cartoon plano
 - [ ] EXACTLY 1 figura (no forzar una segunda — no aplica relación maestro/aprendiz aquí)
-- [ ] Círculos concéntricos + patrón de barrido de TV de fondo, no compite con la figura
+- [ ] Fondo solo scan-lines/test card SIN ningún círculo, anillo ni diana (verificar — Flow los reinserta solo)
 - [ ] Texto letra por letra: "Los Simpson: el precio real de mantener un equipo treinta años sin quemarlo"
 - [ ] Footer con las 2 filas de íconos completas, "EP.021" centrado y prominente
 - [ ] Nada de anillo dorado como diana genérica reciclada de otro episodio sin razón temática

@@ -28,7 +28,33 @@
   - `btq-production/roadmap-btq.md` actualizado (EP.020 → publicado + URL real, EP.021 agregado)
 - **Resultado:** OK — pausa natural, esperando grabación.
 
-## Siguiente paso
+## Stage 0 — Intake (2026-07-10)
 
-Andy graba el guion. Al tener el audio, retomar el pipeline ("corre el pipeline para EP.021") para
-seguir con Stage B (transcripción) — el estado queda guardado en `pipeline-state-ep021.md`.
+- Qué se hizo: episode brief construido. Audio confirmado por Andy:
+  `E:\Podcast\BTQ\EP 21\BTQ EP 21.mp3` (39.5 MB, grabado 2026-07-10). Closing TM y fuentes
+  extraídos del guion aprobado (no se repreguntaron). `spotify_url: pending`.
+- Resultado: OK — sigue Stage 1 (transcripción)
+
+## Stage 1 — Transcripción (2026-07-10)
+
+- Qué se hizo: transcripción con diarización (large-v2, es, srt) vía WhisperX en background,
+  exit 0. Encoding UTF-8 verificado leyendo el archivo (el mojibake del log era solo el
+  console encoding de PS). Tags [SPEAKER_00]/[SPEAKER_01] presentes.
+- Archivos generados: E:\Transcriptor\transcripciones\BTQ EP 21.srt (46 KB, ~41:10 de contenido + outro musical)
+- Resultado: OK — sigue Stage 2 (assets via episode-launch)
+
+## Stage 2 — Generación de assets (2026-07-10)
+
+- Qué se hizo: episode-launch invocado en modo pipeline. Fact-check de entidades reales del
+  SRT vs fuentes del guion: sin errores. Descripción Spotify 310 palabras (contada
+  programáticamente). Capítulos de YouTube con timestamps reales del SRT.
+- Corrección de Andy en el gate: los aros/círculos concéntricos de fondo NO van — se
+  retiraron de los 3 prompts de portada, y la regla se hizo permanente en
+  brand-constants.md (vetados en TODAS las imágenes BTQ, portadas y quote cards; antes
+  el motivo estaba "reservado para la portada") + memoria actualizada.
+- Archivos generados: btq-production/launch-assets/EP021-simpsons-launch.md;
+  EP021-simpsons-artwork.md actualizado (sin aros); brand-constants.md §Reglas #3,
+  checklist #6, §Quote Cards y §Patrones de Flow actualizados.
+- Gate heredado: aprobado por Andy (con la corrección de aros aplicada antes).
+- Checkpoint Spotify: pendiente — Andy va a publicar con la metadata del §A.
+- Resultado: OK — 3 prompts de cover-art listos para Stage 3
