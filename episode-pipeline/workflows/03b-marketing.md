@@ -39,11 +39,24 @@ respuestas posibles y registra cada una por separado en la bitácora:
 - **Decide saltarse el paso por completo** (no quiere quote cards esta vez): no fuerces
   la generación — registra el skip explícito y continúa
 
-Si no las tiene, presenta los prompts resultantes para que el usuario los genere en
-Flow — **misma pausa estructural que Stage 3** (no existe API de generación de imágenes):
+Si no las tiene, **ruta primaria (desde 2026-07-11, aprobada en BTQ EP.021 — aplica a
+BTQ, MPD y CCC):** generarlas LOCALMENTE, sin pausa de Flow:
 
-> "Prompts de quote cards listos para EP.0XX — [N] cards. Genera cada una en Flow y
-> dime las rutas cuando estén listas."
+1. **Escenas** (objeto-metáfora por card, fondo propio desenfocado, volumen real) vía
+   skill `comfyui` — mismas reglas de prompt del Paso 1 de `03-image-validation.md`.
+2. **Texto compuesto determinista con PIL** (no generado): split con mitad de color de
+   marca + cita + atribución. Garantiza letra por letra perfecta y tildes correctas —
+   elimina de raíz los patrones de fallo de texto de Flow (EP.020: 5 rondas; EP.021
+   local: 0). Cada show usa SU sistema visual (BTQ: negro #0A0A0A / cita off-white
+   #F5F2EC / atribución gold #C9A84C; MPD: silver/crimson; CCC: el suyo).
+3. **Validar cada cita contra el SRT real** antes de componer (qué se dijo y dónde) —
+   verbatim, sin recortes silenciosos.
+4. Formato BTQ desde EP.021: **16:9 (1920x1080)** — decisión de Andy 2026-07-11; el 1:1
+   solo si se necesita para feed de Instagram.
+
+**Fallback Flow** (si el usuario lo pide o no hay servidor local): presenta los prompts
+y pausa como antes — "Prompts de quote cards listos para EP.0XX — [N] cards. Genera
+cada una en Flow y dime las rutas cuando estén listas."
 
 ⚠️ **Desactualizado para BTQ desde EP.020 (2026-07-05) — verificar antes de asumir que
 esto sigue aplicando:** `.claude/skills/episode-launch/docs/brand-constants.md` §"Quote

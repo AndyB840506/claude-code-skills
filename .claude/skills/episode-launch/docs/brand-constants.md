@@ -132,6 +132,15 @@ contra Gladiator EP.019 — ver `btq-production/launch-assets/EP019-gladiator-ar
 
 ## Quote Cards — mismo tratamiento cinematográfico que la portada (desde 2026-07-05, EP.020)
 
+> **Actualización 2026-07-11 (EP.021, aprobada por Andy):** las quote cards BTQ ahora se
+> producen LOCALMENTE — escena vía ComfyUI (skill `comfyui`) + texto compuesto
+> determinista con PIL (cita off-white + atribución gold sobre la mitad negra). El texto
+> ya NO se genera con el modelo, así que los patrones de fallo de Flow de abajo solo
+> aplican si se usa Flow como fallback. **Formato: 16:9 (1920x1080)** — el split 50/50 se
+> mantiene (mitad negra texto / mitad escena), solo cambió la proporción; 1:1 únicamente
+> si se necesita para feed de Instagram. Citas verbatim validadas contra el SRT real.
+> Procedimiento compartido para los 3 shows en `episode-pipeline/workflows/03b-marketing.md`.
+
 **Cambio de dirección:** hasta EP.019 las quote cards usaban un estilo propio —
 "Graphic editorial poster design — NOT photorealistic 3D" (más plano, tipo póster/
 halftone). Desde EP.020 quedan retiradas: las quote cards usan el MISMO render

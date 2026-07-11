@@ -17,6 +17,26 @@ Comma-separated tags, rough priority order:
 - Negative prompt staples: `lowres, bad anatomy, bad hands, extra fingers, watermark, signature`
 - Check each checkpoint's Civitai page: many specify required quality-tag prefixes and a recommended negative.
 
+## Z-Image Turbo: la trampa de la negación (aprendido 2026-07-11, BTQ EP.021)
+
+- **A CFG 1.0 el prompt negativo NO actúa** (matemáticamente apagado). La comunidad de
+  Civitai los pone igual (ej. "blurry ugly bad") pero son decorativos. Subir CFG degrada
+  el modelo turbo — no es la solución.
+- **"DO NOT render X" en el positivo tiende a EVOCAR X**, no a prohibirlo. Y pedir un
+  concepto que CONTIENE el elemento prohibido lo garantiza (ej.: pedir "broadcast
+  test-card geometry" y prohibir círculos = salen círculos, la carta de ajuste ES
+  círculos concéntricos).
+- **Regla:** el control es 100% del prompt positivo. No nombrar el concepto problemático
+  en ninguna forma; describir SOLO lo que sí se quiere en su lugar ("plain dark smoke and
+  golden dust" en vez de "test-card background, no rings").
+- Settings comunidad (Civitai, modelo 2168935): cfg=1, steps=8-9, sampler euler o
+  res_multistep, scheduler simple.
+- Para retoques localizados usar VAEEncode + **SetLatentNoiseMask** (img2img enmascarado);
+  `VAEEncodeForInpaint` con denoise <1 deja parches grises en modelos no-inpaint. Si hay
+  que ELIMINAR estructura (no solo retocarla), destruirla primero (blur pesado en PIL) y
+  luego re-texturizar enmascarado a denoise ~0.4 — a denoise medio la estructura
+  subyacente sobrevive y se repinta más nítida.
+
 ## Iteration method (applies to both)
 1. **Fix the seed** while developing a prompt — image changes only where the prompt changed. Learn cause/effect.
 2. Change ONE thing per run.

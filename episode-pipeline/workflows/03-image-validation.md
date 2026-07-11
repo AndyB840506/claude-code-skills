@@ -26,16 +26,36 @@ salta directo al Paso 2 (validación) con esas rutas.
 
 ---
 
-## Paso 1 — Pausa para generación (punto de pausa estructural)
+## Paso 1 — Generación (ruta local primero — TODOS los shows, desde 2026-07-11)
 
-No existe API de generación de imágenes — Flow/Nani Banana son herramientas manuales.
-Presenta los 3 prompts (de Stage 2) y pide:
+**Ruta primaria (aprobada por Andy en BTQ EP.021, aplica a BTQ, MPD y CCC): generación
+LOCAL vía la skill `comfyui`** (Z-Image Turbo por API — ya NO es cierto que "no existe
+API de generación de imágenes"). Ventajas confirmadas: sin filtro de copyright para
+personajes con nombre propio (advertir el riesgo IP de publicar, decisión editorial del
+usuario), iteración barata con seed fijo, y sin los patrones de fallo de Flow.
+
+Reglas de la ruta local (detalle en `comfyui/docs/prompting.md` §"la trampa de la
+negación" — leer ANTES de escribir prompts):
+1. El control es 100% del prompt positivo (a CFG 1 el negativo no actúa; "DO NOT render
+   X" evoca X; no pedir conceptos que contienen el elemento prohibido).
+2. Identidad de personajes desde píxeles de referencia (img2img / render cartoon fiel
+   del propio modelo), nunca descrita de memoria — feedback de Andy EP.021 ("queda
+   super picasso").
+3. El texto de marca puede ir en el render (Z-Image lo hace bien) pero se verifica
+   letra por letra; typos puntuales se parchan determinista con PIL sobre zonas planas.
+   Alternativa igual de válida: escena sin texto + tipografía 100% PIL (tildes seguras).
+4. Upscale a resolución final (ej. 3000x3000 Spotify) con RealESRGAN local.
+5. La atmósfera/drama nace EN el render (una sola escena completa) — no componer figura
+   sobre lienzo vacío (rechazado EP.021: "figura flotando en negro").
+
+**Fallback:** si el usuario prefiere Flow/Nani Banana para algún formato (o el servidor
+local no está disponible), presenta los prompts y pausa como antes:
 
 > **Prompts listos para EP.0XX — 1:1 · 9:16 · 16:9.**
-> Genera cada uno en Flow/Nani Banana (selecciona el mejor de los candidatos) y
-> dime las rutas de los archivos descargados cuando estén listos.
+> Genera cada uno y dime las rutas cuando estén listas.
 
-Espera la respuesta del usuario con las rutas. **No continúes sin ellas.**
+En esa ruta siguen vigentes los patrones de fallo de Flow documentados en
+`episode-launch/docs/brand-constants.md`.
 
 ---
 
