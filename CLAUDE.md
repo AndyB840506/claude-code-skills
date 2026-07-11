@@ -6,7 +6,7 @@ Este proyecto crea skills personalizadas para Claude Code. Una skill es un archi
 
 Windows con PowerShell 5.1. Usar PowerShell (no Bash/xcopy) para operaciones de archivos. Evitar backtick-quotes, caracteres Unicode y expresiones if inline en scripts — PS 5.1 no los maneja correctamente.
 
-**Excepción (escrituras byte-exactas):** para contenido que otras herramientas parsean (frontmatter de skills, JSON, restaurar archivos desde git), usar Bash con redirección (`git show X > file`) — `Set-Content -Encoding UTF8` en PS 5.1 escribe BOM y corrompe el archivo (mordió el 2026-07-06: el harness cargó una skill restaurada con el frontmatter ilegible).
+**Excepción (escrituras byte-exactas):** para contenido que otras herramientas parsean (frontmatter de skills, JSON, restaurar archivos desde git), usar Bash con redirección (`git show X > file`) — `Set-Content -Encoding UTF8` en PS 5.1 escribe BOM y corrompe el archivo (mordió el 2026-07-06: el harness cargó una skill restaurada con el frontmatter ilegible). Y `-Encoding ASCII` destruye tildes/ñ/flechas (mordió el 2026-07-11: MODELS.md con `??`) — para editar archivos con contenido UTF-8, usar la herramienta Write o python, no Set-Content.
 
 Config y reglas operativas en `~/.claude/`; proyectos y archivos de producción en `C:\Users\andre\repos\`. No proponer junctions para `~/.claude/`. Output de producción (imágenes, audios, transcripciones, cachés) va a `E:\` en el desktop y `D:\` en el portátil — nunca a `C:\`.
 

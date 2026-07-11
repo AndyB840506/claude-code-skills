@@ -1,6 +1,6 @@
 ---
 name: comfyui
-description: Operate the local image-generation stack (ComfyUI v0.27.0) — E:\AI on the desktop (RTX 3080 Ti 12GB) and D:\AI on the laptop (RTX 3060 6GB) — launch the server, generate/verify via API, place downloaded models in the right folders, troubleshoot, and plan Stage 2 LoRA training. Triggers - comfyui, generate image, image generation, stable diffusion, sdxl, z-image, civitai, add model, place model, lora training, generar imagen, imagen local, modelo de imagen, E:\AI, D:\AI.
+description: Operate the local image-generation stack (ComfyUI v0.27.0) — E:\AI on the desktop (RTX 3080 Ti 12GB) and D:\AI on the laptop (RTX 3060 6GB) — launch the server, generate/verify via API, place downloaded models in the right folders, troubleshoot, and plan Stage 2 LoRA training. Triggers - comfyui, generate image, image generation, stable diffusion, sdxl, z-image, hidream, chroma, bigasp, noobai, illustrious, civitai, huggingface model, add model, place model, lora training, generar imagen, imagen local, modelo de imagen, E:\AI, D:\AI.
 ---
 
 # ComfyUI — Local Image Generation Stack

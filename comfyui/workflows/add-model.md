@@ -1,5 +1,7 @@
 # Add a Model File
 
+**Source order (aprendido 2026-07-11):** HuggingFace directo primero — descarga sin cuenta con `curl -L .../resolve/main/<file>?download=true`; Civitai pide login hasta para assets gratis. Buscar el repo con `api/models?search=<nombre>` y listar archivos/tamaños con `api/models/<repo>?blobs=true`; preferir repo del autor u oficial (Comfy-Org) sobre mirrors. Descargas grandes: task en background + verificar tamaño exacto contra el API al terminar.
+
 User typically downloads to `E:\Downloads` (browser default — NOT `C:\Users\andre\Downloads`) and pastes the path.
 
 1. **Verify the file**: exists, size matches the source page (a truncated download loads garbage or errors).

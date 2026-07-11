@@ -44,6 +44,21 @@ Comma-separated tags, rough priority order:
   luego re-texturizar enmascarado a denoise ~0.4 — a denoise medio la estructura
   subyacente sobrevive y se repinta más nítida.
 
+## Chroma (T5-flan encoder) — prompts DENSOS o look genérico (aprendido 2026-07-11)
+
+- **Chroma castiga prompts cortos**: cada bloque no descrito se rellena con "promedio AI"
+  (piel plástica, render genérico) — fue la causa raíz del "chafitas" del usuario, no la
+  receta. A/B mismo-seed: receta oficial (flan+padding 1) vs sustituta = mejora marginal;
+  prompt denso vs corto = la diferencia grande.
+- Estructura por párrafo: sujeto detallado → encuadre/pose → ropa/materiales →
+  cámara/lente → luz → textura de piel → entorno (2-3 detalles). Plantillas rellenables
+  (real / animado / 3D) viven como MarkdownNote en el workflow "Chroma Personajes Pro".
+- **A diferencia de Z-Image turbo, aquí el negativo SÍ actúa** (cfg 3.8 real). Úsalo de
+  cortafuegos de estilo: `photograph, realistic skin` para forzar 2D; `anime, illustration`
+  para forzar fotorreal.
+- Settings oficiales (del workflow del creador, no de memoria): euler +
+  BetaSamplingScheduler 26 steps (alpha/beta 0.45), shift 1.0, cfg 3.8, base 1152×1152.
+
 ## Iteration method (applies to both)
 1. **Fix the seed** while developing a prompt — image changes only where the prompt changed. Learn cause/effect.
 2. Change ONE thing per run.

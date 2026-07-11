@@ -13,3 +13,5 @@
 | Downloaded file "missing" | It's in `E:\Downloads`, not the user profile Downloads | Check `E:\Downloads` first |
 | Bad/garbled generations from anime checkpoint | Natural-language prompt on booru-tag model | Rewrite as comma-separated tags (`1girl, ...`) |
 | JSON parse errors from API | BOM or empty response | Global rule: check BOM + empty body specifically |
+| Quality below the model's reputation after replicating an official recipe | A component was substituted (e.g. standard t5xxl instead of the flan variant the creator ships) | Match EVERY file of the official example (encoders included) or flag the substitution as a risk up front — bit 2026-07-11 (Chroma) |
+| "Model looks bad" dispute — is it the recipe, the quant, or the prompt? | Multiple variables changed at once | Same-seed A/B via API: one payload per variable (control vs candidate), compare outputs side by side. 2026-07-11: verdict in ~15 min — prompt density dominated, recipe changes were marginal |

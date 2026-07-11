@@ -20,11 +20,15 @@ Two installs with identical layout — paths below use `E:\AI`; on the laptop su
 | Backup repo (workflows, configs, RESTORE.md, MODELS.md) | `C:\Users\andre\repos\comfyui-setup` — re-snapshot con `backup.ps1` + commit; GitHub privado del usuario, branch `master` (no `main`) |
 | ComfyUI's internal models dir (also valid) | `E:\AI\ComfyUI_windows_portable\ComfyUI\models\` |
 
-## Installed models (as of 2026-07-08)
-- `checkpoints/sd_xl_base_1.0.safetensors` (6.94 GB) — SFW verification model
-- `diffusion_models/z_image_turbo_bf16.safetensors` (11.46 GB) + `text_encoders/qwen_3_4b.safetensors` (7.49 GB) + `vae/ae.safetensors` (320 MB) — Z-Image Turbo set, natural-language prompts
-- `upscale_models/RealESRGAN_x4plus_anime_6B.pth` (18 MB) — for the "Pulir" refine workflow
-- No anime/Illustrious checkpoint yet — user must pick on Civitai and verify license himself (his rule).
+## Installed models (as of 2026-07-11 — full list with URLs in backup repo `MODELS.md`)
+- `checkpoints/`: `sd_xl_base_1.0` (SFW verification) · `bigASP_v2` (fotorreal NSFW) · `NoobAI-XL-v1.1` + `Illustrious-XL-v2.0` (estilizado, booru tags)
+- `diffusion_models/`: `z_image_turbo_bf16` · `Chroma1-HD-fp8mixed` (uncensored, natural language, T5 flan) · `hidream_i1_dev_uncensored_fp8_v0.2` (quad encoders)
+- `text_encoders/`: qwen_3_4b (Z-Image) · clip_l/clip_g/t5xxl/llama fp8 (HiDream) · `t5xxl_flan_fp8_scaled` (Chroma)
+- `upscale_models/`: `RealESRGAN_x4plus.pth` (fotorreal) · `RealESRGAN_x4plus_anime_6B.pth` (anime/Pulir)
+- Workflows "Pro" (two-stage base→hi-res muteable) por modelo, en el repo de backup.
+
+## Measured timings, RTX 3080 Ti (two-stage completo, 2026-07-11)
+SDXL trio ~25-50 s · Chroma ~7-8 min (base ~3 + refine 1728 ~4.5) · HiDream ~8-10 min. Cambiar de modelo entre corridas cuesta 1-2 min extra de recarga (~7-16 GB) — en sesión de trabajo, quedarse en un modelo. Iterar con Hi-Res muteado (Ctrl+M), fijar seed, des-mutear para el final.
 
 ## User's saved workflows (also in backup repo)
 `Desde Cero` (txt2img puro) · `Pipeline Limpio` (referencia → JoyCaption + términos + img2img) · `Pulir` (upscale 4x anime → rebaja a 2 MP → 2ª pasada denoise 0.4) · más los 3 legacy (Best/Joy/My Workflow).
