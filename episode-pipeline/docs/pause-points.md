@@ -13,9 +13,11 @@
    la URL en vivo. Si el pipeline se invoca de nuevo antes de que esto se resuelva, el
    Paso 0 de `00-intake.md` lo detecta y se detiene aquí mismo (este es el punto que
    habría atrapado el caso de BTQ EP.16)
-6. **Stage C.3 / C.3b — Pausa(s) de generación de imagen**: estructural, no existe API
-   de generación automática; el usuario debe generar en Flow/Nani Banana y reportar
-   rutas (cover-art en C.3, quote cards en C.3b)
+6. **Stage C.3 / C.3b — Validación de imágenes (pausa de aprobación, ya no de
+   generación)**: desde 2026-07-11 la generación es local vía ComfyUI, sin pausa
+   estructural (ver `03-image-validation.md` Paso 1) — la pausa que queda es el visto
+   bueno del usuario sobre las imágenes. Solo con el fallback Flow/Nani Banana vuelve
+   la pausa de "genera y repórtame rutas" (cover-art en C.3, quote cards en C.3b)
 7. **Stage C.5 — Gate final de aprobación**: el único gate explícitamente pedido por
    el usuario — muestra el resumen completo de lo que está por publicarse antes de
    `vercel --prod`

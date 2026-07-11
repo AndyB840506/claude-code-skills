@@ -31,6 +31,13 @@ Comma-separated tags, rough priority order:
   golden dust" en vez de "test-card background, no rings").
 - Settings comunidad (Civitai, modelo 2168935): cfg=1, steps=8-9, sampler euler o
   res_multistep, scheduler simple.
+- **Personajes conocidos: declarar proporciones canon explícitas** ("a tall adult man,
+  his head is about one quarter of his total height, long legs") — sin eso el render
+  tiende a chibi/cabezón (BTQ EP.021, Homero).
+- **Flat in = flat out:** pedir "flat colors / cel shading plano" produce imagen sin
+  sombras aunque la escena tenga fuentes de luz. Para covers dramáticos describir la
+  iluminación SIEMPRE (rim light, lado en sombra, sombra proyectada, oclusión) — para
+  2D con drama, la referencia útil es "cinematic style of The Simpsons Movie (2007)".
 - Para retoques localizados usar VAEEncode + **SetLatentNoiseMask** (img2img enmascarado);
   `VAEEncodeForInpaint` con denoise <1 deja parches grises en modelos no-inpaint. Si hay
   que ELIMINAR estructura (no solo retocarla), destruirla primero (blur pesado en PIL) y

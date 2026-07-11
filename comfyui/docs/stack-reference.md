@@ -35,6 +35,10 @@ Two installs with identical layout — paths below use `E:\AI`; on the laptop su
 - `POST /prompt` — queue API-format workflow JSON `{"prompt": {nodes...}}`; returns `prompt_id`, check `node_errors` is empty
 - `GET /history/<prompt_id>` — empty `{}` until done; then `status.status_str == "success"`
 - Wait-for-up pattern: `curl -s --retry 40 --retry-delay 3 --retry-connrefused --retry-all-errors http://127.0.0.1:8188/system_stats`
+- **Los PNG guardados llevan el workflow completo en metadata** (`img.info["prompt"]` =
+  grafo API con prompt/seed/params, `img.info["workflow"]` = grafo UI) — leerlos con PIL
+  para reproducir o editar EXACTAMENTE una generación del usuario, en vez de rederivar
+  la receta (usado BTQ EP.021). Plantilla API lista: `comfyui/templates/zimage-txt2img-api.json`.
 
 ## Launch (headless, from Claude)
 ```powershell
