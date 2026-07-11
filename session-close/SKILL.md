@@ -32,6 +32,8 @@ The handoff commit backs up the project repo. The continuity sync (Step 4) backs
   handoff) — run the full close from the current session, don't just patch the handoff:
   the skipped close also skipped the continuity sync (memory unbacked since then) and
   the retrospective (unrecoverable once context is cleared)
+- **Parallel sessions:** close each one (each retrospective is session-local) but
+  SEQUENTIALLY — handoff + continuity sync push to shared repos and concurrent closes race.
 
 ---
 

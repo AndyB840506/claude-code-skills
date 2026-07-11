@@ -22,16 +22,14 @@ C — Lanzamiento:       validación de imágenes → marketing → grid → dep
 ```
 
 **No reimplementa nada que ya exista** — invoca y encadena `transcriptor`,
-`episode-launch`, `podcast-creator`, `btq-project`, `btq-guion`, `deploy-preflight`.
-⚠️ `btq-project` y `btq-guion` NO existen en disco (confirmado 2026-06-26) — donde un
-workflow los referencie, cae en fallback documentado ahí mismo (típicamente
-`guion-style-btq.md` o `episode-launch/docs/brand-constants.md`). No los busques como
-skills invocables.
+`episode-launch`, `podcast-creator`, `deploy-preflight`. ⚠️ `btq-project` y
+`btq-guion` NO existen en disco (confirmado 2026-06-26) — no los busques como
+skills; donde un workflow los cite, usa el fallback documentado ahí mismo
+(típ. `guion-style-btq.md` o `episode-launch/docs/brand-constants.md`).
 
-## Regla fundamental y routing
-
-Corre autónomo entre los puntos de pausa; si los datos contradicen el checkpoint,
-detente y pregunta antes de sobreescribir. Routing del Paso 0 en `docs/routing.md`.
+**Regla fundamental:** corre autónomo entre los puntos de pausa; si los datos
+contradicen el checkpoint, detente y pregunta antes de sobreescribir. Routing
+del Paso 0 en `docs/routing.md`.
 
 ## Workflows
 
@@ -48,6 +46,5 @@ detente y pregunta antes de sobreescribir. Routing del Paso 0 en `docs/routing.m
 
 ## Reference (`docs/`)
 
-`routing.md` (regla fundamental + Paso 0) · `state-file.md` (checkpoint + tabla de
-routing) · `pause-points.md` (7 pausas) · `audit-log.md` (bitácora) ·
-`implementation-notes.md` (directorios, episode brief, reglas de no-mezcla).
+`routing.md` (Paso 0) · `state-file.md` (checkpoint + tabla de routing) · `pause-points.md`
+(7 pausas) · `audit-log.md` (bitácora) · `implementation-notes.md` (directorios, episode brief, no-mezcla).
