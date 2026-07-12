@@ -1,5 +1,7 @@
 # Prompting Guide (per model family)
 
+> Standalone copy exists at `imagen-a-prompt/docs/prompt-formats.md` (user-requested, no cross-deps) — when a model's rules change, update BOTH files.
+
 Claude may draft/refine SFW prompts on request (backgrounds, environments, concepts, poses, lighting). Explicit prompts are user-side; the structures below transfer.
 
 ## Z-Image / Qwen-encoder models — natural language

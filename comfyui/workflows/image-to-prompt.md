@@ -11,6 +11,11 @@ Natural-language captioner, uncensored, preferred over WD14 for sentence-prompt 
 Installed 2026-07-08 (user-approved clones): `custom_nodes/comfyui-manager` + `custom_nodes/ComfyUI-WD14-Tagger` (needs `onnxruntime` in the embedded python — already installed).
 
 ## Via API (Claude-driven)
+API facts verified 2026-07-12 (first live run of `imagen-a-prompt`):
+- The API rejects graphs with no output node (`prompt_no_outputs`) — `JC_adv` alone fails; close with `PreviewAny` wired to the STRING (slot 1). WD14 IS an output node, works alone.
+- JC_adv `prompt_style: Stable Diffusion Prompt` emits prompt-shaped text directly — no rewriting needed.
+- Before building a graph with unfamiliar nodes, GET `/object_info/<class>` for exact input names/defaults — WD14 and JC queued first-try this way; never guess schemas.
+
 1. Copy the image into `E:\AI\ComfyUI_windows_portable\ComfyUI\input\`.
 2. Queue: `LoadImage` → `WD14Tagger|pysssss` (defaults: threshold 0.35, character_threshold 0.85; model `wd-eva02-large-tagger-v3` = best quality, auto-downloads on first use).
 3. Tags come back in history: `outputs.<node_id>.tags` (list of strings). Verified working 2026-07-08.

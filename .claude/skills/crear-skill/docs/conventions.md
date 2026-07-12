@@ -6,9 +6,16 @@ Puedes crear skills en:
 
 # Dónde se Guardan
 
-Todas las skills van en:
+**En ESTE repo (~/.claude/skills) hay dos ubicaciones válidas** (aclarado 2026-07-12):
+- **Raíz del repo** (`nombre-skill/SKILL.md`, hermana de `comfyui/`) — skills personales
+  y portables: disponibles en cualquier workspace y en cualquier máquina que clone el repo.
+  Default para skills nuevas de uso general (ej. `imagen-a-prompt`).
+- **Nested** (`.claude/skills/nombre-skill/SKILL.md`) — herramientas que solo aplican
+  dentro de este workspace (ej. `crear-skill`, `retrospective`).
+
+Estructura estándar en ambos casos:
 ```
-.claude/skills/nombre-skill/SKILL.md
+nombre-skill/SKILL.md
 ```
 
 Si es muy grande, se organiza con carpetas:
