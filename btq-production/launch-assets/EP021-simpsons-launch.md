@@ -83,6 +83,29 @@ lanzamiento domingo 12 · 8:00 PM Colombia, pico lunes 13 · 7–8 AM, refuerzo 
 - Dom: "Tu mejor empleado no avisa antes de apagarse. EP.21 ya disponible. 🎙️"
 - Mar: "¿Tu equipo está vivo o solo prendido? 🧟 EP.21 en Spotify."
 
+## B2 · Quote cards — calendario corrido (post-lanzamiento, generado lun 13-jul)
+
+Solo formato 16:9 (las 3 cards ya generadas; no se producen derivados 1:1/9:16). Citas
+verbatim contra el SRT real (`E:\Transcriptor\transcripciones\BTQ EP 21.srt`); los tres
+timestamps del brief (~05:09, ~24:10, ~39:20) coincidieron con líneas exactas o casi
+exactas del audio. Corrección menor en Card 2: el SRT transcribe "calentario" donde se
+dice "calendario" (artefacto de transcripción de WhisperX, no tiene sentido gramatical);
+se usa la forma correcta en el caption, no el error de transcripción. Las citas de los captions
+se ajustaron (13-jul) para coincidir letra por letra con el texto RENDERIZADO en cada card
+(verificado contra las 3 imágenes reales), que es la versión limpia aprobada el 11-jul — no
+con el crudo del SRT. Calendario espaciado
+a propósito para no chocar con el pico del lunes en la mañana ni con el refuerzo doble ya
+planeado del martes 14 (§B arriba) — ninguna card cae el mismo día que otra ni el martes.
+
+| Día | Card (archivo) | Plataforma | Caption |
+|---|---|---|---|
+| Lun 13-jul (tarde/noche) | BTQ-EP021-CARD1-16x9.png | LinkedIn (prioritaria, link en primer comentario) + Instagram/Facebook (repost, link en bio) | **LinkedIn:** «Un programa no se cae por perder rating. Se cae, primero, por perder a la gente que nadie más sabe hacer lo que ellos hacen.» —Behind the Queue, EP.021. Esa gente rara vez sale en un reporte — sale cuando ya se fue. ¿Ya identificó a la suya esta semana? 🎧 Episodio completo en el primer comentario. #Liderazgo #BPO #ContactCenter #GestiónDeEquipos #Burnout #BehindTheQueue · **Instagram/Facebook:** «Un programa no se cae por perder rating. Se cae, primero, por perder a la gente que nadie más sabe hacer lo que ellos hacen.» —Behind the Queue, EP.021 🎙️ La gente que sostiene todo por dentro casi nunca sale en un reporte — hasta que renuncia. EP.021 disponible, link en bio. #BehindTheQueue #PodcastEnEspañol #LosSimpson #Liderazgo #BPO #ContactCenter #ServicioAlCliente #Burnout #GestiónDeEquipos #Operaciones #LATAM #Colombia #CustomerExperience |
+| Mié 15-jul | BTQ-EP021-CARD2-16x9.png | LinkedIn (prioritaria, link en primer comentario) + Instagram/Facebook (repost, link en bio) | **LinkedIn:** «Zombie Simpsons no significa que el programa se murió. Significa que se quedó prendido, funcionando, cumpliendo el calendario de estrenos — sin que nadie, en el momento justo, decidiera activamente revivirlo.» —Behind the Queue, EP.021. ¿Cuántos procesos en su operación siguen "prendidos" — cumpliendo el calendario — sin que nadie se pregunte si siguen vivos? 🎧 Episodio completo en el primer comentario. #Liderazgo #BPO #ContactCenter #MejoraContinua #Burnout #BehindTheQueue · **Instagram/Facebook:** «Zombie Simpsons no significa que el programa se murió. Significa que se quedó prendido, funcionando, cumpliendo el calendario de estrenos — sin que nadie, en el momento justo, decidiera activamente revivirlo.» —Behind the Queue, EP.021 🧟 Prendido no es lo mismo que vivo. EP.021 disponible, link en bio. #BehindTheQueue #PodcastEnEspañol #LosSimpson #Liderazgo #BPO #ContactCenter #ServicioAlCliente #Burnout #MejoraContinua #Operaciones #LATAM #Colombia #CustomerExperience |
+| Vie 17-jul | BTQ-EP021-CARD3-16x9.png | LinkedIn (prioritaria, link en primer comentario) + Instagram/Facebook (repost, link en bio) | **LinkedIn:** «Que su equipo dure treinta años no depende de la suerte. Depende de que alguien, todos los días, decida que siga vivo — y no solo prendido.» —Behind the Queue, EP.021. Cierre de semana: ¿hoy decidió activamente que su equipo siga vivo, o simplemente dejó que siguiera prendido? 🎧 Episodio completo en el primer comentario. #Liderazgo #BPO #ContactCenter #GestiónDeEquipos #BehindTheQueue · **Instagram/Facebook:** «Que su equipo dure treinta años no depende de la suerte. Depende de que alguien, todos los días, decida que siga vivo — y no solo prendido.» —Behind the Queue, EP.021 🕯️ EP.021 disponible, link en bio. #BehindTheQueue #PodcastEnEspañol #LosSimpson #Liderazgo #BPO #ContactCenter #ServicioAlCliente #GestiónDeEquipos #Operaciones #LATAM #Colombia #CustomerExperience |
+
+Archivos fuente (16:9, ya generados): `E:\Podcast\BTQ\EP 21\BTQ Artwork EP 21\BTQ-EP021-CARD1-16x9.png`,
+`BTQ-EP021-CARD2-16x9.png`, `BTQ-EP021-CARD3-16x9.png`.
+
 ---
 
 ## C · YouTube Metadata
