@@ -111,3 +111,31 @@
 - Archivos: E:\Podcast\BTQ\EP 21\BTQ Artwork EP 21\BTQ-EP021-CARD{1,2,3}.png (1080x1080).
 - Resultado: OK — pendiente visto bueno de Andy; siguen grid (04) y deploy (05), ambos
   bloqueados por la URL de Spotify (aún pending).
+
+## Stage 4 — Rotación de grid (2026-07-13)
+
+- Qué se hizo: URL de Spotify de EP.021 recibida (https://open.spotify.com/episode/0VH2eMppsNMBl3JqTEq4T0,
+  guardada sin el parámetro de tracking ?si=). Grid de BTQ rotado de 019,018,017,016 a
+  020,019,018,017 (orden descendente verificado leyendo las 4 cards en vivo antes de editar).
+- Episodio que entra: EP.020 (ref "Ley de Goodhart", título del badge previo, cita del cierre
+  del episodio, URL 6gRVIWVI3jBUAJarLJ7AsQ tomada del badge live + roadmap — coincidían) |
+  Episodio que sale: EP.016 (Pink Floyd · The Wall).
+- Badge "Última pista" actualizado a EP.021 · Los Simpson (hueco conocido de EP.018, cubierto).
+- Propagación: URL de EP.021 escrita en EP021-simpsons-launch.md y roadmap-btq.md ("publicado");
+  URL de EP.020 registrada en EP020-metricas-launch.md (estaba "pendiente" desde su lanzamiento).
+- Archivo modificado: btq-production/website/index.html
+- Resultado: OK
+
+## Stage 5 — Deploy + verificación (2026-07-13)
+
+- Qué se hizo: preflight (PASS — project.json local OK proyecto "website", vercel.json válido
+  sin ignoreCommand, sin secrets, baseline pre-deploy HTTP 200 Server: Vercel; nota: el hook
+  deploy-preflight-gate.ps1 citado en el workflow 05 no existe en esta máquina — referencia
+  stale, el gate real fue la aprobación de Andy) → gate de aprobación (aprobado por Andy vía
+  menú) → vercel --prod (dpl_Ht8jFrWiHL2rNWihx54LnQ6McYTR, READY, aliased a behind-thequeue.com)
+  → verificación HTTP → verificación Spotify (informativa).
+- URL verificada: https://behind-thequeue.com → HTTP 200, con los 3 marcadores nuevos en el
+  HTML servido (URL EP.021 en el badge, URL EP.020 en el grid, texto "Última pista · Los Simpson").
+- Verificación Spotify: PASS — "EP.21 — Los Simpson: cómo evitar el burnout de tu equipo a
+  largo plazo" visible en la página pública del show.
+- Resultado: OK — episodio publicado y verificado en vivo

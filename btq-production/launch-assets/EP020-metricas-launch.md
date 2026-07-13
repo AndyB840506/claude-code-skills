@@ -1,7 +1,7 @@
 # EP.020 — Métricas / Ley de Goodhart · Paquete de lanzamiento
 
 **Generado:** 2026-07-04 (sáb, día de grabación) · Laswell / episode-launch (vía episode-pipeline)
-**Live:** pendiente — Andy sube el episodio a Spotify for Podcasters, avisa la URL cuando esté pública.
+**Live:** https://open.spotify.com/episode/6gRVIWVI3jBUAJarLJ7AsQ (registrada 2026-07-13 al rotar el grid para EP.021; verificada contra el badge del sitio live y el roadmap).
 **Fuentes:** guion [EP020-metricas-guion.html](EP020-metricas-guion.html) · SRT `E:\Transcriptor\transcripciones\BTQ EP 20.srt` (duración real ~44min38s, más larga que el estimado de guion de ~37min) · artwork ya preparado y aprobado en [EP020-metricas-artwork-v3.md](EP020-metricas-artwork-v3.md) — 3 imágenes generadas en `E:\Podcast\BTQ\EP 20\BTQ Artwork EP 20`.
 
 **Nota de re-transcripción:** Andy detectó un problema de timing en la música de intro/outro

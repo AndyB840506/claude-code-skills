@@ -2,7 +2,7 @@
 
 **Fecha:** 2026-07-10 · **Show:** Behind the Queue · **Duración:** ~41:10 (SRT real)
 **Audio:** `E:\Podcast\BTQ\EP 21\BTQ EP 21.mp3` · **SRT:** `E:\Transcriptor\transcripciones\BTQ EP 21.srt`
-**Spotify URL:** pending
+**Spotify URL:** https://open.spotify.com/episode/0VH2eMppsNMBl3JqTEq4T0
 
 Fact-check: entidades reales dichas al aire verificadas contra las fuentes del guion
 (disputa 1998 $30k→~$125k vigente 1998–2004, Matt Groening, Al Jean co-showrunner T3 con
