@@ -50,7 +50,12 @@ BTQ, MPD y CCC):** generarlas LOCALMENTE, sin pausa de Flow:
    local: 0). Cada show usa SU sistema visual (BTQ: negro #0A0A0A / cita off-white
    #F5F2EC / atribución gold #C9A84C; MPD: silver/crimson; CCC: el suyo).
 3. **Validar cada cita contra el SRT real** antes de componer (qué se dijo y dónde) —
-   verbatim, sin recortes silenciosos.
+   verbatim, sin recortes silenciosos. La versión RENDERIZADA en la card puede llevar
+   limpieza aprobada (muletillas, gramática, arranque de frase); cualquier caption o
+   copy posterior que cite una card debe coincidir letra por letra con el texto
+   renderizado en la card final — no con el crudo del SRT ni con el guion (mordió
+   2026-07-13, EP.021: los captions delegados citaron el SRT crudo y hubo que
+   corregirlos contra las 3 imágenes reales).
 4. Formato BTQ desde EP.021: **16:9 (1920x1080)** — decisión de Andy 2026-07-11; el 1:1
    solo si se necesita para feed de Instagram.
 

@@ -10,9 +10,11 @@ gate y el deploy — ver memoria `feedback_verify_before_done`.
 ## Paso 1 — Preflight
 
 Invoca `/deploy-preflight` con target **Vercel** (es el único usado por ambos shows).
-Esto corre los 6 chequeos (env vars, puertos, BOM, JSON, auth/SSL, shell safety) y
-escribe el flag que el hook `deploy-preflight-gate.ps1` necesita para desbloquear
-`vercel --prod`.
+Esto corre los chequeos del skill (project link/repo.json, directorio y vercel.json,
+secrets, baseline de producción + host real). (Nota 2026-07-13: la referencia anterior
+a un flag + hook `deploy-preflight-gate.ps1` era stale — ese hook no existe en las
+máquinas actuales; el bloqueo real contra deploys sin validar es el gate de aprobación
+del Paso 2.)
 
 Si el preflight reporta algo en estado FAIL (manual): detente aquí y reporta el
 bloqueo al usuario — no continúes al gate de aprobación con un preflight a medias.

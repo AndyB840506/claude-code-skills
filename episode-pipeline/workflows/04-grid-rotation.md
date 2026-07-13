@@ -45,6 +45,11 @@ usuario (verificada desde el browser, regla EP.016) **antes** de tocar el markup
 no pongas "pending" en un `href`. Al obtenerla, propágala también al launch file +
 roadmap de ESE episodio, no solo úsala en la card.
 
+**Y lo mismo para el episodio QUE SE LANZA:** al recibir su URL, escríbela en su propio
+launch file (línea `Live:`/`Spotify URL`) además del roadmap — la de EP.020 quedó
+"pendiente" en su launch file desde su propio lanzamiento y solo se registró al rotar
+el grid de EP.021 (2026-07-13).
+
 ---
 
 ## Paso 1 — Leer el grid actual
@@ -53,7 +58,7 @@ Abre el `index.html` del show correspondiente y localiza el contenedor del grid:
 
 | Show | Contenedor | Card | Campos por card |
 |---|---|---|---|
-| BTQ | `<div class="ep-list stagger">` en `btq-production/website/index.html` | `<a class="ep-row" href="[spotify URL]">` | `.ep-num` (3 dígitos), `.ep-body > .ep-ref-tag` (referencia cultural), `.ep-row-title`, `.ep-row-quote`, `.ep-arrow` |
+| BTQ | `<div class="stag">` (sección `#tracklist`) en `btq-production/website/index.html` | `<a class="track" href="[spotify URL]">` | `.t-num` (3 dígitos), `.t-ref` (referencia cultural), `.t-title`, `.t-quote`, `.t-right` (bloque "Escuchar →") — clases verificadas en vivo 2026-07-13 (EP.021); los nombres anteriores `ep-list`/`ep-row` eran de un markup viejo |
 | MPD | `<div class="episodes-grid">` en `mrputridsden-production/website/index.html` | `<div class="episode-card" data-ep="0XX">` | `.ep-number`, `.ep-title`, `.ep-meta` (duración · fecha · "Co-host"/invitado), `.ep-description`, `.ep-link` (con SVG + href de Spotify) |
 
 Anota las 4 cards actuales en orden — son tu punto de partida para el diff.
@@ -91,9 +96,9 @@ usuario antes de tocar el markup** — no asumas (ver memoria `feedback_confirm_
 ## Paso 3 — Editar el markup
 
 **BTQ**: usa los campos del episode brief + lo generado en Stage 2 (`episode-launch`)
-para la card que entra — `cultural_ref` → `.ep-ref-tag`, título → `.ep-row-title`, una
-cita/frase representativa del episodio → `.ep-row-quote`, número de 3 dígitos →
-`.ep-num`, URL de Spotify → `href` del `<a class="ep-row">`.
+para la card que entra — `cultural_ref` → `.t-ref`, título → `.t-title`, una
+cita/frase representativa del episodio → `.t-quote`, número de 3 dígitos →
+`.t-num`, URL de Spotify → `href` del `<a class="track">`.
 
 **MPD**: usa los campos del episode brief + lo generado en Stage 2
 (`shownotes-ep[NNN].md` / `youtube-ep[NNN].md`) para la card que entra — número →
