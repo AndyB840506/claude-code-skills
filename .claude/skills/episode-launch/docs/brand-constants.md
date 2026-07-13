@@ -140,6 +140,13 @@ contra Gladiator EP.019 — ver `btq-production/launch-assets/EP019-gladiator-ar
 > mantiene (mitad negra texto / mitad escena), solo cambió la proporción; 1:1 únicamente
 > si se necesita para feed de Instagram. Citas verbatim validadas contra el SRT real.
 > Procedimiento compartido para los 3 shows en `episode-pipeline/workflows/03b-marketing.md`.
+>
+> **Implementación PIL (BTQ, desde EP.021):** fuente Segoe UI Bold para la cita, Segoe
+> UI (regular) para la atribución — ambas del sistema, no requieren instalar nada.
+> Tamaño de la cita dinámico: arranca en 72px y baja de 2 en 2 hasta que el bloque
+> completo (todas las líneas envueltas) quepa en el alto disponible de la mitad negra;
+> el tamaño de la atribución es ~34% del tamaño final de la cita. Script listo:
+> `comfyui/templates/quote-card-compose.py`.
 
 **Cambio de dirección:** hasta EP.019 las quote cards usaban un estilo propio —
 "Graphic editorial poster design — NOT photorealistic 3D" (más plano, tipo póster/

@@ -16,7 +16,7 @@ Run: 2026-06-02 10:23
 | global:/prompt-reviewer | WARN 86% | 84 | has_welcome |
 | global:/retrospective | WARN 86% | 162 | has_welcome |
 | global:/hiresignal-scoring | WARN 86% | 178 | has_welcome |
-| project:/mrputridsden/.claude/skills/podcast-creator | WARN 86% | 78 | has_question_flow |
+| project:/.claude/skills/podcast-creator | WARN 86% | 78 | has_question_flow |
 | project:/btq-guion | WARN 86% | 404 | has_welcome |
 | project:/mrputridsden | WARN 86% | 31 | has_welcome |
 | project:/retrospective | WARN 86% | 162 | has_welcome |
@@ -27,7 +27,7 @@ Run: 2026-06-02 10:23
 | global:/.claude/skills/handoff | WARN 86% | 75 | has_welcome |
 | global:/.claude/skills/mrputridsden | WARN 86% | 31 | has_welcome |
 | global:/.claude/skills/retrospective | WARN 86% | 63 | has_welcome |
-| global:/.claude/skills/mrputridsden/.claude/skills/podcast-creator | WARN 86% | 78 | has_question_flow |
+| global:/.claude/skills/podcast-creator | WARN 86% | 78 | has_question_flow |
 | global:/.claude/skills/crear-skill | WARN 86% | 98 | has_welcome |
 | global:/closeout | WARN 86% | 29 | has_welcome |
 | global:/bf6-meta-configurator | WARN 86% | 332 | has_welcome |

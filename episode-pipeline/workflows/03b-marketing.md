@@ -48,7 +48,10 @@ BTQ, MPD y CCC):** generarlas LOCALMENTE, sin pausa de Flow:
    marca + cita + atribución. Garantiza letra por letra perfecta y tildes correctas —
    elimina de raíz los patrones de fallo de texto de Flow (EP.020: 5 rondas; EP.021
    local: 0). Cada show usa SU sistema visual (BTQ: negro #0A0A0A / cita off-white
-   #F5F2EC / atribución gold #C9A84C; MPD: silver/crimson; CCC: el suyo).
+   #F5F2EC / atribución gold #C9A84C; MPD: silver/crimson; CCC: el suyo). Plantilla
+   reutilizable (BTQ, adaptar colores/fuente para MPD/CCC):
+   `comfyui/templates/quote-card-compose.py` (split 50/50, tamaño de fuente dinámico
+   según longitud de la cita, escena generada directo a 960×1080 para no recortarla).
 3. **Validar cada cita contra el SRT real** antes de componer (qué se dijo y dónde) —
    verbatim, sin recortes silenciosos. La versión RENDERIZADA en la card puede llevar
    limpieza aprobada (muletillas, gramática, arranque de frase); cualquier caption o
@@ -58,6 +61,12 @@ BTQ, MPD y CCC):** generarlas LOCALMENTE, sin pausa de Flow:
    corregirlos contra las 3 imágenes reales).
 4. Formato BTQ desde EP.021: **16:9 (1920x1080)** — decisión de Andy 2026-07-11; el 1:1
    solo si se necesita para feed de Instagram.
+5. **Si el usuario regenera las cards en OTRA máquina** después de que ya existía un set
+   (ej. generadas en el PC, luego regeneradas en el portátil), actualizar la línea
+   "archivos fuente" del launch file (`EP0XX-*-launch.md`) con una nota explícita de cuál
+   set queda vigente y cuál queda sin usar — no lo borres, no lo sobrescribas en
+   silencio. Mordió 2026-07-13 (BTQ EP.021): sin esta nota, el launch file habría seguido
+   apuntando al set del PC mientras Andy publicaba desde el portátil.
 
 **Fallback Flow** (si el usuario lo pide o no hay servidor local): presenta los prompts
 y pausa como antes — "Prompts de quote cards listos para EP.0XX — [N] cards. Genera

@@ -28,10 +28,9 @@ The handoff commit backs up the project repo. The continuity sync (Step 4) backs
 - End of major sessions — after creating/modifying skills or fixing bugs
 - End of day — batch daily changes into one session close
 - Before handing off — ensure everything is documented and backed up
-- When a past session is discovered to have ended WITHOUT its close (e.g. a missing
-  handoff) — run the full close from the current session, don't just patch the handoff:
-  the skipped close also skipped the continuity sync (memory unbacked since then) and
-  the retrospective (unrecoverable once context is cleared)
+- When a past session ended WITHOUT its close (e.g. a missing handoff) — run the full
+  close now, don't just patch the handoff: the skipped close also skipped the continuity
+  sync (memory unbacked since then) and the retrospective (unrecoverable once context clears)
 - **Parallel sessions:** close each one (each retrospective is session-local) but
   SEQUENTIALLY — handoff + continuity sync push to shared repos and concurrent closes race.
 

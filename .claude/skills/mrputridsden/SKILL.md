@@ -1,6 +1,6 @@
 ---
 name: mrputridsden
-description: "Master context skill para el podcast Mr. Putrid's Den — produccion de episodios, guiones en bogotano moderno, artwork, show notes, social media, exportacion HTML. Triggers: mr putrid, mr putrid's den, la guarida, podcast metal, podcast rock, guion episodio, silla putrida, artwork podcast, show notes, produce episode, podcast script, bogotano podcast."
+description: "Master context skill para el podcast Mr. Putrid's Den — produccion de episodios, guiones en bogotano moderno, artwork, show notes, social media, exportacion HTML. Triggers: mr putrid, mr putrid's den, la guarida, podcast metal, podcast rock, silla putrida, bogotano podcast, guion de la guarida, artwork de la guarida, show notes de la guarida, produce episodio de mr putrid."
 ---
 
 # Mr. Putrid's Den — Skill Router

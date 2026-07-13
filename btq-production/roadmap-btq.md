@@ -50,6 +50,12 @@ Perfil: supervisor/gerente de BPO de ~40 años.
 Andres:** Metallica, Matrix, Star Wars — un pilar SEO entre cada 3–4 pop-culture.
 (Back to the Future y Los Simpson ya usados — EP.013 y EP.021 respectivamente.)
 
+**Feedback de Andy sobre EP.022 (2026-07-13):** le gustó más el EP.020 (pilar SEO,
+métricas/KPIs) que el EP.021 — lo sintió "más profesional", sobre todo por tocar temas
+operacionales. Señal para inclinar EP.022 hacia otro pilar SEO/operacional en vez de
+tomar el siguiente candidato pop-culture de la lista de arriba — tema exacto aún sin
+decidir, a confirmar con él antes de arrancar Stage A.
+
 ---
 
 **Notas:**

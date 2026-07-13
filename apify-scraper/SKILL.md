@@ -40,10 +40,9 @@ con pipelines ya armados, usa el playbook correspondiente en `workflows/`:
 - `workflows/job-market-and-recruitment.md` — research de empleos,
   sourcing de candidatos, **monitoreo de Upwork para freelance**
 
-Antes de correr cualquier Actor de pago (la mayoría lo son), consulta
-`docs/gotchas.md` — tiene el protocolo de estimación de costo y los
-pitfalls más comunes. Para elegir el Actor correcto, consulta
-`docs/actor-index.md`.
+Antes de correr cualquier Actor de pago (la mayoría lo son), consulta `docs/gotchas.md`
+(protocolo de estimación de costo + pitfalls comunes) y `docs/actor-index.md` (elegir
+el Actor correcto).
 
 Si el usuario quiere evitar el costo de Apify para un sitio específico,
 consulta `workflows/self-hosted-alternative.md` antes de descartar la opción

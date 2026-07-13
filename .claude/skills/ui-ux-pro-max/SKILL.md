@@ -15,6 +15,11 @@ Searchable database of 67 styles, 96 color palettes, 57 font pairings, 99 UX gui
 - Building landing pages or dashboards
 - Implementing accessibility requirements
 
+If `web-page-kit` is already driving a full site build, defer to its design-guide
+(Rule 8) for the page-level aesthetic direction — use this skill for individual
+components, chart types, stack-specific guidelines, or a second opinion on an existing
+design, not to re-decide the whole site's tone.
+
 ## Workflow
 
 Follow [workflows/design-workflow.md](workflows/design-workflow.md) for the full process: prerequisites, generating a design system with `--design-system`, persisting it, supplemental domain searches, and stack guidelines.

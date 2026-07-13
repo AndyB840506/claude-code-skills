@@ -1,6 +1,6 @@
 ---
 name: prompt-reviewer-en
-description: "Evaluate and improve prompts, skills, and instructions. Find clarity issues, missing edge cases, and effectiveness gaps. Propose specific, executable fixes with reasoning. For Spanish, use /prompt-reviewer. Triggers EN: review prompt, evaluate skill, improve instructions, prompt audit, skill review, instruction check, is this clear, this is unclear, fix my prompt, review my system prompt, audit instructions, prompt not working."
+description: "Evaluate and improve prompts, skills, and instructions. Find clarity issues, missing edge cases, and effectiveness gaps. Propose specific, executable fixes with reasoning. Triggers EN: review prompt, evaluate skill, improve instructions, prompt audit, skill review, instruction check, is this clear, this is unclear, fix my prompt, review my system prompt, audit instructions, prompt not working."
 ---
 
 # Prompt Reviewer EN — Evaluate and Improve

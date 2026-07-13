@@ -103,8 +103,13 @@ planeado del martes 14 (§B arriba) — ninguna card cae el mismo día que otra 
 | Mié 15-jul | BTQ-EP021-CARD2-16x9.png | LinkedIn (prioritaria, link en primer comentario) + Instagram/Facebook (repost, link en bio) | **LinkedIn:** «Zombie Simpsons no significa que el programa se murió. Significa que se quedó prendido, funcionando, cumpliendo el calendario de estrenos — sin que nadie, en el momento justo, decidiera activamente revivirlo.» —Behind the Queue, EP.021. ¿Cuántos procesos en su operación siguen "prendidos" — cumpliendo el calendario — sin que nadie se pregunte si siguen vivos? 🎧 Episodio completo en el primer comentario. #Liderazgo #BPO #ContactCenter #MejoraContinua #Burnout #BehindTheQueue · **Instagram/Facebook:** «Zombie Simpsons no significa que el programa se murió. Significa que se quedó prendido, funcionando, cumpliendo el calendario de estrenos — sin que nadie, en el momento justo, decidiera activamente revivirlo.» —Behind the Queue, EP.021 🧟 Prendido no es lo mismo que vivo. EP.021 disponible, link en bio. #BehindTheQueue #PodcastEnEspañol #LosSimpson #Liderazgo #BPO #ContactCenter #ServicioAlCliente #Burnout #MejoraContinua #Operaciones #LATAM #Colombia #CustomerExperience |
 | Vie 17-jul | BTQ-EP021-CARD3-16x9.png | LinkedIn (prioritaria, link en primer comentario) + Instagram/Facebook (repost, link en bio) | **LinkedIn:** «Que su equipo dure treinta años no depende de la suerte. Depende de que alguien, todos los días, decida que siga vivo — y no solo prendido.» —Behind the Queue, EP.021. Cierre de semana: ¿hoy decidió activamente que su equipo siga vivo, o simplemente dejó que siguiera prendido? 🎧 Episodio completo en el primer comentario. #Liderazgo #BPO #ContactCenter #GestiónDeEquipos #BehindTheQueue · **Instagram/Facebook:** «Que su equipo dure treinta años no depende de la suerte. Depende de que alguien, todos los días, decida que siga vivo — y no solo prendido.» —Behind the Queue, EP.021 🕯️ EP.021 disponible, link en bio. #BehindTheQueue #PodcastEnEspañol #LosSimpson #Liderazgo #BPO #ContactCenter #ServicioAlCliente #GestiónDeEquipos #Operaciones #LATAM #Colombia #CustomerExperience |
 
-Archivos fuente (16:9, ya generados): `E:\Podcast\BTQ\EP 21\BTQ Artwork EP 21\BTQ-EP021-CARD1-16x9.png`,
-`BTQ-EP021-CARD2-16x9.png`, `BTQ-EP021-CARD3-16x9.png`.
+**Actualización 13-jul (tarde):** Andy decidió publicar la regeneración local hecha desde
+el portátil (mismas 3 escenas — micrófono, CRT en estática, vela — nuevo render ComfyUI +
+mismo texto PIL, citas idénticas a la tabla de arriba) en vez del set original del PC.
+Archivos fuente vigentes (16:9): `D:\Podcast\BTQ\EP 21\BTQ Artwork EP 21\BTQ-EP021-CARD1-16x9.png`,
+`BTQ-EP021-CARD2-16x9.png`, `BTQ-EP021-CARD3-16x9.png`. El set original del PC
+(`E:\Podcast\BTQ\EP 21\BTQ Artwork EP 21\...`) queda sin usar — no borrar, solo no es el
+que se publica.
 
 ---
 

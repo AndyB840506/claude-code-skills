@@ -257,6 +257,11 @@ window.addEventListener('scroll', () => {
 
 ## Rule 8: Visual Design Direction (frontend-design)
 
+> Esta sección reimplementa inline la filosofía anti-genérico de la skill
+> `frontend-design` (no la referencia porque web-page-kit corre standalone). Si
+> `frontend-design/SKILL.md` cambia sus principios de tono/tipografía/color, actualizar
+> AMBOS archivos — igual que la nota de sync de `comfyui/docs/prompting.md`.
+
 **Do not use lookup tables.** Generic font-by-industry assignments produce predictable, forgettable pages. Instead, commit to a deliberate aesthetic direction for every site.
 
 ### Step 1 — Choose a Tone (pick one, commit fully)

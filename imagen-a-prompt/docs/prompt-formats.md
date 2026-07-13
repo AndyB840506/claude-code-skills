@@ -18,6 +18,12 @@ Reglas críticas (Z-Image **turbo**):
   sombra proyectada) o sale plano.
 - Personajes de proporciones conocidas: declarar proporciones explícitas ("a tall adult
   man, his head is about one quarter of his total height") o tiende a chibi.
+- **Un adjetivo de color cerca de la luz/fondo tiñe todo el fondo**, aunque se pida
+  "void black" aparte (ej. "faint red glow" → fondo completo rojo). Si hay una fuente de
+  luz de color, declarar explícito que el resto se apaga a negro puro: "background fades
+  to pure black, no colored wash".
+- **Escenas de un solo objeto en vacío pueden alucinar objetos extra** sin pedirlos.
+  Agregar "alone, nothing else in frame" lo suprime.
 
 Settings sugeridos: `cfg 1.0 · steps 8-9 · euler o res_multistep · scheduler simple`
 

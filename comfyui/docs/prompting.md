@@ -45,6 +45,16 @@ Comma-separated tags, rough priority order:
   que ELIMINAR estructura (no solo retocarla), destruirla primero (blur pesado en PIL) y
   luego re-texturizar enmascarado a denoise ~0.4 — a denoise medio la estructura
   subyacente sobrevive y se repinta más nítida.
+- **Un adjetivo de color cerca de la luz/fondo tiñe todo el fondo**, aunque se pida
+  "void black" en otra parte del prompt (ej. "faint red glow dissolving into shadow" →
+  fondo completo rojo, no negro puro; aprendido 2026-07-13, BTQ EP.021 CARD1 en el
+  portátil). Si hay una fuente de luz de color en la escena, declarar explícitamente que
+  el resto del fondo se apaga a negro puro: "background fades to pure black, no colored
+  wash" — no basta con pedir "void black" una sola vez al principio del prompt.
+- **Escenas de un solo objeto en vacío pueden alucinar objetos extra** sin que se pidan
+  (ej. una figurita apareció sola junto a una vela; aprendido 2026-07-13, BTQ EP.021
+  CARD3). Para composiciones de un solo objeto, agregar "alone, nothing else in frame"
+  suprime el objeto extra.
 
 ## Chroma (T5-flan encoder) — prompts DENSOS o look genérico (aprendido 2026-07-11)
 

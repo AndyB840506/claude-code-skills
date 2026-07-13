@@ -45,6 +45,5 @@ el skill kit — no extrae aprendizajes nuevos ni reorganiza estructura.
 ## Workflow
 
 Sigue `workflows/audit.md` — inventario → detectar → verificar muestra → proponer →
-aplicar → actualizar línea base. Reglas de aprobación (nunca tocar sin aprobar,
-preferir fusionar sobre borrar, verificar antes de marcar obsoleta) viven en el
-Paso 4 de ese archivo.
+aplicar → actualizar línea base. Reglas de aprobación (nunca tocar sin aprobar, preferir
+fusionar sobre borrar, verificar antes de marcar obsoleta) viven en el Paso 4 de ese archivo.

@@ -5,7 +5,7 @@ Two installs with identical layout — paths below use `E:\AI`; on the laptop su
 ## Hardware
 - Desktop: NVIDIA RTX 3080 Ti, 12 GB VRAM (cuda:0). System RAM 32 GB. Stack at `E:\AI`.
 - Laptop: NVIDIA RTX 3060 Laptop, 6 GB VRAM (cuda:0). System RAM 16 GB. Stack at `D:\AI` (full replica, 2026-07-08; SDXL smoke test passed — 1024², 12 steps).
-- 12 GB fits SDXL fully; Z-Image bf16 (11.46 GB) partially offloads to RAM — first gen slow, rest OK. On the laptop (6 GB / 16 GB) offload is heavier: SDXL verified OK; Z-Image untested, expect it slow or OOM-prone.
+- 12 GB fits SDXL fully; Z-Image bf16 (11.46 GB) partially offloads to RAM — first gen slow, rest OK. On the laptop (6 GB / 16 GB) offload is heavier: SDXL verified OK; Z-Image also verified OK 2026-07-13 (BTQ EP.021 quote cards, 960×1080, ~40s/image, no OOM) — earlier note calling it "untested, expect slow/OOM-prone" was overly cautious.
 - iGPU (AMD Radeon) also present on the desktop — ignore it; ComfyUI uses cuda:0.
 
 ## Layout
@@ -19,6 +19,12 @@ Two installs with identical layout — paths below use `E:\AI`; on the laptop su
 | Offline user manual | `E:\AI\manual.html` |
 | Backup repo (workflows, configs, RESTORE.md, MODELS.md) | `C:\Users\andre\repos\comfyui-setup` — re-snapshot con `backup.ps1` + commit; GitHub privado del usuario, branch `master` (no `main`) |
 | ComfyUI's internal models dir (also valid) | `E:\AI\ComfyUI_windows_portable\ComfyUI\models\` |
+
+**Producción final de podcasts (portadas, quote cards) NO vive en `E:\AI\outputs\`** — ese
+folder es solo el output crudo de ComfyUI. La carpeta de entrega por show sigue la misma
+convención de letra de unidad: `E:\Podcast\<Show>\EP NN\...` en el desktop → mismo path con
+`D:\Podcast\<Show>\EP NN\...` en el portátil (usado por primera vez 2026-07-13, BTQ EP.021).
+Mismo nombre de carpeta, solo cambia la letra de unidad — igual que `E:\AI` ↔ `D:\AI`.
 
 ## Installed models (as of 2026-07-11 — full list with URLs in backup repo `MODELS.md`)
 - `checkpoints/`: `sd_xl_base_1.0` (SFW verification) · `bigASP_v2` (fotorreal NSFW) · `NoobAI-XL-v1.1` + `Illustrious-XL-v2.0` (estilizado, booru tags)

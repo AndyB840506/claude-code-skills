@@ -30,7 +30,7 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 - **Formato documentos:** HTML optimizado para PDF vía IlovePDF
 - **Backup:** después de cada guion/documento → git commit + push a GitHub + copia a G:\My Drive\ si está montado
 - **Production assets en mrputridsden-production, no en la skill** — Scripts HTML, propuestas, documentos y artefactos de producción se guardan en `C:\Users\andre\repos\kit-skill-creator\mrputridsden-production\`. La carpeta de la skill (`.claude\skills\mrputridsden\`) es solo instruction files. (Andres usa dos PCs: el escritorio SÍ tiene E: — ahí vive E:\Transcriptor; el portátil solo C:/D:.)
-- **Skill activa:** `C:\Users\andre\repos\kit-skill-creator\.claude\skills\mrputridsden\.claude\skills\podcast-creator\SKILL.md` (project-scoped, vive junto a esta carpeta)
+- **Skill activa:** `C:\Users\andre\repos\kit-skill-creator\.claude\skills\podcast-creator\SKILL.md` (project-scoped, en la raíz de `.claude/skills/`, no anidada dentro de esta carpeta)
 
 ---
 
@@ -146,18 +146,22 @@ mrputridsden/
 ├── glosario-cachaco.md           ← Consultar siempre antes de guiones
 ├── eventos.json                  ← Eventos para segmento de promo
 ├── SKILL.md
-├── CLAUDE.md
-└── .claude/skills/podcast-creator/
-    ├── SKILL.md
-    └── workflows/
-        ├── 00-setup.md
-        ├── 01-episodio.md
-        ├── 02-grabacion.md
-        ├── 03-artwork.md
-        ├── 04-social-media.md
-        ├── 05-show-notes.md
-        ├── 06-html-export.md
-        └── 07-youtube.md
+└── CLAUDE.md
+```
+
+**Skill compartida (workflows de producción, en la raíz de `.claude/skills/`, no anidada aquí):**
+```
+.claude/skills/podcast-creator/
+├── SKILL.md
+└── workflows/
+    ├── 00-setup.md
+    ├── 01-episodio.md
+    ├── 02-grabacion.md
+    ├── 03-artwork.md
+    ├── 04-social-media.md
+    ├── 05-show-notes.md
+    ├── 06-html-export.md
+    └── 07-youtube.md
 ```
 
 **Producción (assets — carpeta propia, separada de la skill):**
