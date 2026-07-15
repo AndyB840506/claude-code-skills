@@ -35,28 +35,19 @@ estimation.
 ## Deliverable output contract
 
 `C:\Users\andre\repos\the-freelancer\freelancer\deliverable.js` —
-`BASE_RULES` constant (lines ~12–37): single self-contained HTML file, inline
-CSS/JS, print-safe colors, brand frame ("The Freelancer", dark #0e1113 /
-orange #ff3d00) for reports/audits, EXCEPTION: client's own branding when the
-deliverable IS their website (Web Page Kit, Social Profile to Web).
+`BASE_RULES` constant (lines 12–23): single self-contained HTML file, inline
+CSS/JS, print-safe colors, brand frame ("The Freelancer", teal #0d9488) for
+reports/audits, EXCEPTION: client's own branding when the deliverable IS their
+website (Web Page Kit, Social Profile to Web). Language: written in the
+client's language (the order's "Language" line — en/es/pt), or the dominant
+language of the intake transcript if not recorded.
 
-**Output language (non-negotiable, added 2026-07-03 — verify this section
-still exists before trusting the summary below, line numbers drift):** render
-the ENTIRE deliverable in the order's language — every heading/label/marker,
-not just the body copy. Content (findings, scores, copy, recommendations) must
-be written natively in the target language, never translated from an English
-draft. Section names in the per-service prompt files are a structural
-reference in English for the model, not output text.
+`resolveServiceId()` (lines 26–35): normalize both sides (lowercase, strip
+accents, strip non-alphanumerics) and match against `id`, English `name`, or
+Spanish `name` via substring containment.
 
-**Markers (unified across all services):** `[TODO: ...]` for missing/
-unverified facts, `[IMAGE: ...]` for image placeholders — the tag word stays
-in English so it's grep-able, only the description inside is localized. Don't
-invent other marker vocabulary.
-
-`resolveServiceId()` (lines ~40–49, not ~26–35 — drifted after the 2026-07-03
-edit): normalize both sides (lowercase, strip accents, strip
-non-alphanumerics) and match against `id`, English `name`, or Spanish `name`
-via substring containment.
+`extractHtml()` (lines 37–43): strips markdown code fences the model may have
+added despite instructions, then slices from the first `<!DOCTYPE`/`<html`.
 
 Truth rules: only facts from the transcript/JD/tools actually used; unknowns go
 in a visible "Preguntas pendientes / Pending questions" section, never guessed.
