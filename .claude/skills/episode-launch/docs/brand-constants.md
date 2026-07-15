@@ -149,6 +149,20 @@ SIEMPRE falla la ortografía de texto largo horneado en la misma imagen que la e
    footer (mismo criterio que las quote cards).
 5. El gold "BTQ" y "EP.NN" necesitan fuente notablemente más grande de lo intuitivo para
    leerse "prominente" — referencia calibrada en EP.022: ~0.040×H (BTQ), ~0.050×H (EP.NN).
+6. **1:1** debe entregarse a 3000×3000 real (mínimo de plataforma) — generar nativo más
+   chico (ej. 1536×1536) y escalar con RealESRGAN, ver receta en
+   `comfyui/docs/stack-reference.md` §Portadas a resolución de impresión.
+7. **16:9** (thumbnail/hero) usa una escena nueva nativa 1920×1080 (figura a un lado,
+   el resto void black reservado para texto) + plantilla
+   `comfyui/templates/cover-16x9-compose.py` (título+subtítulo alineados a la izquierda,
+   sin footer — los thumbnails se recortan).
+8. **9:16** (historia/teaser) NO se genera de cero: se deriva por PIL de la escena 1:1
+   YA aprobada — recorte de la porción superior (figura+checklist) + relleno del resto
+   con negro de marca exacto `(10,10,10)`, dejando margen arriba para el wordmark antes
+   de pegar la escena. Luego se compone con la MISMA `portada-compose.py` del 1:1 (título
+   y footer reutilizan la misma lógica, solo cambia el canvas). Evita repetir los intentos
+   fallidos de controlar por prompt una composición vertical extrema — ver
+   `comfyui/docs/prompting.md`.
 
 Para portadas vía Flow (no local), sigue vigente el flujo normal de arriba sin cambios.
 

@@ -36,6 +36,16 @@ Mismo nombre de carpeta, solo cambia la letra de unidad — igual que `E:\AI` �
 ## Measured timings, RTX 3080 Ti (two-stage completo, 2026-07-11)
 SDXL trio ~25-50 s · Chroma ~7-8 min (base ~3 + refine 1728 ~4.5) · HiDream ~8-10 min. Cambiar de modelo entre corridas cuesta 1-2 min extra de recarga (~7-16 GB) — en sesión de trabajo, quedarse en un modelo. Iterar con Hi-Res muteado (Ctrl+M), fijar seed, des-mutear para el final.
 
+## Portadas a resolución de impresión (3000×3000, aprendido 2026-07-15, BTQ EP.022)
+No pedir a Z-Image Turbo una generación nativa directa a 3000×3000 en la RTX 3080 Ti
+(12 GB) — nunca probado a esa resolución, riesgo real de OOM o lentitud extrema. Receta
+que funcionó: generar nativo a 1536×1536 (seguro, mismo orden de magnitud que otras
+generaciones probadas) → `UpscaleModelLoader` + `ImageUpscaleWithModel`
+(`RealESRGAN_x4plus.pth`) → `ImageScale` a 3000×3000 exacto (lanczos, crop disabled).
+Los tres nodos corren en segundos una vez generada la escena base. Formatos que no piden
+mínimo de impresión (16:9 1920×1080, 9:16 1080×1920) no necesitan este paso — generar
+nativo directo a la resolución final.
+
 ## User's saved workflows (also in backup repo)
 `Desde Cero` (txt2img puro) · `Pipeline Limpio` (referencia → JoyCaption + términos + img2img) · `Pulir` (upscale 4x anime → rebaja a 2 MP → 2ª pasada denoise 0.4) · más los 3 legacy (Best/Joy/My Workflow).
 

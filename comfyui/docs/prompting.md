@@ -66,6 +66,26 @@ Comma-separated tags, rough priority order:
   resultado final — solo escena e íconos aislados; todo texto (wordmark, títulos,
   números de episodio) se compone aparte con PIL, igual que ya se hacía con las citas
   de las quote cards. Plantilla: `comfyui/templates/portada-compose.py`.
+- **Composiciones verticales extremas (figura confinada a un tercio del frame, el resto
+  negro puro) no son controlables de forma confiable solo con prompt** (aprendido
+  2026-07-15, BTQ EP.022 9:16): 2 intentos con instrucciones explícitas de proporción
+  fallaron — la figura terminó ocupando la mitad o la base del frame ambas veces.
+  **Regla:** cuando una composición ya fue resuelta y aprobada en OTRO aspect ratio (ej.
+  el 1:1), y el nuevo formato solo necesita una porción de esa misma escena con relleno
+  negro alrededor, no seguir iterando el prompt — recortar la escena aprobada con PIL y
+  rellenar el resto con el negro de marca exacto (`(10,10,10)` / `#0A0A0A`). Cero riesgo
+  de reintroducir errores ya corregidos (género, checkbox, íconos extra) y más rápido
+  que seguir apostando con el modelo.
+- **El "negro puro" que renderiza el modelo NO es pixel-idéntico al negro de marca
+  programático `(10,10,10)`** (aprendido 2026-07-15, BTQ EP.022): una generación aislada
+  con fondo "pure black" suele salir en `(0,0,0)` o similar, un valor distinto aunque
+  visualmente ambos "se vean negros". Pegar ese asset de forma opaca junto a o sobre un
+  bloque negro programático (footer, panel de texto) deja una costura/caja rectangular
+  visible. **Regla:** al componer un asset generado por IA sobre un bloque negro PIL,
+  usar una máscara de alfa derivada de `ImageChops.difference()` contra negro puro
+  (`Image.paste(asset, pos, mask)`), nunca un paste opaco — así solo los píxeles de
+  contenido real se componen y el negro programático se ve continuo. Ver el fix aplicado
+  en `comfyui/templates/portada-compose.py` (tira de íconos sobre el footer).
 
 ## Chroma (T5-flan encoder) — prompts DENSOS o look genérico (aprendido 2026-07-11)
 
