@@ -116,6 +116,8 @@ patrón de adaptación 1:1→9:16 ya usado en episodios previos una vez se aprue
 
 Esta es la primera vez que la dirección v3 se aplica a un episodio SIN referente pop —
 la diana de tiro al blanco resuelve el patrón geométrico exigido por la regla de marca
-sin inventar un elemento decorativo desconectado del tema. Si funciona, este mismo criterio
-(buscar un símbolo literal del propio contenido del episodio, no solo de "cultura/época")
-aplica a futuros episodios sin referente.
+sin inventar un elemento decorativo desconectado del tema. El criterio (buscar un símbolo
+literal del propio contenido del episodio, no solo de "cultura/época") quedó CONFIRMADO
+una segunda vez en EP.022 (checklist/checkboxes, ver
+`EP022-costo-calidad-artwork-v3.md`) — deja de ser hipótesis, es el patrón estándar para
+episodios sin referente.

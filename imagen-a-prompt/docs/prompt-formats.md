@@ -24,6 +24,12 @@ Reglas críticas (Z-Image **turbo**):
   to pure black, no colored wash".
 - **Escenas de un solo objeto en vacío pueden alucinar objetos extra** sin pedirlos.
   Agregar "alone, nothing else in frame" lo suprime.
+- **Logos/íconos SÍ los reconoce, pero solo aislados** — mezclados con escena + texto
+  largo en un mismo prompt, los íconos pueden salir bien pero el texto SIEMPRE sale con
+  errores de ortografía. Aislar los íconos en su propia generación (fondo negro puro,
+  "no text, no words, no letters", sin escena) y componer todo el texto legible aparte
+  (PIL u otra herramienta determinista) — nunca dejar que el modelo genere texto que se
+  vaya a leer en el resultado final.
 
 Settings sugeridos: `cfg 1.0 · steps 8-9 · euler o res_multistep · scheduler simple`
 

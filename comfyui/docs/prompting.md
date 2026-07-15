@@ -55,6 +55,17 @@ Comma-separated tags, rough priority order:
   (ej. una figurita apareció sola junto a una vela; aprendido 2026-07-13, BTQ EP.021
   CARD3). Para composiciones de un solo objeto, agregar "alone, nothing else in frame"
   suprime el objeto extra.
+- **Logos/íconos de marca: SÍ los reconoce, pero solo aislados — texto largo mezclado
+  con escena SIEMPRE sale con errores** (aprendido 2026-07-14, BTQ EP.022). Pedir una
+  escena completa + wordmark + título + footer con nombres de íconos en un solo prompt
+  produjo íconos de la fila 1 (Facebook/Instagram/TikTok) reconocibles y a color, pero
+  TODO el texto horneado salió con errores de ortografía ("BEHIND THE QUEUE" → "BEHIND
+  THE QEQUE") y faltó la fila 2 de íconos. Aislar los íconos en su propia generación
+  (fondo negro puro, "no text, no words, no letters", sin escena) los deja limpios y
+  recortables. **Regla:** el modelo nunca genera texto que se vaya a leer en el
+  resultado final — solo escena e íconos aislados; todo texto (wordmark, títulos,
+  números de episodio) se compone aparte con PIL, igual que ya se hacía con las citas
+  de las quote cards. Plantilla: `comfyui/templates/portada-compose.py`.
 
 ## Chroma (T5-flan encoder) — prompts DENSOS o look genérico (aprendido 2026-07-11)
 

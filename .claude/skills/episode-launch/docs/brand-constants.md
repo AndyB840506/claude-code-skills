@@ -130,6 +130,30 @@ contra Gladiator EP.019 — ver `btq-production/launch-assets/EP019-gladiator-ar
 
 ---
 
+## Generación LOCAL de portadas (ComfyUI, desde EP.022 — técnica híbrida)
+
+Cuando la portada se genera localmente (Z-Image Turbo, no Flow) — probado por primera vez
+en BTQ EP.022, 2026-07-14: el modelo SÍ reconoce y renderiza íconos de marca reales
+(Facebook, Instagram, TikTok, Spotify, Apple Podcasts, Amazon Music) cuando se le pide una
+generación DEDICADA solo a los íconos (fondo negro puro, sin escena, sin texto) — pero
+SIEMPRE falla la ortografía de texto largo horneado en la misma imagen que la escena
+("BEHIND THE QUEUE" salió "BEHIND THE QEQUE"). Ver detalle en `comfyui/docs/prompting.md`.
+
+**Flujo obligatorio para portadas locales:**
+1. Generar la escena SOLA (sin wordmark/título/footer/íconos horneados).
+2. Generar los íconos de plataforma en una imagen aparte (fondo negro, sin texto).
+3. Componer wordmark + "BTQ" + título + "EP.NN" + íconos recortados con PIL —
+   plantilla `comfyui/templates/portada-compose.py`.
+4. Fuente: Bebas Neue NO está instalada localmente — usar **Impact** (Windows) como
+   sustituto condensado bold para wordmark y "EP.NN"; Segoe UI Bold para "BTQ"/título/
+   footer (mismo criterio que las quote cards).
+5. El gold "BTQ" y "EP.NN" necesitan fuente notablemente más grande de lo intuitivo para
+   leerse "prominente" — referencia calibrada en EP.022: ~0.040×H (BTQ), ~0.050×H (EP.NN).
+
+Para portadas vía Flow (no local), sigue vigente el flujo normal de arriba sin cambios.
+
+---
+
 ## Quote Cards — mismo tratamiento cinematográfico que la portada (desde 2026-07-05, EP.020)
 
 > **Actualización 2026-07-11 (EP.021, aprobada por Andy):** las quote cards BTQ ahora se

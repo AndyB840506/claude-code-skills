@@ -52,6 +52,12 @@ liderazgo para un supervisor/gerente de BPO de ~40 años. La chispa no viene de 
    versión de EP.017 se había citado un artículo HBR inexistente — se reemplazó por casos reales
    Jobs/Apple y Collins. Investigar en web antes de escribir; marcar lo no confirmado como
    [VERIFICAR]).
+   **La verificación cubre también las pasadas de expansión/edición, no solo el primer
+   borrador** (casi se cuela una cifra inventada de horas de vuelo del B-17 en una pasada de
+   expansión de EP.022 — se detectó y se reemplazó por el dato real verificado antes de
+   entregar). Cualquier dato nuevo agregado DESPUÉS del borrador inicial —al alargar,
+   ilustrar o rematar un párrafo— se verifica igual que el material original, no se asume
+   "de memoria" solo porque el tema ya se investigó antes.
    **Episodios atados a un momento cultural en curso** (un Mundial, unos premios, una serie del
    momento): anclar el guion en hechos históricos ya verificables y tratar el evento vivo solo como
    telón de fondo. NUNCA afirmar resultados del evento en curso si caen más allá del corte de

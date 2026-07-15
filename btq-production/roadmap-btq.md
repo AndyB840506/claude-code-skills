@@ -18,6 +18,7 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.019 | Gladiator / Máximo — "la huella que deja un líder" | publicado — https://open.spotify.com/episode/0nNg2ngSzEVxKk7awLe5AK |
 | EP.020 | Pilar SEO — Métricas / KPIs de call center (evergreen, keyword-first, sin referente pop) | publicado — https://open.spotify.com/episode/6gRVIWVI3jBUAJarLJ7AsQ |
 | EP.021 | Los Simpson — 30 años en el aire: cómo evitar el burnout de un equipo a largo plazo | publicado — https://open.spotify.com/episode/0VH2eMppsNMBl3JqTEq4T0 |
+| EP.022 | Pilar SEO — Costo de mala calidad en call center (Philip Crosby, "Quality Is Free", 1979) — ángulo P&L: cuánto cuesta NO invertir en calidad | guion listo |
 
 ---
 
@@ -53,8 +54,13 @@ Andres:** Metallica, Matrix, Star Wars — un pilar SEO entre cada 3–4 pop-cul
 **Feedback de Andy sobre EP.022 (2026-07-13):** le gustó más el EP.020 (pilar SEO,
 métricas/KPIs) que el EP.021 — lo sintió "más profesional", sobre todo por tocar temas
 operacionales. Señal para inclinar EP.022 hacia otro pilar SEO/operacional en vez de
-tomar el siguiente candidato pop-culture de la lista de arriba — tema exacto aún sin
-decidir, a confirmar con él antes de arrancar Stage A.
+tomar el siguiente candidato pop-culture de la lista de arriba.
+
+**Tema EP.022 confirmado (2026-07-14):** costo de mala calidad (Cost of Poor Quality)
+en call center, anclado en Philip Crosby ("Quality Is Free", 1979) — mismo patrón que
+EP.020 (métrica + teoría real citable), esta vez con ángulo P&L explícito: cuánto le
+cuesta a la operación NO invertir en calidad (retrabajo, quejas, reprocesos) vs.
+prevención.
 
 ---
 

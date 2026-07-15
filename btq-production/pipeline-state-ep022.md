@@ -1,0 +1,7 @@
+EPISODE: EP.022 (BTQ)
+stage_a: complete — guion aprobado 2026-07-14, artwork v3 prompts preparados 2026-07-14 (1:1, 16:9 completos; 9:16 a derivar del 1:1 cuando se apruebe, mismo patrón que episodios previos). Portada 1:1 generada y APROBADA localmente el mismo día (D:\AI, Z-Image Turbo + PIL híbrido, ver pipeline-audit-ep022.md §Extra) — archivo final en D:\Podcast\BTQ\EP 22\BTQ Artwork EP 22\BTQ-EP022-COVER-1x1-approved.png (test a 1024x1024, pendiente escalar a 3000x3000 producción).
+stage_b: pending
+stage_c: pending
+spotify_url: pending
+notes: guion aprobado en btq-production/launch-assets/EP022-costo-calidad-guion.html (~42.2 min medidos, 4.674 palabras — dentro del estándar 40-45 min). Tema: costo de la mala calidad en call center, pilar SEO sin referente pop, anclado en Philip Crosby ("Quality Is Free", 1979) con ángulo P&L explícito, siguiendo el mismo patrón que EP.020 (métrica + teoría real citable). Artwork v3 (prompts en btq-production/launch-assets/EP022-costo-calidad-artwork-v3.md): segundo episodio sin referente pop en la dirección v3 — resuelto con un patrón de checklist/checkboxes dorado como símbolo literal del tema (mismo criterio que la diana de EP.020), evitando el círculo/anillo/diana vetado desde EP.021. Figura: la supervisora de QA de la escena de apertura del guion, con un checkbox deliberadamente sin marcar. Teaser de EP.023 queda genérico — tema del próximo episodio sin definir todavía.
+Grabación planeada para el viernes 2026-07-17 (según Andy, 2026-07-14).

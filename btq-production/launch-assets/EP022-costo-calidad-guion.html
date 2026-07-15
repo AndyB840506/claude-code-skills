@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EP.22 — El Costo de la Mala Calidad en Call Center: por qué lo barato sale carísimo | Behind the Queue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+        :root {
+            --bg: #0A0A0A;
+            --card: #141414;
+            --card2: #1b1b1b;
+            --gold: #C9A84C;
+            --gold-dim: #8a7331;
+            --offwhite: #F5F2EC;
+            --muted: #9a968c;
+            --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --sans: 'DM Sans', system-ui, -apple-system, Segoe UI, sans-serif;
+            --accent: 'Bebas Neue', 'Arial Narrow', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--sans);
+            background: #050505;
+            color: var(--offwhite);
+            line-height: 1.8;
+            font-size: 15.5px;
+        }
+
+        .container { max-width: 820px; margin: 0 auto; background: var(--bg); }
+
+        /* ---------- HEADER ---------- */
+        .header {
+            background: linear-gradient(160deg, #161208 0%, #0A0A0A 70%);
+            padding: 46px 48px 40px;
+            border-bottom: 3px solid var(--gold);
+        }
+        .header .podcast {
+            font-family: var(--accent);
+            font-size: 1.15em;
+            color: var(--gold);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .header .epnum {
+            font-family: var(--accent);
+            font-size: 2.6em;
+            color: var(--gold);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+        .header h1 {
+            font-family: var(--serif);
+            font-size: 2em;
+            font-weight: 900;
+            margin: 6px 0 10px;
+            color: var(--offwhite);
+            line-height: 1.18;
+        }
+        .header .tagline {
+            font-family: var(--serif);
+            font-style: italic;
+            color: var(--gold);
+            font-size: 1.05em;
+            margin-bottom: 22px;
+        }
+        .meta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .meta-item {
+            background: rgba(201,168,76,0.10);
+            border: 1px solid var(--gold-dim);
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            color: var(--gold);
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------- SECTIONS ---------- */
+        .section { padding: 32px 48px; border-bottom: 1px solid #222; }
+        .section h2 {
+            font-family: var(--accent);
+            font-size: 1.15em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid var(--gold-dim);
+        }
+
+        /* ---------- ARQUITECTURA ---------- */
+        .arquitectura { font-size: 0.9em; }
+        .arq-row {
+            display: grid;
+            grid-template-columns: 30px 1.1fr 95px 1.6fr;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid #1c1c1c;
+            align-items: start;
+        }
+        .arq-row.head { color: var(--gold); font-weight: 700; border-bottom: 1px solid var(--gold-dim); }
+        .arq-num { color: var(--gold); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--offwhite); }
+        .arq-time { color: var(--muted); font-family: monospace; font-size: 0.92em; }
+        .arq-row span:last-child { color: var(--muted); }
+
+        /* ---------- GUION SEGMENTS ---------- */
+        .segment { margin: 40px 0; padding-bottom: 26px; border-bottom: 1px solid #1a1a1a; }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+        .segment-number {
+            font-family: var(--accent);
+            background: var(--gold);
+            color: #0A0A0A;
+            min-width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1em; font-weight: bold;
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+        .segment-title {
+            font-family: var(--accent);
+            font-weight: 400;
+            font-size: 1.15em;
+            color: var(--offwhite);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.78em;
+            color: var(--muted);
+            background: #181818;
+            padding: 3px 11px;
+            border-radius: 10px;
+            white-space: nowrap;
+            font-family: monospace;
+        }
+        .sub { font-family: var(--serif); font-style: italic; font-size: 1.12em; color: var(--gold); margin: 26px 0 8px; }
+
+        p.line { margin: 0 0 4px; color: #e9e6dd; }
+
+        /* PAUSA chips */
+        .pausa {
+            display: inline-block;
+            font-family: var(--accent);
+            letter-spacing: 2px;
+            font-size: 0.72em;
+            color: var(--gold-dim);
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 0 8px;
+            margin: 8px 0;
+            background: #111;
+        }
+        .pausa.larga { color: var(--gold); border-color: var(--gold-dim); }
+
+        /* REMATE — the signature punch line */
+        .remate {
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(90deg, rgba(201,168,76,0.07), transparent);
+            padding: 14px 20px;
+            margin: 18px 0;
+            font-family: var(--serif);
+            font-size: 1.08em;
+            color: var(--offwhite);
+        }
+        .remate::before {
+            content: "REMATE";
+            display: block;
+            font-family: var(--accent);
+            font-size: 0.62em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+
+        /* NOTA producción — not printable */
+        .nota {
+            background: #15130c;
+            border: 1px dashed var(--gold-dim);
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 14px 0;
+            font-size: 0.85em;
+            color: #cdbb88;
+        }
+        .nota::before { content: "NOTA · "; font-family: var(--accent); letter-spacing: 2px; color: var(--gold); }
+
+        /* DATO callout */
+        .dato {
+            background: var(--card2);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 5px 5px 0;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .dato-label {
+            font-family: var(--accent);
+            font-size: 0.78em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        em { color: var(--gold); font-style: italic; }
+        strong { color: var(--offwhite); }
+
+        /* FUENTES */
+        .fuentes p { font-size: 0.83em; color: var(--muted); line-height: 1.7; }
+
+        .checklist-box {
+            background: var(--card);
+            border: 1px solid #262011;
+            border-radius: 6px;
+            padding: 6px 18px;
+        }
+        .checklist-box .row { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #1a1a1a; align-items: baseline; }
+        .checklist-box .row:last-child { border-bottom: none; }
+        .ck { color: #4a7a4a; font-weight: 700; }
+        .warn { color: var(--gold); font-weight: 700; }
+
+        footer { padding: 26px 48px; color: var(--muted); font-size: 0.8em; text-align: center; }
+        footer .gold { color: var(--gold); font-family: var(--accent); letter-spacing: 3px; }
+
+        @media print {
+            body { background: #fff; color: #111; }
+            .container { background: #fff; }
+            .nota { display: none; }
+            .header { background: #111; }
+            .remate { color: #111; }
+            p.line, .segment-title, strong { color: #111; }
+        }
+        @media (max-width: 640px) {
+            .section, .header, footer { padding-left: 22px; padding-right: 22px; }
+            .arq-row { grid-template-columns: 24px 1fr; }
+            .arq-row .arq-time, .arq-row span:last-child { grid-column: 2; }
+        }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Behind the Queue</div>
+        <div class="epnum">EP.22</div>
+        <h1>El Costo de la Mala Calidad en Call Center: por qué lo barato sale carísimo</h1>
+        <div class="tagline">Philip Crosby lo dijo en 1979: la calidad es gratis. Lo que cuesta, y cuesta muchísimo, es no tenerla.</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 022</span>
+            <span class="meta-item">Solo host · Andy</span>
+            <span class="meta-item">Pilar SEO · sin referente pop</span>
+            <span class="meta-item">~42 min (medido · 150 wpm + expansión)</span>
+            <span class="meta-item">Calidad · P&amp;L · Liderazgo BPO</span>
+            <span class="meta-item">Evergreen — no atado a coyuntura</span>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Hook</span><span class="arq-time">0:45–6:15</span><span>Ana, supervisora de QA, baja el muestreo un viernes de cierre de mes — la cuenta llega tres semanas después</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Nombrar el fenómeno</span><span class="arq-time">6:15–11:20</span><span>Philip Crosby, "Quality Is Free" (1979) — costo de no conformidad vs. costo de conformidad</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Cuerpo 1 · Samsung Note 7</span><span class="arq-time">11:20–16:40</span><span>La carrera contra el iPhone 7, la batería que no alcanzó a probarse bien, $5.300 millones</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Cuerpo 2 · el dato SQM</span><span class="arq-time">16:40–21:50</span><span>Lo que de verdad cuesta una llamada repetida — la aritmética que nadie pone en el reporte del viernes</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">Re-enganche · el cliente que no vuelve</span><span class="arq-time">21:50–26:10</span><span>PWC: uno de cada tres clientes se va después de UNA mala experiencia — casi la mitad en Latinoamérica</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Referencias Cruzadas</span><span class="arq-time">26:10–32:15</span><span>El hospital de Michigan y el avión de 1935 — prevenir casi gratis contra corregir carísimo</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Aplicable Hoy</span><span class="arq-time">32:15–35:30</span><span>3 acciones concretas para esta semana</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">Recomendaciones de Andy</span><span class="arq-time">35:30–38:10</span><span>Libro (Checklist Manifesto) · charla (Margaret Heffernan, TED) · película (Sully)</span></div>
+            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Cierre canónico + Teaser EP.023</span><span class="arq-time">38:10–41:00</span><span>Pregunta comentable · CTAs · firma + TM</span></div>
+        </div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="section">
+        <h2>Antes de grabar · checklist</h2>
+        <div class="checklist-box">
+            <div class="row"><span class="ck">✓</span><span><strong>Tiempos calibrados a 150 wpm + expansión de +35.5% (recalibrado 2026-07-06 contra SRT de EP.20) — MEDIDOS, no a ojo:</strong> guion tiene 4.674 palabras escritas (contadas: p.line + remate + dato + sub) → ~42.2 min hablados con la expansión natural de Andy en vivo. Cae dentro del estándar editorial de 40-45 min.</span></div>
+            <div class="row"><span class="ck">✓</span><span>Título keyword-first (Costo de la Mala Calidad, Call Center) sin referente pop, según regla editorial de "un pilar SEO al mes" — mismo patrón que EP.020 (métrica + teoría real citable, esta vez con ángulo P&amp;L explícito).</span></div>
+            <div class="row"><span class="ck">✓</span><span>Todos los datos verificados por web antes de escribir: Philip Crosby / "Quality Is Free" (McGraw-Hill, 1979), Samsung Galaxy Note 7 (2016), SQM Group (repeat contacts, FCR), PWC "Experience Is Everything" (2018), Peter Pronovost / Keystone Initiative Michigan (NEJM, 2006), Boeing Model 299 (1935). Ver Fuentes al final.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Escena de apertura (Ana):</strong> es una escena compuesta, genérica y verosímil del mundo BPO — no un caso real con nombre propio. Se presenta como tal, sin atribuirla a ninguna empresa. Distinto de los Cuerpos 1-2 y Referencias Cruzadas, que sí son casos reales y verificados.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Sully (2016):</strong> dramatización de Hollywood — la NTSB objetó públicamente su retrato como antagonista en la investigación real. El guion lo aclara al recomendarla, no se presenta la trama del filme como hecho documentado.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>[PENDIENTE DEFINIR]</strong> el teaser del cierre asume que EP.023 vuelve a un referente pop (según la regla de alternar pilar SEO / pop-culture) pero el tema exacto todavía no está elegido — dejar el teaser genérico hasta confirmar con Andy, o grabar esa parte aparte.</span></div>
+            <div class="row"><span class="warn">⚠</span><span>Sin bloque "Mito o Realidad" al final — los datos de interés van distribuidos dentro del Cuerpo (regla vigente desde 2026-07-04 en guion-style-btq.md).</span></div>
+            <div class="row"><span class="warn">⚠</span><span>Muletillas: máx 1 "imagínense", 0 "me vuela la cabeza". Revisar en la pasada de voz.</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- APERTURA -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Apertura</span><span class="segment-time">0:00</span></div>
+            <p class="line">Buenas y santas. Feliz día, feliz tarde o feliz noche. Cualquier día que éste sea.</p>
+            <p class="line">Esto es Behind the Queue, episodio veintidós.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+        </div>
+
+        <!-- SEGMENTO 1 — HOOK -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">1</span><span class="segment-title">Hook</span><span class="segment-time">0:45 – 6:15</span></div>
+            <p class="line">Son las diez de la mañana de un último viernes de mes, y Ana —supervisora de calidad de una operación de ventas telefónicas— tiene un correo abierto en la pantalla que no le gusta nada.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Dice, más o menos, esto: "Vamos apretados en la meta del mes. Necesitamos que calidad se enfoque en soporte, no en auditoría. Bajen el muestreo esta semana."</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Bajar el muestreo. En español de piso: revisen menos llamadas de venta. Dejen pasar más cosas sin mirarlas con lupa. Solo esta semana, dice el correo. Solo mientras se cierra el mes.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ana lo piensa dos segundos. Sabe exactamente qué pasa si dice que no: la llama el gerente regional, le pregunta por qué el equipo no llega a la meta, y ella termina explicando que fue por cuidarle el detalle a un proceso que, en ese momento, a nadie más en la sala le importa tanto como a ella.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Así que responde: "Listo. Bajamos el muestreo esta semana."</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Le escribe a su colega de otra sede, la que lleva quince años en esto: "¿tú crees que esto está bien?" Su colega le contesta con un solo emoji: los ojitos mirando de lado. Ninguna de las dos dice nada más. Las dos ya saben la respuesta.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ese viernes, el equipo cierra el mes con la meta cumplida. Hay aplausos en el chat general. Alguien manda un gif. El gerente regional felicita a todo el piso, en mayúsculas.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Avancemos tres semanas.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El área de servicio al cliente —la que atiende a la gente que ya compró algo, no la que vende— empieza a ver un patrón raro. Quejas por ventas mal explicadas. Clientes que juran que no sabían que estaban pagando un seguro adicional. Cargos que nadie autorizó con claridad. Solicitudes de cancelación, una detrás de otra, como fichas de dominó.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Uno de esos clientes llama furioso porque le está saliendo, mes a mes, un cargo por un seguro de vida que jura no haber pedido. El agente se lo mencionó rapidísimo, metido entre otras ocho cosas del guion de venta, y él firmó sin caer en cuenta de qué estaba aceptando. Y no es un caso aislado: son doce reclamos casi idénticos, todos de la misma semana. La semana exacta del muestreo bajo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Nadie, en ese momento, conecta ese patrón con la semana en que bajaron el muestreo. ¿Por qué lo harían? Fue hace tres semanas. Fue solo una semana. Y en el reporte de aquel viernes, todo había salido en verde.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Pero alguien, en un departamento de finanzas que ni siquiera está en ese piso, va a terminar sumando el costo real de esa semana. Las llamadas repetidas a servicio al cliente. Las cancelaciones. Los reembolsos. Y el tiempo de la misma Ana, semanas después, reescuchando una por una esas llamadas para entender qué pasó —cuando pudo haberlo visto la semana en que ocurrió, por una fracción de ese costo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y ese número, el de después, va a ser bastante más grande que lo que ese piso "ahorró" bajando el muestreo un viernes de cierre.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Nadie en ese comité de finanzas sabe, tampoco, que todo empezó con un correo de un viernes que decía "solo esta semana". Para ellos es apenas una línea más en una hoja de cálculo: reembolsos, mes tal, monto tal. El origen exacto —el muestreo que se bajó, el viernes exacto, el nombre de Ana— ya se perdió en el camino. Solo quedó la factura.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">Nadie decidió, ese viernes, hacer las cosas mal. Decidieron, sin decirlo así, hacerlas rápido y arreglarlas después. Y esa es, casi siempre, la decisión más cara que existe —solo que la cuenta llega en un sobre distinto, semanas más tarde, con otro nombre en el asunto del correo.</div>
+            <p class="line">Esto no es un problema de una supervisora floja ni de un gerente malvado. Es algo bastante más viejo, con casi cincuenta años de historia, el nombre de un ejecutivo gringo de corbata, y una frase que suena, al principio, casi a chiste: la calidad es gratis.</p>
+        </div>
+
+        <!-- SEGMENTO 2 — NOMBRAR EL FENÓMENO -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">2</span><span class="segment-title">Nombrar el fenómeno</span><span class="segment-time">6:15 – 11:20</span></div>
+            <div class="nota">Philip Crosby, "Quality Is Free" (1979). Tono: casi de clase, con humor propio para aligerar la parte más teórica.</div>
+            <p class="line">Ese señor se llamaba Philip Crosby. Y en 1979 publicó un libro con ese título exacto: "Quality Is Free" — "La calidad es gratis".</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Crosby no era un profesor escribiendo desde un escritorio de universidad. Era vicepresidente de calidad en ITT, una de las corporaciones más grandes de Estados Unidos en ese momento —relojes, hoteles, seguros, telecomunicaciones, de todo un poco. Llevaba años metido, literal, en líneas de producción y centros de servicio, viendo de cerca cómo se iba la plata cuando algo salía mal.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Para que se hagan una idea del tamaño: ITT, en esos años, tenía negocios en más de setenta países y cientos de miles de empleados. Si a Crosby se le ocurría una idea de calidad que no sirviera en la vida real, se le iba a notar rapidísimo, en decenas de fábricas y centros de servicio distintos —no en una sola oficina bonita de Nueva York.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y su hallazgo, resumido a la fuerza en una frase, fue este: la calidad de verdad no cuesta nada extra. Ya está incluida en hacer las cosas bien desde el principio. Lo que cuesta —y cuesta muchísimo— es la falta de calidad.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Crosby le puso nombre técnico a las dos caras de esa moneda. De un lado, el costo de conformidad: lo que gasta una operación en hacer las cosas bien desde el arranque —entrenar a la gente, tener un proceso claro, revisar antes de que el error salga a la calle. Del otro lado, el costo de no conformidad: todo lo que se gasta después, arreglando lo que no se hizo bien la primera vez. Reprocesos. Quejas. Devoluciones. Una supervisora reescuchando llamadas tres semanas tarde.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y no, tranquilos, esto no se convierte en un pódcast de contabilidad de un momento a otro —sigo sin saber leer bien un estado de resultados completo, así que descuiden.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Pero vale la pena quedarse un segundo en el número que Crosby se atrevió a poner encima de la mesa, porque es el tipo de cifra que cambia una conversación entera con la gerencia general.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato · la estimación de Crosby (verificado)</div>Crosby calculaba que, en la mayoría de las operaciones que auditó a finales de los setenta, el costo de no conformidad —todo lo que se gastaba corrigiendo errores que se pudieron evitar— representaba entre el <strong>veinte y el veinticinco por ciento</strong> de las ventas totales. No el dos por ciento. No el cinco. Uno de cada cuatro o cinco pesos que entraban a la caja, se iban arreglando lo mal hecho.</div>
+            <p class="line">Léanlo otra vez, despacio. Una de cada cuatro operaciones de su empresa, en promedio, no está generando valor. Está pagando la cuenta de algo que salió mal la primera vez.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Crosby resumió todo su método en cuatro reglas que llamó, sin modestia ninguna, los "cuatro absolutos de la calidad". Se los traduzco rápido, porque el resto del episodio se apoya en ellos: uno, calidad significa cumplir requisitos claros, no una sensación subjetiva de "que se vea bonito". Dos, prevenir sale más barato que inspeccionar después. Tres, la meta es cero defectos, no un "más o menos así está bien". Y cuatro —la que de verdad le duele a cualquier gerente— la calidad se mide en plata, en el costo de no conformidad, no en un índice bonito de un tablero.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Miren el tres con cuidado, porque es el que más rechazo genera en un piso de call center: cero defectos, no "más o menos está bien". No es que Crosby pidiera perfección imposible todos los días —él mismo aclaraba que el estándar es la brújula hacia la que apunta el sistema, no un examen que se reprueba la primera vez que algo sale mal.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ana, en la escena de hace un momento, no rompió ninguna regla escrita. Solo cambió, sin saberlo, de qué lado de esa moneda quería pagar. Y como casi siempre pasa, el lado barato del viernes resultó ser el lado carísimo de las tres semanas siguientes.</p>
+        </div>
+
+        <!-- SEGMENTO 3 — CUERPO 1 · SAMSUNG NOTE 7 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">Cuerpo 1 · Samsung Note 7</span><span class="segment-time">11:20 – 16:40</span></div>
+            <div class="nota">Voz narrativa presente. Verificar tono: no es un chiste sobre celulares que explotan, es un caso serio de cronograma vs. calidad.</div>
+            <p class="line">Corea del Sur, mediados de 2016. En las oficinas de Samsung hay una fecha marcada con rojo en el calendario, y no es la fecha de lanzamiento de su propio teléfono. Es la fecha en la que Apple va a presentar el iPhone 7.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Samsung decide algo audaz: lanzar su nuevo buque insignia, el Galaxy Note 7, dos semanas antes que Apple. Ganarle el terreno, ganarle los titulares, ganarle la temporada de fin de año entera.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">El problema es que dos semanas antes también significa dos semanas menos de pruebas. Y la batería de un teléfono de gama alta, la parte más delicada de todo el aparato, es exactamente lo que no se debería apurar. Probar una batería a fondo, en serio, puede tomar hasta un año completo de pruebas —y se necesitan miles de unidades para que los resultados signifiquen algo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Samsung no tenía un año. Tenía un cronograma con una fecha en rojo, y esa fecha no se movía por nadie.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Para colmo, sus propios ingenieros habían diseñado el teléfono buscando la batería más grande posible dentro de un cuerpo de apenas 7,9 milímetros de grosor. Casi sin espacio de sobra para que la batería se hinche, cosa normal en cualquier batería de litio. Ellos mismos lo admitieron después: "diseñamos afuera todo el margen de holgura del grosor de la batería". Cero colchón. Cero espacio para el error.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Con el cronograma apretado y el diseño sin margen, la presión bajó en cascada hasta los proveedores de baterías, que terminaron saltándose pasos de prueba que, en condiciones normales, no se saltan. Un proveedor entregó baterías con separadores demasiado delgados entre los polos positivo y negativo. El otro, con rebabas de soldadura que no debían estar ahí.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">El teléfono sale a la venta. Y en cuestión de días, empiezan a llegar reportes de celulares que se calientan, humean, y en varios casos, se prenden en fuego. En un bolsillo. En una mesa de noche. En un avión, que tuvo que evacuarse por un Note 7 humeando en la cabina.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Samsung hace un retiro informal a inicios de septiembre de 2016. Manda reemplazos, con baterías de otro proveedor, pensando que ya resolvió el problema.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y entonces pasa lo que nadie en Samsung quería ni imaginar: los teléfonos de reemplazo, los que se suponían seguros, también empiezan a incendiarse. El 10 de octubre de 2016, Samsung no tiene más remedio que hacer el retiro completo, mundial, y descontinuar el Note 7 para siempre. Más de dos millones de unidades recogidas.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aquí está la parte que ningún reporte financiero captura del todo: en esas semanas, "Note 7" se volvió sinónimo de "celular que explota" en las noticias de todo el mundo, en chistes de programas nocturnos, en aeropuertos que prohibieron el modelo a bordo de cualquier vuelo. Samsung podía reponer las unidades. Lo que le tomó muchísimo más tiempo fue reponer la confianza de un comprador que, la próxima vez que fuera a elegir teléfono, se iba a acordar de esa palabra —"explota"— antes que del nombre de la marca.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato · el costo real (verificado)</div>Samsung terminó reportando un costo total cercano a los <strong>5.300 millones de dólares</strong> por todo el episodio: reemplazos, logística de retiro global, y el hueco que dejó un producto insignia descontinuado en plena temporada de fin de año. Su investigación interna posterior involucró a más de <strong>700 ingenieros</strong>, y probó cerca de <strong>200.000 teléfonos</strong> y <strong>30.000 baterías adicionales</strong> —las pruebas que, básicamente, faltó hacer antes del lanzamiento.</div>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="remate">Samsung no ahorró dos semanas de pruebas. Las cambió por 5.300 millones de dólares, un producto insignia enterrado, y meses reconstruyendo la confianza de sus propios clientes. Esa es la cuenta completa del costo de no conformidad, a la escala de una multinacional: se ve chiquita en el cronograma del lunes, y se vuelve gigante en el balance del año.</div>
+            <p class="line">Y antes de que sigan pensando "eso les pasa a los gigantes, con celulares que explotan, no a mi call center" —quédense un momento más, porque el mismo patrón, sin fuego de por medio, está pasando ahora mismo en su reporte del viernes.</p>
+        </div>
+
+        <!-- SEGMENTO 4 — CUERPO 2 · EL DATO SQM -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">Cuerpo 2 · el dato SQM</span><span class="segment-time">16:40 – 21:50</span></div>
+            <div class="nota">Traer el tema de vuelta al mundo BPO con números propios de la industria, no solo casos ajenos.</div>
+            <p class="line">Volvamos al piso. Porque en su operación no hay baterías que se incendien, pero sí hay algo que se parece muchísimo: la llamada repetida.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ustedes ya conocen el FCR, la resolución en la primera llamada. Lo que casi nadie mide con la misma atención es cuánto cuesta, en plata contante, cuando esa llamada no se resuelve a la primera y el cliente tiene que volver a marcar.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">SQM Group, una firma que lleva más de dos décadas midiendo centros de contacto en todo el mundo, lo puso en números claros: una llamada repetida cuesta, en promedio, el doble de lo que cuesta resolver algo bien a la primera. El doble. Porque casi todo lo que rodea esa segunda llamada es más caro: el cliente ya está molesto, la llamada dura más, y a veces necesita a alguien con más experiencia —y más sueldo— para arreglar lo que el primer agente no pudo cerrar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y no es solo el tiempo extra en la llamada. Es el agente senior que hay que meter a resolver lo que el primero no pudo. Es el cliente que ya no cree en la primera respuesta, así que pide hablar con un supervisor. Es, muchas veces, un correo de seguimiento, una nota en el sistema, y alguien en otro turno leyendo todo ese historial antes de poder ayudar. Ese "doble" no es una cifra inflada de consultor —es la suma real de todo lo que se activa cuando algo no quedó resuelto la primera vez.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato · la aritmética de la llamada repetida (SQM Group, verificado)</div>El call center promedio que SQM Group audita recibe cerca de <strong>540.000 llamadas repetidas al año</strong> —alrededor del <strong>26 por ciento</strong> de todo su volumen anual. Solamente esas llamadas repetidas le cuestan a esa operación promedio unos <strong>4,8 millones de dólares al año</strong>. Y del otro lado del mismo cálculo: mejorar el FCR en apenas <strong>un punto porcentual</strong> le ahorra a un call center mediano cerca de <strong>286.000 dólares al año</strong>, sin contratar a nadie nuevo ni comprar un solo software.</div>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Deténganse en ese último número un segundo. Un punto porcentual de mejora en FCR —algo tan chiquito que ni siquiera se nota en el reporte semanal a simple vista— vale casi trescientos mil dólares al año en una operación mediana. Ahora multipliquen eso por los cinco o diez puntos de FCR que su operación probablemente se está dejando en la mesa ahora mismo, sin saberlo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y si su operación es más chica que el promedio que audita SQM, no se salve tan rápido: la proporción se mantiene casi igual. Un centro de trescientos agentes, con un FCR débil, fácilmente está perdiendo el equivalente al salario anual completo de varios de esos agentes, solo en llamadas que se pudieron resolver a la primera y no se resolvieron.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Eso, damas y caballeros, es el costo de no conformidad de Crosby, con nombre y apellido de industria: contact center. No es una teoría de 1979. Es una factura que su empresa ya está pagando este mismo mes, solo que nadie la puso junta en una sola línea del estado de resultados.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y aquí es donde casi todos los gerentes cometen el mismo error de Samsung, en chiquito: miran el costo de conformidad —lo que cuesta entrenar bien, auditar bien, dar tiempo extra en una llamada difícil— y lo ven como un gasto. Un lujo que se recorta primero cuando el mes viene apretado.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Pero el costo de no conformidad —la llamada repetida, la queja, el cliente que cancela— casi nunca aparece en el mismo reporte, el mismo día, con el mismo peso. Aparece disperso, semanas después, repartido entre servicio al cliente, retención, finanzas. Por eso es tan fácil recortar lo primero sin darse cuenta de que se está multiplicando lo segundo.</p>
+        </div>
+
+        <!-- SEGMENTO 5 — RE-ENGANCHE · EL CLIENTE QUE NO VUELVE -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">Re-enganche · el cliente que no vuelve</span><span class="segment-time">21:50 – 26:10</span></div>
+            <div class="nota">El dato/giro más fuerte del episodio va aquí, en la segunda mitad — completion rates 50-67%.</div>
+            <p class="line">Y todavía no les he contado la parte que más me dolió a mí cuando la investigué para este episodio. Porque hasta ahora hemos hablado de plata que se va en reprocesos y llamadas repetidas. Falta la plata que ni siquiera alcanza a entrar.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">PwC, una de las firmas de consultoría más grandes del mundo, hizo una encuesta enorme en 2018 —miles de consumidores, en varios países— preguntando, en plata blanca, cuántas malas experiencias aguanta alguien antes de irse de una marca para siempre.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="dato"><div class="dato-label">Dato · lo que aguanta un cliente (PwC, verificado)</div>A nivel global, <strong>uno de cada tres clientes</strong> —treinta y dos por ciento— abandona una marca después de <strong>una sola</strong> mala experiencia. Una. No necesita una racha. Le basta una llamada mal atendida, una promesa incumplida, un agente que sonó a robot leyendo un guion sin ganas. Y si son dos malas experiencias seguidas, ya son <strong>seis de cada diez</strong> los que se van.</div>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Y aquí viene el dato que a ustedes, en particular, les debería quitar el sueño: en Latinoamérica, ese "uno de cada tres" sube a casi <strong>uno de cada dos</strong>. Cerca del cuarenta y nueve por ciento. Nuestra región, la de la calidez, la del "aquí sí lo atendemos bien", resulta ser de las más rápidas del planeta en decir "hasta aquí llegamos" cuando el servicio falla.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Piénsenlo con ironía por un segundo: somos, culturalmente, la región que más presume del "calor humano" en el servicio. Y resulta que, cuando ese calor humano falla una sola vez, somos también los que menos segundas oportunidades damos. No hay contradicción ahí —hay una expectativa altísima que, cuando se rompe, se rompe del todo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ese cliente que se va no manda una queja formal. No llama a reclamar. Simplemente no vuelve a comprar, no renueva, y si alguien le pregunta por qué se fue, casi nunca menciona la llamada exacta que lo hizo decidir. Solo dice: "ya no confío en ellos".</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ese ingreso perdido no aparece en ningún reporte de calidad. No tiene código de ticket. No lo audita nadie el viernes. Es, de todo el costo de no conformidad del que hemos hablado hoy, el más invisible de todos —y probablemente el más caro.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Así que la próxima vez que alguien en su comité les diga que "bajar un poco el estándar de calidad esta semana" es una decisión sin costo, porque no rompió nada, no incendió ningún teléfono ni salió en las noticias, quiero que se acuerden de este número: casi la mitad de sus clientes en esta región solo necesita una mala llamada más para irse, calladitos, sin dar explicaciones.</p>
+        </div>
+
+        <!-- SEGMENTO 6 — REFERENCIAS CRUZADAS -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">Referencias Cruzadas</span><span class="segment-time">26:10 – 32:15</span></div>
+            <div class="nota">Universaliza la tesis fuera de negocios/tecnología. Voz narrativa presente en ambos casos.</div>
+            <p class="line">Salgamos de los negocios un momento, porque quiero que esta idea les quede clarísima como algo universal, no como una rareza de call centers y celulares. Y para eso nos vamos, primero, a un hospital.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Baltimore, principios de los años dos mil. Un médico llamado Peter Pronovost, del hospital Johns Hopkins, está obsesionado con un problema que la medicina llevaba décadas tratando como "el costo normal de hacer el trabajo": las infecciones que le entran a un paciente por el catéter, la vía central que se le pone en una vena grande para pasarle medicamentos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Esas infecciones, en Estados Unidos, están asociadas a decenas de miles de muertes al año. Y durante mucho tiempo, se aceptaban casi como el clima: lamentable, pero inevitable.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Pronovost hace algo que suena casi demasiado simple para ser una revolución médica: escribe una lista de cinco pasos. Lavarse las manos. Limpiar la piel con el antiséptico correcto. Cubrir al paciente por completo con un paño estéril. Usar gorro, tapabocas, bata y guantes estériles. Y elegir bien el punto de inserción del catéter.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Cinco pasos que, en teoría, cualquier médico ya sabía de memoria. La única novedad real es que ahora estaban escritos, en una hoja, frente a los ojos, y una enfermera tenía autoridad —por primera vez— de detener al médico más importante del hospital si se saltaba un paso.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="dato"><div class="dato-label">Dato · el checklist que casi no costó nada (verificado)</div>En Johns Hopkins, la tasa de infección de vía central bajó del <strong>once por ciento a cero</strong>. Cuando el mismo checklist se llevó a decenas de hospitales de Michigan, en los primeros <strong>tres meses</strong> las infecciones cayeron un <strong>sesenta y seis por ciento</strong>. Y en los primeros <strong>quince meses</strong> del programa completo, se estima que se salvaron cerca de <strong>1.500 vidas</strong> y unos <strong>175 millones de dólares</strong> en costos hospitalarios. El estudio se publicó en el New England Journal of Medicine, en diciembre de 2006.</div>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Un papel. Cinco líneas. Y del otro lado, 1.500 personas que siguieron respirando y 175 millones de dólares que el sistema de salud no tuvo que gastar corrigiendo lo que una lista de cinco pasos pudo prevenir desde el principio. Ese es, casi con exactitud matemática, el argumento entero de Crosby: prevenir no cuesta nada comparado con corregir.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y esa idea del papelito con pasos escritos, resulta, no la inventó la medicina. La medicina se la copió a otro gremio, treinta años antes, después de una tragedia bastante más ruidosa.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ohio, Estados Unidos, 30 de octubre de 1935. En el campo de pruebas de Wright Field, un avión enorme para su época, el prototipo del que después sería el legendario B-17, se levanta del suelo, sube unos noventa metros, y se cae.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Mueren dos de los cinco tripulantes, incluido el piloto —uno de los aviadores militares más experimentados del país. La investigación encuentra la causa: mientras manejaba la cantidad enorme de palancas, botones y controles nuevos de ese avión, el piloto se olvidó de soltar un seguro nuevo en los controles de elevación. Un solo seguro, entre docenas de piezas.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Un periódico de la época resumió el veredicto con una frase que se volvió célebre: era "demasiado avión para que lo maneje un solo hombre" —de memoria, sin ayuda de nada más.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y en vez de rendirse ahí, un grupo de ingenieros y pilotos de pruebas de Boeing hace algo que hoy nos parece obvio, y en 1935 era una novedad total: escriben un checklist. Pasos críticos para el rodaje, el despegue y el aterrizaje, en una tarjeta, frente al piloto, para que ninguna acción dependiera solo de la memoria de un ser humano bajo presión.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Ese checklist se volvió obligatorio en toda la flota de Boeing. Después, en toda la aviación militar. Después, en toda la aviación comercial del planeta. El propio B-17, con el checklist ya incorporado desde su primer vuelo de producción, terminó siendo el tercer bombardero más construido de toda la historia —casi 12.731 unidades entre 1936 y 1945— lejos del "demasiado avión para un solo hombre" que casi lo entierra en 1935. Noventa años después, cada vez que un piloto se sube a un avión, en cualquier aerolínea del mundo, sigue repasando una lista de pasos escritos antes de encender motores —heredera directa de aquel accidente de 1935.</p>
+            <span class="pausa">PAUSA</span>
+            <div class="remate">Un hospital y un aeropuerto, separados por treinta años y ningún parentesco entre sí, llegaron exactamente a la misma conclusión que Philip Crosby pondría en un libro en 1979: la prevención casi no cuesta nada. Un papel, cinco pasos, una tarjeta plastificada. Lo que sí cuesta, y cuesta en vidas o en millones, es confiarle a la memoria de una sola persona, bajo presión, algo que un checklist de sesenta segundos pudo haber cubierto.</div>
+            <p class="line">Bancos, hospitales, aerolíneas, fabricantes de celulares. La lista de industrias que ya pagaron esta lección, algunas con plata y otras con vidas, es larguísima. Su operación de call center no tiene ninguna razón para creer que está exenta de la misma física.</p>
+        </div>
+
+        <!-- SEGMENTO 7 — APLICABLE HOY -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Aplicable Hoy</span><span class="segment-time">32:15 – 35:30</span></div>
+            <div class="nota">Tres herramientas concretas, casi sin presupuesto, para esta semana.</div>
+            <p class="line">Tres cosas concretas, esta semana, sin pedirle un peso nuevo a finanzas.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Uno — ponga la cuenta completa en la misma hoja</div>
+            <p class="line">La próxima vez que alguien proponga recortar tiempo de auditoría, entrenamiento o muestreo de calidad "solo por esta semana", pídale que le muestre, en el mismo correo, el costo de conformidad que se ahorra y una estimación honesta del costo de no conformidad que probablemente va a generar tres semanas después. No hace falta una fórmula perfecta. Basta con obligar a que las dos cifras se miren a la cara antes de decidir, no que una se vea y la otra se esconda para el mes que viene.</p>
+            <p class="line">Puede ser tan simple como una columna nueva en la misma hoja de siempre: "costo estimado si esto sale mal". No hace falta contabilidad de precisión —hace falta el hábito de preguntarlo antes de aprobar, no después de pagarlo.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Dos — escriba su propio checklist de cinco pasos</div>
+            <p class="line">No necesita un sistema nuevo ni un consultor de Boeing. Elija el proceso de su piso donde más se repiten los errores —una venta, una escalación, un reembolso— y escriba, con su equipo, los cinco pasos que nunca se pueden saltar. Péguelo literal, en papel o en la pantalla, frente al agente. Pronovost no inventó medicina nueva. Solo dejó de confiarle a la memoria algo que valía la pena tener escrito.</p>
+            <p class="line">Y no lo deje solo en un PDF perdido en una carpeta compartida que nadie abre. Péguelo en el puesto físico, o en la pantalla que el agente ve antes de marcar cada llamada difícil. Un checklist que nadie ve no es un checklist —es un documento archivado.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Tres — mida lo que se va, no solo lo que se queja</div>
+            <p class="line">La queja formal es apenas la punta visible. Este mes, pregúntele a su equipo de retención o de analítica un número que casi nadie pide: cuántos clientes dejaron de comprar o de renovar en los treinta días después de una llamada mal calificada. No van a tener el dato perfecto la primera vez que pregunten. Pero el solo hecho de empezar a perseguir esa cifra cambia lo que su equipo entiende por "una llamada sin consecuencias".</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Compártalo, además, en la misma reunión donde celebran las metas de volumen cumplidas. Que el número de clientes perdidos se vea, literalmente, en la misma pantalla que el número de ventas ganadas. Esa sola imagen, lado a lado, dice más que cualquier charla motivacional del lunes.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ninguna de las tres cuesta un peso extra de verdad. Cuestan, las tres, la misma incomodidad: mirar el costo completo, no solo la mitad que ya sale bonita en el reporte del viernes.</p>
+        </div>
+
+        <!-- SEGMENTO 8 — RECOMENDACIONES -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">8</span><span class="segment-title">Recomendaciones de Andy</span><span class="segment-time">35:30 – 38:10</span></div>
+            <div class="nota">Sin referente pop que diversificar — mezclar medios igual: libro, charla, película.</div>
+            <p class="line">Si este episodio los dejó pensando, tres cosas para seguir la conversación.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Uno — el libro: "The Checklist Manifesto", de Atul Gawande (2009)</div>
+            <p class="line">Está en español como "El efecto checklist". Gawande es cirujano, y cuenta de primera mano tanto la historia del hospital de Michigan que les conté hace un momento como la del avión de Boeing de 1935 —y de paso, cómo llevó la idea a sus propias salas de cirugía. Se lee en un fin de semana, y se los prometo: van a querer escribir un checklist esa misma noche.</p>
+            <p class="line">Y no es un librito solo para médicos o pilotos: la mitad del libro está dedicada a construcción, finanzas e inversión —Gawande fue bastante deliberado en probar que la idea funciona fuera de su propio oficio.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Dos — la charla: "Dare to Disagree", Margaret Heffernan, TED</div>
+            <p class="line">Búsquenla en YouTube o en ted.com. Heffernan habla de la "ceguera voluntaria" —esa costumbre humana de no querer ver el problema que está justo enfrente, porque verlo obligaría a hacer algo incómodo al respecto. Es exactamente lo que le pasó al gerente regional de nuestra historia de hoy, aplaudiendo un viernes sin preguntar el porqué del número.</p>
+            <p class="line">Son quince minutos, y el ejemplo con el que arranca —sobre una industria entera que decidió no ver lo obvio— les va a sonar incómodamente parecido a lo que hablamos hace un rato con Samsung.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Tres — la película: "Sully" (2016)</div>
+            <p class="line">Con Tom Hanks, dirigida por Clint Eastwood. Cuenta el aterrizaje de emergencia de un avión en el río Hudson, en Nueva York, en 2009 —los ciento cincuenta y cinco pasajeros sobrevivieron. Aviso honesto: la película dramatiza bastante la investigación real, y hasta la propia autoridad de aviación de Estados Unidos se quejó de cómo la retrataron. Pero el corazón de la historia sí es real: procedimiento, entrenamiento y calma bajo presión, funcionando exactamente para lo que fueron diseñados.</p>
+            <p class="line">Véanla pensando menos en el drama de la sala de audiencias, y más en los doscientos ocho segundos exactos que le tomó a la tripulación decidir, ejecutar y aterrizar sin perder a nadie. Eso no fue improvisación. Fue procedimiento, entrenado hasta volverse reflejo.</p>
+            <span class="pausa">PAUSA</span>
+        </div>
+
+        <!-- SEGMENTO 9 — CIERRE + TEASER -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">9</span><span class="segment-title">Cierre canónico + Teaser EP.023</span><span class="segment-time">38:10 – 41:00</span></div>
+            <div class="nota">Tercer REMATE del episodio (contando Hook y Samsung y Referencias Cruzadas serían 3 en total antes de este cierre). Teaser EP.023 genérico — tema aún no definido, ver checklist.</div>
+            <p class="line">Antes de irme, la pregunta del episodio. Y esta vez quiero que la piensen con un número exacto en la cabeza, no en abstracto.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">¿Qué está recortando su operación esta semana, pensando que no cuesta nada, que en realidad le va a llegar en factura dentro de un mes? ¿Y qué pasaría si esta semana, antes de aprobar ese recorte, alguien pusiera junto a él la otra mitad de la cuenta —la que todavía no ha llegado, pero ya viene en camino?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No tiene que ser una cifra perfecta. Tiene que ser, apenas, la pregunta incómoda hecha a tiempo —antes del viernes, no tres semanas después.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No necesito que me cuenten el número exacto ni el nombre de nadie. Necesito que se lo respondan a ustedes mismos, en la ducha, en el carro, donde sea que piensen mejor —porque casi siempre, como con el número del episodio pasado, ya lo sabían. Solo les faltaba que alguien se los preguntara en voz alta.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Escríbanlo en los comentarios del episodio, ahí mismo en Spotify. Los leo todos —y los del episodio anterior, el de los Simpson, me tienen todavía pensando en un par de respuestas sobre el burnout de equipos completos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si este episodio les sirvió, o si conocen a alguien que dirige un equipo y está a punto de recortar calidad "solo por esta semana", compártanselo. Y si quieren seguir la conversación, estoy en LinkedIn como Andrés Bermúdez Rodríguez.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Teaser EP.023</div>
+            <div class="nota">[PENDIENTE DEFINIR] Tema de EP.023 sin confirmar al momento de escribir este guion. Dejar este bloque genérico o grabarlo por separado cuando se confirme el episodio siguiente — NO inventar un referente todavía.</div>
+            <p class="line">La próxima semana volvemos a un referente que ya conocen —todavía no les puedo adelantar cuál, porque ni yo lo tengo del todo decidido— pero les prometo que, otra vez, va a ser algo mirado desde un ángulo que no se esperan.</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="sub">Cierre y TM canónico</div>
+            <p class="line">Esto fue Behind the Queue, episodio veintidós.</p>
+            <p class="line">Yo soy Andy. Y recuerden: la calidad es gratis. Lo que cuesta, y a veces cuesta carísimo, es no tenerla.</p>
+            <div class="nota">OUTRO MUSICAL — fade suave a silencio.</div>
+        </div>
+
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section fuentes">
+        <h2>Fuentes verificadas (no leer al aire)</h2>
+        <p>· <strong>Philip Crosby / "Quality Is Free":</strong> libro publicado por McGraw-Hill, 1979; Crosby fue vicepresidente de calidad de ITT Corporation antes de escribir el libro; framework de costo de conformidad vs. costo de no conformidad y los "Cuatro Absolutos de la Calidad" (calidad = cumplimiento de requisitos; prevención > inspección; estándar = cero defectos; medición = costo de no conformidad); estimación de Crosby de que el costo de no conformidad representaba 20-25% de las ventas en las operaciones que auditó — ampliamente citada en literatura de gestión de calidad (IndustryWeek, "Philip Crosby: Quality is Still Free"; múltiples fuentes académicas de gestión de calidad). · <strong>Samsung Galaxy Note 7:</strong> Wikipedia "Samsung Galaxy Note 7"; CBC News (Samsung reporta costo de al menos $5.300 millones USD); TechCrunch; Forbes ("Samsung Explains Note 7 Battery Explosions", enero 2017) — lanzamiento adelantado dos semanas al iPhone 7, cronograma de pruebas comprimido, diseño de batería sin margen de holgura ("diseñamos afuera todo el margen"), fallas de dos proveedores distintos (separadores delgados / rebabas de soldadura), retiro informal 2 de septiembre 2016, retiro formal EE.UU. 15 de septiembre, retiro mundial y descontinuación 10 de octubre 2016, más de 2 millones de unidades recogidas, investigación posterior con +700 ingenieros, ~200.000 teléfonos y ~30.000 baterías probadas. · <strong>SQM Group:</strong> sqmgroup.com (investigación de FCR y costo de contactos repetidos) — una llamada repetida cuesta aproximadamente el doble de una resuelta en el primer contacto; call center promedio con ~540.702 llamadas repetidas al año (~26% del volumen anual), costo aproximado de $4,8 millones de dólares anuales; mejora de 1 punto porcentual en FCR ahorra ~$286.000 dólares al año en un call center mediano. · <strong>PwC "Experience Is Everything" (2018):</strong> pwc.com/future-of-cx — 32% de los consumidores globales abandona una marca después de una sola mala experiencia; 59% después de dos malas experiencias; cifra regional de Latinoamérica cercana al 49%. · <strong>Peter Pronovost / Keystone Initiative:</strong> The New England Journal of Medicine, diciembre 28 de 2006 ("An Intervention to Decrease Catheter-Related Bloodstream Infections in the ICU"); Wikipedia "Peter Pronovost"; The Lancet — checklist de 5 pasos para inserción de catéter central; tasa de infección en Johns Hopkins de 11% a 0%; en Michigan, caída del 66% en los primeros 3 meses; estimado de ~1.500 vidas y ~$175 millones de dólares ahorrados en los primeros 15 meses del programa. · <strong>Boeing Model 299 / origen del checklist de vuelo:</strong> The Aviation Geek Club; National Air and Space Museum; Wikipedia "Pre-flight checklist" — accidente del 30 de octubre de 1935 en Wright Field, Ohio; 2 de 5 tripulantes muertos, incluido el piloto; causa: seguro de controles de elevación no liberado; frase de la época "too much airplane for one man to fly"; checklist creado por ingenieros y pilotos de pruebas de Boeing, adoptado luego por toda la aviación militar y comercial. · <strong>Recomendaciones:</strong> "The Checklist Manifesto" ("El efecto checklist"), Atul Gawande (Metropolitan Books, 2009); "Dare to Disagree", Margaret Heffernan, TEDGlobal 2012 (basada en su libro "Willful Blindness"); "Sully" (2016, dir. Clint Eastwood, con Tom Hanks, basada en el libro "Highest Duty" de Chesley Sullenberger y Jeffrey Zaslow, sobre el amaraje del vuelo 1549 de US Airways en 2009).</p>
+        <p style="margin-top:10px">Notas: (1) La escena de apertura (Ana) es una composición genérica y verosímil del mundo BPO, no un caso real con nombre propio — se aclara así en el checklist de producción. (2) "Sully" dramatiza la investigación real de la NTSB; la propia autoridad objetó públicamente su retrato en el filme — se recomienda aclarando esto, no como documental. (3) El teaser de EP.023 queda genérico a propósito porque el tema del próximo episodio no estaba confirmado al escribir este guion — actualizar o regrabar ese bloque cuando se defina.</p>
+    </div>
+
+    <footer>
+        <span class="gold">Behind the Queue</span> · EP.022 — El Costo de la Mala Calidad en Call Center<br>
+        Production packet · guion de grabación · ~42 min medidos (4.674 palabras a 150 wpm + expansión) · estilo con chispa (guion-style-btq.md)
+    </footer>
+
+</div>
+</body>
+</html>
