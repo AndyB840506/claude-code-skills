@@ -88,3 +88,39 @@
 - Pendiente: escalar a 3000×3000 real (test corrió a 1024×1024); derivar 16:9 y 9:16
   con el mismo criterio cuando se necesiten.
 - Resultado: OK — Andy aprobó el resultado final ("Asi quedo perfecto")
+
+### Extra 2 — escalado a producción + 16:9 + 9:16 (escritorio, 2026-07-15)
+- Los archivos de prueba aprobados vivían solo en D:\ (portátil); el escritorio (E:\AI,
+  RTX 3080 Ti) no tenía acceso a ellos. A pedido de Andy, se regeneró todo desde cero en
+  vez de transferir archivos manualmente.
+- 1:1: escena nativa 1536×1536 (2 iteraciones — v1 salió con figura masculina y último
+  checkbox como cuadro sólido en vez de vacío; v2 corrigió género y contraste del
+  checkbox; v3 redujo un patrón de fondo tipo circuito que competía con el texto) →
+  RealESRGAN_x4plus → resize a 3000×3000 exacto (verificado con PIL). Tira de íconos
+  generada en batch de 4, las 4 limpias, se usó la variante #3 (fondos más consistentes).
+  Compuesto con `portada-compose.py`. Aprobado por Andy.
+- 16:9: escena nueva nativa 1920×1080 (2 iteraciones — v1 salió con checklist en dos
+  columnas y varios casilleros vacíos dispersos, diluyendo el chiste visual; v2 forzó
+  una sola columna de 7 casillas con solo la última vacía). Tipografía compuesta con
+  plantilla nueva `comfyui/templates/cover-16x9-compose.py` (título+subtítulo alineados
+  a la izquierda, sin footer, fuente dinámica). Aprobado.
+- 9:16: 2 intentos de generar la escena de cero fallaron en controlar la composición
+  extrema (figura ocupando la mitad/base del frame en vez del tercio superior, con negro
+  abajo). Se cambió de estrategia: derivar del recorte superior de la escena 1:1 YA
+  aprobada + relleno de negro de marca exacto (10,10,10) por PIL, sin generar de nuevo —
+  0 riesgo de reintroducir errores ya corregidos (género, checkbox, íconos extra).
+  Primer intento de composición dejó el wordmark superpuesto sobre la cabeza/monitor
+  porque el recorte no dejaba suficiente margen negro arriba; corregido con un offset
+  vertical antes de pegar la escena. Aprobado en la segunda versión.
+- **Bug encontrado y corregido en `portada-compose.py`**: la tira de íconos se pegaba de
+  forma opaca sobre el footer; su propio fondo (0,0,0) no coincidía con el negro del
+  footer (10,10,10), dejando una caja rectangular visible (detectado por Andy en la
+  entrega del 1:1). Fix: máscara de alfa derivada de `ImageChops.difference` contra
+  negro puro, así solo los píxeles de ícono se componen y el footer se ve continuo.
+  Verificado con muestreo de píxeles (footer y huecos entre íconos leen exactamente
+  10,10,10 tras el fix). Aplica retroactivamente a cualquier portada futura que use la
+  plantilla.
+- Archivos finales en `E:\Podcast\BTQ\EP 22\BTQ Artwork EP 22\`: `BTQ-EP022-COVER-1x1-approved-3000.png`,
+  `BTQ-EP022-COVER-16x9.png`, `BTQ-EP022-COVER-9x16.png`, más `-scene-only-3000.png` y
+  `BTQ-icon-strip-source.png` de respaldo.
+- Resultado: OK — 3 variantes aprobadas por Andy.

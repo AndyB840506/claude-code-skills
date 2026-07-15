@@ -1,5 +1,10 @@
 EPISODE: EP.022 (BTQ)
-stage_a: complete — guion aprobado 2026-07-14, artwork v3 prompts preparados 2026-07-14 (1:1, 16:9 completos; 9:16 a derivar del 1:1 cuando se apruebe, mismo patrón que episodios previos). Portada 1:1 generada y APROBADA localmente el mismo día (D:\AI, Z-Image Turbo + PIL híbrido, ver pipeline-audit-ep022.md §Extra) — archivo final en D:\Podcast\BTQ\EP 22\BTQ Artwork EP 22\BTQ-EP022-COVER-1x1-approved.png (test a 1024x1024, pendiente escalar a 3000x3000 producción).
+stage_a: complete — guion aprobado 2026-07-14, artwork v3 prompts preparados 2026-07-14. Las 3 variantes de portada generadas, aprobadas y guardadas en producción el 2026-07-15 en el escritorio (E:\AI, RTX 3080 Ti):
+- 1:1 (3000x3000): Z-Image Turbo 1536x1536 nativo + RealESRGAN_x4plus + PIL híbrido (wordmark/título/footer + tira de íconos). `BTQ-EP022-COVER-1x1-approved-3000.png`.
+- 16:9 (1920x1080, thumbnail YouTube): escena nueva nativa 1920x1080, figura a la derecha + tercio izquierdo negro puro; título/subtítulo alineados a la izquierda vía plantilla nueva `comfyui/templates/cover-16x9-compose.py`, sin footer (se recorta en miniatura). `BTQ-EP022-COVER-16x9.png`.
+- 9:16 (1080x1920, historia/teaser): derivada de la escena 1:1 ya aprobada (recorte superior + relleno negro de marca exacto, sin generar de nuevo) + mismo bloque de tipografía/footer del 1:1 vía `portada-compose.py`. `BTQ-EP022-COVER-9x16.png`.
+Bug corregido en `portada-compose.py`: la tira de íconos pegaba su propio negro (0,0,0) sobre el footer (10,10,10), dejando una caja visible — ahora se pega con máscara de alfa derivada de la diferencia-contra-negro, sin costura. Aplica a las 3 variantes y a futuras portadas/quote cards que reutilicen la plantilla.
+Todos los archivos finales en E:\Podcast\BTQ\EP 22\BTQ Artwork EP 22\ (D:\ en el portátil).
 stage_b: pending
 stage_c: pending
 spotify_url: pending

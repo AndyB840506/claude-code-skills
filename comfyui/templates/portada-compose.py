@@ -97,12 +97,19 @@ if icon_strip_path:
     bbox = diff.getbbox()
     if bbox:
         icons = icons.crop(bbox)
+        diff = diff.crop(bbox)
     icon_h = int(FOOTER_H * 0.82)
     icon_w = int(icons.width * (icon_h / icons.height))
     icons = icons.resize((icon_w, icon_h), Image.LANCZOS)
+    # The icon strip's own background is near-pure black (0,0,0), which does not
+    # match the footer bar color (10,10,10) -- pasting it opaquely leaves a visible
+    # seam/box. Use the diff-from-black as an alpha mask so only icon pixels
+    # composite onto the footer, letting the footer's own black show through the gaps.
+    mask = diff.convert("L").resize((icon_w, icon_h), Image.LANCZOS)
+    mask = mask.point(lambda v: min(255, int(v * 1.6)))
     icons_x = W - footer_pad - icon_w
     icons_y = int(H - FOOTER_H / 2 - icon_h / 2)
-    canvas.paste(icons, (icons_x, icons_y))
+    canvas.paste(icons, (icons_x, icons_y), mask)
 else:
     # Placeholder: nombres de plataforma en vez de iconos reales
     row1 = "Facebook . Instagram . TikTok"
