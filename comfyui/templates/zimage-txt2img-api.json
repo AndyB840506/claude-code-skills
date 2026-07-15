@@ -1,12 +1,12 @@
 {
-  "_comment": "Z-Image Turbo txt2img en formato API (POST /prompt). Derivado del workflow 'Desde Cero' del usuario + settings comunidad Civitai (cfg=1, steps 8-9). Reemplazar POSITIVE_PROMPT_HERE / NEGATIVE_PROMPT_HERE / seed / width-height / PREFIX_HERE. Recordar: a CFG 1 el negativo NO actua - todo el control va en el positivo (ver docs/prompting.md).",
+  "_comment": "Z-Image Turbo txt2img en formato API (POST /prompt). Derivado del workflow 'Desde Cero' del usuario + settings comunidad Civitai (cfg=1, steps 8-9). ADVERTENCIA VERIFICADA (docs/prompting.md, 2026-07-11): a CFG 1.0 el negativo esta matematicamente apagado -- el texto de abajo NO previene manos/miembros deformes por mas completo que sea, es decorativo. El fix real para warping/appendages extra en ESTE modelo va en el POSITIVE: declarar conteo y proporciones explicitas ('two arms, two hands with five fingers each, anatomically correct proportions') y, si es una escena de un solo sujeto, agregar 'alone, nothing else in frame' para suprimir extremidades/objetos alucinados. Reemplazar POSITIVE_PROMPT_HERE / seed / width-height / PREFIX_HERE; NEGATIVE_PROMPT_HERE se deja relleno solo por consistencia con los otros templates.",
   "prompt": {
     "66": {"class_type": "UNETLoader", "inputs": {"unet_name": "z_image_turbo_bf16.safetensors", "weight_dtype": "default"}},
     "62": {"class_type": "CLIPLoader", "inputs": {"clip_name": "qwen_3_4b.safetensors", "type": "lumina2", "device": "default"}},
     "63": {"class_type": "VAELoader", "inputs": {"vae_name": "ae.safetensors"}},
     "69": {"class_type": "ModelSamplingAuraFlow", "inputs": {"shift": 3.0, "model": ["66", 0]}},
     "67": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["62", 0], "text": "POSITIVE_PROMPT_HERE"}},
-    "71": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["62", 0], "text": "NEGATIVE_PROMPT_HERE"}},
+    "71": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["62", 0], "text": "deformed, disfigured, mutated, extra limbs, missing limbs, extra fingers, missing fingers, fused fingers, bad anatomy, bad proportions, warped body, blurry, lowres, watermark, signature"}},
     "68": {"class_type": "EmptySD3LatentImage", "inputs": {"width": 1024, "height": 1024, "batch_size": 1}},
     "70": {"class_type": "KSampler", "inputs": {"seed": 42, "steps": 9, "cfg": 1.0, "sampler_name": "res_multistep", "scheduler": "simple", "denoise": 1.0, "model": ["69", 0], "positive": ["67", 0], "negative": ["71", 0], "latent_image": ["68", 0]}},
     "65": {"class_type": "VAEDecode", "inputs": {"samples": ["70", 0], "vae": ["63", 0]}},

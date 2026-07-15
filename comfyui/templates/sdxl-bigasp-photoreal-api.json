@@ -1,0 +1,12 @@
+{
+  "_comment": "bigASP_v2 txt2img en formato API (POST /prompt) -- checkpoint fotorreal (NSFW). Prompt hibrido: describir como frases naturales (sujeto, pose, luz, camara) en vez de tags booru puros, que es como este checkpoint rinde mejor. cfg/steps/sampler abajo son defaults SDXL razonables, NO una receta oficial verificada del creador -- revisar la pagina de Civitai de bigASP_v2 por sus settings recomendados antes de dar esto por definitivo. Negativo ya relleno con staples de anatomia + terminos anti-ilustracion para reforzar el look fotorrealista (editar NEGATIVE_PROMPT_HERE si quieres cambiarlo). Reemplazar POSITIVE_PROMPT_HERE / seed / width-height / PREFIX_HERE segun la generacion.",
+  "prompt": {
+    "40": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "bigASP_v2.safetensors"}},
+    "41": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["40", 1], "text": "POSITIVE_PROMPT_HERE"}},
+    "42": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["40", 1], "text": "illustration, anime, cartoon, drawing, painting, 3d render, cgi, doll, plastic skin, airbrushed, uncanny valley, lowres, worst quality, low quality, bad anatomy, bad proportions, gross proportions, bad hands, poorly drawn hands, mutated hands, extra fingers, missing fingers, fused fingers, too many fingers, extra limbs, missing limbs, extra arms, extra legs, disconnected limbs, malformed limbs, deformed, disfigured, mutation, cloned face, long neck, warped body, warped perspective, watermark, signature, text, jpeg artifacts, blurry"}},
+    "43": {"class_type": "EmptyLatentImage", "inputs": {"width": 1024, "height": 1024, "batch_size": 1}},
+    "44": {"class_type": "KSampler", "inputs": {"seed": 42, "steps": 30, "cfg": 6.0, "sampler_name": "dpmpp_2m_sde", "scheduler": "karras", "denoise": 1.0, "model": ["40", 0], "positive": ["41", 0], "negative": ["42", 0], "latent_image": ["43", 0]}},
+    "45": {"class_type": "VAEDecode", "inputs": {"samples": ["44", 0], "vae": ["40", 2]}},
+    "9": {"class_type": "SaveImage", "inputs": {"filename_prefix": "PREFIX_HERE", "images": ["45", 0]}}
+  }
+}

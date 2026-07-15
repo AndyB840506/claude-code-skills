@@ -58,7 +58,12 @@ nativo directo a la resolución final.
 - **Los PNG guardados llevan el workflow completo en metadata** (`img.info["prompt"]` =
   grafo API con prompt/seed/params, `img.info["workflow"]` = grafo UI) — leerlos con PIL
   para reproducir o editar EXACTAMENTE una generación del usuario, en vez de rederivar
-  la receta (usado BTQ EP.021). Plantilla API lista: `comfyui/templates/zimage-txt2img-api.json`.
+  la receta (usado BTQ EP.021). Plantillas API listas en `comfyui/templates/`:
+  `zimage-txt2img-api.json` · `chroma-txt2img-api.json` ·
+  `illustrious-sdxl-booru-api.json` (estilizado/anime) ·
+  `sdxl-bigasp-photoreal-api.json` (fotorreal). Las 4 traen negativo anti-warping
+  pre-rellenado (editable); en Z-Image el negativo es decorativo por diseño (cfg 1.0) —
+  ver `docs/prompting.md`.
 
 ## Launch (headless, from Claude)
 ```powershell

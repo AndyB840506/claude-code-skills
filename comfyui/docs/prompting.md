@@ -10,6 +10,9 @@ Formula: **subject + action + setting + lighting + camera/style**, as full sente
 - Weak: `boxer, locker room, dramatic, 4k, masterpiece` (keyword-stacking wastes this encoder)
 - Useful vocabulary: camera (35mm, wide-angle, drone shot, close-up), lighting (golden hour, overcast, neon, rim light), medium (photo, oil painting, 3D render, cel-shaded).
 
+## SDXL fotorreal (bigASP) — natural language, NOT booru tags
+Same formula as Z-Image (subject + action + setting + lighting + camera/style), 1-2 quality tags at the end if the checkpoint wants them. Negative acts (classic SDXL) — use it for anti-illustration too when output looks painted instead of photoreal (`illustration, anime, cartoon, drawing, painting, 3d render, cgi, plastic skin`). Settings are reasonable SDXL defaults, not a verified official recipe — check bigASP_v2's Civitai page: `cfg ~6 · steps 30 · dpmpp_2m_sde · karras · 1024×1024`. Template: `comfyui/templates/sdxl-bigasp-photoreal-api.json`.
+
 ## Illustrious / anime SDXL checkpoints — booru tags
 Comma-separated tags, rough priority order:
 `<count> → appearance → pose/action → setting → lighting/composition → quality`
@@ -18,8 +21,11 @@ Comma-separated tags, rough priority order:
 - Weight syntax: `(tag:1.3)` boosts, `(tag:0.7)` dampens. Beyond ~1.5 causes artifacts.
 - Negative prompt staples: `lowres, bad anatomy, bad hands, extra fingers, watermark, signature`
 - Check each checkpoint's Civitai page: many specify required quality-tag prefixes and a recommended negative.
+- Template: `comfyui/templates/illustrious-sdxl-booru-api.json` (Illustrious-XL-v2.0 — stylized/anime, will NOT look photoreal regardless of prompt; for that use the bigASP template above).
 
 ## Z-Image Turbo: la trampa de la negación (aprendido 2026-07-11, BTQ EP.021)
+
+Template: `comfyui/templates/zimage-txt2img-api.json`.
 
 - **A CFG 1.0 el prompt negativo NO actúa** (matemáticamente apagado). La comunidad de
   Civitai los pone igual (ej. "blurry ugly bad") pero son decorativos. Subir CFG degrada
@@ -88,6 +94,10 @@ Comma-separated tags, rough priority order:
   en `comfyui/templates/portada-compose.py` (tira de íconos sobre el footer).
 
 ## Chroma (T5-flan encoder) — prompts DENSOS o look genérico (aprendido 2026-07-11)
+
+Template: `comfyui/templates/chroma-txt2img-api.json` — usa `ModelSamplingAuraFlow`
+(NO `ModelSamplingSD3`, ese mismatch produjo ruido puro pese a "success" — ver
+`docs/troubleshooting.md`).
 
 - **Chroma castiga prompts cortos**: cada bloque no descrito se rellena con "promedio AI"
   (piel plástica, render genérico) — fue la causa raíz del "chafitas" del usuario, no la

@@ -1,0 +1,12 @@
+{
+  "_comment": "Illustrious-XL-v2.0 txt2img en formato API (POST /prompt), prompt en tags booru. OJO: este checkpoint es estilizado/anime -- el negativo de anatomia ayuda con dedos/miembros extra, pero NO va a producir un look fotorrealista aunque se pida; para eso usar sdxl-bigasp-photoreal-api.json. Negativo ya relleno con staples de anatomia (editar NEGATIVE_PROMPT_HERE si quieres cambiarlo); revisar la pagina de Civitai del checkpoint por si recomienda un sampler o negativo propio. Reemplazar POSITIVE_PROMPT_HERE (tags booru reales, no frases inventadas) / seed / width-height / PREFIX_HERE segun la generacion.",
+  "prompt": {
+    "30": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": "Illustrious-XL-v2.0.safetensors"}},
+    "31": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["30", 1], "text": "POSITIVE_PROMPT_HERE"}},
+    "32": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["30", 1], "text": "lowres, worst quality, low quality, bad anatomy, bad proportions, gross proportions, bad hands, poorly drawn hands, mutated hands, extra fingers, missing fingers, fused fingers, too many fingers, extra limbs, missing limbs, extra arms, extra legs, disconnected limbs, malformed limbs, deformed, disfigured, mutation, cloned face, long neck, watermark, signature, text, jpeg artifacts, blurry"}},
+    "33": {"class_type": "EmptyLatentImage", "inputs": {"width": 1024, "height": 1024, "batch_size": 1}},
+    "34": {"class_type": "KSampler", "inputs": {"seed": 42, "steps": 28, "cfg": 7.0, "sampler_name": "dpmpp_2m", "scheduler": "karras", "denoise": 1.0, "model": ["30", 0], "positive": ["31", 0], "negative": ["32", 0], "latent_image": ["33", 0]}},
+    "35": {"class_type": "VAEDecode", "inputs": {"samples": ["34", 0], "vae": ["30", 2]}},
+    "9": {"class_type": "SaveImage", "inputs": {"filename_prefix": "PREFIX_HERE", "images": ["35", 0]}}
+  }
+}

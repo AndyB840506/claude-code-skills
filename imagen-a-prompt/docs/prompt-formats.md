@@ -3,6 +3,11 @@
 Copia autocontenida para esta skill (origen: guía de prompting del stack local,
 2026-07-11). Si se aprende algo nuevo sobre un modelo, actualizar AQUÍ.
 
+> Cada sección abajo incluye el archivo de plantilla ComfyUI (`comfyui/templates/`) que
+> corresponde a ese formato exacto — usar siempre esa plantilla, no adivinar el grafo,
+> para evitar bugs de wiring (aprendido 2026-07-15: mezclar nodos de otro modelo produjo
+> ruido puro en Chroma pese a que la API reportaba "success").
+
 ## Z-Image / Qwen-encoder — frases naturales
 
 Fórmula: **sujeto + acción + entorno + luz + cámara/estilo**, en oraciones completas.
@@ -33,6 +38,10 @@ Reglas críticas (Z-Image **turbo**):
 
 Settings sugeridos: `cfg 1.0 · steps 8-9 · euler o res_multistep · scheduler simple`
 
+**Plantilla ComfyUI:** `comfyui/templates/zimage-txt2img-api.json` — OJO: el negativo ahí
+es decorativo (cfg 1.0 lo apaga matemáticamente), el control de warping/miembros extra
+va 100% en el prompt positivo (proporciones explícitas + "alone, nothing else in frame").
+
 ## Chroma (T5-flan encoder) — párrafos DENSOS
 
 Chroma castiga prompts cortos: cada bloque no descrito se rellena con "promedio AI"
@@ -51,6 +60,9 @@ Chroma castiga prompts cortos: cada bloque no descrito se rellena con "promedio 
 
 Settings sugeridos: `euler + Beta scheduler · 26 steps · cfg 3.8 · base 1152×1152`
 
+**Plantilla ComfyUI:** `comfyui/templates/chroma-txt2img-api.json` — aquí el negativo SÍ
+actúa (cfg real).
+
 ## Illustrious / SDXL anime — booru tags
 
 Tags separados por coma, en orden de prioridad:
@@ -64,6 +76,27 @@ Tags separados por coma, en orden de prioridad:
   negativo recomendado propios.
 
 Settings sugeridos: `cfg ~7 · steps 25-30 · sampler según el checkpoint (ver Civitai)`
+
+**Plantilla ComfyUI:** `comfyui/templates/illustrious-sdxl-booru-api.json` (checkpoint
+Illustrious-XL-v2.0 — estilizado/anime; NO da resultado fotorrealista aunque se pida).
+
+## SDXL fotorreal (bigASP) — frases naturales
+
+Checkpoint fotorrealista (bigASP_v2). A diferencia del formato anterior, aquí NO se usan
+tags booru puros — rinde mejor con prosa natural, igual fórmula que Z-Image (sujeto +
+acción + entorno + luz + cámara/estilo), con 1-2 tags de calidad al final si el checkpoint
+los pide (`masterpiece, best quality`).
+
+- Bien: `A photograph of a woman sitting by a window, soft afternoon light, 50mm lens, shallow depth of field, realistic skin texture`
+- El negativo SÍ actúa (SDXL clásico). Usarlo también para anti-ilustración cuando el
+  resultado se ve pintado en vez de fotorreal: `illustration, anime, cartoon, drawing,
+  painting, 3d render, cgi, plastic skin`.
+
+Settings sugeridos (defaults razonables, NO receta oficial verificada — revisar Civitai
+de bigASP_v2 antes de darlos por definitivos): `cfg ~6 · steps 30 · sampler dpmpp_2m_sde
+· scheduler karras · base 1024×1024`
+
+**Plantilla ComfyUI:** `comfyui/templates/sdxl-bigasp-photoreal-api.json`
 
 ## Método de iteración (aplica a todos)
 

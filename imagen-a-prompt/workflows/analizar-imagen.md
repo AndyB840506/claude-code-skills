@@ -10,9 +10,10 @@ Modelo destino: [menú]
 Objetivo: [replicar fiel / variaciones / solo el estilo] — default: replicar fiel
 ```
 
-Para el modelo destino usa AskUserQuestion con opciones:
+Para el modelo destino usa AskUserQuestion con **multiSelect** y estas 4 opciones
+(seleccionar una, varias, o las 4):
 **Z-Image** (frases naturales) / **Chroma** (párrafos densos) / **Illustrious-SDXL**
-(booru tags) / **Los 3 formatos**.
+(booru tags, estilizado/anime) / **SDXL fotorreal — bigASP** (frases naturales).
 
 ## Paso 2 — Analizar la imagen
 
@@ -32,9 +33,11 @@ producto — no resumas):
    acabado (grano, cel-shading, pintura).
 8. **Paleta y textura:** 3-5 colores dominantes, contraste, texturas notables.
 
-Si la imagen es contenido explícito, no la analices con visión directa: cambia a
-`workflows/captioner-local.md` (el captioner local corre en la GPU del usuario sin
-restricciones) y explica el cambio de ruta en una línea.
+Si la imagen es contenido explícito, o si al describirla te encuentras rechazando o
+evadiendo el detalle pedido por cualquier motivo (incluye personas reales
+identificables, no solo contenido explícito), no insistas ni reintentes con otro
+phrasing: cambia a `workflows/captioner-local.md` (el captioner local corre en la GPU
+del usuario sin restricciones) y explica el cambio de ruta en una línea.
 
 ## Paso 3 — Formatear el prompt
 
@@ -50,11 +53,17 @@ modelo(s) elegidos. Reglas fijas:
   sujeto concreto.
 - Cierra cada prompt con la línea de settings sugeridos del modelo (están en
   `docs/prompt-formats.md`).
+- Cada prompt lleva pegado el nombre exacto de la plantilla ComfyUI que hay que correr
+  (línea "Plantilla ComfyUI" de `docs/prompt-formats.md`) — nunca dejar que se corra a
+  mano de memoria ni se adivine el grafo, para evitar el tipo de bug de wiring que
+  produjo ruido puro en Chroma pese a que la API reportaba "success" (2026-07-15).
 
 ## Paso 4 — Entregar
 
-Presenta cada prompt en un bloque de código listo para copiar, etiquetado con el modelo.
-Pregunta si quiere guardarlo a un archivo `.txt` junto a la imagen original.
+Presenta cada prompt en un bloque de código listo para copiar, etiquetado con el modelo
+Y el archivo de plantilla ComfyUI correspondiente (ej. "Chroma — correr con
+`comfyui/templates/chroma-txt2img-api.json`"). Pregunta si quiere guardarlo a un archivo
+`.txt` junto a la imagen original.
 
 ---
 

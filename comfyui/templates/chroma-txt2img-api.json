@@ -1,0 +1,20 @@
+{
+  "_comment": "Chroma1-HD txt2img en formato API (POST /prompt). Corregido 2026-07-15 contra el workflow real y verificado del usuario ('Chroma Personajes Pro.json' en repos/comfyui-setup): usa ModelSamplingAuraFlow (NO ModelSamplingSD3 -- ese error produjo ruido puro en la primera version de esta plantilla) + T5TokenizerOptions (min_padding=1) entre el CLIPLoader y los CLIPTextEncode + decodifica desde el slot 0 ('output') de SamplerCustomAdvanced, no el slot 1 ('denoised_output'). Settings oficiales: euler + BetaSamplingScheduler steps 26 alpha/beta 0.45, shift 1.0, cfg 3.8 real, base 1152x1152. A diferencia de Z-Image, aqui el negativo SI actua -- ya viene relleno con un negativo de anatomia + anti-ilustracion (para reforzar look fotorrealista); edita NEGATIVE_PROMPT_HERE si quieres cambiarlo. Reemplazar POSITIVE_PROMPT_HERE / seed / width-height / PREFIX_HERE segun la generacion. Validado con render real 2026-07-15 (test_chroma_fixed, foto de una manzana) -- imagen coherente, no ruido.",
+  "prompt": {
+    "10": {"class_type": "UNETLoader", "inputs": {"unet_name": "Chroma1-HD-fp8mixed.safetensors", "weight_dtype": "default"}},
+    "11": {"class_type": "CLIPLoader", "inputs": {"clip_name": "t5xxl_flan_fp8_scaled.safetensors", "type": "chroma", "device": "default"}},
+    "25": {"class_type": "T5TokenizerOptions", "inputs": {"clip": ["11", 0], "min_padding": 1, "min_length": 0}},
+    "12": {"class_type": "VAELoader", "inputs": {"vae_name": "ae.safetensors"}},
+    "13": {"class_type": "ModelSamplingAuraFlow", "inputs": {"model": ["10", 0], "shift": 1.0}},
+    "14": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["25", 0], "text": "POSITIVE_PROMPT_HERE"}},
+    "15": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["25", 0], "text": "illustration, anime, cartoon, drawing, painting, cel shading, flat shading, plastic skin, 3d render, cgi, doll, deformed, disfigured, mutated, extra limbs, missing limbs, extra arms, extra legs, missing arms, missing legs, disconnected limbs, malformed limbs, fused fingers, too many fingers, missing fingers, mutated hands, poorly drawn hands, poorly drawn face, bad anatomy, bad proportions, gross proportions, cloned face, long neck, warped body, warped perspective, blurry, low quality, lowres, jpeg artifacts, watermark, signature, text"}},
+    "16": {"class_type": "EmptySD3LatentImage", "inputs": {"width": 1152, "height": 1152, "batch_size": 1}},
+    "17": {"class_type": "RandomNoise", "inputs": {"noise_seed": 42}},
+    "18": {"class_type": "CFGGuider", "inputs": {"model": ["13", 0], "positive": ["14", 0], "negative": ["15", 0], "cfg": 3.8}},
+    "19": {"class_type": "KSamplerSelect", "inputs": {"sampler_name": "euler"}},
+    "20": {"class_type": "BetaSamplingScheduler", "inputs": {"model": ["13", 0], "steps": 26, "alpha": 0.45, "beta": 0.45}},
+    "21": {"class_type": "SamplerCustomAdvanced", "inputs": {"noise": ["17", 0], "guider": ["18", 0], "sampler": ["19", 0], "sigmas": ["20", 0], "latent_image": ["16", 0]}},
+    "22": {"class_type": "VAEDecode", "inputs": {"samples": ["21", 0], "vae": ["12", 0]}},
+    "9": {"class_type": "SaveImage", "inputs": {"filename_prefix": "PREFIX_HERE", "images": ["22", 0]}}
+  }
+}
