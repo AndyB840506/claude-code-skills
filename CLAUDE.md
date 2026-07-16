@@ -16,6 +16,7 @@ Config y reglas operativas en `~/.claude/`; proyectos y archivos de producción 
 
 1. **Sincroniza con GitHub:** ejecuta `git pull origin main` Y TAMBIÉN `git -C "$env:USERPROFILE\.claude\skills" pull origin main` — son 2 clones del mismo repo y el global se desactualiza solo (mordió 2026-07-08: 1 mes stale en el portátil, una skill "no existía")
    - **Repos externos:** antes del primer edit **o de lanzar cualquier agente (Explore/executor) sobre otro repo** (hiresignal, kuma-talent-web, etc.): `git -C <repo> fetch origin` y verificar si está detrás — pull ANTES de editar o explorar, no al pushear (mordió 2026-07-08: clon de hiresignal 40 commits stale → merge de 4 conflictos; mordió 2026-07-10: exploradores lanzados pre-pull mapearon el árbol viejo y reportaron que un feature existente "no existía").
+   - **En plan mode (no se puede hacer pull):** verificar staleness read-only con `git ls-remote origin` vs HEAD local, y poner el pull como primer paso de ejecución del plan (funcionó 2026-07-16 con hiresignal desactualizado).
 2. **Busca un handoff reciente:** revisa `.agents/handoff/` — abre el archivo con la fecha más reciente.
 3. **Decide cómo continuar:**
    - Si existe uno: resúmelo en 2-3 líneas (qué se hizo, dónde pausó, qué sigue) y pregunta si quiere continuar desde ahí. No asumas que sí.
