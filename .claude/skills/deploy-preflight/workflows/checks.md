@@ -49,7 +49,7 @@ Corre un `curl -sI` (o equivalente) contra la URL de produccion del proyecto par
 **Identificar el host real en los mismos headers** — no confiar en runbooks/docs del repo, pueden estar stale (mordio 2026-07-09: kumatalent.com ya habia migrado de Vercel a DO y el runbook seguia diciendo Vercel prebuilt):
 
 - `x-vercel-id` / `server: Vercel` -> Vercel (aplica todo este skill).
-- `x-do-app-origin` -> DigitalOcean App Platform. Si la app tiene deploy-on-push, el metodo es `git push` — NO corras el flujo vercel; verifica el deploy con un poll del marker nuevo en produccion (static sites de DO publican en ~20-60s).
+- `x-do-app-origin` -> DigitalOcean App Platform. Si la app tiene deploy-on-push, el metodo es `git push` — NO corras el flujo vercel; verifica el deploy con un poll del marker nuevo en produccion. **Tiempo de publicacion depende del tipo de app:** static sites publican en ~20-60s; apps con build (Node/Express, etc.) tardan 1-3 min — usa un deadline de poll de al menos 6 min para no reportar timeout falso (verificado 2026-07-17, the-freelancer Node app).
 - Otro host -> STOP y confirmar con el usuario el metodo de deploy.
 
 Si el host real no coincide con el metodo asumido, re-rutea el deploy Y actualiza el doc stale del repo en la misma sesion.
