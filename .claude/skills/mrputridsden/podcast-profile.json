@@ -19,7 +19,7 @@
   "tono": "Casual, conversacional, experto pero accesible, con humor e irreverencia. Mezcla de discusión seria y entretenimiento.",
   "categoria": "Entretenimiento / Música",
   "duracion_min": 43,
-  "duracion_nota": "43 min = sweet spot de retención definido por Andrés (2026-07-17, tras salida de Juan) — reemplaza el target anterior de 60 min co-host. Un solo episodio, ya no 2 partes por defecto (ver formato_historico).",
+  "duracion_nota": "43 min = sweet spot de retención definido por Andrés (2026-07-17, tras salida de Juan) — reemplaza el target anterior de 60 min co-host. Un solo episodio, ya no 2 partes por defecto (ver formato_historico). Cae dentro del rango editorial 40-45 min ya fijado para BTQ/CCC (mismo host) — ver word_count_target_nota para la fórmula de conversión a palabras.",
   "cadencia": "Semanal",
   "plataformas": [
     "Spotify",
@@ -33,18 +33,13 @@
   "logo_descripcion": "Estilo vintage póster de concierto + rock clásico. Colores: negro profundo, crimson/rojo profundo (#9B1C1C), plateado/acero (#A8A8A8). Elementos: referencias a bandas icónicas, whisky, vinilos, estética underground/conciertos. Sin naranja. Vibe: cuero, metal clásico, backstage.",
   "numeracion": "EP.002",
   "estilo_narración": "mixto",
-  "word_count_target": 5500,
-  "word_count_target_nota": "Estimado sin calibrar (~130 wpm narración solo) — no hay wpm real medido para formato solo todavía. Recalibrar creando `guion-style-mpd.md` con el wpm real tras la primera grabación solo (ver 01-episodio.md Paso 0).",
+  "word_count_target": 4760,
+  "word_count_target_nota": "Recalculado 2026-07-17 con la fórmula real medida de BTQ (mismo host Andrés/Andy, ver btq-production/guion-style-btq.md — SRT de EP.20: 150 wpm hablados + 35.5% de expansión en vivo sobre el guion escrito). 43 min → ~6450 palabras habladas → ~4760 palabras ESCRITAS. Es una calibración prestada de otro show del mismo narrador, no wpm propio de MPD solo — recalibrar con `guion-style-mpd.md` tras el SRT real del primer episodio solo grabado (ver 01-episodio.md Paso 0).",
   "intro_template": "Stevie Ray Vaughn meets Black Label Society: guitarra blues eléctrica + heavy metal, con voz femenina gutural que abre el espacio. Puro impacto sonoro de 30 segundos. Referencia: audio/WhatsApp Video 2026-05-14 Intro.mp4",
   "outro_template": "Jazz 1950s estilo Billie Holiday + cierre con trio de mujeres de época. Lyrics: 'Mmm, that's the sound, the last chord's gone now / The den, it's still warm, a shelter from the storm / Just a velvet haze to end these golden days / Sweet dreams, until we meet'. Nostalgia, calidez, despedida elegante. Referencia: audio/WhatsApp Video 2026-05-14 Outro.mp4",
   "lenguaje": "colombiano_casual",
   "intro_silla_putrida_template": "Esta semana en Mr. Putrid's Den tenemos La Silla Pútrida. Hoy el episodio completo gira alrededor de un invitado especial. Póngase cómodo, que esto está bueno.",
-  "segmento_promocion": {
-    "conductor": "Andrés",
-    "posicion_normal": "bloque_intermedio",
-    "posicion_silla_putrida": "al_final",
-    "fuente_eventos": "eventos.json"
-  },
+  "segmento_promocion_retirado": "Retirado 2026-07-17 (decisión de Andrés) — el segmento de eventos underground dependía del conocimiento insider de Juan como promotor; sin fuente de reemplazo, se elimina en vez de reasignarlo. eventos.json queda deprecado. Ver memoria project_mpd_juan_departure.",
   "reglas_tono": [
     "Español colombiano casual — bogotano moderno, sin arcaísmos. Natural, directo, con humor e irreverencia. Sin regionalismos de otras épocas o países. Al oyente: 'usted' o 'ustedes'. Entre hosts: tuteo natural. NUNCA: 'sumerce', 'cachaco', 'ala', 'chirriado', 'parcero', 'bacano', 'vosotros', 'vos', 'ché', 'tío'.",
     "Conversación natural con estructura — El script es guía, no lectura. Lanza premisas, datos, anécdotas, y deja que fluya como monólogo conversacional de Andrés. Parece improviso, pero está scaffolded.",
@@ -57,7 +52,6 @@
     "#DondeRiffsEncuentranWhisky",
     "#RocksMetalJazz",
     "#ConversacionesDeRiffs",
-    "#EventosUnderground",
     "#BogotáMusical",
     "#PodcastRock",
     "#ArtistasEmergentes",
@@ -94,8 +88,7 @@
     "Debate: ¿cuál es mejor banda/álbum/canción?",
     "Curiosidades y historias de conciertos",
     "Reacciones a música nueva",
-    "Entrevista/invitado artista emergente",
-    "Spotlight: eventos y conciertos underground"
+    "Entrevista/invitado artista emergente"
   ],
   "genre_rotation_rule": "No repetir el mismo género en episodios consecutivos. Verificar 'genre' del episodio anterior antes de asignar el siguiente.",
   "roadmap_9_episodes": [
@@ -162,12 +155,12 @@
     },
     {
       "ep": 9,
-      "title": "Spotlight: Eventos underground que no te puedes perder",
-      "pillar": "Info conciertos",
-      "genre": "formato especial — multi-género",
-      "type": "solo",
-      "description": "Andrés comparte eventos, conciertos próximos, bandas locales emergentes en Bogotá.",
-      "nota": "Requiere fuente de eventos underground — Juan la cubría como promotor; ver Questions to Answer"
+      "title": "[RETIRADO — pendiente de nuevo tema]",
+      "pillar": "N/A",
+      "genre": "N/A",
+      "type": "N/A",
+      "description": "Era 'Spotlight: eventos underground', pillar cortado 2026-07-17 junto con el segmento de Promoción (dependía del conocimiento insider de Juan). Slot libre — Andrés define el nuevo tema del EP.009 cuando llegue el turno.",
+      "nota": "No asignar tema automáticamente — pendiente decisión de Andrés."
     },
     {
       "ep": 10,

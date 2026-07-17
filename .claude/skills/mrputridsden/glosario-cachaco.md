@@ -14,8 +14,9 @@ Natural, directo, con humor e irreverencia. Accesible para cualquier hispanohabl
 
 ## Cómo suena el show
 
-- **Entre hosts (Andrés y Juan):** tuteo natural. "¿Qué piensas tú?", "Exacto, yo creo que..."
+- **Formato solo (EP.005 en adelante, Juan dejó el proyecto 2026-07-17):** Andrés habla directo al oyente. Sin segunda voz — el "¿Qué piensas tú?" entre hosts se reemplaza por diálogo interno (pregunta retórica → respuesta propia) cuando se necesita variar el ritmo.
 - **Al oyente:** "usted" o "ustedes". No tutear al oyente.
+- *(Histórico EP.002-EP.004, co-host: "Entre hosts (Andrés y Juan): tuteo natural. '¿Qué piensas tú?', 'Exacto, yo creo que...'" — ya no aplica.)*
 - **Registro:** conversacional pero informado. No cátedra, no chisme.
 - **Humor:** irónico, espontáneo — nunca forzado ni ofensivo hacia artistas.
 
@@ -64,8 +65,8 @@ Natural, directo, con humor e irreverencia. Accesible para cualquier hispanohabl
 **Hablando de artistas emergentes:**
 > Con entusiasmo genuino. "Estos muchachos están tocando muy duro." No condescendiente.
 
-**En momentos de debate entre hosts:**
-> Directo y divertido. "Yo no estoy de acuerdo con eso." Sin artificios.
+**En momentos de contrapunto (formato solo — diálogo interno, ya no debate entre hosts):**
+> Directo y divertido. "Uno pensaría que sí, pero la verdad es que no." Sin artificios.
 
 **Cierre de episodio:**
 > Cálido y directo. "Gracias por escucharnos." Simple, sin fórmulas rígidas.

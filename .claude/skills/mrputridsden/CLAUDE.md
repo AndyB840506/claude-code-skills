@@ -64,7 +64,7 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 
 Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para trackear cada entregable.
 
-**Episodio único de ~43 min (decisión Andy 2026-07-17, reemplaza el default de 2 partes):** desde EP.005, formato solo, target de duración 43 min — el sweet spot de retención para el show en su nueva etapa. `word_count_target` del perfil (5500, ver `podcast-profile.json` → `word_count_target_nota`) es un estimado sin calibrar; recalibrar con el wpm real tras la primera grabación solo.
+**Episodio único de ~43 min (decisión Andy 2026-07-17, reemplaza el default de 2 partes):** desde EP.005, formato solo, target de duración 43 min — el sweet spot de retención para el show en su nueva etapa, dentro del mismo rango editorial 40-45 min ya fijado para BTQ/CCC. `word_count_target` del perfil (4760 palabras escritas) usa la fórmula real medida de BTQ — mismo host, `btq-production/guion-style-btq.md`: 150 wpm hablados + 35.5% de expansión en vivo. Es una calibración prestada de otro show, no wpm propio de MPD solo; recalibrar con `guion-style-mpd.md` tras el SRT real del primer episodio solo grabado (ver `01-episodio.md` Paso 0).
 
 **Regla histórica retirada — 2 partes por defecto (vigente EP.002-EP.004, decisión Andy 2026-06-17):** los episodios co-host se producían por defecto en 2 partes porque la investigación profunda + anécdotas ciertas poco conocidas pasaban la hora (EP.004 Kraken ~2h45; EP.005 Aterciopelados se había escrito como ~90 min/2 partes bajo formato co-host, guion descartado). Esa regla ya NO aplica a episodios nuevos — con formato solo y target 43 min, la profundidad de investigación debe caber en un episodio único; si algún tema puntual sigue sin caber, consultar con Andrés antes de partir en 2 (ya no es el default automático). Ver `01-episodio.md` (regla de 2 partes, referencia histórica) y memoria `project-mpd-episodes-two-parts` (retirada).
 
@@ -76,17 +76,14 @@ Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para t
 - **Antes de cualquier guion** preguntar: *"¿Esta semana hay Silla Pútrida?"*
 - Si SÍ → episodio gira 100% en torno al invitado, formato presencial (los 3 en el mismo cuarto)
 - Flujo Narval: Claude investiga al invitado → genera doc prep para hosts → carta simple al invitado → bio + temas + NO-list → guion
-- Segmento de Promoción al FINAL en este formato
 - Guardar ficha en `mrputridsden-production\fichas-invitados\[nombre].md`
 - Templates: `mrputridsden-production\templates\silla-putrida-*.md`
 - Perfiles de invitado: `mrputridsden-production\templates\preguntas-por-perfil.md`
 
-### Segmento de Promoción
-- En **todos** los episodios sin excepción (Andrés lo conduce desde EP.005 — antes lo conducía Juan)
-- Episodio normal → bloque intermedio (antes del cierre)
-- Episodio Silla Pútrida → al final (antes del outro)
-- Consultar `eventos.json` para eventos reales
-- **Fuente de eventos pendiente de resolver:** Juan aportaba los eventos underground como promotor activo de la escena; sin él, `eventos.json` necesita una fuente nueva antes del próximo episodio que use este segmento con datos reales (no placeholder). Ver Questions to Answer en handoff/memoria.
+### Segmento de Promoción — RETIRADO (2026-07-17)
+Dependía del conocimiento insider de Juan como promotor de eventos underground; sin fuente de
+reemplazo, Andrés decidió cortarlo en vez de reasignarlo. `eventos.json` queda deprecado (no
+consultar). No incluir este segmento en ningún guion nuevo. Ver memoria `project_mpd_juan_departure`.
 
 ---
 
@@ -98,10 +95,10 @@ Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para t
 2. Bienvenida — Andrés
 3. Tema principal — Bloque A
 4. Tema principal — Bloque B
-5. Segmento de Promoción (Andrés)
-6. Takeaway / Reflexión final
-7. Outro music (30 seg)
+5. Takeaway / Reflexión final
+6. Outro music (30 seg)
 ```
+Sin Segmento de Promoción (retirado 2026-07-17, ver Segmentos permanentes).
 Sin [INTERCAMBIO] entre hosts — es monólogo conversacional (Andrés se dirige directo al oyente, no a un co-host). Puede simular diálogo interno (pregunta retórica → respuesta) para mantener ritmo, pero no hay segunda voz real.
 
 **Formato histórico (co-host, EP.002-EP.004) — archivado, no aplica a episodios nuevos:**
@@ -143,8 +140,7 @@ Sin [INTERCAMBIO] entre hosts — es monólogo conversacional (Andrés se dirige
 4. [INTERCAMBIO natural]
 5. Bloque de preguntas — Bloque B
 6. Cierre con el invitado (dónde encontrarlo)
-7. Segmento de Promoción (Andrés) — AL FINAL
-8. Outro music (30 seg)
+7. Outro music (30 seg)
 ```
 
 ---

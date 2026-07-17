@@ -1,6 +1,7 @@
 {
   "ultima_actualizacion": "2026-05-23",
-  "nota": "Andrés actualiza esta lista con eventos próximos (desde 2026-07-17, Juan dejó el proyecto — antes él la mantenía como promotor). Consultar antes de generar cada guión para el segmento de Promoción. Fuente de eventos underground aún por resolver sin el conocimiento insider de Juan.",
+  "deprecado": true,
+  "nota": "DEPRECADO 2026-07-17 — el segmento de Promoción (eventos underground) fue retirado del show, no reasignado. Este archivo ya NO se consulta al escribir guiones. Se conserva como registro histórico. Ver memoria project_mpd_juan_departure.",
   "eventos": [
     {
       "id": "EJEMPLO-1",

@@ -12,17 +12,25 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.003 | Las raices del rock: Sister Rosetta Tharpe | publicado - rendimiento bajo vs EP.002 (ver nota de audiencia) |
 | EP.004 P1 | Kraken: el Titan del Rock colombiano (Parte 1) | en Spotify - programado viernes 2026-06-19 (link listo) |
 | EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | grabado - sale ~2026-06-20 |
-| EP.005 | Aterciopelados: una gomela, un punkero | guion co-host (P1+P2, ~90 min) DESCARTADO - reescribir solo, episodio unico ~43 min - sin grabar |
+| EP.005 | Aterciopelados: una gomela, un punkero | guion listo (solo, episodio unico, ~42 min estimado / 4.616 palabras) - sin grabar |
 
 ---
 
 **Cambio de formato (2026-07-17):** Juan dejo el proyecto, Andres continua solo desde EP.005 en
-adelante. El guion co-host de EP.005 (Aterciopelados, P1+P2, ~90 min) ya escrito queda descartado
-- se reescribe como episodio unico de ~43 min (nuevo sweet spot de retencion, decision de Andres)
-antes de grabacion. El default de 2 partes queda retirado para episodios nuevos (ver memoria
-`project_mpd_episodes_two_parts`, RETIRED). Ver memoria `project_mpd_juan_departure` y
-`podcast-profile.json` (formato_historico, duracion_nota, word_count_target_nota,
-roadmap_9_episodes).
+adelante. El guion co-host original de EP.005 (Aterciopelados, P1+P2, ~90 min) quedo descartado
+(recuperable via git history) y se reescribio el mismo dia como episodio unico solo, ~4.616
+palabras escritas / ~42 min estimados (formula real medida de BTQ, mismo host: 150 wpm + 35.5%
+expansion en vivo - ver `btq-production/guion-style-btq.md`). El default de 2 partes queda
+retirado para episodios nuevos (ver memoria `project_mpd_episodes_two_parts`, RETIRED). El
+segmento de Promocion (eventos underground) tambien se retiro del show, no se reasigno.
+
+**Pendiente antes de grabar EP.005:** (1) Andres decide si se menciona en el episodio o en show
+notes el paso a formato solo - el guion actual NO lo menciona al aire, a proposito, ver nota de
+produccion en el script; (2) grabar y generar el SRT real para calibrar `guion-style-mpd.md`
+propio (la duracion de 42 min es una formula prestada de BTQ, no wpm medido de MPD solo).
+
+Ver memoria `project_mpd_juan_departure` y `podcast-profile.json` (formato_historico,
+duracion_nota, word_count_target_nota, roadmap_9_episodes).
 
 **Notas:**
 - Seeded desde memoria `mrputridsden_project` (snapshot 2026-06-05).
