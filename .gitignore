@@ -3,3 +3,4 @@
 business/
 .claude/scheduled_tasks.lock
 .vercel
+__pycache__/

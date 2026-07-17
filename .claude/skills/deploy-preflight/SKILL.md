@@ -11,9 +11,10 @@ aplica el flujo que corresponda (Vercel prebuilt, DO deploy-on-push, etc.).
 
 ## Workflow
 
-Sigue `workflows/checks.md` (Pasos 1–7): identifica el proyecto, verifica
+Sigue `workflows/checks.md` (Pasos 1–8): identifica el proyecto, verifica
 `.vercel/repo.json` y el directorio de deploy, verifica que no haya secrets en
 los archivos a deployar, confirma la baseline de produccion, resume, y — si el
 flujo incluye un `git push` a main/master — corre el post-push check para
 detectar auto-deploys que rompan produccion (mas el flujo prebuilt si el
-proyecto usa `ignoreCommand`).
+proyecto usa `ignoreCommand`). Si la app envia correo, el Paso 8 verifica el
+DNS de email (SPF + DMARC) antes del primer envio real.

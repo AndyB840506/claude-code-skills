@@ -98,3 +98,16 @@ directorio del proyecto (`<dir>`, ej. `mrputridsden-production/website`):
    dominio custom**; este paso es obligatorio.
 5. **Verificar:** `curl -sI https://www.<dominio>/` debe dar `200`, y
    `curl -s https://www.<dominio>/ | grep "<marcador nuevo>"` debe encontrar el cambio.
+
+## Paso 8 — Email DNS (solo si el deploy envia correo)
+
+Si la app deployada envia email (transaccional u outreach), verifica el DNS del dominio remitente ANTES del primer envio real:
+
+```
+nslookup -type=TXT <dominio> 8.8.8.8          # debe mostrar el SPF (v=spf1 ...)
+nslookup -type=TXT _dmarc.<dominio> 8.8.8.8   # debe resolver (v=DMARC1; ...)
+```
+
+- Sin DMARC, Outlook filtra a Junk y mail-tester descuenta ~2 puntos (mordio 2026-07-17: outreach de hiresignal salio 7.7/10; agregar `_dmarc` TXT `v=DMARC1; p=none; rua=mailto:<buzon>` lo subio a 9.9 — DMARC pasa por alineacion SPF aun sin DKIM).
+- Para cold outreach: score de mail-tester.com >= 9 antes del primer envio real a un prospecto.
+- SMTP GoDaddy desde un host cloud (DO/AWS): si da "authentication failed" con creds validas, es bloqueo de IP cloud en 465/587 — usar puerto 3535/tls (ver memoria godaddy-smtp-do-port-3535).
