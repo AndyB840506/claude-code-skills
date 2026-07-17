@@ -1,6 +1,8 @@
 # CLAUDE.md — Mr. Putrid's Den
 
-Este workspace es exclusivo de **Mr. Putrid's Den**, el podcast de Andrés y Juan sobre rock, metal, jazz y géneros variados.
+Este workspace es exclusivo de **Mr. Putrid's Den**, el podcast de Andrés en solitario sobre rock, metal, jazz y géneros variados.
+
+**Formato desde 2026-07-17:** Juan dejó el proyecto — Andrés continúa solo. Hasta EP.004 el show fue co-host (Andrés y Juan); EP.005 en adelante es formato solo. Toda la sección "Regla de balance co-host" más abajo describe el formato HISTÓRICO (EP.002-EP.004) — no aplica a episodios nuevos. Ver memoria `project_mpd_juan_departure`.
 
 ## Al iniciar
 
@@ -62,7 +64,9 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 
 Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para trackear cada entregable.
 
-**Default de 2 partes (decisión Andy 2026-06-17):** los episodios MPD se producen por defecto en 2 partes, porque la investigación profunda + anécdotas ciertas poco conocidas pasan la hora (EP.004 Kraken ~2h45; EP.005 Aterciopelados escrito como ~90 min/2 partes). Estructurar el corte P1/P2 desde el guion, cada parte con apertura/cierre y recap de ~20 seg al abrir la P2. Metadata compartida; solo cambia el título "(Parte 1)"/"(Parte 2)". Ver `01-episodio.md` (regla de 2 partes) y memoria `project-mpd-episodes-two-parts`.
+**Episodio único de ~43 min (decisión Andy 2026-07-17, reemplaza el default de 2 partes):** desde EP.005, formato solo, target de duración 43 min — el sweet spot de retención para el show en su nueva etapa. `word_count_target` del perfil (5500, ver `podcast-profile.json` → `word_count_target_nota`) es un estimado sin calibrar; recalibrar con el wpm real tras la primera grabación solo.
+
+**Regla histórica retirada — 2 partes por defecto (vigente EP.002-EP.004, decisión Andy 2026-06-17):** los episodios co-host se producían por defecto en 2 partes porque la investigación profunda + anécdotas ciertas poco conocidas pasaban la hora (EP.004 Kraken ~2h45; EP.005 Aterciopelados se había escrito como ~90 min/2 partes bajo formato co-host, guion descartado). Esa regla ya NO aplica a episodios nuevos — con formato solo y target 43 min, la profundidad de investigación debe caber en un episodio único; si algún tema puntual sigue sin caber, consultar con Andrés antes de partir en 2 (ya no es el default automático). Ver `01-episodio.md` (regla de 2 partes, referencia histórica) y memoria `project-mpd-episodes-two-parts` (retirada).
 
 ---
 
@@ -78,16 +82,29 @@ Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para t
 - Perfiles de invitado: `mrputridsden-production\templates\preguntas-por-perfil.md`
 
 ### Segmento de Promoción
-- En **todos** los episodios sin excepción (Juan lo conduce)
+- En **todos** los episodios sin excepción (Andrés lo conduce desde EP.005 — antes lo conducía Juan)
 - Episodio normal → bloque intermedio (antes del cierre)
 - Episodio Silla Pútrida → al final (antes del outro)
 - Consultar `eventos.json` para eventos reales
+- **Fuente de eventos pendiente de resolver:** Juan aportaba los eventos underground como promotor activo de la escena; sin él, `eventos.json` necesita una fuente nueva antes del próximo episodio que use este segmento con datos reales (no placeholder). Ver Questions to Answer en handoff/memoria.
 
 ---
 
 ## Estructura de episodios
 
-**Episodio normal (co-host):**
+**Episodio normal (solo, EP.005 en adelante):**
+```
+1. Intro music (30 seg)
+2. Bienvenida — Andrés
+3. Tema principal — Bloque A
+4. Tema principal — Bloque B
+5. Segmento de Promoción (Andrés)
+6. Takeaway / Reflexión final
+7. Outro music (30 seg)
+```
+Sin [INTERCAMBIO] entre hosts — es monólogo conversacional (Andrés se dirige directo al oyente, no a un co-host). Puede simular diálogo interno (pregunta retórica → respuesta) para mantener ritmo, pero no hay segunda voz real.
+
+**Formato histórico (co-host, EP.002-EP.004) — archivado, no aplica a episodios nuevos:**
 ```
 1. Intro music (30 seg)
 2. Bienvenida — Andrés y Juan
@@ -98,27 +115,22 @@ Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para t
 7. Takeaway / Reflexión final
 8. Outro music (30 seg)
 ```
-
-**Regla de balance co-host (actualizada 2026-06-11):**
-- **Andrés lidera ~70% de los segmentos de contenido** mientras Juan gana experiencia al micrófono (decisión de Andrés, EP.004). Juan NO debe quedar mudo: tiene reacciones cortas en todos los bloques.
-- **Juan lidera:** su segmento de Promoción (siempre) + 1-2 bloques puntuales de su expertise como promotor (shows en vivo, escena local). NO darle los bloques emocionales pesados ni los de mayor carga narrativa. Abre con autoridad pero SIN fórmulas declarativas teatrales ("Yo quiero contar esta historia porque...", "el momento que me pone la piel de gallina", "y esto es lo bonito") — esas frases lo hacen sonar leyendo, como un viejito (feedback EP.004, 2026-06-11). Juan abre diciendo el hecho directamente, estilo EP.002: frases cortas, declarativas, sin anunciar lo que va a contar. Referencia canónica de voz de Juan: EP002-black-sabbath-genesis-heavy-metal.html.
-- **Escribir PARA la entrega de Juan, no contra ella (feedback 2026-06-12):** Juan habla muy pausado, registro de narrador de documental. Cuando se le escriben líneas de hype o exclamación ("¡Eso es una locura!") intenta imitar los improvs de Andrés y se queda corto — suena plano. Darle las frases que MEJORAN con pausa y gravedad: remates secos, sentencias, datos con peso, silencios dramáticos. NUNCA escribirle exclamaciones de energía ni reacciones de asombro improvisado. El contraste de entregas (Andrés energía/improv · Juan gravedad/pausa) es el sello del show, no un defecto a corregir.
-- **Andrés lidera:** hilo narrativo, historia musicológica, conectores de episodio a episodio, bloques emocionales.
-- Verificar al terminar el guión: contar bloques donde cada host abre el segmento — proporción objetivo ~70/30 a favor de Andrés.
+- Regla de balance co-host (Andrés ~70% de segmentos, Juan ~30% con entrega pausada/gravedad, nunca hype/exclamación) — conservada aquí como referencia de tono histórico de EP.002-EP.004, pero deja de aplicarse: no hay más bloques que asignarle a Juan.
+- Referencia canónica de la voz de Juan (para consulta histórica, no para nuevos guiones): EP002-black-sabbath-genesis-heavy-metal.html.
 
 **Reglas anti-repetición de guion (feedback 2026-06-12, derivado de comparar guiones vs. transcripción real EP.003):**
 1. **Presupuesto de muletillas:** máximo 1 "imagínense" y 1 "me vuela la cabeza"/"les va a volar la cabeza" por episodio. No escribir "o sea", "básicamente", "totalmente", "agárrense de la silla" — los hosts ya los improvisan de sobra al aire.
-2. **Prohibidas las réplicas de pura validación** ("Eso es una locura", "Total", "Exactamente eso", "No, totalmente"): toda réplica debe aportar un dato nuevo, una imagen o un contrapunto. Mínimo un desacuerdo o corrección genuina entre hosts por episodio — sin tensión, todo suena plano.
-3. **Léxico firmado por host:** Andrés habla en imágenes y escenas; Juan en números, plata, venues, fechas, aforos. No compartir muletillas ni expresiones de firma entre los dos.
+2. **Prohibidas las líneas de pura validación** ("Eso es una locura", "Una locura total"): cada afirmación debe aportar un dato nuevo, una imagen o un contrapunto. Formato solo: usar el diálogo interno (pregunta retórica → matización, o "uno pensaría X, pero...") en vez de un segundo host, para no perder la tensión que antes daba el desacuerdo entre Andrés y Juan.
+3. **Léxico propio del episodio:** Andrés habla en imágenes y escenas — evitar repetir la misma muletilla o expresión de firma entre bloques. *(Regla 3 histórica EP.002-EP.004: léxico firmado por host — Andrés imágenes/escenas, Juan números/venues/fechas — ya no aplica sin segundo host.)*
 4. **No anunciar el hype — dejar que el dato aterrice solo:** "Y llegaron a Noruega" pega más que "el dato que les va a volar la cabeza es que llegaron a Noruega".
 5. **Apertura:** no volcar la agenda completa del episodio ("hoy vamos a ver A, B, C, D"); un solo gancho. Variar el dispositivo de apertura entre episodios (cold open dentro de una escena es opción válida).
 6. **Listas → una escena:** en vez de enumerar 5-7 nombres/hitos, elegir UNO y darle una escena vívida; el resto va a show notes. Nunca recitar la misma cadena/secuencia dos veces en un episodio.
 7. **Transiciones de contenido, no meta-anuncios:** prohibido "nos vamos a recomendaciones" / "ya vamos a avanzar"; la última frase de un segmento contiene el gancho del siguiente.
 8. **Turnos cortos:** bloques escritos largos invitan a rellenar con muletillas al improvisar — preferir turnos más cortos con interrupciones diseñadas.
-9. **Lint al terminar el guion:** contar ocurrencias de muletillas (regla 1) y réplicas de validación (regla 2) antes de entregar; reportar el conteo junto con el balance 70/30.
+9. **Lint al terminar el guion:** contar ocurrencias de muletillas (regla 1) y líneas de validación (regla 2) antes de entregar; reportar el conteo. *(El balance 70/30 co-host ya no aplica — formato solo desde EP.005.)*
 
 **Formato HTML de scripts (EP.003 v2 en adelante):**
-- Bloques de diálogo: sin fondo, solo borde izquierdo sutil (gris Andrés, azul claro Juan)
+- Bloques de diálogo: sin fondo, solo borde izquierdo sutil (gris Andrés; azul claro Juan, ya no aplica en episodios solo — un solo color desde EP.005)
 - Bloques info (dato, leyenda, recomendacion): tint muy claro, no fondos oscuros
 - Container: 780px · Fuente base: 15px · Line-height: 1.85
 - Referencia CSS canónica: `mrputridsden-production\scripts\EP003-raices-del-rock-sister-rosetta-tharpe.html`
@@ -131,7 +143,7 @@ Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para t
 4. [INTERCAMBIO natural]
 5. Bloque de preguntas — Bloque B
 6. Cierre con el invitado (dónde encontrarlo)
-7. Segmento de Promoción (Juan) — AL FINAL
+7. Segmento de Promoción (Andrés) — AL FINAL
 8. Outro music (30 seg)
 ```
 
@@ -217,7 +229,7 @@ Si un guion aparece como `deleted` en `git status`:
 - Web: www.mrputridsden.com
 - General: hello@mrputridsden.com
 - Andrés: Andres@mrputridsden.com
-- Juan: Juan@mrputridsden.com
+- Juan: Juan@mrputridsden.com — inactivo, Juan dejó el proyecto el 2026-07-17
 - GitHub: https://github.com/AndyB840506/claude-code-skills.git
 - Google Drive: drive.google.com/drive/folders/1_gblT3LGmOIyY5Ia7NllqrK7VYMJ2ikR
 

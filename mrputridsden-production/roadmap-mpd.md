@@ -12,10 +12,17 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.003 | Las raices del rock: Sister Rosetta Tharpe | publicado - rendimiento bajo vs EP.002 (ver nota de audiencia) |
 | EP.004 P1 | Kraken: el Titan del Rock colombiano (Parte 1) | en Spotify - programado viernes 2026-06-19 (link listo) |
 | EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | grabado - sale ~2026-06-20 |
-| EP.005 P1 | Aterciopelados: una gomela, un punkero (Parte 1) | guion listo (2 partes) - plan de grabacion + artwork listos; sin grabar |
-| EP.005 P2 | Aterciopelados (Parte 2) | guion listo - mismo guion; sin grabar |
+| EP.005 | Aterciopelados: una gomela, un punkero | guion co-host (P1+P2, ~90 min) DESCARTADO - reescribir solo, episodio unico ~43 min - sin grabar |
 
 ---
+
+**Cambio de formato (2026-07-17):** Juan dejo el proyecto, Andres continua solo desde EP.005 en
+adelante. El guion co-host de EP.005 (Aterciopelados, P1+P2, ~90 min) ya escrito queda descartado
+- se reescribe como episodio unico de ~43 min (nuevo sweet spot de retencion, decision de Andres)
+antes de grabacion. El default de 2 partes queda retirado para episodios nuevos (ver memoria
+`project_mpd_episodes_two_parts`, RETIRED). Ver memoria `project_mpd_juan_departure` y
+`podcast-profile.json` (formato_historico, duracion_nota, word_count_target_nota,
+roadmap_9_episodes).
 
 **Notas:**
 - Seeded desde memoria `mrputridsden_project` (snapshot 2026-06-05).

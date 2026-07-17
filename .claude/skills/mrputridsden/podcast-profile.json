@@ -1,17 +1,14 @@
 {
   "nombre": "Mr. Putrid's Den",
   "tagline": "Donde los riffs encuentran el whisky",
-  "descripcion_corta": "Conversaciones entre Andrés y Juan sobre bandas, rock, metal, jazz y géneros variados. Espacio para riffs, pasión y Jack Daniel's.",
-  "descripcion_larga": "Mr. Putrid's Den es un podcast conversacional co-hosted por Andrés y Juan, un espacio dedicado a explorar rock, metal, jazz y múltiples géneros musicales. Con Juan como promotor de eventos underground, el podcast invita artistas emergentes, comparte historias de conciertos únicos, y ofrece análisis profundo de bandas y álbumes icónicos. Un lugar donde la música, la conversación natural y la pasión por los riffs se encuentran.",
-  "formato": "co-host",
+  "descripcion_corta": "Andrés explora bandas, rock, metal, jazz y géneros variados en solitario. Espacio para riffs, pasión y Jack Daniel's.",
+  "descripcion_larga": "Mr. Putrid's Den es un podcast conversacional conducido por Andrés en solitario (formato co-host con Juan hasta EP.004/EP.005 — Juan dejó el proyecto el 2026-07-17, Andrés continúa solo), un espacio dedicado a explorar rock, metal, jazz y múltiples géneros musicales. El podcast invita artistas emergentes, comparte historias de conciertos únicos, y ofrece análisis profundo de bandas y álbumes icónicos. Un lugar donde la música, la conversación natural y la pasión por los riffs se encuentran.",
+  "formato": "solo",
+  "formato_historico": "co-host (Andrés y Juan) hasta EP.004, 2 partes por defecto por profundidad de investigación — Juan dejó el proyecto el 2026-07-17. EP.005 en adelante: solo, episodio único de ~43 min (ya no 2 partes por defecto).",
   "host": [
     {
       "nombre": "Andrés",
       "bio": "TBD — actualizar antes del primer episodio con invitado"
-    },
-    {
-      "nombre": "Juan",
-      "bio": "Promotor de eventos musicales underground"
     }
   ],
   "audiencia": {
@@ -21,7 +18,8 @@
   },
   "tono": "Casual, conversacional, experto pero accesible, con humor e irreverencia. Mezcla de discusión seria y entretenimiento.",
   "categoria": "Entretenimiento / Música",
-  "duracion_min": 60,
+  "duracion_min": 43,
+  "duracion_nota": "43 min = sweet spot de retención definido por Andrés (2026-07-17, tras salida de Juan) — reemplaza el target anterior de 60 min co-host. Un solo episodio, ya no 2 partes por defecto (ver formato_historico).",
   "cadencia": "Semanal",
   "plataformas": [
     "Spotify",
@@ -35,20 +33,21 @@
   "logo_descripcion": "Estilo vintage póster de concierto + rock clásico. Colores: negro profundo, crimson/rojo profundo (#9B1C1C), plateado/acero (#A8A8A8). Elementos: referencias a bandas icónicas, whisky, vinilos, estética underground/conciertos. Sin naranja. Vibe: cuero, metal clásico, backstage.",
   "numeracion": "EP.002",
   "estilo_narración": "mixto",
-  "word_count_target": 3500,
+  "word_count_target": 5500,
+  "word_count_target_nota": "Estimado sin calibrar (~130 wpm narración solo) — no hay wpm real medido para formato solo todavía. Recalibrar creando `guion-style-mpd.md` con el wpm real tras la primera grabación solo (ver 01-episodio.md Paso 0).",
   "intro_template": "Stevie Ray Vaughn meets Black Label Society: guitarra blues eléctrica + heavy metal, con voz femenina gutural que abre el espacio. Puro impacto sonoro de 30 segundos. Referencia: audio/WhatsApp Video 2026-05-14 Intro.mp4",
   "outro_template": "Jazz 1950s estilo Billie Holiday + cierre con trio de mujeres de época. Lyrics: 'Mmm, that's the sound, the last chord's gone now / The den, it's still warm, a shelter from the storm / Just a velvet haze to end these golden days / Sweet dreams, until we meet'. Nostalgia, calidez, despedida elegante. Referencia: audio/WhatsApp Video 2026-05-14 Outro.mp4",
   "lenguaje": "colombiano_casual",
   "intro_silla_putrida_template": "Esta semana en Mr. Putrid's Den tenemos La Silla Pútrida. Hoy el episodio completo gira alrededor de un invitado especial. Póngase cómodo, que esto está bueno.",
   "segmento_promocion": {
-    "conductor": "Juan",
+    "conductor": "Andrés",
     "posicion_normal": "bloque_intermedio",
     "posicion_silla_putrida": "al_final",
     "fuente_eventos": "eventos.json"
   },
   "reglas_tono": [
     "Español colombiano casual — bogotano moderno, sin arcaísmos. Natural, directo, con humor e irreverencia. Sin regionalismos de otras épocas o países. Al oyente: 'usted' o 'ustedes'. Entre hosts: tuteo natural. NUNCA: 'sumerce', 'cachaco', 'ala', 'chirriado', 'parcero', 'bacano', 'vosotros', 'vos', 'ché', 'tío'.",
-    "Conversación natural con estructura — El script es guía, no lectura. Lanza premisas, datos, anécdotas, y deja que fluya entre Andrés y Juan. Parece improviso, pero está scaffolded.",
+    "Conversación natural con estructura — El script es guía, no lectura. Lanza premisas, datos, anécdotas, y deja que fluya como monólogo conversacional de Andrés. Parece improviso, pero está scaffolded.",
     "Respeta a los artistas y eventos — Cuando hables de bandas, artistas emergentes o eventos underground, hazlo con admiración y conocimiento. Evita burla superficial.",
     "Datos + opinión + anécdota — Cada episodio debe tener: un dato sorprendente, análisis profundo, y una historia personal de concierto o música. Mezcla lo informativo con lo emocional.",
     "Whisky, riffs y conversación — El podcast es sobre tres cosas: la música, la amistad, y el disfrute. Mantén ese balance. Auténtico, no académico ni chismoso."
@@ -81,7 +80,7 @@
   "contacto": {
     "general": "hello@mrputridsden.com",
     "andres": "Andres@mrputridsden.com",
-    "juan": "Juan@mrputridsden.com"
+    "juan_historico": "Juan@mrputridsden.com — inactivo, Juan dejó el proyecto el 2026-07-17"
   },
   "musica": {
     "intro": "Creado",
@@ -131,23 +130,25 @@
       "title": "Jazz fusion: De Herbie Hancock a hoy",
       "pillar": "Historia de género",
       "genre": "jazz / jazz fusion",
-      "type": "co-host",
-      "description": "Cómo jazz y rock se fusionan, evolución del género, referencias clave."
+      "type": "solo",
+      "description": "Cómo jazz y rock se fusionan, evolución del género, referencias clave.",
+      "nota": "Título del roadmap general EP.005 — el episodio en producción activa (Aterciopelados) usa este slot; ver roadmap-mpd.md. Reescrito solo (Juan dejó el proyecto 2026-07-17, guion co-host previo descartado)."
     },
     {
       "ep": 6,
       "title": "¿The Beatles o Led Zeppelin? El debate definitivo",
       "pillar": "Debate clásico",
       "genre": "rock clásico / pop",
-      "type": "co-host",
-      "description": "Andrés vs Juan: ¿quién cambió más la música? Discografía, influencia, legado."
+      "type": "solo",
+      "description": "Andrés arma el caso para ambos lados: ¿quién cambió más la música? Discografía, influencia, legado.",
+      "nota": "Reescrito solo — formato original era debate Andrés vs Juan (Juan dejó el proyecto 2026-07-17)"
     },
     {
       "ep": 7,
       "title": "Stories: Conciertos únicos que nos marcaron",
       "pillar": "Curiosidades/historias",
       "genre": "formato especial — multi-género",
-      "type": "co-host",
+      "type": "solo",
       "description": "Anécdotas personales de conciertos, encuentros con bandas, momentos memorables."
     },
     {
@@ -155,23 +156,25 @@
       "title": "Entrevista: [Artista emergente]",
       "pillar": "Invitado artista",
       "genre": "según el invitado — confirmar antes de grabar",
-      "type": "co-host + guest",
-      "description": "Juan trae a un artista emergente. Hablamos de su proceso, influencias, planes."
+      "type": "solo + guest",
+      "description": "Andrés trae a un artista emergente (fuente de contacto por definir sin Juan como promotor). Hablamos de su proceso, influencias, planes.",
+      "nota": "Requiere fuente de contacto de artistas emergentes — Juan la cubría como promotor; ver Questions to Answer"
     },
     {
       "ep": 9,
       "title": "Spotlight: Eventos underground que no te puedes perder",
       "pillar": "Info conciertos",
       "genre": "formato especial — multi-género",
-      "type": "co-host",
-      "description": "Juan comparte eventos, conciertos próximos, bandas locales emergentes en Bogotá."
+      "type": "solo",
+      "description": "Andrés comparte eventos, conciertos próximos, bandas locales emergentes en Bogotá.",
+      "nota": "Requiere fuente de eventos underground — Juan la cubría como promotor; ver Questions to Answer"
     },
     {
       "ep": 10,
       "title": "Rock progresivo: Yes, Genesis y la complejidad sonora",
       "pillar": "Historia de género",
       "genre": "prog rock",
-      "type": "co-host",
+      "type": "solo",
       "description": "Explorar prog-rock, sintetizadores, estructuras complejas, influencia en metal moderno."
     },
     {
@@ -179,7 +182,7 @@
       "title": "New music reaction: Escuchamos lo que nos envían",
       "pillar": "Reacciones a música nueva",
       "genre": "formato especial — multi-género",
-      "type": "co-host",
+      "type": "solo",
       "description": "Reacción en vivo a música nueva de bandas, artistas emergentes, géneros variados."
     }
   ]

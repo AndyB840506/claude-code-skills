@@ -5,7 +5,7 @@ description: "Master context skill para el podcast Mr. Putrid's Den — producci
 
 # Mr. Putrid's Den — Skill Router
 
-Workspace exclusivo del podcast **Mr. Putrid's Den** de Andres y Juan.
+Workspace exclusivo del podcast **Mr. Putrid's Den** de Andres, en solitario desde EP.005 (formato co-host con Juan hasta EP.004 — Juan dejó el proyecto el 2026-07-17).
 
 Al invocarse, saludar al usuario en cachaco clasico bogotano y confirmar que los archivos de contexto fueron cargados (podcast-profile.json y glosario-cachaco.md).
 
