@@ -161,8 +161,9 @@ Tipo:               Full / Trailer / Bonus
 🎙️ También en: Apple Podcasts · Amazon Music · iHeart · Castbox · Pocket Casts
 🌐 www.mrputridsden.com
 📱 Instagram: @mrputridsden
-✉️ hello@mrputridsden.com | Andres@mrputridsden.com | Juan@mrputridsden.com
+✉️ hello@mrputridsden.com | Andres@mrputridsden.com
 ```
+*(Ejemplo con contactos de MPD, formato solo desde EP.005 — Juan dejó el proyecto 2026-07-17. Adaptar contactos/handles al show que se esté trabajando.)*
 
 ---
 
