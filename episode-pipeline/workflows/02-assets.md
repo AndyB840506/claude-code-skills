@@ -111,6 +111,26 @@ vez de bloquear en serie.
 
 ---
 
+## Chequeo de consistencia — título/tagline (ambas rutas)
+
+Antes de cerrar Stage B, verifica que el título/tagline del episodio sea el MISMO en
+los tres lugares donde vive independientemente: el guion/script, la metadata de show
+notes, y el artwork. Cada uno se genera en un paso separado y puede terminar con una
+frase distinta si cada uno se deriva de una fuente distinta (ej. el guion trae su
+propio tagline en el header, pero el artwork puede venir de un brief visual anterior
+con otra frase) — nadie los cruza automáticamente. Detectado en MPD EP.005: la
+metadata usaba el tagline del guion ("una gomela, un punkero") mientras el artwork ya
+aprobado usaba otro ("de un bar de Bogotá al continente"), y quedó así hasta que el
+usuario lo notó después de cerrar ambos pasos.
+
+**Regla:** al generar la metadata (show notes) DESPUÉS de que el artwork ya esté
+aprobado, usa el título/tagline del artwork como fuente de verdad — es lo que el
+oyente ve primero y ya pasó por aprobación. Si el artwork se genera después de la
+metadata, es al revés. En cualquier orden, el segundo artefacto en completarse debe
+leer el título ya fijado por el primero, no derivar el suyo propio.
+
+---
+
 ## Al terminar (ambas rutas)
 
 1. Confirma: "Assets generados — [N] archivos. Prompts de cover-art listos para

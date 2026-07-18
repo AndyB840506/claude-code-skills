@@ -92,6 +92,31 @@ Template: `comfyui/templates/zimage-txt2img-api.json`.
   (`Image.paste(asset, pos, mask)`), nunca un paste opaco — así solo los píxeles de
   contenido real se componen y el negro programático se ve continuo. Ver el fix aplicado
   en `comfyui/templates/portada-compose.py` (tira de íconos sobre el footer).
+- **Negar rasgos faciales en el positivo puede EMPEORAR el resultado, no solo no
+  ayudar** (segunda instancia confirmada, aprendido 2026-07-17, MPD EP.005 Q3): pedir
+  explícitamente "her face never visible", "no nose or lips visible" en el prompt
+  positivo de una cantante de perfil produjo una cara MÁS iluminada y detallada que el
+  intento anterior sin esa negación — la trampa de la negación (ver arriba) también
+  aplica a rasgos anatómicos, no solo a objetos/conceptos. **Regla que sí funcionó:**
+  en vez de negar el rasgo, describir la posición de la fuente de luz y el ángulo de la
+  cabeza que produce el resultado deseado ("light source directly behind her, head
+  turned away from camera, hair falling over where her face would be") — control
+  geométrico/lumínico positivo, no una lista de prohibiciones.
+- **Consistencia visual de un sujeto recurrente a través de varias generaciones
+  separadas** (aprendido 2026-07-17, MPD EP.005): al generar portada + múltiples quote
+  cards que retratan a la MISMA persona (real o de marca) en generaciones
+  independientes, cada prompt nuevo debe reusar literalmente los descriptores físicos
+  ya aprobados en la primera generación (corte de pelo, color, complexión) — no
+  redescribir "a la memoria" cada vez. En EP.005, la segunda tarjeta con la misma
+  cantante quedó con pelo largo ondulado tipo "cantante de jazz" en vez del corte bob
+  ya establecido en la portada, porque el prompt nuevo no copió la descripción exacta
+  del primero.
+- **Reusar assets de íconos/logos reales entre shows antes de regenerar** (aprendido
+  2026-07-17, MPD EP.005): los íconos de plataforma (Spotify, Apple Podcasts, Amazon
+  Music, redes sociales) son los mismos logos reales sin importar el show — si otro
+  show ya generó y validó una tira de íconos (ej. `E:\Podcast\BTQ\EP 22\BTQ Artwork EP 22\BTQ-icon-strip-source.png`),
+  recortar la fila/ícono que se necesita de ahí es más rápido y confiable que pedirle
+  al modelo que los regenere desde cero.
 
 ## Chroma (T5-flan encoder) — prompts DENSOS o look genérico (aprendido 2026-07-11)
 

@@ -71,6 +71,18 @@ Set-Location E:\AI\ComfyUI_windows_portable; .\python_embeded\python.exe -s Comf
 ```
 Run as background task. Stop with TaskStop on its task id (or user closes console window).
 
+## Compose scripts con texto acentuado (aprendido 2026-07-17, MPD EP.005)
+
+Invocar un script de composición PIL (`*-compose.py`) desde Bash/PowerShell con texto
+en español que lleva tildes/eñes como argumento de línea de comandos puede perder los
+acentos silenciosamente (ej. "Bogotá" → "Bogota") por escaping del shell, sin ningún
+error — el bug solo se nota al mirar la imagen resultante. **Regla:** estructurar el
+script de composición como una función importable (`def compose(...)`) además de su
+entrypoint CLI, y para texto con acentos invocarla desde un script Python chico con los
+strings como literales Python (`titulo = "Aterciopelados"`), nunca vía `sys.argv` desde
+el shell. Ver `comfyui/templates/mpd-portada-compose.py` y `mpd-quote-card-compose.py`
+para el patrón (ambos exponen `compose()`/`compose_quote_card()` importables).
+
 ## Gotchas learned during install
 - Git Bash `tar` is GNU tar — cannot extract .7z. Use Windows bsdtar: `& "$env:WINDIR\System32\tar.exe" -xf file.7z -C dest`.
 - ComfyUI repo moved: use `api.github.com/repositories/589831718/releases/latest` with `-L` (old comfyanonymous URL 301s).
