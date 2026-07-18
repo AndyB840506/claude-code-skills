@@ -1,4 +1,4 @@
-# Metadata EP.005 — Aterciopelados: una gomela, un punkero
+# Metadata EP.005 — Aterciopelados: De un bar de Bogotá al continente.
 
 > **Primer episodio solo.** Juan dejó el proyecto (2026-07-17); Andrés continúa solo desde este
 > episodio. Grabado el mismo día que se reescribió el guion. Episodio único, sin corte P1/P2
@@ -9,7 +9,7 @@
 ## Título
 
 ```
-EP.005 — Aterciopelados: una gomela, un punkero | Mr. Putrid's Den
+EP.005 — Aterciopelados: De un bar de Bogotá al continente. | Mr. Putrid's Den
 ```
 
 ## Descripción
@@ -55,7 +55,7 @@ Aterciopelados, Andrea Echeverri, Héctor Buitrago, El Dorado, rock colombiano, 
 - **Temporada:** 1
 - **Número de episodio:** 5
 - **Tipo:** Full
-- **Título:** Aterciopelados: una gomela, un punkero
+- **Título:** Aterciopelados: De un bar de Bogotá al continente.
 - **Host:** Andrés (solo — primer episodio sin Juan)
 - **Duración real:** ~36:48 total (habla efectiva 00:31–36:18 ≈ 35:47; outro cantado 36:21–36:48)
 - **Duración vs target:** corta vs el objetivo de 43 min (ver `guion-style-mpd.md`) — Andrés decidió publicar as-is
@@ -92,9 +92,8 @@ Aterciopelados, Andrea Echeverri, Héctor Buitrago, El Dorado, rock colombiano, 
   BTQ y salió corto (35.8 min de habla vs 42 min estimados). Datos reales ya calibrados en
   `guion-style-mpd.md` (159 wpm, +23.5% expansión) — el próximo guion (EP.006) usa el target
   correcto de ~5.543 palabras escritas.
-- **Artwork:** pendiente — no hay `artwork-ep005.md` de la versión solo todavía. Las imágenes
-  existentes en `E:\Podcast\MPD\EP 05\` (jpeg del 2026-06-17) corresponden a prompts generados
-  antes del cambio de formato — verificar si siguen sirviendo o si necesitan regenerarse.
+- **Artwork:** hecho 2026-07-17 vía pipeline local (ComfyUI + PIL) — portada 1:1/16:9/9:16 + 4
+  quote cards en `E:\Podcast\MPD\EP 05\artwork-local\`. Detalle en `artwork-ep005.md`.
 - **Pendiente decisión de Andrés:** ¿se menciona el paso a formato solo en el episodio o solo en
   show notes? El guion grabado NO lo menciona al aire, a propósito (ver nota de producción en el
   script). Esta metadata tampoco lo menciona todavía — a la espera de esa decisión.
