@@ -155,3 +155,13 @@
 - Gate heredado: aprobado por Andy sin ajustes
 - Checkpoint Spotify: pendiente — Andy va a publicar y pasar la URL
 - Resultado: OK — commit + push hechos (e6f8171)
+
+### Stage 3 (parcial) — Verificación de cover-art ya existente
+- Qué se hizo: al cerrar sesión, releídas las 3 imágenes finales con `Read` (no solo
+  confiar en la aprobación previa de Stage A) — detectado un patrón de circuito/PCB
+  dorado en la esquina superior derecha de 1:1 y 9:16, ausente en 16:9. Viola
+  `brand-constants.md` §Reglas #3 ("PCB/circuits: ONLY for AI/tech episodes — NEVER on
+  general covers") — EP.022 no es un episodio de tecnología. No fue detectado en las
+  rondas de aprobación de Stage A.
+- Resultado: FAIL parcial (1:1, 9:16) / PASS (16:9) — sin resolver, pendiente decisión
+  de Andy (aceptar o parchear antes de publicar)

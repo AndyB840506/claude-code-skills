@@ -169,10 +169,23 @@ generar en Flow, porque las imágenes ya existen y ya pasaron por aprobación. E
 puede saltar directo a la verificación de consistencia (checklist de marca) sobre los
 archivos ya existentes en vez de esperar una generación nueva.
 
-### Checklist de verificación (contra archivos ya existentes, no contra prompts nuevos)
+### Checklist de verificación (verificado leyendo los 3 archivos directamente — 2026-07-17)
 
-- [x] Render con volumen/textura real, no silueta plana
-- [x] EXACTAMENTE 1 figura (la supervisora de QA)
-- [x] Fondo con patrón de checkboxes, CERO círculos/anillos/diana
-- [x] Texto letra por letra verificado en la entrega (bug de footer detectado y corregido)
-- [x] Footer con las 2 filas de íconos completas, "EP.22" centrado y prominente
+- [x] Render con volumen/textura real, no silueta plana — las 3 imágenes
+- [x] EXACTAMENTE 1 figura (la supervisora de QA) — las 3 imágenes
+- [x] Texto letra por letra correcto — "El Costo de la Mala Calidad: por qué lo barato
+      sale carísimo" (1:1/9:16), "COSTO DE LA MALA CALIDAD / por qué lo barato sale
+      carísimo" (16:9), footer "Behind the Queue" / "EP.22" / "BTQ" — sin typos
+- [x] Footer con las 2 filas de íconos completas en 1:1 y 9:16; 16:9 sin footer por
+      diseño (thumbnail se recorta) — correcto
+- [x] CERO círculos/anillos/diana — confirmado, ninguna de las 3 imágenes los tiene
+- [ ] **FAIL parcial — patrón de fondo:** 1:1 y 9:16 muestran un patrón de circuito/PCB
+      dorado en la esquina superior derecha, en vez de (o además de) la retícula de
+      checkboxes pedida en el prompt. Esto viola la regla de marca `brand-constants.md`
+      §Reglas #3 / "PCB/circuits: ONLY for AI/tech episodes — NEVER on general covers"
+      — EP.022 es de calidad/BPO, no de tecnología. El 16:9 SÍ está limpio (fondo void
+      black puro, sin circuito). No se detectó en las rondas de aprobación previas
+      (ver `pipeline-audit-ep022.md`, Stage A Extra 2) — posible sesgo de "ya se veía
+      bien" al aprobar en pantalla chica. **Sin resolver — Andy decide si se acepta así
+      (las imágenes ya están publicadas/en producción) o si se corrige el 1:1 y 9:16
+      con un parche PIL sobre esa esquina antes de subir a Spotify/rotar el grid.**
