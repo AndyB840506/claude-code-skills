@@ -141,3 +141,17 @@
   guion aprobado, duración real ~42.5 min consistente con el estimado de 42.2 min).
 - Archivos generados: `E:\Transcriptor\transcripciones\BTQ EP 22.srt` (49.173 bytes)
 - Resultado: OK
+
+### Stage 2 — Generación de assets
+- Qué se hizo: `episode-launch` invocado con los 6 inputs resueltos desde el episode
+  brief (sin repreguntar) — SEO Spotify, plan social 4 días, metadata YouTube (11
+  capítulos con timestamps reales del SRT), y checklist de verificación del cover-art
+  (ya generado y aprobado en Stage A local, no se re-generaron prompts ni se pasó por
+  Stage 3 estándar de Flow). Fact-check de entidades reales dichas al aire vs. fuentes
+  del guion — sin errores. Chequeo de consistencia título/tagline entre guion, metadata
+  y artwork — documentado, sin conflicto real (artwork recorta "en Call Center" por
+  espacio, campo SEO lo mantiene para búsqueda).
+- Archivos generados: `btq-production/launch-assets/EP022-costo-calidad-launch.md`
+- Gate heredado: aprobado por Andy sin ajustes
+- Checkpoint Spotify: pendiente — Andy va a publicar y pasar la URL
+- Resultado: OK — commit + push hechos (e6f8171)
