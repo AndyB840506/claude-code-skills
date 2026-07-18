@@ -163,5 +163,10 @@
   `brand-constants.md` §Reglas #3 ("PCB/circuits: ONLY for AI/tech episodes — NEVER on
   general covers") — EP.022 no es un episodio de tecnología. No fue detectado en las
   rondas de aprobación de Stage A.
-- Resultado: FAIL parcial (1:1, 9:16) / PASS (16:9) — sin resolver, pendiente decisión
-  de Andy (aceptar o parchear antes de publicar)
+- Resultado: FAIL parcial (1:1, 9:16) / PASS (16:9) — Andy eligió "corregir con parche
+  PIL" (AskUserQuestion). Corregido: relleno de negro de marca con grano sutil sobre la
+  zona del circuito (esquina superior derecha), narrow left-seam blend para evitar
+  costura visible; figura, checklist en pantalla, texto y footer sin tocar. Originales
+  respaldados como `BTQ-EP022-COVER-1x1-approved-3000 (pre-pcb-fix backup).png` y
+  `BTQ-EP022-COVER-9x16 (pre-pcb-fix backup).png`. Re-verificado visualmente con `Read`
+  tras el parche — PASS en las 3 imágenes.
