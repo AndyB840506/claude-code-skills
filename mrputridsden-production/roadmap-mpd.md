@@ -12,22 +12,35 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.003 | Las raices del rock: Sister Rosetta Tharpe | publicado - rendimiento bajo vs EP.002 (ver nota de audiencia) |
 | EP.004 P1 | Kraken: el Titan del Rock colombiano (Parte 1) | en Spotify - programado viernes 2026-06-19 (link listo) |
 | EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | grabado - sale ~2026-06-20 |
-| EP.005 | Aterciopelados: una gomela, un punkero | guion listo (solo, episodio unico, ~42 min estimado / 4.616 palabras) - sin grabar |
+| EP.005 | Aterciopelados: una gomela, un punkero | grabado 2026-07-17 - `E:\Podcast\MPD\EP 05\MPD EP 05.mp3` (35MB) - primer episodio solo, duracion real ~35.8 min (SRT, por debajo del piso de 40 min - ver guion-style-mpd.md) |
 
 ---
 
 **Cambio de formato (2026-07-17):** Juan dejo el proyecto, Andres continua solo desde EP.005 en
 adelante. El guion co-host original de EP.005 (Aterciopelados, P1+P2, ~90 min) quedo descartado
-(recuperable via git history) y se reescribio el mismo dia como episodio unico solo, ~4.616
-palabras escritas / ~42 min estimados (formula real medida de BTQ, mismo host: 150 wpm + 35.5%
-expansion en vivo - ver `btq-production/guion-style-btq.md`). El default de 2 partes queda
-retirado para episodios nuevos (ver memoria `project_mpd_episodes_two_parts`, RETIRED). El
-segmento de Promocion (eventos underground) tambien se retiro del show, no se reasigno.
+(recuperable via git history) y se reescribio el mismo dia como episodio unico solo, 4.616
+palabras escritas. Se grabo el mismo dia. El default de 2 partes queda retirado para episodios
+nuevos (ver memoria `project_mpd_episodes_two_parts`, RETIRED). El segmento de Promocion (eventos
+underground) tambien se retiro del show, no se reasigno.
 
-**Pendiente antes de grabar EP.005:** (1) Andres decide si se menciona en el episodio o en show
-notes el paso a formato solo - el guion actual NO lo menciona al aire, a proposito, ver nota de
-produccion en el script; (2) grabar y generar el SRT real para calibrar `guion-style-mpd.md`
-propio (la duracion de 42 min es una formula prestada de BTQ, no wpm medido de MPD solo).
+**Calibracion real (2026-07-17, mismo dia, tras transcribir el SRT):** el guion se escribio con
+una formula PRESTADA de BTQ (150 wpm + 35.5% expansion) por no tener datos propios de MPD solo
+todavia - estimaba ~42 min. La grabacion real salio en ~35.8 min (SRT via WhisperX, sin
+diarizacion - un solo host): Andres habla mas rapido en MPD (159 wpm medido) pero expande menos
+en vivo (+23.5%, no +35.5%). Con datos reales ya calibrados en
+`mrputridsden-production/guion-style-mpd.md`, el proximo guion debe apuntar a ~5.543 palabras
+escritas para el target real de 43 min (antes se apuntaba a ~4.760 con la formula prestada).
+`podcast-profile.json` (`word_count_target`) ya actualizado a 5543.
+
+**Decision de Andres (2026-07-17):** EP.005 se publica AS-IS, sin padding ni re-grabacion pese a
+salir corto (~35.8 min vs 43 min target). El formula corregida (~5.543 palabras escritas,
+`guion-style-mpd.md`) se aplica desde EP.006 en adelante, no retroactivamente a EP.005.
+
+**Pendiente ahora:**
+1. Generar/actualizar Show Notes + Metadata (`ep005-metadata.md` no existe aun, crear) con la
+   duracion real ~35.8 min.
+2. Andres aun no ha decidido si se menciona el paso a formato solo en el episodio o solo en show
+   notes - el guion grabado NO lo menciona al aire, a proposito (ver nota de produccion en el script).
 
 Ver memoria `project_mpd_juan_departure` y `podcast-profile.json` (formato_historico,
 duracion_nota, word_count_target_nota, roadmap_9_episodes).
