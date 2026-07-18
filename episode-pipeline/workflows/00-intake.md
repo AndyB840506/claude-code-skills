@@ -74,6 +74,10 @@ Una vez tengas `show` y `ep_number`:
 4. Si el usuario dice que no, o si hay cero o más de un archivo que matchea el número,
    **no adivines** — pide la ruta directamente.
 
+**Excepción:** si el usuario ya dio la ruta exacta del audio al invocar el pipeline
+(no solo el número de episodio — ej. "corre el pipeline, grabé el EP.022 en E:\Podcast\...\BTQ EP 22.mp3"),
+eso ya es la confirmación — no repitas la pregunta, solo verifica que el archivo existe.
+
 El resultado de este paso llena el campo `audio_path` del brief.
 
 ---

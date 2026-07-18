@@ -5,6 +5,16 @@
 es donde se cierra ese loop: generar → validar contra las reglas estándar → corregir
 si falla → repetir hasta que pase.
 
+**Este stage siempre aplica, incluso si el cover-art ya fue generado y aprobado en
+Stage A** (ej. artwork local hecho antes de grabar). "Ya está aprobado" no es lo mismo
+que "ya está validado" — una aprobación previa pudo pasar por alto algo que solo se ve
+al releer la imagen con atención. Nunca declares este stage "N/A" ni marques su
+checklist sin haber invocado `Read` sobre los 3 archivos reales — eso es exactamente
+la "faja" que tumbó a BTQ EP.022: un checklist marcado `[x]` sin verificar dejó pasar
+un patrón de circuito/PCB en la portada que violaba una regla de marca vigente, y solo
+se detectó al re-chequear manualmente antes de cerrar la sesión. Si el set ya existe,
+ve directo al Paso 0 de abajo — no te lo saltes.
+
 ---
 
 ## Paso 0 — Preguntar si ya existen assets de una sesión previa
