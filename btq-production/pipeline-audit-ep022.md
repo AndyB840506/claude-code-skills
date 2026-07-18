@@ -124,3 +124,20 @@
   `BTQ-EP022-COVER-16x9.png`, `BTQ-EP022-COVER-9x16.png`, más `-scene-only-3000.png` y
   `BTQ-icon-strip-source.png` de respaldo.
 - Resultado: OK — 3 variantes aprobadas por Andy.
+
+## Stage B — Post-grabación
+
+### Stage 0 — Intake
+- Qué se hizo: Andy reportó grabación lista en `E:\Podcast\BTQ\EP 22\BTQ EP 22.mp3`
+  (viernes 2026-07-17, según lo planeado). Episode brief armado sin repreguntar —
+  título, cultural_ref, closing TM y fuentes ya estaban resueltos en el guion
+  aprobado (`EP022-costo-calidad-guion.html`) y en `pipeline-state-ep022.md`.
+- Resultado: OK — brief completo, arranca transcripción.
+
+### Stage 1 — Transcripción
+- Qué se hizo: audio copiado a `E:\Transcriptor\audios\BTQ EP 22.mp3` (41.1MB),
+  WhisperX large-v2 + diarización (es), corrido en background (proceso completó
+  exit 0, log revisado línea por línea — contenido del transcript coincide con el
+  guion aprobado, duración real ~42.5 min consistente con el estimado de 42.2 min).
+- Archivos generados: `E:\Transcriptor\transcripciones\BTQ EP 22.srt` (49.173 bytes)
+- Resultado: OK
