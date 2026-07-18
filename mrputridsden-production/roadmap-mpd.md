@@ -12,7 +12,7 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.003 | Las raices del rock: Sister Rosetta Tharpe | publicado - rendimiento bajo vs EP.002 (ver nota de audiencia) |
 | EP.004 P1 | Kraken: el Titan del Rock colombiano (Parte 1) | en Spotify - programado viernes 2026-06-19 (link listo) |
 | EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | grabado - sale ~2026-06-20 |
-| EP.005 | Aterciopelados: una gomela, un punkero | grabado 2026-07-17 - metadata lista (`ep005-metadata.md`), falta artwork y URL de Spotify - primer episodio solo, duracion real ~35.8 min habla / ~36.8 min total |
+| EP.005 | Aterciopelados: una gomela, un punkero | grabado 2026-07-17 - metadata y artwork listos, falta URL de Spotify - primer episodio solo, duracion real ~35.8 min habla / ~36.8 min total |
 
 ---
 
@@ -39,9 +39,12 @@ salir corto (~35.8 min vs 43 min target). El formula corregida (~5.543 palabras 
 **Pendiente ahora:**
 1. ~~Generar Show Notes + Metadata~~ - hecho 2026-07-17: `episodios/ep005-metadata.md` (titulo,
    descripcion EN/HTML, keywords, capitulos con timestamps reales del SRT, datos del episodio).
-2. Artwork del episodio - `artwork-ep005.md` de la version solo no existe todavia. Hay imagenes
-   en `E:\Podcast\MPD\EP 05\` fechadas 2026-06-17 (previas al cambio de formato) - verificar si
-   sirven o si se regeneran.
+2. ~~Artwork del episodio~~ - hecho 2026-07-17: regenerado vía pipeline local (ComfyUI + PIL),
+   primera vez que MPD usa este stack (antes solo BTQ/CCC). Portada 1:1/16:9/9:16 + 4 quote
+   cards en `E:\Podcast\MPD\EP 05\artwork-local\`. Detalle completo en `artwork-ep005.md`. Las
+   imágenes viejas de Flow (2026-06-17, pre-cambio de formato) quedan como referencia histórica,
+   no se usan para publicar. Herramientas nuevas reusables: `comfyui/templates/mpd-portada-compose.py`
+   y `mpd-quote-card-compose.py`.
 3. Andres aun no ha decidido si se menciona el paso a formato solo en el episodio o solo en show
    notes - ni el guion ni la metadata lo mencionan al aire, a proposito.
 4. Al publicar: agregar URL real de Spotify (placeholder en `ep005-metadata.md`), actualizar

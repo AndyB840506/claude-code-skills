@@ -1,4 +1,37 @@
-# Artwork EP.005 — Aterciopelados — Prompts (Google Flow)
+# Artwork EP.005 — Aterciopelados
+
+## REGENERADO 2026-07-17 vía pipeline local (ComfyUI + PIL) — versión vigente
+
+Los prompts de Google Flow más abajo quedan como **referencia histórica de dirección visual**
+(el primer intento, generado 2026-06-17, antes del cambio de formato solo). El set vigente para
+publicar se regeneró el mismo día del cambio de formato usando el stack local (Z-Image Turbo +
+composición determinista con PIL), siguiendo el patrón fijado desde BTQ EP.021
+(memoria `feedback_local_artwork_pipeline`). Primera vez que MPD usa este pipeline.
+
+**Assets finales:** `E:\Podcast\MPD\EP 05\artwork-local\`
+- `EP005-1x1-FINAL-print.png` (3000×3000, para impresión/Spotify) + `EP005-1x1-FINAL-FOR-UPLOAD.jpg` (JPEG q85, 477 KB, bajo el límite de 500 KB)
+- `EP005-16x9-FINAL.png` (1920×1080 — YouTube/web/LinkedIn)
+- `EP005-9x16-FINAL.png` (1080×1920 — Stories/Reels/TikTok)
+- `Q1-final.png` — La paradoja (guitarrista bajo un bombillo, silueta pura)
+- `Q2-final.png` — El takeaway (azotea sobre Bogotá al atardecer)
+- `Q3-final.png` — **Concepto nuevo:** dúo Cerati/Andrea cantando juntos en un mic vintage (evoca el Unplugged 1996), reemplaza el concepto original "la voz" de un solo cantante. Cita: "Una canción secreta, escrita para Cerati — nadie lo supo hasta que él murió."
+- `Q4-final.png` — El riesgo (Caribe Atómico): disco de vinilo disolviéndose en partículas
+
+**Herramientas creadas (reusables para futuros episodios de MPD):**
+- `comfyui/templates/mpd-portada-compose.py` — función `compose()`: tipografía de marca MPD (dots + wordmark + MPD + EP/título/tagline + footer con flor + iconos) sobre una escena ya generada. Alineación se infiere del aspect ratio.
+- `comfyui/templates/mpd-quote-card-compose.py` — función `compose_quote_card()`: mismo footer, gradiente oscuro inferior + cita de 2 líneas + atribución.
+- Ambos son **importables** (no solo CLI) para evitar el problema de tildes perdidas al pasar argumentos con acentos por shell — invocar con strings Python literales desde un script, no vía `sys.argv`.
+
+**Notas del proceso:**
+- Escenas generadas SIN texto horneado (regla de `docs/prompting.md`, aprendida BTQ EP.022) — el modelo nunca genera texto legible, todo el texto se compone con PIL después.
+- Icon strip del footer (Spotify/Apple Podcasts/Amazon Music) reutilizado recortando la fila inferior de `E:\Podcast\BTQ\EP 22\BTQ Artwork EP 22\BTQ-icon-strip-source.png` — mismos iconos reales, no hubo que regenerarlos.
+- Un artefacto de render (blip blanco) en la escena 16:9 original se corrigió con clone-stamp en PIL antes de componer (`EP005-16x9-FINAL.png` ya tiene el fix).
+- Q1 y Q3 (versión original "la voz") mostraban detalle facial parcial en el primer intento — resueltos con instrucciones de backlight más explícitas (Q1) y con un cambio de concepto completo (Q3, ver arriba). Lección: sobre-especificar "no mostrar X" en el positivo puede evocar X en vez de prevenirlo (confirmado en el segundo intento de Q3, que empeoró) — mejor describir la fuente de luz/ángulo que produce el resultado deseado que enumerar negaciones.
+- Portada 1:1 nativa a 1536×1536, luego upscale con `RealESRGAN_x4plus.pth` + `ImageScale` a 3000×3000 exacto — texto compuesto DESPUÉS del upscale, nunca antes (evita blur de PIL por un upscaler pensado para fotos).
+
+---
+
+## Prompts originales (Google Flow) — referencia histórica, no vigente
 
 Prompts para Google Flow (Imagen 3 / Nani Banana Pro). En inglés a propósito (los modelos responden mejor).
 
