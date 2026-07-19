@@ -68,6 +68,7 @@
     "pocket_casts": { "url": "https://pca.st/36g1ew1r", "status": "activo" },
     "instagram": { "url": "https://www.instagram.com/mrputridsden", "status": "activo", "handle": "@mrputridsden" },
     "facebook": { "url": "https://www.facebook.com/share/1BZis2wXSF/", "status": "activo" },
+    "tiktok": { "url": "", "status": "pausado", "nota": "Decisión de Andrés (2026-07-19) — no usar por ahora. No generar copy de TikTok en el plan social hasta que se reactive." },
     "youtube": { "url": "", "status": "pendiente", "nota": "Canal por crear" },
     "rss": { "url": "", "status": "pendiente", "nota": "Andrés proporciona al publicar EP.001" }
   },

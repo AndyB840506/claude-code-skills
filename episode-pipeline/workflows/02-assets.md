@@ -67,6 +67,12 @@ separado, alimentados con el episode brief + el SRT del Stage 1:
    — reutiliza la descripción de Spotify recién generada como base
 3. **`podcast-creator/workflows/03-artwork.md`** ("artwork")
    → genera `artwork-ep[NNN].md` con los 3 prompts (1:1/9:16/16:9)
+4. **`podcast-creator/workflows/04-social-media.md`** ("social media")
+   → genera `social-ep[NNN].md` (plan de lanzamiento 3 días, copy por plataforma)
+   — invócalo en esta misma etapa, junto con los otros tres, no lo dejes para después:
+   el plan social debe existir apenas el episodio está grabado/transcrito, sin esperar
+   a que esté en vivo en Spotify (aprendido en MPD EP.005, donde nadie lo generó hasta
+   2 días después de publicado porque este paso faltaba en la ruta MPD del pipeline).
 
 Para cada uno: si el episode brief ya tiene el dato que el Paso 1 del workflow pediría,
 sáltalo — pasa directo al paso de generación. Solo pregunta lo que genuinamente falte

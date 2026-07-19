@@ -8,7 +8,7 @@ Genera copy listo para publicar en 3 días, adaptado al episodio y a las platafo
 
 ## Paso 0 — Cargar datos
 
-1. Lee `podcast-profile.json`: nombre del podcast, host(s), tono, `reglas_tono`, `hashtags_base`, plataformas, links.
+1. Lee `podcast-profile.json`: nombre del podcast, host(s), tono, `reglas_tono`, `hashtags_base`, plataformas, links. Salta cualquier plataforma en `links` con `status: "pausado"` o `"pendiente"` — no generes su copy (déjala fuera del plan en vez de generarla y marcarla "no publicar" a mano).
 2. Busca el script del episodio (`episodio-[NNN]-*.md`). Si existe, lee el script completo y extrae:
    - La frase más impactante o memorable (para el Día 2)
    - El dato más sorprendente del episodio
@@ -35,6 +35,16 @@ Calcula automáticamente:
 - **Día 1 (Intriga):** 2 días antes de la fecha de publicación
 - **Día 2 (Contenido):** 1 día antes
 - **Día 3 (Lanzamiento):** día y hora de publicación
+
+**Fallback — episodio ya publicado antes de correr este workflow:** si el link de
+Spotify ya es una URL real (no "pendiente"), no hay ventana de intriga previa al
+lanzamiento. Renombra el plan a Día 1 (Lanzamiento) / Día 2 (Contenido) / Día 3
+(Recordatorio), arrancando Día 1 el día que se corre este workflow — no cuentes hacia
+atrás desde una fecha que ya pasó. Aplica el mismo cambio de tono: Día 1 usa el copy
+de CTA directo (ver plantilla de Día 3 más abajo) en vez del hook misterioso de
+intriga, Día 2 mantiene la quote de valor, y Día 3 se convierte en un último empujón
+antes de pasar al siguiente episodio. (Detectado en MPD EP.005, donde el plan se
+generó 2 días después de publicado.)
 
 ---
 
