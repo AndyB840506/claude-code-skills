@@ -60,7 +60,7 @@
   ],
   "links": {
     "web": "www.mrputridsden.com",
-    "spotify": { "url": "https://open.spotify.com/episode/0LW93D5Q5KhQYfIX96xOEH?si=4fee5140b6934fe6", "status": "activo", "nota": "EP.001 live — EP.002 live desde semana del 2026-05-27" },
+    "spotify": { "url": "https://open.spotify.com/show/0M12ujB9eJqr0dWZUwEf6B?si=b560e3e237554491", "status": "activo", "nota": "Link general del show (agregado 2026-07-19, reemplaza el link de EP.001 que se usaba como stand-in). Links por episodio siguen en cada ep00X-metadata.md." },
     "apple": { "url": "https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794", "status": "activo" },
     "amazon_music": { "url": "https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den", "status": "activo" },
     "iheart": { "url": "https://iheart.com/podcast/334702214/", "status": "activo" },

@@ -26,7 +26,7 @@ Andrés cuenta:
 🥃 Los discos que la prensa gringa amó y acá casi nadie nombra (Oye, Río, Claroscura)
 
 🎙️ Escúchanos en:
-   Spotify: [PENDIENTE — agregar URL al publicar]
+   Spotify: https://open.spotify.com/episode/2D129VK9H4sn7itPKjgz3W?si=9d09422fdab54fc6
    Apple Podcasts: https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794
    Amazon Music: https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den
    + iHeart, Castbox, Pocket Casts y más
@@ -41,7 +41,7 @@ Andrés cuenta:
 <p>Una niña de familia bien y un punkero de barrio obrero se cruzaron sin que sus mundos tuvieran ninguna razón para tocarse. Se enamoraron, terminaron rápido — y en vez de que la banda muriera con el romance, siguieron 30 años como la sociedad creativa más importante del rock colombiano. Esta es la historia de Aterciopelados.</p>
 <p>Andrés cuenta:</p>
 <p>🥃 De La Pestilencia (hardcore punk, barrio Restrepo) al Dorado — cómo un punkero se hizo aterciopelado<br>🥃 El Dorado (1995): un millón de copias, la voz de Andrea, y por qué el mundo dejó de pedirle perdón por sonar colombiana<br>🥃 Londres con Phil Manzanera, el riesgo de Caribe Atómico, y la revista Time nombrándolos junto a U2<br>🥃 El embarazo que puso la carrera en pausa — y el disco solista de Andrea sobre ser mamá<br>🥃 "Platónico": la canción secreta escrita para Gustavo Cerati, y la espina de 2010<br>🥃 Los discos que la prensa gringa amó y acá casi nadie nombra (Oye, Río, Claroscura)</p>
-<p>🎙️ Escúchanos en:<br>Spotify: [PENDIENTE — agregar URL al publicar]<br>Apple Podcasts: <a href="https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794">abrir en Apple</a><br>Amazon Music: <a href="https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den">abrir en Amazon</a><br>+ iHeart, Castbox, Pocket Casts y más</p>
+<p>🎙️ Escúchanos en:<br>Spotify: <a href="https://open.spotify.com/episode/2D129VK9H4sn7itPKjgz3W">abrir en Spotify</a><br>Apple Podcasts: <a href="https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794">abrir en Apple</a><br>Amazon Music: <a href="https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den">abrir en Amazon</a><br>+ iHeart, Castbox, Pocket Casts y más</p>
 <p>🌐 <a href="https://www.mrputridsden.com">www.mrputridsden.com</a><br>✉️ hello@mrputridsden.com | Andres@mrputridsden.com</p>
 ```
 
@@ -97,7 +97,6 @@ Aterciopelados, Andrea Echeverri, Héctor Buitrago, El Dorado, rock colombiano, 
 - **Pendiente decisión de Andrés:** ¿se menciona el paso a formato solo en el episodio o solo en
   show notes? El guion grabado NO lo menciona al aire, a propósito (ver nota de producción en el
   script). Esta metadata tampoco lo menciona todavía — a la espera de esa decisión.
-- **Pendiente al publicar:** agregar la URL real de Spotify al placeholder `[PENDIENTE]` en ambas
-  descripciones. Actualizar `roadmap-mpd.md` a "en Spotify" / "publicado".
+- **Publicado:** EP.005 en Spotify — https://open.spotify.com/episode/2D129VK9H4sn7itPKjgz3W
 - **Contacto:** sin Juan@mrputridsden.com (inactivo desde 2026-07-17, ver memoria
   `project_mpd_juan_departure`).

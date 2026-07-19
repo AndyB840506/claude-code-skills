@@ -12,7 +12,7 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.003 | Las raices del rock: Sister Rosetta Tharpe | publicado - rendimiento bajo vs EP.002 (ver nota de audiencia) |
 | EP.004 P1 | Kraken: el Titan del Rock colombiano (Parte 1) | en Spotify - programado viernes 2026-06-19 (link listo) |
 | EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | grabado - sale ~2026-06-20 |
-| EP.005 | Aterciopelados: una gomela, un punkero | grabado 2026-07-17 - metadata y artwork listos, falta URL de Spotify - primer episodio solo, duracion real ~35.8 min habla / ~36.8 min total |
+| EP.005 | Aterciopelados: De un bar de Bogotá al continente. | en Spotify - https://open.spotify.com/episode/2D129VK9H4sn7itPKjgz3W - primer episodio solo, duracion real ~35.8 min habla / ~36.8 min total |
 
 ---
 
@@ -45,10 +45,11 @@ salir corto (~35.8 min vs 43 min target). El formula corregida (~5.543 palabras 
    imágenes viejas de Flow (2026-06-17, pre-cambio de formato) quedan como referencia histórica,
    no se usan para publicar. Herramientas nuevas reusables: `comfyui/templates/mpd-portada-compose.py`
    y `mpd-quote-card-compose.py`.
-3. Andres aun no ha decidido si se menciona el paso a formato solo en el episodio o solo en show
-   notes - ni el guion ni la metadata lo mencionan al aire, a proposito.
-4. Al publicar: agregar URL real de Spotify (placeholder en `ep005-metadata.md`), actualizar
-   estado a "en Spotify" / "publicado" en esta tabla.
+3. ~~Decision sobre mencionar el paso a formato solo~~ - decidido 2026-07-19: queda sin
+   mencionar, ni en el episodio ni en show notes ni en redes.
+4. ~~Al publicar: agregar URL real de Spotify~~ - hecho 2026-07-19: publicado en
+   https://open.spotify.com/episode/2D129VK9H4sn7itPKjgz3W, `ep005-metadata.md` y esta tabla
+   actualizados.
 
 Ver memoria `project_mpd_juan_departure` y `podcast-profile.json` (formato_historico,
 duracion_nota, word_count_target_nota, roadmap_9_episodes).
