@@ -94,9 +94,9 @@ Aterciopelados, Andrea Echeverri, Héctor Buitrago, El Dorado, rock colombiano, 
   correcto de ~5.543 palabras escritas.
 - **Artwork:** hecho 2026-07-17 vía pipeline local (ComfyUI + PIL) — portada 1:1/16:9/9:16 + 4
   quote cards en `E:\Podcast\MPD\EP 05\artwork-local\`. Detalle en `artwork-ep005.md`.
-- **Pendiente decisión de Andrés:** ¿se menciona el paso a formato solo en el episodio o solo en
-  show notes? El guion grabado NO lo menciona al aire, a propósito (ver nota de producción en el
-  script). Esta metadata tampoco lo menciona todavía — a la espera de esa decisión.
+- **Decidido 2026-07-19:** el paso a formato solo queda SIN mencionar — ni en el episodio, ni en
+  show notes, ni en redes. El guion grabado ya no lo menciona al aire (a propósito); esta
+  metadata tampoco lo menciona, por diseño.
 - **Publicado:** EP.005 en Spotify — https://open.spotify.com/episode/2D129VK9H4sn7itPKjgz3W
 - **Contacto:** sin Juan@mrputridsden.com (inactivo desde 2026-07-17, ver memoria
   `project_mpd_juan_departure`).

@@ -3,8 +3,32 @@
 ## Paso 1 — Identificar el proyecto a deployar
 
 Pregunta (si no es obvio del contexto de la conversacion) cual proyecto/directorio se va a deployar. Ejemplos en este repo:
-- `mrputridsden-production/website` -> proyecto Vercel `v0-mr-putrids-den`
+- `mrputridsden-production/website` -> proyecto Vercel `mr-putrids-den-web` (dominio `mrputridsden.com`; renombrado 2026-07-19 tras el incidente del Paso 1b — el proyecto viejo `v0-mr-putrids-den` quedo huerfano/stale, no lo uses)
 - `btq-production/website` -> proyecto Vercel `website`
+
+## Paso 1b — Verificar que el link real coincide con el mapeo esperado
+
+**Mordio 2026-07-19:** `mrputridsden-production/website/.vercel/project.json` estaba
+linkeado al proyecto `website` — que es el proyecto REAL de BTQ, no de MPD. Causa mas
+probable: colision de nombre — la carpeta de MPD tambien se llama `website`, y en algun
+momento un `vercel link` (interactivo o con `--yes`) matcheo por nombre de carpeta y
+linkeo al proyecto existente equivocado en vez de crear uno nuevo. Correr `vercel --prod`
+desde ahi auto-alias el dominio real de BTQ (`behind-thequeue.com`) al build de MPD,
+tumbando produccion de otro show hasta que se detecto y se restauro.
+
+**Antes de correr `vercel --prod` (o `--prebuilt --prod`) desde cualquier directorio:**
+
+```bash
+cat <directory>/.vercel/project.json
+```
+
+Confirma que `projectName` coincide EXACTAMENTE con el esperado del Paso 1. Si no
+coincide (o si el nombre de la carpeta coincide con el nombre de OTRO proyecto Vercel
+conocido en este workspace — ej. una carpeta llamada `website` cuando existe un
+proyecto `website` de otro show/cliente), **STOP** — no deployes. Reporta el mismatch y
+pregunta al usuario como proceder (relinkear al proyecto correcto, o crear uno nuevo
+dedicado con `vercel link --project <nombre-unico-no-generico> --yes`, evitando nombres
+genericos como `website` que puedan volver a colisionar).
 
 ## Paso 2 — Verificar `.vercel/repo.json`
 
@@ -53,6 +77,13 @@ Corre un `curl -sI` (o equivalente) contra la URL de produccion del proyecto par
 - Otro host -> STOP y confirmar con el usuario el metodo de deploy.
 
 Si el host real no coincide con el metodo asumido, re-rutea el deploy Y actualiza el doc stale del repo en la misma sesion.
+
+**Si verificas con la tool WebFetch en vez de `curl`:** WebFetch cachea por URL ~15
+minutos. Re-verificar un dominio justo despues de arreglarlo (ej. confirmar que un
+alias se restauro) puede devolver la respuesta cacheada de ANTES del fix y parecer que
+el problema sigue ahi (mordio 2026-07-19 verificando la restauracion de BTQ). Agrega un
+query param cache-busting (`?cb=<algo unico>`) a la URL en cada refetch para forzar una
+lectura real, o usa `curl` que no tiene este problema.
 
 ## Paso 5 — Resumen
 
