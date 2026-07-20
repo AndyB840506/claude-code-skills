@@ -203,3 +203,12 @@
 - Archivos generados: `E:\Podcast\BTQ\EP 22\BTQ Artwork EP 22\BTQ-EP022-CARD1-16x9.png`,
   `BTQ-EP022-CARD2-16x9.png`, `BTQ-EP022-CARD3-16x9.png`
 - Resultado: OK — 3/3 quote cards aprobadas
+
+## Stage 4 — Rotación de grid
+- Qué se hizo: grid BTQ rotado de `020,019,018,017` a `021,020,019,018` — EP.021 (en
+  circulación antes de este lanzamiento) entra al grid al principio (orden descendente
+  BTQ), EP.017 sale. URL de EP.021 ya estaba registrada (badge "última pista"), reusada
+  tal cual. Badge "última pista"/hero actualizado a EP.022 (lt-n, lt-k, lt-t, href).
+- Episodio que entra: EP.021 | Episodio que sale: EP.017
+- Archivo modificado: `btq-production/website/index.html`
+- Resultado: OK
