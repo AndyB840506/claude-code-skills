@@ -97,6 +97,18 @@ lanzamiento domingo 19 · 8:00 PM Colombia, pico lunes 20 · 7–8 AM, refuerzo 
 - Dom: "Samsung perdió $5.300M por ahorrarse 2 semanas de pruebas. EP.22 ya disponible. 🎙️"
 - Mar: "Un papel. 5 pasos. 1.500 vidas salvadas. EP.22 en Spotify."
 
+## B2 · Quote cards — calendario corrido (post-lanzamiento)
+
+Formato 16:9, generadas local (ComfyUI + texto PIL), citas verbatim contra el SRT real.
+Calendario espaciado para no chocar con el pico del lunes 20 ni el refuerzo del martes 21
+(§B arriba) — Mié 22 / Vie 24 / Dom 26, todos verificados contra el calendario real.
+
+| Día | Card (archivo) | Plataforma | Caption |
+|---|---|---|---|
+| Mié 22-jul | BTQ-EP022-CARD1-16x9.png | LinkedIn (prioritaria, link en primer comentario) + Instagram/Facebook (repost, link en bio) | **LinkedIn:** «Nadie decidió, ese viernes, hacer las cosas mal. Simplemente decidieron, sin decirlo así, hacerlas rápido y arreglarlas después. Y esa es casi siempre la decisión más cara que existe.» —Behind the Queue, EP.022. ¿Qué decisión "rápida" tomó su equipo esta semana que todavía no le ha pasado factura? 🎧 Episodio completo en el primer comentario. #Liderazgo #BPO #ContactCenter #Calidad #BehindTheQueue · **Instagram/Facebook:** «Nadie decidió, ese viernes, hacer las cosas mal. Simplemente decidieron hacerlas rápido y arreglarlas después.» —Behind the Queue, EP.022 ⏰ La cuenta siempre llega, solo que en otro sobre. EP.022 disponible, link en bio. #BehindTheQueue #PodcastEnEspañol #Liderazgo #BPO #ContactCenter #Calidad #ServicioAlCliente #Operaciones #LATAM #Colombia #CustomerExperience |
+| Vie 24-jul | BTQ-EP022-CARD2-16x9.png | LinkedIn (prioritaria, link en primer comentario) + Instagram/Facebook (repost, link en bio) | **LinkedIn:** «Samsung no ahorró dos semanas de pruebas. Las cambió por 5.300 millones de dólares, un producto insignia enterrado, y meses reconstruyendo la confianza de sus propios clientes.» —Behind the Queue, EP.022. El costo de no conformidad no se ve chiquito hasta que se ve gigante en el balance del año. 🎧 Episodio completo en el primer comentario. #Liderazgo #BPO #ContactCenter #Calidad #GestiónDeCalidad #BehindTheQueue · **Instagram/Facebook:** «Samsung no ahorró dos semanas de pruebas. Las cambió por 5.300 millones de dólares.» —Behind the Queue, EP.022 📱 Lo barato sale carísimo. EP.022 disponible, link en bio. #BehindTheQueue #PodcastEnEspañol #Liderazgo #BPO #ContactCenter #Calidad #ServicioAlCliente #Operaciones #LATAM #Colombia #CustomerExperience |
+| Dom 26-jul | BTQ-EP022-CARD3-16x9.png | LinkedIn (prioritaria, link en primer comentario) + Instagram/Facebook (repost, link en bio) | **LinkedIn:** «La prevención casi no cuesta nada. Un papel, cinco pasos, una tarjeta plastificada. Lo que sí cuesta, y cuesta en vidas o en millones, es confiarle a la memoria de una sola persona, bajo presión, algo que un checklist de sesenta segundos pudo haber cubierto.» —Behind the Queue, EP.022. Cierre de semana: ¿su operación tiene ese checklist de sesenta segundos escrito, o todavía depende de la memoria de alguien bajo presión? 🎧 Episodio completo en el primer comentario. #Liderazgo #BPO #ContactCenter #MejoraContinua #BehindTheQueue · **Instagram/Facebook:** «La prevención casi no cuesta nada. Lo que sí cuesta es confiarle a la memoria de una persona, bajo presión, lo que un checklist pudo haber cubierto.» —Behind the Queue, EP.022 ✈️ EP.022 disponible, link en bio. #BehindTheQueue #PodcastEnEspañol #Liderazgo #BPO #ContactCenter #Calidad #ServicioAlCliente #Operaciones #LATAM #Colombia #CustomerExperience |
+
 ---
 
 ## C · YouTube Metadata

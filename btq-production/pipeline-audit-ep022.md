@@ -170,3 +170,36 @@
   respaldados como `BTQ-EP022-COVER-1x1-approved-3000 (pre-pcb-fix backup).png` y
   `BTQ-EP022-COVER-9x16 (pre-pcb-fix backup).png`. Re-verificado visualmente con `Read`
   tras el parche — PASS en las 3 imágenes.
+
+## Stage 3 — Validación de imágenes (formal, 2026-07-20)
+- Qué se hizo: Spotify confirmado por Andy (episode/6ewMTUO0FGNxfIMS0u55Yu), checkpoint
+  cerrado. Set ya existente (generado en Stage A, corregido en el hallazgo de arriba) —
+  releídas las 3 imágenes con `Read` y aplicado el checklist formal de
+  `episode-launch/docs/brand-constants.md` (no existe `btq-project/workflows/artwork.md`).
+
+### Ronda 1 (única — el fix del PCB ya se hizo antes de este stage formal)
+- Imagen 1:1   → Regla de margen: PASS (tipografía en tercio superior/inferior, sujeto+monitor en tercio central) · Split-scene: N-A · Referencia oficial: N-A (personaje original) → PASS
+- Imagen 16:9  → Regla de margen: PASS (título en tercio izquierdo negro, figura en el resto) · Split-scene: N-A · Referencia: N-A → PASS
+- Imagen 9:16  → Regla de margen: PASS (escena en tercio superior, título+footer en tercio inferior) · Split-scene: N-A · Referencia: N-A → PASS
+- Resultado: OK — 3/3 imágenes con veredicto PASS
+
+## Stage 3b — Material de marketing
+- Qué se hizo: plan social ya venía de Stage 2 (episode-launch), sin regenerar — solo
+  confirmado. Quote cards: Andy eligió "generar ahora (local)" (AskUserQuestion) — 3
+  REMATE del guion (Hook/Ana, Samsung, hospital+avión). Escenas vía ComfyUI local
+  (Z-Image Turbo, 960×1080, void black + rim light dorado, formato 16:9 desde EP.021).
+  **2 rondas de fallos de patrón vetado antes de aprobar:** ronda 1 (CARD1/CARD2)
+  reinsertó el anillo/diana concéntrico vetado (mismo patrón de falla que Flow, ahora
+  confirmado también en generación local) — CARD3 salió con texto ilegible/mal escrito
+  en el clipboard ("Pre Filelt"). Ronda 2 con prohibición reforzada: CARD2 quedó limpio,
+  CARD1 mejoró pero la tela del cubículo tenía una textura de mini-círculos repetidos
+  (detectado con zoom, no a simple vista) — ronda 3 forzó un divisor de metal liso sin
+  textura, PASS. CARD3 ronda 2 ya salió limpio (líneas en blanco, sin texto legible).
+  Citas verificadas verbatim contra la transcripción real (Stage 1) antes de componer —
+  las 3 coinciden con lo dicho al aire (con limpieza aprobada de muletillas/conectores).
+  Texto compuesto con PIL (`quote-card-compose.py`, invocado vía script Python con
+  strings literales para no perder tildes por escaping de shell) — verificado letra por
+  letra y seam de composición muestreado a nivel de píxel (10,10,10 exacto en los 3).
+- Archivos generados: `E:\Podcast\BTQ\EP 22\BTQ Artwork EP 22\BTQ-EP022-CARD1-16x9.png`,
+  `BTQ-EP022-CARD2-16x9.png`, `BTQ-EP022-CARD3-16x9.png`
+- Resultado: OK — 3/3 quote cards aprobadas
