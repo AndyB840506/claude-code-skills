@@ -2,7 +2,7 @@
 
 **Fecha:** 2026-07-17 (grabado viernes) · **Show:** Behind the Queue · **Duración:** ~41:10 (SRT real)
 **Audio:** `E:\Podcast\BTQ\EP 22\BTQ EP 22.mp3` · **SRT:** `E:\Transcriptor\transcripciones\BTQ EP 22.srt`
-**Spotify URL:** pending
+**Spotify URL:** https://open.spotify.com/episode/6ewMTUO0FGNxfIMS0u55Yu
 
 Fact-check: transcript cotejado línea por línea contra el guion aprobado
 (`EP022-costo-calidad-guion.html`) y sus fuentes verificadas — Philip Crosby / "Quality Is
@@ -89,7 +89,7 @@ lanzamiento domingo 19 · 8:00 PM Colombia, pico lunes 20 · 7–8 AM, refuerzo 
 | Mar 21 (refuerzo) | LinkedIn | El checklist de cinco pasos que bajó una tasa de infección hospitalaria de 11% a cero no era medicina nueva — era una hoja de papel frente a los ojos de alguien, con autoridad para detener al médico más importante del hospital si se saltaba un paso. En el EP.22 cuento esa historia y la del avión de 1935 que la originó. Su operación probablemente ya tiene el proceso que necesita ese mismo tratamiento. #Liderazgo #BPO #ContactCenter #MejoraContinua #BehindTheQueue |
 | Mar 21 (refuerzo) | Instagram / Facebook | Un papel. Cinco pasos. 1.500 vidas salvadas. 🏥✈️ La prevención casi nunca cuesta lo que creemos — corregir después sí. EP.22 disponible en Spotify. #BehindTheQueue #PodcastEnEspañol #Liderazgo #BPO #ContactCenter #Calidad #Operaciones #LATAM #Colombia #GestiónDeEquipos |
 
-**Primer comentario LinkedIn (domingo y lunes):** "🎧 Escúchalo aquí: [URL de Spotify — pendiente de publicación]"
+**Primer comentario LinkedIn (domingo y lunes):** "🎧 Escúchalo aquí: https://open.spotify.com/episode/6ewMTUO0FGNxfIMS0u55Yu"
 
 **TikTok (2–3 líneas, los 4 días):**
 - Vie: "1979: un libro con un título que suena a chiste. 😅 Domingo les cuento por qué no es chiste."
@@ -129,7 +129,7 @@ CONTENIDO DEL EPISODIO
 
 ENCUENTRA BTQ EN
 🌐 behind-thequeue.com
-🎧 Spotify: [URL del show]
+🎧 Spotify: https://open.spotify.com/episode/6ewMTUO0FGNxfIMS0u55Yu
 📩 andy@behind-thequeue.com
 💼 LinkedIn: Andrés Bermúdez Rodríguez
 📸 Instagram: @behindthequeue84

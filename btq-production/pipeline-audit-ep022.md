@@ -153,7 +153,7 @@
   espacio, campo SEO lo mantiene para búsqueda).
 - Archivos generados: `btq-production/launch-assets/EP022-costo-calidad-launch.md`
 - Gate heredado: aprobado por Andy sin ajustes
-- Checkpoint Spotify: pendiente — Andy va a publicar y pasar la URL
+- Checkpoint Spotify: confirmado 2026-07-20 — https://open.spotify.com/episode/6ewMTUO0FGNxfIMS0u55Yu
 - Resultado: OK — commit + push hechos (e6f8171)
 
 ### Stage 3 (parcial) — Verificación de cover-art ya existente
