@@ -30,6 +30,14 @@ pregunta al usuario como proceder (relinkear al proyecto correcto, o crear uno n
 dedicado con `vercel link --project <nombre-unico-no-generico> --yes`, evitando nombres
 genericos como `website` que puedan volver a colisionar).
 
+**No confundir con falsa alarma (verificado 2026-07-20, deploy EP.022 BTQ):** el output
+de `vercel --prod` imprime "Deploying `<team-slug>/<project-name>`" — el team-slug es el
+nombre de la cuenta/equipo de Vercel del usuario (ej. `mrputridsden`, aunque el deploy
+sea de BTQ), NO el proyecto al que apunta. Ver ese slug no es evidencia de la colisión de
+arriba. Lo que sí confirma un deploy correcto es: `project.json` ya validado ANTES de
+correr el comando (paso de arriba) + la línea final `▲ Aliased <dominio-correcto>` del
+output. Si ambos coinciden con lo esperado, el team-slug del output es irrelevante.
+
 ## Paso 2 — Verificar `.vercel/repo.json`
 
 Lee `c:\Users\andre\.claude\skills\.vercel\repo.json`. Para el proyecto que se va a deployar:

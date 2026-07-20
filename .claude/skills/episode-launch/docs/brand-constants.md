@@ -228,14 +228,22 @@ Ver `btq-production/launch-assets/EP020-metricas-launch.md` §E como primera apl
 de esta dirección (las 4 quote cards reescritas 2026-07-05, anillo de fondo retirado en
 la misma sesión).
 
-**Patrones de fallo conocidos de Flow (aplicar preventivamente, no esperar a que falle):**
+**Patrones de fallo conocidos (aplicar preventivamente, no esperar a que falle — NO
+es exclusivo de Flow, confirmado también en generación LOCAL):**
 - **Reinserta el anillo genérico solo:** aunque el prompt pida otro fondo (bullpen,
-  medidores, display de turnos, fila de escritorios), Flow tiende a devolver el anillo
-  dorado de la portada igual — pasó en Q1, Q3 y Q4 de EP.020 en su primer intento. Por
-  eso, TODO prompt de imagen BTQ — portada Y quote cards (salvo la escena donde el
-  anillo/diana ES el sujeto) — debe incluir DESDE EL PRIMER intento la línea explícita:
-  "DO NOT render any concentric ring, circle, halo, or archery-target pattern anywhere
-  in this image." No esperar a la primera falla para agregarla.
+  medidores, display de turnos, fila de escritorios), el modelo tiende a devolver el
+  anillo dorado de la portada igual — pasó en Q1, Q3 y Q4 de EP.020 en Flow, y de nuevo
+  en EP.022 (2026-07-20) generando LOCAL con Z-Image Turbo (reloj con anillos
+  concéntricos de fondo, batería con diana dorada en la tapa) pese a la prohibición
+  explícita desde el primer intento — hicieron falta 2-3 rondas de prompts reforzados.
+  **Puede colarse disfrazado de textura**, no solo como anillo grande y obvio: en EP.022
+  una tela de cubículo salió cubierta de docenas de mini-círculos repetidos, invisible a
+  tamaño completo y solo detectado al hacer zoom/crop a una esquina antes de aprobar —
+  ver `comfyui/docs/troubleshooting.md`. Por eso, TODO prompt de imagen BTQ — portada Y
+  quote cards (salvo la escena donde el anillo/diana ES el sujeto) — debe incluir DESDE
+  EL PRIMER intento la línea explícita: "DO NOT render any concentric ring, circle,
+  halo, or archery-target pattern anywhere in this image." No esperar a la primera falla
+  para agregarla, y no confiar solo en la vista general de la imagen para descartarlo.
 - **Autocorrige palabras deliberadamente sin tilde:** si el texto de una card pide una
   palabra sin acento por regla de marca (ej. "NUMERO", "TERMOMETRO") pero es la
   ortografía estándar del español con tilde, Flow puede seguir renderizándola acentuada
