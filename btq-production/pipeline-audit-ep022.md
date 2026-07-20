@@ -212,3 +212,23 @@
 - Episodio que entra: EP.021 | Episodio que sale: EP.017
 - Archivo modificado: `btq-production/website/index.html`
 - Resultado: OK
+
+## Stage 5 — Deploy + verificación
+- Qué se hizo (Paso 1, preflight): proyecto Vercel `website` confirmado (projectId/orgId
+  en `btq-production/website/.vercel/project.json`, sin colisión con MPD), directorio +
+  `vercel.json` válidos (sin `ignoreCommand` — flujo estándar), sin secrets expuestos,
+  baseline de producción HTTP 200 (host confirmado Vercel).
+- Resultado preflight: PASS
+- Qué se hizo (Paso 2, gate): resumen pre-deploy presentado a Andy — aprobado ("Si
+  hagamos deploy"). Andy confirmó que el plan social ya quedó programado en Meta por
+  fuera del pipeline.
+- Qué se hizo (Paso 3, deploy): `vercel --prod` desde `btq-production/website/` →
+  aliased a `https://behind-thequeue.com` (deployment `dpl_EWJ7oXedxm3rUHmWBCFtMoV5yw6E`).
+- Qué se hizo (Paso 4, verificación HTTP): `curl` con cache-bust → HTTP 200, contenido
+  confirmado en vivo (no caché viejo): badge `lt-n">022<`, grid `t-num">021<`, URL de
+  Spotify de EP.022 presentes en el HTML servido.
+- Qué se hizo (Paso 5, verificación Spotify): WebFetch contra la página pública del show
+  → EP.22 aparece primero en el listado, título coincide exacto con la metadata generada.
+- URL verificada: https://behind-thequeue.com → HTTP 200
+- Verificación Spotify: PASS — episodio encontrado en la página del show
+- Resultado: OK — episodio publicado y verificado en vivo
