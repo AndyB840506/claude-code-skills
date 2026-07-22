@@ -78,6 +78,65 @@ liderazgo para un supervisor/gerente de BPO de ~40 años. La chispa no viene de 
 
 ---
 
+## ADN estructural de los episodios pilar SEO (fijado 2026-07-21, tras el giro a 100% pilar SEO)
+
+Comparación EP.020 (Goodhart, "más profesional" según Andy) vs. borrador inicial de EP.023
+(Hawthorne, sentía menos peso) confirmó qué es lo que hace que un pilar SEO pegue fuerte.
+**No es una plantilla literal a repetir episodio tras episodio** — el tema, los casos y la
+ejecución cambian siempre; esto es el ADN que debe estar presente, no el guion mismo:
+
+1. **2-3 casos reales y NOMBRADOS, con consecuencias severas y verificables** (despidos,
+   multas, cárcel, muertes) — no solo "la teoría y sus matices". EP.020 tuvo tres: Wells
+   Fargo (fraude, 5.300 despedidos, multa), VA Hospital (muertes documentadas, renuncia de
+   un secretario), Atlanta Public Schools (condenas penales bajo ley RICO).
+2. **Los casos escalan en gravedad** a lo largo del episodio — el primero (negocios/plata),
+   el de re-enganche el más grave (vidas humanas), el de Referencias Cruzadas en un mundo
+   totalmente distinto a los dos anteriores.
+3. **Un segmento con dato duro y verificado, específico de la industria de call center/BPO**
+   (no solo de "otro mundo") — en EP.020 fue SQM Group (correlación FCR-CSAT 1:1). Sin esto,
+   el episodio se siente teórico en vez de aplicable.
+4. **El giro/re-enganche al 60% no tiene que ser siempre un caso más** — puede ser (como en
+   EP.023 con el reanálisis de Levitt & List 2011) una vuelta de tuerca sobre el propio
+   material ya presentado. Es un diferenciador válido, no una desviación del ADN, siempre que
+   los 2-3 casos nombrados con consecuencias severas también estén presentes en el episodio.
+
+**Antes de dar por buena la arquitectura de un pilar SEO nuevo**, verificar contra esta
+lista: ¿hay al menos 2 casos reales y nombrados con consecuencias severas? ¿escalan? ¿hay un
+dato duro propio de call center? Si falta alguno, buscarlo antes de escribir el guion
+completo — no agregarlo después como parche.
+
+---
+
+## Frases de cajón prohibidas (detectadas 2026-07-21, feedback Andy)
+
+EP.020 y EP.022 repitieron casi textual el mismo disclaimer autodesestimativo:
+"Y no, tranquilos, [no me volví economista / esto no se convierte en un pódcast de
+contabilidad] de un momento a otro — sigo sin [entender un balance general / saber
+leer un estado de resultados], así que descuiden". Al aparecer dos veces seguidas ya
+suena a fórmula, no a chispa espontánea (contradice la regla 3: "nunca repetir la
+misma frase textual >3×" aplica también a frases *casi* idénticas entre episodios
+distintos, no solo dentro de uno).
+
+**No usar disclaimers de cajón tipo "tranquilos, esto no es un pódcast de X" para
+aligerar un tramo técnico.** Si un segmento se pone denso, alivianarlo con la escena,
+el humor específico del caso, o una pregunta directa al oyente — nunca con una
+disculpa genérica por hablar de números/teoría. Antes de entregar un guion, releer
+contra los guiones anteriores (no solo el propio) buscando este tipo de muletilla
+estructural repetida.
+
+## Título con nombre del creador cuando el episodio ancla en una ley/teoría específica
+
+**Feedback Andy (2026-07-21):** cuando el episodio gira alrededor de una ley o teoría
+con autor identificable (ej. Ley de Goodhart, Philip Crosby / Cost of Poor Quality),
+el título debe nombrar a ese creador — no solo describir el concepto en abstracto.
+EP.020 y EP.022 no lo hicieron (títulos genéricos: "Métricas y KPIs...", "El Costo de
+la Mala Calidad...") y quedó como oportunidad perdida de anclar autoridad y
+searchability real. Aplica principalmente a episodios **pilar SEO** (sin referente
+pop) — los pop-culture siguen la fórmula `EP.XX — [Referente]: [frase con keyword]`
+de abajo, que ya trae su propio ancla de búsqueda.
+
+---
+
 ## Estructura canónica del episodio (pop-culture) — seguir desde el primer borrador
 
 Derivado de comparar EP.018 (completo) vs. un primer borrador de EP.019 que se quedó corto
@@ -106,6 +165,12 @@ BTQ pop-culture lleva, en orden, estos bloques. No omitir ninguno al escribir el
 7. **Recomendaciones de Andy — diversificadas.** Máximo UNA atada al referente (la peli/disco
    del episodio); las otras saltan fuera (un libro de otro mundo, una charla, otra peli). NO
    las tres dentro del mismo tema/época. Mezclar medios: película + libro + charla.
+   **Nunca repetir la misma recomendación (ni la misma referencia cruzada) entre episodios**
+   (feedback Andy 2026-07-21). Antes de cerrar las 3 recomendaciones o las referencias cruzadas
+   de un guion nuevo, grepear `btq-production/launch-assets/*.html` por el título candidato — si
+   ya apareció en otro episodio, descartarlo y buscar otro. Precedente: EP.023 (Matrix) descartó
+   "Moneyball" (ya en EP.020) y "Sully" (ya en EP.022) por esta regla, y confirmó por grep que
+   Baudrillard / Kathryn Schulz / The Big Short no se habían usado antes.
 8. **Cierre canónico** (NO omitir nada de esto — es la firma de BTQ):
    - **Pregunta comentable** que interpela al oyente sobre SU situación.
    - **CTA de comentarios:** "escríbanlo en los comentarios del episodio, en Spotify, los leo
@@ -248,6 +313,15 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
 - [ ] Remates: contar bloques `REMATE` → **máx ~3-4 por episodio**, no uno por segmento.
 - [ ] Puente referente→BPO: que NO se repita la misma frase ("llévenlo a su piso") — variar cada vez.
 - [ ] Muletillas: máx 1 "imagínense", 0 "me vuela la cabeza" (igual que MPD).
+- [ ] **Sin disclaimers de cajón** tipo "tranquilos, esto no es un pódcast de X" para
+      aligerar un tramo técnico (repetido casi textual en EP.020/EP.022 — ver sección
+      dedicada arriba). Si el título ancla en una ley/teoría con autor, confirmar que
+      el nombre del creador está en el título.
+- [ ] **Sin "Andy" en tercera persona dentro del guion hablado** (detectado 2026-07-21,
+      EP.023 borrador Hawthorne: "del tipo que Andy, personalmente, desconfía..." — debía
+      ser "yo, personalmente, desconfío"). BTQ es solo host narrando en primera persona
+      todo el episodio; "Andy" en tercera persona solo es válido como etiqueta de sección
+      ("Recomendaciones de Andy") o en la firma canónica del cierre ("Yo soy Andy").
 - [ ] Frase larga: ninguna oración que no se pueda decir de un respiro; partir las cadenas de guiones.
 - [ ] Al menos 2-3 momentos de humor/guiño/autoconciencia repartidos.
 - [ ] Datos verificados (fuentes reales, nada inventado); lo dudoso marcado [VERIFICAR].
