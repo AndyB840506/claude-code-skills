@@ -87,9 +87,16 @@ show (sistema tipográfico propio, nunca mezclar — ver memoria
 | BTQ | reglas vigentes en `.claude/skills/episode-launch/docs/brand-constants.md` (dirección de artwork CONGELADA: póster gráfico, siluetas a contraluz sobre dorado #C9A84C, footer fijo). El skill `btq-project` no existe (2026-06-26); brand-constants.md es la fuente real. Ejemplo aplicado: `btq-production/launch-assets/EP019-gladiator-artwork.md` |
 | MPD | `podcast-creator/workflows/03-artwork.md` + sistema tipográfico en memoria `mrputridsden_project` |
 
-**No generes las imágenes todavía** — eso ocurre en la etapa de validación (Stage C),
-junto con el resto del material visual. Aquí solo se preparan los prompts para
-tenerlos listos cuando llegue ese momento.
+**Corre un test de validación local en ComfyUI antes de cerrar Stage A** (práctica real
+desde EP.021/EP.022, confirmada explícitamente por Andy 2026-07-21 — este paso decía
+antes "no generes las imágenes todavía", desactualizado). No es la producción final:
+1-2 renders a 1024×1024 (`comfyui/workflows/run-and-generate.md`) para validar que la
+dirección conceptual funciona (composición, ausencia de círculos/anillos vetados, si
+hay persona: rasgos étnicos declarados explícitamente — ver `comfyui/docs/prompting.md`)
+antes de que Andy vaya a grabar. Mostrar el render al usuario y esperar aprobación
+explícita del concepto. El escalado a producción (3000×3000 vía upscale, 16:9, 9:16,
+composición de texto con PIL) y las quote cards SÍ quedan para más cerca del cierre del
+episodio (mismo patrón que EP.022 "Extra 2") — no es bloqueante para la pausa de Stage A.
 
 ---
 

@@ -42,6 +42,15 @@ Template: `comfyui/templates/zimage-txt2img-api.json`.
 - **Personajes conocidos: declarar proporciones canon explícitas** ("a tall adult man,
   his head is about one quarter of his total height, long legs") — sin eso el render
   tiende a chibi/cabezón (BTQ EP.021, Homero).
+- **Personas genéricas (sin referente conocido): declarar rasgos étnicos explícitos en
+  el positivo** (aprendido 2026-07-21, BTQ EP.023) — sin esa descripción, Z-Image Turbo
+  cae por defecto en un hombre de rasgos asiáticos independientemente del contexto de la
+  escena (agente de call center genérico, sin ninguna pista étnica en el prompt). No es
+  un error del render, es el sesgo por defecto del modelo ante un prompt neutro. Regla:
+  cualquier escena con una persona SIN referente conocido debe declarar explícitamente
+  rasgos/etnia en el positivo (ej. "a Latino man in his 30s", "a Black woman in her 40s",
+  "a white man with a beard") — no dejarlo implícito ni asumir que "persona genérica" el
+  modelo lo va a variar solo.
 - **Flat in = flat out:** pedir "flat colors / cel shading plano" produce imagen sin
   sombras aunque la escena tenga fuentes de luz. Para covers dramáticos describir la
   iluminación SIEMPRE (rim light, lado en sombra, sombra proyectada, oclusión) — para
@@ -51,6 +60,13 @@ Template: `comfyui/templates/zimage-txt2img-api.json`.
   que ELIMINAR estructura (no solo retocarla), destruirla primero (blur pesado en PIL) y
   luego re-texturizar enmascarado a denoise ~0.4 — a denoise medio la estructura
   subyacente sobrevive y se repinta más nítida.
+- **Conceptos de "luz partida" (mitad iluminada / mitad en sombra de la misma persona u
+  objeto) necesitan ángulo frontal, no 3/4** (aprendido 2026-07-21, BTQ EP.023): un
+  ángulo de tres cuartos solo muestra un lado de la cara/cuerpo a cámara, así que no hay
+  línea de división visible aunque el prompt la pida explícitamente. Fix: pedir "facing
+  the camera directly, frontal angle" + describir la línea de luz como "hard-edged...
+  sharp and straight, not a soft gradient" en vez de "rim light" (que sugiere solo un
+  borde, no una mitad completa).
 - **Un adjetivo de color cerca de la luz/fondo tiñe todo el fondo**, aunque se pida
   "void black" en otra parte del prompt (ej. "faint red glow dissolving into shadow" →
   fondo completo rojo, no negro puro; aprendido 2026-07-13, BTQ EP.021 CARD1 en el

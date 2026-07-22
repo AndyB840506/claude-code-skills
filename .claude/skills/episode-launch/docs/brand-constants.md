@@ -101,6 +101,14 @@ primer plano de cara.
    es válida por defecto; sumar una segunda a otra escala SOLO si la relación (maestro/
    aprendiz, líder/sucesor) es parte central de la historia de ese episodio específico —
    no inventar un segundo personaje que no viene al caso.
+1b. **Episodios pilar SEO (sin referente pop): preferir un objeto/símbolo literal del
+   contenido en vez de una persona genérica** (patrón confirmado 3/3 — EP.020: diana de
+   tiro al blanco, EP.022: checklist con una casilla vacía, EP.023: foco incandescente
+   vintage + headset). Ventajas sobre usar una persona sin referente conocido: evita el
+   sesgo de etnia por defecto del modelo local (ver `comfyui/docs/prompting.md`, bit
+   2026-07-21) y ancla la imagen directo al contenido del capítulo en vez de a una escena
+   genérica de oficina. Si una persona SÍ es necesaria (ej. la escena del hook necesita un
+   protagonista), declarar rasgos étnicos explícitos en el prompt — nunca dejarlo implícito.
 2. **Render con volumen y textura de material, nunca silueta plana.** Músculo, armadura,
    tela con sombreado real + luz dorada de contorno — como una estatua oscura iluminada
    desde atrás, no un recorte negro liso (esa era la falla de v1).

@@ -66,10 +66,16 @@ nativo directo a la resolución final.
   ver `docs/prompting.md`.
 
 ## Launch (headless, from Claude)
+**Use the PowerShell tool, not Bash** — Git Bash silently eats single backslashes in
+unquoted Windows path arguments (`--output-directory E:\AI\outputs` arrives at the
+process as `E:AIoutputs`, breaking the output dir) — confirmed 2026-07-21, BTQ EP.023.
 ```powershell
-Set-Location E:\AI\ComfyUI_windows_portable; .\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build --output-directory E:\AI\outputs
+Set-Location E:\AI\ComfyUI_windows_portable; Start-Process -FilePath ".\python_embeded\python.exe" -ArgumentList "-s ComfyUI\main.py --windows-standalone-build --output-directory E:\AI\outputs" -WindowStyle Hidden -RedirectStandardOutput "E:\AI\comfyui-stdout.log" -RedirectStandardError "E:\AI\comfyui-stderr.log"
 ```
-Run as background task. Stop with TaskStop on its task id (or user closes console window).
+Run as a background PowerShell task. After launch, confirm with `curl .../system_stats`
+that `argv` shows the correct un-mangled path. Server logs land in the two redirected
+files — check `comfyui-stderr.log` for tracebacks on any generic 500 from the API (see
+`troubleshooting.md`). Stop with TaskStop on its task id, or close the process/console.
 
 ## Compose scripts con texto acentuado (aprendido 2026-07-17, MPD EP.005)
 
