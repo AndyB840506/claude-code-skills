@@ -1,17 +1,16 @@
 <style>
   :root{
-    /* Paleta muestreada del artwork vigente (MPD-T2-PORTADA-FINAL-3000.jpg),
+    /* Paleta muestreada del artwork vigente (MPD-T2-ESCENA-OFICIAL-3000.jpg),
        no propuesta de memoria. Los hex marcados "muestra" salen del pixel real. */
-    --medianoche:#16100D;      /* fondo */
-    --cuero:#20150F;           /* muestra: butaca capitone */
-    --madera:#463931;          /* muestra: estanteria */
-    --piedra:#8A7A6A;          /* muestra: marmol de la chimenea */
-    --ambar:#C98A4B;           /* whisky + luz de fuego */
-    --fuego:#F7BC84;           /* muestra: llama. Uso minimo, solo highlight */
-    --barrica:#5A2620;         /* lomos rojos de los libros */
+    --medianoche:#0B1A39;      /* muestra: el azul mas profundo de la escena */
+    --tinta:#151E3B;           /* muestra: butaca capitone */
+    --humo:#2C2F43;            /* muestra: estanteria */
+    --piedra:#55555B;          /* muestra: marmol de la chimenea */
+    --brasa:#D9BF7A;           /* muestra: pico del fuego. Unico calido del sistema */
     --polvo:#E7DDC9;           /* texto principal */
-    --polvo-dim:#A89B84;       /* texto secundario */
-    --linea:#33271F;
+    --polvo-dim:#9AA3B8;       /* texto secundario, azulado */
+    --linea:#242C47;
+    --alerta:#C9736A;          /* semantico, no de paleta: solo para la columna "Nunca" */
     --display: 'Bookman Old Style', Bookman, 'Book Antiqua', Georgia, serif;
     --body: 'Segoe UI', system-ui, -apple-system, sans-serif;
     --mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
@@ -32,13 +31,13 @@
   /* fuego de chimenea: un resplandor calido bajo el wordmark. Sin simbolos. */
   .hero::before{
     content:""; position:absolute; inset:0;
-    background:radial-gradient(300px 170px at 50% 92%, rgba(201,138,75,.20), transparent 72%);
+    background:radial-gradient(300px 170px at 50% 92%, rgba(217,191,122,.16), transparent 72%);
     pointer-events:none;
   }
   .hero > *{ position:relative; }
   .eyebrow{
     font-family:var(--mono); font-size:12px; letter-spacing:.28em;
-    text-transform:uppercase; color:var(--ambar); margin-bottom:26px;
+    text-transform:uppercase; color:var(--brasa); margin-bottom:26px;
   }
   .wordmark{
     font-family:var(--display); font-weight:700; text-transform:uppercase;
@@ -46,7 +45,7 @@
     font-size:clamp(28px, 6.4vw, 58px); color:var(--polvo);
     text-shadow:0 2px 30px rgba(0,0,0,.7);
   }
-  .rule{ width:78px; height:2px; background:var(--ambar); margin:26px auto 24px; border:0; }
+  .rule{ width:78px; height:2px; background:var(--brasa); margin:26px auto 24px; border:0; }
   .tagline{
     font-family:var(--display); font-style:italic;
     font-size:clamp(16px,2.4vw,21px); color:var(--polvo-dim); text-wrap:balance;
@@ -57,26 +56,26 @@
   section{ padding:56px 0; border-bottom:1px solid var(--linea); }
   .kicker{
     font-family:var(--mono); font-size:12px; letter-spacing:.24em; text-transform:uppercase;
-    color:var(--ambar); margin-bottom:18px; display:flex; align-items:center; gap:12px;
+    color:var(--brasa); margin-bottom:18px; display:flex; align-items:center; gap:12px;
   }
-  .kicker::before{ content:""; width:22px; height:1px; background:var(--ambar); }
+  .kicker::before{ content:""; width:22px; height:1px; background:var(--brasa); }
   h2{
     font-family:var(--display); font-weight:700; font-size:clamp(21px,3.2vw,29px);
     color:var(--polvo); margin-bottom:18px; text-wrap:balance;
   }
   p{ color:var(--polvo); margin-bottom:14px; max-width:62ch; }
   p.lead{ font-size:18px; }
-  em.amber{ color:var(--fuego); font-style:normal; }
+  em.amber{ color:var(--brasa); font-style:normal; }
 
   /* ---------- PALETTE ---------- */
   .swatches{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-top:8px; }
-  .sw{ border:1px solid var(--linea); border-radius:6px; overflow:hidden; background:var(--cuero); }
+  .sw{ border:1px solid var(--linea); border-radius:6px; overflow:hidden; background:var(--tinta); }
   .sw .chip{ height:78px; }
   .sw .meta{ padding:10px 12px; }
   .sw .nm{ font-size:13px; font-weight:600; color:var(--polvo); }
   .sw .hex{ font-family:var(--mono); font-size:12px; color:var(--polvo-dim); text-transform:uppercase; }
   .sw .use{ font-size:11px; color:var(--polvo-dim); margin-top:4px; line-height:1.4; }
-  .sw .src{ font-family:var(--mono); font-size:10px; color:var(--ambar); margin-top:5px; letter-spacing:.08em; text-transform:uppercase; }
+  .sw .src{ font-family:var(--mono); font-size:10px; color:var(--brasa); margin-top:5px; letter-spacing:.08em; text-transform:uppercase; }
 
   /* ---------- TYPE ---------- */
   .typerow{ padding:16px 0; border-top:1px solid var(--linea); }
@@ -84,46 +83,46 @@
   .type-label{ font-family:var(--mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--polvo-dim); margin-bottom:8px; }
   .samp-display{ font-family:var(--display); font-weight:700; font-size:34px; color:var(--polvo); }
   .samp-body{ font-family:var(--body); font-size:16px; color:var(--polvo); max-width:62ch; }
-  .samp-mono{ font-family:var(--mono); font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--ambar); }
+  .samp-mono{ font-family:var(--mono); font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--brasa); }
 
   /* ---------- LOCKUP ---------- */
   .lockup{
     background:
       linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.15) 45%, rgba(0,0,0,.72)),
-      radial-gradient(180px 110px at 50% 52%, rgba(201,138,75,.28), transparent 70%),
-      var(--cuero);
+      radial-gradient(180px 110px at 50% 52%, rgba(217,191,122,.22), transparent 70%),
+      var(--tinta);
     border:1px solid var(--linea); border-radius:8px; padding:34px 30px 30px; text-align:center;
   }
   .lockup .lk-wordmark{ font-family:var(--display); font-weight:700; text-transform:uppercase; letter-spacing:.16em; font-size:15px; color:var(--polvo); }
-  .lockup .lk-rule{ width:56px; height:2px; background:var(--ambar); margin:14px auto 26px; }
-  .lockup .lk-season{ font-family:var(--body); font-weight:600; font-size:12px; letter-spacing:.3em; text-transform:uppercase; color:var(--ambar); margin-bottom:12px; }
+  .lockup .lk-rule{ width:56px; height:2px; background:var(--brasa); margin:14px auto 26px; }
+  .lockup .lk-season{ font-family:var(--body); font-weight:600; font-size:12px; letter-spacing:.3em; text-transform:uppercase; color:var(--brasa); margin-bottom:12px; }
   .lockup .lk-title{ font-family:var(--display); font-weight:700; font-size:clamp(26px,4.6vw,42px); color:var(--polvo); line-height:1.06; text-wrap:balance; }
   .lockup .lk-sub{ margin-top:14px; font-style:italic; color:var(--polvo-dim); font-family:var(--display); font-size:15px; }
 
   /* ---------- TAGLINES ---------- */
   ul.tags{ list-style:none; display:grid; gap:10px; margin-top:6px; }
   ul.tags li{ padding-left:20px; position:relative; color:var(--polvo); font-family:var(--display); font-style:italic; font-size:17px; }
-  ul.tags li::before{ content:""; position:absolute; left:0; top:.75em; width:9px; height:1px; background:var(--ambar); }
-  .primary-tag{ color:var(--fuego) !important; }
+  ul.tags li::before{ content:""; position:absolute; left:0; top:.75em; width:9px; height:1px; background:var(--brasa); }
+  .primary-tag{ color:var(--brasa) !important; }
 
   /* ---------- DO / DONT ---------- */
   .cols{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:6px; }
   @media(max-width:620px){ .cols{ grid-template-columns:1fr; } }
-  .card{ background:var(--cuero); border:1px solid var(--linea); border-radius:8px; padding:20px 22px; }
+  .card{ background:var(--tinta); border:1px solid var(--linea); border-radius:8px; padding:20px 22px; }
   .card h3{ font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase; margin-bottom:14px; }
-  .card.do h3{ color:var(--ambar); }
-  .card.dont h3{ color:var(--barrica); filter:brightness(1.7); }
+  .card.do h3{ color:var(--brasa); }
+  .card.dont h3{ color:var(--alerta); }
   .card ul{ list-style:none; display:grid; gap:9px; }
   .card li{ font-size:14px; color:var(--polvo); padding-left:18px; position:relative; }
-  .card.do li::before{ content:"—"; position:absolute; left:0; color:var(--ambar); }
+  .card.do li::before{ content:"—"; position:absolute; left:0; color:var(--brasa); }
   .card.dont li::before{ content:"\00d7"; position:absolute; left:0; color:#A6483C; }
 
-  .measured{ background:var(--cuero); border:1px solid var(--linea); border-left:3px solid var(--ambar); border-radius:8px; padding:20px 24px; margin-top:8px; }
+  .measured{ background:var(--tinta); border:1px solid var(--linea); border-left:3px solid var(--brasa); border-radius:8px; padding:20px 24px; margin-top:8px; }
   .measured p{ margin-bottom:8px; }
   .measured p:last-child{ margin-bottom:0; }
 
   .foot{ padding-top:40px; color:var(--polvo-dim); font-size:13px; text-align:center; }
-  .foot .mono{ font-family:var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--ambar); }
+  .foot .mono{ font-family:var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--brasa); }
 </style>
 
 <div class="guarida">
@@ -158,19 +157,29 @@
     <!-- PALETA -->
     <section>
       <div class="kicker">Paleta — muestreada de la escena</div>
-      <h2>Cuero, madera, piedra y fuego. Nada inventado.</h2>
-      <p>Cada color marcado <em class="amber">muestra</em> se leyó del pixel real de la portada de Temporada 2. Aparece un tono que la propuesta anterior no contemplaba y que domina media imagen: la <em class="amber">piedra</em> del mármol de la chimenea.</p>
+      <h2>Noche azul, y una sola brasa.</h2>
+      <p>Cada color marcado <em class="amber">muestra</em> se leyó del pixel real de la escena oficial. El sistema es frío casi por completo: azules profundos, piedra gris — y <strong>un único acento cálido</strong>, el pico del fuego.</p>
       <div class="swatches">
-        <div class="sw"><div class="chip" style="background:#16100D"></div><div class="meta"><div class="nm">Medianoche</div><div class="hex">#16100D</div><div class="use">Fondo. Negro cálido, nunca puro.</div></div></div>
-        <div class="sw"><div class="chip" style="background:#20150F"></div><div class="meta"><div class="nm">Cuero</div><div class="hex">#20150F</div><div class="use">Superficies, tarjetas.</div><div class="src">muestra · butaca</div></div></div>
-        <div class="sw"><div class="chip" style="background:#463931"></div><div class="meta"><div class="nm">Madera</div><div class="hex">#463931</div><div class="use">Superficie elevada, bordes.</div><div class="src">muestra · estantería</div></div></div>
-        <div class="sw"><div class="chip" style="background:#8A7A6A"></div><div class="meta"><div class="nm">Piedra</div><div class="hex">#8A7A6A</div><div class="use">Neutro medio. El mármol.</div><div class="src">muestra · chimenea</div></div></div>
-        <div class="sw"><div class="chip" style="background:#C98A4B"></div><div class="meta"><div class="nm">Ámbar</div><div class="hex">#C98A4B</div><div class="use">Acento principal. Whisky, luz.</div></div></div>
-        <div class="sw"><div class="chip" style="background:#F7BC84"></div><div class="meta"><div class="nm">Fuego</div><div class="hex">#F7BC84</div><div class="use">Highlight. Uso mínimo.</div><div class="src">muestra · llama</div></div></div>
-        <div class="sw"><div class="chip" style="background:#5A2620"></div><div class="meta"><div class="nm">Barrica</div><div class="hex">#5A2620</div><div class="use">Rojo profundo. Lomos, alertas.</div></div></div>
-        <div class="sw"><div class="chip" style="background:#E7DDC9"></div><div class="meta"><div class="nm">Polvo</div><div class="hex">#E7DDC9</div><div class="use">Texto. Hueso.</div></div></div>
+        <div class="sw"><div class="chip" style="background:#0B1A39"></div><div class="meta"><div class="nm">Medianoche</div><div class="hex">#0B1A39</div><div class="use">Fondo. El azul más profundo.</div><div class="src">muestra</div></div></div>
+        <div class="sw"><div class="chip" style="background:#151E3B"></div><div class="meta"><div class="nm">Tinta</div><div class="hex">#151E3B</div><div class="use">Superficies, tarjetas.</div><div class="src">muestra · butaca</div></div></div>
+        <div class="sw"><div class="chip" style="background:#2C2F43"></div><div class="meta"><div class="nm">Humo</div><div class="hex">#2C2F43</div><div class="use">Superficie elevada, bordes.</div><div class="src">muestra · estantería</div></div></div>
+        <div class="sw"><div class="chip" style="background:#55555B"></div><div class="meta"><div class="nm">Piedra</div><div class="hex">#55555B</div><div class="use">Neutro medio. El mármol.</div><div class="src">muestra · chimenea</div></div></div>
+        <div class="sw"><div class="chip" style="background:#D9BF7A"></div><div class="meta"><div class="nm">Brasa</div><div class="hex">#D9BF7A</div><div class="use">Acento único. Nunca dos acentos.</div><div class="src">muestra · pico del fuego</div></div></div>
+        <div class="sw"><div class="chip" style="background:#E7DDC9"></div><div class="meta"><div class="nm">Polvo</div><div class="hex">#E7DDC9</div><div class="use">Texto. Hueso cálido sobre frío.</div></div></div>
       </div>
-      <p style="margin-top:18px; font-size:13px; color:var(--polvo-dim);">Se elimina el verde <s>pátina</s> de la propuesta anterior: era el óxido de una señal de carretera que ya no existe en el sistema.</p>
+      <p style="margin-top:18px; font-size:13px; color:var(--polvo-dim);">Caen dos colores de la propuesta anterior: el verde <s>pátina</s> (era el óxido de una señal de carretera que ya no existe) y el rojo <s>barrica</s> (no queda nada rojo en la escena una vez enfriada).</p>
+    </section>
+
+    <!-- TEMPERATURA -->
+    <section>
+      <div class="kicker">La regla que decide el mood</div>
+      <h2>Contraste térmico: frío en todo, cálido solo en el fuego.</h2>
+      <p>La primera versión de esta escena era cálida en todo — fuego, mármol, madera <em>y sombras</em>. Cuando la imagen entera vive del mismo lado del espectro, se aplana y lee <strong>acogedora</strong>: club de caballeros, tertulia con whisky. Amable, pero no es un show de misterios.</p>
+      <p>La corrección no fue cambiar de paleta sino <em class="amber">separar las temperaturas</em>: sombras, medios tonos y aire hacia azul nocturno; el calor reservado exclusivamente a la llama. La escena se vuelve nocturna, el fuego gana fuerza al ser lo único cálido del cuadro, y la butaca vacía se lee más sola.</p>
+      <div class="measured">
+        <p><strong>Aplicación:</strong> <code style="font-family:var(--mono); color:var(--brasa);">comfyui/templates/night_grade.py</code>, con los parámetros congelados. Va después del upscale y de <code style="font-family:var(--mono); color:var(--brasa);">vintage_grade</code>, antes de componer el lockup.</p>
+        <p><strong>Corolario de marca:</strong> hay un solo acento y es la brasa. Si algo necesita destacar y ya hay un elemento en brasa en la pieza, se resuelve con jerarquía o con piedra — nunca agregando un segundo color cálido.</p>
+      </div>
     </section>
 
     <!-- TIPOGRAFIA -->
@@ -214,7 +223,7 @@
         <div class="lk-title">El Club de los 27</div>
         <div class="lk-sub">Cinco muertes, dos años, una edad — y por qué la verdad sin maldición asusta más que el mito.</div>
       </div>
-      <p style="margin-top:16px; font-size:13px; color:var(--polvo-dim);">Composición determinista en <code style="font-family:var(--mono); color:var(--ambar);">comfyui/templates/mpd-lockup-t2.py</code>. El texto nunca se genera con IA.</p>
+      <p style="margin-top:16px; font-size:13px; color:var(--polvo-dim);">Composición determinista en <code style="font-family:var(--mono); color:var(--brasa);">comfyui/templates/mpd-lockup-t2.py</code>. El texto nunca se genera con IA.</p>
     </section>
 
     <!-- TAGLINES -->
@@ -240,7 +249,7 @@
             <li>Chimenea encendida, butaca de cuero vacía</li>
             <li>Libros viejos, mármol, madera oscura</li>
             <li>Whisky servido, puro apagado, ceniza</li>
-            <li>Luz cálida de fuego, sombra profunda</li>
+            <li>Sombra azul fría, calor solo en la llama</li>
             <li>Grano de foto, polvo, textura de época</li>
             <li>Serif de letrero antiguo con peso</li>
           </ul>
@@ -252,6 +261,8 @@
             <li>Tarot, ouija, cabras, demonios, 666</li>
             <li>Velas rituales / iconografía satánica</li>
             <li>Carretera, cruce, señales — es el codename interno</li>
+            <li>Calidez global: madera y sombras cálidas</li>
+            <li>Un segundo acento cálido junto a la brasa</li>
             <li>Impact ni sans condensada genérica</li>
             <li>Texto claro sin scrim sobre mármol o fuego</li>
           </ul>
