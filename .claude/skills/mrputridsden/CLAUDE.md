@@ -190,15 +190,35 @@ C:\Users\andre\repos\kit-skill-creator\mrputridsden-production\
 
 ## Sitio web (mrputridsden.com)
 
-### Regla de actualización del grid "Episodios recientes" — espeja la regla de BTQ
-- Siempre 4 cards (`<div class="episode-card" data-ep="0XX">` dentro de `.episodes-grid`), orden oldest -> newest
-- Muestra los 4 episodios ANTERIORES al que está en circulación — **NO incluye el nuevo** (su propio link/embed ya lo cubre)
-- Al lanzar nuevo EP: rotar — entra el anterior al nuevo, sale el más antiguo del grid
-- **Visual propio de MPD** — la lógica de rotación espeja a BTQ pero NUNCA su tipografía ni estilo de card (ver memoria `feedback_mpd_vs_btq_typography`); usa siempre el componente `.episode-card` existente
-- Documentado también como comentario HTML en `website/index.html` justo antes de `<div class="episodes-grid">`
+### Estructura vigente (overhaul de Temporada 2, 2026-07-22)
 
-### Deploy
-Desde `mrputridsden-production/website/`: `$env:NODE_OPTIONS="--use-system-ca"; vercel --prod` (bypass Avast SSL, igual que BTQ)
+El sitio se rehizo con el sistema visual "La Guarida". **La regla vieja del grid de 4 cards ya no
+aplica**: `.episode-card` y `.episodes-grid` no existen en el HTML actual. Las secciones son:
+
+- `#hero` — la escena oficial de T2 como telón fijo + la tarjeta de Expediente 01
+- `#guarida` — qué es el show ahora
+- `#expediente` — el episodio de estreno (portada + sinopsis)
+- `#archivo` — **Temporada 1 completa**, filas `.arch-row`, de la más vieja a la más nueva
+- `#residente`, `#escucha`, `#contacto`
+
+**Al publicar un episodio nuevo de T2:** agregarlo como fila propia de temporada 2 (o promoverlo
+desde el bloque de expediente), NO rotar el archivo de T1 — T1 está cerrada y se conserva entera.
+La regla de rotación de BTQ ya no espeja acá.
+
+**Nunca prometer fechas ni duración de un episodio sin grabar** (decisión de Andrés 2026-07-22):
+la estimación de EP.005 falló por 6 minutos. El estado se expresa como "Expediente: Abierto".
+
+### Deploy — NO usar `vercel --prod`
+
+`vercel.json` tiene `"ignoreCommand": "exit 0"`, así que un `vercel --prod` normal genera un
+deployment VACÍO y produccion devuelve 404. Hay que usar el **flujo prebuilt**, y el proyecto
+correcto es `mr-putrids-den-web` (el viejo `v0-mr-putrids-den` quedó huérfano tras el renombre
+del 2026-07-19; un `.vercel/project.json` stale apunta ahí y el deploy "funciona" sin cambiar nada).
+
+Verificar el proyecto real antes de desplegar:
+`vercel inspect https://www.mrputridsden.com --scope mrputridsden` → el campo `name`.
+
+Pasos completos en `deploy-preflight` Paso 7 y en la memoria `reference_mpd_website_live`.
 
 ---
 

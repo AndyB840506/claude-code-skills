@@ -1,8 +1,10 @@
 {
   "nombre": "Mr. Putrid's Den",
-  "tagline": "Donde los riffs encuentran el whisky",
-  "descripcion_corta": "Andrés explora bandas, rock, metal, jazz y géneros variados en solitario. Espacio para riffs, pasión y Jack Daniel's.",
-  "descripcion_larga": "Mr. Putrid's Den es un podcast conversacional conducido por Andrés en solitario (formato co-host con Juan hasta EP.004/EP.005 — Juan dejó el proyecto el 2026-07-17, Andrés continúa solo), un espacio dedicado a explorar rock, metal, jazz y múltiples géneros musicales. El podcast invita artistas emergentes, comparte historias de conciertos únicos, y ofrece análisis profundo de bandas y álbumes icónicos. Un lugar donde la música, la conversación natural y la pasión por los riffs se encuentran.",
+  "tagline": "Donde la música se encuentra con el mito",
+  "tagline_perfil": "Donde los riffs encuentran el whisky",
+  "tagline_nota": "Actualizado 2026-07-22 con el pivote a misterios (Temporada 2). La de riffs y whisky era la principal de la T1 y queda como secundaria: liderar con ella le vende el show viejo a quien llega nuevo. Ver `mrputridsden-production/show-metadata-t2.md`.",
+  "descripcion_corta": "Misterios y leyendas del rock. Primero la leyenda completa; después los datos. Desde Bogotá.",
+  "descripcion_larga": "Mr. Putrid's Den es el podcast donde la música se encuentra con el mito. Cada episodio abre un expediente: la muerte que nadie explicó, el disco que la gente jura maldito, el genio que se apagó demasiado pronto. El trato es siempre el mismo — primero la leyenda completa, con todos sus detalles escalofriantes, tal como se cuenta; después la abrimos, le miramos las tripas y separamos qué es mito y qué es dato. Y casi siempre pasa lo mismo: cuando se le quita la maldición, lo que queda debajo asusta más. Sin ouija, sin pentagramas, sin sustos baratos. Conducido por Andrés desde Bogotá. La Temporada 1 (EP.001-EP.005) queda como archivo: rock, metal y raíces, de Black Sabbath a Kraken y Aterciopelados.",
   "formato": "solo",
   "formato_historico": "co-host (Andrés y Juan) hasta EP.004, 2 partes por defecto por profundidad de investigación — Juan dejó el proyecto el 2026-07-17. EP.005 en adelante: solo, episodio único de ~43 min (ya no 2 partes por defecto).",
   "host": [
@@ -17,7 +19,8 @@
     "dolor_principal": "Dificultad para encontrar espacios conversacionales auténticos sobre música; falta de visibilidad para artistas y eventos underground"
   },
   "tono": "Casual, conversacional, experto pero accesible, con humor e irreverencia. Mezcla de discusión seria y entretenimiento.",
-  "categoria": "Entretenimiento / Música",
+  "categoria": "Music / Music History (primaria) · Society & Culture / Documentary (secundaria)",
+  "categoria_nota": "Cambiada 2026-07-22 con el pivote a misterios; antes era 'Entretenimiento / Música'. Confirmar los rótulos exactos en el panel de Spotify antes de guardar — la taxonomía la hereda de Apple.",
   "duracion_min": 43,
   "duracion_nota": "43 min = sweet spot de retención definido por Andrés (2026-07-17, tras salida de Juan) — reemplaza el target anterior de 60 min co-host. Un solo episodio, ya no 2 partes por defecto (ver formato_historico). Cae dentro del rango editorial 40-45 min ya fijado para BTQ/CCC. Calibración propia de MPD disponible desde EP.005 (primer episodio solo grabado) en `mrputridsden-production/guion-style-mpd.md` — ver word_count_target_nota.",
   "cadencia": "Semanal",
@@ -26,11 +29,18 @@
     "RSS (distribuir a otras plataformas)"
   ],
   "colores": {
+    "principal": "#0B1A39",
+    "secundario": "#151E3B",
+    "acento": "#D9BF7A",
+    "texto": "#E7DDC9",
+    "nota": "Paleta 'La Guarida' (Temporada 2), muestreada del pixel real del artwork. Brasa #D9BF7A es el ÚNICO acento cálido del sistema — nunca dos acentos. La paleta crimson de la T1 (#1a1a1a/#9B1C1C/#A8A8A8) queda solo para el archivo. Ver `rebrand/identidad-la-guarida.html`."
+  },
+  "colores_t1_archivo": {
     "principal": "#1a1a1a",
     "secundario": "#9B1C1C",
     "acento": "#A8A8A8"
   },
-  "logo_descripcion": "Estilo vintage póster de concierto + rock clásico. Colores: negro profundo, crimson/rojo profundo (#9B1C1C), plateado/acero (#A8A8A8). Elementos: referencias a bandas icónicas, whisky, vinilos, estética underground/conciertos. Sin naranja. Vibe: cuero, metal clásico, backstage.",
+  "logo_descripcion": "Estudio victoriano a puerta cerrada: chimenea encendida, butaca de cuero vacía de espaldas, libros viejos, mármol, whisky servido y puro apagado. Noche azul fría con el calor SOLO en la llama (contraste térmico). Tipografía serif de época con peso (Bookman Old Style Bold), nunca una condensada moderna tipo Impact. PROHIBIDO: pentagramas, tarot, ouija, demonios, 666, velas rituales — el misterio viene de la atmósfera, no de los símbolos. Tampoco carretera ni cruce de caminos (es el codename interno).",
   "numeracion": "EP.002",
   "estilo_narración": "mixto",
   "word_count_target": 5543,
@@ -49,11 +59,19 @@
   ],
   "hashtags_base": [
     "#MrPutridsDen",
+    "#ArchivosSecretosDelRock",
+    "#MisteriosYLeyendas",
+    "#LeyendasDelRock",
+    "#MisteriosDelRock",
+    "#PodcastDeMisterio",
+    "#PodcastRock",
+    "#BogotáMusical",
+    "#LaGuarida"
+  ],
+  "hashtags_t1_archivo": [
     "#DondeRiffsEncuentranWhisky",
     "#RocksMetalJazz",
     "#ConversacionesDeRiffs",
-    "#BogotáMusical",
-    "#PodcastRock",
     "#ArtistasEmergentes",
     "#CachachoRocker",
     "#RiffsYWhisky"
