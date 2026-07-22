@@ -8,6 +8,17 @@ Genera prompts listos para copiar en Google Flow (con Nani Banana Pro o Imagen 3
 
 ## Paso 0 — Cargar datos
 
+**0.a — OBLIGATORIO ANTES DE PROPONER CUALQUIER DIRECCIÓN VISUAL: MIRAR el artwork vigente.**
+No basta con leer los colores del perfil — hay que ABRIR la imagen actual del show (portada
+publicada y/o el último `EP0XX-1x1-FINAL*`) con la herramienta Read y verla. Si no se encuentra el
+archivo, PEDIRLE al usuario que la comparta antes de seguir. Prohibido proponer paleta, estilo o
+composición nueva sin haber visto la actual.
+*(Mordió el 2026-07-22, rebrand MPD Temporada 2: se diseñó una identidad completa —paleta ámbar,
+wordmark, specimen en vivo— asumiendo un lenguaje fotográfico, cuando la portada real del show era
+un póster ilustrado negro/crema/ROJO. Se propuso además reemplazar el crimson `#9B1C1C` que estaba
+escrito en `podcast-profile.json` y ya había sido leído. El usuario tuvo que corregirlo mandando un
+screenshot, después de varias generaciones perdidas.)*
+
 1. Lee `podcast-profile.json`: nombre del podcast, colores de marca, estilo visual, tono.
 2. Busca archivos `artwork-ep*.md` en el directorio. Si existen, lista los disponibles: "Tengo prompts guardados del EP.001 y EP.002 — ¿quieres usar alguno como base?"
 3. Lee el script del episodio si existe para extraer el tema y referencia cultural.

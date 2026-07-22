@@ -172,6 +172,20 @@ Template: `comfyui/templates/chroma-txt2img-api.json` — usa `ModelSamplingAura
   BetaSamplingScheduler 26 steps (alpha/beta 0.45), shift 1.0, cfg 3.8, base 1152×1152.
 
 ## Iteration method (applies to both)
+0. **Mantener una lista de requisitos YA satisfechos y verificarlos TODOS en cada iteración**, no
+   solo el que se está arreglando (aprendido 2026-07-22, portada MPD T2, 19 generaciones). En
+   Z-Image, reescribir una frase del prompt desplaza otros atributos aunque el seed no cambie —
+   cada arreglo rompió algo ya logrado: se arregló el humo y el vaso perdió la calavera moldeada;
+   se sacó la butaca de la chimenea y aparecieron dos calaveras decorativas en la repisa. **Antes de
+   presentar una iteración, recorrer la lista completa** (sujeto, atributos del sujeto, composición,
+   luz, paleta, elementos prohibidos) y reportar honestamente qué se ganó Y qué se perdió — nunca
+   presentar como "arreglado" mirando solo el cambio nuevo.
+0.b **Verificar relaciones entre objetos con un crop ampliado, no a tamaño completo.** Los errores
+   de atribución (de qué objeto sale el humo/la luz/el reflejo) son invisibles en la imagen entera
+   y saltan al ampliar. En la sesión citada el usuario detectó que el humo salía del VASO y no del
+   puro; a tamaño completo había pasado desapercibido dos veces.
+0.c **Los gates de palabras prohibidas van con límite de palabra (`\bword\b`), no subcadena** —
+   `unmistakable` contiene `mist` y abortó un envío correcto (mismo día).
 1. **Fix the seed** while developing a prompt — image changes only where the prompt changed. Learn cause/effect.
 2. Change ONE thing per run.
 3. Prompt done → switch seed to random for variations.
