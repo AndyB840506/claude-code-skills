@@ -1,0 +1,301 @@
+<style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #ebebeb; color: #1e1e1e; line-height: 1.75; font-size: 15px; }
+        .container { max-width: 780px; margin: 0 auto; background: white; }
+        .header { background: #1a1a1a; color: white; padding: 40px 44px; border-bottom: 5px solid #9B1C1C; }
+        .header .podcast { font-size: 0.85em; color: #FF8C00; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+        .header .pilar { font-size: 0.72em; color: #A8A8A8; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px; }
+        .header h1 { font-size: 1.9em; font-weight: 900; margin-bottom: 6px; }
+        .header .tagline { color: #FFD700; font-style: italic; font-size: 1em; margin-bottom: 20px; }
+        .meta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
+        .meta-item { background: rgba(155,28,28,0.2); border: 1px solid #9B1C1C; padding: 5px 12px; border-radius: 20px; font-size: 0.8em; color: #FFD700; }
+        .section { padding: 28px 44px; border-bottom: 1px solid #eee; }
+        .section h2 { font-size: 0.72em; text-transform: uppercase; letter-spacing: 3px; color: #9B1C1C; margin-bottom: 18px; padding-bottom: 7px; border-bottom: 2px solid #9B1C1C; }
+        .segment { margin: 36px 0; padding-bottom: 24px; border-bottom: 1px solid #f0f0f0; }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+        .segment-number { background: #9B1C1C; color: white; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75em; font-weight: bold; flex-shrink: 0; }
+        .segment-title { font-weight: 700; font-size: 0.95em; color: #1a1a1a; text-transform: uppercase; letter-spacing: 1px; }
+        .segment-time { margin-left: auto; font-size: 0.78em; color: #aaa; background: #f5f5f5; padding: 2px 10px; border-radius: 10px; white-space: nowrap; }
+        .sfx { background: #1a1a1a; color: #FFD700; padding: 11px 16px; border-radius: 4px; font-family: monospace; font-size: 0.88em; margin: 14px 0; }
+        .host-block { margin: 18px 0; padding: 0 0 0 18px; border-left: 3px solid #ddd; }
+        .host-name { font-weight: 800; font-size: 0.78em; text-transform: uppercase; letter-spacing: 2px; color: #9B1C1C; margin-bottom: 6px; }
+        .host-text { font-size: 1em; line-height: 1.85; color: #2a2a2a; }
+        .dato { background: #fdfaf3; color: #3a3018; padding: 14px 18px; border-radius: 4px; margin: 16px 0; border-left: 4px solid #c8a830; }
+        .dato-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; color: #9a7a10; margin-bottom: 5px; font-weight: 700; }
+        .leyenda { background: #faf5ff; color: #2e1a2e; padding: 14px 18px; border-radius: 4px; margin: 16px 0; border-left: 4px solid #9B1C1C; }
+        .leyenda-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; color: #7a1a7a; margin-bottom: 5px; font-weight: 700; }
+        .recomendacion { background: #f3faf3; color: #1a2e1a; padding: 14px 18px; border-radius: 4px; margin: 16px 0; border-left: 4px solid #5a8a3a; }
+        .recomendacion-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; color: #3a6a1a; margin-bottom: 5px; font-weight: 700; }
+        .nota-produccion { background: #fffaed; border: 1px solid #e0bb3a; border-radius: 4px; padding: 9px 14px; margin: 10px 0; font-size: 0.84em; color: #5a4a10; }
+        .nota-produccion::before { content: "NOTA PRODUCCIÓN: "; font-weight: 700; text-transform: uppercase; }
+        .verificar { background: #fbeaea; border: 1px solid #d88; border-radius: 4px; padding: 9px 14px; margin: 10px 0; font-size: 0.84em; color: #7a2020; }
+        .verificar::before { content: "⚠ VERIFICAR ANTES DE GRABAR: "; font-weight: 700; text-transform: uppercase; }
+        .arquitectura { font-size: 0.88em; }
+        .arq-row { display: grid; grid-template-columns: 26px 220px 74px 1fr; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f0f0f0; align-items: start; }
+        .arq-num { color: #9B1C1C; font-weight: bold; }
+        .arq-seg { font-weight: 600; }
+        .arq-time { color: #aaa; font-family: monospace; }
+    </style>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Mr. Putrid's Den</div>
+        <div class="pilar">Archivos Secretos del Rock — Expediente 01</div>
+        <h1>EP.006: El Club de los 27</h1>
+        <div class="tagline">Cinco muertes, dos años, una edad — y por qué la verdad sin maldición asusta más que el mito</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 006</span>
+            <span class="meta-item">Archivos Secretos del Rock</span>
+            <span class="meta-item">Leyendas / Misterio</span>
+            <span class="meta-item">~43 min · Episodio único</span>
+            <span class="meta-item">Solo</span>
+        </div>
+    </div>
+
+    <!-- NOTA DE VERIFICACIÓN -->
+    <div class="section">
+        <div class="nota-produccion">PRIMER EPISODIO DEL PILAR "ARCHIVOS SECRETOS DEL ROCK" (decisión de Andrés 2026-07-21): episodios completos de leyendas/mitos del rock que ROTAN con los episodios anclados en banda. Formato solo, mismo tono conversacional del show. El pilar existe para explorar el misterio SIN vender el rumor como hecho — cada episodio separa el dato documentado de la leyenda.</div>
+        <div class="nota-produccion">DURACIÓN: dimensionada con la calibración REAL propia de MPD solo (`mrputridsden-production/guion-style-mpd.md` — SRT de EP.005: 159 wpm hablados, +23,5% de expansión en vivo). Target 43 min → ~5.543 palabras ESCRITAS de narración (bloques `host-text` únicamente; `dato`/`leyenda`/`nota-produccion`/`verificar` son referencia de producción, NO se leen al aire). Muestra de calibración n=1 — recalibrar contra el SRT real de este episodio tras grabar.</div>
+        <div class="nota-produccion">DATOS: verificados vía búsqueda web en la sesión de escritura (Wikipedia ES/EN "27 Club", estudio BMJ 2011 vía QUT ePrints/HealthDay, prensa). El estudio del desmentido (Bloque C) es el eje del episodio — citado con precisión abajo. Lo no confirmado al 100% va marcado en rojo (`VERIFICAR`) para chequear antes de grabar.</div>
+        <div class="verificar">Fechas y edades: todas las muertes citadas ocurrieron a los 27 años — confirmar cada fecha/edad exacta en Wikipedia antes de grabar (Jones 3-jul-1969; Wilson 3-sep-1970; Hendrix 18-sep-1970; Joplin 4-oct-1970; Morrison 3-jul-1971; Cobain hallado 8-abr-1994; Winehouse 23-jul-2011; Robert Johnson 16-ago-1938). Especialmente el "16 días" entre Hendrix y Joplin y los "dos años exactos" entre Jones y Morrison (ambos 3 de julio).</div>
+        <div class="verificar">La frase de la mamá de Kurt Cobain ("ese club estúpido") está ampliamente reportada por prensa de 1994 y se le acredita haber popularizado el término "Club de los 27" — decirla como cita ampliamente atribuida, no como transcripción textual verificada. Igual con la leyenda del cruce de caminos de Robert Johnson: es LEYENDA, presentarla como tal.</div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row" style="color:#9B1C1C; font-weight:bold;">
+                <span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span>
+            </div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Intro music</span><span class="arq-time">00:00</span><span>Intro del show — fade out</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Cold open + Bienvenida</span><span class="arq-time">00:30</span><span>3 de julio: Jones (1969) y Morrison (1971), mismo día, dos años exactos.</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Bloque A — El origen</span><span class="arq-time">03:40</span><span>El racimo 1969-71: Jones, Wilson, Hendrix, Joplin, Morrison.</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Bloque B — El mito se renueva</span><span class="arq-time">17:00</span><span>Cobain 1994 lo nombra; Winehouse 2011 lo sella; Robert Johnson, socio fundador.</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">Bloque C — ¿Maldición o coincidencia?</span><span class="arq-time">29:30</span><span>El estudio BMJ. No hay pico a los 27 — pero la verdad da más miedo.</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Cierre + conector</span><span class="arq-time">40:00</span><span>El cruce de caminos de Robert Johnson → próximo Archivo Secreto.</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Outro music</span><span class="arq-time">~43:00</span><span>Outro del show — fade in.</span></div>
+        </div>
+        <div class="nota-produccion">Episodio único. Tiempos estimados con la calibración real de MPD (159 wpm / +23,5%) — recalibrar contra el SRT real tras grabar.</div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section" style="padding-top:32px; padding-bottom:10px;">
+        <h2>Guion Completo</h2>
+    </div>
+
+    <div class="section" style="padding-top:24px; padding-bottom:40px;">
+
+        <!-- SEG 1 -->
+        <div class="segment">
+            <div class="segment-header"><div class="segment-number">1</div><div class="segment-title">Intro Music</div><div class="segment-time">00:00 — 00:30</div></div>
+            <div class="sfx">[SFX: INTRO — Stevie Ray Vaughn meets Black Label Society. Guitarra blues eléctrica + heavy metal. Voz femenina gutural. 30 segundos. Fade out lento.]</div>
+        </div>
+
+        <!-- SEG 2 -->
+        <div class="segment">
+            <div class="segment-header"><div class="segment-number">2</div><div class="segment-title">Cold Open + Bienvenida</div><div class="segment-time">00:30 — 03:40</div></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Tres de julio de 1969. Una finca en el campo inglés, la misma casa donde años atrás se escribió Winnie the Pooh. De madrugada, sacan del fondo de una piscina el cuerpo de Brian Jones — el hombre que fundó los Rolling Stones, el que armó esa banda con sus propias manos. Tenía veintisiete años.<br><br>
+                    [PAUSA]<br><br>
+                    Ahora adelante el reloj. Tres de julio de 1971. Exactamente dos años después. Mismo día, mismo número en el calendario. Un apartamento en París. En la tina del baño encuentran a Jim Morrison, la voz de The Doors, el hombre que se hacía llamar el Rey Lagarto. Sin autopsia. Sin explicación clara. Veintisiete años.<br><br>
+                    [PAUSA]<br><br>
+                    Dos gigantes del rock, muertos el mismo día del año, con dos años de diferencia exacta, a la misma edad. Y no son los únicos. [ÉNFASIS]Ni de cerca.[/ÉNFASIS]<br><br>
+                    Bienvenidos de vuelta a Mr. Putrid's Den. Soy Andrés, y hoy abrimos algo nuevo en la Guarida. Lo vamos a llamar [ÉNFASIS]Archivos Secretos del Rock[/ÉNFASIS]: episodios dedicados a las leyendas, los mitos y los misterios que rodean esta música. Historias que la gente busca a media noche, que llenan foros enteros, que se cuentan como verdad aunque nadie las haya podido probar. Y arrancamos con la más famosa de todas.<br><br>
+                    El Club de los 27.<br><br>
+                    Si usted alguna vez buscó en internet "músicos que murieron a los 27", ya se topó con la lista. Es de las cosas más buscadas del rock, año tras año: llena foros, videos, hilos enteros de gente discutiendo a quién le falta. Y no es casualidad que enganche tanto. Tiene todos los ingredientes de una gran historia de terror: genios, juventud, muerte, un número que se repite, y la sensación de que hay una fuerza invisible cobrando cuentas. La diferencia es que esta no la inventó nadie alrededor de una fogata. Cada nombre de la lista fue una persona real, con una madre real que enterró a un hijo de veintisiete años.<br><br>
+                    La idea es sencilla y escalofriante: una lista de músicos enormes que murieron, todos, a la misma edad. Veintisiete años. Como si existiera una puerta que se abre a esa edad y algunos, los más brillantes, cayeran por ella.<br><br>
+                    Hoy no vengo a asustarlos con una maldición. Vengo a hacer algo más interesante: desarmar la leyenda pieza por pieza. Ver de dónde salió, por qué se nos quedó pegada, y qué dice la evidencia de verdad cuando uno la mira de frente. Porque le adelanto una cosa desde ya, y quédensela para el final: cuando quitamos la maldición, lo que queda debajo asusta mucho más.<br><br>
+                    Una aclaración antes de arrancar, porque en la Guarida no vendemos humo: yo no creo en la maldición. Y aun así este episodio me tuvo despierto investigando hasta tarde, porque la historia real, la que no tiene diablo, es más oscura y más humana que cualquier cuento de fantasmas. Así que hagamos un trato: yo les cuento la leyenda completa, con todos sus detalles escalofriantes, tal como se cuenta en los foros y a medianoche; y después la abrimos, le miramos las tripas, y separamos qué es mito y qué es verdad. Respiren. Empezamos por el principio, que es una piscina en Inglaterra.
+                </div>
+            </div>
+            <div class="nota-produccion">Cold open dentro de la escena (dispositivo de apertura variado, distinto del hook expositivo de EP.005). No se vuelca la agenda completa — un solo gancho: la coincidencia del 3 de julio.</div>
+        </div>
+
+        <!-- SEG 3 -->
+        <div class="segment">
+            <div class="segment-header"><div class="segment-number">3</div><div class="segment-title">Bloque A — El Origen del Mito (1969-1971)</div><div class="segment-time">03:40 — 17:00</div></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Volvamos a Brian Jones, porque él es donde todo empieza. [PAUSA] Poquito antes de morir lo habían echado de su propia banda. Los Rolling Stones eran su criatura — él escogió el nombre, él armó el grupo, él era el multi-instrumentista que le daba a la banda ese color raro, la cítara, la marimba, esos sonidos que uno oye en los primeros discos y no sabe de dónde salen. Ese sitar hipnótico de "Paint It Black", por ejemplo, es él: la flauta, el órgano, los instrumentos raros que hacían que los primeros Stones no sonaran como una banda de blues más salían casi todos de sus manos. Era, con diferencia, el músico más dotado de los cinco. Pero para el 69 estaba hundido en drogas y alcohol, ya casi no aparecía a grabar, y los otros lo sacaron. Semanas después apareció muerto en su piscina.<br><br>
+                    El veredicto oficial fue "muerte por infortunio". Un accidente. El corazón y el hígado maltratados por años de excesos, un clavado a la piscina de noche, y ya. Pero desde el primer día hubo otra versión rondando: que a Brian Jones lo mataron. Que un tipo que estaba haciendo obras en la casa esa noche lo ahogó en una pelea. Nunca se probó. Se quedó como rumor, como esas confesiones de lecho de muerte que aparecen décadas después y nadie puede confirmar. La primera muerte del club ya venía con su propio misterio adentro.<br><br>
+                    Y ojo, porque el hombre que hacía las obras esa noche fue la última persona que vio a Brian con vida, y años después, según varias versiones, habría confesado en su lecho de muerte que él lo ahogó. ¿Verdad? ¿Cuento para vender un libro? Nadie lo pudo comprobar. Esa neblina es justo el material del que vive una leyenda: un hecho duro y comprobado en el centro, un hombre muerto en una piscina, y alrededor una nube de versiones que ni se confirman ni se descartan del todo. La fama se paga cara, dicen. Brian ni siquiera alcanzó a cobrarla: murió recién echado de la banda que él mismo había inventado.<br><br>
+                    Y acá quiero meter un nombre que casi nadie dice cuando habla del Club de los 27. Porque la lista famosa se salta a un tipo que murió [ÉNFASIS]primero[/ÉNFASIS] que casi todos los grandes.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — el miembro olvidado</div>
+                Alan Wilson, guitarrista, armonicista y cantante de Canned Heat (la banda de "On the Road Again" y "Going Up the Country", que tocó en Woodstock). Le decían "Blind Owl". Murió el 3 de septiembre de 1970, de una sobredosis de barbitúricos — posible suicidio, sufría de depresión severa. Tenía 27 años. Murió QUINCE DÍAS ANTES que Hendrix, pero como Canned Heat no llegó al panteón de los mega-nombres, casi nunca se le nombra en la leyenda.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Alan Wilson. Tres de septiembre del 70. Y ahí es donde el calendario se pone denso, porque en las semanas siguientes viene el golpe doble que de verdad prendió la alarma en la prensa.<br><br>
+                    Dieciocho de septiembre de 1970. Londres. Jimi Hendrix. [PAUSA] No hay mucho que yo les tenga que explicar de quién era Hendrix. El hombre que reinventó lo que una guitarra eléctrica podía hacer, que puso el instrumento a hablar, a gritar, a llorar. Lo encuentran muerto en el apartamento de una novia. La causa: se asfixió con su propio vómito después de mezclar pastillas para dormir con alcohol. Pastillas alemanas, fuertes, de las que él no conocía la dosis. Un error de cálculo, no una decisión. Veintisiete años.<br><br>
+                    Y acá está lo que de verdad pone esa muerte en perspectiva: Hendrix llevaba apenas cuatro años siendo famoso. Cuatro. En el 66 era un guitarrista desconocido que se ganaba la vida acompañando a otros; en el 67 le prendió candela a su guitarra en el festival de Monterey y el mundo entero aprendió su nombre; en el 69 cerró Woodstock con esa versión del himno de Estados Unidos que sonaba a bombas y a país en llamas. Y en el 70 estaba muerto. De cero a dios a cadáver en cuatro años. Esa velocidad, la de una fama que le cae encima a un ser humano más rápido de lo que nadie puede procesar, va a ser un personaje central de este episodio. Guárdenla.<br><br>
+                    Y no habían pasado ni tres semanas — dieciséis días, para ser exactos — cuando cae la otra mitad del golpe. Cuatro de octubre de 1970. Un motel en Hollywood. Janis Joplin.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Janis era la voz. Esa garganta rota, blanca, del sur de Texas, que cantaba blues como si le doliera de verdad, como si cada nota le costara sangre. La mujer que se paró en Monterey y en Woodstock y le demostró a una industria de hombres que una mujer podía romper el escenario igual o más duro que cualquiera de ellos. Estaba en pleno trabajo de su mejor disco, "Pearl", el que salió después de muerta. Una noche vuelve al motel, se inyecta heroína — de un lote que resultó ser mucho más puro de lo normal — y no despierta. Sola, en un cuarto de motel. Veintisiete años.<br><br>
+                    Y la vuelta más cruel es esta: Janis estaba en el mejor momento creativo de su vida. El disco que grababa, "Pearl", salió pocos meses después, ya sin ella, y se volvió el más grande de su carrera. Una de sus canciones, "Me and Bobby McGee", llegó a ser número uno en Estados Unidos. Janis nunca lo supo. Ya estaba muerta cuando pasó. [PAUSA] Piénsenlo un segundo: el punto más alto de toda su vida ocurrió cuando ella ya no estaba para verlo. Y esa es casi la firma del club entero, se van justo antes de la cima o parados exactamente en ella, congelados para siempre en su mejor versión. Detrás de la fiesta, del personaje de la mujer indestructible que se tomaba el mundo, había una persona profundamente sola. Y murió como pasó esa última noche: sola.<br><br>
+                    Piénsenlo desde el asiento de un periodista de música en octubre del 70. En cuestión de un mes: Alan Wilson, Jimi Hendrix, Janis Joplin. Tres músicos, la misma edad. Y el año anterior, Brian Jones, la misma edad. Empieza a sentirse como algo. Como un patrón. Como si el rock estuviera cobrando un peaje, y el peaje fuera siempre el mismo número.<br><br>
+                    Y entonces, para cerrar el círculo de la manera más inquietante posible, llega el tres de julio del 71 con el que abrí el episodio.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Jim Morrison. París. La ciudad a la que se había ido a huir de la fama, de los juicios, del personaje que él mismo había creado y que ya no aguantaba. Se fue a Francia a ser poeta, a desaparecer un rato. Lo encuentran en la tina del baño. La causa oficial: falla cardíaca. Pero — y este es el detalle que le echa gasolina a cada teoría — no le hicieron autopsia. En Francia, con la ley de la época, si no había señales evidentes de crimen, no era obligatoria. Así que sobre la muerte de Morrison lo único que hay es la palabra de la persona que estaba con él esa noche. Nada más.<br><br>
+                    Sin autopsia, sin cuerpo que muchos alcanzaran a ver, en un país lejano. ¿El resultado? Durante años hubo gente convencida de que Morrison no estaba muerto. Que lo había fingido para escaparse en serio. Que andaba por África, por algún pueblo, viejo y libre. Cuando una muerte deja huecos, la imaginación los llena. Y la de Morrison quedó llena de huecos a propósito o por descuido, da igual: el mito se alimenta igual.<br><br>
+                    Y hay una postal que lo resume todo. La tumba de Morrison, en el cementerio de Père Lachaise en París, se volvió uno de los lugares más visitados de la ciudad, más que las de escritores y pintores que llevaban ahí enterrados siglos. Generaciones de fanáticos peregrinando a dejarle cigarrillos, botellas de licor, grafitis en las paredes, a un muchacho de veintisiete años enterrado a un océano de su casa. La muerte lo volvió más grande que su propia música. [PAUSA] Y para entender por qué estas cinco muertes pegaron tan duro, hay que entender el momento. Estos dioses jóvenes caen justo cuando se está acabando la fiesta de los años sesenta, el sueño hippie, la idea de que la música y el amor iban a cambiar el mundo. Woodstock había sido apenas el año anterior: medio millón de personas, paz, flores. Y de golpe, en dos años, se mueren cinco de sus profetas, todos a la misma edad. Fue como ver morirse a la propia década. El Club de los 27 no nace solo del calendario. Nace de esa resaca. Del duelo de toda una generación viendo apagarse su promesa.<br><br>
+                    Ahí tienen el racimo original. En menos de dos años — del 3 de julio del 69 al 3 de julio del 71 — cae Brian Jones, cae Alan Wilson, cae Jimi Hendrix, cae Janis Joplin, cae Jim Morrison. Cinco figuras del rock. Todas de veintisiete años.<br><br>
+                    Uno entiende perfectamente por qué la gente de esa época sintió que estaba pasando algo que no se podía explicar con la razón. Cinco veces el mismo número en dos años no se siente como azar. Se siente como un mensaje. Y así nació la leyenda. [PAUSA] Pero la leyenda no se quedó en los setenta. Se durmió veinte años… y despertó con una escopeta.
+                </div>
+            </div>
+            <div class="leyenda">
+                <div class="leyenda-label">Chispa del bloque</div>
+                El poder del racimo original no está en cada muerte por separado — está en la densidad temporal. Cinco en dos años, dos de ellos el mismo día del calendario. La regla anti-lista aplica: no recitar los cinco como inventario frío; darle a Jones (misterio del asesinato), Wilson (el olvidado), Joplin (la escena del motel) y Morrison (el hueco sin autopsia) su propia imagen, y dejar que el número se acumule solo.
+            </div>
+        </div>
+
+        <!-- SEG 4 -->
+        <div class="segment">
+            <div class="segment-header"><div class="segment-number">4</div><div class="segment-title">Bloque B — El Mito se Renueva</div><div class="segment-time">17:00 — 29:30</div></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Salto de veintitrés años. 1994. Otra generación, otra ciudad, otro sonido. Seattle, la lluvia, el grunge, las camisas de franela. Y el hombre que sin quererlo se había vuelto la voz de toda esa generación: Kurt Cobain, de Nirvana.<br><br>
+                    Y quiero que noten el silencio de esos veintitrés años, porque dice algo. Entre Morrison en el 71 y Cobain en el 94, el rock siguió perdiendo gente; la muerte más grande de ese lapso fue la de John Lennon, asesinado a tiros afuera de su casa en Nueva York en 1980. Pero Lennon tenía cuarenta años. No cuadraba en el club. Así que por más enorme que fue esa muerte, no reactivó la leyenda del veintisiete. La leyenda necesitaba, para despertar, a alguien que muriera exactamente a esa edad y fuera igual de gigante. En el 94 le llegó.<br><br>
+                    Cobain tenía todo lo que se supone que uno quiere — el disco más importante de su década, un estadio lleno donde quisiera tocar, dinero, fama mundial. Y lo odiaba casi todo. Odiaba ser el vocero de algo, odiaba que la industria empaquetara su rabia y la vendiera, cargaba un dolor de estómago crónico que nadie le pudo diagnosticar y una adicción a la heroína que usaba, según él, para calmar ese dolor. Y cargaba un peso que nadie firma cuando arma una banda: el de haberse vuelto, sin pedirlo, el vocero de millones de personas. Toda una generación proyectó su rabia y su desencanto en un solo hombre flaquito de Aberdeen que solo quería hacer canciones ruidosas. Esa corona pesa, y él lo dijo de mil formas: que no quería ser líder de nadie, que la fama lo hacía sentirse un fraude. Tenía una hija recién nacida. Tenía el mundo a los pies. Y nada de eso le alcanzó. En abril del 94 lo encuentran en su casa de Seattle. Herida de escopeta. Se la hizo él mismo. Veintisiete años.<br><br>
+                    Y lo que casi nadie recuerda es que estuvo a un pelo de morir un mes antes. En marzo del 94, en Roma, Cobain tuvo una sobredosis que lo dejó en coma varios días. Se recuperó, volvió a Seattle, y semanas después terminó lo que había arrancado allá. [PAUSA] Hay una grabación que hoy es imposible de ver sin que a uno se le enfríe la sangre: el concierto acústico que Nirvana grabó para MTV pocos meses antes, a finales del 93. Cuentan que Kurt pidió que decoraran el escenario con lirios y velas negras, y cuando le preguntaron cómo lo quería, contestó que lo quería como un funeral. Meses después fue el suyo. Ahí estaba, tocando en vivo, despidiéndose delante de millones de personas, y nadie lo alcanzó a leer a tiempo. [VERIFICAR: sobredosis de Roma marzo 94 y anécdota de las velas/lirios del Unplugged, contar como ampliamente reportadas.]<br><br>
+                    Y acá pasa algo que le cambia la historia al mito. Algo casi literario.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — el momento en que el club recibió su nombre</div>
+                A la prensa de 1994 se le atribuye ampliamente una frase de Wendy, la mamá de Kurt Cobain, al enterarse de la muerte de su hijo: algo como "ahora se fue y se unió a ese club estúpido — le dije que no se metiera en ese club estúpido". Se le acredita a esa frase haber puesto en circulación popular la idea del "Club de los 27" como tal. Antes existía la coincidencia; después de Cobain, existía el NOMBRE. [VERIFICAR — cita ampliamente reportada, no transcripción textual confirmada; presentar como tal al aire.]
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Piensen en lo que eso significa. La mamá de Kurt, en el peor momento de su vida, ya sabía del club. Ya existía en la cabeza de la gente como una idea, como una superstición flotando. La coincidencia de los setenta se había vuelto folclor. Y con Cobain, ese folclor se puso un nombre y salió en todos los periódicos. De ahí en adelante, cada vez que un músico moría a esa edad, la primera reacción del mundo no era "qué tragedia" — era "otro para el club".<br><br>
+                    Lo cual me lleva a una pregunta incómoda que vamos a necesitar para el final: ¿por qué el veintisiete? ¿Por qué no el veintiséis, o el veintiocho? Guárdenla. La respondemos en el último bloque, y la respuesta no es la que uno esperaría.<br><br>
+                    Pero primero, el que muchos de ustedes están esperando. Porque si Cobain le puso el nombre al club en los noventa, hubo una muerte en este siglo que lo volvió a poner en primera plana para una generación que ni siquiera había nacido cuando murió Hendrix.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Veintitrés de julio de 2011. Londres. Amy Winehouse. [PAUSA] Y esta duele de una manera distinta, porque a Amy la vimos morir en cámara lenta, en vivo, delante de todos. No fue un accidente de una noche. Fue una caída pública de años, contada en portadas de tabloides que se reían mientras la filmaban.<br><br>
+                    Amy tenía un talento que aparece una vez por generación — esa voz de jazz y soul metida en el cuerpo de una muchacha de Londres, un disco, "Back to Black", que es de esos que van a seguir sonando dentro de cincuenta años. Y tenía, también a la vista de todos, una adicción al alcohol que la estaba matando. Hay una canción suya, la más famosa, "Rehab", que es literalmente sobre negarse a ir a rehabilitación. Cantamos ese coro en las fiestas durante años. Era pegajoso. Era gracioso. Y era, visto ahora, la crónica de una muerte anunciada que todos coreamos sin escuchar.<br><br>
+                    Coreábamos ese "no, no, no" con la copa en la mano sin caer en que la mujer nos estaba cantando, en tiempo real, su propia sentencia. Y ese es uno de los detalles más escalofriantes de toda esta historia: muchas de estas señales de alarma no estaban escondidas. Estaban en las letras, en las portadas, en las entrevistas. Las cantamos, las coreamos, las volvimos éxitos. Solo que las oíamos como música, no como lo que también eran: pedidos de auxilio con melodía pegajosa.<br><br>
+                    Y no era una principiante a la que la fama agarró desprevenida. Amy era una de las voces más grandes que Inglaterra había producido en una generación. En 2008, con "Back to Black", se ganó cinco premios Grammy en una sola noche. Pero esa misma noche no pudo ir a recibirlos: estaba en Londres, metida en tratamiento, y actuó por satélite desde el otro lado del mundo. El ascenso más alto y la caída más honda, en la misma pantalla, al mismo tiempo. Su vida se enredó con una relación tormentosa que muchos señalan como la puerta por donde entraron las drogas más duras. Y todos lo vimos pasar. Esa es la diferencia brutal con los muertos de los setenta: a Hendrix y a Janis los perdimos de un día para otro, de golpe. A Amy la vimos irse durante cinco años, en portadas de tabloide, en videos de paparazzi, en conciertos donde salía a escena sin poder cantar y el público la abucheaba. Fue una muerte en cámara lenta, con transmisión en vivo y entrada paga.<br><br>
+                    Murió de envenenamiento por alcohol. El cuerpo, después de años de ciclos de recaída, no aguantó. Veintisiete años. La misma edad de Jones, de Hendrix, de Joplin, de Morrison, de Cobain. Y el mundo entero, en el mismo segundo, pensó lo mismo: [ÉNFASIS]el club.[/ÉNFASIS] Hasta el papá de Amy habló de eso. La coincidencia ya no era una nota de pie de página para fanáticos del rock viejo — era titular global otra vez.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y cuando ya el club tenía suficientes miembros famosos, pasó algo curioso con la leyenda: empezó a buscar hacia atrás. A necesitar un origen más viejo que el rock mismo. Un padre fundador. Y lo encontró en un hombre del que casi no existen ni fotos.
+                </div>
+            </div>
+            <div class="leyenda">
+                <div class="leyenda-label">Leyenda — el socio fundador</div>
+                Robert Johnson, el bluesman del Delta del Mississippi. Uno de los músicos más influyentes de la historia — sin él no hay Rolling Stones, no hay Led Zeppelin, no hay Clapton. Existen apenas unas dos docenas de grabaciones suyas y un par de fotos confirmadas. Murió el 16 de agosto de 1938, se dice que envenenado con whisky por el esposo celoso de una mujer con la que coqueteaba. Tenía 27 años. Y sobre él pesa LA leyenda madre del rock: que su talento sobrenatural no era suyo — que se lo dio el diablo, a medianoche, en un cruce de caminos, a cambio de su alma.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Fíjense en lo elegante y lo tramposo que es esto. Robert Johnson murió en 1938. La palabra "rock and roll" ni siquiera existía como la conocemos. Él no se murió pensando que pertenecía a ningún club. Pero cuando la leyenda de los 27 ya estaba armada, alguien miró hacia atrás, vio que el bluesman fundador también había muerto a esa edad, y lo coronó socio fundador retroactivo. El mito se dio su propia genealogía. Y hay un detalle de Robert Johnson que parece de película de terror y sin embargo es real: casi no existe registro de él. Grabó apenas unas dos docenas de canciones, en cuartos de hotel, y cuentan que a veces tocaba de cara a la pared, de espaldas a todo el mundo. Unos dicen que de timidez; otros, que para que nadie le copiara la técnica; y los más creyentes, que para que nadie viera lo que le hacía a la guitarra. De su cara solo se conservan un par de fotos confirmadas. Un hombre que cambió la historia de la música y del que casi no queda evidencia física: perfecto para una leyenda. Cuando no hay datos, la imaginación tiene todo el espacio del mundo para trabajar. Así el mito se hizo más antiguo, más profundo, más "esto siempre fue así" de lo que en realidad fue.<br><br>
+                    Y guárdense a Robert Johnson y su cruce de caminos, porque al final del episodio vamos a volver a él. [PAUSA] Ahora sí. Tenemos el racimo de los setenta. Tenemos a Cobain poniéndole nombre. Tenemos a Winehouse renovándolo en este siglo. Tenemos hasta un padre fundador de 1938. La leyenda está completa, está redonda, se siente absolutamente real.<br><br>
+                    Y por eso mismo es el momento perfecto para hacer la pregunta más peligrosa que existe: ¿y si nada de esto fuera verdad?
+                </div>
+            </div>
+        </div>
+
+        <!-- SEG 5 -->
+        <div class="segment">
+            <div class="segment-header"><div class="segment-number">5</div><div class="segment-title">Bloque C — ¿Maldición o Coincidencia?</div><div class="segment-time">29:30 — 40:00</div></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Porque alguien se hizo esa pregunta en serio. No un fanático, no un periodista de rock — científicos. En 2011, el mismo año en que murió Amy Winehouse, un grupo de investigadores de una universidad en Australia publicó un estudio en una de las revistas médicas más respetadas del mundo, el British Medical Journal, para responder de una vez una pregunta simple: ¿los músicos de verdad tienen más probabilidad de morir a los 27?<br><br>
+                    No lo respondieron con vibras. Lo respondieron con números.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — el estudio que puso el mito a prueba</div>
+                Estudio de Adrian Barnett y colegas, Queensland University of Technology, publicado en el British Medical Journal en diciembre de 2011 (edición de Navidad del BMJ, donde publican investigaciones reales pero de temas curiosos). Analizaron 1.046 músicos famosos que tuvieron un álbum #1 en el Reino Unido entre 1956 y 2007, y siguieron cuántos murieron y a qué edad. Resultado central: NO hay ningún pico de muertes a los 27 años. El riesgo de morir a los 27 era estadísticamente igual que a los 25 o a los 32. El "27" no tiene nada de especial. [VERIFICAR cifras exactas — 1.046 músicos, 71 muertes / 7% durante el seguimiento; edición BMJ dic 2011.]
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y el método importa, así que aguántenme diez segundos de rigor. Ellos no hicieron lo que hace la leyenda, que es arrancar con la lista de muertos famosos y contar cuántos tenían veintisiete; eso es trampa, uno empieza con el resultado que quiere. Hicieron lo contrario: tomaron a más de mil músicos que llegaron al número uno, famosos y no tanto, vivos y muertos, y los siguieron a todos a lo largo del tiempo para ver a qué edad se moría cada cual. Con esa muestra completa, sin escoger a dedo, el famoso pico de los veintisiete simplemente no aparece. Se desinfla.<br><br>
+                    Ahí está. Estadísticamente, el Club de los 27 no existe. La maldición del número no aparece por ningún lado cuando uno cuenta de verdad, con una muestra grande, en vez de coleccionar solo los casos que confirman la historia que ya queríamos creer.<br><br>
+                    ¿Y por qué se siente tan real, entonces? Por dos trampas de nuestra propia cabeza, y vale la pena nombrarlas porque no aplican solo a esto — aplican a casi toda superstición.<br><br>
+                    La primera: nosotros vemos patrones donde no los hay. El cerebro humano es una máquina de encontrar figuras. Vemos caras en las nubes, vemos un rostro en la Luna. Cuando cinco músicos mueren a la misma edad en dos años, el cerebro grita "¡PATRÓN!" antes de que la razón alcance a preguntar cuántos músicos murieron a los veintiséis, o a los veintiocho, o a los treinta y uno en esos mismos años. Nadie hace esa lista. La lista de los otros números es aburrida, no confirma nada, así que no se cuenta. Solo coleccionamos el veintisiete.<br><br>
+                    Déjenme ponerlo con nombres, porque así se ve clarísimo. ¿Cuántos gigantes murieron jóvenes pero NO a los veintisiete, y por eso nadie los mete en ningún club? John Lennon, asesinado a los cuarenta. Elvis, a los cuarenta y dos. David Bowie, a los sesenta y nueve. Prince, a los cincuenta y siete, de una sobredosis de analgésicos. Y del lado joven, más cerca de nosotros: Avicii, el DJ, murió a los veintiocho; Mac Miller a los veintiséis. Muchos de ellos por lo mismo exacto que mató a los del club, drogas, presión, salud mental hecha pedazos. Pero ninguno entra en la leyenda, porque el número no les cuadra. ¿Y por qué no hay un Club de los 28, o uno de los 26? Porque no nos hace falta. Ya teníamos el número que nos gustaba, guardamos las coincidencias que lo confirman y botamos las demás. Eso es una superstición en una sola frase: coleccionar lo que confirma lo que uno ya quería creer, y olvidar el resto. [VERIFICAR edades: Lennon 40, Elvis 42, Bowie 69, Prince 57, Avicii 28, Mac Miller 26.]<br><br>
+                    Y la segunda trampa es todavía más perversa, porque tiene que ver con la fama.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Piénsenlo al revés. Uno cree que morir a los 27 te mete en el club. ¿Y si fuera al contrario? ¿Y si morir joven, en la cima, con el talento intacto y la historia sin terminar, es justamente lo que te vuelve leyenda? [PAUSA] Un músico que muere viejo, después de veinte años de discos mediocres, se apaga despacio y lo olvidamos. Un músico que muere a los 27, en su mejor momento, se congela para siempre en la versión más brillante de sí mismo. La muerte joven no es lo que interrumpe el mito — es el combustible del mito. Por eso recordamos a los veintisiete y no a los que se salvaron. La leyenda del club no se sostiene sobre la edad. Se sostiene sobre lo que la fama le hace a nuestra memoria.<br><br>
+                    Entonces, si no hay maldición, ¿ya podemos respirar tranquilos, decir "todo fue casualidad" y cerrar el expediente? [PAUSA] No. Y acá es donde les cobro la promesa del principio.<br><br>
+                    Porque ese mismo estudio que mató la maldición encontró otra cosa. Algo que no salió en los titulares porque no es tan divertido, pero que es cierto. Los músicos famosos, en sus veintes y sus treintas, mueren [ÉNFASIS]dos o tres veces más[/ÉNFASIS] que cualquier persona normal de su misma edad. No a los 27 en particular — en toda esa franja de juventud. El número 27 es mentira. El peligro de ser una estrella de rock joven es completamente real.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    ¿Y saben qué es lo que de verdad los mata? No un cruce de caminos, no un pacto, no un número maldito. Los mata algo mucho más terrenal y mucho más difícil de ver, porque no cabe en una buena historia de terror: los mata la industria. Los mata la fama que les cae encima a los veinte años, antes de que nadie sepa cómo cargarla. Los mata el dinero de golpe, el acceso ilimitado a todo, la soledad rarísima de estar rodeado de gente que vive de uno. Los mata una adicción que empezó como escape y terminó como jaula. Los mata que a esa edad uno todavía se cree inmortal.<br><br>
+                    Miren la lista otra vez con esos ojos: Jones, Hendrix, Joplin, Cobain, Winehouse. Drogas, alcohol, soledad, dolor no tratado, salud mental que nadie cuidó. Ni una sola de esas muertes necesita al diablo para explicarse. Y fíjense en un detalle que lo delata todo: cuando la gente trata de explicar por qué justo el veintisiete, se va para la numerología, para la astrología, para el llamado "retorno de Saturno" que dizque ocurre a esa edad. Cuando uno necesita tres teorías místicas distintas para apuntalar un patrón, casi siempre es porque el patrón no se sostiene solo. La realidad no necesita horóscopos: la realidad es una lista de historias clínicas, y casi todas tienen el mismo perfil. Empezaron a consumir muy jóvenes. Cargaban una herida de salud mental que en su época ni se nombraba, la palabra "depresión" no se decía en voz alta, y menos un hombre, y menos una estrella de rock que tenía que ser invencible. Y la industria los prefería productivos antes que sanos, porque nadie a su alrededor ganaba dinero si ellos paraban a cuidarse. Y esa, para mí, es la parte que de verdad da escalofrío. Una maldición sería casi un consuelo — sería algo de afuera, algo místico, algo que a uno no le va a tocar. Lo que de verdad pasó es peor: es un sistema que agarra gente joven y talentosa, la exprime, y demasiadas veces la deja caer. Y eso no es magia. Eso lo podríamos cambiar. Simplemente, la mayoría de las veces, no lo cambiamos.<br><br>
+                    Y ojo con una cosa, porque acá está la trampa más peligrosa de todas. En la nota que Kurt Cobain dejó escrita citó una frase de una canción de Neil Young: "es mejor arder que apagarse lentamente". Esa idea, la de que es más noble irse joven y en llamas que envejecer y apagarse despacio, es preciosa en una canción y es veneno puro en la vida real. Porque cuando nosotros convertimos a estos muertos en santos, en un club exclusivo, en leyenda romántica, le estamos mandando a la próxima generación de artistas de veinte años un mensaje horrible: que autodestruirse es parte del arte, que el dolor no tratado es glamuroso, que morir joven lo vuelve a uno eterno. No es cierto. No los volvió eternos la muerte. Los volvió eternos la música que alcanzaron a hacer antes. Y con más años, habrían hecho más. [VERIFICAR: Cobain citó a Neil Young, "it's better to burn out than to fade away", en su nota; ampliamente documentado.]<br><br>
+                    Ese es el takeaway de hoy, y me lo llevo yo también: cuando una historia sobrenatural es demasiado redonda, demasiado perfecta, casi siempre está tapando una verdad humana más incómoda. La maldición del 27 tapa una conversación sobre adicción, salud mental y cómo tratamos a nuestros artistas. Quítenle el misterio de encima, y lo que queda no es menos triste. Es más urgente.<br><br>
+                    Y que quede claro, porque en la Guarida respetamos a los artistas: contar esta historia no es faltarle al respeto a ninguno de ellos. Al contrario. Respetarlos de verdad es dejar de coleccionarlos como estampitas de un club macabro y empezar a verlos como lo que fueron, personas con un talento descomunal y un dolor real que la industria y la época no supieron, o no quisieron, cuidar. La leyenda los aplana a todos en un solo número. La verdad les devuelve la cara.
+                </div>
+            </div>
+        </div>
+
+        <!-- SEG 6 -->
+        <div class="segment">
+            <div class="segment-header"><div class="segment-number">6</div><div class="segment-title">Cierre + Conector</div><div class="segment-time">40:00 — ~43:00</div></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Así que ese es el primer Archivo Secreto de la Guarida. El Club de los 27: una superstición que no resiste los números, montada encima de un peligro que sí es completamente real. El mito es falso. Lo que el mito esconde, no.<br><br>
+                    Pero les dejé una puerta abierta, y no se me olvida. Robert Johnson. El socio fundador. El bluesman del que casi no hay fotos y que, según la leyenda, no aprendió a tocar así de bueno — sino que se paró una medianoche en un cruce de dos caminos de tierra en Mississippi, un desconocido le afinó la guitarra, y desde esa noche tocó como los ángeles. O como los demonios. El pacto con el diablo.<br><br>
+                    Esa es la otra gran leyenda del rock. La idea de que este talento, esta oscuridad, esta música que a veces suena a que viene de otro lado — que en serio venga de otro lado. Y no es solo Robert Johnson. Esa acusación se la han echado a Led Zeppelin, a bandas de metal enteras, a canciones que supuestamente esconden mensajes si uno las pone al revés. Y de eso va el próximo Archivo Secreto. [PAUSA] Pactos, símbolos y mensajes ocultos: el rock y el diablo.<br><br>
+                    Si esta historia les gustó, háganme un favor concreto: mándensela a ese amigo que se sabe todos los datos de rock, el que va a querer discutir a quién le faltó en la lista. Y cuéntenme en los comentarios — ¿a ustedes cuál de estos artistas les duele más? A mí, hoy, me pesó Amy.<br><br>
+                    Gracias por acompañarme en la Guarida. Cuídense, cuiden a la gente que quieren, y no romanticen tanto a los que se van temprano. Nos oímos en el próximo expediente.
+                </div>
+            </div>
+            <div class="nota-produccion">Conector real (no inventado): Robert Johnson aparece DENTRO de este episodio como socio fundador; su leyenda del cruce de caminos es el puente natural al próximo "Archivo Secreto" (pactos con el diablo / Led Zeppelin-Crowley / backmasking). Cumple la regla del conector: el dato-puente se descubrió en la investigación de este episodio, no se forzó.</div>
+        </div>
+
+        <!-- SEG 7 -->
+        <div class="segment">
+            <div class="segment-header"><div class="segment-number">7</div><div class="segment-title">Outro Music</div><div class="segment-time">~43:00</div></div>
+            <div class="sfx">[SFX: OUTRO — Jazz 1950s estilo Billie Holiday + cierre con trío de mujeres de época. "...Sweet dreams, until we meet." Nostalgia, calidez, despedida. Fade in.]</div>
+        </div>
+
+    </div>
+
+    <!-- LINT / CIERRE DE PRODUCCIÓN -->
+    <div class="section" style="padding-bottom:40px;">
+        <h2>Lint del Guion (reglas anti-repetición)</h2>
+        <div class="nota-produccion">Conteo de muletillas con presupuesto (CLAUDE.md §Reglas anti-repetición): "imagínense/imagínese" = 0 usos (presupuesto: máx 1). "me vuela la cabeza / les va a volar la cabeza" = 0 usos (presupuesto: máx 1). "o sea" / "básicamente" / "totalmente" / "agárrense de la silla" = 0 usos (prohibidas). Líneas de pura validación ("eso es una locura" sola, "una locura total") = 0 (regla 2: cada afirmación aporta dato/imagen/contrapunto).</div>
+        <div class="nota-produccion">Apertura: cold open dentro de escena, un solo gancho (coincidencia 3 de julio), sin volcar la agenda completa (regla 5). Listas → escena: los 5 del racimo se dan con imagen propia, no como inventario (regla 6). Transiciones con gancho, sin meta-anuncios ("ahora vamos a...") (regla 7). Diálogo interno (pregunta retórica → respuesta) reemplaza al segundo host (formato solo).</div>
+        <div class="verificar">WORD COUNT: contar programáticamente las palabras de los bloques `host-text` (excluir `dato`/`leyenda`/`nota-produccion`/`verificar`/headers/SFX) con `Get-Content -Raw -Encoding UTF8` y confirmar ±15% del target de ~5.543. Recalibrar wpm/expansión contra el SRT real tras grabar (`E:\Transcriptor\transcripciones\`), y actualizar `guion-style-mpd.md` (muestra pasa de n=1 a n=2).</div>
+    </div>
+
+</div>
