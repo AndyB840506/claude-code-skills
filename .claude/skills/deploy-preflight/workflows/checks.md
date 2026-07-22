@@ -22,6 +22,22 @@ tumbando produccion de otro show hasta que se detecto y se restauro.
 cat <directory>/.vercel/project.json
 ```
 
+**El nombre esperado del Paso 1 tambien caduca — verificalo contra el dominio, no contra
+un doc** (mordio 2026-07-22, MPD): el proyecto se habia renombrado el 2026-07-19 y tanto
+`.vercel/project.json` como la memoria `reference_mpd_website_live` seguian nombrando al
+proyecto viejo (`v0-mr-putrids-den`), que habia quedado huerfano. Desplegar ahi **reporta
+exito y deja produccion intacta** — no hay error visible. La unica fuente autoritativa es
+quien sirve el dominio ahora mismo:
+
+```bash
+vercel inspect https://www.<dominio>/ --scope <team>
+```
+
+El campo `name` de la respuesta es el proyecto real. Si no coincide con `project.json`,
+reescribi `project.json` con el `projectId` correcto (`vercel project inspect <nombre>
+--scope <team>` lo devuelve; el `orgId` es el mismo para todos los proyectos del team) —
+**nunca con `vercel link`** desde un subdirectorio, ver el pitfall del Paso 2.
+
 Confirma que `projectName` coincide EXACTAMENTE con el esperado del Paso 1. Si no
 coincide (o si el nombre de la carpeta coincide con el nombre de OTRO proyecto Vercel
 conocido en este workspace — ej. una carpeta llamada `website` cuando existe un

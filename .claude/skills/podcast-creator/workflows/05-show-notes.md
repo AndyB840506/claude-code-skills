@@ -4,6 +4,26 @@ Genera las notas del episodio optimizadas para SEO, listas para publicar en Spot
 
 **Regla fundamental: El título de Spotify no puede superar 80 caracteres. Verificar el conteo explícitamente antes de entregar.**
 
+## Metadata a nivel SHOW (no de episodio)
+
+Este workflow genera metadata **por episodio**. Cuando lo que hay que actualizar es la
+descripción del **show completo** (pivote editorial, temporada nueva, rebrand), aplican
+límites distintos:
+
+| Campo | Tope | Ojo |
+|---|---|---|
+| Descripción del show (Spotify) | **600 caracteres** | Aplica al texto **tal como se pega** |
+| Título del show | sin cambios en un pivote | El nombre público no se toca salvo decisión explícita |
+
+- **Si la descripción va en HTML, las etiquetas CUENTAN** — son ~7 caracteres por `<p>`.
+  Medir la versión HTML completa, no solo el texto visible.
+- **Medir con `len()`, no estimar.** Mordió el 2026-07-22 en MPD: la descripción se
+  escribió y se dio por buena; salió de 949 caracteres en texto plano y 1102 en HTML.
+- Guardar la versión ya ajustada en `podcast-profile.json` en un campo propio
+  (`descripcion_spotify_600`) y apuntar ahí desde el perfil, para que la próxima corrida
+  no la regenere desde `descripcion_larga`, que es interna y no respeta el tope.
+- Al recortar, **anotar qué se cayó** — sirve si otro campo o plataforma admite más texto.
+
 ---
 
 ## Paso 0 — Cargar datos

@@ -347,6 +347,31 @@ Always test: navigation collapses to hamburger on mobile, text is readable, CTAs
 
 ---
 
+## Rule 10b: Images — always pair `width:100%` with `height:auto`
+
+Giving an `<img>` explicit `width`/`height` attributes is correct (it reserves layout space
+and prevents CLS), but the attribute keeps applying as a CSS height. So this **stretches**:
+
+```css
+img { display: block; max-width: 100%; }   /* falta height */
+```
+```html
+<img src="cover.jpg" width="760" height="760">   <!-- en una columna de 340px -->
+```
+
+The width scales to 340 px, the height stays pinned at 760 → the image renders distorted.
+Put it in the global reset so no future image repeats it:
+
+```css
+img { display: block; max-width: 100%; height: auto; }
+```
+
+Caught 2026-07-22 on the MPD site: the cover art shipped visibly stretched and the user
+spotted it, not the build. Fixing it globally rather than on the one selector means the
+next image added to the page can't reintroduce it.
+
+---
+
 ## Rule 11: Scroll-Driven Video (Apple-style) — `site_type: scroll`
 
 Use when the user selects **Scroll Experience** or provides a video file.

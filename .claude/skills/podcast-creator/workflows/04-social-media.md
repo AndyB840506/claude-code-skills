@@ -46,6 +46,25 @@ intriga, Día 2 mantiene la quote de valor, y Día 3 se convierte en un último 
 antes de pasar al siguiente episodio. (Detectado en MPD EP.005, donde el plan se
 generó 2 días después de publicado.)
 
+**Fallback — no hay fecha de publicación (episodio sin grabar):** si el episodio tiene
+guion pero todavía no existe el audio, **este workflow no aplica**. El plan de 3 días
+está construido hacia atrás desde una fecha, y acá no hay a qué contar. Genera en su
+lugar un **arco de revelación**:
+
+- Anuncia el **cambio** (temporada nueva, giro editorial, identidad nueva), no un episodio.
+- **Sin cuenta regresiva y sin ninguna promesa verificable:** ni fecha de estreno, ni
+  duración. La duración estimada de un episodio sin grabar es una proyección y falla —
+  en MPD EP.005 se estimaron 42 min y salieron 35,8. El estado se expresa cualitativo
+  ("en producción", "expediente abierto"), nunca en minutos ni en días.
+- Estructura en beats, no en días: cada beat sube una capa (intriga → manifiesto → primer
+  tema). **El último beat es repetible** — se puede volver a publicar con otra pieza
+  mientras llega el audio, sin que se lea como que se repitió el anuncio.
+- Ritmo sugerido: un beat cada ~3 días, y el arco se sostiene indefinidamente.
+- Cuando por fin haya fecha, ahí sí corre el plan de 3 días normal encima del arco.
+
+(Detectado en MPD Temporada 2, 2026-07-22: guion listo, sin grabar, y había que anunciar
+el pivote del show.)
+
 ---
 
 ## Paso 2 — Generar plan completo

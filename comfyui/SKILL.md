@@ -22,6 +22,7 @@ User manual: `<root>\manual.html` (offline copy) or https://claude.ai/code/artif
 - Paths, hardware, installed models, API endpoints: `docs/stack-reference.md`
 - Known failures and fixes: `docs/troubleshooting.md`
 - Prompt structure per model family + iteration method: `docs/prompting.md`
+- Post-proceso PIL — composición de tipografía, scrims, grading, aprobación en miniatura: `docs/artwork-composition.md`
 
 ## Hard rules
 
