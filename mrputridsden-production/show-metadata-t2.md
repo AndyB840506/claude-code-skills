@@ -32,36 +32,39 @@ Donde la música se encuentra con el mito
 
 ## Descripción del show
 
-Texto plano — para el campo de descripción de Spotify/Apple/Amazon.
+> **Límite: 600 caracteres.** Aplica al texto tal como se pega, así que la versión HTML se mide
+> **con las etiquetas incluidas** (~7 caracteres por párrafo). La primera versión de este archivo
+> se pasó por mucho — 949 la plana y 1102 la HTML — porque no se midió. Medir, no estimar:
+> `python -c "print(len(open('x.txt',encoding='utf-8').read()))"`.
+
+Texto plano — para el campo de descripción de Spotify/Apple/Amazon. **543 caracteres.**
 
 ```
 Mr. Putrid's Den es el podcast donde la música se encuentra con el mito.
 
-Cada episodio abre un expediente: la muerte que nadie explicó, el disco que la gente jura maldito, el genio que se apagó demasiado pronto. Historias que se buscan a medianoche, que llenan foros enteros y que se repiten como verdad aunque nadie las haya podido probar.
+Cada episodio abre un expediente: la muerte que nadie explicó, el disco maldito, el genio que se apagó demasiado pronto. Primero va la leyenda completa, tal como se cuenta a medianoche. Después la abrimos y separamos qué es mito y qué es dato. Casi siempre pasa lo mismo: cuando se le quita la maldición, lo que queda debajo asusta más.
 
-El trato es siempre el mismo: primero la leyenda completa, con todos sus detalles escalofriantes, tal como se cuenta. Después la abrimos, le miramos las tripas y separamos qué es mito y qué es dato. Y casi siempre pasa lo mismo: cuando se le quita la maldición, lo que queda debajo asusta más.
+Sin ouija ni sustos baratos. Conducido por Andrés desde Bogotá.
 
-Sin ouija, sin pentagramas, sin sustos baratos. Investigación, respeto por los muertos, y una silla junto al fuego. Acá no vendemos humo.
-
-Conducido por Andrés desde Bogotá.
-
-La Temporada 1 (episodios 1 al 5) queda como archivo y sigue completa: rock, metal y raíces, de Black Sabbath a Kraken y Aterciopelados.
+Temporada 1 (EP.001-005) queda como archivo: rock, metal y raíces.
 ```
 
 ## Descripción del show — HTML
 
 Spotify acepta HTML limitado. `<p>` por párrafo garantiza el espaciado y evita que se peguen
-palabras al pegar (mismo criterio que en los `ep00X-metadata.md`).
+palabras al pegar (mismo criterio que en los `ep00X-metadata.md`). **565 caracteres con etiquetas.**
 
 ```html
 <p>Mr. Putrid's Den es el podcast donde la música se encuentra con el mito.</p>
-<p>Cada episodio abre un expediente: la muerte que nadie explicó, el disco que la gente jura maldito, el genio que se apagó demasiado pronto. Historias que se buscan a medianoche, que llenan foros enteros y que se repiten como verdad aunque nadie las haya podido probar.</p>
-<p>El trato es siempre el mismo: primero la leyenda completa, con todos sus detalles escalofriantes, tal como se cuenta. Después la abrimos, le miramos las tripas y separamos qué es mito y qué es dato. Y casi siempre pasa lo mismo: cuando se le quita la maldición, lo que queda debajo asusta más.</p>
-<p>Sin ouija, sin pentagramas, sin sustos baratos. Investigación, respeto por los muertos, y una silla junto al fuego. Acá no vendemos humo.</p>
-<p>Conducido por <b>Andrés</b> desde Bogotá.</p>
-<p><i>La Temporada 1 (episodios 1 al 5) queda como archivo y sigue completa: rock, metal y raíces, de Black Sabbath a Kraken y Aterciopelados.</i></p>
-<p>🌐 <a href="https://www.mrputridsden.com">www.mrputridsden.com</a><br>✉️ hello@mrputridsden.com</p>
+<p>Cada episodio abre un expediente: la muerte que nadie explicó, el disco maldito, el genio que se apagó demasiado pronto. Primero va la leyenda completa, tal como se cuenta a medianoche. Después la abrimos y separamos qué es mito y qué es dato: cuando se le quita la maldición, lo que queda debajo asusta más.</p>
+<p>Sin ouija ni sustos baratos. Conducido por Andrés desde Bogotá.</p>
+<p>Temporada 1 queda como archivo. <a href="https://www.mrputridsden.com">mrputridsden.com</a></p>
 ```
+
+**Qué se perdió al recortar**, por si algún campo largo lo admite después: el párrafo de método
+completo ("con todos sus detalles escalofriantes… le miramos las tripas"), la línea de "acá no
+vendemos humo", los nombres de bandas del archivo (Black Sabbath, Kraken, Aterciopelados) y el
+email en el cuerpo. La web sí conserva todo eso.
 
 ## Descripción corta
 
