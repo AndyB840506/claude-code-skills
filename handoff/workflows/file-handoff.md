@@ -16,6 +16,10 @@ Write handoff doc to a file, commit, and push so any machine can resume.
 3. **Scan for pending markers** before drafting Next Steps:
    - Search active project files for `USER-COMMENT`, `NEEDS USER INPUT`, `[TODO]`, `FIXME`
    - Note: ignore markers inside `.claude/skills/` files — only flag project files
+   - **Mark machine-bound next steps.** If a step depends on a gitignored or untracked
+     artifact (contact CSVs, caches like `seen_jobids.json`, data on `E:\`/`D:\`), say so
+     in the step itself — otherwise the next session tries it from the other machine and
+     hits the wall halfway through.
 
 4. **Write the handoff file** to `<repo-root>/.agents/handoff/YYYY-MM-DD-<topic>.md`
 
@@ -23,6 +27,7 @@ Write handoff doc to a file, commit, and push so any machine can resume.
    ```markdown
    # Handoff: <Title>
    **Date:** YYYY-MM-DD
+   **Machine:** desktop (E:\) | laptop (D:\) — where this session ran
    **Status:** Complete | In progress — [one-line state]
    ---
    ## What We Accomplished This Session
