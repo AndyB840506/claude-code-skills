@@ -1,0 +1,261 @@
+<style>
+  :root{
+    --medianoche:#141110;      /* ground: warm near-black */
+    --humo:#211b17;            /* raised surface / cards */
+    --barrica:#4a201b;         /* oxblood / whisky-barrel red-brown */
+    --barrica-hi:#6e2f26;
+    --ambar:#ce8b3a;           /* whisky amber — primary accent */
+    --ambar-glow:#e9ab4d;      /* brighter amber highlight */
+    --polvo:#e7ddc9;           /* bone / dust-of-the-road — main text */
+    --polvo-dim:#a89b84;       /* muted bone — secondary text */
+    --patina:#5e7a6e;          /* rusted road-sign green — cold accent, sparing */
+    --linea:#3a302a;           /* hairlines */
+    --display: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+    --body: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --mono: ui-monospace, 'Cascadia Code', 'Consolas', monospace;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  .cdc{
+    background:var(--medianoche);
+    color:var(--polvo);
+    font-family:var(--body);
+    line-height:1.7;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+    padding:0 20px 80px;
+    min-height:100vh;
+  }
+  .wrap{ max-width:880px; margin:0 auto; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    text-align:center;
+    padding:96px 16px 72px;
+    overflow:hidden;
+    border-bottom:1px solid var(--linea);
+  }
+  /* crossroads motif: two crossing roads + a streetlamp glow — no occult symbols */
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(120px 120px at 50% 42%, rgba(233,171,77,.16), transparent 70%),
+      linear-gradient(to bottom, transparent 0, transparent calc(42% - 1px), rgba(206,139,58,.22) 42%, transparent calc(42% + 1px)),
+      linear-gradient(to right, transparent 0, transparent calc(50% - 1px), rgba(206,139,58,.16) 50%, transparent calc(50% + 1px));
+    pointer-events:none;
+  }
+  .hero > *{ position:relative; }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px; letter-spacing:.28em; text-transform:uppercase;
+    color:var(--ambar); margin-bottom:26px;
+  }
+  .wordmark{
+    font-family:var(--display);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    line-height:1.05;
+    text-wrap:balance;
+    font-size:clamp(30px, 7vw, 62px);
+    color:var(--polvo);
+    text-shadow:0 2px 30px rgba(0,0,0,.6);
+  }
+  .wordmark .amp{ color:var(--ambar); font-style:italic; letter-spacing:0; }
+  .wordmark .amp2{ color:var(--ambar); }
+  .rule{
+    width:64px; height:2px; background:var(--ambar);
+    margin:28px auto 24px; border:0;
+  }
+  .tagline{
+    font-family:var(--display); font-style:italic;
+    font-size:clamp(16px,2.4vw,21px); color:var(--polvo-dim);
+    text-wrap:balance;
+  }
+  .oldname{ margin-top:30px; font-size:13px; color:var(--polvo-dim); }
+  .oldname s{ color:var(--barrica-hi); text-decoration-thickness:1px; }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding:56px 0; border-bottom:1px solid var(--linea); }
+  .kicker{
+    font-family:var(--mono); font-size:12px; letter-spacing:.24em;
+    text-transform:uppercase; color:var(--ambar); margin-bottom:18px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .kicker::before{ content:""; width:22px; height:1px; background:var(--ambar); }
+  h2{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(22px,3.4vw,30px); letter-spacing:.01em;
+    color:var(--polvo); margin-bottom:18px; text-wrap:balance;
+  }
+  p{ color:var(--polvo); margin-bottom:14px; max-width:62ch; }
+  p.lead{ font-size:18px; color:var(--polvo); }
+  em.amber{ color:var(--ambar-glow); font-style:normal; }
+
+  /* ---------- PALETTE ---------- */
+  .swatches{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-top:8px; }
+  .sw{ border:1px solid var(--linea); border-radius:6px; overflow:hidden; background:var(--humo); }
+  .sw .chip{ height:78px; }
+  .sw .meta{ padding:10px 12px; }
+  .sw .nm{ font-size:13px; font-weight:600; color:var(--polvo); }
+  .sw .hex{ font-family:var(--mono); font-size:12px; color:var(--polvo-dim); text-transform:uppercase; }
+  .sw .use{ font-size:11px; color:var(--polvo-dim); margin-top:4px; line-height:1.4; }
+
+  /* ---------- TYPE ---------- */
+  .typerow{ padding:16px 0; border-top:1px solid var(--linea); }
+  .typerow:first-child{ border-top:0; }
+  .type-label{ font-family:var(--mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--polvo-dim); margin-bottom:8px; }
+  .samp-display{ font-family:var(--display); font-weight:700; font-size:34px; letter-spacing:.02em; color:var(--polvo); }
+  .samp-body{ font-family:var(--body); font-size:16px; color:var(--polvo); max-width:62ch; }
+  .samp-mono{ font-family:var(--mono); font-size:14px; letter-spacing:.12em; text-transform:uppercase; color:var(--ambar); }
+
+  /* ---------- EPISODE LOCKUP ---------- */
+  .lockup{
+    background:
+      radial-gradient(140px 90px at 82% 18%, rgba(206,139,58,.14), transparent 70%),
+      var(--humo);
+    border:1px solid var(--linea); border-left:3px solid var(--ambar);
+    border-radius:8px; padding:30px 30px 32px;
+  }
+  .lockup .exp{ font-family:var(--mono); font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--patina); margin-bottom:14px; }
+  .lockup .show{ font-family:var(--display); text-transform:uppercase; letter-spacing:.2em; font-size:13px; color:var(--polvo-dim); margin-bottom:8px; }
+  .lockup .eptitle{ font-family:var(--display); font-weight:700; font-size:clamp(26px,4.4vw,40px); color:var(--polvo); line-height:1.08; text-wrap:balance; }
+  .lockup .epsub{ margin-top:14px; font-style:italic; color:var(--polvo-dim); font-family:var(--display); }
+
+  /* ---------- TAGLINES ---------- */
+  ul.tags{ list-style:none; display:grid; gap:10px; margin-top:6px; }
+  ul.tags li{ padding-left:20px; position:relative; color:var(--polvo); font-family:var(--display); font-style:italic; font-size:17px; }
+  ul.tags li::before{ content:""; position:absolute; left:0; top:.75em; width:9px; height:1px; background:var(--ambar); }
+  .primary-tag{ color:var(--ambar-glow) !important; }
+
+  /* ---------- DO / DONT ---------- */
+  .cols{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:6px; }
+  @media(max-width:620px){ .cols{ grid-template-columns:1fr; } }
+  .card{ background:var(--humo); border:1px solid var(--linea); border-radius:8px; padding:20px 22px; }
+  .card h3{ font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase; margin-bottom:14px; }
+  .card.do h3{ color:var(--patina); }
+  .card.dont h3{ color:var(--barrica-hi); }
+  .card ul{ list-style:none; display:grid; gap:9px; }
+  .card li{ font-size:14px; color:var(--polvo); padding-left:18px; position:relative; }
+  .card.do li::before{ content:"—"; position:absolute; left:0; color:var(--patina); }
+  .card.dont li::before{ content:"\00d7"; position:absolute; left:0; color:var(--barrica-hi); }
+
+  .foot{ padding-top:40px; color:var(--polvo-dim); font-size:13px; text-align:center; }
+  .foot .mono{ font-family:var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--ambar); }
+</style>
+
+<div class="cdc">
+  <div class="wrap">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="eyebrow">Identidad de marca · Propuesta 01</div>
+      <div class="wordmark">The <span class="amp2">Crossroads</span></div>
+      <hr class="rule">
+      <div class="tagline">Donde la música se encuentra con el mito</div>
+      <div class="oldname">reemplaza a <s>Mr. Putrid's Den</s> · un podcast de leyendas y misterios del rock</div>
+    </header>
+
+    <!-- CONCEPTO -->
+    <section>
+      <div class="kicker">El concepto</div>
+      <h2>Una cantina al borde de una carretera, a medianoche.</h2>
+      <p class="lead"><em class="amber">The Crossroads:</em> un cruce de caminos en mitad de la nada. Una luz ámbar temblando sobre la barra. Y alguien que llega con una historia del rock que no se cuenta a la luz del día: la muerte que nadie explicó, el disco maldito, el genio que se apagó demasiado pronto.</p>
+      <p>El cruce de caminos es el punto donde <em class="amber">la música se encuentra con el mito</em> — la encrucijada donde cada leyenda del rock eligió su rumbo. No es un lugar de rituales; es un lugar de <em class="amber">historias</em>. El misterio vive en la carretera, en la noche y en el whisky, no en ningún símbolo.</p>
+      <p>El show desarma cada leyenda con respeto y con datos: separa lo comprobado del rumor, y casi siempre encuentra que la verdad humana asusta más que cualquier maldición.</p>
+    </section>
+
+    <!-- PALETA -->
+    <section>
+      <div class="kicker">Paleta — "Whisky &amp; carretera"</div>
+      <h2>Neutros cálidos, un ámbar que manda, un rojo de barrica.</h2>
+      <p>Evoluciona el negro y el crimson de la etapa anterior hacia algo más ahumado y nocturno: el naranja chillón se vuelve <em class="amber">ámbar de whisky</em>, el crimson se hunde en <em class="amber">rojo de barrica</em>, y aparece el hueso del polvo del camino para leer.</p>
+      <div class="swatches">
+        <div class="sw"><div class="chip" style="background:#141110"></div><div class="meta"><div class="nm">Medianoche</div><div class="hex">#141110</div><div class="use">Fondo. Negro cálido, no puro.</div></div></div>
+        <div class="sw"><div class="chip" style="background:#211b17"></div><div class="meta"><div class="nm">Humo</div><div class="hex">#211B17</div><div class="use">Superficies, tarjetas.</div></div></div>
+        <div class="sw"><div class="chip" style="background:#ce8b3a"></div><div class="meta"><div class="nm">Ámbar</div><div class="hex">#CE8B3A</div><div class="use">Acento principal. Whisky, luz de barra.</div></div></div>
+        <div class="sw"><div class="chip" style="background:#4a201b"></div><div class="meta"><div class="nm">Barrica</div><div class="hex">#4A201B</div><div class="use">Rojo profundo. Peligro, sangre seca.</div></div></div>
+        <div class="sw"><div class="chip" style="background:#e7ddc9"></div><div class="meta"><div class="nm">Polvo</div><div class="hex">#E7DDC9</div><div class="use">Texto. Hueso, polvo del camino.</div></div></div>
+        <div class="sw"><div class="chip" style="background:#5e7a6e"></div><div class="meta"><div class="nm">Pátina</div><div class="hex">#5E7A6E</div><div class="use">Acento frío, mínimo. Señal de carretera oxidada.</div></div></div>
+      </div>
+    </section>
+
+    <!-- TIPOGRAFIA -->
+    <section>
+      <div class="kicker">Tipografía</div>
+      <h2>Serif de letrero viejo + sans limpia + mono de expediente.</h2>
+      <div class="typerow">
+        <div class="type-label">Display — wordmark y títulos (serif, versalitas, tracking amplio)</div>
+        <div class="samp-display">El Club de los 27</div>
+      </div>
+      <div class="typerow">
+        <div class="type-label">Cuerpo — lectura (sans neutra, cálida)</div>
+        <div class="samp-body">Tres de julio de 1969. Sacan del fondo de una piscina el cuerpo de Brian Jones, el hombre que fundó los Rolling Stones. Tenía veintisiete años. Dos años después, el mismo día, cae Jim Morrison.</div>
+      </div>
+      <div class="typerow">
+        <div class="type-label">Utilitaria — etiquetas, expedientes, datos (monoespaciada)</div>
+        <div class="samp-mono">Expediente 01 · Leyenda / Misterio · ~43 min</div>
+      </div>
+      <p style="margin-top:20px; font-size:13px; color:var(--polvo-dim);">Nota: el specimen usa fuentes de sistema para no depender de CDNs. El wordmark final se fijaría con una serif de letrero licenciada (dirección: humanista con carácter, tipo Recoleta / Domaine / Freight Display) antes de cerrar el logo.</p>
+    </section>
+
+    <!-- LOCKUP DE EPISODIO -->
+    <section>
+      <div class="kicker">Aplicación — lockup de episodio</div>
+      <h2>Cómo se firma cada capítulo.</h2>
+      <div class="lockup">
+        <div class="exp">Expediente 01</div>
+        <div class="show">The Crossroads</div>
+        <div class="eptitle">El Club de los 27</div>
+        <div class="epsub">Cinco muertes, dos años, una edad — y por qué la verdad sin maldición asusta más que el mito.</div>
+      </div>
+    </section>
+
+    <!-- TAGLINES -->
+    <section>
+      <div class="kicker">Voz — taglines candidatas</div>
+      <h2>El tono: nocturno, cálido, escéptico. Nunca solemne de más.</h2>
+      <ul class="tags">
+        <li class="primary-tag">Donde la música se encuentra con el mito &nbsp;— <span style="font-family:var(--mono); font-style:normal; font-size:11px; letter-spacing:.14em; color:var(--polvo-dim);">PRINCIPAL</span></li>
+        <li>El rock, a la hora en que se cuentan los secretos</li>
+        <li>Cada leyenda eligió un camino aquí</li>
+        <li>Historias que solo se cuentan a medianoche</li>
+      </ul>
+    </section>
+
+    <!-- DO / DONT -->
+    <section style="border-bottom:0;">
+      <div class="kicker">La regla de oro del look</div>
+      <h2>El misterio viene de la atmósfera, no de los símbolos.</h2>
+      <div class="cols">
+        <div class="card do">
+          <h3>Sí</h3>
+          <ul>
+            <li>Carretera solitaria, cruce, señal oxidada</li>
+            <li>Medianoche, luna, faros, neón tenue</li>
+            <li>Whisky, barra de bar, vinilo, humo</li>
+            <li>Grano de foto, polvo, luz ámbar cálida</li>
+            <li>Tipografía de letrero viejo, expediente</li>
+          </ul>
+        </div>
+        <div class="card dont">
+          <h3>Nunca</h3>
+          <ul>
+            <li>Pentagramas, sigilos, invertidos</li>
+            <li>Tarot, ouija, cabras, demonios, 666</li>
+            <li>Velas rituales / iconografía satánica</li>
+            <li>Cualquier símbolo ocultista</li>
+            <li>Naranja chillón de la etapa anterior</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">
+      <div class="mono">The Crossroads</div>
+      <p style="margin-top:8px; max-width:none;">Specimen de identidad · propuesta para aprobación · no reemplaza aún nada en vivo</p>
+    </div>
+
+  </div>
+</div>
