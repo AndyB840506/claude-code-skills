@@ -13,23 +13,35 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.004 P1 | Kraken: el Titan del Rock colombiano (Parte 1) | en Spotify - programado viernes 2026-06-19 (link listo) |
 | EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | grabado - sale ~2026-06-20 |
 | EP.005 | Aterciopelados: De un bar de Bogotá al continente. | en Spotify - https://open.spotify.com/episode/2D129VK9H4sn7itPKjgz3W - primer episodio solo, duracion real ~35.8 min habla / ~36.8 min total |
-| EP.006 | Archivos Secretos del Rock: El Club de los 27 | guion listo - 2026-07-21, `scripts/EP006-club-de-los-27.html`, ~5.208 palabras narracion (~40.5 min estimados con calibracion real MPD 159 wpm/+23.5%), formato solo. PRIMER episodio del pilar nuevo "Archivos Secretos del Rock". |
+| EP.006 (T2·E1) | El Club de los 27 | guion listo - 2026-07-21, `scripts/EP006-club-de-los-27.html`, ~5.208 palabras narracion (~40.5 min estimados con calibracion real MPD 159 wpm/+23.5%), formato solo. ESTRENO DE LA TEMPORADA 2. Publico = Temporada 2, Episodio 1; interno = 6º producido (EP.006). |
 
 ---
 
-**Pilar nuevo "Archivos Secretos del Rock" (decision de Andres 2026-07-21):** episodios completos
-dedicados a leyendas, mitos y misterios del rock, que ROTAN con los episodios anclados en banda
-(no un segmento corto embutido). Formato solo, mismo tono del show. Regla del pilar: explorar el
-misterio SIN vender el rumor como hecho — cada episodio separa el dato documentado de la leyenda.
-Expediente 01 = El Club de los 27 (EP.006). Conector descubierto en la investigacion: Robert Johnson
-y el pacto en el cruce de caminos -> puente natural al proximo Archivo Secreto (pactos con el diablo /
-Led Zeppelin-Crowley / backmasking).
+## Estructura de temporadas (decision de Andres 2026-07-21)
 
-**Reordenamiento del roadmap (2026-07-21):** al entrar el Club de los 27 como EP.006, el plan
-especulativo previo de `podcast-profile.json` (`roadmap_9_episodes`) corre +1 desde el antiguo EP.006:
-"Beatles vs Zeppelin" pasa a EP.007, "Stories: Conciertos" a EP.008, etc. Ese JSON es referencia
-suelta de futuro (no fuente de verdad) — esta tabla manda. Las preguntas abiertas heredadas siguen
-vigentes: fuente de contacto de invitados (antiguo EP.008) y tema del slot retirado (antiguo EP.009).
+El show pivota **100% a misterios y leyendas del rock**. En vez de renombrar/migrar plataformas
+(riesgo legal + dominio ya registrado), se parte en temporadas:
+
+- **Temporada 1 = EP.001–EP.005.** El show viejo (rock/metal/jazz variado), incluida la era co-host
+  con Juan. Queda como ARCHIVO — no se borra nada, conserva historia y suscriptores. Asi se
+  encapsula el "rastro de Juan" sin destruir nada.
+- **Temporada 2 = desde el Club de los 27** (misterios/leyendas). Numeracion publica REINICIA por
+  temporada: Club de los 27 = **T2 · E1**; los siguientes cuentan 1,2,3… dentro de la T2. En Spotify
+  se usan los campos nativos Season=2 / Episode=1 (se setean en el paso de metadata, NO requiere
+  dominio nuevo). El numero interno (EP.006, EP.007…) se mantiene en archivos/roadmap para continuidad.
+
+**Nombre:** publico sigue **Mr. Putrid's Den**. "The Crossroads" es codename interno de la etapa
+(no publico). Direccion visual T2 "whisky & carretera" — ver `rebrand/identidad-cruce-de-caminos.html`
+y memoria `project_mpd_rebrand_cruce_de_caminos`. SIN simbologia ocultista (limite firme de Andres).
+
+**Conector del Club de los 27** (descubierto en investigacion): Robert Johnson y el cruce de caminos
+-> puente al proximo expediente (pactos con el diablo / Led Zeppelin-Crowley / backmasking). OJO:
+ese tema toca lo ocultista — confirmar con Andres su comodidad y tratarlo desde angulo esceptico
+antes de producirlo (ver `feedback_mpd_no_occult_symbols`).
+
+**Plan especulativo previo** de `podcast-profile.json` (`roadmap_9_episodes`, "Beatles vs Zeppelin"
+etc.) queda como banco de ideas de banda para mezclar/descartar segun el nuevo enfoque de misterios —
+ya no es la fila activa. Esta tabla manda.
 
 ---
 
