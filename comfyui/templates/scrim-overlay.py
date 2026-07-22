@@ -40,3 +40,28 @@ def add_scrims(src_path, dst_path, top_frac=0.26, top_alpha=205,
     out = Image.composite(Image.new("RGB", (W, H), dark), im, mask)
     out.save(dst_path)
     return dst_path
+
+
+def scrim_bands(im, top_frac=0.0, top_alpha=215, bottom_frac=0.0, bottom_alpha=238,
+                dark=(6, 10, 22)):
+    """Igual que add_scrims pero en memoria y por bandas simples (arriba/abajo).
+
+    Existe para las piezas de redes, que componen varios formatos en una sola pasada y
+    no pueden ir escribiendo archivos intermedios. `dark` por defecto es el azul casi
+    negro del sistema T2, no negro puro: sobre la escena nocturna el negro puro marca
+    la costura del degradado.
+    """
+    out = im.copy()
+    W, H = out.size
+    for frac, alpha, from_top in ((top_frac, top_alpha, True), (bottom_frac, bottom_alpha, False)):
+        h = int(H * frac)
+        if h <= 1:
+            continue
+        grad = Image.new("L", (1, h))
+        for i in range(h):
+            t = i / (h - 1)
+            grad.putpixel((0, i), int(alpha * ((1 - t) if from_top else t)))
+        grad = grad.resize((W, h))
+        box = (0, 0, W, h) if from_top else (0, H - h, W, H)
+        out.paste(Image.composite(Image.new("RGB", (W, h), dark), out.crop(box), grad), box)
+    return out
