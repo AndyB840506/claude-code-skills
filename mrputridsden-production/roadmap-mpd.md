@@ -31,8 +31,10 @@ El show pivota **100% a misterios y leyendas del rock**. En vez de renombrar/mig
   dominio nuevo). El numero interno (EP.006, EP.007…) se mantiene en archivos/roadmap para continuidad.
 
 **Nombre:** publico sigue **Mr. Putrid's Den**. "The Crossroads" es codename interno de la etapa
-(no publico). Direccion visual T2 "whisky & carretera" — ver `rebrand/identidad-cruce-de-caminos.html`
-y memoria `project_mpd_rebrand_cruce_de_caminos`. SIN simbologia ocultista (limite firme de Andres).
+(no publico). Direccion visual T2 "La Guarida" — ver `rebrand/identidad-la-guarida.html` y memoria
+`project_mpd_rebrand_cruce_de_caminos`. SIN simbologia ocultista (limite firme de Andres).
+(El specimen viejo "whisky & carretera" / `identidad-cruce-de-caminos.html` quedo eliminado el
+2026-07-22: construia identidad publica sobre el codename interno.)
 
 **Conector del Club de los 27** (descubierto en investigacion): Robert Johnson y el cruce de caminos
 -> puente al proximo expediente (pactos con el diablo / Led Zeppelin-Crowley / backmasking). OJO:
