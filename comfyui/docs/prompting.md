@@ -127,6 +127,24 @@ Template: `comfyui/templates/zimage-txt2img-api.json`.
   cantante quedó con pelo largo ondulado tipo "cantante de jazz" en vez del corte bob
   ya establecido en la portada, porque el prompt nuevo no copió la descripción exacta
   del primero.
+- **Para ELIMINAR un elemento hay que borrar TODAS sus palabras, incluidos los sinónimos
+  atmosféricos — y verificarlo programáticamente antes de encolar** (aprendido 2026-07-22,
+  portada MPD Temporada 2, costó 4 generaciones). Secuencia real: (1) el prompt pedía humo
+  saliendo del puro y el modelo se lo puso al VASO; (2) al reescribirlo con "there is no smoke
+  anywhere near the glass" el humo siguió saliendo del vaso — la trampa de la negación otra vez;
+  (3) al quitar esa frase el humo del puro desapareció, pero seguían apareciendo plumas porque el
+  prompt aún decía **"thick haze hangs in the air"**; (4) recién al eliminar también `haze` quedó
+  limpio. **Regla:** grepear el prompt por el concepto Y sus sinónimos (`smoke|haze|mist|fog|vapour`)
+  y ABORTAR el POST si alguno aparece — no basta con quitar la mención obvia. Corolario de
+  atribución: cuando dos objetos cercanos compiten por un efecto (humo, luz, reflejo), amarrar el
+  efecto al objeto en la MISMA oración ("from the glowing tip of that cigar...") y verificar con un
+  crop ampliado de la zona antes de dar la imagen por buena — a tamaño completo el error no se ve.
+- **El envejecido/filtro de foto antigua NO se le pide al modelo: va como post-proceso PIL**
+  (aprendido 2026-07-22, MPD T2). Z-Image devuelve foto de producto limpia por más que se pida
+  "expired 35mm film, faded, scratches". Script reutilizable: `comfyui/templates/vintage_grade.py`
+  (`vintage(img, strength)` importable): desatura, split-tone cálido, levanta negros, viñeta, grano
+  por medios tonos, polvo y rayas confinadas a los márgenes laterales para que nunca crucen el
+  sujeto. Aplicarlo DESPUÉS del upscale, a la resolución final, para que el grano quede a escala.
 - **Reusar assets de íconos/logos reales entre shows antes de regenerar** (aprendido
   2026-07-17, MPD EP.005): los íconos de plataforma (Spotify, Apple Podcasts, Amazon
   Music, redes sociales) son los mismos logos reales sin importar el show — si otro
