@@ -20,10 +20,17 @@ from PIL import Image, ImageChops, ImageDraw, ImageFont
 
 # Paleta del sistema T2. Deriva de la escena real (marmol, cuero, fuego, whisky),
 # no del specimen de carretera que quedo obsoleto con el codename interno.
-MEDIANOCHE = (20, 17, 16)
+#
+# OJO: esta constante NO es el "Medianoche #0B1A39" de la paleta. Es el casi-negro
+# calido de la franja de iconos. Se llamaba MEDIANOCHE y mentia: cualquiera que leyera
+# el archivo iba a creer que ese era el color de fondo del sistema.
+FOOTER_DARK = (20, 17, 16)
 POLVO = (231, 221, 201)
 POLVO_DIM = (168, 155, 132)
-AMBAR = (206, 139, 58)
+# Acento unico del sistema: brasa #D9BF7A, el mismo del specimen y de la web.
+# Antes era #CE8B3A, un ambar mas naranja que quedo de una version previa: dejaba la
+# portada de Spotify como la unica pieza de la marca con otro acento (2026-07-22).
+BRASA = (217, 191, 122)
 
 F_DISPLAY = "C:/Windows/Fonts/BOOKOSB.TTF"   # Bookman Old Style Bold
 F_ITALIC = "C:/Windows/Fonts/BOOKOSI.TTF"    # Bookman Old Style Italic
@@ -74,7 +81,7 @@ def compose(scene_path, season_label, title, tagline, out_path, icon_strip_path=
 
     rule_w, rule_h = int(W * 0.07), max(2, int(H * 0.0013))
     rule_y = wm_y + int(H * 0.062)
-    draw.rectangle([(W - rule_w) / 2, rule_y, (W + rule_w) / 2, rule_y + rule_h], fill=AMBAR)
+    draw.rectangle([(W - rule_w) / 2, rule_y, (W + rule_w) / 2, rule_y + rule_h], fill=BRASA)
 
     # --- bloque inferior: temporada / titulo / tagline ---
     FOOTER_H = int(H * 0.058)
@@ -100,7 +107,7 @@ def compose(scene_path, season_label, title, tagline, out_path, icon_strip_path=
     block_h = int(label_font.size * 1.9) + line_h * len(lines) + int(H * 0.014) + tag_line_h * len(tag_lines)
     y = H - FOOTER_H - block_h - int(H * 0.055)
 
-    _tracked(draw, y, season_label.upper(), label_font, AMBAR, W, int(H * 0.005))
+    _tracked(draw, y, season_label.upper(), label_font, BRASA, W, int(H * 0.005))
     y += int(label_font.size * 1.9)
     for line in lines:
         draw.text(((W - font.getlength(line)) / 2, y), line, font=font, fill=POLVO)
@@ -111,7 +118,7 @@ def compose(scene_path, season_label, title, tagline, out_path, icon_strip_path=
         y += tag_line_h
 
     # --- footer: solo iconos de plataforma ---
-    draw.rectangle([0, H - FOOTER_H, W, H], fill=MEDIANOCHE)
+    draw.rectangle([0, H - FOOTER_H, W, H], fill=FOOTER_DARK)
     if icon_strip_path:
         icons = Image.open(icon_strip_path).convert("RGB")
         diff = ImageChops.difference(icons, Image.new("RGB", icons.size, (0, 0, 0)))
@@ -130,11 +137,15 @@ def compose(scene_path, season_label, title, tagline, out_path, icon_strip_path=
 
 if __name__ == "__main__":
     base = "E:/Podcast/MPD/Temporada 2/artwork"
+    # La escena es ESCENA-OFICIAL (grading nocturno E), no PORTADA-FINAL, que es la
+    # version calida previa al pivote de temperatura. Verificado comparando una zona sin
+    # tipografia contra la portada publicada: delta 0.01 vs 18.33 (2026-07-22). Corriendo
+    # esto con la ruta vieja se regeneraba la portada en la paleta equivocada.
     compose(
-        scene_path=f"{base}/MPD-T2-PORTADA-FINAL-3000.jpg",
+        scene_path=f"{base}/MPD-T2-ESCENA-OFICIAL-3000.jpg",
         season_label="Temporada 2",
         title="Misterios y Leyendas",
         tagline="Donde la música se encuentra con el mito",
-        out_path=f"{base}/MPD-T2-PORTADA-CONTEXTO-3000-v2.jpg",
+        out_path=f"{base}/MPD-T2-PORTADA-CONTEXTO-3000.jpg",
         icon_strip_path="E:/Podcast/MPD/EP 05/artwork-local/mpd-icon-strip-source.png",
     )
