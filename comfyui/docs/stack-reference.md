@@ -64,6 +64,14 @@ nativo directo a la resolución final.
   `sdxl-bigasp-photoreal-api.json` (fotorreal). Las 4 traen negativo anti-warping
   pre-rellenado (editable); en Z-Image el negativo es decorativo por diseño (cfg 1.0) —
   ver `docs/prompting.md`.
+- **Antes de escribir CUALQUIER script nuevo en `templates/`, listar el directorio
+  completo** (`Glob comfyui/templates/*`), no solo buscar por el nombre que uno espera.
+  Mordió 2026-07-22: se construyó un scrim en degradado dentro de `mpd-lockup-t2.py`
+  existiendo ya `scrim-overlay.py`, creado el día anterior por exactamente el mismo
+  problema. Buscar `mpd-portada-compose.py` por nombre encontró ese archivo y nada más,
+  así que la herramienta correcta quedó invisible. Los helpers de composición
+  (`scrim-overlay.py`, `vintage_grade.py`, `night_grade.py`) no llevan el nombre del show
+  en el archivo — por eso una búsqueda por nombre de show nunca los va a encontrar.
 
 ## Launch (headless, from Claude)
 **Use the PowerShell tool, not Bash** — Git Bash silently eats single backslashes in

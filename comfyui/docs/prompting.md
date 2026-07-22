@@ -145,6 +145,42 @@ Template: `comfyui/templates/zimage-txt2img-api.json`.
   (`vintage(img, strength)` importable): desatura, split-tone cálido, levanta negros, viñeta, grano
   por medios tonos, polvo y rayas confinadas a los márgenes laterales para que nunca crucen el
   sujeto. Aplicarlo DESPUÉS del upscale, a la resolución final, para que el grano quede a escala.
+- **Crear la herramienta no es aplicarla** (mordió 2026-07-22, MPD T2, dos sesiones
+  seguidas). La sesión del 21 detectó que el wordmark blanco se perdía sobre el mármol
+  pálido y creó `scrim-overlay.py` para resolverlo — pero la portada se cerró y publicó
+  **sin aplicarlo**, así que el defecto siguió vivo y hubo que rehacer el lockup entero al
+  día siguiente. **Regla:** cuando un fix se materializa en un script nuevo, el mismo turno
+  lo aplica al artefacto que lo motivó y muestra el resultado; un helper recién creado que
+  no aparece en el pipeline de la pieza es un fix que no ocurrió.
+- **El artwork se aprueba a 150 px, no a 3000** (aprendido 2026-07-22, MPD T2). El tamaño
+  real en una lista de Spotify ronda los 150-300 px; a 3000 px cualquier lockup se ve bien.
+  Reducir la pieza final con LANCZOS a 150 y **mirarla** antes de declararla lista. En la
+  T2 ese test reprobó lo que a tamaño completo parecía correcto: el wordmark sobre mármol
+  era un borrón y el subtítulo en rojo desaparecía. **Corolarios:** ningún texto se apoya
+  directo sobre una zona clara (mármol) ni sobre el fuego — va sobre scrim o sobre zona
+  naturalmente oscura; y el título va en **una sola línea**, porque partirlo en dos empuja
+  el bloque hacia arriba, hacia la zona más brillante de la escena.
+- **Contraste térmico: una escena cálida en todo lee acogedora, no misteriosa** (aprendido
+  2026-07-22, MPD T2). La primera portada tenía fuego, mármol, madera **y sombras** del
+  mismo lado del espectro; el resultado leía "club de caballeros", no misterio. El arreglo
+  no es cambiar de paleta sino **separar las temperaturas**: sombras, medios tonos y aire
+  hacia azul nocturno, y el calor reservado a la única fuente de luz real (la llama). Así
+  la escena se vuelve nocturna y el fuego gana fuerza por ser lo único cálido del cuadro.
+  Script con parámetros congelados: `comfyui/templates/night_grade.py` (split toning por
+  luminancia), después del upscale y de `vintage_grade`, antes de componer el lockup.
+  **Precaución contra el reflejo de descartar:** predecir que un tinte fuerte "se va a ver
+  como filtro falso" sin generarlo es teorizar — se generan las variantes y se miran. En
+  T2 la variante más agresiva (la que yo había descartado en teoría) fue la elegida.
+- **La paleta de un sistema visual se muestrea del artwork, no se propone de memoria**
+  (aprendido 2026-07-22, MPD T2). Leer el pixel real de la pieza vigente (promedio de un
+  parche, más estable que un pixel suelto; y para el acento, el pico de mayor sesgo
+  cálido/frío). En T2 eso reveló un color que la propuesta escrita "a ojo" no contemplaba
+  y que domina media imagen — la piedra del mármol — y descartó dos que ya no existían en
+  la escena. Marcar en el specimen cuáles hex son muestra y cuáles derivados.
+- **Al cambiar el sistema visual de una temporada, versionar el compositor, no mutarlo**
+  (aprendido 2026-07-22, MPD T2): `mpd-lockup-t2.py` se creó al lado de
+  `mpd-portada-compose.py` en vez de editarlo, para que las portadas ya publicadas de la
+  temporada anterior sigan reproducibles tal como salieron.
 - **Reusar assets de íconos/logos reales entre shows antes de regenerar** (aprendido
   2026-07-17, MPD EP.005): los íconos de plataforma (Spotify, Apple Podcasts, Amazon
   Music, redes sociales) son los mismos logos reales sin importar el show — si otro
