@@ -239,10 +239,138 @@ def build(accent_name):
     save(xh, f"MPD-T2-x-header-1500x500{sfx}.jpg")
 
 
+EP005_COVER = r"E:\Podcast\MPD\EP 05\artwork-local\EP005-1x1-FINAL-FOR-UPLOAD.jpg"
+TEASER_DIR = os.path.join(OUT_DIR, "teasers")
+
+ROLL = [
+    ("Brian Jones", "1969"),
+    ("Alan Wilson", "1970"),
+    ("Jimi Hendrix", "1970"),
+    ("Janis Joplin", "1970"),
+    ("Jim Morrison", "1971"),
+    ("Kurt Cobain", "1994"),
+    ("Amy Winehouse", "2011"),
+]
+
+
+def wrap_to(text, font, max_w):
+    """Parte el texto en lineas que quepan en max_w."""
+    words, lines, cur = text.split(), [], ""
+    for w in words:
+        probe = (cur + " " + w).strip()
+        if font.getlength(probe) <= max_w or not cur:
+            cur = probe
+        else:
+            lines.append(cur)
+            cur = w
+    if cur:
+        lines.append(cur)
+    return lines
+
+
+def teaser_base(size, veil_amt, top_a, bot_a, y_center=0.52):
+    """Lienzo comun de los teasers: escena recortada, atenuada y con scrims."""
+    scene = Image.open(SCENE).convert("RGB")
+    im = crop_aspect(scene, size[0] / size[1], y_center=y_center).resize(size, Image.LANCZOS)
+    im = veil(im, veil_amt)
+    return scrim_bands(im, top_frac=0.34, top_alpha=top_a, bottom_frac=0.46, bottom_alpha=bot_a)
+
+
+def teaser_expediente(accent, size, name):
+    W, H = size
+    im = teaser_base(size, 0.46, 190, 232)
+    d = ImageDraw.Draw(im)
+    block_w = int(W * 0.82)
+    cx = W // 2
+
+    lockup(im, accent, cx=cx, top=int(H * 0.07), block_w=block_w, scale=0.86,
+           parts=("wordmark", "rule"))
+
+    y = int(H * 0.58)
+    tag_font = ImageFont.truetype(F_LABEL, int(block_w * 0.036))
+    tracked(d, cx, y, "EXPEDIENTE 01", tag_font, accent, int(tag_font.size * 0.28))
+    y += int(tag_font.size * 2.4)
+
+    t_size = int(block_w * 0.135)
+    while t_size > 16:
+        t_font = ImageFont.truetype(F_DISPLAY, t_size)
+        if t_font.getlength("El Club de los 27") <= block_w:
+            break
+        t_size -= 2
+    d.text((cx - t_font.getlength("El Club de los 27") / 2, y), "El Club de los 27",
+           font=t_font, fill=POLVO)
+    y += int(t_size * 1.5)
+
+    # Cortes explicitos: el wrap automatico partia en "Mismo / día", separando una
+    # frase de tres palabras. Las dos fechas van juntas en una linea y el remate en otra.
+    hook = ["3 de julio de 1969. 3 de julio de 1971.", "Mismo día. Misma edad."]
+    h_size = int(block_w * 0.046)
+    while h_size > 12:
+        h_font = ImageFont.truetype(F_ITALIC, h_size)
+        if max(h_font.getlength(l) for l in hook) <= block_w:
+            break
+        h_size -= 1
+    for line in hook:
+        d.text((cx - h_font.getlength(line) / 2, y), line, font=h_font, fill=POLVO_DIM)
+        y += int(h_font.size * 1.42)
+    save(im, name)
+
+
+def teaser_nomina(accent, size, name):
+    """La nomina. Mas atenuada que las demas: acá manda la lista, no la escena."""
+    W, H = size
+    im = teaser_base(size, 0.66, 210, 238)
+    d = ImageDraw.Draw(im)
+    cx, block_w = W // 2, int(W * 0.80)
+
+    lockup(im, accent, cx=cx, top=int(H * 0.06), block_w=block_w, scale=0.86,
+           parts=("wordmark", "rule"))
+
+    y = int(H * 0.215)
+    lab = ImageFont.truetype(F_LABEL, int(block_w * 0.037))
+    tracked(d, cx, y, "TODOS TENÍAN 27", lab, accent, int(lab.size * 0.28))
+    y += int(lab.size * 2.8)
+
+    # La lista se dimensiona contra el espacio que QUEDA hasta el margen inferior.
+    # Con tamanos fijos, la septima entrada (Amy Winehouse) se salia del lienzo en el
+    # formato 1:1 — el ano quedaba cortado por el borde.
+    bottom = int(H * 0.94)
+    slot = (bottom - y) / len(ROLL)
+    n_size = int(min(block_w * 0.072, slot * 0.50))
+    n_font = ImageFont.truetype(F_DISPLAY, n_size)
+    y_font = ImageFont.truetype(F_LABEL, max(11, int(n_size * 0.40)))
+    for nombre, anio in ROLL:
+        d.text((cx - n_font.getlength(nombre) / 2, y), nombre, font=n_font, fill=POLVO)
+        tracked(d, cx, y + int(n_size * 1.08), anio, y_font, accent, int(y_font.size * 0.24))
+        y += slot
+    save(im, name)
+
+
+def build_teasers(accent_name):
+    accent = ACCENTS[accent_name]
+    os.makedirs(TEASER_DIR, exist_ok=True)
+    print("teasers · acento:", accent_name)
+
+    # Beat 1 — el contraste. La primera lamina es la portada REAL de EP.005, sin
+    # retocar: decir "esto era el show" con el artwork que la gente ya vio pega mas
+    # que un degradado inventado.
+    antes = Image.open(EP005_COVER).convert("RGB").resize((1080, 1080), Image.LANCZOS)
+    save(antes, "teasers/teaser-1a-antes-1080.jpg")
+
+    teaser_expediente(accent, (1080, 1080), "teasers/teaser-3a-expediente-1080.jpg")
+    teaser_expediente(accent, (1080, 1920), "teasers/teaser-3a-expediente-story.jpg")
+    teaser_nomina(accent, (1080, 1080), "teasers/teaser-3b-nomina-1080.jpg")
+    teaser_nomina(accent, (1080, 1920), "teasers/teaser-3b-nomina-story.jpg")
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--accent", choices=list(ACCENTS) + ["both"], default="both")
+    ap.add_argument("--teasers", action="store_true", help="solo las piezas de la revelacion de T2")
     args = ap.parse_args()
+    if args.teasers:
+        build_teasers("brasa" if args.accent in ("both", "brasa") else args.accent)
+        raise SystemExit
     os.makedirs(os.path.join(OUT_DIR, "pruebas"), exist_ok=True)
     for name in (list(ACCENTS) if args.accent == "both" else [args.accent]):
         build(name)
