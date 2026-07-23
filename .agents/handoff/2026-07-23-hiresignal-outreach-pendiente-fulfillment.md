@@ -76,6 +76,8 @@ que diga que sí, sin pool de candidatos). Nada de envíos antes de eso.
   gotcha GoDaddy/puerto 3535.
 - `hiresignal/api/outreach-lib.php:159-205` — los 3 templates y los 4 hallazgos de arriba.
 - `.agents/handoff/2026-07-17-hiresignal-outreach-live.md` — el build completo del sistema.
+  **Su sección de bloqueos está muerta** (decía "falta el sign-off de Hugo"); ya lleva aviso
+  de supersedido. Lo técnico sigue válido.
 - `kuma-talent-sourcing/ontario-outreach/README.md` — mecánica del scraper + reglas Tier 3.
 
 ## Notes / Gotchas

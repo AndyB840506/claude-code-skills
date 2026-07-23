@@ -1,6 +1,13 @@
 # Handoff: HireSignal Outreach — construido, deployado y certificado 9.9/10
 **Date:** 2026-07-17 (viernes)
-**Status:** Complete — sistema live en producción; el piloto espera solo el sign-off de Hugo
+**Status:** Complete — sistema live en producción
+**SUPERSEDIDO:** ver `2026-07-23-hiresignal-outreach-pendiente-fulfillment.md`
+
+> ⚠️ **Este handoff quedó desactualizado el mismo día en que se escribió (09:20).** Hugo
+> firmó ese mismo 2026-07-17 y dio la postal definitiva (8B Macville Ave, Kitchener); la
+> novedad se guardó en memoria a las 13:25 desde una sesión sobre otro tema, así que este
+> archivo nunca se enteró. **El bloqueo real es el plan de fulfillment, no el sign-off.**
+> Todo lo técnico de abajo sigue siendo válido — solo la sección de bloqueos está muerta.
 
 ---
 
