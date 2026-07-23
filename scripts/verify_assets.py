@@ -20,12 +20,21 @@ import sys
 
 from PIL import Image
 
-BRAND_BLACK = (10, 10, 10)
-# Tope por canal para considerar un pixel "void black". Calibrado contra el set
-# aprobado de EP.022, que da (7,6,6), (10,10,10) y (14,14,15) -- por eso NO se
-# puede exigir igualdad exacta a (10,10,10): reprobaria portadas ya publicadas.
-VOID_CEILING = 24
 PURE_BLACK = (0, 0, 0)
+
+# El negro de marca cambia por show -- un tope global reprobaria MPD y CCC enteros.
+# TOLERANCIA calibrada contra el set aprobado de BTQ EP.022, que da (7,6,6),
+# (10,10,10) y (14,14,15): por eso NO se puede exigir igualdad exacta al valor
+# nominal, solo que el pixel caiga dentro de la banda oscura de ese show.
+TOLERANCE = 14
+SHOWS = {
+    "btq": {"brand_black": (10, 10, 10), "hex": "#0A0A0A",
+            "source": "episode-launch/docs/brand-constants.md"},
+    "mpd": {"brand_black": (26, 26, 26), "hex": "#1A1A1A",
+            "source": "comfyui/templates/mpd-portada-compose.py"},
+    "ccc": {"brand_black": (20, 20, 20), "hex": "#141414",
+            "source": "corporate-crime-confidential-production/artwork-general.md"},
+}
 
 # (sufijo de archivo, ancho, alto). El aspect se deriva, no se declara dos veces.
 VARIANTS = {
@@ -57,13 +66,14 @@ def sample_points(im):
     return [(p, rgb.getpixel(p)) for p in pts]
 
 
-def is_void_black(px):
+def is_void_black(px, ceiling):
     """Negro de marca real: oscuro pero NO #000000 puro."""
-    return px != PURE_BLACK and max(px) <= VOID_CEILING
+    return px != PURE_BLACK and max(px) <= ceiling
 
 
-def check_image(path, expected):
+def check_image(path, expected, brand):
     """Devuelve lista de fallos (strings). Vacia = pasa."""
+    ceiling = max(brand["brand_black"]) + TOLERANCE
     fails = []
     name = os.path.basename(path)
     try:
@@ -83,13 +93,13 @@ def check_image(path, expected):
         # 1. Negro puro = defecto duro, en cualquier punto.
         for pt, px in pts:
             if px == PURE_BLACK:
-                fails.append("%s: pixel %s es negro puro #000000 -- el negro de marca es %s"
-                             % (name, pt, BRAND_BLACK))
-        # 2. Tiene que existir region de void black en algun borde.
-        if not any(is_void_black(px) for _pt, px in pts):
+                fails.append("%s: pixel %s es negro puro #000000 -- el negro de marca es %s %s"
+                             % (name, pt, brand["hex"], brand["brand_black"]))
+        # 2. Tiene que existir region de negro de marca en algun borde.
+        if not any(is_void_black(px, ceiling) for _pt, px in pts):
             muestras = ", ".join(str(px) for _pt, px in pts[:4])
-            fails.append("%s: ningun borde es void black (<=%d por canal). Muestras: %s"
-                         % (name, VOID_CEILING, muestras))
+            fails.append("%s: ningun borde es negro de marca %s (<=%d por canal). Muestras: %s"
+                         % (name, brand["hex"], ceiling, muestras))
     return fails
 
 
@@ -138,6 +148,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("slug", help="ej. EP022")
     ap.add_argument("--root", required=True, help="carpeta con los assets renderizados")
+    ap.add_argument("--show", default="btq", choices=sorted(SHOWS),
+                    help="define el negro de marca (btq #0A0A0A, mpd #1A1A1A, ccc #141414)")
     ap.add_argument("--metadata", help="JSON opcional con los campos de texto publicables")
     args = ap.parse_args()
 
@@ -145,10 +157,14 @@ def main():
         print("FATAL: no existe la carpeta %s" % args.root)
         return 2
 
+    brand = SHOWS[args.show]
     found, skipped = collect(args.root, args.slug)
     fails = []
 
-    print("=== %s en %s ===" % (args.slug, args.root))
+    print("=== %s [%s] en %s ===" % (args.slug, args.show.upper(), args.root))
+    print("negro de marca: %s %s (tope %d) -- fuente: %s"
+          % (brand["hex"], brand["brand_black"],
+             max(brand["brand_black"]) + TOLERANCE, brand["source"]))
     if skipped:
         print("ignorados (backup/fuente): %d" % len(skipped))
 
@@ -161,7 +177,7 @@ def main():
 
     for key in sorted(found):
         path, expected = found[key]
-        f = check_image(path, expected)
+        f = check_image(path, expected, brand)
         print("   %-28s %s" % (key, "PASS" if not f else "FAIL"))
         fails.extend(f)
 

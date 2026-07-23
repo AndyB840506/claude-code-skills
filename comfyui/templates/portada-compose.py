@@ -1,4 +1,7 @@
-# Uso: python portada-compose.py <escena.png> <EP.NN> "<titulo>" <salida.png> [icon_strip.png]
+# Uso: python portada-compose.py <escena.png> <EP.NNN> "<titulo>" <salida.png> [icon_strip.png]
+# Formato del label: 3 digitos con cero a la izquierda -- "EP.022", no "EP.22".
+# Decidido 2026-07-23: gana brand-constants.md:84 (EP.0XX). Las portadas hasta EP.022
+# inclusive salieron con 2 digitos; no se regeneran retroactivamente.
 # Compone la tipografia congelada BTQ v3 (dots + wordmark + BTQ + titulo + footer)
 # sobre una escena ya generada. Requiere PIL (ya viene en python_embeded de ComfyUI).
 # icon_strip.png (opcional): imagen con 2 filas de iconos de plataforma generadas por

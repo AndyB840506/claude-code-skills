@@ -56,7 +56,7 @@
       "applies_to": ["cover-1x1"],
       "rule": "Footer completo: izquierda 'Behind the Queue', centro 'EP.0NN' en oro, derecha DOS filas de iconos (FB/IG/TikTok + Spotify/Apple/Amazon). Nada de texto en la esquina inferior derecha.",
       "why": "En EP.022 falto la fila 2 de iconos; en otra ronda aparecieron iconos extra no pedidos.",
-      "spec_conflict": "PENDIENTE DE DECISION: brand-constants.md:84 especifica 'EP.0XX' (3 digitos), portada-compose.py documenta '<EP.NN>' (2 digitos), y la portada publicada de EP.022 dice 'EP.22'. Verificar contra la decision de Andres antes de reprobar por este item.",
+      "ep_label_format": "EP.0NN -- 3 digitos con cero a la izquierda ('EP.022', no 'EP.22'). Resuelto 2026-07-23 a favor de brand-constants.md:84; portada-compose.py actualizado. Las portadas hasta EP.022 salieron con 2 digitos y NO se regeneran retroactivamente, asi que no se reprueba un asset viejo por esto.",
       "evidence": ["brand-constants.md:82-89", "pipeline-audit-ep022.md:73", "comfyui/templates/portada-compose.py:1"]
     },
     {
