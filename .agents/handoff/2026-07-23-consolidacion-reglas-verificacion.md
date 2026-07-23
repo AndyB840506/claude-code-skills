@@ -91,6 +91,7 @@ pendientes que Andrés aprobó explícitamente como el siguiente.
 ## Next Steps
 
 1. **Construir los hooks de recibo** (`PreToolUse`, aprobado como el siguiente). Diseño: receipts por `session_id`, filtro `if` sobre comandos de deploy/push, `permissionDecision: "deny"` si falta el recibo. **No debe bloquear** deploys de andyfreelancer / kumatalent / MPD, que usan mecanismos distintos.
+   ⚠️ **Resolver esta tensión ANTES de construir:** [[feedback_hooks_reactivos]] dice explícitamente que los hooks solo hacen cumplir reglas **mecánicas** y que las de criterio "no son mecanizables — no prometer que un hook va a hacer cumplir una regla de juicio". El hook puede comprobar que *exista* un recibo; no puede comprobar que de verdad verifiqué algo. Enforza el ritual, no la sustancia. Decidir con Andrés si eso igual vale la pena (un recibo falso al menos es un acto deliberado y auditable) o si el esfuerzo va a otro lado.
 2. **Compuerta de assets** — `verify_assets.py` + `banned-patterns.json` con alcance por tipo de asset, backfill desde los 9 `pipeline-audit-*.md`. Probar contra EP.022 (debe PASAR) y contra el backup pre-pcb-fix (debe FALLAR).
 3. **Capa de wave paralela dentro de `episode-pipeline`** — NO un orquestador nuevo. A/B/E en paralelo; C y D secuenciales porque comparten una sola GPU. Dry-run sobre EP.022 sin escrituras.
 4. Opcional: `frontend-design`, `retrospective` y `ui-ux-pro-max` siguen sin zona `Triggers:` (3 de 29).

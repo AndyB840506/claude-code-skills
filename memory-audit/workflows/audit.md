@@ -40,9 +40,12 @@ aprobación explícita antes de tocar cualquier archivo.
 
 ### Paso 1b — Sobredimensionadas
 
-Para cada archivo, cuenta sus líneas totales (`Measure-Object -Line`). Cualquiera por
-encima de ~60 líneas es un hallazgo tipo **sobredimensionada** — ver
-[[feedback_memory_file_discipline]]. No requiere verificación adicional, solo el conteo.
+Para cada archivo, cuenta sus líneas totales con **`wc -l`** (o `sum(1 for _ in fh)` en
+Python). **NO uses `Measure-Object -Line`: no cuenta líneas en blanco y sub-reporta en
+silencio** — ver `skills/CLAUDE.md` § Debugging, "Instrumentos que sub-reportan"
+(2026-07-23: dio 28 donde `wc -l` daba 36). Cualquier archivo por encima de ~60 líneas es
+un hallazgo tipo **sobredimensionada** — ver [[feedback_memory_file_discipline]]. No
+requiere verificación adicional, solo el conteo.
 
 ### Paso 2 — Detectar duplicados y contradicciones
 
