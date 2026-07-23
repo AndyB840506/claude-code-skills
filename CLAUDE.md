@@ -76,6 +76,11 @@ No declarar un bug como corregido hasta haberlo verificado (re-ejecutar/reproduc
 
 Con `curl -L` no forzar `-X POST`: tras un redirect 302 curl reenvía el POST sin body (Google responde 411). Omitir `-X` y dejar que curl convierta a GET después del redirect (mordió 2 veces el 2026-07-06 probando el Apps Script de Kuma).
 
+**Instrumentos que sub-reportan en silencio** — no dan error, solo devuelven de menos, así que producen "sin hallazgos" falsos (los dos mordieron el 2026-07-23):
+- `Get-Content X | Measure-Object -Line` **no cuenta líneas en blanco** (dio 28 donde `wc -l` daba 36). Para contar líneas usar `wc -l`.
+- `glob.glob('**/x', recursive=True)` de Python **omite directorios que empiezan con punto** — leyó 18 de 28 `SKILL.md` porque se saltó todo `.claude/`. Usar `os.walk`.
+Antes de reportar un conteo o un "cero hallazgos", cruzar el total con una segunda herramienta. Ver §Procedencia en `~/.claude/CLAUDE.md`.
+
 ## Workflows
 
 Ritual de cierre de sesión: `/session-close` lo automatiza completo (retrospective → skill-kit-auditor → handoff). Equivale a ejecutar `/retrospective`, luego `skill-kit-auditor`, luego `/handoff` en ese orden. Aplicar los fixes aprobados del audit antes de generar el handoff.

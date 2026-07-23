@@ -43,5 +43,6 @@ If skills aren't showing up: check `.claude/skills/` for loose `.md` files mixed
 - [ ] `docs/` — advanced/reference material only, not front-loaded
 - [ ] No loose `.md` files alongside folder-based skills
 - [ ] No mid-word line breaks or garbled text (sign of a corrupted save)
+- [ ] **Trigger overlap:** run `python skill-management/scripts/audit-triggers.py` from the kit root — 5 tests (exact, containment, near-duplicate, project-scope, missing trigger zone). Don't eyeball it: exact-match alone misses the worst case (a project-only skill claiming a generic phrase).
 
 If a skill passes these checks, it's maintainable.
