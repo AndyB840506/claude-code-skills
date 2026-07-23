@@ -5,8 +5,9 @@ description: >
   in one pass: Spotify SEO (description + preview), social plan 4-day calendar, YouTube
   title/description/tags/thumbnail/chapters, SafeCreative registration metadata,
   cover-art prompts (1:1 · 9:16 · 16:9), and git commit + push.
-  Triggers: /episode-launch, lanzar episodio, launch EP, publicar episodio BTQ,
-  generar assets episodio, metadata episodio, social plan BTQ, portada episodio.
+  SOLO para BTQ (Behind the Queue) — para MPD, CCC u otro show usar episode-pipeline.
+  Triggers: /episode-launch, lanzar episodio BTQ, launch BTQ EP, publicar episodio BTQ,
+  generar assets episodio BTQ, metadata episodio BTQ, social plan BTQ, portada episodio BTQ.
 ---
 
 # BTQ Episode Launch Orchestrator

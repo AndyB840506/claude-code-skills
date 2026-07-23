@@ -1,6 +1,6 @@
 ---
 name: web-page-kit
-description: "Create professional web pages for any business, brand, or content — scroll experience, business, portfolio, blog, e-commerce, events, personal brand, podcast. Guided step-by-step from setup to deployment. Bilingual EN/ES. Triggers: create website, web page generator, generate web page, build website, create landing page, make website, page builder, seo optimization, website from scratch, import website, adapt website, scroll experience, cinematic website, scroll animation, scroll video, portfolio site, business website, publish website, crear sitio web, crear página web, publicar sitio, página web."
+description: "Create professional web pages for any business, brand, or content — scroll experience, business, portfolio, blog, e-commerce, events, personal brand, podcast. Guided step-by-step from setup to deployment. Bilingual EN/ES. Use this when the deliverable is a whole page or site; for isolated design decisions (palette, type pairing, a single component, reviewing existing UI code) use ui-ux-pro-max instead. Triggers: create website, web page generator, generate web page, build website, create landing page, make website, page builder, seo optimization, website from scratch, import website, adapt website, scroll experience, cinematic website, scroll animation, scroll video, portfolio site, business website, publish website, crear sitio web, crear página web, publicar sitio, página web."
 ---
 
 # Web Page Kit — Professional Web Presence
