@@ -1,8 +1,10 @@
 # CLAUDE.md — Mr. Putrid's Den
 
-Este workspace es exclusivo de **Mr. Putrid's Den**, el podcast de Andrés en solitario sobre rock, metal, jazz y géneros variados.
+Este workspace es exclusivo de **Mr. Putrid's Den**, el podcast de Andrés en solitario sobre **misterios y leyendas del rock** — *donde la música se encuentra con el mito*. Cada episodio abre un expediente: primero la leyenda completa, después los datos.
 
-**Formato desde 2026-07-17:** Juan dejó el proyecto — Andrés continúa solo. Hasta EP.004 el show fue co-host (Andrés y Juan); EP.005 en adelante es formato solo. Toda la sección "Regla de balance co-host" más abajo describe el formato HISTÓRICO (EP.002-EP.004) — no aplica a episodios nuevos. Ver memoria `project_mpd_juan_departure`.
+**Temporada 1 CLAUSURADA (2026-07-23):** EP.001–EP.005 fueron la era co-host con Juan, con temática de rock, metal, jazz y géneros variados. Queda como **archivo cerrado** — no se reabre, no se edita retroactivamente, no se borra. **Desde Temporada 2 el show es 100% misterios y leyendas, formato solo.** Toda la sección "Regla de balance co-host" más abajo es referencia HISTÓRICA de EP.002-EP.004 y no aplica a episodios nuevos. Ver memoria `project_mpd_juan_departure`.
+
+**Excepción declarada — La Silla Pútrida sigue ABIERTA** (decisión de Andrés, 2026-07-23): si aparece un invitado, se hace, aunque el enfoque de T2 sea 100% misterios. No retirar ese segmento por "no encaja con el pilar".
 
 ## Al iniciar
 
@@ -72,7 +74,8 @@ Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para t
 
 ## Segmentos permanentes
 
-### La Silla Pútrida
+### La Silla Pútrida — VIGENTE en T2 (excepción confirmada 2026-07-23)
+Sobrevive al enfoque 100% misterios: si hay invitado, se hace. Formato solo + invitado.
 - **Antes de cualquier guion** preguntar: *"¿Esta semana hay Silla Pútrida?"*
 - Si SÍ → episodio gira 100% en torno al invitado, formato presencial (los 3 en el mismo cuarto)
 - Flujo Narval: Claude investiga al invitado → genera doc prep para hosts → carta simple al invitado → bio + temas + NO-list → guion
