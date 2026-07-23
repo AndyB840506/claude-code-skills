@@ -1,6 +1,6 @@
 ---
 name: verify
-description: Evidence-gathering pass before declaring any task complete
+description: "Evidence-gathering pass before declaring any task complete — produce a claim/evidence/output table, confirm the real date and repo state, inspect generated images directly, and close with a verified vs. unverified split. Triggers: verify, verificar, evidence pass, show me the evidence, show the receipts, prove it, antes de declarar hecho, esta verificado, check before claiming, verification gate, evidence table."
 ---
 
 Before reporting completion, produce a table with one row per claim:
@@ -18,5 +18,5 @@ Rules:
 7. **Close with two explicit sections** (non-trivial tasks only — a task that produced an artifact, touched a repo, deployed, or generated an asset; per `~/.claude/CLAUDE.md` the ceremony is skipped on trivial ones):
    - **Verified done** — each claim with the evidence command and its actual output.
    - **Known open issues / anything I did not check** — if empty, state 'nothing unverified' and justify why nothing remains.
-8. **Banned words** while section 2 is non-empty: 'final', 'complete', 'production-ready', and 'verified' as a standalone claim about the task. The **'Verified done'** section header is exempt — it labels evidence, it does not assert completion.
+8. **Banned words** while section 2 is non-empty. One list, unifying this file with `~/.claude/CLAUDE.md` § Verification so there is no competing pair: 'final', 'complete', 'production-ready', 'verified' — and their Spanish counterparts 'hecho', 'resuelto', 'sin hallazgos', 'verificado' — as a claim about the task. The **'Verified done'** section header is exempt: it labels evidence, it does not assert completion.
 
