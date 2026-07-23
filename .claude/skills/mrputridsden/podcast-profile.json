@@ -112,6 +112,7 @@
     "Entrevista/invitado artista emergente"
   ],
   "genre_rotation_rule": "No repetir el mismo género en episodios consecutivos. Verificar 'genre' del episodio anterior antes de asignar el siguiente.",
+  "roadmap_9_episodes_nota": "OBSOLETO — plan especulativo de la era Temporada 1 (co-host + episodios anclados en banda). T1 quedó CLAUSURADA el 2026-07-23 y Temporada 2 es 100% misterios y leyendas. Sirve solo como banco de ideas históricas; NO auto-rellenar episodios desde aquí. Fuente de verdad: mrputridsden-production/roadmap-mpd.md.",
   "roadmap_9_episodes": [
     {
       "ep": 2,
@@ -171,8 +172,8 @@
       "pillar": "Invitado artista",
       "genre": "según el invitado — confirmar antes de grabar",
       "type": "solo + guest",
-      "description": "Andrés trae a un artista emergente (fuente de contacto por definir sin Juan como promotor). Hablamos de su proceso, influencias, planes.",
-      "nota": "Requiere fuente de contacto de artistas emergentes — Juan la cubría como promotor; ver Questions to Answer"
+      "description": "MUERTO con el cierre de T1 (2026-07-23). Existía por los contactos de Juan como promotor y no encaja en T2 (100% misterios). No es un pendiente ni un slot por llenar.",
+      "nota": "CANCELADO — no reactivar ni buscarle fuente de contacto."
     },
     {
       "ep": 9,
@@ -180,8 +181,8 @@
       "pillar": "N/A",
       "genre": "N/A",
       "type": "N/A",
-      "description": "Era 'Spotlight: eventos underground', pillar cortado 2026-07-17 junto con el segmento de Promoción (dependía del conocimiento insider de Juan). Slot libre — Andrés define el nuevo tema del EP.009 cuando llegue el turno.",
-      "nota": "No asignar tema automáticamente — pendiente decisión de Andrés."
+      "description": "MUERTO con el cierre de T1 (2026-07-23). Era 'Spotlight: eventos underground', pillar cortado el 2026-07-17 con el segmento de Promoción (dependía del conocimiento insider de Juan). No es un slot libre: T2 se planea desde roadmap-mpd.md.",
+      "nota": "CANCELADO — no es una decisión pendiente de Andrés."
     },
     {
       "ep": 10,
