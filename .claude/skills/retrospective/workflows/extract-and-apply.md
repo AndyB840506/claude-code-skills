@@ -13,6 +13,14 @@ Scan the conversation for these patterns:
   gets it wrong. Absence of a user correction does NOT mean there's nothing to encode —
   it may just mean the judgment call happened to be right this time.
 
+**Reproceso por procedencia** (chequeo obligatorio, va primero):
+- Preguntar literal: **"¿qué artefacto reescribí hoy después de haberlo dado por bueno?"**
+  Contar los commits del día que arreglan un commit propio anterior — cada uno cuenta.
+- Por cada uno, nombrar **el input que asumí sin abrir su fuente primaria** (un handoff,
+  una fecha, el output de un comando, el reporte de un subagente).
+- Reportar el número aunque sea 0 — es la métrica de si §Procedencia está funcionando.
+  Referencia: 2026-07-23 tuvo 4 en una sesión; ~2/semana entre 06-19 y 07-23.
+
 **Corrections** (highest priority when present):
 - User rejected output: "this is not great", "remove this", "bullshit", "wrong"
 - User redirected approach: "no, do it this way", "don't do that", "let's not"
