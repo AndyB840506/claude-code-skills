@@ -84,9 +84,14 @@ pendientes que Andrés aprobó explícitamente como el siguiente.
 ## Questions to Answer
 
 - **NEEDS USER INPUT (Andrés + Hugo) — heredado:** plan de fulfillment de HireSignal. Sigue siendo el bloqueo que manda; detalle en `2026-07-23-hiresignal-outreach-pendiente-fulfillment.md`.
-- **El "slug bug desde el 06-09" no se pudo reproducir.** Los 3 slugs coinciden entre `~/.claude/projects` y `claude-continuity/memory`, con 7 commits de sync hoy. Hace falta el script de sync o el incidente original — no inventarle una entrada al registro.
-- ¿`docs/estandar-de-entregables.md` §4 se renombra? Se titula "prompts de generación" pero `verify` regla 3 lo usa para calificar renders.
-- ¿`verify` regla 6 necesita una categoría "inverificable por construcción"? Hoy, cualquier métrica histórica deja la tarea INCOMPLETE para siempre.
+- **¿Qué se hace con `frontend-design`?** Es un stub de 1 archivo, declara `license: Complete terms in LICENSE.txt` con ese archivo inexistente, duplica el nombre de un skill bundled de Anthropic, y su territorio ya lo cubren `ui-ux-pro-max` (32 archivos) y `web-page-kit`. Es el único skill sin zona `Triggers:` (1 de 29) y **a propósito**: dársela crearía una colisión a tres bandas. Opciones: borrarlo, o dejarlo documentado como deliberadamente sin triggers.
+
+### Cerradas después de escribir este handoff (2026-07-23, misma sesión)
+
+- ✅ **Slug bug: resuelto, ya estaba arreglado.** `claude-continuity/sync.ps1` líneas 29-31 lo documentan: *"Do NOT recompute Claude's project slug -- the derivation differs from Claude Code's (case + dash handling), so a computed slug silently misses the real folder."* El script enumera las carpetas reales en vez de calcular el slug. Por eso no se podía reproducir.
+- ✅ **`docs §4` renombrado** a "prompts de generación **y renders**", con nota de qué ítem es exclusivo del prompt.
+- ✅ **`verify` regla 6** ahora tiene la categoría **NO VERIFICABLE** (por construcción), que no fuerza INCOMPLETE pero obliga a listarla en la sección 2.
+- ✅ **Zonas `Triggers:`** agregadas a `retrospective` y `ui-ux-pro-max`. Efecto colateral: las colisiones reales del kit pasaron de **2 a 0** (el solapamiento `landing page` ⊂ `create landing page` desapareció al dejar de parsear la lista larga de keywords).
 
 ## Next Steps
 
@@ -94,4 +99,5 @@ pendientes que Andrés aprobó explícitamente como el siguiente.
    ⚠️ **Resolver esta tensión ANTES de construir:** [[feedback_hooks_reactivos]] dice explícitamente que los hooks solo hacen cumplir reglas **mecánicas** y que las de criterio "no son mecanizables — no prometer que un hook va a hacer cumplir una regla de juicio". El hook puede comprobar que *exista* un recibo; no puede comprobar que de verdad verifiqué algo. Enforza el ritual, no la sustancia. Decidir con Andrés si eso igual vale la pena (un recibo falso al menos es un acto deliberado y auditable) o si el esfuerzo va a otro lado.
 2. **Compuerta de assets** — `verify_assets.py` + `banned-patterns.json` con alcance por tipo de asset, backfill desde los 9 `pipeline-audit-*.md`. Probar contra EP.022 (debe PASAR) y contra el backup pre-pcb-fix (debe FALLAR).
 3. **Capa de wave paralela dentro de `episode-pipeline`** — NO un orquestador nuevo. A/B/E en paralelo; C y D secuenciales porque comparten una sola GPU. Dry-run sobre EP.022 sin escrituras.
-4. Opcional: `frontend-design`, `retrospective` y `ui-ux-pro-max` siguen sin zona `Triggers:` (3 de 29).
+4. **Decidir sobre `frontend-design`** (borrar vs documentar) — ver Questions. Es el único cabo suelto de higiene que queda en el kit.
+5. **Producción parada, no es meta-trabajo:** BTQ **EP.023** tiene guion desde el 07-21 pero sin artwork generado y sin grabar (`E:\Podcast\BTQ` llega hasta EP 22). MPD **EP.006** (Club de los 27) tiene guion pero sin artwork, sin metadata y sin social — los `artwork-ep0XX.md` solo llegan a EP.005.

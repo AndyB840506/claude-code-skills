@@ -58,7 +58,12 @@ Checklist obligatorio antes de entregar (correr greps literales sobre el guion):
 - [ ] Copy listo para copiar-pegar, separado por plataforma y por día, con quién firma.
 - [ ] Quotes marcadas con ⚠️ "confirmar contra el audio grabado antes de publicar".
 
-## 4 · Artwork (prompts de generación)
+## 4 · Artwork (prompts de generación **y renders**)
+
+> Los ítems de marca y de texto-en-imagen se verifican **dos veces**: al escribir el prompt
+> y al leer la imagen renderizada (skill `verify`, regla 3). El único ítem exclusivo del
+> prompt es el último ("cada prompt termina con checklist de accuracy") — ese no aplica al
+> render. Fuente canónica de la marca BTQ: `.claude/skills/episode-launch/docs/brand-constants.md`.
 
 - [ ] BTQ: principio de nostalgia — estética FIEL a la época del referente,
       no reinterpretación moderna. Brand: fondo #0A0A0A, acentos dorado #C9A84C,

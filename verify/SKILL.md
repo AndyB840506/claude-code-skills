@@ -15,6 +15,7 @@ Rules:
 4. For every deploy, curl the live URL and quote the response.
 5. For every length-limited string, print `.Length`.
 6. If ANY row is Fail or 'not checked', report the task as INCOMPLETE.
+   - **Exception — NOT VERIFIABLE (by construction):** a claim with no artifact that could confirm or refute it (a past session's process metric, a count from a cleared context, someone else's undocumented action). Mark it **NO VERIFICABLE**, not 'not checked'. It does NOT by itself force INCOMPLETE — but it MUST appear in section 2 with why no artifact exists. Without this, any task touching a historical number stays INCOMPLETE forever, which drains the verdict of meaning.
 7. **Close with two explicit sections** (non-trivial tasks only — a task that produced an artifact, touched a repo, deployed, or generated an asset; per `~/.claude/CLAUDE.md` the ceremony is skipped on trivial ones):
    - **Verified done** — each claim with the evidence command and its actual output.
    - **Known open issues / anything I did not check** — if empty, state 'nothing unverified' and justify why nothing remains.

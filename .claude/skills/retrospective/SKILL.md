@@ -1,6 +1,6 @@
 ---
 name: retrospective
-description: Analyze the current session to extract reusable learnings and propose updates to relevant skills. Use when the user asks for a retrospective, what was learned, or how skills should be updated.
+description: "Analyze the current session to extract reusable learnings and propose updates to relevant skills. Covers ONE session — for patterns across many sessions use /insight, and for the full closing ritual use /session-close. Triggers: retrospective, retrospectiva, que aprendimos hoy, what did we learn, extraer aprendizajes, post-mortem de sesion, actualizar skills con lo aprendido, learnings de esta sesion, reproceso de hoy."
 ---
 
 # Retrospective
