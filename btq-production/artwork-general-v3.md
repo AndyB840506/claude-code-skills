@@ -1,5 +1,22 @@
 # BTQ — Artwork general del show (v3) — og-image / social preview
 
+> ## ⛔ NO USAR ESTE PROMPT TAL CUAL (2026-07-23)
+>
+> El prompt de abajo pide **círculos concéntricos** de fondo ("like the grooves of a
+> vinyl record"). Ese motivo quedó **VETADO en TODAS las imágenes BTQ** por decisión de
+> Andy del **2026-07-10 (EP.021)** — ver `.claude/skills/episode-launch/docs/brand-constants.md`
+> § "Reglas de la dirección" #3 y su bloque congelado, que incluye la línea
+> `DO NOT render any concentric ring, circle, halo, or archery-target pattern anywhere in this image.`
+> Este archivo es anterior a esa decisión y nunca se actualizó.
+>
+> **Qué falta para poder usarlo:** decidir con Andrés qué patrón geométrico reemplaza a
+> los surcos de vinilo (la regla pide "el patrón del universo del referente"; para la
+> imagen de marca general no hay referente de episodio, así que es una decisión creativa
+> abierta). Hasta entonces, la og-image no se regenera desde acá.
+>
+> Recordatorio aparte: la og-image **actualmente en vivo** tiene el typo horneado
+> "PREMIUM KEY EDITOIAL" y un garabato sobre el vinilo — sigue publicada.
+
 Reemplaza `website/og-image.png` (1600×900, referenciado en `index.html` para
 `og:image`/`twitter:image`). El actual tiene un bug real: texto roto de IA
 ("PREMIUM KEY EDITOIAL" — typo, debería decir EDITORIAL — y un garabato ilegible
