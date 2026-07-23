@@ -40,7 +40,8 @@ The handoff commit backs up the project repo. The continuity sync (Step 4) backs
 
 When `/session-close` is invoked, run all 5 steps in order:
 
-1. Invoke `/retrospective` → show learnings → ask user to confirm changes → apply if approved
+1. Invoke `/retrospective` → show learnings → ask user to confirm changes → apply if approved.
+   **Si el usuario pegó reglas o prompts a lo largo de la sesión, reconciliar ANTES de seguir:** tabla `lo que pegó | dónde quedó en disco | en qué difiere del texto original`. Leerla de los archivos, no de memoria. Una sesión larga con pastes secuenciales pierde el rastro: el 2026-07-23 el usuario tuvo que preguntar "¿aplicamos todos los prompts?" — de 12, uno se había ejecutado como tarea sin quedar nunca escrito como regla, y 4 habían quedado con texto materialmente distinto al pegado.
 2. Audit the skill kit directly against the checklist in `skill-management/SKILL.md` (trigger overlaps, duplicate content, structure violations, files >50 lines) → show results → ask user to confirm fixes → apply if approved
 3. Invoke `/handoff` via `Skill("handoff")` → write `.agents/handoff/YYYY-MM-DD-<topic>.md`, commit, push to GitHub (no confirmation needed — handoff is always safe to write)
 4. Run the continuity sync (no confirmation needed — always safe): `cd "C:\Users\andre\repos\claude-continuity"; .\sync.ps1` (Mac/Linux: `bash sync.sh`). It copies `~/.claude/` memory + config into the repo and pushes to `origin master`. Report what it synced.
