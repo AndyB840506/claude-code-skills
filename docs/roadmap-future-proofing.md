@@ -49,7 +49,7 @@ corregidos de forma aditiva, 12 skills sin hallazgos. Detalle completo en
 
 ### Sesión 2 — Auditoría: skills de sistema y rituales
 - [ ] `crear-skill` — ¿produce skills que cumplen el estándar de verificabilidad?
-- [ ] `/retrospective`, `skill-kit-auditor`, `/handoff` — ¿el ritual de cierre captura
+- [ ] `/retrospective`, `skill-management`, `/handoff` — ¿el ritual de cierre captura
       lo aprendido en formato regla-explícita o en prosa vaga?
 - [ ] MEMORY.md — revisar que cada memoria tenga condición de uso clara y siga vigente.
 - [ ] Handoffs viejos en `.agents/handoff/` — extraer reglas que quedaron solo ahí.
@@ -69,6 +69,6 @@ corregidos de forma aditiva, 12 skills sin hallazgos. Detalle completo en
       de verdad (¿faltó alguno? ej. propuestas, informes HTML).
 
 ## Continuo hasta el 22 de junio
-- En cada cierre de sesión, el ritual (/retrospective → skill-kit-auditor → /handoff)
+- En cada cierre de sesión, el ritual (/retrospective → skill-management → /handoff)
   pregunta además: "¿qué decidí hoy por juicio propio que debería ser una regla escrita?"
 - EP.018 El Mundial se produce con el formato nuevo — sirve de validación del sistema.

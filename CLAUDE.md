@@ -2,6 +2,12 @@
 
 Este proyecto crea skills personalizadas para Claude Code. Una skill es un archivo que le enseña a Claude a hacer una tarea específica de forma repetible.
 
+## Verify Before Claiming
+
+Los principios viven en `~/.claude/CLAUDE.md`: **§ Verification** (la faja — gobierna la SALIDA, no declarar hecho sin evidencia) y **§ Procedencia** (gobierna la ENTRADA, no usar un artefacto guardado como hecho). El **procedimiento** operativo — tabla de evidencia, recibos, las dos secciones de cierre — vive en la skill `verify`.
+
+**No re-declarar esas reglas aquí.** Estaban escritas en 4 sitios el 2026-07-23 y el fallo siguió ocurriendo: el problema no es que falte la regla, es que falta el enforcement. Agregar una quinta copia diluye, no refuerza.
+
 ## Environment
 
 Windows con PowerShell 5.1. Usar PowerShell (no Bash/xcopy) para operaciones de archivos. Evitar backtick-quotes, caracteres Unicode y expresiones if inline en scripts — PS 5.1 no los maneja correctamente.
@@ -10,12 +16,18 @@ Windows con PowerShell 5.1. Usar PowerShell (no Bash/xcopy) para operaciones de 
 
 Config y reglas operativas en `~/.claude/`; proyectos y archivos de producción en `C:\Users\andre\repos\`. No proponer junctions para `~/.claude/`. Output de producción (imágenes, audios, transcripciones, cachés) va a `E:\` en el desktop y `D:\` en el portátil — nunca a `C:\`.
 
+### Windows — shell
+
+- El shell por defecto es PowerShell. **NO** usar heredocs de bash ni here-strings de PowerShell para contenido multilínea — escribir archivos con la herramienta Write. (No contradice la excepción de arriba: eso es redirección `>`, no heredoc.)
+- Git Bash mangla rutas absolutas de Windows; usar PowerShell para cualquier cosa que pase rutas a ComfyUI u otros binarios de Windows.
+
 ## Comportamiento al iniciar
 
 **Antes de responder nada**, sigue este orden:
 
 1. **Sincroniza con GitHub:** ejecuta `git pull origin main` Y TAMBIÉN `git -C "$env:USERPROFILE\.claude\skills" pull origin main` — son 2 clones del mismo repo y el global se desactualiza solo (mordió 2026-07-08: 1 mes stale en el portátil, una skill "no existía")
    - **Repos externos:** antes del primer edit **o de lanzar cualquier agente (Explore/executor) sobre otro repo** (hiresignal, kuma-talent-web, etc.): `git -C <repo> fetch origin` y verificar si está detrás — pull ANTES de editar o explorar, no al pushear (mordió 2026-07-08: clon de hiresignal 40 commits stale → merge de 4 conflictos; mordió 2026-07-10: exploradores lanzados pre-pull mapearon el árbol viejo y reportaron que un feature existente "no existía").
+   - **Trazabilidad del SHA (antes de lanzar subagentes):** correr `git pull --rebase --autostash` en CADA repo que los agentes vayan a leer (`--autostash` porque un working tree sucio aborta el rebase), e **imprimir el HEAD sha resultante de cada uno**. Pasarle ese sha a cada agente en su prompt y exigir que lo **cite en su reporte** — un sha que no coincide delata una lectura stale. **Un agente por workstream** — un *workstream* es un entregable independiente que no comparte archivos de salida con otro (ej.: metadata de Spotify vs rotación del grid). Si dos tareas escriben el mismo archivo, son UN solo workstream.
    - **En plan mode (no se puede hacer pull):** verificar staleness read-only con `git ls-remote origin` vs HEAD local, y poner el pull como primer paso de ejecución del plan (funcionó 2026-07-16 con hiresignal desactualizado).
 2. **Busca un handoff reciente:** revisa `.agents/handoff/` — abre el archivo con la fecha más reciente.
 3. **Decide cómo continuar:**
@@ -48,7 +60,7 @@ Esto:
 - ✓ Continúa la sesión sin desconexión
 - ✓ Prepara espacio para nueva conversación
 
-**Configuración:** Habilitada en `.claude/settings.json`
+**Configuración:** manual — el auto-compact del harness está **desactivado** (`"autoCompactEnabled": false` en `~/.claude/settings.json`) y este proyecto no tiene `.claude/settings.json`. Compactar al 50% es responsabilidad del modelo, nadie lo dispara solo (verificado 2026-07-23).
 
 ## Qué genera
 
@@ -81,9 +93,40 @@ Con `curl -L` no forzar `-X POST`: tras un redirect 302 curl reenvía el POST si
 - `glob.glob('**/x', recursive=True)` de Python **omite directorios que empiezan con punto** — leyó 18 de 28 `SKILL.md` porque se saltó todo `.claude/`. Usar `os.walk`.
 Antes de reportar un conteo o un "cero hallazgos", cruzar el total con una segunda herramienta. Ver §Procedencia en `~/.claude/CLAUDE.md`.
 
+## Límites de lo publicable (medir, no estimar)
+
+- Descripción del show en Spotify: límite duro de **600 caracteres** — contarlos antes de enviar.
+- Cualquier copy publicado con límite de plataforma: **imprimir el conteo de caracteres** en la respuesta.
+- Imágenes embebidas en HTML: toda `<img>` con regla de `width` debe llevar `height: auto` en la MISMA regla. **Verificación:** revisar cada `<img>` una por una — NO un grep del archivo: `width:\s*\d` también matchea divs, y un solo `height: auto` en cualquier parte enmascara al resto (comprobado 2026-07-23).
+- Negro de marca: **no lo redeclares aquí** — la fuente es `.claude/skills/episode-launch/docs/brand-constants.md`. Lo único que se afirma acá: un asset generado que renderiza negro puro `#000000` está mal y se corrige antes de componer.
+
+## Artwork (reglas de generación — persisten entre sesiones)
+
+**Fuente canónica de las reglas de artwork BTQ:** `.claude/skills/episode-launch/docs/brand-constants.md` § "Dirección de artwork" (**CONGELADA v3**, 2026-07-04). Esta sección NO la reemplaza — agrega lo que no está allí. Si chocan, gana el archivo congelado.
+
+- **Motivos vetados — por tipo de asset, no en general:**
+  - *quote cards:* anillo/diana dorada como relleno de fondo (ver [[feedback_btq_quotecard_visual_style]]).
+  - *cualquier asset:* proporciones chibi; personas en cards marcadas "sin personas".
+  - ⚠️ **Los círculos concéntricos NO son un motivo vetado en general** — `btq-production/artwork-general-v3.md` los EXIGE en la og-image (surcos de vinilo, oro #C9A84C). Un veto plano contradice la marca.
+- Confirmar el aspect ratio destino por tipo de asset (portada vs quote card vs tile de grid) ANTES de generar.
+- Renderizar e inspeccionar visualmente **todas** las variantes de aspect ratio antes de declarar un set completo.
+
+## Long-running jobs (descargas y renders > 2 min)
+
+Antes de arrancar cualquier descarga o render que se espere que pase de 2 minutos:
+
+- **Estimar y decirlo primero:** duración estimada y, si es descarga, bytes totales. Para un render los bytes no dicen nada — la estimación es `steps x it/s` **nombrando la máquina** (3080 Ti 12GB en el desktop vs 3060 6GB en el portátil dan números distintos).
+- **Baseline más simple primero:** proponer el workflow mínimo que podría funcionar, **correrlo y mostrar su output** antes de agregar nodos o etapas. Instancia de las reglas #14/#15 globales.
+- **Progreso:** lanzar en background escribiendo a un log; reportar en cada frontera de etapa y al terminar, con tiempo transcurrido. El log se puede leer a demanda. **No prometer una cadencia fija de 60s** — el harness no da un timer propio durante una tarea: un comando en foreground bloquea hasta que retorna y uno en background solo avisa al completarse.
+
+## Principios de tooling — lean y reactivo
+
+- No agregar hooks de `SessionStart` ni ningún costo fijo de arranque. Los hooks deben ser dirigidos por evento (`PreToolUse`/`PostToolUse`) y dispararse solo cuando ocurre el evento relevante.
+- **`PostToolUse` corre DESPUÉS de la herramienta — no puede bloquear nada.** Para impedir que algo se ejecute hay que usar `PreToolUse` con `hookSpecificOutput.permissionDecision: "deny"` (verificado 2026-07-23 contra el schema de settings).
+
 ## Workflows
 
-Ritual de cierre de sesión: `/session-close` lo automatiza completo (retrospective → skill-kit-auditor → handoff). Equivale a ejecutar `/retrospective`, luego `skill-kit-auditor`, luego `/handoff` en ese orden. Aplicar los fixes aprobados del audit antes de generar el handoff.
+Ritual de cierre de sesión: `/session-close` lo automatiza completo (retrospective → skill-management → handoff). Equivale a ejecutar `/retrospective`, luego `skill-management`, luego `/handoff` en ese orden. Aplicar los fixes aprobados del audit antes de generar el handoff.
 
 ## Regla de transición de modelo (vigente desde 2026-06-12)
 
