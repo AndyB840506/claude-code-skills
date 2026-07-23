@@ -9,6 +9,10 @@
 > registra el sign-off de Hugo del 2026-07-17 y la postal definitiva; Andrés lo confirmó.
 > El bloqueo real es otro: **el plan de fulfillment.**
 
+> **La sesión siguió después de escribir esto.** El error de arriba desató una investigación
+> de causa raíz cuyo resultado vive en `2026-07-23-procedencia-causa-raiz.md` — leer ese
+> primero si lo que te interesa es el proceso y no HireSignal.
+
 ---
 
 ## What We Accomplished This Session
