@@ -105,10 +105,10 @@ Antes de reportar un conteo o un "cero hallazgos", cruzar el total con una segun
 
 **Fuente canónica de las reglas de artwork BTQ:** `.claude/skills/episode-launch/docs/brand-constants.md` § "Dirección de artwork" (**CONGELADA v3**, 2026-07-04). Esta sección NO la reemplaza — agrega lo que no está allí. Si chocan, gana el archivo congelado.
 
-- **Motivos vetados — por tipo de asset, no en general:**
-  - *quote cards:* anillo/diana dorada como relleno de fondo (ver [[feedback_btq_quotecard_visual_style]]).
+- **Motivos vetados:**
+  - **Círculos concéntricos / anillos / diana: VETADOS en TODAS las imágenes** — portadas **Y** quote cards. Decisión de Andy del **2026-07-10 (EP.021)**; antes el motivo estaba "reservado para la portada" y por eso reaparecía. Única excepción: cuando la diana **ES el sujeto central** de la escena (ej. Q2 de EP.020). La línea `DO NOT render any concentric ring, circle, halo, or archery-target pattern anywhere in this image.` va en **todo** prompt desde el primer intento: el modelo los reinserta solo (Flow en EP.020; Z-Image local en EP.022) y **pueden colarse disfrazados de textura** — en EP.022 una tela salió cubierta de mini-círculos, invisible a tamaño completo y detectada solo al hacer zoom a una esquina.
   - *cualquier asset:* proporciones chibi; personas en cards marcadas "sin personas".
-  - ⚠️ **Los círculos concéntricos NO son un motivo vetado en general** — `btq-production/artwork-general-v3.md` los EXIGE en la og-image (surcos de vinilo, oro #C9A84C). Un veto plano contradice la marca.
+  - ⚠️ **`btq-production/artwork-general-v3.md` contradice esto** — pide "concentric circles… like the grooves of a vinyl record" para la og-image. Ese archivo quedó **desactualizado** (el veto es posterior, del 07-10) y **no se usa tal cual** hasta corregirlo.
 - Confirmar el aspect ratio destino por tipo de asset (portada vs quote card vs tile de grid) ANTES de generar.
 - Renderizar e inspeccionar visualmente **todas** las variantes de aspect ratio antes de declarar un set completo.
 
