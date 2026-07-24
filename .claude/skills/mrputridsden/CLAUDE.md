@@ -6,6 +6,23 @@ Este workspace es exclusivo de **Mr. Putrid's Den**, el podcast de Andrés en so
 
 **Excepción declarada — La Silla Pútrida sigue ABIERTA** (decisión de Andrés, 2026-07-23): si aparece un invitado, se hace, aunque el enfoque de T2 sea 100% misterios. No retirar ese segmento por "no encaja con el pilar".
 
+---
+
+## Formato narrativo del expediente — CANON T2 (decisión Andrés 2026-07-24)
+
+El show tiene UNA firma de formato que se replica en cada expediente. Lo que cambia entre episodios es la **narrativa**; el esqueleto no. La firma: **desenmascarar el mito sin apagar el escalofrío.** Dos capas, cada una con su trabajo:
+
+- **Teaser / redes = la carnada.** Venden el MITO y la pregunta abierta. Es donde se explota el hueco (efecto Zeigarnik: lo incompleto se recuerda y se recomienda). El teaser NUNCA resuelve ni spoilea el destape — solo deja el picor. **Enmarcar siempre como leyenda** ("cuentan que…", "¿por qué a los 27?"), nunca afirmar el rumor como hecho — respeta el pilar dato-vs-leyenda. La honestidad la paga el episodio; el teaser solo hace la pregunta.
+- **Episodio = el pago.** Dos modos según el caso:
+  - **Caso con verdad documentada** (ej. Club de los 27 / estudio BMJ): se DESTAPA, pero el destape reencuadra hacia una pregunta más honda ("por qué *necesitábamos* creerlo"), no desinfla ("era mentira"). La revelación abre una puerta, no cierra un candado. Si tu revelación es MÁS PEQUEÑA que el mito, no la reveles — deja la zona gris.
+  - **Caso genuinamente sin resolver** (ej. muertes sin esclarecer, "Paul is Dead"): se deja ABIERTO — se exponen las teorías, no se fabrica un final. El hueco ES el producto.
+
+**Filtro antes de escribir cada guion:** ¿mi revelación es más grande o más chica que el mito? Más grande → destapar como puerta. Más chica → dejar abierto.
+
+**Único es la narrativa, no la estructura.** Cada expediente reusa este esqueleto pero debe ser único en ángulo, escena y voz — NUNCA un copy-paste del anterior. Refuerza (no reemplaza) las "Reglas anti-repetición de guion" de más abajo: dispositivo de apertura variado, léxico propio del episodio, una escena viva en vez de listas.
+
+**LÍMITE FIRME — no deificar a los artistas (decisión Andrés 2026-07-24):** nunca catalogar a un músico como dios, semidiós, mesías u objeto de culto — ni en guion, ni en teaser, ni en artwork. Puede ofender a creyentes reales. Y encaja con el pilar: el mito los eleva a ídolos, el episodio los devuelve a lo HUMANO, que es donde vive la verdad interesante. Reconocer la grandeza artística sin lenguaje de adoración religiosa. Hermano del límite de simbología ocultista (ver memoria `feedback_mpd_no_occult_symbols`).
+
 ## Al iniciar
 
 Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
