@@ -23,6 +23,16 @@ El show tiene UNA firma de formato que se replica en cada expediente. Lo que cam
 
 **LÍMITE FIRME — no deificar a los artistas (decisión Andrés 2026-07-24):** nunca catalogar a un músico como dios, semidiós, mesías u objeto de culto — ni en guion, ni en teaser, ni en artwork. Puede ofender a creyentes reales. Y encaja con el pilar: el mito los eleva a ídolos, el episodio los devuelve a lo HUMANO, que es donde vive la verdad interesante. Reconocer la grandeza artística sin lenguaje de adoración religiosa. Hermano del límite de simbología ocultista (ver memoria `feedback_mpd_no_occult_symbols`).
 
+---
+
+## Alcance, persona y tono — CANON T2 (decisión Andrés 2026-07-24, tras estudio de mercado + feedback)
+
+**Alcance: híbrido anclado en rock.** El rock/la música es la COLUMNA e identidad del show ("misterios y leyendas del rock"), pero NO exclusivo: hay válvula para otras leyendas/misterios y para invitados. Esto AFINA el encuadre previo — sigue siendo 100% misterios y leyendas (nada de episodios de análisis de banda; esos murieron con T1), lo que se abre es el TEMA: rock como ancla + otras leyendas de vez en cuando. Razón: como marca nueva, un gancho afilado (ser *el* de los misterios del rock) te hace memorable antes de ampliar; salir "amplio" el día uno choca de frente con los gigantes (Relatos de la Noche, Leyendas Legendarias). Se amplía cuando haya base fiel. Ver estudio de mercado (artifact 2026-07-24) y memoria `project_mpd_archivos_secretos_pillar`.
+
+**Persona: tercera persona investigativa + viñetas dramatizadas.** Andrés narra e investiga en tercera persona, usando **presente cinematográfico** para inmersión ("es marzo del 71, entra al apartamento de París…"). Puede caer en viñetas dramatizadas puntuales, SIEMPRE marcadas como reconstrucción. **PROHIBIDO narrar en primera persona "como si lo contara el artista":** pone pensamientos/palabras inventadas en la boca de músicos reales muertos, rompe el pilar dato-vs-leyenda y arriesga ofender. La inmersión se logra en tercera, no fabricando al artista.
+
+**Tono: serio e inmersivo + chispa seca.** Base atmosférica tipo Relatos de la Noche (lo que la audiencia del género adora), sazonada con el ingenio irónico del host (ver `glosario-cachaco.md`). NO comedia tipo Leyendas Legendarias — esa vive del trío que se rebota; en monólogo es stand-up, choca con la marca eerie y te mete al terreno que LL ya domina. Ni documental solemne, ni show de comedia.
+
 ## Al iniciar
 
 Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
@@ -109,15 +119,18 @@ consultar). No incluir este segmento en ningún guion nuevo. Ver memoria `projec
 
 ## Estructura de episodios
 
-**Episodio normal (solo, EP.005 en adelante):**
+**Episodio normal (solo, EP.005 en adelante — apertura fija desde T2, 2026-07-24):**
 ```
-1. Intro music (30 seg)
-2. Bienvenida — Andrés
-3. Tema principal — Bloque A
-4. Tema principal — Bloque B
-5. Takeaway / Reflexión final
-6. Outro music (30 seg)
+0. Logo sonoro (3–5 seg) — firma de marca, el PRIMER sonido que se oye
+1. Disclaimer — voz grave y misteriosa, FIJO cada episodio
+2. Intro music (~30 seg)
+3. Bienvenida — Andrés
+4. Tema principal — Bloque A
+5. Tema principal — Bloque B
+6. Takeaway / Reflexión final
+7. Outro music (~30 seg)
 ```
+**Logo sonoro y disclaimer son bumpers FIJOS reutilizables** — se producen UNA vez y se reusan en cada episodio (no se regeneran por episodio; solo si cambia el texto/motivo). El disclaimer es el contrato de honestidad del show (mito ≠ verdad). Texto del disclaimer, ajustes de ElevenLabs y brief del logo sonoro en `mrputridsden-production/audio/t2-disclaimer-e-intro.md`. El logo sonoro va ANTES del disclaimer porque la investigación de branding sonoro dice que la firma debe ser el primer sonido.
 Sin Segmento de Promoción (retirado 2026-07-17, ver Segmentos permanentes).
 Sin [INTERCAMBIO] entre hosts — es monólogo conversacional (Andrés se dirige directo al oyente, no a un co-host). Puede simular diálogo interno (pregunta retórica → respuesta) para mantener ritmo, pero no hay segunda voz real.
 

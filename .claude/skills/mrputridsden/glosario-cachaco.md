@@ -22,6 +22,11 @@ Natural, directo, con humor e irreverencia. Accesible para cualquier hispanohabl
 
 ---
 
+## Persona y tono narrativo (CANON T2, 2026-07-24)
+
+- **Tercera persona investigativa**, en **presente cinematográfico** para inmersión ("es marzo del 71, entra al apartamento…"). Viñetas dramatizadas puntuales OK, siempre marcadas como reconstrucción. **NUNCA primera persona "como el artista"** — inventa a un músico real, rompe el pilar dato-vs-leyenda.
+- **Tono base: serio e inmersivo + chispa seca.** Atmósfera tipo Relatos de la Noche como cama, sazonada con el ingenio irónico del host — NO comedia tipo Leyendas Legendarias (eso necesita trío y apaga lo eerie). Ni documental solemne. El humor es sabor, no el motor. (Detalle del porqué en el `CLAUDE.md` § Alcance, persona y tono.)
+
 ## Palabras y frases que funcionan bien
 
 | Expresión | Uso |
