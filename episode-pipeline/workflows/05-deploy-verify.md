@@ -19,6 +19,15 @@ del Paso 2.)
 Si el preflight reporta algo en estado FAIL (manual): detente aquí y reporta el
 bloqueo al usuario — no continúes al gate de aprobación con un preflight a medias.
 
+**Compuerta mecánica de assets (BTQ):** antes del gate de aprobación, corre
+`python scripts/verify_web.py btq-production/website` — chequeo mecánico de lo que el
+deploy publica (og-image ≤500 KB, 1600×900, no negro puro; cada `<img>` con width lleva
+`height:auto`). Exit ≠ 0 = detente, mismo criterio que un FAIL de preflight. Es lo mismo
+que hace cumplir el hook `block-btq-deploy-unverified.ps1` en `vercel --prod`, pero acá
+lo corres tú explícito en vez de esperar a que el hook deniegue. Para portadas/quote
+cards de un episodio (no el sitio), la compuerta es `scripts/verify_assets.py <slug>
+--show btq|mpd|ccc` + la lectura de imágenes del Workflow 03.
+
 ---
 
 ## Paso 2 — GATE FINAL DE APROBACIÓN (el único pedido por el usuario)
