@@ -1,21 +1,21 @@
 # BTQ — Artwork general del show (v3) — og-image / social preview
 
-> ## ⛔ NO USAR ESTE PROMPT TAL CUAL (2026-07-23)
+> ## ⛔ RETIRADO — CONCEPTO MUERTO (2026-07-23, decisión de Andy)
 >
-> El prompt de abajo pide **círculos concéntricos** de fondo ("like the grooves of a
-> vinyl record"). Ese motivo quedó **VETADO en TODAS las imágenes BTQ** por decisión de
-> Andy del **2026-07-10 (EP.021)** — ver `.claude/skills/episode-launch/docs/brand-constants.md`
-> § "Reglas de la dirección" #3 y su bloque congelado, que incluye la línea
-> `DO NOT render any concentric ring, circle, halo, or archery-target pattern anywhere in this image.`
-> Este archivo es anterior a esa decisión y nunca se actualizó.
+> **La imagen editorial de marca (figura + círculos concéntricos dentro de la imagen) ya
+> no va.** Dependía de los surcos de vinilo concéntricos, y ese motivo quedó VETADO en
+> TODAS las imágenes BTQ desde el 2026-07-10 (EP.021) — ver
+> `.claude/skills/episode-launch/docs/brand-constants.md` § "Reglas de la dirección" #3.
+> Sin los aros, este concepto no se sostiene, así que se retira entero en vez de
+> parchearlo.
 >
-> **Qué falta para poder usarlo:** decidir con Andrés qué patrón geométrico reemplaza a
-> los surcos de vinilo (la regla pide "el patrón del universo del referente"; para la
-> imagen de marca general no hay referente de episodio, así que es una decisión creativa
-> abierta). Hasta entonces, la og-image no se regenera desde acá.
+> **No regenerar la og-image desde este prompt.** Cuando se decida un reemplazo para la
+> og-image será un concepto NUEVO (sin aros), no una corrección de este. El prompt de
+> abajo queda solo como registro histórico de lo que se descartó.
 >
-> Recordatorio aparte: la og-image **actualmente en vivo** tiene el typo horneado
-> "PREMIUM KEY EDITOIAL" y un garabato sobre el vinilo — sigue publicada.
+> Estado del asset en vivo: `website/og-image.png` sigue publicada con el typo horneado
+> "PREMIUM KEY EDITOIAL", pesa ~2 MB (el límite de marca son 500 KB) y usa el concepto
+> muerto. Necesita reemplazo, no corrección.
 
 Reemplaza `website/og-image.png` (1600×900, referenciado en `index.html` para
 `og:image`/`twitter:image`). El actual tiene un bug real: texto roto de IA

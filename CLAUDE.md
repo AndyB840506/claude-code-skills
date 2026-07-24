@@ -108,7 +108,7 @@ Antes de reportar un conteo o un "cero hallazgos", cruzar el total con una segun
 - **Motivos vetados:**
   - **Círculos concéntricos / anillos / diana: VETADOS en TODAS las imágenes** — portadas **Y** quote cards. Decisión de Andy del **2026-07-10 (EP.021)**; antes el motivo estaba "reservado para la portada" y por eso reaparecía. Única excepción: cuando la diana **ES el sujeto central** de la escena (ej. Q2 de EP.020). La línea `DO NOT render any concentric ring, circle, halo, or archery-target pattern anywhere in this image.` va en **todo** prompt desde el primer intento: el modelo los reinserta solo (Flow en EP.020; Z-Image local en EP.022) y **pueden colarse disfrazados de textura** — en EP.022 una tela salió cubierta de mini-círculos, invisible a tamaño completo y detectada solo al hacer zoom a una esquina.
   - *cualquier asset:* proporciones chibi; personas en cards marcadas "sin personas".
-  - ⚠️ **`btq-production/artwork-general-v3.md` contradice esto** — pide "concentric circles… like the grooves of a vinyl record" para la og-image. Ese archivo quedó **desactualizado** (el veto es posterior, del 07-10) y **no se usa tal cual** hasta corregirlo.
+  - ⚠️ **La og-image editorial (figura + surcos de vinilo) está RETIRADA** — concepto muerto desde 2026-07-23 porque dependía de los aros vetados. `btq-production/artwork-general-v3.md` quedó como registro histórico; su reemplazo será un concepto nuevo, no una corrección. La og-image en vivo sigue con el typo "PREMIUM KEY EDITOIAL" y ~2 MB (límite 500 KB).
 - Confirmar el aspect ratio destino por tipo de asset (portada vs quote card vs tile de grid) ANTES de generar.
 - Renderizar e inspeccionar visualmente **todas** las variantes de aspect ratio antes de declarar un set completo.
 
