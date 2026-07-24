@@ -20,4 +20,8 @@ Rules:
    - **Verified done** — each claim with the evidence command and its actual output.
    - **Known open issues / anything I did not check** — if empty, state 'nothing unverified' and justify why nothing remains.
 8. **Banned words** while section 2 is non-empty. One list, unifying this file with `~/.claude/CLAUDE.md` § Verification so there is no competing pair: 'final', 'complete', 'production-ready', 'verified' — and their Spanish counterparts 'hecho', 'resuelto', 'sin hallazgos', 'verificado' — as a claim about the task. The **'Verified done'** section header is exempt: it labels evidence, it does not assert completion.
+9. **Verify at the boundary where the consumer meets the artifact, not where you authored it.** Four reworks on 2026-07-24 shared this shape: the thing built was checked, the thing delivered was not.
+   - **Absence claims:** never conclude a behaviour is missing from one file — it can be composed across caller and callee. `config.php` sent the request with no cache breakpoint on the history, so "caching is missing" looked true; `api/message.php` had already added one before calling. Grep the whole call path before saying it is not there. This one shipped wrong numbers into a memo.
+   - **Tests that assert absence:** a green count proves only the surfaces it scanned. Print the covered list beside the result — "12 passed" silently meant "2 files, English only" while five brand leaks lived outside the scan.
+   - **Published pages and documents:** fetch the published artifact and check what rendered, not the source file. Valid standalone HTML can render differently embedded — sheets with no `background` came out transparent over a grey ground, and the user had to report the unreadable text.
 

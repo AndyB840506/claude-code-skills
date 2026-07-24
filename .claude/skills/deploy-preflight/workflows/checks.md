@@ -109,6 +109,21 @@ el problema sigue ahi (mordio 2026-07-19 verificando la restauracion de BTQ). Ag
 query param cache-busting (`?cb=<algo unico>`) a la URL en cada refetch para forzar una
 lectura real, o usa `curl` que no tiene este problema.
 
+## Paso 4b — Hay alguien a mitad de un flujo?
+
+Si el repo tiene `deploy_on_push`, **cada push reinicia el contenedor en produccion**.
+Preguntar antes de pushear si hay una demo, una prueba de cliente o un usuario a mitad
+de un flujo con estado.
+
+El 2026-07-24, seis pushes a `hiresignal/master` en 56 minutos mataron una prueba real
+de HGS: las sesiones PHP vivian en el disco del contenedor, la entrevista murio con
+"Session expired", y como el registro solo se escribe al generar el reporte, **no quedo
+ningun rastro** — ni parcial. El sintoma que llego fue "no aparece nada en el admin".
+
+- Si la app guarda estado de usuario en disco (sesiones PHP, archivos temporales), el
+  arreglo estructural es moverlo a la base de datos — no "evitar deployar".
+- Si el trabajo no es urgente y hay una demo en curso: dejarlo en rama y mergear despues.
+
 ## Paso 5 — Resumen
 
 Da un resumen corto de:
