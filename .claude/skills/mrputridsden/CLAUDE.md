@@ -178,6 +178,21 @@ Sin [INTERCAMBIO] entre hosts — es monólogo conversacional (Andrés se dirige
 
 ---
 
+## Feedback de audio (intros, música, tomas)
+
+No puedo ESCUCHAR audio. Para opinar sobre un mp3/wav (iteración de intro, logo sonoro, toma de voz),
+NO fingir que se oyó: renderizar espectrograma + forma de onda con ffmpeg y leerlos como imagen — da
+duración, BPM aproximado, balance de frecuencias (cálido/grave vs brillante), dinámica y dónde
+construye/resuelve. Es lectura estructural, no de timbre: si tiene tal instrumento/coros/vinilo NO se
+deduce de la imagen — para eso, pedirle a Andrés que describa cómo suena.
+
+```
+ffmpeg -i IN -lavfi "showspectrumpic=s=1400x600:legend=1:color=intensity" spectrum.png
+ffmpeg -i IN -lavfi "showwavespic=s=1400x300" waveform.png
+```
+
+---
+
 ## Estructura de carpetas
 
 **Skill (instrucciones — esta carpeta):**
