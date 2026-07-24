@@ -255,12 +255,12 @@ window.addEventListener('scroll', () => {
 
 ---
 
-## Rule 8: Visual Design Direction (frontend-design)
+## Rule 8: Visual Design Direction
 
-> Esta sección reimplementa inline la filosofía anti-genérico de la skill
-> `frontend-design` (no la referencia porque web-page-kit corre standalone). Si
-> `frontend-design/SKILL.md` cambia sus principios de tono/tipografía/color, actualizar
-> AMBOS archivos — igual que la nota de sync de `comfyui/docs/prompting.md`.
+> Esta sección reimplementa inline la filosofía anti-genérico de diseño para que
+> web-page-kit corra standalone. (Antes referenciaba la skill `frontend-design`, borrada
+> el 2026-07-24 por ser un stub que solapaba con `ui-ux-pro-max` y este kit; la filosofía
+> vive ahora acá.) Para decisiones de diseño de componentes sueltos, ver `ui-ux-pro-max`.
 
 **Do not use lookup tables.** Generic font-by-industry assignments produce predictable, forgettable pages. Instead, commit to a deliberate aesthetic direction for every site.
 

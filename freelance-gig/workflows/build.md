@@ -19,8 +19,9 @@ If `classification.matchedServiceId` is set:
 
 ## 2. Unmatched/custom job → scope generically
 
-- Web/UI build → hand off to `frontend-design` or `web-page-kit` (already in
-  this repo) rather than re-deriving layout/design rules here.
+- Web/UI build → hand off to `web-page-kit` (sitio completo) o `ui-ux-pro-max`
+  (componente suelto / decisión de diseño), ya en este repo, en vez de re-derivar
+  reglas de layout/diseño aquí.
 - Copy-only ask → draft directly, same voice bar as the proposal stage.
 - Dev/automation ask → scaffold a project skeleton under
   `C:\Users\andre\repos\` matching Andy's real stack (Express/Node, DO App
