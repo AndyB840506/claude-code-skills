@@ -154,6 +154,9 @@ def main():
     ap.add_argument("--show", default="btq", choices=sorted(SHOWS),
                     help="define el negro de marca (btq #0A0A0A, mpd #1A1A1A, ccc #141414)")
     ap.add_argument("--metadata", help="JSON opcional con los campos de texto publicables")
+    ap.add_argument("--stage-a", action="store_true", dest="stage_a",
+                    help="episodio SIN grabar: no exige quote cards, que son Stage B "
+                         "(su texto se valida contra la transcripcion real)")
     args = ap.parse_args()
 
     if not os.path.isdir(args.root):
@@ -176,7 +179,16 @@ def main():
             fails.append("falta la variante %s" % key)
 
     if not any(CARD_RE.search(k) for k in found):
-        fails.append("no se encontro ninguna quote card (-CARDn-16x9.png)")
+        if args.stage_a:
+            print("quote cards: OMITIDAS -- Stage A declarado con --stage-a.")
+        else:
+            fails.append(
+                "no se encontro ninguna quote card (-CARDn-16x9.png). "
+                "Las cards son Stage B: se componen DESPUES de grabar y su texto se "
+                "valida contra la transcripcion real, NO contra el guion (Andy se "
+                "expande en vivo). Si el episodio no se ha grabado, este FAIL es el "
+                "estado correcto -- correr con --stage-a. NUNCA sacar las frases del "
+                "borrador para que el gate pase.")
 
     for key in sorted(found):
         path, expected = found[key]
