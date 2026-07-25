@@ -124,6 +124,35 @@ disculpa genérica por hablar de números/teoría. Antes de entregar un guion, r
 contra los guiones anteriores (no solo el propio) buscando este tipo de muletilla
 estructural repetida.
 
+---
+
+## Doble sentido regional — "cola" y cualquier palabra que viaje mal (feedback Andy 2026-07-25)
+
+El show se escucha en toda Latinoamérica. **`cola` significa «trasero» en buena parte de la
+región** (Colombia, Venezuela, Argentina, Chile). En el piso de un contact center nadie lo oye
+así — es el término de la industria y se usa veinte veces al día. El problema no es la palabra,
+es la **construcción**: cuando se despega del contexto técnico y queda sola con un adjetivo
+físico, el segundo sentido se activa solo.
+
+**Regla:** `cola` puede usarse cuando el contexto operativo la ancla de forma inmediata
+(«la cola de llamadas», «la teoría de colas»). **No usarla con adjetivos corporales o de
+tamaño.** Ya salió al aire así:
+
+- ❌ *"La cola está reventada."* (EP.018) — el caso peor, y está publicado.
+- ⚠️ *"la cola en rojo"*, *"ver la cola crecer"* (EP.018, EP.019) — limítrofes; el color y el
+  verbo salvan el contexto, pero por poco.
+- ✅ *"la fila de llamadas"*, *"el volumen en espera"*, *"los casos represados"*, *"el backlog"*.
+
+**El nombre del show NUNCA se traduce.** «Behind the Queue» se dice y se escribe en inglés
+siempre, incluso a mitad de una frase en español. La traducción literal es impublicable, y por
+eso la metáfora de la cola (ver `brand-constants.md`) vive en inglés en la marca y solo baja al
+español como *fila / espera / backlog* dentro del guion.
+
+**Generalizar antes de grabar:** cualquier palabra que cambie de sentido entre países se revisa
+en la pasada final, no solo esta (`coger`, `concha`, `pico`, `pinche`, `chucha`…). El criterio
+es el oyente de otro país que no tiene el contexto colombiano — si la frase sola le puede sonar
+a otra cosa, se reescribe. Va en el lint de entrega.
+
 ## Título: el teórico va PRIMERO, y después en llano qué es
 
 **Feedback Andy (2026-07-25).** Fórmula obligatoria de los episodios **pilar SEO**:
@@ -353,6 +382,9 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
       ser "yo, personalmente, desconfío"). BTQ es solo host narrando en primera persona
       todo el episodio; "Andy" en tercera persona solo es válido como etiqueta de sección
       ("Recomendaciones de Andy") o en la firma canónica del cierre ("Yo soy Andy").
+- [ ] **Doble sentido regional** (ver sección dedicada): grep de `cola` → ninguna con adjetivo
+      corporal o de tamaño ("reventada", "apretada", "grande"); el nombre del show sin traducir.
+      Repasar también `coger`, `concha`, `pico`, `pinche`, `chucha`.
 - [ ] Frase larga: ninguna oración que no se pueda decir de un respiro; partir las cadenas de guiones.
 - [ ] Al menos 2-3 momentos de humor/guiño/autoconciencia repartidos.
 - [ ] Datos verificados (fuentes reales, nada inventado); lo dudoso marcado [VERIFICAR].

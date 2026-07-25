@@ -35,7 +35,10 @@ center».
    el giro al 60 %.
 4. El ritual: «Buenas y santas…», el cierre canónico, las recomendaciones de Andy.
 5. La metáfora de la cola: esperar, acumular, el backlog — funciona en cualquier empresa y es
-   lo que le da sentido al nombre.
+   lo que le da sentido al nombre. **En la marca vive en inglés y no se traduce nunca:**
+   «Behind the Queue» se dice y se escribe en inglés incluso a mitad de una frase en español,
+   porque `cola` significa «trasero» en buena parte de Latinoamérica. Al bajar al guion se dice
+   *fila / espera / backlog*. Regla completa en `btq-production/guion-style-btq.md`.
 
 **Costo aceptado a sabiendas:** se pierde la cola larga SEO de «call center» a cambio de
 repertorio. Se le señaló el riesgo a Andy —EP.020 funcionó justamente por esa keyword— y
