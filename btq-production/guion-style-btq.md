@@ -126,32 +126,66 @@ estructural repetida.
 
 ---
 
-## Doble sentido regional — "cola" y cualquier palabra que viaje mal (feedback Andy 2026-07-25)
+## Español neutro: neutro en el diccionario, Andy en el micrófono (feedback Andy 2026-07-25)
 
-El show se escucha en toda Latinoamérica. **`cola` significa «trasero» en buena parte de la
-región** (Colombia, Venezuela, Argentina, Chile). En el piso de un contact center nadie lo oye
-así — es el término de la industria y se usa veinte veces al día. El problema no es la palabra,
-es la **construcción**: cuando se despega del contexto técnico y queda sola con un adjetivo
-físico, el segundo sentido se activa solo.
+El show se escucha en toda Latinoamérica. Se escribe en **español neutro**, pero neutro en el
+sentido del doblaje profesional: **es un estándar de léxico, no de voz.** Regula qué palabras se
+usan, no cómo suena Andy.
 
-**Regla:** `cola` puede usarse cuando el contexto operativo la ancla de forma inmediata
-(«la cola de llamadas», «la teoría de colas»). **No usarla con adjetivos corporales o de
-tamaño.** Ya salió al aire así:
+**Esto NO es licencia para aplanar el guion.** El fallo característico de un guion BTQ es salir
+*tieso* (ver el Diagnóstico que abre esta guía), y las reglas 1 y 7 de chispa existen justamente
+para evitarlo. Neutro mal entendido suena a locutor de aeropuerto — y eso es peor que un
+regionalismo.
 
-- ❌ *"La cola está reventada."* (EP.018) — el caso peor, y está publicado.
+| Neutro SÍ regula | Neutro NO toca |
+|---|---|
+| Palabras ancladas a un país | Frases cortas y declarativas (regla 1) |
+| Palabras con segundo sentido regional | El chiste seco, la autoconciencia (regla 7) |
+| Voseo y vosotros → `usted` / `ustedes` | El ritmo staccato, la escena en presente |
+| Modismos que hay que explicar | Meterse con el oyente, la ironía, el aparte |
+
+**La prueba:** un oyente en México o Argentina, sin contexto colombiano, ¿entiende la frase sola
+y sin que se le explique? Si sí, se queda aunque sea coloquial —*"sí, ya sé, otro que les habla
+de Cerati"* viaja perfecto—. Si no, se reescribe.
+
+### 1 · Palabras ancladas a un país (cambiar)
+
+`tinto` (en Colombia es café negro; en el resto de la región es vino tinto — el caso ejemplar),
+`parcero/parce`, `chino` o `pelado` por niño, `bacano`, `berraco`, `man`, `vaina`, `camello` por
+trabajo, `jartera`, `tusa`, `ahorita` (significa cosas distintas según el país). También
+`chévere`, que viaja al norte andino pero no al Cono Sur ni a México.
+
+*Borderline, decidir por caso:* `plata` por dinero — se entiende en toda la región aunque México
+prefiera `dinero`. Aporta textura; no está prohibida, pero si un párrafo ya va cargado de
+colombianismos, esta es la primera que cae.
+
+### 2 · Palabras con segundo sentido regional (cazar siempre)
+
+`coger` (normal en Colombia, vulgar en México, Argentina, Uruguay y Chile — usar *tomar*),
+`concha`, `pico`, `pinche`, `chucha`, `papaya`, `verga`, `culo`, `bicho`.
+
+### 3 · El caso `cola` — y el nombre del show
+
+`cola` significa «trasero» en buena parte de la región. En el piso de un contact center nadie lo
+oye así: es el término de la industria y se usa veinte veces al día. El problema no es la
+palabra, es la **construcción** — cuando se despega del contexto técnico y queda sola con un
+adjetivo físico, el segundo sentido se activa solo.
+
+- ✅ *"la cola de llamadas"*, *"la teoría de colas"* — el contexto operativo la ancla.
+- ✅ Alternativas limpias: *"la fila de llamadas"*, *"el volumen en espera"*, *"los casos
+  represados"*, *"el backlog"*.
 - ⚠️ *"la cola en rojo"*, *"ver la cola crecer"* (EP.018, EP.019) — limítrofes; el color y el
   verbo salvan el contexto, pero por poco.
-- ✅ *"la fila de llamadas"*, *"el volumen en espera"*, *"los casos represados"*, *"el backlog"*.
+- ❌ `cola` + adjetivo corporal o de tamaño: *"reventada"*, *"apretada"*, *"grande"*.
+  Ya salió al aire así: *"La cola está reventada"* (EP.018).
 
 **El nombre del show NUNCA se traduce.** «Behind the Queue» se dice y se escribe en inglés
 siempre, incluso a mitad de una frase en español. La traducción literal es impublicable, y por
 eso la metáfora de la cola (ver `brand-constants.md`) vive en inglés en la marca y solo baja al
 español como *fila / espera / backlog* dentro del guion.
 
-**Generalizar antes de grabar:** cualquier palabra que cambie de sentido entre países se revisa
-en la pasada final, no solo esta (`coger`, `concha`, `pico`, `pinche`, `chucha`…). El criterio
-es el oyente de otro país que no tiene el contexto colombiano — si la frase sola le puede sonar
-a otra cosa, se reescribe. Va en el lint de entrega.
+> Las listas de arriba son un punto de partida, no un inventario cerrado. Ante una palabra con
+> sabor local que no esté listada, aplicar la prueba del párrafo inicial.
 
 ## Título: el teórico va PRIMERO, y después en llano qué es
 
@@ -382,9 +416,12 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
       ser "yo, personalmente, desconfío"). BTQ es solo host narrando en primera persona
       todo el episodio; "Andy" en tercera persona solo es válido como etiqueta de sección
       ("Recomendaciones de Andy") o en la firma canónica del cierre ("Yo soy Andy").
-- [ ] **Doble sentido regional** (ver sección dedicada): grep de `cola` → ninguna con adjetivo
-      corporal o de tamaño ("reventada", "apretada", "grande"); el nombre del show sin traducir.
-      Repasar también `coger`, `concha`, `pico`, `pinche`, `chucha`.
+- [ ] **Español neutro** (ver sección dedicada — es de léxico, NO aplanar la voz): grep de
+      `cola` → ninguna con adjetivo corporal o de tamaño; nombre del show sin traducir; grep de
+      anclados a un país (`tinto`, `parce`, `bacano`, `berraco`, `vaina`, `camello`, `chino`,
+      `ahorita`) y de doble sentido (`coger`, `concha`, `pico`, `pinche`, `chucha`, `papaya`);
+      cero voseo y cero vosotros. Prueba de cada hallazgo: ¿lo entiende un oyente en México sin
+      que se lo expliquen? Si sí, se queda aunque sea coloquial.
 - [ ] Frase larga: ninguna oración que no se pueda decir de un respiro; partir las cadenas de guiones.
 - [ ] Al menos 2-3 momentos de humor/guiño/autoconciencia repartidos.
 - [ ] Datos verificados (fuentes reales, nada inventado); lo dudoso marcado [VERIFICAR].
