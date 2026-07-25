@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Behind the Queue — Liner Notes · Podcast de liderazgo y cultura pop</title>
-  <meta name="description" content="Podcast en español para líderes de BPO y Contact Center. Cultura pop, datos reales y lecciones de liderazgo. Conducido por Andy. Nuevo episodio cada semana.">
+  <title>Behind the Queue — Podcast de gestión, calidad y liderazgo</title>
+  <meta name="description" content="Podcast en español para quienes dirigen equipos y operaciones. Una ley, una teoría o un principio real de gestión por episodio, bajado al piso. Nuevo episodio cada semana.">
   <link rel="canonical" href="https://behind-thequeue.com/">
 
   <meta property="og:title" content="Behind the Queue">
-  <meta property="og:description" content="Podcast en español para líderes de BPO y Contact Center. Cultura pop, datos reales y lecciones aplicables hoy.">
+  <meta property="og:description" content="Podcast en español para quienes dirigen equipos y operaciones. Teoría real de gestión, bajada al piso.">
   <meta property="og:url" content="https://behind-thequeue.com/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://behind-thequeue.com/og-image.png">
@@ -23,7 +23,7 @@
     "@context": "https://schema.org",
     "@type": "PodcastSeries",
     "name": "Behind the Queue",
-    "description": "Podcast en español para líderes de BPO y Contact Center. Cultura pop, datos reales y lecciones aplicables hoy.",
+    "description": "Podcast en español para quienes dirigen equipos y operaciones. Teoría real de gestión, bajada al piso.",
     "url": "https://behind-thequeue.com/",
     "webFeed": "https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP",
     "author": { "@type": "Person", "name": "Andrés Bermúdez Rodríguez" },
@@ -33,26 +33,26 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Fontshare, not the usual Google suspects: Boska (high-contrast editorial serif) + Satoshi (clean grotesk) -->
-  <link href="https://api.fontshare.com/v2/css?f[]=boska@300,400,500,700,900&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+  <!-- Sistema BTQ v4: Cabinet Grotesk (display) + Supreme (cuerpo) + Martian Mono (datos) -->
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,900&f[]=supreme@400,500,700&f[]=martian-mono@400,500&display=swap" rel="stylesheet">
 
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
     :root{
-      --bg:#080806;
-      --bg-2:#100F0C;
-      --ink:#F4EFE5;
-      --body:#ADA593;          /* AA on dark */
-      --faint:#6E6860;         /* decorative labels only */
-      --gold:#C9A84C;
-      --gold-hi:#E7CB7C;
-      --gold-dim:rgba(201,168,76,.08);
-      --line:rgba(244,239,229,.09);
-      --line-2:rgba(244,239,229,.16);
-      --disp:'Boska',Georgia,'Times New Roman',serif;
-      --body-f:'Satoshi',system-ui,sans-serif;
-      --mono:'Satoshi',system-ui,sans-serif;
+      --bg:#0E1113;
+      --bg-2:#22262A;
+      --ink:#F4EFE7;
+      --body:#AEB5B3;          /* AA on dark */
+      --faint:#8B9492;         /* decorative labels only */
+      --signal:#FF3D00;
+      --signal-hi:#FF6A3D;
+      --signal-dim:rgba(255,61,0,.08);
+      --line:rgba(244,239,231,.09);
+      --line-2:rgba(244,239,231,.16);
+      --disp:'Cabinet Grotesk',system-ui,sans-serif;
+      --body-f:'Supreme',system-ui,sans-serif;
+      --mono:'Martian Mono',ui-monospace,monospace;
     }
 
     html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;background:var(--bg)}
@@ -61,10 +61,10 @@
       font-family:var(--body-f);
       line-height:1.65;overflow-x:hidden;position:relative;
     }
-    ::selection{background:var(--gold);color:var(--bg)}
+    ::selection{background:var(--signal);color:var(--bg)}
     ::-webkit-scrollbar{width:3px}
     ::-webkit-scrollbar-track{background:var(--bg)}
-    ::-webkit-scrollbar-thumb{background:var(--gold)}
+    ::-webkit-scrollbar-thumb{background:var(--signal)}
     a{color:inherit}
 
     /* film grain — the "pressed vinyl / print" texture */
@@ -78,7 +78,7 @@
 
     /* mono liner-notes meta voice */
     .meta{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
-    .meta b{color:var(--gold);font-weight:500}
+    .meta b{color:var(--signal);font-weight:500}
 
     /* ── TOP BAR ── */
     header{
@@ -88,51 +88,51 @@
       mix-blend-mode:difference;
     }
     header.docked{
-      mix-blend-mode:normal;background:rgba(8,8,6,.82);
+      mix-blend-mode:normal;background:rgba(14,17,19,.82);
       backdrop-filter:blur(16px);padding:14px 44px;border-bottom:1px solid var(--line);
     }
     .cat{font-family:var(--disp);font-size:1.05rem;letter-spacing:.22em;color:var(--ink);text-decoration:none}
-    .cat i{color:var(--gold);font-style:normal}
+    .cat i{color:var(--signal);font-style:normal}
     .top-mid{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);opacity:.7}
     .onair{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none}
-    .onair .led{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:blink 1.8s ease-in-out infinite}
+    .onair .led{width:7px;height:7px;border-radius:50%;background:var(--signal);box-shadow:0 0 10px var(--signal);animation:blink 1.8s ease-in-out infinite}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
     .bar-right{display:flex;align-items:center;gap:24px}
     .bar-contact{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none;opacity:.82;transition:.2s}
-    .bar-contact:hover{color:var(--gold);opacity:1}
+    .bar-contact:hover{color:var(--signal);opacity:1}
     @media(max-width:760px){.top-mid{display:none}header,header.docked{padding-left:22px;padding-right:22px}}
 
     /* ── MASTHEAD ── */
     .mast{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;padding:120px 44px 60px}
-    .mast::after{content:'';position:absolute;left:0;right:0;bottom:0;height:40vh;background:radial-gradient(120% 100% at 20% 100%,var(--gold-dim),transparent 70%);pointer-events:none}
+    .mast::after{content:'';position:absolute;left:0;right:0;bottom:0;height:40vh;background:radial-gradient(120% 100% at 20% 100%,var(--signal-dim),transparent 70%);pointer-events:none}
     .mast-kicker{display:flex;gap:20px;align-items:center;margin-bottom:30px;flex-wrap:wrap}
-    .mast-kicker .rule{width:60px;height:1px;background:var(--gold)}
+    .mast-kicker .rule{width:60px;height:1px;background:var(--signal)}
     .title{position:relative;z-index:2}
     .title .ln{
       display:block;font-family:var(--disp);
       font-size:clamp(4.2rem,18vw,15.5rem);line-height:.82;letter-spacing:.005em;
       color:var(--ink);will-change:transform;
     }
-    .title .ln.two{color:transparent;-webkit-text-stroke:1.4px var(--gold);text-stroke:1.4px var(--gold);padding-left:.12em}
+    .title .ln.two{color:transparent;-webkit-text-stroke:1.4px var(--signal);text-stroke:1.4px var(--signal);padding-left:.12em}
     .title .ln.three{padding-left:.04em}
     .mast-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-top:48px;position:relative;z-index:2;flex-wrap:wrap}
-    .mast-line{font-family:var(--disp);font-size:clamp(1.15rem,2vw,1.55rem);font-weight:400;font-style:italic;color:var(--body);max-width:30ch;line-height:1.45}
+    .mast-line{font-family:var(--disp);font-size:clamp(1.15rem,2vw,1.55rem);font-weight:400;color:var(--body);max-width:30ch;line-height:1.45}
     .mast-line b{color:var(--ink);font-style:normal;font-weight:500}
     .latest{
       display:inline-flex;align-items:center;gap:14px;text-decoration:none;
       border:1px solid var(--line-2);border-radius:2px;padding:12px 18px;transition:.25s;flex-shrink:0;
     }
-    .latest:hover{border-color:var(--gold);background:var(--gold-dim)}
-    .latest .lt-n{font-family:var(--disp);font-size:1.9rem;line-height:.8;color:var(--gold)}
+    .latest:hover{border-color:var(--signal);background:var(--signal-dim)}
+    .latest .lt-n{font-family:var(--disp);font-size:1.9rem;line-height:.8;color:var(--signal)}
     .latest .lt-t{font-size:.8rem;color:var(--ink)}
     .latest .lt-k{font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:3px}
-    .latest .lt-a{color:var(--gold);font-size:1.1rem}
+    .latest .lt-a{color:var(--signal);font-size:1.1rem}
 
     /* ── SEASON REFERENCES (static editorial index) ── */
     .refs{padding:96px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .refs-kick{font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+    .refs-kick{font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin-bottom:28px}
     .refs-line{font-family:var(--disp);font-weight:500;font-size:clamp(1.9rem,5.4vw,4.6rem);line-height:1.08;letter-spacing:-.015em;color:var(--ink);max-width:20ch}
-    .refs-line span{font-style:italic;color:var(--gold)}
+    .refs-line span{color:var(--signal)}
 
     /* ── WebGL atmosphere — now a GLOBAL reactive field behind the WHOLE page ── */
     #atmo{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block;pointer-events:none}
@@ -141,14 +141,14 @@
     /* ── SECTION SHELL ── */
     section{position:relative;z-index:2}
     .sec-tag{display:flex;align-items:center;gap:16px;margin-bottom:40px}
-    .sec-tag .n{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+    .sec-tag .n{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--signal)}
     .sec-tag .bar{flex:1;height:1px;background:var(--line)}
 
     /* ── PREMISE ── */
     .premise{padding:120px 0;border-bottom:1px solid var(--line)}
     .premise-grid{display:grid;grid-template-columns:1.55fr .9fr;gap:72px;align-items:start}
     .premise h2{font-family:var(--disp);font-weight:400;font-size:clamp(2.1rem,4.4vw,3.7rem);line-height:1.08;letter-spacing:-.01em;margin-bottom:34px}
-    .premise h2 em{font-style:italic;color:var(--gold)}
+    .premise h2 em{font-style:italic;color:var(--signal)}
     .premise p{color:var(--body);font-size:1.02rem;line-height:1.95;margin-bottom:20px;max-width:54ch}
     .premise p b{color:var(--ink);font-weight:500}
     /* liner credits sidebar */
@@ -157,7 +157,7 @@
     .credits .row:last-child{border-bottom:none}
     .credits .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
     .credits .v{font-size:.84rem;color:var(--ink);text-align:right;font-weight:500}
-    .credits .v.gold{color:var(--gold)}
+    .credits .v.signal{color:var(--signal)}
 
     /* ── TRACKLIST ── */
     .side{padding:118px 0;position:relative}
@@ -168,15 +168,15 @@
       text-decoration:none;color:inherit;position:relative;transition:background .3s ease;
     }
     .track:first-of-type{border-top:1px solid var(--line)}
-    .track::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform .35s ease}
-    .track:hover{background:linear-gradient(90deg,var(--gold-dim),transparent 60%)}
+    .track::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--signal);transform:scaleY(0);transform-origin:top;transition:transform .35s ease}
+    .track:hover{background:linear-gradient(90deg,var(--signal-dim),transparent 60%)}
     .track:hover::before{transform:scaleY(1)}
-    .track:hover .t-num{color:var(--gold);opacity:1}
-    .track:hover .t-title{color:var(--gold-hi)}
-    .track:hover .t-go{color:var(--gold);transform:translateX(5px)}
-    .track:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+    .track:hover .t-num{color:var(--signal);opacity:1}
+    .track:hover .t-title{color:var(--signal-hi)}
+    .track:hover .t-go{color:var(--signal);transform:translateX(5px)}
+    .track:focus-visible{outline:2px solid var(--signal);outline-offset:4px}
     .t-num{font-family:var(--disp);font-size:4.6rem;line-height:.78;color:var(--ink);opacity:.14;transition:.3s;padding-left:18px}
-    .t-ref{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:9px}
+    .t-ref{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);margin-bottom:9px}
     .t-title{font-family:var(--disp);font-weight:500;font-size:1.22rem;line-height:1.32;margin-bottom:10px;transition:color .3s}
     .t-quote{font-family:var(--disp);font-style:italic;font-size:.92rem;color:var(--body);line-height:1.55;max-width:62ch}
     .t-right{display:flex;align-items:center;gap:18px;flex-shrink:0}
@@ -185,22 +185,22 @@
 
     /* ── QUOTE SPREAD ── */
     .spread{padding:130px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(16,15,12,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);text-align:center}
-    .spread .mk{font-family:var(--disp);font-size:5rem;line-height:0;color:var(--gold);opacity:.5;display:block;height:32px}
+    .spread .mk{font-family:var(--disp);font-size:5rem;line-height:0;color:var(--signal);opacity:.5;display:block;height:32px}
     .spread blockquote{font-family:var(--disp);font-style:italic;font-weight:300;font-size:clamp(1.6rem,4vw,2.9rem);line-height:1.42;max-width:18ch;margin:18px auto 28px;letter-spacing:-.01em}
     @media(min-width:760px){.spread blockquote{max-width:24ch}}
-    .spread blockquote em{font-style:normal;color:var(--gold);font-weight:400}
+    .spread blockquote em{font-style:normal;color:var(--signal);font-weight:400}
     .spread cite{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);font-style:normal}
-    .spread cite b{color:var(--gold);font-weight:500}
+    .spread cite b{color:var(--signal);font-weight:500}
 
     /* ── LISTEN ── */
     .listen{padding:120px 0;border-bottom:1px solid var(--line)}
     .listen-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
     .listen h2{font-family:var(--disp);font-weight:400;font-size:clamp(1.9rem,3.4vw,2.8rem);line-height:1.1;margin-bottom:30px}
-    .listen h2 em{font-style:italic;color:var(--gold)}
+    .listen h2 em{font-style:italic;color:var(--signal)}
     .embed{border-radius:5px;overflow:hidden;border:1px solid var(--line)}
     .plat{display:flex;flex-direction:column;gap:10px}
     .plat a{display:flex;align-items:center;gap:15px;padding:15px 20px;border:1px solid var(--line);border-radius:2px;text-decoration:none;color:var(--ink);font-size:.85rem;font-weight:500;transition:.22s}
-    .plat a:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim);transform:translateX(4px)}
+    .plat a:hover{border-color:var(--signal);color:var(--signal);background:var(--signal-dim);transform:translateX(4px)}
     .plat svg{width:18px;height:18px;flex-shrink:0}
     .plat .pm{margin-left:auto;font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;color:var(--faint)}
 
@@ -210,10 +210,10 @@
     .host-photo{position:relative}
     .host-photo .frame{aspect-ratio:4/5;border:1px solid var(--line);overflow:hidden;background:var(--bg-2);border-radius:2px}
     .host-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.3) contrast(1.05)}
-    .host-photo .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-size:9rem;color:var(--gold);opacity:.14}
-    .host-photo::after{content:'BTQ-T2';position:absolute;bottom:14px;left:14px;font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--gold);background:rgba(8,8,6,.7);padding:5px 9px;border-radius:2px}
+    .host-photo .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-size:9rem;color:var(--signal);opacity:.14}
+    .host-photo::after{content:'BTQ';position:absolute;bottom:14px;left:14px;font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--signal);background:rgba(14,17,19,.7);padding:5px 9px;border-radius:2px}
     .host h2{font-family:var(--disp);font-weight:400;font-size:clamp(2rem,3.4vw,3rem);line-height:1.08;margin-bottom:8px}
-    .host h2 em{font-style:italic;color:var(--gold)}
+    .host h2 em{font-style:italic;color:var(--signal)}
     .host .role{font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:30px}
     .host p{color:var(--body);font-size:1rem;line-height:1.95;margin-bottom:18px;max-width:58ch}
     .host p b{color:var(--ink);font-weight:500}
@@ -225,44 +225,44 @@
     .contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:72px;align-items:start}
     .contact .kicker{font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:16px}
     .contact h2{font-family:var(--disp);font-weight:400;font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.08;margin-bottom:16px}
-    .contact h2 em{font-style:italic;color:var(--gold)}
+    .contact h2 em{font-style:italic;color:var(--signal)}
     .contact .lead{color:var(--body);font-size:1rem;line-height:1.9;max-width:40ch;margin-bottom:24px}
     .contact .alt{font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;color:var(--faint)}
-    .contact .alt a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
-    .contact .alt a:hover{color:var(--gold-hi)}
+    .contact .alt a{color:var(--signal);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
+    .contact .alt a:hover{color:var(--signal-hi)}
     .c-social{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
     .c-social a{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--body);text-decoration:none;border:1px solid var(--line);border-radius:2px;padding:9px 14px;transition:.2s}
-    .c-social a:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
+    .c-social a:hover{border-color:var(--signal);color:var(--signal);background:var(--signal-dim)}
     .c-social svg{width:15px;height:15px;flex-shrink:0}
     .cform{display:flex;flex-direction:column;gap:20px}
     .cform .frow{display:grid;grid-template-columns:1fr 1fr;gap:20px}
     .cform label{display:flex;flex-direction:column;gap:8px;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
     .cform input,.cform textarea{background:transparent;border:none;border-bottom:1px solid var(--line-2);color:var(--ink);font-family:var(--body-f);font-size:.95rem;padding:10px 0;transition:border-color .22s;resize:vertical}
     .cform input::placeholder,.cform textarea::placeholder{color:var(--faint)}
-    .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--gold)}
-    .cform button{align-self:flex-start;margin-top:6px;background:var(--gold);color:var(--bg);border:none;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding:15px 30px;border-radius:2px;cursor:pointer;transition:background .22s}
-    .cform button:hover{background:var(--gold-hi)}
+    .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--signal)}
+    .cform button{align-self:flex-start;margin-top:6px;background:var(--signal);color:var(--bg);border:none;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding:15px 30px;border-radius:2px;cursor:pointer;transition:background .22s}
+    .cform button:hover{background:var(--signal-hi)}
     .cform button:disabled{opacity:.5;cursor:default}
     .fstatus{font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;min-height:1.1em;margin-top:2px}
-    .fstatus.ok{color:var(--gold)}
+    .fstatus.ok{color:var(--signal)}
     .fstatus.err{color:#d98a6a}
 
     /* ── COLOPHON ── */
     footer{border-top:1px solid var(--line);padding:64px 0 40px;background:var(--bg)}
     .colo{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:48px}
     .colo h3{font-family:var(--disp);font-size:2.2rem;letter-spacing:.12em;margin-bottom:12px}
-    .colo h3 i{color:var(--gold);font-style:normal}
+    .colo h3 i{color:var(--signal);font-style:normal}
     .colo p{color:var(--body);font-size:.86rem;line-height:1.7;max-width:38ch}
     .colo .ct{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
-    .colo a.mail{font-family:var(--disp);font-style:italic;color:var(--gold);text-decoration:none;font-size:1rem;border-bottom:1px solid var(--line-2);padding-bottom:3px}
-    .colo a.mail:hover{color:var(--gold-hi)}
+    .colo a.mail{font-family:var(--disp);font-style:italic;color:var(--signal);text-decoration:none;font-size:1rem;border-bottom:1px solid var(--line-2);padding-bottom:3px}
+    .colo a.mail:hover{color:var(--signal-hi)}
     .colo .soc{display:flex;flex-direction:column;gap:9px}
     .colo .soc a{color:var(--body);text-decoration:none;font-size:.84rem;display:flex;align-items:center;gap:10px;transition:.2s}
-    .colo .soc a:hover{color:var(--gold)}
+    .colo .soc a:hover{color:var(--signal)}
     .colo .soc svg{width:15px;height:15px}
     .colo-base{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:24px;border-top:1px solid var(--line);flex-wrap:wrap}
     .colo-base p{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;color:var(--faint)}
-    .colo-base a{color:var(--gold);text-decoration:none}
+    .colo-base a{color:var(--signal);text-decoration:none}
 
     /* ── REVEAL — GSAP-driven. No CSS hidden state on purpose: if the CDN
        libs fail or reduced-motion is on, content still shows (graceful). ── */
@@ -271,16 +271,16 @@
     /* ── CUSTOM CURSOR (agency signal · pointer:fine only) ── */
     @media(pointer:fine){
       body.cursor-on, body.cursor-on a, body.cursor-on button{cursor:none}
-      .cur-dot{position:fixed;top:0;left:0;width:7px;height:7px;border-radius:50%;background:var(--gold);z-index:90;pointer-events:none;transform:translate(-50%,-50%)}
-      .cur-ring{position:fixed;top:0;left:0;width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;z-index:90;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s ease,height .25s ease,background .25s ease;mix-blend-mode:difference}
-      .cur-ring.hover{width:60px;height:60px;background:var(--gold-dim)}
-      .cur-ring.label{width:92px;height:92px;background:var(--gold);mix-blend-mode:normal;border-color:var(--gold)}
+      .cur-dot{position:fixed;top:0;left:0;width:7px;height:7px;border-radius:50%;background:var(--signal);z-index:90;pointer-events:none;transform:translate(-50%,-50%)}
+      .cur-ring{position:fixed;top:0;left:0;width:34px;height:34px;border:1px solid var(--signal);border-radius:50%;z-index:90;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s ease,height .25s ease,background .25s ease;mix-blend-mode:difference}
+      .cur-ring.hover{width:60px;height:60px;background:var(--signal-dim)}
+      .cur-ring.label{width:92px;height:92px;background:var(--signal);mix-blend-mode:normal;border-color:var(--signal)}
       .cur-label{position:fixed;top:0;left:0;z-index:91;pointer-events:none;transform:translate(-50%,-50%);font-family:var(--mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bg);opacity:0;transition:opacity .2s}
       .cur-label.show{opacity:1}
     }
 
-    /* ── TAP / CLICK FEEDBACK — gold ripple wherever you touch ── */
-    .ripple{position:fixed;z-index:4;pointer-events:none;border:1px solid var(--gold);border-radius:50%;transform:translate(-50%,-50%);mix-blend-mode:screen;will-change:width,height,opacity}
+    /* ── TAP / CLICK FEEDBACK — signal ripple wherever you touch ── */
+    .ripple{position:fixed;z-index:4;pointer-events:none;border:1px solid var(--signal);border-radius:50%;transform:translate(-50%,-50%);mix-blend-mode:screen;will-change:width,height,opacity}
     .ripple.go{animation:ripple .62s cubic-bezier(.2,.7,.3,1) forwards}
     @keyframes ripple{from{width:8px;height:8px;opacity:.75}to{width:180px;height:180px;opacity:0}}
 
@@ -318,7 +318,7 @@
 <!-- TOP BAR -->
 <header id="bar">
   <a href="#top" class="cat">BTQ<i>·</i></a>
-  <span class="top-mid">Liner Notes — Temporada 2</span>
+  <span class="top-mid">Gestión · Calidad · Liderazgo</span>
   <div class="bar-right">
     <a href="#contacto" class="bar-contact">Contacto</a>
     <a href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP" target="_blank" rel="noopener" class="onair"><span class="led"></span>On Air</a>
@@ -328,9 +328,9 @@
 <!-- MASTHEAD -->
 <section class="mast" id="top">
   <div class="mast-kicker rv">
-    <span class="meta"><b>Cat.</b> BTQ-T2</span>
+    <span class="meta"><b>Temporada</b> 2026</span>
     <span class="rule"></span>
-    <span class="meta">Podcast · Liderazgo &amp; Cultura Pop · LATAM</span>
+    <span class="meta">Podcast · Gestión, Calidad &amp; Liderazgo · LATAM</span>
   </div>
 
   <h1 class="title" aria-label="Behind the Queue">
@@ -340,10 +340,10 @@
   </h1>
 
   <div class="mast-foot">
-    <p class="mast-line rv">Donde la <b>cultura pop</b> entra al contact center. Una referencia — un videojuego, una película, una banda — y la lección de liderazgo que nadie te enseñó en el trabajo.</p>
+    <p class="mast-line rv">Una <b>ley que alguien formuló</b> y su nombre quedó pegado a ella. Qué explica de verdad, qué le hace a un equipo, y qué hace usted con eso el lunes por la mañana.</p>
     <a class="latest rv" href="https://open.spotify.com/episode/6ewMTUO0FGNxfIMS0u55Yu" target="_blank" rel="noopener">
       <span class="lt-n">022</span>
-      <span><span class="lt-k">Última pista · La Calidad Es Gratis</span><span class="lt-t">El costo real de la mala calidad en su call center</span></span>
+      <span><span class="lt-k">Último episodio · Philip Crosby</span><span class="lt-t">El costo real de la mala calidad en su empresa</span></span>
       <span class="lt-a">→</span>
     </a>
   </div>
@@ -352,8 +352,8 @@
 <!-- SEASON REFERENCES — static editorial index (no carousel) -->
 <section class="refs">
   <div class="wrap">
-    <p class="refs-kick rv">Sampleado esta temporada</p>
-    <h2 class="refs-line rv">Soda Stereo, Pink Floyd, Metal Gear Solid, los Diarios de la Boticaria, Back to the Future <span>&amp;</span> Queen.</h2>
+    <p class="refs-kick rv">Sobre la mesa esta temporada</p>
+    <h2 class="refs-line rv">Goodhart, Crosby, Hawthorne, Parkinson, Peter <span>&amp;</span> la teoría de colas.</h2>
   </div>
 </section>
 
@@ -363,16 +363,16 @@
     <div class="sec-tag rv"><span class="n">A1 · El show</span><span class="bar"></span></div>
     <div class="premise-grid">
       <div>
-        <h2 class="rv">No es teoría de management.<br>Es <em>Kratos aprendiendo a liderar sin gritar.</em></h2>
-        <p class="rv"><b>Behind the Queue</b> es un podcast en español para líderes de BPO, Contact Center y experiencia del cliente. Cada episodio toma una referencia cultural y extrae las lecciones que nadie te enseñó en la operación.</p>
-        <p class="rv">Es Freddie Mercury demostrando que romper las reglas con propósito es arte. Es Marty McFly recordándonos que la mentoría cambia el futuro. Es Soda Stereo sonando cuando el líder ya no está.</p>
-        <p class="rv">Datos reales, referencias que reconoces y lecciones aplicables el lunes por la mañana — desde la trinchera, no desde un libro.</p>
+        <h2 class="rv">No es teoría de management.<br>Es <em>la teoría, con la factura adjunta.</em></h2>
+        <p class="rv"><b>Behind the Queue</b> es un podcast en español para quienes dirigen equipos y operaciones. Cada episodio toma una ley, una teoría o un principio real de gestión y lo baja al piso: qué significa cuando hay gente, plata y un lunes de por medio.</p>
+        <p class="rv">Es Goodhart explicando por qué su tablero le miente. Es Crosby calculando lo que cuesta no invertir en calidad. Es Hawthorne mostrando que la gente rinde distinto cuando sabe que la miran.</p>
+        <p class="rv">Casos documentados, cifras verificables y decisiones aplicables el lunes por la mañana — desde la trinchera, no desde un libro.</p>
       </div>
       <div class="credits rv">
-        <div class="row"><span class="k">Género</span><span class="v">Liderazgo / Cultura pop</span></div>
+        <div class="row"><span class="k">Género</span><span class="v">Gestión / Liderazgo</span></div>
         <div class="row"><span class="k">Idioma</span><span class="v">Español</span></div>
-        <div class="row"><span class="k">Audiencia</span><span class="v">Líderes BPO · CX · LATAM</span></div>
-        <div class="row"><span class="k">Conduce</span><span class="v gold">Andy Bermúdez</span></div>
+        <div class="row"><span class="k">Audiencia</span><span class="v">Quien dirige equipos · LATAM</span></div>
+        <div class="row"><span class="k">Conduce</span><span class="v signal">Andy Bermúdez</span></div>
         <div class="row"><span class="k">Frecuencia</span><span class="v">Semanal · T2</span></div>
         <div class="row"><span class="k">Desde</span><span class="v">Bogotá, Colombia</span></div>
       </div>
@@ -382,16 +382,16 @@
 
 <!-- TRACKLIST -->
 <section class="side" id="tracklist">
-  <span class="side-rot" aria-hidden="true">Lado A · Temporada 2</span>
+  <span class="side-rot" aria-hidden="true">Temporada 2026</span>
   <div class="wrap">
-    <div class="sec-tag rv"><span class="n">A2 · Tracklist</span><span class="bar"></span></div>
+    <div class="sec-tag rv"><span class="n">A2 · Episodios</span><span class="bar"></span></div>
 
     <div class="stag">
       <a class="track" href="https://open.spotify.com/episode/0VH2eMppsNMBl3JqTEq4T0" target="_blank" rel="noopener">
         <div class="t-num">021</div>
         <div>
           <div class="t-ref">Los Simpson</div>
-          <div class="t-title">Cómo evitar el burnout de tu equipo a largo plazo</div>
+          <div class="t-title">Cómo evitar el burnout de su equipo a largo plazo</div>
           <div class="t-quote">"Que su equipo dure treinta años no depende de la suerte. Depende de que alguien, todos los días, decida que siga vivo — y no solo prendido."</div>
         </div>
         <div class="t-right"><span class="t-listen">Escuchar</span><span class="t-go">→</span></div>
@@ -401,7 +401,7 @@
         <div class="t-num">020</div>
         <div>
           <div class="t-ref">Ley de Goodhart</div>
-          <div class="t-title">El número que dejó de medir lo que importa</div>
+          <div class="t-title">Cuando el número deja de medir su call center</div>
           <div class="t-quote">"El número no es la meta. El número es apenas un termómetro — y el día que se le olvide la diferencia, va a terminar curando la fiebre a punta de romper el termómetro."</div>
         </div>
         <div class="t-right"><span class="t-listen">Escuchar</span><span class="t-go">→</span></div>
@@ -421,7 +421,7 @@
         <div class="t-num">018</div>
         <div>
           <div class="t-ref">El Mundial</div>
-          <div class="t-title">El liderazgo cuando no puedes tocar el balón</div>
+          <div class="t-title">Liderazgo cuando usted no puede tocar el balón</div>
           <div class="t-quote">"El balón no es suyo. Su trabajo es preparar tan bien a quien lo va a patear, que pueda ganar el partido sin usted."</div>
         </div>
         <div class="t-right"><span class="t-listen">Escuchar</span><span class="t-go">→</span></div>
@@ -443,7 +443,7 @@
 <!-- LISTEN -->
 <section class="listen" id="escucha">
   <div class="wrap">
-    <div class="sec-tag rv"><span class="n">B1 · Pon el disco</span><span class="bar"></span></div>
+    <div class="sec-tag rv"><span class="n">B1 · Escuchar</span><span class="bar"></span></div>
     <div class="listen-grid">
       <div>
         <h2 class="rv">Escucha <em>donde prefieras</em></h2>
@@ -494,7 +494,7 @@
         <p class="rv">Behind the Queue nació de una pregunta simple: <b>¿por qué las lecciones más útiles de liderazgo no vienen de los libros de management, sino de los personajes que más amamos?</b></p>
         <p class="rv">Cada episodio es una conversación con esa pregunta. Y la respuesta siempre sorprende.</p>
         <div class="host-tags stag">
-          <span>BPO / CX</span><span>Ingeniería Industrial</span><span>Liderazgo Operativo</span><span>LATAM</span><span>Bogotá</span>
+          <span>Operaciones</span><span>Ingeniería Industrial</span><span>Calidad</span><span>Liderazgo</span><span>LATAM</span><span>Bogotá</span>
         </div>
       </div>
     </div>
@@ -539,7 +539,7 @@
     <div class="colo">
       <div>
         <h3>BEHIND THE QUEUE<i>·</i></h3>
-        <p>Una producción independiente sobre liderazgo y cultura pop para quienes dirigen la operación en Latinoamérica.</p>
+        <p>Una producción independiente sobre gestión, calidad y liderazgo para quienes dirigen equipos en Latinoamérica.</p>
       </div>
       <div>
         <p class="ct">Contacto</p>
@@ -557,7 +557,7 @@
     </div>
     <div class="colo-base">
       <p>© 2026 <a href="https://behind-thequeue.com">Behind the Queue</a> · Bogotá, Colombia</p>
-      <p>Podcast semanal · BPO/CX LATAM · Cat. BTQ-T2</p>
+      <p>Podcast semanal · Gestión &amp; Liderazgo · LATAM</p>
     </div>
   </div>
 </footer>
@@ -658,7 +658,7 @@
       scrollTrigger: { trigger: '.host', start: 'top bottom', end: 'bottom top', scrub: true } });
   }
 
-  // WebGL atmosphere behind the masthead — flowing dark/gold field for depth.
+  // WebGL atmosphere behind the masthead — flowing dark/ember field for depth.
   // Raw WebGL (no Three.js): light, fails gracefully to the CSS background.
   (function(){
     const cv = document.getElementById('atmo'); if (!cv) return;
@@ -676,14 +676,14 @@
         vec2 p=uv; p.x*=uRes.x/uRes.y; p+=uMouse*0.12;
         float n=fbm(p*2.1+vec2(uTime*0.025,uTime*0.015));
         float n2=fbm(p*4.3-uTime*0.012);
-        vec3 bg=vec3(0.031,0.031,0.024);
-        vec3 gold=vec3(0.79,0.66,0.30);
+        vec3 bg=vec3(0.055,0.067,0.075);
+        vec3 ember=vec3(0.72,0.26,0.08);
         float glow=smoothstep(0.40,0.95,n)*0.5+n2*0.10;
         glow*=smoothstep(1.15,0.0,length(uv-vec2(0.22,0.12)));
-        vec3 col=mix(bg,gold,clamp(glow*0.75,0.,1.));
+        vec3 col=mix(bg,ember,clamp(glow*0.62,0.,1.));
         col*=smoothstep(1.35,0.15,length(uv-0.5));
         float cpulse=uClick.z*smoothstep(0.34,0.0,length(uv-uClick.xy));
-        col+=gold*cpulse*0.75;
+        col+=ember*cpulse*0.75;
         gl_FragColor=vec4(col,1.0);
       }`;
     function sh(t,s){const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return gl.getShaderParameter(o,gl.COMPILE_STATUS)?o:null;}
@@ -713,7 +713,7 @@
     requestAnimationFrame(draw);
   })();
 
-  // TAP/CLICK FEEDBACK — quick gold ripple at the touch point (works on touch + mouse)
+  // TAP/CLICK FEEDBACK — quick signal ripple at the touch point (works on touch + mouse)
   (function(){
     if (reduce) return;
     addEventListener('pointerdown', e => {

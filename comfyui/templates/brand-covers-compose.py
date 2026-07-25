@@ -139,6 +139,31 @@ gd.text((sx0 + 8, sy0 - 34), "SAFE AREA 1235x338 - no subir esta version",
 guide.save(os.path.join(out_dir, "BTQ-yt-banner-GUIA-safearea.png"))
 print("banner listo — wordmark %d px, bloque %d px (safe area %d)" % (bsize, total, SAFE_H))
 
+# --------------------------------------------------- og-image 1600x900 (web)
+# Cierra una deuda vieja: la og-image anterior pesaba ~2 MB contra un limite de
+# 500 KB, decia "PREMIUM KEY EDITOIAL" (typo) y su concepto quedo retirado por
+# depender de los aros vetados.
+OW, OH = 1600, 900
+og = Image.new("RGB", (OW, OH), VOID)
+d = ImageDraw.Draw(og)
+OM = int(OW * 0.055)
+fk3 = mono(20)
+osize = 150
+while osize > 50:
+    fo = ImageFont.truetype(DISP, osize)
+    olh = int(osize * 0.86)
+    _, _, oh = block_metrics(fo, BLINES, olh)
+    ototal = oh + 30 + fk3.getbbox(KICKER)[3]
+    if ototal <= OH - 2 * OM:
+        break
+    osize -= 2
+oy = (OH - ototal) // 2
+draw_block(d, OM, oy, fo, BLINES, olh)
+d.text((OM, oy + oh + 30), KICKER, font=fk3, fill=MUTED)
+og_path = os.path.join(out_dir, "og-image.png")
+og.save(og_path, optimize=True)
+print("og-image lista — %.0f KB (limite 500)" % (os.path.getsize(og_path) / 1024))
+
 print()
 for f in sorted(os.listdir(out_dir)):
     p = os.path.join(out_dir, f)
