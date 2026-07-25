@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+# ############################################################################
+# MUERTO desde 2026-07-25 -- NO USAR.
+# Superado por comfyui/templates/brand-covers-compose.py.
+# ############################################################################
 """Deriva los assets de canal de YouTube desde la escena de la portada BTQ v4.
 
 Por que no sirve el cuadrado de Spotify tal cual:

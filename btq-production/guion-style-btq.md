@@ -360,6 +360,13 @@ un molde. **Prohibidas de aquí en adelante** las tres de la tabla, y prohibido 
 aplicación con una fórmula fija de conteo («tres cosas concretas / tres herramientas / tres
 cosas que puede hacer»). La aplicación entra distinto cada vez.
 
+**Una cita atribuida no se reescribe si no se puede verificar su origen** (2026-07-25). En la
+web había un *pull quote* atribuido a EP.011 —«Lo que tienes hoy no va a estar para siempre»—
+en tuteo, chocando con el usted del sistema nuevo. **No se tocó**: no apareció en ningún guion
+del repo, solo en versiones viejas del sitio, así que no hay forma de saber si es textual del
+audio o una paráfrasis escrita para la web. Reescribir una cita atribuida sin conocer su origen
+es inventar lo que alguien dijo. Ante el choque de registro, se pregunta; no se corrige.
+
 **La mitigación de una regla se volvió molde.** El § No dar señales de cierre falso pide meter
 «una línea de enganche» antes de la aplicación, y ejemplifica con *"todavía no les he dicho la
 parte que más le tocó a X"*. El lint encontró esa línea **casi textual en EP.022 y EP.023**:

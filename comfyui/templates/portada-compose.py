@@ -1,3 +1,9 @@
+# ############################################################################
+# MUERTO desde 2026-07-25 -- NO USAR.
+# Exige una escena renderizada, y BTQ paso a portadas de TIPOGRAFIA PURA.
+# Reemplazo: comfyui/templates/portada-ep-compose.py
+# Se conserva solo como registro; varios handoffs viejos todavia lo nombran.
+# ############################################################################
 # Uso: python portada-compose.py <escena.png> <EP.NN> "<titulo>" <salida.png>
 #
 # Compone la tipografia BTQ v4 "Sala de Maquinas" sobre una escena ya generada.

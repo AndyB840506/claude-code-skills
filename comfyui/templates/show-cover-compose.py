@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+# ############################################################################
+# MUERTO desde 2026-07-25 -- NO USAR.
+# Superado por comfyui/templates/brand-covers-compose.py, que genera portada,
+# avatar, banner y og-image en una sola corrida. El concepto de objeto
+# renderizado (panel anunciador) murio con el giro a tipografia pura.
+# ############################################################################
 """Portada del SHOW de BTQ (no de un episodio) — direccion v4 "Sala de Maquinas".
 Fuente canonica de las reglas: episode-launch/docs/brand-constants.md
 

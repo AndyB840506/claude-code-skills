@@ -15,6 +15,13 @@
 | Formato | WAV 48 kHz para editar; el MP3 sale del render final del episodio. |
 | Loudness | Que **no pique** por encima del habla. Al montarlo, dejarlo un par de dB por debajo del pico de la voz, no al tope. |
 
+> ⚠️ **LA DIRECCIÓN SONORA ESTÁ ABIERTA (2026-07-25).** Andy probó la línea industrial y le
+> **choca**: «por el sonido industrial choca un poco, así que voy a experimentar con el
+> sonido». Lo que sigue abajo es la primera hipótesis —derivada del sistema visual— y NO
+> está aprobada. Lo que sí está fijado es la **forma**: duración, corte seco, mismo stinger
+> en los dos extremos, y que Andy entre sobre el silencio. Al retomar, preguntarle qué
+> encontró experimentando antes de proponer nada.
+
 ## De qué mundo sale
 
 El sistema visual v4 se llama **Sala de Máquinas**: grafito, acero, un solo naranja,

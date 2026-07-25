@@ -1,3 +1,8 @@
+> ⚠️ **MUERTO desde 2026-07-25 — no usar.** Prompts del concepto v3 (foco incandescente +
+> headset + waveform dorado). Murio con el giro a portadas de tipografia pura; el oro ya no
+> es color de marca. Se conserva como registro historico. Generador vigente:
+> `comfyui/templates/portada-ep-compose.py`.
+
 # EP.023 — Efecto Hawthorne · Artwork v3
 
 EP.023 no tiene referente pop (pilar SEO, igual que EP.020 y EP.022) — mismo desafío: qué

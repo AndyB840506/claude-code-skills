@@ -89,10 +89,23 @@ No declarar un bug como corregido hasta haberlo verificado (re-ejecutar/reproduc
 
 Con `curl -L` no forzar `-X POST`: tras un redirect 302 curl reenvía el POST sin body (Google responde 411). Omitir `-X` y dejar que curl convierta a GET después del redirect (mordió 2 veces el 2026-07-06 probando el Apps Script de Kuma).
 
-**Instrumentos que sub-reportan en silencio** — no dan error, solo devuelven de menos, así que producen "sin hallazgos" falsos (los dos mordieron el 2026-07-23):
+**Instrumentos que sub-reportan en silencio** — no dan error, solo devuelven de menos, así que producen "sin hallazgos" falsos.
+
+**El principio, antes de la lista de culpables** (generalizado 2026-07-25, tras caer 3 veces en una sesión con instrumentos que NO estaban en la lista): un «cero hallazgos» solo vale si la búsqueda cubrió **todas las formas que el dato puede tomar**. Antes de reportarlo, preguntarse las tres:
+
+1. **¿Otra representación del mismo valor?** Un color vive como `#C9A84C` **y** como `rgba(201,168,76)`; una fecha como `2026-07-25` y como `25 de julio`; una ruta con `\` y con `/`. Buscar el hex y no el rgb dejó oro vivo en un CSS que yo había declarado limpio.
+2. **¿Busqué el término o la idea?** Buscar `Kratos` y `cultura pop` no encuentra «los personajes que más amamos», que ES la tesis de cultura pop. Cuando lo que se caza es un concepto, el grep de palabras no basta: hay que leer.
+3. **¿El corpus incluye al propio objeto evaluado?** Un guion comparado contra una carpeta que contiene su propia copia `.artifact.html` matchea consigo mismo — 19.000 falsos positivos. Excluir siempre el target y sus derivados.
+
+Y una cuarta, para conteos: **¿estoy midiendo la región relevante o el archivo entero?** «36 menciones de call center» era el HTML completo con notas y metadata; en las líneas habladas eran **0**.
+
+Instancias concretas ya documentadas (las dos primeras mordieron el 2026-07-23):
 - `Get-Content X | Measure-Object -Line` **no cuenta líneas en blanco** (dio 28 donde `wc -l` daba 36). Para contar líneas usar `wc -l`.
 - `glob.glob('**/x', recursive=True)` de Python **omite directorios que empiezan con punto** — leyó 18 de 28 `SKILL.md` porque se saltó todo `.claude/`. Usar `os.walk`.
+
 Antes de reportar un conteo o un "cero hallazgos", cruzar el total con una segunda herramienta. Ver §Procedencia en `~/.claude/CLAUDE.md`.
+
+**Al actualizar una regla, separar lo histórico de lo normativo.** Un documento mezcla enunciados que *describen lo que pasó* con enunciados que *mandan lo que se hace*. Solo los segundos se actualizan. El 2026-07-25, al retirar la música de intro/outro, la frase «el ritmo se midió sobre EP.20 sin contar intro/outro musical» **se conservó**: ese episodio sí llevaba música y reescribirla habría falsificado el registro de cómo se calibró la cifra.
 
 ## Límites de lo publicable (medir, no estimar)
 

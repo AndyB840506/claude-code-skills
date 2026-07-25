@@ -191,12 +191,27 @@ instaló. Ya no hace falta.
    documentación lo daba por hecho y la carpeta estaba vacía.
    **Componer la tipografía a 3000 nativo, nunca escalar el texto.**
 
-**Portada del SHOW** (no de un episodio): `comfyui/templates/show-cover-compose.py`. No lleva
-título ni `EP.NN` — solo wordmark, regla y kicker; el objeto representa al programa entero.
-**Versión vigente (aprobada 2026-07-25): panel anunciador** — la rejilla con la que se vigila
-una planta entera. Seis ventanas rectangulares apagadas, una encendida en `#FF3D00`. Muchos
-indicadores, uno que importa: gestión a cualquier escala, sin pertenecer a una industria.
-Ventaja adicional: **cero geometría circular**, así que el veto de anillos no queda en zona gris.
+### Qué generador se usa — mapa vigente (2026-07-25)
+
+Hay generadores muertos en el repo referenciados por handoffs viejos. **Esta tabla manda.**
+
+| Para | Script vigente |
+|---|---|
+| Portada del show, avatar y banner de YouTube, og-image | `comfyui/templates/brand-covers-compose.py` |
+| Portada de un episodio (1:1 · 16:9 · 9:16) | `comfyui/templates/portada-ep-compose.py` |
+| Recorte del stinger desde un track largo | `scripts/cortar_jingle.py` |
+| Compuerta de assets | `scripts/verify_assets.py` (`--stage-a` si no se ha grabado) |
+
+> ⚠️ **MUERTOS — no usar, aunque aparezcan en handoffs anteriores:**
+> `portada-compose.py` (exige una escena renderizada, que ya no existe en esta dirección),
+> `show-cover-compose.py` y `youtube-assets-compose.py` (superados por `brand-covers-compose.py`
+> el mismo día que nacieron). El concepto de **panel anunciador** para la portada del show —
+> seis ventanas apagadas y una encendida— también murió con el giro a tipografía pura:
+> ninguna portada lleva ya objeto renderizado.
+
+`portada-ep-compose.py` recibe el **título publicado completo** y lo parsea; aborta si no sigue
+la fórmula. Es a propósito: es la única forma de garantizar que la portada y la metadata no
+diverjan, y de paso hace de lint del título.
 Escena: `E:\AI\outputs\BTQ-v4-annun2-s515202_00001_.png`.
 
 Dos conceptos descartados por el camino, y por qué — sirven de criterio para el próximo:
