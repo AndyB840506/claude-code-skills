@@ -7,6 +7,12 @@
 
 ---
 
+> **PENDIENTE (decidido 2026-07-25, aplazado a la semana del 2026-08-03):** adoptar aquí la
+> regla de **español neutro** que se fijó en `btq-production/guion-style-btq.md` § Español
+> neutro. Andy confirmó que aplica igual a MPD (mismo público, toda Latinoamérica); se aplazó
+> para cerrar BTQ primero y estrenar con EP.023. Al retomarla, leer la sección de BTQ y
+> adaptarla — **no copiarla a ciegas**: MPD tiene otro registro y su propia voz.
+
 ## Calibración de duración — dimensionar en PALABRAS, no en minutos adivinados
 
 Mismo método que BTQ/CCC: contar palabras **escritas** del guion y convertir a duración hablada

@@ -215,10 +215,14 @@ frente y solo. Después de los dos puntos, la explicación en lenguaje llano.
   (`Costo de la Mala Calidad: la cuenta que Crosby le pasa…`). Si el nombre no va al
   frente, pierde el efecto de autoridad y el título vuelve a sonar a copy.
 
-**Caso especial:** cuando el efecto se conoce por un nombre que NO es el del teórico
-(ej. *efecto Hawthorne*, por la fábrica, cuyo investigador fue Elton Mayo), hay que
-elegir entre el término buscable y el nombre propio. Decidirlo **por episodio y con
-Andy**, no por default.
+**Caso especial — resuelto 2026-07-25 (EP.023).** Cuando el efecto se conoce por un
+nombre que NO es el del teórico (*efecto Hawthorne*, por la fábrica; el investigador
+fue Elton Mayo), **gana el término buscable**, siempre que sea un nombre propio y no
+un eslogan. Razón: el modelo aprobado no es «el teórico a secas» sino *[tipo] de
+[nombre propio]* — `Ley de Goodhart`. `Efecto Hawthorne` comparte esa estructura;
+`Elton Mayo` sería el equivalente a titular EP.020 como «Goodhart» solo. El teórico
+entra en el cuerpo del episodio y en las recomendaciones, donde no cuesta
+descubrimiento. Sigue siendo consulta con Andy si un caso futuro no encaja.
 
 **El título de la portada y el título publicado son el MISMO string.** La incongruencia
 entre artwork y metadata nace de aplicar criterios distintos en cada uno; se evita
@@ -408,9 +412,13 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
 - [ ] **Sin disclaimers de cajón** tipo "tranquilos, esto no es un pódcast de X" para
       aligerar un tramo técnico (repetido casi textual en EP.020/EP.022 — ver sección
       dedicada arriba).
-- [ ] **Título:** si es pilar SEO, confirmar que el ancla antes de los dos puntos es
-      el **nombre de la teoría** (buscable), no el autor ni el título de su libro — y
-      que el string es idéntico al que se hornea en la portada. Ver sección dedicada.
+- [ ] **Título:** si es pilar SEO, confirmar que el ancla antes de los dos puntos es un
+      **nombre propio al frente y solo** —el teórico, o la ley que lleva su nombre— y **nunca**
+      el título de su libro ni una frase con sabor a eslogan. El aterrizaje va a «su equipo /
+      su operación / su empresa», no a «su call center» (salvo EP.020). Confirmar además que
+      el string es idéntico al que se hornea en la portada. Ver sección dedicada.
+      *(Este ítem decía antes "el nombre de la teoría, no el autor" — quedó obsoleto con el
+      feedback del 2026-07-25 y contradecía a la sección, que pide `Philip Crosby:`.)*
 - [ ] **Sin "Andy" en tercera persona dentro del guion hablado** (detectado 2026-07-21,
       EP.023 borrador Hawthorne: "del tipo que Andy, personalmente, desconfía..." — debía
       ser "yo, personalmente, desconfío"). BTQ es solo host narrando en primera persona

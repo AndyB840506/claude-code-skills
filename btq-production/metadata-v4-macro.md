@@ -92,14 +92,20 @@ confirmar de dónde vino su tráfico.
 
 ---
 
-## E · Pendiente de decidir — título de EP.023
+## E · Título de EP.023 — DECIDIDO 2026-07-25
 
-El efecto se conoce por el nombre de la fábrica (Hawthorne), no por el del investigador
-(Elton Mayo). La regla de título pide el nombre propio al frente, pero aquí los dos compiten:
+```
+EP.23 — Efecto Hawthorne: por qué su equipo rinde distinto cuando lo miran
+```
 
-- `EP.23 — Efecto Hawthorne: por qué su equipo rinde distinto cuando lo miran` — el término
-  buscable, pero el nombre no es de una persona.
-- `EP.23 — Elton Mayo: por qué su equipo rinde distinto cuando lo miran` — el teórico al
-  frente, coherente con Goodhart y Crosby, pero casi nadie busca "Elton Mayo".
+**73 caracteres.** Este string va idéntico en la portada, en Spotify y en YouTube.
 
-Decisión de Andy, pendiente. Ver `guion-style-btq.md` § Título.
+**Por qué Hawthorne y no Elton Mayo.** El modelo aprobado no es «el teórico a secas» sino
+*[tipo] de [nombre propio]* — `Ley de Goodhart`. `Efecto Hawthorne` tiene esa misma estructura
+y conserva el nombre propio al frente; poner `Elton Mayo` sería el equivalente a titular EP.020
+como «Goodhart» solo. Además es el término que la gente busca. Mayo entra en el cuerpo del
+episodio y en las recomendaciones, donde no cuesta descubrimiento.
+
+**Precedente:** cuando el efecto se conoce por un nombre que no es el del teórico, gana el
+**término buscable**, siempre que sea un nombre propio y no un eslogan. Registrado también en
+`guion-style-btq.md` § Título.
