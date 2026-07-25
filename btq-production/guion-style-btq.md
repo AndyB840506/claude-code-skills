@@ -258,9 +258,18 @@ BTQ pop-culture lleva, en orden, estos bloques. No omitir ninguno al escribir el
    EP.019: Sócrates + John Wooden. Es lo que hace el episodio universal y no un resumen del
    referente.
 6. **Aplicable Hoy**: 3 cosas concretas para esta semana.
-7. **Recomendaciones de Andy — diversificadas.** Máximo UNA atada al referente (la peli/disco
-   del episodio); las otras saltan fuera (un libro de otro mundo, una charla, otra peli). NO
-   las tres dentro del mismo tema/época. Mezclar medios: película + libro + charla.
+7. **Recomendaciones de Andy — TEJIDAS, no en bloque** (cambio 2026-07-25, confirmado por Andy;
+   precisado también en `brand-constants.md`). Ya **no** existe un segmento titulado
+   «Recomendaciones de Andy». Las tres se reparten por el cuerpo y entran **como cita que
+   respalda lo que se acaba de decir**: «esto lo cuenta Mayo en su libro», «lo van a ver
+   retratado en tal película», «y lo confirma tal en su charla». Cada una cae donde el
+   contenido se la gana — si no hay un punto del guion que la justifique, esa recomendación
+   está mal elegida.
+   *Por qué:* un bloque con encabezado antes del cierre suena a créditos finales y le da al
+   oyente permiso para abandonar (ver § No dar señales de cierre falso). La regla vieja mitigaba
+   eso con "una línea de enganche" antes del bloque — maquillaje, el bloque seguía ahí.
+   Se conserva la diversificación: máximo UNA atada al referente, mezclar medios
+   (película + libro + charla), nunca las tres del mismo tema o época.
    **Nunca repetir la misma recomendación (ni la misma referencia cruzada) entre episodios**
    (feedback Andy 2026-07-21). Antes de cerrar las 3 recomendaciones o las referencias cruzadas
    de un guion nuevo, grepear `btq-production/launch-assets/*.html` por el título candidato — si
@@ -297,6 +306,73 @@ elimina esa clase de problema: no hay solape que sincronizar.
 El estándar de duración de 40-45 min sigue midiendo **solo el habla** — el jingle no cuenta,
 igual que antes no contaba la música.
 
+## Rotación de esqueleto — la fórmula no se repite (fijado 2026-07-25)
+
+**El problema, medido.** EP.020, EP.021, EP.022 y EP.023 salieron con el MISMO esqueleto de 9
+segmentos, en el mismo orden, con los mismos nombres de ranura (`Cuerpo 1`, `Cuerpo 2`,
+`Re-enganche`). Cuatro episodios seguidos. El oyente que llegó por EP.020 ya sabe, en EP.023,
+que después del segundo caso viene el giro.
+
+**Lo intocable son las piezas, no su orden** (precisado en `brand-constants.md` § esencia):
+teórico nombrado · casos reales con consecuencias que escalan · un dato duro · un giro que
+reencuadra · aplicación real · cierre canónico. Cómo se ordenan lo decide el material.
+
+**Regla: ningún esqueleto dos episodios seguidos.** Menú de arranque —se puede inventar otro,
+lo que no se puede es repetir el anterior:
+
+| | Esqueleto | Cuándo sirve |
+|---|---|---|
+| **A** | *Canónico* — escena → nombrar → caso → caso → giro → cruzadas → aplicación | El default histórico. Ya se usó 4 veces seguidas: **en pausa**. |
+| **B** | *Invertido* — abrir con el desmentido y reconstruir hacia atrás | Cuando la teoría misma está en disputa (EP.023). |
+| **C** | *Un solo caso a fondo* — un caso largo por capas, sin segundo cuerpo | Cuando el caso da para sostener 40 min solo (más cerca de MPD). |
+| **D** | *Trenzado* — dos casos en paralelo, alternando, no en secuencia | Cuando hay dos historias que se iluminan mutuamente. |
+| **E** | *Acción primero* — dar el consejo en el minuto 2 y usar el episodio para justificarlo | Cuando la aplicación es contraintuitiva y el "por qué" es el suspenso. |
+
+**Los segmentos se nombran por su CONTENIDO, no por su función.** `Cuerpo 1` y `Re-enganche` son
+ranuras de producción y no deben aparecer en un guion. EP.018 lo hacía bien: «La preparación ·
+Bielsa», «La decisión · Van Gaal y Obdulio».
+
+## Nunca dos veces el mismo pozo (fijado 2026-07-25)
+
+**Hallazgo:** EP.020 y EP.022 usan literalmente el mismo Cuerpo 2 — «el dato SQM». Mismo dato
+duro, dos episodios. La regla de no repetir recomendaciones ni referencias cruzadas ya existía
+(punto 7 del ADN) pero **no cubría los datos ni los casos**, que son lo que sostiene el episodio.
+
+- **Ninguna fuente de dato o caso ancla puede repetirse en 5 episodios.** Antes de cerrar el
+  dato duro o los casos, grepear `btq-production/launch-assets/*.html` por la fuente candidata.
+- Si la única cifra disponible ya se usó, **buscar otra fuente para el mismo punto**, no
+  reciclarla con otras palabras.
+
+## Frases-molde: la voz no es una plantilla (fijado 2026-07-25)
+
+**Medido con solapamiento de 6-gramas entre guiones, excluyendo el ritual canónico** (que SÍ debe
+repetirse). Lo que apareció:
+
+| Frase | Episodios |
+|---|---|
+| «Tres cosas concretas, esta semana, sin…» + «ninguna de las tres cuesta un peso» | **EP.020, 022, 023** |
+| «Y aquí va el dato que me guardé todo el episodio para este momento exacto» | EP.017, 018 |
+| «¿Cuándo fue la última vez que…?» | EP.017, 018, 019, 021 |
+| `tres cosas concretas` — **1 vez en 6 de 7 episodios** · `y aquí está` — 12 veces · `esa es la` — 10 veces | |
+
+Una frase que aparece exactamente una vez por episodio, en seis episodios, no es muletilla: es
+un molde. **Prohibidas de aquí en adelante** las tres de la tabla, y prohibido abrir el tramo de
+aplicación con una fórmula fija de conteo («tres cosas concretas / tres herramientas / tres
+cosas que puede hacer»). La aplicación entra distinto cada vez.
+
+**La mitigación de una regla se volvió molde.** El § No dar señales de cierre falso pide meter
+«una línea de enganche» antes de la aplicación, y ejemplifica con *"todavía no les he dicho la
+parte que más le tocó a X"*. El lint encontró esa línea **casi textual en EP.022 y EP.023**:
+`todavía no les he contado la parte que`. Una mitigación redactada como ejemplo se copia como
+plantilla. **Los ejemplos de esta guía son ilustraciones, no texto para pegar** — cuando una
+regla dé un ejemplo de redacción, escribir uno nuevo, no reusar el de la guía.
+
+**Cómo verificar:** `python scripts/lint_guion_repeticion.py <guion.html>` — solapamiento de
+6-gramas contra los guiones anteriores, **excluyendo apertura, cierre y recomendaciones** (esos
+repiten por diseño; sin excluirlos, 25 de 25 hallazgos eran ritual). Cualquier 6-grama compartido
+en el cuerpo se reescribe. Mide repetición **literal, no humor**: si el chiste cambia pero el
+andamiaje es idéntico, igual suena a fórmula.
+
 ## No dar señales de cierre falso antes del Cierre real (retención Spotify, fijado 2026-07-06)
 
 Según la data de permanencia/completion de Spotify, cualquier momento del episodio que **suene**
@@ -305,9 +381,13 @@ segmento que "resuelve" del todo— le da al oyente el permiso mental de dejar d
 aunque el episodio siga. El oyente no abandona solo por aburrimiento; abandona en el momento exacto
 en que algo *suena* a que ya terminó.
 
-**Los puntos de mayor riesgo, por diseño de la estructura canónica, son los REMATES de segmentos
-intermedios y el tramo Aplicable Hoy → Recomendaciones** (posiciones 6-7 de 8) — ambos, en casi
-cualquier pódcast, funcionan culturalmente como "señal de que ya casi se acaba".
+**Los puntos de mayor riesgo son los REMATES de segmentos intermedios y el tramo de aplicación**
+— en casi cualquier pódcast funcionan culturalmente como "señal de que ya casi se acaba".
+
+> **Actualización 2026-07-25:** el bloque «Recomendaciones de Andy» **era** el peor de estos
+> puntos y ya no existe como segmento — las recomendaciones van tejidas en el cuerpo (ver punto 7
+> del ADN). La mitigación que estaba escrita aquí ("meter una línea de enganche antes de entrar")
+> era maquillaje: el bloque seguía sonando a créditos. Se eliminó la causa, no el síntoma.
 
 **Mitigación obligatoria — condición → acción → verificación:**
 - Cuando un REMATE de un segmento que NO es el cierre final quede redactado con tono de conclusión
@@ -315,11 +395,10 @@ cualquier pódcast, funcionan culturalmente como "señal de que ya casi se acaba
   adelante — una pregunta sin responder, un hilo que se retoma después, nunca un punto final
   emocional. Verificar releyendo cada REMATE fuera del Cierre y preguntando: "¿esto suena a que el
   episodio podría terminar aquí?" Si la respuesta es sí, reescribirlo.
-- Antes de entrar a Aplicable Hoy o a Recomendaciones, meter una línea corta de enganche que le
-  diga al oyente, sin sonar a anuncio de índice (regla 8, sin meta-anuncios), que todavía viene algo
-  que vale la pena — ej. una referencia a la pregunta del cierre, un "todavía no les he dicho la
-  parte que más le tocó a X" — nunca un simple "y ahora, unas recomendaciones" que suena a que el
-  contenido real ya se acabó.
+- Antes de entrar al tramo de aplicación, meter una línea corta de enganche que le diga al oyente,
+  sin sonar a anuncio de índice (regla 8, sin meta-anuncios), que todavía viene algo que vale la
+  pena — ej. una referencia a la pregunta del cierre, un "todavía no les he dicho la parte que más
+  le tocó a X". Y **nunca** abrirlo con una fórmula de conteo fija (ver § Frases-molde).
 - Verificar en la lectura final: ningún bloque antes del Cierre canónico debe poder funcionar,
   por sí solo, como final satisfactorio del episodio si se cortara ahí.
 
@@ -443,8 +522,9 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
 - [ ] **Sin "Andy" en tercera persona dentro del guion hablado** (detectado 2026-07-21,
       EP.023 borrador Hawthorne: "del tipo que Andy, personalmente, desconfía..." — debía
       ser "yo, personalmente, desconfío"). BTQ es solo host narrando en primera persona
-      todo el episodio; "Andy" en tercera persona solo es válido como etiqueta de sección
-      ("Recomendaciones de Andy") o en la firma canónica del cierre ("Yo soy Andy").
+      todo el episodio; "Andy" en tercera persona solo es válido en la firma canónica del cierre
+      ("Yo soy Andy"). *(Antes también valía como etiqueta de la sección «Recomendaciones de
+      Andy» — esa sección ya no existe, ver punto 7 del ADN.)*
 - [ ] **Español neutro** (ver sección dedicada — es de léxico, NO aplanar la voz): grep de
       `cola` → ninguna con adjetivo corporal o de tamaño; nombre del show sin traducir; grep de
       anclados a un país (`tinto`, `parce`, `bacano`, `berraco`, `vaina`, `camello`, `chino`,
@@ -458,9 +538,17 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
       (regionalismos raros, cultismos, tecnicismos). Cazar y reemplazar por habla natural —
       ej. rechazados: "galones", "desperdigado", "embestida", "factura final", "telón de
       fondo". Si dudas si una palabra "se entiende", cámbiala.
-- [ ] **Estructura canónica completa** (ver sección arriba): ¿están Referencias Cruzadas
-      FUERA del referente, recomendaciones diversificadas, y el cierre canónico entero
-      (comentarios Spotify · compartir · LinkedIn · teaser · firma + TM · outro)? No omitir.
+- [ ] **Piezas completas** (ver ADN arriba): ¿están Referencias Cruzadas FUERA del referente, las
+      3 recomendaciones **tejidas en el cuerpo** (ninguna en bloque, cada una donde el contenido
+      se la gana, medios mezclados), y el cierre canónico entero (comentarios Spotify · compartir ·
+      LinkedIn · teaser · firma + TM · jingle)? No omitir.
+- [ ] **Esqueleto distinto al del episodio anterior** (§ Rotación de esqueleto) y ningún segmento
+      llamado `Cuerpo N` ni `Re-enganche` — se nombran por su contenido.
+- [ ] **Pozo no repetido** (§ Nunca dos veces el mismo pozo): grepear `launch-assets/*.html` por
+      la fuente del dato duro y por cada caso ancla — nada reutilizado en 5 episodios.
+- [ ] **Frases-molde** (§ Frases-molde): correr el solapamiento de 6-gramas contra los guiones
+      anteriores excluyendo apertura/cierre; cero 6-gramas compartidos en el cuerpo. Prohibido
+      abrir la aplicación con fórmula de conteo ("tres cosas concretas").
 - [ ] **Sin bloque "Mito o Realidad" al final:** los datos de interés / mito-vs-realidad van
       distribuidos dentro del Cuerpo, no como segmento aparte antes del cierre.
 - [ ] **Sin señales de cierre falso antes del Cierre real** (ver sección dedicada arriba): releer

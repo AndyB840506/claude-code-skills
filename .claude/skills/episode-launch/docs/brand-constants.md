@@ -32,8 +32,17 @@ center».
 2. La voz de trinchera: «desde la trinchera, no desde un libro». Macro no significa académico
    ni de consultor.
 3. El formato: teórico nombrado + casos reales con consecuencias que escalan + un dato duro +
-   el giro al 60 %.
+   el giro al 60 %. **El ORDEN de los segmentos no es parte de la esencia** (precisado
+   2026-07-25): lo intocable son esas piezas, no la secuencia en que aparecen. Ver la rotación
+   de esqueletos en `btq-production/guion-style-btq.md`.
 4. El ritual: «Buenas y santas…», el cierre canónico, las recomendaciones de Andy.
+   **Precisión 2026-07-25 (confirmada por Andy):** «las recomendaciones de Andy» se cumple
+   aunque vayan **tejidas dentro del cuerpo como citas del argumento** —«esto lo cuenta Mayo en
+   su libro», «lo van a ver retratado en tal película», «y lo confirma tal en su charla»— en vez
+   de un bloque con encabezado antes del cierre. Lo esencial es que Andy recomiende, no que haya
+   una sección llamada así. Motivo: el bloque con nombre funciona como señal de créditos finales
+   y le da permiso al oyente para abandonar antes del cierre real (ver § No dar señales de cierre
+   falso en `guion-style-btq.md`).
 5. La metáfora de la cola: esperar, acumular, el backlog — funciona en cualquier empresa y es
    lo que le da sentido al nombre. **En la marca vive en inglés y no se traduce nunca:**
    «Behind the Queue» se dice y se escribe en inglés incluso a mitad de una frase en español,
