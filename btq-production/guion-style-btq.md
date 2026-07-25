@@ -124,16 +124,38 @@ disculpa genérica por hablar de números/teoría. Antes de entregar un guion, r
 contra los guiones anteriores (no solo el propio) buscando este tipo de muletilla
 estructural repetida.
 
-## Título con nombre del creador cuando el episodio ancla en una ley/teoría específica
+## Título: el teórico va PRIMERO, y después en llano qué es
 
-**Feedback Andy (2026-07-21):** cuando el episodio gira alrededor de una ley o teoría
-con autor identificable (ej. Ley de Goodhart, Philip Crosby / Cost of Poor Quality),
-el título debe nombrar a ese creador — no solo describir el concepto en abstracto.
-EP.020 y EP.022 no lo hicieron (títulos genéricos: "Métricas y KPIs...", "El Costo de
-la Mala Calidad...") y quedó como oportunidad perdida de anclar autoridad y
-searchability real. Aplica principalmente a episodios **pilar SEO** (sin referente
-pop) — los pop-culture siguen la fórmula `EP.XX — [Referente]: [frase con keyword]`
-de abajo, que ya trae su propio ancla de búsqueda.
+**Feedback Andy (2026-07-25).** Fórmula obligatoria de los episodios **pilar SEO**:
+
+```
+EP.NN — [Teórico o ley que lleva su nombre]: [qué es, en llano, con keyword y en usted]
+```
+
+Lo que va antes de los dos puntos es **el nombre propio que ancla la autoridad**, al
+frente y solo. Después de los dos puntos, la explicación en lenguaje llano.
+
+- **Bien — EP.20:** `Ley de Goodhart: cuando el número deja de medir su call center`.
+  Es el modelo: Goodhart al frente, y luego qué significa, sin adorno.
+- **Mal — EP.22 publicado:** `La Calidad Es Gratis: el costo real de la mala calidad…`.
+  "La Calidad Es Gratis" es el título del libro de Crosby y **suena a eslogan de
+  marketing**, no a fuente consultable. Debía ser `Philip Crosby: el costo real de la
+  mala calidad en su call center`.
+- **Mal también:** meter al teórico dentro de la frase, subordinado
+  (`Costo de la Mala Calidad: la cuenta que Crosby le pasa…`). Si el nombre no va al
+  frente, pierde el efecto de autoridad y el título vuelve a sonar a copy.
+
+**Caso especial:** cuando el efecto se conoce por un nombre que NO es el del teórico
+(ej. *efecto Hawthorne*, por la fábrica, cuyo investigador fue Elton Mayo), hay que
+elegir entre el término buscable y el nombre propio. Decidirlo **por episodio y con
+Andy**, no por default.
+
+**El título de la portada y el título publicado son el MISMO string.** La incongruencia
+entre artwork y metadata nace de aplicar criterios distintos en cada uno; se evita
+resolviendo el título una sola vez, antes de generar la imagen.
+
+Los episodios **pop-culture** (carril en pausa desde el giro del 2026-07-21) siguen la
+fórmula `EP.XX — [Referente]: [frase con keyword]` de abajo, que trae su propio ancla.
 
 ---
 
@@ -315,8 +337,10 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
 - [ ] Muletillas: máx 1 "imagínense", 0 "me vuela la cabeza" (igual que MPD).
 - [ ] **Sin disclaimers de cajón** tipo "tranquilos, esto no es un pódcast de X" para
       aligerar un tramo técnico (repetido casi textual en EP.020/EP.022 — ver sección
-      dedicada arriba). Si el título ancla en una ley/teoría con autor, confirmar que
-      el nombre del creador está en el título.
+      dedicada arriba).
+- [ ] **Título:** si es pilar SEO, confirmar que el ancla antes de los dos puntos es
+      el **nombre de la teoría** (buscable), no el autor ni el título de su libro — y
+      que el string es idéntico al que se hornea en la portada. Ver sección dedicada.
 - [ ] **Sin "Andy" en tercera persona dentro del guion hablado** (detectado 2026-07-21,
       EP.023 borrador Hawthorne: "del tipo que Andy, personalmente, desconfía..." — debía
       ser "yo, personalmente, desconfío"). BTQ es solo host narrando en primera persona
