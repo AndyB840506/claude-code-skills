@@ -36,7 +36,9 @@ CREAM = (244, 239, 231)
 MUTED = (139, 148, 146)
 
 S = 3000
-KICKER = "OPERACIÓN  ·  CALIDAD  ·  LIDERAZGO"
+# "GESTIÓN" y no "OPERACIÓN" desde el giro a alcance macro (2026-07-25): el show
+# dejo de estar acotado a call center / BPO.
+KICKER = "GESTIÓN  ·  CALIDAD  ·  LIDERAZGO"
 
 im = Image.open(scene_path).convert("RGB").resize((S, S), Image.LANCZOS)
 

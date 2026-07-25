@@ -41,7 +41,8 @@ CREAM = (244, 239, 231)
 SIGNAL = (255, 61, 0)
 MUTED = (139, 148, 146)
 
-KICKER = "OPERACIÓN  ·  CALIDAD  ·  LIDERAZGO"
+# "GESTIÓN" y no "OPERACIÓN" desde el giro a alcance macro (2026-07-25).
+KICKER = "GESTIÓN  ·  CALIDAD  ·  LIDERAZGO"
 WORD = ["BEHIND", "THE QUEUE"]
 
 scene = Image.open(scene_path).convert("RGB")

@@ -23,11 +23,34 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 
 ---
 
-## Estrategia editorial (data-driven — analytics Spotify 2026-06-12, giro 2026-07-21)
+## Estrategia editorial (analytics Spotify 2026-06-12; giros 2026-07-21 y 2026-07-25)
 
 **Audiencia núcleo (verificada):** hombre 35–44 (43% del total; 56% sumando todo el rango),
 Colombia 70% + EE.UU. 20%, escucha en Android y ~15% en desktop Windows (en el trabajo).
-Perfil: supervisor/gerente de BPO de ~40 años.
+Perfil: gerente/supervisor de ~40 años.
+
+### Giro de alcance 2026-07-25 — de call center a gestión empresarial
+
+**Decisión de Andy.** El show sale del techo de BPO/contact center y pasa a **gestión de
+equipos y operaciones en cualquier industria**. La teoría puede venir de donde sea; el
+aterrizaje es «su equipo / su empresa». Arranca como **corte de temporada**: las portadas de
+EP.011–EP.023 se quedan como están, el sistema visual nuevo empieza de EP.024 en adelante.
+
+- **Costo aceptado:** se pierde la cola larga SEO de «call center». Se le señaló que EP.020
+  —el único episodio con buen desempeño medido— probablemente rankeó por esa keyword, y
+  decidió proceder. Por eso **EP.020 no se retitula**.
+- **La esencia no se toca:** mundo Sala de Máquinas, voz de trinchera, formato de teórico
+  nombrado, ritual de apertura y cierre, metáfora de la cola. Detalle en
+  `episode-launch/docs/brand-constants.md` § Giro de alcance.
+- **Metadata nueva** (portada, descripción, categorías, retitulación): `metadata-v4-macro.md`.
+- **No existía sistema de temporadas** — «T2» aparecía solo como decoración en la web, no en
+  este roadmap ni en la metadata de ningún episodio. Si el corte va a significar algo para el
+  oyente, hay que crearlo.
+
+**Repertorio que destraba el giro** (teorías reales, verificar fuente primaria al escribir):
+Ley de Little (teoría de colas — el episodio que el show le debe a su propio nombre), Ley de
+Parkinson, Principio de Peter, Ley de Brooks, Teoría de Restricciones (Goldratt), Deming,
+Herzberg, «Ruido» (Kahneman), efecto Ringelmann.
 
 ### Giro estratégico 2026-07-21 — BTQ pasa a 100% pilar SEO
 

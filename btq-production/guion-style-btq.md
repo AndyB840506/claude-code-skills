@@ -129,8 +129,15 @@ estructural repetida.
 **Feedback Andy (2026-07-25).** Fórmula obligatoria de los episodios **pilar SEO**:
 
 ```
-EP.NN — [Teórico o ley que lleva su nombre]: [qué es, en llano, con keyword y en usted]
+EP.NN — [Teórico o ley que lleva su nombre]: [qué es, en llano, en usted]
 ```
+
+**Alcance del aterrizaje (giro macro, 2026-07-25):** el segundo tramo aterriza en «su equipo»,
+«su operación» o «su empresa» — ya **no** en «su call center». La teoría puede venir de donde
+sea (manufactura, aviación, software, economía); lo que se mantiene es que baje al piso.
+Única excepción deliberada: **EP.020 no se retitula** aunque diga «call center», porque es el
+único episodio con desempeño medido y esa keyword es probablemente la razón. Ver
+`btq-production/metadata-v4-macro.md`.
 
 Lo que va antes de los dos puntos es **el nombre propio que ancla la autoridad**, al
 frente y solo. Después de los dos puntos, la explicación en lenguaje llano.

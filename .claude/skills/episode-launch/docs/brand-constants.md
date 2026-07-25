@@ -11,12 +11,35 @@
 | Display | Cabinet Grotesk Extrabold |
 | Cuerpo | Supreme (Regular / Medium / Bold) |
 | Datos / mono | Martian Mono |
-| Headsets | Contact center boom mic — NEVER music headphones |
+| Headsets | Si aparece uno: contact center boom mic — NEVER music headphones |
 | Spotify category | Business → Management (secundaria: Business → Careers) |
-| Kicker de marca | `OPERACIÓN · CALIDAD · LIDERAZGO` |
+| Kicker de marca | `GESTIÓN · CALIDAD · LIDERAZGO` |
 | Primary language | Spanish |
-| Core audience | Hombre 35–44, supervisor/gerente BPO — Colombia 70% + EE.UU. 20% (analytics 2026-06-12) |
+| Alcance | **Macro — gestión de equipos y operaciones en cualquier industria** (giro 2026-07-25) |
+| Core audience | Hombre 35–44, gerente/supervisor — Colombia 70% + EE.UU. 20% (analytics 2026-06-12) |
 | Priority platform | LinkedIn (profesional 35–44; 15% escucha en desktop en el trabajo) |
+
+## Giro de alcance (2026-07-25)
+
+El show deja de estar acotado a call center / BPO y pasa a gestión a nivel empresarial. La
+teoría puede venir de donde sea; el aterrizaje es «su equipo / su empresa», ya no «su call
+center».
+
+**Lo que NO cambia — la esencia, fijada explícitamente con Andy:**
+
+1. El mundo Sala de Máquinas: grafito, acero, cream, un solo naranja, luz plana de taller.
+   Nada de abstracción corporativa — ni rascacielos, ni engranajes, ni apretones de manos.
+2. La voz de trinchera: «desde la trinchera, no desde un libro». Macro no significa académico
+   ni de consultor.
+3. El formato: teórico nombrado + casos reales con consecuencias que escalan + un dato duro +
+   el giro al 60 %.
+4. El ritual: «Buenas y santas…», el cierre canónico, las recomendaciones de Andy.
+5. La metáfora de la cola: esperar, acumular, el backlog — funciona en cualquier empresa y es
+   lo que le da sentido al nombre.
+
+**Costo aceptado a sabiendas:** se pierde la cola larga SEO de «call center» a cambio de
+repertorio. Se le señaló el riesgo a Andy —EP.020 funcionó justamente por esa keyword— y
+decidió proceder. Por eso EP.020 **no se retitula**: ver `btq-production/metadata-v4-macro.md`.
 
 **Relación con andyfreelancer:** Void, Cream, Señal y Muted se toman **exactos** del sistema de
 `the-freelancer/one-pager/index.html` para que las dos marcas de Andy se lean como familia.
@@ -140,9 +163,20 @@ instaló. Ya no hace falta.
 
 **Portada del SHOW** (no de un episodio): `comfyui/templates/show-cover-compose.py`. No lleva
 título ni `EP.NN` — solo wordmark, regla y kicker; el objeto representa al programa entero.
-Versión vigente: headset de contact center con la lámpara de mute encendida (aprobada
-2026-07-25). El concepto previo, un medidor de panel, se descartó por conceptual: si una
-portada necesita explicación, no funciona a 300 px.
+**Versión vigente (aprobada 2026-07-25): panel anunciador** — la rejilla con la que se vigila
+una planta entera. Seis ventanas rectangulares apagadas, una encendida en `#FF3D00`. Muchos
+indicadores, uno que importa: gestión a cualquier escala, sin pertenecer a una industria.
+Ventaja adicional: **cero geometría circular**, así que el veto de anillos no queda en zona gris.
+Escena: `E:\AI\outputs\BTQ-v4-annun2-s515202_00001_.png`.
+
+Dos conceptos descartados por el camino, y por qué — sirven de criterio para el próximo:
+
+- **Medidor de panel:** demasiado conceptual. Si una portada necesita explicación, no funciona
+  a 300 px, y un VU-meter lee como equipo de audio.
+- **Headset de contact center:** legible al instante, pero ancla el show a una sola industria.
+  Se cayó con el giro macro del mismo día, ya generado y compuesto pero **nunca publicado**.
+- **Calibrador de precisión:** objeto bonito, pero a 300 px lee como un palo gris y su naranja
+  desaparece. Falla lo único sobre lo que está construido el sistema.
 
 **Piso de negro de marca:** Z-Image produce algunos píxeles en negro puro `(0,0,0)`, que esta
 guía prohíbe y que `verify_assets.py` reprueba. Los composers lo levantan a `#0E1113` por canal
