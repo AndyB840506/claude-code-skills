@@ -71,7 +71,7 @@
         }
         .meta { display: flex; gap: 12px; flex-wrap: wrap; }
         .meta-item {
-            background: rgba(201,168,76,0.10);
+            background: rgba(255,61,0,0.10);
             border: 1px solid var(--signal-dim);
             padding: 5px 13px;
             border-radius: 20px;
@@ -164,7 +164,7 @@
         /* REMATE — the signature punch line */
         .remate {
             border-left: 3px solid var(--signal);
-            background: linear-gradient(90deg, rgba(201,168,76,0.07), transparent);
+            background: linear-gradient(90deg, rgba(255,61,0,0.07), transparent);
             padding: 14px 20px;
             margin: 18px 0;
             font-family: var(--display);
@@ -183,13 +183,13 @@
 
         /* NOTA producción — not printable */
         .nota {
-            background: #15130c;
+            background: #17191B;
             border: 1px dashed var(--signal-dim);
             border-radius: 5px;
             padding: 10px 15px;
             margin: 14px 0;
             font-size: 0.85em;
-            color: #cdbb88;
+            color: #A8B0AE;
         }
         .nota::before { content: "NOTA · "; font-family: var(--mono); letter-spacing: 2px; color: var(--signal); }
 
@@ -267,17 +267,16 @@
     <!-- ARQUITECTURA -->
     <div class="section">
         <h2>Arquitectura del Episodio</h2>
+        <div class="nota">Esqueleto <strong>INVERTIDO</strong> (§ Rotación de esqueleto, guion-style-btq.md). Abre con el desmentido y reconstruye hacia atrás. El canónico queda en pausa tras 4 episodios seguidos. Las recomendaciones van <strong>tejidas</strong> en los segmentos 1, 3 y 5 — no hay bloque de recomendaciones.</div>
         <div class="arquitectura">
             <div class="arq-row head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span></div>
-            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Hook</span><span class="arq-time">0:45–6:00</span><span>Un analista de QA avisa "monitoreo en vivo" — la llamada perfecta que nadie vuelve a repetir</span></div>
-            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Nombrar el fenómeno</span><span class="arq-time">6:00–11:00</span><span>Elton Mayo, la fábrica Hawthorne de Western Electric, y un nombre que tardó 30 años en existir</span></div>
-            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Cuerpo 1 · las dos caras de la misma fábrica</span><span class="arq-time">11:00–15:30</span><span>El cuarto de relés y el cuarto de cableado — la misma observación, resultado opuesto</span></div>
-            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Cuerpo 2 · el motor que sabía que lo estaban midiendo</span><span class="arq-time">15:30–21:30</span><span>Volkswagen Dieselgate (11M autos, $30.000M, 7 años de cárcel, ~1.260 muertes prematuras) + el 1-5% de llamadas que de verdad se auditan</span></div>
-            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">Re-enganche · la mentira dentro de la verdad</span><span class="arq-time">21:30–25:30</span><span>2011: dos economistas reabren los datos originales y el mito favorito del management se tambalea</span></div>
-            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Referencias Cruzadas</span><span class="arq-time">25:30–32:00</span><span>El lavado de manos en hospitales y la cárcel que Jeremy Bentham diseñó en 1785</span></div>
-            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Aplicable Hoy</span><span class="arq-time">32:00–35:30</span><span>3 acciones concretas para esta semana</span></div>
-            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">Recomendaciones de Andy</span><span class="arq-time">35:30–38:30</span><span>Libro (Elton Mayo) · charla (Amy Cuddy, TED) · película (The Truman Show)</span></div>
-            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Cierre canónico + Teaser EP.024</span><span class="arq-time">38:30–41:30</span><span>Pregunta comentable · CTAs · firma + TM</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">El estudio que todos citan y casi nadie leyó</span><span class="arq-time">0:45–7:30</span><span>2011: Levitt y List reabren los datos originales de 1924 y el hallazgo más famoso del management se desinfla · <em>rec: charla de Amy Cuddy</em></span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Y aun así, usted ya lo vio</span><span class="arq-time">7:30–14:00</span><span>Cómo se reconoce en una operación real, con el tablero propio y no con un estudio prestado · dato duro: 1-5% de auditoría</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Lo que de verdad pasó en aquella fábrica</span><span class="arq-time">14:00–22:00</span><span>Hawthorne Works: el cuarto de relés contra el cuarto de cableado — misma observación, resultado opuesto · <em>rec: libro de Elton Mayo</em></span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Cuando medir cambia lo medido, y alguien termina preso</span><span class="arq-time">22:00–29:00</span><span>Volkswagen Dieselgate: una máquina diseñada a propósito para portarse distinto cuando la observan</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">Ni la cárcel ni el hospital son metáforas</span><span class="arq-time">29:00–35:00</span><span>Bentham 1785 y el lavado de manos con observador a la vista · <em>rec: The Truman Show</em></span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Qué hacer con esto el lunes</span><span class="arq-time">35:00–39:00</span><span>La brecha, la pregunta incómoda y el techo informal — sin fórmula de conteo</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Cierre canónico + Teaser EP.024</span><span class="arq-time">39:00–41:30</span><span>Pregunta comentable · CTAs · firma + TM</span></div>
         </div>
     </div>
 
@@ -285,16 +284,13 @@
     <div class="section">
         <h2>Antes de grabar · checklist</h2>
         <div class="checklist-box">
-            <div class="row"><span class="ck">✓</span><span><strong>Tiempos calibrados a 150 wpm + expansión de +35.5% (recalibrado 2026-07-06 contra SRT de EP.20) — MEDIDOS con script, no a ojo:</strong> guion tiene 4.542 palabras escritas (contadas: p.line + remate + dato + sub) → ~41.0 min hablados con la expansión natural de Andy en vivo. Cae dentro del estándar editorial de 40-45 min.</span></div>
-            <div class="row"><span class="ck">✓</span><span><strong>Título fijado 2026-07-25:</strong> <code>EP.23 — Efecto Hawthorne: por qué su equipo rinde distinto cuando lo miran</code> (73 caracteres). Gana el término buscable sobre el teórico porque el modelo aprobado es <em>[tipo] de [nombre propio]</em>, igual que «Ley de Goodhart» — «Elton Mayo» equivaldría a titular EP.020 como «Goodhart» solo. Este string va IDÉNTICO en la portada, en Spotify y en YouTube. Ver guion-style-btq.md § Título.</span></div>
-            <div class="row"><span class="ck">✓</span><span><strong>Alcance macro aplicado 2026-07-25:</strong> el Segmento 7 ya no habla solo de auditar llamadas — nombra cuatro formas del mismo fenómeno (la llamada anunciada, la visita del gerente de zona, el jefe de copiloto en la ruta del vendedor, el código que se sabe revisado). La escena de apertura se conserva concreta a propósito: la regla 9 exige escena vívida sobre abstracción.</span></div>
-            <div class="row"><span class="ck">✓</span><span><strong>ADN estructural de pilar SEO verificado (fijado 2026-07-21, ver guion-style-btq.md):</strong> 2 casos reales y nombrados con consecuencias severas que escalan (fábrica Hawthorne → Volkswagen Dieselgate: 11M autos, $30.000M en multas, 7 años de cárcel, ~1.260 muertes prematuras) + 1 dato duro propio de la industria de call center (1-5% de llamadas auditadas manualmente, benchmark de industria) — mismo ADN que EP.020, ejecución distinta.</span></div>
-            <div class="row"><span class="ck">✓</span><span>Todos los datos verificados por web antes de escribir: estudios de Hawthorne Works / Western Electric (fase de iluminación, cuarto de relés, cuarto de cableado), el término acuñado por Henry Landsberger en 1958, la reanálisis de Levitt &amp; List (2011), el escándalo Volkswagen Dieselgate (2015) y el estudio de mortalidad prematura del MIT/Harvard (2017), el benchmark de industria de cobertura de auditoría de calidad en call center, estudios de cumplimiento de higiene de manos con observación abierta vs. encubierta, el Panóptico de Jeremy Bentham (1785), y la controversia de replicación del "power posing" de Amy Cuddy. Ver Fuentes al final.</span></div>
-            <div class="row"><span class="warn">⚠</span><span><strong>Escena de apertura (Julián):</strong> es una escena compuesta, genérica y verosímil del mundo BPO — no un caso real con nombre propio, igual que la escena de Ana en EP.022.</span></div>
-            <div class="row"><span class="warn">⚠</span><span><strong>Sin frases de cajón:</strong> este guion no usa el disclaimer "tranquilos, esto no es un pódcast de X" (feedback Andy 2026-07-21, ver guion-style-btq.md).</span></div>
-            <div class="row"><span class="warn">⚠</span><span>Sin bloque "Mito o Realidad" al final — los datos de interés van distribuidos dentro del Cuerpo.</span></div>
-            <div class="row"><span class="warn">⚠</span><span>Muletillas: 1 sola "imagínense" (segmento 4), 0 "me vuela la cabeza". Revisar en la pasada de voz.</span></div>
-            <div class="row"><span class="warn">⚠</span><span><strong>[PENDIENTE DEFINIR]</strong> el teaser del cierre asume que EP.024 sigue el giro a 100% pilar SEO (sin referente pop) pero el tema exacto todavía no está elegido — dejar el teaser genérico hasta confirmar con Andy.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Título fijado 2026-07-25:</strong> <code>EP.23 — Efecto Hawthorne: por qué su equipo rinde distinto cuando lo miran</code> (73 caracteres). Gana el término buscable sobre el teórico porque el modelo aprobado es <em>[tipo] de [nombre propio]</em>, igual que «Ley de Goodhart». Este string va IDÉNTICO en la portada, en Spotify y en YouTube.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Esqueleto INVERTIDO</strong>, distinto al de EP.020–022. Ningún segmento se llama «Cuerpo N» ni «Re-enganche»: todos se nombran por su contenido.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Se eliminó la escena de apertura inventada.</strong> La versión anterior abría con «Julián, analista de calidad» — una escena compuesta. La descripción del show promete «casos documentados, cifras verificables»: abrir con ficción la contradice en el primer minuto. Ahora el reconocimiento del fenómeno se hace con señales operativas reales.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Recomendaciones tejidas, sin bloque:</strong> Amy Cuddy en el segmento 1 (misma crisis de replicación), el libro de Mayo en el 3 (donde se cuenta su trabajo), The Truman Show en el 5 (la vida entera observada). Ninguna anunciada como «recomendación».</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Alcance macro:</strong> el tramo de aplicación nombra cuatro formas del mismo fenómeno — la revisión anunciada, la visita del gerente a la tienda, el jefe de copiloto en la ruta, el código que se sabe revisado. No es un episodio de call center.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Frases-molde eliminadas:</strong> fuera «tres cosas concretas, esta semana, sin…», «ninguna de las tres cuesta un peso» y «todavía no les he contado la parte que». Verificar con <code>python scripts/lint_guion_repeticion.py</code> antes de aprobar.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>[PENDIENTE DEFINIR]</strong> el teaser del cierre queda genérico: el tema de EP.024 todavía no está elegido.</span></div>
         </div>
     </div>
 
@@ -302,12 +298,12 @@
     <div class="section">
         <h2>Notas de grabación · sesión</h2>
         <div class="checklist-box">
-            <div class="row"><span class="warn">⚠</span><span><strong>Se retiró la música de intro y de outro (2026-07-25).</strong> En su lugar va un jingle corto, el mismo al abrir y al cerrar. <strong>No hace falta tenerlo listo para grabar</strong> — se monta en post. Ver § Jingle en guion-style-btq.md.</span></div>
-            <div class="row"><span class="ck">✓</span><span><strong>Deje 3 segundos de silencio antes de la primera palabra y 3 después de la última.</strong> Es donde se pega el jingle sin recortar voz. Sin ese aire hay que cortar sobre la sílaba y se nota.</span></div>
-            <div class="row"><span class="ck">✓</span><span><strong>Grabe 30 segundos de silencio de la sala</strong> (room tone) antes de empezar, sin hablar y sin moverse. Sirve para rellenar cortes en la edición; sin él, cada empalme suena a bache.</span></div>
-            <div class="row"><span class="ck">✓</span><span><strong>Entre sobre el silencio, no sobre el jingle.</strong> El stinger termina y <em>después</em> arranca «Buenas y santas». Al cerrar, igual: la firma termina, silencio, y ahí entra el jingle. Nada montado encima de la voz.</span></div>
-            <div class="row"><span class="warn">⚠</span><span><strong>Las PAUSAS LARGAS del guion son reales:</strong> cuéntelas de verdad, no las apure. Son el respiro que separa los segmentos y en la edición son los puntos de corte limpios.</span></div>
-            <div class="row"><span class="warn">⚠</span><span><strong>No lea el bloque «Fuentes verificadas» al aire</strong> — está al final del documento solo como respaldo.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Se retiró la música de intro y de outro.</strong> En su lugar va un jingle corto, el mismo al abrir y al cerrar. <strong>No hace falta tenerlo listo para grabar</strong> — se monta en post. Ver <code>btq-production/jingle-brief.md</code>.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Deje 3 segundos de silencio antes de la primera palabra y 3 después de la última.</strong> Es donde se pega el jingle sin recortar voz.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Grabe 30 segundos de silencio de la sala</strong> antes de empezar, sin hablar y sin moverse. Rellena los cortes en la edición.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Este episodio arranca en frío, sin escena.</strong> El primer minuto es usted afirmando algo incómodo. Va lento y seguro, no acelerado — la fuerza está en la afirmación, no en el ritmo.</span></div>
+            <div class="row"><span class="warn">⚠</span><span>Las PAUSAS LARGAS son reales: cuéntelas. Son los puntos de corte limpios en la edición.</span></div>
+            <div class="row"><span class="warn">⚠</span><span>No lea el bloque «Fuentes verificadas» al aire.</span></div>
         </div>
     </div>
 
@@ -318,249 +314,259 @@
         <!-- APERTURA -->
         <div class="segment">
             <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Apertura</span><span class="segment-time">0:00</span></div>
-            <div class="nota">JINGLE DE ENTRADA — stinger corto (2-4 s), seco, a silencio. NO es cama musical: no corre por debajo de la voz ni hace fade largo. Andy entra sobre el silencio, no sobre la música. (Cambio 2026-07-25: se retira la música de intro/outro; en EP.020 su timing obligó a re-transcribir el episodio.)</div>
+            <div class="nota">JINGLE DE ENTRADA — stinger corto (2-4 s), seco, a silencio. NO es cama musical. Andy entra sobre el silencio, no sobre la música.</div>
             <p class="line">Buenas y santas. Feliz día, feliz tarde o feliz noche. Cualquier día que este sea.</p>
             <p class="line">Esto es Behind the Queue, episodio veintitrés.</p>
             <span class="pausa larga">PAUSA LARGA</span>
         </div>
 
-        <!-- SEGMENTO 1 — HOOK -->
+        <!-- 1 -->
         <div class="segment">
-            <div class="segment-header"><span class="segment-number">1</span><span class="segment-title">Hook</span><span class="segment-time">0:45 – 6:00</span></div>
-            <div class="nota">Escena compuesta y verosímil, no un caso real con nombre propio.</div>
-            <p class="line">Son las nueve de la mañana de un martes cualquiera, y Julián, analista de calidad de una operación de servicio al cliente, le escribe a un agente por el chat interno: "Voy a entrar a escuchar tu próxima llamada en vivo, para la evaluación del mes".</p>
+            <div class="segment-header"><span class="segment-number">1</span><span class="segment-title">El estudio que todos citan y casi nadie leyó</span><span class="segment-time">0:45 – 7:30</span></div>
+            <div class="nota">Arranque en frío, sin escena. La incomodidad es el hook. Tono de afirmación tranquila, no de denuncia.</div>
+
+            <p class="line">Hoy voy a empezar por el final. Y voy a empezar desarmando algo que yo mismo he repetido, en capacitaciones, en reuniones y probablemente en este mismo pódcast.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">El agente responde con un pulgar arriba. Y algo, en ese mismo segundo, cambia —aunque nadie lo note a simple vista.</p>
+            <p class="line">Si usted ha pasado por cualquier clase de recursos humanos, por cualquier diplomado de liderazgo, por cualquier curso de calidad, le contaron esta historia: en los años veinte, unos ingenieros entraron a una fábrica en Estados Unidos a medir si más luz hacía a la gente producir más. Subieron la luz, y la producción subió. Bajaron la luz, y la producción también subió. Y la conclusión, que a todos nos pareció preciosa, fue que a la gente no la movía la bombilla: la movía sentirse observada, sentirse importante.</p>
+            <p class="line">Eso se llama el efecto Hawthorne. Está en los manuales. Está en las presentaciones corporativas. Es probablemente el hallazgo más citado de la historia del management.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y es una historia perfecta. Fíjese en lo bien construida que está: tiene un experimento con científicos de verdad, tiene un giro inesperado —la luz no importaba—, y tiene una moraleja calientita que sirve para cerrar cualquier capacitación. Preste atención a la gente cuando la mire, y va a rendir más. Uno la oye y asiente. Yo asentí durante años.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y en 2011, dos economistas fueron a buscar los datos originales de ese estudio. Steven Levitt —el de Freakonomics— y John List. Casi noventa años después, con los números crudos en la mano por primera vez en décadas.</p>
+            <p class="line">Lo que encontraron es que la historia bonita no se sostiene como nos la contaron.</p>
             <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">La siguiente llamada de ese agente es casi perfecta. Saluda con el protocolo completo, palabra por palabra. Confirma los datos del cliente sin saltarse ni uno. Ofrece el producto adicional exactamente donde el libreto dice que hay que ofrecerlo. Cierra con la frase de despedida institucional, entera, sin recortarla como suele hacerlo cuando tiene prisa.</p>
+
+            <div class="sub">Qué encontraron exactamente</div>
+            <p class="line">Que buena parte de lo que se atribuía al efecto tenía explicaciones mucho más aburridas. Que la producción, por ejemplo, tendía a subir los lunes, cuando arrancaba la semana, independientemente de la luz. Que los cambios de iluminación coincidían con cambios de horario y de temporada. Que el patrón que durante décadas se contó como una revelación sobre el alma humana era, en buena parte, un patrón de calendario.</p>
+            <p class="line">No es que el efecto no exista. Volvemos a eso en un momento, y les adelanto que existe, y que a usted le está pasando ahora mismo. Es que la evidencia estrella —la de la lucecita, la que todos citamos— era mucho más floja de lo que noventa años de repetición nos hicieron creer.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Julián cuelga su diadema, feliz. Anota en el formato: cumplimiento total, cien sobre cien. Se lo muestra al supervisor. El supervisor lo felicita en la reunión de la tarde, delante de todo el equipo, como ejemplo del mes.</p>
+            <p class="line">Y hay un detalle que a mí, investigando esto, me pareció el más revelador de todos: el nombre. «Efecto Hawthorne» no se lo puso nadie en 1924. Se lo puso un tipo llamado Henry Landsberger, en 1958. Más de treinta años después, revisando los reportes. O sea: el hallazgo más famoso del management ni siquiera se llamó así mientras estaba ocurriendo. Lo bautizó alguien que llegó a leerlo tarde, igual que todos nosotros.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y ya que estamos: ¿qué encontraron Levitt y List, en concreto? Que los picos de producción coincidían con el día de la semana y con el período de pago. Que la producción tendía a subir cuando arrancaba la semana y alrededor de las fechas en que les pagaban. Nada místico. Nada sobre el alma del trabajador. Calendario y plata.</p>
+            <p class="line">Lo que a mí me obliga a preguntarme otra cosa, y es por qué nos gustó tanto la versión bonita. Y creo que la respuesta es incómoda: porque nos dejaba muy bien parados. Si a la gente la mueve sentirse vista, entonces la herramienta del líder es barata, limpia y no exige cambiar nada estructural. No hay que subir sueldos, no hay que rediseñar el trabajo, no hay que tocar el sistema de metas. Basta con mostrar interés.</p>
+            <p class="line">Toda teoría que le sale gratis al que la aplica merece una segunda mirada.</p>
             <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Avancemos tres semanas.</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">A ese mismo agente le toca, por sorteo aleatorio del sistema, una auditoría de calidad sobre una llamada grabada de un día cualquiera —una llamada que él ni recuerda, tomada sin previo aviso, como se hacen la mayoría. Y esa llamada es otra persona por completo: saluda rápido, se salta la confirmación de datos "porque el cliente ya lo dijo antes", no ofrece el producto adicional porque "se veía apurado", y cuelga sin la frase completa de cierre.</p>
+
+            <div class="sub">Y no es el único caso</div>
+            <p class="line">Si esto le suena a rareza aislada, no lo es. Piense en las posturas de poder: esa idea de que pararse dos minutos como superhéroe antes de una entrevista le cambia la química del cuerpo y la confianza. Salió de una charla TED de Amy Cuddy que es una de las más vistas de la historia. Millones de personas la vieron. Empresas enteras la metieron en sus capacitaciones.</p>
+            <p class="line">Y después vino la crisis de replicación. Otros equipos intentaron reproducir el resultado y la parte fisiológica —la de las hormonas— no apareció. La propia Cuddy terminó reconociendo públicamente qué partes de su hallazgo se sostenían y cuáles no, lo cual, dicho sea de paso, es mucho más de lo que hace la mayoría.</p>
+            <p class="line">Véanla completa, la charla. Es buenísima y sigue valiendo la pena. Pero véanla sabiendo lo que pasó después, porque esa segunda parte de la historia —la del hallazgo que se desinfla— es exactamente la lección de hoy.</p>
+            <div class="remate">Lo que uno cita con más confianza suele ser lo que menos ha verificado.</div>
             <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Julián se queda mirando la pantalla un buen rato. No es que el agente le haya mentido. No es que se lo haya inventado todo para la evaluación de la semana pasada. Es otra cosa, más incómoda de nombrar: ese agente tiene, literalmente, dos versiones de sí mismo trabajando en el mismo puesto. Una para cuando sabe que lo están mirando. Y otra, la de casi todo el día, para cuando no.</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">¿Y cuál de las dos es la real? ¿La del noventa y ocho que se lució frente a Julián, o la del setenta y pico que nadie audita casi nunca?</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">La respuesta incómoda es que las dos son reales. Las dos existieron, de verdad, en la misma persona, en la misma silla, con el mismo entrenamiento. La única variable que cambió entre una llamada y la otra fue si el agente sabía, en ese momento exacto, que alguien más lo estaba escuchando.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Ese pequeño misterio de oficina —por qué una persona rinde distinto según sabe o no que la están observando— tiene casi cien años de historia, y empezó, de todos los lugares posibles, en una fábrica de teléfonos a las afueras de Chicago.</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">Y antes de seguir, una aclaración honesta: nada de esto es culpa de Julián, ni un truco malintencionado del agente. Los dos están haciendo, sin saberlo, exactamente lo que cualquier ser humano haría en su lugar. El problema nunca fue la gente. Fue el instrumento con el que Julián creía estar midiendo la verdad completa de la operación.</p>
         </div>
 
-        <!-- SEGMENTO 2 — NOMBRAR EL FENÓMENO -->
+        <!-- 2 -->
         <div class="segment">
-            <div class="segment-header"><span class="segment-number">2</span><span class="segment-title">Nombrar el fenómeno</span><span class="segment-time">6:00 – 11:00</span></div>
-            <div class="nota">Tono de descubrimiento histórico. Voz narrativa presente para la escena inicial.</div>
-            <p class="line">Cicero, Illinois. Mediados de los años veinte. Una fábrica gigantesca de la Western Electric Company, la planta Hawthorne, fabrica equipos de teléfono para medio país. Y sus ingenieros tienen una pregunta sencilla, casi de sentido común: ¿si mejoramos la iluminación de la planta, van a producir más los obreros?</p>
+            <div class="segment-header"><span class="segment-number">2</span><span class="segment-title">Y aun así, usted ya lo vio</span><span class="segment-time">7:30 – 14:00</span></div>
+            <div class="nota">Aquí NO va escena inventada. Se reconoce el fenómeno con señales operativas verificables en el tablero propio.</div>
+
+            <p class="line">Ahora, dicho todo eso, viene la parte incómoda en la otra dirección.</p>
+            <p class="line">Porque usted no necesita que un estudio de 1924 le dé permiso para creer en esto. Usted ya lo vio. Lo vio esta semana, probablemente. Y lo puede demostrar sin salir de sus propios números.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Suben la luz en un grupo de trabajadoras. La producción sube. Hasta ahí, todo cuadra con lo esperado.</p>
+
+            <div class="sub">Las señales, una por una</div>
+            <p class="line">La primera es la más obvia y la que más se disimula: el día que anuncian visita de alguien de arriba, todo funciona mejor. No un poco mejor. Notablemente mejor. Y nadie lo comenta en voz alta porque comentarlo sería admitir cómo funciona el resto de los días.</p>
+            <p class="line">La segunda vive en el sistema de calidad. Si en su operación conviven dos formas de revisar el trabajo —una anunciada y otra que cae sin avisar— compare los promedios de las dos. Si nunca los ha comparado, ahí hay una tarde de trabajo que le puede cambiar la conversación con su jefe.</p>
+            <p class="line">La tercera es la más silenciosa: el desempeño que se desploma justo cuando termina el período de prueba de alguien nuevo. Durante tres meses supo que lo estaban mirando. Después, dejó de saberlo.</p>
+            <p class="line">Y hay una cuarta, que es la más cara de todas porque no se ve: las decisiones que usted ya tomó sobre ese número. A quién ascendió. A quién no le renovó. Qué proceso declaró resuelto porque el indicador estaba en verde. Si el número venía inflado por observación, esas decisiones venían infladas también, y ninguna de ellas se revisa nunca.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Pero entonces, para confirmar el hallazgo, hacen algo raro: bajan la luz, en vez de subirla más. Y la producción... también sube.</p>
+            <p class="line">Y esto no es de una industria. Toma una forma distinta en cada empresa y es siempre el mismo animal: la llamada que el analista de calidad avisa que va a escuchar, el día que el gerente de zona anuncia que visita la tienda, la ruta que el vendedor hace sabiendo que su jefe va de copiloto, el código que el desarrollador entrega sabiendo que alguien lo va a leer con lupa.</p>
             <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Ahí es donde entra un profesor australiano de Harvard llamado Elton Mayo, invitado a ayudar a entender ese resultado que no tenía ningún sentido según la lógica de "más luz, más productividad". Mayo no era ingeniero ni contador. Venía de estudiar fatiga, monotonía y salud mental en entornos industriales —le interesaba la persona detrás de la máquina, no la máquina en sí, algo bastante fuera de moda para un profesor de escuela de negocios en 1927.</p>
+
+            <div class="sub">El número que casi nadie mira</div>
+            <div class="dato">En los centros de contacto, la cobertura de auditoría manual de calidad está documentada, como referencia de industria, entre el uno y el cinco por ciento de las interacciones.</div>
+            <p class="line">Deténgase ahí un segundo. Entre uno y cinco de cada cien. Y sobre esa muestra se construye el indicador de calidad que se presenta en comité, que define bonos, que decide quién asciende.</p>
+            <p class="line">Ahora combine eso con lo anterior. Si además de ser una muestra minúscula, buena parte de esa muestra se toma en momentos en que la persona sabe que la están evaluando, entonces su número de calidad no está midiendo cómo trabaja su equipo. Está midiendo cómo trabaja su equipo cuando quiere quedar bien.</p>
+            <p class="line">Y esas dos cosas son reales las dos. El problema es que solo una está en el tablero.</p>
+            <p class="line">Si usted no está en un centro de contacto, la pregunta es la misma con otros números: ¿qué fracción del trabajo de su gente alcanza usted realmente a revisar? ¿Y en cuántos de esos casos ellos sabían de antemano que le iba a tocar a ellos?</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Entre 1927 y 1932, Mayo y su equipo llevan el experimento más lejos, con un grupo pequeño de mujeres que ensamblan relés eléctricos en un cuarto aparte, y después con otro grupo de hombres que cablean equipos telefónicos en un cuarto distinto.</p>
+            <p class="line">Y si la respuesta a la segunda es «en todos», no se sienta mal: así funciona el noventa por ciento de las operaciones que conozco. La revisión anunciada es más cómoda para todo el mundo. Para el que revisa, porque no genera conflicto. Para el revisado, porque puede prepararse. El problema no es que sea cómoda: es que el número que sale de ahí se presenta después como si fuera la realidad.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Y el patrón se repite, una y otra vez, casi sin importar qué variable cambiaran: descansos más largos, descansos más cortos, jornadas más cortas, jornadas iguales a las de siempre. La producción, en el grupo de los relés, seguía subiendo.</p>
+            <p class="line">Y antes de que esto suene a que el problema es su gente, hagamos el ejercicio en la otra dirección, que es el que a mí me costó más trabajo aceptar: a usted le pasa igual.</p>
+            <p class="line">Piense en cómo cambia una reunión de equipo cuando se conecta alguien de arriba. Cambia el tono, se aclara la garganta, aparecen palabras que no se usan un martes normal. Piense en cómo escribe un correo sabiendo que va con copia al jefe de su jefe. Piense en la última vez que le tocó presentar resultados y en cuánto tiempo dedicó a que se vieran bien, comparado con el que dedicó a entenderlos.</p>
+            <p class="line">Nadie está exento. Y eso importa porque el líder que cree que esto solo les pasa a los de abajo va a diseñar controles para atrapar gente, en vez de diseñar mediciones que le digan la verdad.</p>
+            <p class="line">Y sí, a mí también. Yo he preparado presentaciones sabiendo perfectamente cuál iba a ser la diapositiva que se iba a mirar con lupa, y cuál nadie iba a abrir. No estoy señalando a nadie desde afuera.</p>
             <span class="pausa larga">PAUSA LARGA</span>
-            <div class="dato"><div class="dato-label">Dato · un nombre que tardó treinta años en existir (verificado)</div>Lo que hoy llamamos "efecto Hawthorne" no se llamó así durante los estudios originales. El término lo acuñó, hasta 1958 —tres décadas después—, un investigador llamado Henry Landsberger, al revisar los datos con la distancia de los años. Los propios obreros de la planta Hawthorne nunca supieron que estaban siendo bautizados en un libro de management del futuro.</div>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">La conclusión que se popularizó, la que probablemente ya conocían aunque no supieran de dónde venía, es esta: las personas cambian su comportamiento —casi siempre para mejor— cuando saben que alguien las está observando. No fue la luz. No fueron los descansos. Fue la atención.</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">Y con esa frase sola, ya tienen la mitad de lo que se enseña en cualquier clase de recursos humanos sobre este tema. La otra mitad —la que casi nadie cuenta en la versión corta— es bastante menos bonita.</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">Antes de esos estudios, la teoría de moda en las fábricas de Estados Unidos era la del ingeniero Frederick Taylor: al obrero se le mide con cronómetro, se le optimiza el movimiento de las manos como si fuera una pieza más de la línea, y se le paga por unidad producida. Punto. Nada de sentimientos, nada de grupo, nada de "cómo se sienten hoy". Los estudios de Hawthorne, sin proponérselo del todo, le abrieron la puerta a una idea que en su momento sonó casi ingenua: que un ser humano en una fábrica seguía siendo, ante todo, un ser humano, con relaciones, ansiedades y una vida social que no se apagaba al cruzar la puerta de la planta.</p>
         </div>
 
-        <!-- SEGMENTO 3 — CUERPO 1 · LAS DOS CARAS DE LA MISMA FÁBRICA -->
+        <!-- 3 -->
         <div class="segment">
-            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">Cuerpo 1 · las dos caras de la misma fábrica</span><span class="segment-time">11:00 – 15:30</span></div>
-            <div class="nota">Contraste rápido: primero la versión bonita, después su reverso, en el mismo segmento.</div>
-            <p class="line">Quedémonos un momento en el cuarto de los relés, porque es una historia genuinamente bonita. Cinco mujeres, sacadas del piso enorme y ruidoso de la fábrica, instaladas en un cuarto aparte, con un supervisor que —a diferencia del piso general— les explicaba qué cambio venía y les preguntaba su opinión. Para 1927, en una fábrica donde el obrero promedio era, para la gerencia, poco más que una pieza intercambiable, eso era casi radical.</p>
+            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">Lo que de verdad pasó en aquella fábrica</span><span class="segment-time">14:00 – 22:00</span></div>
+            <div class="nota">Voz narrativa en presente. Aquí se cuenta la historia real, ya sin el mito. La recomendación del libro entra como cita, no anunciada.</div>
+
+            <p class="line">Volvamos a la fábrica, porque la historia verdadera es mejor que el mito.</p>
+            <p class="line">Hawthorne Works, a las afueras de Chicago. Una planta enorme de la Western Electric, decenas de miles de personas fabricando equipos telefónicos. Entre 1924 y comienzos de los treinta, ahí se corre una de las investigaciones industriales más largas que se habían hecho nunca. La fase de la iluminación es apenas el arranque. Lo interesante viene después, y casi nadie lo cuenta.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Y esas cinco mujeres, sintiéndose vistas —no vigiladas, vistas— empezaron a trabajar como equipo, a cuidarse entre ellas, a resolver sus propios problemas de ritmo. La producción subió, y se quedó arriba, casi sin importar qué variable probaran los investigadores: descansos largos, descansos cortos, jornadas más cortas, jornadas normales otra vez.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Esta es la parte que se volvió leyenda de management: que basta con prestarle atención genuina a la gente para que rinda mejor. Y no está mal, como lección. El problema es que, si el episodio terminara aquí, sería una fábula demasiado cómoda —del tipo que yo, personalmente, desconfío apenas la escucho completa sin ningún matiz.</p>
+
+            <div class="sub">El primer cuarto</div>
+            <p class="line">Apartan a un grupo pequeño de operarias a un cuarto separado para ensamblar relés telefónicos. Y ahí empiezan a mover variables. Descansos más largos. Descansos más cortos. Jornada más corta. Jornada normal otra vez. Refrigerio. Sin refrigerio.</p>
+            <p class="line">Y la producción sube. Cambian la condición, y vuelve a subir. Vuelven a las condiciones originales, las de siempre, sin ningún beneficio —y la producción se queda arriba.</p>
+            <p class="line">Ese es el resultado que fundó la leyenda. Pero mire lo que también estaba pasando en ese cuarto, y que rara vez se menciona: a esas mujeres las sacaron del piso general, las pusieron en un grupo pequeño, les hablaron, les preguntaron su opinión antes de cada cambio, y les dieron un supervisor que no las trataba como al resto. Les cambiaron el trabajo entero, no la luz.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Porque a quince metros de ese cuarto tan armonioso, en la misma fábrica, al mismo tiempo, otro grupo de catorce hombres —cableando equipos de conmutación telefónica, también observados de cerca— demostraba exactamente lo contrario.</p>
+            <p class="line">Y para dimensionar el tamaño de esto: la fase de la iluminación va de 1924 a 1927. El cuarto de relés, de 1927 a 1932. Cinco años. Esto no fue una prueba de un semestre con una encuesta al final: fue media década de gente entrando todos los días a un cuarto a ser observada, con registros diarios. Es, todavía hoy, uno de los estudios de campo más largos que se han hecho en una empresa real.</p>
             <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Ahí, la lógica bonita simplemente no aplicó. La producción se quedó plana, terca, mes tras mes —a pesar de un incentivo económico real por cada unidad extra. Los investigadores, desconcertados, se pusieron a hablar con los catorce hombres uno por uno, sin libreta a la vista, y encontraron algo que ningún incentivo de nómina había logrado torcer: una regla no escrita sobre cuánto era "lo correcto" producir en un día. Le decían el bogey —la cuota tácita. Ni una unidad más, aunque el bono lo permitiera. Ni una unidad menos, para no llamar la atención de un supervisor.</p>
+
+            <div class="sub">El segundo cuarto, el que nadie cita</div>
+            <p class="line">Años después, en la misma planta, montan otro cuarto de observación. Catorce hombres cableando bancos de conmutación. Mismo nivel de atención. Un observador ahí sentado todo el día.</p>
+            <p class="line">Y pasa lo contrario.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">¿Y qué le pasaba al que se salía de esa cuota, al que un día rendía de más? No lo felicitaban. Le decían, con humor a medias, "muéstrenos otra vez ese ritmo y va a ser el que todos tengamos que sostener". La presión social del grupo entero, empujando hacia abajo al que amenazaba con volverse la nueva vara de medir para todos.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <div class="dato"><div class="dato-label">Dato · el mismo experimento, resultado opuesto (verificado)</div>Mientras el cuarto de relés —organizado en cooperación abierta con los investigadores— mostró un aumento sostenido de producción, el cuarto de cableado de bancos —donde los propios trabajadores se organizaron para resistir cualquier cambio de ritmo— no mostró ningún cambio de productividad ligado al incentivo económico ofrecido. La variable que de verdad decidía el resultado no era la observación en sí. Era si el grupo, por dentro, decidía usarla a su favor o en su contra.</div>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Imagínense la escena completa, los dos cuartos funcionando al mismo tiempo, a quince metros uno del otro: en uno, la observación destapa cooperación. En el otro, la misma observación destapa un sistema silencioso de castigo entre compañeros para que nadie se destaque de más.</p>
+            <p class="line">Ese grupo no produce más. Ese grupo se protege. Habían fijado entre ellos, sin que nadie lo escribiera, cuánto era correcto producir en un día. Ni más ni menos. Al que producía por encima lo llamaban al orden, con burla y con golpes en el brazo. Al que producía por debajo, también. Tenían un techo informal y lo defendían, incluso contra un incentivo económico que les convenía romper.</p>
+            <p class="line">Le tenían nombre propio. Le decían «el bogey».</p>
             <span class="pausa">PAUSA</span>
-            <div class="remate">Traducido a un piso de call center: si su equipo cree que el monitoreo existe para atraparlos, se van a comportar como el cuarto de cableado —cuota mínima segura, nadie se destaca. Si cree que existe para ayudarlos a mejorar, hay una oportunidad real de que se comporten como el cuarto de relés. La diferencia no está en si los observan. Está en para qué creen que los están observando.</div>
-            <p class="line">Y noten algo importante: los catorce hombres no eran flojos, ni estaban en contra de la empresa por principio. Estaban, a su manera, protegiendo a los más lentos del grupo de una gerencia que, en el pasado, había subido metas apenas alguien las superaba. Su cuota tácita no nació de la pereza. Nació de una desconfianza aprendida, con motivo.</p>
+            <p class="line">Y el detalle que remata la historia: la empresa les había puesto un incentivo económico para producir más. Plata sobre la mesa, disponible, por hacer lo que el grupo había decidido que no se hacía. No funcionó. La norma social del grupo le ganó al bolsillo de cada uno.</p>
+            <p class="line">A los que producían de más los llamaban «rompe-tarifas». A los que producían de menos, también los corregían: nadie podía quedar tan por debajo que llamara la atención sobre el grupo. Y también protegían a los más lentos, ajustando lo que reportaban para que el promedio se viera parejo. No era pereza. Era un grupo administrando su propia exposición.</p>
+            <p class="line">Dos cuartos, en la misma fábrica, a metros el uno del otro, con el mismo nivel de observación. Uno produjo más. El otro se blindó.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">La diferencia no fue la observación</div>
+            <p class="line">Fue lo que cada grupo creyó que significaba esa observación. Las del primer cuarto creían que la atención era para ayudarlas: las escuchaban, les preguntaban, eran parte del experimento. Los del segundo creían que la atención era para exprimirlos: si demostraban que podían producir más, mañana esa cifra sería la meta obligatoria de todos.</p>
+            <p class="line">Los dos grupos hicieron exactamente lo racional, dada la historia que tenían en la cabeza sobre por qué había alguien mirándolos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y esto le da vuelta completa a la idea que nos vendieron. No es que la observación mejore el desempeño. Es que la observación amplifica lo que su gente ya cree sobre usted. Si creen que usted está de su lado, mirar los empuja. Si creen que usted está buscando con qué, mirar los blinda.</p>
+            <div class="remate">El monitoreo no crea la cultura. La revela, y después la multiplica.</div>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El hombre que dirigió buena parte de la interpretación de todo esto fue Elton Mayo, un psicólogo australiano que terminó en Harvard. Su libro sobre los problemas humanos de la civilización industrial es de 1933 y se consigue todavía. Léalo con la misma desconfianza con la que abrimos el episodio: Mayo saca conclusiones más grandes de las que sus datos aguantan, y eso es parte de lo interesante. Es leer, en tiempo real, cómo nace un mito que después nos tragamos todos durante noventa años.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
         </div>
 
-        <!-- SEGMENTO 4 — CUERPO 2 · VOLKSWAGEN Y EL MOTOR QUE SABÍA QUE LO ESTABAN MIDIENDO -->
+        <!-- 4 -->
         <div class="segment">
-            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">Cuerpo 2 · el motor que sabía que lo estaban midiendo</span><span class="segment-time">15:30 – 21:30</span></div>
-            <div class="nota">Caso ancla de negocios, consecuencias severas y nombradas — mismo peso narrativo que Wells Fargo en EP.020. Presente/escena, no informe.</div>
-            <p class="line">Alemania, principios de los años 2010. Volkswagen tiene un problema de ingeniería que suena, sobre el papel, casi imposible de resolver: fabricar motores diésel que cumplan los límites de contaminación más estrictos del mundo, en Estados Unidos, sin sacrificar la potencia y el consumo de combustible que hicieron famosa a la marca.</p>
+            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">Cuando medir cambia lo medido, y alguien termina preso</span><span class="segment-time">22:00 – 29:00</span></div>
+            <div class="nota">Caso ancla con consecuencias severas y nombradas. Escena en presente, no informe.</div>
+
+            <p class="line">Ahora bien. Todo lo anterior es sobre personas, que son complicadas, que interpretan, que tienen miedo. Se puede discutir.</p>
+            <p class="line">Así que déjeme contarle el caso donde no hay nada que interpretar. Donde el que se comportaba distinto al sentirse observado no era una persona. Era un motor.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">Un software que sabía cuándo lo estaban examinando</div>
+            <p class="line">Volkswagen, finales de la década pasada. La compañía necesita vender motores diésel en Estados Unidos, y los límites de emisiones allá son de los más estrictos del mundo. Hay una tensión de ingeniería que no se resuelve fácil: el motor que cumple la norma consume más y rinde menos; el motor que rinde bonito no cumple la norma.</p>
+            <p class="line">Y en vez de escoger, alguien escoge las dos.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Y en vez de resolver ese problema de verdad, alguien en la ingeniería de Volkswagen encuentra un atajo escalofriantemente parecido al de nuestros dos cuartos de hace un momento: le enseñan al software del motor a reconocer cuándo está siendo examinado.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">El auto detecta los patrones exactos de una prueba de emisiones en laboratorio —el volante quieto, las ruedas girando sin avanzar, la secuencia precisa del examen oficial— y ahí, solo ahí, activa un modo limpio, que sí cumple la norma. El resto del tiempo, en la carretera real, con ustedes manejando de verdad, el motor apaga ese modo y contamina como le da la gana.</p>
+            <p class="line">Le meten al carro un programa que reconoce cuándo está en una prueba de laboratorio. Detecta la posición del volante, la velocidad, la presión, el patrón de uso. Y cuando concluye que lo están midiendo, activa el control de emisiones completo. El carro cumple. Perfecto en el papel.</p>
+            <p class="line">En la carretera, con una persona real manejando, el sistema se relaja y el vehículo contamina muy por encima del límite.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Es, letra por letra, el mismo mecanismo que Elton Mayo tropezó a ciegas en 1927: el comportamiento cambia, y cambia mucho, en el instante exacto en que el sujeto sabe que lo están midiendo. Solo que aquí no fue un accidente de laboratorio. Fue una decisión de ingeniería, tomada a propósito, con nombre de "dispositivo de desactivación" en los documentos internos.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <div class="dato"><div class="dato-label">Dato · la escala del engaño (verificado)</div>Investigadores de la Universidad de West Virginia detectaron la anomalía en 2014, comparando emisiones de laboratorio contra emisiones reales de carretera. Volkswagen terminó admitiendo, en septiembre de 2015, que instaló el software en cerca de <strong>11 millones de autos</strong> en todo el mundo. En manejo real, esos motores emitían hasta <strong>40 veces</strong> el límite legal de óxidos de nitrógeno permitido en la prueba de laboratorio.</div>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Las consecuencias no se quedaron en una multa administrativa. Volkswagen terminó pagando más de <strong>30.000 millones de dólares</strong> entre multas, acuerdos legales y recompra de vehículos. Un ingeniero de alto rango, Oliver Schmidt, fue arrestado en Estados Unidos y sentenciado a <strong>siete años de prisión</strong> por ocultarle el software a los reguladores.</p>
+            <div class="dato">Hasta cuarenta veces el límite legal de óxidos de nitrógeno.</div>
+            <p class="line">Cuarenta veces. No un veinte por ciento por encima, no el doble. Cuarenta veces lo permitido, en la calle, mientras el mismo carro salía impecable en el laboratorio.</p>
+            <div class="remate">Una máquina diseñada a propósito para portarse distinto cuando sabe que la están mirando. El efecto Hawthorne, pero escrito en código, a sabiendas, por un equipo de ingeniería.</div>
             <span class="pausa">PAUSA</span>
-            <p class="line">Y la parte que de verdad conecta esto con la Ley que nombramos hace un momento, más allá del dinero y la cárcel: investigadores del MIT y Harvard calcularon que esas emisiones de más, respiradas durante años por gente que nunca supo que su auto mentía, van a causar alrededor de <strong>60 muertes prematuras en Estados Unidos</strong> y cerca de <strong>1.200 en Europa</strong>. No es una cifra de daño reputacional. Es aire real, en pulmones reales, contaminado por un motor que solo se portaba bien cuando sabía que alguien lo estaba midiendo.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Bajemos ahora del auto hasta la operación exacta donde ustedes trabajan, porque el mismo problema tiene, en su industria, un número propio y verificado.</p>
+            <p class="line">¿Y cómo se descubrió? Esta parte me encanta, porque no fue un regulador. En 2014, un grupo de investigadores de la Universidad de West Virginia hace algo que a nadie se le había ocurrido como prioridad: en vez de medir los carros en el laboratorio, les montan los equipos encima y los sacan a la carretera. A manejar de verdad.</p>
+            <p class="line">Y los números no cuadran. No cuadran por mucho. Ellos ni siquiera estaban buscando un fraude: estaban comparando tecnologías de diésel. Se toparon con esto de frente.</p>
+            <p class="line">El engaño aguantó años contra el sistema oficial de medición. Se cayó el día que alguien midió distinto.</p>
             <span class="pausa">PAUSA</span>
-            <div class="dato"><div class="dato-label">Dato · lo poco que de verdad se audita (verificado, benchmark de industria)</div>En la mayoría de las operaciones de contact center que todavía auditan calidad de forma manual, un equipo de QA logra revisar, en promedio, solo entre el <strong>1 y el 5 por ciento</strong> de las llamadas totales. Es decir: entre el 95 y el 99 por ciento de lo que su operación hace todos los días nunca pasa frente a los ojos de nadie que evalúe calidad.</p></div>
+            <p class="line">Y ahí está la lección que le sirve a usted mañana, sin necesidad de un escándalo: si su forma de medir es siempre la misma y siempre es anunciada, cualquier cosa que se esté acomodando a esa medición se le va a quedar invisible durante años. No porque nadie sea honesto, sino porque nunca miró desde otro ángulo.</p>
             <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Léanlo con el auto de Volkswagen todavía fresco en la cabeza. Su reporte de calidad no está mintiendo, exactamente igual que el motor alemán no estaba "apagado" del todo. Está construido, casi por definición, sobre el comportamiento del uno al cinco por ciento del tiempo en que su gente sabe que la están midiendo. El resto —la inmensísima mayoría de su operación real— es, para efectos de ese reporte, territorio completamente a ciegas.</p>
+
+            <div class="sub">La factura</div>
+            <div class="dato">Alrededor de once millones de vehículos en el mundo. Del orden de treinta mil millones de dólares entre multas, recompras y acuerdos. Directivos condenados, uno de ellos a siete años de prisión. Un estudio del MIT y Harvard estimó alrededor de sesenta muertes prematuras en Estados Unidos por esas emisiones excedentes. Y un estudio del MIT y Harvard estimó que el exceso de contaminación de esos vehículos causaría alrededor de mil doscientas muertes prematuras solo en Europa.</div>
+            <p class="line">Deténgase en esa última cifra, porque es la que separa esto de una anécdota de negocios. No fue una multa. Fue gente que se muere antes de tiempo porque un número tenía que verse bien en una prueba.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y ojo con la conclusión fácil. La tentación es decir «qué gente tan corrupta». Yo creo que eso es dejarnos salir muy barato. Nadie se levantó un lunes decidido a matar a mil doscientas personas. Lo que hubo fue una meta imposible, un sistema de medición que se podía distinguir de la realidad, y una organización donde decir «esto no se puede» era peor visto que hacer trampa.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Esa última parte es la que yo le pediría que se lleve. Porque la meta imposible y el sistema de medición flojo los tiene mucha empresa. Lo que convierte eso en catástrofe es el tercer ingrediente: que en la reunión donde alguien debió decir «este motor no da», decirlo costaba la carrera.</p>
+            <p class="line">Su operación probablemente no tiene un motor. Pero sí tiene metas, sí tiene un momento en que se mide, y sí tiene gente que sabe distinguir cuál es ese momento.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
         </div>
 
-        <!-- SEGMENTO 5 — RE-ENGANCHE · LA MENTIRA DENTRO DE LA VERDAD -->
+        <!-- 5 -->
         <div class="segment">
-            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">Re-enganche · la mentira dentro de la verdad</span><span class="segment-time">21:30 – 25:30</span></div>
-            <div class="nota">El giro más fuerte del episodio va aquí, en la segunda mitad — completion rates 50-67%.</div>
-            <p class="line">Y todavía no les he contado la parte que a mí, investigando este episodio, más me sacudió. Porque resulta que ni siquiera la mitad "bonita" de la historia —la de la luz, la del cuarto de relés— es tan sólida como se enseña.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Durante décadas, se dio por hecho que los datos originales del experimento de la iluminación se habían perdido, o se habían destruido, y que había que confiar en los resúmenes de segunda mano que se fueron repitiendo de libro en libro. Hasta que, en 2011, dos economistas —Steven Levitt, el mismo de "Freakonomics", y John List— los encontraron completos, guardados en un archivo, casi noventa años después del experimento original, y se sentaron a correr los números en serio, con las herramientas estadísticas de hoy, algo que nadie había hecho con ese detalle en casi un siglo.</p>
+            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">Ni la cárcel ni el hospital son metáforas</span><span class="segment-time">29:00 – 35:00</span></div>
+            <div class="nota">Referencias cruzadas FUERA del mundo del episodio: filosofía del siglo XVIII y medicina actual. La recomendación de la película entra aquí como cita.</div>
+
+            <p class="line">Dos lugares más, los dos fuera de cualquier oficina, para terminar de entender el tamaño de esto.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Y lo que encontraron fue incómodo para casi cien años de citas de management: gran parte de esas subidas de productividad que todos atribuían al "efecto de sentirse observado" coincidían, con mucha más fuerza, con patrones aburridísimos y nada místicos —qué día de la semana era, si acababan de pagarles, si era lunes después de un fin de semana o viernes antes de uno.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <div class="dato"><div class="dato-label">Dato · el mito bajo el microscopio de 2011 (verificado)</div>Al controlar estadísticamente por el ciclo de días de la semana y los períodos de pago dentro del experimento original, Levitt y List encontraron que buena parte de la diferencia entre el grupo observado y el grupo de control, la que sostenía la versión popular de "cualquier cambio de luz, hasta bajarla, subía la producción", se reducía drásticamente o desaparecía. La leyenda que se enseña en la mayoría de los cursos de management simplifica, y en algunos puntos tergiversa, lo que los números originales realmente muestran.</div>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Déjenme ser preciso con lo que esto significa, porque no quiero que se lleven la idea contraria y todavía más exagerada: esto no prueba que observar a alguien nunca cambie su comportamiento. Prueba algo más incómodo y más interesante: que la historia fundacional, la que le dio nombre a todo el fenómeno, fue contada durante décadas con más entusiasmo narrativo que rigor estadístico.</p>
+
+            <div class="sub">Un arquitecto de 1785</div>
+            <p class="line">Jeremy Bentham, filósofo inglés, escribe desde Rusia una serie de cartas describiendo un edificio. Una construcción circular, con las celdas contra la pared exterior y una torre de vigilancia en el centro. La gracia del diseño es cruel en su elegancia: desde la torre se ve hacia adentro de cada celda, pero desde las celdas no se ve si hay alguien en la torre.</p>
+            <p class="line">El preso nunca sabe si lo están mirando. Y como nunca lo sabe, tiene que comportarse todo el tiempo como si sí.</p>
+            <p class="line">Bentham entendió, ciento cuarenta años antes que aquella fábrica, que no hace falta vigilar a alguien todo el tiempo. Basta con que no pueda descartarlo.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Y eso debería ponerlos, a ustedes también, un poquito más alertas con cualquier "estudio clásico" que alguien les cite en una capacitación de liderazgo sin haberlo verificado nunca de primera mano —empezando, con toda humildad, por este mismo pódcast: cada dato de este episodio se revisó por su fuente original, precisamente porque la lección de hoy es que las versiones bonitas de una historia rara vez sobreviven intactas el contacto con los datos crudos.</p>
+            <p class="line">Y el panóptico, como edificio, nunca se construyó del todo como Bentham lo imaginó. Pero la idea se le salió de las manos y terminó inspirando cárceles reales en medio mundo, varias todavía en pie. Una idea que empezó como una carta a su hermano acabó siendo arquitectura de verdad, con gente adentro.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Casi cien años de charlas de management, de diapositivas corporativas, de manuales de recursos humanos citando "el estudio de Hawthorne" como prueba científica sólida de que la atención sube la productividad —construidos, en buena parte, sobre una lectura entusiasta de unos datos que nadie se había tomado el trabajo de revisar con calma hasta hace apenas una década larga.</p>
+            <p class="line">Y esa idea, que suena a filosofía vieja, es exactamente lo que usted hace cuando dice «las llamadas se graban» o «las pantallas quedan registradas». Usted no está revisando todo. Usted está construyendo una torre.</p>
             <span class="pausa larga">PAUSA LARGA</span>
-            <div class="remate">La leyenda bonita de la fábrica de teléfonos no aguantó el archivo completo. Y aun así, la idea que esa leyenda intentaba nombrar —que ser observado cambia lo que uno hace— resultó ser más cierta de lo que su propia historia fundacional logró probar. A veces un mito se cae, y la verdad que estaba tratando de contar sigue de pie, solo que apoyada en otros datos, más recientes y mejor medidos.</div>
-            <p class="line">La buena noticia, y esto sí quedó confirmado muchísimas veces desde entonces, con metodología sólida y en un terreno donde los errores cuestan vidas de verdad, es que el fenómeno que Hawthorne bautizó —aunque haya sido con datos menos limpios de lo que se creía— sí existe. Solo que la mejor prueba de que existe no viene de una fábrica de teléfonos de 1924. Viene de un hospital.</p>
+
+            <div class="sub">Y algo mucho más cotidiano: lavarse las manos</div>
+            <p class="line">En cualquier hospital serio del mundo se mide la adherencia al lavado de manos. No por cortesía: no hacerlo mata pacientes. Y la forma clásica de medirlo es poner a alguien a observar y anotar.</p>
+            <p class="line">Cuando se ha comparado esa medición con observaciones hechas de forma discreta, sin que el personal identifique al observador, el cumplimiento medido cae. A veces de manera dramática.</p>
+            <div class="dato">Con observador visible, el cumplimiento medido se ha reportado entre el setenta y ocho y el ochenta y siete por ciento. Con observación encubierta, entre el cuarenta y cinco y el cincuenta y cinco.</div>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Casi la mitad. En el mismo hospital, con la misma gente, el mismo día. Y hay dos detalles todavía más finos: la brecha es bastante mayor en enfermería que en el cuerpo médico, y es mayor en consulta externa que en cuidados intensivos —donde la rutina es más estricta y la consecuencia de fallar es más inmediata.</p>
+            <p class="line">Traduzca eso a su operación. La brecha no es pareja: es más grande donde la supervisión es más esporádica y donde la consecuencia de hacerlo mal se siente más lejana. Ahí es exactamente donde usted tiene menos visibilidad y más riesgo.</p>
+            <p class="line">Piense en lo que eso significa. Profesionales de la salud, que saben perfectamente lo que está en juego, que no lo hacen por pereza ni por maldad —y aun así el número cambia según quién esté mirando. Si pasa ahí, con vidas de por medio, pregúntese con qué cara asumiría usted que su operación es la excepción.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si quiere ver esto llevado hasta el absurdo, y que además es una gran película, véase The Truman Show. Un hombre cuya vida entera es un set, rodeado de gente que actúa, siendo observado a toda hora. Lo que a mí me sigue pareciendo lo mejor de esa película no es la vigilancia. Es que Truman es el único que se comporta de verdad, porque es el único que no sabe que lo miran.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
         </div>
 
-        <!-- SEGMENTO 6 — REFERENCIAS CRUZADAS -->
+        <!-- 6 -->
         <div class="segment">
-            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">Referencias Cruzadas</span><span class="segment-time">25:30 – 32:00</span></div>
-            <div class="nota">Universaliza la tesis fuera del management. Voz narrativa presente en ambos casos.</div>
-            <p class="line">Cualquier hospital serio, en cualquier parte del mundo, mide con obsesión una cosa aparentemente simple: si el personal médico se lava las manos antes de tocar a cada paciente. No por cortesía. Porque no hacerlo mata gente, literal, por infecciones que se transmiten de una cama a otra en las manos de quien las atiende.</p>
+            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">Qué hacer con esto el lunes</span><span class="segment-time">35:00 – 39:00</span></div>
+            <div class="nota">Sin fórmula de conteo. Entra directo a la primera herramienta, sin anunciar cuántas son.</div>
+
+            <p class="line">Entonces qué hace uno con todo esto, sin torre de vigilancia y sin presupuesto nuevo.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Y para medirlo, los hospitales usan dos métodos distintos, casi como si hubieran diseñado, sin querer, el experimento perfecto para probar el efecto Hawthorne con datos modernos y limpios: observadores que se anuncian, con chaleco y tablilla, parados junto a la puerta —y observadores encubiertos, que se mezclan con el personal sin que nadie sepa que están evaluando nada.</p>
+
+            <div class="sub">Empiece por medir su propia brecha</div>
+            <p class="line">Si el único momento en que usted mira el trabajo de su gente es cuando ellos saben que los está mirando, no está midiendo su operación real: está midiendo el mejor comportamiento posible de su equipo, no el más frecuente.</p>
+            <p class="line">Complemente esa revisión anunciada con una mirada al azar, sin previo aviso, y compare las dos cifras. Esa diferencia es su propia versión del fenómeno, medida con sus datos y no con un estudio de hace un siglo. Y no necesita un sistema nuevo: basta con etiquetar, durante un mes, cuáles revisiones fueron avisadas y cuáles no.</p>
+            <p class="line">Si la brecha es grande, ya sabe que su indicador oficial está más cerca de un techo aspiracional que de un promedio real.</p>
+            <p class="line">Y no haga esto a escondidas. Dígale al equipo qué va a hacer y para qué. La gracia no es cazar a nadie: es tener por fin un número que le sirva para decidir. Si lo hace en secreto y se sabe —y se va a saber— acaba de convertir su operación en el segundo cuarto de la fábrica.</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="sub">Después, la pregunta que incomoda</div>
+            <p class="line">Acuérdese de los dos cuartos. Misma observación, resultados opuestos, y la diferencia estuvo en lo que cada grupo creyó que significaba que los estuvieran mirando.</p>
+            <p class="line">Así que antes de instalar más monitoreo, pregúntese honestamente cuál de los dos cuartos tiene usted hoy. ¿Su gente cree que usted revisa para ayudarlos a mejorar, o cree que revisa para tener con qué? Si la respuesta lo incomoda, ese es el problema que hay que resolver primero, antes de revisarle el trabajo a una sola persona más.</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="sub">Y busque su bogey</div>
+            <p class="line">Revise si hay un techo informal en su equipo: un número que casi nadie supera aunque superarlo convenga. Si lo encuentra, no lo castigue de frente. Pregunte, en privado y sin buscar culpables, por qué existe esa cuota tácita.</p>
+            <p class="line">Casi siempre hay una razón real detrás —desconfianza en cómo se usan los datos, miedo a que le suban la meta a todos si alguien se destaca— y esa razón vale más que cualquier número del tablero. Y resista la tentación de subir la meta apenas descubra el techo. Subirla sin tocar la desconfianza que lo sostiene solo le enseña al equipo a esconder mejor el bogey la próxima vez.</p>
             <span class="pausa larga">PAUSA LARGA</span>
-            <div class="dato"><div class="dato-label">Dato · la brecha que sí es real (verificado)</div>En estudios hospitalarios recientes, el cumplimiento de lavado de manos con observador visible ronda el 78 al 87 por ciento. El mismo personal, en el mismo hospital, evaluado por observadores encubiertos que nadie identifica como tales, cae hasta el 45 al 55 por ciento. La brecha, además, no es pareja: es casi tres veces más grande en enfermería que en personal médico, y mucho más marcada en consulta externa que en cuidados intensivos, donde ya existe una cultura de higiene más internalizada.</div>
+            <div class="sub">Y una última, que va contra mí mismo</div>
+            <p class="line">Apliquele a este episodio la misma desconfianza con la que lo abrimos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Yo le acabo de contar que el estudio más famoso del management estaba mucho más flojo de lo que nos dijeron. Y después le pedí que se creyera dos casos, unas cifras de hospital y una historia de 1785. Todo eso está en las fuentes, todo está verificado, y aun así el ejercicio honesto es el mismo: ¿qué tan fuerte es la evidencia de lo que yo le acabo de vender?</p>
+            <p class="line">Porque el problema nunca fue Hawthorne. El problema es la comodidad de repetir algo que suena bien sin haber ido nunca a mirar los números. Y eso lo hacemos con los estudios, sí, pero también lo hacemos con el informe de calidad del mes pasado, con lo que «siempre ha funcionado» en la operación, y con lo que nos contó el que estaba en el puesto antes que nosotros.</p>
+            <p class="line">Y le voy a ser franco: yo no le estoy pidiendo que dude de todo, porque eso es igual de cómodo y no lleva a ninguna parte. Le estoy pidiendo que escoja uno. Un solo número, de los que usted presenta con más seguridad, y que se siente esta semana a mirar cómo se construye. De dónde sale la muestra, quién sabía que lo estaban midiendo, y desde cuándo nadie lo revisa.</p>
+            <div class="remate">Desconfiar del dato favorito es más útil que conseguir uno nuevo.</div>
             <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Lean ese número otra vez: la misma persona, el mismo día, el mismo protocolo escrito en la pared, se lava las manos casi el doble de veces cuando sabe que alguien con tablilla la está mirando. Eso no es un mito de los años veinte mal contado. Es un hallazgo replicado, con metodología seria, en hospitales de varios países, hasta hace pocos años.</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">Y hay un detalle todavía más fino en esos estudios, que conecta directo con lo que pasó en el cuarto de cableado de bancos: la brecha entre observado y no observado no es igual para todo el mundo. Es casi tres veces más grande en el personal de enfermería que en los médicos, y muchísimo más marcada en consulta externa —donde el equipo cambia todo el tiempo y nadie se conoce bien— que en cuidados intensivos, donde la rutina y la cercanía del equipo ya volvieron el lavado de manos casi un reflejo, sin necesitar tablilla de por medio.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Dicho de otra forma: entre más fuerte la cultura interna de un equipo, menos depende su comportamiento de que alguien externo lo esté mirando. Otra vez la misma variable del cuarto de relés contra el cuarto de cableado, pero ahora con datos de hospital, replicados, publicados, y verificados —no con la leyenda de una fábrica de hace cien años.</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">El efecto Hawthorne, el de verdad, el que sobrevive a la lupa moderna, no nació completamente en Chicago en 1924. Nació, en realidad, ciento cuarenta años antes, en la cabeza de un filósofo inglés que nunca puso un pie en una fábrica de teléfonos ni en un hospital.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Inglaterra, 1785. Jeremy Bentham, filósofo y reformador legal, le escribe una carta a su hermano Samuel desde Krichev, en el imperio ruso, describiendo una idea para una cárcel perfecta. La llama el panóptico: un edificio circular, con las celdas de los prisioneros pegadas a la pared exterior, y una torre de vigilancia en el centro exacto.</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">El truco no está en la torre en sí. Está en un detalle de diseño casi cruel en su elegancia: los prisioneros pueden ver la torre, pero nunca pueden ver si hay alguien adentro mirándolos en ese momento exacto. Físicamente, es imposible que un solo guardia vigile a todos los presos a la vez. Pero como ningún preso puede saber cuándo le toca a él, la única apuesta segura es comportarse todo el tiempo como si lo estuvieran mirando siempre.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Bentham no necesitó ninguna fábrica ni ningún economista con hoja de cálculo para llegar a la misma conclusión que Hawthorne tropezaría a ciegas siglo y medio después: no hace falta observar a alguien todo el tiempo para cambiar su comportamiento todo el tiempo. Solo hace falta que esa persona no pueda estar segura de cuándo NO la están observando.</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">El panóptico de Bentham, como edificio, nunca se construyó exactamente como él lo imaginó en Inglaterra —pero la idea se le escapó de las manos y terminó inspirando cárceles reales en medio mundo, algunas todavía en pie hoy como museo, con esa misma torre central y esas mismas celdas alrededor. La arquitectura cambió de país. La lógica de fondo —que no saber cuándo lo observan a uno lo vuelve más disciplinado que sabiendo con certeza— sigue siendo, literal, el mismo principio detrás de por qué un letrero de "esta llamada puede ser grabada" cambia el tono de alguien antes de que la grabación siquiera empiece.</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">Y con Bentham, con el hospital, con Julián y su agente, ya tienen las tres piezas completas del rompecabezas. Falta la parte que de verdad importa esta semana: qué hacer con todo esto el lunes, sin necesitar ni una torre de vigilancia ni un presupuesto nuevo.</p>
         </div>
 
-        <!-- SEGMENTO 7 — APLICABLE HOY -->
+        <!-- 7 -->
         <div class="segment">
-            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Aplicable Hoy</span><span class="segment-time">32:00 – 35:30</span></div>
-            <div class="nota">Tres herramientas concretas, casi sin presupuesto, para esta semana.</div>
-            <p class="line">Tres cosas concretas, esta semana, sin pedirle un peso nuevo a nadie.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
+            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Cierre canónico + Teaser EP.024</span><span class="segment-time">39:00 – 41:30</span></div>
 
-            <div class="sub">Uno — mida lo que nadie sabe que está midiendo</div>
-            <p class="line">Si el único momento en que usted mira el trabajo de su gente es cuando ellos saben que los está mirando, no está midiendo su operación real: está midiendo el mejor comportamiento posible de su equipo, no el más frecuente. Y esto toma una forma distinta en cada empresa, pero es siempre el mismo animal: la llamada que el analista de calidad avisa que va a escuchar, el día que el gerente de zona anuncia que visita la tienda, la ruta que el vendedor hace sabiendo que su jefe va de copiloto, el código que el desarrollador entrega sabiendo que alguien lo va a leer con lupa. Complemente esa observación anunciada con una mirada al azar, sin previo aviso —y compare las dos cifras. Esa diferencia, el "gap Hawthorne" de su propia operación, es un dato más honesto que cualquiera de las dos por separado.</p>
-            <p class="line">No hace falta un sistema nuevo para calcularlo. Basta con etiquetar, durante un mes, cuáles revisiones fueron avisadas y cuáles no, y comparar el promedio entre los dos grupos. Si la brecha es grande, ya sabe que su número oficial de calidad está más cerca de un techo aspiracional que de un promedio real —construido, como vimos, sobre la fracción mínima del trabajo que a usted le alcanza el tiempo de revisar. En los centros de contacto esa fracción está documentada entre el uno y el cinco por ciento de las llamadas. La pregunta incómoda es cuál es la suya, y si alguna vez se ha sentado a calcularla.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-
-            <div class="sub">Dos — pregúntese para qué cree su equipo que los están observando</div>
-            <p class="line">El cuarto de relés y el cuarto de cableado tenían el mismo nivel de observación y resultados opuestos. La diferencia estuvo en la confianza: un grupo creía que la atención era para ayudarlos, el otro creía que era para atraparlos. Antes de instalar más monitoreo, pregúntese honestamente cuál de los dos cuartos es el que tiene hoy en su equipo —y si la respuesta lo incomoda, ese es exactamente el problema que hay que resolver primero, antes de revisarle el trabajo a una sola persona más.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-
-            <div class="sub">Tres — busque su propio "bogey"</div>
-            <p class="line">Revise si hay un techo informal de desempeño en su equipo —un número que casi nadie supera, aunque el sistema de incentivos premie hacerlo. Puede ser una norma no escrita de "no hay que quedar mal con el resto del turno". Si lo encuentra, no lo castigue de frente: pregúntele al equipo, en privado y sin buscar culpables, por qué existe esa cuota tácita. Casi siempre hay una razón real detrás —desconfianza en cómo se usan los datos, miedo a que suban la meta para todos si alguien se destaca— y esa razón es más valiosa que cualquier número del tablero.</p>
-            <p class="line">Y si encuentra ese techo, resista la tentación de subir la meta de golpe apenas lo descubra. Primero arregle la desconfianza que lo sostiene. Subir la meta sin tocar esa desconfianza solo enseña al equipo a esconder mejor su propio bogey la próxima vez.</p>
+            <div class="sub">Pregunta comentable</div>
+            <p class="line">Le dejo una pregunta, y le pido que se la responda de verdad antes de responderla en voz alta: ¿cuál fue la última decisión importante que usted tomó basado en un número que solo existe cuando alguien sabe que lo están mirando?</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">Ninguna de las tres cuesta un peso extra de verdad. Cuestan, las tres, la misma incomodidad: aceptar que su tablero de calidad podría estar midiendo, con total precisión, algo que no es lo que ustedes creen que está midiendo.</p>
-        </div>
 
-        <!-- SEGMENTO 8 — RECOMENDACIONES -->
-        <div class="segment">
-            <div class="segment-header"><span class="segment-number">8</span><span class="segment-title">Recomendaciones de Andy</span><span class="segment-time">35:30 – 38:30</span></div>
-            <div class="nota">Sin referente pop que diversificar — mezclar medios igual: libro, charla, película.</div>
-            <p class="line">Si este episodio los dejó pensando, tres cosas para seguir la conversación.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-
-            <div class="sub">Uno — el libro: "The Human Problems of an Industrial Civilization", de Elton Mayo (1933)</div>
-            <p class="line">Es el libro que el propio Mayo escribió después de los estudios de Hawthorne, publicado por Harvard. Aviso honesto: es texto académico de los años treinta, no un bestseller de aeropuerto —pero es la fuente original, de primera mano, antes de que varias generaciones de libros de management la fueran simplificando hasta la versión que la mayoría conoce hoy.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-
-            <div class="sub">Dos — la charla: "Your Body Language May Shape Who You Are", Amy Cuddy, TED 2012</div>
-            <p class="line">Es una de las charlas más vistas en la historia de TED —más de treinta y nueve millones de reproducciones. Y tiene, sin que Cuddy lo planeara, un paralelo casi perfecto con lo que hablamos hoy: años después de volverse viral, varios intentos serios de repetir su experimento no lograron los mismos resultados, y hasta TED terminó agregándole una nota de "esto está en debate científico" al video original, y cambiándole el título de "tu postura moldea quién eres" a "tu postura podría moldear cómo te sientes". Véanla, pero véanla también como ejercicio: ¿qué tan fácil es enamorarse de una historia de investigación bien contada, antes de preguntar si los datos aguantan una segunda mirada?</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-
-            <div class="sub">Tres — la película: "The Truman Show" (1998)</div>
-            <p class="line">Con Jim Carrey, dirigida por Peter Weir. Un hombre vive toda su vida sin saber que es la estrella de un reality show transmitido las veinticuatro horas, con cámaras escondidas en cada rincón de su ciudad. Nadie le avisó nunca que lo estaban observando —y esa es, exactamente, la diferencia con el panóptico de Bentham: a Truman no le hacía falta sospechar que lo vigilaban, porque ni siquiera sabía que existía la posibilidad.</p>
-            <p class="line">Véanla pensando menos en el giro final de la trama, y más en la pregunta incómoda que deja flotando: ¿cuánto de lo que ustedes consideran "su forma de ser en el trabajo" es en realidad la versión que actúan sabiendo, aunque sea a medias, que alguien los puede estar mirando?</p>
-        </div>
-
-        <!-- SEGMENTO 9 — CIERRE + TEASER -->
-        <div class="segment">
-            <div class="segment-header"><span class="segment-number">9</span><span class="segment-title">Cierre canónico + Teaser EP.024</span><span class="segment-time">38:30 – 41:30</span></div>
-            <div class="nota">Segundo y último REMATE del episodio, después del de Cuerpo 2 — este cierre no lleva remate nuevo, solo la firma. Teaser EP.024 genérico — tema aún no definido tras el giro a 100% pilar SEO.</div>
-            <p class="line">Antes de irme, la pregunta del episodio. Y quiero que la piensen con un número concreto en la cabeza, no en abstracto.</p>
+            <div class="sub">CTAs</div>
+            <p class="line">Escríbanlo en los comentarios del episodio, ahí mismo en Spotify. Los leo todos, y los del episodio pasado estuvieron particularmente buenos.</p>
+            <p class="line">Y si esto le hizo pensar en alguien —en ese jefe, en ese compañero, en usted mismo hace tres años— compártalo con esa persona.</p>
+            <p class="line">Estoy en LinkedIn como Andrés Bermúdez Rodríguez. Ahí seguimos la conversación durante la semana.</p>
             <span class="pausa">PAUSA</span>
-            <p class="line">¿Cuál es, en su operación, la diferencia real entre el desempeño que ven cuando avisan que van a auditar, y el que encuentran cuando no avisan? ¿Y su equipo cree, honestamente, que ese monitoreo existe para ayudarlos a mejorar, o para atraparlos el día que se equivoquen?</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">No tiene que ser un número exacto. Tiene que ser, apenas, la honestidad de admitir cuál de las dos versiones de su equipo es la que de verdad sostiene la operación la mayor parte del tiempo —la de la llamada perfecta que le mostraron una vez, o la de las cientos que nadie audita nunca.</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">No necesito que me cuenten el número ni el nombre de nadie. Necesito que se lo respondan a ustedes mismos —porque casi siempre, como con la pregunta del episodio pasado, sobre qué reporte de su operación lleva demasiado tiempo "en verde" sin que nadie lo mire de cerca, ya sabían la respuesta. Solo les faltaba que alguien se las preguntara en voz alta, otra vez.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
-            <p class="line">Escríbanlo en los comentarios del episodio, ahí mismo en Spotify. Los leo todos —y los del episodio pasado, el del costo de la mala calidad, todavía me tienen pensando en un par de historias que me contaron sobre reprocesos carísimos escondidos en un solo viernes.</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">Si este episodio les sirvió, o si conocen a alguien que lidera un equipo de calidad o de monitoreo y necesita revisar para qué está midiendo lo que mide, compártanselo. Y si quieren seguir la conversación, estoy en LinkedIn como Andrés Bermúdez Rodríguez.</p>
-            <span class="pausa">PAUSA</span>
-            <p class="line">Y una última cosa, antes del cierre de siempre: si este episodio los hizo dudar de algún otro "estudio clásico" que llevan años repitiendo en sus capacitaciones sin haberlo verificado nunca, cuéntenmelo también. Con gusto le dedico un episodio completo a desarmar el próximo mito de management bien intencionado que encontremos.</p>
-            <span class="pausa larga">PAUSA LARGA</span>
 
             <div class="sub">Teaser EP.024</div>
-            <div class="nota">[PENDIENTE DEFINIR] Tema de EP.024 sin confirmar al momento de escribir este guion, ya bajo el giro a 100% pilar SEO — NO inventar un tema todavía.</div>
-            <p class="line">La próxima semana seguimos en esta misma línea, buscando la teoría real detrás de otro problema que ya conocen de memoria en su operación —todavía no les puedo adelantar cuál, porque ni yo la tengo cerrada del todo— pero les prometo que va a valer la pena la espera.</p>
+            <div class="nota">[PENDIENTE DEFINIR] Tema de EP.024 sin confirmar. NO inventar un tema.</div>
+            <p class="line">La próxima semana seguimos igual: agarrando una idea que todo el mundo repite en las reuniones y yendo a mirar si de verdad aguanta. Todavía no le puedo decir cuál, porque ni yo la tengo cerrada. Pero si hoy le movió el piso enterarse de que el estudio más famoso del management estaba cojo, la próxima le va a gustar.</p>
             <span class="pausa">PAUSA</span>
 
-            <div class="sub">Cierre y TM canónico</div>
+            <div class="sub">Firma + TM canónico</div>
             <p class="line">Esto fue Behind the Queue, episodio veintitrés.</p>
-            <p class="line">Yo soy Andy. Y recuerden: lo que ustedes miden cuando alguien sabe que lo están mirando casi nunca es lo mismo que lo que de verdad está pasando en su operación.</p>
-            <div class="nota">JINGLE DE SALIDA — el MISMO stinger de la entrada, corto y seco. Entra después de que la firma cierra en silencio, no encima de ella. Sin fade largo ni cama musical.</div>
+            <p class="line">Yo soy Andy. Y recuerden: lo que usted mide cuando alguien sabe que lo están mirando casi nunca es lo mismo que lo que de verdad está pasando.</p>
+            <div class="nota">JINGLE DE SALIDA — el MISMO stinger de la entrada. Entra después de que la firma cierra en silencio, no encima de ella.</div>
         </div>
-
     </div>
 
-    <!-- FUENTES -->
-    <div class="section fuentes">
+    <div class="section">
         <h2>Fuentes verificadas (no leer al aire)</h2>
         <p>· <strong>Estudios de Hawthorne / Western Electric:</strong> New World Encyclopedia "Hawthorne effect"; Analytic Technologies (Informal Organizational Structure — The Hawthorne Studies); Your Article Library ("4 Phases of Hawthorne Experiments") — fases de iluminación (1924-1927), cuarto de relés (1927-1932) y cuarto de observación del cableado de bancos, dirigidas con participación de Elton Mayo, profesor de Harvard; el "bogey" o cuota tácita de producción y la presión social del grupo contra quien producía de más, documentados en el cuarto de cableado, sin efecto del incentivo económico ofrecido. · <strong>Origen del término:</strong> término "efecto Hawthorne" acuñado por Henry A. Landsberger en 1958, décadas después de los estudios originales. · <strong>Reanálisis de 2011:</strong> Levitt, Steven D. y List, John A., "Was There Really a Hawthorne Effect at the Hawthorne Plant? An Analysis of the Original Illumination Experiments", NBER Working Paper No. 15016 / American Economic Journal: Applied Economics — hallazgo de que buena parte de las variaciones de productividad atribuidas al cambio de iluminación se explican mejor por patrones de día de la semana y período de pago. · <strong>Volkswagen Dieselgate:</strong> investigación de la Universidad de West Virginia (2014) que detectó la anomalía; admisión de Volkswagen en septiembre de 2015 de instalar el software de desactivación ("defeat device") en ~11 millones de vehículos; emisiones reales de hasta 40 veces el límite legal de NOx; más de $30.000 millones de dólares en multas, acuerdos y recompras; condena de 7 años de prisión para el ejecutivo Oliver Schmidt (2017); estudio del MIT/Harvard publicado en Environmental Research Letters (2017) estimando ~60 muertes prematuras en EE.UU. y ~1.200 en Europa por las emisiones excedentes. · <strong>Auditoría de calidad en call center:</strong> benchmarks de industria (Balto.ai, Capacity) — la auditoría manual de calidad tradicionalmente cubre entre el 1 y el 5% del volumen total de llamadas. · <strong>Higiene de manos en hospitales:</strong> estudio de cumplimiento con observación abierta vs. encubierta (PubMed / BMC Infectious Diseases, cohortes hospitalarias) — cumplimiento de 78-87% con observador visible vs. 45-55% con observador encubierto; brecha (efecto Hawthorne) casi tres veces mayor en enfermería que en médicos, y mayor en consulta externa que en cuidados intensivos. · <strong>El Panóptico:</strong> Jeremy Bentham, concepto descrito en cartas desde Krichev en 1785 a su hermano Samuel Bentham; diseño de vigilancia central sin que los reclusos puedan saber cuándo están siendo observados. · <strong>Recomendaciones:</strong> "The Human Problems of an Industrial Civilization", Elton Mayo (Macmillan, 1933); "Your Body Language May Shape Who You Are", Amy Cuddy, TEDGlobal 2012, y la controversia de replicación posterior sobre el "power posing" (Carney, Cuddy y Yap, con fallas de réplica documentadas desde 2015-2016); "The Truman Show" (1998, dir. Peter Weir, con Jim Carrey).</p>
-        <p style="margin-top:10px">Notas: (1) La escena de apertura (Julián) es una composición genérica y verosímil del mundo BPO, no un caso real con nombre propio. (2) El teaser de EP.024 queda genérico a propósito porque el tema del próximo episodio no estaba confirmado al escribir este guion, ya bajo el giro a 100% pilar SEO — actualizar o regrabar ese bloque cuando se defina.</p>
+        <p style="margin-top:10px">Notas: (1) Reescrito el 2026-07-25 con esqueleto INVERTIDO: se eliminó la escena de apertura compuesta y las recomendaciones dejaron de ser un bloque. (2) El teaser de EP.024 queda genérico a propósito porque el tema del próximo episodio no estaba confirmado al escribir este guion, ya bajo el giro a 100% pilar SEO — actualizar o regrabar ese bloque cuando se defina.</p>
     </div>
 
     <footer>
-        <span class="gold">Behind the Queue</span> · EP.023 — Elton Mayo y el Efecto Hawthorne<br>
-        Production packet · guion de grabación · ~41.0 min medidos (4.542 palabras a 150 wpm + expansión) · estilo con chispa (guion-style-btq.md)
+        <span class="gold">Behind the Queue</span> · EP.023 — Efecto Hawthorne<br>
+        Production packet · guion de grabación · ~40 min medidos (esqueleto invertido, reescrito 2026-07-25) · estilo con chispa (guion-style-btq.md)
     </footer>
 
 </div>

@@ -1,68 +1,88 @@
 EPISODE: EP.023 (BTQ)
-stage_a: complete — guion aprobado 2026-07-21; título y portadas rehechos 2026-07-25 bajo el sistema v4.
+stage_a: complete — reescrito y verificado 2026-07-25. Listo para grabar.
 stage_b: pending — requiere la grabación. Las quote cards se componen aquí, contra la TRANSCRIPCIÓN real, nunca contra el guion.
 stage_c: pending
 spotify_url: pending
 
-TITULO FIJADO (2026-07-25, decisión de Andy):
-  EP.23 — Efecto Hawthorne: por qué su equipo rinde distinto cuando lo miran
-  73 caracteres. Este string va IDÉNTICO en portada, Spotify y YouTube.
-  Gana el término buscable sobre el teórico (Elton Mayo) porque el modelo
-  aprobado no es "el teórico a secas" sino [tipo] de [nombre propio] — igual
-  que `Ley de Goodhart`. Precedente en guion-style-btq.md § Título.
+## Título — FIJADO 2026-07-25 (decisión de Andy)
 
-ARTWORK — REHECHO 2026-07-25. Tipografía pura, sin ComfyUI.
-  Generador: comfyui/templates/portada-ep-compose.py (determinista, PIL).
-  Salidas en E:\AI\outputs\BTQ-EP023\ — COVER-1x1 / 16x9 / 9x16 + jpg + 300/96.
-  Gate: `python scripts/verify_assets.py EP023 --root E:\AI\outputs\BTQ-EP023
-  --show btq --stage-a` → PASS en los 3 aspect ratios, negro de marca OK.
-  Los tres inspeccionados visualmente. El 9:16 se ve sparse (es inherente a la
-  tipografía pura en un lienzo tan alto); pendiente el juicio de Andy.
+```
+EP.23 — Efecto Hawthorne: por qué su equipo rinde distinto cuando lo miran
+```
 
-  ⚠️ MUERTO — no revivir: el concepto v3 (foco incandescente vintage + headset +
-  waveform dorado, test E:\AI\outputs\BTQ-EP023-bulb-v1_00001_.png) murió con el
-  giro a tipografía pura del 2026-07-25. También muere el archivo de prompts
-  `launch-assets/EP023-hawthorne-artwork-v3.md`. El oro ya no es color de marca.
+73 caracteres. Va IDÉNTICO en portada, Spotify y YouTube. Gana el término buscable sobre
+el teórico (Elton Mayo) porque el modelo aprobado no es «el teórico a secas» sino
+*[tipo] de [nombre propio]* — igual que `Ley de Goodhart`. Precedente en
+`guion-style-btq.md` § Título.
 
-CONTENIDO (sin cambios desde 2026-07-21): efecto Hawthorne (Elton Mayo, fábrica
-Hawthorne de Western Electric, 1920s-30s), pilar SEO sin referente pop. 2 casos
-nombrados que escalan (fábrica Hawthorne → Volkswagen Dieselgate: 11M autos,
-$30.000M en multas, 7 años de cárcel, ~1.260 muertes prematuras estimadas por
-MIT/Harvard) + dato duro de industria (1-5% de llamadas auditadas manualmente).
-Giro al 60%: reanálisis 2011 de Levitt & List sobre los datos originales.
-~41.0 min medidos, 4.542 palabras.
+## Guion — REESCRITO 2026-07-25, esqueleto INVERTIDO
 
-LINTS CORRIDOS 2026-07-25 sobre el guion:
-  - Español neutro: 0 hallazgos en las 5 categorías (anclado a un país, doble
-    sentido, cola+adjetivo, voseo, tuteo). Limpio.
-  - "Andy" en 3ª persona: 7 apariciones, TODAS en metadata/etiquetas de sección
-    (permitido). Ninguna en línea hablada.
-  - "imagínense": 1 real (presupuesto: máx 1). OK.
+**Motivo.** EP.020/021/022/023 salieron con el MISMO esqueleto de 9 segmentos. Andy:
+«ya en 3 episodios con los mismos chistes pedorros tampoco» y «las recomendaciones se
+pueden tornar como el aviso de cierre y no se termine de consumir el episodio».
 
-PASADA DE ALCANCE MACRO — HECHA 2026-07-25 (criterio "quirúrgico", elegido por Andy):
-  Tocado solo el Segmento 7 (Aplicable Hoy), 3 párrafos. La escena de apertura
-  (Julián, analista de calidad, escuchando una llamada) se CONSERVA a propósito:
-  la regla 9 de chispa exige escena vívida sobre abstracción, y generalizarla
-  habría producido el modo "tieso" que el Diagnóstico de la guía ataca.
-  - La herramienta 1 pasa de "auditar llamadas" a nombrar cuatro formas del mismo
-    animal: la llamada anunciada, la visita del gerente de zona a la tienda, el
-    jefe de copiloto en la ruta del vendedor, el código que se entrega sabiendo
-    que lo van a leer con lupa.
-  - El dato duro de industria (1-5% de llamadas auditadas) se conserva —el ADN de
-    pilar SEO lo exige— pero pasa a ser ejemplo y termina en pregunta abierta a
-    cualquier industria, no en cierre de call center.
-  - "antes de auditar una sola llamada más" → "antes de revisarle el trabajo a una
-    sola persona más".
+- **Abre con el desmentido** de Levitt & List (2011), que antes estaba enterrado en el
+  segmento 5 como «re-enganche». El mejor material del episodio dejó de ser relleno
+  estructural y pasó a ser la premisa.
+- **ELIMINADA la escena de apertura compuesta** («Julián, analista de calidad»).
+  Contradecía en el primer minuto la promesa del show —«casos documentados, cifras
+  verificables»—. La sustituye el reconocimiento del fenómeno con señales operativas
+  reales, verificables en el tablero del propio oyente.
+- **Recomendaciones TEJIDAS, sin bloque:** Cuddy en el segmento 1 (su «power posing»
+  tuvo la misma crisis de replicación), el libro de Mayo en el 3, The Truman Show en el 5.
+- Segmentos nombrados por su contenido; cero `Cuerpo N`, cero `Re-enganche`.
+- Remates recortados de 10 a 4 (regla 2 de chispa: máx 3-4).
+- **Cierre autoconsciente nuevo:** el episodio se aplica a sí mismo la desconfianza con
+  la que abre. Amarra el esqueleto invertido.
 
-  ⚠️ CORRECCIÓN de medición: el "~36 menciones de call center" que se reportó antes
-  se midió sobre el HTML COMPLETO (notas, tabla de arquitectura, metadata), no
-  sobre las líneas habladas. Medido solo sobre `<p class="line">`: call center 0,
-  BPO 0. El anclaje real y único era la escena de apertura. Medir el guion
-  hablado SIEMPRE contra `<p class="line">`, nunca contra el archivo entero.
+**Contenido y fuentes:** sin cambios de fondo — efecto Hawthorne (Hawthorne Works de
+Western Electric, iluminación 1924-27, cuarto de relés 1927-32, cuarto de cableado y el
+«bogey»), término acuñado por Landsberger en 1958, reanálisis de Levitt & List (2011),
+Volkswagen Dieselgate, panóptico de Bentham (1785), higiene de manos observada vs
+encubierta. Todo en el bloque «Fuentes verificadas» del propio guion. La reescritura
+**incorporó cifras que ya estaban verificadas pero se estaban usando en vago**: 40× el
+límite de NOx, ~60 muertes prematuras en EE.UU. además de las ~1.200 en Europa, y el
+78-87% vs 45-55% del lavado de manos.
 
-  Estado tras la pasada (solo líneas habladas): 4.362 palabras · call center 0 ·
-  BPO 0 · centros de contacto 1 · agente 9 y llamadas 10 (la escena de apertura,
-  conservada) · equipo 14 · operación 11 · empresa 2 · tienda/vendedor/
-  desarrollador 1 c/u. Lints de español neutro: 0 en las 4 categorías.
+**LINTS — todos corridos DESPUÉS de la reescritura:**
 
-Grabación pendiente de agendar con Andy.
+| | |
+|---|---|
+| `lint_guion_repeticion.py` | **PASS** — cero 6-gramas compartidos (antes: FAIL con 28) |
+| Español neutro | 0 en las 5 categorías · tuteo 0 |
+| Muletillas | `imagínense` 0 · disclaimer de cajón 0 · «Andy» 3ª persona solo en la firma |
+| Cierre canónico | las 7 piezas presentes |
+| Duración | 4.425 palabras escritas → **40,0 min** (rango 40-45) |
+| Alcance | call center 0 · BPO 0 · equipo 8 · operación 7 · empresa 4 |
+
+**Artifact para revisión:** https://claude.ai/code/artifact/96f22190-affa-4f54-854c-5e05135ba1e4
+
+## Artwork — REHECHO 2026-07-25, tipografía pura
+
+Generador: `comfyui/templates/portada-ep-compose.py` (determinista con PIL, sin ComfyUI).
+Salidas en `E:\AI\outputs\BTQ-EP023\` — COVER-1x1 / 16x9 / 9x16 + jpg + contrapruebas
+300/96.
+
+```
+python scripts/verify_assets.py EP023 --root E:\AI\outputs\BTQ-EP023 --show btq --stage-a
+   → PASS en los 3 aspect ratios, negro de marca OK
+```
+
+Los tres inspeccionados visualmente. El 9:16 se ve sparse —inherente a la tipografía pura
+en un lienzo tan alto—; pendiente el juicio de Andy.
+
+> ⚠️ **MUERTO, no revivir:** el concepto v3 (foco incandescente vintage + headset +
+> waveform dorado, test `E:\AI\outputs\BTQ-EP023-bulb-v1_00001_.png`) murió con el giro a
+> tipografía pura. También muere `launch-assets/EP023-hawthorne-artwork-v3.md`.
+> El oro ya no es color de marca.
+
+## Audio
+
+Se retiró la música de intro/outro: va un jingle corto, el mismo al abrir y al cerrar
+(`btq-production/jingle-brief.md`). **No bloquea la grabación** — se monta en post.
+Andy debe dejar 3 s de silencio en cabeza y cola, y grabar 30 s de room tone.
+
+## Pendiente
+
+- Grabación (Andy).
+- Tema de EP.024 sin definir: el teaser del cierre queda genérico a propósito.
