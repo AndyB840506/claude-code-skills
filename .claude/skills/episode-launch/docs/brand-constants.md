@@ -2,262 +2,181 @@
 
 | Element | Value |
 |---------|-------|
-| Background | Void Black `#0A0A0A` |
-| Accent | Signal Gold `#C9A84C` |
-| Off-white | `#F5F2EC` |
-| Headline font | Playfair Display |
-| Body | DM Sans |
-| Accent | Bebas Neue |
+| Void (fondo base) | `#0E1113` — **nunca** negro puro `#000000` |
+| Panel | `#22262A` — cara alta del degradado, sensación de chapa |
+| Acero | `#39434A` — tono medio: reglas, marcos, barras apagadas |
+| Cream | `#F4EFE7` — wordmark y títulos |
+| Señal | `#FF3D00` — **un solo elemento por imagen** |
+| Muted | `#8B9492` — etiquetas mono, metadatos |
+| Display | Cabinet Grotesk Extrabold |
+| Cuerpo | Supreme (Regular / Medium / Bold) |
+| Datos / mono | Martian Mono |
 | Headsets | Contact center boom mic — NEVER music headphones |
-| Spotify category | Society & Culture |
+| Spotify category | Business → Management (secundaria: Business → Careers) |
+| Kicker de marca | `OPERACIÓN · CALIDAD · LIDERAZGO` |
 | Primary language | Spanish |
 | Core audience | Hombre 35–44, supervisor/gerente BPO — Colombia 70% + EE.UU. 20% (analytics 2026-06-12) |
-| Nostalgia era | Referentes y estética 80s/90s — la adolescencia de la audiencia núcleo |
 | Priority platform | LinkedIn (profesional 35–44; 15% escucha en desktop en el trabajo) |
+
+**Relación con andyfreelancer:** Void, Cream, Señal y Muted se toman **exactos** del sistema de
+`the-freelancer/one-pager/index.html` para que las dos marcas de Andy se lean como familia.
+El **Acero** es propio de BTQ y es el diferenciador — andyfreelancer no tiene tono medio. Si el
+acero desaparece de una composición, la imagen cae en el cliché de «negro con un acento» y hay
+que rehacerla.
 
 ---
 
-## Dirección de artwork (CONGELADA v3 — 2026-07-04 — restaurada de EP.10 Kratos)
+## Dirección de artwork v4 — "Sala de Máquinas" (2026-07-25)
 
-> **Historial:** la dirección original de EP.10 (Kratos/God of War) tenía más capas de
-> diseño de las que sobrevivieron — postura narrativa (de espaldas, reflexionando, no de
-> frente a cámara), una SEGUNDA figura a otra escala para crear relación, un símbolo
-> watermark del universo del referente, y una tipografía en capas (5 puntos + wordmark +
-> "BTQ"). Esa riqueza se perdió cuando se "congeló" v1 el 2026-06-12 (EP.017-019: figura
-> única, de frente, parada, en humo dorado) — el usuario lo calificó de genérico. Se probó
-> v2 (cómic pulp ilustrado, 2026-07-04) y tampoco convenció. **v3 restaura la fórmula de
-> EP.10 como el estándar oficial** — no es una idea nueva, es recuperar lo que ya
-> funcionaba antes de simplificarse de más.
+> **Reemplaza a v3, que queda descongelada y archivada** (ver §Histórico al final). v3 giraba
+> alrededor de una regla que dejó de ser aplicable el 2026-07-21, cuando BTQ pasó a 100% pilar
+> SEO: *«patrón geométrico del universo del referente»*. Sin cultura pop no hay referente, y la
+> dirección se quedó sin su pieza central.
 
-**BTQ = imagen editorial cinemática, render con volumen (no silueta plana) + patrón
-geométrico watermark del universo del referente.** Lo que define el estilo es la TEXTURA
-del render — figuras con volumen y material real (músculo, armadura, tela), sombreadas en
-tonos oscuros con luz dorada ambiental/de contorno, como una estatua oscura iluminada desde
-atrás — no un recorte plano de silueta lisa (esa era la falla de v1). El número de figuras
-NO es una regla fija: una sola figura protagonista está perfecto si la historia es de un
-solo personaje; una segunda figura a otra escala se usa SOLO cuando la relación (maestro/
-aprendiz, líder/sucesor) es parte central de la historia de ese episodio — no forzarla si
-no aplica.
+**BTQ = el piso de operación como cuarto de máquinas.** Grafito y acero como mundo, luz plana de
+taller, y **una sola luz de señal encendida** — el naranja que en una planta significa «mire
+esto». Un objeto por episodio, nunca un collage.
 
-Bloques que se copian VERBATIM en todo prompt de portada (cambian el sujeto, si aplica una
-segunda figura, el patrón geométrico y el título):
+### Reglas de la dirección
 
-**[BLOQUE CONGELADO — ATMÓSFERA BTQ v3]**
+1. **Un objeto literal del contenido del episodio**, renderizado con volumen y textura de
+   material real (metal, vidrio, baquelita, tela). Nada de personas genéricas. Si una persona es
+   indispensable para la escena del hook, **declarar rasgos étnicos explícitos en el prompt** —
+   Z-Image Turbo por defecto genera un hombre de rasgos asiáticos sin importar el contexto
+   (confirmado 2 veces, 2026-07-21; ver `comfyui/docs/prompting.md`).
+2. **Luz plana, cenital, de taller.** El volumen viene del material, no de un halo. *No* usar el
+   glow dorado de contorno «como estatua iluminada desde atrás» — eso era v3 y se retiró con el oro.
+3. **Un solo elemento en `#FF3D00` por imagen.** Dos acentos matan el efecto de señal.
+4. **Fondo: rejilla fina de líneas verticales** tipo panel, en `#1F2428` sobre el degradado. Marca
+   de agua, nunca compite con el objeto.
+5. **Círculos concéntricos, anillos, halos y dianas: VETADOS** en portadas Y quote cards
+   (decisión de Andy 2026-07-10, EP.021). Única excepción: cuando la diana **es** el sujeto central
+   de la escena. La línea va en **todo** prompt desde el primer intento:
+   `DO NOT render any concentric ring, circle, halo, or archery-target pattern anywhere in this image.`
+   **Pueden colarse disfrazados de textura** — en EP.022 una tela salió cubierta de mini-círculos,
+   invisible a tamaño completo y detectada solo al hacer zoom a una esquina. Verificar con zoom a
+   las esquinas, no en la vista general.
+6. **Cero IP de terceros** en la portada del show: sables, escudos, prismas, logos ajenos. La
+   portada 2026 los tenía y es parte de lo que se está corrigiendo.
+7. **Sin proporciones chibi. Sin estilo cartoon. Sin circuit boards.**
+
+### Bloque de escena (copiar verbatim, cambia solo el objeto)
+
 ```
-Dark cinematic editorial image, rendered with real volume and material
-texture (muscle, armor, fabric) — NOT a flat silhouette cutout. Void
-black background #0A0A0A.
+Dark industrial editorial image, rendered with real volume and material
+texture (steel, glass, bakelite, worn enamel) — NOT a flat silhouette
+cutout, NOT a glossy 3D render. Background #0E1113, graphite panel tone
+#22262A.
 
-Center composition: dramatic figure of [FIGURA PRINCIPAL], seen from
-behind or at an angle — [describir la postura/acción concreta del
-personaje]. Dark, moody shading with warm golden #C9A84C rim light and
-ambient glow outlining the figure, like a dark statue lit from behind.
+Center composition: [OBJETO LITERAL DEL EPISODIO], shot straight on,
+lit by flat overhead workshop light. Cool steel greys, matte surfaces,
+honest wear. Exactly ONE element glows in signal orange #FF3D00 —
+[cuál elemento]. No other warm light anywhere.
 
-[SI APLICA — solo cuando la relación es parte central de la historia:
-to one side, smaller in scale, a second figure of [FIGURA SECUNDARIA]
-— creating a size contrast that tells a relationship.]
-
-Background: a geometric pattern drawn from the referent's own
-culture/era (e.g. Greek key / meander for Ancient Greece), rendered in
-thin gold #C9A84C line art — subtle, like an engraved watermark, not
-competing with the figure.
+Background: a fine vertical line grid, like the ventilation slots of an
+equipment panel, in #1F2428 — subtle, engraved, never competing with
+the object.
 
 DO NOT render any concentric ring, circle, halo, or archery-target
 pattern anywhere in this image.
 
-No circuit boards. No cartoon style. Cinematic.
+No circuit boards. No cartoon style. No golden rim light. No text.
 ```
 
-**[BLOQUE CONGELADO — TIPOGRAFÍA + FOOTER BTQ v3]**
+**El modelo NO escribe texto.** La escena se genera limpia; wordmark, kicker, título y `EP.NN`
+se componen después con PIL.
+
+### Tipografía y footer (composición PIL)
+
 ```
-Typography:
-- Top center: five small gold #C9A84C dots
-- "BEHIND THE QUEUE" — ultra bold white condensed sans-serif, large
-- "BTQ" — small gold below
+Arriba, alineado a la izquierda, margen 6.2% del lado:
+- "BEHIND" / "THE QUEUE"  — Cabinet Grotesk Extrabold, cream, 10.8% del lado, dos líneas
+- regla de acero de lado a lado
+- "OPERACIÓN · CALIDAD · LIDERAZGO" — Martian Mono Regular, muted, 1.75%
 
-Below silhouettes:
-"[Título del episodio: referente + gancho de liderazgo]"
-White text, bold
-
-Footer black bar at bottom:
-- Left: "Behind the Queue" white
-- CENTER: "EP.0XX" gold #C9A84C — prominent
-- Right two rows:
-  Row 1: Facebook icon, Instagram icon, TikTok icon
-  Row 2: Spotify icon, Apple Podcast icon, Amazon Music icon
-
-Do NOT place any text in the bottom-right corner.
-Format: square 3000x3000px.
+Abajo:
+- regla de acero
+- Título del episodio — Supreme Medium, cream, 3.35%, máximo 2 líneas
+- "EP.NN" — Martian Mono Regular, señal #FF3D00, 3.0%, alineado a la derecha
 ```
 
-**Regla de rostros:** el rostro puede verse parcialmente si la postura lo expone (de
-perfil, de espaldas mostrando poco), pero no es el foco — el énfasis está en el volumen del
-cuerpo/armadura y el rim light, no en el detalle facial. Persona real → mantenerlo de
-espaldas/en sombra por likeness; ficticio → hay más libertad, pero seguir sin buscar el
-primer plano de cara.
+**Anclar la regla superior al píxel de tinta más bajo del wordmark** (`font.getbbox(linea)[3]`),
+no al avance de línea: la cola de la Q de QUEUE cruza la regla si se calcula por interlineado
+(detectado al renderizar, 2026-07-25).
 
-**Reglas de la dirección:**
-1. **Número de figuras según la historia, no una regla fija.** Una sola figura protagonista
-   es válida por defecto; sumar una segunda a otra escala SOLO si la relación (maestro/
-   aprendiz, líder/sucesor) es parte central de la historia de ese episodio específico —
-   no inventar un segundo personaje que no viene al caso.
-1b. **Episodios pilar SEO (sin referente pop): preferir un objeto/símbolo literal del
-   contenido en vez de una persona genérica** (patrón confirmado 3/3 — EP.020: diana de
-   tiro al blanco, EP.022: checklist con una casilla vacía, EP.023: foco incandescente
-   vintage + headset). Ventajas sobre usar una persona sin referente conocido: evita el
-   sesgo de etnia por defecto del modelo local (ver `comfyui/docs/prompting.md`, bit
-   2026-07-21) y ancla la imagen directo al contenido del capítulo en vez de a una escena
-   genérica de oficina. Si una persona SÍ es necesaria (ej. la escena del hook necesita un
-   protagonista), declarar rasgos étnicos explícitos en el prompt — nunca dejarlo implícito.
-2. **Render con volumen y textura de material, nunca silueta plana.** Músculo, armadura,
-   tela con sombreado real + luz dorada de contorno — como una estatua oscura iluminada
-   desde atrás, no un recorte negro liso (esa era la falla de v1).
-3. **Fondo: SOLO el patrón geométrico del universo del referente** (greca griega para
-   Kratos; para otro referente, el patrón equivalente de esa cultura/época — un mosaico
-   romano, scan-lines de TV analógica, un patrón art-deco de los 80s, etc.) en línea fina,
-   tipo marca de agua, sin competir con la figura ni el texto. **Los círculos concéntricos/
-   anillos/diana están VETADOS en todas las imágenes — portadas Y quote cards (decisión de
-   Andy 2026-07-10, EP.021; antes el motivo estaba "reservado para la portada" y por eso
-   reaparecía).** Única excepción: cuando la diana ES el sujeto central de la escena (ej.
-   Q2 de EP.020). Incluir el ban explícito en el prompt desde el primer intento.
-4. **Conteo explícito de figuras:** "EXACTLY [N]" para cada silueta — sigue siendo el error
-   más frecuente de Flow.
-5. **Tipografía:** texto exacto entre comillas + "render text EXACTLY as written, letter
-   by letter, no changes". Verificar letra por letra con zoom antes de aprobar. Si Flow
-   genera la escena pero OMITE el texto: NO regenerar — modo edición sobre la misma imagen
-   ("same image, keep everything identical, add text...").
-6. **Checklist antes de aprobar:** (a) render con volumen/textura real, no silueta plana,
-   (b) número de figuras justificado por la historia (no forzado a 2), (c) patrón
-   geométrico del universo correcto de fondo y CERO círculos/anillos/diana (Flow los
-   reinserta solo — verificar), (d) texto letra por letra, (e) footer con las 2 filas de
-   íconos completas.
+**Las tildes se escriben.** El apaño de quitar acentos venía de que Flow autocorregía palabras
+sin tilde; con composición PIL determinista no aplica. Cobertura de glifos verificada vía cmap en
+las cinco fuentes: cero faltantes en `áéíóúñÑüÁÉÍÓÚ¿¡—·«»`.
 
-Prompt de referencia validado: EP.10 (Kratos/Atreus, Omega griego de fondo) — ver bloque de
-arriba, es el prompt real usado. El primer prompt v3 aplicado a un episodio nuevo se prueba
-contra Gladiator EP.019 — ver `btq-production/launch-assets/EP019-gladiator-artwork-v3-test.md`.
+**Retirado de v3:** los cinco puntos dorados superiores y el footer de dos filas con seis íconos
+de plataforma. A 300 px eran una mancha gris. Queda solo `EP.NN`.
+
+### Fuentes — instalación
+
+Las tres son gratuitas y están instaladas por usuario en
+`%LOCALAPPDATA%\Microsoft\Windows\Fonts` (sin admin), con entradas en
+`HKCU:\Software\Microsoft\Windows NT\CurrentVersion\Fonts`:
+
+| Rol | Archivo | Origen |
+|-----|---------|--------|
+| Display | `CabinetGrotesk-Extrabold.otf` (+ Bold, Medium, Regular) | Fontshare |
+| Cuerpo | `Supreme-Bold.otf`, `Supreme-Medium.otf`, `Supreme-Regular.otf` | Fontshare |
+| Datos | `MartianMono-Variable.ttf` | Google Fonts (OFL) — Fontshare devuelve 500 |
+
+**Martian Mono es variable y su instancia por defecto es `SemiExpanded Regular`.** En PIL hay que
+llamar `font.set_variation_by_name('Regular')` o el mono sale más ancho de lo previsto.
+
+Esto retira el sustituto **Impact** que se venía usando desde EP.022 porque Bebas Neue nunca se
+instaló. Ya no hace falta.
+
+### Formatos
+
+1. **1:1 — 3000×3000 real** (mínimo de plataforma). Generar nativo más chico (ej. 1536×1536) y
+   escalar con RealESRGAN; receta en `comfyui/docs/stack-reference.md`.
+2. **16:9 — 1920×1080 nativo** (objeto a un lado, resto reservado para texto) +
+   `comfyui/templates/cover-16x9-compose.py`.
+3. **9:16 — derivado por PIL** de la escena 1:1 ya aprobada: recorte de la porción del objeto +
+   relleno con `#0E1113`. No se genera de cero.
+
+### Checklist antes de aprobar
+
+- [ ] Volumen y textura de material real, no silueta plana ni render 3D brillante
+- [ ] Exactamente UN elemento en `#FF3D00`
+- [ ] El acero `#39434A` está presente — la imagen no es «negro con un acento»
+- [ ] Cero anillos/círculos/dianas — **verificado con zoom a las cuatro esquinas**
+- [ ] Fondo negro real `#0E1113`, no `#000000`
+- [ ] Texto letra por letra, con tildes
+- [ ] Legible a 300×300 y a 96×96 — generar los reescalados y mirarlos
 
 ---
 
-## Generación LOCAL de portadas (ComfyUI, desde EP.022 — técnica híbrida)
+## Quote Cards — mismo mundo, split 50/50
 
-Cuando la portada se genera localmente (Z-Image Turbo, no Flow) — probado por primera vez
-en BTQ EP.022, 2026-07-14: el modelo SÍ reconoce y renderiza íconos de marca reales
-(Facebook, Instagram, TikTok, Spotify, Apple Podcasts, Amazon Music) cuando se le pide una
-generación DEDICADA solo a los íconos (fondo negro puro, sin escena, sin texto) — pero
-SIEMPRE falla la ortografía de texto largo horneado en la misma imagen que la escena
-("BEHIND THE QUEUE" salió "BEHIND THE QEQUE"). Ver detalle en `comfyui/docs/prompting.md`.
+Formato **16:9 (1920×1080)**, mitad negra con texto / mitad escena. Escena vía ComfyUI, texto
+compuesto determinista con PIL (`comfyui/templates/quote-card-compose.py`). Citas verbatim
+validadas contra el SRT real. Procedimiento compartido para los 3 shows en
+`episode-pipeline/workflows/03b-marketing.md`.
 
-**Flujo obligatorio para portadas locales:**
-1. Generar la escena SOLA (sin wordmark/título/footer/íconos horneados).
-2. Generar los íconos de plataforma en una imagen aparte (fondo negro, sin texto).
-3. Componer wordmark + "BTQ" + título + "EP.NN" + íconos recortados con PIL —
-   plantilla `comfyui/templates/portada-compose.py`.
-4. Fuente: Bebas Neue NO está instalada localmente — usar **Impact** (Windows) como
-   sustituto condensado bold para wordmark y "EP.NN"; Segoe UI Bold para "BTQ"/título/
-   footer (mismo criterio que las quote cards).
-5. El gold "BTQ" y "EP.NN" necesitan fuente notablemente más grande de lo intuitivo para
-   leerse "prominente" — referencia calibrada en EP.022: ~0.040×H (BTQ), ~0.050×H (EP.NN).
-6. **1:1** debe entregarse a 3000×3000 real (mínimo de plataforma) — generar nativo más
-   chico (ej. 1536×1536) y escalar con RealESRGAN, ver receta en
-   `comfyui/docs/stack-reference.md` §Portadas a resolución de impresión.
-7. **16:9** (thumbnail/hero) usa una escena nueva nativa 1920×1080 (figura a un lado,
-   el resto void black reservado para texto) + plantilla
-   `comfyui/templates/cover-16x9-compose.py` (título+subtítulo alineados a la izquierda,
-   sin footer — los thumbnails se recortan).
-8. **9:16** (historia/teaser) NO se genera de cero: se deriva por PIL de la escena 1:1
-   YA aprobada — recorte de la porción superior (figura+checklist) + relleno del resto
-   con negro de marca exacto `(10,10,10)`, dejando margen arriba para el wordmark antes
-   de pegar la escena. Luego se compone con la MISMA `portada-compose.py` del 1:1 (título
-   y footer reutilizan la misma lógica, solo cambia el canvas). Evita repetir los intentos
-   fallidos de controlar por prompt una composición vertical extrema — ver
-   `comfyui/docs/prompting.md`.
-
-Para portadas vía Flow (no local), sigue vigente el flujo normal de arriba sin cambios.
+- **Escena:** mismo bloque industrial de arriba — luz plana de taller, un objeto que ilustre la
+  cita, un solo elemento en señal. *No* el render cinematográfico con glow de v3.
+- **Tipografía:** cita en Supreme Bold cream, atribución en Martian Mono `#FF3D00`. Tamaño de la
+  cita dinámico: arranca en 72px y baja de 2 en 2 hasta que el bloque envuelto quepa en el alto
+  disponible; la atribución es ~34% del tamaño final de la cita.
+- **Fondo propio por card**, desenfocado y distinto en cada una, coherente con el mundo del
+  episodio — sin repetir elemento entre las 4 cards.
+- **Sin anillos.** Aplica el mismo veto y la misma verificación con zoom.
 
 ---
 
-## Quote Cards — mismo tratamiento cinematográfico que la portada (desde 2026-07-05, EP.020)
+## Histórico — direcciones retiradas
 
-> **Actualización 2026-07-11 (EP.021, aprobada por Andy):** las quote cards BTQ ahora se
-> producen LOCALMENTE — escena vía ComfyUI (skill `comfyui`) + texto compuesto
-> determinista con PIL (cita off-white + atribución gold sobre la mitad negra). El texto
-> ya NO se genera con el modelo, así que los patrones de fallo de Flow de abajo solo
-> aplican si se usa Flow como fallback. **Formato: 16:9 (1920x1080)** — el split 50/50 se
-> mantiene (mitad negra texto / mitad escena), solo cambió la proporción; 1:1 únicamente
-> si se necesita para feed de Instagram. Citas verbatim validadas contra el SRT real.
-> Procedimiento compartido para los 3 shows en `episode-pipeline/workflows/03b-marketing.md`.
->
-> **Implementación PIL (BTQ, desde EP.021):** fuente Segoe UI Bold para la cita, Segoe
-> UI (regular) para la atribución — ambas del sistema, no requieren instalar nada.
-> Tamaño de la cita dinámico: arranca en 72px y baja de 2 en 2 hasta que el bloque
-> completo (todas las líneas envueltas) quepa en el alto disponible de la mitad negra;
-> el tamaño de la atribución es ~34% del tamaño final de la cita. Script listo:
-> `comfyui/templates/quote-card-compose.py`.
-
-**Cambio de dirección:** hasta EP.019 las quote cards usaban un estilo propio —
-"Graphic editorial poster design — NOT photorealistic 3D" (más plano, tipo póster/
-halftone). Desde EP.020 quedan retiradas: las quote cards usan el MISMO render
-cinematográfico/con volumen real que la portada (bloque congelado de ATMÓSFERA BTQ v3
-de arriba), no un estilo aparte. Razón: el usuario calificó el estilo póster plano de
-"boring/sketchy" al compararlo lado a lado con la portada — quiere una sola identidad
-visual consistente entre portada y quote cards, no dos.
-
-**Cómo aplicar a partir de EP.021:**
-- Composición: se mantiene el split 50/50 (mitad negro con texto, mitad escena) — eso
-  no cambió, solo el render de la escena.
-- Escena: cualquier objeto/entorno que ilustre la cita, renderizado con volumen y
-  textura de material real (vidrio, metal, tela, madera — lo que aplique), sombreado
-  oscuro + luz dorada de contorno ambiental, "like a dark statue lit from behind" —
-  igual que la figura de la portada, no una silueta plana ni textura de póster/
-  halftone/screen-print.
-- Encabezar cada prompt con: "Dark cinematic editorial image, rendered with real
-  volume and material texture — NOT a flat graphic poster, NOT a silhouette cutout."
-  y cerrar con "No circuit boards. No cartoon style. No flat poster texture. Cinematic."
-  (mismo patrón que el bloque congelado de portada).
-- Checklist de aprobación: agregar el ítem "render con volumen/textura real — NO plano
-  ni tipo póster" a la lista existente de cada card (texto letra por letra, mitad negro
-  reservada, etc.).
-- **NO agregar el anillo/círculo concéntrico dorado (diana) de fondo en las quote
-  cards** — desde 2026-07-10 (EP.021) el motivo está vetado en TODAS las imágenes,
-  incluida la portada (ver §Reglas de la dirección #3); ya no existe el caso "reservado
-  para la portada". Única excepción: escenas donde la diana ES el sujeto central (ej.
-  Q2 de EP.020). Cada escena ya lleva su propio objeto como metáfora, no hace falta
-  reforzarlo con el anillo dorado detrás.
-- **Sí darle a cada card un elemento de fondo propio, desenfocado (profundidad de
-  campo), relevante al tema específico de esa cita** — sin el anillo, un objeto solo
-  flotando en negro puro puede sentirse repetitivo entre las 4 cards del mismo
-  episodio. El fondo debe ser distinto por card (no reciclar el mismo elemento en dos
-  cards), muy fuera de foco para no competir con el objeto principal ni el texto, y
-  coherente con el mundo del episodio (ej. EP.020: bullpen de contact center, pared de
-  medidores, display de turnos, fila de escritorios — cuatro variantes del mismo
-  universo, cuatro objetos distintos).
-
-Ver `btq-production/launch-assets/EP020-metricas-launch.md` §E como primera aplicación
-de esta dirección (las 4 quote cards reescritas 2026-07-05, anillo de fondo retirado en
-la misma sesión).
-
-**Patrones de fallo conocidos (aplicar preventivamente, no esperar a que falle — NO
-es exclusivo de Flow, confirmado también en generación LOCAL):**
-- **Reinserta el anillo genérico solo:** aunque el prompt pida otro fondo (bullpen,
-  medidores, display de turnos, fila de escritorios), el modelo tiende a devolver el
-  anillo dorado de la portada igual — pasó en Q1, Q3 y Q4 de EP.020 en Flow, y de nuevo
-  en EP.022 (2026-07-20) generando LOCAL con Z-Image Turbo (reloj con anillos
-  concéntricos de fondo, batería con diana dorada en la tapa) pese a la prohibición
-  explícita desde el primer intento — hicieron falta 2-3 rondas de prompts reforzados.
-  **Puede colarse disfrazado de textura**, no solo como anillo grande y obvio: en EP.022
-  una tela de cubículo salió cubierta de docenas de mini-círculos repetidos, invisible a
-  tamaño completo y solo detectado al hacer zoom/crop a una esquina antes de aprobar —
-  ver `comfyui/docs/troubleshooting.md`. Por eso, TODO prompt de imagen BTQ — portada Y
-  quote cards (salvo la escena donde el anillo/diana ES el sujeto) — debe incluir DESDE
-  EL PRIMER intento la línea explícita: "DO NOT render any concentric ring, circle,
-  halo, or archery-target pattern anywhere in this image." No esperar a la primera falla
-  para agregarla, y no confiar solo en la vista general de la imagen para descartarlo.
-- **Autocorrige palabras deliberadamente sin tilde:** si el texto de una card pide una
-  palabra sin acento por regla de marca (ej. "NUMERO", "TERMOMETRO") pero es la
-  ortografía estándar del español con tilde, Flow puede seguir renderizándola acentuada
-  pese a instrucciones explícitas — en EP.020 sobrevivió al prompt original + 2 rondas
-  de edición dirigida sobre la misma palabra. **Regla de corte:** si after 2 intentos de
-  edición dirigida ("keep everything identical, only fix word X") la palabra sigue mal,
-  DEJAR de reintentar en Flow — la escena ya validada se aprueba, y esa palabra puntual
-  se corrige por fuera (overlay/recorte en un editor simple como Canva) en vez de seguir
-  quemando generaciones en el mismo punto.
+- **v3 «editorial cinemática» (2026-07-04 → 2026-07-25).** Negro `#0A0A0A` + Signal Gold
+  `#C9A84C`, Playfair Display / DM Sans / Bebas Neue, figura con volumen y rim light dorado
+  «como estatua iluminada desde atrás», fondo con el patrón geométrico del universo del
+  referente, footer de 5 puntos + 12 íconos. Murió con el giro a 100% pilar SEO: sin referente
+  pop, su regla de fondo era inaplicable. Aplicada en EP.019–EP.023.
+- **v2 «cómic pulp ilustrado» (2026-07-04).** Descartada el mismo día.
+- **v1 «silueta plana en humo dorado» (2026-06-12 → 2026-07-04).** EP.017–019. Andy la calificó
+  de genérica: figura única, de frente, parada, silueta lisa sin volumen.
+- **og-image editorial (figura + surcos de vinilo).** Retirada 2026-07-23 — dependía de los aros
+  concéntricos vetados. `btq-production/artwork-general-v3.md` queda como registro histórico.

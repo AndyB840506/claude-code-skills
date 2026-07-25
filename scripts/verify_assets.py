@@ -28,7 +28,10 @@ PURE_BLACK = (0, 0, 0)
 # nominal, solo que el pixel caiga dentro de la banda oscura de ese show.
 TOLERANCE = 14
 SHOWS = {
-    "btq": {"brand_black": (10, 10, 10), "hex": "#0A0A0A",
+    # BTQ paso a la direccion v4 "Sala de Maquinas" el 2026-07-25: el negro de
+    # marca ya no es #0A0A0A sino #0E1113 (Void). Los assets de EP.019-EP.023,
+    # generados bajo v3, quedan fuera de esta banda a proposito -- son archivo.
+    "btq": {"brand_black": (14, 17, 19), "hex": "#0E1113",
             "source": "episode-launch/docs/brand-constants.md"},
     "mpd": {"brand_black": (26, 26, 26), "hex": "#1A1A1A",
             "source": "comfyui/templates/mpd-portada-compose.py"},
