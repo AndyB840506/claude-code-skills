@@ -26,6 +26,34 @@ corto. Grave, seco, con cuerpo metálico. Serio pero no fúnebre.
 **No:** piano corporativo inspirador. Swell orquestal. Drop de EDM. Ukelele. Whoosh de
 tráiler. Voz cantada. Campanitas de "notificación". Nada que suene a curso de LinkedIn.
 
+## ⚠️ El generador no va a obedecer la duración. No pelee con el prompt.
+
+**Comprobado 2026-07-25:** los generadores de música por texto ignoran las duraciones
+cortas. Uno pide 3 segundos y devuelven 60. Tienen una longitud mínima de salida y el
+prompt no la cambia — insistir es perder la tarde.
+
+**El flujo correcto es al revés: que genere sus 60 segundos, y el stinger se recorta.**
+Eso además juega a favor: de un track de 60 s salen varios candidatos y se elige el mejor.
+
+```
+python scripts/cortar_jingle.py <track.wav>
+```
+
+Sin más argumentos imprime el mapa de energía del track y **propone los tres mejores
+puntos de arranque** — los golpes más secos, donde el sonido entra de la nada. Después:
+
+```
+python scripts/cortar_jingle.py <track.wav> --start 12.4 --dur 3.0
+```
+
+Recorta, aplica un fade de salida de 45 ms para que no suene un *click*, normaliza el pico
+a −3 dBFS y exporta WAV 48 kHz. Y genera además **`BTQ-jingle-PRUEBA-empalme.wav`**:
+stinger + 2,5 s de silencio + stinger. **Escuche ese**, porque es exactamente como se va a
+oír en el episodio, al abrir y al cerrar.
+
+Si sale con cola o se siente largo, se vuelve a cortar con otro `--start` o `--dur` más
+corto. **No hay que regenerar nada.**
+
 ## Prompts para pegar en el generador
 
 Tres direcciones distintas, no tres versiones de la misma. Genera las tres y compara —
@@ -33,41 +61,47 @@ el juicio final es de oído, no de descripción.
 
 **A · El relé** *(la más literal respecto al episodio y a la marca)*
 ```
-Short audio logo, 3 seconds. Starts with a single mechanical relay click,
-dry and close-miked. Then two low synth-bass notes, minor, industrial and
-warm. Metallic body, slight tape saturation. Ends abruptly in silence,
-no reverb tail. No melody beyond the two notes. No drums. Serious,
-industrial, understated.
+Industrial audio-logo loop. Begins immediately, cold, with no intro build:
+a single mechanical relay click, dry and close-miked, followed by two low
+synth-bass notes in a minor key. Metallic body, slight tape saturation.
+Repeat that same short motif every few seconds with silence between
+repeats. Dry, no reverb tail. No drum kit, no melody beyond those two
+notes. Serious, industrial, understated.
 ```
 
 **B · El tono de señal** *(más abstracta, más "marca" que "escena")*
 ```
-Podcast sonic logo, 3 seconds. A low sustained industrial hum that resolves
-into three descending synth tones, minor key, dry and precise. Analog,
-slightly detuned. No percussion, no reverb wash. Ends clean and sudden.
-Restrained and confident, not uplifting.
+Minimal sonic-branding loop. Opens cold on the first beat with three
+descending analog synth tones over a low industrial hum, minor key, dry
+and precise, slightly detuned. Let the motif repeat with clear gaps of
+near-silence between each repetition. No percussion, no reverb wash, no
+swell. Restrained and confident, not uplifting.
 ```
 
 **C · La máquina que arranca** *(la más rítmica; sirve si A y B suenan muy quietas)*
 ```
-3-second audio stinger. A short pulse of low industrial machinery starting
-up, filtered, with a dry percussive metallic hit on the downbeat and one
-bass note underneath. Minor. Tight, no reverb, hard stop. Mechanical and
-serious, no fanfare.
+Short industrial motif, repeated. Starts instantly on a dry percussive
+metallic hit, with one low bass note underneath and a brief filtered pulse
+of machinery. Minor key. Tight and mechanical, no reverb, no fanfare.
+Repeat the same figure throughout with space between repeats.
 ```
 
-> Ajuste si sale largo: bajar el número de segundos en el prompt y pedir explícitamente
-> `hard stop, no fade`. Los generadores tienden a estirar y a poner cola de reverb.
+> **Los prompts ya no piden 3 segundos** — pedirlo no sirve (ver arriba). Lo que piden es
+> que el track **arranque con el golpe**, sin construcción previa, y que el motivo se
+> repita: así cualquier tramo de 3 s es recortable y hay varios candidatos por generación.
+> Lo único que sí conviene insistir en el prompt es `dry, no reverb tail`: la cola de
+> reverb es lo único que el recorte no puede arreglar del todo.
 
 ## Cómo elegir la buena
 
-1. **Escúchala a volumen bajo, en el celular.** Si a bajo volumen no se distingue de
+1. **Escuche `BTQ-jingle-PRUEBA-empalme.wav`, no el stinger suelto.** El script lo genera
+   solo: stinger + silencio + stinger. Tiene que funcionar en los dos sitios sin sentirse
+   repetido ni fuera de lugar.
+2. **Escúchelo a volumen bajo, en el celular.** Si a bajo volumen no se distingue de
    cualquier otro pódcast, no es una firma.
-2. **Pégala al principio y al final del mismo archivo y escúchalos seguidos.** Tiene que
-   funcionar en los dos sitios sin sentirse repetida ni fuera de lugar.
-3. **Cuenta los segundos.** Si dudas si es larga, es larga.
-4. **Prueba el empalme con la voz:** jingle → silencio → «Buenas y santas». Si tienes que
-   recortar la cola del jingle para que no pise la voz, pide otra versión con `hard stop`.
+3. **Si duda de si es largo, es largo.** Vuelva a cortar con `--dur 2.5`.
+4. **Lo único que el recorte no arregla es la cola de reverb.** Si el track viene mojado,
+   no lo pelee: regenere pidiendo `dry, no reverb tail`.
 
 ## Al montarla
 
