@@ -131,8 +131,22 @@ instaló. Ya no hace falta.
 
 ### Formatos
 
-1. **1:1 — 3000×3000 real** (mínimo de plataforma). Generar nativo más chico (ej. 1536×1536) y
-   escalar con RealESRGAN; receta en `comfyui/docs/stack-reference.md`.
+1. **1:1 — 3000×3000 real** (mínimo de plataforma). Generar nativo a 1024×1024, escalar ×4 con
+   `RealESRGAN_x4plus.pth` vía ComfyUI (`UpscaleModelLoader` + `ImageUpscaleWithModel`) y
+   remuestrear a 3000. El modelo se instaló el 2026-07-25 en
+   `E:\AI\ComfyUI_windows_portable\ComfyUI\models\upscale_models\` — antes de esa fecha la
+   documentación lo daba por hecho y la carpeta estaba vacía.
+   **Componer la tipografía a 3000 nativo, nunca escalar el texto.**
+
+**Portada del SHOW** (no de un episodio): `comfyui/templates/show-cover-compose.py`. No lleva
+título ni `EP.NN` — solo wordmark, regla y kicker; el objeto representa al programa entero.
+Versión vigente: headset de contact center con la lámpara de mute encendida (aprobada
+2026-07-25). El concepto previo, un medidor de panel, se descartó por conceptual: si una
+portada necesita explicación, no funciona a 300 px.
+
+**Piso de negro de marca:** Z-Image produce algunos píxeles en negro puro `(0,0,0)`, que esta
+guía prohíbe y que `verify_assets.py` reprueba. Los composers lo levantan a `#0E1113` por canal
+antes de componer — no hace falta corregirlo a mano, pero sí verificarlo en el output.
 2. **16:9 — 1920×1080 nativo** (objeto a un lado, resto reservado para texto) +
    `comfyui/templates/cover-16x9-compose.py`.
 3. **9:16 — derivado por PIL** de la escena 1:1 ya aprobada: recorte de la porción del objeto +
