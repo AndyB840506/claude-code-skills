@@ -275,7 +275,27 @@ BTQ pop-culture lleva, en orden, estos bloques. No omitir ninguno al escribir el
    - **Redes:** LinkedIn — "estoy en LinkedIn como Andrés Bermúdez Rodríguez".
    - **Teaser** del próximo episodio (bien armado, no una nota suelta).
    - **Firma + TM canónico:** "Yo soy Andy. Y recuerden: [tesis del episodio en una frase
-     memorable]" + nota OUTRO MUSICAL.
+     memorable]" + nota JINGLE DE SALIDA (ver § Jingle, abajo).
+
+## Jingle en vez de música de intro/outro (decisión de Andy, 2026-07-25)
+
+**Se retira la música de intro y de outro.** En su lugar va un **stinger corto (2-4 s)**,
+el mismo al abrir y al cerrar — el patrón de *Leyendas Legendarias*: una firma sonora que
+se reconoce en dos segundos, no una cama que hay que cuadrar contra la voz.
+
+- **No es cama musical.** No corre por debajo del habla, no hace fade largo. Andy entra
+  sobre el **silencio**, no sobre la música; y al cerrar, el jingle entra *después* de que
+  la firma termina, no encima de ella.
+- **El mismo stinger en los dos extremos.** Es una firma sonora, no dos piezas distintas.
+- **En el guion:** nota `JINGLE DE ENTRADA` en el Segmento 0, antes de «Buenas y santas»;
+  nota `JINGLE DE SALIDA` después del TM canónico. Ya **no** se escribe `OUTRO MUSICAL`.
+
+**Por qué, además del gusto:** en EP.020 el timing de la música de intro/outro obligó a
+re-transcribir el episodio (ver `launch-assets/EP020-metricas-launch.md`). Un stinger seco
+elimina esa clase de problema: no hay solape que sincronizar.
+
+El estándar de duración de 40-45 min sigue midiendo **solo el habla** — el jingle no cuenta,
+igual que antes no contaba la música.
 
 ## No dar señales de cierre falso antes del Cierre real (retención Spotify, fijado 2026-07-06)
 
@@ -336,7 +356,8 @@ el ritmo real de Andy, **no** estimando minutos "a ojo" por segmento. Las marcas
 salen infladas y hacen que Andy termine ~15 min antes de lo marcado y tenga que estirar.
 
 **Estándar editorial de duración (BTQ y CCC, fijado 2026-07-06):** el episodio debe caer **entre 40
-y 45 minutos de contenido hablado**, sin contar intro ni outro musical. No es un mínimo sugerido ni
+y 45 minutos de contenido hablado**, sin contar el jingle de entrada ni el de salida (antes: la
+música de intro/outro, retirada el 2026-07-25 — ver § Jingle). No es un mínimo sugerido ni
 un techo aspiracional — es el rango objetivo. Si el guion mide por debajo de 40 o por encima de 45
 (con la fórmula de abajo), expandir o cortar antes de aprobar el guion para grabación, no dejarlo
 para la edición.
@@ -449,4 +470,6 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
 - [ ] **Voz narrativa, no documental:** los tramos históricos en presente/escena, no en
       modo informe.
 - [ ] Aperturas y conectores de contenido (sin meta-anuncios tipo "ahora vamos a…").
-- [ ] Duración: contar **palabras escritas × 1.355 (expansión) / 150 (wpm)** (ver "Calibración de duración", recalibrado 2026-07-06 contra SRT real de EP.20) — NO estimar minutos a ojo, NO usar 143 wpm / +15% (cifras viejas, basadas solo en EP.17). El resultado debe caer **entre 40 y 45 minutos** (estándar editorial, sin contar intro/outro musical) — si queda fuera de ese rango, expandir o cortar antes de grabar, no dejarlo para después.
+- [ ] Duración: contar **palabras escritas × 1.355 (expansión) / 150 (wpm)** (ver "Calibración de duración", recalibrado 2026-07-06 contra SRT real de EP.20) — NO estimar minutos a ojo, NO usar 143 wpm / +15% (cifras viejas, basadas solo en EP.17). El resultado debe caer **entre 40 y 45 minutos** (estándar editorial, contando solo el habla — el jingle no cuenta) — si queda fuera de ese rango, expandir o cortar antes de grabar, no dejarlo para después.
+- [ ] **Jingle, no música:** el Segmento 0 abre con nota `JINGLE DE ENTRADA` y el cierre lleva
+      `JINGLE DE SALIDA`. Cero apariciones de `OUTRO MUSICAL` o de camas musicales. Ver § Jingle.
