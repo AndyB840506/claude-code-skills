@@ -56,6 +56,24 @@ que rehacerla.
 > SEO: *«patrón geométrico del universo del referente»*. Sin cultura pop no hay referente, y la
 > dirección se quedó sin su pieza central.
 
+> **Actualización 2026-07-25 (tarde) — las PORTADAS pasan a TIPOGRAFÍA PURA.** Decisión de
+> Andy: «prefiero algo sencillo y minimalista». Se abandona la búsqueda de un objeto que
+> represente al show. Ninguno de los tres candidatos se explicaba solo, y costaron seis rondas
+> y más de veinte generaciones. Lo que sigue vigente de Sala de Máquinas es la **paleta, la
+> tipografía y el principio de una sola señal**; lo que se retira es el objeto renderizado.
+>
+> **Portadas y assets de marca: `comfyui/templates/brand-covers-compose.py`.** No usa ComfyUI
+> ni ningún modelo — todo determinista con PIL. Genera portada 1:1, avatar y banner de YouTube
+> en una corrida. Se acabaron los sellos alucinados, el veto de anillos y el piso de negro puro.
+>
+> **Concepto:** el nombre hace el trabajo. El wordmark ocupa el cuadro en tres líneas y
+> **`QUEUE` va en Señal `#FF3D00`** — la palabra *es* la señal. No hay objeto que interpretar.
+> Verificado legible a 300 y 96 px; avatar legible a 48 px.
+>
+> Lo de abajo (escena, prompts, upscale) queda como **registro** de la etapa de objeto y sigue
+> aplicando a las **quote cards**, que sí llevan escena. Si Andy quiere llevarlas también a
+> tipografía pura, es una decisión aparte que no se ha tomado.
+
 **BTQ = el piso de operación como cuarto de máquinas.** Grafito y acero como mundo, luz plana de
 taller, y **una sola luz de señal encendida** — el naranja que en una planta significa «mire
 esto». Un objeto por episodio, nunca un collage.

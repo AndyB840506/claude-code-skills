@@ -5,21 +5,31 @@ Nada de esto está aplicado todavía — Claude no tiene acceso a la consola.
 
 ---
 
-## A · Portada del show
+## A · Assets de marca — tipografía pura
 
-| Archivo | Uso |
+Todos en `E:\AI\outputs\BTQ-brand\`, generados por `comfyui/templates/brand-covers-compose.py`
+(determinista, sin ComfyUI — se rehacen con un comando).
+
+| Archivo | Dónde va |
 |---|---|
-| `E:\AI\outputs\BTQ-SHOW-COVER-v4-q92.jpg` | **el que se sube** — 3000×3000, 0,50 MB |
-| `E:\AI\outputs\BTQ-SHOW-COVER-v4.png` | master sin pérdida |
-| `-300.png` / `-96.png` | contrapruebas de legibilidad |
+| `BTQ-COVER-q92.jpg` | **Spotify** — portada del show, 3000×3000, 235 KB |
+| `BTQ-yt-avatar-800.png` | **YouTube** — foto de perfil |
+| `BTQ-yt-banner-2048x1152.jpg` | **YouTube** — banner del canal |
+| `BTQ-COVER.png` | master sin pérdida |
+| `BTQ-COVER-300.png` / `-96.png` | contrapruebas de legibilidad |
+| `BTQ-yt-avatar-800-PREVIEW-circulo.png` | **no subir** — cómo se ve ya recortado en círculo |
+| `BTQ-yt-banner-GUIA-safearea.png` | **no subir** — el banner con el área segura dibujada |
 
-Concepto: **panel anunciador** — la rejilla con la que se vigila una planta entera.
-Seis ventanas apagadas, una encendida en `#FF3D00`. Muchos indicadores, uno que importa:
-gestión a cualquier escala, sin pertenecer a una industria. Cero geometría circular, así que
-el veto de anillos no queda en zona gris.
+Concepto: **el nombre hace el trabajo.** El wordmark ocupa el cuadro en tres líneas y `QUEUE`
+va en Señal `#FF3D00` — la palabra *es* la señal, no hay objeto que interpretar. El avatar es
+`BTQ` con la Q en Señal, porque el wordmark de tres líneas no sobrevive el recorte circular.
 
-Verificado: píxel más oscuro `(14,17,19)`, sin negro puro, un solo color saturado, legible a
-300 y 96 px.
+Verificado mirando: legible a 300 y a 96 px; avatar legible a 48 px; el bloque del banner
+completo —kicker incluido— dentro del área segura de 1235×338.
+
+> Se descartó la línea de portadas con objeto renderizado (medidor, headset, calibrador, panel
+> anunciador). Ninguna se explicaba sola. Los archivos `BTQ-SHOW-COVER-v4*` y
+> `BTQ-v4-*` quedan en `E:\AI\outputs\` como descarte — **no subir ninguno.**
 
 ---
 
