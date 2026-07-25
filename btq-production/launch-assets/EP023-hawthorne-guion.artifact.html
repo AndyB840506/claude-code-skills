@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EP.23 — Efecto Hawthorne: por qué su equipo rinde distinto cuando lo miran | Behind the Queue</title>
+<title>EP.23 — Efecto Hawthorne | Behind the Queue</title>
 <style>
         :root {
             /* Sistema v4 "Sala de Maquinas" -- fuente canonica:
@@ -243,9 +238,16 @@
             .arq-row { grid-template-columns: 24px 1fr; }
             .arq-row .arq-time, .arq-row span:last-child { grid-column: 2; }
         }
+
+        /* --- artifact: el ground de marca no depende del tema del visor --- */
+        html, body { background: #08090A !important; color: var(--offwhite); }
+        :root[data-theme="light"] body, :root[data-theme="dark"] body { background: #08090A; }
+        .container { box-shadow: 0 0 0 1px #1b2024; }
+        ::selection { background: var(--signal); color: #0E1113; }
+        a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 </style>
-</head>
-<body>
+
 <div class="container">
 
     <!-- HEADER -->
@@ -564,5 +566,3 @@
     </footer>
 
 </div>
-</body>
-</html>
