@@ -199,8 +199,26 @@ Hay generadores muertos en el repo referenciados por handoffs viejos. **Esta tab
 |---|---|
 | Portada del show, avatar y banner de YouTube, og-image | `comfyui/templates/brand-covers-compose.py` |
 | Portada de un episodio (1:1 · 16:9 · 9:16) | `comfyui/templates/portada-ep-compose.py` |
+| Quote cards (tipografía pura, sin ComfyUI) | `comfyui/templates/quote-card-compose.py` |
 | Recorte del stinger desde un track largo | `scripts/cortar_jingle.py` |
 | Compuerta de assets | `scripts/verify_assets.py` (`--stage-a` si no se ha grabado) |
+
+**Los documentos de workflow también producen assets y también se quedan viejos.** Un script
+muerto falla ruidoso; un workflow desactualizado no falla — te hace generar lo incorrecto con
+toda confianza. Al congelar una dirección hay que barrer **los dos**:
+
+| Documento | Última verificación contra la realidad |
+|---|---|
+| `workflows/step2-generate-assets.md` | 2026-07-25 — §A (fórmula de título) y §D (portadas) alineadas a v4 |
+| `workflows/post-publish.md` | 2026-07-25 — § 4b reescrita contra el `index.html` real |
+| `docs/brand-constants.md` § Quote Cards | 2026-07-25 — pasada a tipografía pura |
+
+> **Cómo se detectó que hacía falta esta tabla** (EP.023, 2026-07-25). El rebrand v4 actualizó
+> los *assets* y los *scripts de imagen*, pero dejó **4 productores** apuntando a v3: la sección
+> de quote cards de este archivo, `quote-card-compose.py` (Segoe UI + oro + `#0A0A0A`),
+> `step2-generate-assets.md` y `post-publish.md`. Ninguno dio error — cada uno se cobró en
+> iteraciones o en un asset fuera de marca cuando alguien lo ejecutó días después.
+> **Al cerrar un rebrand, listar todo lo que produce un asset y abrirlo uno por uno.**
 
 > ⚠️ **MUERTOS — no usar, aunque aparezcan en handoffs anteriores:**
 > `portada-compose.py` (exige una escena renderizada, que ya no existe en esta dirección),

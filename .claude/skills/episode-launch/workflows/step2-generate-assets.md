@@ -12,10 +12,16 @@ either: ask the user to confirm before using the corrected version.
 
 ## A · Spotify SEO
 
-**Episode title (formula obligatoria — analytics 2026-06-12):**
-`EP.XX — [Referente]: [frase con keyword BPO / liderazgo / call center]`
-- La keyword buscable NO es opcional: los títulos pop-culture sin keyword ganan algoritmo
-  pero son invisibles en Search (EP.01 sigue #1 all-time por las búsquedas de "BPO").
+**Episode title (fórmula vigente — actualizada 2026-07-25 con el giro macro):**
+`EP.XX — [Teórico o ley]: [frase llana con keyword de gestión]`
+- **El teórico o la ley van primero**, no un referente pop: el roadmap es 100% pilar SEO desde
+  2026-07-21 y el carril pop-culture está en pausa. Regla completa y precedentes en
+  `btq-production/guion-style-btq.md` § Título.
+- La keyword buscable NO es opcional, pero **ya no es «BPO / call center»**: el giro de alcance
+  del 2026-07-25 sacó al show del techo de contact center. Usar keywords de gestión —
+  *liderazgo, gestión de equipos, indicadores, calidad, medición del desempeño*. Ejemplo real
+  aprobado (EP.023): `EP.23 — Efecto Hawthorne: por qué su equipo rinde distinto cuando lo miran`.
+- **EP.020 no se retitula** — rankeó con la keyword vieja y se deja como está a propósito.
 - Numeración `EP.XX` exacta (dos dígitos, mayúsculas). Nunca "Ep.X", "EP.0XX de tres
   dígitos" ni sufijo "| Behind the Queue" en Spotify.
 
@@ -152,38 +158,33 @@ searching for topic-keyword phrases (framework/author names, segment names like
 
 ---
 
-## D · Cover-Art Prompts (Nani Banana 2 / AI)
+## D · Portadas — NO se escriben prompts (v4, 2026-07-25)
 
-**Dirección visual congelada (2026-06-12, validada con EP.017):** todo prompt de portada
-arranca de los bloques verbatim en `docs/brand-constants.md` § "Dirección de artwork"
-(atmósfera de póster gráfico con siluetas a contraluz + footer). Solo se redacta nuevo
-el sujeto central del episodio. Seguir su checklist (conteo de figuras, texto letra por
-letra, cero caras) antes de aprobar cualquier generación.
+> ⚠️ **Esta sección pedía prompts de IA hasta el 2026-07-25.** Toda la dirección v3 que
+> describía —oro `#C9A84C`, negro `#0A0A0A`, siluetas a contraluz, estética fiel a la época del
+> referente pop— **está retirada**. Si algo de eso reaparece en un asset, el asset está mal.
 
-**Principio de nostalgia (analytics 2026-06-12):** la audiencia núcleo (hombre 35–44)
-responde a la estética FIEL A LA ÉPOCA del referente — el visual debe gritar "su
-adolescencia", no una reinterpretación moderna. Queen con estética 70s/80s real, no
-Queen estilizado 2026.
+Las portadas de episodio **ya no se generan con un modelo**: se componen deterministas con PIL.
+No hay prompt que redactar en este paso.
 
-**Título del episodio en la portada (OBLIGATORIO — feedback EP.018):** los formatos
-**1:1 y 9:16** llevan un bloque de tipografía con el TÍTULO del episodio en el tercio
-superior, aparte del footer — NO basta con el `EP.0XX` del footer. Patrón validado
-(EP.017 / EP.018): Línea 1 = referente cultural en gold ultra-bold (ej. "SODA STEREO",
-"EL MUNDIAL"); Línea 2 = tagline con la keyword buscable, en blanco a un tercio del
-tamaño (ej. "EL LIDERAZGO QUE SIGUE SONANDO", "LIDERAZGO SIN TOCAR EL BALON"). El
-formato **16:9** es la excepción: usa un hook de thumbnail de 3-5 palabras (ej. "LA GIRA
-/ SIN CERATI", "EL BALON / NO ES TUYO"), no el título completo. Texto de imagen sin
-tildes; la frase con tildes va en el caption.
+```
+python comfyui/templates/portada-ep-compose.py @titulo.txt
+```
 
-Generate one density-first prompt for each format. Each prompt must:
-- Name the character and exact visual canon (source, era, costume)
-- State the mood / color palette
-- Include BTQ brand: void black `#0A0A0A` background · signal gold `#C9A84C` accents
-- Specify composition for the format (centered 1:1 / vertical hero 9:16 / wide scene 16:9)
-- Include footer rule: "Behind the Queue" left · **EP.0XX gold CENTER** · icons right
-- End with accuracy checklist: 3 bullet points Claude must verify before approving
-- PCB/circuits: ONLY for AI/tech episodes — NEVER on general covers
+- Recibe el **título publicado completo** y lo parsea; aborta si no cumple la fórmula del §A.
+  Es a propósito: garantiza que portada y metadata no diverjan, y de paso hace de lint del título.
+- Acepta `@archivo.txt` porque PowerShell 5.1 pierde los acentos al pasar por `argv`.
+- Salidas: 1:1 · 16:9 · 9:16 + contrapruebas 300/96.
 
-**Format: 1:1 (Spotify cover / platform square)**
-**Format: 9:16 (TikTok / Stories)**
-**Format: 16:9 (LinkedIn / YouTube thumbnail)**
+**Compuerta antes de aprobar:**
+
+```
+python scripts/verify_assets.py EP0XX --root E:\AI\outputs\BTQ-EP0XX --show btq
+```
+
+Más `--stage-a` si el episodio todavía no se ha grabado (sin audio no hay quote cards y la
+compuerta falla por cards faltantes).
+
+La dirección visual, la paleta y el checklist de aprobación viven en
+`docs/brand-constants.md` § "Dirección de artwork v4" — **esa es la fuente, no esta sección.**
+Las quote cards son también tipografía pura: ver § Quote Cards del mismo archivo.

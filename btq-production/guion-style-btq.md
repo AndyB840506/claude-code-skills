@@ -470,6 +470,32 @@ abrir la Parte 2. Ojo: BTQ tiene cadencia semanal estricta (≥7 días entre epi
 
 ---
 
+## Datos: verificar ANTES de escribirlos, y qué hacer si el audio los contradice
+
+Regla de Andy (2026-07-25). **Ninguna cifra, fecha, nombre propio ni atribución entra al guion
+sin fuente verificada.** No se escribe «como ~X» para verificar después: para cuando el guion
+llega al micrófono, el dato ya se grabó. Todo lo verificado va al bloque **Fuentes verificadas
+(no leer al aire)** al final del guion, con la publicación concreta — no «un estudio del MIT»
+sino la revista y el año.
+
+**Qué hacer cuando lo grabado no coincide con la fuente** (caso EP.023: el guion decía
+«sesenta muertes prematuras» y al aire salió «alrededor de setenta»):
+
+1. **Los assets públicos usan la cifra verificada, no la dicha al aire.** Descripción de
+   Spotify, YouTube, redes y SafeCreative se escriben contra la fuente.
+2. **No se corrige en silencio ni se propaga en silencio.** Se le reporta a Andy la
+   discrepancia con el timestamp exacto, y él decide si edita el audio o lo deja.
+3. **Distinguir el error de locución del artefacto de transcripción.** WhisperX confunde
+   nombres propios: en EP.023 escribió «Freeconomics» por *Freakonomics* y «Elton Mayer» por
+   *Elton Mayo*, y el guion tenía ambos bien. Antes de reportar un error al aire, **cotejar
+   contra el guion**: si el guion está bien, lo más probable es que sea la transcripción, y
+   eso solo lo resuelve el oído de Andy. Precedente: EP.019, «Tim Collins» por Jim Collins.
+
+**El fact-check se corre sobre la TRANSCRIPCIÓN, no sobre el guion** — el guion ya se
+verificó al escribirse; lo que falta comprobar es qué salió realmente por el micrófono.
+
+---
+
 ## Calibración de duración — dimensionar en PALABRAS, no en minutos adivinados
 
 Regla medida (no de gusto). El guion se dimensiona contando **palabras habladas** y dividiendo por
