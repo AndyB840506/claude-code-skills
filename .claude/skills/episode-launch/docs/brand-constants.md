@@ -243,21 +243,34 @@ antes de componer — no hace falta corregirlo a mano, pero sí verificarlo en e
 
 ---
 
-## Quote Cards — mismo mundo, split 50/50
+## Quote Cards — TIPOGRAFÍA PURA (v4, corregido 2026-07-25)
 
-Formato **16:9 (1920×1080)**, mitad negra con texto / mitad escena. Escena vía ComfyUI, texto
-compuesto determinista con PIL (`comfyui/templates/quote-card-compose.py`). Citas verbatim
+Formato **16:9 (1920×1080)**, **sin escena renderizada**. Todo determinista con PIL:
+`comfyui/templates/quote-card-compose.py`. No usa ComfyUI ni ningún modelo. Citas verbatim
 validadas contra el SRT real. Procedimiento compartido para los 3 shows en
 `episode-pipeline/workflows/03b-marketing.md`.
 
-- **Escena:** mismo bloque industrial de arriba — luz plana de taller, un objeto que ilustre la
-  cita, un solo elemento en señal. *No* el render cinematográfico con glow de v3.
-- **Tipografía:** cita en Supreme Bold cream, atribución en Martian Mono `#FF3D00`. Tamaño de la
-  cita dinámico: arranca en 72px y baja de 2 en 2 hasta que el bloque envuelto quepa en el alto
-  disponible; la atribución es ~34% del tamaño final de la cita.
-- **Fondo propio por card**, desenfocado y distinto en cada una, coherente con el mundo del
-  episodio — sin repetir elemento entre las 4 cards.
-- **Sin anillos.** Aplica el mismo veto y la misma verificación con zoom.
+- **Composición:** fondo `#0E1113` a sangre completa, rejilla vertical fina en `#1F2428` como
+  marca de agua, cita alineada a la izquierda y centrada en vertical, atribución debajo.
+- **Tipografía:** cita en **Supreme Bold** cream `#F4EFE7`, atribución en **Martian Mono**
+  `#FF3D00` — el único elemento saturado. Cuerpo de la cita dinámico: arranca en 104px y baja
+  de 2 en 2 hasta que el bloque envuelto quepa a lo ancho y a lo alto.
+- **Cero objetos, cero fotos, cero ilustración.** La cita ES el contenido.
+
+> ⚠️ **Por qué cambió** (decisión de Andy, 2026-07-25). Hasta este día la sección pedía «mitad
+> negra con texto / mitad escena» con la escena generada en ComfyUI. Eso era **v3 y sobrevivió
+> por descuido al giro a tipografía pura**: mientras portadas, banner y avatar pasaron a
+> tipografía, las quote cards se quedaron pidiendo un objeto renderizado. El costo apareció en
+> EP.023: de 4 cards generadas, 2 salieron con anillos vetados (una espiral concéntrica en el
+> reflejo de un vidrio, tres anillos de bloom alrededor de una lámpara) y una con fondo de
+> estudio blanco en vez de `#0E1113`, obligando a rondas de regeneración. Andy lo cortó:
+> «mejor dejarlo minimalista como quedó todo el branding nuevo, para que no sigas sacando 20
+> iteraciones e imágenes innecesarias».
+>
+> **La lección general, más allá de las cards:** al congelar una dirección nueva hay que
+> **barrer todas las secciones que producen assets**, no solo las que se están rehaciendo en
+> ese momento. Un residuo de la dirección vieja no se anuncia — se cobra en iteraciones la
+> próxima vez que alguien lo ejecuta.
 
 ---
 

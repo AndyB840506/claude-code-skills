@@ -1,83 +1,88 @@
-# Uso CLI: python quote-card-compose.py <escena.png> "<cita>" "<atribucion>" <salida.png>
-# Tambien importable: from quote_card_compose import compose_quote_card
-# Compone una quote card BTQ 1920x1080: escena a la derecha (960x1080), texto a la
-# izquierda sobre negro puro. Requiere PIL (ya viene en python_embeded de ComfyUI).
-# Genera la escena directo a 960x1080 (o cualquier alto x 960 de ancho) para evitar
-# recorte/deformación al pegarla en la mitad derecha.
-# Import directo (no CLI) recomendado para citas con tildes/enies — evita perderlas por
-# escaping de shell al invocar vía Bash/PowerShell (ver comfyui/docs/stack-reference.md
-# "Compose scripts con texto acentuado").
+# -*- coding: utf-8 -*-
+"""Quote cards de BTQ — direccion v4, TIPOGRAFIA PURA.
+
+No usa ComfyUI ni ningun modelo: todo determinista con PIL, igual que
+brand-covers-compose.py y portada-ep-compose.py.
+
+Cambio 2026-07-25 (decision de Andy): antes cada card llevaba una escena
+renderizada en la mitad derecha. Eso era v3 y sobrevivio por descuido al giro a
+tipografia pura -- generaba anillos vetados, fondos de estudio blancos y una
+ronda de iteraciones por card. La cita ES el contenido; no necesita ilustracion.
+
+Uso CLI: python quote-card-compose.py "<cita>" "<atribucion>" <salida.png>
+Importable: compose_quote_card(quote, attribution, out_path)
+Para citas con tildes preferir el import directo -- el escaping de shell las pierde.
+"""
+import os
 import sys
 import textwrap
+
 from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1920, 1080
-HALF = 960
-BLACK = (10, 10, 10)       # #0A0A0A — void black de marca BTQ
-OFFWHITE = (245, 242, 236)  # #F5F2EC — cita
-GOLD = (201, 168, 76)       # #C9A84C — atribucion
+VOID = (14, 17, 19)        # #0E1113 — nunca negro puro
+CREAM = (244, 239, 231)    # #F4EFE7 — cita
+SIGNAL = (255, 61, 0)      # #FF3D00 — atribucion, UNICO elemento saturado
+GRID = (31, 36, 40)        # #1F2428 — rejilla de ventilacion, marca de agua
 
-# Segoe UI: tildes/nn correctas de forma determinista (nunca generadas por el modelo)
-QUOTE_FONT_PATH = "C:/Windows/Fonts/segoeuib.ttf"
-ATTR_FONT_PATH = "C:/Windows/Fonts/segoeui.ttf"
+MARGIN_X = 150
+MARGIN_Y = 130
 
-
-def _wrap_and_measure(text, font_path, size, max_width):
-    font = ImageFont.truetype(font_path, size)
-    chars_per_line = max(10, int(max_width / (size * 0.52)))
-    lines = textwrap.wrap(text, width=chars_per_line, break_long_words=False)
-    line_h = int(size * 1.28)
-    total_h = line_h * len(lines)
-    max_line_w = max((font.getlength(l) for l in lines), default=0)
-    return font, lines, line_h, total_h, max_line_w
+_FD = os.path.join(os.environ["LOCALAPPDATA"], "Microsoft", "Windows", "Fonts")
+QUOTE_FONT = os.path.join(_FD, "Supreme-Bold.otf")
+ATTR_FONT = os.path.join(_FD, "MartianMono-Variable.ttf")
+for _p in (QUOTE_FONT, ATTR_FONT):
+    if not os.path.exists(_p):
+        sys.exit("FALTA LA FUENTE: %s\nVer brand-constants.md seccion Fuentes." % _p)
 
 
-def compose_quote_card(scene_path, quote, attribution, out_path):
-    canvas = Image.new("RGB", (W, H), BLACK)
+def _attr(px):
+    f = ImageFont.truetype(ATTR_FONT, px)
+    f.set_variation_by_name("Regular")   # el default de la variable es SemiExpanded
+    return f
 
-    scene = Image.open(scene_path).convert("RGB")
-    scene = scene.resize((HALF, H), Image.LANCZOS)
-    canvas.paste(scene, (HALF, 0))
 
-    draw = ImageDraw.Draw(canvas)
+def _fit(quote, max_w, max_h):
+    """Baja el cuerpo hasta que la cita envuelta quepa a lo ancho y a lo alto."""
+    for size in range(104, 39, -2):
+        font = ImageFont.truetype(QUOTE_FONT, size)
+        wrapped = textwrap.wrap(quote, width=max(12, int(max_w / (size * 0.50))),
+                                break_long_words=False)
+        line_h = int(size * 1.24)
+        if (max((font.getlength(l) for l in wrapped), default=0) <= max_w
+                and line_h * len(wrapped) <= max_h):
+            return font, wrapped, line_h, size
+    raise ValueError("cita demasiado larga para la card: %r" % quote)
 
-    margin_x = 90
-    margin_top = 90
-    margin_bottom = 130
-    text_width_px = HALF - 2 * margin_x
-    avail_height = H - margin_top - margin_bottom
 
-    # Tamano de fuente dinamico: empieza grande y baja hasta que la cita quepa en el
-    # alto disponible (citas largas como EP021 CARD2 terminan ~60px, cortas en ~72px)
-    size = 72
-    while size > 24:
-        font, lines, line_h, total_h, max_line_w = _wrap_and_measure(quote, QUOTE_FONT_PATH, size, text_width_px)
-        if total_h <= avail_height - 100 and max_line_w <= text_width_px:
-            break
-        size -= 2
+def compose_quote_card(quote, attribution, out_path):
+    card = Image.new("RGB", (W, H), VOID)
+    d = ImageDraw.Draw(card)
 
-    attr_size = max(22, int(size * 0.34))
-    attr_font = ImageFont.truetype(ATTR_FONT_PATH, attr_size)
+    # Rejilla vertical fina, como las ranuras de ventilacion de un panel de equipo.
+    for x in range(0, W, 24):
+        d.line([(x, 0), (x, H)], fill=GRID, width=1)
 
-    block_h = total_h + 40 + int(attr_size * 1.4)
-    start_y = margin_top + (avail_height - block_h) // 2
+    attr_size = 30
+    af = _attr(attr_size)
+    attr_h = af.getbbox(attribution)[3]
 
-    y = start_y
+    avail_w = W - 2 * MARGIN_X
+    avail_h = H - 2 * MARGIN_Y - attr_h - 60
+    font, lines, line_h, size = _fit(quote, avail_w, avail_h)
+
+    block_h = line_h * len(lines) + 60 + attr_h
+    y = (H - block_h) // 2 - font.getbbox(lines[0])[1]
+
     for line in lines:
-        draw.text((margin_x, y), line, font=font, fill=OFFWHITE)
+        d.text((MARGIN_X, y), line, font=font, fill=CREAM)
         y += line_h
 
-    y += 30
-    draw.text((margin_x, y), attribution, font=attr_font, fill=GOLD)
+    d.text((MARGIN_X, y + 60), attribution, font=af, fill=SIGNAL)
 
-    canvas.save(out_path)
-    print("saved", out_path, "quote font size", size)
+    card.save(out_path)
+    print("guardada %s  (cuerpo %dpx, %d lineas)" % (out_path, size, len(lines)))
 
 
 if __name__ == "__main__":
-    compose_quote_card(
-        scene_path=sys.argv[1],
-        quote=sys.argv[2],
-        attribution=sys.argv[3],
-        out_path=sys.argv[4],
-    )
+    compose_quote_card(sys.argv[1], sys.argv[2], sys.argv[3])
