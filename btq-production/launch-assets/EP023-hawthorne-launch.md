@@ -83,7 +83,8 @@ medición del desempeño, management, Behind the Queue, podcast en español, LAT
 
 ## B · Plan social — 4 días
 
-Grabación sábado · lanzamiento domingo 8:00 PM hora Colombia.
+Grabación sábado · lanzamiento **domingo 2026-07-26 a las 9:00 PM** hora Colombia
+(programado en Spotify por Andy; la hora canónica documentada son las 8:00 PM — ver nota abajo).
 
 ### Jueves — intriga
 
@@ -112,7 +113,7 @@ El que dice que si usted mira a su gente, su gente rinde más.
 
 En 2011 alguien por fin fue a buscar los datos originales 👀
 
-Domingo 8PM.
+Domingo 9PM.
 
 #BehindTheQueue #PodcastEnEspañol #NuevoEpisodio #Liderazgo #GestiónDeEquipos #Management #Indicadores #Operaciones #LATAM #Colombia #CustomerExperience #EfectoHawthorne #Productividad #Equipos #Jefes
 ```
@@ -121,7 +122,7 @@ Domingo 8PM.
 
 - Slide 1: `Le contaron que mirar a su gente la hace rendir más.`
 - Slide 2: `En 2011 fueron a buscar los datos originales.`
-- Slide 3: `Domingo 8PM. Y sí, también aplica para usted.`
+- Slide 3: `Domingo 9PM. Y sí, también aplica para usted.`
 
 **TikTok**
 
@@ -140,7 +141,7 @@ Grabando el 23 🎙️
 
 Este me costó más de lo normal, porque a mitad del episodio me tocó aceptar que yo también hago exactamente lo que estoy criticando.
 
-Mañana 8PM.
+Mañana 9PM.
 
 #BehindTheQueue #DetrásDeCámaras #PodcastEnEspañol #NuevoEpisodio #Liderazgo #GestiónDeEquipos #Management #Operaciones #LATAM #Colombia #Podcasting
 ```
@@ -150,10 +151,10 @@ Mañana 8PM.
 ```
 Grabando el episodio 23.
 Spoiler: me incluí en el problema.
-Mañana 8PM.
+Mañana 9PM.
 ```
 
-### Domingo 8:00 PM — lanzamiento
+### Domingo 9:00 PM — lanzamiento
 
 **LinkedIn**
 

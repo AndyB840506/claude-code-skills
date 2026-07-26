@@ -1,6 +1,14 @@
 EPISODE: EP.023 (BTQ)
 stage_a: complete — reescrito y verificado 2026-07-25. Listo para grabar.
-stage_b: in_progress — grabado y transcrito 2026-07-25. Las quote cards se componen aquí, contra la TRANSCRIPCIÓN real, nunca contra el guion.
+stage_b: complete — grabado, transcrito y assets generados 2026-07-25. Quote cards compuestas contra la TRANSCRIPCIÓN real (verbatim verificado), en tipografía pura.
+stage_c: in_progress — metadata aplicada en Spotify por Andy 2026-07-25; **go-live programado domingo 2026-07-26 21:00 hora Colombia**.
+spotify_url: pending — capturar cuando salga en vivo. Hay marcadores `[LINK SPOTIFY]` esperándola en `launch-assets/EP023-hawthorne-launch.md` (descripción de YouTube y primer comentario de LinkedIn del domingo).
+
+> **Hora de lanzamiento:** 21:00, no las 20:00 que documenta la regla de producción
+> (`episode-launch/workflows/step2-generate-assets.md` § B, que cita `btq-project/SKILL.md` §10).
+> El plan social de este episodio quedó alineado a las 21:00. **Sin decidir** si es cambio
+> permanente del estándar o excepción de esta semana — si es permanente hay que actualizar esas
+> fuentes, porque el horario está justificado con analytics.
 
 ## Grabación — 2026-07-25
 
