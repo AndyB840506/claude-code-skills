@@ -20,17 +20,28 @@ NOT part of the Step 2 parallel batch. Format reference: EP.015 registration
 
 # Step 4b — Update website episode grid (post-publish, once Spotify URL is live-verified)
 
-The site at `behind-thequeue.com` (Vercel project `website`) shows the 4 most recently
-published episodes in its `<div class="ep-list">` grid, oldest→newest (slot 1 = oldest,
-slot 4 = newest — drop the oldest each time a new episode publishes).
+> ⚠️ **Estructura reescrita 2026-07-25 con el rebrand v4.** Ya **no** existe
+> `<div class="ep-list">` ni el comentario `GRID RULE` que esta sección describía: el reskin
+> tipográfico los reemplazó y la descripción vieja mandaba a editar un nodo inexistente.
+> Verificado contra `btq-production/website/index.html` real.
 
-1. Edit `btq-production/website/index.html` — the grid keeps the 4 most recent episodes
-   ordered oldest→newest by EP number (slot 1 = lowest EP number = oldest, slot 4 = highest
-   = newest; see the `GRID RULE` comment above `<div class="ep-list">`). Drop the row with
-   the lowest EP number and append a new entry for the latest episode: `ep-num`,
-   `ep-ref-tag` (cultural reference), `ep-row-title`, `ep-row-quote`, and `href` pointing
-   to the **live-verified** Spotify URL (see re-push caveat in step1-collect-inputs.md —
-   never reuse a URL only "confirmed" pre-re-upload).
+El sitio `behind-thequeue.com` (proyecto Vercel `website`) muestra los episodios en **dos
+bloques separados**, y publicar uno nuevo toca los dos:
+
+| Bloque | Selector | Contenido |
+|---|---|---|
+| Último episodio (destacado) | `.mast-foot > a.latest` | `lt-n` (número, 3 dígitos), `lt-k` = `Último episodio · [Teórico]`, `lt-t` = título. **Sin cita.** |
+| Tracklist | `.stag > a.track` ×4 | `t-num`, `t-ref` (teórico/referente), `t-title`, `t-quote`. Orden **newest→oldest**. |
+
+1. Editar `btq-production/website/index.html`:
+   - `a.latest` pasa a ser el episodio nuevo (número, teórico, título, `href`).
+   - El que estaba en `a.latest` **baja al primer lugar del tracklist** — y ahí sí necesita
+     `t-quote`, que el bloque destacado no tenía. **Sacarla textual del SRT del episodio**,
+     no inventarla ni parafrasear el guion; el patrón de las 4 existentes es la frase de
+     firma del cierre.
+   - Se cae el `a.track` de número más bajo, para que el tracklist siga en 4.
+   - El `href` va a la URL de Spotify **verificada en vivo** (ver la advertencia de re-push en
+     step1-collect-inputs.md — nunca reutilizar una URL solo "confirmada" antes de re-subir).
 2. Redeploy from `btq-production/website/`: run `vercel --prod`.
 3. **Git commit alone does NOT update the live site** — Vercel deploy is manual via CLI,
    not auto-deploy from git push. Confirmed in EP.016: the HTML had the correct grid in the

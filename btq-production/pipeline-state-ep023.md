@@ -10,6 +10,44 @@ spotify_url: pending — capturar cuando salga en vivo. Hay marcadores `[LINK SP
 > permanente del estándar o excepción de esta semana — si es permanente hay que actualizar esas
 > fuentes, porque el horario está justificado con analytics.
 
+## Web — preparado 2026-07-25, bloqueado solo por la URL
+
+Todo lo que no dependía del link ya está resuelto. Al salir en vivo: pegar la URL, correr
+`vercel --prod` desde `btq-production/website/` y verificar en vivo con cache-busting.
+**El commit de git NO actualiza el sitio** — el deploy es manual por CLI.
+
+**1. `a.latest` pasa a EP.023:**
+
+```html
+<a class="latest rv" href="[URL_SPOTIFY_EP023]" target="_blank" rel="noopener">
+  <span class="lt-n">023</span>
+  <span><span class="lt-k">Último episodio · Elton Mayo</span><span class="lt-t">Por qué su equipo rinde distinto cuando lo miran</span></span>
+  <span class="lt-a">→</span>
+</a>
+```
+
+**2. EP.022 baja al tope del tracklist.** Necesita `t-quote`, que el bloque destacado no
+tenía. Sacada **textual del SRT de EP.022** (33:54 aprox., frase de firma del cierre — mismo
+patrón que las 4 existentes), no del guion:
+
+```html
+<a class="track" href="https://open.spotify.com/episode/6ewMTUO0FGNxfIMS0u55Yu" target="_blank" rel="noopener">
+  <div class="t-num">022</div>
+  <div>
+    <div class="t-ref">Philip Crosby</div>
+    <div class="t-title">El costo real de la mala calidad en su empresa</div>
+    <div class="t-quote">"La calidad es gratis. Lo que cuesta —y a veces cuesta carísimo— es no tenerla."</div>
+  </div>
+  <div class="t-right"><span class="t-listen">Escuchar</span><span class="t-go">→</span></div>
+</a>
+```
+
+**3. Se cae EP.018** (`6PC4QIDiAwmVZJ1BV5PYcx`), el de número más bajo, para dejar el
+tracklist en 4: 022 · 021 · 020 · 019.
+
+**No hace falta tocar** la sección `refs`: ya nombra a Hawthorne (y de paso a Parkinson y
+Peter, que cubren EP.024).
+
 ## Grabación — 2026-07-25
 
 - Audio: `E:\Podcast\BTQ\EP 23\BTQ EP 23.mp3` (33,5 MB, 34:56 totales) + sesión Reaper `.rpp`.
