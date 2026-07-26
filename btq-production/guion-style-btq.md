@@ -448,27 +448,60 @@ un techo aspiracional — es el rango objetivo. Si el guion mide por debajo de 4
 (con la fórmula de abajo), expandir o cortar antes de aprobar el guion para grabación, no dejarlo
 para la edición.
 
-**Ritmo real de Andy ≈ 150 palabras/min** (recalibrado 2026-07-06 contra el SRT del EP.20:
-`E:\Transcriptor\transcripciones\BTQ EP 20.srt` — 6.192 palabras habladas por el host / 41,28 min de
-habla efectiva, sin contar intro/outro musical. Cifra anterior de 143 wpm venía del SRT del EP.17,
-sigue siendo la referencia correcta si el ritmo de Andy vuelve a bajar). Ese número **ya incluye sus
-pausas** — es ritmo de entrega, no de lectura en seco. Diagnóstico EP.17: estaba marcado a "57 min"
-(≈90 wpm imaginario) y cayó en ~42-45. EP.18 v1 tenía 4.213 palabras = ~29 min reales aunque estaba
-marcado a 52.
+**Ritmo real de Andy ≈ 150 palabras/min.** Estable y no es la variable a vigilar: medido sobre los
+4 SRT de EP.020-023 con un solo método (palabras de las líneas del speaker / habla efectiva = del
+primer al último cue, menos los silencios ≥3 s) da 147,4 · 153,4 · 142,5 · 148,6 — **media 148,0**.
+Ese número **ya incluye sus pausas** — es ritmo de entrega, no de lectura en seco. Diagnóstico
+EP.17: estaba marcado a "57 min" (≈90 wpm imaginario) y cayó en ~42-45. EP.18 v1 tenía 4.213
+palabras = ~29 min reales aunque estaba marcado a 52.
 
-**Expansión real en vivo recalibrada:** el EP.20 tenía un guion escrito de 4.570 palabras y terminó
-en 6.192 palabras habladas — una expansión real de **+35.5%**, no el +15% que se asumía antes (ver
-"Ajuste por expansión" abajo, cifra vieja basada solo en EP.17). Usar +35.5% como referencia actual;
-recalibrar de nuevo si el patrón cambia en 2-3 episodios más.
+**Expansión real en vivo — RECALIBRADA 2026-07-25. Esta es la variable que rompe la duración.**
 
-**Tabla de dimensionamiento (palabras habladas → minutos a 150 wpm, recalibrado 2026-07-06):**
+| EP | escritas | habladas | expansión | habla efectiva |
+|---|---|---|---|---|
+| 020 | 4.570 | 6.418 | +40,4% | 43,53 min |
+| 021 | 4.584 | 6.134 | +33,8% | 39,99 min |
+| 022 | 4.674 | 5.901 | +26,2% | 41,40 min |
+| 023 | 4.425 | 5.017 | **+13,4%** | **33,77 min** |
 
-| Objetivo real | Palabras habladas | Palabras ESCRITAS (con +35.5% expansión) |
+**La causa NO es que Andy se expanda menos con el tiempo — es estructural** (diagnóstico de Andy,
+2026-07-25). EP.023 fusionó dentro del cuerpo segmentos que antes iban sueltos (las recomendaciones,
+tejidas en vez de en bloque) y se dimensionó **asumiendo que el guion fusionado conservaba las
+palabras del original**. No las conserva: **las costuras entre segmentos separados son donde ocurre
+la expansión en vivo.** Al disolverlas desaparece el volumen hablado que generaban — de ahí el salto
+de -12,8 puntos de EP.022 a EP.023, el mayor de la serie.
+
+**Regla: el factor de expansión depende del ESQUELETO, no de la fecha.**
+
+| Esqueleto | Expansión a usar | Evidencia |
 |---|---|---|
-| 40 min (piso del estándar) | ~6.000 | ~4.430 |
-| 42.5 min (centro del estándar) | ~6.375 | ~4.705 |
-| 45 min (techo del estándar) | ~6.750 | ~4.980 |
-| >50 min (fuera del estándar → evaluar 2 partes) | ~7.500+ | ~5.535+ |
+| Segmentos separados, con bloques propios (recomendaciones aparte, re-enganche) | **+26% a +40%** | EP.020-022 |
+| Segmentos fusionados / recomendaciones tejidas en el cuerpo | **+13%** | EP.023 |
+
+**Al cambiar de esqueleto NO se hereda el factor del esqueleto anterior, y NO se asume que el guion
+reescrito conserva el conteo del original — hay que recontarlo.** Fusionar segmentos reduce las
+palabras habladas aunque las escritas no bajen. Con esqueleto nuevo sin precedente medido, usar el
+factor bajo (+13%): el error caro es quedarse corto, porque estirar en post no se puede y regrabar
+sí cuesta.
+
+> ⚠️ Estas cifras salen de medir los SRT directamente, no de las notas de sesiones anteriores. La
+> guía registraba 6.192 palabras habladas para EP.20 donde el conteo consistente da 6.418: eran
+> métodos distintos de recortar el habla efectiva. Al recalibrar de nuevo, **volver a medir los 4+
+> SRT con un solo método** en vez de encadenar cifras heredadas.
+
+**Tabla de dimensionamiento (palabras habladas → minutos a 148 wpm, recalibrado 2026-07-25).**
+La columna de escritas usa **+13%** — el factor del esqueleto fusionado. Con un esqueleto de
+segmentos separados, usar +26% a +40% y la columna baja proporcionalmente:
+
+| Objetivo real | Palabras habladas | Palabras ESCRITAS (con +13% expansión) |
+|---|---|---|
+| 40 min (piso del estándar) | ~5.920 | ~5.240 |
+| 42.5 min (centro del estándar) | ~6.290 | ~5.565 |
+| 45 min (techo del estándar) | ~6.660 | ~5.895 |
+| >50 min (fuera del estándar → evaluar 2 partes) | ~7.400+ | ~6.550+ |
+
+Es un salto grande frente a la tabla vieja (~4.700 escritas para el centro): **el guion tiene que
+nacer ~18% más largo que los de EP.020-023.**
 
 **Ajuste por expansión en vivo (recalibrado 2026-07-06):** el dato de EP.17 (guion 5.265 → habló
 6.062, +15%) resultó ser un piso, no el promedio — el SRT real de EP.20 mostró **+35.5%** (guion 4.570
@@ -565,6 +598,6 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
 - [ ] **Voz narrativa, no documental:** los tramos históricos en presente/escena, no en
       modo informe.
 - [ ] Aperturas y conectores de contenido (sin meta-anuncios tipo "ahora vamos a…").
-- [ ] Duración: contar **palabras escritas × 1.355 (expansión) / 150 (wpm)** (ver "Calibración de duración", recalibrado 2026-07-06 contra SRT real de EP.20) — NO estimar minutos a ojo, NO usar 143 wpm / +15% (cifras viejas, basadas solo en EP.17). El resultado debe caer **entre 40 y 45 minutos** (estándar editorial, contando solo el habla — el jingle no cuenta) — si queda fuera de ese rango, expandir o cortar antes de grabar, no dejarlo para después.
+- [ ] Duración: contar **palabras escritas × factor de expansión del esqueleto / 148 (wpm)** — factor **1.13** si los segmentos van fusionados / las recomendaciones tejidas, **1.26 a 1.40** si van en bloques separados (ver "Calibración de duración", recalibrado 2026-07-25 contra los SRT de EP.020-023). NO estimar minutos a ojo, NO heredar el factor del esqueleto anterior, y si el guion es una reescritura **recontar las palabras** en vez de asumir el conteo del original. El resultado debe caer **entre 40 y 45 minutos** (estándar editorial, contando solo el habla — el jingle no cuenta) — si queda fuera de ese rango, expandir o cortar antes de grabar, no dejarlo para después.
 - [ ] **Jingle, no música:** el Segmento 0 abre con nota `JINGLE DE ENTRADA` y el cierre lleva
       `JINGLE DE SALIDA`. Cero apariciones de `OUTRO MUSICAL` o de camas musicales. Ver § Jingle.

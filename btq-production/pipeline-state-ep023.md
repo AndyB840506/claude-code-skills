@@ -1,6 +1,26 @@
 EPISODE: EP.023 (BTQ)
 stage_a: complete — reescrito y verificado 2026-07-25. Listo para grabar.
-stage_b: pending — requiere la grabación. Las quote cards se componen aquí, contra la TRANSCRIPCIÓN real, nunca contra el guion.
+stage_b: in_progress — grabado y transcrito 2026-07-25. Las quote cards se componen aquí, contra la TRANSCRIPCIÓN real, nunca contra el guion.
+
+## Grabación — 2026-07-25
+
+- Audio: `E:\Podcast\BTQ\EP 23\BTQ EP 23.mp3` (33,5 MB, 34:56 totales) + sesión Reaper `.rpp`.
+- Transcripción: `E:\Transcriptor\transcripciones\BTQ EP 23.srt` — WhisperX large-v2, es,
+  diarización, exit 0. 336 cues, UTF-8 sin BOM, un solo speaker.
+- **Duración real: 33,77 min de habla efectiva** (5.017 palabras a 148,6 wpm), contra los
+  40,0 min proyectados. **Andy aceptó publicar así** — el estándar 40-45 queda roto una vez.
+- Causa (diagnóstico de Andy): al fusionar dentro del cuerpo los segmentos que antes iban
+  sueltos, se asumió que el guion conservaba las palabras del original. Las costuras entre
+  segmentos separados eran donde ocurría la expansión en vivo. Expansión real **+13,4%**
+  contra el +35,5% asumido. Recalibrado en `guion-style-btq.md` § Calibración de duración.
+- Hueco de 18,1 s entre 0:15 y 0:33 → slot del jingle de entrada, limpio.
+- **Solo 0,59 s de silencio en cabeza** (el checklist pedía 3 s). Se resuelve insertando el
+  silencio en Reaper al montar el stinger; no requiere regrabar.
+- Teaser de EP.024: improvisado sobre el `[PENDIENTE DEFINIR]` — quedó genérico a propósito
+  («todavía no le puedo decir cuál porque ni yo la tengo cerrada»). El tema sigue sin definir.
+- WhisperX transcribe el nombre del show como «Behind the Cue» / «Behind the Cube» (3 veces).
+  Es artefacto de transcripción —*Queue* es homófono de *cue*—, no un error de pronunciación:
+  corregir solo si el SRT se publica como subtítulos.
 stage_c: pending
 spotify_url: pending
 

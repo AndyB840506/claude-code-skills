@@ -66,7 +66,12 @@
      corrigió regenerando y republicando en la misma URL. Anotado como hábito a
      mantener: republicar el Artifact después de cada edición al archivo fuente.
 - Lint final: 4.542 palabras (p.line + remate + dato + sub) → ~41.0 min a 150 wpm +
-  expansión 35.5%, dentro de 40-45 min. 2 REMATE (dentro de máx 3-4). Refrán central
+  expansión 35.5%, dentro de 40-45 min.
+  > Nota 2026-07-25 (post-grabación): esta cifra corresponde a la versión **previa** a la
+  > reescritura de esqueleto invertido — la que todavía tenía el segmento "Re-enganche".
+  > El guion que se grabó mide **4.425** (reconteo independiente con el mismo método).
+  > La proyección de ~41 min falló por el factor de expansión, no por el conteo: ver
+  > `guion-style-btq.md` § Calibración de duración, recalibrado con este episodio. 2 REMATE (dentro de máx 3-4). Refrán central
   variado 3 veces (Puente/Cuerpo1, Re-enganche, firma de cierre). 1 "imagínense", 0
   "me vuela la cabeza". Sin disclaimer de cajón. Sin bloque "Mito o Realidad" aparte.
   Título con el nombre del creador (Elton Mayo) según la nueva regla. 0 recomendaciones
