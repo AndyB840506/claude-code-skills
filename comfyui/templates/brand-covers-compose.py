@@ -125,8 +125,14 @@ while bsize > 50:
         break
     bsize -= 2
 ytop = sy0 + (SAFE_H - total) // 2
-draw_block(d, sx0, ytop, fb, BLINES, blh)
-d.text((sx0, ytop + bh + 34), KICKER, font=fk2, fill=MUTED)
+# Centrado horizontal dentro del safe area (2026-07-25). Antes el bloque se dibujaba
+# pegado a sx0 y dejaba los dos tercios derechos del banner vacios: entraba en el safe
+# area, pero en TV y movil se leia descentrado. Se centra el GRUPO (wordmark + kicker)
+# como unidad para no romper el alineado a la izquierda entre los dos.
+group_w = max(max(fb.getbbox(t)[2] for t, _ in BLINES), fk2.getbbox(KICKER)[2])
+bx = sx0 + (SAFE_W - group_w) // 2
+draw_block(d, bx, ytop, fb, BLINES, blh)
+d.text((bx, ytop + bh + 34), KICKER, font=fk2, fill=MUTED)
 bn.save(os.path.join(out_dir, "BTQ-yt-banner-2048x1152.png"))
 bn.save(os.path.join(out_dir, "BTQ-yt-banner-2048x1152.jpg"),
         "JPEG", quality=92, optimize=True, subsampling=0)
