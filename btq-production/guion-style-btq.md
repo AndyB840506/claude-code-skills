@@ -306,6 +306,41 @@ elimina esa clase de problema: no hay solape que sincronizar.
 El estándar de duración de 40-45 min sigue midiendo **solo el habla** — el jingle no cuenta,
 igual que antes no contaba la música.
 
+## Disclaimer de encuadre — el puente al ritual (decisión de Andy, 2026-07-25)
+
+**El problema que resuelve.** En EP.023 el Segmento 0 quedó así: hook en frío → «Bienvenidos a
+Behind the Queue, episodio 23» → **18 segundos de nada** → «Buenas y santas». El salto del hook
+al ritual no tenía puente: el jingle solo tapa el hueco, no lo resuelve. Andy pidió un
+**disclaimer de encuadre** que haga esa transición.
+
+**Qué es.** Entre el hook en frío y el «Buenas y santas», un bloque corto que le dice al oyente
+qué va a oír en el episodio **y qué no**. Se escribe **nuevo en cada episodio** — es encuadre del
+tema, no una fórmula recitada. Lo que se fija acá es su forma, no su texto.
+
+| Restricción | Valor |
+|---|---|
+| Largo | **35-55 palabras** (≈15-22 s a 148 wpm) |
+| Posición | Segmento 0, después del hook y del `JINGLE DE ENTRADA`, antes de «Buenas y santas» |
+| Obligatorio | La mitad de «qué **no** va a oír» — es la que sostiene la promesa de evidencia |
+
+**Lo que NO puede ser:**
+
+- **Un índice.** «Hoy vamos a ver tres cosas: primero…» convierte el episodio en una agenda y le
+  da al oyente permiso para saltar. Misma patología que el bloque de recomendaciones con
+  encabezado (ver § No dar señales de cierre falso).
+- **El remate adelantado.** El giro y el dato del ~60% no se tocan acá. El disclaimer encuadra
+  la pregunta; no entrega la respuesta.
+- **Una fórmula recitada.** Si dos episodios seguidos lo abren con la misma construcción, deja de
+  ser encuadre y pasa a ser ritual — y el ritual ya existe dos líneas más abajo. Aplica la misma
+  lógica que la rotación de esqueleto: **verificarlo contra el episodio anterior** con
+  `scripts/lint_guion_repeticion.py`.
+- **Un descargo legal.** No es «esto no constituye asesoría profesional». Andy descartó
+  explícitamente esa lectura: el encuadre es del **tema**, no de la responsabilidad.
+
+**Efecto en la duración:** suma ~45 palabras habladas al Segmento 0. Es marginal, pero cuenta
+dentro del estándar — el disclaimer es habla, no jingle. Incluirlo al dimensionar (ver
+§ Calibración de duración).
+
 ## Rotación de esqueleto — la fórmula no se repite (fijado 2026-07-25)
 
 **El problema, medido.** EP.020, EP.021, EP.022 y EP.023 salieron con el MISMO esqueleto de 9
@@ -601,3 +636,6 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
 - [ ] Duración: contar **palabras escritas × factor de expansión del esqueleto / 148 (wpm)** — factor **1.13** si los segmentos van fusionados / las recomendaciones tejidas, **1.26 a 1.40** si van en bloques separados (ver "Calibración de duración", recalibrado 2026-07-25 contra los SRT de EP.020-023). NO estimar minutos a ojo, NO heredar el factor del esqueleto anterior, y si el guion es una reescritura **recontar las palabras** en vez de asumir el conteo del original. El resultado debe caer **entre 40 y 45 minutos** (estándar editorial, contando solo el habla — el jingle no cuenta) — si queda fuera de ese rango, expandir o cortar antes de grabar, no dejarlo para después.
 - [ ] **Jingle, no música:** el Segmento 0 abre con nota `JINGLE DE ENTRADA` y el cierre lleva
       `JINGLE DE SALIDA`. Cero apariciones de `OUTRO MUSICAL` o de camas musicales. Ver § Jingle.
+- [ ] **Disclaimer de encuadre presente** entre el hook y «Buenas y santas»: 35-55 palabras,
+      incluye la mitad de «qué **no** va a oír», no es índice ni descargo legal, y no repite la
+      construcción del episodio anterior. Ver § Disclaimer de encuadre.

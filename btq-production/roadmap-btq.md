@@ -19,7 +19,17 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.020 | Pilar SEO — Métricas / KPIs de call center (evergreen, keyword-first, sin referente pop) | publicado — https://open.spotify.com/episode/6gRVIWVI3jBUAJarLJ7AsQ |
 | EP.021 | Los Simpson — 30 años en el aire: cómo evitar el burnout de un equipo a largo plazo | publicado — https://open.spotify.com/episode/0VH2eMppsNMBl3JqTEq4T0 |
 | EP.022 | Pilar SEO — Costo de mala calidad en call center (Philip Crosby, "Quality Is Free", 1979) — ángulo P&L: cuánto cuesta NO invertir en calidad | publicado — https://open.spotify.com/episode/6ewMTUO0FGNxfIMS0u55Yu |
-| EP.023 | Pilar SEO — el Efecto Hawthorne en monitoreo de calidad de call center (Elton Mayo, estudios Western Electric, 1920s) | guion listo |
+| EP.023 | Pilar SEO — el Efecto Hawthorne en medición del desempeño (Elton Mayo, estudios Western Electric, 1920s; reanálisis de Levitt & List 2011) | grabado — 2026-07-25, 33,77 min |
+| EP.024 | Pilar SEO — el Principio de Peter: ascender hasta el nivel de incompetencia (Laurence J. Peter y Raymond Hull, *The Peter Principle*, 1969) | en roadmap — tema elegido 2026-07-25 |
+
+> **EP.024 — por qué este tema** (decisión de Andy, 2026-07-25). Continúa directamente el cierre
+> de EP.023, que preguntó literalmente «¿a quién ascendió? ¿a quién no le renovó?», y cumple el
+> teaser grabado: «una idea que todo el mundo repite en las reuniones». Es el primer episodio con
+> el **disclaimer de encuadre** nuevo (ver `guion-style-btq.md`) y el primero dimensionado con la
+> tabla recalibrada — con esqueleto fusionado son **~5.565 palabras escritas** para el centro del
+> estándar, no las ~4.700 de la tabla vieja.
+> **Fuente primaria por verificar al escribir:** el roadmap exige confirmar la fuente antes de
+> redactar. Peter/Hull 1969 es la referencia que tengo, pero no la he abierto en esta sesión.
 
 ---
 
