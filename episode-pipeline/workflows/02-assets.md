@@ -26,8 +26,12 @@ Si un episodio se grabó tan largo que se publica en 2+ partes (ej. MPD EP.004 K
 ## Ruta BTQ — invoca `episode-launch`
 
 `episode-launch` ya genera en un solo paso: SEO de Spotify, plan social de 4 días,
-metadata de YouTube, prompts de cover-art (1:1/9:16/16:9), corre su propio gate de
-aprobación, y hace commit + push del archivo consolidado.
+portadas compuestas (1:1/9:16/16:9), quote cards, corre su propio gate de aprobación,
+y hace commit + push del archivo consolidado.
+
+> **No pidas metadata de YouTube ni de SafeCreative.** Ambas están retiradas desde el
+> 2026-07-26: BTQ recibe el episodio en YouTube por ingesta de RSS, y dejó de registrar en
+> SafeCreative. Ver `episode-launch/workflows/step2-generate-assets.md` §C.
 
 **Invócalo directamente, supliendo sus 6 inputs desde el episode brief — sin que
 vuelva a preguntarlos:**

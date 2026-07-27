@@ -44,9 +44,10 @@ hubo que re-grabar/re-exportar algo.
 1. Sobrescribe el audio en `E:\Transcriptor\audios\` con `Copy-Item -Force` y respalda el
    SRT viejo (`[nombre] (pre-fix backup).srt`) antes de que WhisperX lo sobrescriba.
 2. Repite la ejecución completa del Paso 3 sobre el archivo nuevo.
-3. Si ya se habían generado capítulos de YouTube o quote cards con timestamps del SRT
-   viejo (Stage 2), **no los descartes ni los regeneres desde cero** — solo recalcula los
-   timestamps contra el SRT nuevo. El contenido/copy no cambia, solo dónde ancla cada cita.
+3. Si ya se habían generado quote cards con timestamps del SRT viejo (Stage 2), **no las
+   descartes ni las regeneres desde cero** — solo recalcula los timestamps contra el SRT
+   nuevo. El contenido/copy no cambia, solo dónde ancla cada cita. (Los capítulos de YouTube
+   ya no se generan: retirados el 2026-07-26, el episodio entra por RSS.)
 4. Anota el re-run en la bitácora como sub-paso (ej. "Stage 1b — Re-transcripción") en vez
    de sobreescribir la entrada original de Stage 1.
 

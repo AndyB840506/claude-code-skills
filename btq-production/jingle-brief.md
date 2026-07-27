@@ -15,12 +15,13 @@
 | Formato | WAV 48 kHz para editar; el MP3 sale del render final del episodio. |
 | Loudness | Que **no pique** por encima del habla. Al montarlo, dejarlo un par de dB por debajo del pico de la voz, no al tope. |
 
-> ⚠️ **LA DIRECCIÓN SONORA ESTÁ ABIERTA (2026-07-25).** Andy probó la línea industrial y le
-> **choca**: «por el sonido industrial choca un poco, así que voy a experimentar con el
-> sonido». Lo que sigue abajo es la primera hipótesis —derivada del sistema visual— y NO
-> está aprobada. Lo que sí está fijado es la **forma**: duración, corte seco, mismo stinger
-> en los dos extremos, y que Andy entre sobre el silencio. Al retomar, preguntarle qué
-> encontró experimentando antes de proponer nada.
+> ⚠️ **LA DIRECCIÓN SONORA SIGUE ABIERTA A PROPÓSITO (act. 2026-07-26).** Andy probó la
+> línea industrial el 2026-07-25 y le **chocó**: «por el sonido industrial choca un poco,
+> así que voy a experimentar con el sonido». EP.023 salió con un jingle propio y **la
+> decisión ahora es variarlo por episodio** (ver § Varía por episodio, abajo) — así que la
+> dirección sonora no se va a "cerrar" nunca en un archivo único. Lo que sigue abajo son
+> hipótesis de partida, no un estándar aprobado. Lo fijado es la **forma**: duración, corte
+> seco, mismo stinger en los dos extremos, y que Andy entre sobre el silencio.
 
 ## De qué mundo sale
 
@@ -115,5 +116,20 @@ Repeat the same figure throughout with space between repeats.
 - Andy graba **3 s de silencio antes de la primera palabra y 3 después de la última** —
   ahí se pega el jingle sin recortar voz.
 - El jingle de cierre entra **después** de que la firma termina, no encima.
-- Guardar el archivo elegido como asset permanente de marca; se reusa en todos los
-  episodios sin regenerarlo.
+## Varía por episodio — la firma es la FORMA, no el archivo
+
+**Decisión de Andy, 2026-07-26 (reemplaza la regla anterior de "asset permanente que se
+reusa sin regenerarlo").** Cada episodio lleva **su propio jingle**, generado y recortado
+de nuevo, manteniendo **el mismo formato que el de EP.023**. Lo que se mantiene constante
+entre episodios es la especificación dura de arriba —2-4 s, mismo stinger al abrir y al
+cerrar, corte seco, nunca por debajo del habla—, no la grabación.
+
+Consecuencia práctica: **el jingle vuelve a la lista de pendientes de cada episodio.** No
+es un paso que se hace una vez y se hereda. El flujo por episodio es el de arriba: generar
+60 s, `cortar_jingle.py` para el mapa de energía, elegir sobre
+`BTQ-jingle-PRUEBA-empalme.wav`.
+
+> **Pendiente de documentar:** qué terminó siendo el jingle de EP.023 (cuál de las tres
+> direcciones, duración final, y el archivo fuente). Es la referencia de formato de aquí en
+> adelante, así que sin eso escrito "el mismo formato que EP.023" no es verificable por
+> nadie que retome esto en otra sesión.

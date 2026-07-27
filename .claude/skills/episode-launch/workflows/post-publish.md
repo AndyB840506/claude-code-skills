@@ -1,20 +1,11 @@
-# Step 4a — SafeCreative Registration Metadata (on request, post-publish)
+# Step 4a — SafeCreative: RETIRADO (2026-07-26)
 
-Generated separately — typically once the episode has a confirmed Spotify/YouTube URL,
-NOT part of the Step 2 parallel batch. Format reference: EP.015 registration
-(work ID 2605315837136).
-
-- **Title:** `Behind the Queue · EP.0XX · [Cultural reference]: [hook]`
-- **Work type:** Podcast
-- **Summary** (one paragraph): `Episodio [N] del podcast Behind the Queue, conducido por
-  Andrés Ricardo Bermúdez Rodríguez. En este episodio se analiza [cultural reference] como
-  punto de entrada para explorar [organizational/leadership lesson] — y qué hace el líder
-  que decide [actionable insight]. Producción original en español para audiencias de
-  operaciones, servicio al cliente y liderazgo en BPO/contact center.`
-- **Tags (~20–25, comma-separated):** mix of recurring brand tags (behind the queue,
-  andrés bermúdez, liderazgo, bpo, español, podcast, latam, colombia, contact center,
-  servicio al cliente, cultura, operaciones, información organizacional, experiencia)
-  + episode-specific (cultural reference name, themes, named frameworks/authors)
+> ⚠️ **BTQ ya no registra episodios en SafeCreative.** Decisión de Andy, 2026-07-26.
+> No generar la metadata de registro ni ofrecerla como paso opcional. Referencia histórica:
+> el registro de EP.015 (work ID 2605315837136) fue el formato que se usaba.
+>
+> Esto NO aplica a otros shows: `podcast-creator/workflows/00-setup.md` sigue sugiriendo
+> SafeCreative a quien arranca un podcast desde cero, y esa recomendación general se queda.
 
 ---
 

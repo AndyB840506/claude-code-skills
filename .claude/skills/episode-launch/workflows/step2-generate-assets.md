@@ -113,48 +113,40 @@ Cultural: episode-specific tag
 
 ---
 
-## C · YouTube Metadata
+## C · YouTube — RETIRADA (2026-07-26). El episodio entra por RSS.
 
-**Before generating, check the most recently published episode's actual YouTube page**
-(e.g. EP.015 — `https://youtu.be/DsRGtiimlAg`) — the format below reflects real production
-practice, which may keep evolving past what's written here. If WebFetch can't render the
-page (YouTube is a JS-heavy SPA and often returns unusable HTML), fall back to the format
-documented here — it was captured directly from a YouTube Studio screenshot, not scraped.
+> ⚠️ **NO generar metadata de YouTube.** Andy confirmó el 2026-07-26 (EP.023) que **YouTube
+> ingesta el episodio automáticamente desde el RSS del podcast**: no hay subida manual y no hay
+> caja de YouTube Studio que llenar. Todo lo que esta sección pedía —título hook,
+> descripción de 5 bloques, 15-20 tags, texto de thumbnail y la lista de capítulos con
+> timestamps— **no lo aplica nadie**. Generarlo es trabajo que se tira.
+>
+> Para EP.023 se generaron 23 capítulos con timestamps reales del SRT. Ese es exactamente el
+> costo que esta retirada evita repetir.
 
-- **Title:** Long, hook-style — `[Hook / cultural reference]: [punch line] | EP.0XX | Behind the Queue`.
-  No hard 60-char limit in practice (EP.015's title runs ~95 chars). El punch line
-  lleva al menos una keyword buscable (BPO / liderazgo / call center) — misma regla
-  que el título de Spotify (§A).
-- **Description structure** (matches EP.015 exactly — 5 blocks in this order):
-  1. Hook paragraph (2–3 sentences, the "honest question")
-  2. Episode summary paragraph (cultural reference as lens + leadership lesson)
-  3. `CONTENIDO DEL EPISODIO` — timestamped chapter list (see Chapter timestamps below)
-  4. `ENCUENTRA BTQ EN` — links block: website · Spotify · email · LinkedIn (full name) · Instagram
-  5. Hashtags (space-separated `#Tag`, NOT comma-separated — see Tags vs. hashtags below)
-- **Tags field** (YouTube Studio metadata box, separate from the description): 15–20
-  keywords, comma-separated — see Tags vs. hashtags below
-- **Thumbnail text:** 3–5 words max · high contrast · brand voice (Bebas Neue / uppercase style)
+**Consecuencia sobre la descripción:** al entrar por RSS, la descripción que YouTube muestra
+es **la de Spotify** (§A). Si en algún momento se quieren capítulos visibles, tienen que ir
+dentro de esa descripción — no en un asset aparte. **Sin decidir** (2026-07-26): la
+descripción de §A no los lleva hoy y no se agregaron por defecto, porque cambiarían el
+formato de Spotify ya establecido. Preguntárselo a Andy antes de meterlos.
 
-**If the audio gets re-transcribed after chapters/quote cards were already generated**
-(e.g. Andy re-exported to fix an intro/outro timing bug — confirmed BTQ EP.020): don't
-regenerate the assets from scratch. Recalculate only the timestamps against the new SRT —
-the copy/text of every block stays the same, only where each quote/chapter anchors moves.
+**Lo que sí sigue vivo de esta sección:**
 
-**Chapter timestamps:**
-Before saying timestamps aren't available, check the diarized transcript at
-`E:\Transcriptor\transcripciones\[Show] Ep.[N].srt` — note the show uses **no zero-padding**
-(e.g. `Behind The Queue Ep.16.srt`, not `Ep.016.srt`). Locate section transitions by
-searching for topic-keyword phrases (framework/author names, segment names like
-"Aplicable Hoy", cultural references). Real timestamps from the transcript beat guessed ranges.
+**Si el audio se re-transcribe después de generar las quote cards** (ej. Andy reexportó para
+arreglar un bug de timing de intro/outro — confirmado en EP.020): no regenerar los assets
+desde cero. Recalcular solo los timestamps contra el SRT nuevo — el texto de cada bloque se
+queda igual, solo se mueve dónde ancla cada cita.
 
-**Tags vs. hashtags — never conflate these, both belong in the metadata:**
-- **Tags / keywords** (distinct SEO metadata fields: YouTube Studio Tags box, Spotify
-  keyword/SEO tags, SafeCreative tags — NOT the hashtags inside post copy) = comma-separated
-  list. Format: `tag1, tag2, tag3, ...`
-- **In-content hashtags** (inside YouTube/description text AND the §B social posts) = a
-  separate, smaller set, space-separated with `#` prefix, for in-feed discoverability.
-  Format: `#Tag1 #Tag2 #Tag3`
-- Generate both where the platform has both — don't drop one in favor of the other.
+**Ubicación del SRT:** `E:\Transcriptor\transcripciones\[Show] Ep.[N].srt` — el show usa
+**sin zero-padding** (`Behind The Queue Ep.16.srt`, no `Ep.016.srt`).
+
+**Tags vs. hashtags — no confundirlos, los dos existen todavía:**
+- **Tags / keywords** (campo SEO de Spotify — NO los hashtags del copy) = lista separada por
+  comas. Formato: `tag1, tag2, tag3, ...`
+- **Hashtags in-content** (dentro de la descripción y de los posts de §B) = un set aparte, más
+  pequeño, separado por espacios con `#`, para descubrimiento en feed.
+  Formato: `#Tag1 #Tag2 #Tag3`
+- Generar los dos donde la plataforma tenga los dos — no sacrificar uno por el otro.
 
 ---
 

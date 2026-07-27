@@ -275,7 +275,11 @@ La diferencia no fue mirarlos.
 
 ---
 
-## C · YouTube
+## C · YouTube — NO SE APLICÓ (registro histórico)
+
+> El 2026-07-26 Andy confirmó que **YouTube ingesta el episodio por RSS**: no hubo subida
+> manual y nada de este bloque se pegó en ningún lado. Se deja como registro de lo que se
+> generó. **Desde EP.024 ya no se genera** — §C del workflow está retirada.
 
 **Título:**
 
@@ -360,7 +364,10 @@ frase con tildes va en el caption.
 
 ---
 
-## E · SafeCreative — metadata de registro
+## E · SafeCreative — NO SE APLICÓ (registro histórico)
+
+> BTQ dejó de registrar en SafeCreative (decisión de Andy, 2026-07-26). EP.023 **no** se
+> registró. Se deja el bloque como registro; desde EP.024 no se genera.
 
 | Campo | Valor |
 |---|---|
