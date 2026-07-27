@@ -25,11 +25,12 @@ spotify_url: https://open.spotify.com/episode/3FQOeIT8bNTakHNGgBhMMR
 > sigue siendo 20:00 y NO se tocan `step2-generate-assets.md` §B ni `btq-project/SKILL.md` §10.
 > Al revisar los analytics: comparar EP.023 (21:00) contra EP.020-022 (20:00) en las primeras 24 h.
 
-## Web — HTML aplicado 2026-07-26, PENDIENTE DE DEPLOY
+## Web — DESPLEGADA Y VERIFICADA 2026-07-26
 
-Los 3 cambios ya están escritos en `website/index.html`. **Falta correr `vercel --prod` desde
-`btq-production/website/`** y verificar en vivo con cache-busting.
-**El commit de git NO actualiza el sitio** — el deploy es manual por CLI.
+Los 3 cambios están en `website/index.html` y **ya desplegados**: `vercel --prod`
+(`dpl_Gv3PxhntkCxjxyfFnZGBbfoadMEX` → alias `behind-thequeue.com`), verificado en vivo con
+cache-busting (HTTP 200, latest=EP.023, EP.018 ausente, tracklist 022·021·020·019).
+**El commit de git NO actualiza el sitio** — el deploy fue manual por CLI.
 
 **1. `a.latest` pasa a EP.023:** ✅ aplicado
 
