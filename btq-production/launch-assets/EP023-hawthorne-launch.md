@@ -346,21 +346,25 @@ Volkswagen dieselgate, panóptico, Amy Cuddy, Behind the Queue, podcast en espa�
 
 ## D · Quote cards (4) — verbatim contra el SRT
 
-Formato 16:9 (1920×1080), split 50/50, generador `comfyui/templates/quote-card-compose.py`.
+Formato 16:9 (1920×1080), tipografía pura, generador `comfyui/templates/quote-card-compose.py`.
 Las 4 citas fueron verificadas programáticamente como textuales contra
 `E:\Transcriptor\transcripciones\BTQ EP 23.srt` (normalizando tildes y puntuación).
 
-| # | Cita (verbatim) | Timestamp | Objeto de escena sugerido |
-|---|---|---|---|
-| 1 | Es que la observación amplifica lo que su gente ya cree sobre usted. | 18:19 | Lámpara de taller apagada, una sola encendida al fondo |
-| 2 | Está midiendo el mejor comportamiento posible de su equipo, no el más frecuente. | 29:01 | Calibrador metálico sobre banco de trabajo |
-| 3 | Usted no está revisando todo. Usted está construyendo una torre. | 26:07 | Torre de andamio / estructura vertical de acero |
-| 4 | Desconfiar del dato favorito es más útil que conseguir uno nuevo. | 33:06 | Carpeta de registros abierta, hoja de datos |
+| # | Cita (verbatim) | Timestamp |
+|---|---|---|
+| 1 | Es que la observación amplifica lo que su gente ya cree sobre usted. | 18:19 |
+| 2 | Está midiendo el mejor comportamiento posible de su equipo, no el más frecuente. | 29:01 |
+| 3 | Usted no está revisando todo. Usted está construyendo una torre. | 26:07 |
+| 4 | Desconfiar del dato favorito es más útil que conseguir uno nuevo. | 33:06 |
 
-Reglas heredadas de `brand-constants.md` § Quote Cards: fondo propio por card, desenfocado y
-distinto en cada una; exactamente UN elemento en `#FF3D00`; el acero `#39434A` presente; cero
-anillos/círculos/dianas verificado con zoom a las 4 esquinas; texto de imagen **sin tildes**, la
-frase con tildes va en el caption.
+Atribución: `BEHIND THE QUEUE  ·  EP.023`, Martian Mono en `#FF3D00` — el único elemento saturado.
+
+> **Corregido 2026-07-26.** Este bloque conservaba tres reglas de v3 que el giro a tipografía
+> pura ya había retirado: «split 50/50», una columna de «objeto de escena sugerido» por card, y
+> «texto de imagen **sin tildes**». Las tres son falsas en v4: no hay escena que componer, y las
+> tildes se renderizan bien porque las fuentes se verificaron glifo por glifo
+> (`brand-constants.md` § Tipografía). Al regenerar las cards en el portátil, esa línea casi hace
+> que salieran sin acentos.
 
 ---
 
