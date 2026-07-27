@@ -23,7 +23,7 @@ the album "The Wall", giving `EP016-the-wall-launch.md`).
 Then run:
 ```
 git add btq-production/launch-assets/EP0XX-[slug]-launch.md
-git commit -m "feat(EP.0XX): launch assets — Spotify SEO, social plan, portadas y quote cards
+git commit -m "feat(EP.0XX): launch assets — Spotify SEO, social plan, YouTube, portadas y quote cards
 
 Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
 git push

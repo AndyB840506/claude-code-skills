@@ -275,11 +275,11 @@ La diferencia no fue mirarlos.
 
 ---
 
-## C · YouTube — NO SE APLICÓ (registro histórico)
+## C · YouTube — se aplica A MANO en Studio
 
-> El 2026-07-26 Andy confirmó que **YouTube ingesta el episodio por RSS**: no hubo subida
-> manual y nada de este bloque se pegó en ningún lado. Se deja como registro de lo que se
-> generó. **Desde EP.024 ya no se genera** — §C del workflow está retirada.
+> El episodio **llegó solo a YouTube por ingesta del RSS**, con la metadata de Spotify.
+> Andy la sobrescribe manualmente con lo de abajo — incluidos los 23 capítulos. Este bloque
+> **sí se usa**; no es registro histórico.
 
 **Título:**
 

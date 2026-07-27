@@ -12,7 +12,8 @@ spotify_url: https://open.spotify.com/episode/3FQOeIT8bNTakHNGgBhMMR
 | Web desplegada | hecho | `dpl_Gv3PxhntkCxjxyfFnZGBbfoadMEX` → alias `behind-thequeue.com`; verificada con cache-busting (HTTP 200, EP.023 presente, EP.018 ausente, tracklist 022·021·020·019) |
 | roadmap a `publicado` | hecho | `roadmap-btq.md` línea 22 |
 | Quote cards programadas | hecho | **reportado por Andy** — programadas para todo el pipeline social de la semana. No verificable desde el repo |
-| YouTube | hecho vía **RSS** | **reportado por Andy:** «YouTube confirmó episodio con el RSS» — ingesta automática, no subida manual. ⚠️ Ver la pregunta abierta abajo sobre qué pasa con los assets de YouTube que genera §C del workflow |
+| YouTube — ítem creado | hecho vía **RSS** | **reportado por Andy:** «YouTube confirmó episodio con el RSS» — ingesta automática, sin subida manual |
+| YouTube — metadata | **pendiente de Andy** | Llega con la metadata de Spotify y **Andy la sobrescribe a mano en Studio** (confirmado 2026-07-26). El bloque §C del archivo de assets, con los 23 capítulos, es lo que se pega |
 | Marca en Spotify | hecho | **reportado por Andy** — cambio de marca confirmado en Spotify |
 | Jingle | hecho para EP.023 | **reportado por Andy.** Cambia la regla: varía por episodio (ver `jingle-brief.md` § Varía por episodio) |
 | SafeCreative | **RETIRADO** | Decisión de Andy 2026-07-26: BTQ deja de registrar en SafeCreative. `post-publish.md` § Step 4a marcado como retirado |

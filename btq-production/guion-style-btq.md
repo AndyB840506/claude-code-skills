@@ -481,9 +481,8 @@ sino la revista y el año.
 **Qué hacer cuando lo grabado no coincide con la fuente** (caso EP.023: el guion decía
 «sesenta muertes prematuras» y al aire salió «alrededor de setenta»):
 
-1. **Los assets públicos usan la cifra verificada, no la dicha al aire.** La descripción de
-   Spotify y el copy de redes se escriben contra la fuente. (La descripción de Spotify es
-   también la que YouTube muestra: entra por RSS desde el 2026-07-26.)
+1. **Los assets públicos usan la cifra verificada, no la dicha al aire.** Las descripciones
+   de Spotify y de YouTube y el copy de redes se escriben contra la fuente.
 2. **No se corrige en silencio ni se propaga en silencio.** Se le reporta a Andy la
    discrepancia con el timestamp exacto, y él decide si edita el audio o lo deja.
 3. **Distinguir el error de locución del artefacto de transcripción.** WhisperX confunde
