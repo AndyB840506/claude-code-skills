@@ -179,6 +179,26 @@ Las tres son gratuitas y están instaladas por usuario en
 **Martian Mono es variable y su instancia por defecto es `SemiExpanded Regular`.** En PIL hay que
 llamar `font.set_variation_by_name('Regular')` o el mono sale más ancho de lo previsto.
 
+**Aprovisionar una máquina nueva (hecho en el portátil el 2026-07-26).** No hay que copiar
+imágenes entre máquinas: los assets de marca se **regeneran**, que para eso son deterministas.
+Hacen falta dos cosas, y en el portátil faltaban las dos:
+
+```
+python -m pip install Pillow
+```
+
+Fuentes, a `%LOCALAPPDATA%\Microsoft\Windows\Fonts` (crear el directorio si no existe):
+`https://api.fontshare.com/v2/fonts/download/cabinet-grotesk` y `.../supreme` devuelven ZIP;
+Martian Mono sale de `github.com/google/fonts/raw/main/ofl/martianmono/MartianMono[wdth,wght].ttf`
+y hay que **renombrarlo a `MartianMono-Variable.ttf`**, que es el nombre que buscan los scripts.
+Copiar el archivo basta para PIL; registrarlas en HKCU solo hace falta si se quieren en otras apps.
+
+**Contraprueba de que no hay deriva entre máquinas:** `BTQ-COVER-q92.jpg` tiene que pesar
+**235 KB**. Si da otra cosa, falta una fuente o se coló un sustituto.
+
+**Salida:** `E:\AI\outputs\BTQ-brand` en el escritorio, `D:\AI\outputs\BTQ-brand` en el portátil
+— el script recibe la carpeta como argumento, nunca a `C:`.
+
 Esto retira el sustituto **Impact** que se venía usando desde EP.022 porque Bebas Neue nunca se
 instaló. Ya no hace falta.
 
