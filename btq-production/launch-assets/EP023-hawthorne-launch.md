@@ -180,7 +180,7 @@ El episodio 23 ya está arriba. Va del efecto Hawthorne, del estudio que result�
 
 ```
 Episodio 23 completo acá 👇
-[LINK SPOTIFY]
+https://open.spotify.com/episode/3FQOeIT8bNTakHNGgBhMMR
 ```
 
 **Instagram / Facebook**
@@ -319,7 +319,7 @@ CONTENIDO DEL EPISODIO
 
 ENCUENTRA BTQ EN
 🌐 Web: behind-thequeue.com
-🎧 Spotify: [LINK SPOTIFY]
+🎧 Spotify: https://open.spotify.com/episode/3FQOeIT8bNTakHNGgBhMMR
 📩 Email: andy@behind-thequeue.com
 💼 LinkedIn: linkedin.com/company/behind-the-queue
 👤 Andrés Bermúdez Rodríguez: linkedin.com/in/andresbermudezrodriguez

@@ -1,25 +1,26 @@
 EPISODE: EP.023 (BTQ)
 stage_a: complete — reescrito y verificado 2026-07-25. Listo para grabar.
 stage_b: complete — grabado, transcrito y assets generados 2026-07-25. Quote cards compuestas contra la TRANSCRIPCIÓN real (verbatim verificado), en tipografía pura.
-stage_c: in_progress — metadata aplicada en Spotify por Andy 2026-07-25; **go-live programado domingo 2026-07-26 21:00 hora Colombia**.
-spotify_url: pending — capturar cuando salga en vivo. Hay marcadores `[LINK SPOTIFY]` esperándola en `launch-assets/EP023-hawthorne-launch.md` (descripción de YouTube y primer comentario de LinkedIn del domingo).
+stage_c: in_progress — **EN VIVO desde el domingo 2026-07-26 21:00 hora Colombia** (verificado 22:57 COT: og:title de Spotify = el título fijado, "released Today"). URL capturada y sustituida en los 3 marcadores. Falta: deploy de la web y las subidas manuales de Andy (YouTube, SafeCreative, quote cards, jingle).
+spotify_url: https://open.spotify.com/episode/3FQOeIT8bNTakHNGgBhMMR
 
 > **Hora de lanzamiento:** 21:00, no las 20:00 que documenta la regla de producción
 > (`episode-launch/workflows/step2-generate-assets.md` § B, que cita `btq-project/SKILL.md` §10).
-> El plan social de este episodio quedó alineado a las 21:00. **Sin decidir** si es cambio
-> permanente del estándar o excepción de esta semana — si es permanente hay que actualizar esas
-> fuentes, porque el horario está justificado con analytics.
+> El plan social de este episodio quedó alineado a las 21:00. **Decisión de Andy 2026-07-26: se
+> resuelve con los analytics de EP.023**, no por criterio a priori. Hasta entonces la regla escrita
+> sigue siendo 20:00 y NO se tocan `step2-generate-assets.md` §B ni `btq-project/SKILL.md` §10.
+> Al revisar los analytics: comparar EP.023 (21:00) contra EP.020-022 (20:00) en las primeras 24 h.
 
-## Web — preparado 2026-07-25, bloqueado solo por la URL
+## Web — HTML aplicado 2026-07-26, PENDIENTE DE DEPLOY
 
-Todo lo que no dependía del link ya está resuelto. Al salir en vivo: pegar la URL, correr
-`vercel --prod` desde `btq-production/website/` y verificar en vivo con cache-busting.
+Los 3 cambios ya están escritos en `website/index.html`. **Falta correr `vercel --prod` desde
+`btq-production/website/`** y verificar en vivo con cache-busting.
 **El commit de git NO actualiza el sitio** — el deploy es manual por CLI.
 
-**1. `a.latest` pasa a EP.023:**
+**1. `a.latest` pasa a EP.023:** ✅ aplicado
 
 ```html
-<a class="latest rv" href="[URL_SPOTIFY_EP023]" target="_blank" rel="noopener">
+<a class="latest rv" href="https://open.spotify.com/episode/3FQOeIT8bNTakHNGgBhMMR" target="_blank" rel="noopener">
   <span class="lt-n">023</span>
   <span><span class="lt-k">Último episodio · Elton Mayo</span><span class="lt-t">Por qué su equipo rinde distinto cuando lo miran</span></span>
   <span class="lt-a">→</span>
@@ -67,8 +68,6 @@ Peter, que cubren EP.024).
 - WhisperX transcribe el nombre del show como «Behind the Cue» / «Behind the Cube» (3 veces).
   Es artefacto de transcripción —*Queue* es homófono de *cue*—, no un error de pronunciación:
   corregir solo si el SRT se publica como subtítulos.
-stage_c: pending
-spotify_url: pending
 
 ## Título — FIJADO 2026-07-25 (decisión de Andy)
 

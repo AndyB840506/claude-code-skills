@@ -19,7 +19,7 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.020 | Pilar SEO — Métricas / KPIs de call center (evergreen, keyword-first, sin referente pop) | publicado — https://open.spotify.com/episode/6gRVIWVI3jBUAJarLJ7AsQ |
 | EP.021 | Los Simpson — 30 años en el aire: cómo evitar el burnout de un equipo a largo plazo | publicado — https://open.spotify.com/episode/0VH2eMppsNMBl3JqTEq4T0 |
 | EP.022 | Pilar SEO — Costo de mala calidad en call center (Philip Crosby, "Quality Is Free", 1979) — ángulo P&L: cuánto cuesta NO invertir en calidad | publicado — https://open.spotify.com/episode/6ewMTUO0FGNxfIMS0u55Yu |
-| EP.023 | Pilar SEO — el Efecto Hawthorne en medición del desempeño (Elton Mayo, estudios Western Electric, 1920s; reanálisis de Levitt & List 2011) | **en Spotify** — programado go-live domingo 2026-07-26 21:00 COT (URL pendiente de capturar) |
+| EP.023 | Pilar SEO — el Efecto Hawthorne en medición del desempeño (Elton Mayo, estudios Western Electric, 1920s; reanálisis de Levitt & List 2011) | publicado — https://open.spotify.com/episode/3FQOeIT8bNTakHNGgBhMMR |
 | EP.024 | Pilar SEO — el Principio de Peter: ascender hasta el nivel de incompetencia (Laurence J. Peter y Raymond Hull, *The Peter Principle*, 1969) | en roadmap — tema elegido 2026-07-25 |
 
 > **EP.024 — por qué este tema** (decisión de Andy, 2026-07-25). Continúa directamente el cierre
