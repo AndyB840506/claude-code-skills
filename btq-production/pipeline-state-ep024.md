@@ -95,6 +95,20 @@ el valor de un episodio suelto. **Alternativa mejor si hay vistas suficientes: Y
 da la curva de retención minuto a minuto** del mismo audio. Revisar cuántas vistas tiene el ítem
 de EP.023 antes de sacar conclusiones de ahí.
 
+## Corrección post-aprobación (2026-07-28, auditoría de la guía de estilo)
+
+Una línea se reescribió **después** de aprobado, con visto bueno de Andy: traía
+`todavía no les he mostrado`, el mismo andamiaje de EP.022 y EP.023 — tercero seguido. El lint
+de 6-gramas lo dejó pasar porque difería en la última palabra; ahora hay un grep nominal en el
+checklist. El guion sigue en PASS y dentro del estándar.
+
+**Duración remedida con un extractor que respeta tags anidados: 5.536 palabras escritas →
+42,3 min** (×1,13 ÷148). Difiere en ~69 palabras del conteo registrado al aprobar (5.605 =
+42,8 min) y **la diferencia no está explicada** — la edición solo quitó ~5 palabras. Ambas
+mediciones caen dentro de 40-45, así que no cambia ninguna decisión. Al recontar, usar un
+extractor que no corte en el primer `</`: el regex ingenuo dio 5.213 (39,8 min), 323 palabras
+de menos, por truncar en cada `<strong>` interno.
+
 ## Pendiente
 
 - Artwork (portadas 3 formatos + quote cards): no iniciado. Las cards se componen DESPUÉS de

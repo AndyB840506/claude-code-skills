@@ -4,9 +4,15 @@
 > Nace del feedback de Andy (2026-06-17): los guiones estaban "muy tiesos, les falta chispa".
 > Referencia de narrativa con chispa: los guiones de MPD (ej. `mrputridsden-production/scripts/EP005-aterciopelados.html`).
 
-BTQ es **solo host (Andy)**: conecta un referente pop (música, cine, juegos) con una lección de
-liderazgo para un supervisor/gerente de BPO de ~40 años. La chispa no viene de banter entre hosts
-(no hay co-host) — viene del ritmo hablado, la escena, el dato que sorprende, el humor y la calidez.
+BTQ es **solo host (Andy)**: le explica a un supervisor/gerente de BPO de ~40 años una ley, teoría
+o principio real de gestión, bajado al piso con casos verificados. La chispa no viene de banter
+entre hosts (no hay co-host) — viene del ritmo hablado, la escena, el dato que sorprende, el humor
+y la calidez.
+
+> **Carril vigente: 100% pilar SEO** (giro del 2026-07-21). El carril **pop-culture** —conectar un
+> referente de música, cine o juegos con la lección— está **en pausa**, no retirado: las reglas que
+> hablan de «el referente» siguen escritas porque sirven si vuelve, pero **no aplican hoy**. Fuente:
+> `roadmap-btq.md` § Reglas retiradas.
 
 ---
 
@@ -65,7 +71,7 @@ liderazgo para un supervisor/gerente de BPO de ~40 años. La chispa no viene de 
    grabar, sin inventar (visto en EP.018 / Mundial 2026: las anécdotas son de 1950/1993/2014/2019;
    nada del torneo en curso se afirma como resultado).
 
-7. **Mete humor, guiño y autoconciencia.** Andy solo, una hora — necesita contraste. Un chiste
+7. **Mete humor, guiño y autoconciencia.** Andy solo, 40-45 minutos — necesita contraste. Un chiste
    seco, admitir lo obvio ("sí, ya sé, otro que les habla de Cerati"), una exageración, un aparte.
    El humor no le quita peso a la lección: le da respiro para que la lección pegue más duro.
 
@@ -248,9 +254,11 @@ la regla de que portada y metadata comparten string.
 el aterrizaje en «su equipo», «su operación» o «su empresa» ahora vive en el **primer** tramo —es
 el problema mismo, dicho en segunda persona— y ya **no** en «su call center». La teoría puede venir de donde
 sea (manufactura, aviación, software, economía); lo que se mantiene es que baje al piso.
-Única excepción deliberada: **EP.020 no se retitula** aunque diga «call center», porque es el
-único episodio con desempeño medido y esa keyword es probablemente la razón. Ver
-`btq-production/metadata-v4-macro.md`.
+Única excepción deliberada: **EP.020 no se retitula** aunque diga «call center» — pero
+**no por la keyword**. La corrección de arriba lo mide: EP.020 recibió 36 impresiones de búsqueda
+y 102 de sus 143 vinieron del Home; no ganó por SEO. Se deja quieto porque es el **único episodio
+con desempeño medido**, y cambiarle el título destruye la única línea base que existe para
+comparar. Ver `btq-production/metadata-v4-macro.md`.
 
 Lo que va antes de los dos puntos es **el problema, en las palabras del oyente** — la frase que
 esa persona escribiría en un buscador o le preguntaría a una IA. Después de los dos puntos, el
@@ -294,11 +302,21 @@ fórmula `EP.XX — [Referente]: [frase con keyword]` de abajo, que trae su prop
 
 ---
 
-## Estructura canónica del episodio (pop-culture) — seguir desde el primer borrador
+## Estructura canónica del episodio — seguir desde el primer borrador
+
+> **Aplica a TODOS los episodios, incluidos los pilares SEO** (aclarado 2026-07-28). Esta sección
+> llevaba el rótulo «(pop-culture)» heredado de cuando se escribió, y el cierre canónico —la firma
+> del show, exigida por el lint en todos los episodios— vive aquí adentro. Con el carril
+> pop-culture en pausa, ese rótulo hacía que la sección entera pareciera archivada.
+> **Lo único condicional son los puntos que nombran «el referente»** (2 y 5): si el episodio no
+> tiene referente pop, el puente y las Referencias Cruzadas salen del tema mismo, no de una
+> película o una banda. El resto es obligatorio siempre.
+> El §ADN de los pilares SEO (arriba) no reemplaza esto: dice qué material tiene que haber,
+> no en qué orden va ni cómo cierra.
 
 Derivado de comparar EP.018 (completo) vs. un primer borrador de EP.019 que se quedó corto
 (feedback Andy 2026-06-26: "se encasilló en el referente, le faltó el cierre"). Un episodio
-BTQ pop-culture lleva, en orden, estos bloques. No omitir ninguno al escribir el borrador:
+BTQ lleva, en orden, estos bloques. No omitir ninguno al escribir el borrador:
 
 1. **Apertura** (ritual: "Buenas y santas…") + **Hook** en escena.
 2. **El Puente** referente → supervisor BPO (a veces enlaza con el episodio anterior).
@@ -440,7 +458,8 @@ Bielsa», «La decisión · Van Gaal y Obdulio».
 
 **Hallazgo:** EP.020 y EP.022 usan literalmente el mismo Cuerpo 2 — «el dato SQM». Mismo dato
 duro, dos episodios. La regla de no repetir recomendaciones ni referencias cruzadas ya existía
-(punto 7 del ADN) pero **no cubría los datos ni los casos**, que son lo que sostiene el episodio.
+(punto 7 de § Estructura canónica) pero **no cubría los datos ni los casos**, que son lo que
+sostiene el episodio.
 
 - **Ninguna fuente de dato o caso ancla puede repetirse en 5 episodios.** Antes de cerrar el
   dato duro o los casos, grepear `btq-production/launch-assets/*.html` por la fuente candidata.
@@ -471,9 +490,10 @@ del repo, solo en versiones viejas del sitio, así que no hay forma de saber si 
 audio o una paráfrasis escrita para la web. Reescribir una cita atribuida sin conocer su origen
 es inventar lo que alguien dijo. Ante el choque de registro, se pregunta; no se corrige.
 
-**La mitigación de una regla se volvió molde.** El § No dar señales de cierre falso pide meter
-«una línea de enganche» antes de la aplicación, y ejemplifica con *"todavía no les he dicho la
-parte que más le tocó a X"*. El lint encontró esa línea **casi textual en EP.022 y EP.023**:
+**La mitigación de una regla se volvió molde.** El § No dar señales de cierre falso **pedía** meter
+«una línea de enganche» antes de la aplicación, y la ejemplificaba con *"todavía no les he dicho la
+parte que más le tocó a X"* (**mitigación retirada el 2026-07-28**, justamente por esto). El lint
+encontró esa línea **casi textual en EP.022 y EP.023**:
 `todavía no les he contado la parte que`. Una mitigación redactada como ejemplo se copia como
 plantilla. **Los ejemplos de esta guía son ilustraciones, no texto para pegar** — cuando una
 regla dé un ejemplo de redacción, escribir uno nuevo, no reusar el de la guía.
@@ -497,8 +517,9 @@ en que algo *suena* a que ya terminó.
 
 > **Actualización 2026-07-25:** el bloque «Recomendaciones de Andy» **era** el peor de estos
 > puntos y ya no existe como segmento — las recomendaciones van tejidas en el cuerpo (ver punto 7
-> del ADN). La mitigación que estaba escrita aquí ("meter una línea de enganche antes de entrar")
-> era maquillaje: el bloque seguía sonando a créditos. Se eliminó la causa, no el síntoma.
+> de § Estructura canónica). La mitigación que estaba escrita aquí ("meter una línea de enganche
+> antes de entrar") era maquillaje: el bloque seguía sonando a créditos. Se eliminó la causa, no
+> el síntoma — **y con ella se retiró la mitigación**, que se había vuelto molde (ver abajo).
 
 **Mitigación obligatoria — condición → acción → verificación:**
 - Cuando un REMATE de un segmento que NO es el cierre final quede redactado con tono de conclusión
@@ -506,10 +527,13 @@ en que algo *suena* a que ya terminó.
   adelante — una pregunta sin responder, un hilo que se retoma después, nunca un punto final
   emocional. Verificar releyendo cada REMATE fuera del Cierre y preguntando: "¿esto suena a que el
   episodio podría terminar aquí?" Si la respuesta es sí, reescribirlo.
-- Antes de entrar al tramo de aplicación, meter una línea corta de enganche que le diga al oyente,
-  sin sonar a anuncio de índice (regla 8, sin meta-anuncios), que todavía viene algo que vale la
-  pena — ej. una referencia a la pregunta del cierre, un "todavía no les he dicho la parte que más
-  le tocó a X". Y **nunca** abrirlo con una fórmula de conteo fija (ver § Frases-molde).
+- **RETIRADA la "línea de enganche" antes de la aplicación** (2026-07-28). Era la mitigación
+  obligatoria de esta sección y se convirtió exactamente en lo que prohíbe § Frases-molde: el
+  ejemplo que traía impreso apareció casi textual en EP.022 **y** EP.023. Una mitigación redactada
+  como frase modelo se copia como plantilla, y el checklist la exigía episodio tras episodio.
+  **En su lugar:** el remate del segmento anterior a la aplicación es el que tiene que tirar hacia
+  adelante — se arregla ahí, con el material del episodio, no con una frase puente reutilizable.
+  Y **nunca** abrir la aplicación con una fórmula de conteo fija (ver § Frases-molde).
 - Verificar en la lectura final: ningún bloque antes del Cierre canónico debe poder funcionar,
   por sí solo, como final satisfactorio del episodio si se cortara ahí.
 
@@ -578,7 +602,7 @@ un techo aspiracional — es el rango objetivo. Si el guion mide por debajo de 4
 (con la fórmula de abajo), expandir o cortar antes de aprobar el guion para grabación, no dejarlo
 para la edición.
 
-**Ritmo real de Andy ≈ 150 palabras/min.** Estable y no es la variable a vigilar: medido sobre los
+**Ritmo real de Andy ≈ 148 palabras/min.** Estable y no es la variable a vigilar: medido sobre los
 4 SRT de EP.020-023 con un solo método (palabras de las líneas del speaker / habla efectiva = del
 primer al último cue, menos los silencios ≥3 s) da 147,4 · 153,4 · 142,5 · 148,6 — **media 148,0**.
 Ese número **ya incluye sus pausas** — es ritmo de entrega, no de lectura en seco. Diagnóstico
@@ -704,7 +728,7 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
       ser "yo, personalmente, desconfío"). BTQ es solo host narrando en primera persona
       todo el episodio; "Andy" en tercera persona solo es válido en la firma canónica del cierre
       ("Yo soy Andy"). *(Antes también valía como etiqueta de la sección «Recomendaciones de
-      Andy» — esa sección ya no existe, ver punto 7 del ADN.)*
+      Andy» — esa sección ya no existe, ver punto 7 de § Estructura canónica.)*
 - [ ] **Español neutro** (ver sección dedicada — es de léxico, NO aplanar la voz): grep de
       `cola` → ninguna con adjetivo corporal o de tamaño; nombre del show sin traducir; grep de
       anclados a un país (`tinto`, `parce`, `bacano`, `berraco`, `vaina`, `camello`, `chino`,
@@ -729,12 +753,18 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
 - [ ] **Frases-molde** (§ Frases-molde): correr el solapamiento de 6-gramas contra los guiones
       anteriores excluyendo apertura/cierre; cero 6-gramas compartidos en el cuerpo. Prohibido
       abrir la aplicación con fórmula de conteo ("tres cosas concretas").
+      **Más un grep nominal, porque el lint de 6-gramas NO caza el andamiaje** si cambia una sola
+      palabra: `grep -i "todavía no les he\|aún no les he"` → **cero apariciones**. Precedente
+      2026-07-28: EP.022 y EP.023 decían `todavía no les he contado` y EP.024 llegó a guion
+      aprobado con `todavía no les he mostrado` — tercero seguido, y el 6-grama pasó porque
+      difería en la última palabra. Cuando se detecte un molde nuevo, agregarle su grep aquí:
+      el solapamiento literal es el piso, no el techo.
 - [ ] **Sin bloque "Mito o Realidad" al final:** los datos de interés / mito-vs-realidad van
       distribuidos dentro del Cuerpo, no como segmento aparte antes del cierre.
 - [ ] **Sin señales de cierre falso antes del Cierre real** (ver sección dedicada arriba): releer
       cada REMATE que no sea el del Cierre y confirmar que tira hacia adelante, no que suena a
-      final. Confirmar que hay una línea de enganche antes de Aplicable Hoy o Recomendaciones,
-      no un salto directo que suene a que el contenido real ya terminó.
+      final — en especial el que precede a la aplicación. **No** buscar una "línea de enganche":
+      esa mitigación se retiró el 2026-07-28 por haberse vuelto molde.
 - [ ] **Voz narrativa, no documental:** los tramos históricos en presente/escena, no en
       modo informe.
 - [ ] Aperturas y conectores de contenido (sin meta-anuncios tipo "ahora vamos a…").
