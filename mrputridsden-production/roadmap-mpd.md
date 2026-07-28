@@ -107,10 +107,15 @@ tiene **5 filas** (T1·01 a T1·05). Pero T1 publico **6 items**: EP.004 salio e
 T1·04 apunta solo a la Parte 1 (`0Zf7egfYOQFP3E8Af9b4fr`); la **Parte 2**
 (`1QRXaL85TszCpwo2pfmEPw`, 2026-06-20, 1h16min) **no tiene fila**.
 
-Contradice la regla de que T1 esta cerrada y "se conserva ENTERA". Decision de Andres pendiente:
-agregar una fila T1·05 para la Parte 2 y renumerar Aterciopelados a T1·06, o dejar EP.004 como una
-sola entrada con las dos partes. **No tocar el sitio sin ese OK** — y ojo con el deploy: `vercel
---prod` normal da 404, hay que usar el flujo prebuilt (ver CLAUDE.md § Sitio web).
+**Decidido por Andres el 2026-07-28: NO se renumera nada.** T1 queda sellada en T1·01–T1·05 con
+Aterciopelados cerrando el ciclo, y T2 cuenta aparte desde E1. La opcion de correr Aterciopelados a
+T1·06 para abrirle campo a la Parte 2 queda **descartada** — tocar la numeracion de una temporada ya
+cerrada es justo lo que se queria evitar.
+
+Lo unico que sigue abierto es cosmetico y de bajo impacto: la fila T1·04 enlaza solo la Parte 1 y
+declara "92 min" cuando lo real son 105 min (P1) + 76 min (P2). Si algun dia se toca el sitio por
+otra razon, arreglar de paso; **no vale un deploy propio**. Ojo con el deploy: `vercel --prod`
+normal da 404, hay que usar el flujo prebuilt (ver CLAUDE.md § Sitio web).
 
 ---
 
