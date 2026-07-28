@@ -102,12 +102,24 @@ Una línea se reescribió **después** de aprobado, con visto bueno de Andy: tra
 de 6-gramas lo dejó pasar porque difería en la última palabra; ahora hay un grep nominal en el
 checklist. El guion sigue en PASS y dentro del estándar.
 
-**Duración remedida con un extractor que respeta tags anidados: 5.536 palabras escritas →
-42,3 min** (×1,13 ÷148). Difiere en ~69 palabras del conteo registrado al aprobar (5.605 =
-42,8 min) y **la diferencia no está explicada** — la edición solo quitó ~5 palabras. Ambas
-mediciones caen dentro de 40-45, así que no cambia ninguna decisión. Al recontar, usar un
-extractor que no corte en el primer `</`: el regex ingenuo dio 5.213 (39,8 min), 323 palabras
-de menos, por truncar en cada `<strong>` interno.
+**Duración: 5.612 palabras escritas → 42,8 min**, contando `line + remate + dato +
+mito/realidad + sub` y usando el factor y el wpm **medidos del SRT real de EP.023**
+(×1,134 · 148,6 wpm), no heredados de ninguna nota.
+
+Dos conteos malos aparecieron en el camino, ambos por el instrumento y no por el guion:
+
+- regex con `(.*?)</` → 5.213 (39,8 min). Corta en el primer `</`, así que trunca toda línea
+  con un `<strong>` adentro.
+- extractor que solo miraba `line` y `sub` → 5.536 (42,3 min). Se saltaba los bloques `remate`
+  y `dato`, que **sí se hablan**. Con las cinco clases, EP.023 da exactamente los 4.425 que
+  registra la guía — o sea que el método correcto reproduce la cifra histórica.
+
+**Riesgo abierto: el esqueleto D (trenzado) no tiene precedente medido.** El ×1,134 sale de
+EP.023, que es esqueleto B con segmentos fusionados. Si D expande como los de segmentos
+separados, EP.024 se va a 47,6 min (×1,26) o 52,9 (×1,40) — fuera del estándar por arriba.
+Es el error recuperable (se corta), al revés que EP.023, que se quedó corto y eso no se
+arregla en post. Al transcribir, **medir el factor real de D y anotarlo en la tabla de
+esqueletos** de `guion-style-btq.md`.
 
 ## Pendiente
 
