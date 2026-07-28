@@ -35,29 +35,60 @@ tras la salida de Juan (ver memoria `project_mpd_juan_departure`).
   El guion se quedó corto para el target de 43 min pese a que la fórmula prestada de BTQ estimaba
   ~42 min — la expansión menor (+23,5% vs +35,5% asumido) explica la diferencia.
 
-> ## ⚠️ ESTA TABLA QUEDÓ CORTA — corregida el 2026-07-28 con la grabación de EP.006
+> ## ⚠️ EL MODELO DE UNA SOLA CIFRA NO SIRVE — reemplazado el 2026-07-28
 >
-> La grabación del piloto de T2 (Club de los 27) **desmintió la calibración de EP.005.** Medido con
-> `ffprobe` sobre `E:\Podcast\MPD\Temporada 2\EP 01\MPD EP 01.mp3`: **5.230 palabras escritas
-> produjeron 45:55 de audio**, todo habla (verificado con espectrograma — no hay música pegada).
+> **La duración de un episodio de MPD no la manda el largo del guion. La manda cuánto se pausa.**
+> Eso se midió, no se supuso, y corrige un error de análisis del mismo día: al ver que el piloto de
+> T2 duró 45:55 contra ~40,5 estimados se concluyó "el guion está 13% largo" y se recortó. Falso —
+> el guion estaba bien; lo que cambió fue la entrega.
 >
-> - Ritmo real compuesto: **113,9 palabras escritas por minuto** (0,008781 min por palabra).
-> - La tabla de abajo asumía **128,9** palabras escritas por minuto. Se equivocaba por **13%**.
-> - Consecuencia concreta: un guion de 5.543 palabras —el "target de 43 min" de la tabla vieja—
->   produce en realidad **~48,7 min**, fuera del rango editorial.
+> ### Las tres variables, separadas
 >
-> **Usar esta tabla mientras haya n=2:**
+> **1. Ritmo de articulación: ~175 wpm. Es una CONSTANTE.** Medido sobre los 12 SRT reales de
+> `E:\Transcriptor\transcripciones\`, contando palabras contra tiempo con voz (no contra duración
+> total):
 >
-> | Objetivo real | Palabras ESCRITAS |
+> | Show | n | wpm hablando | rango |
+> |---|---|---|---|
+> | BTQ | 8 | **176,9** | 171,2 – 191,0 |
+> | MPD | 4 | **174,7** | 168,5 – 180,2 |
+>
+> Andrés articula igual en los dos shows y en todos los episodios. Esta cifra no se re-negocia.
+>
+> **2. Densidad de pausa: ES EL DIAL, y es decisión de dirección.** Medido con `silencedetect` a
+> igual umbral sobre los mp3:
+>
+> | Episodio | % del tiempo con voz | % pausa |
+> |---|---|---|
+> | MPD EP.04 P1 (T1, co-host) | 86,4% | 13,6% |
+> | MPD EP.04 P2 (T1, co-host) | 91,3% | 8,7% |
+> | **Piloto T2 (solo, registro de misterio)** | **67,5%** | **32,5%** |
+>
+> Un tercio del piloto es silencio: 14,9 min de pausa en 45:55. Eso **no es un defecto** — es el
+> registro pausado que pide el formato de misterio (la referencia del género, *Relatos de la Noche*,
+> vive de eso). Pero hay que dimensionar el guion sabiéndolo.
+>
+> **3. Expansión sobre el escrito: depende de qué tan pegado al guion se lea.** El piloto se leyó
+> casi textual — 31,0 min de voz × 175 wpm ≈ 5.425 habladas sobre 5.230 escritas, **expansión ≈1,04**.
+> EP.005 (T1) traía ≈1,23. No es una constante del show; es cuánto improvisa según el modo.
+>
+> ### La fórmula
+>
+> ```
+> minutos = (palabras_escritas × expansión) / 175 / (1 − pausa)
+> ```
+>
+> **Palabras escritas para un episodio de 43 min**, según cómo se vaya a leer (expansión 1,04, modo
+> leído):
+>
+> | Densidad de pausa | Palabras ESCRITAS |
 > |---|---|
-> | 40 min (piso) | ~4.555 |
-> | 43 min (target de Andrés) | ~4.896 |
-> | 45 min (techo) | ~5.124 |
+> | 32% (pausado, como el piloto) | **~5.000** |
+> | 20% (intermedio) | ~5.800 |
+> | 13% (ágil, como T1) | ~6.300 |
 >
-> **Lo que NO se puede afirmar todavía:** si el desfase viene de que Andrés habla más lento en T2
-> (registro más grave y pausado del formato misterio) o de que improvisa más. Para separar wpm de
-> expansión hace falta el SRT, que aún no existe porque el piloto se va a regrabar. Hasta entonces
-> el número compuesto es lo único medido, y es suficiente para dimensionar.
+> **Decidir el registro ANTES de dimensionar el guion.** Un mismo guion de 5.000 palabras dura 44
+> min pausado y 35 min ágil — nueve minutos de diferencia sin tocar una sola palabra.
 
 <details>
 <summary><strong>Tabla anterior (EP.005 — wpm 159,2 / expansión 1,235). Superada, se conserva como registro.</strong></summary>
@@ -72,20 +103,40 @@ tras la salida de Juan (ver memoria `project_mpd_juan_departure`).
 </details>
 
 **Cómo medir (actualizado 2026-07-28):** contar palabras de los bloques `host-text` únicamente (no
-`dato`/`leyenda`/`recomendacion`/`nota-produccion`, que son referencia de producción y no se leen
-al aire) y **multiplicar por 0,008781 para obtener minutos** — o dividir entre 113,9. Ese factor es
-el ritmo compuesto medido sobre la grabación de EP.006. No usar el par 159 wpm / ×1,235: sobreestima
-cuántas palabras caben.
+`dato`/`leyenda`/`recomendacion`/`nota-produccion`, que son referencia de producción y no se leen al
+aire) y aplicar la fórmula de arriba con la densidad de pausa que se vaya a usar. No usar el par
+159 wpm / ×1,235 de EP.005: mezcla articulación con pausa y da un número que solo vale para ese
+episodio.
+
+### Prueba de pausa — hacer esto ANTES de dimensionar un guion nuevo
+
+Grabar **un bloque de prueba** (2-3 minutos bastan) leyendo como se va a leer el episodio, y medirlo:
+
+```
+ffprobe -v error -show_entries format=duration -of csv=p=0 "prueba.mp3"
+ffmpeg -hide_banner -i "prueba.mp3" -af "silencedetect=noise=-40dB:d=0.35" -f null - 2>&1 \
+  | grep -o "silence_duration: [0-9.]*" | awk '{s+=$2} END {print "silencio total:", s, "seg"}'
+```
+
+`% pausa = silencio / duración`. Con ese número y la fórmula sale el largo del guion. Es la única
+forma de no estar adivinando: dos entregas del mismo texto se separan hasta nueve minutos.
+
+⚠️ **El umbral importa.** A −35 dB el piloto da 63,8% con voz y a −40 dB da 67,5%. Usar **siempre
+−40 dB** para que las cifras sean comparables entre episodios, y no comparar nunca una medición de
+`silencedetect` contra una derivada de SRT — son instrumentos distintos.
 
 ⚠️ **Contar con script, no a ojo, y con los patrones en escapes unicode.** Las tildes se manglan al
 pasar por la línea de comandos y devuelven **ceros falsos** en los greps de muletillas (mordió el
 2026-07-28: el lint reportó 0 muletillas con patrones rotos). Escribir el script a disco y correrlo
 desde ahí.
 
-**Muestra: n=2** (EP.005 y el piloto de EP.006), y los dos discrepan fuerte entre sí — 128,9 vs
-113,9 palabras escritas por minuto. Con dos puntos tan separados, tratar el número como provisional
-y **medir la duración real de cada episodio grabado con `ffprobe`** antes de dar por buena cualquier
-estimación. Al tener SRT, separar wpm de expansión. Los SRT viven en `E:\Transcriptor\transcripciones\`.
+**Estado de la muestra:** la articulación (~175 wpm) tiene n=12 y es sólida. La **expansión** tiene
+n=2 y los dos puntos están lejos (1,23 en EP.005 vs 1,04 en el piloto de T2) — depende del modo de
+lectura, así que no promediarlos. La **densidad de pausa** de T2 tiene n=1 y es justo la variable
+que más manda: por eso la prueba de pausa de arriba, en vez de confiar en una tabla.
+
+Cuando exista el SRT de la regrabación, recalcular expansión y pausa y subir T2 a n=2. Los SRT viven
+en `E:\Transcriptor\transcripciones\`.
 
 ---
 
