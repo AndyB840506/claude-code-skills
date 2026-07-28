@@ -5,43 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mr. Putrid's Den — EP.006: El Club de los 27</title>
     <style>
+        /* ── SISTEMA "LA GUARIDA" — Temporada 2 (congelado 2026-07-22) ──
+           Tokens tomados de rebrand/identidad-la-guarida.html, no a ojo.
+           Regla de mood: contraste térmico. Todo frío; el calor SOLO en la brasa.
+           Por eso el acento se usa con avaricia — si todo brilla, lee a club de
+           caballeros y no a misterio.
+           Retirados de Temporada 1: crimson #9B1C1C, ámbar #CE8B3A, oro #FFD700. */
+        :root {
+            --medianoche: #0B1A39;
+            --tinta:      #151E3B;
+            --humo:       #2C2F43;
+            --piedra:     #55555B;
+            --brasa:      #D9BF7A;
+            --polvo:      #E7DDC9;
+            --polvo-dim:  #9AA3B8;
+            --linea:      #242C47;
+            --alerta:     #C9736A;
+            --display: 'Bookman Old Style', Bookman, 'Book Antiqua', Georgia, serif;
+            --body:    'Segoe UI', system-ui, -apple-system, sans-serif;
+            --mono:    ui-monospace, 'Cascadia Code', Consolas, monospace;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #ebebeb; color: #1e1e1e; line-height: 1.75; font-size: 15px; }
-        .container { max-width: 780px; margin: 0 auto; background: white; }
-        .header { background: #1a1a1a; color: white; padding: 40px 44px; border-bottom: 5px solid #9B1C1C; }
-        .header .podcast { font-size: 0.85em; color: #CE8B3A; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
-        .header .pilar { font-size: 0.72em; color: #A8A8A8; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px; }
-        .header h1 { font-size: 1.9em; font-weight: 900; margin-bottom: 6px; }
-        .header .tagline { color: #FFD700; font-style: italic; font-size: 1em; margin-bottom: 20px; }
-        .meta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
-        .meta-item { background: rgba(155,28,28,0.2); border: 1px solid #9B1C1C; padding: 5px 12px; border-radius: 20px; font-size: 0.8em; color: #FFD700; }
-        .section { padding: 28px 44px; border-bottom: 1px solid #eee; }
-        .section h2 { font-size: 0.72em; text-transform: uppercase; letter-spacing: 3px; color: #9B1C1C; margin-bottom: 18px; padding-bottom: 7px; border-bottom: 2px solid #9B1C1C; }
-        .segment { margin: 36px 0; padding-bottom: 24px; border-bottom: 1px solid #f0f0f0; }
+        body { font-family: var(--body); background: var(--medianoche); color: var(--polvo); line-height: 1.75; font-size: 15px; }
+        .container { max-width: 780px; margin: 0 auto; background: var(--tinta); }
+
+        .header { background: var(--medianoche); color: var(--polvo); padding: 44px 44px 38px; border-bottom: 1px solid var(--brasa); }
+        .header .podcast { font-family: var(--mono); font-size: 0.7em; color: var(--brasa); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
+        .header .pilar { font-family: var(--mono); font-size: 0.66em; color: var(--piedra); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
+        .header h1 { font-family: var(--display); font-size: 2.1em; font-weight: 700; color: var(--polvo); margin-bottom: 10px; text-wrap: balance; line-height: 1.2; }
+        .header .tagline { color: var(--polvo-dim); font-style: italic; font-size: 0.98em; max-width: 60ch; }
+        .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+        .meta-item { background: var(--humo); border: 1px solid var(--linea); padding: 5px 12px; border-radius: 3px; font-family: var(--mono); font-size: 0.72em; letter-spacing: 0.5px; color: var(--polvo-dim); }
+
+        .section { padding: 30px 44px; border-bottom: 1px solid var(--linea); }
+        .section h2 { font-family: var(--mono); font-size: 0.7em; text-transform: uppercase; letter-spacing: 3px; color: var(--brasa); margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid var(--linea); }
+
+        .segment { margin: 38px 0; padding-bottom: 26px; border-bottom: 1px solid var(--linea); }
         .segment:last-child { border-bottom: none; }
-        .segment-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-        .segment-number { background: #9B1C1C; color: white; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75em; font-weight: bold; flex-shrink: 0; }
-        .segment-title { font-weight: 700; font-size: 0.95em; color: #1a1a1a; text-transform: uppercase; letter-spacing: 1px; }
-        .segment-time { margin-left: auto; font-size: 0.78em; color: #aaa; background: #f5f5f5; padding: 2px 10px; border-radius: 10px; white-space: nowrap; }
-        .sfx { background: #1a1a1a; color: #FFD700; padding: 11px 16px; border-radius: 4px; font-family: monospace; font-size: 0.88em; margin: 14px 0; }
-        .host-block { margin: 18px 0; padding: 0 0 0 18px; border-left: 3px solid #ddd; }
-        .host-name { font-weight: 800; font-size: 0.78em; text-transform: uppercase; letter-spacing: 2px; color: #9B1C1C; margin-bottom: 6px; }
-        .host-text { font-size: 1em; line-height: 1.85; color: #2a2a2a; }
-        .dato { background: #fdfaf3; color: #3a3018; padding: 14px 18px; border-radius: 4px; margin: 16px 0; border-left: 4px solid #c8a830; }
-        .dato-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; color: #9a7a10; margin-bottom: 5px; font-weight: 700; }
-        .leyenda { background: #faf5ff; color: #2e1a2e; padding: 14px 18px; border-radius: 4px; margin: 16px 0; border-left: 4px solid #9B1C1C; }
-        .leyenda-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; color: #7a1a7a; margin-bottom: 5px; font-weight: 700; }
-        .recomendacion { background: #f3faf3; color: #1a2e1a; padding: 14px 18px; border-radius: 4px; margin: 16px 0; border-left: 4px solid #5a8a3a; }
-        .recomendacion-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 2px; color: #3a6a1a; margin-bottom: 5px; font-weight: 700; }
-        .nota-produccion { background: #fffaed; border: 1px solid #e0bb3a; border-radius: 4px; padding: 9px 14px; margin: 10px 0; font-size: 0.84em; color: #5a4a10; }
-        .nota-produccion::before { content: "NOTA PRODUCCIÓN: "; font-weight: 700; text-transform: uppercase; }
-        .verificar { background: #fbeaea; border: 1px solid #d88; border-radius: 4px; padding: 9px 14px; margin: 10px 0; font-size: 0.84em; color: #7a2020; }
-        .verificar::before { content: "⚠ VERIFICAR ANTES DE GRABAR: "; font-weight: 700; text-transform: uppercase; }
-        .arquitectura { font-size: 0.88em; }
-        .arq-row { display: grid; grid-template-columns: 26px 220px 74px 1fr; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f0f0f0; align-items: start; }
-        .arq-num { color: #9B1C1C; font-weight: bold; }
-        .arq-seg { font-weight: 600; }
-        .arq-time { color: #aaa; font-family: monospace; }
+        .segment-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+        .segment-number { background: var(--brasa); color: var(--medianoche); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 0.72em; font-weight: 700; flex-shrink: 0; }
+        .segment-title { font-family: var(--display); font-weight: 700; font-size: 1em; color: var(--polvo); letter-spacing: 0.5px; }
+        .segment-time { margin-left: auto; font-family: var(--mono); font-size: 0.72em; color: var(--piedra); background: var(--humo); padding: 3px 10px; border-radius: 3px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+        .sfx { background: var(--medianoche); color: var(--brasa); padding: 12px 16px; border-radius: 3px; border: 1px solid var(--linea); font-family: var(--mono); font-size: 0.8em; line-height: 1.65; margin: 16px 0; }
+
+        .host-block { margin: 20px 0; padding: 0 0 0 20px; border-left: 2px solid var(--linea); }
+        .host-name { font-family: var(--mono); font-weight: 700; font-size: 0.68em; text-transform: uppercase; letter-spacing: 2px; color: var(--brasa); margin-bottom: 8px; }
+        .host-text { font-size: 1.02em; line-height: 1.9; color: var(--polvo); }
+
+        /* Temperatura = estatus epistémico. Es la tesis del show hecha CSS:
+           el dato confirmado se calienta, la leyenda se queda fría. */
+        .dato { background: var(--humo); color: var(--polvo); padding: 15px 18px; border-radius: 3px; margin: 18px 0; border-left: 3px solid var(--brasa); font-size: 0.94em; }
+        .dato-label { font-family: var(--mono); font-size: 0.66em; text-transform: uppercase; letter-spacing: 2px; color: var(--brasa); margin-bottom: 7px; font-weight: 700; }
+        .leyenda { background: var(--humo); color: var(--polvo-dim); padding: 15px 18px; border-radius: 3px; margin: 18px 0; border-left: 3px solid var(--piedra); font-size: 0.94em; }
+        .leyenda-label { font-family: var(--mono); font-size: 0.66em; text-transform: uppercase; letter-spacing: 2px; color: var(--polvo-dim); margin-bottom: 7px; font-weight: 700; }
+        .recomendacion { background: var(--humo); color: var(--polvo-dim); padding: 15px 18px; border-radius: 3px; margin: 18px 0; border-left: 3px solid var(--linea); font-size: 0.94em; }
+        .recomendacion-label { font-family: var(--mono); font-size: 0.66em; text-transform: uppercase; letter-spacing: 2px; color: var(--piedra); margin-bottom: 7px; font-weight: 700; }
+
+        .nota-produccion { background: transparent; border: 1px dashed var(--linea); border-radius: 3px; padding: 11px 15px; margin: 12px 0; font-size: 0.82em; line-height: 1.7; color: var(--polvo-dim); }
+        .nota-produccion::before { content: "NOTA PRODUCCIÓN: "; font-family: var(--mono); font-weight: 700; font-size: 0.9em; letter-spacing: 1px; color: var(--piedra); text-transform: uppercase; }
+        .nota-produccion strong { color: var(--polvo); }
+        .nota-produccion code { font-family: var(--mono); font-size: 0.92em; color: var(--brasa); }
+        .verificar { background: transparent; border: 1px solid var(--alerta); border-radius: 3px; padding: 11px 15px; margin: 12px 0; font-size: 0.82em; line-height: 1.7; color: var(--polvo-dim); }
+        .verificar::before { content: "⚠ VERIFICAR ANTES DE GRABAR: "; font-family: var(--mono); font-weight: 700; font-size: 0.9em; letter-spacing: 1px; color: var(--alerta); text-transform: uppercase; }
+        .verificar strong { color: var(--alerta); }
+        .verificar code { font-family: var(--mono); font-size: 0.92em; }
+
+        .arquitectura { font-size: 0.86em; overflow-x: auto; }
+        .arq-row { display: grid; grid-template-columns: 28px 210px 80px 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--linea); align-items: start; min-width: 560px; }
+        .arq-row:last-child { border-bottom: none; }
+        .arq-num { font-family: var(--mono); color: var(--brasa); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--polvo); }
+        .arq-time { color: var(--piedra); font-family: var(--mono); font-variant-numeric: tabular-nums; }
+        .arq-head { font-family: var(--mono); font-size: 0.88em; text-transform: uppercase; letter-spacing: 1.5px; color: var(--piedra); border-bottom-color: var(--piedra); }
+        .arq-head .arq-num, .arq-head .arq-seg, .arq-head .arq-time { color: var(--piedra); font-weight: 700; }
+        /* El pivote de la reestructura: es el unico renglon que se calienta,
+           porque es donde el episodio deja de repetir lo sabido. */
+        .arq-pivote { background: rgba(217,191,122,0.09); border-left: 2px solid var(--brasa); padding-left: 10px; margin-left: -12px; }
+
+        strong { color: var(--polvo); font-weight: 700; }
+        em { color: var(--polvo-dim); }
+        details { margin: 12px 0; }
+        summary { cursor: pointer; color: var(--polvo-dim); font-size: 0.86em; }
+        summary:focus-visible { outline: 2px solid var(--brasa); outline-offset: 3px; }
+        table { border-collapse: collapse; width: 100%; font-size: 0.9em; }
+        th, td { border: 1px solid var(--linea); padding: 7px 10px; text-align: left; }
+        th { color: var(--brasa); font-weight: 700; }
+
+        @media (max-width: 620px) {
+            .section, .header { padding-left: 22px; padding-right: 22px; }
+            .segment-time { margin-left: 0; }
+        }
     </style>
 </head>
 <body>
@@ -73,7 +127,7 @@
     <div class="section">
         <h2>Arquitectura del Episodio</h2>
         <div class="arquitectura">
-            <div class="arq-row" style="color:#9B1C1C; font-weight:bold;">
+            <div class="arq-row arq-head">
                 <span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span>
             </div>
             <div class="arq-row"><span class="arq-num">0</span><span class="arq-seg">Logo sonoro</span><span class="arq-time">00:00</span><span>Bumper FIJO (3–5 s) — el primer sonido del show.</span></div>
@@ -81,7 +135,7 @@
             <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Intro music</span><span class="arq-time">00:20</span><span>Música de T2 recortada a ~18 s — fade out.</span></div>
             <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Cold open + Bienvenida</span><span class="arq-time">00:40</span><span>3 de julio: Jones (1969) y Morrison (1971), mismo día, dos años exactos.</span></div>
             <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Bloque A — El racimo</span><span class="arq-time">03:50</span><span>1969-71: Jones, Wilson, Hendrix, Joplin, Morrison. Cierra reconociendo que el oyente ya se sabe esto.</span></div>
-            <div class="arq-row" style="background:#FDF3F3;"><span class="arq-num">5</span><span class="arq-seg">Bloque B — El desmentido</span><span class="arq-time">12:30</span><span><strong>El estudio BMJ entra ACÁ, no al final.</strong> El club no existe + las dos trampas mentales.</span></div>
+            <div class="arq-row arq-pivote"><span class="arq-num">5</span><span class="arq-seg">Bloque B — El desmentido</span><span class="arq-time">12:30</span><span><strong>El estudio BMJ entra ACÁ, no al final.</strong> El club no existe + las dos trampas mentales.</span></div>
             <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Bloque C — Cómo se fabrica un mito</span><span class="arq-time">21:00</span><span>Cobain lo nombra (y la frase de Wendy es ambigua); Winehouse lo renueva; Johnson, fundador retroactivo.</span></div>
             <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Bloque D — Lo que el mito tapa</span><span class="arq-time">33:00</span><span>Mueren 2-3x más. La industria, no el diablo. El veneno del "mejor arder".</span></div>
             <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">Cierre + conector</span><span class="arq-time">41:00</span><span>El cruce de caminos de Robert Johnson → próximo Archivo Secreto.</span></div>
