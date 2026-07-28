@@ -45,7 +45,10 @@ VARIANTS = {
     "COVER-16x9": (1920, 1080),
     "COVER-9x16": (1080, 1920),
 }
-CARD_RE = re.compile(r"-CARD\d+-16x9\.png$", re.I)
+# Dos nombres validos: -QUOTE-N.png es el canonico desde v4 (tipografia pura,
+# EP.023 en adelante); -CARDn-16x9.png es el de las cards renderizadas en ComfyUI
+# (EP.021-022, archivo). Ambos son 1920x1080.
+CARD_RE = re.compile(r"-(?:QUOTE-\d+|CARD\d+-16x9)\.png$", re.I)
 CARD_SIZE = (1920, 1080)
 
 # Archivos que estan en la carpeta pero NO son entregables.
@@ -183,7 +186,7 @@ def main():
             print("quote cards: OMITIDAS -- Stage A declarado con --stage-a.")
         else:
             fails.append(
-                "no se encontro ninguna quote card (-CARDn-16x9.png). "
+                "no se encontro ninguna quote card (-QUOTE-N.png). "
                 "Las cards son Stage B: se componen DESPUES de grabar y su texto se "
                 "valida contra la transcripcion real, NO contra el guion (Andy se "
                 "expande en vivo). Si el episodio no se ha grabado, este FAIL es el "

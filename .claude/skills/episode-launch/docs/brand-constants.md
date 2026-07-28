@@ -294,6 +294,11 @@ validadas contra el SRT real. Procedimiento compartido para los 3 shows en
   `#FF3D00` — el único elemento saturado. Cuerpo de la cita dinámico: arranca en 104px y baja
   de 2 en 2 hasta que el bloque envuelto quepa a lo ancho y a lo alto.
 - **Cero objetos, cero fotos, cero ilustración.** La cita ES el contenido.
+- **Nombre de archivo canónico: `BTQ-EP0NN-QUOTE-N.png`** (fijado 2026-07-28). El gate
+  `scripts/verify_assets.py` lo exige por regex; el nombre viejo `-CARDn-16x9.png` (cards
+  renderizadas en ComfyUI, EP.021-022) se sigue aceptando solo por los assets de archivo.
+  Cualquier otro nombre hace que el gate **omita las cards en silencio** — fue lo que pasó
+  desde EP.023 hasta que se detectó el 2026-07-28.
 
 > ⚠️ **Por qué cambió** (decisión de Andy, 2026-07-25). Hasta este día la sección pedía «mitad
 > negra con texto / mitad escena» con la escena generada en ComfyUI. Eso era **v3 y sobrevivió
