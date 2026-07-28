@@ -2,7 +2,7 @@
 
 Todos los prompts usados y aprobados en producción. Usar como base para EP.004+.
 
-**Sistema tipográfico:** MPD canónico (ver mrputridsden_project.md en memoria).
+**Sistema tipográfico:** MPD canónico **de Temporada 1** (Impact). *(La memoria `mrputridsden_project.md` que se citaba acá ya no existe. Desde T2 el canon es Bookman Old Style Bold e Impact quedó prohibido — ver `episode-launch/docs/brand-constants.md` y la memoria `project_mpd_rebrand_cruce_de_caminos`. Este documento es de EP.003 y se conserva como registro de T1.)*
 **Regla tipografía:** Siempre gradiente oscuro en tercio inferior + texto confinado ahí. NUNCA texto centrado en imagen.
 
 ---

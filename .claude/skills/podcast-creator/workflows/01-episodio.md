@@ -4,11 +4,11 @@ Genera un script completo, palabra por palabra, para un episodio específico. Se
 
 **Regla fundamental: Lee `podcast-profile.json` primero. Si no existe, lanza `00-setup.md` antes de continuar.**
 **Regla de lenguaje: Consulta `glosario-cachaco.md` antes de escribir cualquier guión (contiene guía de tono actualizada — español colombiano casual).**
-**Regla de eventos: Consulta `eventos.json` para el Segmento de Promoción.**
-**Regla de rotación de género: Revisar el género del episodio anterior antes de proponer el tema. No repetir el mismo género back-to-back. Si el EP anterior fue metal → el siguiente no puede ser metal. Géneros contiguos válidos: rock clásico, blues, jazz, soul, reggae, punk, alternativo, electrónico, folclore, salsa/afro-latino, etc.**
-**Regla del conector de género (EP.003 en adelante): Durante la investigación del episodio, identificar un dato real dentro del material — un artista, una influencia, un cruce histórico — que conecte orgánicamente con el género del siguiente episodio. Ese dato se convierte en el puente del cierre: el host lo nombra como anticipo del próximo capítulo. El conector NO se inventa — se descubre en la investigación. Si no existe un conector natural, revisar el orden del roadmap antes de forzarlo. Ejemplo: EP.002 (metal) → Iommi se inspiró en Django Reinhardt (jazz) → ese dato es el puente hacia un episodio de jazz. EP.003 (rock roots) → el árbol africano tiene dos ramas, una fue al Caribe → ese dato es el puente hacia EP.004 (salsa).**
+**Regla de eventos — RETIRADA (2026-07-17):** el Segmento de Promoción se cortó del show y `eventos.json` quedó deprecado. **No consultarlo y no incluir el segmento en ningún guion nuevo.** *(Se conserva el enunciado aquí solo como registro de que existió hasta EP.004.)*
+**Regla de rotación de género — RETIRADA para MPD T2 (2026-07-23):** aplicaba cuando cada episodio se anclaba en una banda/género (era T1). T2 es 100% misterios y leyendas: no hay género musical que rotar. *(Sigue vigente para cualquier otro show musical que use este workflow y lo declare en su `podcast-profile.json`.)* El enunciado histórico: no repetir el mismo género back-to-back; contiguos válidos rock clásico, blues, jazz, soul, reggae, punk, alternativo, electrónico, folclore, salsa/afro-latino.
+**Regla del conector — VIGENTE, pero ya no es "de género" (MPD T2):** durante la investigación, identificar un dato real del material que conecte con el **próximo expediente** (no con el próximo género). Ese dato es el puente del cierre. El conector NO se inventa — se descubre investigando; si no hay uno natural, revisar el orden del roadmap antes de forzarlo. Ejemplo vivo T2: Club de los 27 → Robert Johnson y el cruce de caminos → puente a pactos con el diablo. *(Ejemplos históricos de la era género: EP.002 metal → Iommi se inspiró en Django Reinhardt → jazz.)*
 **Regla de investigación y verificación (OBLIGATORIA, antes de escribir): investigar el tema en la web y reunir datos verificables (fechas, cifras, anécdotas reales, evolución del sonido, álbumes emblemáticos Y los menos conocidos, canciones). NUNCA inventar fuentes, fechas, productores ni quotes — marcar lo no confirmado como `[VERIFICAR]` para chequear antes de grabar. Igualar la profundidad de los episodios fuertes (Black Sabbath / Kraken): dato duro + escena de la época + anécdota cierta poco conocida. Lección EP.005 (Aterciopelados): el primer borrador acreditó mal al productor de "El Dorado" (era Federico López, no Manzanera) — el error solo salió al investigar.**
-**Regla de 2 partes (default para episodios con investigación profunda): si la data con chispa pasa de ~60 min, estructurar el guion en 2 partes DESDE EL INICIO — corte natural, cada parte con su apertura/cierre corto, recap de ~20 seg al abrir la Parte 2. Metadata compartida; solo cambia el título "(Parte 1)"/"(Parte 2)". Ver memoria `project-mpd-episodes-two-parts`.**
+**Regla de 2 partes — RETIRADA (2026-07-17).** Ya NO es el default. Con formato solo y target de ~43 min, la investigación debe caber en un episodio único; si un tema puntual no cabe, **preguntarle a Andrés antes de partir en 2** — no partir por reflejo. *(Enunciado histórico, vigente EP.002-EP.004: si la data pasaba de ~60 min se estructuraba en 2 partes desde el inicio, con recap de ~20 seg al abrir la Parte 2 y título "(Parte 1)"/"(Parte 2)".)* Ver memoria `project_mpd_episodes_two_parts` (RETIRED).
 
 > **⚠️ Alcance de este workflow — qué es genérico y qué es específico de MPD/BTQ:**
 > Este archivo se usa para cualquier show creado con `podcast-creator`, pero acumuló
@@ -20,7 +20,7 @@ Genera un script completo, palabra por palabra, para un episodio específico. Se
 >   género de arriba (específicas del formato musical de MPD)
 > - El tratamiento "usted/ustedes, nunca tú" y las palabras prohibidas del Paso 3
 >   (español colombiano — no aplica a shows en otro idioma)
-> - Las tablas de segmentos "co-host" y el Segmento de Promoción (Andrés/Juan de MPD)
+> - Las tablas de segmentos "co-host" y el Segmento de Promoción (Andrés/Juan de MPD) — ⚠️ **estas dos son HISTÓRICAS, no solo "específicas de MPD"**: MPD es formato solo desde EP.005 y el Segmento de Promoción está retirado. No usarlas para MPD tampoco.
 >
 > Lo genérico y aplicable a cualquier show: Paso 0 (cargar perfil), Paso 0.5 (formato
 > del episodio), Paso 1 (datos del episodio), Paso 1.5 (cuestionario si es interview),
@@ -36,7 +36,7 @@ Genera un script completo, palabra por palabra, para un episodio específico. Se
 > ¿Esta semana hay Silla Pútrida? (¿Tienen invitado especial en el show?)
 
 - **SÍ** → `formato_episodio = "silla_putrida"`. Ir a **Paso 0-SP** antes de continuar.
-- **NO** → `formato_episodio = "co-host"`. Continuar con **Paso 0** normalmente.
+- **NO** → `formato_episodio = "solo"` (default de MPD desde EP.005; el perfil manda: `podcast-profile.json` → `"formato"`). Continuar con **Paso 0** normalmente. *(Hasta EP.004 el default era `"co-host"`.)*
 
 ---
 
@@ -363,39 +363,61 @@ Calcula los tiempos según `duracion_min` del perfil:
 
 **Estructura base según tipo de episodio:**
 
-**Episodio normal (co-host):**
+**Episodio normal (solo — DEFAULT de MPD desde EP.005; apertura fija de T2 desde 2026-07-24):**
 
 | # | Segmento | Duración | Contenido para ESTE episodio |
 |---|----------|----------|------------------------------|
+| 0 | Logo sonoro | 3-5 seg | [bumper FIJO — primer sonido, no se regenera] |
+| 1 | Disclaimer | ~30 seg | [bumper FIJO, voz grave — contrato dato-vs-leyenda] |
+| 2 | Intro music | ~30 seg | [música de apertura] |
+| 3 | Bienvenida | 1-2 min | [Andrés abre el episodio] |
+| 4 | Contexto del tema | 3-4 min | [por qué este expediente ahora] |
+| 5 | Bloque principal A | [X min] | [primer desarrollo] |
+| 6 | Bloque principal B | [X min] | [segundo desarrollo / giro / destape] |
+| 7 | Reflexión / Takeaway | 3-4 min | [la puerta que abre la revelación] |
+| 8 | Outro + CTA | 1-2 min | [cierre + conector al próximo expediente] |
+| 9 | Outro music | ~30 seg | [música de cierre] |
+
+Logo sonoro y disclaimer son **bumpers fijos reutilizables** — se producen una vez y se pegan en cada episodio. Textos y briefs en `mrputridsden-production/audio/t2-disclaimer-e-intro.md`.
+
+**Episodio Silla Pútrida (con invitado):**
+
+| # | Segmento | Duración | Contenido para ESTE episodio |
+|---|----------|----------|------------------------------|
+| 0 | Logo sonoro | 3-5 seg | [bumper FIJO] |
+| 1 | Disclaimer | ~30 seg | [bumper FIJO] |
+| 2 | Intro especial Silla Pútrida | 30 seg | [música + anuncio de invitado] |
+| 3 | Bienvenida + presentación | 2-3 min | [Andrés presenta al invitado] |
+| 4 | Bloque preguntas A | [X min] | [preguntas aprobadas — Bloque 1 y 2] |
+| 5 | [INTERCAMBIO natural] | — | conversación con el invitado, fluye libre |
+| 6 | Bloque preguntas B | [X min] | [preguntas aprobadas — Bloque 3] |
+| 7 | Cierre con invitado | 2-3 min | [dónde encontrarlo, redes, proyectos] |
+| 8 | Outro + CTA | 1-2 min | [cierre + agradecimiento al invitado] |
+| 9 | Outro music | 30 seg | [música de cierre] |
+
+<details>
+<summary><b>Estructura histórica co-host (EP.002-EP.004) — archivada, NO usar en episodios nuevos</b></summary>
+
+Juan dejó el proyecto el 2026-07-17 y el Segmento de Promoción se retiró con él (no se reasignó).
+Se conserva como registro de cómo se produjeron esos tres episodios.
+
+| # | Segmento | Duración | Contenido |
+|---|----------|----------|-----------|
 | 1 | Intro music | 30 seg | [música de apertura] |
 | 2 | Bienvenida | 1-2 min | [Andrés y Juan abren el episodio] |
 | 3 | Contexto del tema | 3-4 min | [por qué este tema ahora] |
 | 4 | Bloque principal A | [X min] | [primer desarrollo] |
 | 5 | [INTERCAMBIO] | — | diálogo libre entre hosts |
 | 6 | Bloque principal B | [X min] | [segundo desarrollo / giro] |
-| 7 | **Segmento de Promoción** | 3-5 min | [Juan presenta eventos de `eventos.json`] |
+| 7 | **Segmento de Promoción** | 3-5 min | [Juan presentaba eventos de `eventos.json`] |
 | 8 | Reflexión / Takeaway | 3-4 min | [conclusión accionable] |
 | 9 | Outro + CTA | 1-2 min | [cierre + call to action] |
 | 10 | Outro music | 30 seg | [música de cierre] |
 
-**Episodio Silla Pútrida (con invitado):**
+El Segmento de Promoción lo conducía Juan, con eventos reales de `eventos.json`, en tono
+entusiasta y conversacional. `eventos.json` quedó deprecado — no consultarlo.
 
-| # | Segmento | Duración | Contenido para ESTE episodio |
-|---|----------|----------|------------------------------|
-| 1 | Intro especial Silla Pútrida | 30 seg | [música + anuncio de invitado] |
-| 2 | Bienvenida + presentación | 2-3 min | [Andrés presenta al invitado, Juan da contexto] |
-| 3 | Bloque preguntas A | [X min] | [preguntas aprobadas — Bloque 1 y 2] |
-| 4 | [INTERCAMBIO natural] | — | conversación fluye libre |
-| 5 | Bloque preguntas B | [X min] | [preguntas aprobadas — Bloque 3] |
-| 6 | Cierre con invitado | 2-3 min | [dónde encontrarlo, redes, proyectos] |
-| 7 | **Segmento de Promoción** | 3-5 min | [Juan AL FINAL — eventos de `eventos.json`] |
-| 8 | Outro + CTA | 1-2 min | [cierre + agradecimiento al invitado] |
-| 9 | Outro music | 30 seg | [música de cierre] |
-
-**Nota sobre el Segmento de Promoción:**
-- Consultar `eventos.json` para usar eventos reales — si está vacío, marcar `[PENDIENTE — Juan agrega eventos]`
-- Juan lo conduce siempre
-- Tono: entusiasta, conversacional, sin leer como publicidad
+</details>
 
 Presenta esto con los temas reales del episodio en cada fila. **Espera "ok", "adelante", "perfecto" o similar antes de escribir el script.**
 
@@ -423,7 +445,7 @@ Una vez aprobada la arquitectura, escribe el script palabra por palabra.
 - Usa el `outro_template` del perfil
 - Escribe como se habla, no como se escribe: contracciones, frases cortas, pausas naturales
 - Cada segmento debe tener una frase de transición clara al siguiente
-- **Conectores conversacionales entre hosts** — el guion de co-host no es Host A habla / Host B reacciona / Host A habla. Los bloques deben conectarse con puentes que suenen como conversación real, no como turnos de debate:
+- **Conectores conversacionales entre hosts** *(HISTÓRICO EP.002-EP.004 — solo aplica a shows co-host; MPD es formato solo desde EP.005. En monólogo el equivalente es el diálogo interno: pregunta retórica → matización, o "uno pensaría X, pero…")* — el guion de co-host no es Host A habla / Host B reacciona / Host A habla. Los bloques deben conectarse con puentes que suenen como conversación real, no como turnos de debate:
   - ✅ "Y ese dato es clave, porque lo que viene después..." (retoma el hilo del otro)
   - ✅ "Mirá, yo añadiría algo a eso..." (suma sin interrumpir)
   - ✅ "Que es una locura, porque..." (reacción emocional + continuación)
@@ -434,7 +456,7 @@ Una vez aprobada la arquitectura, escribe el script palabra por palabra.
 
 **Audit retroactivo obligatorio** — Si en esta sesión se agrega o modifica una regla de calidad (conectores, tono, estructura) porque un guion existente la viola, revisar y corregir ese guion en el mismo turno antes de entregar. No basta con actualizar la regla — el artefacto existente debe quedar corregido también.
 
-**Confirmación de entrega obligatoria** — Al terminar de escribir cualquier archivo (script, metadata, checklist), confirmar al usuario la ruta exacta donde quedó guardado: "Guardado en: C:\Users\andre\repos\kit-skill-creator\mrputridsden-production\scripts\EP00X-titulo.html". Nunca asumir que el usuario sabe dónde está el archivo.
+**Confirmación de entrega obligatoria** — Al terminar de escribir cualquier archivo (script, metadata, checklist), confirmar al usuario la ruta exacta donde quedó guardado: "Guardado en: C:\Users\andre\.claude\skills\mrputridsden-production\scripts\EP00X-titulo.html". Nunca asumir que el usuario sabe dónde está el archivo.
 
 **Si formato_episodio = `interview`:**
 - Escribe las preguntas del host en orden de escalada: bienvenida → preguntas fáciles → profundas → cierre

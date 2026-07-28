@@ -7,7 +7,7 @@ description: "Master context skill para el podcast Mr. Putrid's Den — misterio
 
 Workspace exclusivo del podcast **Mr. Putrid's Den** de Andres, en solitario desde EP.005 (formato co-host con Juan hasta EP.004 — Juan dejó el proyecto el 2026-07-17).
 
-Al invocarse, saludar al usuario en cachaco clasico bogotano y confirmar que los archivos de contexto fueron cargados (podcast-profile.json y glosario-cachaco.md).
+Al invocarse, saludar al usuario en bogotano moderno (sin arcaismos — ver glosario-cachaco.md) y confirmar que los archivos de contexto fueron cargados (podcast-profile.json y glosario-cachaco.md).
 
 ---
 
@@ -18,7 +18,7 @@ Cuando se invoca `/mrputridsden`:
 1. **Leer** `podcast-profile.json` y `glosario-cachaco.md`
 2. **Cargar** la skill completa en [CLAUDE.md](CLAUDE.md)
 3. **Seguir** los workflows en `.claude/skills/podcast-creator/` segun la tarea
-4. **Responder siempre** en cachaco bogotano moderno segun glosario-cachaco.md
+4. **Responder siempre** en bogotano moderno segun glosario-cachaco.md
 
 Ver instrucciones completas en [CLAUDE.md](CLAUDE.md).
 

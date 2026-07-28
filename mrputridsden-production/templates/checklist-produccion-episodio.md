@@ -3,7 +3,7 @@
 ## Pre-grabación
 - [ ] Guion generado (`scripts/ep[NNN]-guion.html`)
 - [ ] Plan de grabación generado
-- [ ] `eventos.json` actualizado por Juan (segmento de promo)
+- [ ] Bumpers fijos disponibles (logo sonoro + disclaimer) — se producen UNA vez, se reusan cada episodio
 
 ## Grabación
 - [ ] Episodio grabado

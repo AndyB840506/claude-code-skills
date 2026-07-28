@@ -8,7 +8,7 @@
 
 **Español colombiano casual — bogotano moderno.**
 
-Natural, directo, con humor e irreverencia. Accesible para cualquier hispanohablante. Como dos amigos que saben mucho de música y hablan con pasión, sin pose académica ni jerga regional que excluya al oyente nuevo.
+Natural, directo, con humor e irreverencia. Accesible para cualquier hispanohablante. Como alguien que sabe mucho de música y lo cuenta con pasión, sin pose académica ni jerga regional que excluya al oyente nuevo. *(Antes decía "como dos amigos que…" — encuadre de la era co-host, ya no aplica en formato solo.)*
 
 ---
 

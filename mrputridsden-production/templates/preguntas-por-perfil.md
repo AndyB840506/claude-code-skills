@@ -29,7 +29,7 @@
 
 **Preguntas must-ask:**
 - ¿Cómo termina uno siendo promotor de eventos de música en Bogotá?
-- ¿Cuál ha sido el show que más lo marcó — ya sea porque salió soberano o porque fue un desastre chirriado?
+- ¿Cuál ha sido el show que más lo marcó — ya sea porque salió redondo o porque fue un desastre total?
 - ¿Cómo decide qué artista merece visibilidad y cuál no?
 - ¿Cuál es la realidad del negocio que la gente no ve desde afuera?
 - ¿Qué le falta al ecosistema de eventos underground en Bogotá?
@@ -113,6 +113,6 @@
 
 - **Estas son bases** — Claude las personaliza con la investigación Narval antes de cada episodio
 - **No hacer todas** — elegir 5-7 en total según cómo fluya la conversación
-- **Andrés y Juan pueden preguntar ambos** — no hay un solo entrevistador
+- **Andrés es el único entrevistador** (formato solo desde EP.005) — *antes decía que Andrés y Juan preguntaban ambos*
 - **Si la conversación va por otro lado** — seguirla. Estas son guías, no libreto
 - **Siempre cerrar con** dónde encontrar al invitado y qué viene

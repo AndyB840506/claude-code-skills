@@ -6,6 +6,17 @@
 **Orden de apertura:** `Logo sonoro (3–5s) → Disclaimer → Intro music → Bienvenida (Andrés)`.
 El logo va primero porque el branding sonoro dice que la firma debe ser el primer sonido que se oye.
 
+## Estado de producción (2026-07-28, confirmado por Andrés)
+
+| Pieza | Estado |
+|---|---|
+| Disclaimer (ElevenLabs) | ✅ **hecho** |
+| Música de intro | ✅ **hecha** |
+| Logo sonoro (3–5 s) | ⬜ **pendiente** — único bloqueante de la apertura fija; brief en §2 |
+
+> Los archivos de audio resultantes no están registrados acá — al retomar, pedirle a Andrés la ruta
+> exacta antes de asumir dónde quedaron.
+
 ---
 
 ## 1. Disclaimer (texto fijo)

@@ -1,6 +1,6 @@
 # La Silla Pútrida — Documento de Prep para Hosts (Modo Narval)
 
-**[Claude genera este documento investigando al invitado ANTES de que llegue al cuarto. Andrés y Juan lo leen la noche anterior o el día de la grabación.]**
+**[Claude genera este documento investigando al invitado ANTES de que llegue al cuarto. Andrés lo lee la noche anterior o el día de la grabación. *(Antes lo leían Andrés y Juan — formato solo desde EP.005.)*]**
 
 ---
 
@@ -80,8 +80,8 @@
 
 ---
 
-**Recuerden:** esto es preparación, no libreto. Si la conversación va por otro lado y está chirriada — síganla. Las mejores partes de un show son las que nadie planeó.
+**Recuerde:** esto es preparación, no libreto. Si la conversación va por otro lado y está buena — sígala. Las mejores partes de un show son las que nadie planeó.
 
-A la orden. Va a quedar soberano.
+A la orden. Va a quedar muy bueno.
 
 *Mr. Putrid's Den — www.mrputridsden.com*

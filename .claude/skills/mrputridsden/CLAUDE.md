@@ -35,11 +35,11 @@ El show tiene UNA firma de formato que se replica en cada expediente. Lo que cam
 
 ## Al iniciar
 
-Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
+Lee `podcast-profile.json` y responde en bogotano moderno (sin arcaísmos — ver `glosario-cachaco.md`):
 
-> **Bienvenido de vuelta a la Guarida, sumerce.**
+> **Bienvenido de vuelta a la Guarida.**
 >
-> ¿Qué producimos hoy?
+> El expediente ya está sobre la mesa. ¿Cuál abrimos hoy?
 >
 > 1. **Guion** — script completo del próximo episodio
 > 2. **Plan de grabación** — checklist para el día de grabación
@@ -56,12 +56,12 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 
 - **Leer `podcast-profile.json` siempre** antes de cualquier workflow
 - **Leer `glosario-cachaco.md` siempre** antes de generar cualquier guion (ahora contiene la guía de tono actualizada)
-- **Consultar `eventos.json`** antes de generar el segmento de promoción
+- **NO consultar `eventos.json`** — deprecado con el Segmento de Promoción (retirado 2026-07-17, ver Segmentos permanentes)
 - **Lenguaje:** español colombiano casual — bogotano moderno, sin arcaísmos. Ver `glosario-cachaco.md`.
 - **Formato documentos:** HTML optimizado para PDF vía IlovePDF
 - **Backup:** después de cada guion/documento → git commit + push a GitHub + copia a G:\My Drive\ si está montado
-- **Production assets en mrputridsden-production, no en la skill** — Scripts HTML, propuestas, documentos y artefactos de producción se guardan en `C:\Users\andre\repos\kit-skill-creator\mrputridsden-production\`. La carpeta de la skill (`.claude\skills\mrputridsden\`) es solo instruction files. (Andres usa dos PCs: el escritorio SÍ tiene E: — ahí vive E:\Transcriptor; el portátil solo C:/D:.)
-- **Skill activa:** `C:\Users\andre\repos\kit-skill-creator\.claude\skills\podcast-creator\SKILL.md` (project-scoped, en la raíz de `.claude/skills/`, no anidada dentro de esta carpeta)
+- **Production assets en mrputridsden-production, no en la skill** — Scripts HTML, propuestas, documentos y artefactos de producción se guardan en `C:\Users\andre\.claude\skills\mrputridsden-production\`. La carpeta de la skill (`.claude\skills\mrputridsden\`) es solo instruction files. (Andres usa dos PCs: el escritorio SÍ tiene E: — ahí vive E:\Transcriptor; el portátil solo C:/D:.) ⚠️ La raíz `C:\Users\andre\repos\kit-skill-creator\` que se citaba antes **ya no existe** (verificado 2026-07-28) — MPD/BTQ viven en `~/.claude/skills/` como carpetas hermanas, excepción confirmada a la regla global de `repos\`.
+- **Skill activa:** `C:\Users\andre\.claude\skills\.claude\skills\podcast-creator\SKILL.md` (project-scoped, en la raíz de `.claude/skills/`, no anidada dentro de esta carpeta)
 
 ---
 
@@ -69,8 +69,8 @@ Lee `podcast-profile.json` y responde en cachaco clásico bogotano:
 
 - Consultar `glosario-cachaco.md` antes de generar cualquier guion (contiene guía de tono actualizada)
 - **Español colombiano casual** — bogotano moderno, sin arcaísmos de los 40's
-- Al oyente: "usted" o "ustedes" — nunca "tú"
-- Entre hosts: tuteo natural
+- Al oyente: "usted" o "ustedes" — nunca "tú". Vale también frente a las referencias del género: *Relatos de la Noche* tutea ("¿te atreves a escuchar?") y MPD **no** — no copiar ese registro.
+- *(Histórico EP.002-EP.004: "entre hosts, tuteo natural" — ya no aplica, formato solo desde EP.005.)*
 - **PROHIBIDO:** "sumerce", "ala", "chirriado", "cachifo", "caray", "carachas" (arcaísmos) + "parcero", "bacano" (muy coloquiales) + "vosotros", "vos", "ché", "tío" (otros regionalismos)
 - Claude al hablar con Andrés: español colombiano moderno, casual y directo
 - ⚠️ **EP001 usa el tono cachaco ANTIGUO** (sumerce, caray, chirriado, cachifo) — ese tono fue removido desde EP002. NUNCA modelar el tono de EP002+ desde EP001. La fuente canónica de tono es `glosario-cachaco.md`, no el script del EP001.
@@ -104,9 +104,10 @@ Usar `mrputridsden-production\templates\checklist-produccion-episodio.md` para t
 ### La Silla Pútrida — VIGENTE en T2 (excepción confirmada 2026-07-23)
 Sobrevive al enfoque 100% misterios: si hay invitado, se hace. Formato solo + invitado.
 - **Antes de cualquier guion** preguntar: *"¿Esta semana hay Silla Pútrida?"*
-- Si SÍ → episodio gira 100% en torno al invitado, formato presencial (los 3 en el mismo cuarto)
-- Flujo Narval: Claude investiga al invitado → genera doc prep para hosts → carta simple al invitado → bio + temas + NO-list → guion
-- Guardar ficha en `mrputridsden-production\fichas-invitados\[nombre].md`
+- Si SÍ → episodio gira 100% en torno al invitado, formato presencial (Andrés y el invitado en el mismo cuarto — eran 3 en la era co-host)
+- Flujo Narval: Claude investiga al invitado → genera doc prep para Andrés → carta simple al invitado → bio + temas + NO-list → guion
+- Guardar ficha en `mrputridsden-production\fichas-invitados\[nombre].md` (la carpeta se crea al primer invitado; hoy no existe)
+- Las plantillas de `templates/silla-putrida-*.md` y `preguntas-por-perfil.md` se reescribieron el **2026-07-28** a formato solo: firmadas solo por Andrés, "usted y yo en el mismo cuarto", descripción de T2 ("donde la música se encuentra con el mito") y sin arcaísmos. Antes iban firmadas "Andrés & Juan" y describían el show viejo.
 - Templates: `mrputridsden-production\templates\silla-putrida-*.md`
 - Perfiles de invitado: `mrputridsden-production\templates\preguntas-por-perfil.md`
 
@@ -156,7 +157,7 @@ Sin [INTERCAMBIO] entre hosts — es monólogo conversacional (Andrés se dirige
 5. **Apertura:** no volcar la agenda completa del episodio ("hoy vamos a ver A, B, C, D"); un solo gancho. Variar el dispositivo de apertura entre episodios (cold open dentro de una escena es opción válida).
 6. **Listas → una escena:** en vez de enumerar 5-7 nombres/hitos, elegir UNO y darle una escena vívida; el resto va a show notes. Nunca recitar la misma cadena/secuencia dos veces en un episodio.
 7. **Transiciones de contenido, no meta-anuncios:** prohibido "nos vamos a recomendaciones" / "ya vamos a avanzar"; la última frase de un segmento contiene el gancho del siguiente.
-8. **Turnos cortos:** bloques escritos largos invitan a rellenar con muletillas al improvisar — preferir turnos más cortos con interrupciones diseñadas.
+8. **Turnos cortos:** bloques escritos largos invitan a rellenar con muletillas al improvisar — preferir párrafos más cortos con puntos de respiro diseñados. *(Antes decía "interrupciones diseñadas", de la era co-host: en formato solo no hay segunda voz que interrumpa.)*
 9. **Lint al terminar el guion:** contar ocurrencias de muletillas (regla 1) y líneas de validación (regla 2) antes de entregar; reportar el conteo. *(El balance 70/30 co-host ya no aplica — formato solo desde EP.005.)*
 
 **Formato HTML de scripts (EP.003 v2 en adelante):**
@@ -165,15 +166,17 @@ Sin [INTERCAMBIO] entre hosts — es monólogo conversacional (Andrés se dirige
 - Container: 780px · Fuente base: 15px · Line-height: 1.85
 - Referencia CSS canónica: `mrputridsden-production\scripts\EP003-raices-del-rock-sister-rosetta-tharpe.html`
 
-**Episodio Silla Pútrida:**
+**Episodio Silla Pútrida (con la apertura fija de T2 — los bumpers también aplican acá):**
 ```
-1. Intro especial Silla Pútrida (30 seg)
-2. Bienvenida + presentación del invitado
-3. Bloque de preguntas — Bloque A
-4. [INTERCAMBIO natural]
-5. Bloque de preguntas — Bloque B
-6. Cierre con el invitado (dónde encontrarlo)
-7. Outro music (30 seg)
+0. Logo sonoro (3–5 seg)
+1. Disclaimer — voz grave, FIJO cada episodio
+2. Intro especial Silla Pútrida (30 seg)
+3. Bienvenida + presentación del invitado
+4. Bloque de preguntas — Bloque A
+5. [INTERCAMBIO natural con el invitado]
+6. Bloque de preguntas — Bloque B
+7. Cierre con el invitado (dónde encontrarlo)
+8. Outro music (30 seg)
 ```
 
 ---
@@ -200,7 +203,7 @@ ffmpeg -i IN -lavfi "showwavespic=s=1400x300" waveform.png
 mrputridsden/
 ├── podcast-profile.json          ← Estado central del sistema
 ├── glosario-cachaco.md           ← Consultar siempre antes de guiones
-├── eventos.json                  ← Eventos para segmento de promo
+├── eventos.json                  ← DEPRECADO (segmento de promo retirado 2026-07-17) — no consultar
 ├── SKILL.md
 └── CLAUDE.md
 ```
@@ -222,17 +225,17 @@ mrputridsden/
 
 **Producción (assets — carpeta propia, separada de la skill):**
 ```
-C:\Users\andre\repos\kit-skill-creator\mrputridsden-production\
-├── audio/                        ← Intro y outro del show
+C:\Users\andre\.claude\skills\mrputridsden-production\
+├── audio/                        ← Intro, outro, disclaimer y logo sonoro del show
 ├── scripts/                      ← Guiones en HTML (EP.001, EP.002...)
 ├── episodios/                    ← Metadata, social y artwork por episodio (ep001-metadata.md, social-ep002.md...)
 ├── documents/                    ← Propuesta y documentos importantes
-├── fichas-invitados/             ← Una ficha por invitado Silla Pútrida
+├── fichas-invitados/             ← Una ficha por invitado Silla Pútrida (aún no existe — se crea al primero)
 ├── templates/                    ← Templates: cuestionario, invitación, prep hosts
 └── website/                      ← Sitio web (mrputridsden.com), incluye .vercel/
 ```
 
-**Por qué están separadas:** producción anidada dentro de la carpeta de skill creó copias huérfanas del SKILL.md cuando se exportó/copió el proyecto (detectado y corregido 2026-06-07 — ver memoria `assets-on-e-drive`). La skill SOLO contiene instrucciones; los assets viven en su propia carpeta.
+**Por qué están separadas:** producción anidada dentro de la carpeta de skill creó copias huérfanas del SKILL.md cuando se exportó/copió el proyecto (detectado y corregido 2026-06-07). La skill SOLO contiene instrucciones; los assets viven en su propia carpeta. Ver memoria `project_podcast_production_in_skills_repo`.
 
 ---
 

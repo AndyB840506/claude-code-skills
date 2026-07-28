@@ -10,16 +10,19 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.001 | Bienvenidos a la Guarida | publicado |
 | EP.002 | Black Sabbath: El Génesis del Heavy Metal | publicado |
 | EP.003 | Las raices del rock: Sister Rosetta Tharpe | publicado - rendimiento bajo vs EP.002 (ver nota de audiencia) |
-| EP.004 P1 | Kraken: el Titan del Rock colombiano (Parte 1) | en Spotify - programado viernes 2026-06-19 (link listo) |
-| EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | grabado - sale ~2026-06-20 |
+| EP.004 P1 | Kraken: el Titan del Rock colombiano (Parte 1) | programado 2026-06-19 — **estado real NO VERIFICADO** (fecha pasada hace mas de un mes; confirmar en Spotify y poner el link) |
+| EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | programado ~2026-06-20 — **estado real NO VERIFICADO** (idem) |
 | EP.005 | Aterciopelados: De un bar de Bogotá al continente. | en Spotify - https://open.spotify.com/episode/2D129VK9H4sn7itPKjgz3W - primer episodio solo, duracion real ~35.8 min habla / ~36.8 min total |
-| EP.006 (T2·E1) | El Club de los 27 | guion listo - 2026-07-21, `scripts/EP006-club-de-los-27.html`, ~5.208 palabras narracion (~40.5 min estimados con calibracion real MPD 159 wpm/+23.5%), formato solo. ESTRENO DE LA TEMPORADA 2. Publico = Temporada 2, Episodio 1; interno = 6º producido (EP.006). |
+| EP.006 (T2·E1) | El Club de los 27 | **grabado** 2026-07-24 (`E:\Podcast\MPD\Temporada 2\EP 01\MPD EP 01.mp3`) — en ronda de feedback con circulo cercano, NO se publica hasta confirmar el formato. Guion: `scripts/EP006-club-de-los-27.html`, ~5.208 palabras narracion (~40.5 min estimados, calibracion MPD 159 wpm/+23.5%), formato solo. ESTRENO DE LA TEMPORADA 2. Publico = T2·E1; interno = 6º producido. Faltan: SRT, metadata/show-notes, quote cards, plan de lanzamiento. |
 
 ---
 
 ## Estructura de temporadas (decision de Andres 2026-07-21)
 
-El show pivota **100% a misterios y leyendas del rock**. En vez de renombrar/migrar plataformas
+El show pivota **100% a misterios y leyendas**, anclado en el rock. *(Alcance afinado el 2026-07-24
+a HIBRIDO ANCLADO EN ROCK: el rock es la columna e identidad, pero hay valvula para otras leyendas
+e invitados. Sigue siendo 100% misterios — nada de episodios de analisis de banda.)*
+En vez de renombrar/migrar plataformas
 (riesgo legal + dominio ya registrado), se parte en temporadas:
 
 - **Temporada 1 = EP.001–EP.005.** El show viejo (rock/metal/jazz variado), incluida la era co-host
@@ -30,8 +33,9 @@ El show pivota **100% a misterios y leyendas del rock**. En vez de renombrar/mig
   se usan los campos nativos Season=2 / Episode=1 (se setean en el paso de metadata, NO requiere
   dominio nuevo). El numero interno (EP.006, EP.007…) se mantiene en archivos/roadmap para continuidad.
 
-**Nombre:** publico sigue **Mr. Putrid's Den**. "The Crossroads" es codename interno de la etapa
-(no publico). Direccion visual T2 "La Guarida" — ver `rebrand/identidad-la-guarida.html` y memoria
+**Nombre:** **Mr. Putrid's Den** full, sin sub-nombres. *("The Crossroads" fue un codename interno
+del pivote y quedo RETIRADO el 2026-07-24 — nunca fue publico y ya no se usa ni internamente.)*
+Direccion visual T2 "La Guarida" — ver `rebrand/identidad-la-guarida.html` y memoria
 `project_mpd_rebrand_cruce_de_caminos`. SIN simbologia ocultista (limite firme de Andres).
 (El specimen viejo "whisky & carretera" / `identidad-cruce-de-caminos.html` quedo eliminado el
 2026-07-22: construia identidad publica sobre el codename interno.)
@@ -86,10 +90,11 @@ Ver memoria `project_mpd_juan_departure` y `podcast-profile.json` (formato_histo
 duracion_nota, word_count_target_nota, roadmap_9_episodes).
 
 **Notas:**
-- Seeded desde memoria `mrputridsden_project` (snapshot 2026-06-05).
-- Roadmap completo EP.002–EP.011 ya definido con regla de rotación de género y regla
-  de conector — agregar filas a esta tabla a medida que cada episodio entra en
-  producción activa (no listar los 11 de una vez para no quedar desactualizado).
+- Seeded desde un snapshot de memoria del 2026-06-05 (esa entrada ya no existe).
+- El roadmap EP.002–EP.011 de la era T1 se armó con la **regla de rotación de género**, hoy
+  RETIRADA (T2 es 100% misterios: no hay género musical que rotar). Lo que sigue vigente es la
+  **regla del conector**, ahora hacia el próximo *expediente*, no hacia el próximo género.
+  Agregar filas a esta tabla a medida que cada episodio entra en producción activa.
 - Mantener esta tabla actualizada manualmente o vía `episode-pipeline` — es la fuente
   que Stage A consulta para decidir cuál episodio sigue.
 
