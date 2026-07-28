@@ -10,8 +10,8 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.001 | Bienvenidos a la Guarida | publicado |
 | EP.002 | Black Sabbath: El Génesis del Heavy Metal | publicado |
 | EP.003 | Las raices del rock: Sister Rosetta Tharpe | publicado - rendimiento bajo vs EP.002 (ver nota de audiencia) |
-| EP.004 P1 | Kraken: el Titan del Rock colombiano (Parte 1) | programado 2026-06-19 — **estado real NO VERIFICADO** (fecha pasada hace mas de un mes; confirmar en Spotify y poner el link) |
-| EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | programado ~2026-06-20 — **estado real NO VERIFICADO** (idem) |
+| EP.004 P1 | Kraken: el Titan del Rock colombiano (Parte 1) | publicado - https://open.spotify.com/episode/0Zf7egfYOQFP3E8Af9b4fr - salio 2026-06-14 (no el 19 como decia el plan), 1h45min. Verificado contra Spotify 2026-07-28. |
+| EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | publicado - https://open.spotify.com/episode/1QRXaL85TszCpwo2pfmEPw - salio 2026-06-20, 1h16min. Verificado contra Spotify 2026-07-28. ⚠️ **NO esta en el archivo de la web** (ver nota abajo). |
 | EP.005 | Aterciopelados: De un bar de Bogotá al continente. | en Spotify - https://open.spotify.com/episode/2D129VK9H4sn7itPKjgz3W - primer episodio solo, duracion real ~35.8 min habla / ~36.8 min total |
 | EP.006 (T2·E1) | El Club de los 27 | **grabado** 2026-07-24 (`E:\Podcast\MPD\Temporada 2\EP 01\MPD EP 01.mp3`) — en ronda de feedback con circulo cercano, NO se publica hasta confirmar el formato. Guion: `scripts/EP006-club-de-los-27.html`, ~5.208 palabras narracion (~40.5 min estimados, calibracion MPD 159 wpm/+23.5%), formato solo. ESTRENO DE LA TEMPORADA 2. Publico = T2·E1; interno = 6º producido. Faltan: SRT, metadata/show-notes, quote cards, plan de lanzamiento. |
 
@@ -97,6 +97,20 @@ duracion_nota, word_count_target_nota, roadmap_9_episodes).
   Agregar filas a esta tabla a medida que cada episodio entra en producción activa.
 - Mantener esta tabla actualizada manualmente o vía `episode-pipeline` — es la fuente
   que Stage A consulta para decidir cuál episodio sigue.
+
+---
+
+## Hueco abierto en el archivo de la web (detectado 2026-07-28)
+
+`#archivo` de mrputridsden.com dice ser "la primera temporada del show, episodio por episodio" y
+tiene **5 filas** (T1·01 a T1·05). Pero T1 publico **6 items**: EP.004 salio en dos partes. La fila
+T1·04 apunta solo a la Parte 1 (`0Zf7egfYOQFP3E8Af9b4fr`); la **Parte 2**
+(`1QRXaL85TszCpwo2pfmEPw`, 2026-06-20, 1h16min) **no tiene fila**.
+
+Contradice la regla de que T1 esta cerrada y "se conserva ENTERA". Decision de Andres pendiente:
+agregar una fila T1·05 para la Parte 2 y renumerar Aterciopelados a T1·06, o dejar EP.004 como una
+sola entrada con las dos partes. **No tocar el sitio sin ese OK** — y ojo con el deploy: `vercel
+--prod` normal da 404, hay que usar el flujo prebuilt (ver CLAUDE.md § Sitio web).
 
 ---
 
