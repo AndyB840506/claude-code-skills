@@ -181,3 +181,29 @@ nslookup -type=TXT _dmarc.<dominio> 8.8.8.8   # debe resolver (v=DMARC1; ...)
 - Sin DMARC, Outlook filtra a Junk y mail-tester descuenta ~2 puntos (mordio 2026-07-17: outreach de hiresignal salio 7.7/10; agregar `_dmarc` TXT `v=DMARC1; p=none; rua=mailto:<buzon>` lo subio a 9.9 — DMARC pasa por alineacion SPF aun sin DKIM).
 - Para cold outreach: score de mail-tester.com >= 9 antes del primer envio real a un prospecto.
 - SMTP GoDaddy desde un host cloud (DO/AWS): si da "authentication failed" con creds validas, es bloqueo de IP cloud en 465/587 — usar puerto 3535/tls (ver memoria godaddy-smtp-do-port-3535).
+
+## Paso 9 — Si el deploy EXCLUYE archivos (`.vercelignore`, `.gcloudignore`, etc.)
+
+Excluir archivos es la unica clase de cambio que **rompe paginas sin tocarlas**. Y no se ve
+en una captura: el archivo sigue en disco, asi que en local todo renderiza bien.
+
+Despues de deployar, resolver **todas** las referencias internas de las paginas que siguen
+vivas contra el dominio real — no revisarlas a ojo:
+
+```python
+# extrae src=/href= de cada pagina desplegada y pide cada una al dominio
+# cualquier codigo != 200 es una referencia rota por la exclusion
+```
+
+Y confirmar las dos listas por separado: **lo que debe seguir 200** y **lo que debe haber
+pasado a 404**. Solo la primera detecta el dano; solo la segunda confirma que la exclusion
+sirvio de algo (verificado 2026-07-28 en BTQ: 0 referencias rotas, 7 URLs retiradas).
+
+**Con `cleanUrls` activo, un `.html` excluido devuelve 308 hacia su version sin extension.**
+No es un fallo: la cadena termina en 404, que es lo que deindexa. Verificar el destino, no
+el primer codigo.
+
+**Excluir una URL del sitemap NO impide que Google la indexe** — el sitemap sugiere, no
+restringe. Lo que la saca del indice es `404`/`410` o un `noindex`. Un borrador viejo de la
+portada servido con 200 es contenido duplicado aunque no este en el sitemap (mordio
+2026-07-28: `/index-v2`, `/index-v3` y `/index-liner` llevaban meses accesibles).
