@@ -187,42 +187,103 @@ español como *fila / espera / backlog* dentro del guion.
 > Las listas de arriba son un punto de partida, no un inventario cerrado. Ante una palabra con
 > sabor local que no esté listada, aplicar la prueba del párrafo inicial.
 
-## Título: el teórico va PRIMERO, y después en llano qué es
+## Título: el PROBLEMA va primero, y el teórico después como autoridad
 
-**Feedback Andy (2026-07-25).** Fórmula obligatoria de los episodios **pilar SEO**:
+**Fórmula obligatoria de los episodios pilar SEO — INVERTIDA el 2026-07-28 (decisión de Andy
+sobre los analytics del catálogo):**
 
 ```
-EP.NN — [Teórico o ley que lleva su nombre]: [qué es, en llano, en usted]
+EP.NN — [El problema, dicho como lo diría el oyente]: [el teórico o la ley que lo explica]
 ```
 
-**Alcance del aterrizaje (giro macro, 2026-07-25):** el segundo tramo aterriza en «su equipo»,
-«su operación» o «su empresa» — ya **no** en «su call center». La teoría puede venir de donde
+**Por qué se invirtió — está medido, no es gusto.** Cruzando impresiones contra tiempo de consumo
+de los episodios publicados después del 28-abr-2026 (misma ventana en ambas métricas):
+
+| Episodio | Impresiones | Min escuchados por impresión | % desde búsqueda |
+|---|---|---|---|
+| EP.20 `Ley de Goodhart` | 143 | **4,57** | 25,2% |
+| EP.18 `El Mundial` | 124 | 3,15 | 4,8% |
+| EP.16 `The Wall` | 153 | 2,59 | 32,0% |
+| EP.12 `Bohemian Rhapsody` | 286 | 2,18 | 44,8% |
+| EP.14 `MAOMAO` | 227 | 1,69 | 52,9% |
+| EP.17 `Soda Stereo` | 341 | **0,98** | 61,3% |
+
+Tres cosas salen de ahí:
+
+1. **Mientras más impresiones vienen de búsqueda, PEOR convierten** — la relación es casi monótona.
+   Quien busca «Soda Stereo» quiere a Soda Stereo; le sale un pódcast de gestión y se va en menos
+   de un minuto. Y ojo: **EP.17 sí entregaba Soda Stereo.** No falló por engañar, falló porque esa
+   gente nunca iba a ser la audiencia. La puerta de cultura pop no sirve ni cumpliendo la promesa.
+2. **Los nombres de teorías dan intención sin alcance.** Nadie busca «Principio de Peter».
+3. Lo único que tiene alcance **y** intención es **el problema en las palabras del oyente** — que
+   además es literalmente cómo se le pregunta a una IA, así que la misma decisión sirve para
+   posicionarse en búsqueda y en respuestas de modelos.
+
+> **Corrección a una creencia del roadmap.** Está escrito que EP.020 «probablemente rankeó por la
+> keyword call center», y sobre eso se aceptó el costo del giro macro del 2026-07-25. Los datos
+> dicen otra cosa: EP.020 recibió **36 impresiones de búsqueda** en 22 días (EP.017 recibió 209) y
+> **102 de sus 143 impresiones vinieron del Home** de Spotify. EP.020 no ganó por SEO — ganó por
+> **conversión**. Lo que hay que replicar de EP.020 no es su keyword: es que su tema le importó a
+> la audiencia que ya existe.
+
+**Ejemplo del cambio, con EP.024:**
+
+```
+Antes:  EP.24 — Principio de Peter: por qué su mejor empleado se vuelve un mal jefe
+Ahora:  EP.24 — Por qué su mejor empleado se vuelve un mal jefe: el Principio de Peter
+```
+
+La autoridad no se pierde: se mueve tres palabras a la derecha. Y el título deja de prometer un
+referente que después hay que honrar — promete la tesis, que es lo que el episodio ya entrega.
+
+### Registro histórico — la fórmula anterior (2026-07-25 → 2026-07-28)
+
+*Esto describe lo que se hacía antes, no lo que se hace ahora.* La fórmula pedía
+`[Teórico o ley que lleva su nombre]: [qué es, en llano, en usted]`, con el nombre propio «al
+frente y solo» por efecto de autoridad. Bajo esa regla se titularon EP.020, EP.022 y EP.023.
+Lo que **sigue vigente** de esa etapa está abajo: el veto al título-eslogan, el caso Hawthorne y
+la regla de que portada y metadata comparten string.
+
+**Alcance del aterrizaje (giro macro, 2026-07-25; reubicado al invertir la fórmula el 2026-07-28):**
+el aterrizaje en «su equipo», «su operación» o «su empresa» ahora vive en el **primer** tramo —es
+el problema mismo, dicho en segunda persona— y ya **no** en «su call center». La teoría puede venir de donde
 sea (manufactura, aviación, software, economía); lo que se mantiene es que baje al piso.
 Única excepción deliberada: **EP.020 no se retitula** aunque diga «call center», porque es el
 único episodio con desempeño medido y esa keyword es probablemente la razón. Ver
 `btq-production/metadata-v4-macro.md`.
 
-Lo que va antes de los dos puntos es **el nombre propio que ancla la autoridad**, al
-frente y solo. Después de los dos puntos, la explicación en lenguaje llano.
+Lo que va antes de los dos puntos es **el problema, en las palabras del oyente** — la frase que
+esa persona escribiría en un buscador o le preguntaría a una IA. Después de los dos puntos, el
+teórico o la ley, que aporta la autoridad y el término técnico.
 
-- **Bien — EP.20:** `Ley de Goodhart: cuando el número deja de medir su call center`.
-  Es el modelo: Goodhart al frente, y luego qué significa, sin adorno.
+- **Bien — EP.24:** `Por qué su mejor empleado se vuelve un mal jefe: el Principio de Peter`.
+  El problema al frente en lenguaje de persona; la teoría detrás, sosteniéndolo.
+- **Mal — la fórmula vieja:** `Principio de Peter: por qué su mejor empleado se vuelve un mal jefe`.
+  Arranca con un término que nadie busca. El contenido es idéntico; el descubrimiento no.
 - **Mal — EP.22 publicado:** `La Calidad Es Gratis: el costo real de la mala calidad…`.
   "La Calidad Es Gratis" es el título del libro de Crosby y **suena a eslogan de
-  marketing**, no a fuente consultable. Debía ser `Philip Crosby: el costo real de la
-  mala calidad en su call center`.
-- **Mal también:** meter al teórico dentro de la frase, subordinado
-  (`Costo de la Mala Calidad: la cuenta que Crosby le pasa…`). Si el nombre no va al
-  frente, pierde el efecto de autoridad y el título vuelve a sonar a copy.
+  marketing**, no a fuente consultable. Este veto sigue vigente: **el ancla nunca es el título
+  de un libro ni una frase con sabor a publicidad**, vaya donde vaya en el título.
+- **Mal — puerta de cultura pop:** `Soda Stereo: el liderazgo que sigue sonando…`. Trae mucha
+  impresión y casi ningún oyente (0,98 min por impresión, el peor del catálogo), **incluso
+  cumpliendo la promesa**. No usar un referente pop como ancla de descubrimiento.
 
-**Caso especial — resuelto 2026-07-25 (EP.023).** Cuando el efecto se conoce por un
-nombre que NO es el del teórico (*efecto Hawthorne*, por la fábrica; el investigador
-fue Elton Mayo), **gana el término buscable**, siempre que sea un nombre propio y no
-un eslogan. Razón: el modelo aprobado no es «el teórico a secas» sino *[tipo] de
-[nombre propio]* — `Ley de Goodhart`. `Efecto Hawthorne` comparte esa estructura;
-`Elton Mayo` sería el equivalente a titular EP.020 como «Goodhart» solo. El teórico
-entra en el cuerpo del episodio y en las recomendaciones, donde no cuesta
-descubrimiento. Sigue siendo consulta con Andy si un caso futuro no encaja.
+**La promesa del título tiene que poder señalarse en una línea concreta del guion** (fijado
+2026-07-28, a raíz de una pregunta de Andy: «si menciono algo en el título y no lo desarrollo, la
+gente siente que le metieron gato por liebre»). Antes de aprobar el título, ubicar **la frase
+exacta del guion que lo responde**. Si no se puede señalar con el dedo, el título está mintiendo
+aunque sea sin querer. La fórmula problema-primero hace esto casi automático —el título promete la
+tesis, no un referente— pero se verifica igual, porque el riesgo aparece cuando el título se
+escribe antes que el cuerpo.
+
+**Caso especial — resuelto 2026-07-25 (EP.023), sigue vigente para la SEGUNDA mitad.** Cuando el
+efecto se conoce por un nombre que NO es el del teórico (*efecto Hawthorne*, por la fábrica; el
+investigador fue Elton Mayo), **gana el término reconocible**, siempre que sea un nombre propio y
+no un eslogan: el modelo es *[tipo] de [nombre propio]* — `Ley de Goodhart`, `Efecto Hawthorne`,
+`Principio de Peter`. `Elton Mayo` a secas sería el equivalente a poner «Goodhart» solo. Con la
+fórmula invertida esta decisión ya no afecta el descubrimiento —para eso está el problema al
+frente— pero sí la autoridad, así que se mantiene. Sigue siendo consulta con Andy si un caso
+futuro no encaja.
 
 **El título de la portada y el título publicado son el MISMO string.** La incongruencia
 entre artwork y metadata nace de aplicar criterios distintos en cada uno; se evita
@@ -628,13 +689,16 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
 - [ ] **Sin disclaimers de cajón** tipo "tranquilos, esto no es un pódcast de X" para
       aligerar un tramo técnico (repetido casi textual en EP.020/EP.022 — ver sección
       dedicada arriba).
-- [ ] **Título:** si es pilar SEO, confirmar que el ancla antes de los dos puntos es un
-      **nombre propio al frente y solo** —el teórico, o la ley que lleva su nombre— y **nunca**
-      el título de su libro ni una frase con sabor a eslogan. El aterrizaje va a «su equipo /
-      su operación / su empresa», no a «su call center» (salvo EP.020). Confirmar además que
-      el string es idéntico al que se hornea en la portada. Ver sección dedicada.
-      *(Este ítem decía antes "el nombre de la teoría, no el autor" — quedó obsoleto con el
-      feedback del 2026-07-25 y contradecía a la sección, que pide `Philip Crosby:`.)*
+- [ ] **Título (fórmula invertida 2026-07-28):** confirmar que antes de los dos puntos va **el
+      problema en las palabras del oyente** —la frase que escribiría en un buscador o le
+      preguntaría a una IA— y que el teórico o la ley va **después**. Nunca anclar en el título
+      de un libro, en una frase con sabor a eslogan, ni en un referente de cultura pop. El
+      aterrizaje va a «su equipo / su operación / su empresa». Confirmar además que el string es
+      idéntico al que se hornea en la portada. Ver sección dedicada.
+- [ ] **Coherencia título ↔ guion:** señalar **la línea exacta del guion** que responde la promesa
+      del título. Si no se puede señalar, se corrige uno de los dos antes de grabar. (Fijado
+      2026-07-28: un título que promete algo que el episodio no desarrolla se siente como «gato
+      por liebre» y se paga en abandono, no en quejas.)
 - [ ] **Sin "Andy" en tercera persona dentro del guion hablado** (detectado 2026-07-21,
       EP.023 borrador Hawthorne: "del tipo que Andy, personalmente, desconfía..." — debía
       ser "yo, personalmente, desconfío"). BTQ es solo host narrando en primera persona

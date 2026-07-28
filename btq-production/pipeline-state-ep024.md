@@ -8,9 +8,22 @@ stage_c: no iniciado.
 Archivo: `launch-assets/EP024-peter-guion.html` · Artifact:
 https://claude.ai/code/artifact/b84b68c3-97d0-49e2-ae28-184e8e333740
 
-**Título fijado:** `EP.24 — Principio de Peter: por qué su mejor empleado se vuelve un mal jefe`
-(71 caracteres). Modelo *[tipo] de [nombre propio]*, igual que Goodhart y Hawthorne. Va idéntico
-en portada, Spotify y YouTube.
+**Título — RETITULADO 2026-07-28 con la fórmula invertida:**
+
+```
+EP.24 — Por qué su mejor empleado se vuelve un mal jefe: el Principio de Peter
+```
+
+78 caracteres (límite de YouTube: 100). Va idéntico en portada, Spotify y YouTube.
+**Primer episodio con la fórmula nueva**: el problema al frente en las palabras del oyente, el
+teórico detrás como autoridad. Ver `guion-style-btq.md` § Título para la evidencia que la motivó.
+
+**Coherencia título ↔ guion (regla nueva, verificada):** la promesa se responde en el bloque DATO
+del segmento 4 — «mientras más vendía la persona antes del ascenso, PEOR jefe resultó ser», con la
+caída de 0,061 y el tercio de trabajador.
+
+*Título anterior, descartado:* `EP.24 — Principio de Peter: por qué su mejor empleado se vuelve un
+mal jefe` (71 car.). Mismo contenido, arrancando por un término que nadie busca.
 
 **Esqueleto TRENZADO** (el D del menú de rotación) — primera vez que se usa. Dos hilos alternados
 que no se resuelven hasta el segmento 5: A = la sátira de 1969, B = el paper de 2019. El invertido
@@ -60,6 +73,27 @@ sistema de pago.
 | Libro (referente) | *The Peter Principle*, 1969 | 3 |
 | Serie | *The Office* — Michael Scott | 5 |
 | Charla/video | «Why Is My Boss Incompetent?», Yale Insights 2018, con video de Kelly Shue | 6 |
+
+## Métrica de seguimiento — minutos por reproducción
+
+Spotify **no** entrega retención dentro del episodio (confirmado con Andy 2026-07-28: el único
+archivo de retención es el semana-a-semana, y es ilegible con 1-3 oyentes por semana). El proxy
+que sí sale de los exports normales, y que se anota en el `pipeline-state` de CADA episodio:
+
+```
+minutos por reproducción = horas de consumo x 60 / reproducciones
+```
+
+| Episodio | Min/reproducción | Nota |
+|---|---|---|
+| EP.022 | ~23-28 | ventanas aproximadas, n=9 |
+| EP.023 | ~20,5 | 3,41 h / 10 reproducciones, ~60% de 33,77 min |
+| EP.024 | *(pendiente)* | |
+
+Es un proxy débil con estos volúmenes — sirve por tendencia a lo largo de 4-5 episodios, no por
+el valor de un episodio suelto. **Alternativa mejor si hay vistas suficientes: YouTube Studio sí
+da la curva de retención minuto a minuto** del mismo audio. Revisar cuántas vistas tiene el ítem
+de EP.023 antes de sacar conclusiones de ahí.
 
 ## Pendiente
 
