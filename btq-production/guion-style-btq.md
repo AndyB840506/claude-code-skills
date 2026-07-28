@@ -676,6 +676,20 @@ separados) y dividir por **148**. Marcar los tiempos de la arquitectura en conse
 Escribir el guion para que **en seco** caiga por debajo del objetivo hablado:
 **siempre dejar colchón para CORTAR, no para estirar.**
 
+**Validar el contador antes de creerle** (fijado 2026-07-28). Un extractor de palabras no avisa
+cuando cuenta de menos: devuelve un número plausible. Antes de aplicarlo a un guion nuevo,
+**correrlo sobre EP.023 y confirmar que da 4.425**. Si no da esa cifra, el instrumento está mal,
+no el guion. El 2026-07-28 dos métodos fallaron en silencio sobre EP.024: un regex con `(.*?)</`
+dio 5.213 porque cortaba en el primer `</` de cada línea con `<strong>` adentro, y un extractor
+que solo miraba `line` y `sub` dio 5.536 porque se saltaba los bloques `remate` y `dato`, que sí
+se hablan. El bueno da 5.612. Los tres parecían razonables; solo uno reproduce la cifra histórica.
+
+**El factor de expansión está atado al método que lo produjo.** El ×1,134 sale de dividir las
+5.017 palabras habladas de EP.023 entre sus 4.425 escritas **contadas con las cinco clases**.
+Aplicarlo a un conteo hecho de otra forma da un resultado sin sentido — ese mismo día,
+5.536 × 1,13 daba 42,3 min contra los 42,8 reales. Si se cambia de método de conteo, **hay que
+recalcular el factor con el método nuevo**, no arrastrar el viejo.
+
 **Recalibrar** los 148 wpm y el factor de expansión cada pocos episodios contra el SRT más reciente
 (los SRT viven en `E:\Transcriptor\transcripciones\`); si su ritmo cambia, actualizar la tabla —y
 este párrafo con ella, que es justo lo que no se hizo en julio.

@@ -107,6 +107,8 @@ Antes de reportar un conteo o un "cero hallazgos", cruzar el total con una segun
 
 **Al actualizar una regla, separar lo histórico de lo normativo.** Un documento mezcla enunciados que *describen lo que pasó* con enunciados que *mandan lo que se hace*. Solo los segundos se actualizan. El 2026-07-25, al retirar la música de intro/outro, la frase «el ritmo se midió sobre EP.20 sin contar intro/outro musical» **se conservó**: ese episodio sí llevaba música y reescribirla habría falsificado el registro de cómo se calibró la cifra.
 
+**Y al RETIRAR una regla, grepear el documento entero por su nombre antes de darla por retirada.** Un documento largo guarda la misma regla en varios sitios —la sección que la define, el checklist que la exige, la nota que explica por qué existe— y retirarla solo donde se definió deja copias vivas que siguen mandando. El 2026-07-28, en `guion-style-btq.md`, «línea de enganche» vivía en **5 sitios**: se había declarado «maquillaje» y eliminada en uno, y otros dos la seguían exigiendo, incluido el checklist previo a entregar. El resultado no fue teórico: la muletilla entró a EP.022, EP.023 y EP.024. La regla vale para cualquier documento de reglas, no solo para las guías de guion. **Ojo con el párrafo de arriba:** el grep saca *todas* las ocurrencias, pero no todas se borran — las que **mandan** se retiran, y las que **narran** («el lint la encontró en EP.022 y EP.023») se conservan, pasadas a tiempo pasado y marcadas como retiradas. Borrarlas también sería falsificar el registro; dejarlas en presente sería seguir mandando.
+
 ## Límites de lo publicable (medir, no estimar)
 
 - Descripción del show en Spotify: límite duro de **600 caracteres** — contarlos antes de enviar.

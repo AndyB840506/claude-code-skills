@@ -49,10 +49,26 @@
 - `step2-generate-assets.md` §B.1 (nuevo) — qué link va en el primer comentario según el día:
   jueves/lunes/martes el artículo, domingo Spotify.
 
+**Auditoría de la guía de estilo (segundo tramo de la sesión)**
+- Andy notó que `guion-style-btq.md` (746 líneas) podía tener contradicciones. Leída entera:
+  **tenía 8**. Cinco cambiaban lo que se escribe. La peor: la guía **exigía** en su checklist la
+  misma línea de enganche que ella misma documenta como molde copiado en EP.022 y EP.023 —
+  «línea de enganche» vivía en **5 sitios**, retirada en uno y obligatoria en dos.
+- También: el cierre canónico estaba archivado bajo el rótulo «(pop-culture)», carril en pausa;
+  tres remisiones a un «punto 7 del ADN» inexistente; y la excepción de EP.020 se justificaba con
+  una creencia que el propio documento refuta 25 líneas antes.
+- **EP.024 traía el molde retirado** (`todavía no les he mostrado`) — tercero seguido. El lint de
+  6-gramas lo dejó pasar porque cambiaba la última palabra. Reescrito con OK de Andy; lint PASS.
+  Al checklist se le agregó el grep nominal correspondiente.
+- **Duración de EP.024 remedida contra el SRT real de EP.023**: 5.612 palabras → **42,8 min**.
+  Andy preguntó si estaba asumiendo — lo estaba. Al medir salió que **EP.023 se proyectó a 40,0 y
+  duró 33,77**, porque se dimensionó con el factor viejo (+35,5% ÷150), el mismo que matamos hoy.
+
 ## Where We Paused
 
-**Last action:** cierre de sesión — retrospectiva aplicada y auditoría del kit sin hallazgos.
-**Next action:** grabar EP.024.
+**Last action:** segundo cierre de sesión — 3 aprendizajes aplicados, kit auditado sin hallazgos.
+**Next action:** grabar EP.024. Es el primer esqueleto D, así que la grabación **también es la
+medición**: su factor de expansión no existe hasta que haya SRT.
 **Blockers:** todo lo que queda depende de Andy (grabación, jingle, Google Search Console).
 
 ## Files to Read First
@@ -80,6 +96,13 @@
 - **Los artículos arrancan en EP.023 y van hacia adelante.** EP.017–EP.022 quedan sin
   artículo por decisión de Andy — descartado a propósito, no pendiente olvidado.
 - Assets de EP.023 en `E:\AI\outputs\BTQ-EP023\` (máquina de escritorio; no existen en el portátil).
+- **Validar el contador de palabras antes de creerle:** correrlo sobre EP.023 y confirmar que da
+  **4.425**. El 2026-07-28 dos métodos fallaron en silencio sobre EP.024 (5.213 y 5.536 contra los
+  5.612 reales) — ninguno da error, solo devuelve un número plausible. Y el factor ×1,134 está
+  atado a ese método de conteo: aplicarlo a un conteo hecho de otra forma da un resultado falso.
+- **El esqueleto D (trenzado) de EP.024 no tiene precedente medido.** A ×1,134 son 42,8 min; si
+  expande como los de segmentos separados, 47,6-52,9. Al transcribir, medir su factor real y
+  anotarlo en la tabla de esqueletos de `guion-style-btq.md`.
 
 ## Questions to Answer
 
