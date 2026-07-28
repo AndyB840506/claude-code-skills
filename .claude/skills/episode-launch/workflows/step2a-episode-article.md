@@ -79,8 +79,11 @@ guion no se puede atribuir, **no entra al artículo**.
 a dónde apuntar. El post de intriga del jueves sí puede enlazarlo — para entonces el
 artículo ya está escrito y en revisión, se despliega el domingo.
 
-## Atraso del catálogo
+## Alcance: de EP.023 en adelante
 
-EP.017–EP.022 tienen guion guardado y no tienen artículo. EP.001–EP.016 no tienen guion
-en texto, así que no se pueden derivar. El atraso se escribe uno por uno, fuera del
-kit de lanzamiento.
+**Decisión de Andy, 2026-07-28: no se escribe el atraso.** El artículo arranca en EP.023
+(ya publicado) y de ahí en adelante cada episodio nace con el suyo dentro del kit.
+
+EP.017–EP.022 tienen guion guardado pero **no** llevan artículo; EP.001–EP.016 ni
+siquiera tienen guion en texto. No proponer el retro-llenado como pendiente — está
+descartado a propósito, no olvidado. Si algún día se retoma, será una decisión nueva.

@@ -101,3 +101,8 @@ de EP.023 antes de sacar conclusiones de ahí.
   grabar, contra la transcripción real.
 - Grabación: dejar **3 s de silencio en cabeza y cola** (en EP.023 quedaron 0,59 s) + 30 s de
   room tone. El jingle varía respecto al de EP.023 manteniendo su formato.
+- **Artículo en `/episodios/<slug>` + su `og:image`** — nuevo paso del kit desde 2026-07-28
+  (ver `episode-launch/workflows/step2a-episode-article.md`). Se escribe antes del plan
+  social, porque los 4 posts de LinkedIn se cortan de él; se **despliega el domingo**, junto
+  con el episodio, para que el CTA de escucha tenga a dónde apuntar. Slug propuesto:
+  `por-que-su-mejor-empleado-se-vuelve-un-mal-jefe` (derivado del título aprobado).
