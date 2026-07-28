@@ -337,10 +337,12 @@ casi el doble de expansión asumida. No repetir ese error en ningún show.
 
 **Cómo calcular el word count target (NO adivinar minutos):** usa un **wpm MEDIDO** contra el
 SRT real del show, no una suposición. El supuesto típico de ~100-110 wpm está muy por debajo de
-la realidad: un host leyendo en voz alta corre mucho más rápido (BTQ/Andy solo host = **~150 wpm**
-+ **~35.5% de expansión en vivo**, recalibrado 2026-07-06 contra el SRT de EP.20 — ver
+la realidad: un host leyendo en voz alta corre mucho más rápido (BTQ/Andy solo host = **148 wpm**,
+medido sobre los SRT de EP.020-023 con un solo método, recalibrado 2026-07-25). **La expansión en
+vivo NO es un número fijo: depende del esqueleto** — +13% con segmentos fusionados o con un
+esqueleto nuevo sin precedente medido, +26% a +40% con segmentos separados. Ver
 `btq-production/guion-style-btq.md` → "Calibración de duración" para la cifra vigente de cada show,
-nunca copiar la de otro). Fórmula: `palabras_escritas ≈ (minutos objetivo × wpm_medido) / (1 + expansión_medida)`.
+nunca copiar la de otro. Fórmula: `palabras_escritas ≈ (minutos objetivo × wpm_medido) / (1 + expansión_medida)`.
 Deja colchón para CORTAR, no para estirar.
 
 **Verificar después de grabar:** comparar la duración real del SRT contra la marcada en el guion.
