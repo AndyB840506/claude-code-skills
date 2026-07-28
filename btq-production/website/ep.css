@@ -1,155 +1,224 @@
 /* Behind the Queue — paginas de episodio.
-   Sistema v4 "Sala de Maquinas". Fuente canonica de los valores:
-   .claude/skills/episode-launch/docs/brand-constants.md
-   El sitio se compromete a proposito con un solo mundo oscuro: es la marca. */
+   NO define un sistema propio: replica el de index.html para que las paginas de
+   episodio se lean como el mismo sitio. Tokens, contenedor, grano, barra, voz de
+   notas de disco y breakpoints estan copiados de ahi. Si index.html cambia, esto
+   se actualiza detras. */
 
-:root {
-  --bg:        #0E1113;   /* Void — nunca negro puro */
-  --panel:     #191D20;
-  --panel-2:   #22262A;
-  --signal:    #FF3D00;
-  --signal-dim:#9E2600;
-  --cream:     #F4EFE7;
-  --muted:     #8B9492;
-  --steel:     #39434A;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-  --display: 'Cabinet Grotesk', 'Arial Black', system-ui, sans-serif;
-  --sans:    'Supreme', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --mono:    'Martian Mono', ui-monospace, Consolas, monospace;
-
-  --measure: 68ch;
+:root{
+  --bg:#0E1113;
+  --bg-2:#22262A;
+  --ink:#F4EFE7;
+  --body:#AEB5B3;          /* AA on dark */
+  --faint:#8B9492;         /* decorative labels only */
+  --signal:#FF3D00;
+  --signal-hi:#FF6A3D;
+  --signal-dim:rgba(255,61,0,.08);
+  --line:rgba(244,239,231,.09);
+  --line-2:rgba(244,239,231,.16);
+  --disp:'Cabinet Grotesk',system-ui,sans-serif;
+  --body-f:'Supreme',system-ui,sans-serif;
+  --mono:'Martian Mono',ui-monospace,monospace;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;background:var(--bg)}
+body{
+  background:transparent;color:var(--ink);
+  font-family:var(--body-f);
+  line-height:1.65;overflow-x:hidden;position:relative;
+}
+::selection{background:var(--signal);color:var(--bg)}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--signal)}
+a{color:inherit}
+img{max-width:100%;height:auto}
 
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { animation: none !important; transition: none !important; }
+/* film grain — la misma textura de "vinilo prensado" de la portada */
+.grain{
+  position:fixed;inset:0;z-index:3;pointer-events:none;opacity:.05;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-body {
-  background: var(--bg);
-  color: var(--cream);
-  font-family: var(--sans);
-  font-size: 17px;
-  line-height: 1.75;
-  -webkit-font-smoothing: antialiased;
+.wrap{max-width:1180px;margin:0 auto;padding:0 44px}
+
+/* voz mono de notas de disco */
+.meta{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+.meta b{color:var(--signal);font-weight:500}
+
+/* ── BARRA ──
+   En la portada el header arranca transparente sobre el hero y se "acopla" al
+   hacer scroll. Aqui no hay hero, asi que va acoplado desde el principio. */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 44px;
+  background:rgba(14,17,19,.82);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
 }
+.cat{font-family:var(--disp);font-size:1.05rem;letter-spacing:.22em;color:var(--ink);text-decoration:none}
+.cat i{color:var(--signal);font-style:normal}
+.top-mid{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);opacity:.7}
+.bar-right{display:flex;align-items:center;gap:26px}
+.bar-link{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none;opacity:.78}
+.bar-link:hover,.bar-link:focus-visible{color:var(--signal);opacity:1}
+a:focus-visible{outline:2px solid var(--signal);outline-offset:4px}
 
-.wrap { width: min(100% - 2.5rem, var(--measure)); margin-inline: auto; }
-
-/* ---------- barra ---------- */
-.bar {
-  border-bottom: 1px solid var(--steel);
-  background: rgba(14,17,19,.92);
-  position: sticky; top: 0; z-index: 10;
-  backdrop-filter: blur(6px);
+/* ── CABECERA DEL ARTICULO ── */
+.ep-head{padding:150px 0 64px;border-bottom:1px solid var(--line)}
+.ep-kick{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:30px}
+.ep-kick .n{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--signal)}
+.ep-kick .sep{width:26px;height:1px;background:var(--line-2)}
+h1{
+  font-family:var(--disp);font-weight:400;
+  font-size:clamp(2.1rem,5.2vw,4rem);line-height:1.06;letter-spacing:-.015em;
+  color:var(--ink);max-width:20ch;text-wrap:balance;
 }
-.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: .75rem 1rem; padding: .9rem 0; flex-wrap: wrap; }
-.bar a { color: var(--cream); text-decoration: none; }
-.brand { font-family: var(--mono); font-size: .78rem; letter-spacing: .28em; text-transform: uppercase; color: var(--signal); }
-.bar nav { display: flex; gap: 1.25rem; font-size: .9rem; }
+h1 em{font-style:italic;color:var(--signal)}
+.ep-teoria{font-family:var(--disp);font-style:italic;color:var(--signal);font-size:clamp(1.05rem,2vw,1.4rem);margin-top:22px;max-width:44ch}
+.ep-lede{color:var(--body);font-size:1.08rem;line-height:1.9;margin-top:30px;max-width:54ch}
+.ep-lede em{font-style:italic;color:var(--signal)}
 
-/* Holgura para telefonos angostos (360-400px), donde el nombre con letter-spacing
-   de .28em mas dos enlaces queda muy justo. `flex-wrap` en .bar .wrap es la red real;
-   esto solo evita que la barra se parta en dos lineas por unos pocos pixeles.
-   OJO: no nacio de un desbordamiento medido -- ver la nota al final del archivo. */
-@media (max-width: 460px) {
-  .brand { font-size: .7rem; letter-spacing: .18em; }
-  .bar nav { gap: 1rem; font-size: .85rem; }
+/* ── CUERPO ──
+   Dos columnas con la misma proporcion que .premise-grid de la portada, para que
+   el articulo no deje media pantalla vacia como haria una columna sola. */
+.ep-body{padding:88px 0}
+.ep-grid{display:grid;grid-template-columns:1.55fr .9fr;gap:72px;align-items:start}
+section.blk + section.blk{margin-top:88px}
+
+/* riel lateral — ficha del episodio, en voz de notas de disco */
+.rail{position:sticky;top:96px;border-top:1px solid var(--line-2);padding-top:22px}
+.rail dl{margin:0}
+.rail dt{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-top:18px}
+.rail dt:first-child{margin-top:0}
+.rail dd{margin:5px 0 0;color:var(--ink);font-size:.95rem;line-height:1.6}
+.rail dd em{font-style:italic;color:var(--signal)}
+.rail .rail-cta{
+  display:inline-flex;align-items:center;gap:10px;margin-top:28px;
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--signal);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:6px;
 }
-.bar nav a:hover, .bar nav a:focus-visible { color: var(--signal); }
+.rail .rail-cta span{transition:transform .35s ease;display:inline-block}
+.rail .rail-cta:hover span{transform:translateX(5px)}
+.rail .rail-cta:hover{color:var(--signal-hi)}
 
-/* ---------- cabecera del articulo ---------- */
-header.ep { padding: 3.5rem 0 2rem; }
-.kicker {
-  font-family: var(--mono); font-size: .72rem; letter-spacing: .22em;
-  text-transform: uppercase; color: var(--signal); margin-bottom: 1rem;
-  display: flex; flex-wrap: wrap; gap: .6rem; align-items: baseline;
-}
-.kicker .sep { color: var(--steel); }
-h1 {
-  font-family: var(--display); font-weight: 900;
-  font-size: clamp(2rem, 6vw, 3.1rem); line-height: 1.08;
-  text-wrap: balance; margin-bottom: .9rem;
-}
-.teoria { font-family: var(--display); font-style: italic; color: var(--signal); font-size: 1.15rem; margin-bottom: 1.6rem; }
-.lede { font-size: 1.15rem; color: #d9d5cc; text-wrap: pretty; }
+/* mismo patron de encabezado de seccion que la portada */
+.sec-tag{display:flex;align-items:center;gap:16px;margin-bottom:40px}
+.sec-tag .n{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--signal);white-space:nowrap}
+.sec-tag .rule{flex:1;height:1px;background:var(--line)}
 
-/* ---------- cuerpo ---------- */
-main { padding-bottom: 4rem; }
-section.blk { margin-top: 2.75rem; }
-h2 {
-  font-family: var(--mono); font-size: .95rem; letter-spacing: .18em;
-  text-transform: uppercase; color: var(--signal);
-  padding-bottom: .5rem; border-bottom: 1px solid var(--signal-dim);
-  margin-bottom: 1.25rem; text-wrap: balance;
-}
-h3 { font-family: var(--display); font-size: 1.3rem; margin: 2rem 0 .6rem; text-wrap: balance; }
-p + p { margin-top: 1.1rem; }
-strong { color: #fff; }
-em { color: var(--signal); font-style: italic; }
-a { color: var(--signal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+.blk h2{font-family:var(--disp);font-weight:400;font-size:clamp(1.9rem,3.4vw,2.8rem);line-height:1.1;margin-bottom:30px;max-width:24ch;text-wrap:balance}
+.blk h2 em{font-style:italic;color:var(--signal)}
+.blk h3{font-family:var(--disp);font-weight:400;font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.2;margin:52px 0 18px;color:var(--ink);text-wrap:balance}
+.blk p{color:var(--body);font-size:1.02rem;line-height:1.95;margin-bottom:20px;max-width:54ch}
+.blk p b,.blk p strong{color:var(--ink);font-weight:500}
+.blk p em{font-style:italic;color:var(--signal)}
+.blk a{color:var(--signal);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:1px}
+.blk a:hover{color:var(--signal-hi)}
+.blk ul,.blk ol{color:var(--body);font-size:1.02rem;line-height:1.95;max-width:54ch;margin:0 0 20px 1.2rem}
+.blk li+li{margin-top:10px}
 
-/* cifras */
-.cifras { display: grid; gap: 1px; background: var(--steel); border: 1px solid var(--steel); border-radius: 6px; overflow: hidden; margin: 1.5rem 0; }
-.cifra { background: var(--panel); padding: 1.1rem 1.25rem; display: grid; gap: .3rem; }
-.cifra b { font-family: var(--mono); font-size: 1.45rem; color: var(--signal); font-variant-numeric: tabular-nums; line-height: 1.2; }
-.cifra span { font-size: .95rem; color: #cfcbc2; }
-.cifra small { color: var(--muted); font-size: .8rem; }
-@media (min-width: 620px) { .cifras { grid-template-columns: 1fr 1fr; } }
+/* cita destacada — la tipografia de .spread de la portada, sin el bloque a sangre */
+.pull{margin:44px 0;padding-left:26px;border-left:1px solid var(--signal);max-width:34ch}
+.pull p{font-family:var(--disp);font-style:italic;font-weight:300;
+  font-size:clamp(1.35rem,2.6vw,1.95rem);line-height:1.42;letter-spacing:-.01em;
+  color:var(--ink);max-width:none;margin:0}
+.pull em{font-style:normal;color:var(--signal);font-weight:400}
 
-/* cita destacada */
-blockquote {
-  border-left: 3px solid var(--signal);
-  background: linear-gradient(90deg, rgba(255,61,0,.07), transparent);
-  padding: 1rem 1.3rem; margin: 1.6rem 0;
-  font-family: var(--display); font-size: 1.12rem;
-}
-
-ul, ol { margin: 1rem 0 1rem 1.3rem; }
-li + li { margin-top: .55rem; }
+/* cifras — filas tipo liner notes, no tarjetas */
+.cifras{border-top:1px solid var(--line);margin:40px 0 0}
+.cifra{display:grid;grid-template-columns:210px 1fr;gap:30px;padding:26px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.cifra b{font-family:var(--disp);font-weight:400;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--signal);line-height:1.05;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.cifra .d{color:var(--body);font-size:1rem;line-height:1.8;max-width:52ch}
+.cifra .d strong{color:var(--ink);font-weight:500}
+.cifra .d em{font-style:italic;color:var(--signal)}
+.cifra .src{display:block;margin-top:8px;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
 
 /* fuentes */
-.fuentes { font-size: .92rem; color: var(--muted); }
-.fuentes li { margin-top: .8rem; }
-.fuentes strong { color: #cfcbc2; }
+.fuentes ol{list-style:none;margin:0;border-top:1px solid var(--line)}
+.fuentes li{padding:20px 0;border-bottom:1px solid var(--line);color:var(--body);font-size:.92rem;line-height:1.8;max-width:78ch}
+.fuentes li strong{color:var(--ink);font-weight:500}
+.fuentes li em{font-style:italic;color:var(--faint)}
 
-/* CTA escuchar */
-.escuchar {
-  margin-top: 3rem; background: var(--panel-2); border: 1px solid var(--steel);
-  border-radius: 8px; padding: 1.6rem;
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+/* CTA escuchar — el gesto de .track de la portada */
+.escuchar{
+  display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;
+  margin-top:70px;padding:38px 0;position:relative;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
 }
-.escuchar p { color: #cfcbc2; max-width: 34ch; }
-.btn {
-  display: inline-block; background: var(--signal); color: #0E1113;
-  font-family: var(--mono); font-size: .82rem; letter-spacing: .12em; text-transform: uppercase;
-  padding: .85rem 1.4rem; border-radius: 4px; text-decoration: none; font-weight: 700;
+.escuchar p{color:var(--body);font-size:1.02rem;line-height:1.8;max-width:44ch;margin:0}
+.escuchar .go{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--signal);text-decoration:none;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:12px;
 }
-.btn:hover, .btn:focus-visible { background: var(--cream); }
+.escuchar .go span{transition:transform .35s ease;display:inline-block}
+.escuchar:hover .go span{transform:translateX(5px)}
+.escuchar:hover{background:linear-gradient(90deg,var(--signal-dim),transparent 60%)}
 
-/* indice de episodios */
-.lista { list-style: none; margin: 0; }
-.lista li { border-top: 1px solid var(--steel); }
-.lista li:last-child { border-bottom: 1px solid var(--steel); }
-.lista a { display: grid; grid-template-columns: 4.2rem 1fr; gap: 1rem; padding: 1.4rem 0; text-decoration: none; color: var(--cream); align-items: start; }
-.lista a:hover, .lista a:focus-visible { color: var(--signal); }
-.lista .num { font-family: var(--mono); color: var(--signal); font-size: 1rem; }
-.lista .tit { font-family: var(--display); font-size: 1.2rem; line-height: 1.25; text-wrap: balance; }
-.lista .sub { color: var(--muted); font-size: .92rem; margin-top: .25rem; }
+/* ── INDICE DE EPISODIOS — el patron .track de la portada ── */
+.lista{border-top:1px solid var(--line)}
+.lista a{
+  display:grid;grid-template-columns:110px 1fr auto;gap:30px;align-items:center;
+  padding:34px 0;border-bottom:1px solid var(--line);
+  text-decoration:none;position:relative;transition:background .35s ease;
+}
+.lista a::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--signal);transform:scaleY(0);transform-origin:top;transition:transform .35s ease}
+.lista a:hover{background:linear-gradient(90deg,var(--signal-dim),transparent 60%)}
+.lista a:hover::before{transform:scaleY(1)}
+.lista .t-num{font-family:var(--disp);font-size:3.2rem;line-height:1;color:var(--faint);opacity:.5;transition:color .3s ease,opacity .3s ease}
+.lista a:hover .t-num{color:var(--signal);opacity:1}
+/* display:block explicito -- estas piezas son <span> dentro de un <a>, no <div>
+   como en .track de la portada, y sin esto el titulo y el subtitulo salen en la
+   misma linea (visto en captura del indice, 2026-07-28). */
+.lista .t-title{display:block;font-family:var(--disp);font-size:clamp(1.2rem,2.2vw,1.6rem);line-height:1.2;color:var(--ink);transition:color .3s ease;text-wrap:balance}
+.lista a:hover .t-title{color:var(--signal-hi)}
+.lista .t-sub{display:block;color:var(--body);font-size:.92rem;line-height:1.7;margin-top:8px;max-width:60ch}
+.lista .t-go{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);transition:transform .35s ease,color .3s ease}
+.lista a:hover .t-go{color:var(--signal);transform:translateX(5px)}
 
-footer.pie { border-top: 1px solid var(--steel); padding: 2rem 0 3rem; color: var(--muted); font-size: .85rem; }
-footer.pie a { color: var(--muted); }
-footer.pie a:hover { color: var(--signal); }
+/* ── PIE ── */
+footer{border-top:1px solid var(--line);padding:64px 0 40px;background:var(--bg)}
+.colo{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;margin-bottom:40px}
+.colo h3{font-family:var(--disp);font-size:2.2rem;letter-spacing:.12em;margin-bottom:12px}
+.colo h3 i{color:var(--signal);font-style:normal}
+.colo p{color:var(--body);font-size:.86rem;line-height:1.7;max-width:38ch}
+.colo .ct{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+.colo a.mail{font-family:var(--disp);font-style:italic;color:var(--signal);text-decoration:none;font-size:1rem;border-bottom:1px solid var(--line-2);padding-bottom:3px}
+.colo a.mail:hover{color:var(--signal-hi)}
+.colo .soc{display:flex;flex-direction:column;gap:9px}
+.colo .soc a{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--body);text-decoration:none}
+.colo .soc a:hover{color:var(--signal)}
+.legal{border-top:1px solid var(--line);padding-top:24px;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
 
-/* tablas y bloques anchos nunca desbordan el body */
-.scroll-x { overflow-x: auto; }
-img { max-width: 100%; height: auto; }
+/* ── BREAKPOINTS — los mismos cortes de index.html ── */
+@media(max-width:760px){.top-mid{display:none}header{padding-left:22px;padding-right:22px}}
+@media(max-width:980px){
+  .ep-grid{grid-template-columns:1fr;gap:56px}
+  .rail{position:static}
+  .colo{grid-template-columns:1fr;gap:36px}
+  .cifra{grid-template-columns:1fr;gap:10px}
+  .escuchar{grid-template-columns:1fr;gap:20px}
+}
+@media(max-width:680px){
+  .wrap{padding-left:22px;padding-right:22px}
+  .ep-head{padding:120px 0 48px}
+  .ep-body{padding:64px 0}
+  section.blk + section.blk{margin-top:64px}
+  .lista a{grid-template-columns:64px 1fr;gap:18px}
+  .lista .t-num{font-size:2.6rem}
+  .lista .t-go{display:none}
+}
 
-/* NO agregar aqui `overflow-x: hidden` sobre html/body: rompe el `position: sticky`
-   de la barra superior. Se agrego el 2026-07-28 creyendo que la pagina desbordaba en
-   movil y se revirtio el mismo dia: no desbordaba (docWidth == innerWidth). Lo que
-   fallaba era la captura, no el CSS. */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+/* NO agregar `overflow-x: hidden` sobre html/body pensando que algo desborda sin
+   haberlo medido: rompe `position: sticky`. Se agrego el 2026-07-28 por una captura
+   mal leida (Edge headless tiene un piso de viewport de 492px y recorta la imagen,
+   lo que parece desbordamiento y no lo es) y se revirtio el mismo dia. Para medir de
+   verdad: cargar la pagina en un iframe del ancho objetivo y comparar
+   scrollWidth contra innerWidth. */
