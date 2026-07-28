@@ -1,5 +1,5 @@
 EPISODE: EP.024 (BTQ)
-stage_a: guion escrito 2026-07-28 — LISTO PARA GRABAR, pendiente aprobación de Andy.
+stage_a: **complete — guion APROBADO por Andy el 2026-07-28. Listo para grabar.**
 stage_b: no iniciado (grabación, transcripción, assets).
 stage_c: no iniciado.
 
@@ -63,7 +63,6 @@ sistema de pago.
 
 ## Pendiente
 
-- **Aprobación del guion por Andy** antes de grabar.
 - Artwork (portadas 3 formatos + quote cards): no iniciado. Las cards se componen DESPUÉS de
   grabar, contra la transcripción real.
 - Grabación: dejar **3 s de silencio en cabeza y cola** (en EP.023 quedaron 0,59 s) + 30 s de
