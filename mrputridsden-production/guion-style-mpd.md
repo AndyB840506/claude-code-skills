@@ -35,7 +35,32 @@ tras la salida de Juan (ver memoria `project_mpd_juan_departure`).
   El guion se quedó corto para el target de 43 min pese a que la fórmula prestada de BTQ estimaba
   ~42 min — la expansión menor (+23,5% vs +35,5% asumido) explica la diferencia.
 
-**Tabla de dimensionamiento (recalibrada con datos reales de EP.005 — wpm 159,2 / expansión 1,235):**
+> ## ⚠️ ESTA TABLA QUEDÓ CORTA — corregida el 2026-07-28 con la grabación de EP.006
+>
+> La grabación del piloto de T2 (Club de los 27) **desmintió la calibración de EP.005.** Medido con
+> `ffprobe` sobre `E:\Podcast\MPD\Temporada 2\EP 01\MPD EP 01.mp3`: **5.230 palabras escritas
+> produjeron 45:55 de audio**, todo habla (verificado con espectrograma — no hay música pegada).
+>
+> - Ritmo real compuesto: **113,9 palabras escritas por minuto** (0,008781 min por palabra).
+> - La tabla de abajo asumía **128,9** palabras escritas por minuto. Se equivocaba por **13%**.
+> - Consecuencia concreta: un guion de 5.543 palabras —el "target de 43 min" de la tabla vieja—
+>   produce en realidad **~48,7 min**, fuera del rango editorial.
+>
+> **Usar esta tabla mientras haya n=2:**
+>
+> | Objetivo real | Palabras ESCRITAS |
+> |---|---|
+> | 40 min (piso) | ~4.555 |
+> | 43 min (target de Andrés) | ~4.896 |
+> | 45 min (techo) | ~5.124 |
+>
+> **Lo que NO se puede afirmar todavía:** si el desfase viene de que Andrés habla más lento en T2
+> (registro más grave y pausado del formato misterio) o de que improvisa más. Para separar wpm de
+> expansión hace falta el SRT, que aún no existe porque el piloto se va a regrabar. Hasta entonces
+> el número compuesto es lo único medido, y es suficiente para dimensionar.
+
+<details>
+<summary><strong>Tabla anterior (EP.005 — wpm 159,2 / expansión 1,235). Superada, se conserva como registro.</strong></summary>
 
 | Objetivo real | Palabras habladas | Palabras ESCRITAS |
 |---|---|---|
@@ -44,14 +69,45 @@ tras la salida de Juan (ver memoria `project_mpd_juan_departure`).
 | 43 min (target fijado por Andrés) | ~6.846 | ~5.543 |
 | 45 min (techo del estándar) | ~7.164 | ~5.801 |
 
-**Cómo medir:** contar palabras de los bloques `host-text` únicamente (no `dato`/`leyenda`/
-`recomendacion`/`nota-produccion`, que son referencia de producción, no se leen al aire),
-multiplicar por 1.235 (expansión verificada) y dividir por 159 (wpm verificado). Marcar los
-tiempos de la arquitectura en consecuencia.
+</details>
 
-**Muestra: n=1.** Esta es la primera calibración real de MPD solo — recalibrar (wpm y expansión)
-contra el SRT de los próximos 2-3 episodios grabados, igual que BTQ ajustó de 143→150 wpm tras
-más datos. Los SRT viven en `E:\Transcriptor\transcripciones\`.
+**Cómo medir (actualizado 2026-07-28):** contar palabras de los bloques `host-text` únicamente (no
+`dato`/`leyenda`/`recomendacion`/`nota-produccion`, que son referencia de producción y no se leen
+al aire) y **multiplicar por 0,008781 para obtener minutos** — o dividir entre 113,9. Ese factor es
+el ritmo compuesto medido sobre la grabación de EP.006. No usar el par 159 wpm / ×1,235: sobreestima
+cuántas palabras caben.
+
+⚠️ **Contar con script, no a ojo, y con los patrones en escapes unicode.** Las tildes se manglan al
+pasar por la línea de comandos y devuelven **ceros falsos** en los greps de muletillas (mordió el
+2026-07-28: el lint reportó 0 muletillas con patrones rotos). Escribir el script a disco y correrlo
+desde ahí.
+
+**Muestra: n=2** (EP.005 y el piloto de EP.006), y los dos discrepan fuerte entre sí — 128,9 vs
+113,9 palabras escritas por minuto. Con dos puntos tan separados, tratar el número como provisional
+y **medir la duración real de cada episodio grabado con `ffprobe`** antes de dar por buena cualquier
+estimación. Al tener SRT, separar wpm de expansión. Los SRT viven en `E:\Transcriptor\transcripciones\`.
+
+---
+
+## Loudness — targets de máster (medidos sobre el piloto de EP.006, 2026-07-28)
+
+El piloto salió **−25,8 LUFS integrado, LRA 15,1, true peak −2,1 dBFS**. Está ~10 LU por debajo del
+estándar de podcast, y con un rango dinámico del doble de lo normal para voz hablada. Peor: la
+mitad del episodio se hunde — por tramos dio −20,4 → −24,5 → −27,8 → **−29,2** → −19,6 LUFS, casi
+10 LU de deriva entre el centro y los extremos.
+
+| Métrica | Piloto | Target |
+|---|---|---|
+| Integrado | −25,8 LUFS | **−16 LUFS** (Spotify normaliza a −14) |
+| LRA | 15,1 LU | **~6 LU** |
+| True peak | −2,1 dBFS | ≤ −1 dBFS ✓ |
+
+**Verificar antes de publicar cualquier episodio:**
+
+```
+ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 "archivo.mp3"
+ffmpeg -hide_banner -i "archivo.mp3" -af ebur128=peak=true -f null -
+```
 
 ---
 
