@@ -20,7 +20,8 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.021 | Los Simpson — 30 años en el aire: cómo evitar el burnout de un equipo a largo plazo | publicado — https://open.spotify.com/episode/0VH2eMppsNMBl3JqTEq4T0 |
 | EP.022 | Pilar SEO — Costo de mala calidad en call center (Philip Crosby, "Quality Is Free", 1979) — ángulo P&L: cuánto cuesta NO invertir en calidad | publicado — https://open.spotify.com/episode/6ewMTUO0FGNxfIMS0u55Yu |
 | EP.023 | Pilar SEO — el Efecto Hawthorne en medición del desempeño (Elton Mayo, estudios Western Electric, 1920s; reanálisis de Levitt & List 2011) | publicado — https://open.spotify.com/episode/3FQOeIT8bNTakHNGgBhMMR |
-| EP.024 | Pilar SEO — el Principio de Peter: ascender hasta el nivel de incompetencia (Laurence J. Peter y Raymond Hull, *The Peter Principle*, 1969) | en roadmap — tema elegido 2026-07-25 |
+| EP.024 | Pilar SEO — el Principio de Peter: ascender hasta el nivel de incompetencia (Laurence J. Peter y Raymond Hull, *The Peter Principle*, 1969) | **guion escrito 2026-07-28** — `launch-assets/EP024-peter-guion.html`, listo para grabar |
+| EP.025 | Pilar SEO — la Ley de Little: por qué su cola no baja (John D. C. Little, 1961; teoría de colas) | en roadmap — tema elegido 2026-07-28 |
 
 > **EP.024 — por qué este tema** (decisión de Andy, 2026-07-25). Continúa directamente el cierre
 > de EP.023, que preguntó literalmente «¿a quién ascendió? ¿a quién no le renovó?», y cumple el
