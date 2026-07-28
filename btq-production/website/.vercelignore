@@ -1,0 +1,19 @@
+# Lo que NO se sube a produccion.
+# Excluye del deploy unicamente: los archivos siguen en el repo.
+
+# Borradores viejos de la portada. Con cleanUrls quedaban servidos en /index-v2,
+# /index-v3 y /index-liner con 200 -- tres homepages completas que Google puede
+# indexar como contenido duplicado de /. Verificado en vivo el 2026-07-28.
+index-v2.html
+index-v3.html
+index-liner.html
+
+# Generador del sitemap: se corre en local, no tiene por que servirse.
+# Estaba publico con 200 en /build-sitemap.py.
+build-sitemap.py
+
+# Imagenes huerfanas: ninguna pagina que se despliega las referencia.
+# Podcast_cover_art_logo solo la usaban index-v2/v3, que ya no se suben.
+Podcast_cover_art_logo._Square_202605311357.jpeg
+Podcast_logo_design_202604211135.jpg
+btq-episodio-social.png
