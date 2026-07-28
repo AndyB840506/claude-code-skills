@@ -90,7 +90,8 @@ para la semana" — ver `btq-project/SKILL.md` §10, fuente canónica de este ca
   (analytics EP.016: lunes = día récord de impresiones, 124; la audiencia escucha
   lunes-martes en el trabajo, no el domingo en la noche) — aprobado 2026-06-12
 - Martes: refuerzo/herramienta — profundiza para quien ya escuchó, engancha a quien no
-- LinkedIn: 5–8 hashtags · Spotify link goes in FIRST COMMENT (write comment text separately)
+- LinkedIn: 5–8 hashtags · el link va en el PRIMER COMENTARIO, con su texto escrito
+  aparte — **y qué link depende del día** (ver §B.1)
 - Instagram/Facebook: 10–15 hashtags · día de lanzamiento termina con una pregunta
 - TikTok copy: ultra short (2–3 lines) for all four days
 - **LinkedIn es la plataforma prioritaria** — la audiencia núcleo es hombre 35–44
@@ -102,6 +103,47 @@ para la semana" — ver `btq-project/SKILL.md` §10, fuente canónica de este ca
 - **Clips/quotes para redes salen del episodio que el algoritmo ya empuja** (hoy:
   EP.012 Bohemian Rhapsody, 149 impresiones Home) — al promocionar el catálogo, usar
   ese como puerta de entrada, no el más reciente.
+
+---
+
+### B.1 · El artículo del episodio — destino y fuente de los cortes
+
+Desde 2026-07-28 cada episodio tiene una página de texto en
+`behind-thequeue.com/episodios/<slug>`. No es un extra del sitio: es **el destino
+que le faltaba a LinkedIn**. Un gerente que ve el post el lunes a las 7 AM en la
+oficina no puede darle play — puede leer. Ese es el hueco que tapa.
+
+**Qué link va en el primer comentario, por día:**
+
+| Día | Link | Por qué |
+|-----|------|---------|
+| Jueves (intriga) | **artículo** | el episodio todavía no existe; el artículo sí da a dónde ir |
+| Domingo (lanzamiento) | **Spotify** | el objetivo del día es la reproducción, no la lectura |
+| Lunes 7–8 AM | **artículo** | están en el trabajo, en desktop, sin audífonos |
+| Martes (refuerzo) | **artículo** | va dirigido a quien ya escuchó: profundizar es leer |
+
+El post del domingo puede llevar el artículo como **segundo** link dentro del mismo
+comentario ("y si prefiere leerlo: ..."), nunca en lugar de Spotify.
+
+**Los 4 posts se cortan del artículo, no del guion.** El artículo ya hizo el trabajo
+de destilar el guion a tesis + cifras verificadas + aplicación; volver al guion para
+cada post repite ese trabajo y abre la puerta a que un post afirme algo que el
+artículo no sostiene. Orden: guion → artículo → posts.
+
+> **Nota honesta sobre la regla del primer comentario.** La creencia de que LinkedIn
+> penaliza los enlaces externos en el cuerpo del post está muy repetida en marketing
+> pero **no tiene fuente primaria de la plataforma**. La regla se mantiene porque no
+> cuesta nada, no porque esté verificada. Si alguien mide lo contrario, cámbiese.
+
+**Imagen del preview (`og:image`):** cada artículo usa la **portada 16:9 de su propio
+episodio** (`/og/btq-epNNN.png`), no la `og-image.png` genérica del sitio. En LinkedIn
+la imagen del preview es lo que decide el clic, y con la genérica todos los episodios
+se veían idénticos en el feed. Se usa la portada y **no** una quote card: la portada
+nombra el episodio, la quote card arranca a mitad de frase y se lee mal debajo de un
+titular. El archivo se copia desde `E:\AI\outputs\BTQ-EPNNN\BTQ-EPNNN-COVER-16x9.png`
+al directorio de deploy; pesa ~50 KB, muy por debajo del límite de 500 KB.
+
+---
 
 **Core hashtags (always include):**
 ```
