@@ -23,6 +23,8 @@ El show tiene UNA firma de formato que se replica en cada expediente. Lo que cam
 
 **LÍMITE FIRME — no deificar a los artistas (decisión Andrés 2026-07-24):** nunca catalogar a un músico como dios, semidiós, mesías u objeto de culto — ni en guion, ni en teaser, ni en artwork. Puede ofender a creyentes reales. Y encaja con el pilar: el mito los eleva a ídolos, el episodio los devuelve a lo HUMANO, que es donde vive la verdad interesante. Reconocer la grandeza artística sin lenguaje de adoración religiosa. Hermano del límite de simbología ocultista (ver memoria `feedback_mpd_no_occult_symbols`).
 
+**Distinción USAR vs. CRITICAR (precisión del 2026-07-28):** el límite prohíbe *ejercer* la deificación, no *nombrarla*. Al aire, «de cero a **dios** a cadáver» y «estos **dioses jóvenes**» son violaciones — el guion está deificando. Pero «cuando convertimos a estos muertos en **santos**, le mandamos a la próxima generación un mensaje horrible» se **conserva**: ahí el guion está criticando el fenómeno, que es la tesis del show. Un lint que solo cuente las palabras marca los dos casos igual; hay que leer la frase. Ojo con la ironía de fondo: ese episodio argumentaba contra deificar mientras los llamaba dioses, y la contradicción interna se siente aunque el oyente no sepa nombrarla.
+
 ---
 
 ## Alcance, persona y tono — CANON T2 (decisión Andrés 2026-07-24, tras estudio de mercado + feedback)

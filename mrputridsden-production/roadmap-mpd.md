@@ -119,6 +119,26 @@ normal da 404, hay que usar el flujo prebuilt (ver CLAUDE.md § Sitio web).
 
 ---
 
+## Ideas y contactos del feedback del piloto (2026-07-25) — rescatados de WhatsApp 2026-07-28
+
+Salieron en la misma conversacion del feedback y NO estaban en ningun archivo. No son decisiones
+tomadas: son pendientes de decidir con Andres.
+
+- **"Martes de misterio"** — idea de cadencia/franja propuesta por Andres en el chat; la persona
+  del feedback la respaldo ("uy re si!"). Encaja con que el show no tiene deadline fijo y con que
+  ella misma senalo que un capitulo semanal es mucha inversion de tiempo. **Sin decidir.**
+- **Episodio de leyendas venezolanas de terror** — ella y una amiga quieren hacer uno; Andres
+  ofrecio invitarlas ("te puedo invitar y nos cuentas") y ella acepto con pena pero acepto.
+  Encaja con el alcance hibrido (rock como columna, abierto a otras leyendas) y con que La Silla
+  Putrida sigue abierta. **Contacto tibio, sin fecha.**
+- **Ofrecimiento de ayuda con la edicion** — "yo te puedo ayudar con la edicion", dicho en firme.
+  Si la edicion es cuello de botella para la cadencia, esto ya esta ofrecido. **Sin usar.**
+
+Referencia de genero que ella misma mando como norte: **Relatos de la Noche** (Sonoro). Ojo, esa
+tutea al oyente y MPD usa usted — se toma la atmosfera, no el registro.
+
+---
+
 ## Regla de audiencia (aprendida EP.003, 2026-06-11)
 
 EP.003 (Sister Rosetta Tharpe, musicologia/raices) rindio por debajo de EP.002

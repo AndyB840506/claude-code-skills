@@ -102,12 +102,38 @@ Y una cuarta, para conteos: **¿estoy midiendo la región relevante o el archivo
 Instancias concretas ya documentadas (las dos primeras mordieron el 2026-07-23):
 - `Get-Content X | Measure-Object -Line` **no cuenta líneas en blanco** (dio 28 donde `wc -l` daba 36). Para contar líneas usar `wc -l`.
 - `glob.glob('**/x', recursive=True)` de Python **omite directorios que empiezan con punto** — leyó 18 de 28 `SKILL.md` porque se saltó todo `.claude/`. Usar `os.walk`.
+- **Patrones con tildes pasados por la línea de comandos se manglan y devuelven ceros falsos.** El 2026-07-28 un lint de muletillas reportó `imagínense = 0` con el patrón roto en la consola. Escribir el script a disco con escapes unicode (`imagín`) y correrlo desde ahí, no pasarlo inline.
+- **Un umbral absoluto sub-reporta en los tramos fuertes de la señal.** Mismo día: `silencedetect -40dB` contó **1 pausa** en el último minuto de un audio porque ese tramo estaba 10 LU más alto y los silencios no cruzaban el umbral. Parecía música. El espectrograma mostró voz con pausas normales. Con umbrales fijos, verificar los extremos con un instrumento distinto.
+- **Un lint que nombra lo que busca se encuentra a sí mismo** — es el principio 3 («¿el corpus incluye al propio objeto evaluado?») a escala de línea, no de carpeta: la nota que decía «marcadores `[VERIFICAR]` abiertos: 0» hacía que el grep de `[VERIFICAR` reportara 1. Redactar las notas de lint sin escribir el patrón literal.
 
 Antes de reportar un conteo o un "cero hallazgos", cruzar el total con una segunda herramienta. Ver §Procedencia en `~/.claude/CLAUDE.md`.
 
 **Al actualizar una regla, separar lo histórico de lo normativo.** Un documento mezcla enunciados que *describen lo que pasó* con enunciados que *mandan lo que se hace*. Solo los segundos se actualizan. El 2026-07-25, al retirar la música de intro/outro, la frase «el ritmo se midió sobre EP.20 sin contar intro/outro musical» **se conservó**: ese episodio sí llevaba música y reescribirla habría falsificado el registro de cómo se calibró la cifra.
 
 **Y al RETIRAR una regla, grepear el documento entero por su nombre antes de darla por retirada.** Un documento largo guarda la misma regla en varios sitios —la sección que la define, el checklist que la exige, la nota que explica por qué existe— y retirarla solo donde se definió deja copias vivas que siguen mandando. El 2026-07-28, en `guion-style-btq.md`, «línea de enganche» vivía en **5 sitios**: se había declarado «maquillaje» y eliminada en uno, y otros dos la seguían exigiendo, incluido el checklist previo a entregar. El resultado no fue teórico: la muletilla entró a EP.022, EP.023 y EP.024. La regla vale para cualquier documento de reglas, no solo para las guías de guion. **Ojo con el párrafo de arriba:** el grep saca *todas* las ocurrencias, pero no todas se borran — las que **mandan** se retiran, y las que **narran** («el lint la encontró en EP.022 y EP.023») se conservan, pasadas a tiempo pasado y marcadas como retiradas. Borrarlas también sería falsificar el registro; dejarlas en presente sería seguir mandando.
+
+**Y el barrido incluye los ENTREGABLES producidos bajo la regla vieja, no solo los documentos de reglas.** Esto es lo que falló el 2026-07-28: una auditoría barrió el kit de MPD, declaró 27 mandatos muertos retirados y se dio por completa — pero el corpus fueron los archivos de reglas. El guion de EP.006, escrito bajo las reglas viejas, seguía cargando en su cabecera el codename retirado («The Crossroads») y la dirección visual descartada («whisky & carretera»), muertos desde hacía 4 y 6 días; y todo su CSS seguía en la paleta de Temporada 1, incluido un ámbar que se había retirado explícitamente. Nada de eso aparecía en los documentos de reglas: vivía en el producto. **Al retirar una regla, grepear el repo, no el documento** — guiones, plantillas, HTML publicado, prompts guardados. Y ojo con dónde se esconde: en ese caso dos colores retirados sobrevivieron al reemplazo completo de la hoja de estilos porque estaban como `style="…#9B1C1C"` **inline en el body**. Para cambios de paleta, el grep obligatorio es `style="[^"]*#`. **Esto NO choca con la regla 11 (NO SOBRE-LEER) ni con «solo inputs que DECIDEN»:** grepear no es leer. El barrido devuelve una lista de coincidencias, y solo se abren los archivos que aparecen — igual que etiquetar un pendiente es barato frente a releerlo todo.
+
+## Una cifra compuesta no es una constante
+
+Cuando una medición mezcla dos variables independientes, el número resultante **solo vale para
+la muestra de la que salió** — y escribirlo como constante produce una regla falsa que después
+manda sobre decisiones reales.
+
+Mordió el 2026-07-28: el piloto de MPD duró 45:55 contra ~40,5 estimados. Se concluyó «el guion
+está 13% largo», se recortaron ~500 palabras y se escribió en la guía de estilo un ritmo de
+«113,9 palabras escritas por minuto» como si fuera el ritmo del host. Falso. Al separarlo:
+
+- **Articulación: ~175 wpm.** Constante real, medida sobre 12 SRT de dos shows distintos.
+- **Densidad de pausa: 32,5%** en ese episodio contra 9-14% en los anteriores.
+
+El guion no estaba largo; **un tercio de la grabación era silencio**, puesto a propósito por el
+registro del formato. La «constante» compuesta mezclaba una propiedad del host con una decisión
+de dirección.
+
+**Antes de escribir un ratio como regla, preguntar: ¿qué dos cosas estoy multiplicando aquí, y
+puede una moverse sin la otra?** Si puede, medirlas por separado y dejar la fórmula, no el
+producto. Y nombrar cuál de las dos es decisión humana — esa es la que hay que fijar primero.
 
 ## Límites de lo publicable (medir, no estimar)
 
@@ -152,3 +178,4 @@ Este proyecto fue calibrado con Fable 5, que infiere mucho desde contexto. Cualq
 2. **Correr los lints de las skills antes de entregar** (greps de muletillas, conteos, fórmulas de título). Los criterios son verificables a propósito: verificarlos, no estimarlos.
 3. **Consultar MEMORY.md y el handoff más reciente antes de actuar.** Las decisiones de juicio ya tomadas están escritas ahí y en `docs/roadmap-future-proofing.md`; no re-derivarlas ni contradecirlas sin preguntar.
 4. **Si una tarea requiere juicio que no está escrito, preguntar al usuario** en vez de improvisar — y al resolverla, escribir la regla nueva donde corresponde.
+5. **Al cambiar de objeto dentro de la sesión, re-confirmar el eje de la revisión.** Regla completa en `~/.claude/CLAUDE.md` regla #14 — no re-declararla acá.
