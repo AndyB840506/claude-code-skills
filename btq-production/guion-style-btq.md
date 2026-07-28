@@ -279,7 +279,15 @@ BTQ pop-culture lleva, en orden, estos bloques. No omitir ninguno al escribir el
 8. **Cierre canónico** (NO omitir nada de esto — es la firma de BTQ):
    - **Pregunta comentable** que interpela al oyente sobre SU situación.
    - **CTA de comentarios:** "escríbanlo en los comentarios del episodio, en Spotify, los leo
-     todos" (+ guiño a los comentarios del episodio anterior).
+     todos". El **guiño a los comentarios del episodio anterior es CONDICIONAL** (fijado
+     2026-07-28): solo va si el episodio anterior tiene comentarios reales, y hay que
+     **mirarlos antes de escribirlo** — no basta con suponer que llegaron. Si no hay ninguno,
+     el reemplazo es el reconocimiento honesto de que la sección está vacía, que además
+     funciona mejor como CTA ("si usted escribe algo, va a ser el único").
+     *Por qué:* la redacción vieja daba la pieza por obligatoria y empujaba a inventarla. En el
+     borrador de EP.024 se coló "varios me contaron cosas de sus propias mediciones" cuando
+     EP.023 tenía **cero** comentarios — se detectó solo porque Andy compartió los analytics.
+     Una pieza obligatoria que depende de un hecho externo es una fábrica de datos inventados.
    - **CTA de compartir** ("si esto les hizo pensar en alguien, compártanlo").
    - **Redes:** LinkedIn — "estoy en LinkedIn como Andrés Bermúdez Rodríguez".
    - **Teaser** del próximo episodio (bien armado, no una nota suelta).
@@ -564,21 +572,28 @@ segmentos separados, usar +26% a +40% y la columna baja proporcionalmente:
 Es un salto grande frente a la tabla vieja (~4.700 escritas para el centro): **el guion tiene que
 nacer ~18% más largo que los de EP.020-023.**
 
-**Ajuste por expansión en vivo (recalibrado 2026-07-06):** el dato de EP.17 (guion 5.265 → habló
-6.062, +15%) resultó ser un piso, no el promedio — el SRT real de EP.20 mostró **+35.5%** (guion 4.570
-→ habló 6.192). Usar +35.5% como referencia actual hasta la próxima recalibración. Por eso conviene
-escribir el guion para que **en seco** caiga bien por debajo del objetivo hablado, y dejar que la
-expansión natural de Andy lo lleve al número real — ver tabla arriba para la conversión ya aplicada.
-**Siempre dejar colchón para CORTAR, no para estirar.**
+> ⚠️ **Corregido 2026-07-28.** Hasta esta fecha, aquí abajo seguían vivas las instrucciones de la
+> calibración del 2026-07-06 — «usar +35.5%», «multiplicar por 1.355 y dividir por 150»— que
+> contradicen la tabla recalibrada de arriba (+13%, 148 wpm) a seis líneas de distancia. Quien
+> siguiera este párrafo dimensionaba el guion mal. Lo **histórico** se conserva (así se calibró en
+> su momento); lo **normativo** ahora apunta a la tabla vigente.
+
+*Registro histórico, no instrucción:* la calibración del 2026-07-06 tomó el dato de EP.17 (guion
+5.265 → habló 6.062, +15%) como piso y el SRT de EP.20 (+35.5%: guion 4.570 → habló 6.192) como
+referencia. Esas cifras describen cómo se calibró entonces; **fueron reemplazadas** por la tabla de
+esqueleto de arriba tras la remedición del 2026-07-25 con un solo método.
 
 **Cómo medir** (excluir lo que no se lee: bloques `NOTA`, chips `PAUSA`, encabezados de segmento,
 tabla de arquitectura): contar palabras de `p.line` + `remate` + `dato` + `mito/realidad` + `sub`,
-multiplicar por 1.355 (expansión verificada) y dividir por 150 (wpm verificado) — no dividir
-directo por 143 sin aplicar la expansión, ese método subestima la duración real. Marcar los tiempos
-de la arquitectura en consecuencia.
+multiplicar por **el factor de expansión del esqueleto** (tabla de arriba: +13% si los segmentos
+van fusionados o si el esqueleto es nuevo y no tiene precedente medido; +26% a +40% si van
+separados) y dividir por **148**. Marcar los tiempos de la arquitectura en consecuencia.
+Escribir el guion para que **en seco** caiga por debajo del objetivo hablado:
+**siempre dejar colchón para CORTAR, no para estirar.**
 
-**Recalibrar** el 150 wpm y el +35.5% cada pocos episodios contra el SRT más reciente (los SRT viven en
-`E:\Transcriptor\transcripciones\`); si su ritmo cambia, actualizar este número y la tabla.
+**Recalibrar** los 148 wpm y el factor de expansión cada pocos episodios contra el SRT más reciente
+(los SRT viven en `E:\Transcriptor\transcripciones\`); si su ritmo cambia, actualizar la tabla —y
+este párrafo con ella, que es justo lo que no se hizo en julio.
 
 ---
 

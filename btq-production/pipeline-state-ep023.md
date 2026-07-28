@@ -18,12 +18,48 @@ spotify_url: https://open.spotify.com/episode/3FQOeIT8bNTakHNGgBhMMR
 | Jingle | hecho para EP.023 | **reportado por Andy.** Cambia la regla: varía por episodio (ver `jingle-brief.md` § Varía por episodio) |
 | SafeCreative | **RETIRADO** | Decisión de Andy 2026-07-26: BTQ deja de registrar en SafeCreative. `post-publish.md` § Step 4a marcado como retirado |
 
-> **Hora de lanzamiento:** 21:00, no las 20:00 que documenta la regla de producción
-> (`episode-launch/workflows/step2-generate-assets.md` § B, que cita `btq-project/SKILL.md` §10).
-> El plan social de este episodio quedó alineado a las 21:00. **Decisión de Andy 2026-07-26: se
-> resuelve con los analytics de EP.023**, no por criterio a priori. Hasta entonces la regla escrita
-> sigue siendo 20:00 y NO se tocan `step2-generate-assets.md` §B ni `btq-project/SKILL.md` §10.
-> Al revisar los analytics: comparar EP.023 (21:00) contra EP.020-022 (20:00) en las primeras 24 h.
+> **Hora de lanzamiento — CERRADA 2026-07-28: se queda en 20:00.** EP.023 salió a las 21:00 y la
+> decisión quedó parqueada esperando sus analytics. Los analytics llegaron el 2026-07-28 y
+> **no pueden responder la pregunta** — ni ahora ni con más volumen:
+>
+> - **Spotify exporta por DÍA, no por hora.** Un archivo con una fila por fecha no distingue un
+>   lanzamiento de las 20:00 de uno de las 21:00, tenga 10 reproducciones o diez mil. La pregunta
+>   y el instrumento no tienen la misma resolución.
+> - **Sus días no son días de Colombia.** El export muestra **0 reproducciones el 2026-07-26**,
+>   aunque el episodio salió ese día 21:00 COT: todo cayó en el bucket del 27. Ese desfase de
+>   huso solo agrava lo anterior.
+> - **La muestra es ruido:** 10 reproducciones, 3 oyentes únicos, 100% Colombia. Cualquier
+>   diferencia contra EP.020-022 sería azar.
+>
+> Por eso se cierra por criterio y no por dato: **la regla escrita (20:00) se mantiene** y el plan
+> social vuelve a alinearse a ella. `step2-generate-assets.md` §B y `btq-project/SKILL.md` §10
+> quedan como están — nunca se tocaron.
+>
+> **No reabrir esta pregunta con analytics de Spotify.** Si alguna vez importa de verdad, exige
+> otro instrumento (medición hora a hora), y antes de eso hay un problema más grande: el alcance.
+> Lo que estos números sí dicen es que EP.023 lo escucharon 3 personas, todas en un solo país.
+
+## Analytics — primeras 48 h (export de Spotify entregado por Andy 2026-07-28)
+
+| Métrica | Valor |
+|---|---|
+| Reproducciones | **10** (8 el 27-jul, 2 el 28-jul) |
+| Oyentes únicos | **3** |
+| Tiempo consumido | **3,41 h** acumuladas |
+| Comentarios | **0** |
+| Geografía | Colombia 100% |
+
+Consumo por reproducción ≈ **20,5 min** sobre un episodio de 33,77 min de habla → ~60% de
+completitud. Y 10 reproducciones entre 3 oyentes = cada uno volvió unas 3 veces.
+
+> La serie de consumo se lee como **acumulada**, igual que la de reproducciones —que es
+> demostrablemente acumulada: 8 → 10 cuadra con los diarios 8 y 2—. Si fuera diaria, el promedio
+> daría 34,5 min por reproducción, o sea 100% de completitud en todas, que es menos creíble.
+> No está confirmado contra la documentación de Spotify.
+
+**Los 0 comentarios tuvieron consecuencia directa:** el borrador de EP.024 agradecía comentarios
+de este episodio que nunca existieron. Ver `guion-style-btq.md` § Cierre canónico, punto 8, donde
+el guiño pasó a ser condicional a raíz de esto.
 
 ## Web — DESPLEGADA Y VERIFICADA 2026-07-26
 
