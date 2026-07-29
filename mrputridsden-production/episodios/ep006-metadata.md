@@ -134,5 +134,15 @@ club de los 27, 27 club, maldicion del rock, misterios del rock, leyendas del ro
   discrepancia real (murió el 5, lo encontraron el 8).
 - **Máster:** hecho fuera de Reaper con `templates/masterizar-mpd.ps1`. El render crudo salía a
   −18,3 LUFS con true peak +0,1 dBFS (clipping).
-- **Pendiente antes de publicar:** artwork (portada 1:1/16:9/9:16), quote cards renderizadas, plan
-  de lanzamiento, y pegar la URL de Spotify en la descripción.
+- **Portada 1:1 lista y verificada (2026-07-28):**
+  `E:\Podcast\MPD\Temporada 2\EP 01\artwork\MPD-T2E01-PORTADA-3000.jpg` — 3000×3000, 0,94 MB.
+  Escena: cinco sillas vacías, Z-Image Turbo semilla 6913 a 1536² → RealESRGAN_x4plus → 3000×3000
+  exactos → lockup `mpd-lockup-t2.py` (La Guarida). Verificado: sin aros/relojes/vinilos ni al
+  100% ni con zoom, sin negro puro (piso levantado a 11), y legible a 150 px.
+  - ⚠️ **Los tres primeros intentos se rechazaron**: el concepto de «expediente + fotografías +
+    sala de archivo» hizo que el modelo metiera vinilos con diana, relojes de pared y calaveras.
+    **Causa técnica: a `cfg=1.0` el prompt negativo no tiene efecto** — no hay guía classifier-free
+    que lo aplique, así que el veto de aros hay que resolverlo construyendo la escena para que no
+    haya razón de que aparezcan, no prohibiéndolos.
+- **Pendiente antes de publicar:** portada 16:9 y 9:16, quote cards renderizadas, plan de
+  lanzamiento, y pegar la URL de Spotify en la descripción.

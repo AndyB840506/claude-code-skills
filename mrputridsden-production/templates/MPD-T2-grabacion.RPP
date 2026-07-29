@@ -241,7 +241,7 @@
       GUID {E230FFE2-3F71-4689-BD2C-A70C5E9D2A61}
       RECPASS 5
       <SOURCE MP3
-        FILE "E:\Podcast\02-My Vocal-260728_1826.mp3" 1
+        FILE "E:\Podcast\MPD\Temporada 2\bumpers\MPD-T2-disclaimer.mp3" 1
       >
     >
   >
@@ -307,7 +307,7 @@
       CHANMODE 0
       GUID {347247F2-2686-4F9C-B78A-D19DB2E210CF}
       <SOURCE MP3
-        FILE "E:\Podcast\soulprodmusic-astral-creepy-dark-logo-254198.mp3" 1
+        FILE "E:\Podcast\MPD\Temporada 2\bumpers\MPD-T2-logo-sonoro.mp3" 1
       >
       <EXT
         ORIGINAL_FILENAME E:\Downloads\soulprodmusic-astral-creepy-dark-logo-254198.mp3
@@ -379,7 +379,7 @@
       CHANMODE 0
       GUID {4AB8AF2A-4357-49DB-9CB1-ECBB6FE5B441}
       <SOURCE MP3
-        FILE "E:\Podcast\The_Locked_Porch.mp3" 1
+        FILE "E:\Podcast\MPD\Temporada 2\bumpers\MPD-T2-musica.mp3" 1
       >
       <EXT
         ORIGINAL_FILENAME E:\Downloads\The_Locked_Porch.mp3
@@ -431,7 +431,7 @@
       CHANMODE 0
       GUID {16AF409A-FBB8-4F84-BD5F-AEC305F6DFA6}
       <SOURCE MP3
-        FILE "E:\Podcast\The_Locked_Porch.mp3" 1
+        FILE "E:\Podcast\MPD\Temporada 2\bumpers\MPD-T2-musica.mp3" 1
       >
       <EXT
         ORIGINAL_FILENAME E:\Downloads\The_Locked_Porch.mp3
