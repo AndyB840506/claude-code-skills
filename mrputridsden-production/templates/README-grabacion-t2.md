@@ -9,7 +9,7 @@
 | Archivo | Qué es |
 |---|---|
 | `MPD-T2-grabacion.RPP` | Proyecto de Reaper con los bumpers ya colocados y la cadena de FX |
-| `masterizar-mpd.ps1` | Convierte el WAV renderizado en el MP3 final, medido y verificado |
+| `masterizar-podcast.ps1` | Convierte el WAV renderizado en el MP3 final, medido y verificado |
 
 ---
 
@@ -22,7 +22,7 @@
 5. **Renderizar a WAV 24-bit.** No a MP3 — así el MP3 se codifica una sola vez.
 6. **Correr el masterizador:**
    ```powershell
-   .\masterizar-mpd.ps1 "E:\Podcast\MPD\Temporada 2\EP 0X\MPD EP 0X.wav"
+   .\masterizar-podcast.ps1 "E:\Podcast\MPD\Temporada 2\EP 0X\MPD EP 0X.wav"
    ```
    Imprime una tabla con OK/FALLA contra los targets y avisa si hay que ajustar la ganancia.
 
@@ -63,7 +63,7 @@ Son bumpers reutilizables. Ya vienen en el template en estas posiciones exactas:
 | 2 | Nivel integrado del render | −18,3 LUFS | **−16 LUFS** |
 | 3 | Fade-in del logo | 3,56 s | **0,05 s** |
 
-**El 1 y el 2 ya no se arreglan en Reaper.** Se arreglan en `masterizar-mpd.ps1`, fuera de Reaper,
+**El 1 y el 2 ya no se arreglan en Reaper.** Se arreglan en `masterizar-podcast.ps1`, fuera de Reaper,
 porque así es determinista y medible en vez de a oído. El render de Reaper puede seguir saliendo a
 −18,3: el script se encarga.
 
@@ -96,7 +96,7 @@ mal y las métricas están bien, el problema está en esos tres plugins y hay qu
 - [ ] Cuerpo en `POSITION 35.5`
 - [ ] Outro pegado al final del cuerpo
 - [ ] Renderizado a **WAV**, no a MP3
-- [ ] `masterizar-mpd.ps1` dice **LISTO PARA PUBLICAR**
+- [ ] `masterizar-podcast.ps1` dice **LISTO PARA PUBLICAR**
 - [ ] Transcribir con `/transcriptor` y **cruzar el SRT contra los bloques `dato`/`leyenda`** del
       guion — en T2·01 se leyó al aire una nota de producción y hubo que cortar 7,9 s
       (ver `guion-style-mpd.md` § Bloques que no se leen)

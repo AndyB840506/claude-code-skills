@@ -19,6 +19,17 @@ Config y reglas operativas en `~/.claude/`; proyectos y archivos de producción 
 ### Windows — shell
 
 - El shell por defecto es PowerShell. **NO** usar heredocs de bash ni here-strings de PowerShell para contenido multilínea — escribir archivos con la herramienta Write. (No contradice la excepción de arriba: eso es redirección `>`, no heredoc.)
+- **En un `.ps1`, `2>&1` sobre un ejecutable nativo aborta el script si `$ErrorActionPreference = "Stop"`.** PS 5.1 envuelve cada línea de stderr en un ErrorRecord (`NativeCommandError`), así que la PRIMERA línea que el proceso escriba a stderr mata el script aunque termine con código 0. Mordió el 2026-07-28: `masterizar-mpd.ps1` (hoy `masterizar-podcast.ps1`) reventó al medir con ffmpeg, que escribe todas sus mediciones a stderr por diseño. Solución: bajar a `Continue` solo alrededor de la llamada y verificar el resultado a mano (`Test-Path`, parsear la salida), en vez de confiar en que la excepción avise.
+
+```powershell
+# OJO: el parametro NO se puede llamar $args -- es variable automatica de PowerShell.
+function Invocar-Nativo([string[]]$argumentos) {
+    $previo = $ErrorActionPreference
+    $ErrorActionPreference = "Continue"
+    try { return & ffmpeg @argumentos 2>&1 | ForEach-Object { "$_" } }
+    finally { $ErrorActionPreference = $previo }
+}
+```
 - Git Bash mangla rutas absolutas de Windows; usar PowerShell para cualquier cosa que pase rutas a ComfyUI u otros binarios de Windows.
 
 ## Comportamiento al iniciar
@@ -104,6 +115,7 @@ Instancias concretas ya documentadas (las dos primeras mordieron el 2026-07-23):
 - `glob.glob('**/x', recursive=True)` de Python **omite directorios que empiezan con punto** — leyó 18 de 28 `SKILL.md` porque se saltó todo `.claude/`. Usar `os.walk`.
 - **Patrones con tildes pasados por la línea de comandos se manglan y devuelven ceros falsos.** El 2026-07-28 un lint de muletillas reportó `imagínense = 0` con el patrón roto en la consola. Escribir el script a disco con escapes unicode (`imagín`) y correrlo desde ahí, no pasarlo inline.
 - **Un umbral absoluto sub-reporta en los tramos fuertes de la señal.** Mismo día: `silencedetect -40dB` contó **1 pausa** en el último minuto de un audio porque ese tramo estaba 10 LU más alto y los silencios no cruzaban el umbral. Parecía música. El espectrograma mostró voz con pausas normales. Con umbrales fijos, verificar los extremos con un instrumento distinto.
+- **Ningún buscador de texto ve el `\r`: `awk`, `grep` y `Select-String` devuelven CERO sobre un archivo CRLF.** Medido el 2026-07-28 sobre un archivo con 3 bytes `0x0D` reales: `awk '/\r$/'` → 0, `grep -c $'\r'` → 0, `Select-String "\r$"` → 0, y `[IO.File]::ReadAllBytes` → 3. Los tres tratan el `\r` como parte del terminador de línea y lo descartan antes de que el patrón lo vea. Mordió ese día: tras editar un `.rpp` de Reaper el chequeo con `awk` dio vacío y parecía que la escritura había convertido los finales de línea; a nivel de bytes los 463 CRLF estaban intactos. **Para verificar finales de línea o cualquier byte de control, contar bytes con python (`open(p,'rb').read().count(b'\r\n')`) o `od -c`** — nunca con un buscador de patrones.
 - **Un lint que nombra lo que busca se encuentra a sí mismo** — es el principio 3 («¿el corpus incluye al propio objeto evaluado?») a escala de línea, no de carpeta: la nota que decía «marcadores `[VERIFICAR]` abiertos: 0» hacía que el grep de `[VERIFICAR` reportara 1. Redactar las notas de lint sin escribir el patrón literal.
 
 Antes de reportar un conteo o un "cero hallazgos", cruzar el total con una segunda herramienta. Ver §Procedencia en `~/.claude/CLAUDE.md`.

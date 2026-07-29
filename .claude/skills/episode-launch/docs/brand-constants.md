@@ -106,6 +106,14 @@ esto». Un objeto por episodio, nunca un collage.
    (decisión de Andy 2026-07-10, EP.021). Única excepción: cuando la diana **es** el sujeto central
    de la escena. La línea va en **todo** prompt desde el primer intento:
    `DO NOT render any concentric ring, circle, halo, or archery-target pattern anywhere in this image.`
+   ⚠️ **Esa línea va en el prompt POSITIVO, y con Z-Image no basta.** Z-Image Turbo corre a
+   `cfg=1.0` y **a CFG 1.0 el prompt negativo no actúa** (ver `comfyui/docs/prompting.md`): meter
+   ahí el veto es un no-op. Mordió el 2026-07-28 en MPD T2·01 — tres portadas seguidas con vinilos
+   de diana, relojes de pared y calaveras pese al veto completo en el negativo.
+   **Con modelos a cfg 1, el veto se resuelve construyendo la escena para que no haya motivo de que
+   aparezca lo vetado**, no prohibiéndolo: quitar del concepto todo lo que invoque objetos redondos
+   (fotografías → carátulas, sala con pared → reloj, mesa de archivo musical → vinilos) y cerrar el
+   fondo en negro. Prohibir es débil; no dar motivo funciona.
    **Pueden colarse disfrazados de textura** — en EP.022 una tela salió cubierta de mini-círculos,
    invisible a tamaño completo y detectada solo al hacer zoom a una esquina. Verificar con zoom a
    las esquinas, no en la vista general.

@@ -132,7 +132,7 @@ club de los 27, 27 club, maldicion del rock, misterios del rock, leyendas del ro
     porque no estaba en la lista de `[VERIFICAR]`.
 - **Bien resuelto:** la muerte de Cobain se dice como «abril del 94» sin día, lo que esquiva la
   discrepancia real (murió el 5, lo encontraron el 8).
-- **Máster:** hecho fuera de Reaper con `templates/masterizar-mpd.ps1`. El render crudo salía a
+- **Máster:** hecho fuera de Reaper con `templates/masterizar-podcast.ps1`. El render crudo salía a
   −18,3 LUFS con true peak +0,1 dBFS (clipping).
 - **Portada 1:1 lista y verificada (2026-07-28):**
   `E:\Podcast\MPD\Temporada 2\EP 01\artwork\MPD-T2E01-PORTADA-3000.jpg` — 3000×3000, 0,94 MB.

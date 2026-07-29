@@ -197,6 +197,9 @@ www.mrputridsden.com
 - [ ] Bio actualizada antes o junto con el Beat 2
 - [ ] Ningún copy menciona fecha de estreno
 - [ ] Ningún copy menciona la salida de Juan
-- [ ] Los datos del Beat 3 son los del guion; las fechas exactas siguen marcadas `[VERIFICAR]` en
-      `scripts/EP006-club-de-los-27.html` — el copy solo usa día/año, que ya están confirmados en
-      la investigación, pero si algo cambia al verificar, corregir acá también
+- [x] Los datos del Beat 3 son los del guion. **Las 8 fechas del racimo quedaron verificadas contra
+      fuentes primarias el 2026-07-28 y las ocho salieron correctas** (Jones 3-jul-69 · Wilson
+      3-sep-70 · Hendrix 18-sep-70 · Joplin 4-oct-70 · Morrison 3-jul-71 · Winehouse 23-jul-11 ·
+      Johnson 16-ago-38; Cobain se dice como «abril del 94» sin día, a propósito). El copy puede
+      usarlas sin reservas. Única fecha discutible del episodio, y NO está en el copy: el «3 de
+      marzo del 94 en Roma» — las fuentes se reparten entre el 3 y el 4.
