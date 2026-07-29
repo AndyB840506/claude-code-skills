@@ -124,8 +124,16 @@ Mordió el 2026-07-28: el piloto de MPD duró 45:55 contra ~40,5 estimados. Se c
 está 13% largo», se recortaron ~500 palabras y se escribió en la guía de estilo un ritmo de
 «113,9 palabras escritas por minuto» como si fuera el ritmo del host. Falso. Al separarlo:
 
-- **Articulación: ~175 wpm.** Constante real, medida sobre 12 SRT de dos shows distintos.
+- **Articulación: ~168 wpm.** Medida sobre 13 SRT de dos shows distintos, rango ±6%.
 - **Densidad de pausa: 32,5%** en ese episodio contra 9-14% en los anteriores.
+
+**Y la cifra "corregida" salió mal a su vez** — se escribió ~175 wpm ese mismo día. El medidor
+contaba la etiqueta `[SPEAKER_00]:` como palabra hablada (infla 3,6-8,6% según cuántos segmentos
+tenga el archivo), así que la constante "real" era artefacto del instrumento. Detectado el
+2026-07-28 al recalcular sobre la regrabación. **Corolario: separar las variables no basta si el
+instrumento que las mide está sesgado — cruzar cada cifra nueva contra un segundo método ANTES de
+escribirla como constante.** Lo que la destapó fue que un número (186 wpm) no cuadraba con el resto
+de la serie.
 
 El guion no estaba largo; **un tercio de la grabación era silencio**, puesto a propósito por el
 registro del formato. La «constante» compuesta mezclaba una propiedad del host con una decisión

@@ -33,6 +33,10 @@ def analyze(path):
         text = TS.sub("", b)
         text = re.sub(r"^\s*\d+\s*$", "", text, flags=re.M)
         text = re.sub(r"<[^>]+>", " ", text)
+        # las etiquetas de diarizacion NO son palabras habladas: "[SPEAKER_00]:" pasa
+        # el filtro de "contiene letras" e inflaba el conteo 3,6-8,6% por archivo
+        # (detectado 2026-07-28 sobre MPD T2 E01: 430 etiquetas = +7,7%)
+        text = re.sub(r"\[SPEAKER_[^\]]*\]\s*:?", " ", text)
         # descartar el artefacto de intro musical (cadenas de A repetidas)
         if re.match(r"^\s*[Aa\s.,]+$", text) and len(text.strip()) > 25:
             continue

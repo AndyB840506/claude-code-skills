@@ -44,16 +44,24 @@ tras la salida de Juan (ver memoria `project_mpd_juan_departure`).
 >
 > ### Las tres variables, separadas
 >
-> **1. Ritmo de articulación: ~175 wpm. Es una CONSTANTE.** Medido sobre los 12 SRT reales de
-> `E:\Transcriptor\transcripciones\`, contando palabras contra tiempo con voz (no contra duración
-> total):
+> **1. Ritmo de articulación: ~168 wpm.** Medido sobre los 13 SRT reales de
+> `E:\Transcriptor\transcripciones\` con `wpm.py`, contando palabras contra tiempo con voz (no contra
+> duración total):
 >
 > | Show | n | wpm hablando | rango |
 > |---|---|---|---|
-> | BTQ | 8 | **176,9** | 171,2 – 191,0 |
-> | MPD | 4 | **174,7** | 168,5 – 180,2 |
+> | BTQ | 8 | **167,3** | 162,8 – 178,9 |
+> | MPD | 5 | **168,2** | 158,4 – 180,2 |
+> | **Global** | **13** | **167,6** | 158,4 – 180,2 |
 >
-> Andrés articula igual en los dos shows y en todos los episodios. Esta cifra no se re-negocia.
+> Andrés articula parecido en los dos shows. Pero el rango es ±6%, así que **no es una constante
+> dura**: sirve para dimensionar, no para predecir un episodio concreto al minuto.
+>
+> ⚠️ **Corrección del 2026-07-28 (segunda de ese día).** La cifra anterior — «~175 wpm, constante,
+> no se re-negocia» — era un **artefacto del medidor**. `wpm.py` contaba la etiqueta de diarización
+> `[SPEAKER_00]:` como palabra hablada, porque pasa el filtro de «contiene letras». Infla entre
+> **3,6% y 8,6%** según cuántos segmentos tenga el archivo. Corregido en `wpm.py` ese mismo día; los
+> números de arriba ya son los limpios. Cualquier cifra de wpm anterior al 2026-07-28 está inflada.
 >
 > **2. Densidad de pausa: ES EL DIAL, y es decisión de dirección.** Medido con `silencedetect` a
 > igual umbral sobre los mp3:
@@ -62,30 +70,52 @@ tras la salida de Juan (ver memoria `project_mpd_juan_departure`).
 > |---|---|---|
 > | MPD EP.04 P1 (T1, co-host) | 86,4% | 13,6% |
 > | MPD EP.04 P2 (T1, co-host) | 91,3% | 8,7% |
-> | **Piloto T2 (solo, registro de misterio)** | **67,5%** | **32,5%** |
+> | Piloto T2 (solo, descartado — se regrabó) | 67,5% | 32,5% |
+> | **T2·01 publicable (solo, regrabado 2026-07-28)** | **73,3%** | **26,7%** |
 >
 > Un tercio del piloto es silencio: 14,9 min de pausa en 45:55. Eso **no es un defecto** — es el
 > registro pausado que pide el formato de misterio (la referencia del género, *Relatos de la Noche*,
 > vive de eso). Pero hay que dimensionar el guion sabiéndolo.
 >
 > **3. Expansión sobre el escrito: depende de qué tan pegado al guion se lea.** El piloto se leyó
-> casi textual — 31,0 min de voz × 175 wpm ≈ 5.425 habladas sobre 5.230 escritas, **expansión ≈1,04**.
+> casi textual. La cifra que se escribió aquí el 2026-07-28 —«31,0 min × 175 wpm ≈ 5.425 habladas
+> sobre 5.230 escritas, expansión ≈1,04»— **quedó mal por arrastre de la constante inflada**: con los
+> 167,6 correctos son ≈5.196 habladas, **expansión ≈0,99**. Y era una cifra *derivada*, no medida: el
+> piloto se descartó y nunca tuvo SRT. Usar el punto medido de T2·01 (1,087), no este.
 > EP.005 (T1) traía ≈1,23. No es una constante del show; es cuánto improvisa según el modo.
 >
 > ### La fórmula
 >
 > ```
-> minutos = (palabras_escritas × expansión) / 175 / (1 − pausa)
+> minutos = (palabras_escritas × expansión) / 167,6 / (1 − pausa_SRT)
 > ```
 >
-> **Palabras escritas para un episodio de 43 min**, según cómo se vaya a leer (expansión 1,04, modo
-> leído):
+> 🚨 **LOS DOS INSTRUMENTOS NO SE MEZCLAN — y la versión anterior de esta fórmula los mezclaba.**
+> El wpm sale del SRT; la pausa se puede medir con `silencedetect` **o** con el SRT, y dan números
+> distintos sobre el mismo audio. Meter la pausa de `silencedetect` en una fórmula cuyo wpm vino del
+> SRT infla el resultado ~8%: sobre T2·01 predecía **45,2 min** para un episodio que dura **41,8**.
 >
-> | Densidad de pausa | Palabras ESCRITAS |
+> | Instrumento | Pausa en T2·01 | Con qué wpm se usa |
+> |---|---|---|
+> | SRT (`1 − voz/total` del propio SRT) | **22,2%** | ✅ con los 167,6 de la tabla |
+> | `silencedetect` −40 dB | **26,7%** | ❌ nunca con esos 167,6 |
+>
+> Conversión medida sobre T2·01: **pausa_silencedetect ≈ pausa_SRT + 4,5 puntos**. Sirve para la
+> prueba de pausa de más abajo, que se hace antes de grabar y por tanto no tiene SRT: se mide con
+> `silencedetect` y se le restan ~4,5 puntos antes de meterla a la fórmula.
+>
+> **Palabras escritas para un episodio de 43 min**, según cómo se vaya a leer (expansión 1,09, modo
+> leído; pausa en términos de SRT):
+>
+> | Densidad de pausa (SRT) | Palabras ESCRITAS |
 > |---|---|
-> | 32% (pausado, como el piloto) | **~5.000** |
-> | 20% (intermedio) | ~5.800 |
-> | 13% (ágil, como T1) | ~6.300 |
+> | 22% (pausado, como T2·01) | **~5.150** |
+> | 17% (intermedio) | ~5.500 |
+> | 12% (ágil, como T1) | ~5.800 |
+>
+> Precisión esperada: **±3%**. La fórmula con la constante global da 42,6 min para T2·01 contra los
+> 41,8 reales, porque ese episodio articuló 172,1 (2,7% sobre la media). Es una herramienta de
+> dimensionado, no un cronómetro.
 >
 > **Decidir el registro ANTES de dimensionar el guion.** Un mismo guion de 5.000 palabras dura 44
 > min pausado y 35 min ágil — nueve minutos de diferencia sin tocar una sola palabra.
@@ -130,13 +160,28 @@ pasar por la línea de comandos y devuelven **ceros falsos** en los greps de mul
 2026-07-28: el lint reportó 0 muletillas con patrones rotos). Escribir el script a disco y correrlo
 desde ahí.
 
-**Estado de la muestra:** la articulación (~175 wpm) tiene n=12 y es sólida. La **expansión** tiene
-n=2 y los dos puntos están lejos (1,23 en EP.005 vs 1,04 en el piloto de T2) — depende del modo de
-lectura, así que no promediarlos. La **densidad de pausa** de T2 tiene n=1 y es justo la variable
-que más manda: por eso la prueba de pausa de arriba, en vez de confiar en una tabla.
+**Estado de la muestra (actualizado 2026-07-28 con el SRT de la regrabación — T2 ya está en n=2):**
+la articulación (167,6 wpm) tiene n=13 pero rango ±6%, así que se usa para dimensionar, no para
+predecir. La **expansión** tiene n=3 y los puntos siguen lejos (1,23 en EP.005 · 1,04 en el piloto ·
+**1,087 en T2·01**) — depende del modo de lectura, así que no promediarlos. La **densidad de pausa**
+de T2 ya tiene n=2 (32,5% piloto → 26,7% regrabación) y sigue siendo la variable que más manda: por
+eso la prueba de pausa de arriba, en vez de confiar en una tabla.
 
-Cuando exista el SRT de la regrabación, recalcular expansión y pausa y subir T2 a n=2. Los SRT viven
-en `E:\Transcriptor\transcripciones\`.
+### Punto de calibración — T2·01 «El Club de los 27» (regrabado 2026-07-28)
+
+| | |
+|---|---|
+| Escritas (`host-text` + el bloque `dato` que se leyó) | **5.108** |
+| Habladas (SRT limpio, sin etiquetas de speaker) | **5.552** |
+| Expansión | **1,087** |
+| Articulación | **172,1 wpm** |
+| Pausa (SRT / `silencedetect` −40 dB) | **22,2% / 26,7%** |
+| Duración final | **41:47** |
+
+⚠️ **Ojo al contar lo escrito: se leyó un bloque `dato` al aire** (el de Alan Wilson, 76 palabras).
+No fue descuido de lectura — ver § Bloques que no se leen, abajo. Si se cuentan solo los `host-text`
+(5.036) la expansión sale 1,102 en vez de 1,087; la diferencia es menor, pero el conteo honesto
+incluye lo que de verdad se leyó.
 
 ---
 
@@ -147,11 +192,11 @@ estándar de podcast, y con un rango dinámico del doble de lo normal para voz h
 mitad del episodio se hunde — por tramos dio −20,4 → −24,5 → −27,8 → **−29,2** → −19,6 LUFS, casi
 10 LU de deriva entre el centro y los extremos.
 
-| Métrica | Piloto | Target |
-|---|---|---|
-| Integrado | −25,8 LUFS | **−16 LUFS** (Spotify normaliza a −14) |
-| LRA | 15,1 LU | **~6 LU** |
-| True peak | −2,1 dBFS | ≤ −1 dBFS ✓ |
+| Métrica | Piloto | T2·01 entregado | Target |
+|---|---|---|---|
+| Integrado | −25,8 LUFS | **−16,0 LUFS** ✅ | **−16 LUFS** (Spotify normaliza a −14) |
+| LRA | 15,1 LU | **6,5 LU** ✅ | **~6 LU** |
+| True peak | −2,1 dBFS | **−1,2 dBFS** ✅ | ≤ −1 dBFS |
 
 **Verificar antes de publicar cualquier episodio:**
 
@@ -159,6 +204,92 @@ mitad del episodio se hunde — por tramos dio −20,4 → −24,5 → −27,8 �
 ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1 "archivo.mp3"
 ffmpeg -hide_banner -i "archivo.mp3" -af ebur128=peak=true -f null -
 ```
+
+### Cómo se llegó al target en T2·01 (2026-07-28)
+
+El render crudo de Reaper salía a **−18,3 LUFS con true peak +0,1 dBFS** — o sea, por debajo del
+estándar **y** clipeando a la vez. La causa: el limitador del máster topaba a 0,0 dBFS de pico de
+muestra, y el encode a MP3 genera overs inter-muestra por encima de eso.
+
+Se corrigió **fuera de Reaper**, sobre el WAV, para que sea determinista y medible:
+
+```
+ffmpeg -i "EP.wav" -af "volume=3.2dB,alimiter=limit=0.7943:attack=2:release=80:level=0" \
+  -c:a libmp3lame -b:a 128k -ar 44100 -ac 2 "EP MASTER.mp3"
+```
+
+- `limit=0.7943` = **−2,0 dBFS** de techo, que tras el encode aterriza en −1,2 a −1,7 dBTP.
+- `attack=2:release=80` importa: con `attack=5:release=50` el mismo archivo perdió 0,8 LU y quedó
+  en −16,8. Ataque más rápido controla mejor el pico **y** pierde menos nivel medio.
+- `level=0` desactiva la auto-nivelación del limitador, que si no pisa la ganancia de `volume`.
+- **Renderizar de Reaper a WAV, no a MP3** — así el MP3 se codifica una sola vez.
+
+El LRA solo bajó de 6,6 a 6,5: el limitador trabaja los picos, no aplasta la dinámica. Si una
+corrida futura baja el LRA más de ~0,5 LU, la ganancia es demasiada.
+
+---
+
+## Bloques que no se leen — el guion tiene que hacerlos imposibles de leer por error
+
+**Mordió el 2026-07-28 y llegó hasta el máster.** En T2·01 se grabó al aire esta frase:
+
+> «Todas las cifras de este bloque quedaron confirmadas contra la cobertura del estudio. No quedan
+> estimados sin respaldo.»
+
+Eso es contabilidad de verificación, no narración. Hubo que cortar 7,9 s del episodio ya grabado.
+
+**La causa NO fue descuido de lectura.** La frase estaba correctamente clasificada dentro de un
+bloque `class="dato"` — o sea, el guion la había etiquetado bien como referencia de producción. El
+problema es que **los bloques `dato` y `leyenda` se renderizan intercalados en el flujo de lectura**,
+entre dos bloques de narración, y leyendo de corrido no se distinguen. La prueba de que es
+estructural y no humano: en el mismo episodio se leyó al aire **otro** bloque `dato` completo (el de
+Alan Wilson, 76 palabras) sin que nadie lo notara, porque ese sí sonaba a contenido.
+
+**Reglas, hasta que el render del guion se arregle:**
+
+1. **Nada de contabilidad de verificación dentro de `dato` o `leyenda`.** Los marcadores
+   `verificado <fecha>`, «confirmado contra X», «no quedan estimados sin respaldo» van en
+   `nota-produccion`, que sí está visualmente separado y **ninguno de los 11 se leyó al aire**.
+2. **`dato` y `leyenda` son para material que el host DECIDE si usa.** Si un dato tiene que sonar en
+   el episodio, va escrito como narración en `host-text`, no como referencia.
+3. **Antes de grabar, correr el lint de bloques:** verificar que ningún `dato`/`leyenda` contenga
+   lenguaje de producción. El script que lo detecta está en la retrospectiva del 2026-07-28.
+4. **Después de grabar, cruzar el SRT contra los bloques no-narrativos** para ver cuáles se leyeron.
+   Es una comprobación de 10 segundos y es la única que agarra esto antes de publicar.
+
+---
+
+## Verificar las fuentes ANTES de escribir, no después
+
+**Decisión de Andrés, 2026-07-28.** Ningún dato entra a un guion de MPD sin fuente verificada de
+primera mano. No se escribe primero y se verifica después: para cuando el guion está grabado, un
+dato malo cuesta una regrabación, no una edición de texto.
+
+Qué salió bien y qué no en T2·01, como referencia de cuánto vale esto:
+
+- **Las 8 fechas del racimo salieron correctas** (Jones 3-jul-69 · Wilson 3-sep-70 · Hendrix
+  18-sep-70 · Joplin 4-oct-70 · Morrison 3-jul-71 · Winehouse 23-jul-11 · Johnson 16-ago-38), y el
+  estudio del BMJ cuadró verbatim en las seis cifras que se citan. Pero **se verificaron después de
+  grabar**, no antes — si una hubiera fallado, tocaba regrabar.
+- **La de Cobain se resolvió sola por prudencia:** al aire se dice «abril del 94» sin día, lo que
+  esquiva la trampa real (murió el 5, lo encontraron el 8). **Cuando una fecha tiene disputa
+  documentada, decir el mes y no el día es una salida legítima**, no una debilidad.
+- **La única floja quedó publicada:** «3 de marzo del 94 en Roma». Las fuentes se reparten entre el
+  3 y el 4 y lo más común es que lo encontraron la madrugada del 4. Nadie la había marcado porque
+  no estaba en la lista de `[VERIFICAR]` — **se verificó lo que el guion se acordó de marcar, no
+  todo lo que afirmaba.**
+
+**Por eso la regla no es «verificar los marcadores», es esta:**
+
+1. **Toda fecha, cifra, cita y atribución** que el guion afirme necesita fuente antes de escribirse.
+   No solo las que alguien marcó — la lista de marcadores es justamente lo que ya se sospechaba.
+2. **Nombrar la fuente en el bloque `nota-produccion`**, con fecha de consulta. Si no se puede
+   nombrar una fuente real, el dato no entra: se reformula o se corta.
+3. **Cuando las fuentes se contradicen, decirlo en el guion** en vez de elegir en silencio. En T2·01
+   esto ya se hizo bien con la frase de la mamá de Cobain — se cuentan las tres lecturas en vez de
+   darla como acta de fundación. Ese es el patrón a repetir.
+4. **Bajar la precisión es una herramienta válida.** Mes en vez de día, «unas 50 pastillas» en vez
+   de un número exacto. Es preferible a afirmar de más.
 
 ---
 
@@ -168,3 +299,18 @@ El primer segmento del SRT de EP.005 (00:00:00–00:00:24) transcribió el intro
 femenina gutural) como una cadena larga de "Aaaa..." — es un artefacto esperado de WhisperX al
 oír música/vocalización no hablada, no un error de la grabación. Excluir ese segmento (y el
 segmento final con la letra del outro cantado) al contar palabras habladas para calibración.
+
+**Los timestamps se corren cerca de la música.** En T2·01 el SRT fechó la primera frase del cuerpo
+en **28,5 s** cuando el cuerpo arranca en **35,5 s** — el alineador arrastró el segmento ~8 s hacia
+dentro de la música de intro. El final del episodio en cambio cuadró al segundo. **Los timestamps
+dentro del cuerpo son confiables; los que caen junto a música, no.** Si un timestamp del arranque
+decide algo, verificarlo contra el envolvente del audio (`ebur128` con `framelog`), no contra el SRT.
+
+**Las etiquetas `[SPEAKER_00]:` no son palabras.** Ver la corrección de la constante de articulación
+más arriba. `wpm.py` ya las excluye desde el 2026-07-28; cualquier script nuevo que cuente palabras
+sobre un SRT diarizado tiene que hacer lo mismo.
+
+**Para verificar una palabra concreta, re-transcribir el fragmento aislado.** Extraer 20-30 s con
+`ffmpeg -ss` y correr WhisperX solo sobre eso quita el sesgo de contexto y funciona como segundo
+instrumento. Así se confirmó en T2·01 que «en menos de un año» (donde el guion decía «dos años») y
+«21.700» (donde decía «21.750») eran errores de lectura reales y no fallos de transcripción.
