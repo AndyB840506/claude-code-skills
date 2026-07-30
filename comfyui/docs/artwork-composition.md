@@ -78,6 +78,20 @@ se compone con PIL, deterministico. Ver `comfyui/templates/`.
   cálido/frío). En T2 eso reveló un color que la propuesta escrita "a ojo" no contemplaba
   y que domina media imagen — la piedra del mármol — y descartó dos que ya no existían en
   la escena. Marcar en el specimen cuáles hex son muestra y cuáles derivados.
+  - **Y al revés: el artwork se mide contra el sistema, no solo el sistema contra el
+    artwork** (aprendido 2026-07-30, MPD T2E01). La regla de arriba cubre cómo NACE una
+    paleta; esta cubre si una pieza nueva PERTENECE a ella. Instrumento: muestrear un
+    parche sin tipografía (zona de fondo) y comparar el sesgo de canal contra el hex
+    declarado **y contra un asset vivo**. En MPD T2 el sesgo azul B−R vale +46 en el
+    `#0B1A39` declarado, +36,7 en el fondo de la web y en la portada de temporada — y la
+    portada del episodio marcaba **+0,9**: estaba fuera de la paleta de su propia marca.
+    Un solo número lo dejó indiscutible; "se ve parecido" no habría llegado nunca.
+- **Cinco objetos distintos leen como arrume; cinco iguales leen como conjunto** (Andrés,
+  2026-07-30). Cuando una portada tiene que representar N de algo, lo que hace que la
+  repetición se lea deliberada es que los objetos sean **idénticos**. Cinco sillas de cinco
+  maderas y cinco respaldos distintos se leyeron "bastante sloppy" aunque cada una
+  estuviera bien renderizada. Si el concepto es un conteo, uniformar; si el concepto es la
+  variedad, que la variedad sea el tema y no un subproducto del modelo.
 - **Al cambiar el sistema visual de una temporada, versionar el compositor, no mutarlo**
   (aprendido 2026-07-22, MPD T2): `mpd-lockup-t2.py` se creó al lado de
   `mpd-portada-compose.py` en vez de editarlo, para que las portadas ya publicadas de la
@@ -88,6 +102,23 @@ se compone con PIL, deterministico. Ver `comfyui/templates/`.
   show ya generó y validó una tira de íconos (ej. `E:\Podcast\BTQ\EP 22\BTQ Artwork EP 22\BTQ-icon-strip-source.png`),
   recortar la fila/ícono que se necesita de ahí es más rápido y confiable que pedirle
   al modelo que los regenere desde cero.
+
+## Un derivado hereda los defectos del original — incluidos los que nadie busco
+
+(aprendido 2026-07-30, MPD T2E01)
+
+Antes de derivar formatos nuevos (16:9, 9:16, quote cards) de una pieza "ya aprobada",
+**verificar la pieza aprobada contra las fuentes primarias del sistema** — paleta,
+tipografia, motivos vetados. Que un humano la haya aprobado a tamaño completo no es
+verificacion contra el sistema: son dos cosas distintas, y la segunda nadie la corrio.
+
+Ese dia se produjeron el 16:9 y el 9:16 a partir de una 1:1 aprobada que estaba fuera de
+paleta, y el defecto se multiplico por tres antes de que el usuario lo viera. **El costo
+de verificar es un comando; el de heredar es rehacer el set entero.**
+
+Es la faja #4 ("tratar cualquier 'esto ya quedo resuelto' de una sesion anterior como
+hipotesis") aplicada al CONTENIDO y no solo al estado: preguntar si el archivo existe no
+es preguntar si el archivo esta bien.
 
 ## Tipografia sobre escenas simetricas — los scrims de borde no bastan
 

@@ -80,6 +80,10 @@ salir corto (~35.8 min vs 43 min target). El formula corregida (~5.543 palabras 
    imágenes viejas de Flow (2026-06-17, pre-cambio de formato) quedan como referencia histórica,
    no se usan para publicar. Herramientas nuevas reusables: `comfyui/templates/mpd-portada-compose.py`
    y `mpd-quote-card-compose.py`.
+   > ⚠️ **Esas dos quedaron para T1 solamente (2026-07-30).** Son Impact + crimson + dorado,
+   > paleta retirada. Para Temporada 2 los compositores son `mpd-portada-ep-t2.py` (los tres
+   > formatos del episodio) y `mpd-quote-card-t2.py`. La línea de arriba se conserva porque
+   > narra lo que se construyó el 07-17, no porque siga mandando.
 3. ~~Decision sobre mencionar el paso a formato solo~~ - decidido 2026-07-19: queda sin
    mencionar, ni en el episodio ni en show notes ni en redes.
 4. ~~Al publicar: agregar URL real de Spotify~~ - hecho 2026-07-19: publicado en

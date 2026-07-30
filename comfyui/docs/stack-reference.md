@@ -97,6 +97,11 @@ strings como literales Python (`titulo = "Aterciopelados"`), nunca vía `sys.arg
 el shell. Ver `comfyui/templates/mpd-portada-compose.py` y `mpd-quote-card-compose.py`
 para el patrón (ambos exponen `compose()`/`compose_quote_card()` importables).
 
+**Forma más fuerte de la misma regla** (2026-07-30, MPD T2E01): si el texto es fijo por
+episodio y no un parámetro, guardarlo como constante EN el propio script y no aceptarlo
+por `sys.argv` en absoluto — así no existe la ruta por la que se puede manglar. Ver
+`mpd-quote-card-t2.py`, que lleva las cuatro citas como literales del módulo.
+
 ## Gotchas learned during install
 - Git Bash `tar` is GNU tar — cannot extract .7z. Use Windows bsdtar: `& "$env:WINDIR\System32\tar.exe" -xf file.7z -C dest`.
 - ComfyUI repo moved: use `api.github.com/repositories/589831718/releases/latest` with `-L` (old comfyanonymous URL 301s).
