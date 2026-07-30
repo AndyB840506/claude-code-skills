@@ -31,7 +31,7 @@ Andrés cuenta:
 Aquí el mito no se vende como verdad. La última palabra siempre será suya.
 
 🎙️ Escúchanos en:
-   Spotify: [PENDIENTE — pegar la URL del episodio al publicar]
+   Spotify: https://open.spotify.com/show/0M12ujB9eJqr0dWZUwEf6B?si=9e3caba77ffb4d86
    Apple Podcasts: https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794
    Amazon Music: https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den
    + iHeart, Castbox, Pocket Casts y más
@@ -47,7 +47,7 @@ Aquí el mito no se vende como verdad. La última palabra siempre será suya.
 <p>Andrés cuenta:</p>
 <p>🥃 El racimo del 69 al 71 completo — incluido el miembro que casi nadie nombra<br>🥃 El estudio del British Medical Journal que siguió a 1.046 músicos y no encontró ningún pico de muertes a los 27<br>🥃 Por qué el cerebro humano ve el patrón aunque el patrón no esté — y por qué eso no lo hace tonto<br>🥃 Kurt Cobain: el hombre que le puso el nombre al club sin proponérselo, en abril del 94<br>🥃 La frase de la mamá de Cobain que se cita como acta de fundación del club — y las tres lecturas que tiene en disputa<br>🥃 Amy Winehouse y Robert Johnson: el cierre del círculo y el socio fundador del que casi no quedan fotos<br>🥃 Lo que el mito tapa: el dato que sí aguanta el examen y asusta más que la maldición</p>
 <p>Aquí el mito no se vende como verdad. La última palabra siempre será suya.</p>
-<p>🎙️ Escúchanos en:<br>Spotify: [PENDIENTE al publicar]<br>Apple Podcasts: <a href="https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794">abrir en Apple</a><br>Amazon Music: <a href="https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den">abrir en Amazon</a><br>+ iHeart, Castbox, Pocket Casts y más</p>
+<p>🎙️ Escúchanos en:<br>Spotify: <a href="https://open.spotify.com/show/0M12ujB9eJqr0dWZUwEf6B">abrir en Spotify</a><br>Apple Podcasts: <a href="https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794">abrir en Apple</a><br>Amazon Music: <a href="https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den">abrir en Amazon</a><br>+ iHeart, Castbox, Pocket Casts y más</p>
 <p>🌐 <a href="https://www.mrputridsden.com">www.mrputridsden.com</a><br>✉️ hello@mrputridsden.com | Andres@mrputridsden.com</p>
 ```
 
@@ -176,6 +176,13 @@ retirada.
     cinematográfica pero cuyo charco de luz **cierra en óvalo** dentro del cuadro; el de 4127 se
     sale por los dos bordes y no llega a leerse como forma circular. 9219 queda disponible en
     `E:\AI\outputs\MPD-T2E01-escenario-s9219_00001_.png` si se prefiere ese look.
-- **Pendiente antes de publicar:** plan de lanzamiento y pegar la URL de Spotify en la
-  descripción. **Si la portada 1:1 anterior ya se subió al episodio programado, hay que
-  re-subir la nueva.**
+- **Estado al 2026-07-30:** episodio subido y **programado para el viernes 31**; la portada
+  1:1 nueva (la del «27») **ya se subió** y el episodio sigue programado. Confirmado por
+  Andrés. Falta solo el plan de lanzamiento.
+- ⚠️ **La URL de Spotify pegada es la del SHOW, no la del episodio.** Es válida y permanente,
+  y queda alineada con los links de Apple y Amazon de ese mismo bloque, que también son de
+  show. Pero EP.005 usó el deep link del episodio
+  (`open.spotify.com/episode/2D129VK9H4sn7itPKjgz3W`), que solo existe una vez el episodio
+  está vivo. **Si se quiere ese formato, cambiarla el viernes 31 cuando publique.** Formato
+  del bloque, igual que en EP.005: el `?si=` se conserva en la descripción plana y se quita
+  en la versión HTML.

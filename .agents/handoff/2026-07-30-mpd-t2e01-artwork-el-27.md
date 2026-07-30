@@ -102,13 +102,15 @@ texto acentuado.
 
 ## Next Steps
 
-**De Andrés:**
-1. **Pegar la URL de Spotify** en `episodios/ep006-metadata.md` — está como marcador en **dos
-   sitios**: la descripción plana (línea ~34) y la versión HTML (línea ~50). Hay que cambiar las
-   dos; la HTML es la que se pega en Spotify.
-2. **Decidir si hay que re-subir la portada 1:1.** Si la vieja (de sillas) ya viajó con la
-   subida del episodio, la nueva la reemplaza. **Máquina: desktop** — el archivo vive en `E:\`.
-3. **Apagar ComfyUI si no se va a usar:** quedó corriendo en el puerto 8188 ocupando VRAM.
+**De Andrés — los tres cerrados el mismo 07-30, después de escribir este handoff:**
+1. ~~Pegar la URL de Spotify~~ — hecha en los dos sitios. ⚠️ **Es la URL del SHOW**
+   (`open.spotify.com/show/0M12ujB9eJqr0dWZUwEf6B`), no la del episodio. Queda alineada con
+   los links de Apple y Amazon del mismo bloque, que también son de show, pero EP.005 usó el
+   deep link del episodio, que solo existe una vez publicado. **Si se quiere ese formato,
+   cambiarla el viernes 31.**
+2. ~~Re-subir la portada 1:1~~ — **ya subida** la del «27», y el episodio sigue programado
+   para el viernes 31. Confirmado por Andrés.
+3. ~~Apagar ComfyUI~~ — cerrado (PID 26336); verificado que el puerto 8188 dejó de responder.
 
 **De producción:**
 4. **Plan de lanzamiento de T2·E1.** Es lo único del episodio que falta. Las 4 cards ya están
@@ -160,8 +162,9 @@ No es un pendiente, es archivo.
 
 ## Questions to Answer
 
-- ¿La portada 1:1 vieja alcanzó a subirse al episodio programado? De eso depende si hay que
-  re-subir.
+- ~~¿La portada 1:1 vieja alcanzó a subirse?~~ **Resuelto el 07-30:** Andrés subió la nueva y
+  el episodio sigue programado.
+- ¿Se cambia la URL del show por el deep link del episodio cuando publique el viernes 31?
 - ¿Se deja el haz frío o se decide bajar el `PIVOT` de `night_grade` para T2 entera? (Si se baja,
   afecta a todas las piezas del sistema, no solo a este episodio.)
 - ¿Las dos imprecisiones del audio (12:48 «menos de un año», 15:56 «21.700») quedan definitivas?
