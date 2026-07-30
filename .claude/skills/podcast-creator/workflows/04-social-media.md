@@ -30,6 +30,7 @@ Pregunta en un solo mensaje:
 > 2. ¿Cuáles son los links del episodio en Spotify, Apple Podcasts y Amazon Music? (si no están disponibles aún, escribe "pendiente")
 > 3. ¿Cuándo publicas el episodio? (día y hora aproximada — necesito calcular los 3 días del plan)
 > 4. ¿Hay algún dato sorprendente, controversia o ángulo que quieras destacar en el lanzamiento?
+> 5. **Solo si ya corrió un arco de revelación para este episodio o temporada:** ¿qué beats del arco alcanzaste a publicar? (decide si el gancho del lanzamiento ya está quemado — ver el bloque del arco más abajo)
 
 Calcula automáticamente:
 - **Día 1 (Intriga):** 2 días antes de la fecha de publicación
@@ -61,6 +62,19 @@ lugar un **arco de revelación**:
   mientras llega el audio, sin que se lea como que se repitió el anuncio.
 - Ritmo sugerido: un beat cada ~3 días, y el arco se sostiene indefinidamente.
 - Cuando por fin haya fecha, ahí sí corre el plan de 3 días normal encima del arco.
+
+**Y al correr ese plan encima de un arco YA publicado, el día de lanzamiento NO puede reusar el
+gancho del arco.** El último beat suele ser justamente el que presenta el tema del episodio, así
+que su gancho ya lo vio la misma audiencia — y muchas veces ese mismo párrafo abre también la
+descripción del episodio. Repetirlo es la tercera pasada del mismo texto.
+
+**Preguntar al usuario qué beats se publicaron antes de escribir el copy de lanzamiento** — es la
+pregunta 5 del Paso 1, para que vaya en el mismo mensaje y no como consulta suelta. No se
+deduce del repo, que guarda el plan pero **no** el registro de publicación; tampoco del
+calendario, que solo da una aritmética plausible. Si el gancho ya salió, el lanzamiento abre con
+lo que el arco NO reveló — casi siempre el giro o el desenlace, que además es la razón real para
+darle play. (Detectado en MPD T2·E1, 2026-07-30: los 4 beats ya habían salido y el Día 1 iba a
+repetir el cold open palabra por palabra.)
 
 (Detectado en MPD Temporada 2, 2026-07-22: guion listo, sin grabar, y había que anunciar
 el pivote del show.)

@@ -99,6 +99,23 @@ transcripción, pide los momentos clave al usuario.
 0X:XX [Segmento de promoción / cierre]
 ```
 
+**Tres reglas duras de YouTube. Si UNA falla, la plataforma descarta la lista ENTERA en
+silencio** — el video queda sin capítulos y no avisa:
+
+1. El primer capítulo debe ser exactamente `00:00`.
+2. Mínimo 3 capítulos.
+3. **Cada capítulo debe durar al menos 10 segundos — incluido el último**, que se mide contra
+   la duración total del episodio, no contra otro marcador.
+
+La tercera es la que muerde, porque el marcador final suele ser un «Outro» pegado al final del
+audio. **Mordió en MPD T2·E1 (2026-07-30):** la lista de Spotify traía 18 marcadores y el último
+era `41:38 Outro` sobre un episodio de `41:47` — **9 segundos**. La versión de YouTube salió con
+17, cortando en el marcador anterior; el de Outro se conservó en la lista de Spotify, que no
+tiene esta regla. **La lista de capítulos de Spotify no es portable a YouTube tal cual.**
+
+**Verificar, no estimar:** convertir cada marcador a segundos, restar contra el siguiente (y el
+último contra la duración real del episodio) y confirmar que el mínimo es ≥10 s.
+
 ---
 
 ## Paso 3 — Guardar y presentar
@@ -112,8 +129,9 @@ transcripción, pide los momentos clave al usuario.
 ══════════════════════════════════════════
   Episodio:           EP.[NNN]
   Título:             [N] chars [✓/✗]
-  Tags:               [N] terms
-  Capítulos:          [Sí/No — N bloques]
+  Tags:               [N] terms · [N] chars / 500 [✓/✗]
+  Capítulos:          [N] bloques · primero en 00:00 [✓/✗]
+                      más corto: [N] s / mín 10 s [✓/✗]
   Archivo:            youtube-ep[NNN].md
 ══════════════════════════════════════════
 ```
