@@ -34,6 +34,7 @@ Aquí el mito no se vende como verdad. La última palabra siempre será suya.
    Spotify: https://open.spotify.com/show/0M12ujB9eJqr0dWZUwEf6B?si=9e3caba77ffb4d86
    Apple Podcasts: https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794
    Amazon Music: https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den
+   YouTube: https://www.youtube.com/channel/UC9NYMQREuQj2VtDS0YFXbrA
    + iHeart, Castbox, Pocket Casts y más
 
 🌐 www.mrputridsden.com
@@ -47,7 +48,7 @@ Aquí el mito no se vende como verdad. La última palabra siempre será suya.
 <p>Andrés cuenta:</p>
 <p>🥃 El racimo del 69 al 71 completo — incluido el miembro que casi nadie nombra<br>🥃 El estudio del British Medical Journal que siguió a 1.046 músicos y no encontró ningún pico de muertes a los 27<br>🥃 Por qué el cerebro humano ve el patrón aunque el patrón no esté — y por qué eso no lo hace tonto<br>🥃 Kurt Cobain: el hombre que le puso el nombre al club sin proponérselo, en abril del 94<br>🥃 La frase de la mamá de Cobain que se cita como acta de fundación del club — y las tres lecturas que tiene en disputa<br>🥃 Amy Winehouse y Robert Johnson: el cierre del círculo y el socio fundador del que casi no quedan fotos<br>🥃 Lo que el mito tapa: el dato que sí aguanta el examen y asusta más que la maldición</p>
 <p>Aquí el mito no se vende como verdad. La última palabra siempre será suya.</p>
-<p>🎙️ Escúchanos en:<br>Spotify: <a href="https://open.spotify.com/show/0M12ujB9eJqr0dWZUwEf6B">abrir en Spotify</a><br>Apple Podcasts: <a href="https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794">abrir en Apple</a><br>Amazon Music: <a href="https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den">abrir en Amazon</a><br>+ iHeart, Castbox, Pocket Casts y más</p>
+<p>🎙️ Escúchanos en:<br>Spotify: <a href="https://open.spotify.com/show/0M12ujB9eJqr0dWZUwEf6B">abrir en Spotify</a><br>Apple Podcasts: <a href="https://podcasts.apple.com/us/podcast/mr-putrids-den/id1896808794">abrir en Apple</a><br>Amazon Music: <a href="https://music.amazon.com/podcasts/ba1b7a7c-64d8-4ae1-b947-7fd6fc2e5047/mr-putrids-den">abrir en Amazon</a><br>YouTube: <a href="https://www.youtube.com/channel/UC9NYMQREuQj2VtDS0YFXbrA">abrir en YouTube</a><br>+ iHeart, Castbox, Pocket Casts y más</p>
 <p>🌐 <a href="https://www.mrputridsden.com">www.mrputridsden.com</a><br>✉️ hello@mrputridsden.com | Andres@mrputridsden.com</p>
 ```
 

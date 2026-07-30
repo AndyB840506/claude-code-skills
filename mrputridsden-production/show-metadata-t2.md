@@ -104,6 +104,7 @@ podcast colombiano, Bogotá, música y misterio, discos malditos
 | Autor / host | Andrés |
 | Copyright | © 2026 Mr. Putrid's Den |
 | Web | https://www.mrputridsden.com |
+| YouTube | https://www.youtube.com/channel/UC9NYMQREuQj2VtDS0YFXbrA — canal creado 2026-07-30. Si se fija el handle `@mrputridsden` (alineado con Instagram), la URL bonita reemplaza a esta; la de `/channel/` sigue siendo válida siempre |
 | Email | hello@mrputridsden.com |
 | Temporada actual | 2 (campos nativos Season/Episode) |
 
