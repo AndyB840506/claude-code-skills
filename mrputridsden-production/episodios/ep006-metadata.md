@@ -99,12 +99,18 @@ club de los 27, 27 club, maldicion del rock, misterios del rock, leyendas del ro
 > palabra por palabra con lo que suena. Formato y pipeline: ComfyUI local + texto PIL determinista
 > (memoria `feedback_local_artwork_pipeline`), sistema visual **La Guarida**.
 
-| # | Timestamp | Texto |
-|---|---|---|
-| Q1 | 17:23 | Estadísticamente, el club de los 27 no existe. |
-| Q2 | 35:01 | Los mata la fama que les cae encima a los 20 años antes de que nadie sepa cómo cargarla. |
-| Q3 | 36:01 | Cuando uno necesita tres teorías místicas distintas para apuntar un patrón, casi siempre es porque el patrón no se sostiene solo. |
-| Q4 | 41:21 | Cuídense, cuiden a la gente que quieren y no romanticen tanto a los que se van temprano. |
+| # | Timestamp | Texto | Archivo (1920×1080) |
+|---|---|---|---|
+| Q1 | 17:23 | Estadísticamente, el club de los 27 no existe. | `MPD-T2E01-Q1-1920x1080.png` |
+| Q2 | 35:01 | Los mata la fama que les cae encima a los 20 años antes de que nadie sepa cómo cargarla. | `MPD-T2E01-Q2-1920x1080.png` |
+| Q3 | 36:01 | Cuando uno necesita tres teorías místicas distintas para apuntar un patrón, casi siempre es porque el patrón no se sostiene solo. | `MPD-T2E01-Q3-1920x1080.png` |
+| Q4 | 41:21 | Cuídense, cuiden a la gente que quieren y no romanticen tanto a los que se van temprano. | `MPD-T2E01-Q4-1920x1080.png` |
+
+Renderizadas el 2026-07-30 en `E:\Podcast\MPD\Temporada 2\EP 01\artwork\` con
+`comfyui/templates/mpd-quote-card-t2.py`. Cuerpo de 95 px en las cuatro (mismo tamaño =
+se leen como set) y encuadre del escenario distinto por card. **El compositor de T1
+(`mpd-quote-card-compose.py`) NO se usa en T2**: es Impact + crimson + dorado, paleta
+retirada.
 
 **Restricciones de arte (no negociables):**
 - ⛔ **Nada de círculos concéntricos, anillos, halos ni dianas** — vetados en TODAS las imágenes
@@ -134,15 +140,42 @@ club de los 27, 27 club, maldicion del rock, misterios del rock, leyendas del ro
   discrepancia real (murió el 5, lo encontraron el 8).
 - **Máster:** hecho fuera de Reaper con `templates/masterizar-podcast.ps1`. El render crudo salía a
   −18,3 LUFS con true peak +0,1 dBFS (clipping).
-- **Portada 1:1 lista y verificada (2026-07-28):**
-  `E:\Podcast\MPD\Temporada 2\EP 01\artwork\MPD-T2E01-PORTADA-3000.jpg` — 3000×3000, 0,94 MB.
-  Escena: cinco sillas vacías, Z-Image Turbo semilla 6913 a 1536² → RealESRGAN_x4plus → 3000×3000
-  exactos → lockup `mpd-lockup-t2.py` (La Guarida). Verificado: sin aros/relojes/vinilos ni al
-  100% ni con zoom, sin negro puro (piso levantado a 11), y legible a 150 px.
-  - ⚠️ **Los tres primeros intentos se rechazaron**: el concepto de «expediente + fotografías +
-    sala de archivo» hizo que el modelo metiera vinilos con diana, relojes de pared y calaveras.
-    **Causa técnica: a `cfg=1.0` el prompt negativo no tiene efecto** — no hay guía classifier-free
-    que lo aplique, así que el veto de aros hay que resolverlo construyendo la escena para que no
-    haya razón de que aparezcan, no prohibiéndolos.
-- **Pendiente antes de publicar:** portada 16:9 y 9:16, quote cards renderizadas, plan de
-  lanzamiento, y pegar la URL de Spotify en la descripción.
+- **Artwork: los tres formatos listos y verificados (2026-07-30).** Concepto: **el «27»
+  tipográfico** sobre un escenario vacío con un haz de luz. Compositor único para los tres:
+  `comfyui/templates/mpd-portada-ep-t2.py`.
+
+  | Formato | Archivo en `E:\Podcast\MPD\Temporada 2\EP 01\artwork\` | Peso |
+  |---|---|---|
+  | 1:1 · 3000×3000 | `MPD-T2E01-PORTADA-3000.jpg` | 695 KB |
+  | 16:9 · 1920×1080 | `MPD-T2E01-16x9-FINAL.png` | 985 KB |
+  | 9:16 · 1080×1920 | `MPD-T2E01-9x16-FINAL.png` | 1.152 KB |
+
+  Escena: Z-Image Turbo semilla **4127** a 1536² → RealESRGAN_x4plus → 3000² → `night_grade.py`
+  (variante E) → lockup. El numeral se compone con PIL en Bookman (relleno tenue + contorno
+  brasa); **el modelo nunca lo genera**. Verificado: cero píxeles `#000000`, sesgo azul B−R de
+  +38,8 a +48,3 (referencia: web `den-bg.jpg` +36,7 · medianoche `#0B1A39` +46), y el bloque
+  entero legible a 300 px y a 150 px.
+
+- ⚠️ **La primera versión (cinco sillas vacías, semilla 6913) se descartó el 2026-07-30 por
+  decisión de Andrés**, por dos defectos:
+  1. **Fuera de paleta.** Se compuso sin grading nocturno y quedó en un casi-negro neutro
+     (B−R = **+0,9**) mientras el resto de la marca vive en +36,7. Medido sobre los cuatro
+     archivos, no estimado.
+  2. **Cinco sillas de cinco estilos distintos leen como un arrume de muebles, no como un
+     club.** Lo que hace que una repetición se lea deliberada es que los objetos sean iguales;
+     la variedad la hace ver accidental. Además la silla es iconografía de true-crime, no de un
+     show anclado en rock.
+
+  Queda como registro histórico en `MPD-T2E01-PORTADA-3000-PRE-GRADING-2026-07-28.jpg`.
+  - ⚠️ Vale de esa tanda: **a `cfg=1.0` el prompt negativo no tiene efecto** — no hay guía
+    classifier-free que lo aplique, así que el veto de aros se resuelve construyendo la escena
+    para que no haya razón de que aparezcan, no prohibiéndolos. El primer concepto
+    («expediente + fotografías + sala de archivo») hizo que el modelo metiera vinilos con
+    diana, relojes de pared y calaveras en los tres primeros intentos.
+  - De las tres semillas del escenario vacío se eligió **4127 sobre 9219**, que era más
+    cinematográfica pero cuyo charco de luz **cierra en óvalo** dentro del cuadro; el de 4127 se
+    sale por los dos bordes y no llega a leerse como forma circular. 9219 queda disponible en
+    `E:\AI\outputs\MPD-T2E01-escenario-s9219_00001_.png` si se prefiere ese look.
+- **Pendiente antes de publicar:** plan de lanzamiento y pegar la URL de Spotify en la
+  descripción. **Si la portada 1:1 anterior ya se subió al episodio programado, hay que
+  re-subir la nueva.**
