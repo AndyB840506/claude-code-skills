@@ -178,7 +178,8 @@ retirada.
     `E:\AI\outputs\MPD-T2E01-escenario-s9219_00001_.png` si se prefiere ese look.
 - **Estado al 2026-07-30:** episodio subido y **programado para el viernes 31**; la portada
   1:1 nueva (la del «27») **ya se subió** y el episodio sigue programado. Confirmado por
-  Andrés. Falta solo el plan de lanzamiento.
+  Andrés. **Plan de lanzamiento escrito el 2026-07-30 en `social-ep006.md`** (3 días,
+  IG + FB, viernes 31 / domingo 2 / martes 4).
 - ⚠️ **La URL de Spotify pegada es la del SHOW, no la del episodio.** Es válida y permanente,
   y queda alineada con los links de Apple y Amazon de ese mismo bloque, que también son de
   show. Pero EP.005 usó el deep link del episodio
