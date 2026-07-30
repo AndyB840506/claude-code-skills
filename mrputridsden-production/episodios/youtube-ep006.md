@@ -6,6 +6,17 @@
 > **Esto es metadata de EPISODIO.** Para el canal (banner, avatar, descripción del perfil) la
 > fuente es `show-metadata-t2.md`. El workflow 07 de `podcast-creator` cubre episodio, no perfil.
 
+## ⏸️ PARQUEADO — T2·E1 no se anuncia en YouTube
+
+**Decisión de Andrés, 2026-07-30:** el canal queda creado y esta metadata queda lista, pero
+**el lanzamiento de T2·E1 no se anuncia en YouTube.** El anuncio arranca con el **próximo
+episodio**.
+
+Esto **no es un pendiente**. Nada de este archivo está esperando acción para el viernes 31.
+Al retomarlo en el episodio siguiente, lo reutilizable es la estructura (título, densidad de
+keywords, tags bilingües) y sobre todo **la regla de los capítulos de abajo**, que aplica a
+cualquier episodio, no solo a este.
+
 ---
 
 ## ⚠️ Lo primero: los capítulos de Spotify NO sirven tal cual en YouTube
