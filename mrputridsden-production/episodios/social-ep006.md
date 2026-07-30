@@ -3,6 +3,8 @@
 
 **Generado:** 2026-07-30 (jueves)
 **Publicación del episodio:** **viernes 31 de julio** (ya subido y programado en Spotify)
+**Estado:** ✅ **Los tres días quedaron programados en IG + FB** (confirmado por Andrés, 2026-07-30).
+Lo que sigue abierto es lo de la sección «Gotchas», no el copy.
 
 > **Estreno de Temporada 2.** Público = T2·E1; interno = EP.006. Primer episodio del pilar
 > **Archivos Secretos** y primero con la apertura fija de T2.
