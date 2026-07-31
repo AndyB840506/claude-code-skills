@@ -584,8 +584,33 @@ sino la revista y el año.
    contra el guion**: si el guion está bien, lo más probable es que sea la transcripción, y
    eso solo lo resuelve el oído de Andy. Precedente: EP.019, «Tim Collins» por Jim Collins.
 
-**El fact-check se corre sobre la TRANSCRIPCIÓN, no sobre el guion** — el guion ya se
-verificó al escribirse; lo que falta comprobar es qué salió realmente por el micrófono.
+**El fact-check se corre sobre la TRANSCRIPCIÓN, no sobre el guion** — lo que se comprueba ahí
+es qué salió realmente por el micrófono. Pero eso **no exime al guion de una segunda pasada**:
+ver abajo.
+
+### Re-verificar las fuentes JUSTO ANTES de grabar (regla de Andy, 2026-07-31)
+
+*«Siempre revisa las fuentes porque después de que grabe te das cuenta que no era como estaba
+en el guion.»* El guion es corregible; la grabación no. **Antes de que Andy se siente al
+micrófono, re-abrir la fuente primaria de cada cifra, fecha, nombre y cita** — aunque el
+`pipeline-state` o la sesión que lo escribió digan «fuentes verificadas». Ese sello es una
+hipótesis de otra sesión, no un hecho (§ Verification, punto 4).
+
+Producir una tabla `afirmación del guion | fuente primaria abierta | veredicto`. Lo que no se
+pueda abrir se marca **NO VERIFICADA** y se le dice a Andy **antes**, no después.
+
+Mordió el 2026-07-31 en EP.024, con el guion aprobado tres días antes y marcado como
+verificado: la compra de Luisiana no es «un tercio del territorio» sino **~23%**, y la frase
+«el 30% es la única cifra que aparece igual en el borrador y en el publicado» era **falsa**
+(también coinciden los cinco subordinados por jefe, «casi un tercio de un trabajador» y el
+periodo 2005-2011). Dos errores que se habrían grabado.
+
+**Trampa específica de los papers: el borrador NO es el publicado.** Un mismo estudio circula
+como working paper y como artículo revisado, y **las cifras cambian entre versiones**. En
+EP.024 el working paper de NBER (w24343) trae **214 empresas y 53.035 trabajadores**; el
+publicado en QJE 2019 trae **131 empresas y 38.843**. El borrador es además el que suele bajar
+primero en una búsqueda y el que repite la prensa. **Citar solo la versión publicada, y dejar
+anotado en el `pipeline-state` cuál se usó y dónde quedó guardada.**
 
 ---
 
@@ -733,6 +758,12 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
       de un libro, en una frase con sabor a eslogan, ni en un referente de cultura pop. El
       aterrizaje va a «su equipo / su operación / su empresa». Confirmar además que el string es
       idéntico al que se hornea en la portada. Ver sección dedicada.
+- [ ] **Artifact resincronizado.** Si el guion se editó DESPUÉS de publicar su Artifact,
+      regenerar el `*.artifact.html` desde el `.html` y republicar sobre **la misma URL**.
+      Andy graba leyendo el Artifact, no el archivo — un `.html` corregido con el Artifact viejo
+      significa que graba la versión mala. (Mordió el 2026-07-31 en EP.024: el Artifact llevaba
+      desde el 07-28 a las 11:59 desincronizado de un `.html` editado a las 15:47, así que le
+      faltaba la muletilla ya retirada. Ningún script falla ante esto: hay que mirarlo.)
 - [ ] **Coherencia título ↔ guion:** señalar **la línea exacta del guion** que responde la promesa
       del título. Si no se puede señalar, se corrige uno de los dos antes de grabar. (Fijado
       2026-07-28: un título que promete algo que el episodio no desarrolla se siente como «gato

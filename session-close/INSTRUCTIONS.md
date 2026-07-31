@@ -6,6 +6,7 @@ This document defines how `/session-close` executes its 5 steps.
 
 ```
 STEP 1: Invoke /retrospective
+  → Reconciliar los prompts/reglas que el usuario pegó en la sesión (ver abajo)
   → User confirms: "Apply these changes?" YES/NO
   → Continue to STEP 2
 
@@ -37,6 +38,16 @@ STEP 5: Memory + skill-kit audit check
     o cambio en K)"
   → No user confirmation needed for this step itself
 ```
+
+## Step 1 — Reconciliar los prompts pegados en la sesión
+
+Si el usuario pegó reglas o prompts a lo largo de la sesión, reconciliar **ANTES de seguir**:
+producir una tabla `lo que pegó | dónde quedó en disco | en qué difiere del texto original`.
+Leerla **de los archivos, no de memoria**.
+
+Una sesión larga con pastes secuenciales pierde el rastro: el 2026-07-23 el usuario tuvo que
+preguntar "¿aplicamos todos los prompts?" — de 12, uno se había ejecutado como tarea sin quedar
+nunca escrito como regla, y 4 habían quedado con texto materialmente distinto al pegado.
 
 ## Implementation Rules
 

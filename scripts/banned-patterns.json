@@ -1,8 +1,13 @@
 {
-  "version": 1,
-  "updated": "2026-07-23",
+  "version": 2,
+  "updated": "2026-07-31",
   "source_of_truth": ".claude/skills/episode-launch/docs/brand-constants.md",
   "note": "Los motivos VISUALES no son detectables por script (PIL no ve un anillo ni lee un typo). Este registry es el checklist contra el que el modelo lee cada imagen en el stage 2 (skill `verify`, regla 3). `verify_assets.py` solo hace las aserciones mecanicas: dimensiones, aspect ratio, negro de marca, presencia de variantes.",
+  "directions_note": "AÑADIDO 2026-07-31. `applies_to_direction` acota cada patron a la direccion de arte que lo hizo necesario. BTQ paso a TIPOGRAFIA PURA el 2026-07-25: sus portadas y quote cards ya no tienen escena, objeto, figura ni footer de iconos, asi que los patrones de escena quedaron inaplicables PARA BTQ. NO se borran: MPD y CCC siguen renderizando escena y `verify_assets.py` les sirve a los tres. Al leer una imagen en stage 2, aplicar solo los patrones cuya direccion coincida con la del asset.",
+  "directions": {
+    "btq-v4-tipografia": "BTQ desde 2026-07-25 — portadas y quote cards compuestas con PIL, sin modelo. Sin escena, sin objeto, sin figuras, sin footer de iconos.",
+    "escena-renderizada": "Assets con escena generada por modelo (MPD, CCC, y BTQ hasta v3). Aqui viven los patrones de figuras, materiales y fondo."
+  },
   "enforcement": {
     "script": "verify_assets.py — dimensiones, aspect, pixeles de esquina, limites de caracteres",
     "model-read": "lectura directa de la imagen contra este registry, obligatoria antes de aprobar"
@@ -13,11 +18,12 @@
       "severity": "blocker",
       "enforcement": "model-read",
       "applies_to": ["cover-1x1", "cover-16x9", "cover-9x16", "quote-card", "og-image"],
+      "applies_to_direction": ["btq-v4-tipografia", "escena-renderizada"],
       "rule": "Cero circulos concentricos, anillos, halos o patrones de diana en cualquier parte de la imagen.",
       "exception": "Solo cuando la diana ES el sujeto central de la escena (ej. Q2 de EP.020).",
       "prompt_line": "DO NOT render any concentric ring, circle, halo, or archery-target pattern anywhere in this image.",
       "why": "Decision de Andy 2026-07-10 (EP.021). El modelo lo reinserta solo: Flow en EP.020 (Q1/Q3/Q4 FAIL) y Z-Image local en EP.022 (2 rondas, CARD1/CARD2).",
-      "detection_hint": "Puede colarse disfrazado de TEXTURA, no solo como anillo grande: en EP.022 una tela salio cubierta de mini-circulos, invisible a tamano completo. Hacer zoom/crop a una esquina antes de aprobar.",
+      "detection_hint": "Puede colarse disfrazado de TEXTURA, no solo como anillo grande: en EP.022 una tela salio cubierta de mini-circulos, invisible a tamano completo. Hacer zoom/crop a una esquina antes de aprobar. En tipografia pura el riesgo es nulo por construccion, pero el patron se mantiene activo porque un asset compuesto puede incluir una imagen de fondo.",
       "evidence": ["brand-constants.md:65", "brand-constants.md:118-122", "pipeline-audit-ep022.md:191-194"]
     },
     {
@@ -25,9 +31,10 @@
       "severity": "blocker",
       "enforcement": "model-read",
       "applies_to": ["cover-1x1", "cover-16x9", "cover-9x16", "quote-card", "og-image"],
+      "applies_to_direction": ["btq-v4-tipografia", "escena-renderizada"],
       "rule": "Todo texto horneado en el render se verifica letra por letra con zoom.",
       "why": "Fallos reales: 'BEHIND THE QEQUE', 'Mada Calidad', 'Pre Filelt' en el clipboard, 'PREMIUM KEY EDITOIAL' en la og-image vigente.",
-      "detection_hint": "Z-Image falla la ortografia de texto largo horneado junto a la escena. Flujo correcto: escena sin texto + tipografia 100% PIL.",
+      "detection_hint": "Z-Image falla la ortografia de texto largo horneado junto a la escena. Flujo correcto: escena sin texto + tipografia 100% PIL. Con tipografia pura el texto no lo inventa un modelo, pero SIGUE habiendo que verificarlo: se hornea desde un string, y si ese string esta mal el error se propaga identico a la portada, a Spotify y a YouTube. Cotejar contra el titulo aprobado, no contra la memoria.",
       "evidence": ["brand-constants.md:146-148", "pipeline-audit-ep022.md:73", "artwork-general-v3.md:5"]
     },
     {
@@ -35,6 +42,7 @@
       "severity": "major",
       "enforcement": "model-read",
       "applies_to": ["quote-card"],
+      "applies_to_direction": ["btq-v4-tipografia", "escena-renderizada"],
       "rule": "Palabras que la marca pide sin tilde deben quedar sin tilde.",
       "why": "'NUMERO' volvio a salir 'NÚMERO' 3 veces seguidas en EP.020 pese a edicion dirigida.",
       "cutoff": "Tras 2 intentos de edicion dirigida, dejar de reintentar y parchar por fuera (PIL/Canva).",
@@ -45,7 +53,9 @@
       "severity": "blocker",
       "enforcement": "model-read",
       "applies_to": ["cover-1x1", "cover-16x9", "cover-9x16", "quote-card"],
+      "applies_to_direction": ["escena-renderizada"],
       "rule": "Render con volumen y textura de material real + rim light dorado. NO silueta plana ni textura de poster/halftone.",
+      "retired_for": "btq-v4-tipografia — retirado 2026-07-31. BTQ dejo de renderizar escena el 2026-07-25 y el oro dejo de ser color de marca; exigir 'volumen de material real' sobre una portada tipografica no tiene objeto. Sigue VIGENTE para MPD y CCC.",
       "why": "Era la falla de v1. En EP.022 una escena salio 'tipo foto de oficina', lejos del void-black + rim light que pide la marca.",
       "evidence": ["brand-constants.md:112-114", "pipeline-audit-ep022.md:65"]
     },
@@ -54,9 +64,11 @@
       "severity": "major",
       "enforcement": "model-read",
       "applies_to": ["cover-1x1"],
+      "applies_to_direction": ["escena-renderizada"],
       "rule": "Footer completo: izquierda 'Behind the Queue', centro 'EP.0NN' en oro, derecha DOS filas de iconos (FB/IG/TikTok + Spotify/Apple/Amazon). Nada de texto en la esquina inferior derecha.",
+      "retired_for": "btq-v4-tipografia — retirado 2026-07-31. brand-constants.md retiro explicitamente el footer de dos filas con seis iconos el 2026-07-25 ('a 300 px eran una mancha gris; queda solo EP.NN'), y el oro ya no es color de marca. La etiqueta en v4 es 'EP.NN' a DOS digitos, que es lo que hornea portada-ep-compose.py y lo que exige su regex.",
       "why": "En EP.022 falto la fila 2 de iconos; en otra ronda aparecieron iconos extra no pedidos.",
-      "ep_label_format": "EP.0NN -- 3 digitos con cero a la izquierda ('EP.022', no 'EP.22'). Resuelto 2026-07-23 a favor de brand-constants.md:84; portada-compose.py actualizado. Las portadas hasta EP.022 salieron con 2 digitos y NO se regeneran retroactivamente, asi que no se reprueba un asset viejo por esto.",
+      "ep_label_format": "HISTORICO (v3): 'EP.0NN' a 3 digitos. Resuelto 2026-07-23 a favor de brand-constants.md:84. Las portadas hasta EP.022 salieron con 2 digitos y NO se regeneran retroactivamente. Bajo v4 la forma correcta volvio a ser 'EP.NN' a dos digitos.",
       "evidence": ["brand-constants.md:82-89", "pipeline-audit-ep022.md:73", "comfyui/templates/portada-compose.py:1"]
     },
     {
@@ -64,7 +76,9 @@
       "severity": "major",
       "enforcement": "model-read",
       "applies_to": ["cover-1x1", "cover-16x9", "cover-9x16"],
+      "applies_to_direction": ["escena-renderizada"],
       "rule": "El fondo es SOLO el patron geometrico del universo del referente, en linea fina tipo marca de agua. Sin circuit boards, sin estilo cartoon.",
+      "retired_for": "btq-v4-tipografia — retirado 2026-07-31. En v4 el fondo es Void #0E1113 plano, sin patron. Sigue vigente para MPD y CCC.",
       "evidence": ["brand-constants.md:115-118"]
     },
     {
@@ -72,7 +86,9 @@
       "severity": "major",
       "enforcement": "model-read",
       "applies_to": ["cover-1x1", "cover-16x9", "cover-9x16"],
+      "applies_to_direction": ["escena-renderizada"],
       "rule": "Una figura por defecto. Una segunda SOLO si la relacion es central a la historia del episodio. Declarar 'EXACTLY [N]' en el prompt.",
+      "retired_for": "btq-v4-tipografia — no aplica: en v4 no hay figuras. Vigente para MPD y CCC.",
       "why": "El conteo de figuras es el error mas frecuente de Flow.",
       "evidence": ["brand-constants.md:100-103", "brand-constants.md:123-124"]
     },
@@ -81,7 +97,9 @@
       "severity": "major",
       "enforcement": "model-read",
       "applies_to": ["cover-1x1", "cover-16x9", "cover-9x16", "quote-card"],
+      "applies_to_direction": ["escena-renderizada"],
       "rule": "Si aparece una persona sin referente pop conocido, declarar rasgos etnicos explicitos en el prompt.",
+      "retired_for": "btq-v4-tipografia — no aplica: en v4 no hay personas. Vigente para MPD y CCC.",
       "why": "El modelo local tiene sesgo por defecto. En episodios pilar SEO se prefiere un objeto/simbolo literal en vez de una persona generica (3/3 confirmado).",
       "evidence": ["brand-constants.md:104-111"]
     },
@@ -90,7 +108,9 @@
       "severity": "blocker",
       "enforcement": "model-read",
       "applies_to": ["cover-1x1", "cover-16x9", "cover-9x16", "quote-card"],
+      "applies_to_direction": ["escena-renderizada"],
       "rule": "Sin proporciones chibi ni estilo caricatura.",
+      "retired_for": "btq-v4-tipografia — no aplica: en v4 no hay figuras. Vigente para MPD y CCC.",
       "evidence": ["brand-constants.md:68"]
     },
     {
@@ -98,7 +118,9 @@
       "severity": "blocker",
       "enforcement": "model-read",
       "applies_to": ["quote-card"],
+      "applies_to_direction": ["escena-renderizada"],
       "rule": "Cero personas en cards cuyo concepto declara 'sin personas'.",
+      "retired_for": "btq-v4-tipografia — no aplica: las quote cards de BTQ son tipografia pura desde 2026-07-25. Vigente para MPD y CCC.",
       "evidence": ["CLAUDE.md ## Artwork"]
     }
   ]

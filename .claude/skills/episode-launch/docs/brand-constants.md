@@ -207,6 +207,20 @@ Copiar el archivo basta para PIL; registrarlas en HKCU solo hace falta si se qui
 **Salida:** `E:\AI\outputs\BTQ-brand` en el escritorio, `D:\AI\outputs\BTQ-brand` en el portátil
 — el script recibe la carpeta como argumento, nunca a `C:`.
 
+**Dónde van las portadas de EPISODIO — no es la misma carpeta que los assets de marca**
+(fijado 2026-07-31; hasta entonces no estaba escrito y se venía derivando de EP.022):
+
+| Qué | Dónde |
+|---|---|
+| Assets de **marca** (portada del show, avatar y banner de YouTube, og-image) | `E:\AI\outputs\BTQ-brand` |
+| Portadas y quote cards de un **episodio** | `E:\Podcast\BTQ\EP NN\BTQ Artwork EP NN\` |
+
+En el portátil, `D:\` en vez de `E:\`. La carpeta del episodio es también donde vive el audio,
+así que la compuerta se corre con
+`python scripts/verify_assets.py EPNNN --root "E:\Podcast\BTQ\EP NN\BTQ Artwork EP NN"`.
+Ojo: EP.023 **no** tiene esa carpeta —su artwork v3 murió con el giro— así que no sirve de
+patrón; el que manda es EP.022.
+
 Esto retira el sustituto **Impact** que se venía usando desde EP.022 porque Bebas Neue nunca se
 instaló. Ya no hace falta.
 
@@ -293,7 +307,11 @@ antes de componer — no hace falta corregirlo a mano, pero sí verificarlo en e
 
 ### Checklist antes de aprobar
 
-- [ ] Volumen y textura de material real, no silueta plana ni render 3D brillante
+> El ítem «volumen y textura de material real, no silueta plana» se **retiró el 2026-07-31**:
+> era de la dirección v3 con escena renderizada y no tiene objeto sobre una portada tipográfica.
+> Sigue vivo para MPD y CCC en `scripts/banned-patterns.json` (`flat-silhouette`,
+> dirección `escena-renderizada`).
+
 - [ ] Exactamente UN elemento en `#FF3D00`
 - [ ] El acero `#39434A` está presente — la imagen no es «negro con un acento»
 - [ ] Cero anillos/círculos/dianas — **verificado con zoom a las cuatro esquinas**
