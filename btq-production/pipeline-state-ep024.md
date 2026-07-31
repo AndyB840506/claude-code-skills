@@ -47,7 +47,45 @@ sistema de pago.
 **Primer episodio con disclaimer de encuadre.** Va en el segmento 0, entre el hook en frío y el
 «Buenas y santas», después del jingle de entrada.
 
-## Fuentes — todas verificadas 2026-07-28
+## Re-verificación de fuentes 2026-07-31 — ANTES de grabar (2 errores corregidos)
+
+Instrucción de Andrés: *«siempre revisa las fuentes porque después de que grabe te das cuenta que
+no era como estaba en el guion»*. Se re-abrieron las fuentes primarias en vez de confiar en la
+nota de la sesión del 07-28. **Dos afirmaciones estaban mal y se corrigieron en el guion:**
+
+1. **Luisiana no es «un tercio del territorio».** 828.000 mi² sobre ~3,8 M ⇒ **~23%**.
+   Corregido a «casi una cuarta parte».
+2. **«La única cifra que aparece igual en el borrador de 2018 y en el estudio publicado»: falso.**
+   Se bajaron las dos versiones y se compararon: además del 30% coinciden los **cinco
+   subordinados por jefe**, **«casi un tercio de un trabajador»** y el periodo **2005-2011**.
+   Corregido a «una de las pocas cifras que sobrevivió igual».
+
+Otras dos, por precisión: la frase «the slows» es **atribuida** a Lincoln, no una cita
+documentada (pasó a «se dice que le diagnosticó»); y Leeson, liberado el 3 jul 1999, cumplió
+**3 a 7 m** desde la condena o **4 a 4 m** desde el arresto — «cuatro y medio» pasaba de los dos,
+quedó en «poco más de cuatro». El QJE se publicó en **nov 2019**, así que «siete años» pasó a
+«casi siete años».
+
+**Se dejó SIN cambiar «dos canadienses»** (primera línea del episodio): Raymond Hull nació en
+Inglaterra en 1919 **pero era un dramaturgo canadiense**, así que la frase es defendible. Se
+señala por si alguien la cuestiona.
+
+⚠️ **Trampa del PDF:** el que baja primero de NBER es el **borrador de 2018** — 214 empresas,
+53.035 trabajadores, 1.531 ascendidos. Usarlo habría puesto TODAS las cifras del segmento 4
+mal. La versión publicada está en la copia de la autora:
+`http://danielle.li/assets/docs/PromotionsAndThePeterPrinciple.pdf`
+(guardada en `E:\AI\outputs\BTQ-EP024\qje2019-publicado.pdf`).
+
+**Confirmado textualmente en el paper publicado:** `131 different U.S.-based client firms` ·
+`38,843 workers` · `1,553 of whom were promoted` · `5,956 managers` · `from 2005 to 2011` ·
+`a 0.061 point decline in manager value added` (Tabla III col. 2) · `30% higher under this
+counterfactual policy` · `almost one-third of one worker` sobre `five subordinates`.
+
+**NO verificado en fuente primaria:** los £827 millones exactos (Britannica dice «roughly £830
+million») y el «más del doble del capital del banco». El libro de Peter sigue sin abrirse en
+edición completa.
+
+## Fuentes — verificadas 2026-07-28, re-verificadas 2026-07-31 (ver arriba)
 
 - **Peter & Hull 1969.** La formulación exacta está corroborada por la cita del paper de QJE y
   por fuentes enciclopédicas. **El libro NO se abrió en su edición completa**: la única copia
