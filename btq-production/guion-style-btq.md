@@ -624,6 +624,44 @@ leído — «medio siglo después», «las cinco etapas del duelo», «el uno po
 diaria», «lleva quince años en la empresa», «se lee en dos tardes». La prueba: ¿el número es
 un **dato** que alguien podría verificar, o es una **forma de hablar**? Dato → numeral.
 
+### Pasada de relleno y argumentos débiles — obligatoria antes de grabar (Andy, 2026-07-31)
+
+*«A partir de este guion se deben presentar números y buscar rellenos en argumentos débiles y
+falta de verificación de data.»* No es una revisión opcional de oficio: es un paso del checklist.
+
+**Por qué aparece el relleno, que es lo que hay que entender antes de cazarlo.** El estándar de
+duración se mide en **palabras escritas**, pero lo que se publica son **minutos hablados**. Todo
+lo que alarga el texto sin alargar el audio empuja hacia la meta gratis. Escribir las cifras en
+letras es la forma más barata; el relleno argumental es la siguiente. **Un estándar medido sobre
+el artefacto intermedio crea el incentivo de inflar el artefacto intermedio** — no es mala fe,
+es diseño de la métrica.
+
+**El método que funcionó (EP.024):** cruzar dos mapas, el del relleno y el de los datos sin
+verificar. **Se solapan.** De los 7 argumentos débiles detectados, los 7 caían en los segmentos
+apoyados en fuentes secundarias o sin abrir; **cero** caían en los dos segmentos construidos
+sobre el paper verificado línea por línea. Donde el dato está firme, la prosa afirma y sigue.
+Donde no lo está, aparecen «cualquier manual», «nadie discute», «está llena de».
+
+**Corolario operativo: la densidad de retórica es un detector de huecos de verificación.** Si un
+tramo necesita tres apelaciones a la autoridad anónima para sostenerse, el problema no es el
+estilo — es que no hay fuente. Ir a buscarla antes de reescribir la frase.
+
+Qué se caza, con los ejemplos reales de EP.024:
+
+| Patrón | Ejemplo cazado |
+|---|---|
+| La misma idea enunciada 3+ veces | El mecanismo del Principio, **5 veces seguidas** |
+| Muletilla de tribuna que solo anuncia | «Deténgase un segundo…», «la frase que a mí me dejó pensando varios días» |
+| **Anunciar rigor en vez de ejercerlo** | «Ahora, seamos rigurosos, porque este pódcast promete evidencia» — a 3 líneas de dos cifras sin verificar |
+| Universal absoluto sin fuente | «cualquier manual de **cualquier época**», «**nadie** discute», «está **llena** de» |
+| Cantidad inventada o lectura de mentes | «**Miles** de personas terminaron ese libro pensando lo mismo» |
+| Mecanismo regalado que la fuente no da | El guion explicaba por qué la colaboración predice; el paper dice «we cannot pinpoint the exact channel» |
+
+**Y no basta con cortar: hay que sustituir.** Cortar solo hace que el episodio caiga bajo el
+estándar, que es lo que empujó al relleno en primer lugar. En EP.024 salieron 355 palabras de
+relleno y entraron 270 de dato verificado que estaba en el paper sin usar — la duración quedó en
+41,9 min, dentro del rango, sin depender del relleno.
+
 **Trampa específica de los papers: el borrador NO es el publicado.** Un mismo estudio circula
 como working paper y como artículo revisado, y **las cifras cambian entre versiones**. En
 EP.024 el working paper de NBER (w24343) trae **214 empresas y 53.035 trabajadores**; el
@@ -634,6 +672,21 @@ anotado en el `pipeline-state` cuál se usó y dónde quedó guardada.**
 ---
 
 ## Calibración de duración — dimensionar en PALABRAS, no en minutos adivinados
+
+> ⚠️ **Esta métrica tiene un efecto secundario y hay que conocerlo para no obedecerla a ciegas.**
+> Mide el artefacto **intermedio** (palabras escritas) para predecir el **final** (minutos
+> hablados), así que premia todo lo que alarga el texto sin alargar el audio: cifras en letras,
+> ideas repetidas, muletillas de tribuna. Cumplir el rango 40-45 **no** es evidencia de que el
+> episodio tenga 42 minutos de contenido. Correr siempre la § Pasada de relleno antes de dar la
+> duración por buena — si el guion cae bajo el estándar al quitarle el relleno, la respuesta es
+> **sustituir con dato verificado**, no devolver el relleno.
+>
+> **Y desde EP.024 las cifras van en numeral**, lo que reduce las palabras escritas sin tocar las
+> habladas (`827` se escribe como 1 palabra y se dice como 3). El SRT las devuelve a palabras, así
+> que el factor **se recalibra solo** al transcribir — pero **no comparar el factor de un guion con
+> numerales contra el de uno con cifras en letras**: EP.024 cambió esqueleto (D) *y* notación a la
+> vez, y atribuirle todo el cambio al esqueleto sería el error de «cifra compuesta» documentado en
+> `~/.claude/CLAUDE.md`.
 
 Regla medida (no de gusto). El guion se dimensiona contando **palabras habladas** y dividiendo por
 el ritmo real de Andy, **no** estimando minutos "a ojo" por segmento. Las marcas de minutos por ojo
@@ -777,6 +830,14 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
       de un libro, en una frase con sabor a eslogan, ni en un referente de cultura pop. El
       aterrizaje va a «su equipo / su operación / su empresa». Confirmar además que el string es
       idéntico al que se hornea en la portada. Ver sección dedicada.
+- [ ] **Pasada de relleno + argumentos débiles** (sección dedicada arriba). Cruzar el mapa de
+      relleno con el de datos sin verificar: se solapan, y ese solape señala dónde falta fuente.
+      Cortar **y sustituir** por dato verificado, no solo cortar.
+- [ ] **Cada ítem de una lista atribuida a una fuente se verifica por separado**, no solo el
+      concepto que la encabeza. En EP.024 los 4 ejemplos de «incompetencia creativa» iban como
+      «la solución que Peter propone»: **2 no existían en ninguna fuente y 1 era anacrónico**
+      (correos electrónicos en un libro de 1969). El concepto era correcto; la lista, inventada.
+      Verificar el concepto y dar por buena la lista es el error.
 - [ ] **Cifras en número, no en letras.** Grep de `ochocientos|doscientos|ciento |cincuenta y|
       treinta y|veinti|por ciento|décimas|centésimas` sobre las líneas habladas: cada hit es
       un dato escrito en palabras (o una excepción idiomática justificada). **Correr este grep

@@ -295,6 +295,25 @@ Qué salió bien y qué no en T2·01, como referencia de cuánto vale esto:
    guion aprobado tres días antes y marcado como verificado tenía dos errores. Ver
    [[feedback_verify_sources_before_recording]].
 
+### Pasada de relleno y argumentos débiles — obligatoria antes de grabar (Andrés, 2026-07-31)
+
+*«A partir de este guion se deben presentar números y buscar rellenos en argumentos débiles y
+falta de verificación de data.»* Es un paso del checklist, no una revisión opcional.
+
+**Por qué aparece el relleno:** el estándar de duración se mide en **palabras escritas** y lo que
+se publica son **minutos hablados**, así que todo lo que alarga el texto sin alargar el audio
+empuja hacia la meta gratis. Un estándar medido sobre el artefacto intermedio crea el incentivo
+de inflarlo.
+
+**El método:** cruzar el mapa del relleno con el de los datos sin verificar — **se solapan**. En
+BTQ EP.024, los 7 argumentos débiles caían todos en los segmentos sin fuente primaria y ninguno
+en los verificados. **La densidad de retórica es un detector de huecos de verificación:** si un
+tramo necesita apelar a «todo el mundo sabe» o «nadie discute», el problema no es el estilo, es
+que falta la fuente. Aplica doble en MPD, donde el material es leyenda y mito.
+
+Y **no basta con cortar: hay que sustituir**, o el episodio cae bajo el estándar y vuelve el
+incentivo. Detalle y tabla de patrones en `btq-production/guion-style-btq.md`.
+
 ### Las cifras van en NÚMERO, no en letras (regla de Andrés, 2026-07-31)
 
 `827 millones`, no «ochocientos veintisiete millones». Andrés lee en voz alta y el numeral se

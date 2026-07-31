@@ -2,8 +2,13 @@
 
 **Date:** 2026-07-31 (viernes)
 **Machine:** desktop (E:\)
-**Status:** In progress — EP.024 tiene portadas y guion corregido; **falta grabar**.
+**Status:** In progress — EP.024 **listo para grabar**, sin ninguna cifra sin verificar.
 MPD T2·E1 sale hoy a las **21:00**.
+
+> **Este handoff se extendió en una segunda pasada de la misma sesión** (ver § Segunda mitad).
+> Se prefirió extenderlo antes que escribir un segundo archivo del mismo día sobre el mismo
+> episodio, que habría obligado a reconciliar dos documentos. Lo de la primera mitad queda como
+> está; lo que cambió de estado está marcado abajo.
 
 ---
 
@@ -65,6 +70,65 @@ resincronizar el Artifact al editar un guion · probar un generador contra el ca
 viven las portadas de episodio en disco). `banned-patterns.json` pasó a v2 con
 `applies_to_direction`: 7 patrones quedaron acotados a `escena-renderizada` porque exigían cosas
 retiradas de BTQ el 2026-07-25 — **no se borraron**, MPD y CCC sí renderizan escena.
+
+---
+
+---
+
+## Segunda mitad — cifras, relleno y cierre de fuentes
+
+### 6. Las cifras van en numeral (regla nueva de Andrés)
+
+*«Cuando hablemos de cifras coloques en número y no en letras porque es más confuso.»* **19
+cifras-dato convertidas.** La razón fuerte resultó no ser la legibilidad: **en letras se escapan
+de los lints**. Mi extractor de afirmaciones filtraba por dígitos y no tocó **ninguno** de los 16
+bloques con la cifra escrita en palabras — y ahí adentro había un error real: «cincuenta y seis
+años» sobre un libro de 1969, cuando el episodio sale en 2026. Son **57**.
+
+Se dejan en letras las expresiones idiomáticas y los nombres de conceptos («medio siglo», «las
+cinco etapas del duelo», «el uno por ciento de mejora diaria»). La prueba: ¿es un **dato**
+verificable o una **forma de hablar**?
+
+### 7. Pasada de relleno y argumentos débiles (Andrés eligió la opción 2: cortar Y sustituir)
+
+Andrés detectó el incentivo estructural: **si el estándar de duración se mide en palabras
+escritas, todo lo que alarga el texto sin alargar el audio empuja hacia la meta gratis.**
+
+**Cortadas 355 palabras** de relleno: el mecanismo del Principio enunciado 5 veces seguidas, la
+recepción del libro 4 veces, la invisibilidad del daño 3 veces (quedó solo el REMATE, que era el
+bueno), y las muletillas de tribuna — incluida «ahora, seamos rigurosos, porque este pódcast
+promete evidencia», que **anunciaba rigor a tres líneas de dos cifras sin verificar**.
+
+**Añadidas 270 palabras** verbatim del paper: la robustez del **equipo distinto** (mata la
+objeción «¿y si el equipo ya venía flojo?»), el **32% exacto** con el percentil 50→67, y el
+**hallazgo del ranking** (descontadas las ventas, ser el nº 1 del equipo sigue prediciendo el
+ascenso). Y se corrigió un sobre-alcance: el guion explicaba *por qué* la colaboración predice un
+buen jefe cuando el paper dice «**we cannot pinpoint the exact channel**».
+
+**El hallazgo metodológico:** los 7 argumentos débiles caían **todos** en los segmentos apoyados
+en fuentes secundarias; **cero** en los dos construidos sobre el paper verificado. La densidad de
+retórica es un detector de huecos de verificación.
+
+### 8. Ejemplos inventados atribuidos a Peter
+
+Los 4 ejemplos de «incompetencia creativa» iban como *«la solución que Peter propone»*: **2 no
+existen en ninguna fuente** y **1 era anacrónico** (tipo de letra de los correos, en un libro de
+1969). Reemplazados por los documentados: parquear en el puesto del jefe, dejar los cajones
+abiertos, saltarse el café oficial, vestirse con un gusto apenas cuestionable.
+
+### 9. Barings cerrado — y un «más» que sobraba
+
+Andrés propuso publicar un rango («entre 827 y 830 millones») para no comprometerse. **Un intento
+dirigido más cerró el dato en fuente institucional:** *Bank Underground*, el blog del personal del
+**Banco de Inglaterra** — «Leeson hid the losses, which, in the end, reached £827 million —
+**twice** the firm's capital». Sin hedge.
+
+Y destapó un error que el hedge habría enterrado: el guion decía «**más** del doble del capital» y
+la fuente dice *twice*. Corregido.
+
+**EP.024 ya no tiene ninguna cifra sin verificar.** Único hueco declarado: el libro de Peter, que
+Andrés confirmó que **no consiguió** — está explícito en el bloque de Fuentes, con la lista de qué
+elementos vienen de fuentes secundarias.
 
 ---
 
@@ -157,7 +221,13 @@ MPD (aplazado a la semana del **2026-08-03**, marcador vivo en `guion-style-mpd.
 
 - ¿Se corrige el checklist o el script por lo del doble `#FF3D00`? (punto 7)
 - ¿El favicon del Artifact era otro? (punto 8)
-- ¿Persigo en fuente primaria los **£827 millones** exactos y el «más del doble del capital del
-  banco»? Britannica dice «roughly £830 million». Están en el guion sin verificar.
 - ¿EP.024 mantiene salida en domingo (**2026-08-02**)? Es inferencia mía desde la nota «se
   despliega el domingo»; **no verificado** contra una fecha publicada.
+
+> **RESUELTO en la segunda mitad:** los £827 millones y la comparación con el capital quedaron
+> confirmados en *Bank Underground* (Banco de Inglaterra). Ya no son pregunta abierta.
+
+**Nuevo, para cuando se transcriba EP.024:** al medir el factor de expansión del esqueleto D,
+**no compararlo contra el 1,134 de EP.023 sin más.** EP.024 cambió dos variables a la vez —
+esqueleto nuevo *y* cifras en numeral, que reducen las palabras escritas sin tocar las habladas.
+Atribuirle todo el cambio al esqueleto sería el error de «cifra compuesta» ya documentado.
