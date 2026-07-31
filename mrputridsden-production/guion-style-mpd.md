@@ -290,6 +290,22 @@ Qué salió bien y qué no en T2·01, como referencia de cuánto vale esto:
    darla como acta de fundación. Ese es el patrón a repetir.
 4. **Bajar la precisión es una herramienta válida.** Mes en vez de día, «unas 50 pastillas» en vez
    de un número exacto. Es preferible a afirmar de más.
+5. **Re-abrir las fuentes JUSTO ANTES de grabar**, aunque ya se verificaran al escribir. El sello
+   «verificado» de una sesión anterior es hipótesis, no hecho. Mordió en BTQ el 2026-07-31: un
+   guion aprobado tres días antes y marcado como verificado tenía dos errores. Ver
+   [[feedback_verify_sources_before_recording]].
+
+### Las cifras van en NÚMERO, no en letras (regla de Andrés, 2026-07-31)
+
+`827 millones`, no «ochocientos veintisiete millones». Andrés lee en voz alta y el numeral se
+parsea más rápido — pero la razón fuerte es otra: **en letras, las cifras se escapan de los
+lints**, porque cualquier extractor filtra por dígitos y no las ve. Ese día, en BTQ EP.024, la
+primera pasada de verificación revisó 46 bloques y **no tocó ninguno de los 16 que traían la
+cifra escrita en palabras** — dentro había un «cincuenta y seis años» que eran 57.
+
+**Excepción:** expresiones idiomáticas y nombres de conceptos, donde el numeral suena raro leído
+(«medio siglo después», «las cinco etapas del duelo»). La prueba: ¿es un **dato** verificable o
+una **forma de hablar**? Dato → numeral.
 
 ---
 

@@ -605,6 +605,25 @@ verificado: la compra de Luisiana no es «un tercio del territorio» sino **~23%
 (también coinciden los cinco subordinados por jefe, «casi un tercio de un trabajador» y el
 periodo 2005-2011). Dos errores que se habrían grabado.
 
+### Las cifras van en NÚMERO, no en letras (regla de Andy, 2026-07-31)
+
+`827 millones`, no «ochocientos veintisiete millones». `233 años`, no «doscientos treinta y
+tres años». `0,074 puntos porcentuales`, no «siete centésimas de punto porcentual».
+
+Dos razones, y la segunda es la que muerde:
+
+1. Andy lee el guion en voz alta y el numeral se parsea más rápido que la palabra.
+2. **En letras, las cifras se escapan de los lints.** Cualquier extractor que filtre por
+   dígitos —que es lo natural— no las ve. Comprobado el 2026-07-31: la primera pasada de
+   verificación de EP.024 revisó 46 bloques y **no tocó ni uno solo de los 16 que tenían la
+   cifra escrita en palabras**. Ahí adentro estaba «cincuenta y seis años después» sobre un
+   libro de 1969 (son 57) y una tasa mal redondeada.
+
+**Excepción: expresiones idiomáticas y nombres de conceptos**, donde el numeral suena raro
+leído — «medio siglo después», «las cinco etapas del duelo», «el uno por ciento de mejora
+diaria», «lleva quince años en la empresa», «se lee en dos tardes». La prueba: ¿el número es
+un **dato** que alguien podría verificar, o es una **forma de hablar**? Dato → numeral.
+
 **Trampa específica de los papers: el borrador NO es el publicado.** Un mismo estudio circula
 como working paper y como artículo revisado, y **las cifras cambian entre versiones**. En
 EP.024 el working paper de NBER (w24343) trae **214 empresas y 53.035 trabajadores**; el
@@ -758,6 +777,10 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
       de un libro, en una frase con sabor a eslogan, ni en un referente de cultura pop. El
       aterrizaje va a «su equipo / su operación / su empresa». Confirmar además que el string es
       idéntico al que se hornea en la portada. Ver sección dedicada.
+- [ ] **Cifras en número, no en letras.** Grep de `ochocientos|doscientos|ciento |cincuenta y|
+      treinta y|veinti|por ciento|décimas|centésimas` sobre las líneas habladas: cada hit es
+      un dato escrito en palabras (o una excepción idiomática justificada). **Correr este grep
+      ANTES del fact-check**, porque el extractor de cifras filtra por dígitos y no las ve.
 - [ ] **Artifact resincronizado.** Si el guion se editó DESPUÉS de publicar su Artifact,
       regenerar el `*.artifact.html` desde el `.html` y republicar sobre **la misma URL**.
       Andy graba leyendo el Artifact, no el archivo — un `.html` corregido con el Artifact viejo
