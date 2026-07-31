@@ -258,6 +258,20 @@ toda confianza. Al congelar una dirección hay que barrer **los dos**:
 `portada-ep-compose.py` recibe el **título publicado completo** y lo parsea; aborta si no sigue
 la fórmula. Es a propósito: es la única forma de garantizar que la portada y la metadata no
 diverjan, y de paso hace de lint del título.
+
+> **Reconciliado con la fórmula invertida (2026-07-31, al componer EP.024).** El script nació el
+> 2026-07-25 asumiendo que el ancla era un nombre propio de 2 palabras y la dibujaba **una palabra
+> por línea**. La fórmula invertida del 2026-07-28 pone el problema al frente, así que el ancla
+> pasó a ser una frase de 10 palabras y el tipo se encogió a **84 px en 16:9** (contra 216 px de
+> EP.023) — ilegible en miniatura y una mancha a 96 px. Ahora el ancla **se envuelve por ancho** y
+> el paso de línea se calcula sobre **la tinta real**, no con un avance fijo: con `asize * 0.86`
+> la tilde de la `É` chocaba con la pata de la `R`.
+> **El chequeo de ancho no es redundante con el envoltorio** — una palabra sola más ancha que la
+> caja no se puede partir, así que solo bajar el tamaño la mete; sin él, `HAWTHORNE` se sale del
+> cuadro. Se detectó porque el arreglo se probó contra un título de la fórmula **vieja**, no solo
+> contra el nuevo.
+> Un cambio de **fórmula de título** es un cambio de dirección: barrer los productores igual que
+> al cerrar un rebrand (ver la nota de la tabla de arriba).
 Escena: `E:\AI\outputs\BTQ-v4-annun2-s515202_00001_.png`.
 
 Dos conceptos descartados por el camino, y por qué — sirven de criterio para el próximo:

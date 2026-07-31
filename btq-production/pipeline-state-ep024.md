@@ -121,10 +121,36 @@ Es el error recuperable (se corta), al revés que EP.023, que se quedó corto y 
 arregla en post. Al transcribir, **medir el factor real de D y anotarlo en la tabla de
 esqueletos** de `guion-style-btq.md`.
 
+## Artwork — PORTADAS LISTAS 2026-07-31
+
+`E:\Podcast\BTQ\EP 24\BTQ Artwork EP 24\` — 1:1 (3000²) · 16:9 (1920×1080) · 9:16 (1080×1920),
+más el JPG q92 y los reescalados de 300 y 96 px. Compuerta: `verify_assets.py --stage-a` **PASS**
+(3 imágenes, negro de marca `#0E1113`, cero negro puro). Stage 2 leído a ojo en las tres.
+
+**Al generarlas se destapó que el generador y la fórmula de título estaban en conflicto.**
+`portada-ep-compose.py` se escribió el 2026-07-25 esperando un ancla de nombre propio
+(`EFECTO HAWTHORNE`) y la dibujaba **una palabra por línea**. La fórmula invertida adoptada el
+2026-07-28 —EP.024 es el primer episodio que la usa— hace que el ancla sea la frase del problema,
+10 palabras. Resultado medido antes del arreglo:
+
+| | ancla 1:1 | ancla 16:9 | legible a 96 px |
+|---|---|---|---|
+| EP.023 (fórmula corta) | 420 px | 216 px | sí |
+| EP.024 sin arreglar | 232 px | **84 px** | no |
+| EP.024 arreglado | 348 px | 168 px | sí |
+
+Dos cambios en el script: el ancla se **envuelve por ancho** en vez de una palabra por línea, y el
+paso de línea se calcula sobre **la tinta real** (con el avance fijo de `asize * 0.86` la tilde de
+`QUÉ` chocaba con la pata de la `R`). Con un título de fórmula corta los tamaños vuelven idénticos
+(420/216/152 px); el interlineado queda algo más ceñido, así que **no** es idéntico píxel a píxel
+—medido con diff— pero ningún asset publicado cambia.
+
+⚠️ **`scripts/banned-patterns.json` quedó viejo**: exige footer con dos filas de íconos y
+`EP.0NN` a 3 dígitos, ambos retirados de `brand-constants.md` el 2026-07-25. No se tocó.
+
 ## Pendiente
 
-- Artwork (portadas 3 formatos + quote cards): no iniciado. Las cards se componen DESPUÉS de
-  grabar, contra la transcripción real.
+- Quote cards: se componen DESPUÉS de grabar, contra la transcripción real.
 - Grabación: dejar **3 s de silencio en cabeza y cola** (en EP.023 quedaron 0,59 s) + 30 s de
   room tone. El jingle varía respecto al de EP.023 manteniendo su formato.
 - **Artículo en `/episodios/<slug>` + su `og:image`** — nuevo paso del kit desde 2026-07-28

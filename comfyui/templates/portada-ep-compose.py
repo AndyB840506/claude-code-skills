@@ -69,6 +69,28 @@ def mono(px):
     return f
 
 
+def envolver(words, font, maxw):
+    """Reparte las palabras del ancla en lineas que quepan en maxw.
+
+    Con la formula vieja el ancla era un nombre propio de 2 palabras y una
+    palabra por linea funcionaba. Con la formula invertida (2026-07-28) el
+    ancla es la frase del problema -- 10 palabras en EP.024 -- y una por linea
+    encogia el tipo a 84 px en 16:9. Se envuelve por ancho REAL de la fuente,
+    no por conteo de caracteres.
+    """
+    lineas, actual = [], []
+    for w in words:
+        tentativa = " ".join(actual + [w])
+        if actual and font.getlength(tentativa) > maxw:
+            lineas.append(" ".join(actual))
+            actual = [w]
+        else:
+            actual.append(w)
+    if actual:
+        lineas.append(" ".join(actual))
+    return lineas
+
+
 def render(W, H):
     """Compone la portada a cualquier aspect ratio.
 
@@ -106,7 +128,7 @@ def render(W, H):
     llh = int(lsize * 1.34)
     lblock = llh * (len(llines) - 1) + fl.getbbox(llines[-1])[3]
 
-    # --- ancla: una palabra por linea, ultima en Senal ---
+    # --- ancla: envuelta por ancho, ultima palabra en Senal ---
     # Cabe por ANCHO y por ALTO: en 16:9 el limite real es el alto disponible.
     words = [w.upper() for w in anchor.split()]
     gap = int(U * 0.045)
@@ -114,19 +136,38 @@ def render(W, H):
     asize = int(U * 0.20)
     while asize > 40:
         fa = ImageFont.truetype(DISP, asize)
-        alh = int(asize * 0.86)
-        atop = fa.getbbox(words[0])[1]
-        ablock = alh * (len(words) - 1) + fa.getbbox(words[-1])[3] - atop
-        if max(fa.getlength(w) for w in words) <= W - 2 * MX and ablock <= room:
+        alineas = envolver(words, fa, W - 2 * MX)
+        # Paso UNIFORME entre lineas base. Todas usan la misma fuente, asi que
+        # un mismo origen mas un paso constante ya las deja parejas; el paso
+        # solo tiene que dar para que la tinta mas alta (la tilde de la E) no
+        # toque la mas baja (la cola de la Q) de la linea de arriba. Con el
+        # avance fijo de antes (asize * 0.86) chocaban -- visto en EP.024.
+        cajas = [fa.getbbox(t) for t in alineas]
+        atop = min(b[1] for b in cajas)
+        abot = max(b[3] for b in cajas)
+        alh = (abot - atop) + int(asize * 0.10)
+        ablock = alh * (len(alineas) - 1) + (abot - atop)
+        # El chequeo de ancho NO es redundante con envolver(): una palabra sola
+        # mas ancha que la caja no se puede partir, asi que envolver() la deja
+        # pasar y solo bajar el tamano la mete. Sin esto, HAWTHORNE se sale.
+        if max(fa.getlength(t) for t in alineas) <= W - 2 * MX and ablock <= room:
             break
         asize -= 4
 
     # --- centrado optico entre las dos reglas ---
     avail_top, avail_bot = head_rule + int(U * 0.03), foot_rule - int(U * 0.03)
     y = avail_top + ((avail_bot - avail_top) - (ablock + gap + lblock)) // 2
-    for i, w in enumerate(words):
-        d.text((MX, y - atop + i * alh), w, font=fa,
-               fill=SIGNAL if i == len(words) - 1 else CREAM)
+    for i, texto in enumerate(alineas):
+        if i == len(alineas) - 1 and " " in texto:
+            # Ultima linea: solo la ULTIMA PALABRA en Senal, no la linea entera.
+            cabeza, cola = texto.rsplit(" ", 1)
+            cabeza += " "
+            d.text((MX, y - atop + i * alh), cabeza, font=fa, fill=CREAM)
+            d.text((MX + fa.getlength(cabeza), y - atop + i * alh), cola,
+                   font=fa, fill=SIGNAL)
+        else:
+            d.text((MX, y - atop + i * alh), texto, font=fa,
+                   fill=SIGNAL if i == len(alineas) - 1 else CREAM)
     ly = y + ablock + gap
     for line in llines:
         d.text((MX, ly), line, font=fl, fill=MUTED)
