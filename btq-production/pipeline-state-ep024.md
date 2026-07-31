@@ -47,6 +47,62 @@ sistema de pago.
 **Primer episodio con disclaimer de encuadre.** Va en el segmento 0, entre el hook en frío y el
 «Buenas y santas», después del jingle de entrada.
 
+## Pasada de relleno y argumentos débiles 2026-07-31 (decisión de Andrés: opción 2)
+
+Andrés detectó el incentivo estructural: **si el estándar de duración se mide en palabras
+escritas, todo lo que alarga el texto sin alargar el audio empuja hacia la meta gratis** —
+escribir las cifras en letras es la forma más barata, y el relleno argumental la siguiente.
+Encargo: cortar relleno **y sustituirlo por sustancia verificada**, no solo recortar.
+
+**Cortado (~355 palabras de relleno puro):** el mecanismo del Principio enunciado 5 veces
+seguidas en el seg. 1 (quedan 2); la recepción del libro dicha 4 veces (quedan 2); el cierre
+del seg. 2 que repetía la línea anterior con anáfora; la invisibilidad del daño dicha 3 veces
+en el seg. 4 (queda solo el REMATE, que era el bueno); y las muletillas de tribuna
+—«deténgase un segundo…», «la frase que a mí me dejó pensando varios días» y **«ahora, seamos
+rigurosos, porque este pódcast promete evidencia»**, que anunciaba rigor en lugar de ejercerlo,
+a tres líneas de las cifras de Barings sin verificar.
+
+**Añadido (~270 palabras, todo verbatim del paper publicado):**
+
+- **Robustez del equipo distinto** — «slightly stronger for managers assigned to a different
+  team… unlikely to be driven by team-specific factors». Mata la objeción obvia («¿y si el
+  equipo ya venía flojo?»), que el guion no respondía.
+- **El 32% exacto** en vez de «alrededor de un tercio», y «duplicar no es raro: equivale a
+  pasar del percentil 50 al 67» — dimensiona una premisa que se afirmaba sin dimensionar.
+- **El hallazgo del ranking:** descontadas las ventas, **ser el nº 1 del equipo** sigue
+  prediciendo el ascenso. No estaba en el guion. «Está premiando el podio.»
+
+**Sobre-alcance corregido:** el guion explicaba *por qué* la colaboración predice un buen jefe.
+El paper dice literalmente «**we cannot pinpoint the exact channel**». Ahora el guion lo dice:
+«la correlación está medida; la explicación es de uno».
+
+**Argumentos débiles reformulados (7):** «está llena de frases perfectas que resultaron falsas»
+(generalización sin un solo ejemplo) · «cualquier manual de cualquier época» → «segregación de
+funciones, lo primero que revisa cualquier auditoría» · doble apelación a consenso anónimo sobre
+McClellan → una sola y atribuida · «al doble de su tamaño real» (cifra sin fuente) → retirada ·
+«miles de personas pensando lo mismo» → retirada · «cada vez que lo mandan a vender» sobre 9
+temporadas → acotado · «la que hizo que el libro se vendiera como pan caliente» → retirada.
+
+**Duración: 5.577 → 5.492 palabras habladas = 42,6 → 41,9 min.** Dentro del estándar 40-45 sin
+depender del relleno, que era el punto.
+
+⚠️ **El diagnóstico de fondo sigue abierto:** los segmentos 1 y 3 son **1.382 palabras (25% del
+episodio) sobre un libro que nunca se abrió en edición completa.** Ahí el relleno y la falta de
+verificación son la misma cosa. Se recortó, no se resolvió.
+
+## Cifras en numeral, no en letras (regla de Andrés, 2026-07-31)
+
+19 cifras-dato pasadas a numeral. **Dos instrumentos míos sub-reportaron en cadena:** el
+extractor de afirmaciones filtraba por dígitos (no vio las 16 cifras escritas en palabras) y el
+segundo exigía que la cifra fuera seguida de `años|millones|mil|por ciento|libras`, así que no
+vio «veintidós mil setecientas diecisiete **bajas**» ni «cinco **personas**». Dentro de lo que
+no veían había un error real: «cincuenta y seis años» sobre un libro de 1969 — son **57**.
+
+⚠️ **Efecto colateral no resuelto:** el modelo de duración cuenta palabras **escritas** y asume
+que equivalen a palabras habladas. Un numeral rompe esa equivalencia (`827` se escribe como 1
+palabra y se dice como 3), así que el modelo ahora **subestima**, y el sesgo crece con cuántas
+cifras tenga el episodio. Medir el desfase contra el SRT real de EP.024 al transcribir.
+
 ## Re-verificación de fuentes 2026-07-31 — ANTES de grabar (2 errores corregidos)
 
 Instrucción de Andrés: *«siempre revisa las fuentes porque después de que grabe te das cuenta que
