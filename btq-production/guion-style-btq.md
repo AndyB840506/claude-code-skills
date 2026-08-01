@@ -229,6 +229,42 @@ español como *fila / espera / backlog* dentro del guion.
 > Las listas de arriba son un punto de partida, no un inventario cerrado. Ante una palabra con
 > sabor local que no esté listada, aplicar la prueba del párrafo inicial.
 
+## Dichos: se tuercen, no se citan (fijado 2026-08-01, propuesta de Andy)
+
+**El recurso.** Mezclar referencias con dichos comunes —«al mejor panadero se le quema el pan»,
+«ojos que no ven, corazón que no siente»— para que el registro sea más casual sin perder el
+componente ejecutivo. El dicho pone la calidez y la complicidad; el dato pone el peso. Nace con
+el carril **Oficio de Jefe**, donde el sujeto es un problema que el oyente ya vive, y es
+especialmente útil ahí porque el refrán **ya es la forma en que él nombra ese problema**.
+
+**La regla, que es lo que separa el recurso del relleno: el dicho tiene que TORCERSE.** Citarlo
+y seguir es decoración, y la decoración es exactamente lo que se viene cortando de los guiones.
+Hay tres formas válidas de torcerlo:
+
+1. **Extenderlo** — decir lo que el dicho *no* dice. «Al mejor panadero se le quema el pan. Pero
+   fíjense en lo que el dicho no dice: no dice que el panadero no se dé cuenta. El pan quemado
+   huele.» El refrán entra como acuerdo y sale como acusación.
+2. **Invertirle el sentido** — el mismo refrán, leído desde el otro lado. «Ojos que no ven,
+   corazón que no siente» se dice como consuelo; en una operación es un diagnóstico, y es malo.
+3. **Negar su premisa** — «No hay peor sordo que el que no quiere oír» → usted *sí* quiere oír,
+   y aun así no oye. Ahí el dicho deja de explicar y el episodio tiene que explicar por qué.
+
+**Restricciones:**
+
+- **Techo de 5 por episodio, máximo uno por segmento.** Pasado ese punto deja de sonar a voz
+  propia y empieza a sonar a abuelo dando consejos.
+- **Ninguno en el cierre.** El cierre canónico ya tiene su firma y su remate; un refrán ahí
+  compite con ellos.
+- **Cada dicho tiene que hacer trabajo estructural** — sostener un remate, cerrar un segmento o
+  montar el giro. Si se puede borrar sin que se caiga nada, es relleno: se borra.
+- **No se repiten entre episodios.** Misma lógica que las recomendaciones y los casos ancla:
+  grepear `launch-assets/*.html` antes de cerrarlo.
+- **Que sea de uso real en Colombia**, no un refrán de manual. Si hay que explicarlo, no sirve.
+
+**Precedente:** EP.024 «Mi puerta siempre está abierta» los estrena con 5 —tres colocados y dos
+planeados—; el del panadero sostiene el remate del segmento de Nokia y el del sordo monta el
+giro del episodio entero.
+
 ## Título: el PROBLEMA va primero, y el teórico después como autoridad
 
 **Fórmula obligatoria de los episodios pilar SEO — INVERTIDA el 2026-07-28 (decisión de Andy

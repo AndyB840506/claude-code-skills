@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EP.24 — Mi puerta siempre está abierta: por qué nadie le cuenta los problemas a tiempo | Behind the Queue</title>
+<style>
+        :root {
+            /* Sistema v4 "Sala de Maquinas" -- fuente canonica:
+               episode-launch/docs/brand-constants.md. Se fue el oro. */
+            --bg: #0E1113;          /* Void -- nunca negro puro */
+            --card: #22262A;        /* Panel */
+            --card2: #191D20;
+            --signal: #FF3D00;
+            --signal-dim: #9E2600;
+            --offwhite: #F4EFE7;    /* Cream */
+            --muted: #8B9492;
+            --steel: #39434A;
+            /* Fuentes instaladas por usuario; el fallback cubre otras maquinas. */
+            --display: 'Cabinet Grotesk', 'Arial Black', system-ui, sans-serif;
+            --sans: 'Supreme', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            --mono: 'Martian Mono', ui-monospace, Consolas, monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--sans);
+            background: #08090A;
+            color: var(--offwhite);
+            line-height: 1.8;
+            font-size: 15.5px;
+        }
+
+        .container { max-width: 820px; margin: 0 auto; background: var(--bg); }
+
+        /* ---------- HEADER ---------- */
+        .header {
+            background: linear-gradient(160deg, #22262A 0%, #0E1113 70%);
+            padding: 46px 48px 40px;
+            border-bottom: 3px solid var(--signal);
+        }
+        .header .podcast {
+            font-family: var(--mono);
+            font-size: 1.15em;
+            color: var(--signal);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .header .epnum {
+            font-family: var(--mono);
+            font-size: 2.6em;
+            color: var(--signal);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+        .header h1 {
+            font-family: var(--display);
+            font-size: 2em;
+            font-weight: 900;
+            margin: 6px 0 10px;
+            color: var(--offwhite);
+            line-height: 1.18;
+        }
+        .header .tagline {
+            font-family: var(--display);
+            font-style: italic;
+            color: var(--signal);
+            font-size: 1.05em;
+            margin-bottom: 22px;
+        }
+        .meta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .meta-item {
+            background: rgba(255,61,0,0.10);
+            border: 1px solid var(--signal-dim);
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            color: var(--signal);
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------- SECTIONS ---------- */
+        .section { padding: 32px 48px; border-bottom: 1px solid #222; }
+        .section h2 {
+            font-family: var(--mono);
+            font-size: 1.15em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--signal);
+            margin-bottom: 20px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid var(--signal-dim);
+        }
+
+        /* ---------- ARQUITECTURA ---------- */
+        .arquitectura { font-size: 0.9em; }
+        .arq-row {
+            display: grid;
+            grid-template-columns: 30px 1.1fr 95px 1.6fr;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid #1c1c1c;
+            align-items: start;
+        }
+        .arq-row.head { color: var(--signal); font-weight: 700; border-bottom: 1px solid var(--signal-dim); }
+        .arq-num { color: var(--signal); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--offwhite); }
+        .arq-time { color: var(--muted); font-family: monospace; font-size: 0.92em; }
+        .arq-row span:last-child { color: var(--muted); }
+
+        /* ---------- GUION SEGMENTS ---------- */
+        .segment { margin: 40px 0; padding-bottom: 26px; border-bottom: 1px solid #1a1a1a; }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+        .segment-number {
+            font-family: var(--mono);
+            background: var(--signal);
+            color: #0E1113;
+            min-width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1em; font-weight: bold;
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+        .segment-title {
+            font-family: var(--mono);
+            font-weight: 400;
+            font-size: 1.15em;
+            color: var(--offwhite);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.78em;
+            color: var(--muted);
+            background: #181818;
+            padding: 3px 11px;
+            border-radius: 10px;
+            white-space: nowrap;
+            font-family: monospace;
+        }
+        .sub { font-family: var(--display); font-style: italic; font-size: 1.12em; color: var(--signal); margin: 26px 0 8px; }
+
+        p.line { margin: 0 0 4px; color: #e9e6dd; }
+
+        /* PAUSA chips */
+        .pausa {
+            display: inline-block;
+            font-family: var(--mono);
+            letter-spacing: 2px;
+            font-size: 0.72em;
+            color: var(--signal-dim);
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 0 8px;
+            margin: 8px 0;
+            background: #111;
+        }
+        .pausa.larga { color: var(--signal); border-color: var(--signal-dim); }
+
+        /* REMATE — the signature punch line */
+        .remate {
+            border-left: 3px solid var(--signal);
+            background: linear-gradient(90deg, rgba(255,61,0,0.07), transparent);
+            padding: 14px 20px;
+            margin: 18px 0;
+            font-family: var(--display);
+            font-size: 1.08em;
+            color: var(--offwhite);
+        }
+        .remate::before {
+            content: "REMATE";
+            display: block;
+            font-family: var(--mono);
+            font-size: 0.62em;
+            letter-spacing: 3px;
+            color: var(--signal);
+            margin-bottom: 6px;
+        }
+
+        /* NOTA producción — not printable */
+        .nota {
+            background: #17191B;
+            border: 1px dashed var(--signal-dim);
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 14px 0;
+            font-size: 0.85em;
+            color: #A8B0AE;
+        }
+        .nota::before { content: "NOTA · "; font-family: var(--mono); letter-spacing: 2px; color: var(--signal); }
+
+        /* DATO callout */
+        .dato {
+            background: var(--card2);
+            border-left: 4px solid var(--signal);
+            border-radius: 0 5px 5px 0;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .dato-label {
+            font-family: var(--mono);
+            font-size: 0.78em;
+            letter-spacing: 3px;
+            color: var(--signal);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        em { color: var(--signal); font-style: italic; }
+        strong { color: var(--offwhite); }
+
+        /* FUENTES */
+        .fuentes p { font-size: 0.83em; color: var(--muted); line-height: 1.7; }
+
+        .checklist-box {
+            background: var(--card);
+            border: 1px solid #262011;
+            border-radius: 6px;
+            padding: 6px 18px;
+        }
+        .checklist-box .row { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #1a1a1a; align-items: baseline; }
+        .checklist-box .row:last-child { border-bottom: none; }
+        .ck { color: #4a7a4a; font-weight: 700; }
+        .warn { color: var(--signal); font-weight: 700; }
+
+        .pendiente {
+            background: #1b1410;
+            border: 1px dashed var(--signal);
+            border-radius: 6px;
+            padding: 18px 22px;
+            margin: 30px 0;
+            color: #D9CFC4;
+        }
+        .pendiente h3 {
+            font-family: var(--mono);
+            color: var(--signal);
+            letter-spacing: 3px;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        footer { padding: 26px 48px; color: var(--muted); font-size: 0.8em; text-align: center; }
+        footer .gold { color: var(--signal); font-family: var(--mono); letter-spacing: 3px; }
+
+        @media print {
+            body { background: #fff; color: #111; }
+            .container { background: #fff; }
+            .nota { display: none; }
+            .header { background: #111; }
+            .remate { color: #111; }
+            p.line, .segment-title, strong { color: #111; }
+        }
+        @media (max-width: 640px) {
+            .section, .header, footer { padding-left: 22px; padding-right: 22px; }
+            .arq-row { grid-template-columns: 24px 1fr; }
+            .arq-row .arq-time, .arq-row span:last-child { grid-column: 2; }
+        }
+</style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Behind the Queue</div>
+        <div class="epnum">EP.24</div>
+        <h1>Mi puerta siempre está abierta: por qué nadie le cuenta los problemas a tiempo</h1>
+        <div class="tagline">Usted no tiene un problema de comunicación. Tiene un problema de precio: en su equipo, contar la verdad cuesta más que callarla. Y el precio lo puso usted sin darse cuenta.</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 024</span>
+            <span class="meta-item">Solo host · Andy</span>
+            <span class="meta-item">Carril · Oficio de Jefe #1</span>
+            <span class="meta-item">Registro · ejecutivo relajado</span>
+            <span class="meta-item">~42,5 min (148 wpm + 13%)</span>
+            <span class="meta-item">Evergreen — no atado a coyuntura</span>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="nota">Esqueleto <strong>E · ACCIÓN PRIMERO</strong> (§ Rotación de esqueleto, guion-style-btq.md) — nunca usado antes; el trenzado fue de EP.024-Peter y el invertido de EP.023. La recomendación aterrizada va en el <strong>minuto 2</strong> y el resto del episodio la justifica. Sirve justo aquí porque la acción es contraintuitiva —<em>deje de preguntar y empiece a contar</em>— y el «por qué» es el suspenso. Sin precedente medido, se dimensiona con el factor bajo (+13%).</div>
+        <div class="arquitectura">
+            <div class="arq-row head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span></div>
+            <div class="arq-row"><span class="arq-num">0</span><span class="arq-seg">Apertura en frío</span><span class="arq-time">0:00–1:40</span><span>La frase, el desmentido en tres líneas, disclaimer de encuadre y ritual</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">La respuesta, de una vez</span><span class="arq-time">1:40–9:00</span><span><strong>APLICABLE.</strong> Deje de preguntar «¿alguna novedad?» y empiece a contar cuántas malas noticias le llegan. El hallazgo de Edmondson: los mejores equipos reportaban MÁS errores · <em>rec. tejida</em></span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">La cuenta que hace su equipo</span><span class="arq-time">9:00–16:30</span><span><strong>Caso 1 · plata.</strong> Nokia 2007-2013: los mandos medios como «filtros». Vuori &amp; Huy, ASQ 2016. La mecánica del silencio como cálculo, no como cobardía</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Cuando el filtro es la jerarquía</span><span class="arq-time">16:30–24:00</span><span><strong>Caso 2 · 7 vidas.</strong> Columbia 2003: tres solicitudes de imágenes, canceladas. La frase del CAIB sobre las barreras organizacionales</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Estaba escrito, y con fecha</span><span class="arq-time">24:00–31:30</span><span><strong>Caso 3 · 72 vidas · re-enganche al 60%.</strong> Grenfell: el blog del 20-nov-2016, siete meses antes. El caso más grave y el más literal</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">El giro</span><span class="arq-time">31:30–37:00</span><span>No es un problema de comunicación: es un problema de precio. Y el precio no lo pone el que calla, lo pone el que oye</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Qué hace usted el lunes</span><span class="arq-time">37:00–43:00</span><span><strong>APLICABLE.</strong> Las tres movidas concretas, con la trampa de cada una</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Cierre canónico + Teaser EP.025</span><span class="arq-time">43:00–45:00</span><span>Pregunta comentable · CTAs · LinkedIn · teaser · firma + TM</span></div>
+        </div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="section">
+        <h2>Antes de grabar · checklist</h2>
+        <div class="checklist-box">
+            <div class="row"><span class="ck">✓</span><span><strong>Título:</strong> <code>EP.24 — Mi puerta siempre está abierta: por qué nadie le cuenta los problemas a tiempo</code> (<strong>88 caracteres</strong>, dentro del límite de 100 de YouTube). Carril Oficio de Jefe: el título es solo la frase del problema, sin teórico detrás. Este string va IDÉNTICO en portada, Spotify y YouTube.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Cumple el teaser ya publicado en EP.023:</strong> «una idea que todo el mundo repite en las reuniones» y verificar «si de verdad aguanta». «Mi puerta siempre está abierta» es exactamente eso, y no aguanta.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Compuerta de aplicabilidad (regla 3b):</strong> segmentos 1 y 6 son accionables y suman <strong>~30%</strong> de las palabras; el primero arranca en el <strong>minuto 2</strong>, muy antes del 60% exigido. EP.024-Peter tuvo 13,9% empezando en el minuto 38.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Dato duro del mundo del oyente (regla 3):</strong> Edmondson y las unidades de enfermería — equipos de trabajo reales, no un caso de otro planeta. Es lo que le faltó al guion de Peter.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Casos nombrados que escalan:</strong> Nokia (plata) → Columbia (7 muertos) → Grenfell (72 muertos). Tres mundos distintos. Verificado por grep que ninguno se usó en episodios anteriores. <strong>Boeing quedó descartado</strong>: ya se usó en EP.022.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Registro «ejecutivo relajado»</strong> (decisión de Andy, 2026-08-01): frases cortas, cero floritura literaria, el golpe lo da el dato. Se conserva el «usted» singular con imperativos en plural, como en los episodios anteriores.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Falta el coeficiente exacto de Edmondson 1999.</strong> Hoy está la dirección del hallazgo, no la cifra. Abrir el paper de ASQ antes de grabar y, si no aparece, decirlo cualitativamente sin inventar número.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Fuentes primarias sin abrir todavía:</strong> PDF del CAIB, post original del Grenfell Action Group y el paper de Vuori &amp; Huy. Corroborados entre secundarias, no leídos. Pasada obligatoria antes de grabar.</span></div>
+            <div class="row"><span class="warn">⚠</span><span>Correr <code>python scripts/lint_guion_repeticion.py</code> contra EP.023 y contra el guion de Peter antes de aprobar.</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- 0 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Apertura en frío</span><span class="segment-time">0:00</span></div>
+            <div class="nota">Arranca en frío, sin jingle y sin saludo. Tono tranquilo y llano. No es una revelación dramática: es alguien constatando algo que ya sabe. La fuerza está en lo corto de las frases.</div>
+
+            <p class="line">Usted lo ha dicho. En una reunión, con la mejor intención: «mi puerta siempre está abierta».</p>
+            <p class="line">Y es cierto. La puerta está abierta.</p>
+            <p class="line">El problema es que nadie la cruza.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ahora mismo alguien de su equipo sabe algo que a usted le serviría saber. Y ya hizo la cuenta: contárselo le sale más caro que quedarse callado.</p>
+            <p class="line">Este episodio es sobre esa cuenta. Sobre quién la puso, cuánto cobra, y qué pasa cuando se paga completa.</p>
+
+            <div class="nota">JINGLE DE ENTRADA — stinger corto (2-4 s), seco, a silencio. NO es cama musical. Andy entra sobre el silencio.</div>
+
+            <div class="nota">Disclaimer de encuadre — 47 palabras. Es encuadre del tema, no descargo legal, y cambia en cada episodio.</div>
+            <p class="line">Lo de hoy es el silencio organizacional: por qué la información mala se queda abajo. No van a oír que hay que «fomentar la comunicación», ni una lista de dinámicas para romper el hielo. Van a oír por qué la puerta abierta no sirve, y qué sí.</p>
+            <span class="pausa">PAUSA</span>
+
+            <p class="line">Buenas y santas. Feliz día, feliz tarde o feliz noche. Cualquier día que este sea.</p>
+            <p class="line">Esto es Behind the Queue, episodio 24.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+        </div>
+
+        <!-- 1 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">1</span><span class="segment-title">La respuesta, de una vez</span><span class="segment-time">1:40 – 9:00</span></div>
+            <div class="nota">Esqueleto E: la acción va aquí, en el minuto 2, antes de cualquier caso. Léalo con seguridad, sin preámbulo. Es el segmento que define el episodio — si esto no aterriza, lo demás es historia interesante y nada más.</div>
+
+            <p class="line">Voy a hacer algo distinto hoy. Normalmente les cuento la historia primero y lo aplicable queda para el final. Hoy es al revés. La recomendación va de una vez, en el minuto dos, y el resto del episodio es por qué.</p>
+            <p class="line">Aquí va.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line"><strong>Deje de preguntar si hay novedades. Empiece a contar cuántas malas noticias le llegan.</strong></p>
+            <p class="line">Eso es todo. Ese es el episodio.</p>
+            <p class="line">Suena simple y suena raro, así que déjeme desarmarlo.</p>
+
+            <div class="sub">Por qué preguntar no sirve</div>
+
+            <p class="line">«¿Alguna novedad?» es la pregunta más inútil que existe en una operación.</p>
+            <p class="line">No porque esté mal formulada. Porque el que responde ya sabe cuál es la respuesta correcta, y la respuesta correcta es «no, todo bien».</p>
+            <p class="line">Piénselo desde el otro lado. Su analista tiene un problema. Chiquito todavía. Si se lo cuenta hoy, va a tener que explicar por qué pasó, va a quedar como el que trae líos, y probablemente le van a pedir que lo resuelva él mismo. Si se queda callado, hay una posibilidad real de que el problema se arregle solo.</p>
+            <p class="line">No es cobardía. Es aritmética. Y del lado de él, la aritmética da callarse.</p>
+            <p class="line">Y si ya lo intentó una vez y le fue mal, la cuenta ni siquiera hay que hacerla. El que se quema con leche ve una vaca y llora.</p>
+            <p class="line">Basta con que <strong>una</strong> persona traiga un problema y salga regañada. Una. Usted no acaba de corregir a alguien: acaba de entrenar a toda la sala, porque los demás estaban mirando. Y esa clase no se le olvida a nadie.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Entonces usted pregunta, le dicen que todo bien, y usted se va tranquilo. Y aquí está lo peligroso: usted no se quedó sin información. Usted recibió información. Recibió un «todo bien» y lo archivó como si fuera un dato.</p>
+
+            <div class="remate">El silencio no es ausencia de información. Es información que ya fue procesada por alguien más, y que llegó a usted con la parte incómoda quitada.</div>
+
+            <div class="sub">Lo que sí se puede contar</div>
+
+            <p class="line">Por eso la recomendación no es preguntar mejor. Es medir otra cosa.</p>
+            <p class="line">Siéntese este viernes y responda una sola pregunta, con número: en las últimas cuatro semanas, ¿cuántas veces alguien de su equipo le trajo un problema que usted no sabía que existía?</p>
+            <p class="line">No una queja. No un pedido de vacaciones. Un problema real, del trabajo, que usted no había visto.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si el número es cero, usted no tiene un equipo tranquilo. Tiene un equipo que decidió que no vale la pena.</p>
+            <p class="line">Y si el número venía bajando —si hace seis meses le llegaban tres al mes y ahora le llega uno cada tanto— eso no es que la operación esté mejorando. Puede ser exactamente lo contrario, y ahora les cuento por qué lo sé.</p>
+
+            <div class="sub">El estudio que salió al revés</div>
+
+            <p class="line">Finales de los años noventa. Una investigadora de Harvard, Amy Edmondson, está estudiando equipos de enfermería en hospitales. La pregunta es de las que uno creería obvias: ¿los equipos que funcionan mejor cometen menos errores?</p>
+            <p class="line">Ella esperaba que sí. Todo el mundo esperaba que sí.</p>
+            <p class="line">Los datos dijeron lo contrario. <strong>Los equipos mejor calificados reportaban MÁS errores.</strong> No menos. Más.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y ahí es donde la investigación se pone seria, porque uno con ese resultado puede hacer dos cosas. Puede concluir que los buenos equipos son un desastre —que es absurdo pero es lo que dice el número si uno lo lee literal— o puede preguntarse si está midiendo lo que cree que está midiendo.</p>
+            <p class="line">Edmondson se preguntó lo segundo. Y la respuesta fue que los mejores equipos no cometían más errores. Estaban dispuestos a hablar de ellos.</p>
+
+            <div class="dato">
+                <div class="dato-label">El hallazgo, dicho como le sirve a usted</div>
+                <p class="line"><strong>Su tablero de errores no mide cuántos errores ocurren. Mide cuántos errores la gente se atreve a reportar.</strong> Son dos cosas distintas y se mueven en direcciones opuestas: mientras más miedo hay, más limpio se ve el tablero.</p>
+            </div>
+
+            <p class="line">Deje que eso aterrice, porque tiene una consecuencia práctica bastante fea.</p>
+            <p class="line">Si usted llega a un área nueva y encuentra los indicadores de incidentes impecables, hay dos explicaciones posibles y ninguna se puede descartar desde el escritorio. Una es que la operación está fina. La otra es que reportar ahí se paga caro.</p>
+            <p class="line">Y las dos se ven exactamente igual en el reporte.</p>
+            <p class="line">Ojos que no ven, corazón que no siente. Uno lo dice como consuelo, para no amargarse con lo que no puede controlar. En una operación no es consuelo: es el diagnóstico, y es malo. El corazón no siente porque los ojos ya dejaron de ver — y alguien tuvo que taparlos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Por eso la recomendación de hoy no es «genere confianza», que no significa nada y no se puede hacer un lunes. Es contar. Contar cuántas malas noticias suben, tratar ese número como un indicador de la operación, y desconfiar cuando esté demasiado bonito.</p>
+            <p class="line">Ahora, si esto fuera solamente un consejo de gestión, se acabaría aquí y el episodio duraría ocho minutos. El problema es lo que pasa cuando ese número llega a cero y nadie se dio cuenta.</p>
+            <p class="line">Y para eso les tengo tres casos. El primero le costó a una empresa el mercado entero. El último costó setenta y dos vidas, y estaba advertido por escrito, con fecha, siete meses antes.</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">2</span><span class="segment-title">La cuenta que hace su equipo</span><span class="segment-time">9:00 – 16:30</span></div>
+            <div class="nota">Caso 1 — plata, no vidas. Tono narrativo pero seco: es una empresa que hizo todo lo que un manual diría y aun así no se enteró. La recomendación tejida (el paper) va al final, sin anunciarse.</div>
+
+            <p class="line">2007. Nokia es el fabricante de celulares más grande del mundo y no está ni cerca de tener competencia seria. Cuatro de cada diez teléfonos del planeta son de ellos.</p>
+            <p class="line">Ese mismo año sale el primer iPhone.</p>
+            <p class="line">Seis años después, Nokia le vende su negocio de teléfonos a Microsoft y desaparece del mercado que había inventado.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">La explicación fácil, la que uno oye en cualquier presentación, es que Nokia no vio venir el smartphone. Que se durmieron.</p>
+            <p class="line">Es falsa. Y es cómoda, por eso se repite.</p>
+            <p class="line">Nokia tenía prototipos de pantalla táctil años antes del iPhone. Tenía ingenieros diciendo que su sistema operativo no iba a aguantar. Tenía la información. Toda.</p>
+            <p class="line">Lo que no tenía era esa información arriba.</p>
+
+            <div class="sub">Lo que encontraron los investigadores</div>
+
+            <p class="line">Dos investigadores, Timo Vuori y Quy Huy, se metieron a averiguar qué había pasado por dentro. Entrevistaron a decenas de personas de todos los niveles de la empresa: ingenieros, mandos medios, altos directivos.</p>
+            <p class="line">Y lo que reconstruyeron no es una historia de ceguera. Es una historia de filtros.</p>
+            <p class="line">Los de arriba tenían miedo. Miedo de los competidores, de los accionistas, de perder la posición. Y ese miedo lo descargaban hacia abajo, en forma de exigencia y de impaciencia.</p>
+            <p class="line">Los del medio también tenían miedo, pero de otra cosa. No de Apple. De sus propios jefes.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Uno de esos mandos medios lo dijo con una palabra que a mí no se me ha ido de la cabeza desde que la leí. Dijo que sus superiores funcionaban como <em>filtros</em> entre él y la alta dirección. Porque no se atrevían a llevar malas noticias.</p>
+
+            <div class="remate">Un filtro no miente. Un filtro deja pasar solo lo que no le va a costar caro. Y a la salida, todo lo que queda es verdad — incompleta, pero verdad.</div>
+
+            <p class="line">Y ese es el punto que hace que este caso valga para usted, que probablemente no vende cuarenta por ciento de los celulares del mundo.</p>
+            <p class="line">Nadie en esa cadena mintió. Cada persona reportó cosas ciertas. Simplemente cada una, en cada escalón, quitó la parte más incómoda antes de pasar el mensaje.</p>
+            <p class="line">Multiplique eso por cuatro niveles jerárquicos y el que está arriba está recibiendo un resumen del resumen del resumen, donde ya no queda nada que duela.</p>
+            <p class="line">Y con esa información —que es real, que no es falsa— la alta dirección de Nokia llegó a una conclusión razonable: que su tecnología estaba mejor de lo que estaba, y que había tiempo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No había tiempo.</p>
+
+            <div class="sub">La parte que duele</div>
+
+            <p class="line">Y ojo con la lectura fácil, que sería «qué mal manejada esa empresa».</p>
+            <p class="line">Nokia tenía procesos. Tenía comités. Tenía revisiones de producto y reportes semanales y gente competente en todos los niveles. Tenía, seguramente, más de un directivo diciendo en una reunión que su puerta estaba abierta.</p>
+            <p class="line">Nada de eso importó, porque ninguna de esas cosas cambia la aritmética del que tiene que decidir si abre la boca.</p>
+            <p class="line">Un comité no lo protege a usted de las consecuencias de haber sido el que trajo la mala noticia. Solo le da un lugar más formal donde recibirlas.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Al mejor panadero se le quema el pan. Eso lo tenemos claro y hasta lo perdonamos: nadie espera una operación sin problemas, y el que la promete está mintiendo o no ha llegado.</p>
+            <p class="line">Pero fíjense en lo que el dicho no dice. No dice que el panadero no se dé cuenta. El pan quemado huele. Y el que está parado frente al horno lo huele primero, mucho antes que el dueño de la panadería.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">A Nokia no se le quemó el pan. A Nokia el que lo olió hizo la cuenta, decidió que avisar le salía más caro que callarse, y se quedó ahí parado viendo cómo se quemaba.</p>
+
+            <div class="remate">El problema nunca fue que se quemara el pan. Fue que el olor no llegó hasta la oficina del fondo — y no porque estuviera lejos.</div>
+            <p class="line">Este trabajo está publicado, por si a alguien le queda la duda de si esto es una anécdota bien contada. Salió en <em>Administrative Science Quarterly</em>, que es de las revistas más exigentes que hay en gestión, y se lee sorprendentemente bien para ser un paper: es básicamente gente contando, en primera persona, cómo dejaron de decir lo que sabían.</p>
+            <p class="line">Hasta aquí, el costo fue plata. Mucha, pero plata.</p>
+            <p class="line">El siguiente caso es el mismo mecanismo exacto, en una organización con más ingenieros por metro cuadrado que cualquier otra del mundo, y ahí ya no se cuenta en dólares.</p>
+        </div>
+
+        <div class="pendiente">
+            <h3>Hasta aquí va el primer tercio</h3>
+            <p>Escritas <strong>1.722 palabras</strong> de las ~5.565 del objetivo — <strong>31%</strong> (medido con <code>medir_nuevo.py</code>, no estimado). Faltan los segmentos <strong>3 (Columbia)</strong>, <strong>4 (Grenfell)</strong>, <strong>5 (el giro)</strong>, <strong>6 (qué hace usted el lunes)</strong> y <strong>7 (cierre + teaser EP.025)</strong>, más el bloque de fuentes verificadas.</p>
+            <p>Se paró aquí a propósito: el registro «ejecutivo relajado» se validó sobre una muestra de 60 palabras, y conviene confirmarlo sobre prosa real antes de escribir el 69% restante.</p>
+            <p><strong>Dichos ya colocados (3):</strong> «el que se quema con leche ve una vaca y llora» (seg. 1, la aritmética del que ya habló una vez) · «ojos que no ven, corazón que no siente» (seg. 1, el tablero limpio) · «al mejor panadero se le quema el pan» (seg. 2, Nokia — es el que sostiene el remate del segmento).</p>
+            <p><strong>Dichos planeados para lo que falta (2):</strong> «en casa de herrero, azadón de palo» en el segmento 3 —la NASA, con más ingenieros por metro cuadrado que cualquier organización del mundo, y la información sin moverse— y «no hay peor sordo que el que no quiere oír» en el segmento 5, torcido al revés: usted <em>sí</em> quiere oír, y aun así no oye. Ese es el giro del episodio.</p>
+            <p><strong>Techo: 5 dichos en todo el episodio</strong>, uno por segmento como máximo y ninguno en el cierre. Ver la regla en <code>guion-style-btq.md</code> § Dichos.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="gold">BEHIND THE QUEUE · EP.024</div>
+        <p>Guion de trabajo — borrador parcial, 2026-08-01. Carril Oficio de Jefe. Esqueleto E (acción primero). Dimensionado a 148 wpm con factor de expansión +13%.</p>
+    </footer>
+
+</div>
+</body>
+</html>
