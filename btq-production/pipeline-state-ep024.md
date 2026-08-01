@@ -94,12 +94,23 @@ tintas exactas de marca. Fuente sin cuantizar: `r6s2404_00001_.png`. Alterna: `r
   temática de maquinaria chocaba con la identidad. Eso último destapó que el cuerpo de
   `brand-constants.md` llevaba una semana desactualizado.
 
-**Pendiente de artwork:**
-- [ ] **Decidir si es la portada de EP.024 o va a redes.** Todo lo demás depende de esto.
-- [ ] Componer la tipografía encima con `portada-compose.py` — marcado `MUERTO`, revivido solo
-      para este episodio. Nunca se ha corrido con esta ilustración; puede necesitar ajuste.
-- [ ] Las tres proporciones. La ilustración es **cuadrada**: 9:16 y 16:9 necesitan
-      recomposición, no recorte — en 16:9 los monos quedan cortados arriba y abajo.
+**Artwork CERRADO 2026-08-01.** Andy confirmó que va de portada, no a redes.
+
+**Entregables:** `E:\AI\outputs\BTQ-EP024\` — `EP024-COVER-1x1.png` (3000x3000),
+`-9x16.png` (1620x2880), `-16x9.png` (2560x1440), más contrapruebas de 300 y 96 px, la
+ilustración base y la fuente sin cuantizar. `titulo.txt` con el string horneado.
+
+- **Composición:** la ilustración NO llena el cuadro. Se recorta al contenido, se le quita el
+  14% superior (solo brazos entrando) y se encaja entre el 25,5% y el 73,5% de la altura. Sin
+  eso, el kicker `GESTIÓN · CALIDAD · LIDERAZGO` caía sobre la cabeza del primer mono y el
+  degradado inferior griseaba las patas. Las tres proporciones se recomponen, no se recortan.
+- **Legibilidad a 96 px verificada:** el wordmark se lee y el concepto —tres figuras con manos
+  naranja tapándolas— se entiende. El título no se lee a ese tamaño; es el intercambio aceptado
+  al ir con ilustración en vez de tipografía pura.
+- **Bug encontrado y corregido:** `portada-compose.py` dimensiona el wordmark como fracción de
+  la ALTURA, así que en 9:16 «THE QUEUE» se salía del cuadro. Se creó
+  `comfyui/templates/portada-compose-ratios.py` — derivado, con el wordmark achicado hasta caber
+  en el ANCHO. El original marcado `MUERTO` no se tocó.
 
 ## ⚠️ Assets obsoletos que NO se pueden reciclar
 
