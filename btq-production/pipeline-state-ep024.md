@@ -33,10 +33,10 @@ Artifact: https://claude.ai/code/artifact/9a5078a8-3388-4582-97b9-48a71bc7851c
   resto del episodio la justifica. 9 segmentos.
 - **Registro: ejecutivo relajado** (decisión de Andy 2026-08-01) — frases cortas, cero floritura
   literaria, el golpe lo da el dato.
-- **5.162 palabras escritas ≈ 39,4 min** a 148 wpm con el factor +13% del esqueleto nuevo.
-  ⚠️ **Sigue ~250 palabras corto** del piso de 40 min del estándar.
-- **Compuertas medidas** con el script de conteo, no estimadas: aplicable **27,5%** (exige ≥25%)
-  arrancando en el **2,9%** del guion (exige <60%).
+- **5.405 palabras escritas ≈ 41,3 min** a 148 wpm con el factor +13% del esqueleto nuevo.
+  ✅ **Cruzó el piso de 40 min** el 2026-08-01.
+- **Compuertas medidas** con el script de conteo, no estimadas: aplicable **29,3%** (exige ≥25%)
+  arrancando en el **2,7%** del guion (exige <60%).
 - **5 dichos, uno por segmento, todos torcidos** (§ Dichos): leche/vaca · panadero · tapar el sol
   · el sordo negado · ojos que no ven. Segmentos 5 y 8 sin dicho, a propósito.
 
@@ -60,11 +60,24 @@ Dato duro del mundo del oyente: **Edmondson 1999** — los mejores equipos repor
 
 ## ⚠️ Pendientes antes de grabar
 
-- [ ] **Expandir ~250 palabras** para cruzar el piso de 40 min.
-- [ ] **Abrir las fuentes primarias.** Ninguna se ha abierto; todo está corroborado entre
-      secundarias. Faltan: informes de la Contraloría (Reficar e Hidroituango), informe técnico
-      del colapso de Space, fallo del Tribunal Administrativo de Antioquia, post original del
-      Grenfell Action Group (la URL que se intentó dio 404) y el paper de Edmondson.
+- [x] ~~Expandir ~250 palabras~~ — **hecho 2026-08-01**, 5.405 palabras = 41,3 min. Lo que
+      expandió no fue relleno: fueron los dos hallazgos de la pasada de verificación.
+- [x] ~~Verificar Edmondson y Nokia~~ — **hecho, y los dos traían error**:
+      · **Nokia:** el guion decía «cuatro de cada diez teléfonos del planeta» en 2007. Gartner da
+      **37,8% en el año completo**; el 40% se cruzó solo en el **cuarto trimestre**. Corregido.
+      · **Edmondson:** el hallazgo de los errores es de **1996** (*Journal of Applied Behavioral
+      Science*), no del paper de 1999 en ASQ, que es donde nombra la seguridad psicológica.
+      Estaba mal atribuido. Corregido, y de paso el guion ganó el mecanismo real: las unidades
+      que reportaban más eran aquellas donde las enfermeras confiaban entre sí.
+- [x] ~~Space~~ — **hecho, y apareció el mejor dato del episodio**: la torre cayó **mientras una
+      cuadrilla reforzaba una columna**, y **10 de los 12 muertos eran esos trabajadores**. La
+      organización sí respondió a la advertencia; la respuesta misma mató gente. Añadido al
+      segmento 4. Sentencia de 2022 del Tribunal Administrativo de Antioquia: >40.000 millones
+      de pesos contra municipio, Lérida CDO, aseguradora y curadores urbanos.
+- [x] ~~URL del post de Grenfell~~ — confirmada:
+      `grenfellactiongroup.wordpress.com/2016/11/20/kctmo-playing-with-fire/`
+- [ ] **FALTAN por abrir, y son las de más riesgo:** los informes de la Contraloría sobre Reficar
+      e Hidroituango. Todo lo de esos dos casos sigue corroborado solo entre secundarias.
 - [ ] **Conciliar las cifras de Reficar.** Circulan ~USD 997 millones (~$2,9 billones), USD 2.879
       millones (~$8,5 billones) y USD 6.080 millones, y **son cosas distintas** — fallo de
       detrimento vs. daño detectado vs. monto del proceso. El guion **no dice ninguna**, a
