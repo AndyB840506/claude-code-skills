@@ -82,15 +82,64 @@ que rehacerla.
 > **`QUEUE` va en Señal `#FF3D00`** — la palabra *es* la señal. No hay objeto que interpretar.
 > Verificado legible a 300 y 96 px; avatar legible a 48 px.
 >
-> Lo de abajo (escena, prompts, upscale) queda como **registro** de la etapa de objeto y sigue
+> ~~Lo de abajo (escena, prompts, upscale) queda como **registro** de la etapa de objeto y sigue
 > aplicando a las **quote cards**, que sí llevan escena. Si Andy quiere llevarlas también a
-> tipografía pura, es una decisión aparte que no se ha tomado.
+> tipografía pura, es una decisión aparte que no se ha tomado.~~
+>
+> **CORREGIDO 2026-08-01 — este párrafo era falso y llevaba una semana mandando mal.** Las quote
+> cards **también** pasaron a tipografía pura el mismo 2026-07-25. Lo dice el propio generador,
+> `comfyui/templates/quote-card-compose.py`: *«antes cada card llevaba una escena renderizada en
+> la mitad derecha. Eso era v3 y sobrevivió por descuido al giro a tipografía pura — generaba
+> anillos vetados, fondos de estudio blancos y una ronda de iteraciones por card. La cita ES el
+> contenido; no necesita ilustración»*. **Gana el código, que es lo que corre.** Detectado al
+> proponer artwork con escena para EP.024 apoyándose en este párrafo.
+>
+> **Estado real: BTQ no tiene hoy ningún asset con escena renderizada.** Portada de episodio,
+> portada de show, avatar, banner y quote cards son todos tipografía determinista con PIL. El
+> bloque de escena de abajo queda como **registro histórico**, sin destinatario vigente.
 
-**BTQ = el piso de operación como cuarto de máquinas.** Grafito y acero como mundo, luz plana de
+> **EXCEPCIÓN PUNTUAL — EP.024, y solo EP.024 (2026-08-01).** Decisión de Andy: la portada de
+> ese episodio vuelve a llevar **escena renderizada**, con el concepto de los tres monos
+> —«no ver, no oír, no hablar»— torcido para que las manos que los tapan **vengan desde fuera
+> del cuadro**, de modo que la imagen diga la tesis del episodio (alguien puso el precio de
+> hablar) y no la que el episodio demuele (ignorancia voluntaria).
+>
+> - **No descongela la dirección.** Se le señaló el costo —la puerta se cerró el 2026-07-25 tras
+>   seis rondas y más de veinte generaciones, con un «prefiero algo sencillo y minimalista»— y
+>   Andy confirmó que es solo para este episodio. Del EP.025 en adelante sigue la tipografía pura.
+> - **Compositor:** `comfyui/templates/portada-compose.py`, que está marcado `MUERTO — NO USAR`.
+>   Se revive **únicamente** para esta corrida; la marca no se quita.
+> - Aplican íntegras las reglas 1-7 de abajo, en especial el veto de círculos —que con Z-Image a
+>   `cfg=1.0` se resuelve construyendo la escena sin motivo redondo, no prohibiéndolo— y el veto
+>   de chibi/cartoon, que en este concepto es riesgo alto.
+
+> ⚠️ **TODO LO QUE SIGUE ES REGISTRO HISTÓRICO, NO INSTRUCCIÓN VIGENTE** (marcado 2026-08-01).
+> El giro a tipografía pura del 2026-07-25 se corrigió **solo en el encabezado** de esta
+> sección; el cuerpo de abajo —las 7 reglas de la dirección, el bloque de escena, el upscale—
+> se quedó redactado en presente y lleva una semana leyéndose como vigente.
+>
+> **Cómo mordió:** el 2026-08-01, al armar el artwork de EP.024, se construyó un prompt desde
+> estas reglas y salió una fotografía de cuarto de máquinas —lockers, banco de trabajo,
+> luminaria cenital— que no se parece en nada a lo que el show publica. Andy lo detectó de
+> inmediato: *«la temática de maquinaria choca mucho con la identidad del programa»*. Tenía
+> razón, y la evidencia es la portada publicada de EP.023 (`E:\AI\outputs\BTQ-EP023\`):
+> **tipografía sobre vacío, sin escena, sin objeto, sin maquinaria.**
+>
+> **Lo que de verdad sigue vigente de «Sala de Máquinas» son tres cosas y ninguna es un
+> escenario:** la **paleta** (void `#0E1113`, grafito `#22262A`, cream `#F4EFE7`, señal
+> `#FF3D00`), la **tipografía** (display grotesca + kicker mono con tracking) y el **principio
+> de una sola señal**. El nombre de la dirección sobrevivió a su mundo — es una metáfora de
+> paleta, no una locación.
+>
+> **Antes de escribir cualquier prompt de imagen para BTQ, abrir la última portada publicada**
+> y no estas reglas. El generador vigente es `comfyui/templates/portada-ep-compose.py`
+> (determinista, sin modelo).
+
+~~**BTQ = el piso de operación como cuarto de máquinas.** Grafito y acero como mundo, luz plana de
 taller, y **una sola luz de señal encendida** — el naranja que en una planta significa «mire
-esto». Un objeto por episodio, nunca un collage.
+esto». Un objeto por episodio, nunca un collage.~~
 
-### Reglas de la dirección
+### Reglas de la dirección — HISTÓRICAS (era de objeto, 2026-07-25 y antes)
 
 1. **Un objeto literal del contenido del episodio**, renderizado con volumen y textura de
    material real (metal, vidrio, baquelita, tela). Nada de personas genéricas. Si una persona es
