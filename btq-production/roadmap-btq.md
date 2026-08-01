@@ -20,8 +20,20 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.021 | Los Simpson — 30 años en el aire: cómo evitar el burnout de un equipo a largo plazo | publicado — https://open.spotify.com/episode/0VH2eMppsNMBl3JqTEq4T0 |
 | EP.022 | Pilar SEO — Costo de mala calidad en call center (Philip Crosby, "Quality Is Free", 1979) — ángulo P&L: cuánto cuesta NO invertir en calidad | publicado — https://open.spotify.com/episode/6ewMTUO0FGNxfIMS0u55Yu |
 | EP.023 | Pilar SEO — el Efecto Hawthorne en medición del desempeño (Elton Mayo, estudios Western Electric, 1920s; reanálisis de Levitt & List 2011) | publicado — https://open.spotify.com/episode/3FQOeIT8bNTakHNGgBhMMR |
-| EP.024 | `Por qué su mejor empleado se vuelve un mal jefe: el Principio de Peter` (Peter y Hull, 1969 + Benson/Li/Shue, QJE 2019) | **guion aprobado 2026-07-28** — `launch-assets/EP024-peter-guion.html`, listo para grabar. **Primer título con la fórmula invertida** |
-| EP.025 | Ley de Little (John D. C. Little, 1961; teoría de colas) — **título por definir con la fórmula nueva**: el problema es «por qué su cola no baja / por qué poner más gente no la baja» | en roadmap — tema elegido 2026-07-28 |
+| EP.024 | **Oficio de Jefe #1** — «Mi puerta siempre está abierta»: por qué nadie le cuenta los problemas a tiempo | en roadmap — tema fijado 2026-08-01. **Sourcing pendiente**: sin 2-3 casos nombrados con consecuencias documentadas, el tema no procede |
+| EP.025 | Oficio de Jefe #2 — tema por definir | en roadmap |
+| EP.026 | Oficio de Jefe #3 — tema por definir | en roadmap |
+| EP.027 | **Pilar SEO** — `Por qué su mejor empleado se vuelve un mal jefe: el Principio de Peter` (Peter y Hull, 1969 + Benson/Li/Shue, QJE 2019) | guion aprobado 2026-07-28 y **grabado 2026-07-31** — `launch-assets/EP024-peter-guion.html`. **Reubicado desde EP.024 el 2026-08-01** (ver abajo) |
+| EP.028 | Oficio de Jefe #4 — tema por definir | en roadmap |
+| EP.029 | Oficio de Jefe #5 — tema por definir | en roadmap |
+| EP.030 | Oficio de Jefe #6 — tema por definir | en roadmap |
+| EP.031 | **Pilar SEO** — Ley de Little (John D. C. Little, 1961; teoría de colas). El show le debe este tema a su propio nombre | en roadmap — **carril decidido 2026-08-01: pilar SEO**, con teórico nombrado y fórmula, no reencuadrada como problema. Título por definir con la fórmula invertida |
+
+> **Ley de Little — decidida como pilar SEO (2026-08-01).** Era EP.025 bajo el roadmap
+> anterior. Se evaluó reencuadrarla como episodio de Oficio de Jefe («Póngale más gente»:
+> por qué la cola no baja) y **Andy escogió mantenerla en el carril teórico**. El teaser que
+> la anunciaba se grabó dentro del EP.024 de Peter, así que la promesa **no está publicada**
+> y no obliga a ninguna fecha.
 
 > **EP.024 — por qué este tema** (decisión de Andy, 2026-07-25). Continúa directamente el cierre
 > de EP.023, que preguntó literalmente «¿a quién ascendió? ¿a quién no le renovó?», y cumple el
@@ -39,6 +51,67 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 **Audiencia núcleo (verificada):** hombre 35–44 (43% del total; 56% sumando todo el rango),
 Colombia 70% + EE.UU. 20%, escucha en Android y ~15% en desktop Windows (en el trabajo).
 Perfil: gerente/supervisor de ~40 años.
+
+### Rotación 3+1 y carril «Oficio de Jefe» (2026-08-01) — SUPERA el giro del 2026-07-21
+
+**Decisión de Andy**, tomada después de grabar el EP.024 de Peter y sentirlo «demasiado
+teórico, como una reseña y un análisis, sin nada memorable que rescatar».
+
+**Lo medido que respalda la decisión** (sobre el guion grabado, 5.427 palabras habladas):
+
+| Tramo | Palabras | % |
+|---|---|---|
+| Montaje: historia del libro + metodología del paper (segmentos 0-3) | 2.072 | 38% |
+| **Contenido aplicable** (único tramo accionable, arranca en el minuto ~38 de 45) | **753** | **13,9%** |
+
+Los tres casos nombrados eran Barings (1995), Antietam (1862) y *The Office* (ficción):
+ninguno es una operación contemporánea. El formato «teórico nombrado + su paper» llevaba
+cuatro episodios seguidos (Crosby, Hawthorne, Peter, y Little iba de quinto).
+
+**Regla nueva — rotación 3+1.** Reinstaura la cadencia de «un pilar SEO al mes» que el giro
+del 2026-07-21 había reemplazado, pero el carril acompañante ya **no es pop-culture**:
+
+1. **Tres episodios de Oficio de Jefe**, luego **uno de pilar SEO**. Se cuenta desde EP.024.
+2. **Oficio de Jefe** = el sujeto del episodio es un **problema operativo recurrente**, no
+   una teoría. Se titula con la frase que el oyente ya usa («Mi puerta siempre está abierta»,
+   «Póngale más gente»). La teoría entra solo si sostiene un punto concreto, y puede no tener
+   apellido famoso. Sigue siendo evergreen y buscable — la gente busca el problema, no el
+   nombre del teórico.
+3. **Pilar SEO** = lo que se venía haciendo desde EP.020: teórico nombrado, paper citable,
+   fórmula de título invertida. **No se retira nada de su ADN ni de sus reglas**; solo deja de
+   ser todos los episodios y pasa a ser uno de cada cuatro.
+4. **El ADN de casos es intocable en los DOS carriles:** 2-3 casos reales y nombrados con
+   consecuencias severas y verificables. Un episodio de Oficio de Jefe sin casos duros no
+   queda «más operativo», queda en opinión — que es peor que teórico.
+5. **La columna de fuentes del carril nuevo no es el paper**, porque no lo hay: son
+   investigaciones de incidentes, hallazgos de reguladores, expedientes judiciales y
+   post-mortems públicos. Se verifican con el mismo estándar.
+
+**El nombre «Oficio de Jefe» y dónde se publica (decidido 2026-08-01).** Se escogió sobre
+`Manejo de Personal` (más volumen de búsqueda pero genérico y sin voz), `La Operación`
+(buen nombre, mal keyword — compite con cirugía y con operativos policiales) y
+`Frases de Reunión` (memorable, no lo busca nadie). Gana porque carga **«jefe»**, que es a la
+vez lo que el oyente escribe en el buscador y con lo que se identifica, y porque hace eco del
+remate ya grabado en el episodio de Peter: *«el ascenso no es un premio, es un cambio de
+oficio»*.
+
+- **NO va como prefijo en el título del episodio.** La fórmula invertida ya usa ese espacio
+  para el problema en las palabras del oyente, que es la keyword que hoy funciona; un prefijo
+  se la come. El título de un episodio de Oficio de Jefe es solo la frase del problema.
+- **Va donde Spotify sí indexa:** como agrupación de serie/temporada y en la descripción del
+  show. Un nombre de carril que solo vive en este roadmap no lo ve nadie y no ayuda al
+  algoritmo.
+- **Esto resuelve el pendiente de la línea de abajo** («No existía sistema de temporadas —
+  si el corte va a significar algo para el oyente, hay que crearlo», 2026-07-25). El corte de
+  temporada del alcance macro y el arranque de este carril caen en el mismo punto: EP.024.
+  **Pendiente de ejecución:** montar la agrupación en Spotify for Podcasters y actualizar la
+  descripción del show en `metadata-v4-macro.md`.
+
+**Sobre la grabación de EP.024 (Peter):** no se descarta. El tema se reubicó a EP.027 como el
+pilar SEO de la primera vuelta. **Si se reusa el audio, hay que regrabar dos tramos**: el
+segmento 0 dice «episodio 24» y el segmento 7 anuncia la Ley de Little como el episodio
+siguiente. Queda abierto si el guion se reusa tal cual (13,9% aplicable) o se reestructura
+antes — la queja de Andy fue del contenido, no solo de la frecuencia.
 
 ### Giro de alcance 2026-07-25 — de call center a gestión empresarial
 
@@ -63,7 +136,16 @@ Ley de Little (teoría de colas — el episodio que el show le debe a su propio 
 Parkinson, Principio de Peter, Ley de Brooks, Teoría de Restricciones (Goldratt), Deming,
 Herzberg, «Ruido» (Kahneman), efecto Ringelmann.
 
+> **Precisión 2026-08-01:** esta lista es el repertorio del **carril pilar SEO**, o sea 1 de
+> cada 4 episodios. No es la lista de temas del show. Leerla como tal fue parte de lo que
+> volvió el roadmap enteramente teórico: los 4 episodios previos a EP.024 salieron de aquí.
+
 ### Giro estratégico 2026-07-21 — BTQ pasa a 100% pilar SEO
+
+> ⚠️ **SUPERADO el 2026-08-01 por la rotación 3+1** (arriba). Lo que sigue se conserva como
+> registro de por qué se tomó y de la evidencia que lo sostuvo. **Lo que sigue vigente:** el
+> retiro de la cultura pop y todas las reglas de titulación y de ADN de los episodios pilar
+> SEO. **Lo que dejó de mandar:** que TODOS los episodios sean pilar SEO — ahora es 1 de cada 4.
 
 **Decisión de Andy:** retirar la cultura pop del roadmap de forma permanente (no
 caso por caso). Lectura de Andy sobre el desempeño reciente: EP.019 (Gladiator) y
@@ -73,8 +155,10 @@ sí funcionó muy bien — señal más fuerte y más reciente que la nota de "re
 comparaba EP.012 Queen vs. EP.015 Solid Snake dentro de la era pop-culture, sin
 todavía EP.019/EP.021 en la muestra). De aquí en adelante:
 
-- **Todo episodio de BTQ es pilar SEO** — evergreen, keyword-first, sin referente pop.
-  Reemplaza la regla anterior de "un pilar SEO al mes" y la rotación con pop-culture.
+- ~~**Todo episodio de BTQ es pilar SEO** — evergreen, keyword-first, sin referente pop.
+  Reemplaza la regla anterior de "un pilar SEO al mes" y la rotación con pop-culture.~~
+  **RETIRADO 2026-08-01:** vuelve la cadencia de 1 pilar SEO cada 4, con Oficio de Jefe
+  —no pop-culture— como carril acompañante. Lo demás de esta lista sigue vigente.
 - **Título con el nombre del creador de la ley/teoría** cuando el episodio ancla en
   una con autor identificable (regla ya fijada en `guion-style-btq.md` tras el
   feedback de Andy sobre EP.020/EP.022, que no lo hicieron) — ej. "La Ley de
@@ -89,8 +173,11 @@ todavía EP.019/EP.021 en la muestra). De aquí en adelante:
 
 **Reglas vigentes para elegir y titular episodios (post-giro):**
 
-1. **Pilar SEO siempre** — título keyword-first, sin referente pop, anclado en una
-   métrica, ley o teoría real y citable (mismo patrón que EP.020 y EP.022). Razón
+1. ~~**Pilar SEO siempre**~~ — **ajustado 2026-08-01: keyword-first siempre, pilar SEO 1 de
+   cada 4.** Todo episodio sigue siendo evergreen, buscable y sin referente pop; lo que cambia
+   es de dónde sale la keyword. En pilar SEO viene de la métrica, ley o teoría citable (mismo
+   patrón que EP.020 y EP.022); en Oficio de Jefe viene del **problema tal como el oyente lo
+   busca**. La razón de fondo no se toca — el título tiene que ganarse el buscador. Razón
    original que sigue vigente: la adquisición de oyentes nuevos cayó de ~30/mes
    (marzo) a ~4/mes (junio) y EP.01 sigue siendo #1 all-time en consumo gracias a
    Search (193 de 245 impresiones) — los episodios pop-culture ganaban el
@@ -116,8 +203,9 @@ prevención.
 
 ### Reglas retiradas (pop-culture, en pausa desde 2026-07-21)
 
-Documentadas por si el roadmap reabre este carril más adelante — no aplican mientras
-el giro a 100% pilar SEO esté vigente.
+Documentadas por si el roadmap reabre este carril más adelante. **Siguen sin aplicar tras la
+rotación 3+1 del 2026-08-01:** el carril acompañante del pilar SEO es Oficio de Jefe, no
+pop-culture. La cultura pop sigue retirada por la evidencia de EP.019 y EP.021.
 
 1. **Referentes 80s/90s primero** — rock clásico, rock en español, cine de esa era.
    Evidencia parcial (2026-06-12, muestra chica): EP.012 Queen = 40 plays (mejor de

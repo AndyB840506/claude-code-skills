@@ -35,9 +35,19 @@ hecho sobre un comentario ambiguo tocó revertirse). Si el usuario dice algo que
 orden actual, repíteselo en numeración explícita y espera el "sí" antes de editar.
 
 **BTQ:** antes de confirmar el candidato, revisa la sección "Estrategia editorial"
-de `roadmap-btq.md` (referentes 80s/90s primero, un pilar SEO al mes, fórmula de
-título con keyword, cadencia ≥7 días) y verifica que el episodio propuesto cumpla.
-Si el roadmap lleva 3–4 pop-culture seguidos sin pilar SEO, propónselo al usuario.
+de `roadmap-btq.md` y verifica que el episodio propuesto cumpla. **Rotación vigente
+(2026-08-01): tres episodios de Oficio de Jefe y el cuarto de pilar SEO.**
+
+- **Oficio de Jefe:** el sujeto es un problema operativo recurrente, titulado con la
+  frase que el oyente ya usa («Mi puerta siempre está abierta»). La teoría entra solo si
+  sostiene un punto; puede no tener autor famoso. Fuentes: investigaciones de incidentes,
+  reguladores, expedientes, post-mortems — **no un paper**.
+- **Pilar SEO:** teórico nombrado + paper citable. El repertorio de teorías del roadmap
+  (Parkinson, Brooks, Goldratt, Deming…) es de ESTE carril, no la lista de temas del show.
+- Cuenta en qué punto de la rotación va el roadmap y dilo al proponer. Si ya van tres de
+  Oficio de Jefe, el siguiente es pilar SEO.
+- El carril **pop-culture sigue retirado** (evidencia de EP.019 y EP.021) — no lo propongas.
+- Sigue vigente: fórmula de título con keyword y **cadencia ≥7 días**.
 
 ---
 

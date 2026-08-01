@@ -9,10 +9,21 @@ o principio real de gestión, bajado al piso con casos verificados. La chispa no
 entre hosts (no hay co-host) — viene del ritmo hablado, la escena, el dato que sorprende, el humor
 y la calidez.
 
-> **Carril vigente: 100% pilar SEO** (giro del 2026-07-21). El carril **pop-culture** —conectar un
-> referente de música, cine o juegos con la lección— está **en pausa**, no retirado: las reglas que
-> hablan de «el referente» siguen escritas porque sirven si vuelve, pero **no aplican hoy**. Fuente:
-> `roadmap-btq.md` § Reglas retiradas.
+> **Carriles vigentes: rotación 3+1** (fijada 2026-08-01, supera el «100% pilar SEO» del
+> 2026-07-21). Tres episodios de **Oficio de Jefe** —el sujeto es un problema operativo
+> recurrente, titulado con la frase que el oyente ya usa— y luego uno de **pilar SEO** —teórico
+> nombrado, paper citable—. Todo lo que este documento dice sobre pilar SEO sigue vigente **para
+> ese 1 de cada 4**; nada se retira. Lo que cambió es que dejó de ser todos los episodios.
+>
+> **Lo que NO cambia en ninguno de los dos carriles:** el ADN de 2-3 casos reales nombrados con
+> consecuencias severas y verificables, la voz, el título buscable y el cierre canónico. En sala
+> de máquinas la columna de fuentes no es un paper —no lo hay— sino investigaciones de
+> incidentes, hallazgos de reguladores, expedientes judiciales y post-mortems públicos, con el
+> mismo estándar de verificación.
+>
+> El carril **pop-culture** —conectar un referente de música, cine o juegos con la lección— sigue
+> **en pausa**, no retirado: las reglas que hablan de «el referente» siguen escritas porque sirven
+> si vuelve, pero **no aplican hoy**. Fuente: `roadmap-btq.md` § Rotación 3+1.
 
 ---
 
@@ -98,18 +109,43 @@ ejecución cambian siempre; esto es el ADN que debe estar presente, no el guion 
 2. **Los casos escalan en gravedad** a lo largo del episodio — el primero (negocios/plata),
    el de re-enganche el más grave (vidas humanas), el de Referencias Cruzadas en un mundo
    totalmente distinto a los dos anteriores.
-3. **Un segmento con dato duro y verificado, específico de la industria de call center/BPO**
-   (no solo de "otro mundo") — en EP.020 fue SQM Group (correlación FCR-CSAT 1:1). Sin esto,
-   el episodio se siente teórico en vez de aplicable.
+3. **Un segmento con dato duro y verificado del MUNDO DEL OYENTE** (no solo de "otro mundo").
+   Sin esto, el episodio se siente teórico en vez de aplicable.
+   > **Reescrita el 2026-08-01.** Decía «específico de la industria de call center/BPO» —
+   > en EP.020 fue SQM Group (correlación FCR-CSAT 1:1). El giro de alcance del 2026-07-25 sacó
+   > al show del call center y **nadie reapuntó esta regla**, que quedó señalando a una
+   > industria que ya no es la del show. EP.024 (Peter) fue el primer episodio del alcance
+   > nuevo y salió sin este segmento: sus tres casos fueron Barings (1995), Antietam (1862) y
+   > *The Office* (ficción), ninguno una operación contemporánea. Andy lo describió como
+   > «demasiado teórico, como una reseña». **La regla no falló: se quedó huérfana.**
+   >
+   > El oyente verificado es gerente/supervisor de ~40 años, Colombia 70% + EE.UU. 20%.
+   > «Su mundo» es una operación de hoy con gente, turnos, metas y reportes — de cualquier
+   > industria. Un caso de 1862 puede acompañar, pero no puede ser el único anclaje.
+
+3b. **Compuerta de aplicabilidad — medida, no estimada (fijada 2026-08-01).** El tramo
+   accionable («qué hace usted el lunes») tiene que ser **≥25% de las palabras habladas** y
+   **empezar antes del 60% del episodio**. EP.024 tuvo **13,9%** y arrancó en el minuto ~38
+   de 45; ahí nació la queja. Se cuenta contando palabras de las líneas habladas por segmento,
+   no a ojo. **Y la metodología no es contenido:** EP.024 gastó 608 palabras (6,5 min) en
+   explicar por qué los investigadores escogieron vendedores y de dónde salieron los datos.
+   Eso es movimiento de reseña — el oyente necesita saber que el dato es sólido, no cómo se
+   construyó la muestra.
 4. **El giro/re-enganche al 60% no tiene que ser siempre un caso más** — puede ser (como en
    EP.023 con el reanálisis de Levitt & List 2011) una vuelta de tuerca sobre el propio
    material ya presentado. Es un diferenciador válido, no una desviación del ADN, siempre que
    los 2-3 casos nombrados con consecuencias severas también estén presentes en el episodio.
 
-**Antes de dar por buena la arquitectura de un pilar SEO nuevo**, verificar contra esta
-lista: ¿hay al menos 2 casos reales y nombrados con consecuencias severas? ¿escalan? ¿hay un
-dato duro propio de call center? Si falta alguno, buscarlo antes de escribir el guion
+**Antes de dar por buena la arquitectura de un episodio nuevo — de CUALQUIERA de los dos
+carriles**, verificar contra esta lista: ¿hay al menos 2 casos reales y nombrados con
+consecuencias severas? ¿escalan? ¿hay un dato duro del mundo del oyente? ¿el tramo aplicable
+llega al 25% y arranca antes del 60%? Si falta alguno, buscarlo antes de escribir el guion
 completo — no agregarlo después como parche.
+
+> **Alcance ampliado 2026-08-01.** Este ADN se fijó para el carril pilar SEO, pero los puntos
+> 1, 2, 3 y 3b aplican **igual a los episodios de Oficio de Jefe**. Lo único propio del pilar
+> SEO es el teórico nombrado y el paper citable. Un episodio operativo sin casos duros no queda
+> «más aterrizado»: queda en opinión, que es peor que teórico.
 
 ---
 

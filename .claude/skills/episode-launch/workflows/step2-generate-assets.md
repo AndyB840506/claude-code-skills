@@ -12,11 +12,15 @@ either: ask the user to confirm before using the corrected version.
 
 ## A · Spotify SEO
 
-**Episode title (fórmula vigente — actualizada 2026-07-25 con el giro macro):**
-`EP.XX — [Teórico o ley]: [frase llana con keyword de gestión]`
-- **El teórico o la ley van primero**, no un referente pop: el roadmap es 100% pilar SEO desde
-  2026-07-21 y el carril pop-culture está en pausa. Regla completa y precedentes en
-  `btq-production/guion-style-btq.md` § Título.
+**Episode title (fórmula vigente — INVERTIDA el 2026-07-28):**
+`EP.XX — [El problema, dicho como lo diría el oyente]: [el teórico o la ley que lo explica]`
+- **El problema va primero; el teórico va detrás, como autoridad.** Está medido contra
+  analytics del catálogo, no es gusto — la tabla de impresiones vs. minutos consumidos está en
+  `btq-production/guion-style-btq.md` § Título. *(Este archivo cargó la fórmula
+  pre-inversión hasta el 2026-08-01; si ve la versión con el teórico primero, está vieja.)*
+- **En episodios de Oficio de Jefe no hay segunda mitad**: no hay teórico que poner, así que
+  el título es solo la frase del problema. Rotación 3+1 vigente desde 2026-08-01 — tres de sala
+  de máquinas, el cuarto pilar SEO. El carril pop-culture sigue en pausa.
 - La keyword buscable NO es opcional, pero **ya no es «BPO / call center»**: el giro de alcance
   del 2026-07-25 sacó al show del techo de contact center. Usar keywords de gestión —
   *liderazgo, gestión de equipos, indicadores, calidad, medición del desempeño*. Ejemplo real
