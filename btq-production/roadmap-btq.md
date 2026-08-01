@@ -23,7 +23,7 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.024 | **Oficio de Jefe #1** — «Mi puerta siempre está abierta»: por qué nadie le cuenta los problemas a tiempo | en roadmap — tema fijado 2026-08-01. **Sourcing pendiente**: sin 2-3 casos nombrados con consecuencias documentadas, el tema no procede |
 | EP.025 | Oficio de Jefe #2 — tema por definir | en roadmap |
 | EP.026 | Oficio de Jefe #3 — tema por definir | en roadmap |
-| EP.027 | **Pilar SEO** — `Por qué su mejor empleado se vuelve un mal jefe: el Principio de Peter` (Peter y Hull, 1969 + Benson/Li/Shue, QJE 2019) | guion aprobado 2026-07-28 y **grabado 2026-07-31** — `launch-assets/EP024-peter-guion.html`. **Reubicado desde EP.024 el 2026-08-01** (ver abajo) |
+| EP.027 | **Pilar SEO** — `Por qué su mejor empleado se vuelve un mal jefe: el Principio de Peter` (Peter y Hull, 1969 + Benson/Li/Shue, QJE 2019) | **grabado** la noche del 2026-07-31 — `launch-assets/EP024-peter-guion.html`. **NO subido a Spotify, no programado, sin metadata publicada** (confirmado por Andy 2026-08-01). **Reubicado desde EP.024** (ver abajo) |
 | EP.028 | Oficio de Jefe #4 — tema por definir | en roadmap |
 | EP.029 | Oficio de Jefe #5 — tema por definir | en roadmap |
 | EP.030 | Oficio de Jefe #6 — tema por definir | en roadmap |
@@ -101,17 +101,28 @@ oficio»*.
 - **Va donde Spotify sí indexa:** como agrupación de serie/temporada y en la descripción del
   show. Un nombre de carril que solo vive en este roadmap no lo ve nadie y no ayuda al
   algoritmo.
-- **Esto resuelve el pendiente de la línea de abajo** («No existía sistema de temporadas —
-  si el corte va a significar algo para el oyente, hay que crearlo», 2026-07-25). El corte de
-  temporada del alcance macro y el arranque de este carril caen en el mismo punto: EP.024.
-  **Pendiente de ejecución:** montar la agrupación en Spotify for Podcasters y actualizar la
-  descripción del show en `metadata-v4-macro.md`.
+- **Esto le da una respuesta posible al pendiente de la línea de abajo** («No existía sistema
+  de temporadas — si el corte va a significar algo para el oyente, hay que crearlo»,
+  2026-07-25). El corte de temporada del alcance macro y el arranque de este carril caen en el
+  mismo punto: EP.024.
+  **Propuesta, NO aprobada todavía:** montar la agrupación en Spotify for Podcasters y
+  actualizar la descripción del show en `metadata-v4-macro.md`. Es un cambio en una plataforma
+  pública y **necesita el sí de Andy antes de tocarlo** — no hay nada urgente empujándolo,
+  porque no hay episodio publicado esperando esa agrupación.
 
 **Sobre la grabación de EP.024 (Peter):** no se descarta. El tema se reubicó a EP.027 como el
 pilar SEO de la primera vuelta. **Si se reusa el audio, hay que regrabar dos tramos**: el
 segmento 0 dice «episodio 24» y el segmento 7 anuncia la Ley de Little como el episodio
 siguiente. Queda abierto si el guion se reusa tal cual (13,9% aplicable) o se reestructura
 antes — la queja de Andy fue del contenido, no solo de la frecuencia.
+
+> **NADA DE ESTO TOCA NINGUNA PLATAFORMA** (confirmado por Andy, 2026-08-01). El episodio se
+> grabó pero **nunca se subió ni se programó**: no hay publicación que retirar, ni fecha que
+> mover, ni metadata que corregir en Spotify o YouTube. Toda esta reorganización vive en el
+> roadmap y en disco. **Lo único ya público que sí restringe el contenido** es el teaser
+> grabado dentro de EP.023, que prometió «una idea que todo el mundo repite en las reuniones»
+> y verificar «si de verdad aguanta» — eso es una restricción de guion, no una acción de
+> plataforma.
 
 ### Giro de alcance 2026-07-25 — de call center a gestión empresarial
 
