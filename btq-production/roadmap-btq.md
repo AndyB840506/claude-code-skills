@@ -20,14 +20,38 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.021 | Los Simpson — 30 años en el aire: cómo evitar el burnout de un equipo a largo plazo | publicado — https://open.spotify.com/episode/0VH2eMppsNMBl3JqTEq4T0 |
 | EP.022 | Pilar SEO — Costo de mala calidad en call center (Philip Crosby, "Quality Is Free", 1979) — ángulo P&L: cuánto cuesta NO invertir en calidad | publicado — https://open.spotify.com/episode/6ewMTUO0FGNxfIMS0u55Yu |
 | EP.023 | Pilar SEO — el Efecto Hawthorne en medición del desempeño (Elton Mayo, estudios Western Electric, 1920s; reanálisis de Levitt & List 2011) | publicado — https://open.spotify.com/episode/3FQOeIT8bNTakHNGgBhMMR |
-| EP.024 | **Oficio de Jefe #1** — «Mi puerta siempre está abierta»: por qué nadie le cuenta los problemas a tiempo | en roadmap — tema fijado 2026-08-01. **Sourcing pendiente**: sin 2-3 casos nombrados con consecuencias documentadas, el tema no procede |
-| EP.025 | Oficio de Jefe #2 — tema por definir | en roadmap |
+| EP.024 | **Oficio de Jefe #1** — `Por qué su equipo no le cuenta los problemas: seguridad psicológica` | **guion v2 escrito** 2026-08-01 — `launch-assets/EP024-puerta-abierta-guion.html`. Casos: Nokia · Reficar + Hidroituango · Space · Grenfell. Falta expandir ~250 palabras y la pasada de fuentes primarias |
+| EP.025 | **Oficio de Jefe #2** — «Llevo cuatro meses sin llenar esa vacante»: por qué el perfil que pidió no existe por ese salario | en roadmap — tema fijado 2026-08-01 (idea de Andy, de foros de LinkedIn). Ver nota abajo |
 | EP.026 | Oficio de Jefe #3 — tema por definir | en roadmap |
 | EP.027 | **Pilar SEO** — `Por qué su mejor empleado se vuelve un mal jefe: el Principio de Peter` (Peter y Hull, 1969 + Benson/Li/Shue, QJE 2019) | **grabado** la noche del 2026-07-31 — `launch-assets/EP024-peter-guion.html`. **NO subido a Spotify, no programado, sin metadata publicada** (confirmado por Andy 2026-08-01). **Reubicado desde EP.024** (ver abajo) |
 | EP.028 | Oficio de Jefe #4 — tema por definir | en roadmap |
 | EP.029 | Oficio de Jefe #5 — tema por definir | en roadmap |
 | EP.030 | Oficio de Jefe #6 — tema por definir | en roadmap |
 | EP.031 | **Pilar SEO** — Ley de Little (John D. C. Little, 1961; teoría de colas). El show le debe este tema a su propio nombre | en roadmap — **carril decidido 2026-08-01: pilar SEO**, con teórico nombrado y fórmula, no reencuadrada como problema. Título por definir con la fórmula invertida |
+
+> **EP.025 — el ángulo y por qué se giró (2026-08-01).** La idea nació de foros de LinkedIn y
+> Andy la traía en tres piezas: (a) contratar en LatAm por costo termina pidiendo requisitos
+> altos por un salario irrisorio; (b) qué le pasa a la oferta laboral cuando la gente acepta
+> esos puestos por necesidad; (c) por qué los reclutadores hoy son más exigentes y hacen
+> ghosting sin entrevistar, al revés que en la pandemia, cuando le rogaban al candidato.
+>
+> **Se giró el punto de vista, no el material.** Las tres piezas están escritas desde el
+> **candidato**, y la audiencia verificada de BTQ es el que **contrata** (gerente/supervisor
+> de ~40). El ángulo aprobado —«llevo cuatro meses sin llenar esa vacante»— conserva (a) y (b)
+> completas con el oyente como protagonista.
+>
+> **Dos banderas señaladas y pendientes de resolver al escribir:**
+> - **Evergreen:** «ahora más que nunca los reclutadores ghostean, al revés que en la pandemia»
+>   es coyuntural y el roadmap exige evergreen. La versión que aguanta es el **ciclo de poder
+>   del mercado laboral**, con la pandemia como ejemplo y no como eje. La pieza (c) entra así o
+>   no entra.
+> - **Conflicto de interés:** Andy tiene HireSignal y Kuma Talent. Un episodio sobre
+>   reclutamiento puede leerse como publicidad. **Se declara en el disclaimer de encuadre del
+>   segmento 0**, no se disimula. Decidido antes de escribir, no después.
+>
+> **Sourcing pendiente:** aplica el mismo estándar del carril — 2-3 casos nombrados con
+> consecuencias verificables. Un episodio sobre el mercado laboral sin casos duros se vuelve
+> opinión, que es peor que teórico.
 
 > **Ley de Little — decidida como pilar SEO (2026-08-01).** Era EP.025 bajo el roadmap
 > anterior. Se evaluó reencuadrarla como episodio de Oficio de Jefe («Póngale más gente»:

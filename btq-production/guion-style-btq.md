@@ -229,6 +229,41 @@ español como *fila / espera / backlog* dentro del guion.
 > Las listas de arriba son un punto de partida, no un inventario cerrado. Ante una palabra con
 > sabor local que no esté listada, aplicar la prueba del párrafo inicial.
 
+## Lo que el oyente DICE no es lo que el oyente BUSCA (fijado 2026-08-01)
+
+**El hueco, encontrado al titular EP.024.** La regla del carril Oficio de Jefe decía que el
+título va con «la frase que el oyente ya usa». Eso produjo `Mi puerta siempre está abierta`,
+que es una frase excelente y que **nadie teclea en un buscador**: es algo que un jefe *dice*
+en una reunión, no algo que *busca*. La regla, tal como estaba, permitía un título con cero
+superficie de búsqueda — justo en un show cuya adquisición depende de Search (EP.01 sigue
+siendo #1 all-time con 193 de 245 impresiones desde búsqueda).
+
+**Regla: todo título necesita al menos un término que alguien tecleé.** Las dos mitades de la
+fórmula invertida tienen trabajos distintos y ninguna es opcional:
+
+```
+EP.NN — [El problema, dicho como lo BUSCARÍA el oyente]: [el término técnico o el teórico]
+```
+
+- **La primera mitad se gana el clic** y debe estar escrita como una consulta real
+  («por qué su equipo no le cuenta los problemas»), no como una frase de reunión
+  («mi puerta siempre está abierta»). La frase de reunión no se bota: **va en el hook hablado
+  del segmento 0**, que es donde sí hace su trabajo — que el jefe se reconozca en el primer
+  segundo.
+- **La segunda mitad se gana la búsqueda** y es donde va el término establecido
+  —`seguridad psicológica`, `Ley de Little`, `efecto Hawthorne`—. **Corrige la instrucción
+  anterior** de que en Oficio de Jefe «no hay segunda mitad porque no hay teórico»: si existe
+  un término técnico buscable para el problema, va ahí, tenga o no apellido famoso.
+
+**Y si el título nombra un concepto, el AUDIO tiene que decirlo.** Poner `seguridad
+psicológica` en el título y en la descripción sin que la palabra suene nunca en el episodio es
+prometer algo que no se entrega. Verificable con un grep de las líneas habladas antes de
+aprobar — en EP.024 el término aparecía **0 veces** hasta que se detectó.
+
+**Lo que NO se puede afirmar:** no existe herramienta que dé volumen de búsqueda de Spotify.
+Cualquier set de keywords es **hipótesis a medir** contra la analítica propia, no un dato.
+Decirlo así al proponerlo.
+
 ## Dichos: se tuercen, no se citan (fijado 2026-08-01, propuesta de Andy)
 
 **El recurso.** Mezclar referencias con dichos comunes —«al mejor panadero se le quema el pan»,
