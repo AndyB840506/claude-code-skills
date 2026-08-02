@@ -2,6 +2,17 @@
 
 Generate all four blocks in a single response. Label each block clearly.
 
+**El SRT no es el audio — es un derivado, y el ASR se equivoca en las dos direcciones**
+(2026-08-01, EP.024). Ese día se le reportaron a Andy tres discrepancias «entre el guion y lo
+grabado» sacadas del SRT; al oír el audio, **dos eran errores del transcriptor y no cosas que él
+hubiera dicho**: «Grenfell» salió 5/5 veces como «Greenfield» por la pronunciación, y «2 heridas»
+salió como «12 heridas». La tercera (Nokia) sí era real. Que un error se repita en las 5
+ocurrencias **no** lo convierte en lo que se dijo: WhisperX normaliza hacia la palabra que
+conoce, así que es consistente por construcción. **Toda discrepancia detectada solo en el SRT se
+entrega marcada como no verificada, con el timestamp exacto para que un humano la oiga** — nunca
+como un hallazgo cerrado. Corregir el SRT sí es correcto y barato; el audio no se toca sin que
+Andy lo confirme de oído.
+
 **Fact-check real-world claims before finalizing (confirmed EP.019 — "Tim Collins" said
 on air for the real author Jim Collins).** Verbatim-matching the transcript only confirms
 the words were actually said; it doesn't confirm they're correct. Before publishing, scan

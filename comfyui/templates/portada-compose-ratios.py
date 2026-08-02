@@ -52,6 +52,23 @@ KICKER = "GESTIÓN  ·  CALIDAD  ·  LIDERAZGO"
 WORD = ["BEHIND", "THE QUEUE"]
 
 scene = Image.open(scene_path).convert("RGB")
+
+# Tamanos canonicos por proporcion -- los MISMOS que exige scripts/verify_assets.py.
+# Antes se componia al tamano de la escena, asi que salian portadas de 2560x1440 y
+# 1620x2880 que la compuerta rechazaba y habia que reescalar a mano cada episodio
+# (mordio el 2026-08-01 en EP.024). Se escala ANTES de componer, no despues: asi la
+# tipografia se dibuja al tamano final en vez de bajarse ya rasterizada.
+CANON = [((1, 1), (3000, 3000)), ((16, 9), (1920, 1080)), ((9, 16), (1080, 1920))]
+_w, _h = scene.size
+for (_rw, _rh), _dest in CANON:
+    if abs(_w / float(_h) - _rw / float(_rh)) < 0.01:
+        if scene.size != _dest:
+            print("escala a tamano canonico:", scene.size, "->", _dest)
+            scene = scene.resize(_dest, Image.LANCZOS)
+        break
+else:
+    print("OJO: proporcion %dx%d no esta en la tabla canonica -- la compuerta va a fallar" % (_w, _h))
+
 W, H = scene.size
 canvas = scene.copy()
 

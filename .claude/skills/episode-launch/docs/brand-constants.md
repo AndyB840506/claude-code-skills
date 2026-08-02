@@ -267,6 +267,17 @@ Copiar el archivo basta para PIL; registrarlas en HKCU solo hace falta si se qui
 En el portátil, `D:\` en vez de `E:\`. La carpeta del episodio es también donde vive el audio,
 así que la compuerta se corre con
 `python scripts/verify_assets.py EPNNN --root "E:\Podcast\BTQ\EP NN\BTQ Artwork EP NN"`.
+
+> ⚠️ **Cuando un episodio cambia de tema, hay que barrer la carpeta del EPISODIO, no solo la de
+> `E:\AI\outputs`.** El 2026-08-01 EP.024 pasó del Principio de Peter a seguridad psicológica, y
+> el barrido de ese día renombró `BTQ-EP024-PETER-OBSOLETO\` en `E:\AI\outputs` — pero
+> `E:\Podcast\BTQ\EP 24\` se quedó con **tres trampas**: el WAV y el MP3 de Peter (con el nombre
+> corto, que es el que agarra cualquier script por defecto y con una duración a 26 s de la del
+> episodio nuevo), y `BTQ Artwork EP 24\` entera con las portadas de Peter — incluido el
+> `-1x1-q92.jpg`, que es exactamente el archivo que se sube a Spotify. Ninguna se veía vieja: se
+> veían perfectas. **Al reasignar un episodio, renombrar `-OBSOLETO` el audio Y la carpeta de
+> artwork del episodio**, y verificar la identidad del audio por las tomas que cita su `.rpp`
+> (`FILE "…-<AAMMDD>_<HHMM>…"`), no por la duración ni por el nombre.
 Ojo: EP.023 **no** tiene esa carpeta —su artwork v3 murió con el giro— así que no sirve de
 patrón; el que manda es EP.022.
 
