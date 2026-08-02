@@ -1,7 +1,33 @@
 EPISODE: EP.024 (BTQ) — «Por qué su equipo no le cuenta los problemas»
-stage_a: **en curso** — guion v2 escrito 2026-08-01, artwork en selección.
-stage_b: no iniciado (grabación, transcripción, assets).
+stage_a: **cerrado** 2026-08-01 — guion v2 escrito, artwork cerrado, episodio grabado.
+stage_b: **en curso** — grabación, transcripción, MP3 y carpeta de artwork listos; falta metadata.
 stage_c: no iniciado.
+
+## Estado de producción (2026-08-01, medido)
+
+| Entregable | Ruta | Verificado |
+|---|---|---|
+| Audio máster | `E:\Podcast\BTQ\EP 24\BTQ EP 24 oficial.wav` | 41:26 · tomas `260801_1832`/`_1836` |
+| MP3 publicación | `E:\Podcast\BTQ\EP 24\BTQ EP 24 oficial.mp3` | 128 kbps · −21,0 LUFS · TP −0,8 dBFS |
+| Transcripción | `E:\Transcriptor\transcripciones\BTQ EP 24 oficial.srt` | 451 cues · último 41:08 · 1 hablante |
+| Artwork | `E:\Podcast\BTQ\EP 24\BTQ Artwork EP 24\` | 1:1 3000² · 9:16 · 16:9 + JPEG q92 |
+
+**Decisiones de Andy sobre el audio grabado (2026-08-01, no se regraba nada):**
+- Nokia dice «4 de cada 10» en `10:04`, no «casi cuatro de cada diez» como el guion corregido.
+  Fue improvisación deliberada para no sonar a guion. **Queda así**; el 37,8% real va en las
+  fuentes, no en el audio.
+- El dato de la cuadrilla reforzando la columna en Space (10 de los 12 muertos eran esos
+  trabajadores) **no se dijo** y se deja fuera. Sigue disponible para show notes.
+- «Grenfell» sonaba a «Greenfield» para WhisperX por pronunciación; corregido en el SRT
+  (5 ocurrencias), el audio no se toca. También se corrigió «12 heridas» → «2 heridas» en `24:54`.
+  El ASR crudo quedó en `BTQ EP 24 oficial-ASR-CRUDO.srt`.
+
+**Pendientes de artwork, no bloquean:** la portada tiene 0,18% de píxeles `#000000` (el void es
+`#0E1113` y `brand-constants.md` prohíbe el negro puro — sospecha: el degradado inferior), y las
+contrapruebas de 300/96 px de 9:16 y 16:9 están en cuadrado, o sea deformadas.
+
+**Los archivos de la era Peter se movieron a `E:\Podcast\BTQ\EP 27\`** el 2026-08-01. Sus
+portadas **no sirven ahí**: llevan `EP.24` horneado dentro de la imagen.
 
 > **Este episodio REEMPLAZÓ al del Principio de Peter el 2026-08-01.** Peter estaba grabado y
 > se sintió «demasiado teórico, como una reseña»; se reubicó a EP.027 sin descartarse. Todo lo
