@@ -12,6 +12,27 @@ stage_c: no iniciado.
 | Transcripción | `E:\Transcriptor\transcripciones\BTQ EP 24 oficial.srt` | 451 cues · último 41:08 · 1 hablante |
 | Artwork | `E:\Podcast\BTQ\EP 24\BTQ Artwork EP 24\` | 1:1 3000² · 9:16 · 16:9 + JPEG q92 |
 
+## URL de Spotify — PROVISIONAL, NO propagar
+
+```
+https://open.spotify.com/episode/25xgYzaTZmxEXqTNIu7yQp
+```
+
+Entregada por Spotify el 2026-08-01, antes del lanzamiento. **Sin verificar.** Al consultarla
+ese día devolvió **HTTP 404**, que es lo esperable en un episodio no público pero que **no
+distingue** entre «todavía no propaga», «el ID va a cambiar» y «el ID está mal».
+
+El token `?si=…` de la URL compartida se descartó: es rastreo de compartir, no parte del
+identificador. Nunca entra en el artículo ni en el JSON-LD.
+
+**No está en ningún asset todavía.** El artículo sigue con `PENDIENTE-SPOTIFY-URL` en 2 sitios
+(el CTA del cuerpo y el del riel) a propósito.
+
+**Al lanzar el domingo, antes de propagarla:** abrir la página del episodio en el navegador y
+copiar la URL de ahí, no de aquí. Si el ID cambió, este archivo queda obsoleto — es el caso
+confirmado en EP.016, donde `pipeline-state-ep016.md` guardaba `episode/6GoODy…` como
+«confirmada» y la URL real tras la re-subida era `episode/3CNyTkA6…`.
+
 **Decisiones de Andy sobre el audio grabado (2026-08-01, no se regraba nada):**
 - Nokia dice «4 de cada 10» en `10:04`, no «casi cuatro de cada diez» como el guion corregido.
   Fue improvisación deliberada para no sonar a guion. **Queda así**; el 37,8% real va en las
@@ -102,16 +123,29 @@ Dato duro del mundo del oyente: **Edmondson 1999** — los mejores equipos repor
       de pesos contra municipio, Lérida CDO, aseguradora y curadores urbanos.
 - [x] ~~URL del post de Grenfell~~ — confirmada:
       `grenfellactiongroup.wordpress.com/2016/11/20/kctmo-playing-with-fire/`
-- [ ] **FALTAN por abrir, y son las de más riesgo:** los informes de la Contraloría sobre Reficar
-      e Hidroituango. Todo lo de esos dos casos sigue corroborado solo entre secundarias.
-- [ ] **Conciliar las cifras de Reficar.** Circulan ~USD 997 millones (~$2,9 billones), USD 2.879
-      millones (~$8,5 billones) y USD 6.080 millones, y **son cosas distintas** — fallo de
-      detrimento vs. daño detectado vs. monto del proceso. El guion **no dice ninguna**, a
-      propósito. Ojo: $2,9 billones aparece también en Hidroituango por otro concepto.
-- [ ] **Lo de Echeverry golpeando la mesa va ATRIBUIDO** («él mismo contó que…»). Es un relato
-      del exministro de 2024, no un hallazgo de auditoría.
+- [x] ~~**FALTAN por abrir:** los informes de la Contraloría sobre Reficar e Hidroituango~~ —
+      **abiertos el 2026-08-01**, ya no dependen de secundarias. Se bajó y leyó el **comunicado
+      de prensa n.º 165 de la CGR (26 nov 2021)**: fallo en firme de Hidroituango por
+      **$4.330.831.615.227,34** contra **26 personas naturales y jurídicas**, compuesto por
+      $3.157.419.881.218,97 de destrucción del valor presente neto y $1.173.411.734.008,37 de
+      lucro cesante. ⚠️ **El audio dice «1,1 y 2,9 billones», que son las cifras del informe
+      especial ANTERIOR, no las del fallo.** No se corrige el audio (decisión de Andy); el
+      artículo publica las dos en orden.
+- [x] ~~**Conciliar las cifras de Reficar**~~ — **conciliadas el 2026-08-01**. Las tres cifras que
+      circulaban son cosas distintas y la que aplica es la primera: **USD 997 millones =
+      $2,9 billones** es el *fallo de responsabilidad fiscal* del **26 de abril de 2021**
+      (ratificado en octubre de 2021) por mayores inversiones que no agregaron valor, contra
+      2 presidentes, 3 vicepresidentes, 7 miembros de junta y 4 contratistas — que es exactamente
+      la composición que el episodio nombra al aire. Confirmado además el incremento del
+      presupuesto de **USD 3.993 a 4.854 millones el 7 de mayo de 2012** en la renegociación con
+      CB&I, con análisis interno que advertía en contra. Sigue en pie el aviso: $2,9 billones
+      aparece también en Hidroituango por otro concepto — no son la misma plata.
+- [x] ~~**Lo de Echeverry golpeando la mesa va ATRIBUIDO**~~ — se cumplió: el audio lo dice como
+      «él mismo contó años después que…». Es un relato del exministro, no un hallazgo de
+      auditoría, y así queda también en el artículo.
 - [ ] Correr `scripts/lint_guion_repeticion.py` contra EP.023 y contra el guion de Peter.
-- [ ] Definir el teaser del segmento 8 — hoy está genérico. EP.025 ya tiene tema.
+- [ ] ~~Definir el teaser del segmento 8~~ — **quedó genérico en la grabación** («estoy entre dos
+      y las dos me gustan»). Ya no es accionable para EP.024; se cierra sin hacer.
 
 ## Artwork — EXCEPCIÓN, escena renderizada solo en este episodio
 
