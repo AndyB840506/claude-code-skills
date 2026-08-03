@@ -105,7 +105,7 @@ segundo) · lunes — artículo · martes — artículo.
 `#Liderazgo #GestionDeEquipos #SeguridadPsicologica #CulturaOrganizacional #Management #Operaciones #Colombia`
 
 **Primer comentario:**
-> Episodio completo acá 👉 [URL DE SPOTIFY] — y si prefiere leerlo: behind-thequeue.com/episodios/por-que-su-equipo-no-le-cuenta-los-problemas
+> Episodio completo acá 👉 https://open.spotify.com/episode/25xgYzaTZmxEXqTNIu7yQp — y si prefiere leerlo: behind-thequeue.com/episodios/por-que-su-equipo-no-le-cuenta-los-problemas
 
 **IG/FB:**
 > «Mi puerta siempre está abierta.»
@@ -184,7 +184,7 @@ CONTENIDO DEL EPISODIO
 ENCUENTRA BTQ EN
 
 🌐 behind-thequeue.com
-🎧 Spotify: [URL DEL EPISODIO]
+🎧 Spotify: https://open.spotify.com/episode/25xgYzaTZmxEXqTNIu7yQp
 📩 andy@behind-thequeue.com
 💼 LinkedIn: linkedin.com/company/behind-the-queue
 📸 Instagram: @behindthequeue84
