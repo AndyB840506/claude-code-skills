@@ -138,6 +138,28 @@ aire) y aplicar la fórmula de arriba con la densidad de pausa que se vaya a usa
 159 wpm / ×1,235 de EP.005: mezcla articulación con pausa y da un número que solo vale para ese
 episodio.
 
+### El primer borrador llega corto — dimensionar el MATERIAL, no solo el texto
+
+**Medido el 2026-08-03 sobre el borrador de T2·E2:** 3.471 palabras narradas contra un objetivo
+de ~5.200. **33% corto**, o sea 28,9 min leído pausado contra un piso de 40. Y el guion no estaba
+mal escrito: los tres actos estaban completos, con su tesis y su destape. Simplemente **el material
+investigado no daba para más minutos**.
+
+Ese es el punto. La sección de arriba dimensiona el TEXTO —cuántas palabras para cuántos minutos—
+y da por sentado que las palabras existen. Pero un guion de misterios no se alarga escribiendo más:
+se alarga **teniendo más material verificado**, y eso se decide en la ronda de fuentes, no frente
+al teclado. Escribir primero y contar después deja dos salidas, y **una de las dos está prohibida
+por la § Pasada de relleno**: inflar el texto para llegar a la meta.
+
+**Regla:** antes de escribir, estimar cuántos minutos rinde lo investigado. Un ancla verificada con
+escena propia rinde entre 8 y 12 minutos; un dato suelto sin escena rinde menos de 1. Si la cuenta
+no llega al piso de 40, **la ronda de fuentes no terminó** — volver a investigar es más barato que
+descubrirlo con el guion escrito.
+
+**Y cuando el borrador ya salió corto, el arreglo NO es repartir palabras por todos lados:** hay
+que nombrar los sitios concretos donde falta material y qué fuente lo daría. En T2·E2 fueron cuatro
+y quedaron anotados dentro del propio guion, no en un pendiente aparte.
+
 ### Prueba de pausa — hacer esto ANTES de dimensionar un guion nuevo
 
 Grabar **un bloque de prueba** (2-3 minutos bastan) leyendo como se va a leer el episodio, y medirlo:

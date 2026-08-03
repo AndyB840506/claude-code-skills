@@ -19,6 +19,12 @@ El show tiene UNA firma de formato que se replica en cada expediente. Lo que cam
 
 **Filtro antes de escribir cada guion:** ¿mi revelación es más grande o más chica que el mito? Más grande → destapar como puerta. Más chica → dejar abierto.
 
+**Anunciar el próximo expediente al aire es un COMPROMISO, no un gancho (2026-08-03).** El cierre de T2·E1 dijo textual *"y de eso va el próximo Archivo Secreto: pactos, símbolos y mensajes ocultos"* — y con eso quedó fijado el tema, el alcance y el orden del episodio siguiente, antes de que nadie hubiera investigado si el tema daba para 43 minutos. No fue un error: el conector salió de la investigación real, como manda la regla del conector. Lo que faltaba era saber que **la frase se cobra**.
+
+- **Decidir ANTES de grabar si el cierre anuncia tema o no.** Las dos opciones son válidas: anunciar amarra al oyente (y a uno), no anunciar deja libertad para que el siguiente expediente salga del banco según lo que rinda. Lo prohibido es improvisarlo frente al micrófono.
+- **Si se anuncia, el gancho va escrito en el guion**, no dicho de memoria — y solo se anuncia un tema que ya tenga al menos un ángulo verificado en `banco-expedientes.md`. Anunciar un tema sin investigar es firmar un cheque contra una cuenta que no se ha abierto.
+- **Al arrancar cualquier expediente, abrir primero el cierre del anterior** y leer qué se prometió, literal. Es la fuente de qué hay que entregar — no el roadmap, no la memoria, no lo que uno recuerda. El 2026-08-03 el roadmap y la memoria coincidían en llamarlo "el episodio de Robert Johnson" y el guion decía otra cosa: Johnson era la puerta, y su biografía ya se había gastado en el episodio anterior.
+
 **Único es la narrativa, no la estructura.** Cada expediente reusa este esqueleto pero debe ser único en ángulo, escena y voz — NUNCA un copy-paste del anterior. Refuerza (no reemplaza) las "Reglas anti-repetición de guion" de más abajo: dispositivo de apertura variado, léxico propio del episodio, una escena viva en vez de listas.
 
 **LÍMITE FIRME — no deificar a los artistas (decisión Andrés 2026-07-24):** nunca catalogar a un músico como dios, semidiós, mesías u objeto de culto — ni en guion, ni en teaser, ni en artwork. Puede ofender a creyentes reales. Y encaja con el pilar: el mito los eleva a ídolos, el episodio los devuelve a lo HUMANO, que es donde vive la verdad interesante. Reconocer la grandeza artística sin lenguaje de adoración religiosa. Hermano del límite de simbología ocultista (ver memoria `feedback_mpd_no_occult_symbols`).
