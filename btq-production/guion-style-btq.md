@@ -339,6 +339,40 @@ Tres cosas salen de ahí:
 > **conversión**. Lo que hay que replicar de EP.020 no es su keyword: es que su tema le importó a
 > la audiencia que ya existe.
 
+### Largo máximo — medido el 2026-08-03, a pedido de Andy
+
+La fórmula invertida alarga los títulos y hay que ponerle techo. Medido sobre el catálogo
+post-giro:
+
+| Episodio | Caracteres | Palabras del ancla |
+|---|---|---|
+| EP.022 | 46 | 10 |
+| EP.021 | 49 | 10 |
+| EP.020 | 65 | 9 |
+| EP.024 | 67 | 9 |
+| EP.023 | 69 | 9 |
+| EP.027 | 70 | 10 |
+| *EP.026, primera propuesta* | *83* | *11* |
+
+**Techo: 70 caracteres y 9 palabras de ancla** (el ancla es lo que va ANTES de los dos puntos).
+No es un número inventado: es el rango en el que ya vive todo el catálogo. La propuesta de
+EP.026 se salía con 83 y se recortó a **58** — `Por qué su equipo no sigue el procedimiento:
+carga cognitiva`.
+
+**El costo de pasarse no es solo la búsqueda: es la portada.** `portada-ep-compose.py` dibuja el
+ancla dentro de la imagen, así que cada palabra de más encoge la tipografía. Medido al generar
+EP.024 (ver `pipeline-state-ep027-peter.md` § Artwork):
+
+| | ancla 1:1 | ancla 16:9 | ¿legible a 96 px? |
+|---|---|---|---|
+| EP.023, fórmula corta | 420 px | 216 px | sí |
+| EP.024 con el ancla larga, sin arreglar | 232 px | **84 px** | **no** |
+| EP.024 después del arreglo | 348 px | 168 px | sí |
+
+El arreglo del compositor recuperó legibilidad, pero **no devuelve el tamaño**: 348 px contra
+420. Un ancla más larga sigue costando tipografía, y a 96 px —el tamaño al que Spotify muestra
+la portada en una lista— eso decide si el título se lee o no.
+
 **Ejemplo del cambio, con EP.024:**
 
 ```

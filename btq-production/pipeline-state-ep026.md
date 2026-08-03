@@ -9,15 +9,27 @@ desde EP.024 del 2026-08-02; verificado con calendario, no estimado).
 > Ojo: la fecha de arriba asume que EP.025 sale el 9 de agosto y EP.026 el 16. **Recalcular si
 > alguno se corre.**
 
-## Título — PROVISIONAL, sin aprobar
+## Título — recortado 2026-08-03
 
 ```
-EP.26 — Por qué su equipo se equivoca aunque el procedimiento esté escrito: carga cognitiva
+EP.26 — Por qué su equipo no sigue el procedimiento: carga cognitiva
 ```
 
-84 caracteres (límite de YouTube: 100). Fórmula invertida: el problema en las palabras del
-oyente primero, el término técnico detrás. **Andy no lo ha confirmado** — se preguntó el
-2026-08-03 y respondió sobre los casos, no sobre el título.
+**58 caracteres · ancla de 7 palabras.** Dentro del techo nuevo (70 car. / 9 palabras de ancla),
+que se midió justamente a raíz de este título — ver `guion-style-btq.md` § Largo máximo.
+
+*Primera propuesta, descartada:* `Por qué su equipo se equivoca aunque el procedimiento esté
+escrito: carga cognitiva` — 83 caracteres, el outlier de todo el catálogo post-giro (46-70).
+
+**Por qué esta versión es mejor que la larga, y no solo más corta:** «por qué mi equipo no sigue
+el procedimiento» es lo que un jefe teclea en un buscador. El título plantea **el diagnóstico
+equivocado** —que no lo siguen— y el episodio lo voltea: no es desobediencia, es que el
+procedimiento se diseñó para no poder seguirse bajo carga.
+
+> ⚠️ **Coherencia título ↔ guion (regla vigente).** La promesa del título tiene que responderse
+> explícitamente en el cuerpo. Acá eso significa un momento donde se dice, sin rodeos, que la
+> gente **sí** está tratando de seguirlo. Si el episodio no desmonta la premisa del título, el
+> título queda acusando al equipo, que es lo contrario de la tesis.
 
 ## De dónde salió el tema
 
@@ -137,8 +149,29 @@ primeras 20) y el de la NTSB no (293 págs, 0 caracteres).
 ## Pendientes antes de escribir
 
 - [ ] Cerrar el caso 3 en fuente primaria, o reemplazarlo.
-- [ ] Confirmar el título con Andy.
-- [ ] Decidir si el tercer caso se cambia por uno de la región — hoy solo Avianca lo es.
-      Aviación + nuclear + medicina es el trío clásico de alta confiabilidad y ya lo popularizó
-      Atul Gawande en *The Checklist Manifesto*; el ángulo hay que ganárselo.
+- [x] ~~Confirmar el título~~ — recortado a 58 caracteres el 2026-08-03.
+- [x] ~~Decidir si el tercer caso se cambia por uno de la región~~ — **Andy: los tres se quedan.**
+      Lo regional no es obligatorio; lo obligatorio es la correlación con el oyente (abajo).
 - [ ] Sweller: abrir la fuente de la teoría de carga cognitiva, no citarla de memoria.
+
+## ⚠️ Correlación con el oyente — instrucción de Andy (2026-08-03)
+
+Los tres casos se quedan como están. Pero vienen de un reactor nuclear, una cabina y una UCI, y
+el oyente dirige una operación. **Cada caso tiene que aterrizar con equivalentes nombrados en su
+mundo, o queda como curiosidad de otro planeta.** Regla general en `roadmap-btq.md` § rotación,
+punto 4.
+
+Aterrizajes obligatorios, uno por caso:
+
+| Caso | Cómo se llama eso en la operación del oyente |
+|---|---|
+| TMI — 100 alarmas sin jerarquía | el tablero donde todo está en rojo, las alertas que ya nadie abre, el chat con 40 notificaciones por hora |
+| Avianca — la palabra que no cargaba el significado | «urgente» en el asunto de un correo que ya todos escriben, el «prioridad alta» del ticket que perdió sentido, escalar sin una palabra que obligue |
+| Keystone — quitar carga, no ponerla | de 14 pasos a los 5 que importan, y volver imposible saltarse el crítico |
+
+La técnica de referencia es la del EP.024 con el edificio Space: «en su operación las costuras se
+llaman *ya hablé con él*, *le pusimos un refuerzo esta semana*, *lo estamos monitoreando*». Sin
+ese puente, Space habría sido una tragedia ajena; con él, el oyente se reconoce.
+
+**El caso de Avianca tiene doble deber:** ese aterrizaje, y además la distinción explícita con el
+EP.024 (ver arriba).

@@ -107,6 +107,13 @@ del 2026-07-21 había reemplazado, pero el carril acompañante ya **no es pop-cu
 4. **El ADN de casos es intocable en los DOS carriles:** 2-3 casos reales y nombrados con
    consecuencias severas y verificables. Un episodio de Oficio de Jefe sin casos duros no
    queda «más operativo», queda en opinión — que es peor que teórico.
+   **Precisión de Andy, 2026-08-03: el caso puede venir de cualquier industria, pero cada uno
+   tiene que aterrizar en la operación del oyente con equivalentes nombrados.** Lo regional
+   ayuda y se prefiere, pero **no es obligatorio**; lo obligatorio es la correlación. Un
+   reactor nuclear o una sala de urgencias sirven si el guion traduce: «en su operación esto
+   se llama…». Es la técnica que hizo aterrizar el edificio Space en EP.024 —«las costuras se
+   llaman *ya hablé con él*, *le pusimos un refuerzo esta semana*, *lo estamos monitoreando*»—
+   y sin ella el caso queda como una curiosidad de otro mundo.
 5. **La columna de fuentes del carril nuevo no es el paper**, porque no lo hay: son
    investigaciones de incidentes, hallazgos de reguladores, expedientes judiciales y
    post-mortems públicos. Se verifican con el mismo estándar.
