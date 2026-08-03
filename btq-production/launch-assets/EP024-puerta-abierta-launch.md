@@ -82,67 +82,96 @@ El jueves de intriga (2026-07-30) se saltó por decisión de Andy: el tema cambi
 **Link del primer comentario, por día:** sábado — ninguno · domingo — Spotify (artículo como
 segundo) · lunes — artículo · martes — artículo.
 
+> **Formato:** cada bloque de abajo va en un bloque de código para que se copie y se pegue
+> tal cual, sin que se arrastren `>` ni comillas. Los hashtags van dentro del mismo bloque
+> porque son parte del post. El primer comentario va aparte, en su propio bloque.
+
 ### Sábado 1 ago · IG/FB · calentamiento
 
-> Grabado. Cuatro casos, dos de ellos colombianos, y una frase que todos hemos dicho en una reunión creyendo que servía de algo. Mañana 8 PM.
+```
+Grabado. Cuatro casos, dos de ellos colombianos, y una frase que todos hemos dicho en una reunión creyendo que servía de algo. Mañana 8 PM.
 
-`#BehindTheQueue #Liderazgo #GestionDeEquipos #PodcastEnEspañol #Colombia #LATAM #Operaciones #CulturaOrganizacional #Management #Jefes`
+#BehindTheQueue #Liderazgo #GestionDeEquipos #PodcastEnEspañol #Colombia #LATAM #Operaciones #CulturaOrganizacional #Management #Jefes
+```
 
 ### Domingo 2 ago, 8:00 PM · lanzamiento
 
 **LinkedIn** (prioritaria — se escribe primero, IG/FB derivan de ella):
 
-> Hay una frase que casi todos hemos dicho en una reunión: «mi puerta siempre está abierta».
->
-> Y es cierta. La puerta está abierta. El problema es que nadie la cruza.
->
-> Ahora mismo alguien de su equipo sabe algo que a usted le serviría saber. Y ya hizo la cuenta: contárselo le sale más caro que quedarse callado. No es cobardía — es aritmética, y la puso usted sin darse cuenta.
->
-> En el episodio de hoy: por qué su tablero de errores no mide cuántos errores ocurren sino cuántos su gente se atreve a reportar, y cuatro casos donde una advertencia existió y no sirvió de nada — Nokia, Reficar e Hidroituango, el edificio Space y Grenfell.
->
-> ¿Cuál fue la última vez que alguien de su equipo le trajo un problema que usted no sabía que existía? Si le costó acordarse de la fecha, ese es el dato.
+```
+Hay una frase que casi todos hemos dicho en una reunión: «mi puerta siempre está abierta».
 
-`#Liderazgo #GestionDeEquipos #SeguridadPsicologica #CulturaOrganizacional #Management #Operaciones #Colombia`
+Y es cierta. La puerta está abierta. El problema es que nadie la cruza.
+
+Ahora mismo alguien de su equipo sabe algo que a usted le serviría saber. Y ya hizo la cuenta: contárselo le sale más caro que quedarse callado. No es cobardía — es aritmética, y la puso usted sin darse cuenta.
+
+En el episodio de hoy: por qué su tablero de errores no mide cuántos errores ocurren sino cuántos su gente se atreve a reportar, y cuatro casos donde una advertencia existió y no sirvió de nada — Nokia, Reficar e Hidroituango, el edificio Space y Grenfell.
+
+¿Cuál fue la última vez que alguien de su equipo le trajo un problema que usted no sabía que existía? Si le costó acordarse de la fecha, ese es el dato.
+
+#Liderazgo #GestionDeEquipos #SeguridadPsicologica #CulturaOrganizacional #Management #Operaciones #Colombia
+```
 
 **Primer comentario:**
-> Episodio completo acá 👉 https://open.spotify.com/episode/25xgYzaTZmxEXqTNIu7yQp — y si prefiere leerlo: behind-thequeue.com/episodios/por-que-su-equipo-no-le-cuenta-los-problemas
+
+```
+Episodio completo acá 👉 https://open.spotify.com/episode/25xgYzaTZmxEXqTNIu7yQp — y si prefiere leerlo: behind-thequeue.com/episodios/por-que-su-equipo-no-le-cuenta-los-problemas
+```
 
 **IG/FB:**
-> «Mi puerta siempre está abierta.»
-> La puerta sí está abierta. Nadie la cruza.
-> Alguien de su equipo ya hizo la cuenta: contárselo le sale más caro que callarse.
-> Episodio nuevo, disponible ahora.
-> ¿Cuál fue la última vez que alguien le trajo un problema que usted no sabía que existía?
 
-`#BehindTheQueue #Liderazgo #GestionDeEquipos #SeguridadPsicologica #CulturaOrganizacional #Management #Operaciones #Jefes #PodcastEnEspañol #Colombia #LATAM #NuevoEpisodio`
+```
+«Mi puerta siempre está abierta.»
+La puerta sí está abierta. Nadie la cruza.
+Alguien de su equipo ya hizo la cuenta: contárselo le sale más caro que callarse.
+Episodio nuevo, disponible ahora.
+¿Cuál fue la última vez que alguien le trajo un problema que usted no sabía que existía?
+
+#BehindTheQueue #Liderazgo #GestionDeEquipos #SeguridadPsicologica #CulturaOrganizacional #Management #Operaciones #Jefes #PodcastEnEspañol #Colombia #LATAM #NuevoEpisodio
+```
 
 **TikTok:**
-> Su equipo no está callado.
-> Está pagando el precio más barato de los dos que usted le puso.
+
+```
+Su equipo no está callado.
+Está pagando el precio más barato de los dos que usted le puso.
+```
 
 ### Lunes 3 ago, 7-8 AM · pico real de escucha · LinkedIn
 
-> Empieza la semana. Una pregunta para el viernes, con número: en las últimas cuatro semanas, ¿cuántas veces alguien de su equipo le trajo un problema que usted no sabía que existía?
->
-> Si el número es cero, no tiene un equipo tranquilo. Tiene un equipo que decidió que no vale la pena.
->
-> Un indicador impecable tiene dos explicaciones, y ninguna se descarta desde el escritorio: que la operación esté fina, o que reportar ahí se pague caro. Se ven idénticas en el reporte.
+```
+Empieza la semana. Una pregunta para el viernes, con número: en las últimas cuatro semanas, ¿cuántas veces alguien de su equipo le trajo un problema que usted no sabía que existía?
 
-`#Liderazgo #Indicadores #GestionDeEquipos #Management #Operaciones`
+Si el número es cero, no tiene un equipo tranquilo. Tiene un equipo que decidió que no vale la pena.
 
-**Primer comentario:** artículo.
+Un indicador impecable tiene dos explicaciones, y ninguna se descarta desde el escritorio: que la operación esté fina, o que reportar ahí se pague caro. Se ven idénticas en el reporte.
+
+#Liderazgo #Indicadores #GestionDeEquipos #Management #Operaciones
+```
+
+**Primer comentario:**
+
+```
+El episodio entero, si prefiere leerlo: behind-thequeue.com/episodios/por-que-su-equipo-no-le-cuenta-los-problemas
+```
 
 ### Martes 4 ago · refuerzo · LinkedIn
 
-> De las tres recomendaciones del episodio, esta es la que yo defiendo: separe al mensajero de la solución.
->
-> La razón número uno por la que la gente no reporta no es el miedo al regaño. Es saber que el que reporta se lo queda. «Ah, usted lo detectó, encárguese» — dicho con la mejor intención, convierte cada advertencia en trabajo adicional para quien la trae. Nadie se ofrece dos veces.
->
-> Y no se anuncia: se demuestra. La primera vez que alguien reporta algo y usted se lo asigna a otro delante de todos, ahí quedó dicho.
+```
+De las tres recomendaciones del episodio, esta es la que yo defiendo: separe al mensajero de la solución.
 
-`#Liderazgo #GestionDeEquipos #CulturaOrganizacional #Management #Operaciones`
+La razón número uno por la que la gente no reporta no es el miedo al regaño. Es saber que el que reporta se lo queda. «Ah, usted lo detectó, encárguese» — dicho con la mejor intención, convierte cada advertencia en trabajo adicional para quien la trae. Nadie se ofrece dos veces.
 
-**Primer comentario:** artículo.
+Y no se anuncia: se demuestra. La primera vez que alguien reporta algo y usted se lo asigna a otro delante de todos, ahí quedó dicho.
+
+#Liderazgo #GestionDeEquipos #CulturaOrganizacional #Management #Operaciones
+```
+
+**Primer comentario:**
+
+```
+El episodio entero, si prefiere leerlo: behind-thequeue.com/episodios/por-que-su-equipo-no-le-cuenta-los-problemas
+```
 
 ---
 

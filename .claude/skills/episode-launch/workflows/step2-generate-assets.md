@@ -115,6 +115,12 @@ para la semana" — ver `btq-project/SKILL.md` §10, fuente canónica de este ca
 - **La pregunta del día de lanzamiento interpela al oyente, no al personaje** — "¿qué
   muro construiste tú?" funciona; "¿qué opinas de Pink Floyd?" no (efecto EP.016:
   7 comentarios). Aplicar el mismo principio en las 4 plataformas.
+- **Cada post va en un bloque de código, nunca en cita de bloque (`>`).** El archivo de
+  assets existe para copiar y pegar: con `>` al inicio de cada línea, el carácter se
+  arrastra al portapapeles y hay que limpiarlo post a post. Los hashtags van DENTRO del
+  mismo bloque (son parte del post, se pegan de una), y el texto del primer comentario
+  va en su propio bloque con el link ya resuelto — no «Primer comentario: artículo»,
+  que no se puede pegar. Pedido por Andy el 2026-08-03 sobre EP.024.
 - **Clips/quotes para redes salen del episodio que el algoritmo ya empuja** (hoy:
   EP.012 Bohemian Rhapsody, 149 impresiones Home) — al promocionar el catálogo, usar
   ese como puerta de entrada, no el más reciente.
