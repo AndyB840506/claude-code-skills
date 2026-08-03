@@ -147,21 +147,10 @@ Journal of Medicine, 355(26), 2725-2732.**
 circula asociada al proyecto pero **no está en este abstract**. Si se quiere decir al aire, hay
 que buscar de dónde sale.
 
-## Herramienta nueva — lectura de PDF escaneados
+## Herramienta — lectura de PDF escaneados
 
-Instalado `pymupdf` el 2026-08-03. Los informes oficiales que este show necesita —NTSB,
-Contraloría, y las resoluciones de SIC/SERNAC de la veta del cliente— se publican como escaneo
-sin capa de texto, y ni WebFetch ni `pypdf` sacan nada de ellos. El patrón que funcionó:
-
-```python
-import fitz
-doc = fitz.open(ruta)
-doc[n].get_pixmap(dpi=150).save(salida)   # y leer el PNG como imagen
-print(doc[n].get_text())                   # si SÍ hay capa de texto
-```
-
-Probar primero `get_text()`: el informe Kemeny sí tenía capa (86 págs, 24k caracteres en las
-primeras 20) y el de la NTSB no (293 págs, 0 caracteres).
+`pymupdf`, instalado el 2026-08-03 para abrir el informe de la NTSB. **La receta y el porqué
+viven en `skills/CLAUDE.md` § instrumentos que mienten en silencio** — no se repiten acá.
 
 ## Pendientes antes de escribir
 
