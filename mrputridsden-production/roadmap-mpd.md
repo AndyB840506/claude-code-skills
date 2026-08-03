@@ -14,6 +14,11 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | publicado - https://open.spotify.com/episode/1QRXaL85TszCpwo2pfmEPw - salio 2026-06-20, 1h16min. Verificado contra Spotify 2026-07-28. ⚠️ **NO esta en el archivo de la web** (ver nota abajo). |
 | EP.005 | Aterciopelados: De un bar de Bogotá al continente. | en Spotify - https://open.spotify.com/episode/2D129VK9H4sn7itPKjgz3W - primer episodio solo, duracion real ~35.8 min habla / ~36.8 min total |
 | EP.006 (T2·E1) | El Club de los 27 | **grabado** 2026-07-24 (`E:\Podcast\MPD\Temporada 2\EP 01\MPD EP 01.mp3`) — en ronda de feedback con circulo cercano, NO se publica hasta confirmar el formato. Guion: `scripts/EP006-club-de-los-27.html`, ~5.208 palabras narracion (~40.5 min estimados, calibracion MPD 159 wpm/+23.5%), formato solo. ESTRENO DE LA TEMPORADA 2. Publico = T2·E1; interno = 6º producido. Faltan: SRT, metadata/show-notes, quote cards, plan de lanzamiento. |
+| EP.007 (T2·E2) | Pactos, símbolos y mensajes ocultos: el rock y el diablo | en roadmap — **anunciado al aire en el cierre de EP.006**, no es opcional. Alcance por confirmar con Andrés (ver `banco-expedientes.md` #1). Slot de carril principal. Abre con Robert Johnson / Tommy Johnson. |
+
+**Cadencia de carriles (Andrés, 2026-08-03):** principal (alta rotación) por defecto; **uno de
+nicho cada 3 o 4 episodios**. Con esta cuenta, el primer slot de nicho cae en **T2·E4 o T2·E5**.
+Ver `banco-expedientes.md` § Carril de nicho.
 
 ---
 
@@ -42,8 +47,16 @@ Direccion visual T2 "La Guarida" — ver `rebrand/identidad-la-guarida.html` y m
 
 **Conector del Club de los 27** (descubierto en investigacion): Robert Johnson y el cruce de caminos
 -> puente al proximo expediente (pactos con el diablo / Led Zeppelin-Crowley / backmasking). OJO:
-ese tema toca lo ocultista — confirmar con Andres su comodidad y tratarlo desde angulo esceptico
-antes de producirlo (ver `feedback_mpd_no_occult_symbols`).
+ese tema toca lo ocultista — tratarlo desde angulo esceptico y sin simbologia en el artwork
+(ver `feedback_mpd_no_occult_symbols`).
+
+> **Ya no es una opcion: quedo ANUNCIADO AL AIRE.** El cierre de EP.006 lo nombra textual —
+> *"Pactos, simbolos y mensajes ocultos: el rock y el diablo"* — y ahi mismo abre el alcance mas
+> alla de Johnson ("no es solo Robert Johnson... Led Zeppelin, bandas de metal enteras, canciones
+> que supuestamente esconden mensajes si uno las pone al reves"). Verificado contra
+> `scripts/EP006-club-de-los-27.html`, bloque 8, el 2026-08-03. Robert Johnson es la PUERTA del
+> expediente, no el tema — y su material biografico ya se gasto en el bloque C de EP.006.
+> Angulos investigados en `banco-expedientes.md`.
 
 **Plan especulativo previo** de `podcast-profile.json` (`roadmap_9_episodes`, "Beatles vs Zeppelin"
 etc.) queda como banco de ideas de banda para mezclar/descartar segun el nuevo enfoque de misterios —
@@ -156,3 +169,33 @@ EP.003 (Sister Rosetta Tharpe, musicologia/raices) rindio por debajo de EP.002
 - Antes de fijar el siguiente episodio del roadmap: revisar plays de Spotify
   del episodio anterior (checkpoint post-launch, ~1-2 semanas despues de
   publicar) y registrar el dato en esta tabla.
+  > ⚠️ **Esta columna lleva vacia desde el EP.003.** "Rendimiento bajo vs EP.002"
+  > se anoto sin numero. Mientras no haya plays reales anotados aca, cualquier
+  > afirmacion sobre que tema "pega mas" es estimacion, no medicion — incluida
+  > la seleccion de temas del banco de expedientes.
+
+### Segunda capa — demanda primero, diferenciacion en el detalle (Andres, 2026-08-03)
+
+La regla de arriba dice QUE ancla usar. Esta dice COMO elegir el tema, y corrige un
+sesgo que tenia el analisis previo: se estaba tratando la saturacion como defecto.
+
+- **La alta rotacion es senal de demanda probada, no un motivo para descartar.**
+  Un tema muy contado lo es porque la gente lo consume. Con audiencia todavia en
+  construccion, ir al nicho primero hace la captacion mucho mas dificil.
+- **El diferenciador NO es la originalidad del tema: es el detalle subexpuesto.**
+  Titular de alta rotacion + el angulo del que casi nadie habla, siempre que sea
+  relevante para la tesis. Ejemplo verificado 2026-08-03: la leyenda de la
+  encrucijada era de **Tommy Johnson** (sin parentesco), contada por su hermano
+  LeDell al folclorista David Evans; salto a Robert Johnson porque los dos vivieron
+  en Hazlehurst, Mississippi.
+- **Esto NO contradice el filtro de canon de CLAUDE.md** ("si tu revelacion es MAS
+  PEQUENA que el mito, no la reveles"). Un detalle poco contado es mas pequeno en
+  TAMANO y mas grande en SIGNIFICADO — es justo el destape que reencuadra. Si el
+  detalle solo desinfla, no sirve.
+- **Cadencia de nicho: uno cada 3 o 4 episodios.** Los temas densos, oscuros o de
+  baja rotacion (black metal noruego, muertes en conciertos, EVP, Jim Sullivan)
+  **no se descartan** — se aplazan a esos slots. Asi el show construye audiencia con
+  los temas de alcance y la premia con profundidad, sin quemarse en el nicho antes
+  de tener base.
+
+Banco de temas ya filtrado contra estas dos capas: `banco-expedientes.md`.
