@@ -148,6 +148,101 @@ antes — la queja de Andy fue del contenido, no solo de la frecuencia.
 > y verificar «si de verdad aguanta» — eso es una restricción de guion, no una acción de
 > plataforma.
 
+### Vetas en exploración — el cliente y la región (2026-08-03)
+
+**No son un carril nuevo y no tocan la rotación 3+1.** Decisión de Andy: se espera a que la
+rotación dé una vuelta completa antes de evaluar si esto merece carril propio. Mientras tanto
+son **temas dentro de Oficio de Jefe**, y esta sección existe para que cuando llegue el momento
+no se re-derive desde cero.
+
+**De dónde salió.** Andy señaló el 2026-08-03 que el show lleva 24 episodios hablando del que
+atiende y ninguno del que espera — y que la cola del nombre es, literalmente, gente esperando.
+Ver `brand-constants.md` § esencia, punto 5.
+
+**La disciplina que separa esto de contenido de CX:** el cliente es el **sujeto**; el jefe sigue
+siendo el **protagonista**. El episodio no es «cómo piensa su cliente» —eso le habla a alguien
+que hace publicidad— sino **una decisión que el oyente toma y que el cliente siente**. Si el
+oyente no puede hacer nada distinto el lunes, el tema se cayó del carril.
+
+#### Veta A — el proceso mal diseñado desde el principio
+
+Nadie lo cambió: nació así. El procedimiento se ejecuta correctamente y aun así produce el mal
+resultado, porque optimiza la variable equivocada. El culpable no es quien lo ejecuta.
+
+#### Veta B — la política que se cambió para ahorrar y la pagó el cliente
+
+Tesis: **la política se diseñó para ahorrar, la pagó el cliente, y después la pagó la empresa
+multiplicada.** Alguien la aprobó en una reunión, con buenas intenciones y un ahorro proyectado.
+
+> **Separadas a pedido de Andy (2026-08-03).** Son dos cosas: A nació torcido, B se torció al
+> cambiarlo. B tiene fecha, acta y responsable; A no tiene a nadie a quien señalar, y esa
+> diferencia cambia el episodio entero.
+
+**Frontera obligatoria con EP.022 (Crosby).** El 022 midió el costo **hacia adentro** —
+retrabajo, reprocesos, no prevenir. Estas vetas son el costo **hacia afuera y de vuelta**: la
+política funcionó como se diseñó, nadie se equivocó ejecutándola, y la cuenta llegó igual. Sin
+esa frontera explícita, quien escuchó el 022 siente que se lo repitieron.
+
+#### Prioridad regional (Andy, 2026-08-03)
+
+Casos de **marcas y empresas latinoamericanas**, no todo mercado norteamericano o europeo.
+Continúa la decisión del EP.024, donde 2 de 4 casos fueron colombianos y fueron primero.
+
+**La jugada de fuentes — es el movimiento del EP.024 generalizado.** Lo que le dio peso a ese
+episodio fue abrir el comunicado n.º 165 de la CGR, no la prensa. El equivalente regional para
+políticas de cara al consumidor son los reguladores de protección al consumidor, que publican
+resoluciones con hallazgo y multa cuantificada:
+
+| País | Entidad |
+|---|---|
+| Colombia | SIC — Superintendencia de Industria y Comercio |
+| Chile | SERNAC |
+| México | PROFECO |
+| Brasil | Procon / Senacon |
+
+#### Banco inicial de casos — TODOS SIN FUENTE PRIMARIA ABIERTA
+
+Son pistas para investigar, **no hechos citables**. Ninguno entra a un guion sin abrir el
+documento primario primero.
+
+*Región (prioritarios):*
+- **La Polar (Chile, ~2011).** Repactación unilateral de deudas de clientes sin su
+  consentimiento, a gran escala; terminó en procesos penales y casi acaba con la compañía. Es
+  el caso insignia de la veta B: una política aplicada al cliente para proteger ingresos que
+  destruyó a la empresa. **Verificar con SERNAC y con el expediente judicial.**
+- **Viva Air y Ultra Air (Colombia, 2023).** Colapso abrupto de dos aerolíneas de bajo costo
+  con pasajeros varados. Decisión de estructura de costos que terminó de cara al cliente.
+- **Avianca — huelga de pilotos ACDAC (2017).** Miles de vuelos cancelados.
+- **Rappi (Colombia).** Investigaciones de la SIC en materia de protección al consumidor.
+
+*Fuera de la región, como contraste y solo si la región no da:*
+- **Netflix / Qwikster (2011).** Reestructuración de precio y separación del servicio; pérdida
+  fuerte de suscriptores y desplome de la acción, con disculpa pública del CEO.
+- **United 3411 (2017).** Lo que lo hace BTQ no es el video: la política **se ejecutó al pie de
+  la letra** y dejó al empleado de primera línea sin ninguna salida decente.
+- **Ryanair (2017).** Miles de vuelos cancelados por cómo se programaron las vacaciones de los
+  pilotos.
+- **Comcast (2014).** La llamada de retención grabada: un incentivo mal diseñado dejó al agente
+  sin permiso para hacer lo único razonable.
+
+**Hilo común de los cuatro de afuera:** la primera línea quedó atrapada entre el cliente y una
+política que alguien firmó arriba. Esa es la conexión con la audiencia — el oyente no es el
+cliente furioso, es quien aprobó la política o quien tiene que defenderla.
+
+#### Casos QUEMADOS — no reusar
+
+| Caso | Dónde se usó |
+|---|---|
+| Boeing | EP.022 |
+| Volkswagen | artículo del EP.023 |
+| Nokia, Reficar, Hidroituango, edificio Space, Grenfell | EP.024 |
+| Wells Fargo | **EP.001 de Corporate Crime Confidential** — otro show de Andy; reusarlo se nota |
+
+#### Choque de calendario a vigilar
+
+La **Ley de Little es el EP.031** y también es sobre colas. Son distintos —Little es la
+matemática del flujo; la veta del cliente es percepción y política— pero no van pegados.
+
 ### Giro de alcance 2026-07-25 — de call center a gestión empresarial
 
 **Decisión de Andy.** El show sale del techo de BPO/contact center y pasa a **gestión de
