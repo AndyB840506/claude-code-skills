@@ -1,0 +1,457 @@
+<style>
+
+        /* ── SISTEMA "LA GUARIDA" — Temporada 2 (congelado 2026-07-22) ──
+           Tokens tomados de rebrand/identidad-la-guarida.html, no a ojo.
+           Regla de mood: contraste térmico. Todo frío; el calor SOLO en la brasa.
+           Retirados de Temporada 1: crimson #9B1C1C, ámbar #CE8B3A, oro #FFD700. */
+        :root {
+            --medianoche: #0B1A39;
+            --tinta:      #151E3B;
+            --humo:       #2C2F43;
+            --piedra:     #55555B;
+            --brasa:      #D9BF7A;
+            --polvo:      #E7DDC9;
+            --polvo-dim:  #9AA3B8;
+            --linea:      #242C47;
+            --alerta:     #C9736A;
+            --display: 'Bookman Old Style', Bookman, 'Book Antiqua', Georgia, serif;
+            --body:    'Segoe UI', system-ui, -apple-system, sans-serif;
+            --mono:    ui-monospace, 'Cascadia Code', Consolas, monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--body); background: var(--medianoche); color: var(--polvo); line-height: 1.75; font-size: 15px; }
+        .container { max-width: 780px; margin: 0 auto; background: var(--tinta); }
+
+        .header { background: var(--medianoche); color: var(--polvo); padding: 44px 44px 38px; border-bottom: 1px solid var(--brasa); }
+        .header .podcast { font-family: var(--mono); font-size: 0.7em; color: var(--brasa); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
+        .header .pilar { font-family: var(--mono); font-size: 0.66em; color: var(--piedra); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
+        .header h1 { font-family: var(--display); font-size: 2.1em; font-weight: 700; color: var(--polvo); margin-bottom: 10px; text-wrap: balance; line-height: 1.2; }
+        .header .tagline { color: var(--polvo-dim); font-style: italic; font-size: 0.98em; max-width: 60ch; }
+        .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+        .meta-item { background: var(--humo); border: 1px solid var(--linea); padding: 5px 12px; border-radius: 3px; font-family: var(--mono); font-size: 0.72em; letter-spacing: 0.5px; color: var(--polvo-dim); }
+
+        .section { padding: 30px 44px; border-bottom: 1px solid var(--linea); }
+        .section h2 { font-family: var(--mono); font-size: 0.7em; text-transform: uppercase; letter-spacing: 3px; color: var(--brasa); margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid var(--linea); }
+
+        .segment { margin: 38px 0; padding-bottom: 26px; border-bottom: 1px solid var(--linea); }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+        .segment-number { background: var(--brasa); color: var(--medianoche); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 0.72em; font-weight: 700; flex-shrink: 0; }
+        .segment-title { font-family: var(--display); font-weight: 700; font-size: 1em; color: var(--polvo); letter-spacing: 0.5px; }
+        .segment-time { margin-left: auto; font-family: var(--mono); font-size: 0.72em; color: var(--piedra); background: var(--humo); padding: 3px 10px; border-radius: 3px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+        .sfx { background: var(--medianoche); color: var(--brasa); padding: 12px 16px; border-radius: 3px; border: 1px solid var(--linea); font-family: var(--mono); font-size: 0.8em; line-height: 1.65; margin: 16px 0; }
+
+        .host-block { margin: 20px 0; padding: 0 0 0 20px; border-left: 2px solid var(--linea); }
+        .host-name { font-family: var(--mono); font-weight: 700; font-size: 0.68em; text-transform: uppercase; letter-spacing: 2px; color: var(--brasa); margin-bottom: 8px; }
+        .host-text { font-size: 1.02em; line-height: 1.9; color: var(--polvo); }
+
+        /* Temperatura = estatus epistémico. Es la tesis del show hecha CSS:
+           el dato confirmado se calienta, la leyenda se queda fría. */
+        .dato { background: var(--humo); color: var(--polvo); padding: 15px 18px; border-radius: 3px; margin: 18px 0; border-left: 3px solid var(--brasa); font-size: 0.94em; }
+        .dato-label { font-family: var(--mono); font-size: 0.66em; text-transform: uppercase; letter-spacing: 2px; color: var(--brasa); margin-bottom: 7px; font-weight: 700; }
+        .leyenda { background: var(--humo); color: var(--polvo-dim); padding: 15px 18px; border-radius: 3px; margin: 18px 0; border-left: 3px solid var(--piedra); font-size: 0.94em; }
+        .leyenda-label { font-family: var(--mono); font-size: 0.66em; text-transform: uppercase; letter-spacing: 2px; color: var(--polvo-dim); margin-bottom: 7px; font-weight: 700; }
+
+        .nota-produccion { background: transparent; border: 1px dashed var(--linea); border-radius: 3px; padding: 11px 15px; margin: 12px 0; font-size: 0.82em; line-height: 1.7; color: var(--polvo-dim); }
+        .nota-produccion::before { content: "NOTA PRODUCCIÓN: "; font-family: var(--mono); font-weight: 700; font-size: 0.9em; letter-spacing: 1px; color: var(--piedra); text-transform: uppercase; }
+        .nota-produccion strong { color: var(--polvo); }
+        .nota-produccion code { font-family: var(--mono); font-size: 0.92em; color: var(--brasa); }
+        .verificar { background: transparent; border: 1px solid var(--alerta); border-radius: 3px; padding: 11px 15px; margin: 12px 0; font-size: 0.82em; line-height: 1.7; color: var(--polvo-dim); }
+        .verificar::before { content: "⚠ VERIFICAR ANTES DE GRABAR: "; font-family: var(--mono); font-weight: 700; font-size: 0.9em; letter-spacing: 1px; color: var(--alerta); text-transform: uppercase; }
+        .verificar strong { color: var(--alerta); }
+        .verificar code { font-family: var(--mono); font-size: 0.92em; }
+
+        .arquitectura { font-size: 0.86em; overflow-x: auto; }
+        .arq-row { display: grid; grid-template-columns: 28px 210px 80px 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--linea); align-items: start; min-width: 560px; }
+        .arq-row:last-child { border-bottom: none; }
+        .arq-num { font-family: var(--mono); color: var(--brasa); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--polvo); }
+        .arq-time { color: var(--piedra); font-family: var(--mono); font-variant-numeric: tabular-nums; }
+        .arq-head { font-family: var(--mono); font-size: 0.88em; text-transform: uppercase; letter-spacing: 1.5px; color: var(--piedra); border-bottom-color: var(--piedra); }
+        .arq-head .arq-num, .arq-head .arq-seg, .arq-head .arq-time { color: var(--piedra); font-weight: 700; }
+        .arq-pivote { background: rgba(217,191,122,0.09); border-left: 2px solid var(--brasa); padding-left: 10px; margin-left: -12px; }
+
+        strong { color: var(--polvo); font-weight: 700; }
+        em { color: var(--polvo-dim); }
+        table { border-collapse: collapse; width: 100%; font-size: 0.9em; }
+        th, td { border: 1px solid var(--linea); padding: 7px 10px; text-align: left; }
+        th { color: var(--brasa); font-weight: 700; }
+
+        @media (max-width: 620px) {
+            .section, .header { padding-left: 22px; padding-right: 22px; }
+            .segment-time { margin-left: 0; }
+        }
+
+        /* --- Ajustes solo para el artifact publicado --- */
+        html, body { background: var(--medianoche); }
+        :root[data-theme="light"] body, :root[data-theme="dark"] body { background: var(--medianoche); color: var(--polvo); }
+        .container { box-shadow: 0 0 90px rgba(0,0,0,0.55); }
+        img, table { max-width: 100%; }
+        a { color: var(--brasa); }
+        :focus-visible { outline: 2px solid var(--brasa); outline-offset: 3px; }
+        @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+    </style>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Mr. Putrid's Den · Temporada 2</div>
+        <div class="pilar">Temporada 2 · Episodio 2 — Expediente 02</div>
+        <h1>El rock y el diablo</h1>
+        <div class="tagline">Pactos, símbolos y mensajes ocultos — tres leyendas, tres autores con nombre propio, y ninguno de ellos es el diablo</div>
+        <div class="meta">
+            <span class="meta-item">Temporada 2 · Ep. 2</span>
+            <span class="meta-item">Misterios / Leyendas</span>
+            <span class="meta-item">~43 min · Episodio único</span>
+            <span class="meta-item">Solo</span>
+        </div>
+    </div>
+
+    <!-- NOTA DE PRODUCCIÓN -->
+    <div class="section">
+        <div class="nota-produccion">Segundo expediente de la Temporada 2. <strong>Este episodio quedó anunciado al aire</strong> en el cierre de T2·E1 — cita textual: "Pactos, símbolos y mensajes ocultos: el rock y el diablo". Robert Johnson es la PUERTA del expediente, no el tema: su biografía ya se contó en el bloque C de T2·E1 y <strong>no se repite acá</strong> (las dos fotos, tocar de cara a la pared, el fundador retroactivo). Alcance aprobado por Andrés el 2026-08-03: expediente completo en tres actos. Formato solo. Dirección visual "La Guarida". Límites firmes vigentes: SIN simbología ocultista en artwork ni en teaser, y SIN deificar a los artistas.</div>
+        <div class="nota-produccion"><strong>La tesis, en una línea:</strong> las tres grandes acusaciones satánicas del rock tienen autor humano identificable — LeDell Johnson, Kenneth Anger y Michael Mills. El episodio no discute si el diablo existe. Discute <strong>quién escribió cada historia y por qué le convenía</strong>. Es la maquinaria de T2·E1 ("hechos verdaderos mal pegados") un piso más arriba: ahora con nombre y apellido de quién los pegó.</div>
+        <div class="verificar"><strong>Fuentes abiertas el 2026-08-03</strong>, listadas por acto al final del guion. Pendiente la regla 5 de <code>guion-style-mpd.md</code>: <strong>re-abrir todas las fuentes justo antes de grabar</strong>, aunque ya estén verificadas — el sello de una sesión anterior es hipótesis, no hecho. Falta además verificar de primera mano: los nombres y el desenlace de los dos jóvenes de Nevada, y las audiencias del PMRC de 1985 (que hoy se mencionan de pasada, sin cifras).</div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row arq-head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Entra</span><span>Contenido</span></div>
+            <div class="arq-row"><span class="arq-num">0</span><span class="arq-seg">Logo sonoro</span><span class="arq-time">00:00</span><span>Bumper fijo, 3–5 s. Primer sonido del show.</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Disclaimer</span><span class="arq-time">00:05</span><span>Bumper fijo, ~15 s. El contrato de honestidad.</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Intro music</span><span class="arq-time">00:20</span><span>Intro T2 recortado (~15 s).</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Cold open + bienvenida</span><span class="arq-time">00:35</span><span>Sacramento, 1982: un comité del estado de California oye un disco al revés. Un solo gancho.</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Acto I — La encrucijada</span><span class="arq-time">04:30</span><span>Robert Johnson. <strong>Destape: la leyenda era de Tommy Johnson.</strong></span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">Acto II — La casa junto al lago</span><span class="arq-time">16:00</span><span>Page, Boleskine, Equinox. Y el hombre que ventiló el pacto: Kenneth Anger.</span></div>
+            <div class="arq-row arq-pivote"><span class="arq-num">6</span><span class="arq-seg">Acto III — Al revés</span><span class="arq-time">27:00</span><span><strong>Acá aterriza el episodio.</strong> Mills, la audiencia del 82, y el juicio de Nevada del 90.</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Takeaway</span><span class="arq-time">38:00</span><span>Qué tapa la acusación satánica. Devolverle la autoría a los humanos.</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">Cierre + conector</span><span class="arq-time">41:00</span><span>Puente al próximo expediente.</span></div>
+            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Outro music</span><span class="arq-time">~43:00</span><span>Outro T2 recortado (~15 s), fade in.</span></div>
+        </div>
+        <div class="nota-produccion"><strong>Por qué el orden es cronológico y el clímax va al final:</strong> los tres actos avanzan de 1930 a 1990, y cada uno sube la apuesta — de una historia contada en un porche, a un rumor de prensa, a un tribunal con dos familias adentro. T2·E1 puso el desmentido en el centro; acá no se puede, porque el desmentido del Acto III <em>necesita</em> que los dos anteriores ya hayan enseñado el truco.</div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- 0-2 BUMPERS -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Logo sonoro · Disclaimer · Intro</span><span class="segment-time">00:00 — 00:35</span></div>
+            <div class="sfx">[SFX: LOGO SONORO — bumper fijo de marca, 3–5 s. Es el PRIMER sonido del episodio, antes del disclaimer.]</div>
+            <div class="sfx">[SFX: DISCLAIMER — bumper fijo, ~15 s, voz grave. NO se regraba por episodio. Texto y ajustes en <code>audio/t2-disclaimer-e-intro.md</code>.]</div>
+            <div class="sfx">[SFX: INTRO T2 — ~15 s, recortado. ⚠️ NO usar el intro de Temporada 1.]</div>
+        </div>
+
+        <!-- 3 COLD OPEN -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">Cold open + Bienvenida</span><span class="segment-time">00:35 — 04:30</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Sacramento, California. 1982. [PAUSA] Un salón de sesiones del gobierno del estado, con su alfombra industrial y sus micrófonos de mesa. Adentro hay legisladores adultos, con corbata, elegidos por voto popular para discutir presupuestos y carreteras.<br><br>
+                    Y esa tarde están sentados ahí, en silencio, escuchando <strong>un disco puesto al revés</strong>.<br><br>
+                    No es una broma ni una anécdota de oficina. Es una audiencia formal del comité de protección al consumidor de la Asamblea de California. Alguien trajo un tocadiscos. Alguien puso la aguja sobre "Stairway to Heaven", de Led Zeppelin, y la hizo girar hacia atrás. Y ese salón entero se quedó oyendo ese ruido gangoso, esa cosa que no es idioma, buscando dentro una voz.<br><br>
+                    Buscando, específicamente, la voz del diablo. [PAUSA]<br><br>
+                    A mí lo que me detiene no es que alguien creyera eso. Gente cree cosas todo el tiempo. Lo que me detiene es lo otro: [ÉNFASIS]que la creyeron lo suficiente como para gastarle un salón del estado.[/ÉNFASIS] Que la idea tuvo tanta fuerza que se subió de un radio de casa a un edificio público.<br><br>
+                    ¿Y cómo llega una canción a un comité legislativo? [PAUSA] Esa pregunta tiene respuesta. Y la respuesta no empieza en 1982.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Bienvenidos de vuelta a la Guarida. Yo soy Andrés, y este es el <strong>Expediente 02</strong>.<br><br>
+                    En el expediente pasado desarmamos el Club de los 27, y ahí les dejé una puerta abierta: Robert Johnson, el bluesman del que se dice que su talento no era suyo, sino prestado por el diablo en un cruce de caminos a medianoche. Les dije que íbamos a volver.<br><br>
+                    Pues acá estamos. Pero le voy a hacer una advertencia antes de empezar, porque este expediente tiene una trampa que el anterior no tenía.<br><br>
+                    Este episodio <strong>no va sobre si el diablo existe</strong>. Ese no es mi departamento y usted no necesita que yo le resuelva eso. [PAUSA] Este episodio va sobre otra cosa, más terrenal y —le confieso— bastante más incómoda.<br><br>
+                    Va sobre <strong>quién escribió cada una de estas historias</strong>. Porque resulta que las tres grandes acusaciones satánicas de la historia del rock —el pacto en la encrucijada, la casa maldita de Led Zeppelin, y los mensajes escondidos al revés— [ÉNFASIS]tienen autor.[/ÉNFASIS] Un autor humano, con nombre, con apellido, con dirección y con motivos. En los tres casos sabemos quién fue.<br><br>
+                    Y en ninguno de los tres el autor es el diablo.
+                </div>
+            </div>
+            <div class="nota-produccion">Apertura en escena, un solo gancho (regla 5: no volcar la agenda). El cold open del 82 se retoma completo en el Acto III — no es adorno, es el gancho que cierra el círculo. La advertencia de "no va sobre si el diablo existe" es la que protege el límite del show: se explora sin vender el rumor ni burlarse de quien cree.</div>
+        </div>
+
+        <!-- 4 ACTO I -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">Acto I — La encrucijada</span><span class="segment-time">04:30 — 16:00</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Mississippi, años 30. La leyenda dice así, y usted probablemente ya se la sabe: un músico joven, mediocre con la guitarra, tan malo que lo sacaban de los bares. Desaparece un tiempo. Vuelve meses después tocando de una manera que nadie en el Delta había oído. ¿Cómo? Se paró a medianoche en el cruce de dos caminos de tierra. Apareció un hombre. El hombre le tomó la guitarra, se la afinó, se la devolvió. Y desde esa noche tocó así.<br><br>
+                    Esa es la leyenda madre del rock. La historia de la que salen todas las demás. [PAUSA]<br><br>
+                    Y tiene un problema.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    El problema es que <strong>no es la historia de Robert Johnson</strong>.<br><br>
+                    Es la historia de <strong>Tommy Johnson</strong>. [PAUSA] Otro hombre. Otro bluesman. Sin ningún parentesco con Robert — el apellido Johnson en el Mississippi de esa época es como el apellido Rodríguez acá.<br><br>
+                    Y sabemos que es de Tommy porque sabemos <em>quién la contó</em>. La contó <strong>LeDell Johnson</strong>, su hermano mayor. No se la contó a un periodista ni a un productor de discos: se la contó a un <strong>folclorista</strong>, un investigador llamado <strong>David Evans</strong>, que andaba recogiendo testimonios sobre la música del Delta. Evans la publicó en su biografía de Tommy en <strong>1971</strong>.<br><br>
+                    Y en la versión original —la que sale de la boca del hermano— el detalle es más raro y más bonito que el que todos repetimos. LeDell no habla de un contrato ni de firmas de sangre. Habla de un hombre grande que aparece en el cruce, [ÉNFASIS]le toma la guitarra a su hermano, se la afina, y se la devuelve.[/ÉNFASIS]<br><br>
+                    Afinarla. Ese es el gesto. Le acomodó las cuerdas.
+                </div>
+            </div>
+            <div class="leyenda">
+                <div class="leyenda-label">Leyenda — la versión de LeDell</div>
+                Un hombre grande aparece en el cruce a medianoche, recibe la guitarra, la afina y la devuelve. Desde ahí, el talento. Recogida por el folclorista David Evans de boca de LeDell Johnson, hermano de Tommy, y publicada en 1971. <strong>Es anterior a la versión famosa protagonizada por Robert Johnson.</strong>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Entonces la pregunta obvia: ¿cómo se le pega la historia de un hombre a otro hombre? [PAUSA]<br><br>
+                    Y acá la respuesta es de una tontería que da risa: <strong>vivieron en el mismo pueblo</strong>. Hazlehurst, Mississippi. Tommy Johnson vivió ahí. Robert Johnson también vivió ahí un tiempo.<br><br>
+                    Mismo apellido. Mismo oficio. Mismo pueblo. Y una historia suelta, buenísima, circulando por ahí sin dueño fijo. [PAUSA] Con el tiempo, la historia se fue a vivir donde le convenía. Se fue a vivir con el más famoso.<br><br>
+                    Porque las leyendas no se quedan con quien las merece. Se quedan con quien las <em>sostiene</em> mejor.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Ahora, para que la mudanza funcionara faltaba una condición. Y esta es la parte que más me interesa del asunto.<br><br>
+                    Robert Johnson, en vida, <strong>no fue famoso</strong>. Nada de eso. Grabó en dos sesiones improvisadas y rapidísimas: una en <strong>1936</strong>, en un cuarto del hotel Gunter de San Antonio, Texas. Otra en <strong>1937</strong>, en un cuarto en Dallas. No en un estudio de verdad: en cuartos alquilados, con el equipo montado contra la pared.<br><br>
+                    Después de eso, esos discos se hundieron. Se volvieron un montón de placas de 78 revoluciones circulando entre coleccionistas. Johnson se murió en <strong>1938</strong> siendo, para el mundo, nadie.<br><br>
+                    Y así se quedó [ÉNFASIS]más de veinte años.[/ÉNFASIS]
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Hasta <strong>1961</strong>. [PAUSA]<br><br>
+                    Ese año, Columbia Records saca una recopilación con las grabaciones viejas. Se llama <em>King of the Delta Blues Singers</em>. Rey de los cantantes de blues del Delta. Fíjese en el título, porque el título ya está haciendo trabajo: nadie lo había coronado rey de nada. Se lo puso el departamento de mercadeo de un sello, 23 años después de que el hombre estuviera muerto.<br><br>
+                    Y ese disco cae justo en el momento perfecto: los años 60, el revival del folk y el blues, una generación de muchachos ingleses y americanos escarbando en la música vieja buscando algo verdadero. Ese disco es el que lo saca de las sombras. De ahí salen los que después arman medio rock británico.<br><br>
+                    Entonces mire lo que quedó armado: [PAUSA] un hombre del que casi no hay información. Una historia de encrucijada que le pertenecía a otro. Y un disco de 1961 que lo convierte en leyenda ante un público nuevo, [ÉNFASIS]que no tenía cómo saber cuál de las dos cosas era cierta.[/ÉNFASIS]<br><br>
+                    El mito de Robert Johnson no lo hizo el Delta de los años 30. Lo hizo una reedición de los 60.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — la cronología que desarma el mito</div>
+                <strong>1936–37:</strong> Johnson graba en dos sesiones improvisadas (hotel Gunter, San Antonio; un cuarto en Dallas). · <strong>1938:</strong> muere, en la oscuridad. · <strong>1961:</strong> Columbia publica <em>King of the Delta Blues Singers</em> y lo lanza al revival folk-blues de los 60. · <strong>1971:</strong> David Evans publica la historia del cruce de caminos — contada por LeDell sobre su hermano <strong>Tommy</strong>.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y le voy a decir por qué esto no es desinflar la leyenda, sino todo lo contrario.<br><br>
+                    Porque hay un hombre acá que perdió dos veces. Tommy Johnson grabó, tocó, vivió, y le contó a su hermano una historia rarísima sobre un desconocido que le afinó la guitarra en la mitad de la noche. Esa historia se volvió [ÉNFASIS]la leyenda más famosa de la música popular del siglo XX.[/ÉNFASIS] Y a Tommy no le quedó ni el crédito.<br><br>
+                    La leyenda se mudó de casa y ni siquiera dejó una nota. [PAUSA]<br><br>
+                    Eso, para mí, es más escalofriante que un pacto. Porque un pacto con el diablo, por lo menos, es un trato. Esto fue un despojo.
+                </div>
+            </div>
+            <div class="nota-produccion">Cierre del Acto I con el gancho del siguiente (regla 7: sin meta-anuncios). Ojo al grabar: NO repetir el material de Johnson que ya salió en T2·E1 — las dos fotos confirmadas, tocar de cara a la pared, el "fundador retroactivo". Si algo de eso se cuela al improvisar, se corta en edición.</div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Ahora, esa historia le funcionó a la leyenda porque Johnson estaba muerto y no podía desmentir nada. [PAUSA]<br><br>
+                    Treinta años después le pasó algo parecido a una banda que sí estaba viva, que sí podía hablar, y que aun así no logró quitarse el asunto de encima. Entre otras cosas, porque uno de sus integrantes se compró una casa que no ayudaba en nada.
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 ACTO II -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">Acto II — La casa junto al lago</span><span class="segment-time">16:00 — 27:00</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Orillas del lago Ness, Escocia. Una casona grande, gris, sola, con el agua negra al frente y la niebla que se le mete a uno en la ropa. Se llama <strong>Boleskine House</strong>.<br><br>
+                    Esa casa fue de <strong>Aleister Crowley</strong> entre <strong>1899 y 1913</strong>. Crowley era ocultista, escritor, provocador profesional, y —hay que decirlo— un hombre que se dedicó buena parte de su vida a construirse una reputación de monstruo, con bastante éxito comercial. La prensa británica de la época lo llamaba el hombre más malvado del mundo. A él le encantaba.<br><br>
+                    En <strong>1970</strong> esa casa la compra <strong>Jimmy Page</strong>, el guitarrista de Led Zeppelin. [PAUSA] La tuvo hasta <strong>1992</strong>.
+                </div>
+            </div>
+            <div class="verificar">Algunas fuentes fechan la compra de Boleskine en <strong>1971</strong> y no en 1970. <strong>Al aire, decir "a comienzos de los 70"</strong> — bajar la precisión es salida legítima cuando las fuentes se reparten (regla 4 de <code>guion-style-mpd.md</code>). La venta en 1992 sí es consistente entre fuentes.</div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y no fue solo la casa. En el verano del <strong>74</strong>, Page abre una librería en Londres, en el número 4 de Holland Street. Se llamaba <strong>The Equinox</strong>, y vendía exclusivamente libros de ocultismo. El nombre lo tomó de una publicación de la orden que había fundado Crowley.<br><br>
+                    ¿Y la explicación que dio Page? [PAUSA] Que no había en todo Londres una librería con una colección decente de libros de ocultismo, y que estaba harto de no conseguir los libros que quería.<br><br>
+                    Ahí está. Esa es la explicación completa. [ÉNFASIS]Un coleccionista obsesivo, molesto porque no encontraba dónde comprar.[/ÉNFASIS] La librería duró hasta finales de los 70 y cerró cuando se le venció el arriendo.<br><br>
+                    Le confieso que esa parte es la que me parece más humana de toda la historia. El hombre más señalado del rock por pactar con las tinieblas abrió una librería porque le tocaba encargar los libros por correo.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Pero de esos hechos —una casa, una librería, una obsesión de coleccionista— se armó otra cosa mucho más grande.<br><br>
+                    La versión popular dice que Led Zeppelin hizo un pacto. Que Page reunió a los otros tres y que los cuatro firmaron, de alguna forma, a cambio del éxito descomunal que tuvieron. Y la versión trae hasta un detalle de novela: que <strong>John Paul Jones</strong>, el bajista, no entró en el trato. Que por eso a él no le pasó nada. [PAUSA]<br><br>
+                    Y después vino lo que la leyenda cobra como prueba. En <strong>1975</strong>, Robert Plant queda gravemente herido en un accidente de carro. En <strong>1977</strong>, se le muere el hijo, Karac, de 5 años. En <strong>1980</strong>, se muere John Bonham, y con él se acaba la banda.<br><br>
+                    Ahí me toca parar un segundo. [PAUSA] Porque eso último no es material de leyenda. Eso es un niño de 5 años y un hombre de 32, y hay familias vivas que cargan eso todos los días. Lo estoy nombrando porque es exactamente lo que la historia del pacto usa como munición. No para alimentarla.
+                </div>
+            </div>
+            <div class="leyenda">
+                <div class="leyenda-label">Leyenda — el pacto de los cuatro</div>
+                Que Page convenció a la banda de sellar un pacto por el éxito, y que Jones no participó y por eso salió ileso. <strong>No existe fuente para esto.</strong> Ni un testimonio, ni un documento, ni una declaración. Circula desde hace medio siglo sin que nadie pueda decir de dónde salió. En este episodio se expone como lo que es: un relato sin origen documentado.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Entonces, si nadie puede señalar la fuente del pacto, [ÉNFASIS]¿de dónde salió?[/ÉNFASIS] [PAUSA]<br><br>
+                    Acá aparece un personaje que casi nunca se nombra cuando se cuenta esta historia, y que a mi juicio es la pieza que falta. Se llamaba <strong>Kenneth Anger</strong>.<br><br>
+                    Anger era cineasta. Underground, experimental, con obsesiones parecidas a las de Page: le fascinaba Crowley. Estaba haciendo una película llamada <em>Lucifer Rising</em>, y Page se metió en el proyecto: le dio plata, le dio apoyo, y en algún momento hasta lo alojó en una de sus casas.<br><br>
+                    Y se pelearon. [PAUSA] Feo.<br><br>
+                    Se pelearon, y Anger hizo lo que hace mucha gente cuando se pelea con alguien más famoso: <strong>se fue a los medios</strong>. Y lo despedazó. Y el insulto que escogió es preciso y venenoso: dijo que Page era un <strong><em>dabbler</em></strong>. Un aficionado. Un tipo que jugaba a esto sin saber.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Piénsenlo un momento, porque es una jugada perfecta. [PAUSA] Anger no lo acusa de ser malvado. Lo acusa de ser <em>falso</em>. De estar posando.<br><br>
+                    Pero el insulto tiene un efecto secundario que a Anger seguramente no le importó, y que resultó ser el más duradero de todos: [ÉNFASIS]para decir que Page era un aficionado del ocultismo, había que instalar primero, en la cabeza de todo el mundo, que Page andaba en el ocultismo.[/ÉNFASIS]<br><br>
+                    El público no se quedó con "es un aficionado". El público se quedó con la otra mitad.<br><br>
+                    Y de ahí en adelante ya no importa lo que la banda diga. Cada tragedia que les cae encima entra en un molde que ya estaba puesto y esperando.
+                </div>
+            </div>
+            <div class="verificar">También circula que <strong>Anger dijo en privado que le había echado una maldición a Page</strong>. Eso está reportado <strong>de segunda mano y en fuentes débiles</strong> (blogs, agregadores), no en periodismo verificable. <strong>Al aire NO se afirma.</strong> Si se menciona, va como "se cuenta que", y marcando que no hay fuente sólida. Lo que sí está documentado: el pleito por <em>Lucifer Rising</em>, el apoyo económico de Page, y el insulto público de "dabbler".</div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y a Page, ¿qué le queda? [PAUSA] Nunca lo negó del todo, y esa fue su decisión. Cuando le preguntaban por Crowley respondía cosas ambiguas, elegantes, del tipo "estaba usando un sistema que funcionaba". Ni sí, ni no.<br><br>
+                    Y ahí hay una lección de oficio que vale para cualquiera que se dedique a esto: [ÉNFASIS]el misterio vende, hasta el día en que deja de ser suyo.[/ÉNFASIS] Page cultivó una ambigüedad que le servía. Le daba peso, le daba aura, le daba prensa. Y luego esa misma ambigüedad se le montó encima y se quedó ahí, hasta que la usaron para explicar la muerte de un niño de 5 años.<br><br>
+                    Uno alimenta al perro y después el perro no distingue.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Entonces, hasta acá tenemos dos leyendas y dos autores. Un hermano contándole a un investigador la historia de otro hombre. Y un cineasta despechado hablando con la prensa. [PAUSA]<br><br>
+                    Los dos casos tienen algo en común: la acusación se queda dando vueltas en el mundo del rumor. Nadie va a la cárcel, nadie va a un tribunal, nadie tiene que probar nada.<br><br>
+                    Eso se acabó en los años 80. Ahí la acusación se bajó del rumor, se puso corbata, y se metió a un juzgado.
+                </div>
+            </div>
+        </div>
+
+        <!-- 6 ACTO III -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">Acto III — Al revés</span><span class="segment-time">27:00 — 38:00</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    <strong>1981.</strong> Un locutor de radio cristiana llamado <strong>Michael Mills</strong> empieza a decir al aire que las canciones populares traen mensajes escondidos. No metáforas: mensajes grabados hacia atrás, que el oído consciente no capta pero el subconsciente sí.<br><br>
+                    Y pone un ejemplo estrella: "Stairway to Heaven". Según Mills, ahí, al revés, se oye <em>"master Satan"</em>, se oye <em>"serve me"</em>, se oye <em>"there's no escaping it"</em>. Amo Satán. Sírveme. No hay escapatoria. [PAUSA]<br><br>
+                    Y la cosa prende. Prende de una manera que hoy cuesta dimensionar, porque estamos hablando de una época sin internet, donde una idea así viajaba de sermón en sermón, de emisora en emisora, de papá a mamá a colegio.<br><br>
+                    Al año siguiente ya no era un asunto de radio. Era un asunto de estado.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y acá volvemos al salón con el que abrimos. [PAUSA]<br><br>
+                    <strong>1982.</strong> El comité de protección al consumidor de la Asamblea de California hace una audiencia formal sobre el asunto. Ponen "Stairway to Heaven" al revés, ahí, en el recinto.<br><br>
+                    Y llaman a declarar a un señor llamado <strong>William Yarroll</strong>, que se presentaba como investigador neurocientífico. Su tesis: que el cerebro humano puede descifrar mensajes invertidos sin que uno se dé cuenta. Que usted oye la canción al derecho, pero algo adentro suyo la está oyendo al revés y obedeciendo.<br><br>
+                    Fíjense en lo que hace esa tesis, porque es astuta: [ÉNFASIS]convierte "yo no oigo nada" en la prueba de que está funcionando.[/ÉNFASIS] Si usted no lo escucha, es justamente porque el mensaje va dirigido a la parte suya que no controla.<br><br>
+                    Una acusación que usa su propia negación como evidencia. Contra eso no hay defensa posible.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — cómo escaló, año por año</div>
+                <strong>1981:</strong> Michael Mills lo lanza en radio cristiana ("master Satan", "serve me", "there's no escaping it"). · <strong>1982:</strong> el comité de protección al consumidor de la Asamblea de California hace una audiencia, toca la canción al revés y escucha a William Yarroll. · La tesis la siguen desarrollando otros autores del circuito, entre ellos Jacob Aranza y Jeff Godwin.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Ahora, hay una explicación de lo que de verdad está pasando cuando usted oye "master Satan" en un ruido al revés. Y no es que usted sea tonto ni sugestionable. Es que su cerebro está haciendo lo que sabe hacer.<br><br>
+                    El cerebro humano es una máquina de encontrar patrones, y está calibrada para pasarse de rosca a propósito. Le conviene más ver una cara donde no hay que no verla donde sí hay. Por eso vemos figuras en las nubes y caras en los enchufes.<br><br>
+                    Con el sonido pasa igual, pero peor, porque el lenguaje es lo que más entrenado tenemos. Póngale a un cerebro humano un ruido ambiguo y <em>dígale qué debe oír</em>, y lo va a oír. Sin falta. [PAUSA]<br><br>
+                    Y ahí está el truco completo del asunto: [ÉNFASIS]nadie descubrió nunca un mensaje al revés. A todo el mundo se lo dijeron primero.[/ÉNFASIS] Primero le entregan la frase, después le ponen el ruido. En ese orden, y solo en ese orden, funciona.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Hasta acá esto se puede contar como una curiosidad graciosa de los años 80. Adultos con corbata oyendo discos al revés. [PAUSA]<br><br>
+                    Pero le dije al principio que este expediente tenía una trampa. Acá está.<br><br>
+                    <strong>Diciembre de 1985. Sparks, Nevada.</strong> Dos muchachos pasan la tarde tomando y fumando, oyendo una y otra vez un disco de <strong>Judas Priest</strong>: <em>Stained Class</em>, de 1978. Llevan como seis horas en eso.<br><br>
+                    Al final de esa tarde, los dos se disparan. [PAUSA]<br><br>
+                    Y las familias, destrozadas, buscando cómo se explica algo así, encuentran la explicación que llevaba cuatro años circulando por la radio y por las iglesias del país. Demandan a la banda. Sostienen que en la canción "Better by You, Better Than Me" hay un mensaje escondido al revés. Dos palabras: <em>"do it"</em>. Hazlo.
+                </div>
+            </div>
+            <div class="verificar">Confirmar de primera mano <strong>los nombres de los dos jóvenes y el desenlace exacto de cada uno</strong> — hay diferencias entre fuentes sobre quién murió en el acto y quién sobrevivió. <strong>Si no queda claro, al aire se dice "los dos se dispararon" y nada más</strong>, sin detallar. Son personas reales con familia viva: acá la precisión no es un lujo editorial, es respeto.</div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    El caso llega a juicio en <strong>1990</strong>, en Nevada. Y ahí Judas Priest —una banda de heavy metal británica, con toda su pinta— se sienta en un tribunal a defenderse de la acusación de haber inducido a dos muchachos a matarse.<br><br>
+                    El caso <strong>se desestimó</strong>. [PAUSA] Y las razones importan, así que se las doy despacio.<br><br>
+                    Primero: la investigación científica <strong>no sostiene</strong> que un estímulo subliminal pueda precipitar una conducta de esa magnitud. Eso no es opinión de la banda ni de un fan. Es lo que quedó en el proceso.<br><br>
+                    Y segundo, lo que sí apareció cuando se miró de verdad: [ÉNFASIS]los dos muchachos venían de un entorno violento y depresivo.[/ÉNFASIS] Eso estaba ahí antes del disco. Estaba ahí antes de la banda. Estaba ahí antes de que nadie pusiera nada al revés.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — el juicio de Nevada</div>
+                Diciembre de <strong>1985</strong>, Sparks (Nevada): dos jóvenes se disparan tras horas de alcohol, marihuana y el disco <em>Stained Class</em> (1978) de Judas Priest. La demanda señalaba un supuesto <em>"do it"</em> invertido en "Better by You, Better Than Me". El juicio se celebró en <strong>1990</strong> y <strong>el caso fue desestimado</strong>: la investigación científica no sostiene que un estímulo subliminal precipite una conducta así, y se documentó un entorno familiar violento y depresivo previo. Documental sobre el caso: <em>Dream Deceivers</em> (1992).
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y acá es donde a mí se me acaba la risa con este episodio. [PAUSA]<br><br>
+                    Porque la teoría de los mensajes al revés no era inofensiva. No era un chiste de la época. Esa teoría <strong>hizo un trabajo concreto</strong>, y el trabajo fue este: le dio a dos familias en duelo un culpable que quedaba lejos.<br><br>
+                    Un culpable extranjero, con pelo largo, con chaquetas de cuero, que no tenía nada que ver con la casa donde esos muchachos crecieron. [PAUSA] Un culpable que permitía no mirar hacia adentro.<br><br>
+                    Yo no soy capaz de juzgar a esos papás. Nadie que no haya perdido un hijo puede. Buscar una explicación afuera cuando se le muere un hijo a uno es de lo más humano que hay.<br><br>
+                    Pero eso es lo que hace la acusación satánica, siempre, en todos los casos que hemos visto hoy: [ÉNFASIS]señala hacia afuera para que uno no tenga que mirar hacia adentro.[/ÉNFASIS]
+                </div>
+            </div>
+        </div>
+
+        <!-- 7 TAKEAWAY -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Takeaway — quién escribió cada historia</span><span class="segment-time">38:00 — 41:00</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Entonces recapitulemos, pero no por los casos. Por los autores. [PAUSA]<br><br>
+                    La encrucijada la contó <strong>LeDell Johnson</strong>, hablando de su hermano Tommy, a un investigador que estaba recogiendo historias. Ahí no hay mala fe: hay un hombre contando algo raro que pasó en su familia. La historia se mudó sola después.<br><br>
+                    El pacto de Led Zeppelin se lo debemos, en buena parte, a <strong>Kenneth Anger</strong>, un colaborador despechado que fue a los medios a decir que Page era un farsante — y que, para decirlo, tuvo que instalar primero la idea de que Page andaba en eso.<br><br>
+                    Y los mensajes al revés los puso a circular <strong>Michael Mills</strong>, desde una emisora, en 1981.<br><br>
+                    Tres historias. Tres hombres. Un hermano, un artista resentido y un locutor. [ÉNFASIS]Ninguno de los tres es el diablo. Los tres son personas con motivos perfectamente ordinarios.[/ÉNFASIS]
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y le tengo una última cosa, que es la que de verdad me quedó dando vueltas armando este expediente.<br><br>
+                    Todas estas leyendas hacen lo mismo: <strong>le quitan la autoría a alguien</strong>. [PAUSA]<br><br>
+                    Cuando usted dice que Robert Johnson tocaba así por un pacto, lo que está diciendo es que un hombre negro y pobre del Mississippi no pudo haberse vuelto ese guitarrista solo, con años de trabajo. Alguien se lo tuvo que dar.<br><br>
+                    Cuando usted dice que Led Zeppelin llegó donde llegó por un trato, está diciendo que cuatro tipos no pudieron haber escrito eso ellos mismos.<br><br>
+                    Y cuando usted dice que una canción mató a dos muchachos, está diciendo que lo que sí los estaba matando —el dolor real, la casa real— no cuenta.<br><br>
+                    La leyenda del diablo es, en el fondo, la manera más elegante que hemos encontrado de [ÉNFASIS]no darle el crédito a la gente por lo que hizo.[/ÉNFASIS] Ni por lo bueno ni por lo terrible.
+                </div>
+            </div>
+        </div>
+
+        <!-- 8 CIERRE -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">8</span><span class="segment-title">Cierre + Conector</span><span class="segment-time">41:00 — ~43:00</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Ese es el Expediente 02 de la Guarida. Pactos, símbolos y mensajes ocultos. [PAUSA] Tres acusaciones enormes, tres autores con nombre propio, y un cruce de caminos que le pertenecía a otro hombre.<br><br>
+                    Si esta historia les gustó, háganme un favor concreto: mándensela a ese amigo que jura que en tal canción se oye algo si uno la pone al revés. Que la oiga completa antes de discutir.<br><br>
+                    Y cuéntenme una cosa por donde me tengan: [ÉNFASIS]¿usted alguna vez oyó uno de esos mensajes?[/ÉNFASIS] ¿Le dijeron primero qué debía oír, o lo oyó solo? Piénselo con cuidado, porque casi siempre hay alguien que dijo la frase primero.<br><br>
+                    Gracias por acompañarme en la Guarida. Cuídense, cuiden a la gente que quieren, y desconfíen de las historias que le quitan el mérito a la gente. Nos oímos en el próximo expediente.
+                </div>
+            </div>
+            <div class="nota-produccion"><strong>Conector al Expediente 03 — PENDIENTE DE DECIDIR con Andrés.</strong> Este guion NO cierra con un anuncio de tema, a propósito: T2·E1 anunció el suyo y eso creó un compromiso que hubo que honrar sin haber investigado todavía. Antes de grabar hay que decidir si se anuncia el siguiente o no. Candidatos con conector natural desde acá, del banco (<code>banco-expedientes.md</code>): <strong>"Paul is Dead"</strong> (misma mecánica — pistas inventadas por un autor identificable, Fred LaBour, 1969) es el más limpio y es de carril principal. La alternativa de nicho —el círculo del black metal noruego— también conecta, pero es material mucho más pesado y toca la cadencia de nicho (1 cada 3-4). <strong>Si se anuncia, el gancho va escrito ANTES de grabar, no improvisado.</strong></div>
+            <div class="sfx">[SFX: OUTRO T2 — ~15 s, fade in. Instrumental, SIN voces. ⚠️ NO usar el outro de Temporada 1.]</div>
+        </div>
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section">
+        <h2>Fuentes por acto — abiertas el 2026-08-03</h2>
+        <div class="nota-produccion"><strong>Acto I:</strong> Blues Foundation, ficha de Tommy Johnson (<code>blues.org/blues_hof_inductee/tommy-johnson/</code>) · Mississippi Blues Trail, marcador de Tommy Johnson (<code>msbluestrail.org/blues-trail-markers/tommy-johnson</code>) · Wikipedia, <em>King of the Delta Blues Singers</em>. Sostienen: la historia del cruce viene de LeDell sobre Tommy vía David Evans (1971); ambos Johnson vivieron en Hazlehurst; las sesiones de 1936–37; la oscuridad en vida; y el papel de la reedición de Columbia de 1961.</div>
+        <div class="nota-produccion"><strong>Acto II:</strong> STV News y Scotsman sobre Boleskine House (compra de Page, tenencia de Crowley 1899–1913, venta en 1992) · Led Zeppelin News, historia de la librería Equinox (verano de 1974, 4 Holland Street, cita de Page sobre no conseguir libros, cierre por vencimiento del arriendo). <strong>El material de Kenneth Anger es el más flojo del episodio</strong> — el pleito por <em>Lucifer Rising</em> y el insulto "dabbler" están reportados en varias partes, pero la supuesta maldición privada solo aparece en blogs. Tratar en consecuencia.</div>
+        <div class="nota-produccion"><strong>Acto III:</strong> The Metal Circus, reportaje del juicio de 1990 · Futuro Chile, nota de los 35 años del juicio (fecha y lugar del hecho, contenido de la demanda, razones de la desestimación, documental <em>Dream Deceivers</em> de 1992) · material de referencia sobre el origen del rumor de "Stairway" (Mills en 1981, audiencia de la Asamblea de California en 1982, testimonio de Yarroll, autores posteriores Aranza y Godwin).</div>
+    </div>
+
+    <!-- LINT -->
+    <div class="section">
+        <h2>Lint del guion — CORRIDO 2026-08-03</h2>
+        <div class="verificar"><strong>🚨 ESTE GUION ESTÁ CORTO Y NO SE PUEDE GRABAR ASÍ.</strong> Medido con script, no a ojo: <strong>3.471 palabras narradas</strong> en 25 bloques <code>host-text</code>, contra un objetivo de ~5.200. Faltan <strong>~1.730 palabras</strong>. Con la fórmula y los puntos de calibración de T2·E1 (expansión 1,087 · articulación 167,6 wpm) da <strong>28,9 min leído pausado</strong> · 27,1 intermedio · 25,6 ágil. El piso del estándar editorial son 40 min: el déficit es de <strong>~11 a 14 minutos</strong> en cualquiera de los tres modos de lectura.</div>
+        <div class="verificar"><strong>Y NO se arregla rellenando.</strong> La § "Pasada de relleno" de <code>guion-style-mpd.md</code> dice que el relleno aparece justamente porque el estándar se mide en palabras escritas y lo que se publica son minutos — inflar el texto empuja hacia la meta gratis. Lo que le falta a este guion <strong>no son palabras: es material verificado</strong>. Las 1.730 palabras tienen que salir de una segunda ronda de fuentes, no de alargar frases. Dónde caben sin inventar nada, en orden de rendimiento: (1) <strong>quién era Tommy Johnson</strong> — hoy es solo un nombre y el Acto I depende de que al oyente le duela el despojo; (2) <strong>el PMRC y las audiencias del Senado de 1985</strong>, que hoy ni se mencionan y son el puente natural entre el Acto III y la escala nacional del pánico; (3) <strong>el juicio de Nevada</strong>, que es el clímax y se resuelve en dos bloques — el documental <em>Dream Deceivers</em> es fuente disponible; (4) la <strong>defensa de Judas Priest en el tribunal</strong>, hoy ausente: la banda declaró y no se cuenta qué dijo.</div>
+        <div class="nota-produccion"><strong>Lo que SÍ pasó limpio</strong> (mismo lint, 2026-08-03): muletillas con presupuesto <strong>0/0/0</strong> ("imagínense", "me vuela la cabeza", "les va a volar la cabeza"). Prohibidas <strong>0</strong> en las 4 ("o sea", "básicamente", "totalmente", "agárrense"). Límite de no deificar: <strong>0</strong> en las 8 formas (dios/dioses/semidiós/mesías/profeta/ídolo/ídolos/deidad). Registro: <strong>0</strong> tuteos y <strong>0</strong> regionalismos prohibidos. <strong>Lint de bloques: 0 incidencias</strong> — ninguno de los 3 <code>dato</code> ni de los 2 <code>leyenda</code> contiene lenguaje de producción, que es lo que se coló al aire en T2·E1. Cifras en letras: se corrigieron 2 a numeral ("23 años después", "un hombre de 32").</div>
+        <div class="nota-produccion"><strong>Qué hay que medir antes de grabar:</strong> (1) palabras de <code>host-text</code> únicamente, y dimensionar con la fórmula y la densidad de pausa que se vaya a usar; (2) muletillas con presupuesto y prohibidas; (3) líneas de pura validación; (4) límite de no deificar; (5) lint de bloques — que ningún <code>dato</code> ni <code>leyenda</code> contenga lenguaje de producción, que es lo que se coló al aire en T2·E1.</div>
+        <div class="nota-produccion"><strong>Punto de calibración vigente (T2·E1, regrabado 2026-07-28):</strong> 5.108 escritas → 41:47 reales, expansión 1,087, articulación 172,1 wpm, pausa 22,2% (SRT) / 26,7% (<code>silencedetect</code>). Para 43 min leído pausado, el objetivo de este guion es <strong>~5.200 palabras escritas</strong>.</div>
+    </div>
+
+</div>
