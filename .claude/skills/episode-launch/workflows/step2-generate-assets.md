@@ -21,6 +21,26 @@ figures, dates, attributed quotes — and verify each is accurate. If something 
 is wrong, don't silently propagate it into public assets, and don't silently "correct" it
 either: ask the user to confirm before using the corrected version.
 
+## Puntuación de todo texto publicado (2026-08-03, pedido por Andy sobre EP.024)
+
+Aplica a **todo asset escrito**: descripción de Spotify, posts, descripción de YouTube, el
+artículo del sitio y el artículo nativo de LinkedIn. No aplica al guion hablado, donde la
+puntuación no se oye.
+
+- **Comillas rectas `"…"`, nunca angulares `«…»`.** Las angulares son correctas en español
+  pero no están en el teclado, así que cada corrección manual en el editor de LinkedIn o de
+  Spotify obliga a ir a buscar el carácter. El costo lo paga quien edita, no quien escribe.
+- **La raya `—` no se usa como conector ni como inciso.** Ni suelta («la puerta está abierta
+  — nadie la cruza») ni en pareja («la advertencia —fechada y formal— no cambió nada»).
+  Reemplácela por lo que corresponda: coma, dos puntos, paréntesis, o punto y seguido si el
+  inciso es largo. Editar un inciso con rayas obliga a encontrar y borrar las dos, y en un
+  texto largo eso es tedioso.
+- **Lo que sí se conserva:** el guion corto en palabras compuestas y rangos (`2013-2017`),
+  y la raya del **título** del episodio (`EP.24 — …`), que es formato fijo, no puntuación.
+
+Razón por la que existe: EP.024 se publicó como artículo nativo de LinkedIn el 2026-08-03 y
+Andy tuvo que reemplazar a mano las 17 comillas angulares y las 21 rayas del cuerpo.
+
 ## A · Spotify SEO
 
 **Episode title (fórmula vigente — INVERTIDA el 2026-07-28):**

@@ -164,7 +164,7 @@ El episodio entero, si prefiere leerlo: behind-thequeue.com/episodios/por-que-su
 ```
 De las tres recomendaciones del episodio, esta es la que yo defiendo: separe al mensajero de la solución.
 
-La razón número uno por la que la gente no reporta no es el miedo al regaño. Es saber que el que reporta se lo queda. «Ah, usted lo detectó, encárguese» — dicho con la mejor intención, convierte cada advertencia en trabajo adicional para quien la trae. Nadie se ofrece dos veces.
+La razón número uno por la que la gente no reporta no es el miedo al regaño. Es saber que el que reporta se lo queda. "Ah, usted lo detectó, encárguese", dicho con la mejor intención, convierte cada advertencia en trabajo adicional para quien la trae. Nadie se ofrece dos veces.
 
 Y no se anuncia: se demuestra. La primera vez que alguien reporta algo y usted se lo asigna a otro delante de todos, ahí quedó dicho.
 
@@ -186,7 +186,7 @@ El ítem nace por ingesta del RSS con la metadata de Spotify; Andy la sobrescrib
 ### Título
 
 ```
-«Mi puerta siempre está abierta»: por qué nadie la cruza | Liderazgo y seguridad psicológica | EP.024 | Behind the Queue
+"Mi puerta siempre está abierta": por qué nadie la cruza | Liderazgo y seguridad psicológica | EP.024 | Behind the Queue
 ```
 
 ### Descripción
