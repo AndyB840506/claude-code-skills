@@ -1,0 +1,460 @@
+<title>EP.024 — Artículo de LinkedIn</title>
+
+<style>
+  :root {
+    --void: #0E1113;
+    --panel: #1F2428;
+    --panel-2: #22262A;
+    --rule: #39434A;
+    --muted: #8B9492;
+    --ink: #F4EFE7;
+    --signal: #FF3D00;
+    --ground: var(--void);
+    --surface: var(--panel);
+    --hair: var(--rule);
+    --dim: var(--muted);
+    --text: var(--ink);
+    --stripe: rgba(244, 239, 231, .022);
+    --display: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --body: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Cascadia Mono", "Consolas", "SF Mono", ui-monospace, monospace;
+    --measure: 62ch;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --ground: #F4EFE7;
+      --surface: #EAE3D7;
+      --hair: #C8BFB1;
+      --dim: #6B6459;
+      --text: #14171A;
+      --stripe: rgba(20, 23, 26, .028);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: var(--void);
+    --surface: var(--panel);
+    --hair: var(--rule);
+    --dim: var(--muted);
+    --text: var(--ink);
+    --stripe: rgba(244, 239, 231, .022);
+  }
+  :root[data-theme="light"] {
+    --ground: #F4EFE7;
+    --surface: #EAE3D7;
+    --hair: #C8BFB1;
+    --dim: #6B6459;
+    --text: #14171A;
+    --stripe: rgba(20, 23, 26, .028);
+  }
+
+  body {
+    background-color: var(--ground);
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--stripe) 0 1px,
+      transparent 1px 84px
+    );
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .shell {
+    max-width: 78ch;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---- utility bar ---- */
+  .bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    padding: 14px 0;
+    margin-bottom: 40px;
+    background-color: var(--ground);
+    border-bottom: 1px solid var(--hair);
+  }
+  .bar .stamp {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--signal);
+  }
+  .bar .meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--dim);
+    font-variant-numeric: tabular-nums;
+    margin-right: auto;
+  }
+
+  button {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--hair);
+    padding: 9px 16px;
+    cursor: pointer;
+    transition: border-color .15s, color .15s, background-color .15s;
+  }
+  button:hover { border-color: var(--signal); color: var(--signal); }
+  button:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+  button.done { border-color: var(--signal); color: var(--ground); background-color: var(--signal); }
+
+  /* ---- headline field ---- */
+  .field {
+    border: 1px solid var(--hair);
+    background-color: var(--surface);
+    padding: 22px 24px;
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .field .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  .field .headline {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(26px, 4.2vw, 38px);
+    line-height: 1.12;
+    letter-spacing: -.018em;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .field .row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .field .count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--dim);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- the copyable article ---- */
+  #cuerpo {
+    max-width: var(--measure);
+  }
+  #cuerpo > p, #cuerpo > h2, #cuerpo > .cierre {
+    margin: 0 0 22px;
+  }
+  #cuerpo h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(21px, 3vw, 27px);
+    line-height: 1.2;
+    letter-spacing: -.012em;
+    text-wrap: balance;
+    margin: 52px 0 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hair);
+  }
+  #cuerpo h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+  #cuerpo strong { font-weight: 700; }
+  #cuerpo em { font-style: italic; color: var(--dim); }
+  #cuerpo a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--signal); }
+  #cuerpo a:hover { color: var(--signal); }
+  #cuerpo hr {
+    border: none;
+    border-top: 1px solid var(--hair);
+    margin: 44px 0;
+  }
+  .cierre { color: var(--dim); font-size: 15.5px; line-height: 1.6; }
+  .cierre a { color: var(--dim); }
+
+  .nota {
+    max-width: var(--measure);
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hair);
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--dim);
+  }
+  .nota b { color: var(--text); font-weight: 500; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+
+<div class="shell">
+
+  <div class="bar">
+    <span class="stamp">Behind the Queue · EP.024</span>
+    <span class="meta" id="stats">—</span>
+    <button id="btn-cuerpo" type="button">Copiar cuerpo con formato</button>
+  </div>
+
+  <div class="field">
+    <span class="label">Titular del artículo</span>
+    <h1 class="headline" id="titular">«Mi puerta siempre está abierta»: por qué nadie la cruza</h1>
+    <div class="row">
+      <button id="btn-titular" type="button">Copiar titular</button>
+      <span class="count" id="count-titular">—</span>
+    </div>
+  </div>
+
+  <article id="cuerpo">
+
+    <p>Usted lo dijo en serio. La puerta de verdad está abierta. El único problema es que nadie la cruza.</p>
+
+    <p>Ahora mismo alguien de su equipo sabe algo que a usted le serviría saber. Y ya hizo la cuenta: contárselo le sale más caro que quedarse callado.</p>
+
+    <p>Este texto es sobre esa cuenta. Quién la puso, cuánto cobra, y qué pasa cuando se paga completa.</p>
+
+    <h2>La pregunta más inútil que existe en una operación</h2>
+
+    <p>«¿Alguna novedad?»</p>
+
+    <p>No está mal formulada. El problema es que el que responde ya sabe cuál es la respuesta correcta, y la respuesta correcta es «no, todo bien».</p>
+
+    <p>Mírelo desde el otro lado. Su analista tiene un problema todavía chiquito. Si lo cuenta hoy, va a tener que explicar por qué pasó, va a quedar como el que trae los líos, y probablemente le van a pedir que lo resuelva él mismo. Si se queda callado, hay una probabilidad real de que el problema se arregle solo.</p>
+
+    <p>No es cobardía. Es aritmética.</p>
+
+    <p>Y basta con que una persona traiga un problema y salga regañada. Usted no acaba de corregir a alguien: acaba de anunciar una tarifa a toda la sala, porque los demás estaban mirando.</p>
+
+    <p>Aquí está lo peligroso, y es lo que casi nadie ve. Cuando le contestan «todo bien», usted no se quedó sin información. Usted recibió información, y la archivó como un dato.</p>
+
+    <p>El silencio no es ausencia de información: es información que ya fue procesada por alguien más y le llegó con la parte incómoda quitada.</p>
+
+    <h2>Los mejores equipos reportaban más errores</h2>
+
+    <p>A mediados de los noventa, Amy Edmondson estudiaba equipos de enfermería en hospitales con una pregunta de las que uno cree obvias: ¿los equipos que funcionan mejor cometen menos errores?</p>
+
+    <p>Todo el mundo esperaba que sí. Los datos dijeron lo contrario. <strong>Los equipos mejor calificados reportaban más errores, no menos.</strong></p>
+
+    <p>Con ese resultado se pueden hacer dos cosas. Una es concluir que los buenos equipos son un desastre — absurdo, pero es lo que dice el número leído literal. La otra es preguntarse si uno está midiendo lo que cree que está midiendo.</p>
+
+    <p>Edmondson se preguntó lo segundo. Los mejores equipos no cometían más errores: estaban dispuestos a hablar de ellos. En las unidades donde las enfermeras confiaban entre sí, el error se reportaba.</p>
+
+    <p>Y conviene bajarle el aire al término antes de que suene a taller de fin de semana. Seguridad psicológica no se trata de que la gente esté cómoda ni contenta. Se trata de una sola cosa muy concreta: <strong>si decir algo incómodo en su equipo le cuesta a la persona, o no le cuesta.</strong> Nada más.</p>
+
+    <p>La consecuencia práctica es fea. Si usted llega a un área nueva y encuentra los indicadores de incidentes impecables, hay dos explicaciones y ninguna se descarta desde el escritorio: que la operación esté fina, o que reportar ahí se pague caro.</p>
+
+    <p>Mientras más miedo hay, más limpio se ve el tablero. Las dos se ven idénticas en el reporte.</p>
+
+    <p>Su tablero no mide cuántos errores ocurren. Mide cuántos su gente se atreve a reportar.</p>
+
+    <h2>Cuatro formas de que una mala noticia no sirva</h2>
+
+    <p>No son cuatro ejemplos del mismo problema. Son cuatro fallas distintas, y la diferencia importa porque cada una se arregla de otra manera.</p>
+
+    <p><strong>Nokia:</strong> el mensaje nunca llegó arriba.<br>
+    <strong>Reficar e Hidroituango:</strong> llegó, y no cambió la decisión.<br>
+    <strong>El edificio Space, en Medellín:</strong> llegó, y lo parchearon.<br>
+    <strong>Grenfell:</strong> era público, y castigaron al mensajero.</p>
+
+    <p>Desarrollo dos acá. Los otros dos —los dos colombianos, que son los más incómodos— están completos en el artículo del sitio: <a href="https://behind-thequeue.com/episodios/por-que-su-equipo-no-le-cuenta-los-problemas">behind-thequeue.com/episodios/por-que-su-equipo-no-le-cuenta-los-problemas</a></p>
+
+    <p><strong>Nokia — el mensaje nunca llegó</strong></p>
+
+    <p>La explicación cómoda es que Nokia no vio venir el smartphone. Es falsa. Nokia tenía prototipos de pantalla táctil años antes del iPhone y tenía ingenieros diciendo que su sistema operativo no iba a aguantar lo que se venía. Tenía toda la información. Lo que no tenía era esa información arriba.</p>
+
+    <p>Timo Vuori y Quy Huy entrevistaron a decenas de personas de todos los niveles. Lo que armaron no es una historia de ceguera: es una historia de filtros. Los de arriba tenían miedo de los competidores y los accionistas, y ese miedo bajaba convertido en exigencia. Los del medio tenían miedo también, pero de sus propios jefes. Uno de esos mandos medios describió a sus superiores como filtros entre él y la alta dirección, porque no se atrevían a llevarles malas noticias.</p>
+
+    <p>Nadie mintió. Cada persona reportó cosas ciertas, y cada escalón le quitó la parte más incómoda antes de pasarla. Multiplique eso por cuatro niveles y el que está arriba recibe el resumen del resumen del resumen, donde ya no queda nada que duela.</p>
+
+    <p>Con esa información —real, pero incompleta— la alta dirección llegó a una conclusión perfectamente razonable: que había tiempo. No había tiempo.</p>
+
+    <p><strong>Space — llegó y lo parchearon</strong></p>
+
+    <p>Un mes antes del colapso, un residente de la torre 6 reportó a la constructora que le habían aparecido fisuras en el apartamento. Y la constructora respondió: mandó hacer un amarre, una costura, y le cosieron la grieta.</p>
+
+    <p>Ahí está todo en dos palabras. Alguien reportó un síntoma y la organización trató el síntoma. Desde afuera se ve como diligencia: alguien reportó, alguien atendió, se cerró el caso. En el tablero de solicitudes aparece resuelta, en verde.</p>
+
+    <p>Pero la grieta no era el problema. La grieta era el problema hablando, y le taparon la boca con cemento.</p>
+
+    <p>Solemos decir que tapar el sol con las manos no funciona. Cierto: no funciona ni un segundo, y todo el mundo se da cuenta de que usted lo está intentando. Tapar una grieta sí funciona. La costura aguanta, se ve bien, queda registrada como atendida, y por debajo la estructura sigue igual de mal, pero ahora sin señal.</p>
+
+    <p>En su operación las costuras se llaman «ya hablé con él», «le pusimos un refuerzo esta semana», «quedó cubierto con horas extras», «lo estamos monitoreando». Todas son verdad. Todas cierran el ticket. Ninguna toca lo que produjo la grieta.</p>
+
+    <p>El 11 de octubre de 2013 los residentes ya no le escribieron a la constructora: llamaron al organismo de gestión del riesgo a pedir una inspección. Fíjese en el salto. Es lo que uno hace cuando ya no le cree a quien le respondió la primera vez.</p>
+
+    <p>En cualquier organización, cuando alguien deja de escribirle a usted y le escribe a otro, esa es la última señal que usted va a recibir. Después de esa no hay más.</p>
+
+    <p>La torre colapsó al día siguiente. Murieron doce personas.</p>
+
+    <h2>El sordo no es quien usted cree</h2>
+
+    <p>«No hay peor sordo que el que no quiere oír» es cómodo porque reparte la culpa hacia el otro lado. Pero mire la fila completa y dígame dónde está ese sordo.</p>
+
+    <p>La constructora que mandó a coser la grieta sí oyó al residente. Los directivos de Nokia estaban desesperados por saber qué pasaba: ese era justamente su miedo. Usted, que está leyendo esto, quiere oír.</p>
+
+    <p>El problema nunca fue el que no quiere oír. Es <strong>el que quiere oír y aun así no oye.</strong></p>
+
+    <p>Y la explicación es más simple e incómoda de lo que uno quisiera: contar un problema tiene un precio, siempre, en toda organización de cualquier tamaño. A veces chiquito — quedar como el quejumbroso, perder veinte minutos explicando algo que nadie pidió. A veces grande: que le pongan el problema encima, que a la hora del ascenso alguien recuerde que usted es «el complicado».</p>
+
+    <p>Callarse también tiene precio. Pero se paga después, se reparte entre todos, y con suerte le toca a otro.</p>
+
+    <p>Su gente no está decidiendo entre hablar o no hablar. Está decidiendo entre dos precios.</p>
+
+    <p>Y ese precio no lo pone la cultura, ni el país, ni la generación. Lo pone usted, en detalles chiquitos que probablemente ni recuerda: cómo puso la cara la última vez que alguien le llevó un problema un viernes a las cinco; si preguntó «qué pasó» o preguntó «de quién fue»; si el que trajo la mala noticia salió de esa reunión con más trabajo encima del que tenía al entrar.</p>
+
+    <p>Nada de eso está escrito en ningún manual, y todo el mundo en su equipo lo tiene calculado con una precisión que le sorprendería.</p>
+
+    <p>Por eso «mi puerta siempre está abierta» no sirve, y no porque sea mentira. Abrir la puerta es gratis — por eso no significa nada. Lo que significa algo es lo que usted hace en los primeros diez segundos después de que alguien la cruza.</p>
+
+    <h2>Tres cosas para el lunes, cada una con su trampa</h2>
+
+    <p><strong>Uno: pague la primera mala noticia por encima de su valor.</strong> Lo que usted haga en esa reunión no es una respuesta a esa persona: es un anuncio de tarifa para toda la sala. Agradézcalo delante de otros y diga en voz alta que enterarse hoy vale más que enterarse en tres meses. Está comprando la segunda mala noticia, y le va a salir más barata.<br>
+    <em>La trampa:</em> agradecer en público y castigar en privado. Si felicita al que avisó y después le manda a preguntar por qué no lo vio antes, la sala se entera el mismo día.</p>
+
+    <p><strong>Dos: separe al mensajero de la solución.</strong> La razón número uno por la que la gente no reporta no es el miedo al regaño: es saber que el que reporta se lo queda. «Ah, usted lo detectó, encárguese» — dicho con la mejor intención y sonando a confianza, convierte cada advertencia en trabajo adicional para quien la trae. Nadie se ofrece dos veces.<br>
+    <em>La trampa:</em> decirlo una vez en una reunión y creer que quedó dicho. Esto se demuestra, no se anuncia. Queda demostrado la primera vez que alguien reporta algo y usted se lo asigna a otro delante de todos.</p>
+
+    <p><strong>Tres: revise el indicador que se ve más limpio.</strong> Escoja el número que usted presenta con más tranquilidad, ese que nunca da problemas, y pregúntese en serio: ¿está verde porque la cosa está bien, o porque aquí reportar sale caro?<br>
+    <em>La trampa:</em> hacer esa pregunta en voz alta en una reunión grande. Nadie le va a decir «jefe, ese número es mentira» delante de doce personas — eso sí que tiene precio. Se pregunta de a uno, caminando, sin libreta, y a quien hace el trabajo, no a quien hace el reporte.</p>
+
+    <p>Si hay que quedarse con una, es la segunda. El miedo al regaño se le pasa a la gente con el tiempo si usted es decente. La cuenta de «si aviso, me lo quedo» no se va nunca, porque es matemática — y la matemática no se convence con un discurso.</p>
+
+    <h2>El ejercicio, con número</h2>
+
+    <p>Siéntese este viernes y responda una sola pregunta:</p>
+
+    <p>En las últimas cuatro semanas, ¿cuántas veces alguien de su equipo le trajo un problema que usted no sabía que existía?</p>
+
+    <p>No una queja, no un permiso: un problema real del trabajo que usted no había visto.</p>
+
+    <p>Si el número es cero, usted no tiene un equipo tranquilo. Tiene un equipo que decidió que no vale la pena.</p>
+
+    <p>Y si el número venía bajando —si hace seis meses le llegaban tres al mes y hoy le llega uno cada tanto— eso no es que la operación esté mejorando. Puede ser exactamente lo contrario.</p>
+
+    <p>La puerta nunca fue el problema. El problema es lo que le pasa al que la cruza.</p>
+
+    <hr>
+
+    <p class="cierre"><strong>Behind the Queue</strong> es un podcast en español para quienes dirigen equipos y operaciones. Cada episodio toma una ley, una teoría o un principio real de gestión y lo baja al piso: qué significa cuando hay gente, plata y un lunes de por medio. Casos documentados, cifras verificables y las fuentes a la vista.</p>
+
+    <p class="cierre">Este texto es una versión corta del episodio 24. La completa —con Reficar, Hidroituango y Grenfell, y las seis fuentes rastreables— está acá:<br>
+    <a href="https://behind-thequeue.com/episodios/por-que-su-equipo-no-le-cuenta-los-problemas">behind-thequeue.com/episodios/por-que-su-equipo-no-le-cuenta-los-problemas</a></p>
+
+    <p class="cierre">Escuchar el episodio (41 min):<br>
+    <a href="https://open.spotify.com/episode/25xgYzaTZmxEXqTNIu7yQp">https://open.spotify.com/episode/25xgYzaTZmxEXqTNIu7yQp</a></p>
+
+    <p class="cierre">Sitio: <a href="https://behind-thequeue.com">behind-thequeue.com</a><br>
+    LinkedIn: <a href="https://linkedin.com/company/behind-the-queue">linkedin.com/company/behind-the-queue</a><br>
+    Instagram: @behindthequeue84<br>
+    TikTok: @behind.the.queue<br>
+    Facebook: <a href="https://facebook.com/behindthequeue">facebook.com/behindthequeue</a><br>
+    Escríbame: <a href="mailto:andy@behind-thequeue.com">andy@behind-thequeue.com</a></p>
+
+    <p class="cierre">#Liderazgo #GestionDeEquipos #SeguridadPsicologica #CulturaOrganizacional #Management #Operaciones #Colombia</p>
+
+  </article>
+
+  <div class="nota">
+    <b>Cómo usarlo.</b> «Copiar cuerpo con formato» pone el texto en el portapapeles como HTML:
+    al pegarlo en el editor de artículos de LinkedIn, los encabezados llegan como encabezados y
+    las negritas como negritas — no hay que marcarlas a mano.<br><br>
+    <b>El titular va aparte</b> porque en LinkedIn es un campo propio, no la primera línea del cuerpo.<br><br>
+    <b>Antes de publicar:</b> súbale la imagen de encabezado —
+    <code>E:\Podcast\BTQ\EP 24\BTQ Artwork EP 24\EP024-COVER-16x9.png</code> — y revise que los
+    tres enlaces del cierre quedaron activos; LinkedIn a veces los pega como texto plano.
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var cuerpo = document.getElementById("cuerpo");
+    var titular = document.getElementById("titular");
+
+    function contarPalabras(t) {
+      var limpio = t.replace(/\s+/g, " ").trim();
+      return limpio ? limpio.split(" ").length : 0;
+    }
+
+    var palabras = contarPalabras(cuerpo.innerText);
+    var minutos = Math.max(1, Math.round(palabras / 250));
+    document.getElementById("stats").textContent =
+      palabras.toLocaleString("es-CO") + " palabras · ~" + minutos + " min de lectura";
+
+    var tl = titular.textContent.trim().length;
+    document.getElementById("count-titular").textContent =
+      tl + " caracteres · tope de LinkedIn 150";
+
+    function marcar(btn, texto) {
+      var original = btn.dataset.original || btn.textContent;
+      btn.dataset.original = original;
+      btn.textContent = texto;
+      btn.classList.add("done");
+      setTimeout(function () {
+        btn.textContent = original;
+        btn.classList.remove("done");
+      }, 2200);
+    }
+
+    function copiarPlano(texto, btn) {
+      var ta = document.createElement("textarea");
+      ta.value = texto;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      marcar(btn, ok ? "Copiado" : "No se pudo — selecciónelo a mano");
+    }
+
+    document.getElementById("btn-cuerpo").addEventListener("click", function () {
+      var btn = this;
+      var html = cuerpo.innerHTML;
+      var plano = cuerpo.innerText;
+      if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+        navigator.clipboard.write([
+          new ClipboardItem({
+            "text/html": new Blob([html], { type: "text/html" }),
+            "text/plain": new Blob([plano], { type: "text/plain" })
+          })
+        ]).then(function () {
+          marcar(btn, "Copiado con formato");
+        }).catch(function () {
+          copiarPlano(plano, btn);
+        });
+      } else {
+        copiarPlano(plano, btn);
+      }
+    });
+
+    document.getElementById("btn-titular").addEventListener("click", function () {
+      var btn = this;
+      var t = titular.textContent.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () {
+          marcar(btn, "Copiado");
+        }).catch(function () {
+          copiarPlano(t, btn);
+        });
+      } else {
+        copiarPlano(t, btn);
+      }
+    });
+  })();
+</script>

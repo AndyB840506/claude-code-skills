@@ -9,10 +9,16 @@ que no es nuestra. Esta versión es una condensación con otro recorte: desarrol
 cuatro casos y nombra los otros dos, así que quien quiera la fila completa tiene que ir al
 sitio. El enlace al artículo largo va dentro del cuerpo, no solo al final.
 
-**Cómo pegarlo.** LinkedIn no entiende markdown. Pegue el bloque de abajo completo y después,
-en el editor, marque como **Título 2** las 6 líneas que acá van precedidas de `##` (borrando
-los `##`), y ponga en negrita lo que va entre `**`. Las líneas sueltas entre párrafos son
-citas destacadas: el editor de LinkedIn tiene formato de cita si las quiere resaltar.
+**Cómo pegarlo — la vía fácil.** Abra la versión renderizada y use el botón «Copiar cuerpo con
+formato»: llega a LinkedIn con los encabezados y las negritas ya aplicados.
+
+https://claude.ai/code/artifact/6f5c53ea-fe21-4c13-8241-ca59dff1b72d
+
+Fuente de esa página: `EP024-linkedin-articulo.artifact.html`, en esta misma carpeta.
+
+**Cómo pegarlo — a mano, si prefiere el texto plano.** LinkedIn no entiende markdown. Pegue el
+bloque de abajo completo y después, en el editor, marque como **Título 2** las 6 líneas que acá
+van precedidas de `##` (borrando los `##`), y ponga en negrita lo que va entre `**`.
 
 ---
 

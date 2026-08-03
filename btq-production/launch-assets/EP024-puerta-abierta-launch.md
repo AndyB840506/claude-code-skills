@@ -75,6 +75,10 @@ liderazgo, gestión de equipos, seguridad psicológica, Amy Edmondson, comunicac
 
 ---
 
+> **El artículo nativo de LinkedIn vive en otro archivo:** `EP024-linkedin-articulo.md`, en esta
+> misma carpeta, con su versión renderizada en `EP024-linkedin-articulo.artifact.html`. No es
+> pieza del día de lanzamiento —va a mitad de semana—, por eso no está acá adentro.
+
 ## B · Plan social — arranca el sábado
 
 El jueves de intriga (2026-07-30) se saltó por decisión de Andy: el tema cambió después de esa fecha.
