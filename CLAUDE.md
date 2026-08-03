@@ -120,6 +120,28 @@ Instancias concretas ya documentadas (las dos primeras mordieron el 2026-07-23):
 - **Un lint que nombra lo que busca se encuentra a sí mismo** — es el principio 3 («¿el corpus incluye al propio objeto evaluado?») a escala de línea, no de carpeta: la nota que decía «marcadores `[VERIFICAR]` abiertos: 0» hacía que el grep de `[VERIFICAR` reportara 1. Redactar las notas de lint sin escribir el patrón literal.
 - **La herramienta de lectura de imágenes cachea por ruta: releer un archivo que acabo de sobrescribir devuelve la versión ANTERIOR.** Mordió el 2026-07-30: tras regenerar `MPD-T2E01-16x9-FINAL.png` con el grading azul, releer esa misma ruta devolvió la miniatura vieja —neutra, sin grading— y estuve a un paso de reportar que el fix no había entrado. Lo que decide es el archivo en disco: medirlo con PIL/python, o escribir la prueba con un **nombre nuevo**. Nunca tomar una segunda lectura de la misma ruta como evidencia de un cambio.
 
+- **Sobre un PDF escaneado, WebFetch y `pypdf` fallan en silencio y el documento está perfecto.**
+  WebFetch responde que el contenido «está corrupto o mal codificado» y `pypdf` devuelve cadena
+  vacía; las dos salidas se leen como «esta fuente no sirve» cuando lo único que pasa es que no
+  hay capa de texto. Reproducido el 2026-08-03 sobre `NTSB/AAR-91/04`: **293 páginas, 0
+  caracteres** con `pypdf`, y dos WebFetch seguidos declarándolo ilegible — el informe se leyó
+  entero rasterizándolo. Contraste medido el mismo día: el informe Kemeny **sí** traía capa (86
+  págs, 24k caracteres en las primeras 20), así que la falla es del archivo, no de la librería.
+  **Procedimiento:** probar `doc[n].get_text()` primero; si vuelve vacío, rasterizar con
+  `pymupdf` (`doc[n].get_pixmap(dpi=150).save(png)`) y leer el PNG como imagen. Esto importa
+  porque las fuentes primarias de estos shows —NTSB, Contraloría, SIC, SERNAC— se publican
+  escaneadas.
+
+- **Un script de reemplazo masivo verifica cada sustitución y NO escribe si alguna falló.**
+  Un `replace` que no encuentra su texto no lanza error: sigue de largo y deja el archivo a
+  medias, con la mitad de los cambios aplicados y sin señal de que faltó algo. El 2026-08-03,
+  corrigiendo 27 rayas y 24 pares de comillas en un artículo publicado, la primera corrida
+  **abortó sin escribir** porque 1 de 23 patrones no matcheó — y eso fue el comportamiento
+  correcto. Patrón: contar las ocurrencias de cada patrón ANTES de reemplazar, acumular los
+  fallos, y escribir el archivo **solo si la lista de fallos está vacía**. Para HTML, agregar
+  una comprobación de integridad barata: ninguna línea puede quedar con un número impar de
+  comillas rectas — una comilla dentro de un atributo lo cierra y rompe la etiqueta.
+
 - **Grepear solo el REPO para saber si un asset existe da un «no existe» falso.** Los assets renderizados están repartidos en dos sitios y hay que mirar los dos:
   - **`E:\` (portátil: `D:\`)** — artwork de episodio, quote cards, audio, banners de redes. Ej.: `E:\Podcast\MPD\Temporada 2\redes\`.
   - **El repo, en `*/website/`** — los assets del sitio web, que viven versionados porque se despliegan desde ahí (`den-bg.jpg`, `og-image.jpg`, `t2-cover.jpg`, `bar-bg.png`…).

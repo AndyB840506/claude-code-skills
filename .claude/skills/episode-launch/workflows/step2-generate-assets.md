@@ -37,6 +37,12 @@ puntuación no se oye.
   texto largo eso es tedioso.
 - **Lo que sí se conserva:** el guion corto en palabras compuestas y rangos (`2013-2017`),
   y la raya del **título** del episodio (`EP.24 — …`), que es formato fijo, no puntuación.
+- **Una regla de estilo que llega a mitad de vuelo aplica solo a lo que NO se ha publicado.**
+  Corregir en el archivo un texto que ya está en Spotify o en LinkedIn deja el registro
+  diciendo una cosa y la plataforma otra, y ese texto además ya no se reutiliza. El 2026-08-03
+  se aplicó al post del martes y al título de YouTube, que seguían en cola, y se dejaron
+  quietos la descripción de Spotify y los posts del sábado al lunes. Lo publicado se retrofitea
+  **solo si el usuario lo pide**, y entonces se corrige en los dos lados a la vez.
 
 Razón por la que existe: EP.024 se publicó como artículo nativo de LinkedIn el 2026-08-03 y
 Andy tuvo que reemplazar a mano las 17 comillas angulares y las 21 rayas del cuerpo.
@@ -51,6 +57,28 @@ oír» / «mi puerta siempre está abierta») y el lector ya no sabe dónde term
 **Por eso la regla se aplica al generar, no al revisar: el texto tiene que salir ya sin
 rayas ni angulares.** Y si un asset viejo hay que corregirlo, se corrige con el diff a la
 vista, no borrando caracteres a ojo.
+
+## Artículo nativo en plataforma de terceros — es OTRO corte, nunca una copia
+
+Desde 2026-08-03 (EP.024 fue el primero) el kit puede producir un **artículo nativo de
+LinkedIn**, aparte del artículo del sitio. **No es el mismo texto.**
+
+- **Por qué no se copia.** Publicar el artículo completo pone dos copias del mismo contenido a
+  competir por la misma búsqueda, y la que suele ganar es la plataforma — que no es nuestra.
+- **El corte.** La versión de plataforma desarrolla **una parte** de los casos y nombra el
+  resto, así que quien quiera la fila completa tiene que ir al sitio. En EP.024 fueron 2 de 4
+  casos desarrollados, ~2.000 palabras contra 3.437 del artículo del sitio.
+- **El enlace de vuelta va DENTRO del cuerpo**, en el punto exacto donde el texto se corta, no
+  solo en el bloque de cierre.
+- **Entregable doble:** el `.md` como fuente en texto y un `.artifact.html` renderizado con
+  botón de «copiar con formato», porque el editor de LinkedIn no entiende markdown y marcar
+  seis encabezados a mano invita a que se rompa algo. **El titular va en su propio bloque:**
+  en LinkedIn es un campo aparte, no la primera línea del cuerpo.
+- **Cuándo publicarlo:** no el mismo día que el post del episodio, porque compiten. Rinde como
+  pieza de catálogo, a mitad de semana.
+- **Anótalo en el archivo de assets del episodio.** Vive en su propio archivo
+  (`EPNNN-linkedin-articulo.md`), así que el launch necesita un puntero — si no, se busca ahí y
+  no aparece. Pasó el 2026-08-03.
 
 ## LinkedIn colapsa los saltos de línea simples (2026-08-03, medido)
 

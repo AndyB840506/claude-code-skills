@@ -96,6 +96,10 @@ cuatro episodios seguidos (Crosby, Hawthorne, Peter, y Little iba de quinto).
 del 2026-07-21 había reemplazado, pero el carril acompañante ya **no es pop-culture**:
 
 1. **Tres episodios de Oficio de Jefe**, luego **uno de pilar SEO**. Se cuenta desde EP.024.
+   **El cupo de un carril se cuenta contra la tabla de arriba, no se deriva de «3+1» de
+   memoria.** El 2026-08-03 se afirmó dos veces que el siguiente pilar libre era EP.032
+   —es EP.035— teniendo la tabla a la vista. Es §Procedencia: una aritmética sobre el estado
+   del roadmap es una afirmación sobre el roadmap, y se comprueba abriéndolo.
 2. **Oficio de Jefe** = el sujeto del episodio es un **problema operativo recurrente**, no
    una teoría. Se titula con la frase que el oyente ya usa («Mi puerta siempre está abierta»,
    «Póngale más gente»). La teoría entra solo si sostiene un punto concreto, y puede no tener
