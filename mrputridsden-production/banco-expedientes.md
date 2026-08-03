@@ -90,6 +90,9 @@ Alta densidad, baja rotacion. No se descartan: se aplazan a los slots de nicho.
 | **Cielo Drive / Manson y los Beach Boys** | Beach Boys, Beatles | Enorme, pero cruza a true crime duro | SIN VERIFICAR |
 | **Muertes en conciertos** | The Who, Pearl Jam, Great White | Cincinnati 79, Roskilde 2000, The Station 2003, Astroworld 2021. Ancla enorme pero es tragedia, no misterio — hay familias vivas | SIN VERIFICAR |
 | **Gloomy Sunday** | Billie Holiday | Rezso Seress, 1933; el autor se suicido en 1968. Sin ancla de rock + riesgo de tratar suicidio | SIN VERIFICAR |
+| **Philip Taylor Kramer** | Iron Butterfly | Desaparecio en 1995; lo encontraron en 1999. Venia del banco viejo de memoria | SIN VERIFICAR |
+| **Brian Jones** | Rolling Stones | Muerte sin esclarecer en la piscina, 1969. Ojo: EP.006 ya lo usa como apertura del racimo | SIN VERIFICAR |
+| **Hotel California / LaVey** | Eagles | Del banco viejo de memoria. Roza el limite ocultista — angulo esceptico obligatorio | SIN VERIFICAR |
 
 ---
 
@@ -111,6 +114,10 @@ Temas reales que **fallan la regla de ancla** y solo sirven dentro de otro episo
 La Regla de audiencia dice que las bandas locales/latinas conectan doble (identidad +
 nostalgia) y Kraken lo confirmo. **El banco no tiene ni uno.** Es el vacio mas caro de
 esta lista y vale una sesion de busqueda propia.
+
+Ya estaba detectado: la memoria `project_mpd_archivos_secretos_pillar` lo anota como
+"la veta diferenciadora de mitos del rock EN ESPANOL (aun sin investigar)" desde julio.
+Sigue sin investigar.
 
 ---
 
