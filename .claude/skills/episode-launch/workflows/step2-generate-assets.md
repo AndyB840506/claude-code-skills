@@ -41,6 +41,29 @@ puntuación no se oye.
 Razón por la que existe: EP.024 se publicó como artículo nativo de LinkedIn el 2026-08-03 y
 Andy tuvo que reemplazar a mano las 17 comillas angulares y las 21 rayas del cuerpo.
 
+**Y el corolario, que es la parte cara:** cuando la corrección la hace un humano a mano
+sobre un texto largo, **borra el carácter y sigue** — no se detiene a decidir qué signo va
+en su lugar. En EP.024 eso dejó **8 frases rotas** en el artículo publicado, y una de ellas
+invirtió el sentido: «concluir que los buenos equipos son un desastre — absurdo, pero…»
+quedó como «son un desastre absurdo, pero…», que dice lo contrario del argumento. Otras dos
+perdieron las comillas que delimitaban un dicho («No hay peor sordo que el que no quiere
+oír» / «mi puerta siempre está abierta») y el lector ya no sabe dónde termina la cita.
+**Por eso la regla se aplica al generar, no al revisar: el texto tiene que salir ya sin
+rayas ni angulares.** Y si un asset viejo hay que corregirlo, se corrige con el diff a la
+vista, no borrando caracteres a ojo.
+
+## LinkedIn colapsa los saltos de línea simples (2026-08-03, medido)
+
+Al pegar en el editor de artículos de LinkedIn, un `<br>` dentro de un `<p>` —o una línea
+suelta sin línea en blanco antes, en la versión de texto plano— **se pierde**: el contenido
+se une al párrafo anterior. En EP.024 eso fundió la taxonomía de los cuatro casos en un
+párrafo corrido, pegó las tres notas de «La trampa:» al final de su recomendación, y dejó
+el bloque de contacto entero en una sola línea (`Sitio: … LinkedIn: … Instagram: …`).
+
+**Cada unidad que deba verse aparte va en su propio `<p>` (o separada por línea en blanco
+en el texto plano). Nunca `<br>`.** Vale para listas, para el bloque de contacto y para
+cualquier par recomendación/trampa.
+
 ## A · Spotify SEO
 
 **Episode title (fórmula vigente — INVERTIDA el 2026-07-28):**

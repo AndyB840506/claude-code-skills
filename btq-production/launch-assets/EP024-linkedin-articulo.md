@@ -76,8 +76,11 @@ Su tablero no mide cuántos errores ocurren. Mide cuántos su gente se atreve a 
 No son cuatro ejemplos del mismo problema. Son cuatro fallas distintas, y la diferencia importa porque cada una se arregla de otra manera.
 
 **Nokia:** el mensaje nunca llegó arriba.
+
 **Reficar e Hidroituango:** llegó, y no cambió la decisión.
+
 **El edificio Space, en Medellín:** llegó, y lo parchearon.
+
 **Grenfell:** era público, y castigaron al mensajero.
 
 Desarrollo dos acá. Los otros dos (los dos colombianos, que son los más incómodos) están completos en el artículo del sitio: behind-thequeue.com/episodios/por-que-su-equipo-no-le-cuenta-los-problemas
@@ -168,10 +171,15 @@ Escuchar el episodio (41 min):
 https://open.spotify.com/episode/25xgYzaTZmxEXqTNIu7yQp
 
 Sitio: behind-thequeue.com
+
 LinkedIn: linkedin.com/company/behind-the-queue
+
 Instagram: @behindthequeue84
+
 TikTok: @behind.the.queue
+
 Facebook: facebook.com/behindthequeue
+
 Escríbame: andy@behind-thequeue.com
 
 #Liderazgo #GestionDeEquipos #SeguridadPsicologica #CulturaOrganizacional #Management #Operaciones #Colombia
