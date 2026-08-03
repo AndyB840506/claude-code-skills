@@ -251,6 +251,10 @@ conceptos indexados: efecto con nombre propio + su explicación. Un problema ope
 apellido famoso no está indexado, así que **la herramienta no puede producir candidatos de
 Oficio de Jefe** — que es donde están los cupos abiertos.
 
+> **Corrección 2026-08-03:** en la primera versión de esta sección se escribió que el siguiente
+> cupo de pilar era EP.032. **Es EP.035.** La rotación se cuenta desde EP.024: 024-026 Oficio →
+> 027 pilar; 028-030 Oficio → 031 pilar; 032-034 Oficio → 035 pilar.
+
 > ⚠️ **Pendiente de aclarar con Andy:** no está confirmado si la herramienta usa datos de
 > búsqueda o si genera con un modelo a partir de un prompt (la captura muestra una caja «Try a
 > topic, theme or a question», que sugiere lo segundo). **Si genera, no trae señal de demanda**
@@ -263,7 +267,7 @@ BTQ en el carril que el show dejó el 2026-07-25 — el costo de SEO que se acep
 **Las cinco compuertas, en orden. La primera que falle descarta:**
 
 1. **Carril.** ¿Es pilar SEO u Oficio de Jefe? Casi todos son pilar. Los cupos de pilar están
-   tomados hasta EP.031; el siguiente real es EP.032.
+   tomados hasta EP.031; el siguiente real es **EP.035**.
 2. **Quemado o comprometido.** Contra la tabla del roadmap y la de casos quemados. En la tanda
    del 2026-08-03 venía el **Principio de Peter, que ya estaba grabado** como EP.027.
 3. **¿La fuente aguanta?** Muchos efectos famosos están cuestionados y este show no puede
@@ -296,7 +300,7 @@ Oficio de Jefe.
 | **Cognitive Load (Sweller)** | El mejor. Reencuadrado como Oficio de Jefe: *«el procedimiento está escrito y aun así se equivocan»*. Teoría sólida, sin polémica de replicación, no repite nada del catálogo |
 | **Parkinson — Ley de la Trivialidad** | Fuerte. Origen citable (1957, el comité de la planta nuclear contra el cobertizo de bicicletas) sin depender de un paper frágil |
 | **Paradoja de Abilene** | Buena, pero **demasiado cerca del EP.024**: los dos son sobre el silencio. Para EP.029-030, no antes |
-| **Ley de Parkinson** (las 8 horas) | Pilar SEO para EP.032. Ya está anunciada en la home junto a Goodhart y Crosby |
+| **Ley de Parkinson** (las 8 horas) | Pilar SEO para **EP.035**, el siguiente cupo real del carril. Ya está anunciada en la home junto a Goodhart y Crosby |
 | **Efecto Pygmalion** | Choca con EP.023 — Hawthorne y Pygmalion son el mismo movimiento de fondo. A favor: los experimentos de campo de Dov Eden en el ejército israelí son material más defendible que el estudio escolar de Rosenthal |
 | **Riesgo moral** | Sirve, pero pisa el EP.020 (Goodhart). Distinguible —trasladar el riesgo no es falsear la métrica— pero hay que escribir esa frontera |
 
