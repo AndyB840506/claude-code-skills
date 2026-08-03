@@ -1,7 +1,7 @@
 EPISODE: EP.024 (BTQ) — «Por qué su equipo no le cuenta los problemas»
 stage_a: **cerrado** 2026-08-01 — guion v2 escrito, artwork cerrado, episodio grabado.
-stage_b: **en curso** — grabación, transcripción, MP3 y carpeta de artwork listos; falta metadata.
-stage_c: no iniciado.
+stage_b: **cerrado** 2026-08-03 — publicado en Spotify, URL confirmada, descripción pegada por Andy.
+stage_c: **en curso** — URL propagada al sitio y home rotada; falta deploy, redes y YouTube.
 
 ## Estado de producción (2026-08-01, medido)
 
@@ -12,26 +12,22 @@ stage_c: no iniciado.
 | Transcripción | `E:\Transcriptor\transcripciones\BTQ EP 24 oficial.srt` | 451 cues · último 41:08 · 1 hablante |
 | Artwork | `E:\Podcast\BTQ\EP 24\BTQ Artwork EP 24\` | 1:1 3000² · 9:16 · 16:9 + JPEG q92 |
 
-## URL de Spotify — PROVISIONAL, NO propagar
+## URL de Spotify — CONFIRMADA 2026-08-03
 
 ```
 https://open.spotify.com/episode/25xgYzaTZmxEXqTNIu7yQp
 ```
 
-Entregada por Spotify el 2026-08-01, antes del lanzamiento. **Sin verificar.** Al consultarla
-ese día devolvió **HTTP 404**, que es lo esperable en un episodio no público pero que **no
-distingue** entre «todavía no propaga», «el ID va a cambiar» y «el ID está mal».
+**Verificada el 2026-08-03:** HTTP **200** y `og:title` = `EP.24 — Por qué su equipo no le
+cuenta los problemas: seguridad psicológica`. El ID provisional entregado el 2026-08-01 (que ese
+día devolvía 404 por no estar público) resultó ser el definitivo — a diferencia de EP.016, donde
+el ID sí cambió tras la re-subida.
 
 El token `?si=…` de la URL compartida se descartó: es rastreo de compartir, no parte del
 identificador. Nunca entra en el artículo ni en el JSON-LD.
 
-**No está en ningún asset todavía.** El artículo sigue con `PENDIENTE-SPOTIFY-URL` en 2 sitios
-(el CTA del cuerpo y el del riel) a propósito.
-
-**Al lanzar el domingo, antes de propagarla:** abrir la página del episodio en el navegador y
-copiar la URL de ahí, no de aquí. Si el ID cambió, este archivo queda obsoleto — es el caso
-confirmado en EP.016, donde `pipeline-state-ep016.md` guardaba `episode/6GoODy…` como
-«confirmada» y la URL real tras la re-subida era `episode/3CNyTkA6…`.
+**Propagada el 2026-08-03** a los 2 CTAs del artículo (cuerpo y riel) y al bloque «último
+episodio» de la home. Rotación del tracklist aplicada: 023 · 022 · 021 · 020 (sale 019).
 
 **Decisiones de Andy sobre el audio grabado (2026-08-01, no se regraba nada):**
 - Nokia dice «4 de cada 10» en `10:04`, no «casi cuatro de cada diez» como el guion corregido.
