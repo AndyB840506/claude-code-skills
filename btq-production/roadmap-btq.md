@@ -243,6 +243,63 @@ cliente furioso, es quien aprobó la política o quien tiene que defenderla.
 La **Ley de Little es el EP.031** y también es sobre colas. Son distintos —Little es la
 matemática del flujo; la veta del cliente es percepción y política— pero no van pegados.
 
+### Temas que llegan de un sugeridor externo — cómo se filtran (2026-08-03)
+
+Andy trajo dos tandas (~21 temas) de una herramienta de sugerencia. Sirven, pero **como materia
+prima del carril pilar SEO, no como lista de episodios.** Por construcción sugieren sobre
+conceptos indexados: efecto con nombre propio + su explicación. Un problema operativo sin
+apellido famoso no está indexado, así que **la herramienta no puede producir candidatos de
+Oficio de Jefe** — que es donde están los cupos abiertos.
+
+> ⚠️ **Pendiente de aclarar con Andy:** no está confirmado si la herramienta usa datos de
+> búsqueda o si genera con un modelo a partir de un prompt (la captura muestra una caja «Try a
+> topic, theme or a question», que sugiere lo segundo). **Si genera, no trae señal de demanda**
+> y el argumento SEO para adoptar sus temas se cae. No dar por hecho el mecanismo.
+
+**Lo que la lista sí reveló, y es un dato:** 8 de los primeros 15 venían enmarcados en call
+center (*tickets, agents, frontline, scripts, sales calls, CX*). El clasificador todavía tiene a
+BTQ en el carril que el show dejó el 2026-07-25 — el costo de SEO que se aceptó a sabiendas.
+
+**Las cinco compuertas, en orden. La primera que falle descarta:**
+
+1. **Carril.** ¿Es pilar SEO u Oficio de Jefe? Casi todos son pilar. Los cupos de pilar están
+   tomados hasta EP.031; el siguiente real es EP.032.
+2. **Quemado o comprometido.** Contra la tabla del roadmap y la de casos quemados. En la tanda
+   del 2026-08-03 venía el **Principio de Peter, que ya estaba grabado** como EP.027.
+3. **¿La fuente aguanta?** Muchos efectos famosos están cuestionados y este show no puede
+   pararse en uno sin decirlo. Marcados en esa tanda: **Dunning-Kruger** (el patrón aparece
+   incluso en datos aleatorios por autocorrelación), **efecto Cobra** (la anécdota de Delhi no
+   tiene respaldo documental; se popularizó en 2001), **bystander/Kitty Genovese** (los 38
+   testigos son una distorsión del reportaje original), **Broken Windows** (contestada y
+   políticamente cargada), **Dunbar 150** y **Zeigarnik** (réplicas en duda). *Todos por
+   verificar contra fuente primaria antes de comprometerse — ninguno se descarta de memoria.*
+   Y ojo: desmontar un estudio famoso **ya se hizo en EP.023** con Hawthorne. Repetir el
+   movimiento dentro de la ventana de 5 episodios se nota.
+4. **¿El protagonista es el jefe?** Descarta lo que le habla a quien hace publicidad (IKEA,
+   Loss Aversion, anchoring en ventas, Pavlov) salvo que se reencuadre como **una decisión que
+   el oyente toma**. Ver la disciplina de la veta del cliente, arriba.
+5. **¿Hay 2-3 casos nombrados con consecuencias verificables, y de la región?** Sin eso el
+   episodio queda en opinión, que es peor que teórico.
+
+**El título sugerido no se adopta nunca.** Viene en inglés y con la fórmula de otro show. Se
+toma el concepto; el título se reescribe con la fórmula vigente.
+
+**Sesgo a vigilar:** el sugeridor empuja hacia lo saturado (Dunning-Kruger, survivorship bias,
+Parkinson son clichés de contenido de LinkedIn). Rankear en una keyword saturada es más difícil
+que en una frase de problema específica — el mismo argumento que sostiene la titulación de
+Oficio de Jefe.
+
+**Sobrevivientes de las dos tandas del 2026-08-03**, ya con las compuertas corridas:
+
+| Tema | Veredicto |
+|---|---|
+| **Cognitive Load (Sweller)** | El mejor. Reencuadrado como Oficio de Jefe: *«el procedimiento está escrito y aun así se equivocan»*. Teoría sólida, sin polémica de replicación, no repite nada del catálogo |
+| **Parkinson — Ley de la Trivialidad** | Fuerte. Origen citable (1957, el comité de la planta nuclear contra el cobertizo de bicicletas) sin depender de un paper frágil |
+| **Paradoja de Abilene** | Buena, pero **demasiado cerca del EP.024**: los dos son sobre el silencio. Para EP.029-030, no antes |
+| **Ley de Parkinson** (las 8 horas) | Pilar SEO para EP.032. Ya está anunciada en la home junto a Goodhart y Crosby |
+| **Efecto Pygmalion** | Choca con EP.023 — Hawthorne y Pygmalion son el mismo movimiento de fondo. A favor: los experimentos de campo de Dov Eden en el ejército israelí son material más defendible que el estudio escolar de Rosenthal |
+| **Riesgo moral** | Sirve, pero pisa el EP.020 (Goodhart). Distinguible —trasladar el riesgo no es falsear la métrica— pero hay que escribir esa frontera |
+
 ### Giro de alcance 2026-07-25 — de call center a gestión empresarial
 
 **Decisión de Andy.** El show sale del techo de BPO/contact center y pasa a **gestión de
