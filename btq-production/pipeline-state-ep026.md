@@ -117,18 +117,35 @@ texto: se rasterizó con PyMuPDF y se leyó como imagen (ver § Herramienta, aba
 > menciona al aire como ironía —un informe sobre una falla de comunicación que se equivoca en su
 > propia primera página— tiene que ir explicado, o parece que el error es nuestro.
 
-### 3. Keystone ICU (Pronovost, NEJM 2006) — ⚠️ PENDIENTE, NO VERIFICADO
+### 3. Keystone ICU (Pronovost, NEJM 2006) — ✅ VERIFICADO (2026-08-03)
 
-NEJM devuelve **HTTP 403** y PubMed bloquea con captcha. Lo que hay hasta ahora viene de
-resúmenes de búsqueda, **no de la fuente**, y por lo tanto NO se puede citar todavía:
+NEJM y AJIC devuelven **403** y PubMed bloquea con captcha. El abstract publicado sí está en el
+repositorio institucional de Johns Hopkins, y de ahí salen las cifras.
 
-- 103 UCI en Michigan · lista de 5 pasos para el catéter central
-- tasa mediana de infección de 2,7 por 1.000 días-catéter en la línea base → 0 a los 3 meses
-- reducción sostenida del 66% a los 16-18 meses · >1.500 vidas y ~USD 175 millones
+Cita: Pronovost, P., Needham, D., Berenholtz, S., Sinopoli, D., Chu, H., Cosgrove, S., Sexton,
+B., Hyzy, R., Welsh, R., Roth, G., Bander, J., Kepros, J., & Goeschel, C. (2006). *An
+intervention to decrease catheter-related bloodstream infections in the ICU.* **New England
+Journal of Medicine, 355(26), 2725-2732.**
 
-**Rutas por probar:** el seguimiento del proyecto en *American Journal of Infection Control*
-(2008), la ficha de AHRQ PSNet, o la copia en el repositorio institucional de Johns Hopkins.
-**Ninguna cifra de este bloque entra al guion hasta abrir una de esas.**
+- «A total of **108 ICUs** agreed to participate in the study, and **103 reported data**.»
+- **1.981 meses-UCI** y **375.757 días-catéter** en el análisis.
+- Línea base: **mediana 2,7** · **media 7,7** infecciones por 1.000 días-catéter.
+- **0-3 meses: mediana 0.** · **16-18 meses: media 1,4.**
+- Razones de tasa de incidencia: **0,62 (IC 95%: 0,47-0,81)** a los 0-3 meses y
+  **0,34 (IC 95%: 0,23-0,50)** a los 16-18 meses.
+
+> ⚠️ **Los resúmenes de búsqueda traían la cifra mal atribuida en el tiempo, y por poco entra
+> así.** Decían «la tasa cayó 66% en los primeros tres meses». Falso: a los 0-3 meses la razón
+> es 0,62, o sea **38%** de reducción. El **66% es 1 − 0,34, y eso es a los 16-18 meses**. La
+> mediana sí llegó a 0 en los primeros 3 meses, y ahí está el origen de la confusión: se mezcló
+> la mediana temprana con el porcentaje tardío.
+>
+> **Al aire, la forma correcta es la de dos tiempos** — y además es mejor historia: bajó rápido,
+> y lo difícil (y lo que se sostuvo 18 meses) fue que no volviera a subir.
+
+⚠️ **NO verificado, no usar todavía:** la cifra de «más de 1.500 vidas y ~USD 175 millones»
+circula asociada al proyecto pero **no está en este abstract**. Si se quiere decir al aire, hay
+que buscar de dónde sale.
 
 ## Herramienta nueva — lectura de PDF escaneados
 
@@ -148,7 +165,8 @@ primeras 20) y el de la NTSB no (293 págs, 0 caracteres).
 
 ## Pendientes antes de escribir
 
-- [ ] Cerrar el caso 3 en fuente primaria, o reemplazarlo.
+- [x] ~~Cerrar el caso 3~~ — **cerrado 2026-08-03** vía el repositorio de Johns Hopkins, y de
+      paso se atrapó una cifra mal atribuida en el tiempo.
 - [x] ~~Confirmar el título~~ — recortado a 58 caracteres el 2026-08-03.
 - [x] ~~Decidir si el tercer caso se cambia por uno de la región~~ — **Andy: los tres se quedan.**
       Lo regional no es obligatorio; lo obligatorio es la correlación con el oyente (abajo).
