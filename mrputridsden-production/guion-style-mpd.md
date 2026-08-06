@@ -333,6 +333,15 @@ Qué salió bien y qué no en T2·01, como referencia de cuánto vale esto:
    «verificado» de una sesión anterior es hipótesis, no hecho. Mordió en BTQ el 2026-07-31: un
    guion aprobado tres días antes y marcado como verificado tenía dos errores. Ver
    [[feedback_verify_sources_before_recording]].
+6. **Una pasada de reescritura/expansión que agregue más de 5 `.verificar` nuevos necesita su
+   propia sesión de verificación antes de grabar — no exprimirla el mismo día.** La reescritura
+   de EP.007 del 2026-08-05 agregó ~10 marcadores nuevos (raíz africana del cruce, incendio de
+   Boleskine, cita de Halford, PMRC/Senado, entre otros) en una sola sesión de escritura, sin
+   verificar ninguno. Es la misma dinámica que falló con las fechas del racimo en T2·01: escribir
+   rápido y dejar la verificación para "antes de grabar" funciona con 1-2 marcadores, no con 10 —
+   bajo presión de tiempo, esa lista se exprime o se salta. Contar los `.verificar` nuevos al
+   terminar una pasada de expansión; si pasan de 5, el siguiente paso es abrir fuentes, no escribir
+   más guion.
 
 ### Pasada de relleno y argumentos débiles — obligatoria antes de grabar (Andrés, 2026-07-31)
 

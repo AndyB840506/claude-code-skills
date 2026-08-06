@@ -8,16 +8,37 @@ Este workspace es exclusivo de **Mr. Putrid's Den**, el podcast de Andrés en so
 
 ---
 
-## Formato narrativo del expediente — CANON T2 (decisión Andrés 2026-07-24)
+## Formato narrativo del expediente — CANON T2 (decisión Andrés 2026-08-05, reemplaza el del 2026-07-24)
 
-El show tiene UNA firma de formato que se replica en cada expediente. Lo que cambia entre episodios es la **narrativa**; el esqueleto no. La firma: **desenmascarar el mito sin apagar el escalofrío.** Dos capas, cada una con su trabajo:
+> ⚠️ **SUPERADO 2026-08-05.** El canon anterior ("desenmascarar el mito sin apagar el
+> escalofrío", con destape/reencuadre como pago del episodio) medía 1:5 leyenda:corrección
+> en T2·E1 y 1:2 en el primer borrador de T2·E2 — el episodio seguía siendo el que resolvía
+> el misterio, solo que con más elegancia. Andrés lo corrigió tras leer EP.007: el show no
+> es Mythbusters, es un cuento de los hermanos Grimm — personaje, lugar, misterio, y espacio
+> para que la imaginación del oyente lo llene. Ver [[feedback_mpd_mystery_over_resolution]]
+> y [[feedback_mpd_no_hedging_onair]]. El bloque original queda abajo, tachado en espíritu,
+> como registro de cómo se pensaba el formato hasta esa fecha — no manda más.
 
-- **Teaser / redes = la carnada.** Venden el MITO y la pregunta abierta. Es donde se explota el hueco (efecto Zeigarnik: lo incompleto se recuerda y se recomienda). El teaser NUNCA resuelve ni spoilea el destape — solo deja el picor. **Enmarcar siempre como leyenda** ("cuentan que…", "¿por qué a los 27?"), nunca afirmar el rumor como hecho — respeta el pilar dato-vs-leyenda. La honestidad la paga el episodio; el teaser solo hace la pregunta.
-- **Episodio = el pago.** Dos modos según el caso:
-  - **Caso con verdad documentada** (ej. Club de los 27 / estudio BMJ): se DESTAPA, pero el destape reencuadra hacia una pregunta más honda ("por qué *necesitábamos* creerlo"), no desinfla ("era mentira"). La revelación abre una puerta, no cierra un candado. Si tu revelación es MÁS PEQUEÑA que el mito, no la reveles — deja la zona gris.
-  - **Caso genuinamente sin resolver** (ej. muertes sin esclarecer, "Paul is Dead"): se deja ABIERTO — se exponen las teorías, no se fabrica un final. El hueco ES el producto.
+El show tiene UNA firma de formato que se replica en cada expediente. Lo que cambia entre episodios es la **narrativa**; el esqueleto no. La firma nueva: **contar la leyenda completa, con escena, y dejar los vacíos para que el oyente los llene — nunca resolverlos nosotros.**
 
-**Filtro antes de escribir cada guion:** ¿mi revelación es más grande o más chica que el mito? Más grande → destapar como puerta. Más chica → dejar abierto.
+- **Con leyenda real y documentada** (LeDell/Tommy Johnson, Boleskine, los símbolos de *Led Zeppelin IV*): se cuenta completa. El dato verificado entra SOLO si hace la historia MÁS rara, nunca para desinflarla o cerrarla. Prueba concreta antes de meter un dato: **¿esto deja la historia más rara de como estaba, o solo la explica?** Si solo explica, va a `nota-produccion`/`.verificar`, no al aire. El episodio NUNCA entrega un veredicto ni resume "quién tiene la razón" — eso lo dejamos en manos del oyente, una sola vez, al cierre ("la última palabra es suya"), nunca repetido escena por escena.
+- **Con misterio inventado** (premisas fabricadas tipo IA, banco `banco-expedientes.md` § Descartados): se entrega completo dentro de su propia ficción — no hay "afuera" al que mandar al oyente a investigar, así que dejarlo a medias se siente incompleto, no misterioso. Nunca se marca como inventado al aire. Debe anclarse en algo ya viral (banda/canción/persona conocida), no un monstruo desde cero.
+- **Teaser / redes = la carnada**, igual que antes: vende el mito y la pregunta abierta, enmarcado como leyenda ("cuentan que…"), nunca afirma el rumor como hecho.
+
+**Checklist de auto-chequeo antes de entregar cualquier guion o revisión de MPD** (Andrés no debería tener que cazarlo — el 2026-08-05 le tocó corregir esto 3 veces en la misma sesión):
+1. **¿Esto resuelve el misterio?** Si el guion dice quién tiene la razón, quién ganó, o "en el fondo lo que pasó fue X" — es resolución. Reescribir para que la pregunta quede abierta.
+2. **¿Esto se lee como duda dicha en voz alta?** Frases como "esto no está confirmado", "en fuentes débiles", "circula sin fuente" **dentro de `host-text`** rompen inmersión aunque sean ciertas. Esa cautela va en `.verificar`/`nota-produccion` (no se lee al aire) o, como mucho, en una sola línea de cierre.
+
+<details>
+<summary><strong>Canon anterior (2026-07-24) — SUPERADO, se conserva como registro histórico</strong></summary>
+
+La firma vieja: **desenmascarar el mito sin apagar el escalofrío.** Dos capas:
+- **Teaser / redes = la carnada.** Venden el MITO y la pregunta abierta. El teaser NUNCA resuelve ni spoilea el destape — solo deja el picor. La honestidad la paga el episodio; el teaser solo hace la pregunta.
+- **Episodio = el pago.** Caso con verdad documentada → se DESTAPA reencuadrando hacia una pregunta más honda. Caso sin resolver → se deja abierto.
+
+**Filtro viejo:** ¿mi revelación es más grande o más chica que el mito? Más grande → destapar como puerta. Más chica → dejar abierto. — Este filtro seguía produciendo un episodio que resuelve (solo que con matices); por eso se reemplazó, no se ajustó.
+
+</details>
 
 **Anunciar el próximo expediente al aire es un COMPROMISO, no un gancho (2026-08-03).** El cierre de T2·E1 dijo textual *"y de eso va el próximo Archivo Secreto: pactos, símbolos y mensajes ocultos"* — y con eso quedó fijado el tema, el alcance y el orden del episodio siguiente, antes de que nadie hubiera investigado si el tema daba para 43 minutos. No fue un error: el conector salió de la investigación real, como manda la regla del conector. Lo que faltaba era saber que **la frase se cobra**.
 
