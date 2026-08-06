@@ -53,7 +53,24 @@ canciones que supuestamente esconden mensajes si uno las pone al reves."*
 - ⚠️ **No repetir el bloque C de EP.006** — ahi ya se conto que casi no hay fotos, que
   tocaba de cara a la pared y que fue coronado fundador retroactivo.
 
-### 2. Paul is Dead
+### 2. Crowley y su huella en la música (CANDIDATO PRINCIPAL, 2026-08-05)
+**Decidido por Andrés al leer el borrador de EP.007 (Acto II ya deja a Crowley instalado como
+personaje)** — no es propuesta, es la direccion elegida para el Expediente 03.
+- **Rotacion:** ALTA — Crowley es de los temas mas cubiertos del genero (ver competencia mapeada:
+  Leyendas Legendarias tiene un episodio propio sobre el).
+- **Angulo:** su huella va mucho mas alla de Led Zeppelin/Page (ya cubierto en EP.007) — bandas y
+  canciones que lo referencian directamente.
+- **Leads SIN VERIFICAR, abrir antes de escribir guion:**
+  - "Mr. Crowley", Ozzy Osbourne (Blizzard of Ozz, 1980) — cancion titulada por el.
+  - "Quicksand", David Bowie — letra lo menciona ("Crowley's uniform of imagery").
+  - Su rostro entre las figuras de la portada de *Sgt. Pepper's Lonely Hearts Club Band*, The
+    Beatles (1967).
+- **Canon:** aplica igual que el resto de T2 — cuento de los hermanos Grimm, no destape; ver
+  `guion-style-mpd.md` § Misterio sobre resolucion. NO repetir el material de Crowley/Boleskine ya
+  contado en EP.007 (Boleskine, Equinox, la ruptura con Anger) — esto entra por las bandas que lo
+  citan a EL directamente, no por Page.
+
+### 3. Paul is Dead (candidato secundario)
 - **Rotacion:** ALTA (Draw My Life, TikTok, *Time* lo listo entre las conspiraciones mas
   duraderas del mundo).
 - **Detalle — VERIFICADO:** las pistas son inventadas y se sabe quien las invento.
@@ -68,8 +85,8 @@ canciones que supuestamente esconden mensajes si uno las pone al reves."*
   de como funcionan hoy.
 - **Canon:** destape > mito, limpio. Cero ocultismo, cero muertes reales que tratar.
 
-### 3. Panico satanico ampliado (si no cabe entero en el #1)
-Si el expediente #1 se enfoca en los pactos, el PMRC, las audiencias del Senado del 85 y
+### 4. Panico satanico ampliado (si no cabe entero en el expediente 1)
+Si el expediente 1 (EP.007, ya producido) se enfoca en los pactos, el PMRC, las audiencias del Senado del 85 y
 la cruzada contra el metal quedan como episodio propio. **SIN VERIFICAR** mas alla de lo
 citado arriba.
 

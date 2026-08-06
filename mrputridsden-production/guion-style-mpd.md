@@ -182,12 +182,29 @@ pasar por la línea de comandos y devuelven **ceros falsos** en los greps de mul
 2026-07-28: el lint reportó 0 muletillas con patrones rotos). Escribir el script a disco y correrlo
 desde ahí.
 
-**Estado de la muestra (actualizado 2026-07-28 con el SRT de la regrabación — T2 ya está en n=2):**
-la articulación (167,6 wpm) tiene n=13 pero rango ±6%, así que se usa para dimensionar, no para
-predecir. La **expansión** tiene n=3 y los puntos siguen lejos (1,23 en EP.005 · 1,04 en el piloto ·
-**1,087 en T2·01**) — depende del modo de lectura, así que no promediarlos. La **densidad de pausa**
-de T2 ya tiene n=2 (32,5% piloto → 26,7% regrabación) y sigue siendo la variable que más manda: por
-eso la prueba de pausa de arriba, en vez de confiar en una tabla.
+**Estado de la muestra (actualizado 2026-08-05 con el SRT de T2·02 — expansión ya en n=4):**
+la articulación tiene n=14 (agregado 176,9 wpm de T2·02) pero rango amplio, así que se usa para
+dimensionar, no para predecir. La **expansión** tiene n=4 y los puntos siguen MUY lejos entre sí
+(1,23 en EP.005 · 1,04 en el piloto · 1,087 en T2·01 · **1,005 en T2·02**, casi verbatim) —
+depende por completo de qué tan pegado al guion lee Andrés ese día, así que **nunca promediar,
+siempre medir con el SRT real de esa grabación**. La **densidad de pausa** de T2 ya tiene n=3
+(32,5% piloto → 26,7% T2·01 → 23,5% T2·02 vía SRT) y sigue siendo la variable que más manda.
+
+### Punto de calibración — T2·02 «El rock y el diablo» (grabado 2026-08-05)
+
+| | |
+|---|---|
+| Escritas (`host-text`, borrador grabado ese día) | **3.322** |
+| Habladas (SRT, sin etiquetas de speaker) | **3.338** |
+| Expansión | **1,005** — casi verbatim, la más baja medida hasta ahora |
+| Articulación | **176,9 wpm** |
+| Pausa (SRT) | **23,5%** |
+| Duración final | **24:40** |
+
+⚠️ Este episodio se regrabó tras esta medición: el guion creció de 3.322 a 5.725 palabras en la
+misma sesión, dimensionado con esta fila (no con la de T2·01) porque la expansión cambia demasiado
+entre tomas para usar la de otro episodio. Falta el SRT de la regrabación para confirmar si el
+segundo take mantuvo el mismo wpm/expansión.
 
 ### Punto de calibración — T2·01 «El Club de los 27» (regrabado 2026-07-28)
 
