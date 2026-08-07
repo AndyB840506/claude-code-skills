@@ -147,6 +147,36 @@ Journal of Medicine, 355(26), 2725-2732.**
 circula asociada al proyecto pero **no está en este abstract**. Si se quiere decir al aire, hay
 que buscar de dónde sale.
 
+## Sweller — fuente primaria (verificado 2026-08-07)
+
+Sweller, J. (1988). *Cognitive Load During Problem Solving: Effects on Learning.* **Cognitive
+Science, 12(2), 257-285.** PDF con capa de texto, leído completo (29 págs).
+
+Es la columna teórica de los tres casos, no un cuarto caso: explica **por qué** un procedimiento
+escrito falla bajo presión aunque la persona lo esté tratando de seguir — el argumento central
+del episodio.
+
+- **La cita ancla (p. 261):** «The cognitive load imposed on a person using a complex problem
+  solving strategy such as means-ends analysis may be an even more important factor in
+  interfering with learning during problem solving.»
+- **El mecanismo, completo (p. 261):** «In order to use the strategy, a problem solver must
+  simultaneously consider the current problem state, the goal state, the relation between the
+  current problem state and the goal state, the relations between problem-solving operators and
+  lastly, if subgoals have been used, a goal stack must be maintained. The cognitive-processing
+  capacity needed to handle this information may be of such a magnitude as to leave little for
+  schema acquisition, **even if the problem is solved**.»
+- **Por qué esta frase es la que hay que usar al aire:** «even if the problem is solved» es
+  literalmente la tesis del episodio en cinco palabras — se puede seguir el procedimiento
+  correctamente y aun así no quedar nada de capacidad para lo demás. No es que fallen; es que
+  resolver consume toda la memoria de trabajo disponible.
+- **means-ends analysis**, en la jerga de Sweller, es exactamente lo que hace alguien leyendo un
+  procedimiento paso a paso bajo presión: comparar constantemente el estado actual contra la
+  meta y mantener en cabeza la pila de subobjetivos. Es la operación cognitiva detrás de «seguir
+  el procedimiento», no una alternativa a ella.
+- **Lo que NO dice el paper (ojo si se cita mal):** no habla de "7±2 elementos" de memoria de
+  trabajo — esa cifra es de Miller (1956), un paper distinto, y no aparece en este PDF. No
+  atribuírsela a Sweller.
+
 ## Herramienta — lectura de PDF escaneados
 
 `pymupdf`, instalado el 2026-08-03 para abrir el informe de la NTSB. **La receta y el porqué
@@ -159,7 +189,8 @@ viven en `skills/CLAUDE.md` § instrumentos que mienten en silencio** — no se 
 - [x] ~~Confirmar el título~~ — recortado a 58 caracteres el 2026-08-03.
 - [x] ~~Decidir si el tercer caso se cambia por uno de la región~~ — **Andy: los tres se quedan.**
       Lo regional no es obligatorio; lo obligatorio es la correlación con el oyente (abajo).
-- [ ] Sweller: abrir la fuente de la teoría de carga cognitiva, no citarla de memoria.
+- [x] ~~Sweller: abrir la fuente de la teoría de carga cognitiva~~ — **cerrado 2026-08-07**, ver
+      § Sweller — fuente primaria, abajo. Los tres pendientes de este episodio quedan cerrados.
 
 ## ⚠️ Correlación con el oyente — instrucción de Andy (2026-08-03)
 
