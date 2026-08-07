@@ -45,6 +45,17 @@ No sigas preguntando más allá de esto — cualquier dato adicional que un work
 posterior necesite y no esté aquí, ese workflow lo pedirá puntualmente en su momento
 (no lo anticipes). El audio NO se pregunta — se descubre automáticamente (ver abajo).
 
+**Antes de fijar el número del episodio en el brief, abrir `roadmap-[show].md` y
+verificar su política de numeración — no asumir que el número que trae el usuario o un
+handoff previo es el que va en texto PÚBLICO.** Algunos shows separan un número interno
+(para archivos) de un número público distinto (temporada/episodio), y esa política puede
+cambiar entre sesiones. Mordió en MPD EP.02 (2026-08-06): se generaron show notes,
+YouTube y plan social con "EP.007" en el título público —heredado sin verificar del
+`ep_number` de un handoff— cuando el roadmap ya documentaba que T2 usa numeración propia
+por temporada; hubo que reescribir 8+ archivos. El campo `ep_number` del brief puede
+seguir siendo el identificador interno; lo que hay que confirmar contra el roadmap es
+qué texto exacto va en los títulos que ve el oyente.
+
 ---
 
 ## Auto-descubrir el archivo de audio crudo

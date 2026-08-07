@@ -7,7 +7,7 @@ el .html completo del guion mete html/head/body anidados. El patron correcto (me
 feedback_episodes_always_artifact) es publicar SOLO el bloque <style> + el interior de <body>.
 
 Uso:
-    python mk-artifact.py scripts/EP007-el-rock-y-el-diablo.html
+    python mk-artifact.py scripts/EP02-el-rock-y-el-diablo.html
 
 Escribe <mismo nombre>.artifact.html al lado del original e imprime comprobaciones de
 integridad. Reusa los tokens del guion tal cual: la direccion visual "La Guarida" esta

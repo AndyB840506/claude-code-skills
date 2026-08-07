@@ -70,8 +70,15 @@ separado, alimentados con el episode brief + el SRT del Stage 1:
 2. **`podcast-creator/workflows/07-youtube.md`** ("youtube metadata")
    → genera `youtube-ep[NNN].md` (título, descripción, tags, capítulos, miniatura)
    — reutiliza la descripción de Spotify recién generada como base
-3. **`podcast-creator/workflows/03-artwork.md`** ("artwork")
-   → genera `artwork-ep[NNN].md` con los 3 prompts (1:1/9:16/16:9)
+3. **Artwork — verificar primero si el show tiene compositor local propio.** MPD genera
+   su portada en ComfyUI local + PIL determinista (`comfyui/templates/mpd-*`, ver
+   `comfyui/docs/artwork-composition.md` y `mrputridsden/CLAUDE.md` § Artwork), NO con
+   los prompts de Google Flow de `podcast-creator/workflows/03-artwork.md` — ese
+   workflow describe la dirección visual vieja de MPD (T1) y quedó superado ahí mismo
+   (2026-08-06). Antes de generar cualquier prompt de artwork, listar
+   `comfyui/templates/mpd-*` y `E:\Podcast\<Show>\...\artwork\` para ver si ya existe un
+   compositor y una escena vigente para ese show — solo si no hay nada propio, cae al
+   flujo genérico `03-artwork.md`.
 4. **`podcast-creator/workflows/04-social-media.md`** ("social media")
    → genera `social-ep[NNN].md` (plan de lanzamiento 3 días, copy por plataforma)
    — invócalo en esta misma etapa, junto con los otros tres, no lo dejes para después:

@@ -1,0 +1,48 @@
+## Stage 0 — Intake
+- Qué se hizo: episode brief construido (show, audio, datos de episodio); pipeline-state-ep02.md creado retroactivamente (stage_a: complete)
+- Resultado: OK
+
+EPISODE BRIEF
+  show:            MPD
+  ep_number:       EP.02 (T2·E2)
+  title:           Pactos, símbolos y mensajes ocultos: el rock y el diablo
+  cultural_ref:    Robert Johnson / encrucijada → Led Zeppelin - Crowley / Boleskine → backmasking - PMRC / juicio Nevada 1990
+  guest:           none (formato solo)
+  sources:         mrputridsden-production/banco-expedientes.md; mrputridsden-production/scripts/EP02-el-rock-y-el-diablo.html
+  closing_tm:      n/a (solo BTQ)
+  spotify_url:     pending
+  audio_path:      E:\Podcast\MPD\Temporada 2\EP 02\MPD EP 02.wav (grabación completa 2026-08-06)
+  language:        es
+  speakers:        solo (MPD T2 = formato solo, no co-host)
+
+## Stage 1 — Transcripción
+- Qué se hizo: re-transcripción con diarización (large-v2, es, srt) sobre la grabación completa nueva (la toma corta del 08-05 se respaldó como "MPD EP 02 (pre-fix backup).srt" antes de sobrescribir)
+- Archivos generados: E:\Transcriptor\transcripciones\MPD EP 02.srt (39:23, 51.799 bytes)
+- Resultado: OK
+
+## Stage 1b — Verificación de fuentes (16 marcadores .verificar, deuda de la sesión 08-05)
+- Qué se hizo: WebSearch dirigido sobre cada marcador, cruzado contra el SRT nuevo para ver qué quedó grabado
+- Resultado: 15/16 CONFIRMADOS o ya cubiertos por el hedge existente; 1 ALERTA — incendio de Boleskine "1900" (min 18:17 del audio) sin fuente encontrada (los incendios documentados son 2015 y 2019). Andrés decidió (2026-08-06) dejarlo tal cual, sin regrabar ni cortar — "no siempre tiene que ser 100% verificable".
+- Detalle completo en el mensaje al usuario de esta sesión (no se generó archivo aparte)
+
+## Stage 2a — Show notes + YouTube
+- Qué se hizo: workflows 05-show-notes.md y 07-youtube.md de podcast-creator, con timestamps verificados contra el SRT real (no los estimados del guion)
+- Archivos generados: mrputridsden-production/shownotes-ep02.md, mrputridsden-production/youtube-ep02.md
+- Resultado: OK — título Spotify 64 chars, descripción corta 128 chars, 6 capítulos YouTube verificados (mínimo 105s, regla de los 10s)
+
+## Stage 2b — Artwork (composición nueva, no el formato numeral de EP.006)
+- Qué se hizo: el workflow 03-artwork.md de podcast-creator estaba desactualizado (dirección T1); se verificó el artwork vigente (EP.006) y se acordó con Andrés una escena fotorrealista propia que integra las 3 historias (cruce de caminos + disco de vinilo + casona/Boleskine al fondo), en vez de reusar el formato "numeral gigante". Generada en ComfyUI local (Z-Image Turbo, 1536² → RealESRGAN 4x → 3000×3000), grading azul de marca (night_grade variante E) por pedido explícito de Andrés, compuesta con `comfyui/templates/mpd-portada-ep02-t2.py` (basado en mpd-portada-ep-t2.py pero sin draw_numeral). Aprobado por Andrés en escena base y en los 3 formatos finales.
+- Archivos generados: E:\Podcast\MPD\Temporada 2\EP 02\artwork\MPD-T2E02-PORTADA-3000.jpg (1:1), MPD-T2E02-16x9-FINAL.png, MPD-T2E02-9x16-FINAL.png
+- Verificado: piso de negro ≥11 en esquina, footer (21,17,16) ≈ FOOTER_DARK (20,17,16) — invariante de marca respetada; legible a 150px
+- Resultado: OK
+
+## Stage 2c — Plan social (3 días)
+- Qué se hizo: workflow 04-social-media.md de podcast-creator. Fecha de publicación confirmada con Andrés: sábado 2026-08-08 00:00 (tras corregir un primer dato ambiguo de "mañana a medianoche" que no dejaba ventana para el plan de 3 días). Solo Instagram/Facebook — TikTok pausado, YouTube sin canal, MPD no tiene LinkedIn/X.
+- Archivos generados: mrputridsden-production/social-ep02.md
+- Resultado: OK — plan completo generado ANTES de publicar en Spotify, no después (regla del pipeline, aprendida en MPD EP.005)
+
+## Corrección de numeración (2026-08-06)
+- Andrés corrigió: la Temporada 2 reinicia numeración pública en EP.02 — no continúa la cuenta EP.001-005 de T1. Todos los archivos de este episodio (antes nombrados "ep007") y sus referencias internas ("EP.007") se renombraron a "ep02"/"EP.02". El handoff histórico `2026-08-05-mpd-ep007-reescritura.md` NO se renombra — narra el estado a esa fecha, se queda como registro.
+
+## Cierre de Macro-Stage B
+- stage_b: complete, spotify_url: https://open.spotify.com/episode/46l6NpQVF9np4unotGT4KM?si=dscl0PsHSoWMLsIURGBNGQ — recibida 2026-08-06, pero Andrés aclaró que NO está en vivo todavía (programada sábado 2026-08-08 00:00). No se verificó con HTTP porque el usuario ya avisó que fallaría — no es una comprobación pendiente, es el estado esperado.

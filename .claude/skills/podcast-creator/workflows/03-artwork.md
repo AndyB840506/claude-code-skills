@@ -88,13 +88,20 @@ No extra text outside specified overlays. Highly detailed, award-winning photogr
 
 ## Dirección visual del show (CONGELADA 2026-06-12 — validada con EP.004 Kraken)
 
-> **⚠️ Esta sección es específica de MPD (Mr. Putrid's Den) — no la apliques a otros
-> shows.** El estilo fotorrealista "film still" y la prohibición de ilustración de
-> abajo son decisiones de dirección de arte de MPD, no una regla general de la skill.
-> Para cualquier otro show, usa la dirección visual definida en su propio
-> `podcast-profile.json` (`logo_descripcion`, `colores`, `estilo visual` del Paso 3 de
-> `00-setup.md`) en su lugar — incluso si eso significa ilustración, cómic, u otro
-> estilo que esta sección de abajo prohíbe para MPD específicamente.
+> **⚠️ SUPERADA para MPD desde 2026-07-22 (pivote "La Guarida", Temporada 2).** Todo
+> este bloque —fotograma cinematográfico, luz carmesí `#9B1C1C`, prompts para Google
+> Flow— describe la dirección visual de **Temporada 1**. MPD T2 usa un sistema distinto
+> (paleta azul nocturno + brasa, tipografía Bookman, composición determinista en PIL) y
+> genera imagen base en **ComfyUI local**, no en Flow — ver la skill `comfyui`
+> (`docs/artwork-composition.md`, `templates/mpd-*`) y `mrputridsden/CLAUDE.md` § Artwork
+> como fuentes vigentes. Mordió el 2026-08-06 (EP.02): seguir este workflow a ciegas
+> habría producido una portada en la dirección de arte equivocada; se detectó solo
+> porque el Paso 0.a de abajo obliga a mirar el artwork vigente antes de proponer nada.
+> Este bloque queda como registro histórico — no seguirlo para MPD.
+>
+> **Para cualquier otro show:** esta sección es específica de MPD y nunca aplicó a
+> otros — usa la dirección visual de su propio `podcast-profile.json`
+> (`logo_descripcion`, `colores`, `estilo visual` del Paso 3 de `00-setup.md`).
 
 **MPD = fotograma cinematográfico.** Cada portada debe parecer un still de película de
 los 80s en 35mm — NUNCA diseño gráfico ni póster ilustrado. Si una imagen podría pasar

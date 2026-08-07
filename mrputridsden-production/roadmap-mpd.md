@@ -14,7 +14,7 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.004 P2 | Kraken: el Titan del Rock colombiano (Parte 2) | publicado - https://open.spotify.com/episode/1QRXaL85TszCpwo2pfmEPw - salio 2026-06-20, 1h16min. Verificado contra Spotify 2026-07-28. ⚠️ **NO esta en el archivo de la web** (ver nota abajo). |
 | EP.005 | Aterciopelados: De un bar de Bogotá al continente. | en Spotify - https://open.spotify.com/episode/2D129VK9H4sn7itPKjgz3W - primer episodio solo, duracion real ~35.8 min habla / ~36.8 min total |
 | EP.006 (T2·E1) | El Club de los 27: la maldición que los números desmienten | **publicado** - https://open.spotify.com/episode/3KW68cHhHpkMCLbgZkiov7 - salió **2026-08-01** (no el 07-31 que decía la memoria), **41 min**. Título, show, fecha y duración verificados contra Spotify el 2026-08-03. Regrabado el 2026-07-28. Checkpoint de plays: ~2026-08-14. Guion: `scripts/EP006-club-de-los-27.html`, ~5.208 palabras narracion (~40.5 min estimados, calibracion MPD 159 wpm/+23.5%), formato solo. ESTRENO DE LA TEMPORADA 2. Publico = T2·E1; interno = 6º producido. Faltan: SRT, metadata/show-notes, quote cards, plan de lanzamiento. |
-| EP.007 (T2·E2) | Pactos, símbolos y mensajes ocultos: el rock y el diablo | en roadmap — **anunciado al aire en el cierre de EP.006**, no es opcional. Alcance por confirmar con Andrés (ver `banco-expedientes.md` #1). Slot de carril principal. Abre con Robert Johnson / Tommy Johnson. |
+| EP.02 (T2·E2) | Pactos, símbolos y mensajes ocultos: el rock y el diablo | **grabado, sin publicar** — anunciado al aire en el cierre de EP.006. Guion: `scripts/EP02-el-rock-y-el-diablo.html`. Segunda grabación completa 2026-08-06 (`E:\Podcast\MPD\Temporada 2\EP 02\MPD EP 02.wav`, 39:23). Show notes, YouTube, artwork y plan social listos — ver `pipeline-audit-ep02.md`. Publica sábado 2026-08-08 00:00. Renombrado de "EP.007" a "EP.02" el 2026-08-06 (Andrés) — ver nota de numeración abajo. |
 
 **Cadencia de carriles (Andrés, 2026-08-03):** principal (alta rotación) por defecto; **uno de
 nicho cada 3 o 4 episodios**. Con esta cuenta, el primer slot de nicho cae en **T2·E4 o T2·E5**.
@@ -36,7 +36,14 @@ En vez de renombrar/migrar plataformas
 - **Temporada 2 = desde el Club de los 27** (misterios/leyendas). Numeracion publica REINICIA por
   temporada: Club de los 27 = **T2 · E1**; los siguientes cuentan 1,2,3… dentro de la T2. En Spotify
   se usan los campos nativos Season=2 / Episode=1 (se setean en el paso de metadata, NO requiere
-  dominio nuevo). El numero interno (EP.006, EP.007…) se mantiene en archivos/roadmap para continuidad.
+  dominio nuevo).
+  **SUPERADO 2026-08-06 (Andrés):** la idea de mantener un "numero interno" separado (EP.006,
+  EP.007…) para archivos/roadmap, distinto del numero publico de temporada, quedo retirada —
+  generaba confusion (un titulo de Spotify salio escrito "EP.007" por error, mezclando los dos
+  esquemas). **Regla nueva: un solo numero.** Desde este episodio, archivos, roadmap y texto
+  publico usan el mismo numero de temporada: **EP.02** (= T2·E2), **EP.03** (= T2·E3), etc. La fila
+  de EP.006 arriba NO se renombra — ya esta publicada bajo el esquema viejo y renumerarla
+  falsificaria un registro en vivo; el corte aplica desde EP.02 en adelante.
 
 **Nombre:** **Mr. Putrid's Den** full, sin sub-nombres. *("The Crossroads" fue un codename interno
 del pivote y quedo RETIRADO el 2026-07-24 — nunca fue publico y ya no se usa ni internamente.)*
