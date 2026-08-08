@@ -1,14 +1,18 @@
 TEMA APARCADO (BTQ) — carga cognitiva · «el procedimiento está escrito y aun así se equivocan»
 
-**⚠️ YA NO ES EP.026 — reasignado 2026-08-07.** Andy grabó el borrador tal cual quedó el
-2026-08-07 (guardado en disco como `E:\Podcast\BTQ\EP 25\`, un error de rotulado — el
-contenido leído era este guion) y decidió que sonaba a reencauche de EP.024: misma estructura
+**⚠️ YA NO ES UN CUPO NUMERADO ACTIVO — reasignado 2026-08-07, luego aparcado en EP.028.**
+Andy grabó el borrador tal cual quedó el 2026-08-07 (guardado en disco como
+`E:\Podcast\BTQ\EP 25\`) y decidió que sonaba a reencauche de EP.024: misma estructura
 (esqueleto E, tres casos, "qué hace usted el lunes") y dos referencias explícitas a EP.024
-dentro del texto. EP.026 pasa a ser **"ponerse la camiseta"** — ver `roadmap-btq.md`. Este tema
-queda **aparcado, no descartado**: los tres casos (TMI, Avianca, Keystone) y la fuente de
-Sweller ya están verificados en fuente primaria con citas literales, reutilizables el día que
-se le busque una estructura que no calque la de EP.024. La toma grabada en `EP 25` no sirve —
-no editarla ni publicarla.
+dentro del texto. "Ponerse la camiseta" entró en su lugar — primero como EP.026, y ese mismo
+día se renumeró otra vez a **EP.025** (ver `roadmap-btq.md`). **Nota curiosa:** el rótulo
+`EP 25` en el disco, que en su momento se marcó como error, resultó ser correcto — el episodio
+que se grabó ahí terminó siendo justo el que hoy ocupa el slot EP.025. Coincidencia, no
+previsión: la toma en sí sigue sin servir, no se edita ni se publica.
+
+Este tema queda **aparcado en EP.028, no descartado**: los tres casos (TMI, Avianca, Keystone)
+y la fuente de Sweller ya están verificados en fuente primaria con citas literales, reutilizables
+el día que se le busque una estructura que no calque la de EP.024.
 
 stage_a: **aparcado** — casos y Sweller verificados, guion completo pero descartado por
 estructura repetida. Si se retoma, empezar por un esqueleto DISTINTO a E (ver § Rotación de
@@ -16,11 +20,10 @@ esqueleto en `guion-style-btq.md`) y quitar toda referencia cruzada a EP.024.
 stage_b: no aplica mientras esté aparcado.
 stage_c: no aplica mientras esté aparcado.
 
-**Carril:** Oficio de Jefe #3. **Publica:** domingo 2026-09-06, 8:00 PM Colombia (cadencia semanal
-desde EP.024 del 2026-08-02; verificado con calendario, no estimado).
-
-> Ojo: la fecha de arriba asume que EP.025 sale el 9 de agosto y EP.026 el 16. **Recalcular si
-> alguno se corre.**
+**Carril:** Oficio de Jefe #4 (slot EP.028 — ver tabla de `roadmap-btq.md`). **Publica:** sin
+fecha mientras esté aparcado — la que había aquí antes asumía que este tema seguía ocupando un
+cupo activo cerca de EP.024, y ya no es el caso. Recalcular contra la tabla de rotación cuando
+se retome.
 
 ## Título — recortado 2026-08-03
 

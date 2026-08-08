@@ -1,11 +1,19 @@
-EPISODE: EP.026 (BTQ) — «ponerse la camiseta»: el discurso de lealtad como herramienta tóxica
+EPISODE: EP.025 (BTQ) — «ponerse la camiseta»: el discurso de lealtad como herramienta tóxica
+
+**⚠️ RENUMERADO 2026-08-07 (segunda vez el mismo día): era EP.026, ahora es EP.025.** EP.025
+("cuatro meses sin llenar la vacante") nunca tuvo guion ni grabación — el slot 25 estaba vacío
+en la práctica, así que el episodio que sí está listo para producirse pasa a ocupar ese lugar.
+"Cuatro meses sin llenar la vacante" se corre a EP.026. Ver `roadmap-btq.md` para el detalle del
+swap — no hubo cascada, solo estos dos números intercambiaron contenido.
+
 stage_a: **en curso** — tema y los tres casos fijados 2026-08-07 (reasignado desde carga
 cognitiva, ver `pipeline-state-carga-cognitiva-parked.md`). Casos verificados en fuente primaria
-o directamente en la fuente original. Guion no escrito todavía.
+o directamente en la fuente original. Guion completo y medido — ver
+`launch-assets/EP025-camiseta-guion.artifact.html`.
 stage_b: no iniciado.
 stage_c: no iniciado.
 
-**Carril:** Oficio de Jefe #3. **Origen:** video que un amigo de Andy le compartió sobre el
+**Carril:** Oficio de Jefe #2. **Origen:** video que un amigo de Andy le compartió sobre el
 mensaje tóxico de "ponerse la camiseta" en el entorno laboral (el video en sí no se abrió en
 esta sesión — no es la fuente de los casos, solo el disparador de la idea).
 
@@ -124,16 +132,23 @@ directo — no reportería de terceros para las cifras centrales.
   Neumann frente al severance de los despedidos (fuente secundaria — sin verificar la encuesta
   original).
 
-## Pendientes antes de escribir
+## Estado del guion — actualizado 2026-08-07
 
+- [x] ~~Título del episodio~~ — fijado: `Ponerse la camiseta: la explotación laboral disfrazada
+      de slogan` (64 car., ancla de 9 palabras).
+- [x] ~~Aterrizajes obligatorios~~ — escritos, uno por caso, dentro del segmento 6 (qué hace
+      usted el lunes).
+- [x] ~~Duración objetivo~~ — guion completo, **5.239 palabras habladas, medidas
+      programáticamente, 40:00 a 148wpm+13%.** No repitió el error del intento anterior de este
+      cupo (tabla de tiempos fabricada sin correr el conteo) — esta vez el orden fue texto
+      primero, conteo real después, tabla rellenada al final con los números medidos.
 - [ ] Verificar "Eight is Great" en una fuente más primaria que reportería (testimonio ante el
-      Senado de Stumpf, sept. 2016, sería la candidata) o usarlo sin atribución textual directa.
+      Senado de Stumpf, sept. 2016, sería la candidata) o usarlo sin atribución textual directa
+      — el guion ya lo trata así, pendiente solo si se quiere citarlo como frase textual.
 - [ ] Verificar el desglose de los ~USD 970M en acciones del paquete Neumann 2019 en fuente
-      primaria, o usar solo las dos cifras ya confirmadas (185M consultoría + 500M crédito) más
-      el settlement 2021 de ~1.6B ya confirmado.
-- [ ] Aterrizajes obligatorios (§ rotación, roadmap-btq.md punto 4) — pendientes de escribir, uno
-      por caso, para que el oyente jefe/gerente se reconozca en cada mecanismo.
-- [ ] Título del episodio — sin fijar todavía.
-- [ ] Duración objetivo: escribir contra ~5.500-6.000 palabras habladas desde el principio, y
-      **medir el conteo real antes de cerrar el checklist** — no repetir el error de EP.026
-      anterior (tabla de tiempos fabricada sin correr el conteo).
+      primaria — el guion ya evita esa cifra, usa solo las confirmadas (185M + 500M + 1.6B).
+- [ ] Correr `python scripts/lint_guion_repeticion.py` y grep de español neutro antes de aprobar.
+- [ ] Confirmar teaser de EP.024 hacia este episodio (no se abrió el cierre de EP.024 en esta
+      sesión) y el teaser hacia **EP.026** (vacante, no Peter/Little — ese quedó en EP.027 tras
+      el swap) para el cierre de este episodio. El guion todavía dice "Teaser EP.027" en la caja
+      pendiente del segmento 7 — corregir antes de grabar.
