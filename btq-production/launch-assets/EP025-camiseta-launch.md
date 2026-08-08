@@ -8,18 +8,12 @@ Assets de lanzamiento generados 2026-08-07. Audio: `E:\Podcast\BTQ\EP 25\BTQ EP 
 No se usó esta frase en ningún asset publicado por esa razón; si se quiere usar en el futuro,
 Andy debe confirmar de oído cuál dijo realmente antes de citarla.
 
-⚠️ **Conflicto de calendario, necesita decisión de Andy antes de publicar los posts:**
-la cadencia semanal (grabación sábado → lanzamiento domingo) pondría a este episodio el
-domingo **9 de agosto**. Pero el calendario social de 4 días empieza el jueves con el post
-de intriga — y el jueves de esa semana (**6 de agosto**) ya pasó antes de que este episodio
-existiera. Dos opciones:
-- **(A) Lanzar igual el 9 de agosto**, comprimiendo el calendario a 2 días (sábado + domingo,
-  sin intriga de jueves).
-- **(B) Correr todo el calendario una semana**, lanzamiento el **16 de agosto**, con el
-  jueves 13 de intriga completo.
-
-Los bloques de abajo están fechados asumiendo **(A)** por ser la fecha más próxima — cambiar
-las fechas es trivial si Andy prefiere (B).
+✅ **Calendario resuelto 2026-08-07:** Andy confirmó publicación domingo **9 de agosto, 8PM
+Colombia** — opción (A), calendario comprimido a 2 días (sábado + domingo, sin intriga de
+jueves, que ya había pasado). URL de Spotify confirmada:
+`https://open.spotify.com/episode/5AgkBZ1F1M9WPU4MxxqESq`. Propagada a los bloques de abajo,
+al artículo del sitio (`website/episodios/ponerse-la-camiseta.html`) y a
+`pipeline-state-ep025.md`.
 
 ---
 
@@ -104,7 +98,7 @@ Con el consent order de la CFPB, el blog personal de Susan Fowler, y los comunic
 ```
 **Primer comentario (link Spotify, y el artículo como segundo link):**
 ```
-Escúchalo aquí: [URL de Spotify pendiente]
+Escúchalo aquí: https://open.spotify.com/episode/5AgkBZ1F1M9WPU4MxxqESq
 Si prefiere leerlo: https://behind-thequeue.com/episodios/ponerse-la-camiseta
 ```
 
@@ -183,7 +177,7 @@ CONTENIDO DEL EPISODIO
 
 ENCUENTRA BTQ EN
 🌐 behind-thequeue.com
-🎧 Spotify: [URL pendiente]
+🎧 Spotify: https://open.spotify.com/episode/5AgkBZ1F1M9WPU4MxxqESq
 📩 andy@behind-thequeue.com
 💼 LinkedIn: linkedin.com/company/behind-the-queue
 📸 Instagram: @behindthequeue84
@@ -244,7 +238,7 @@ plano nuevo, dejando margen superior limpio para el wordmark y el kicker.
 `btq-production/website/episodios/ponerse-la-camiseta.html` — escrito, JSON-LD verificado (parsea OK),
 agregado a `episodios/index.html`, sitemap regenerado (`website/build-sitemap.py`, 5 URLs).
 **No desplegado todavía** — se publica el domingo del lanzamiento junto con el episodio, no antes.
-Placeholder `href="#"` en los dos links de Spotify hasta tener la URL real.
+Los dos links de Spotify ya tienen la URL real (resuelta 2026-08-07), no el placeholder `href="#"`.
 
 ## F · Artículo nativo de LinkedIn — pendiente
 

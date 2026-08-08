@@ -12,9 +12,14 @@ o directamente en la fuente original. Guion completo y medido (5.239 palabras, 4
 `launch-assets/EP025-camiseta-guion.artifact.html`. Grabado 2026-08-07, ~40:53 medidos con
 ffprobe (`E:\Podcast\BTQ\EP 25\BTQ EP 25.wav` / `.mp3`). Transcrito el mismo día vía WhisperX
 large-v2 + diarización → `E:\Transcriptor\transcripciones\BTQ EP 25.srt`.
-stage_b: **in_progress** — episode brief armado, assets/metadata (episode-launch) siguen.
-stage_c: no iniciado.
-spotify_url: pending
+stage_b: **complete** — episode brief armado, assets/metadata generados vía `episode-launch`
+(Spotify SEO, plan social, YouTube, portadas + quote cards, artículo del sitio). Ver
+`launch-assets/EP025-camiseta-launch.md` para el detalle completo, incluida la excepción de
+artwork (escena renderizada, no tipografía pura) y sus correcciones.
+stage_c: no iniciado — siguiente: `03-image-validation.md` (ya cubierto en la práctica: las
+portadas y quote cards ya pasaron gate mecánico + inspección visual en Stage B de esta sesión).
+spotify_url: https://open.spotify.com/episode/5AgkBZ1F1M9WPU4MxxqESq (confirmada por Andy
+2026-08-07, publica domingo 9 de agosto 8PM Colombia)
 
 **Carril:** Oficio de Jefe #2. **Origen:** video que un amigo de Andy le compartió sobre el
 mensaje tóxico de "ponerse la camiseta" en el entorno laboral (el video en sí no se abrió en
