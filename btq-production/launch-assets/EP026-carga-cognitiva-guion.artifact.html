@@ -1,0 +1,584 @@
+<style>
+        :root {
+            /* Sistema v4 "Sala de Maquinas" -- fuente canonica:
+               episode-launch/docs/brand-constants.md. Se fue el oro. */
+            --bg: #0E1113;          /* Void -- nunca negro puro */
+            --card: #22262A;        /* Panel */
+            --card2: #191D20;
+            --signal: #FF3D00;
+            --signal-dim: #9E2600;
+            --offwhite: #F4EFE7;    /* Cream */
+            --muted: #8B9492;
+            --steel: #39434A;
+            /* Fuentes instaladas por usuario; el fallback cubre otras maquinas. */
+            --display: 'Cabinet Grotesk', 'Arial Black', system-ui, sans-serif;
+            --sans: 'Supreme', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            --mono: 'Martian Mono', ui-monospace, Consolas, monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--sans);
+            background: #08090A;
+            color: var(--offwhite);
+            line-height: 1.8;
+            font-size: 15.5px;
+        }
+
+        .container { max-width: 820px; margin: 0 auto; background: var(--bg); }
+
+        /* ---------- HEADER ---------- */
+        .header {
+            background: linear-gradient(160deg, #22262A 0%, #0E1113 70%);
+            padding: 46px 48px 40px;
+            border-bottom: 3px solid var(--signal);
+        }
+        .header .podcast {
+            font-family: var(--mono);
+            font-size: 1.15em;
+            color: var(--signal);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .header .epnum {
+            font-family: var(--mono);
+            font-size: 2.6em;
+            color: var(--signal);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+        .header h1 {
+            font-family: var(--display);
+            font-size: 2em;
+            font-weight: 900;
+            margin: 6px 0 10px;
+            color: var(--offwhite);
+            line-height: 1.18;
+        }
+        .header .tagline {
+            font-family: var(--display);
+            font-style: italic;
+            color: var(--signal);
+            font-size: 1.05em;
+            margin-bottom: 22px;
+        }
+        .meta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .meta-item {
+            background: rgba(255,61,0,0.10);
+            border: 1px solid var(--signal-dim);
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            color: var(--signal);
+            letter-spacing: 0.5px;
+        }
+
+        /* ---------- SECTIONS ---------- */
+        .section { padding: 32px 48px; border-bottom: 1px solid #222; }
+        .section h2 {
+            font-family: var(--mono);
+            font-size: 1.15em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--signal);
+            margin-bottom: 20px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid var(--signal-dim);
+        }
+
+        /* ---------- ARQUITECTURA ---------- */
+        .arquitectura { font-size: 0.9em; }
+        .arq-row {
+            display: grid;
+            grid-template-columns: 30px 1.1fr 95px 1.6fr;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid #1c1c1c;
+            align-items: start;
+        }
+        .arq-row.head { color: var(--signal); font-weight: 700; border-bottom: 1px solid var(--signal-dim); }
+        .arq-num { color: var(--signal); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--offwhite); }
+        .arq-time { color: var(--muted); font-family: monospace; font-size: 0.92em; }
+        .arq-row span:last-child { color: var(--muted); }
+
+        /* ---------- GUION SEGMENTS ---------- */
+        .segment { margin: 40px 0; padding-bottom: 26px; border-bottom: 1px solid #1a1a1a; }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+        .segment-number {
+            font-family: var(--mono);
+            background: var(--signal);
+            color: #0E1113;
+            min-width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1em; font-weight: bold;
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+        .segment-title {
+            font-family: var(--mono);
+            font-weight: 400;
+            font-size: 1.15em;
+            color: var(--offwhite);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.78em;
+            color: var(--muted);
+            background: #181818;
+            padding: 3px 11px;
+            border-radius: 10px;
+            white-space: nowrap;
+            font-family: monospace;
+        }
+        .sub { font-family: var(--display); font-style: italic; font-size: 1.12em; color: var(--signal); margin: 26px 0 8px; }
+
+        p.line { margin: 0 0 4px; color: #e9e6dd; }
+
+        /* PAUSA chips */
+        .pausa {
+            display: inline-block;
+            font-family: var(--mono);
+            letter-spacing: 2px;
+            font-size: 0.72em;
+            color: var(--signal-dim);
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 0 8px;
+            margin: 8px 0;
+            background: #111;
+        }
+        .pausa.larga { color: var(--signal); border-color: var(--signal-dim); }
+
+        /* REMATE — the signature punch line */
+        .remate {
+            border-left: 3px solid var(--signal);
+            background: linear-gradient(90deg, rgba(255,61,0,0.07), transparent);
+            padding: 14px 20px;
+            margin: 18px 0;
+            font-family: var(--display);
+            font-size: 1.08em;
+            color: var(--offwhite);
+        }
+        .remate::before {
+            content: "REMATE";
+            display: block;
+            font-family: var(--mono);
+            font-size: 0.62em;
+            letter-spacing: 3px;
+            color: var(--signal);
+            margin-bottom: 6px;
+        }
+
+        /* NOTA producción — not printable */
+        .nota {
+            background: #17191B;
+            border: 1px dashed var(--signal-dim);
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 14px 0;
+            font-size: 0.85em;
+            color: #A8B0AE;
+        }
+        .nota::before { content: "NOTA · "; font-family: var(--mono); letter-spacing: 2px; color: var(--signal); }
+
+        /* DATO callout */
+        .dato {
+            background: var(--card2);
+            border-left: 4px solid var(--signal);
+            border-radius: 0 5px 5px 0;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .dato-label {
+            font-family: var(--mono);
+            font-size: 0.78em;
+            letter-spacing: 3px;
+            color: var(--signal);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        em { color: var(--signal); font-style: italic; }
+        strong { color: var(--offwhite); }
+
+        /* FUENTES */
+        .fuentes p { font-size: 0.83em; color: var(--muted); line-height: 1.7; }
+
+        .checklist-box {
+            background: var(--card);
+            border: 1px solid #262011;
+            border-radius: 6px;
+            padding: 6px 18px;
+        }
+        .checklist-box .row { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #1a1a1a; align-items: baseline; }
+        .checklist-box .row:last-child { border-bottom: none; }
+        .ck { color: #4a7a4a; font-weight: 700; }
+        .warn { color: var(--signal); font-weight: 700; }
+
+        .pendiente {
+            background: #1b1410;
+            border: 1px dashed var(--signal);
+            border-radius: 6px;
+            padding: 18px 22px;
+            margin: 30px 0;
+            color: #D9CFC4;
+        }
+        .pendiente h3 {
+            font-family: var(--mono);
+            color: var(--signal);
+            letter-spacing: 3px;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        footer { padding: 26px 48px; color: var(--muted); font-size: 0.8em; text-align: center; }
+        footer .gold { color: var(--signal); font-family: var(--mono); letter-spacing: 3px; }
+
+        @media print {
+            body { background: #fff; color: #111; }
+            .container { background: #fff; }
+            .nota { display: none; }
+            .header { background: #111; }
+            .remate { color: #111; }
+            p.line, .segment-title, strong { color: #111; }
+        }
+        @media (max-width: 640px) {
+            .section, .header, footer { padding-left: 22px; padding-right: 22px; }
+            .arq-row { grid-template-columns: 24px 1fr; }
+            .arq-row .arq-time, .arq-row span:last-child { grid-column: 2; }
+        }
+</style>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Behind the Queue</div>
+        <div class="epnum">EP.26</div>
+        <h1>Por qué su equipo no sigue el procedimiento: carga cognitiva</h1>
+        <div class="tagline">No es que su equipo lo esté desobedeciendo. Es que usted diseñó un procedimiento para leerlo tranquilo, y se lo está pidiendo a alguien que está en llamas.</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 026</span>
+            <span class="meta-item">Solo host · Andy</span>
+            <span class="meta-item">Carril · Oficio de Jefe #3</span>
+            <span class="meta-item">Registro · ejecutivo relajado</span>
+            <span class="meta-item">Esqueleto E · acción primero</span>
+            <span class="meta-item">Evergreen — no atado a coyuntura</span>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="nota">Esqueleto <strong>E · ACCIÓN PRIMERO</strong>, igual que EP.024 — no consecutivos (EP.025 entre medio), decisión ya tomada en <code>pipeline-state-ep026.md</code>. La recomendación aterriza en el minuto 2; el resto justifica. El giro de este episodio no es "hay un villano": es que TMI, Avianca y Keystone son la MISMA curva de sobrecarga en tres industrias distintas, y Keystone es la prueba de que se puede apagar antes de que truene.</div>
+        <div class="arquitectura">
+            <div class="arq-row head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span></div>
+            <div class="arq-row"><span class="arq-num">0</span><span class="arq-seg">Apertura en frío</span><span class="arq-time">0:00–1:35</span><span>La frase, el desmentido, disclaimer de encuadre y ritual</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">La recomendación, de una vez</span><span class="arq-time">1:35–8:30</span><span><strong>APLICABLE.</strong> No se le olvida el procedimiento: se le acaba la memoria de trabajo. Sweller, means-ends analysis, "even if the problem is solved"</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Cien alarmas en minutos</span><span class="arq-time">8:30–15:30</span><span><strong>Caso 1 · Three Mile Island, 1979.</strong> El procedimiento SOBRABA. Informe Kemeny, la formación que agravó el accidente</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">La palabra que no cargaba</span><span class="arq-time">15:30–23:30</span><span><strong>Caso 2 · Avianca 052, 1990.</strong> El procedimiento NO LLEGÓ A TIEMPO — la tripulación sí habló. Distinción explícita con el Nokia de EP.024</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Quitarle pasos, no ponerle carteles</span><span class="arq-time">23:30–31:00</span><span><strong>Caso 3 · Keystone ICU, Michigan, 2006.</strong> Le QUITARON carga en vez de ponerle, y funcionó — medido, dos tiempos</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">El diseño, no el carácter</span><span class="arq-time">31:00–36:30</span><span>El giro: reencuadre — no es un problema de disciplina, es de diseño de la carga. Referencia cruzada a EP.024 (silencio organizacional) como mecanismo hermano</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Qué hace usted el lunes</span><span class="arq-time">36:30–41:30</span><span><strong>APLICABLE.</strong> Las tres movidas, una por caso: recortar alarmas, fijar palabra de escalamiento, sacar pasos no críticos</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Cierre canónico + Teaser EP.027</span><span class="arq-time">41:30–43:30</span><span>Pregunta comentable · CTAs · LinkedIn · teaser · firma + TM</span></div>
+        </div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="section">
+        <h2>Antes de grabar · checklist</h2>
+        <div class="checklist-box">
+            <div class="row"><span class="ck">✓</span><span><strong>Título:</strong> <code>EP.26 — Por qué su equipo no sigue el procedimiento: carga cognitiva</code> (<strong>58 caracteres · ancla de 7 palabras</strong>, fijado en <code>pipeline-state-ep026.md</code> el 2026-08-03). Coherencia título↔guion: el segmento 1 desmonta explícitamente el diagnóstico de desobediencia.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Los tres casos, verificados en fuente primaria</strong> (Kemeny/TMI, NTSB AAR-91/04/Avianca, Johns Hopkins repository/Keystone) — ver <code>pipeline-state-ep026.md</code> para las citas literales completas.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Sweller (1988) leído completo, no citado de memoria</strong> — cerrado 2026-08-07. La cita ancla del segmento 1 y del giro es textual.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Instrucción de Andy sobre Avianca cumplida:</strong> el segmento 3 nombra explícitamente la cercanía con el Nokia de EP.024 y marca la diferencia — allá miedo, acá diseño y carga.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Aterrizajes obligatorios cumplidos, uno por caso</strong> (tablero en rojo/chat con 40 notificaciones · "urgente" en el asunto de un correo · de 14 pasos a los 5 que importan) — cada uno en su segmento y repetido en la aplicación.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Dichos nuevos, distintos a los de EP.024</strong> (que usó panadero/leche-vaca/tapar el sol/ojos que no ven/sordo negado): <em>el que mucho abarca poco aprieta</em> (seg. 2) · <em>camarón que se duerme se lo lleva la corriente</em> (seg. 3, invertido) · <em>menos bulto, más claridad</em> como remate propio, no dicho de cajón (seg. 4). Tres de cinco — cupo disponible.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Referencias cruzadas fuera del referente:</strong> EP.024 (silencio organizacional) nombrado en segmentos 3 y 5 como mecanismo hermano, no como el caso de hoy.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>NO ejecutado todavía — obligatorio antes de aprobar:</strong> <code>python scripts/lint_guion_repeticion.py</code> contra los 5 episodios anteriores (6-gramas, moldes, "todavía no les he..."), grep de español neutro/regionalismos, y conteo de palabras real contra la tabla de 148 wpm +13%. Este borrador está sin correr por esos lints — no declarar "listo para grabar" hasta que pasen.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Teaser de EP.025 sin confirmar:</strong> no se verificó qué promesa (si alguna) hizo el cierre de EP.025 hacia este episodio, porque el guion de EP.025 no se abrió en esta sesión. Confirmar antes de grabar el segmento 0.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Teaser de EP.027 pendiente de fijar:</strong> el roadmap tenía a EP.027 en rediseño (Peter/Little) a fecha del último handoff; confirmar el tema exacto antes de escribir el cierre del segmento 7 — por ahora queda con placeholder.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Duración sin medir contra SRT:</strong> el conteo de palabras de este borrador no se corrió programáticamente. No asumir los 42 min del casillero de arriba como medidos — es estimado por comparación con EP.024.</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- 0 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Apertura en frío</span><span class="segment-time">0:00</span></div>
+            <div class="nota">Arranca en frío, sin jingle y sin saludo. Tono llano, casi de disculpa por lo obvio que va a sonar lo que viene. Nada de dramatismo: es una constatación.</div>
+
+            <p class="line">Su equipo tiene el procedimiento. Está escrito, está aprobado, está pegado en la pared o guardado en el drive donde debe estar.</p>
+            <p class="line">Y aun así, cuando la cosa se pone brava, no lo siguen.</p>
+            <p class="line">Y usted ya sacó la conclusión: son indisciplinados, no lo estudiaron, les falta compromiso.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ese diagnóstico es cómodo y está mal. Hoy les voy a mostrar tres casos donde la gente involucrada sabía exactamente qué decía el procedimiento —lo tenían encima, algunos lo tenían memorizado— y aun así no lo pudieron seguir. Y les voy a mostrar el único caso, de los tres, donde alguien se dio cuenta a tiempo de por qué, y arregló el problema equivocado que todos arreglamos primero.</p>
+            <p class="line">Este episodio es sobre esa diferencia.</p>
+
+            <div class="nota">JINGLE DE ENTRADA — stinger corto (2-4 s), seco, a silencio. Andy entra sobre el silencio, no sobre la cola del jingle.</div>
+
+            <div class="nota">Disclaimer de encuadre — 43 palabras, dentro del rango 35-55.</div>
+            <p class="line">Lo de hoy es carga cognitiva: cuánta información puede sostener una persona en la cabeza al mismo tiempo antes de que algo se caiga. No van a oír que hay que capacitar más ni reforzar la cultura de cumplimiento. Van a oír por qué el procedimiento perfecto también se cae, y qué hacer con eso.</p>
+            <span class="pausa">PAUSA</span>
+
+            <p class="line">Buenas y santas. Feliz día, feliz tarde o feliz noche. Cualquier día que este sea.</p>
+            <p class="line">Esto es Behind the Queue, episodio 26.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+        </div>
+
+        <!-- 1 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">1</span><span class="segment-title">La recomendación, de una vez</span><span class="segment-time">1:35 – 8:30</span></div>
+            <div class="nota">Tramo <strong>APLICABLE</strong> (el primero de dos). Esqueleto E: la tesis va aquí, con la fuente académica nombrada y citada, no reservada para el final. Leer con calma, es la columna teórica del episodio entero.</div>
+
+            <p class="line">Voy a hacer lo mismo que hicimos hace un par de episodios: la recomendación va de una vez, y el resto es por qué.</p>
+            <p class="line">Aquí va.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line"><strong>Cuando alguien no sigue el procedimiento bajo presión, no está siendo negligente. Se le acabó la memoria de trabajo.</strong> Y la memoria de trabajo no se resuelve con más entrenamiento. Se resuelve quitándole peso.</p>
+            <p class="line">Suena raro. Vamos por partes.</p>
+
+            <div class="sub">Lo que de verdad pasa en la cabeza de alguien siguiendo un procedimiento</div>
+
+            <p class="line">Imagínese a alguien —un operario, un piloto, un enfermero, su analista un lunes de cierre— tratando de seguir un procedimiento mientras el mundo se complica alrededor.</p>
+            <p class="line">Para hacerlo, esa persona tiene que sostener en la cabeza, al mismo tiempo: dónde está parada ahora mismo, hacia dónde tiene que llegar, qué diferencia hay entre las dos cosas, qué paso del procedimiento reduce esa diferencia, y si ya iba resolviendo un problema anterior, tiene que seguir cargando ESE también, sin soltarlo, para retomarlo después.</p>
+            <p class="line">Eso tiene nombre en la ciencia cognitiva. Se llama <em>means-ends analysis</em>: ir comparando constantemente dónde estoy contra dónde tengo que llegar, y usar esa diferencia para elegir el siguiente paso. Es exactamente lo que hace alguien leyendo un procedimiento paso a paso bajo presión.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aquí está el problema: eso no es gratis. Consume la misma capacidad limitada que usted necesitaría para aprender, para priorizar, para darse cuenta de que algo no cuadra.</p>
+
+            <div class="sub">El paper que lo puso en números</div>
+
+            <p class="line">1988. Un investigador llamado John Sweller, en la Universidad de Nueva Gales del Sur, publica un paper que hoy es de los más citados en toda la ciencia del aprendizaje. Se llama, literal, <em>Carga Cognitiva Durante la Resolución de Problemas</em>.</p>
+            <p class="line">Y la frase que a mí me cambió la manera de ver este tema es esta, y se las voy a leer tal cual la escribió él:</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="dato">
+                <div class="dato-label">Sweller, 1988 — Cognitive Science, 12(2), p. 261</div>
+                <p class="line">«Para usar esa estrategia, quien resuelve el problema tiene que considerar simultáneamente el estado actual, el estado meta, la relación entre los dos, las relaciones entre las operaciones disponibles, y si ya usó subobjetivos, tiene que mantener una pila de ellos en la cabeza. La capacidad de procesamiento que se necesita para manejar toda esa información puede ser tan grande que no deje casi nada disponible para aprender —<strong>incluso si el problema se resuelve</strong>.»</p>
+            </div>
+
+            <p class="line">Léanla otra vez con esto en la cabeza: <strong>incluso si el problema se resuelve.</strong></p>
+            <p class="line">Eso es lo que nadie le dice cuando le arma el procedimiento perfecto. No es que la persona no lo siga porque no le importa. Es que seguirlo, letra por letra, bajo presión, con la mente ocupada resolviendo lo que está pasando en tiempo real, consume toda la capacidad disponible. Y cuando la capacidad se acaba, algo se cae. Y lo que se cae no lo elige la persona: lo elige lo que menos alarma suena en ese momento.</p>
+
+            <div class="remate">No se le olvidó el procedimiento. Se le llenó la memoria de trabajo con el problema, y ya no había espacio para el papel que le decía cómo resolverlo.</div>
+
+            <p class="line">Y esto tiene una consecuencia incómoda para cualquiera que arma procedimientos: <strong>un procedimiento más largo, más completo, más "a prueba de todo" no es más seguro. Es más caro de sostener en la cabeza justo cuando más hace falta.</strong></p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ahora, esto sería solo una curiosidad de laboratorio si no tuviera casos reales detrás. Tengo tres. El primero es de una sala de control nuclear. El segundo es de una cabina de avión. Y el tercero —el que de verdad me importa que se lleven hoy— es de un hospital que se dio cuenta a tiempo y resolvió el problema equivocado que nadie más había resuelto: no le puso más encima a la gente. Le quitó.</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">2</span><span class="segment-title">Cien alarmas en minutos</span><span class="segment-time">8:30 – 15:30</span></div>
+            <div class="nota">Caso 1. El procedimiento SOBRABA — demasiada señal, sin jerarquía. Tono narrativo, seco, sin dramatizar la radiación (no es el tema del episodio).</div>
+
+            <p class="line">Pensilvania, 28 de marzo de 1979. Central nuclear de Three Mile Island, unidad 2.</p>
+            <p class="line">Poco después de las cuatro de la madrugada, falla una bomba en el sistema de agua de alimentación. Es un problema conocido, con procedimiento escrito, entrenado y practicado.</p>
+            <p class="line">Y en los minutos que siguen, ese problema pequeño dispara una cascada.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">La Comisión Presidencial que investigó el accidente —la comisión Kemeny, se llamó, por el matemático que la presidió— lo describe así, y lo cito directo del informe:</p>
+
+            <div class="dato">
+                <div class="dato-label">Informe Kemeny, 1979 — p. 22</div>
+                <p class="line">«Frederick y Faust estaban en la sala de control cuando sonó la primera alarma, seguida de una cascada de alarmas que llegaron a <strong>cien dentro de los primeros minutos</strong>.»</p>
+            </div>
+
+            <p class="line">Cien alarmas. En minutos. Sonando, parpadeando, todas al mismo tiempo, ninguna diciéndole al operador cuál atender primero.</p>
+            <p class="line">Uno de esos operadores, Craig Faust, lo declaró después ante la comisión con una frase que no necesita adorno:</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="dato">
+                <div class="dato-label">Testimonio de Craig Faust, nota 17</div>
+                <p class="line">«Me hubiera gustado poder tirar a la basura el panel de alarmas. No me estaba dando ninguna información útil.»</p>
+            </div>
+
+            <p class="line">Y aquí quiero que se detengan en algo importante: ese panel no estaba roto. Estaba haciendo exactamente lo que estaba diseñado para hacer. Avisar. El problema es que avisar cien veces en minutos no es avisar: es ruido con forma de información.</p>
+            <p class="line">El que mucho abarca poco aprieta, decimos. Pero fíjense en lo que el dicho no dice: no dice que uno suelta lo nuevo y se queda con lo viejo bien agarrado. Dice que abarca poco de <em>todo</em> — incluso de lo que ya tenía controlado. Faust no perdió solo la alarma cien. Empezó a perder también la número tres, la que sí importaba.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Los operadores, entrenados y con el procedimiento fresco, terminaron cerrando manualmente un sistema de enfriamiento de emergencia que se había activado correctamente, porque la lectura de un indicador —engañosa, mal ubicada, pero técnicamente disponible— sugería que no hacía falta. Fue uno de los pasos que agravó el accidente.</p>
+            <p class="line">Y la comisión, después de meses de investigación, no le echó la culpa a la falta de compromiso de esos operadores. Dijo algo mucho más incómodo:</p>
+
+            <div class="dato">
+                <div class="dato-label">Informe Kemeny, 1979 — p. 22</div>
+                <p class="line">«Cada uno era producto de su entrenamiento —un entrenamiento que no los preparó adecuadamente para enfrentar el accidente en TMI-2. De hecho, <strong>su entrenamiento fue en parte responsable de escalar lo que debió ser un evento menor hacia un accidente potencialmente devastador</strong>.»</p>
+            </div>
+
+            <div class="remate">La comisión presidencial, no yo, no un podcast: el mismo entrenamiento que se supone que los preparaba fue parte de por qué la cosa escaló. No porque el entrenamiento estuviera mal escrito. Porque nadie diseñó qué pasaba cuando cien alarmas competían por la misma cabeza al mismo tiempo.</p>
+
+            <p class="line">Y antes de que alguien piense que esto es un problema de reactores nucleares y no de su operación, hágase esta pregunta: ¿cuántas notificaciones le llegan a su gente en una hora mala? Slack, correo, WhatsApp del cliente, ticket que subió de prioridad, alerta del sistema. Ninguna, individualmente, es el problema. La cascada sí lo es.</p>
+        </div>
+
+        <!-- 3 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">La palabra que no cargaba</span><span class="segment-time">15:30 – 23:30</span></div>
+            <div class="nota">Caso 2. El procedimiento NO LLEGÓ A TIEMPO — instrucción explícita de Andy: nombrar la cercanía con el Nokia de EP.024 y marcar la diferencia (allá miedo, acá carga y diseño).</div>
+
+            <p class="line">Segundo caso, y antes de contarlo tengo que hacer algo poco común: nombrar que se parece a uno que ya les conté.</p>
+            <p class="line">Hace dos episodios les hablé de Nokia, y de cómo el mensaje sobre el iPhone nunca llegó arriba porque cada mando medio, con miedo, le quitaba la parte incómoda antes de pasarlo. Si usted ya oyó ese episodio, este caso le va a sonar parecido al principio. No lo es, y quiero que lo vean con otros ojos: no con los ojos de "el mensaje nunca llegó", sino con los de que <strong>fue el diseño el que falló</strong>.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Porque acá el mensaje sí llegó. La tripulación sí habló. Y aun así no alcanzó.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+
+            <div class="sub">25 de enero de 1990, Cove Neck, Nueva York</div>
+
+            <p class="line">Vuelo 052 de Avianca, un Boeing 707 con matrícula colombiana, ciento cincuenta y ocho personas a bordo, viniendo de Bogotá y Medellín hacia Nueva York.</p>
+            <p class="line">El control de tráfico aéreo los pone en espera. Tres veces. Un total de una hora con diecisiete minutos dando vueltas sobre Nueva York, quemando combustible que no sobraba.</p>
+            <p class="line">En la tercera espera, la tripulación reporta que no pueden esperar más de cinco minutos, que se están quedando sin combustible, y que no les alcanza para desviarse a su alterno, que era Boston.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Eso es un aviso. Formal, verbal, a la torre de control. No fue un silencio. La palabra <em>salió</em>.</p>
+            <p class="line">Y aun así, minutos después, los cuatro motores del avión se quedaron sin combustible y perdieron potencia. El avión cayó a unas dieciséis millas del aeropuerto. Setenta y tres de las ciento cincuenta y ocho personas a bordo murieron.</p>
+
+            <div class="sub">Lo que dijo la investigación</div>
+
+            <p class="line">La Junta Nacional de Seguridad en el Transporte de Estados Unidos, la NTSB, investigó a fondo. Y su conclusión sobre la causa probable, textual, es esta:</p>
+
+            <div class="dato">
+                <div class="dato-label">NTSB/AAR-91/04, causa probable</div>
+                <p class="line">«El fallo de la tripulación en administrar adecuadamente la carga de combustible del avión, y su fallo en comunicar una situación de emergencia de combustible al control de tráfico aéreo antes de que el combustible se agotara.»</p>
+            </div>
+
+            <p class="line">Ahí está la palabra clave, y es la que le da la vuelta a todo el caso: <strong>emergencia</strong>.</p>
+            <p class="line">La tripulación dijo que estaban quedándose sin combustible. Dijo que no podían esperar más. Lo que no dijo —porque el procedimiento de la época no se lo exigía con esa palabra exacta— fue "emergency". La palabra que en el protocolo de aviación activa un tratamiento distinto, prioridad distinta, urgencia distinta por parte del controlador.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El propio informe lo nombra entre los factores contribuyentes: falta de una terminología estandarizada y comprensible para pilotos y controladores sobre estados mínimos y de emergencia de combustible. Y agrega algo que conecta directo con el episodio de hoy: fatiga y estrés de la tripulación como factores que contribuyeron.</p>
+
+            <div class="dato">
+                <div class="dato-label">NTSB/AAR-91/04, factores contribuyentes</div>
+                <p class="line">«Windshear, la fatiga y el estrés de la tripulación fueron factores que contribuyeron a que no se completara con éxito el primer intento de aproximación, y por lo tanto contribuyeron al accidente.»</p>
+            </div>
+
+            <p class="line">Camarón que se duerme se lo lleva la corriente, decimos. Pero esta tripulación no se durmió. Habló, insistió, avisó tres veces. La corriente se los llevó de todos modos, porque la palabra que tenían disponible no cargaba el peso que necesitaba cargar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aquí está la diferencia con Nokia que Andy —o sea, yo— les prometí al principio. En Nokia el mecanismo era el miedo: cada mando medio, deliberadamente, le quitaba la parte incómoda al mensaje antes de subirlo. Acá el mecanismo es otro: es carga y diseño. La tripulación, agotada, comunicando bajo estrés, con un vocabulario que el sistema no había estandarizado, dijo lo que el procedimiento le permitía decir. Y el diseño no cargaba el significado suficiente en esa palabra.</p>
+
+            <div class="remate">En Nokia alguien decidió no decirlo completo. En Avianca lo dijeron completo, y el sistema no tenía dónde ponerlo. Las dos son fallas de comunicación. Solo una es fallas de carácter.</div>
+
+            <p class="line">Y por si a alguien le queda dando vueltas: el propio informe de la NTSB abre su resumen ejecutivo con una fecha equivocada, «19 de julio de 1989», cuando la fecha correcta —la que aparece en la portada y en el resto del documento— es el 25 de enero de 1990. Un informe entero sobre una falla de comunicación, que se equivoca en su propia primera página. Se los digo para que no piensen que es un error nuestro si algún día ven el PDF.</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">Quitarle pasos, no ponerle carteles</span><span class="segment-time">23:30 – 31:00</span></div>
+            <div class="nota">Caso 3. El único de los tres que es una VICTORIA medida. Cambio de tono: de fatalidad a resolución. Es el ancla de "qué hace usted el lunes".</div>
+
+            <p class="line">Los dos casos anteriores terminan mal. Este no.</p>
+            <p class="line">Y se los cuento al final, a propósito, porque es el que de verdad quiero que se lleven.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Michigan, 2003. Un médico llamado Peter Pronovost, en la Universidad Johns Hopkins, se enfoca en un problema puntual y aburrido: las infecciones del torrente sanguíneo asociadas a catéteres en unidades de cuidados intensivos. Matan gente, cuestan fortunas, y en teoría son evitables con cinco pasos de higiene que cualquier médico de UCI ya conoce.</p>
+            <p class="line">Ya conoce. Ese es el detalle que casi nadie mira. No era un problema de que no supieran qué hacer. Era un procedimiento de cinco pasos, bien conocido, en un entorno donde cada médico está simultáneamente monitoreando quince cosas más, algunas de vida o muerte inmediata.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">La respuesta obvia —la que casi cualquier organización intenta primero— es reforzar. Más capacitación, más carteles, más recordatorios, tal vez una auditoría.</p>
+            <p class="line">Pronovost hizo lo contrario. En vez de ponerle más encima a un médico que ya está sosteniendo quince cosas en la cabeza, construyó un checklist de esos cinco pasos y le dio a la enfermera —no al médico, a la enfermera— autoridad explícita para detener el procedimiento si alguno se saltaba. Sacó la decisión de "acordarme de todo" de la cabeza del médico ocupado, y la puso en un papel corto que otra persona podía verificar.</p>
+
+            <div class="remate">No le pidió a nadie que recordara más. Le quitó a una sola persona la obligación de sostener los cinco pasos en la cabeza al mismo tiempo que todo lo demás.</div>
+
+            <p class="line">El estudio se publicó en 2006, en el <em>New England Journal of Medicine</em>, con datos de <strong>ciento tres unidades de cuidados intensivos en Michigan</strong>, casi dos mil meses-UCI de seguimiento.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y acá les tengo que ser precisos, porque el dato que circula suelto por internet está mal contado en el tiempo, y casi se me cuela mal a mí también revisando esto.</p>
+            <p class="line">En los primeros tres meses, la tasa de infección cayó <strong>38%</strong>. No es la cifra que se repite —la del 66%— pero es la que corresponde a esa ventana.</p>
+            <p class="line">El 66% llegó después, sostenido a los <strong>dieciséis a dieciocho meses</strong>. Y esa es la parte que de verdad importa: no fue un chispazo inicial que se apagó. Bajó rápido, y lo difícil —lo que se sostuvo año y medio— fue que no volviera a subir.</p>
+
+            <div class="dato">
+                <div class="dato-label">Pronovost et al., NEJM 2006</div>
+                <p class="line">Mediana de infecciones por 1.000 días-catéter: de <strong>2,7</strong> en la línea base a <strong>0</strong> en los primeros tres meses. Reducción de tasa de incidencia: <strong>38%</strong> a los 0-3 meses, <strong>66%</strong> sostenida a los 16-18 meses.</p>
+            </div>
+
+            <p class="line">Menos bulto, más claridad. No es un dicho de mi abuela, es lo que pasó en esas ciento tres unidades: le quitaron peso al médico y la operación se volvió más segura, medida en números, durante año y medio seguido.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y quiero ser honesto con ustedes en algo: circula por ahí una cifra de "más de mil quinientas vidas y ciento setenta y cinco millones de dólares" asociada a este proyecto. La busqué. No está en el abstract del estudio que acabo de citarles. Puede que salga de otro análisis posterior, pero no se las voy a repetir como si la hubiera verificado, porque no lo hice.</p>
+            <p class="line">Lo que sí verifiqué, con el número del propio estudio, les alcanza: 38% en tres meses, 66% sostenido en año y medio. Eso ya es suficiente para no necesitar inflar nada.</p>
+        </div>
+
+        <!-- 5 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">El diseño, no el carácter</span><span class="segment-time">31:00 – 36:30</span></div>
+            <div class="nota">El giro. Reencuadre de los tres casos bajo el mismo mecanismo (Sweller), y referencia cruzada explícita a EP.024 como mecanismo hermano, no como el caso de hoy.</div>
+
+            <p class="line">Pónganlos uno al lado del otro un momento.</p>
+            <p class="line">Un reactor nuclear con cien alarmas sonando en minutos. Una tripulación con la palabra correcta pero sin el vocabulario que la hiciera cargar suficiente peso. Un hospital que decidió no confiar en que el médico recordara los cinco pasos, y en cambio se los quitó de la cabeza.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Los tres son la misma curva. En los dos primeros, la demanda sobre la memoria de trabajo de una persona superó lo que esa memoria podía sostener, y algo cedió: una alarma que sí importaba, una palabra que no cargó lo suficiente. En el tercero, alguien miró esa misma curva y en vez de pedirle a la gente que aguantara más, le bajó la carga hasta que quedó adentro del rango sostenible.</p>
+            <p class="line">Ese es el reencuadre completo del episodio: <strong>no es un problema de disciplina. Es un problema de diseño de la carga.</strong></p>
+
+            <div class="remate">Un procedimiento que exige más memoria de trabajo de la que una persona tiene disponible en el peor momento no es un procedimiento completo. Es un procedimiento que solo funciona cuando no hace falta.</div>
+
+            <p class="line">Y esto conecta con algo que ya vimos en este pódcast, aunque venía de otro ángulo. En el episodio sobre el silencio organizacional —Nokia, y los dos casos colombianos— el problema era que la mala noticia se filtraba o se ignoraba por miedo: alguien, en algún punto de la cadena, decidía no pasarla completa.</p>
+            <p class="line">Hoy el mecanismo es distinto pero el síntoma final se parece: información que existía, que alguien intentó mover, y que no llegó a tiempo o completa a donde tenía que llegar. Allá el filtro era el miedo. Acá el filtro es la capacidad. Son dos maneras distintas de que la misma cosa —la información correcta, en el momento correcto— no llegue.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y la razón por la que este reencuadre importa no es académica. Es que cambia qué arregla usted primero.</p>
+            <p class="line">Si usted cree que el problema es disciplina, la solución es reforzar: más entrenamiento, más recordatorios, un correo más serio la próxima vez. Y el informe Kemeny ya nos dijo, con sus propias palabras, que ESE fue exactamente el error en Three Mile Island: el entrenamiento que se suponía que preparaba a los operadores fue parte de por qué la cosa escaló.</p>
+            <p class="line">Si en cambio usted acepta que el problema es de diseño de carga, la solución cambia por completo. No es entrenar más. Es quitar.</p>
+        </div>
+
+        <!-- 6 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">Qué hace usted el lunes</span><span class="segment-time">36:30 – 41:30</span></div>
+            <div class="nota">Tramo <strong>APLICABLE</strong> (el segundo de dos). Tres movidas, una por caso, con la trampa de cada una — mismo patrón que EP.024.</div>
+
+            <p class="line">Tres movidas, una por cada caso. Ninguna pide contratar a nadie ni comprar software.</p>
+
+            <div class="sub">Uno · recorte sus alarmas, de Three Mile Island</div>
+
+            <p class="line">Tome los canales donde su gente recibe avisos —Slack, correo, el sistema de tickets, lo que sea— y para cada uno pregúntese: si sonaran todos al mismo tiempo un martes a las tres de la tarde, ¿cuál es el único que de verdad exige que alguien deje lo que está haciendo?</p>
+            <p class="line">Solo ese debería interrumpir. Todo lo demás debería poder esperar a que la persona termine lo que tiene entre manos. La trampa: casi todo el mundo marca "urgente" la mitad de las cosas porque nadie se puso de acuerdo en qué significa urgente. Ese acuerdo es el trabajo de hoy, no de la semana que viene.</p>
+
+            <div class="sub">Dos · fije la palabra, de Avianca</div>
+
+            <p class="line">Pregúntele a su equipo, hoy: cuando algo está de verdad grave —no "ocupado", no "con retraso", sino grave— ¿existe una palabra específica que, al decirla, cambie automáticamente cómo se trata ese mensaje? ¿O cada quien improvisa su propio "urgente" en el asunto del correo, y con el tiempo ese "urgente" perdió el peso que tenía?</p>
+            <p class="line">Si no existe esa palabra, fíjela usted esta semana, con su equipo, en una sola frase clara. La trampa: si la usa para todo, en un mes vuelve a valer lo mismo que "urgente" en un asunto de correo. La palabra solo carga peso si se usa poco y se respeta siempre que se usa.</p>
+
+            <div class="sub">Tres · quite pasos, de Keystone</div>
+
+            <p class="line">Tome su procedimiento más largo —el que su gente jura que sigue completo y que probablemente no sigue completo cuando hay presión— y pregúntese: de todos los pasos, ¿cuáles cinco, si se hacen bien, evitan la mayoría de los problemas serios? Y de esos cinco, ¿cuál es el que, si se salta, nadie más se va a enterar hasta que sea tarde?</p>
+            <p class="line">Ese último paso necesita un punto de verificación de otra persona, como la enfermera de Pronovost. No un cartel que lo recuerde. Alguien con permiso de detener el proceso si no está. La trampa: es tentador convertir esto en un checklist de veinte ítems otra vez. Si tiene más de cinco a siete pasos críticos, no redujo la carga, la disfrazó.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ninguna de las tres pide que su gente aguante más. Las tres le quitan algo a la operación: una alarma, una ambigüedad, un paso. Eso es lo que hizo Pronovost, y es lo único, de los tres casos de hoy, que funcionó.</p>
+        </div>
+
+        <!-- 7 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Cierre canónico + Teaser</span><span class="segment-time">41:30 – 43:30</span></div>
+            <div class="nota">Cierre canónico completo: pregunta comentable · CTAs Spotify/compartir · LinkedIn · teaser EP.027 (PLACEHOLDER — confirmar tema real antes de grabar) · firma + TM · jingle de salida.</div>
+
+            <p class="line">Antes de cerrar, una pregunta para ustedes, y me la pueden dejar en los comentarios de Spotify: ¿cuál de los tres —alarmas, palabra o pasos— es el que más le está costando a su equipo ahora mismo?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si este episodio le sirvió, dos formas de ayudarme sin que le cueste nada: déjeme una reseña de cinco estrellas en Spotify, y compártalo con esa persona de su equipo que necesita oír esto más que usted.</p>
+            <p class="line">También estoy en LinkedIn, escribiendo sobre estos mismos temas. Búsqueme como Andy y máneme un mensaje si algo de hoy le tocó una fibra.</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="pendiente">
+                <h3>⚠ Teaser EP.027 — placeholder, NO grabar así</h3>
+                <p class="line">A la fecha del último handoff (2026-08-03), EP.027 estaba en rediseño de guion sobre el esqueleto E de EP.024, con el tema de Peter/Little sin cerrar del todo. No se abrió el estado actual de EP.027 en esta sesión. Antes de grabar el segmento 7, confirmar el tema real de EP.027 y escribir el teaser sobre eso — no usar el texto de abajo tal cual.</p>
+            </div>
+            <p class="line"><em>[PLACEHOLDER]</em> La próxima semana les cuento qué pasa cuando el mensaje llega, es urgente, y aun así nadie mueve un dedo.</p>
+            <span class="pausa">PAUSA</span>
+
+            <p class="line">Yo soy Andy, y esto fue Behind the Queue.</p>
+            <div class="nota">JINGLE DE SALIDA.</div>
+        </div>
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section fuentes">
+        <h2>Fuentes</h2>
+        <p class="line">Sweller, J. (1988). Cognitive Load During Problem Solving: Effects on Learning. <em>Cognitive Science, 12</em>(2), 257-285.</p>
+        <p class="line">President's Commission on the Accident at Three Mile Island (1979). <em>Report of the President's Commission on the Accident at Three Mile Island</em> ("Kemeny Report").</p>
+        <p class="line">National Transportation Safety Board (1991). <em>Aircraft Accident Report: Avianca, the Airline of Colombia, Boeing 707-321B, HK 2016, Fuel Exhaustion, Cove Neck, New York, January 25, 1990.</em> NTSB/AAR-91/04.</p>
+        <p class="line">Pronovost, P., Needham, D., Berenholtz, S., Sinopoli, D., Chu, H., Cosgrove, S., Sexton, B., Hyzy, R., Welsh, R., Roth, G., Bander, J., Kepros, J., & Goeschel, C. (2006). An intervention to decrease catheter-related bloodstream infections in the ICU. <em>New England Journal of Medicine, 355</em>(26), 2725-2732.</p>
+    </div>
+
+    <footer>
+        <div class="gold">BEHIND THE QUEUE</div>
+        <div>EP.026 — borrador sin lints corridos, ver checklist</div>
+    </footer>
+
+</div>

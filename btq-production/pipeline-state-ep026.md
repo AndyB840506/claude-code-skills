@@ -1,5 +1,8 @@
 EPISODE: EP.026 (BTQ) — carga cognitiva · «el procedimiento está escrito y aun así se equivocan»
-stage_a: **en curso** — tema fijado 2026-08-03, casos en verificación. Guion no iniciado.
+stage_a: **en curso** — tema fijado 2026-08-03, casos y Sweller verificados. Borrador de guion
+escrito 2026-08-07 en `launch-assets/EP026-carga-cognitiva-guion.artifact.html` — **sin lints
+corridos** (repetición/6-gramas, español neutro, conteo real de palabras), teaser de EP.025 sin
+confirmar, y teaser de EP.027 en placeholder. No apto para grabar hasta cerrar esos tres puntos.
 stage_b: no iniciado.
 stage_c: no iniciado.
 
