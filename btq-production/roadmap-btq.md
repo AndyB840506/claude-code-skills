@@ -22,16 +22,18 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.023 | Pilar SEO — el Efecto Hawthorne en medición del desempeño (Elton Mayo, estudios Western Electric, 1920s; reanálisis de Levitt & List 2011) | publicado — https://open.spotify.com/episode/3FQOeIT8bNTakHNGgBhMMR |
 | EP.024 | **Oficio de Jefe #1** — `Por qué su equipo no le cuenta los problemas: seguridad psicológica` | **guion v2 escrito** 2026-08-01 — `launch-assets/EP024-puerta-abierta-guion.html`. Casos: Nokia · Reficar + Hidroituango · Space · Grenfell. Falta expandir ~250 palabras y la pasada de fuentes primarias |
 | EP.025 | **Oficio de Jefe #2** — «Llevo cuatro meses sin llenar esa vacante»: por qué el perfil que pidió no existe por ese salario | en roadmap — tema fijado 2026-08-01 (idea de Andy, de foros de LinkedIn). Ver nota abajo |
-| EP.026 | **Oficio de Jefe #3** — carga cognitiva: «el procedimiento está escrito y aun así se equivocan» | **tema fijado 2026-08-03** por Andy. Teoría de carga cognitiva (Sweller) como columna, reencuadrada al problema operativo. Salió del filtro de sugeridor externo — única sobreviviente utilizable pronto, porque los cupos de pilar llegan hasta EP.035. Faltan los 2-3 casos nombrados |
+| EP.026 | **Oficio de Jefe #3** — «ponerse la camiseta»: el discurso de lealtad como herramienta tóxica | **reasignado 2026-08-07** — Andy grabó el borrador de carga cognitiva y sonaba a reencauche de EP.024 (misma estructura, referencias explícitas). Este tema entra en su lugar. Ver nota abajo. Faltan los 2-3 casos nombrados |
 | EP.027 | **Pilar SEO** — `Por qué su mejor empleado se vuelve un mal jefe: el Principio de Peter` (Peter y Hull, 1969 + Benson/Li/Shue, QJE 2019) | **GUION A REDISEÑAR — decisión de Andy 2026-08-03.** «Quedó muy denso dentro de la teoría»; se rehace sobre el formato del EP.024 (esqueleto E, acción primero). **La grabación del 07-31 queda obsoleta: reestructurar el guion obliga a regrabar completo, no dos tramos.** El guion viejo sigue en `launch-assets/EP024-peter-guion.html` como base de material verificado. **NO subido a Spotify, no programado, sin metadata publicada.** **Reubicado desde EP.024** (ver abajo) |
-| EP.028 | **Oficio de Jefe #4** — «ponerse la camiseta»: el discurso de lealtad como herramienta tóxica | **tema candidato 2026-08-07** — idea de Andy, disparada por un video que le compartió un amigo. Ver nota abajo. Faltan los 2-3 casos nombrados |
+| EP.028 | Oficio de Jefe #4 — carga cognitiva, aparcada (candidato disponible) | **aparcada 2026-08-07**, no descartada — casos y fuente de Sweller ya verificados en `pipeline-state-carga-cognitiva-parked.md`. Retomar con un esqueleto distinto a E y sin referencias cruzadas a EP.024 |
 | EP.029 | Oficio de Jefe #5 — tema por definir | en roadmap |
 | EP.030 | Oficio de Jefe #6 — tema por definir | en roadmap |
 | EP.031 | **Pilar SEO** — Ley de Little (John D. C. Little, 1961; teoría de colas). El show le debe este tema a su propio nombre | en roadmap — **carril decidido 2026-08-01: pilar SEO**, con teórico nombrado y fórmula, no reencuadrada como problema. Título por definir con la fórmula invertida |
 
-> **EP.028 — «ponerse la camiseta» (2026-08-07).** Origen: un video que un amigo de Andy le
-> compartió sobre el mensaje tóxico que ese discurso trae dentro de las organizaciones. Andy
-> confirmó que quiere **las tres capas juntas**, no una sola:
+> **EP.026 — «ponerse la camiseta» (2026-08-07, reasignado desde EP.028 el mismo día).**
+> Origen: un video que un amigo de Andy le compartió sobre el mensaje tóxico que ese discurso
+> trae dentro de las organizaciones. Reemplaza a carga cognitiva, que Andy grabó y descartó por
+> sonar a reencauche de EP.024 — ver `pipeline-state-carga-cognitiva-parked.md`. Andy confirmó
+> que quiere **las tres capas juntas**, no una sola:
 > 1. **Extraer lealtad sin retribución** — la camiseta como excusa para pedir horas extra,
 >    sacrificio personal o silencio ante malas condiciones, a cambio de nada concreto.
 > 2. **Confundir identidad con obediencia** — el discurso de pertenencia hace que cuestionar
@@ -42,8 +44,9 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 > **No visto todavía:** el video que lo disparó no se abrió en esta sesión — la fuente primaria
 > del disparador sigue sin verificar. Antes de escribir, aplica el estándar del carril: 2-3
 > casos nombrados con consecuencias verificables, no una tesis genérica sobre cultura corporativa.
-> **Slot tentativo EP.028** (siguiente cupo abierto de Oficio de Jefe) — no fijado en piedra;
-> puede rotar si EP.028 pide otro orden.
+> **Estructura: NO usar esqueleto E** (ya se usó en EP.024 y en el intento descartado de este
+> mismo cupo) **y NO referenciar EP.024 explícitamente** — es justo el patrón que hizo sonar el
+> intento anterior a repetición.
 
 > **EP.025 — el ángulo y por qué se giró (2026-08-01).** La idea nació de foros de LinkedIn y
 > Andy la traía en tres piezas: (a) contratar en LatAm por costo termina pidiendo requisitos
