@@ -6,12 +6,15 @@ en la práctica, así que el episodio que sí está listo para producirse pasa a
 "Cuatro meses sin llenar la vacante" se corre a EP.026. Ver `roadmap-btq.md` para el detalle del
 swap — no hubo cascada, solo estos dos números intercambiaron contenido.
 
-stage_a: **en curso** — tema y los tres casos fijados 2026-08-07 (reasignado desde carga
+stage_a: **complete** — tema y los tres casos fijados 2026-08-07 (reasignado desde carga
 cognitiva, ver `pipeline-state-carga-cognitiva-parked.md`). Casos verificados en fuente primaria
-o directamente en la fuente original. Guion completo y medido — ver
-`launch-assets/EP025-camiseta-guion.artifact.html`.
-stage_b: no iniciado.
+o directamente en la fuente original. Guion completo y medido (5.239 palabras, 40:00) — ver
+`launch-assets/EP025-camiseta-guion.artifact.html`. Grabado 2026-08-07, ~40:53 medidos con
+ffprobe (`E:\Podcast\BTQ\EP 25\BTQ EP 25.wav` / `.mp3`). Transcrito el mismo día vía WhisperX
+large-v2 + diarización → `E:\Transcriptor\transcripciones\BTQ EP 25.srt`.
+stage_b: **in_progress** — episode brief armado, assets/metadata (episode-launch) siguen.
 stage_c: no iniciado.
+spotify_url: pending
 
 **Carril:** Oficio de Jefe #2. **Origen:** video que un amigo de Andy le compartió sobre el
 mensaje tóxico de "ponerse la camiseta" en el entorno laboral (el video en sí no se abrió en
