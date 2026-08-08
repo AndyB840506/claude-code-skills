@@ -24,10 +24,26 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.025 | **Oficio de Jefe #2** — «Llevo cuatro meses sin llenar esa vacante»: por qué el perfil que pidió no existe por ese salario | en roadmap — tema fijado 2026-08-01 (idea de Andy, de foros de LinkedIn). Ver nota abajo |
 | EP.026 | **Oficio de Jefe #3** — carga cognitiva: «el procedimiento está escrito y aun así se equivocan» | **tema fijado 2026-08-03** por Andy. Teoría de carga cognitiva (Sweller) como columna, reencuadrada al problema operativo. Salió del filtro de sugeridor externo — única sobreviviente utilizable pronto, porque los cupos de pilar llegan hasta EP.035. Faltan los 2-3 casos nombrados |
 | EP.027 | **Pilar SEO** — `Por qué su mejor empleado se vuelve un mal jefe: el Principio de Peter` (Peter y Hull, 1969 + Benson/Li/Shue, QJE 2019) | **GUION A REDISEÑAR — decisión de Andy 2026-08-03.** «Quedó muy denso dentro de la teoría»; se rehace sobre el formato del EP.024 (esqueleto E, acción primero). **La grabación del 07-31 queda obsoleta: reestructurar el guion obliga a regrabar completo, no dos tramos.** El guion viejo sigue en `launch-assets/EP024-peter-guion.html` como base de material verificado. **NO subido a Spotify, no programado, sin metadata publicada.** **Reubicado desde EP.024** (ver abajo) |
-| EP.028 | Oficio de Jefe #4 — tema por definir | en roadmap |
+| EP.028 | **Oficio de Jefe #4** — «ponerse la camiseta»: el discurso de lealtad como herramienta tóxica | **tema candidato 2026-08-07** — idea de Andy, disparada por un video que le compartió un amigo. Ver nota abajo. Faltan los 2-3 casos nombrados |
 | EP.029 | Oficio de Jefe #5 — tema por definir | en roadmap |
 | EP.030 | Oficio de Jefe #6 — tema por definir | en roadmap |
 | EP.031 | **Pilar SEO** — Ley de Little (John D. C. Little, 1961; teoría de colas). El show le debe este tema a su propio nombre | en roadmap — **carril decidido 2026-08-01: pilar SEO**, con teórico nombrado y fórmula, no reencuadrada como problema. Título por definir con la fórmula invertida |
+
+> **EP.028 — «ponerse la camiseta» (2026-08-07).** Origen: un video que un amigo de Andy le
+> compartió sobre el mensaje tóxico que ese discurso trae dentro de las organizaciones. Andy
+> confirmó que quiere **las tres capas juntas**, no una sola:
+> 1. **Extraer lealtad sin retribución** — la camiseta como excusa para pedir horas extra,
+>    sacrificio personal o silencio ante malas condiciones, a cambio de nada concreto.
+> 2. **Confundir identidad con obediencia** — el discurso de pertenencia hace que cuestionar
+>    una decisión se sienta como traición al equipo, no como parte normal del trabajo.
+> 3. **Culpar al individuo por fallas estructurales** — si algo sale mal, es que "no se puso la
+>    camiseta", lo que desvía la responsabilidad de decisiones que tomó la organización.
+>
+> **No visto todavía:** el video que lo disparó no se abrió en esta sesión — la fuente primaria
+> del disparador sigue sin verificar. Antes de escribir, aplica el estándar del carril: 2-3
+> casos nombrados con consecuencias verificables, no una tesis genérica sobre cultura corporativa.
+> **Slot tentativo EP.028** (siguiente cupo abierto de Oficio de Jefe) — no fijado en piedra;
+> puede rotar si EP.028 pide otro orden.
 
 > **EP.025 — el ángulo y por qué se giró (2026-08-01).** La idea nació de foros de LinkedIn y
 > Andy la traía en tres piezas: (a) contratar en LatAm por costo termina pidiendo requisitos
