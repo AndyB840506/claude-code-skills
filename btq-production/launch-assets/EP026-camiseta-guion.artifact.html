@@ -1,0 +1,614 @@
+<style>
+        :root {
+            /* Sistema v4 "Sala de Maquinas" -- fuente canonica:
+               episode-launch/docs/brand-constants.md. Se fue el oro. */
+            --bg: #0E1113;          /* Void -- nunca negro puro */
+            --card: #22262A;        /* Panel */
+            --card2: #191D20;
+            --signal: #FF3D00;
+            --signal-dim: #9E2600;
+            --offwhite: #F4EFE7;    /* Cream */
+            --muted: #8B9492;
+            --steel: #39434A;
+            /* Fuentes instaladas por usuario; el fallback cubre otras maquinas. */
+            --display: 'Cabinet Grotesk', 'Arial Black', system-ui, sans-serif;
+            --sans: 'Supreme', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            --mono: 'Martian Mono', ui-monospace, Consolas, monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--sans);
+            background: #08090A;
+            color: var(--offwhite);
+            line-height: 1.8;
+            font-size: 15.5px;
+        }
+
+        .container { max-width: 820px; margin: 0 auto; background: var(--bg); }
+
+        .header {
+            background: linear-gradient(160deg, #22262A 0%, #0E1113 70%);
+            padding: 46px 48px 40px;
+            border-bottom: 3px solid var(--signal);
+        }
+        .header .podcast {
+            font-family: var(--mono);
+            font-size: 1.15em;
+            color: var(--signal);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .header .epnum {
+            font-family: var(--mono);
+            font-size: 2.6em;
+            color: var(--signal);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+        .header h1 {
+            font-family: var(--display);
+            font-size: 2em;
+            font-weight: 900;
+            margin: 6px 0 10px;
+            color: var(--offwhite);
+            line-height: 1.18;
+        }
+        .header .tagline {
+            font-family: var(--display);
+            font-style: italic;
+            color: var(--signal);
+            font-size: 1.05em;
+            margin-bottom: 22px;
+        }
+        .meta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .meta-item {
+            background: rgba(255,61,0,0.10);
+            border: 1px solid var(--signal-dim);
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            color: var(--signal);
+            letter-spacing: 0.5px;
+        }
+
+        .section { padding: 32px 48px; border-bottom: 1px solid #222; }
+        .section h2 {
+            font-family: var(--mono);
+            font-size: 1.15em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--signal);
+            margin-bottom: 20px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid var(--signal-dim);
+        }
+
+        .arquitectura { font-size: 0.9em; }
+        .arq-row {
+            display: grid;
+            grid-template-columns: 30px 1.1fr 95px 1.6fr;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid #1c1c1c;
+            align-items: start;
+        }
+        .arq-row.head { color: var(--signal); font-weight: 700; border-bottom: 1px solid var(--signal-dim); }
+        .arq-num { color: var(--signal); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--offwhite); }
+        .arq-time { color: var(--muted); font-family: monospace; font-size: 0.92em; }
+        .arq-row span:last-child { color: var(--muted); }
+
+        .segment { margin: 40px 0; padding-bottom: 26px; border-bottom: 1px solid #1a1a1a; }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+        .segment-number {
+            font-family: var(--mono);
+            background: var(--signal);
+            color: #0E1113;
+            min-width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1em; font-weight: bold;
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+        .segment-title {
+            font-family: var(--mono);
+            font-weight: 400;
+            font-size: 1.15em;
+            color: var(--offwhite);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.78em;
+            color: var(--muted);
+            background: #181818;
+            padding: 3px 11px;
+            border-radius: 10px;
+            white-space: nowrap;
+            font-family: monospace;
+        }
+        .sub { font-family: var(--display); font-style: italic; font-size: 1.12em; color: var(--signal); margin: 26px 0 8px; }
+
+        p.line { margin: 0 0 4px; color: #e9e6dd; }
+
+        .pausa {
+            display: inline-block;
+            font-family: var(--mono);
+            letter-spacing: 2px;
+            font-size: 0.72em;
+            color: var(--signal-dim);
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 0 8px;
+            margin: 8px 0;
+            background: #111;
+        }
+        .pausa.larga { color: var(--signal); border-color: var(--signal-dim); }
+
+        .remate {
+            border-left: 3px solid var(--signal);
+            background: linear-gradient(90deg, rgba(255,61,0,0.07), transparent);
+            padding: 14px 20px;
+            margin: 18px 0;
+            font-family: var(--display);
+            font-size: 1.08em;
+            color: var(--offwhite);
+        }
+        .remate::before {
+            content: "REMATE";
+            display: block;
+            font-family: var(--mono);
+            font-size: 0.62em;
+            letter-spacing: 3px;
+            color: var(--signal);
+            margin-bottom: 6px;
+        }
+
+        .nota {
+            background: #17191B;
+            border: 1px dashed var(--signal-dim);
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 14px 0;
+            font-size: 0.85em;
+            color: #A8B0AE;
+        }
+        .nota::before { content: "NOTA · "; font-family: var(--mono); letter-spacing: 2px; color: var(--signal); }
+
+        .dato {
+            background: var(--card2);
+            border-left: 4px solid var(--signal);
+            border-radius: 0 5px 5px 0;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .dato-label {
+            font-family: var(--mono);
+            font-size: 0.78em;
+            letter-spacing: 3px;
+            color: var(--signal);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        em { color: var(--signal); font-style: italic; }
+        strong { color: var(--offwhite); }
+
+        .fuentes p { font-size: 0.83em; color: var(--muted); line-height: 1.7; }
+
+        .checklist-box {
+            background: var(--card);
+            border: 1px solid #262011;
+            border-radius: 6px;
+            padding: 6px 18px;
+        }
+        .checklist-box .row { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #1a1a1a; align-items: baseline; }
+        .checklist-box .row:last-child { border-bottom: none; }
+        .ck { color: #4a7a4a; font-weight: 700; }
+        .warn { color: var(--signal); font-weight: 700; }
+
+        .pendiente {
+            background: #1b1410;
+            border: 1px dashed var(--signal);
+            border-radius: 6px;
+            padding: 18px 22px;
+            margin: 30px 0;
+            color: #D9CFC4;
+        }
+        .pendiente h3 {
+            font-family: var(--mono);
+            color: var(--signal);
+            letter-spacing: 3px;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        footer { padding: 26px 48px; color: var(--muted); font-size: 0.8em; text-align: center; }
+        footer .gold { color: var(--signal); font-family: var(--mono); letter-spacing: 3px; }
+
+        @media print {
+            body { background: #fff; color: #111; }
+            .container { background: #fff; }
+            .nota { display: none; }
+            .header { background: #111; }
+            .remate { color: #111; }
+            p.line, .segment-title, strong { color: #111; }
+        }
+        @media (max-width: 640px) {
+            .section, .header, footer { padding-left: 22px; padding-right: 22px; }
+            .arq-row { grid-template-columns: 24px 1fr; }
+            .arq-row .arq-time, .arq-row span:last-child { grid-column: 2; }
+        }
+</style>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Behind the Queue</div>
+        <div class="epnum">EP.26</div>
+        <h1>Ponerse la camiseta: la explotación laboral disfrazada de slogan</h1>
+        <div class="tagline">"Somos familia" no es una descripción de su empresa. Es un precio que le puso a algo, y ese algo es las horas de su gente. Hoy le muestro el recibo.</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 026</span>
+            <span class="meta-item">Solo host · Andy</span>
+            <span class="meta-item">Carril · Oficio de Jefe #3</span>
+            <span class="meta-item">Registro · ejecutivo relajado</span>
+            <span class="meta-item">Esqueleto A · canónico</span>
+            <span class="meta-item">~40 min medidos (148 wpm + 13%)</span>
+            <span class="meta-item">Evergreen — no atado a coyuntura</span>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="nota"><strong>Esqueleto A · CANÓNICO</strong> — escena → nombrar → tres casos → giro → cruzadas → aplicación. Elegido a propósito 2026-08-07: el intento anterior de este cupo (carga cognitiva, esqueleto E) sonó a reencauche de EP.024. A está en pausa desde EP.023, así que además cumple la rotación. <strong>Sin ninguna referencia cruzada explícita a EP.024</strong> — la única referencia cruzada del episodio apunta a EP.021 (burnout), y es genérica: no se inventa contenido de ese episodio que no se verificó en esta sesión.</div>
+        <div class="arquitectura">
+            <div class="arq-row head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span></div>
+            <div class="arq-row"><span class="arq-num">0</span><span class="arq-seg">Apertura en frío</span><span class="arq-time">0:00–1:33</span><span>El slogan, el desmentido, disclaimer de encuadre y ritual</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">La mentira, nombrada</span><span class="arq-time">1:33–4:51</span><span>Qué hace exactamente "ponerse la camiseta" como frase — no describe, cobra</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Somos familia</span><span class="arq-time">4:51–12:26</span><span><strong>Caso 1 · WeWork.</strong> La mentira vendida — cultura como sustituto del pago, y la asimetría exacta cuando se cobra</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Cuestionar es traicionar</span><span class="arq-time">12:26–20:07</span><span><strong>Caso 2 · Uber / Susan Fowler.</strong> La mentira defendida — quien la señala se vuelve el problema</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Cuando revienta, pagan los que más se la creyeron</span><span class="arq-time">20:07–29:58</span><span><strong>Caso 3 · Wells Fargo.</strong> La mentira limpiada — la meta se fija arriba, el despido cae abajo</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">No fallaron viviendo la cultura</span><span class="arq-time">29:58–34:16</span><span>El giro: la cultura ERA el mecanismo de extracción, funcionando como se diseñó. Referencia cruzada a EP.021 (burnout)</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Qué hace usted el lunes</span><span class="arq-time">34:16–37:56</span><span><strong>APLICABLE.</strong> Tres movidas, una por caso</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Cierre canónico + Teaser</span><span class="arq-time">37:56–40:00</span><span>Pregunta comentable · CTAs · LinkedIn · teaser · firma + TM</span></div>
+        </div>
+        <div class="nota">✓ <strong>Tiempos medidos, no fabricados.</strong> 5.239 palabras habladas verificadas programáticamente (script de conteo sobre <code>p.line</code> + <code>remate</code>), a 148 wpm +13% de expansión por pausas = <strong>40:00 exactos</strong>. Cada corte de segmento arriba sale del conteo real de palabras de ESE segmento, no de una estimación. Esto corrige el error del intento anterior de este cupo (tabla de tiempos fabricada sin medir).</div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="section">
+        <h2>Antes de grabar · checklist</h2>
+        <div class="checklist-box">
+            <div class="row"><span class="ck">✓</span><span><strong>Título:</strong> <code>EP.26 — Ponerse la camiseta: la explotación laboral disfrazada de slogan</code> (<strong>64 caracteres · ancla de 9 palabras</strong>, fijado en <code>pipeline-state-ep026.md</code> el 2026-08-07, segunda pasada tras corrección de Andy sobre el enfoque).</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Los tres casos, verificados en fuente primaria</strong> — WeWork y Uber directo de fuente primaria (comunicados de SoftBank, blog de Fowler), Wells Fargo del consent order de la CFPB leído con pymupdf. Ver <code>pipeline-state-ep026.md</code> para las citas literales completas.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Giro corregido cumplido:</strong> el segmento 5 nombra explícitamente que no son tres fallas independientes, sino una sola mentira en tres momentos — instrucción de Andy del 2026-08-07.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Cifra de Wells Fargo, decisión de Andy:</strong> se dice el total de USD 185 millones, explicando en el aire que son tres organismos distintos (CFPB 100M + OCC 35M + Fiscalía de LA 50M) — no se deja como si fuera una sola multa.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Dichos nuevos</strong>, distintos al catálogo de EP.024 (panadero/leche-vaca/tapar el sol/ojos que no ven/sordo negado) y al del intento descartado de este cupo: <em>el que parte y reparte se queda con la mejor parte</em> (WeWork) · <em>el que calla, otorga</em>, invertido (Uber) · <em>cría cuervos y te sacarán los ojos</em>, invertido (Wells Fargo). Tres de cinco — cupo disponible.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Referencia cruzada fuera del referente:</strong> EP.021 (Simpson, burnout) nombrado en segmento 5 de forma genérica — no se afirma contenido específico de ese episodio que no se verificó en esta sesión.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>"Eight is Great" no citado como frase textual de Stumpf</strong> — no está en el consent order de la CFPB y no se verificó en una fuente primaria propia (candidata: testimonio de Stumpf ante el Senado, sept. 2016). El guion la usa como "el mote que le pusieron adentro", sin comillas de cita directa. Verificar antes de citarla como palabra exacta de Stumpf.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>El desglose de los ~USD 970M en acciones del paquete Neumann 2019 no está verificado en fuente primaria</strong> — el guion usa solo las dos cifras confirmadas directamente en group.softbank (185M consultoría + 500M crédito) más el settlement 2021 de ~1.6B, también confirmado en fuente primaria. No se dice "1.700 millones" como cifra única.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>NO ejecutado todavía — obligatorio antes de aprobar:</strong> <code>python scripts/lint_guion_repeticion.py</code> contra los episodios anteriores, grep de español neutro/regionalismos.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Teaser de EP.025 sin confirmar</strong> — no se abrió el guion de EP.025 en esta sesión. Confirmar antes de grabar el segmento 0.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Teaser de EP.027 pendiente</strong> — mismo estado que en el intento anterior: confirmar el tema real (Peter/Little) antes de escribir el cierre del segmento 7.</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- 0 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Apertura en frío</span><span class="segment-time">0:00</span></div>
+            <div class="nota">Arranca en frío, sin jingle y sin saludo. Tono directo, casi confrontacional pero controlado — no es un grito, es una acusación tranquila.</div>
+
+            <p class="line">"Aquí somos familia."</p>
+            <p class="line">"Esto no es un trabajo, es una misión."</p>
+            <p class="line">"Necesito que se pongan la camiseta."</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Usted ha dicho alguna de esas tres frases, o se las han dicho a usted. Y quiero que hoy las oiga distinto, porque no son frases de cultura. Son frases de precio.</p>
+            <p class="line">Cada una le está pidiendo a alguien que dé algo — horas, silencio, sacrificio — y le está prometiendo algo a cambio que casi nunca se paga en la misma moneda.</p>
+            <p class="line">Hoy le voy a mostrar tres empresas donde ese trato quedó documentado: qué prometió la camiseta, y qué costó de verdad. Una la vendió. Una la defendió cuando alguien la señaló. Y una la usó para lavarse las manos cuando todo explotó.</p>
+
+            <div class="nota">JINGLE DE ENTRADA — stinger corto (2-4 s), seco, a silencio. Andy entra sobre el silencio.</div>
+
+            <div class="nota">Disclaimer de encuadre — 44 palabras, dentro del rango 35-55.</div>
+            <p class="line">Lo de hoy es el discurso de lealtad como herramienta de extracción: cómo el lenguaje de "familia" y "misión" se usa para pedir más de lo que se paga, y para que cuestionar eso se sienta como traición. No es un episodio contra la cultura de empresa. Es un episodio sobre cuándo la cultura es una factura disfrazada.</p>
+            <span class="pausa">PAUSA</span>
+
+            <p class="line">Buenas y santas. Feliz día, feliz tarde o feliz noche. Cualquier día que este sea.</p>
+            <p class="line">Esto es Behind the Queue, episodio 26.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+        </div>
+
+        <!-- 1 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">1</span><span class="segment-title">La mentira, nombrada</span><span class="segment-time">1:33 – 4:51</span></div>
+            <div class="nota">Segmento breve, de tesis. Nombra el mecanismo antes de los casos — esqueleto canónico, no acción-primero. Sienta el vocabulario que los tres casos van a usar.</div>
+
+            <p class="line">"Ponerse la camiseta" no describe nada. No dice qué hacer, no dice cuánto, no dice hasta cuándo. Y esa vaguedad no es un accidente de redacción: es lo que la hace útil.</p>
+            <p class="line">Compárela con una instrucción real. "Necesito que se quede hasta las ocho el jueves" es una petición. Tiene límite, tiene fecha, y en teoría tiene una compensación que se puede discutir.</p>
+            <p class="line">"Necesito que se ponga la camiseta" no tiene nada de eso. No tiene techo. Y como no tiene techo, tampoco tiene forma de decir que ya se cumplió. Nadie se pone <em>demasiada</em> camiseta. Siempre se puede pedir un poco más.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ahí está el primer truco: convierte una petición con límite en una identidad sin límite. Ya no es "trabaje estas horas extra", es "sea el tipo de persona que trabaja las horas que hagan falta". Y a una identidad no se le pone techo, se vive.</p>
+            <p class="line">El segundo truco es peor, y es el que le voy a mostrar hoy con nombre y apellido: si "ponerse la camiseta" es quién es usted, entonces no ponérsela no es un desacuerdo laboral. Es una traición de carácter.</p>
+
+            <div class="remate">Nadie negocia con un traidor. Por eso el lenguaje de familia es tan útil para quien lo usa: convierte cada conversación sobre condiciones de trabajo en una conversación sobre lealtad personal, y en esa conversación usted siempre pierde.</div>
+
+            <p class="line">Y hay un tercer truco, más silencioso, que es el que hace que los otros dos funcionen: el lenguaje de familia desactiva las herramientas normales de negociación, no porque las prohíba, sino porque las vuelve de mal gusto.</p>
+            <p class="line">En una familia no se piden aumentos con una hoja de cálculo comparando el mercado. Eso sería frío, calculador, "poco de equipo". En una familia no se contrata un abogado laboral quien se siente maltratado. Eso sería una traición, no un derecho. Y en una familia, cuando alguien se va a la competencia, no se dice que consiguió mejores condiciones: se dice que "no aguantó", o que "no tenía la camiseta puesta".</p>
+            <p class="line">Fíjense en lo elegante que es el mecanismo, aunque nadie lo diseñe con esa palabra en la cabeza: no hace falta prohibir que la gente negocie. Basta con que negociar se sienta incómodo, ajeno, un poco sucio. Y la gente, casi siempre, evita lo que se siente sucio, aunque le convenga.</p>
+            <p class="line">Y no estoy hablando en abstracto. Tengo tres empresas donde esto no fue un ambiente incómodo: fue un mecanismo, con plata de por medio, con nombres, con fechas, y con consecuencias que se pueden contar.</p>
+            <p class="line">La primera la vendió mejor que nadie. Se llamaba, literalmente, "We". Nosotros.</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">2</span><span class="segment-title">Somos familia</span><span class="segment-time">4:51 – 12:26</span></div>
+            <div class="nota">Caso 1 — WeWork. La mentira en su forma más literal y mejor documentada: "comunidad" vendida como sustituto de compensación, con la asimetría de salida más flagrante de los tres casos.</div>
+
+            <p class="line">WeWork. Si no la conoce por el nombre, la conoce por el negocio: oficinas compartidas, de diseño bonito, con cerveza gratis y clases de yoga los martes.</p>
+            <p class="line">Lo que vendía puertas afuera era espacio de oficina. Lo que vendía puertas adentro, a su propia gente, era otra cosa: pertenecer a "We". A la comunidad. A la misión de, cito el espíritu de la empresa, "elevar la conciencia del mundo".</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y esa misión tenía un ritmo de trabajo que iba con ella: jornadas largas, fiestas hasta tarde que también eran trabajo, la fusión total entre vida social y vida laboral, presentada no como exigencia sino como privilegio. Usted no está cansado, está <em>viviendo la cultura</em>.</p>
+            <p class="line">Y el discurso funcionaba porque era seductor de verdad, no porque fuera torpe. La empresa no vendía escritorios, vendía pertenencia. Y quien entraba a trabajar ahí no sentía que firmaba un contrato: sentía que se sumaba a un movimiento. Eso atrajo gente talentosa dispuesta a dar mucho más de lo que cualquier oferta salarial competidora les hubiera pedido, precisamente porque no se sentía como una transacción.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y ahí está la trampa exacta de este primer caso: mientras la misión se sintió como un regalo, nadie llevó la cuenta. Nadie preguntaba cuántas horas extra representaba "vivir la cultura", porque preguntarlo se sentía mezquino, como pedirle recibo a un amigo. La comunidad no se factura. Por eso funciona tan bien para quien la usa: es la única deuda que el propio deudor se niega a cobrar.</p>
+
+            <div class="sub">Y entonces llegó la cuenta</div>
+
+            <p class="line">Noviembre de 2019. WeWork despide a <strong>dos mil cuatrocientas personas</strong>, cerca de una de cada cinco de toda su plantilla.</p>
+            <p class="line">El paquete que les ofrecieron: tres meses con sueldo y beneficios completos, sin trabajar, y un mes adicional de indemnización. A cambio, tenían que firmar que renunciaban a demandar a la empresa, y aceptar una cláusula que les prohibía trabajar para la competencia entre seis meses y un año.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ahora vamos a la otra puerta.</p>
+            <p class="line">El fundador, Adam Neumann, salió de la empresa el mismo año. Y su salida, la negoció directamente SoftBank, el inversionista que tomó el control. Está en el comunicado oficial de la propia SoftBank, no en un rumor de prensa: un <strong>fee de asesoría de ciento ochenta y cinco millones de dólares</strong>, y una <strong>línea de crédito de quinientos millones</strong> para que pagara sus préstamos personales.</p>
+
+            <div class="dato">
+                <div class="dato-label">Comunicado oficial, SoftBank Group Corp., octubre 2019</div>
+                <p class="line">Fee de asesoría a Adam Neumann: <strong>USD 185 millones</strong>. Línea de crédito para el pago de préstamos personales: <strong>USD 500 millones</strong>. Ambas cifras confirmadas por la propia SoftBank, no solo reportadas por prensa.</p>
+            </div>
+
+            <p class="line">Y hay una segunda parte, porque la historia no termina ahí: SoftBank intentó después dar marcha atrás en parte del acuerdo, hubo una demanda, y en marzo de 2021 llegaron a un arreglo final. La propia SoftBank lo anunció así:</p>
+
+            <div class="dato">
+                <div class="dato-label">Comunicado oficial, SoftBank Group Corp., marzo 2021</div>
+                <p class="line">«Approximately USD 1.6 billion will be paid by SoftBank Group Corp.» — como acuerdo final por la salida de Neumann, en un comunicado que ni siquiera desglosa el número completo.</p>
+            </div>
+
+            <p class="line">Un empleado despedido: tres meses de sueldo, un mes de indemnización, y una firma renunciando a sus derechos.</p>
+            <p class="line">El fundador: mil seiscientos millones de dólares, confirmados por la propia empresa que lo estaba sacando.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">El que parte y reparte se queda con la mejor parte, decimos. Pero fíjense en lo que el dicho no dice: no dice que el que reparte lo haga a la fuerza, ni a escondidas. Neumann repartió a la luz del día, con comunicado de prensa y todo, y aun así se quedó con la mejor parte. Porque el que reparte también decide qué cuenta como "parte justa", y esa decisión nunca se vota en asamblea de empleados.</p>
+
+            <div class="remate">"Somos familia" nunca fue una descripción de WeWork. Fue el precio que le puso a las horas de su gente. Y cuando llegó la hora de repartir de verdad, la factura se cobró completa — a los que menos podían pagarla.</div>
+
+            <p class="line">Una encuesta interna, después de todo esto, encontró que el ochenta y cinco por ciento de los empleados consideraba injusto el paquete de salida de Neumann frente al suyo. No hizo falta explicárselo con diapositivas. Lo sintieron en el bolsillo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y hay una escena, reportada por el Wall Street Journal, que resume mejor que cualquier cifra de qué estaba hecha esta cultura. En una reunión donde Neumann tenía que anunciar recortes de personal, entraron empleados repartiendo shots de tequila. Hubo brindis. Y a los pocos minutos entró a tocar en vivo Darryl McDaniels, de Run-DMC.</p>
+            <p class="line">Léanlo otra vez: le estaban anunciando a la gente que se quedaba sin trabajo, con tequila en la mano y un rapero de gira tocando de fondo. No es una anécdota de exceso. Es la cultura de "somos familia" funcionando exactamente como funciona siempre: la fiesta la sigue pagando y disfrutando el que reparte, mientras a los que les toca el otro lado de la noticia les sirven un shot para que se la traguen mejor.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y la misma mentira que le vendieron a los empleados, se la vendieron a los inversionistas, con otro nombre. En agosto de 2019, WeWork presentó los papeles para salir a bolsa con una valoración implícita de <strong>cuarenta y siete mil millones de dólares</strong>. Y adentro de esos papeles había una cifra inventada que se llamaba, sin ironía, "community-adjusted EBITDA" — una ganancia "ajustada por comunidad" que le restaba al cálculo normal no solo lo de siempre, sino también el arriendo, el mercadeo, los gastos administrativos, y hasta el diseño de las oficinas.</p>
+            <p class="line">En seis semanas, cuando el mercado terminó de leer la letra chica, la valoración se desplomó por debajo de veinte mil millones. Después se habló de diez mil millones, un ochenta por ciento menos de lo que pedían al principio. La oferta se retiró.</p>
+
+            <div class="remate">La misma palabra —"comunidad"— que servía para no pagarle horas extra a un empleado, servía también para inventarle una ganancia a un inversionista. No era un lenguaje de cultura. Era un lenguaje de contabilidad, aplicado donde hiciera falta esconder un número real.</div>
+        </div>
+
+        <!-- 3 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">Cuestionar es traicionar</span><span class="segment-time">12:26 – 20:07</span></div>
+            <div class="nota">Caso 2 — Uber / Susan Fowler. La mentira defendida: qué le pasa a quien la señala. Tono más contenido que el anterior, sin editorializar de más — dejar que las citas hagan el trabajo.</div>
+
+            <p class="line">Si WeWork es la mentira vendiéndose, este segundo caso es la mentira defendiéndose. Porque toda familia disfuncional tiene una regla no escrita: lo que pasa adentro, se queda adentro. Y quien la rompe, no rompió una regla. Rompió la familia.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Uber, 2017. Susan Fowler era ingeniera de software ahí, y publicó en su propio blog un relato, con fechas y con nombres de cargos, de su año en la empresa. Se los voy a leer directo de su texto, sin intermediarios.</p>
+
+            <div class="sub">El primer día</div>
+
+            <p class="line">Su primer día, un manager le propuso tener sexo con él, por chat de la empresa. Ella lo reportó a Recursos Humanos, con capturas de pantalla incluidas.</p>
+            <p class="line">La respuesta que recibió, en sus propias palabras:</p>
+
+            <div class="dato">
+                <div class="dato-label">Susan Fowler, blog personal, 19 de febrero de 2017</div>
+                <p class="line">«This was clearly sexual harassment and he was propositioning me, it was this man's first offense» — y la razón para no sancionarlo con más fuerza: «he "was a high performer" (i.e. had stellar performance reviews from his superiors)».</p>
+            </div>
+
+            <p class="line">Léanlo despacio: Recursos Humanos admitió que era acoso. Y lo dejó pasar porque el acosador rendía bien en sus números.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Eso ya es grave. Lo que viene es, para mí, el corazón del episodio de hoy.</p>
+
+            <div class="sub">Cuando intentó salir del equipo</div>
+
+            <p class="line">Fowler pidió traslado a otro equipo, lejos de ese ambiente. Y para poder trasladarse necesitaba una buena evaluación de desempeño.</p>
+            <p class="line">Su evaluación, que ya había pasado por el proceso oficial de calibración, fue cambiada después. Bajada. En sus palabras:</p>
+
+            <div class="dato">
+                <div class="dato-label">Susan Fowler, blog personal</div>
+                <p class="line">«My performance review and score had been changed after the official reviews had been calibrated», con la razón que le dieron: «I didn't show any signs of an upward career trajectory».</p>
+            </div>
+
+            <p class="line">No dijo nada, no denunció nada, no rompió ninguna regla. Simplemente quiso irse. Y para impedírselo, alguien manipuló un documento oficial después de cerrado.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y la frase que a mí me deja frío, la que resume todo el mecanismo del episodio de hoy, es esta. Cuando ella reportó una amenaza de represalia de un manager, esto fue lo que le dijeron, otra vez en sus palabras exactas:</p>
+
+            <div class="dato">
+                <div class="dato-label">Susan Fowler, sobre la respuesta que recibió al reportar</div>
+                <p class="line">«California is an at-will employment state, he said, which means we can fire you if you ever do this again.» Y sobre Recursos Humanos: «they both admitted that this was illegal, but none of them did anything».</p>
+            </div>
+
+            <div class="remate">Admitieron que era ilegal. Y no hicieron nada. Porque el problema, en ese momento, no era la ley. Era que ella había dejado de comportarse como familia y había empezado a comportarse como alguien con derechos.</div>
+
+            <p class="line">El que calla, otorga, dice el refrán. Pero acá hay que voltearlo: el que calla no siempre está de acuerdo. A veces calla porque ya le enseñaron, con nombre y apellido, cuánto cuesta no callar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y quiero que noten algo antes de seguir: nada de esto pasó en la sombra. Uber tenía, publicados, catorce "valores culturales" que sus propios fundadores repetían en cada presentación a inversionistas. El número siete, textual, era "Always Be Hustlin'" — siempre en modo hustle. Otro, casi de manual, se llamaba "Meritocracy and Toe-Stepping": la mejor idea siempre gana, aunque para defenderla tenga que pisarle los callos a alguien.</p>
+            <p class="line">Léalo otra vez pensando en lo que le acabo de contar de Fowler. Un valor corporativo, publicado, que literalmente premia pisar callos ajenos en nombre de la mejor idea. No hace falta imaginar cómo se usó esa frase para justificar un ambiente donde señalar algo incómodo se trataba como un ataque personal, no como una idea más compitiendo por ganar. El lenguaje de familia intensa, de dar todo por la misión, no era un efecto secundario de la cultura de Uber: era la cultura de Uber, publicada, celebrada, y usada para reclutar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">El post de Fowler se publicó de todos modos. Y lo que destapó fue tan grande que en cuestión de meses cayó Travis Kalanick, el CEO fundador, y Uber contrató a un exfiscal general de Estados Unidos, Eric Holder, para investigar toda la cultura de la empresa desde cero.</p>
+            <p class="line">Pero fíjense en el costo de que esa historia saliera a la luz. No fue gratis para ella. Tuvo que aguantar amenazas, que la empresa contratara investigadores para seguirla, y una ola de acoso público que le cambió la vida. La verdad salió. El precio de sacarla lo pagó una sola persona, sin ayuda de nadie de adentro.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y cuando por fin investigaron, la magnitud de lo que encontraron confirmó que Fowler no era un caso aislado. El bufete contratado revisó <strong>doscientas quince denuncias</strong> de acoso, algunas con hasta cinco años de antigüedad, sobre tres millones de documentos internos. Al final, Uber despidió a más de <strong>veinte personas</strong>, tomó acción correctiva en otros cincuenta y ocho casos, y decidió no actuar en cien más.</p>
+            <p class="line">Doscientas quince denuncias represadas durante años. No fue una manzana podrida. Fue un cajón entero que nadie había abierto porque abrirlo se sentía como traicionar al equipo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y por si alguien piensa que esto era solo un problema de mandos medios sin supervisión, hay un video, grabado por la cámara del tablero de un carro, que muestra al propio Kalanick haciendo exactamente lo mismo, cara a cara.</p>
+            <p class="line">Un conductor de Uber, Fawzi Kamel, le reclamó en persona que los recortes de tarifa le habían hecho perder noventa y siete mil dólares. La respuesta del director general, grabada, textual:</p>
+
+            <div class="dato">
+                <div class="dato-label">Travis Kalanick, video de tablero, febrero de 2017</div>
+                <p class="line">«Some people don't like to take responsibility for their own shit. They blame everything in their life on somebody else.» — «A algunas personas no les gusta hacerse responsables de sus propios problemas. Le echan la culpa de todo en su vida a alguien más.»</p>
+            </div>
+
+            <p class="line">Un conductor señala un problema real, con cifra y con nombre. Y la respuesta del hombre más poderoso de la empresa es exactamente el mismo movimiento que le hicieron a Fowler: convertir el reclamo en un defecto de carácter de quien reclama. El video se hizo público, y Kalanick tuvo que salir a disculparse, admitiendo que necesitaba, en sus palabras, "cambiar fundamentalmente como líder y madurar".</p>
+            <p class="line">No fue un mando medio nervioso el que hizo esto. Fue el fundador, en su propia voz, hacia la persona con menos poder posible en toda la cadena.</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">Cuando revienta, pagan los que más se la creyeron</span><span class="segment-time">20:07 – 29:58</span></div>
+            <div class="nota">Caso 3 — Wells Fargo. La mentira limpiada: cuando el mecanismo revienta, ¿a quién le cae el castigo? Tono de auditoría, seco, con las cifras exactas del consent order.</div>
+
+            <p class="line">Los dos casos anteriores muestran cómo se vende la mentira y cómo se defiende cuando alguien la señala. Este tercero muestra qué pasa cuando revienta sola, sin que nadie tenga que denunciar nada — porque los números terminan hablando por sí solos.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Wells Fargo, uno de los bancos más grandes de Estados Unidos, quería distinguirse vendiéndole a cada cliente varios productos a la vez: cuenta de ahorro, tarjeta de crédito, banca en línea, todo junto. Puso metas de venta agresivas y un programa de incentivos económicos atado a cumplirlas.</p>
+            <p class="line">Y puertas adentro, según se ha reportado ampliamente, la meta se conocía con un mote pegajoso: "Eight is Great". Ocho productos por cliente es lo ideal.</p>
+
+            <div class="nota">La frase "Eight is Great" circula ampliamente en prensa pero no aparece en el consent order de la CFPB, que es la fuente primaria de este segmento — se dice al aire como "el mote que le pusieron adentro", sin atribuirla textualmente a un ejecutivo específico.</div>
+
+            <p class="line">Y ocho no era el número de siempre. El promedio de productos por cliente en la industria bancaria rondaba los seis. Wells Fargo no estaba manteniendo un estándar: estaba subiendo la vara por encima de lo que el resto del sector consideraba razonable, y llamándolo "great" para que sonara a logro y no a exigencia.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y esa meta no se cumplía en horario de oficina. Un grupo de senadores, después del escándalo, pidió una investigación federal separada sobre si Wells Fargo había violado leyes laborales: empleados que hacían horas extra sin pago, noches y fines de semana, para intentar alcanzar la cuota antes de que se las descontaran del bono o les costaran el puesto. La camiseta, otra vez, resultó ser horas no pagadas con otro nombre.</p>
+
+            <p class="line">Miles de empleados, para cumplir esa meta y no perder el bono —o directamente para no perder el trabajo— hicieron algo que el propio regulador describió con un nombre técnico: <em>simulated funding</em>. Financiamiento simulado.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Se los explico en cristiano. Abrían una cuenta a nombre de un cliente real, sin que el cliente supiera. Y para que esa cuenta contara como "activa" ante el sistema de incentivos, movían plata de otra cuenta del mismo cliente —esa sí autorizada— para financiarla temporalmente. El cliente ni se enteraba, hasta que le empezaban a cobrar comisiones por una cuenta que nunca pidió.</p>
+
+            <div class="dato">
+                <div class="dato-label">Consent Order, CFPB, 2016-CFPB-0015</div>
+                <p class="line">«Respondent's employees engaged in "simulated funding." To qualify for incentives that rewarded bankers for opening new accounts that were funded shortly after opening, Respondent's employees opened deposit accounts without consumers' knowledge or consent and then transferred funds from consumers' authorized accounts to temporarily fund the unauthorized accounts.»</p>
+            </div>
+
+            <p class="line">El resultado, en la propia cifra del regulador: <strong>un millón quinientas treinta y cuatro mil doscientas ochenta cuentas</strong> potencialmente abiertas sin autorización. De esas, unas ochenta y cinco mil llegaron a cobrarle al cliente cerca de dos millones de dólares en comisiones que el banco tuvo que devolver.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y esto no pasó en una mala semana. El propio consent order define el "período relevante" como el que va de <strong>mayo de 2011 a julio de 2015</strong>. Más de cuatro años de esto, ocurriendo, sin que la estructura que lo hacía rentable cambiara. Cuatro años son demasiado tiempo para llamarlo un error de un empleado aislado, y muy poco tiempo comparado con lo rápido que se puede cambiar una meta de ventas cuando de verdad se quiere cambiarla.</p>
+            <p class="line">Y hay un detalle que a mí me parece el más incómodo de todo el caso: el banco ya lo sabía. En 2013 —tres años antes de la multa, en medio del "período relevante" que acabo de leerles— el periódico Los Angeles Times publicó una investigación sobre exactamente esta práctica en el sur de California. Wells Fargo despidió entonces a unos treinta empleados por abrir cuentas y emitir tarjetas sin que el cliente lo supiera, en algunos casos falsificando firmas.</p>
+            <p class="line">O sea que la respuesta de 2013 fue idéntica a la de 2016: despedir a la gente de abajo. Tuvieron tres años de aviso, con nombre de periódico y todo, y la meta que hacía rentable la trampa siguió intacta hasta que un regulador federal la tumbó por la fuerza.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Sobre el castigo arriba: en septiembre de 2016, el entonces presidente ejecutivo, John Stumpf, tuvo que sentarse frente al Comité Bancario del Senado. La senadora Elizabeth Warren se lo dijo en la cara, y quedó grabado: lo acusó de "liderazgo sin agallas" por no devolver ni un centavo de su compensación mientras la culpa caía sobre empleados de sucursal que ganaban una fracción de su sueldo. Le dijo, textual, que debía renunciar.</p>
+            <p class="line">Después de esa audiencia, la junta directiva de Wells Fargo le quitó a Stumpf <strong>cuarenta y un millones de dólares</strong> en acciones no consolidadas, le suspendió el sueldo durante la investigación, y le negó el bono de ese año. Warren lo llamó "un pasito en la dirección correcta, muy lejos de la rendición de cuentas real". Stumpf renunció semanas después.</p>
+            <p class="line">Compare las dos cifras un segundo. Cuarenta y un millones, a una sola persona, después de una audiencia pública y con un senador presionando en cámara. Y cinco mil trescientos despidos, sin audiencia, sin cámara, sin que nadie tuviera que dar la cara ante nadie.</p>
+            <p class="line">Cuando esto se destapó, hubo consecuencias. Tres organismos distintos —la Oficina de Protección Financiera del Consumidor, el regulador bancario federal, y la Fiscalía de Los Ángeles— le impusieron multas que sumadas llegan a ciento ochenta y cinco millones de dólares.</p>
+            <p class="line">Y hubo despidos. Muchos despidos.</p>
+
+            <div class="dato">
+                <div class="dato-label">Consent Order, CFPB, 2016-CFPB-0015</div>
+                <p class="line">«During the Relevant Period, Respondent terminated roughly <strong>5,300 employees</strong> for engaging in Improper Sales Practices.»</p>
+            </div>
+
+            <p class="line">Cinco mil trescientos. El propio documento del regulador lo dice sin adorno: fueron los empleados los sancionados. No hay una línea equivalente sobre quién fijó la meta que hizo rentable hacer trampa.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y entre esos miles hay al menos un nombre que vale la pena decir completo: Claudia Ponce de Leon. En 2011 —el primer año del período que cubre el consent order— llamó a la línea de ética de Wells Fargo a reportar que sus compañeros estaban abriendo cuentas falsas para cumplir la meta. La despidieron tres semanas después.</p>
+            <p class="line">Tres semanas. No hizo falta un año de investigación interna ni un comité. Denunciar por el canal oficial, el mismo que la empresa dice que existe para esto, le costó el trabajo en veintiún días.</p>
+            <p class="line">Y esto no fue un caso aislado que se corrigió con el tiempo. Años después, ya con el escándalo destapado y la empresa bajo la lupa de todo el país, un organismo laboral federal —la agencia que investiga represalias contra denunciantes— le ordenó a Wells Fargo pagarle <strong>5,4 millones de dólares</strong> a otro empleado despedido en 2010 por reportar fraude a la misma línea de ética, y reinstalarlo en su puesto siete años después. Y en 2022, ordenó otro pago, esta vez de <strong>más de 22 millones</strong>, a un gerente de banca comercial despedido por escalar denuncias de manipulación de tasas de interés.</p>
+            <p class="line">O sea que el patrón de castigar a quien denuncia no se apagó cuando llegó la multa de 2016. Siguió, con nombres distintos, durante más de una década.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+            <p class="line">Cría cuervos y te sacarán los ojos, dice el dicho, para hablar del que cría algo que después se le vuelve en contra. Pero démosle la vuelta: aquí no criaron cuervos que salieron malos por su cuenta. Criaron cuervos hambrientos, a propósito, con una meta que no se podía cumplir limpio, y cuando picotearon, los culparon a ellos por picotear.</p>
+
+            <div class="remate">La meta se fijó arriba. El bono se pagó arriba. Y cuando hubo que poner la cara, la cara la pusieron cinco mil trescientas personas que nunca decidieron cuánto debía vender un banco.</div>
+
+            <p class="line">Y quiero que noten el patrón completo, porque ya cerramos el círculo: el mismo lenguaje de "dar el máximo por el equipo" que en WeWork vendía sacrificio sin pago, y que en Uber convertía en traición cualquier queja, en Wells Fargo terminó siendo la excusa perfecta para que el castigo cayera abajo y la meta se quedara arriba, intacta.</p>
+        </div>
+
+        <!-- 5 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">No fallaron viviendo la cultura</span><span class="segment-time">29:58 – 34:16</span></div>
+            <div class="nota">El giro, corregido por instrucción de Andy: no son tres mecanismos independientes, es una sola mentira en tres momentos. Nombrarlo explícito acá. Referencia cruzada a EP.021, genérica, sin inventar contenido.</div>
+
+            <p class="line">Pónganlos uno al lado del otro, una vez más, porque acá es donde el episodio se cierra.</p>
+            <p class="line">WeWork vendió la camiseta: "somos familia", y la familia trabaja gratis las horas que hagan falta. Uber la defendió: cuestionarla la convierte a usted en el problema, no en quien tiene la razón. Y Wells Fargo mostró qué pasa cuando revienta: la meta se queda arriba, intacta, y el costo se reparte abajo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Durante años la lectura fácil de estos tres casos ha sido "se les fue de las manos la cultura". Que WeWork se emborrachó con su propia mística. Que a Uber se le descontroló el ambiente de "hustle". Que a Wells Fargo un puñado de empleados deshonestos le mancharon una buena marca.</p>
+            <p class="line">Yo creo que esa lectura es cómoda, y por eso se repite tanto. Y creo que está equivocada.</p>
+
+            <div class="remate">No fallaron viviendo la cultura. La cultura era el mecanismo, funcionando exactamente como se diseñó: pedir más de lo que se paga, hacer que cuestionarlo cueste caro, y tener siempre a mano a quién culpar cuando la cuenta llegara.</div>
+
+            <p class="line">Esto no es una teoría de conspiración con ejecutivos frotándose las manos en una sala oscura. Es más simple y más incómodo que eso: si un sistema de incentivos premia la extracción, y el lenguaje de "familia" hace que cuestionar la extracción se sienta como traición, ese sistema va a extraer hasta que algo reviente. No porque alguien lo planeó paso a paso. Porque esa es la dirección en la que empuja el diseño, con o sin mala intención en el día a día.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y si esto le suena parecido a algo que ya tocamos en este pódcast, no es casualidad. En el episodio sobre el desgaste de un equipo a largo plazo hablamos de burnout como acumulación silenciosa. Esto es la otra cara de la misma moneda: el burnout no siempre es un accidente de exceso de trabajo. A veces es el resultado esperado de pedir sacrificio con lenguaje de amor y pagarlo con lenguaje de negocio.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y antes de que alguien piense que esto es cosa de startups con inversionistas locos, de apps de transporte, o de bancos con miles de sucursales, quiero bajarlo a una escala más chica, porque el mecanismo no necesita ninguno de esos tamaños para funcionar.</p>
+            <p class="line">No hace falta un fee de ciento ochenta y cinco millones de dólares para que exista la asimetría de WeWork. Basta con que usted se quede hasta tarde "porque el equipo lo necesita" mientras nadie más se queda, y que eso nunca aparezca en ningún lado más que en el cansancio de quien se quedó.</p>
+            <p class="line">No hace falta un investigador contratado por la empresa para que exista el mecanismo de Uber. Basta con que la persona que señala el problema deje de ser invitada a las reuniones importantes, poco a poco, sin que nadie lo diga en voz alta.</p>
+            <p class="line">Y no hace falta un millón y medio de cuentas falsas para que exista el mecanismo de Wells Fargo. Basta con una meta de ventas que solo se puede cumplir limpio la mitad de los meses, y con un jefe que prefiere no preguntar cómo se cumplió la otra mitad.</p>
+            <p class="line">La pregunta que le queda entonces no es "¿tengo mala cultura?". Es más incómoda todavía: <strong>¿qué está pidiendo mi cultura que no estoy pagando, y qué le pasa en mi equipo a quien lo señala?</strong></p>
+        </div>
+
+        <!-- 6 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">Qué hace usted el lunes</span><span class="segment-time">34:16 – 37:56</span></div>
+            <div class="nota">Tramo APLICABLE. Tres movidas, una por caso, con la trampa de cada una — mismo patrón que episodios anteriores.</div>
+
+            <p class="line">Tres movidas, una por cada caso. Ninguna pide un consultor de cultura ni un retiro corporativo.</p>
+
+            <div class="sub">Uno · ponga precio, de WeWork</div>
+
+            <p class="line">Tome cualquier frase de las que abrió el episodio — "necesito que se ponga la camiseta", "aquí somos familia", "dé el máximo por el equipo"— y tradúzcala a algo con número y con techo antes de pedirla otra vez. ¿Cuántas horas exactas? ¿Hasta cuándo? ¿Se paga, se compensa, o se reconoce de alguna forma que no sea una palmada en la espalda?</p>
+            <p class="line">La trampa: si la respuesta sincera es "no sé, las que hagan falta", eso no es cultura fuerte. Es una factura sin monto, y las facturas sin monto siempre terminan siendo más altas de lo que cualquiera hubiera aceptado por adelantado.</p>
+            <p class="line">Un ejercicio de treinta minutos: pídale a su equipo, por escrito y sin firmar, que estime cuántas horas fuera de lo pactado dieron en el último mes "porque tocaba" o "porque el equipo lo necesitaba". Va a haber sorpresas. Casi nunca son las horas que usted se imagina, y casi nunca están donde usted cree que están.</p>
+
+            <div class="sub">Dos · haga barato cuestionar, de Uber</div>
+
+            <p class="line">Pregúntese, con honestidad: la última vez que alguien de su equipo le señaló un problema incómodo —de usted, de un compañero con buen desempeño, de una decisión suya— ¿qué le pasó a esa persona en los meses siguientes? ¿Subió, se quedó igual, o se le empezó a hacer más difícil la vida sin que nadie lo dijera en voz alta?</p>
+            <p class="line">Si no tiene una respuesta clara, ese es el dato. La trampa: decir "aquí todos pueden opinar" no cuesta nada. Lo que cuesta, y lo que de verdad se nota, es si opinar en contra de alguien que rinde bien tiene el mismo costo que opinar en contra de alguien que rinde mal.</p>
+            <p class="line">Una forma de medirlo sin depender de la memoria de nadie: revise las últimas dos o tres personas que renunciaron o pidieron traslado de su equipo. Antes de irse, ¿habían señalado algo incómodo? No hace falta que sea la única razón. Si aparece más de una vez en el patrón, ya no es coincidencia.</p>
+
+            <div class="sub">Tres · separe la meta del castigo, de Wells Fargo</div>
+
+            <p class="line">Antes de fijar la próxima meta agresiva para su equipo, pregúntese una cosa que casi nadie se pregunta antes de fijarla: si alguien hace trampa para cumplirla, ¿quién más comparte la responsabilidad además de esa persona? Escríbalo, aunque sea para usted mismo, antes de que pase, no después.</p>
+            <p class="line">La trampa: es fácil escribir "la responsabilidad es de quien hizo trampa" y sentir que ya cumplió el ejercicio. Si su meta es tan agresiva que cumplirla limpio es casi imposible para alguien promedio, parte de esa responsabilidad ya es suya antes de que nadie tramposee nada.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ninguna de las tres pide que deje de exigir. Piden que lo que exige tenga precio, que cuestionarlo no cueste la carrera de nadie, y que cuando algo salga mal, usted mire primero la meta que fijó antes de mirar quién la incumplió.</p>
+        </div>
+
+        <!-- 7 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Cierre canónico + Teaser</span><span class="segment-time">37:56 – 40:00</span></div>
+            <div class="nota">Cierre canónico completo: pregunta comentable · CTAs Spotify/compartir · LinkedIn · teaser EP.027 (PENDIENTE — confirmar tema real antes de grabar) · firma + TM · jingle de salida.</div>
+
+            <p class="line">Antes de cerrar, una pregunta para ustedes, y me la pueden dejar en los comentarios de Spotify: de las tres frases que abrieron el episodio —familia, misión, camiseta— ¿cuál se dice más seguido en su operación, y qué está pagando de verdad quien la escucha?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si este episodio le sirvió, dos formas de ayudarme sin que le cueste nada: déjeme una reseña de cinco estrellas en Spotify, y compártalo con esa persona de su equipo a la que alguna vez le pidieron que se pusiera la camiseta sin explicarle qué significaba eso en horas y en plata.</p>
+            <p class="line">También estoy en LinkedIn, escribiendo sobre estos mismos temas. Búsqueme como Andy y mándeme un mensaje si algo de hoy le tocó una fibra.</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="pendiente">
+                <h3>⚠ Teaser EP.027 — SIN ESCRIBIR, no leer nada de esta caja al aire</h3>
+                <p class="line">Mismo estado que en el intento anterior de este cupo: no se abrió el estado actual de EP.027 en esta sesión (a la fecha del último handoff estaba en rediseño, tema Peter/Little sin cerrar). No existe ninguna línea de teaser lista para grabar. Confirmar el tema exacto de EP.027 y escribir el teaser desde cero antes de grabar este segmento.</p>
+            </div>
+
+            <p class="line">Yo soy Andy, y esto fue Behind the Queue.</p>
+            <div class="nota">JINGLE DE SALIDA.</div>
+        </div>
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section fuentes">
+        <h2>Fuentes</h2>
+        <p class="line">Consumer Financial Protection Bureau (2016). <em>Consent Order, In the Matter of Wells Fargo Bank, N.A.</em> 2016-CFPB-0015. Filed September 8, 2016.</p>
+        <p class="line">Fowler, S. (2017). <em>Reflecting On One Very, Very Strange Year At Uber.</em> susanjfowler.com, 19 de febrero de 2017.</p>
+        <p class="line">SoftBank Group Corp. (2019). Comunicado sobre el Master Transaction Agreement con WeWork — fee de asesoría y línea de crédito a Adam Neumann.</p>
+        <p class="line">SoftBank Group Corp. (2021). <em>Settlement Agreement with Adam Neumann and WeWork Special Committee.</em> group.softbank, 1 de marzo de 2021.</p>
+    </div>
+
+    <footer>
+        <div class="gold">BEHIND THE QUEUE</div>
+        <div>EP.026 — borrador sin lints corridos, ver checklist</div>
+    </footer>
+
+</div>
