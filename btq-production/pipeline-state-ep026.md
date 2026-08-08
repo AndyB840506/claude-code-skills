@@ -9,6 +9,26 @@ stage_c: no iniciado.
 mensaje tóxico de "ponerse la camiseta" en el entorno laboral (el video en sí no se abrió en
 esta sesión — no es la fuente de los casos, solo el disparador de la idea).
 
+## Título y ángulo — ajustado 2026-08-07 (segunda pasada, tras ver el borrador de aterrizajes)
+
+**Título:** `Ponerse la camiseta: la explotación laboral disfrazada de slogan` (64 caracteres, ancla
+de 9 palabras).
+
+**Corrección de Andy sobre el enfoque:** no son tres mecanismos paralelos e independientes. Es
+**una mentira corporativa con tres caras**: el slogan de "familia"/"misión"/"lealtad" es la
+máscara, y la explotación laboral es lo que hay debajo. Los tres casos no ilustran tres
+problemas distintos — ilustran tres MOMENTOS de la misma mentira: se vende (WeWork), se
+defiende cuando alguien la señala (Uber), y se limpia cuando revienta (Wells Fargo). El giro
+del episodio tiene que nombrar esto explícitamente: no es que estas empresas hayan fallado en
+vivir su cultura — la cultura ERA el mecanismo de extracción, funcionando exactamente como se
+diseñó.
+
+**Orden reconsiderado para esqueleto A:** WeWork primero (la mentira en su forma más pura y
+literal — "somos familia" con la asimetría de dólares más flagrante) → Uber (cómo se blinda la
+mentira cuando alguien la nombra) → Wells Fargo (qué pasa cuando la mentira revienta: se culpa
+a quien más se la creyó, no a quien la vendió) → giro nombrando el mecanismo completo →
+aplicación.
+
 ## Las tres capas — instrucción de Andy (2026-08-07), las tres juntas
 
 1. **Extraer lealtad sin retribución** — la camiseta como excusa para pedir sacrificio sin nada
