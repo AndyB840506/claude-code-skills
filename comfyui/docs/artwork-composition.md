@@ -175,3 +175,43 @@ Asi el que decide cuanto se revela es el compositor, no el modelo. Scripts:
 sube hasta una altura donde el objeto ya no cubre todo el ancho y se asoma por el borde.
 En vertical, partir de la escena SIN texto y dibujar el wordmark aparte.
 
+## Corregir el color de una escena generada hacia el hex exacto de marca
+
+(aprendido 2026-08-07, BTQ EP.025 "camiseta")
+
+Z-Image (y modelos similares) aproximan el color por la PALABRA del prompt, no por el
+valor hex — pedir "background #0E1113" puede salir como `#2A2A2A` (gris neutro,
+2-3x mas claro que el void real). Si el brand-constants exige un hex exacto, medirlo
+con `img.getpixel()` despues de generar y corregir en post, no confiar en el prompt.
+
+**Separar fondo de objeto para el grading es el paso dificil — tres intentos fallaron
+antes de dar con el bueno:**
+
+1. **Umbral de brillo+saturacion (`sat<0.08 and val<90`) falla:** un pliegue de sombra en
+   la tela puede ser tan oscuro como el fondo real. Termina "corrigiendo" el color de las
+   sombras de la prenda tambien, dejando rayas negras donde no las hay.
+2. **Flood-fill desde los bordes (para agarrar solo el fondo conectado, no los pliegues
+   aislados) tambien falla si la sombra toca el borde de la silueta** — el "leak" entra
+   por ese puente y se come media prenda. Y aparte: `PIL.ImageDraw.floodfill` fallo en
+   silencio sobre la imagen real completa (0 pixeles rellenados) pese a funcionar en una
+   prueba sintetica de 10x10 — causa no diagnosticada, no confiar en el sin verificar el
+   resultado con `np.unique()` antes de seguir.
+3. **Lo que funciono: segmentar por VARIANZA DE TEXTURA LOCAL, no por brillo.** El fondo
+   real es plano (varianza local ~0); la tela tiene textura de tejido visible incluso en
+   sombra profunda. `local_std = sqrt(blur(gray²) − blur(gray)²)` con un blur de radio ~4px
+   separa limpio los dos. Igual queda ruido fino en las sombras mas oscuras (donde el
+   contraste de la textura se comprime) — limpiar con una apertura morfologica (erosionar
+   ~6px, dilatar ~6px) antes de usar la mascara para el grade.
+
+**Reposicionar un objeto ya generado sin dejar costura:** no pegar el objeto redimensionado
+sobre su propio fondo con gradiente (el punto de union no calza y se ve el rectangulo).
+Extraer el objeto con alpha (mascara de textura de arriba + `GaussianBlur` leve en el borde
+para antialiasing), y pegarlo sobre un canvas NUEVO de color plano — un color plano no tiene
+gradiente que pueda desalinearse, cero costura posible.
+
+**Recortar un formato mas angosto/bajo (16:9, 9:16) de una escena ya reposicionada:** un
+crop centrado ciego puede saltarse por completo el espacio en blanco que se acaba de crear
+arriba para el wordmark. Anclar el crop del lado que tiene el espacio nuevo (arriba, en este
+caso), no centrarlo — y revisar visualmente que el sujeto principal siga visible, no solo
+que el header tenga margen.
+

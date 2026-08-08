@@ -40,6 +40,14 @@ guion no se puede atribuir, **no entra al artículo**.
    ```
    Es la portada, **no** una quote card (razón en §B.1).
 
+   **Si la portada es una escena renderizada (excepción puntual, no tipografía pura),
+   guardarla como JPEG, no PNG.** El PNG de una portada 100% tipográfica pesa ~50 KB; el
+   mismo tamaño con una escena/textura fotográfica de fondo pesa ~900-1000 KB, muy por
+   encima del límite de 500 KB de `brand-constants.md`. Convertir con
+   `im.save(path, "JPEG", quality=90, optimize=True)` — a esa calidad da ~150-200 KB para
+   una escena típica. Verificar el tamaño final con `os.path.getsize()` antes de dar por
+   copiado el asset (bit 2026-08-07, BTQ EP.025: se copió el PNG a 972 KB sin medirlo).
+
 4. **Escribir el HTML** copiando la estructura del artículo de EP.023 —
    `website/episodios/por-que-su-equipo-rinde-distinto-cuando-lo-miran.html` es la
    plantilla viva. No inventar clases: `ep.css` replica el sistema de `index.html`.

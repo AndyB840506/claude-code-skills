@@ -112,6 +112,7 @@ Con `curl -L` no forzar `-X POST`: tras un redirect 302 curl reenvía el POST si
 Y una cuarta, para conteos: **¿estoy midiendo la región relevante o el archivo entero?** «36 menciones de call center» era el HTML completo con notas y metadata; en las líneas habladas eran **0**.
 
 Instancias concretas ya documentadas (las dos primeras mordieron el 2026-07-23):
+- **Un número de episodio vive como `EP.26`/`EP.026` y también escrito en palabras dentro de una frase hablada** («episodio 26»). El 2026-08-07, al renumerar BTQ EP.026→EP.025, un grep de `EP\.26|EP\.026|EP026` se declaró limpio y se commiteó como corregido — pero la línea hablada de la apertura decía literal "episodio 26" sin el prefijo "EP.", y el patrón no la vio. Lo encontró el usuario, no el grep. Al renumerar cualquier cosa que se lee en voz alta, buscar también el número suelto en el texto corrido, no solo sus formas con prefijo.
 - `Get-Content X | Measure-Object -Line` **no cuenta líneas en blanco** (dio 28 donde `wc -l` daba 36). Para contar líneas usar `wc -l`.
 - `glob.glob('**/x', recursive=True)` de Python **omite directorios que empiezan con punto** — leyó 18 de 28 `SKILL.md` porque se saltó todo `.claude/`. Usar `os.walk`.
 - **Patrones con tildes pasados por la línea de comandos se manglan y devuelven ceros falsos.** El 2026-07-28 un lint de muletillas reportó `imagínense = 0` con el patrón roto en la consola. Escribir el script a disco con escapes unicode (`imagín`) y correrlo desde ahí, no pasarlo inline.

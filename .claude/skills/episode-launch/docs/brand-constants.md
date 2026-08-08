@@ -170,31 +170,27 @@ esto». Un objeto por episodio, nunca un collage.~~
    portada 2026 los tenía y es parte de lo que se está corrigiendo.
 7. **Sin proporciones chibi. Sin estilo cartoon. Sin circuit boards.**
 
-### Bloque de escena (copiar verbatim, cambia solo el objeto)
+### Bloque de escena — RETIRADO, no reconstruir de memoria (2026-08-08)
 
-```
-Dark industrial editorial image, rendered with real volume and material
-texture (steel, glass, bakelite, worn enamel) — NOT a flat silhouette
-cutout, NOT a glossy 3D render. Background #0E1113, graphite panel tone
-#22262A.
-
-Center composition: [OBJETO LITERAL DEL EPISODIO], shot straight on,
-lit by flat overhead workshop light. Cool steel greys, matte surfaces,
-honest wear. Exactly ONE element glows in signal orange #FF3D00 —
-[cuál elemento]. No other warm light anywhere.
-
-Background: a fine vertical line grid, like the ventilation slots of an
-equipment panel, in #1F2428 — subtle, engraved, never competing with
-the object.
-
-DO NOT render any concentric ring, circle, halo, or archery-target
-pattern anywhere in this image.
-
-No circuit boards. No cartoon style. No golden rim light. No text.
-```
+**Este bloque existía acá como texto copiar-y-pegar** ("Bloque de escena (copiar verbatim,
+cambia solo el objeto)"), y por eso sobrevivió el retiro de la dirección industrial: la etiqueta
+de "histórico" queda arriba de esta sección, pero el texto de abajo se veía igual de listo para
+usar que cualquier prompt vigente. Mordió dos veces con el mismo mecanismo — EP.024
+(2026-08-01) y EP.025 (2026-08-07, "porque volvimos otra vez al estilo industrial") — las dos
+veces alguien escribió un prompt de escena copiando este bloque sin releer que la sección entera
+estaba superada. La tercera vez que un episodio necesite una escena-excepción (no tipografía
+pura), el prompt se escribe **desde cero**, describiendo el objeto del episodio contra un fondo
+void plano — no se reconstruye este bloque de memoria ni se busca en el historial de git.
 
 **El modelo NO escribe texto.** La escena se genera limpia; wordmark, kicker, título y `EP.NN`
 se componen después con PIL.
+
+**Lo que sí sigue siendo válido de cualquier escena-excepción** (extraído de los dos episodios
+que la usaron, no del bloque retirado): fondo void plano `#0E1113` sin escena/panel/textura
+detrás del objeto, un único acento en señal `#FF3D00`, cero anillos o motivos circulares, cero
+proporciones chibi/cartoon. Verificar con muestreo de píxel contra los hex canónicos después de
+generar — Z-Image aproxima color por palabra, no por valor exacto (ver
+`comfyui/docs/prompting.md`).
 
 ### Tipografía y footer (composición PIL)
 
