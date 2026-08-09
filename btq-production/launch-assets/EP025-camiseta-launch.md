@@ -252,6 +252,7 @@ de Uber/Susan Fowler con link al sitio a mitad de cuerpo. 949 palabras, contadas
 programáticamente. Sin sintaxis markdown filtrada al texto paste-ready (fenced code blocks,
 verificado).
 
-**No publicar hoy — publicar a mitad de semana (miércoles/jueves)**, per la regla ya establecida
-en `episode-launch/workflows/step2-generate-assets.md` §B.1: compite con el post de lanzamiento
-si sale el mismo día.
+**Regla general: no publicar el mismo día del post de lanzamiento** (compite por atención) —
+`episode-launch/workflows/step2-generate-assets.md` §B.1. **Excepción explícita para EP.025,
+decisión de Andy 2026-08-09: se publicó hoy mismo**, el día del lanzamiento. La regla sigue
+vigente para episodios futuros; esto no la retira, es una excepción puntual de este episodio.
