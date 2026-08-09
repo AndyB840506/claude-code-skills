@@ -7,6 +7,9 @@ Tiers: `apify` = Apify-maintained (always prefer), `community` = community-maint
 
 ## Instagram
 
+*Free-but-ToS-risk alternative exists: `workflows/tos-risk-alternatives.md`
+(opt-in only, per user confirmation).*
+
 | Actor | Tier | Best for |
 |-------|------|----------|
 | apify/instagram-scraper | apify | all Instagram data |
@@ -24,6 +27,9 @@ Tiers: `apify` = Apify-maintained (always prefer), `community` = community-maint
 | apify/export-instagram-comments-posts | apify | bulk posts + comments |
 
 ## Facebook
+
+*Free-but-ToS-risk alternative exists: `workflows/tos-risk-alternatives.md`
+(opt-in only, per user confirmation).*
 
 | Actor | Tier | Best for |
 |-------|------|----------|
@@ -45,6 +51,9 @@ Tiers: `apify` = Apify-maintained (always prefer), `community` = community-maint
 | apify/threads-profile-api-scraper | apify | Threads profiles |
 
 ## TikTok
+
+*Free-but-ToS-risk alternative: none in `agent-reach` currently — TikTok
+isn't covered by its channel list. Apify remains the only option.*
 
 | Actor | Tier | Best for |
 |-------|------|----------|
@@ -76,6 +85,9 @@ Tiers: `apify` = Apify-maintained (always prefer), `community` = community-maint
 
 ## X/Twitter
 
+*Free-but-ToS-risk alternative exists: `workflows/tos-risk-alternatives.md`
+(opt-in only, per user confirmation).*
+
 | Actor | Tier | Best for |
 |-------|------|----------|
 | apidojo/tweet-scraper | community | tweet search |
@@ -85,6 +97,10 @@ Tiers: `apify` = Apify-maintained (always prefer), `community` = community-maint
 | apidojo/twitter-list-scraper | community | tweets from lists |
 
 ## LinkedIn
+
+*Free-but-ToS-risk alternative exists: `workflows/tos-risk-alternatives.md`
+(opt-in only, per user confirmation; MCP-based, separate from the
+cookie-export mechanism used for the other platforms above).*
 
 | Actor | Tier | Best for |
 |-------|------|----------|

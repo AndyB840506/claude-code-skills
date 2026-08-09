@@ -23,6 +23,10 @@ target disallows scraping/AI use, or blocks AI crawlers while allowing
 browsers/Googlebot, stop — no browser-UA spoofing, no switching Actors to
 route around it. Tell the user why and offer only compliant alternatives.
 
+Avoiding the Apify cost has two tiers: compliant-free (`workflows/self-hosted-alternative.md`)
+vs. ToS-risk opt-in, where going free means the user — not Apify — absorbs the enforcement
+risk; never default to it, needs explicit per-platform choice + burner account (`workflows/tos-risk-alternatives.md`).
+
 ## Workflow
 
 Sigue `workflows/scrape.md` para el flujo general (elegir Actor, revisar
@@ -42,8 +46,4 @@ con pipelines ya armados, usa el playbook correspondiente en `workflows/`:
 
 Antes de correr cualquier Actor de pago (la mayoría lo son), consulta `docs/gotchas.md`
 (protocolo de estimación de costo + pitfalls comunes) y `docs/actor-index.md` (elegir
-el Actor correcto).
-
-Si el usuario quiere evitar el costo de Apify para un sitio específico,
-consulta `workflows/self-hosted-alternative.md` antes de descartar la opción
-gratuita — no todos los sitios necesitan la infraestructura anti-bot de Apify.
+el Actor correcto). Para evitar el costo, ver "Two tiers" arriba.

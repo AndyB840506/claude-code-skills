@@ -133,6 +133,17 @@ Instancias concretas ya documentadas (las dos primeras mordieron el 2026-07-23):
   porque las fuentes primarias de estos shows —NTSB, Contraloría, SIC, SERNAC— se publican
   escaneadas.
 
+- **WebFetch resume con un modelo chico y puede omitir ítems de una lista sin avisar — una
+  ausencia en su resumen NO es evidencia de que algo no existe.** El 2026-08-09, evaluando si
+  el proyecto externo `agent-reach` cubría TikTok, un WebFetch del README no lo mencionó y eso
+  estuvo a punto de quedar escrito como «TikTok no está cubierto» en un archivo de skill
+  durable, citando solo esa ausencia. Recién al listar el directorio real del repo
+  (`agent_reach/channels/`, 19 archivos, sin `tiktok.py`) quedó confirmado — la afirmación
+  negativa era correcta, pero no estaba verificada cuando se escribió. **Antes de escribir una
+  afirmación NEGATIVA** («X no soporta Y», «no existe alternativa para Z») **en un artefacto
+  que otra sesión va a usar como hecho**, verificarla contra la fuente estructurada (listado de
+  archivos, API, código) — un resumen de WebFetch solo no alcanza.
+
 - **Un script de reemplazo masivo verifica cada sustitución y NO escribe si alguna falló.**
   Un `replace` que no encuentra su texto no lanza error: sigue de largo y deja el archivo a
   medias, con la mitad de los cambios aplicados y sin señal de que faltó algo. El 2026-08-03,

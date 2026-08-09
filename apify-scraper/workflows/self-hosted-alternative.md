@@ -35,6 +35,37 @@ the target site actually needs that — many don't.
    solved the problem you'd otherwise be building from scratch). SPA with no
    anti-bot wall → Playwright self-hosted still works, just slower than HTTP.
 
+## Zero-setup free tools for specific content types
+
+Before writing a `requests`+BeautifulSoup scraper, check whether the target
+matches one of these — no robots.txt gate needed beyond the general check in
+`SKILL.md`, since these either use the platform's own free official API or a
+public reader proxy the platform accepts:
+
+- **YouTube video/transcript/metadata** — `yt-dlp` (well-established, widely
+  used for exactly this). Replaces `streamers/youtube-*` and
+  `curious_coder/youtube-transcript-scraper` Actors for free.
+  ```
+  yt-dlp --skip-download --write-auto-sub --sub-lang en -o "%(id)s.%(ext)s" VIDEO_URL
+  yt-dlp --dump-json VIDEO_URL   # metadata only
+  ```
+- **RSS/Atom feeds** — Python `feedparser`. Trivial, no Actor needed.
+  ```python
+  import feedparser
+  feed = feedparser.parse("https://example.com/feed.xml")
+  ```
+- **Reddit** — official Reddit API (free tier, rate-limited) via `praw`, not
+  a cookie-based scraper. Replaces `trudax/reddit-scraper-lite` for free
+  within rate limits; for volume beyond the free tier, fall back to the
+  Actor.
+- **Generic page-to-text, as an alternative to `requests`+BeautifulSoup** —
+  Jina Reader, a free public proxy that returns clean markdown for a URL, no
+  key required. Still subject to the robots.txt check in step 1 above — it's
+  a rendering proxy, not a bypass.
+  ```
+  curl https://r.jina.ai/https://example.com/page
+  ```
+
 ## Worked example (Argentina job boards, 2026-06)
 
 Checked 7 sites for a recruiting benchmark: Computrabajo (server-rendered,
