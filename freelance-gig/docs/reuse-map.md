@@ -8,10 +8,10 @@ fall back to generic handling (don't fail silently, don't guess at a replacement
 ## Service catalog
 
 `C:\Users\andre\repos\the-freelancer\services.config.js`
-7 services: `lead_generation`, `web_page`, `seo_audit`, `business_audit`,
-`social_to_web`, `meta_ads_audit`, `copywriting`. Each has `id`, bilingual
-`name`/`description`, `scopes` (tiered low/high USD), `intakeQuestions`,
-`deliverableType`.
+8 services: `lead_generation`, `web_page`, `seo_audit`, `business_audit`,
+`social_to_web`, `meta_ads_audit`, `copywriting`, `ai_visibility_audit`. Each
+has `id`, bilingual `name`/`description`, `scopes` (tiered low/high USD),
+`intakeQuestions`, `deliverableType`.
 
 Classify a JD against this catalog the same way `resolveServiceId()` does in
 `freelancer/deliverable.js` (see exact line range under "Deliverable output
@@ -70,6 +70,6 @@ classified `serviceId`.
   catalog — the bot only ever sees orders that already came through Andy's own
   site form.
 - Handling unmatched/custom jobs gracefully (the bot has no fallback for "not
-  one of the 7 services").
+  one of the 8 services").
 - An explicit no-AI-tell self-check before any deliverable is called done — see
   `workflows/build.md`.

@@ -14,7 +14,7 @@ pricing, voice playbook, and deliverable prompts live from `the-freelancer` repo
 
 1. **Intake** — [workflows/intake.md](workflows/intake.md)
    Take the JD (pasted text, URL, or file), extract the brief, classify against the
-   7 known services, save `gig-brief.json`, ask which stage(s) to run.
+   8 known services, save `gig-brief.json`, ask which stage(s) to run.
 2. **Proposal** — [workflows/proposal.md](workflows/proposal.md)
    Draft a pitch in Andy's voice. Surfaces an existing price range only if matched;
    never invents one.
