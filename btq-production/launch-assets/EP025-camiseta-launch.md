@@ -237,8 +237,10 @@ plano nuevo, dejando margen superior limpio para el wordmark y el kicker.
 
 `btq-production/website/episodios/ponerse-la-camiseta.html` — escrito, JSON-LD verificado (parsea OK),
 agregado a `episodios/index.html`, sitemap regenerado (`website/build-sitemap.py`, 5 URLs).
-**No desplegado todavía** — se publica el domingo del lanzamiento junto con el episodio, no antes.
 Los dos links de Spotify ya tienen la URL real (resuelta 2026-08-07), no el placeholder `href="#"`.
+**Desplegado 2026-08-09** (`vercel --prod` desde `btq-production/website`) — verificado con
+`curl` (cache-busted): `https://behind-thequeue.com/episodios/ponerse-la-camiseta` da 200 OK con
+el contenido real, homepage sin regresión.
 
 ## F · Artículo nativo de LinkedIn — pendiente
 

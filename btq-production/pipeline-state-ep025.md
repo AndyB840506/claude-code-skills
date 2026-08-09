@@ -20,6 +20,7 @@ stage_c: no iniciado — siguiente: `03-image-validation.md` (ya cubierto en la 
 portadas y quote cards ya pasaron gate mecánico + inspección visual en Stage B de esta sesión).
 spotify_url: https://open.spotify.com/episode/5AgkBZ1F1M9WPU4MxxqESq (confirmada por Andy
 2026-08-07, publica domingo 9 de agosto 8PM Colombia)
+sitio: desplegado 2026-08-09 (`vercel --prod`), verificado con curl — 200 OK, contenido real.
 
 **Carril:** Oficio de Jefe #2. **Origen:** video que un amigo de Andy le compartió sobre el
 mensaje tóxico de "ponerse la camiseta" en el entorno laboral (el video en sí no se abrió en
@@ -156,7 +157,8 @@ directo — no reportería de terceros para las cifras centrales.
 - [ ] Verificar el desglose de los ~USD 970M en acciones del paquete Neumann 2019 en fuente
       primaria — el guion ya evita esa cifra, usa solo las confirmadas (185M + 500M + 1.6B).
 - [ ] Correr `python scripts/lint_guion_repeticion.py` y grep de español neutro antes de aprobar.
-- [ ] Confirmar teaser de EP.024 hacia este episodio (no se abrió el cierre de EP.024 en esta
-      sesión) y el teaser hacia **EP.026** (vacante, no Peter/Little — ese quedó en EP.027 tras
-      el swap) para el cierre de este episodio. El guion todavía dice "Teaser EP.027" en la caja
-      pendiente del segmento 7 — corregir antes de grabar.
+- [x] ~~Confirmar teaser de EP.024 hacia este episodio... El guion todavía dice "Teaser EP.027"~~
+      — **falsa alarma, verificado 2026-08-09 contra el guion real** (no contra este checklist
+      viejo): el segmento 7 del `.artifact.html` ya tiene el teaser hacia EP.026 con contenido
+      real ("cuatro meses sin llenar la vacante"), no el placeholder. Esta línea había quedado
+      sin actualizar tras el fix.
