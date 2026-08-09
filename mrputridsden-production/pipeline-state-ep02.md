@@ -16,5 +16,5 @@ distintos — corregido al re-preguntar por separado. **Resuelto:** 4 quote card
 `comfyui/templates/mpd-quote-card-ep02-t2.py` (copiado/adaptado de `mpd-quote-card-t2.py`,
 escena/paleta desde `mpd-portada-ep02-t2.py`), verbatim contra el SRT real, verificadas
 visualmente. **Clip de audio resuelto también:** extraído del máster con ffmpeg (33:39–34:38,
-juicio de Nevada, 59.6s) — ver `social-ep02.md` para el detalle del bug de `afade` encontrado y
+juicio de Nevada, 59.6s) — ver `episodios/temporada-2/social-ep02.md` para el detalle del bug de `afade` encontrado y
 corregido en el proceso. Pipeline de EP.02 completo, sin pendientes conocidos.
