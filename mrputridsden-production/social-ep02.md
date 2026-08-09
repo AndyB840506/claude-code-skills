@@ -89,7 +89,7 @@ El rock y el diablo — Expediente 02
   ✓ Copy generado para 3 días × Instagram/Facebook — publicado (confirmado por Andrés 2026-08-09)
   ✓ Portada 1:1 y 9:16 — E:\Podcast\MPD\Temporada 2\EP 02\artwork\
   ✓ Quote cards — 4 generadas 2026-08-09, verbatim del SRT real, verificadas visualmente. Compositor: comfyui/templates/mpd-quote-card-ep02-t2.py. Archivos: E:\Podcast\MPD\Temporada 2\EP 02\artwork\MPD-T2E02-Q1..Q4-1920x1080.png. Q3 usa la misma cita ya publicada en el copy del Día 2 (coinciden letra por letra).
-  □ Clip de audio 30-60 seg para Stories/Reels (momento del tribunal de Nevada) — sigue pendiente, sin resolver
+  ✓ Clip de audio 30-60 seg — generado 2026-08-09 desde el máster (`MPD EP 02.wav`), 33:39–34:38 (el juicio de Nevada, escena completa: "sentada frente a un juez" → "un juez con toga... oyendo exactamente lo mismo, saliendo con una opinión distinta"), 59.6s, fade in/out. Verificado con volumedetect (-18.2 dB mean, no silencio) tras que un primer intento con `afade` mal ordenado exportara silencio total pese a duración/bitrate correctos — ver `~/.claude/CLAUDE.md` § "Instrumentos que mienten en silencio". Archivo: E:\Podcast\MPD\Temporada 2\EP 02\artwork\social-clip\MPD-EP02-clip-juicio-nevada.mp3
 ══════════════════════════════════════════════════
   Fechas del plan:
   Día 1 (Intriga):     jueves 2026-08-06

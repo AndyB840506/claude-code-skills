@@ -15,4 +15,6 @@ antes fue una confirmación apurada del usuario sobre una pregunta que empaqueta
 distintos — corregido al re-preguntar por separado. **Resuelto:** 4 quote cards generadas con
 `comfyui/templates/mpd-quote-card-ep02-t2.py` (copiado/adaptado de `mpd-quote-card-t2.py`,
 escena/paleta desde `mpd-portada-ep02-t2.py`), verbatim contra el SRT real, verificadas
-visualmente. **El clip de audio 30-60s sigue pendiente, sin resolver** (nadie lo confirmó).
+visualmente. **Clip de audio resuelto también:** extraído del máster con ffmpeg (33:39–34:38,
+juicio de Nevada, 59.6s) — ver `social-ep02.md` para el detalle del bug de `afade` encontrado y
+corregido en el proceso. Pipeline de EP.02 completo, sin pendientes conocidos.
