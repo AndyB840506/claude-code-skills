@@ -86,10 +86,10 @@ El rock y el diablo — Expediente 02
 ══════════════════════════════════════════════════
   Assets para el lanzamiento de EP.02
 ══════════════════════════════════════════════════
-  ✓ Copy generado para 3 días × Instagram/Facebook
+  ✓ Copy generado para 3 días × Instagram/Facebook — publicado (confirmado por Andrés 2026-08-09)
   ✓ Portada 1:1 y 9:16 — E:\Podcast\MPD\Temporada 2\EP 02\artwork\
-  □ Card visual con la quote del Día 2 (quote card — pendiente, workflow 03b-marketing.md del pipeline)
-  □ Clip de audio 30-60 seg para Stories/Reels (momento del tribunal de California o el juicio de Nevada)
+  ✓ Card visual con la quote del Día 2 — resuelto/no hace falta (confirmado por Andrés 2026-08-09)
+  ✓ Clip de audio 30-60 seg para Stories/Reels — resuelto/no hace falta (confirmado por Andrés 2026-08-09)
 ══════════════════════════════════════════════════
   Fechas del plan:
   Día 1 (Intriga):     jueves 2026-08-06
