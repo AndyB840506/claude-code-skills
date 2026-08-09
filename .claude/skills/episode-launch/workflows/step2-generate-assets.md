@@ -329,3 +329,30 @@ compuerta falla por cards faltantes).
 La dirección visual, la paleta y el checklist de aprobación viven en
 `docs/brand-constants.md` § "Dirección de artwork v4" — **esa es la fuente, no esta sección.**
 Las quote cards son también tipografía pura: ver § Quote Cards del mismo archivo.
+
+---
+
+## E · Clip de audio para reel (opcional, patrón tomado de MPD)
+
+No es un paso automático del launch — se genera solo si se va a armar un reel (Andy lo
+ensambla a mano con el clip + las quote cards + la portada, fuera de este kit). Verificado
+2026-08-09 en BTQ EP.025.
+
+1. **Elegir el momento desde una quote card ya generada** (no un timestamp nuevo) — así el
+   clip y la card comparten el mismo gancho en los dos formatos. Si la cita sola dura menos de
+   ~5s, incluir la línea de *setup* inmediata antes (una frase corta pierde fuerza como hook
+   aislado; con el setup completo se arma un golpe de dos tiempos).
+2. **Confirmar el in/out exacto contra el SRT real**, no contra el timestamp aproximado de la
+   quote card — buscar la línea en `E:\Transcriptor\transcripciones\BTQ EP NN.srt` y cortar en
+   el límite real de la frase, no en un segundo redondo.
+3. **Extraer con `-ss`/`-to` ANTES de `-i`** (seek de entrada), nunca después — ver
+   `~/.claude/CLAUDE.md` § "Instrumentos que mienten en silencio": con el seek después de
+   `-i`, un `afade` mide su tiempo contra la línea del archivo COMPLETO y puede silenciar el
+   clip entero sin ningún error visible.
+4. **Verificar que el clip no quedó en silencio** antes de entregarlo:
+   ```
+   ffmpeg -i clip.wav -af volumedetect -f null -
+   ```
+   Un `mean_volume` cercano a `-90dB` es silencio real, no una medición baja.
+5. Guardar en `E:\AI\outputs\BTQ-EP0XX\` junto a portadas/quote cards (wav + mp3), mismo patrón
+   de nombres: `BTQ-EP0XX-CLIP-Q<N>.wav`.
