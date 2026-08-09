@@ -43,5 +43,9 @@ One pitch, ready to paste into the platform or send as an email/DM:
 
 ## 4. Output
 
-Give Andy the pitch text directly. If the gig is also going to build
+Give Andy the pitch text directly, inside a plain fenced code block — never a
+markdown blockquote (`>`) or with `**bold**`/backtick styling inside. Andy copies
+this straight into the platform's message box; markdown syntax in a raw-file
+paste transfers as literal characters (`episode-launch/workflows/step2-generate-assets.md`
+§B has the same rule for social posts). If the gig is also going to build
 ([build.md](build.md)), say so and ask whether to proceed now or pause here.

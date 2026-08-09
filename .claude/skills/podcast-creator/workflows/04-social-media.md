@@ -4,6 +4,13 @@ Genera copy listo para publicar en 3 días, adaptado al episodio y a las platafo
 
 **Regla fundamental: El copy debe sonar como el host, no como una marca corporativa. Aplicar las `reglas_tono` del perfil antes de escribir.**
 
+**Cada post va en un bloque de código, nunca en cita de bloque (`>`).** El archivo existe
+para copiar y pegar: con `>` al inicio de cada línea (o `**negrita**`/backticks dentro),
+esos caracteres se arrastran al portapapeles y hay que limpiarlos post a post. Los hashtags
+van DENTRO del mismo bloque. Mismo motivo que
+`episode-launch/workflows/step2-generate-assets.md` §B (pedido por Andy el 2026-08-03
+sobre BTQ EP.024).
+
 ---
 
 ## Paso 0 — Cargar datos
