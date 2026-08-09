@@ -6,5 +6,13 @@ stage_c: complete — 2026-08-09. Spotify confirmado en vivo (verificado vía We
 spotify_url: https://open.spotify.com/episode/46l6NpQVF9np4unotGT4KM — CONFIRMADO EN VIVO 2026-08-09 (verificado dos veces: WebFetch directo al episodio, y listado en la página del show)
 notes: Segunda grabación completa hecha 2026-08-06 21:32-21:37 en E:\Podcast\MPD\Temporada 2\EP 02\MPD EP 02.wav/.mp3/.rpp (reemplaza la toma corta del 08-05, 24:40, que fue solo de calibración). Pendiente antes de cerrar Stage B: verificar ~10 marcadores .verificar nuevos del guion (raíz africana del mito del cruce, incendio de Boleskine 1900, símbolos de Led Zeppelin IV, cita de Rob Halford, alcance PMRC/Senado 1985, fama de Tommy Johnson en vida, escultura de Clarksdale, jurado o no en el juicio de Nevada, año de muerte de Kenneth Anger) — lista completa en .agents/handoff/2026-08-05-mpd-ep007-reescritura.md.
 
-## Pipeline EP.02: COMPLETO — 2026-08-09
-Todo cerrado: Stage A/B/C completos, plan social de 3 días publicado (confirmado por Andrés), quote card y clip de audio del checklist de `social-ep02.md` resueltos/no hacían falta (confirmado por Andrés). No queda ningún pendiente conocido para este episodio.
+## Corrección 2026-08-09 — Stage 3b (quote cards) nunca corrió, ahora sí
+Stage A/B/C (guion/assets/deploy) completos y plan social de 3 días publicado (confirmado por
+Andrés). El workflow `03b-marketing.md` Paso 2 (quote cards) nunca se ejecutó para EP.02 — la
+bitácora salta del plan social a la corrección de numeración sin pasar por ahí. EP.006 sí tuvo
+4 quote cards verbatim (ver handoff 07-28/07-30); EP.02 tenía cero. Un "no hace falta" registrado
+antes fue una confirmación apurada del usuario sobre una pregunta que empaquetaba dos assets
+distintos — corregido al re-preguntar por separado. **Resuelto:** 4 quote cards generadas con
+`comfyui/templates/mpd-quote-card-ep02-t2.py` (copiado/adaptado de `mpd-quote-card-t2.py`,
+escena/paleta desde `mpd-portada-ep02-t2.py`), verbatim contra el SRT real, verificadas
+visualmente. **El clip de audio 30-60s sigue pendiente, sin resolver** (nadie lo confirmó).

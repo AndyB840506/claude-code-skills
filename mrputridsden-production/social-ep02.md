@@ -88,8 +88,8 @@ El rock y el diablo — Expediente 02
 ══════════════════════════════════════════════════
   ✓ Copy generado para 3 días × Instagram/Facebook — publicado (confirmado por Andrés 2026-08-09)
   ✓ Portada 1:1 y 9:16 — E:\Podcast\MPD\Temporada 2\EP 02\artwork\
-  ✓ Card visual con la quote del Día 2 — resuelto/no hace falta (confirmado por Andrés 2026-08-09)
-  ✓ Clip de audio 30-60 seg para Stories/Reels — resuelto/no hace falta (confirmado por Andrés 2026-08-09)
+  ✓ Quote cards — 4 generadas 2026-08-09, verbatim del SRT real, verificadas visualmente. Compositor: comfyui/templates/mpd-quote-card-ep02-t2.py. Archivos: E:\Podcast\MPD\Temporada 2\EP 02\artwork\MPD-T2E02-Q1..Q4-1920x1080.png. Q3 usa la misma cita ya publicada en el copy del Día 2 (coinciden letra por letra).
+  □ Clip de audio 30-60 seg para Stories/Reels (momento del tribunal de Nevada) — sigue pendiente, sin resolver
 ══════════════════════════════════════════════════
   Fechas del plan:
   Día 1 (Intriga):     jueves 2026-08-06
