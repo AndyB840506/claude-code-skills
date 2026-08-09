@@ -46,3 +46,20 @@ EPISODE BRIEF
 
 ## Cierre de Macro-Stage B
 - stage_b: complete, spotify_url: https://open.spotify.com/episode/46l6NpQVF9np4unotGT4KM?si=dscl0PsHSoWMLsIURGBNGQ — recibida 2026-08-06, pero Andrés aclaró que NO está en vivo todavía (programada sábado 2026-08-08 00:00). No se verificó con HTTP porque el usuario ya avisó que fallaría — no es una comprobación pendiente, es el estado esperado.
+
+## Stage C — Retomado 2026-08-09 (sesión nueva, handoff del 08-06 quedó parado en sábado)
+- Spotify confirmado en vivo con WebFetch directo al episodio Y a la página del show (dos verificaciones independientes) antes de tocar el sitio.
+- **Hallazgo:** el sitio (mrputridsden.com) nunca se actualizó tras publicar EP.006 el 08-01 — "Expediente 01" seguía en "En producción" y el embed de Sintoniza apuntaba a EP.005 (T1). El `workflow 04-grid-rotation.md` de `episode-pipeline` describe un markup `.episodes-grid`/`.episode-card` que ya no existe en el sitio real — el rediseño "La Guarida" (commit `8b9a4a8`, 2026-07-22) lo reemplazó por completo. Ese workflow quedó desactualizado para MPD; no se siguió tal cual.
+- Confirmado con Andrés (AskUserQuestion) el alcance del fix: Expediente 01 pasado a publicado + Expediente 02 agregado como sección nueva.
+
+## Stage 4 — "Rotación" (adaptada — no aplica el grid de 4 cards del workflow)
+- Qué se hizo: portadas 1:1 de EP.006 y EP.02 copiadas desde `E:\Podcast\MPD\Temporada 2\EP 01\artwork\MPD-T2E01-PORTADA-3000.jpg` y `...\EP 02\artwork\MPD-T2E02-PORTADA-3000.jpg`, redimensionadas a 760×760 (convención de `t2-cover.jpg`) y guardadas como `ep01-cover.jpg` (56 KB) / `ep02-cover.jpg` (108 KB) en `website/`.
+- `index.html`: nav "Expediente 01"→"Expedientes"; hero pasa a destacar Expediente 02 (el más reciente); Expediente 01 actualizado a estado publicado con link real a Spotify (`3KW68cHhHpkMCLbgZkiov7`) y portada propia; sección nueva `#expediente02` con sinopsis (Robert Johnson / Boleskine House / juicio de Judas Priest) y link a Spotify (`46l6NpQVF9np4unotGT4KM`); embed de Sintoniza actualizado al episodio de EP.02. "El Archivo" (T1) sin tocar.
+- Verificación de integridad: conteo de comillas por línea (0 líneas con número impar), imágenes con width/height explícitos.
+- Resultado: OK
+
+## Stage 5 — Deploy + verificación
+- Qué se hizo: `deploy-preflight` (PASS: project.json correcto `mr-putrids-den-web`, sin secrets, baseline 200, `ignoreCommand: exit 0` confirmado → flujo prebuilt) → gate de aprobación (aprobado por Andrés) → copia a `.vercel/output/static/` → `vercel deploy --prebuilt --prod` → `vercel alias set <deployment> www.mrputridsden.com` (obligatorio, `--prod` no realiasa el dominio custom) → verificación HTTP → verificación Spotify.
+- URL verificada: `https://www.mrputridsden.com/?cb=...` → 200, con `cache-buster` para evitar cache de WebFetch/CDN. Marcadores nuevos confirmados en el HTML servido: "Expediente 02", "ep02-cover.jpg", URL de Spotify de EP.02.
+- Verificación Spotify: PASS — episodio encontrado en la página del show.
+- Resultado: OK — episodio publicado y sitio verificado en vivo.
