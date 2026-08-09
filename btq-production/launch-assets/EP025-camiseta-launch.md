@@ -242,8 +242,16 @@ Los dos links de Spotify ya tienen la URL real (resuelta 2026-08-07), no el plac
 `curl` (cache-busted): `https://behind-thequeue.com/episodios/ponerse-la-camiseta` da 200 OK con
 el contenido real, homepage sin regresión.
 
-## F · Artículo nativo de LinkedIn — pendiente
+## F · Artículo nativo de LinkedIn — generado 2026-08-09
 
-No generado en esta pasada. Es un corte aparte del artículo del sitio (no una copia), con botón
-de "copiar con formato" en `.artifact.html` — se puede generar en una pasada siguiente antes del
-miércoles/jueves de la semana de publicación, como pieza de catálogo a mitad de semana.
+`launch-assets/EP025-linkedin-articulo.md` (fuente) + `EP025-linkedin-articulo.artifact.html`
+(renderizado, botón "copiar con formato") — https://claude.ai/code/artifact/051a489c-9efe-4715-9eb1-83f82ebeb212
+
+Corte propio (no copia del artículo del sitio): desarrolla WeWork y Wells Fargo, nombra el caso
+de Uber/Susan Fowler con link al sitio a mitad de cuerpo. 949 palabras, contadas
+programáticamente. Sin sintaxis markdown filtrada al texto paste-ready (fenced code blocks,
+verificado).
+
+**No publicar hoy — publicar a mitad de semana (miércoles/jueves)**, per la regla ya establecida
+en `episode-launch/workflows/step2-generate-assets.md` §B.1: compite con el post de lanzamiento
+si sale el mismo día.

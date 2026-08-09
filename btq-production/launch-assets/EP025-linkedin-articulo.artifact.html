@@ -1,0 +1,383 @@
+<title>EP.025 — Artículo de LinkedIn</title>
+
+<style>
+  :root {
+    --void: #0E1113;
+    --panel: #1F2428;
+    --panel-2: #22262A;
+    --rule: #39434A;
+    --muted: #8B9492;
+    --ink: #F4EFE7;
+    --signal: #FF3D00;
+    --ground: var(--void);
+    --surface: var(--panel);
+    --hair: var(--rule);
+    --dim: var(--muted);
+    --text: var(--ink);
+    --stripe: rgba(244, 239, 231, .022);
+    --display: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --body: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Cascadia Mono", "Consolas", "SF Mono", ui-monospace, monospace;
+    --measure: 62ch;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --ground: #F4EFE7;
+      --surface: #EAE3D7;
+      --hair: #C8BFB1;
+      --dim: #6B6459;
+      --text: #14171A;
+      --stripe: rgba(20, 23, 26, .028);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: var(--void);
+    --surface: var(--panel);
+    --hair: var(--rule);
+    --dim: var(--muted);
+    --text: var(--ink);
+    --stripe: rgba(244, 239, 231, .022);
+  }
+  :root[data-theme="light"] {
+    --ground: #F4EFE7;
+    --surface: #EAE3D7;
+    --hair: #C8BFB1;
+    --dim: #6B6459;
+    --text: #14171A;
+    --stripe: rgba(20, 23, 26, .028);
+  }
+
+  body {
+    background-color: var(--ground);
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--stripe) 0 1px,
+      transparent 1px 84px
+    );
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .shell {
+    max-width: 78ch;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---- utility bar ---- */
+  .bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    padding: 14px 0;
+    margin-bottom: 40px;
+    background-color: var(--ground);
+    border-bottom: 1px solid var(--hair);
+  }
+  .bar .stamp {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--signal);
+  }
+  .bar .meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--dim);
+    font-variant-numeric: tabular-nums;
+    margin-right: auto;
+  }
+
+  button {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--hair);
+    padding: 9px 16px;
+    cursor: pointer;
+    transition: border-color .15s, color .15s, background-color .15s;
+  }
+  button:hover { border-color: var(--signal); color: var(--signal); }
+  button:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+  button.done { border-color: var(--signal); color: var(--ground); background-color: var(--signal); }
+
+  /* ---- headline field ---- */
+  .field {
+    border: 1px solid var(--hair);
+    background-color: var(--surface);
+    padding: 22px 24px;
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .field .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  .field .headline {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(26px, 4.2vw, 38px);
+    line-height: 1.12;
+    letter-spacing: -.018em;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .field .row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .field .count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--dim);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- the copyable article ---- */
+  #cuerpo {
+    max-width: var(--measure);
+  }
+  #cuerpo > p, #cuerpo > h2, #cuerpo > .cierre {
+    margin: 0 0 22px;
+  }
+  #cuerpo h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(21px, 3vw, 27px);
+    line-height: 1.2;
+    letter-spacing: -.012em;
+    text-wrap: balance;
+    margin: 52px 0 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hair);
+  }
+  #cuerpo h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+  #cuerpo strong { font-weight: 700; }
+  #cuerpo em { font-style: italic; color: var(--dim); }
+  #cuerpo a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--signal); }
+  #cuerpo a:hover { color: var(--signal); }
+  #cuerpo hr {
+    border: none;
+    border-top: 1px solid var(--hair);
+    margin: 44px 0;
+  }
+  .cierre { color: var(--dim); font-size: 15.5px; line-height: 1.6; }
+  .cierre a { color: var(--dim); }
+
+  .nota {
+    max-width: var(--measure);
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hair);
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--dim);
+  }
+  .nota b { color: var(--text); font-weight: 500; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+
+<div class="shell">
+
+  <div class="bar">
+    <span class="stamp">Behind the Queue · EP.025</span>
+    <span class="meta" id="stats">—</span>
+    <button id="btn-cuerpo" type="button">Copiar cuerpo con formato</button>
+  </div>
+
+  <div class="field">
+    <span class="label">Titular del artículo</span>
+    <h1 class="headline" id="titular">"Ponerse la camiseta" nunca fue gratis: quién paga la cuenta</h1>
+    <div class="row">
+      <button id="btn-titular" type="button">Copiar titular</button>
+      <span class="count" id="count-titular">—</span>
+    </div>
+  </div>
+
+  <article id="cuerpo">
+
+    <p>Usted lo ha dicho, o se lo han dicho a usted. "Aquí somos familia." "Esto no es un trabajo, es una misión." "Necesito que se ponga la camiseta." Cada una le pide a alguien que dé algo (horas, silencio, sacrificio) a cambio de algo que casi nunca se paga en la misma moneda.</p>
+
+    <p>Este texto es sobre esa cuenta. Quién la puso, cuánto cobra, y qué pasa cuando alguien se niega a pagarla.</p>
+
+    <h2>Una petición sin techo</h2>
+
+    <p>"Ponerse la camiseta" no describe nada. No dice qué hacer, no dice cuánto, no dice hasta cuándo. Compárela con una instrucción real: "necesito que se quede hasta las ocho el jueves" tiene límite, fecha, y en teoría una compensación discutible. "Necesito que se ponga la camiseta" no tiene nada de eso. Nadie se pone demasiada camiseta: siempre se puede pedir un poco más.</p>
+
+    <p>Ahí está el primer truco: convierte una petición con límite en una identidad sin límite. Ya no es "trabaje estas horas extra", es "sea el tipo de persona que trabaja las horas que hagan falta". Y el segundo es peor: si ponerse la camiseta es quién es usted, entonces no ponérsela no es un desacuerdo laboral. Es una traición de carácter.</p>
+
+    <p>Y pues nadie negocia con un traidor.</p>
+
+    <h2>Dos momentos de la misma mentira</h2>
+
+    <p>No son empresas con el mismo problema. Son momentos distintos de la misma mentira: se vende, se defiende cuando alguien la señala, y se limpia cuando revienta. Desarrollo dos acá. El de en medio, el más incómodo porque es sobre cómo se castiga a quien pregunta, está completo en el artículo del sitio: <a href="https://behind-thequeue.com/episodios/ponerse-la-camiseta">behind-thequeue.com/episodios/ponerse-la-camiseta</a></p>
+
+    <p><strong>WeWork, se vende.</strong> WeWork vendía "comunidad", no escritorios. Pertenecer a "We" y a la misión de "elevar la conciencia del mundo" venía con jornadas largas y fiestas que también eran trabajo, presentadas como privilegio. Nadie llevaba la cuenta de las horas, porque preguntar se sentía como pedirle recibo a un amigo.</p>
+
+    <p>En noviembre de 2019 la empresa despidió a 2.400 personas, cerca de una de cada cinco, con tres meses de sueldo y un mes de indemnización, condicionado a renunciar al derecho de demandar. El fundador, Adam Neumann, salió el mismo año con un fee de asesoría de USD 185 millones y una línea de crédito de USD 500 millones, confirmados directamente por SoftBank. El litigio posterior con SoftBank se resolvió en marzo de 2021 por "aproximadamente USD 1.600 millones", también en comunicado oficial.</p>
+
+    <p>La misma palabra que servía para no pagar horas extra a un empleado sirvió para inventarle una ganancia a un inversionista. El prospecto de salida a bolsa de 2019, con una valoración implícita de USD 47.000 millones, incluía una métrica llamada "community-adjusted EBITDA" que restaba hasta el arriendo de las oficinas. En seis semanas la valoración se desplomó por debajo de los USD 20.000 millones y la oferta se retiró.</p>
+
+    <p><strong>Wells Fargo, se limpia cuando revienta.</strong> El banco fijó metas agresivas de venta cruzada (ocho productos por cliente, contra un promedio de industria de seis) con un programa de incentivos atado a cumplirlas. Miles de empleados recurrieron a lo que el propio regulador llamó "simulated funding": abrir cuentas sin consentimiento del cliente y mover fondos de sus cuentas reales para financiarlas y calificar al bono.</p>
+
+    <p>El resultado, en cifra del regulador: 1.534.280 cuentas potencialmente no autorizadas. El período relevante va de mayo de 2011 a julio de 2015, más de cuatro años, y el banco ya lo sabía: en 2013 Los Angeles Times había publicado una investigación sobre exactamente esta práctica, y el banco despidió entonces a unos treinta empleados. La respuesta de 2013 fue idéntica a la de 2016.</p>
+
+    <p>Cuando el escándalo llegó al Senado en septiembre de ese año, la senadora Elizabeth Warren acusó al entonces CEO John Stumpf de "liderazgo sin agallas" por no devolver nada de su compensación mientras la culpa caía sobre empleados de sucursal. La junta le quitó 41 millones de dólares en acciones no consolidadas. Cinco mil trescientos despidos no tuvieron audiencia pública ni cámaras.</p>
+
+    <h2>No fallaron viviendo la cultura</h2>
+
+    <p>La lectura fácil es que a estas empresas "se les fue de las manos la cultura". Es cómoda y está equivocada. En WeWork, la demanda sobre el tiempo de una persona superó lo que esa persona podía sostener sin que nadie pagara por ello. En Wells Fargo, cuando el mecanismo reventó, el castigo cayó sobre quien más se lo había creído.</p>
+
+    <p>La cultura no falló. Era el mecanismo, funcionando exactamente como se diseñó.</p>
+
+    <p>Esto no es una teoría de conspiración con ejecutivos frotándose las manos en una sala oscura. Es más simple: si un sistema de incentivos premia la extracción, y el lenguaje de familia hace que cuestionar la extracción se sienta como traición, ese sistema va a extraer hasta que algo reviente.</p>
+
+    <h2>Dos movidas para el lunes</h2>
+
+    <p><strong>Uno: ponga precio, de WeWork.</strong> Tome cualquier frase de las que abrieron este texto y tradúzcala a algo con número y con techo antes de pedirla otra vez. Si la respuesta sincera es "las que hagan falta", eso no es cultura fuerte: es una factura sin monto.</p>
+
+    <p><strong>Dos: separe la meta del castigo, de Wells Fargo.</strong> Antes de fijar la próxima meta agresiva, pregúntese quién más comparte la responsabilidad si alguien hace trampa para cumplirla. Escríbalo antes de que pase, no después.</p>
+
+    <p>El episodio completo trae una tercera movida, sacada del caso de Uber sobre qué le pasa a quien señala un problema, y por qué "cuestionar" se convierte en sinónimo de "traicionar" mucho antes de que nadie lo diga en voz alta.</p>
+
+    <p>De las tres frases que abrieron este texto, ¿cuál se dice más seguido en su operación, y qué está pagando de verdad quien la escucha?</p>
+
+    <hr>
+
+    <p class="cierre"><strong>Behind the Queue</strong> es un podcast en español para quienes dirigen equipos y operaciones. Cada episodio toma una ley, una teoría o un principio real de gestión y lo baja al piso: qué significa cuando hay gente, plata y un lunes de por medio. Casos documentados, cifras verificables y las fuentes a la vista.</p>
+
+    <p class="cierre">Este texto es una versión corta del episodio 25. La completa (con el caso de Uber y Susan Fowler, y las tres fuentes rastreables) está acá: <a href="https://behind-thequeue.com/episodios/ponerse-la-camiseta">behind-thequeue.com/episodios/ponerse-la-camiseta</a></p>
+
+    <p class="cierre">Escuchar el episodio (41 min): <a href="https://open.spotify.com/episode/5AgkBZ1F1M9WPU4MxxqESq">https://open.spotify.com/episode/5AgkBZ1F1M9WPU4MxxqESq</a></p>
+
+    <p class="cierre">Sitio: <a href="https://behind-thequeue.com">behind-thequeue.com</a></p>
+
+    <p class="cierre">LinkedIn: <a href="https://linkedin.com/company/behind-the-queue">linkedin.com/company/behind-the-queue</a></p>
+
+    <p class="cierre">Instagram: @behindthequeue84</p>
+
+    <p class="cierre">TikTok: @behind.the.queue</p>
+
+    <p class="cierre">Facebook: <a href="https://facebook.com/behindthequeue">facebook.com/behindthequeue</a></p>
+
+    <p class="cierre">Escríbame: <a href="mailto:andy@behind-thequeue.com">andy@behind-thequeue.com</a></p>
+
+    <p class="cierre">#Liderazgo #GestionDeEquipos #CulturaOrganizacional #RecursosHumanos #Management #Operaciones #Colombia</p>
+
+  </article>
+
+  <div class="nota">
+    <b>Cómo usarlo.</b> "Copiar cuerpo con formato" pone el texto en el portapapeles como HTML:
+    al pegarlo en el editor de artículos de LinkedIn, los encabezados llegan como encabezados y
+    las negritas como negritas — no hay que marcarlas a mano.<br><br>
+    <b>El titular va aparte</b> porque en LinkedIn es un campo propio, no la primera línea del cuerpo.<br><br>
+    <b>Antes de publicar:</b> súbale la imagen de encabezado —
+    <code>E:\AI\outputs\BTQ-EP025\BTQ-EP025-COVER-16x9.png</code> — y revise que los
+    tres enlaces del cierre quedaron activos; LinkedIn a veces los pega como texto plano.
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var cuerpo = document.getElementById("cuerpo");
+    var titular = document.getElementById("titular");
+
+    function contarPalabras(t) {
+      var limpio = t.replace(/\s+/g, " ").trim();
+      return limpio ? limpio.split(" ").length : 0;
+    }
+
+    var palabras = contarPalabras(cuerpo.innerText);
+    var minutos = Math.max(1, Math.round(palabras / 250));
+    document.getElementById("stats").textContent =
+      palabras.toLocaleString("es-CO") + " palabras · ~" + minutos + " min de lectura";
+
+    var tl = titular.textContent.trim().length;
+    document.getElementById("count-titular").textContent =
+      tl + " caracteres · tope de LinkedIn 150";
+
+    function marcar(btn, texto) {
+      var original = btn.dataset.original || btn.textContent;
+      btn.dataset.original = original;
+      btn.textContent = texto;
+      btn.classList.add("done");
+      setTimeout(function () {
+        btn.textContent = original;
+        btn.classList.remove("done");
+      }, 2200);
+    }
+
+    function copiarPlano(texto, btn) {
+      var ta = document.createElement("textarea");
+      ta.value = texto;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      marcar(btn, ok ? "Copiado" : "No se pudo — selecciónelo a mano");
+    }
+
+    document.getElementById("btn-cuerpo").addEventListener("click", function () {
+      var btn = this;
+      var html = cuerpo.innerHTML;
+      var plano = cuerpo.innerText;
+      if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+        navigator.clipboard.write([
+          new ClipboardItem({
+            "text/html": new Blob([html], { type: "text/html" }),
+            "text/plain": new Blob([plano], { type: "text/plain" })
+          })
+        ]).then(function () {
+          marcar(btn, "Copiado con formato");
+        }).catch(function () {
+          copiarPlano(plano, btn);
+        });
+      } else {
+        copiarPlano(plano, btn);
+      }
+    });
+
+    document.getElementById("btn-titular").addEventListener("click", function () {
+      var btn = this;
+      var t = titular.textContent.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () {
+          marcar(btn, "Copiado");
+        }).catch(function () {
+          copiarPlano(t, btn);
+        });
+      } else {
+        copiarPlano(t, btn);
+      }
+    });
+  })();
+</script>
