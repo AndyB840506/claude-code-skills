@@ -189,7 +189,11 @@ Tipo:               Full / Trailer / Bonus
 
 ## Paso 3 — Guardar y presentar
 
-1. Guarda como `shownotes-ep[NNN].md` en el directorio actual.
+1. Guarda como `episodios/ep[NNN]-metadata.md` (mismo directorio que `artwork-ep[NNN].md`,
+   ver `03-artwork.md`) — NO en la raíz del proyecto. Si el show separa temporadas con
+   numeración propia (ej. MPD T2), usa `episodios/temporada-[N]/ep[NNN]-metadata.md`.
+   Mordió en MPD EP.02 (2026-08-06): quedó en la raíz como `shownotes-ep02.md`, fuera del
+   patrón de los episodios anteriores, y tocó reorganizarlo a mano después.
 2. Muestra verificación de longitudes:
 
 ```
@@ -200,7 +204,7 @@ Tipo:               Full / Trailer / Bonus
   Título Spotify:     [N] chars [✓/✗]
   Descripción corta:  [N] chars [✓/✗]
   Keywords SEO:       [N] terms
-  Archivo:            shownotes-ep[NNN].md
+  Archivo:            episodios/ep[NNN]-metadata.md
 ══════════════════════════════════════════
 ```
 

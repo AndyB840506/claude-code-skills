@@ -10,12 +10,14 @@ Genera dos archivos HTML por episodio: un paquete de producción interno y una p
 
 Pregunta el número de episodio si no está claro en el contexto.
 
-Lee los siguientes archivos (los que existan en el directorio):
-1. `podcast-profile.json` — identidad del podcast (requerido)
+Lee los siguientes archivos (los que existan) desde `episodios/` — o `episodios/temporada-[N]/`
+si el show separa temporadas con numeración propia (ej. MPD T2, ver `03-artwork.md` /
+`05-show-notes.md` / `07-youtube.md` para la misma convención):
+1. `podcast-profile.json` — identidad del podcast (requerido, vive en la raíz del proyecto)
 2. `episodio-[NNN]-*.md` — script del episodio
 3. `grabacion-ep[NNN].md` — checklists de grabación
 4. `social-ep[NNN].md` — plan de social media
-5. `shownotes-ep[NNN].md` — show notes y metadatos
+5. `ep[NNN]-metadata.md` — show notes y metadatos
 
 Si falta algún archivo importante (script o show notes), informa al usuario:
 > "No encontré [archivo]. ¿Quieres generarlo primero o incluyo esa sección como pendiente en el HTML?"

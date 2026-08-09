@@ -78,6 +78,6 @@ Verificados contra el SRT real (`E:\Transcriptor\transcripciones\MPD EP 02.srt`)
   Tags:               19 terms
   Capítulos:          6 bloques · primero en 00:00 ✓
                       más corto: 105 s / mín 10 s ✓
-  Archivo:            episodios/temporada-2/ep02-youtube.md
+  Archivo:            episodios/temporada-2/youtube-ep02.md
 ══════════════════════════════════════════
 ```

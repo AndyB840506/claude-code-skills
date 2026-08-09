@@ -27,7 +27,7 @@ EPISODE BRIEF
 
 ## Stage 2a — Show notes + YouTube
 - Qué se hizo: workflows 05-show-notes.md y 07-youtube.md de podcast-creator, con timestamps verificados contra el SRT real (no los estimados del guion)
-- Archivos generados: mrputridsden-production/episodios/temporada-2/ep02-metadata.md, mrputridsden-production/episodios/temporada-2/ep02-youtube.md (movidos y renombrados desde shownotes-ep02.md/youtube-ep02.md el 2026-08-09, ver nota abajo)
+- Archivos generados: mrputridsden-production/episodios/temporada-2/ep02-metadata.md, mrputridsden-production/episodios/temporada-2/youtube-ep02.md (movidos desde shownotes-ep02.md/youtube-ep02.md el 2026-08-09, ver nota abajo)
 - Resultado: OK — título Spotify 64 chars, descripción corta 128 chars, 6 capítulos YouTube verificados (mínimo 105s, regla de los 10s)
 
 ## Stage 2b — Artwork (composición nueva, no el formato numeral de EP.006)
@@ -47,8 +47,8 @@ EPISODE BRIEF
 ## Reorganización 2026-08-09 — episodios/temporada-2/
 `shownotes-ep02.md`, `youtube-ep02.md` y `social-ep02.md` vivían sueltos en la raíz de
 `mrputridsden-production/`, distinto del patrón de EP.001-005 (`episodios/ep0XX-metadata.md`).
-Movidos y renombrados a `episodios/temporada-2/ep02-metadata.md` / `ep02-youtube.md` /
-`social-ep02.md`. De paso, `episodios/ep006-metadata.md`, `social-ep006.md` y `youtube-ep006.md`
+Movidos y renombrados a `episodios/temporada-2/ep02-metadata.md` / `youtube-ep02.md` /
+`social-ep02.md` (esta última no cambió de nombre). De paso, `episodios/ep006-metadata.md`, `social-ep006.md` y `youtube-ep006.md`
 (que sí seguían el patrón pero vivían sueltos en `episodios/`, mezclados con los de T1) se
 movieron también a `episodios/temporada-2/` para que la carpeta separe T1 de T2 consistentemente.
 **Los handoffs históricos que citan las rutas viejas de EP.006 NO se reescribieron** (narran el

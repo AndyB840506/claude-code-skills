@@ -120,7 +120,11 @@ tiene esta regla. **La lista de capítulos de Spotify no es portable a YouTube t
 
 ## Paso 3 — Guardar y presentar
 
-1. Guarda como `youtube-ep[NNN].md` en el directorio actual.
+1. Guarda como `episodios/youtube-ep[NNN].md` (mismo directorio que `artwork-ep[NNN].md`,
+   ver `03-artwork.md`) — NO en la raíz del proyecto. Si el show separa temporadas con
+   numeración propia (ej. MPD T2), usa `episodios/temporada-[N]/youtube-ep[NNN].md`.
+   Mordió en MPD EP.02 (2026-08-06): quedó en la raíz, fuera del patrón, y tocó
+   reorganizarlo a mano después.
 2. Muestra verificación de longitudes:
 
 ```
@@ -132,7 +136,7 @@ tiene esta regla. **La lista de capítulos de Spotify no es portable a YouTube t
   Tags:               [N] terms · [N] chars / 500 [✓/✗]
   Capítulos:          [N] bloques · primero en 00:00 [✓/✗]
                       más corto: [N] s / mín 10 s [✓/✗]
-  Archivo:            youtube-ep[NNN].md
+  Archivo:            episodios/youtube-ep[NNN].md
 ══════════════════════════════════════════
 ```
 

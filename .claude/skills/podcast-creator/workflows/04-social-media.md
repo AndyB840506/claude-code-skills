@@ -288,5 +288,9 @@ Presenta este kit con la nota: "Puedes enviarle esto al invitado para que compar
 
 ## Paso 4 — Guardar
 
-1. Guarda como `social-ep[NNN].md` en el directorio actual.
+1. Guarda como `episodios/social-ep[NNN].md` (mismo directorio que `artwork-ep[NNN].md`,
+   ver `03-artwork.md`) — NO en la raíz del proyecto. Si el show separa temporadas con
+   numeración propia (ej. MPD T2), usa `episodios/temporada-[N]/social-ep[NNN].md`.
+   Mordió en MPD EP.02 (2026-08-06): quedó en la raíz, fuera del patrón, y tocó
+   reorganizarlo a mano después.
 2. Pregunta: "¿Quieres generar las show notes o exportar todo el paquete en HTML?"
