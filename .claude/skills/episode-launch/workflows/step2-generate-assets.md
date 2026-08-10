@@ -262,6 +262,12 @@ practice, which may keep evolving past what's written here. If WebFetch can't re
 page (YouTube is a JS-heavy SPA and often returns unusable HTML), fall back to the format
 documented here — it was captured directly from a YouTube Studio screenshot, not scraped.
 
+**This same JS-rendering wall applies to confirming whether an episode's redes/YouTube were
+already posted** — not just to checking format. Instagram, Facebook, and LinkedIn are
+login-walled and TikTok's page also returns nothing useful to WebFetch. Don't burn turns
+retrying scrapes on these platforms to verify publish status; ask Andy directly (mordió
+2026-08-10 resolviendo EP.024).
+
 - **Title:** Long, hook-style — `[Hook / cultural reference]: [punch line] | EP.0XX | Behind the Queue`.
   No hard 60-char limit in practice (EP.015's title runs ~95 chars). El punch line
   lleva al menos una keyword buscable (BPO / liderazgo / call center) — misma regla

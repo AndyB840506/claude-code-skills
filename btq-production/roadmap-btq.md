@@ -3,6 +3,12 @@
 Fuente de verdad de "qué episodio sigue". `episode-pipeline` la lee al arrancar
 Stage A (`00-roadmap.md`) y la actualiza al cerrar cada macro-stage.
 
+**Esta tabla es un resumen y se desactualiza** — se escribe una vez y no siempre se toca de
+nuevo cuando el episodio avanza. Para el estado real de un episodio en producción, abrir
+`pipeline-state-epXX.md`; si contradice esta fila, gana el pipeline-state y esta fila se corrige
+en el momento (mordió el 2026-08-10 con EP.024: la fila decía "falta expandir" una semana
+después de publicado).
+
 Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` → `publicado`
 
 | EP | Título | Estado |
