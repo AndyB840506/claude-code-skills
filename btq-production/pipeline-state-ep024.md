@@ -1,7 +1,10 @@
 EPISODE: EP.024 (BTQ) — «Por qué su equipo no le cuenta los problemas»
 stage_a: **cerrado** 2026-08-01 — guion v2 escrito, artwork cerrado, episodio grabado.
 stage_b: **cerrado** 2026-08-03 — publicado en Spotify, URL confirmada, descripción pegada por Andy.
-stage_c: **en curso** — URL propagada al sitio y home rotada; falta deploy, redes y YouTube.
+stage_c: **cerrado** 2026-08-10 — sitio desplegado (verificado HTTP 200), redes publicadas y
+episodio subido a YouTube (canal @BehindTheQueue-j3v), confirmado por Andy. El roadmap general
+(`roadmap-btq.md`) había quedado desactualizado (decía "guion v2 escrito, falta expandir") pese
+a que esto ya estaba cerrado desde el 2026-08-03 — corregido en la misma sesión.
 
 ## Estado de producción (2026-08-01, medido)
 
