@@ -35,8 +35,9 @@ estimation.
 ## Deliverable output contract
 
 `C:\Users\andre\repos\the-freelancer\freelancer\deliverable.js` —
-`BASE_RULES` constant (lines 12–23): single self-contained HTML file, inline
-CSS/JS, print-safe colors, brand frame ("The Freelancer", teal #0d9488) for
+`BASE_RULES` constant: single self-contained HTML file, inline
+CSS/JS, print-safe colors, brand frame (header on dark #0e1113 with orange #ff3d00
+accents and cream #f3efe7 text) for
 reports/audits, EXCEPTION: client's own branding when the deliverable IS their
 website (Web Page Kit, Social Profile to Web). Language: written in the
 client's language (the order's "Language" line — en/es/pt), or the dominant
