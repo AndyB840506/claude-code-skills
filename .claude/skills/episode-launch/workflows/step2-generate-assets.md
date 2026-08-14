@@ -326,8 +326,15 @@ python comfyui/templates/portada-ep-compose.py @titulo.txt
 **Compuerta antes de aprobar:**
 
 ```
-python scripts/verify_assets.py EP0XX --root E:\AI\outputs\BTQ-EP0XX --show btq
+python scripts/verify_assets.py EP0XX --root "E:\Podcast\BTQ\EP NN\BTQ Artwork EP NN" --show btq
 ```
+
+> ⚠️ **No `E:\AI\outputs\BTQ-EP0XX\`** — esa es la carpeta de assets de MARCA (portada del show,
+> avatar, banner). Las portadas y quote cards de un EPISODIO van junto a su audio, en
+> `E:\Podcast\BTQ\EP NN\BTQ Artwork EP NN\` (regla fijada 2026-07-31 en `brand-constants.md`,
+> repetida sin corregir en EP.025 y en el primer intento de EP.026). Verificar el nombre real de
+> la carpeta del episodio antes de generar — no ha sido consistente (`EP 25` con espacio,
+> `EP26` sin espacio, por ejemplo).
 
 Más `--stage-a` si el episodio todavía no se ha grabado (sin audio no hay quote cards y la
 compuerta falla por cards faltantes).

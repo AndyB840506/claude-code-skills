@@ -33,9 +33,10 @@ guion no se puede atribuir, **no entra al artículo**.
    `por-que-su-equipo-rinde-distinto-cuando-lo-miran`. Es la URL permanente — no se
    cambia después de publicar.
 
-3. **Copiar la imagen del preview:**
+3. **Copiar la imagen del preview** (la fuente es la carpeta del EPISODIO, no la de assets de
+   marca — ver la advertencia de `step2-generate-assets.md` §D):
    ```powershell
-   Copy-Item "E:\AI\outputs\BTQ-EPNNN\BTQ-EPNNN-COVER-16x9.png" `
+   Copy-Item "E:\Podcast\BTQ\EP NN\BTQ Artwork EP NN\BTQ-EPNNN-COVER-16x9.png" `
              "btq-production\website\og\btq-epNNN.png" -Force
    ```
    Es la portada, **no** una quote card (razón en §B.1).

@@ -1,0 +1,385 @@
+<title>EP.026 — Artículo de LinkedIn</title>
+
+<style>
+  :root {
+    --void: #0E1113;
+    --panel: #1F2428;
+    --panel-2: #22262A;
+    --rule: #39434A;
+    --muted: #8B9492;
+    --ink: #F4EFE7;
+    --signal: #FF3D00;
+    --ground: var(--void);
+    --surface: var(--panel);
+    --hair: var(--rule);
+    --dim: var(--muted);
+    --text: var(--ink);
+    --stripe: rgba(244, 239, 231, .022);
+    --display: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --body: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono: "Cascadia Mono", "Consolas", "SF Mono", ui-monospace, monospace;
+    --measure: 62ch;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --ground: #F4EFE7;
+      --surface: #EAE3D7;
+      --hair: #C8BFB1;
+      --dim: #6B6459;
+      --text: #14171A;
+      --stripe: rgba(20, 23, 26, .028);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: var(--void);
+    --surface: var(--panel);
+    --hair: var(--rule);
+    --dim: var(--muted);
+    --text: var(--ink);
+    --stripe: rgba(244, 239, 231, .022);
+  }
+  :root[data-theme="light"] {
+    --ground: #F4EFE7;
+    --surface: #EAE3D7;
+    --hair: #C8BFB1;
+    --dim: #6B6459;
+    --text: #14171A;
+    --stripe: rgba(20, 23, 26, .028);
+  }
+
+  body {
+    background-color: var(--ground);
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--stripe) 0 1px,
+      transparent 1px 84px
+    );
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .shell {
+    max-width: 78ch;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  .bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    padding: 14px 0;
+    margin-bottom: 40px;
+    background-color: var(--ground);
+    border-bottom: 1px solid var(--hair);
+  }
+  .bar .stamp {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--signal);
+  }
+  .bar .meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: var(--dim);
+    font-variant-numeric: tabular-nums;
+    margin-right: auto;
+  }
+
+  button {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--hair);
+    padding: 9px 16px;
+    cursor: pointer;
+    transition: border-color .15s, color .15s, background-color .15s;
+  }
+  button:hover { border-color: var(--signal); color: var(--signal); }
+  button:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+  button.done { border-color: var(--signal); color: var(--ground); background-color: var(--signal); }
+
+  .field {
+    border: 1px solid var(--hair);
+    background-color: var(--surface);
+    padding: 22px 24px;
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .field .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  .field .headline {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(26px, 4.2vw, 38px);
+    line-height: 1.12;
+    letter-spacing: -.018em;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .field .row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .field .count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--dim);
+    font-variant-numeric: tabular-nums;
+  }
+
+  #cuerpo {
+    max-width: var(--measure);
+  }
+  #cuerpo > p, #cuerpo > h2, #cuerpo > .cierre {
+    margin: 0 0 22px;
+  }
+  #cuerpo h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(21px, 3vw, 27px);
+    line-height: 1.2;
+    letter-spacing: -.012em;
+    text-wrap: balance;
+    margin: 52px 0 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hair);
+  }
+  #cuerpo h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+  #cuerpo strong { font-weight: 700; }
+  #cuerpo em { font-style: italic; color: var(--dim); }
+  #cuerpo a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--signal); }
+  #cuerpo a:hover { color: var(--signal); }
+  #cuerpo hr {
+    border: none;
+    border-top: 1px solid var(--hair);
+    margin: 44px 0;
+  }
+  .cierre { color: var(--dim); font-size: 15.5px; line-height: 1.6; }
+  .cierre a { color: var(--dim); }
+
+  .nota {
+    max-width: var(--measure);
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hair);
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--dim);
+  }
+  .nota b { color: var(--text); font-weight: 500; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+
+<div class="shell">
+
+  <div class="bar">
+    <span class="stamp">Behind the Queue · EP.026</span>
+    <span class="meta" id="stats">—</span>
+    <button id="btn-cuerpo" type="button">Copiar cuerpo con formato</button>
+  </div>
+
+  <div class="field">
+    <span class="label">Titular del artículo</span>
+    <h1 class="headline" id="titular">El candidato que está buscando no existe: por qué esa vacante sigue abierta</h1>
+    <div class="row">
+      <button id="btn-titular" type="button">Copiar titular</button>
+      <span class="count" id="count-titular">—</span>
+    </div>
+  </div>
+
+  <article id="cuerpo">
+
+    <p>Cuatro meses. Y en algún punto usted dejó de preguntarse quién va a llenar esa vacante y empezó a preguntarse algo más incómodo: ¿existe siquiera la persona que está pidiendo?</p>
+
+    <p>La respuesta corta es que probablemente no. No al precio que fijó.</p>
+
+    <p>Este texto es sobre eso: por qué "no hay talento" y "no hay talento al precio que estoy dispuesto a pagar" se sienten exactamente igual desde la silla del que contrata, y son dos problemas completamente distintos.</p>
+
+    <h2>El animal que todo reclutador conoce</h2>
+
+    <p>En inglés le dicen "purple squirrel", la ardilla morada. En español casi siempre le decimos otra cosa: el candidato unicornio. Habla inglés B2 o mejor, tiene seis años de experiencia en un software que salió hace tres, y una aspiración salarial que el presupuesto aprobó hace dos años, cuando el mercado era distinto.</p>
+
+    <p>Ese candidato existe en la descripción del cargo. Casi nunca existe en la vida real. El ejemplo más literal: en 2020, un desarrollador llamado Sebastián Ramírez creó una herramienta de programación llamada FastAPI. Año y medio después circulaban ofertas de trabajo pidiendo "más de cuatro años de experiencia con FastAPI". Ni el propio creador de la herramienta calificaba para esa vacante.</p>
+
+    <p>Voy a desarrollar dos casos acá. El tercero, sobre 116 municipios colombianos con un solo médico, está completo en el artículo del sitio: <a href="https://behind-thequeue.com/episodios/por-que-no-llena-esa-vacante-hace-cuatro-meses">behind-thequeue.com/episodios/por-que-no-llena-esa-vacante-hace-cuatro-meses</a></p>
+
+    <h2>Colombia: la torre de control sin gente en la torre</h2>
+
+    <p>Noviembre de 2023. La Asociación Colombiana de Controladores de Tránsito Aéreo advirtió un déficit de 400 controladores aéreos. Aerocivil respondió que la cifra real era 48. Detrás de la disputa había una causa que las dos partes compartían: la formación de nuevos controladores llevaba cinco años congelada.</p>
+
+    <p>La consecuencia no se quedó en el papel. En una sola jornada, Avianca canceló 66 vuelos y retrasó otros 400, con 9.400 pasajeros afectados por los espaciamientos de seguridad que la propia falta de personal obligó a poner.</p>
+
+    <p>Y acá está la parte que cambia todo el sentido de "no hay presupuesto". Un estudio interno de 2018 ya recomendaba 799 controladores. Para 2025, la planta seguía en 715: 84 vacantes reales, siete años después del propio diagnóstico del Estado, mientras el tráfico de El Dorado pasaba de 30 a más de 50 millones de pasajeros anuales.</p>
+
+    <p>Cuando por fin apareció presupuesto, no fue a formar controladores nuevos. Una investigación de la Procuraduría, abierta en mayo de 2026, señala un bono del 154% para controladores en Bogotá (salarios que se acercan a los 20 millones mensuales) y documentos internos que muestran pagos a personal que no cumplió su carga operativa completa. Son denuncias en investigación, no hechos probados. Pero el patrón es el mismo: la plata, cuando llegó, se fue a los que ya estaban adentro, no a producir a los que faltan.</p>
+
+    <p>Pagar más al mismo número de personas no resuelve un déficit de 84 controladores. Solo lo hace más caro de sostener.</p>
+
+    <h2>Reino Unido: cuando el que no contrató fue el mercado libre</h2>
+
+    <p>Septiembre de 2021. Reino Unido, con dinero, con infraestructura y con gasolina de sobra en los tanques de almacenamiento, se quedó sin gasolina en los surtidores. No fue un ataque ni un desastre natural. Al país le faltaban 70.000 conductores de camión de carga pesada.</p>
+
+    <p>Durante años, las empresas de transporte cubrieron ese oficio (licencia especial, exámenes, entrenamiento) con conductores europeos dispuestos a aceptar el salario ofrecido. Cuando esa fuente se cerró (Brexit, retiro, la pandemia cerrando los centros de examen dos años) el país se quedó sin quien manejara los camiones. El gobierno tuvo que poner al ejército en alerta y autorizar de emergencia a 300 conductores extranjeros. Para el 27 de septiembre, entre el 50% y el 90% de las gasolineras de algunas regiones de Inglaterra estaban secas.</p>
+
+    <p>Subir el salario era, para cualquier empresa individual, una mala decisión de negocio: pagar más que la competencia significaba perder el contrato con el cliente. Nadie se movía primero. El techo no lo puso el mercado. Lo puso una decisión colectiva de no moverse primero, la misma lógica que frena a un gerente que no sube un salario "porque el resto del equipo se va a enterar".</p>
+
+    <p>El mercado no le debe candidatos gratis. Se los cobra, tarde o temprano, con la vacante abierta.</p>
+
+    <h2>La auditoría, no la lista de virtudes de buen jefe</h2>
+
+    <p>Peter Cappelli, profesor de Wharton, encontró algo incómodo revisando años de datos de contratación en Estados Unidos: cuando se pregunta a los empleadores por qué no encuentran candidatos, el salario siempre queda de último en la lista de culpables. Google, según cuenta Laszlo Bock en "Work Rules!", encontró correlación cero entre el desempeño en la entrevista y el desempeño real en el puesto.</p>
+
+    <p>Dos movidas, de las tres que trae el episodio completo:</p>
+
+    <p><strong>Uno: el precio real, antes que el perfil.</strong> Busque en dos o tres fuentes reales, no en lo que le gustaría pagar, cuánto cuesta hoy ese perfil exacto en el mercado. Si el número le da vergüenza, ya tiene la respuesta de por qué nadie contesta.</p>
+
+    <p><strong>Dos: lo que ya le costó la vacante vacía.</strong> Sume las horas extra que el equipo ha absorbido y lo que se dejó de entregar. Ese número casi siempre es más alto que la diferencia salarial que nunca se aprobó.</p>
+
+    <p>La tercera movida, sobre cuándo pagar y cuándo entrenar (con el caso de Estados Unidos entrenando a casi siete millones de trabajadores nuevos en 1942 en vez de esperar al operario perfecto), está en el episodio completo.</p>
+
+    <p>¿Cuánto le ha costado de verdad la vacante que lleva más tiempo abierta en su equipo?</p>
+
+    <hr>
+
+    <p class="cierre"><strong>Behind the Queue</strong> es un podcast en español para quienes dirigen equipos y operaciones. Cada episodio toma un problema operativo real y lo baja al piso: qué significa cuando hay gente, plata y un lunes de por medio. Casos documentados, cifras verificables y las fuentes a la vista.</p>
+
+    <p class="cierre">Este texto es una versión corta del episodio 26. La completa, con el caso de los médicos rurales colombianos y la aplicación entera, está acá: <a href="https://behind-thequeue.com/episodios/por-que-no-llena-esa-vacante-hace-cuatro-meses">behind-thequeue.com/episodios/por-que-no-llena-esa-vacante-hace-cuatro-meses</a></p>
+
+    <p class="cierre">Escuchar el episodio (~37 min): <a href="PENDIENTE-URL-SPOTIFY">PENDIENTE-URL-SPOTIFY</a></p>
+
+    <p class="cierre">Sitio: <a href="https://behind-thequeue.com">behind-thequeue.com</a></p>
+
+    <p class="cierre">LinkedIn: <a href="https://linkedin.com/company/behind-the-queue">linkedin.com/company/behind-the-queue</a></p>
+
+    <p class="cierre">Instagram: @behindthequeue84</p>
+
+    <p class="cierre">TikTok: @behind.the.queue</p>
+
+    <p class="cierre">Facebook: <a href="https://facebook.com/behindthequeue">facebook.com/behindthequeue</a></p>
+
+    <p class="cierre">Escríbame: <a href="mailto:andy@behind-thequeue.com">andy@behind-thequeue.com</a></p>
+
+    <p class="cierre">#Liderazgo #GestionDeEquipos #Contratacion #RecursosHumanos #Reclutamiento #Talento #Colombia</p>
+
+  </article>
+
+  <div class="nota">
+    <b>Cómo usarlo.</b> "Copiar cuerpo con formato" pone el texto en el portapapeles como HTML:
+    al pegarlo en el editor de artículos de LinkedIn, los encabezados llegan como encabezados y
+    las negritas como negritas — no hay que marcarlas a mano.<br><br>
+    <b>El titular va aparte</b> porque en LinkedIn es un campo propio, no la primera línea del cuerpo.<br><br>
+    <b>Antes de publicar:</b> reemplazar <code>PENDIENTE-URL-SPOTIFY</code> con la URL real,
+    subirle la imagen de encabezado —
+    <code>E:\AI\outputs\BTQ-EP026\BTQ-EP026-COVER-16x9.png</code> — y revisar que los
+    enlaces del cierre quedaron activos; LinkedIn a veces los pega como texto plano.
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var cuerpo = document.getElementById("cuerpo");
+    var titular = document.getElementById("titular");
+
+    function contarPalabras(t) {
+      var limpio = t.replace(/\s+/g, " ").trim();
+      return limpio ? limpio.split(" ").length : 0;
+    }
+
+    var palabras = contarPalabras(cuerpo.innerText);
+    var minutos = Math.max(1, Math.round(palabras / 250));
+    document.getElementById("stats").textContent =
+      palabras.toLocaleString("es-CO") + " palabras · ~" + minutos + " min de lectura";
+
+    var tl = titular.textContent.trim().length;
+    document.getElementById("count-titular").textContent =
+      tl + " caracteres · tope de LinkedIn 150";
+
+    function marcar(btn, texto) {
+      var original = btn.dataset.original || btn.textContent;
+      btn.dataset.original = original;
+      btn.textContent = texto;
+      btn.classList.add("done");
+      setTimeout(function () {
+        btn.textContent = original;
+        btn.classList.remove("done");
+      }, 2200);
+    }
+
+    function copiarPlano(texto, btn) {
+      var ta = document.createElement("textarea");
+      ta.value = texto;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(ta);
+      marcar(btn, ok ? "Copiado" : "No se pudo — selecciónelo a mano");
+    }
+
+    document.getElementById("btn-cuerpo").addEventListener("click", function () {
+      var btn = this;
+      var html = cuerpo.innerHTML;
+      var plano = cuerpo.innerText;
+      if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+        navigator.clipboard.write([
+          new ClipboardItem({
+            "text/html": new Blob([html], { type: "text/html" }),
+            "text/plain": new Blob([plano], { type: "text/plain" })
+          })
+        ]).then(function () {
+          marcar(btn, "Copiado con formato");
+        }).catch(function () {
+          copiarPlano(plano, btn);
+        });
+      } else {
+        copiarPlano(plano, btn);
+      }
+    });
+
+    document.getElementById("btn-titular").addEventListener("click", function () {
+      var btn = this;
+      var t = titular.textContent.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(function () {
+          marcar(btn, "Copiado");
+        }).catch(function () {
+          copiarPlano(t, btn);
+        });
+      } else {
+        copiarPlano(t, btn);
+      }
+    });
+  })();
+</script>

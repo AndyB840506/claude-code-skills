@@ -1,0 +1,585 @@
+<style>
+        :root {
+            /* Sistema v4 "Sala de Maquinas" -- fuente canonica:
+               episode-launch/docs/brand-constants.md. Se fue el oro. */
+            --bg: #0E1113;          /* Void -- nunca negro puro */
+            --card: #22262A;        /* Panel */
+            --card2: #191D20;
+            --signal: #FF3D00;
+            --signal-dim: #9E2600;
+            --offwhite: #F4EFE7;    /* Cream */
+            --muted: #8B9492;
+            --steel: #39434A;
+            /* Fuentes instaladas por usuario; el fallback cubre otras maquinas. */
+            --display: 'Cabinet Grotesk', 'Arial Black', system-ui, sans-serif;
+            --sans: 'Supreme', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            --mono: 'Martian Mono', ui-monospace, Consolas, monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--sans);
+            background: #08090A;
+            color: var(--offwhite);
+            line-height: 1.8;
+            font-size: 15.5px;
+        }
+
+        .container { max-width: 820px; margin: 0 auto; background: var(--bg); }
+
+        .header {
+            background: linear-gradient(160deg, #22262A 0%, #0E1113 70%);
+            padding: 46px 48px 40px;
+            border-bottom: 3px solid var(--signal);
+        }
+        .header .podcast {
+            font-family: var(--mono);
+            font-size: 1.15em;
+            color: var(--signal);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .header .epnum {
+            font-family: var(--mono);
+            font-size: 2.6em;
+            color: var(--signal);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+        .header h1 {
+            font-family: var(--display);
+            font-size: 2em;
+            font-weight: 900;
+            margin: 6px 0 10px;
+            color: var(--offwhite);
+            line-height: 1.18;
+        }
+        .header .tagline {
+            font-family: var(--display);
+            font-style: italic;
+            color: var(--signal);
+            font-size: 1.05em;
+            margin-bottom: 22px;
+        }
+        .meta { display: flex; gap: 12px; flex-wrap: wrap; }
+        .meta-item {
+            background: rgba(255,61,0,0.10);
+            border: 1px solid var(--signal-dim);
+            padding: 5px 13px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            color: var(--signal);
+            letter-spacing: 0.5px;
+        }
+
+        .section { padding: 32px 48px; border-bottom: 1px solid #222; }
+        .section h2 {
+            font-family: var(--mono);
+            font-size: 1.15em;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--signal);
+            margin-bottom: 20px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid var(--signal-dim);
+        }
+
+        .arquitectura { font-size: 0.9em; }
+        .arq-row {
+            display: grid;
+            grid-template-columns: 30px 1.1fr 95px 1.6fr;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid #1c1c1c;
+            align-items: start;
+        }
+        .arq-row.head { color: var(--signal); font-weight: 700; border-bottom: 1px solid var(--signal-dim); }
+        .arq-num { color: var(--signal); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--offwhite); }
+        .arq-time { color: var(--muted); font-family: monospace; font-size: 0.92em; }
+        .arq-row span:last-child { color: var(--muted); }
+
+        .segment { margin: 40px 0; padding-bottom: 26px; border-bottom: 1px solid #1a1a1a; }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+        .segment-number {
+            font-family: var(--mono);
+            background: var(--signal);
+            color: #0E1113;
+            min-width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1em; font-weight: bold;
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+        .segment-title {
+            font-family: var(--mono);
+            font-weight: 400;
+            font-size: 1.15em;
+            color: var(--offwhite);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .segment-time {
+            margin-left: auto;
+            font-size: 0.78em;
+            color: var(--muted);
+            background: #181818;
+            padding: 3px 11px;
+            border-radius: 10px;
+            white-space: nowrap;
+            font-family: monospace;
+        }
+        .sub { font-family: var(--display); font-style: italic; font-size: 1.12em; color: var(--signal); margin: 26px 0 8px; }
+
+        p.line { margin: 0 0 4px; color: #e9e6dd; }
+
+        .pausa {
+            display: inline-block;
+            font-family: var(--mono);
+            letter-spacing: 2px;
+            font-size: 0.72em;
+            color: var(--signal-dim);
+            border: 1px solid #2a2a2a;
+            border-radius: 4px;
+            padding: 0 8px;
+            margin: 8px 0;
+            background: #111;
+        }
+        .pausa.larga { color: var(--signal); border-color: var(--signal-dim); }
+
+        .remate {
+            border-left: 3px solid var(--signal);
+            background: linear-gradient(90deg, rgba(255,61,0,0.07), transparent);
+            padding: 14px 20px;
+            margin: 18px 0;
+            font-family: var(--display);
+            font-size: 1.08em;
+            color: var(--offwhite);
+        }
+        .remate::before {
+            content: "REMATE";
+            display: block;
+            font-family: var(--mono);
+            font-size: 0.62em;
+            letter-spacing: 3px;
+            color: var(--signal);
+            margin-bottom: 6px;
+        }
+
+        .nota {
+            background: #17191B;
+            border: 1px dashed var(--signal-dim);
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 14px 0;
+            font-size: 0.85em;
+            color: #A8B0AE;
+        }
+        .nota::before { content: "NOTA · "; font-family: var(--mono); letter-spacing: 2px; color: var(--signal); }
+
+        .dato {
+            background: var(--card2);
+            border-left: 4px solid var(--signal);
+            border-radius: 0 5px 5px 0;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .dato-label {
+            font-family: var(--mono);
+            font-size: 0.78em;
+            letter-spacing: 3px;
+            color: var(--signal);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        em { color: var(--signal); font-style: italic; }
+        strong { color: var(--offwhite); }
+
+        .fuentes p { font-size: 0.83em; color: var(--muted); line-height: 1.7; }
+
+        .checklist-box {
+            background: var(--card);
+            border: 1px solid #262011;
+            border-radius: 6px;
+            padding: 6px 18px;
+        }
+        .checklist-box .row { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid #1a1a1a; align-items: baseline; }
+        .checklist-box .row:last-child { border-bottom: none; }
+        .ck { color: #4a7a4a; font-weight: 700; }
+        .warn { color: var(--signal); font-weight: 700; }
+
+        .pendiente {
+            background: #1b1410;
+            border: 1px dashed var(--signal);
+            border-radius: 6px;
+            padding: 18px 22px;
+            margin: 30px 0;
+            color: #D9CFC4;
+        }
+        .pendiente h3 {
+            font-family: var(--mono);
+            color: var(--signal);
+            letter-spacing: 3px;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        footer { padding: 26px 48px; color: var(--muted); font-size: 0.8em; text-align: center; }
+        footer .gold { color: var(--signal); font-family: var(--mono); letter-spacing: 3px; }
+
+        @media print {
+            body { background: #fff; color: #111; }
+            .container { background: #fff; }
+            .nota { display: none; }
+            .header { background: #111; }
+            .remate { color: #111; }
+            p.line, .segment-title, strong { color: #111; }
+        }
+        @media (max-width: 640px) {
+            .section, .header, footer { padding-left: 22px; padding-right: 22px; }
+            .arq-row { grid-template-columns: 24px 1fr; }
+            .arq-row .arq-time, .arq-row span:last-child { grid-column: 2; }
+        }
+</style>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Behind the Queue</div>
+        <div class="epnum">EP.26</div>
+        <h1>Por qué no llena esa vacante hace cuatro meses: el candidato unicornio</h1>
+        <div class="tagline">No es que no haya candidatos. Es que está pidiendo uno que el mercado no vende al precio que usted puso. Hoy le muestro el recibo — con nombre, apellido, y un país entero que se quedó sin gasolina por la misma razón exacta.</div>
+        <div class="meta">
+            <span class="meta-item">Episodio 026</span>
+            <span class="meta-item">Solo host · Andy</span>
+            <span class="meta-item">Carril · Oficio de Jefe #3</span>
+            <span class="meta-item">Registro · ejecutivo relajado</span>
+            <span class="meta-item">Esqueleto D · trenzado</span>
+            <span class="meta-item">~40:43 medidos (5.331 palabras · 148 wpm +13%)</span>
+            <span class="meta-item">Evergreen — no atado a coyuntura</span>
+            <span class="meta-item">Disclaimer conflicto de interés incluido</span>
+        </div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del Episodio</h2>
+        <div class="nota"><strong>Esqueleto D · TRENZADO</strong> — elegido porque A está prohibido por uso consecutivo (EP.025) y el material se presta a dos historias que se iluminan mutuamente: los dos casos colombianos (Estado como empleador, mismo mecanismo) trenzados en los segmentos 2-3, con el caso de Reino Unido como giro al ~55-60% que amplía la tesis fuera del sector público. Esqueleto sin precedente medido en este carril — factor de expansión +13% aplicado por defecto (ver <code>guion-style-btq.md</code> § Calibración).</div>
+        <div class="arquitectura">
+            <div class="arq-row head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Tiempo</span><span>Contenido</span></div>
+            <div class="arq-row"><span class="arq-num">0</span><span class="arq-seg">Apertura en frío</span><span class="arq-time">0:00–2:10</span><span>El gerente a las 11:30pm, disclaimer de encuadre, disclaimer de conflicto de interés (HireSignal/Kuma Talent), ritual</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">El candidato que no existe</span><span class="arq-time">2:10–6:48</span><span>Nombra el mecanismo — "candidato unicornio" / "purple squirrel" (caso FastAPI), dato duro ManpowerGroup Colombia 66%</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Torre de control, sin gente en la torre</span><span class="arq-time">6:48–12:51</span><span><strong>Caso 1 · Controladores aéreos, Colombia (2023-2026).</strong> El Estado pidió el perfil, congeló la formación 5 años, y cuando llegó la plata se fue a sobresueldos, no a formar</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Un solo médico para todo el pueblo</span><span class="arq-time">12:51–18:33</span><span><strong>Caso 2 · Médicos rurales, Colombia.</strong> Trenzado con el caso 1: mismo hueco, techo más alto — 116 municipios con un solo médico</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Cuando no hay gasolina</span><span class="arq-time">18:33–23:38</span><span><strong>Giro · Reino Unido, crisis de combustible 2021.</strong> El mismo mecanismo, sin Estado de por medio — lo cubre el mercado libre</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">La cuenta que nadie hace</span><span class="arq-time">23:38–30:26</span><span>Vuelta de tuerca con investigación real (Cappelli, Bock, Hartley) + referencias cruzadas (purple squirrel, Training Within Industry / WWII)</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Qué hace usted el lunes</span><span class="arq-time">30:26–39:05</span><span><strong>APLICABLE.</strong> Tres movidas ancladas en los 3 casos: precio real (UK), costo de la vacante vacía (controladores), pagar o entrenar (médicos + TWI)</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Cierre canónico + Teaser</span><span class="arq-time">39:05–40:43</span><span>Pregunta comentable · CTAs · LinkedIn · teaser evergreen hacia EP.027 · firma + TM</span></div>
+        </div>
+        <div class="nota">✓ <strong>Tiempos medidos, no fabricados.</strong> 5.331 palabras escritas contadas programáticamente (<code>p.line</code> + <code>remate</code> + <code>dato</code> + <code>sub</code>, script calibrado contra EP023 antes de confiarle este guion), a 148 wpm +13% de expansión (esqueleto D sin precedente medido) = <strong>40:43</strong>. Dentro del rango 40-45 min, cerca del piso — hay margen para expandir en vivo pero poco colchón para cortar; si al releer en voz alta se siente corto, priorizar agregar en el segmento 6 antes que en los casos.</div>
+        <div class="nota">⚠ <strong>Compuerta de aplicabilidad — medida, no cumple el número exacto de la regla.</strong> El segmento 6 mide 1.133 palabras = <strong>21,2%</strong> del total (regla pide ≥25%) y arranca en el minuto 30:26 = <strong>74,8%</strong> del episodio (regla pide antes del 60%). Se reforzó el segmento 6 en varias rondas con contenido real (no relleno) ligado a los 3 casos, pero no alcanza el número exacto de <code>guion-style-btq.md</code> § ADN 3b. Dato de contexto: el mismo cálculo sobre <code>EP025-camiseta-guion.artifact.html</code> (arquitectura publicada, segmento 6 en 34:16 de 40:00) da un arranque aún más tardío, 85,6% — así que esta compuerta no se está cumpliendo en la práctica reciente, no es un problema nuevo de este guion. Señalado para que Andy decida si se reescribe el segmento 6 antes de grabar o si se recalibra la regla.</div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="section">
+        <h2>Antes de grabar · checklist</h2>
+        <div class="checklist-box">
+            <div class="row"><span class="ck">✓</span><span><strong>Título:</strong> <code>EP.26 — Por qué no llena esa vacante hace cuatro meses: el candidato unicornio</code> (70 caracteres · ancla de 9 palabras — al tope del techo fijado 2026-08-03).</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Los tres casos, verificados en fuente primaria abierta esta sesión:</strong> controladores aéreos (Infobae 2023-11-23, cita directa de Irina Lara/ACDECTA), médicos rurales (Índice de Salud Rural 2024, Así Vamos en Salud, vía Infobae 2025-02-17), crisis de combustible UK 2021 (Wikipedia con cifras cruzadas contra BBC/Reuters/gobierno). Ver <code>pipeline-state-ep026.md</code>.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Dato duro del mundo del oyente:</strong> ManpowerGroup Colombia, Estudio de Escasez de Talento 2024 — 66% (vía Semana, con nombre de la directora citada).</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Disclaimer de conflicto de interés</strong> — HireSignal y Kuma Talent declarados explícitamente en el Segmento 0, antes del ritual. Decisión de Andy, roadmap 2026-08-01: "se declara, no se disimula".</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Bandera evergreen resuelta</strong> — el episodio no ancla en "ahora más que nunca ghostean los reclutadores"; el eje es el mecanismo de precio/perfil, con la pandemia y el Brexit como ejemplos dentro de un caso, no como tesis.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Recomendaciones tejidas (3, medios mixtos):</strong> Peter Cappelli, <em>Why Good People Can't Get Jobs</em> (libro, 2012) · Laszlo Bock, <em>Work Rules!</em> (libro/dato, 2015) · Regina Hartley, TED Talk (charla). Ninguna repetida contra <code>launch-assets/*.html</code>.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Referencias cruzadas fuera de los 3 casos:</strong> "purple squirrel" (jerga de reclutamiento en EE.UU.) + Training Within Industry / War Manpower Commission (EE.UU., 1940-1945) — otro mundo, otra época, mismo tema.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Dichos torcidos:</strong> 3 de 5 disponibles — "el que mucho abarca, poco aprieta" (seg. 1) · "cuentas claras conservan candidatos" (seg. 3, invertido) · "más vale pájaro en mano que ciento volando" (seg. 4). Ninguno en el cierre, ninguno repetido contra episodios anteriores.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Pozo no repetido:</strong> grep de <code>launch-assets/*.html</code> por ACDECTA/controladores aéreos, médicos rurales, HGV, ManpowerGroup, Cappelli, purple squirrel, unicornio — cero resultados antes de escribir. Ver sesión.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Conteo programático de palabras y duración:</strong> 5.331 palabras escritas, 40:43 medidos (script calibrado contra EP023 = 4.403/4.425 esperadas, diferencia explicada por un segmento de apertura con label distinto en el archivo viejo, no por un bug). Dentro de 40-45 min.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong><code>lint_guion_repeticion.py</code> corrido dos veces</strong> (antes y después de la ronda de expansión) — 2 hallazgos reales corregidos ("usted no tiene un problema de", el molde del dicho "fíjense en lo que el dicho no dice", "esto no es un problema de", "y aquí está la parte que"). PASS final: cero 6-gramas compartidos.</span></div>
+            <div class="row"><span class="ck">✓</span><span><strong>Grep de español neutro y de cifras en letras:</strong> cero palabras ancladas a país, cero doble sentido, cero voseo, "Andy" en tercera persona solo en la firma, "cola" sin usar, "imagínense" sin usar (presupuesto 0 de 1). Cifras en letras: solo el idiomático "ciento volando" dentro del refrán fijo — excepción válida.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Compuerta de aplicabilidad NO alcanza el número exacto de la regla</strong> (21,2% / arranca a 74,8%, ver nota en Arquitectura) — reforzada con contenido real en varias rondas, comparable o mejor que el precedente publicado más reciente (EP025). Señalado para decisión de Andy, no oculto.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Nuevo hallazgo de esta sesión, no estaba en el plan aprobado:</strong> el caso de controladores aéreos se amplió con una investigación de la Procuraduría de mayo 2026 sobre sobresueldos y presunto nepotismo en Aerocivil, que nombra a Irina Lara (la misma fuente citada) entre los casos señalados. Son denuncias en investigación, no hechos probados — el guion lo dice así explícitamente. Aun así, nombrar a una persona real en una investigación en curso es una decisión editorial que amerita el visto bueno explícito de Andy antes de grabar, no solo la verificación de la fuente.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>UK: fuente es Wikipedia, no gobierno primario.</strong> Cifras cruzadas contra BBC/Reuters dentro del mismo artículo, pero no se abrió un informe primario del gobierno británico (DfT/ONS) en esta sesión — verificar si el tiempo lo permite antes de grabar.</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Re-verificar TODAS las fuentes justo antes de grabar</strong> (regla de Andy 2026-07-31) — este guion se escribió y verificó en una sola sesión el 2026-08-13; no ha pasado por la segunda pasada obligatoria de "Re-verificar las fuentes JUSTO ANTES de grabar".</span></div>
+            <div class="row"><span class="warn">⚠</span><span><strong>Teaser hacia EP.027 escrito deliberadamente evergreen</strong> — ese episodio está "GUION A REDISEÑAR" según <code>roadmap-btq.md</code> (decisión de Andy 2026-08-03), así que el teaser no promete contenido específico de Peter ni de ningún tema puntual, solo el carril (pilar SEO).</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- 0 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Apertura en frío</span><span class="segment-time">0:00</span></div>
+            <div class="nota">Arranca en frío, sin jingle. Escena íntima, casi confesión, antes de subir el volumen.</div>
+
+            <p class="line">Son las once y media de la noche, un martes cualquiera.</p>
+            <p class="line">Usted no debería estar despierto revisando esto. Pero ahí está, con el celular en la mano, refrescando por décima vez la misma bandeja. Cero candidatos nuevos. Otra vez.</p>
+            <p class="line">Cuatro meses. 120 días, más o menos, desde que publicó esa vacante. Y ya perdió la cuenta de cuántas veces le tocó decirle al equipo, en la reunión del lunes, "seguimos buscando" — con ese tono que ya nadie se cree del todo, ni siquiera usted.</p>
+            <p class="line">En algún punto de esos cuatro meses usted dejó de preguntarse "quién la va a llenar" y empezó a preguntarse otra cosa, más incómoda: "¿existe siquiera la persona que estoy pidiendo?"</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Hoy le voy a contestar esa pregunta. Y la respuesta corta es: probablemente no. No al precio que usted fijó.</p>
+
+            <div class="nota">JINGLE DE ENTRADA — stinger corto (2-4 s), seco, a silencio. Andy entra sobre el silencio.</div>
+
+            <div class="nota">Disclaimer de encuadre — 50 palabras, dentro del rango 35-55.</div>
+            <p class="line">Hoy no le voy a decir cómo redactar una oferta ni a repetir que "contrate por actitud". Le voy a mostrar qué cuesta, en operación real, pedir un perfil que el mercado no entrega al precio que usted fijó — y qué hacer distinto la próxima vez que abra esa vacante.</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="nota">Disclaimer de conflicto de interés — decisión de Andy, roadmap 2026-08-01: se declara explícito, no se disimula. No cuenta como parte del disclaimer de encuadre (35-55 palabras); es un bloque aparte.</div>
+            <p class="line">Y antes de seguir, algo que le debo decir de entrada, no a la mitad ni al final: yo tengo dos empresas de contratación, HireSignal y Kuma Talent. Un episodio mío sobre por qué no se llena una vacante se puede sentir como publicidad disfrazada de contenido. Prefiero que usted lo sepa ahora, con toda la información encima de la mesa, y no que lo descubra después y sienta que le vendí algo sin avisarle.</p>
+            <span class="pausa">PAUSA</span>
+
+            <p class="line">Buenas y santas. Feliz día, feliz tarde o feliz noche. Cualquier día que este sea.</p>
+            <p class="line">Esto es Behind the Queue, episodio 26.</p>
+            <span class="pausa larga">PAUSA LARGA</span>
+        </div>
+
+        <!-- 1 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">1</span><span class="segment-title">El candidato que no existe</span><span class="segment-time">medir</span></div>
+            <div class="nota">Nombra el mecanismo antes de los casos. Dato duro del mundo del oyente. Dicho 1 de 3.</div>
+
+            <p class="line">Hay un animal que todo reclutador conoce y ningún reclutador ha visto. En inglés le dicen "purple squirrel" — la ardilla morada. En español casi siempre le decimos otra cosa: el candidato unicornio.</p>
+            <p class="line">Habla inglés B2 o mejor, seis años de experiencia en un software que salió hace tres, disponibilidad inmediata, y una aspiración salarial que su presupuesto aprobó hace dos años, cuando el dólar estaba distinto y el mercado también.</p>
+            <p class="line">Ese candidato existe en la descripción del cargo. Casi nunca existe en la vida real. Y cuando por fin aparece alguien parecido, ya tiene tres ofertas encima, y ninguna es la suya.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Le cuento el caso más ridículo que encontré investigando esto, porque además de real es gracioso. En 2020, un desarrollador llamado Sebastián Ramírez creó una herramienta de programación llamada FastAPI. Año y medio después, empezaron a circular ofertas de trabajo que pedían, cito, "más de cuatro años de experiencia con FastAPI".</p>
+            <p class="line">Cuatro años de experiencia en algo que llevaba dieciocho meses de existir. Ni el propio Sebastián Ramírez —el que la inventó— calificaba para esa vacante. Él mismo lo contó en su cuenta, entre divertido y exasperado.</p>
+            <p class="line">No es un caso aislado ni un chiste de redes: es el síntoma más puro de lo que le voy a mostrar hoy. Alguien redactó ese requisito copiando una plantilla genérica de "años de experiencia", sin pararse a pensar si el número tenía sentido con el calendario real. Y esa vacante, con toda seguridad, se quedó sin llenar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">La tentación, cuando eso le pasa a usted, es fácil: culpar al mercado. "No hay talento." "La gente ya no quiere trabajar." "Los jóvenes no tienen compromiso." Y hay un dato que parece darle la razón.</p>
+
+            <div class="dato">
+                <div class="dato-label">ManpowerGroup Colombia, Estudio de Escasez de Talento 2024 (vía Semana)</div>
+                <p class="line">Escasez de talento reportada por los empleadores en Colombia: <strong>66%</strong> en 2024, dos puntos por encima de 2023. Por sector: tecnología <strong>75%</strong>, energía y servicios públicos <strong>71%</strong>, comunicaciones <strong>68%</strong>, salud <strong>64%</strong>.</p>
+            </div>
+
+            <p class="line">Ese dato es real. Lo que casi nadie pregunta es la segunda mitad de la frase: escasez, ¿a qué precio?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y hay algo más que vale la pena decir de esa encuesta, con todo respeto por el dato: se la responden los mismos empleadores que están tratando de contratar barato. Nadie va a marcar la casilla "escasez de talento" y escribir al lado "porque yo ofrezco menos de lo que el puesto vale". Un estudio que le pregunta al comprador si el vendedor es el problema casi nunca va a encontrar que el problema es el precio que el comprador quiere pagar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Porque "no hay talento" y "no hay talento a lo que estoy dispuesto a pagar" se sienten exactamente igual desde la silla del que contrata, y son dos problemas completamente distintos. El primero no tiene solución esta semana. El segundo sí — solo que la solución no le va a gustar.</p>
+            <p class="line">El que mucho abarca, poco aprieta, dice el refrán. Y es cierto, pero le falta la segunda mitad: tampoco dice qué le pasa al puesto mientras usted sigue abarcando. Se queda vacío. Cuatro meses vacío, en su caso.</p>
+
+            <div class="remate">Lo que usted llama "no hay talento" casi siempre significa otra cosa: "no hay talento al precio que fijé". Confundir las dos frases sale gratis. Le sale caro cuando se da cuenta, cuatro meses después, de cuál de las dos era la verdadera.</div>
+
+            <p class="line">Se lo voy a mostrar con tres casos. Dos de ellos pasaron aquí mismo, en Colombia, con el Estado como el que contrata. El tercero pasó en un país entero que se quedó sin gasolina — literal — por la misma razón exacta.</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">2</span><span class="segment-title">Torre de control, sin gente en la torre</span><span class="segment-time">medir</span></div>
+            <div class="nota">Caso 1 — controladores aéreos, Colombia (2023). Fuente primaria abierta: Infobae, 22-23 de noviembre de 2023.</div>
+
+            <p class="line">Noviembre de 2023. La Asociación Colombiana de Controladores de Tránsito Aéreo — ACDECTA — sale a decir algo que suena a exageración de sindicato hasta que se revisan los números: al país le faltan 400 controladores aéreos.</p>
+            <p class="line">Aerocivil, la autoridad que los contrata, dice que no, que la cifra real es 48. La diferencia entre 400 y 48 no es un detalle contable. Es la diferencia entre "tenemos un hueco" y "tenemos una crisis", y las dos partes se la pasaron semanas peleando en la prensa por ese número.</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="dato">
+                <div class="dato-label">Infobae, 22-23 de noviembre de 2023</div>
+                <p class="line">Colombia opera con <strong>704</strong> controladores aéreos activos. ACDECTA pide <strong>1.200</strong> desde ese año. La contratación de nuevos cursos de formación de controlador lleva <strong>5 años</strong> congelada; parte de la planta actual ya cumple edad de pensión.</p>
+            </div>
+
+            <p class="line">Fíjese en la causa, porque es la misma causa de todo este episodio: nadie abrió nuevos cursos de formación de controlador durante 5 años. No es que no exista gente capaz de aprender el oficio. Es que el Estado dejó de producir el perfil que hoy dice necesitar con urgencia.</p>
+            <p class="line">Y mientras Aerocivil y el sindicato discutían si eran 400 o 48, la operación seguía sucediendo. Irina Lara, presidenta de ACDECTA, lo dijo así:</p>
+
+            <div class="dato">
+                <div class="dato-label">Irina Lara, presidenta de ACDECTA — cita directa</div>
+                <p class="line">«Desde este año le estamos diciendo al Gobierno que necesitamos 1.200 controladores.»</p>
+            </div>
+
+            <p class="line">Y advirtió algo más grave que el número: fatiga acumulada en el personal, por sobrecarga permanente. Turnos dobles, de forma recurrente, en un oficio donde un segundo de distracción no es un error de digitación. Es un avión.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">La consecuencia no se quedó en el papel. En una sola jornada de esas semanas, Avianca canceló 66 vuelos y retrasó otros 400. 9.400 pasajeros afectados en un solo día, por los espaciamientos de seguridad que la propia falta de personal obligó a poner.</p>
+            <p class="line">Y hay una meta, encima de todo esto, que ahora se ve distinta: Aerocivil proyecta transportar 10 millones de pasajeros para el año 2030. Con la planta actual, la propia ACDECTA dice que esa meta no se puede garantizar.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y aquí viene la parte que no esperaba encontrar cuando empecé a investigar este caso, porque cambia todo el sentido de "no hay presupuesto".</p>
+            <p class="line">Un estudio interno de 2018 ya recomendaba 799 controladores. Para 2025, la planta seguía en 715 — 84 vacantes reales, siete años después del propio diagnóstico del Estado. Y mientras tanto, el tráfico de pasajeros en El Dorado, el aeropuerto más grande del país, pasó de 30 millones a más de 50 millones al año entre 2018 y hoy.</p>
+
+            <div class="dato">
+                <div class="dato-label">Infobae, 16 de mayo de 2026 — investigación de la Procuraduría sobre Aerocivil</div>
+                <p class="line">Denuncias bajo investigación, no hechos probados todavía: el Decreto 0315 de marzo de 2026 fijó un bono del <strong>154%</strong> para controladores asignados a Bogotá. Un controlador de grado 21 recibe un salario base de más de <strong>7 millones de pesos</strong>, más bonos, hasta acercarse a <strong>20 millones mensuales</strong>. Y documentos internos muestran pagos a controladores que no cumplieron toda su carga operativa, bajo acuerdos sindicales que priorizan antigüedad sobre desempeño.</p>
+            </div>
+
+            <p class="line">Entonces no era, después de todo, que no hubiera plata. Era que la plata, cuando por fin llegó, se fue a bonos para los que ya estaban adentro — no a formar a los que faltan. Pagar más al mismo número de personas no resuelve un déficit de 84 controladores. Solo lo hace más caro de sostener.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y hay una última vuelta de tuerca, y se la cuento con el cuidado que merece porque son denuncias en investigación, no una condena: los mismos documentos señalan al menos 70 controladores con vínculos familiares directos en cargos clave, lo que sugiere favoritismo en la asignación de turnos y horas extra. Y entre los casos citados está, según esos documentos, la propia Irina Lara —la voz que usted acaba de escuchar pidiendo 1.200 controladores— con un salario cercano a los 18 millones mensuales, sin certificación médica vigente, y con solo 30 de las 1.200 horas anuales de vuelo requeridas.</p>
+            <p class="line">No se lo cuento para desacreditar la alarma que dio en 2023. El déficit era, y sigue siendo, real: la cifra oficial de 2025 lo confirma. Se lo cuento porque el mismo sistema que no producía controladores nuevos, sí producía sobresueldos para los controladores viejos. Y esa combinación —perfil sin invertir en producirlo, más plata sin invertir en resolverlo— es peor que cualquiera de las dos por separado.</p>
+
+            <div class="remate">El Estado pidió el perfil más exigente que existe en aviación civil — certificación exacta, años de entrenamiento, cero margen de error — y durante 5 años no hizo lo único que produce ese perfil: formarlo. Cuando por fin apareció el dinero, tampoco fue a formarlo. Después se sorprendió de que no apareciera solo.</div>
+        </div>
+
+        <!-- 3 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">Un solo médico para todo el pueblo</span><span class="segment-time">medir</span></div>
+            <div class="nota">Caso 2 — médicos rurales, Colombia. Trenzado con el caso anterior: mismo mecanismo, techo mucho más alto. Fuente: Índice de Salud Rural 2024, Así Vamos en Salud (vía Infobae, 17 de febrero de 2025).</div>
+
+            <p class="line">Quédese con esa palabra — "formarlo" — porque el segundo caso es el mismo hueco, con un techo mucho más alto.</p>
+            <p class="line">El Índice de Salud Rural 2024, del Centro de Pensamiento Así Vamos en Salud, midió algo que ningún colombiano de ciudad se imagina: solo tres municipios del país tienen más de 100 médicos por cada 10.000 habitantes. Santafé de Antioquia y Abejorral, en Antioquia. Córdoba, en Bolívar.</p>
+            <p class="line">Y en el otro extremo: 116 municipios tienen exactamente un médico. Uno. Para todo el pueblo.</p>
+            <span class="pausa">PAUSA</span>
+
+            <div class="dato">
+                <div class="dato-label">Índice de Salud Rural 2024, Así Vamos en Salud (vía Infobae, 17 de febrero de 2025)</div>
+                <p class="line"><strong>116</strong> municipios de Colombia con un solo médico, concentrados en Cundinamarca, Santander y Norte de Santander. <strong>37,3%</strong> de los hospitales públicos rurales en riesgo financiero en 2024, frente a <strong>16,8%</strong> en 2022.</p>
+            </div>
+
+            <p class="line">El mecanismo es idéntico al de los controladores, con un disfraz distinto. Colombia sí produce médicos, muchísimos, de hecho. Lo que no produce, ni con el año rural obligatorio ni sin él, es un médico dispuesto a quedarse en Vichada o en Guainía después de cumplir su año, por el salario y las condiciones que esos municipios pueden ofrecer.</p>
+            <p class="line">El año rural llena la vacante 12 meses. Después, la vacante vuelve a estar abierta. Cuatro meses, ocho meses, a veces el año entero, hasta el próximo lote de médicos recién graduados.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y esto no se queda en estadística de reporte. El mismo índice encontró que en Vaupés la cobertura de control prenatal es del 26,4%. En Guainía, 34,3%. En Vichada, 37,6%. Traducido: 6, 7 de cada 10 embarazos en esas zonas llegan sin el control mínimo recomendado — no porque no exista el protocolo, sino porque no hay quién lo aplique.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y la vacante médica no viaja sola. Va acompañada de todo lo demás que un municipio necesita para que un profesional se quede: en 60 municipios, menos del 1% de las mujeres accede a una mamografía, y otros 171 municipios ni siquiera tienen ese dato registrado. En Papunaua, Vaupés, la cobertura de atención en depresión es prácticamente inexistente — 4%, la más alta de todo el país, lo que le da una idea del resto — y ese mismo municipio tiene la tasa de suicidio más alta de Colombia.</p>
+            <p class="line">Y hay una razón estructural detrás, que explica por qué ningún médico se queda por su propia voluntad: solo el 41,1% de la población de esos 520 municipios rurales tiene acceso a alcantarillado. El 39% tiene cobertura de agua potable por debajo del 50%. Y el 37,4% de esos municipios tiene cobertura de internet por debajo del 1% — así que ni telemedicina hay, como paño de agua tibia.</p>
+            <p class="line">Nadie contrata al médico rural con un salario que compita con Bogotá, y encima le pide que viva sin agua confiable, sin internet, y a horas del hospital más cercano si algo sale mal. El perfil que ese municipio publica no es solo "médico general". Es "médico general dispuesto a una vida que casi nadie describe en la oferta de trabajo".</p>
+            <p class="line">Y aquí está la trampa que comparte con el caso anterior, la de los controladores: en los dos, alguien puede decir, con la conciencia tranquila, "yo sí publiqué la vacante". Publicar no es lo mismo que hacerla atractiva. Un aviso en una bolsa de empleo no compite con nada si detrás no hay ni el salario, ni la vivienda, ni la seguridad que la persona necesita para decir que sí. La vacante estuvo "abierta" todo este tiempo en el papel. Nunca estuvo abierta de verdad.</p>
+            <p class="line">Cuentas claras conservan amistades, dice el refrán. Démosle la vuelta: cuentas claras también conservan candidatos. Un municipio que le pone salario, vivienda y seguridad reales sobre la mesa — no una promesa de "experiencia invaluable" — consigue médico. Uno que no, se queda con el cargo publicado y el consultorio cerrado.</p>
+            <p class="line">Dos casos, mismo país, mismo Estado, dos oficios que no podrían ser más distintos. Y el mismo hueco exacto en el medio: pedir el perfil sin invertir en producirlo, y después llamarlo "escasez de talento" como si fuera un fenómeno del clima.</p>
+            <p class="line">Y para que no piense que esto es solo un problema de Gobierno colombiano — de esos que uno oye y dice "ay, otra vez el Estado" — lo voy a sacar del país entero. Y lo voy a llevar a un lugar donde el que no pudo llenar la vacante no fue ningún ministerio. Fue el mercado libre, funcionando exactamente como se supone que funciona.</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">Cuando no hay gasolina</span><span class="segment-time">medir</span></div>
+            <div class="nota">Giro al ~55-60%. Caso 3 — Reino Unido, crisis de combustible 2021. Fuente: Wikipedia con cifras cruzadas contra fuentes de gobierno UK, BBC y Reuters. Dicho 3 de 3.</div>
+
+            <p class="line">Septiembre de 2021, Reino Unido. Un país entero, con dinero, con infraestructura, con gasolina de sobra en los tanques de almacenamiento, se quedó sin gasolina en los surtidores.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">No fue un ataque, no fue un desastre natural, no fue una guerra. Fue algo mucho más aburrido, y mucho más parecido a lo que le está pasando a usted: al país le faltaban 70.000 conductores de camión de carga pesada.</p>
+
+            <div class="dato">
+                <div class="dato-label">Cifras del gobierno británico, cruzadas con BBC y Reuters (recogidas en Wikipedia)</div>
+                <p class="line">Déficit de <strong>70.000</strong> conductores de carga pesada (HGV) en Reino Unido, 2021. Se perdieron <strong>12.500</strong> conductores europeos antes de la pandemia. <strong>25.000</strong> exámenes de conducción menos aprobados entre 2019 y 2020, por el cierre de centros durante los confinamientos.</p>
+            </div>
+
+            <p class="line">Manejar un camión de carga pesada en Reino Unido no es un oficio de baja exigencia: licencia especial, exámenes, entrenamiento. Es, otra vez, un perfil con requisitos reales. Y durante años, las empresas de transporte lo cubrieron con conductores europeos que aceptaban el salario que se ofrecía.</p>
+            <p class="line">Cuando esa fuente se cerró — por el Brexit, por retiro, por cambios de impuestos que hicieron el oficio menos atractivo — y encima la pandemia cerró los centros de examen durante dos años, el país se quedó, literalmente, sin quién manejara los camiones.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y esto es lo que más se le va a parecer a su propia vacante de cuatro meses: durante años, subir el salario de un conductor de carga pesada era, para cualquier empresa de transporte individual, una mala decisión de negocio. Si usted paga más que su competencia, sube sus costos y pierde el contrato con el cliente. Nadie se movía primero. Cada empresa esperaba a que otra rompiera el techo salarial, y mientras tanto, todas juntas seguían ofreciendo lo mismo a un oficio con cada vez menos gente disponible para hacerlo.</p>
+            <p class="line">Eso es exactamente lo que le pasa a un gerente que no puede subir un salario porque "el resto del equipo se va a enterar" o porque "eso no está en la escala". El techo no lo puso el mercado. Lo puso una decisión interna de no moverse primero.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y lo que pasó después no fue un comunicado lamentando la situación. Fue esto: pánico de compra en las gasolineras, cuando se filtró un informe interno del Gobierno. Para el 27 de septiembre, entre el 50% y el 90% de las gasolineras de algunas regiones de Inglaterra estaban secas. El 3 de octubre, el 22% de las estaciones de Londres y el sureste seguían sin combustible.</p>
+            <p class="line">El Gobierno tuvo que poner al ejército en alerta para manejar camiones cisterna. Desplegó una flota de reserva de 80 vehículos. Autorizó de emergencia a 300 conductores extranjeros hasta marzo del año siguiente. Y suspendió, por decreto, parte de la ley de competencia para que las petroleras pudieran coordinarse sin que fuera ilegal.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Fíjese en la secuencia completa, porque es la misma de los dos casos colombianos, solo que aquí el que "contrata" es un país entero: durante años, el mercado pidió un perfil exigente — licencia HGV, entrenamiento, disponibilidad — pagando lo mínimo necesario para cubrirlo con mano de obra que venía de afuera. El día que esa fuente externa se secó, no había suficiente gente local dispuesta a hacer ese oficio al precio de siempre. Y nadie lo había estado formando de reserva, por si acaso.</p>
+            <p class="line">Más vale pájaro en mano que ciento volando, dice el refrán. Reino Unido tuvo, durante años, cientos de miles de pájaros europeos volando hacia sus rutas de carga. El día que dejaron de volar hacia allá, no había ni un pájaro en mano — porque nunca invirtieron en criar los propios.</p>
+
+            <div class="remate">Nada de esto es incompetencia de gobiernos ni exageración de sindicatos. Es lo que pasa, sin excepción, cuando alguien —un ministerio, una alcaldía rural, un país entero, o usted, en su oficina— pide un perfil exigente y no invierte en que ese perfil exista. El mercado no le debe candidatos gratis. Se los cobra, tarde o temprano, con la vacante abierta.</div>
+        </div>
+
+        <!-- 5 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">La cuenta que nadie hace</span><span class="segment-time">medir</span></div>
+            <div class="nota">Vuelta de tuerca antes de la aplicación: respalda la tesis con investigación real. Recomendaciones tejidas (Cappelli, Bock, Hartley) + referencias cruzadas fuera de los tres casos (purple squirrel ya nombrado en seg. 1, se desarrolla aquí; Training Within Industry).</div>
+
+            <p class="line">Y no soy yo inventándome esta teoría frente a un micrófono. Hay un profesor de Wharton, Peter Cappelli, que lleva más de una década estudiando exactamente esto, y en 2012 publicó un libro con un título que ya es la tesis completa: <em>Why Good People Can't Get Jobs</em> — por qué la buena gente no consigue trabajo.</p>
+            <p class="line">Cappelli revisó años de datos de contratación en Estados Unidos y llegó a una conclusión incómoda para cualquier gerente. Cuando a los empleadores les preguntan por qué no encuentran candidatos, hay un orden casi fijo en las respuestas, y el salario siempre queda de último: primero dicen que a los aplicantes les falta preparación real. Después, que las universidades no están formando lo que el mercado necesita. Después, que el Gobierno no deja entrar suficientes inmigrantes calificados. Y solo al final, casi como confesión, admiten que incluso cuando encuentran a alguien con el perfil exacto, esa persona no acepta el salario que le ofrecen.</p>
+            <p class="line">Fíjese en el orden. Culpar al candidato, culpar a la universidad, culpar al Gobierno — y hasta el final, casi a la fuerza, mirar la propia oferta. Es la misma secuencia que usted acaba de vivir esta semana, solo que con menos vergüenza de decirla en voz alta.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y del otro lado del mundo de la contratación hay un dato todavía más incómodo, este de Google. Laszlo Bock, que fue vicepresidente de recursos humanos de la compañía durante años, lo cuenta en su libro <em>Work Rules!</em>: cuando cruzaron los datos de miles de entrevistas contra el desempeño real de la gente ya contratada, encontraron correlación cero entre lo bien que le fue a alguien en la entrevista y lo bien que le fue después en el trabajo.</p>
+            <p class="line">Cero. Y el promedio universitario, la nota del colegio, dejaba de predecir absolutamente nada después de los primeros dos años de carrera. Google terminó con equipos donde el 14% de la gente nunca pisó una universidad.</p>
+
+            <div class="dato">
+                <div class="dato-label">Bock, L. (2015). Work Rules! Insights from Inside Google That Will Transform How You Live and Lead</div>
+                <p class="line">Estudio interno de Google: correlación nula entre desempeño en entrevista y desempeño laboral posterior. El promedio académico y los puntajes de examen dejan de predecir desempeño después de 2 años de carrera. <strong>14%</strong> del equipo, en algunas áreas, sin título universitario.</p>
+            </div>
+
+            <p class="line">Si la empresa que puede pagar los mejores sueldos del planeta, y que puede elegir entre millones de postulantes, encontró que su propia lista de requisitos no predecía nada — ¿con qué autoridad sostiene usted que el perfil exacto que pidió es el único que puede hacer el trabajo?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Hay una charla, de Regina Hartley, ejecutiva de recursos humanos, que resume esto mejor que cualquier estadística: por qué el mejor candidato no siempre trae la hoja de vida perfecta. Hartley cuenta que ella prefiere, a propósito, entrevistar a alguien que tuvo que resolver un problema de verdad — una crisis familiar, un cambio de carrera forzado, un tropiezo real — antes que a quien tiene el camino más derecho y más bonito en el papel. Porque lo derecho en el papel casi nunca predice lo que hace falta cuando algo sale mal en la operación.</p>
+            <p class="line">Fíjese en lo que las tres fuentes dicen, cada una desde su esquina: Cappelli dice que el problema casi nunca es el candidato. Bock dice que el papel que usted usa para filtrar no predice nada. Hartley dice que el camino torcido a veces enseña más que el derecho. Ninguna de las tres le está pidiendo que baje la vara. Le están pidiendo que revise si la vara que puso mide lo que usted cree que mide.</p>
+            <p class="line">Y hay un nombre para el candidato que usted anda buscando, y no es solo colombiano: en el reclutamiento en inglés le dicen "purple squirrel", la ardilla morada. Mismo animal imposible que el unicornio, otro país, mismo chiste amargo entre reclutadores que llevan meses sin cubrir la misma vacante.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Pero no lo quiero dejar solo con el problema. Porque hay un caso, de hace más de 80 años, que muestra la salida — y no es bajar el estándar.</p>
+            <p class="line">Estados Unidos, 1942. La guerra se lleva a millones de hombres de las fábricas justo cuando la producción de guerra necesita, según el propio cálculo del Gobierno, casi 7 millones de trabajadores nuevos. Ningún país tenía 7 millones de operarios calificados esperando en la banca.</p>
+
+            <div class="dato">
+                <div class="dato-label">Training Within Industry (TWI), War Manpower Commission, Departamento de Guerra de EE. UU., 1940-1945</div>
+                <p class="line">Programa federal de entrenamiento acelerado dentro de la propia industria de guerra, creado ante un déficit estimado de <strong>casi 7 millones</strong> de trabajadores nuevos para 1942, cubierto en parte formando en el puesto a mujeres, jóvenes y trabajadores sin experiencia previa en manufactura.</p>
+            </div>
+
+            <p class="line">El Gobierno no se sentó a esperar al operario perfecto. Creó un programa — Training Within Industry — para entrenar, dentro de la misma fábrica, a la gente que sí estaba disponible: mujeres que nunca habían tocado una máquina, jóvenes, gente sin ninguna experiencia industrial. En pocos años, esas mismas fábricas producían aviones y barcos a un ritmo que ningún país había visto antes.</p>
+
+            <div class="remate">No esperaron a que apareciera el candidato unicornio. Se pusieron a criarlo. Y esa es, en ocho décadas, la única diferencia real entre un país que resuelve su escasez y un municipio que se queda con el cargo vacío otro año más.</div>
+        </div>
+
+        <!-- 6 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">Qué hace usted el lunes</span><span class="segment-time">medir</span></div>
+            <div class="nota">Tramo APLICABLE. Auditoría de tres números sobre la vacante puntual del oyente — no consultoría de cultura genérica.</div>
+
+            <p class="line">Cierre la pestaña con la vacante publicada por quinta vez, y abra en su lugar una hoja en blanco. Lo que sigue no es una lista de virtudes que debería tener un buen jefe. Es una auditoría de tres números, sobre esta vacante puntual, que puede empezar hoy mismo. Una por cada caso de hoy.</p>
+
+            <div class="sub">Uno · el precio real, antes que el perfil — de Reino Unido</div>
+
+            <p class="line">Tome la descripción de esa vacante que lleva cuatro meses abierta y hágale la prueba que ninguna empresa de transporte británica se hizo a tiempo: busque, en dos o tres fuentes reales — no en lo que a usted le gustaría pagar — cuánto cuesta hoy, en el mercado, alguien con exactamente esos requisitos. No lo que costaba hace dos años. Hoy.</p>
+            <p class="line">Y hágalo con un número concreto, no con una sensación. Si publica el cargo en un portal de empleo, mire el rango que el propio portal sugiere para ese título y esa ciudad. Si tiene acceso a un estudio salarial del sector, ábralo. Si no tiene ninguno de los dos, llame a dos colegas de otras empresas — no de la suya — y pregúnteles, directamente, cuánto están pagando ellos por algo parecido. Media hora de trabajo, y sale del terreno de la opinión.</p>
+            <p class="line">La trampa: si el número de mercado le da vergüenza — porque es más alto de lo aprobado, o porque nadie en su equipo actual gana eso — ya tiene la respuesta de por qué nadie contesta. No es un problema de reclutamiento. Es un problema de presupuesto, disfrazado de problema de reclutamiento. Y como aprendimos con los camiones británicos, esperar a que el mercado se lo resuelva solo no funciona: espera a que otro suba el precio primero, y mientras tanto, todos se quedan sin conductor.</p>
+            <p class="line">Y cuando lleve ese número a quien aprueba el presupuesto, llévelo como el que llevaría un ingeniero, no como el que llevaría alguien pidiendo un favor: "esto es lo que cuesta hoy este perfil, esta es la fuente, y esto es lo que nos ha costado no tenerlo estos cuatro meses". Un número contra otro número gana casi cualquier conversación que un "necesito más presupuesto, por favor" nunca gana.</p>
+
+            <div class="sub">Dos · lo que ya le costó la vacante vacía — de los controladores</div>
+
+            <p class="line">Súmele, aunque sea a ojo, el costo real de esos cuatro meses: las horas extra que el equipo actual ha absorbido para tapar el hueco, lo que se dejó de entregar o de vender, y lo que le va a costar contratar de urgencia cuando ya no aguante más. Ese número casi nunca se calcula, y casi siempre es más alto que la diferencia salarial que el gerente se negó a aprobar en primer lugar.</p>
+            <p class="line">Aerocivil nunca calculó ese costo a tiempo. Vio cinco años de contratación congelada como un ahorro, y solo apareció la cuenta real cuando ya eran 66 vuelos cancelados en un día. Usted no tiene que esperar a su propio "66 vuelos cancelados" para hacer la cuenta. Pregúntese, con números: ¿cuántas horas extra pagó su equipo el mes pasado por cubrir ese puesto? ¿Qué entrega se atrasó, y qué le costó ese atraso con el cliente? ¿Cuánto le va a salir contratar de urgencia, con recargo de agencia, cuando la persona que hoy está aguantando el doble de carga finalmente renuncie?</p>
+            <p class="line">La trampa: "no tengo presupuesto para subir el salario" casi nunca es cierto del todo. Lo que es cierto es "no tengo ese presupuesto en la línea de nómina". El costo de la vacante vacía ya está saliendo de otra línea — de horas extra, de errores, de gente que se está quemando en silencio. Solo que nadie la está mirando, exactamente como nadie miró la fatiga acumulada de los controladores hasta que fue noticia.</p>
+            <p class="line">Haga el ejercicio sencillo: tome a la persona que más está cubriendo el hueco ahora mismo, y pregúntese, con honestidad, cuánto tiempo más aguanta antes de que la próxima renuncia sea la de ella. Si la respuesta le preocupa, ya sabe qué tan urgente es de verdad esta vacante — más urgente de lo que la oferta publicada sugiere.</p>
+
+            <div class="sub">Tres · pague o entrene, pero decida — de los médicos rurales y de 1942</div>
+
+            <div class="sub">Tres · pague o entrene, pero decida</div>
+
+            <p class="line">Con el número de mercado y el costo real de la vacante ya sobre la mesa, tiene dos caminos honestos, y solo dos: subir la oferta hasta lo que el mercado pide, o bajar un requisito real — no de maquillaje — y entrenar a alguien que hoy no lo cumple, como hizo Estados Unidos en 1942 con la mitad de su fuerza laboral de guerra.</p>
+            <p class="line">El municipio con un solo médico casi nunca elige de verdad entre esos dos caminos. No sube el salario, porque no puede o porque nadie se atreve a pedirlo. Y tampoco entrena — no forma auxiliares, no arma equipos de salud comunitaria, no invierte en telemedicina aunque sea básica. Se queda en un tercer camino, el más barato en apariencia y el más caro de verdad: publicar la vacante otra vez y esperar a que llegue el próximo lote de médicos del año rural.</p>
+            <p class="line">Su versión de "entrenar" no tiene que ser un programa federal de siete millones de personas. Puede ser mucho más chico: si el perfil que pide exige tres años de experiencia en una herramienta específica, pregúntese si de verdad necesita esos tres años, o si necesita a alguien capaz de aprenderla en tres meses con acompañamiento. Baje ESE requisito, específicamente, y ponga presupuesto real de entrenamiento detrás — no una promesa vaga de "irá aprendiendo sobre la marcha" sin nadie asignado a enseñarle.</p>
+            <p class="line">Lo que no puede seguir haciendo es lo que lleva haciendo cuatro meses: dejar la oferta exactamente igual, y publicarla por sexta vez esperando que esta vez sí aparezca la ardilla morada.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Y antes de que usted lo sienta como una derrota personal, una aclaración: pedir más presupuesto para una vacante no es admitir que fracasó como jefe. Es exactamente lo contrario. El jefe que sigue publicando la misma oferta cuatro, cinco, seis veces, sin tocar el número, es el que de verdad está fallando — solo que lo disfraza de paciencia. Volver con un número de mercado real y decir "esto es lo que cuesta hacerlo bien" es el trabajo. No es la excusa por no haber hecho el trabajo.</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Ninguna de las tres pide que baje el estándar del trabajo. Piden que deje de pedirle al mercado un regalo que no le va a hacer, y empiece a pagar por lo que de verdad necesita, o a construirlo usted mismo. Elija uno de los dos esta semana. El tercer camino —dejar todo igual— ya lo probó cuatro meses, y ya sabe cómo termina.</p>
+        </div>
+
+        <!-- 7 -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Cierre canónico + Teaser</span><span class="segment-time">medir</span></div>
+            <div class="nota">Cierre canónico completo: pregunta comentable · CTAs Spotify/compartir · LinkedIn · teaser evergreen hacia EP.027 (pilar SEO, guion en rediseño — no se promete contenido específico) · firma + TM · jingle.</div>
+
+            <p class="line">Antes de cerrar, una pregunta para usted, y me la puede dejar en los comentarios de Spotify: la vacante que lleva más tiempo abierta en su equipo ahora mismo, ¿es un problema de talento, o es un problema de precio que todavía no se ha animado a mirar de frente?</p>
+            <span class="pausa">PAUSA</span>
+            <p class="line">Si este episodio le sirvió, dos formas de ayudarme sin que le cueste nada: déjeme una reseña de cinco estrellas en Spotify, y compártalo con ese gerente que lleva meses quejándose de que "ya no hay talento como antes".</p>
+            <p class="line">También estoy en LinkedIn, escribiendo sobre estos mismos temas. Búsqueme como Andrés Bermúdez Rodríguez y mándeme un mensaje si algo de hoy le tocó una fibra.</p>
+            <span class="pausa">PAUSA</span>
+
+            <p class="line">La próxima semana el show cambia de carril: toca el turno del pilar teórico, el que trae paper y apellido propio. Ese guion todavía se está terminando de armar, así que por hoy no le adelanto más — pero ya sabe que cuando llegue, va a venir con la misma tarea hecha de siempre.</p>
+            <span class="pausa">PAUSA</span>
+
+            <p class="line">Yo soy Andy. Y recuerden: el candidato perfecto no está escondido en algún lado, esperando a que usted lo encuentre. O lo paga, o lo construye. Todo lo demás es publicar la misma oferta una vez más, y esperar un milagro que no llega.</p>
+            <div class="nota">JINGLE DE SALIDA.</div>
+        </div>
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section fuentes">
+        <h2>Fuentes (no leer al aire)</h2>
+        <p class="line">Infobae Colombia (2023). <em>Faltan 400 controladores para garantizar operaciones aéreas en Colombia.</em> 22-23 de noviembre de 2023. Incluye cita directa de Irina Lara, presidenta de ACDECTA.</p>
+        <p class="line">Centro de Pensamiento Así Vamos en Salud (2025). <em>Índice de Salud Rural 2024.</em> Publicado el 17 de febrero de 2025, vía Infobae Colombia — <em>Crisis financiera en hospitales públicos rurales: 4 de cada 10 están en riesgo.</em></p>
+        <p class="line">2021 United Kingdom fuel supply crisis. Wikipedia — cifras cruzadas contra reportería de BBC y Reuters y fuentes de gobierno del Reino Unido citadas en el artículo. [VERIFICAR contra un informe gubernamental primario (DfT/ONS) antes de grabar, si el tiempo lo permite — Wikipedia es agregador, no fuente primaria.]</p>
+        <p class="line">ManpowerGroup Colombia (2024). Estudio de Escasez de Talento 2024, vía Semana — <em>Escasez de talento en Colombia, el principal desafío para empleadores en 2024.</em> Cita a Lina Correa, directora de Talent Solutions.</p>
+        <p class="line">Cappelli, P. (2012). <em>Why Good People Can't Get Jobs: The Skills Gap and What Companies Can Do About It.</em> Wharton Digital Press.</p>
+        <p class="line">Bock, L. (2015). <em>Work Rules! Insights from Inside Google That Will Transform How You Live and Lead.</em> Twelve.</p>
+        <p class="line">Hartley, R. <em>Why the Best Hire Might Not Have the Perfect Resume.</em> TED Talk.</p>
+        <p class="line">Training Within Industry (TWI) / War Manpower Commission, Departamento de Guerra de EE. UU., 1940-1945 — Wikipedia, con referencia al déficit estimado de casi 7 millones de trabajadores para 1942.</p>
+        <p class="line">"Purple squirrel" (jerga de reclutamiento) — Wikipedia, término documentado en la industria de reclutamiento de EE. UU. desde los años 90-2000, sin origen único verificable.</p>
+    </div>
+
+    <footer>
+        <div class="gold">BEHIND THE QUEUE</div>
+        <div>EP.026 — lints corridos y PASS, pendiente re-verificación de fuentes justo antes de grabar y visto bueno de Andy sobre el caso Aerocivil/Procuraduría — ver checklist</div>
+    </footer>
+</div>
