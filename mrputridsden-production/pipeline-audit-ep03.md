@@ -34,6 +34,11 @@
   y prompt final en `episodios/temporada-2/artwork-ep03.md`. Producción final (upscale,
   tipografía, quote cards) diferida a más cerca del lanzamiento — no bloqueante para
   Stage A.
+- **Corrección post-retrospectiva:** el primer borrador del cierre dejaba el conector al
+  próximo expediente SIN anunciar, decidido unilateralmente por el asistente — esa
+  decisión es de Andrés por regla explícita (`mrputridsden/CLAUDE.md`). Corregido:
+  Andrés eligió anunciar "Paul is Dead" como Expediente 04. Guion, `banco-expedientes.md`
+  y este archivo actualizados; word count re-verificado (4.482, sigue dentro de banda).
 - Archivo de estado creado: `pipeline-state-ep03.md`.
 - Roadmap actualizado: fila de EP.03 pasa a `guion listo`.
 - Resultado: OK — pausa natural, esperando grabación.

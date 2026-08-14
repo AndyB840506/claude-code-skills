@@ -71,7 +71,11 @@ para el Expediente 03.
   contado en EP.02 (Boleskine, Equinox, la ruptura con Anger) — esto entra por las bandas que lo
   citan a EL directamente, no por Page.
 
-### 3. Paul is Dead (candidato secundario)
+### 3. Paul is Dead — YA ANUNCIADO AL AIRE en el cierre de EP.03 (2026-08-14)
+No es propuesta, es el compromiso para el Expediente 04. Cita del guion de EP.03: *"el
+próximo es distinto a este... la vez que medio mundo se convenció de que Paul McCartney
+estaba muerto, y armó las pruebas usted mismo, disco por disco."*
+
 - **Rotacion:** ALTA (Draw My Life, TikTok, *Time* lo listo entre las conspiraciones mas
   duraderas del mundo).
 - **Detalle — VERIFICADO:** las pistas son inventadas y se sabe quien las invento.
