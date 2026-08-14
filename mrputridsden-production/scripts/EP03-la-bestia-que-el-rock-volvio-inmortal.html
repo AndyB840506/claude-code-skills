@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Putrid's Den — EP.03: La Bestia que el rock volvió inmortal</title>
+    <style>
+        /* ── SISTEMA "LA GUARIDA" — Temporada 2 (congelado 2026-07-22) ──
+           Tokens tomados de rebrand/identidad-la-guarida.html, no a ojo.
+           Regla de mood: contraste térmico. Todo frío; el calor SOLO en la brasa.
+           Retirados de Temporada 1: crimson #9B1C1C, ámbar #CE8B3A, oro #FFD700. */
+        :root {
+            --medianoche: #0B1A39;
+            --tinta:      #151E3B;
+            --humo:       #2C2F43;
+            --piedra:     #55555B;
+            --brasa:      #D9BF7A;
+            --polvo:      #E7DDC9;
+            --polvo-dim:  #9AA3B8;
+            --linea:      #242C47;
+            --alerta:     #C9736A;
+            --display: 'Bookman Old Style', Bookman, 'Book Antiqua', Georgia, serif;
+            --body:    'Segoe UI', system-ui, -apple-system, sans-serif;
+            --mono:    ui-monospace, 'Cascadia Code', Consolas, monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--body); background: var(--medianoche); color: var(--polvo); line-height: 1.75; font-size: 15px; }
+        .container { max-width: 780px; margin: 0 auto; background: var(--tinta); }
+
+        .header { background: var(--medianoche); color: var(--polvo); padding: 44px 44px 38px; border-bottom: 1px solid var(--brasa); }
+        .header .podcast { font-family: var(--mono); font-size: 0.7em; color: var(--brasa); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
+        .header .pilar { font-family: var(--mono); font-size: 0.66em; color: var(--piedra); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
+        .header h1 { font-family: var(--display); font-size: 2.1em; font-weight: 700; color: var(--polvo); margin-bottom: 10px; text-wrap: balance; line-height: 1.2; }
+        .header .tagline { color: var(--polvo-dim); font-style: italic; font-size: 0.98em; max-width: 60ch; }
+        .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+        .meta-item { background: var(--humo); border: 1px solid var(--linea); padding: 5px 12px; border-radius: 3px; font-family: var(--mono); font-size: 0.72em; letter-spacing: 0.5px; color: var(--polvo-dim); }
+
+        .section { padding: 30px 44px; border-bottom: 1px solid var(--linea); }
+        .section h2 { font-family: var(--mono); font-size: 0.7em; text-transform: uppercase; letter-spacing: 3px; color: var(--brasa); margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid var(--linea); }
+
+        .segment { margin: 38px 0; padding-bottom: 26px; border-bottom: 1px solid var(--linea); }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+        .segment-number { background: var(--brasa); color: var(--medianoche); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 0.72em; font-weight: 700; flex-shrink: 0; }
+        .segment-title { font-family: var(--display); font-weight: 700; font-size: 1em; color: var(--polvo); letter-spacing: 0.5px; }
+        .segment-time { margin-left: auto; font-family: var(--mono); font-size: 0.72em; color: var(--piedra); background: var(--humo); padding: 3px 10px; border-radius: 3px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+        .sfx { background: var(--medianoche); color: var(--brasa); padding: 12px 16px; border-radius: 3px; border: 1px solid var(--linea); font-family: var(--mono); font-size: 0.8em; line-height: 1.65; margin: 16px 0; }
+
+        .host-block { margin: 20px 0; padding: 0 0 0 20px; border-left: 2px solid var(--linea); }
+        .host-name { font-family: var(--mono); font-weight: 700; font-size: 0.68em; text-transform: uppercase; letter-spacing: 2px; color: var(--brasa); margin-bottom: 8px; }
+        .host-text { font-size: 1.02em; line-height: 1.9; color: var(--polvo); }
+
+        .dato { background: var(--humo); color: var(--polvo); padding: 15px 18px; border-radius: 3px; margin: 18px 0; border-left: 3px solid var(--brasa); font-size: 0.94em; }
+        .dato-label { font-family: var(--mono); font-size: 0.66em; text-transform: uppercase; letter-spacing: 2px; color: var(--brasa); margin-bottom: 7px; font-weight: 700; }
+        .leyenda { background: var(--humo); color: var(--polvo-dim); padding: 15px 18px; border-radius: 3px; margin: 18px 0; border-left: 3px solid var(--piedra); font-size: 0.94em; }
+        .leyenda-label { font-family: var(--mono); font-size: 0.66em; text-transform: uppercase; letter-spacing: 2px; color: var(--polvo-dim); margin-bottom: 7px; font-weight: 700; }
+
+        .nota-produccion { background: transparent; border: 1px dashed var(--linea); border-radius: 3px; padding: 11px 15px; margin: 12px 0; font-size: 0.82em; line-height: 1.7; color: var(--polvo-dim); }
+        .nota-produccion::before { content: "NOTA PRODUCCIÓN: "; font-family: var(--mono); font-weight: 700; font-size: 0.9em; letter-spacing: 1px; color: var(--piedra); text-transform: uppercase; }
+        .nota-produccion strong { color: var(--polvo); }
+        .nota-produccion code { font-family: var(--mono); font-size: 0.92em; color: var(--brasa); }
+        .verificar { background: transparent; border: 1px solid var(--alerta); border-radius: 3px; padding: 11px 15px; margin: 12px 0; font-size: 0.82em; line-height: 1.7; color: var(--polvo-dim); }
+        .verificar::before { content: "⚠ VERIFICAR ANTES DE GRABAR: "; font-family: var(--mono); font-weight: 700; font-size: 0.9em; letter-spacing: 1px; color: var(--alerta); text-transform: uppercase; }
+        .verificar strong { color: var(--alerta); }
+        .verificar code { font-family: var(--mono); font-size: 0.92em; }
+
+        .arquitectura { font-size: 0.86em; overflow-x: auto; }
+        .arq-row { display: grid; grid-template-columns: 28px 210px 80px 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--linea); align-items: start; min-width: 560px; }
+        .arq-row:last-child { border-bottom: none; }
+        .arq-num { font-family: var(--mono); color: var(--brasa); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--polvo); }
+        .arq-time { color: var(--piedra); font-family: var(--mono); font-variant-numeric: tabular-nums; }
+        .arq-head { font-family: var(--mono); font-size: 0.88em; text-transform: uppercase; letter-spacing: 1.5px; color: var(--piedra); border-bottom-color: var(--piedra); }
+        .arq-head .arq-num, .arq-head .arq-seg, .arq-head .arq-time { color: var(--piedra); font-weight: 700; }
+        .arq-pivote { background: rgba(217,191,122,0.09); border-left: 2px solid var(--brasa); padding-left: 10px; margin-left: -12px; }
+
+        strong { color: var(--polvo); font-weight: 700; }
+        em { color: var(--polvo-dim); }
+        table { border-collapse: collapse; width: 100%; font-size: 0.9em; }
+        th, td { border: 1px solid var(--linea); padding: 7px 10px; text-align: left; }
+        th { color: var(--brasa); font-weight: 700; }
+
+        @media (max-width: 620px) {
+            .section, .header { padding-left: 22px; padding-right: 22px; }
+            .segment-time { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Mr. Putrid's Den · Temporada 2</div>
+        <div class="pilar">Temporada 2 · Episodio 3 — Expediente 03</div>
+        <h1>La Bestia que el rock volvió inmortal</h1>
+        <div class="tagline">Murió con doce personas en su funeral. Décadas después, su cara sigue mirando desde la portada más famosa del rock.</div>
+        <div class="meta">
+            <span class="meta-item">Temporada 2 · Ep. 3</span>
+            <span class="meta-item">Misterios / Leyendas</span>
+            <span class="meta-item">~43 min · Episodio único</span>
+            <span class="meta-item">Solo</span>
+        </div>
+    </div>
+
+    <!-- NOTA DE PRODUCCIÓN -->
+    <div class="section">
+        <div class="nota-produccion"><strong>Experimento de UN solo episodio, decidido con Andrés 2026-08-14</strong> (ver memoria <code>project_mpd_ep03_crypt_experiment</code>): estilo tipo Tales from the Crypt aplicado como prueba. Se mantiene la 3ª persona investigativa y el tono serio dentro del relato (nada de comedia tipo Leyendas Legendarias). Lo que cambia: (1) ritmo de suspenso tipo horror-anthology en toda la narración — escalada, presagios, pausas, un "sting" antes de cortar de escena; (2) Andrés más cómplice/travieso SOLO en Bienvenida y Cierre, siempre como él mismo, nunca como personaje ficticio; (3) dos guiños de cuarta pared, dosificados; (4) el cierre entrega un giro irónico tipo EC Comics — esto rompe a propósito la regla de "nunca resolver" de <code>.claude/skills/mrputridsden/CLAUDE.md</code> § Formato narrativo, solo para este episodio. Si el experimento no convence al escuchar la grabación, EP.02/EP.006 siguen siendo el molde para EP.04 en adelante.</div>
+        <div class="nota-produccion"><strong>Conector al próximo expediente: NO se anuncia al aire en este cierre</strong> — decisión explícita, no improvisada (regla de <code>.claude/skills/mrputridsden/CLAUDE.md</code>: "decidir ANTES de grabar si el cierre anuncia tema o no"). El banco (<code>banco-expedientes.md</code>) tiene a "Paul is Dead" como candidato #3 con detalle verificado, pero Andrés no lo ha confirmado como el próximo — no se firma ese cheque en este guion.</div>
+        <div class="verificar"><strong>Fuentes abiertas el 2026-08-14</strong> (listadas al final): Wikipedia "Mr. Crowley", Wikipedia "Quicksand (David Bowie song)", Wikipedia "Aleister Crowley", Wikipedia "List of images on the cover of Sgt. Pepper's...". <strong>Sin verificar con fuente primaria abierta esta sesión, confirmar antes de grabar:</strong> los detalles específicos del año 1975-76 de Bowie en Los Ángeles (peso exacto, pentagramas en la pared, tarot de Crowley, "ver cuerpos caer" por la ventana) vienen de un resumen de búsqueda que cita Rolling Stone / The Quietus / LA Weekly pero no se abrió ninguno de esos artículos directamente esta sesión — abrir al menos uno antes de grabar. También sin abrir: quién exactamente de los cuatro Beatles propuso a Crowley (el guion afirma explícitamente que NO se sabe — eso sí está bien fundamentado, es la ausencia de esa información la que es el hecho verificado).</div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row arq-head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Entra</span><span>Contenido</span></div>
+            <div class="arq-row"><span class="arq-num">0</span><span class="arq-seg">Logo sonoro</span><span class="arq-time">00:00</span><span>Bumper fijo, 3–5 s.</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Disclaimer</span><span class="arq-time">00:05</span><span>Bumper fijo, ~15 s.</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Intro music</span><span class="arq-time">00:20</span><span>Intro T2 recortado (~15 s).</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Cold open + Bienvenida</span><span class="arq-time">00:35</span><span>Hastings, 1947: doce personas en un funeral. No se dice todavía de quién.</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Contexto — La Bestia 666</span><span class="arq-time">04:30</span><span>Sicilia, 1923. La Abadía de Thelema, la muerte de Loveday, y de dónde salió de verdad el apodo.</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">Acto I — La cara sin nombre</span><span class="arq-time">09:30</span><span>Sgt. Pepper's, 1967. El misterio de quién puso a Crowley en la portada.</span></div>
+            <div class="arq-row"><span class="arq-num">6</span><span class="arq-seg">Acto II — El uniforme de imágenes</span><span class="arq-time">18:30</span><span>Bowie, "Quicksand" (1971) → Los Ángeles (1975-76). De la referencia culta a la obsesión real.</span></div>
+            <div class="arq-row arq-pivote"><span class="arq-num">7</span><span class="arq-seg">Acto III — El nombre en el título</span><span class="arq-time">29:30</span><span>Ozzy Osbourne, "Mr. Crowley" (1980) — y el mito de Sabbath que resulta ser falso.</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">Cierre — El giro</span><span class="arq-time">39:30</span><span>Vuelta a Hastings. La ironía: consiguió muerto lo que nunca tuvo vivo.</span></div>
+            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Outro music</span><span class="arq-time">~43:00</span><span>Outro T2 recortado (~15 s), fade in.</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- 0-2 BUMPERS -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Logo sonoro · Disclaimer · Intro</span><span class="segment-time">00:00 — 00:35</span></div>
+            <div class="sfx">[SFX: LOGO SONORO — bumper fijo de marca, 3–5 s.]</div>
+            <div class="sfx">[SFX: DISCLAIMER — bumper fijo, ~15 s, voz grave. Texto en <code>audio/t2-disclaimer-e-intro.md</code>.]</div>
+            <div class="sfx">[SFX: INTRO T2 — ~15 s, recortado.]</div>
+        </div>
+
+        <!-- 3 COLD OPEN + BIENVENIDA -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">Cold open + Bienvenida</span><span class="segment-time">00:35 — 04:30</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Hastings, Inglaterra. Primero de diciembre de 1947. [PAUSA]<br><br>
+                    En un cuarto de una pensión de mala muerte, un hombre de setenta y dos años se apaga despacio, ahogado por una bronquitis que lleva meses masticándole el pecho. No hay cámaras afuera. No hay reporteros esperando. Solo una enfermera, y el sonido de una respiración que se hace cada vez más corta.<br><br>
+                    Cuatro días después, en un crematorio de Brighton, se reúne su despedida. [PAUSA] Cuente con los dedos de las dos manos y le sobran: van doce personas. Un amigo suyo lee en voz alta fragmentos de sus propios escritos — una misa que él mismo había redactado años atrás, y un himno que él mismo había compuesto, dedicado a un dios griego de los bosques y del pánico.<br><br>
+                    Afuera, los periódicos ya están afilando el titular. Van a llamar a esa ceremonia de doce personas una Misa Negra. Van a decir que la ciudad debería estar avergonzada de que semejante funeral se celebrara dentro de sus límites.<br><br>
+                    Doce personas. Una habitación de pensión. Una bronquitis. [PAUSA] Así termina, en la vida real, el hombre al que la prensa británica llevaba treinta años llamando... el más malvado del mundo.<br><br>
+                    Esta noche vamos a averiguar cómo alguien que murió tan solo terminó, años después de su propia muerte, en la portada más mirada de la historia del rock. Y en una canción de Ozzy Osbourne. Y en la letra más rara que David Bowie escribió jamás.<br><br>
+                    Quédese conmigo. Esto se pone bueno.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Bienvenido de vuelta a la Guarida. Yo soy Andrés, y esta noche abrimos el <strong>Expediente 03</strong>.<br><br>
+                    Le voy a confesar algo antes de arrancar: este expediente me tiene un poco obsesionado. No por el hombre — ya le va a caer mal solo, se lo adelanto, no hace falta que yo lo ayude. Me tiene obsesionado el eco que dejó. Porque este señor, en toda su vida, jamás tocó una guitarra eléctrica. Nunca subió a un escenario de rock. Y aun así su cara —literalmente su cara— terminó mirando desde una de las portadas más reproducidas de la historia. Su nombre terminó en el título de una canción que usted probablemente se sabe. Su apellido terminó escondido en la letra de otra.<br><br>
+                    ¿Cómo hace un hombre que murió en 1947, casi solo, casi olvidado, para colarse en tres momentos completamente distintos de la historia del rock, sin que nadie se pusiera de acuerdo para invitarlo?<br><br>
+                    Esa es la pregunta que perseguimos esta noche. Y esta vez sí le voy a dar una respuesta al final — pero se la gano, no se la regalo.<br><br>
+                    Apague la luz. Empecemos.
+                </div>
+            </div>
+            <div class="nota-produccion">Cold open sin nombrar al sujeto — el "sting" es la revelación implícita al Acto I. Bienvenida con el registro cómplice del experimento ("le voy a confesar algo", "no hace falta que yo lo ayude") sin romper la 3ª persona del cuerpo narrativo, que empieza en el segmento de Contexto.</div>
+        </div>
+
+        <!-- 4 CONTEXTO -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">Contexto — La Bestia 666</span><span class="segment-time">04:30 — 09:30</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Antes de llegar al rock, hay que entender de quién estamos hablando. Porque "el hombre más malvado del mundo" no es una frase que yo esté inventando para ponerle emoción al asunto. Es un titular real, de un tabloide real, y detrás de ese titular hay una historia que todavía hoy da escalofríos.<br><br>
+                    Sicilia, 1920. En un pueblo costero llamado Cefalú, Aleister Crowley alquila una casa de campo modesta —sin agua corriente, sin lujos, con vista al mar— y la bautiza con un nombre grandioso: la Abadía de Thelema. Ahí instala una comunidad —seguidores, discípulos, algunos con hijos pequeños que crecen viendo los rituales de sus padres como otros niños ven ir a misa— y la organiza según su propia religión, la que él mismo había fundado años antes, con una sola regla central: haz lo que quieras.<br><br>
+                    En 1923 llega a esa comunidad un joven de veintitrés años, recién graduado de Oxford. Se llama Raoul Loveday, y viene con su esposa, una mujer llamada Betty May.<br><br>
+                    Loveday no dura mucho ahí. Se enferma. Y meses después está muerto.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    [PAUSA]<br><br>
+                    La explicación más probable, la que sostienen los médicos que revisaron el caso después, es simple y trágica a la vez: fiebre entérica aguda, contraída por tomar agua de un manantial de la montaña — el mismo manantial contra el que, cuentan, Crowley les había advertido a los dos. Una infección bacteriana. Nada sobrenatural. Un descuido, en un lugar remoto, sin hospital cerca.<br><br>
+                    Pero esa no es la versión que Betty May le contó a la prensa cuando volvió a Londres, viuda, a los pocos meses.<br><br>
+                    Ella dijo otra cosa. Dijo que a su esposo lo habían hecho tomar sangre de un gato sacrificado en un ritual. Dijo que en esa comunidad, cada vez que alguien usaba la palabra "yo" en una frase, tenía que cortarse la piel con una navaja como penitencia.<br><br>
+                    Un tabloide de Londres publicó su historia completa, con esos detalles y con otros peores. Y de ahí saltaron los demás periódicos, cada uno agregando su propia capa. Uno de ellos, el que más se le pegó al nombre de Crowley para el resto de su vida, tituló que sería "el hombre más malvado del mundo" — y escribió, textual, que les gustaría verlo colgado.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — la Abadía de Thelema</div>
+                Cefalú, Sicilia, 1920–1923. Raoul Loveday, 23 años, exalumno de Oxford, muere el 16 de febrero de 1923 — causa más probable: fiebre entérica aguda por agua de manantial contaminada, contra la que Crowley había advertido. Su viuda, Betty May, da a la prensa británica (Sunday Express y otros) un relato de sangre de gato ritual y auto-laceración obligatoria. El tabloide <em>John Bull</em> lo llama "the wickedest man in the world" y escribe que les gustaría "verlo colgado". El escándalo contribuye a que el gobierno de Mussolini expulse a Crowley de Italia ese mismo año.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    No sabemos, y probablemente nunca lo vamos a saber del todo, cuánto de lo que contó Betty May pasó de verdad y cuánto era el dolor y el shock de una viuda de veintipico años hablándole a un periodista que solo quería el titular más fuerte posible. Lo que sí sabemos es que esa historia, cierta o exagerada, es la que le puso a Crowley el título que cargó el resto de su vida — y el que la prensa repitió, sin cambiarle una palabra, hasta el día en que murió, veinticuatro años después.<br><br>
+                    Y hay un detalle de este hombre que casi nadie conoce, y que a mí me parece el más raro de todos. [PAUSA] "La Bestia" —el mismo apodo que usó toda su vida, el que se tatuó en su propia identidad pública, el que hoy le da título a este expediente— no se lo inventó él. Se lo puso su madre.<br><br>
+                    Cuando Crowley era apenas un adolescente, ya desafiando la religión estrictísima en la que lo habían criado, su madre —escandalizada, buscando la peor palabra posible para condenarlo— lo llamó "la Bestia 666". La cifra del Apocalipsis, la marca del Anticristo, la Biblia entera puesta encima de un hijo adolescente como castigo.<br><br>
+                    Y en vez de sentirlo como una herida, Crowley lo adoptó. Con gusto. Se pasó el resto de su vida firmando cartas, libros y rituales con ese mismo título que su madre le había regalado para insultarlo.<br><br>
+                    Ese es el hombre que nos ocupa esta noche. No un personaje de ficción, no un símbolo en un libro de historia del rock. Un hombre real, con un título que ni siquiera él inventó, ganado en circunstancias reales que todavía hoy nadie ha terminado de esclarecer del todo.<br><br>
+                    Y ese hombre, sin proponérselo, estaba a punto de aparecer donde nadie lo esperaba.
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 ACTO I -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">Acto I — La cara sin nombre</span><span class="segment-time">09:30 — 18:30</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Londres, primavera de 1967. Un estudio de fotografía en Chelsea. Frente a la cámara, cuatro hombres con bigote, uniformes militares de colores imposibles, instrumentos de latón que no van a tocar una sola nota. Detrás de ellos, apilada en varias filas, una multitud de más de setenta caras recortadas en cartón, a tamaño real.<br><br>
+                    La idea era simple, al menos al principio: una banda nueva, recién bajada del escenario, rodeada de sus fans. Y para que esos "fans" pudieran ser cualquiera —vivo o muerto, real o inventado— el pintor Peter Blake y su esposa Jann Haworth decidieron construirlos con recortes de cartón. Le pidieron a cada uno de los cuatro Beatles una lista de nombres. Cada quien mandó la suya.<br><br>
+                    John mandó la suya. Paul mandó la suya. George solo pidió gurús indios —media docena, nada más, sin negociar—. Y Ringo dijo, literal, que lo que decidieran los otros tres le parecía bien.<br><br>
+                    Y ahí empezó el problema. Porque no todos los nombres de esas listas estaban dispuestos a aparecer.<br><br>
+                    El día de la sesión de fotos, el estudio de Chelsea se llenó de esas más de setenta figuras de cartón, recortadas a tamaño real, apiladas en filas como una audiencia congelada a mitad de aplauso. Los cuatro Beatles se pusieron los uniformes de banda militar que hoy son parte de la iconografía del disco, y posaron durante horas frente a esa multitud silenciosa de cartón. Marilyn Monroe. Marlon Brando. Bob Dylan. Edgar Allan Poe. Carl Jung. Hasta Karl Marx, mirando fijo desde algún punto de la fila de atrás.<br><br>
+                    Y entre esa multitud de actores, escritores, científicos y músicos, alguien metió, sin avisarle a nadie, la cara del hombre que ya conocemos de este expediente — el mismo que la prensa británica había perseguido con lupa desde la tragedia de Cefalú, cuarenta y cuatro años antes.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    A un actor de reparto de películas viejas le pidieron permiso para usar su cara. Él contestó que sí — por 400 dólares. La disquera dijo que no pagaba, y lo sacaron: en la portada final, donde debía estar él, queda un espacio vacío, como el hueco de un diente. A Gandhi también lo sacaron, pero por otra razón: temían ofender al mercado indio, donde el disco se vendía mucho. Dos ausencias, dos razones de negocio, bien documentadas, bien explicadas.<br><br>
+                    [PAUSA]<br><br>
+                    Y en medio de esa multitud de más de setenta caras —actores de Hollywood, escritores, boxeadores, un par de científicos, hasta Karl Marx— hay una que no encaja con ninguna categoría de las anteriores. Ni actor, ni músico, ni científico, ni político. Un hombre inglés, calvo, la mirada fija y un poco torcida, vestido de gala, parado ahí entre Marilyn Monroe y un escritor de ciencia ficción, como si llevara toda la vida en esa fiesta.<br><br>
+                    Ese hombre es Aleister Crowley. El mismo que treinta años antes la prensa británica había bautizado, con todas las letras, "el hombre más malvado del mundo".
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — lo que sí está documentado</div>
+                Portada de <em>Sgt. Pepper's Lonely Hearts Club Band</em>, The Beatles, 1967. Diseño de Peter Blake y Jann Haworth. Más de 70 figuras en cartón, elegidas por listas individuales de cada Beatle (cita real de Blake: "le pedí a los cuatro Beatles una lista, y yo hice una propia... John dio una lista, Paul igual. George solo pidió gurús indios, unos seis. Y Ringo dijo que lo que dijeran los demás le parecía bien"). El actor Leo Gorcey fue removido por pedir 400 dólares; Gandhi fue removido por presión comercial en India.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y aquí está lo que a mí no me deja tranquilo. De los más de setenta nombres en esa portada, casi todos los que estaban vivos tuvieron que dar su permiso — y ya vimos que dos lo negaron, o lo condicionaron a dinero. Pero Crowley llevaba veinte años muerto para 1967. A un muerto no se le puede pedir permiso. A un muerto no se le puede pagar 400 dólares para que cambie de opinión.<br><br>
+                    Alguien, de los cuatro Beatles, decidió por su cuenta poner su cara ahí —sabiendo exactamente quién había sido, sabiendo el titular que la prensa le había puesto en vida— y ese alguien nunca dio la cara para decir "fui yo".<br><br>
+                    Peter Blake, el diseñador, contó después, con detalle, cómo armó las listas. Contó quién pidió qué. Pero en ninguna entrevista que exista registrada dijo jamás cuál de los cuatro Beatles puso el nombre de Crowley en su lista.<br><br>
+                    [PAUSA]<br><br>
+                    Así que ahí se queda. En la portada más mirada de la historia del rock, hay una cara que millones de personas han visto sin saber quién es, puesta ahí por alguien que nunca dijo su nombre. Casi sesenta años después, ese hueco sigue sin llenarse.
+                </div>
+            </div>
+            <div class="verificar">Ningún Beatle ha sido identificado públicamente, en ninguna fuente consultada esta sesión, como quien propuso a Crowley — esto es lo que el guion afirma, y es correcto afirmarlo como "no se sabe". <strong>Sin verificar con fuente primaria directa esta sesión:</strong> la cifra exacta de "más de 70" figuras (número ampliamente repetido, confirmar antes de grabar); el detalle de Gandhi/mercado indio y Gorcey/400 dólares vienen de un resumen de Wikipedia, no de la página fuente primaria directa — abrir <code>List of images on the cover of Sgt. Pepper's...</code> completo antes de grabar para confirmar cifras exactas.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y esa no fue la última vez que Crowley se le apareció al rock sin avisar.
+                </div>
+            </div>
+        </div>
+
+        <!-- 6 ACTO II -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">Acto II — El uniforme de imágenes</span><span class="segment-time">18:30 — 29:30</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    1971. Un estudio en Londres. David Bowie tiene veinticuatro años. Todavía no es Ziggy Stardust — todavía es solo un músico prometedor con más ideas que discos vendidos. Está grabando lo que se va a convertir en el álbum <em>Hunky Dory</em>, y entre las canciones hay una que él mismo describiría después como una mezcla de narrativa y surrealismo, nacida —palabras suyas— de la reacción en cadena de moverse constantemente, entre el éxtasis y la calamidad de América.<br><br>
+                    La canción se llama "Quicksand". Arenas movedizas.<br><br>
+                    La letra es una especie de delirio erudito de un muchacho de veinticuatro años tratando de entender el poder y sus máscaras: nombra a Winston Churchill en la misma respiración que a Heinrich Himmler, y menciona a un espía doble real de la Segunda Guerra Mundial, de esos que vivieron una vida entera fingiendo ser otra persona. En medio de ese collage de hombres que cambiaron el curso de la historia a punta de voluntad, disfraz y algo parecido al fanatismo, Bowie canta una frase que se queda pegada si uno la oye con atención: que está usando "el uniforme de imágenes de Crowley". Y unos versos más adelante, que se siente más cerca de la Golden Dawn.<br><br>
+                    La Golden Dawn no es una banda ni un club nocturno. Es el nombre de una sociedad secreta británica de finales del siglo diecinueve, dedicada al estudio de la magia ceremonial. Y Aleister Crowley fue, durante un tiempo, uno de sus miembros más ambiciosos.<br><br>
+                    Hasta que, en abril de 1900, esa membresía terminó de la forma más extraña posible.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    [PAUSA]<br><br>
+                    Los líderes de la sociedad en Londres ya venían peleados con el jefe de la orden, un hombre llamado Samuel Mathers, que vivía en París y que había iniciado a Crowley por su cuenta, sin consultarle a nadie más. Mathers, furioso con la rebelión de su gente en Londres, le pide a Crowley un favor: que vaya hasta la sede de la sociedad, en una calle llamada Blythe Road, y tome control del lugar a la fuerza.<br><br>
+                    Y Crowley va. [PAUSA] Vestido con un kilt escocés negro, una máscara ceremonial del dios egipcio Osiris cubriéndole la cara, y una daga ritual en la mano.<br><br>
+                    Adentro del edificio, defendiendo la sede, está un grupo de miembros de la sociedad. Y entre ellos, nada menos, el poeta William Butler Yeats — sí, el mismo Yeats que décadas después ganaría el Premio Nobel de Literatura. Yeats y los demás le cierran el paso a Crowley. No lo dejan entrar. Todo termina, no en un duelo de magia, sino en abogados y demandas legales, que es como terminan casi todas las guerras que empiezan con mucho teatro.<br><br>
+                    Un mes después, en mayo de 1900, un comité investiga todo el episodio. Y expulsan a Mathers, a su esposa, a Crowley, y a varios de sus aliados. La sociedad entera, la Golden Dawn que Crowley había querido conquistar con máscara y daga, se hizo pedazos en una docena de grupos rivales que nunca volvieron a juntarse del todo.<br><br>
+                    Crowley se fue de ahí sin sociedad, sin título, y con la reputación de ser el hombre que se disfrazó de dios egipcio para tomarse una oficina a la fuerza. Y aun así, setenta años después, un músico de veinticuatro años en Londres seguía citándolo en una canción, dando por hecho que su público sabría de quién hablaba.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — "Quicksand" y la Golden Dawn</div>
+                Álbum <em>Hunky Dory</em>, grabada el 14 de julio de 1971. Letra: "Crowley's uniform of imagery" y "closer to the Golden Dawn". <em>NME</em>: "a Bowie en su ánimo más oscuro y más metafísico". La "Batalla de Blythe Road" (abril de 1900): Crowley, enviado por Samuel Mathers, intenta tomar la sede londinense de la Golden Dawn vestido de Osiris, con kilt negro y daga ritual; un grupo de miembros —incluido W.B. Yeats— se lo impide. Un comité expulsa a Mathers y a Crowley en mayo de 1900; la orden se fractura en múltiples facciones rivales.
+            </div>
+            <div class="verificar">La Batalla de Blythe Road es un episodio ampliamente documentado en biografías de Crowley y de Yeats, pero esta sesión lo resumió de un agregador de búsqueda, no de una biografía académica directa. Confirmar fecha exacta y detalle del vestuario (kilt negro, máscara de Osiris, daga) contra una fuente única y sólida antes de grabar.</div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    [PAUSA]<br><br>
+                    Uno podría pensar que ahí se queda: una referencia culta, un guiño de veinticuatro años, el tipo de cosa que un músico lee en un libro y mete en una letra para sonar interesante. Uno podría pensar eso. [PAUSA] Yo también lo pensé, hasta que seguí investigando qué pasó después.<br><br>
+                    Porque cuatro años más tarde, ese guiño dejó de ser un guiño.<br><br>
+                    En 1975, Bowie se muda a Los Ángeles. Y lo que encuentra ahí —o lo que él mismo se construye ahí— no se parece en nada a un músico citando un libro en una entrevista.<br><br>
+                    Se encierra en una casa alquilada en Bel Air, con las cortinas cerradas de día y de noche. Deja de dormir por días enteros. Se alimenta casi exclusivamente de leche y pimientos rojos, y su peso cae a niveles que sus propios biógrafos describen como alarmantes — un hombre alto, reducido casi a un esqueleto con guitarra. Quema velas negras. Dibuja pentagramas en las paredes de su propia casa. Cuenta, años después, que en esos meses veía cuerpos caer frente a su ventana — algo que él mismo, ya sobrio, atribuiría a la paranoia inducida por semanas sin dormir y sin comer.<br><br>
+                    Y saca, de algún lugar, un mazo de cartas de tarot — el mismo mazo que había diseñado, décadas antes, Aleister Crowley. Se sienta con esas cartas durante horas. Recita hechizos en voz alta. Y en esa misma época se junta, en Nueva York, con dos hombres que ya conocemos de este expediente: el guitarrista Jimmy Page —otro admirador declarado de Crowley— y el cineasta Kenneth Anger.
+                </div>
+            </div>
+            <div class="nota-produccion">No repetir la historia de Page/Anger/Boleskine de EP.02 — solo se usa el hecho NUEVO de que Bowie los frecuentó en esta época. El oyente que ya escuchó EP.02 reconoce los nombres; el que no, no lo necesita para seguir esta escena.</div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    La gente que estuvo cerca de él en esos meses cuenta que Bowie se iba por tangentes larguísimas y extrañas sobre Crowley, sobre numerología, a veces mezcladas en la misma conversación sin que nadie pudiera seguirle el hilo del todo.<br><br>
+                    Y en 1976, en la portada de su siguiente disco, <em>Station to Station</em>, aparece dibujando, con su propia mano, el árbol de la vida de la Cábala.<br><br>
+                    Una letra de 1971 que citaba a Crowley de pasada terminó siendo, cinco años después, un hombre real dibujando símbolos ocultistas en las paredes de su propia casa, con el mazo de cartas del ocultista entre las manos.<br><br>
+                    ¿En qué momento una referencia deja de ser una referencia? [PAUSA] Bowie nunca lo explicó del todo. Décadas después, ya sobrio, hablaba de esos años de Los Ángeles casi sin reconocerse — como si le estuviera contando la historia de otra persona.
+                </div>
+            </div>
+            <div class="verificar">Bloque de Los Ángeles 1975-76 (peso bajo, velas negras, pentagramas, tarot de Crowley, "ver cuerpos caer" por la ventana, tangentes sobre numerología, "hablaba de esos años casi sin reconocerse") viene de un resumen de búsqueda que cita Rolling Stone / The Quietus / LA Weekly / americas-most-haunted, <strong>sin abrir ninguno directamente esta sesión</strong>. Abrir al menos el artículo de Rolling Stone sobre <em>Station to Station</em> antes de grabar y confirmar cada detalle — especialmente "ver cuerpos caer", que es la afirmación más fuerte del bloque y la que más necesita una fuente primaria nombrada (¿de qué entrevista o biografía sale la cita?), y la cifra de peso, que aquí se dejó sin número exacto a propósito. El detalle del árbol de la Cábala en la portada de <em>Station to Station</em> es ampliamente conocido y de bajo riesgo, pero confirmar igual.</div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y todavía faltaba un tercer hombre. Uno que no llegó a Crowley por una sociedad secreta ni por una casa llena de velas negras. Llegó por un libro que se encontró, casi por accidente, en un estudio de grabación.
+                </div>
+            </div>
+        </div>
+
+        <!-- 7 ACTO III -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Acto III — El nombre en el título</span><span class="segment-time">29:30 — 39:30</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    1980. Un estudio de grabación en Inglaterra. Ozzy Osbourne acaba de ser expulsado de Black Sabbath — la banda que él mismo ayudó a fundar, con ese nombre que tantas veces se ha contado que viene de un libro de Crowley.<br><br>
+                    [PAUSA]<br><br>
+                    Y ya que estamos: eso último es mentira. Vale la pena pararnos un segundo, porque el dato real es mejor historia que el mito.<br><br>
+                    La banda se llamaba Earth, y estaba a punto de cambiarse el nombre porque ya existía otro grupo con ese mismo nombre. Justo enfrente del lugar donde ensayaban, en Birmingham, había un cine. Y ese cine, una noche, estaba proyectando una película de terror de 1963, protagonizada por Boris Karloff, que se llamaba exactamente así: <em>Black Sabbath</em>.<br><br>
+                    El bajista de la banda, Geezer Butler, vio la fila de gente pagando entrada para asustarse, y soltó la idea que se le quedó grabada a todos: si a la gente le gusta pagar para tener miedo viendo una película, ¿por qué no una banda que sonara igual de aterradora? Escribieron una canción llamada "Black Sabbath", inspirada en esa misma película. Y de esa canción, la banda se quedó con el nombre.<br><br>
+                    Ningún libro de Crowley. Ningún ritual. Un cine de barrio, una cola de gente asustada, y un cartel con la cara de Boris Karloff.<br><br>
+                    Se lo cuento porque es exactamente el mismo patrón que venimos viendo toda la noche, solo que al revés: acá la leyenda quería meter a Crowley donde nunca estuvo. Y el dato real —el cine, la película, Karloff— no le quita nada de lo oscuro al nombre. Se lo explica mejor.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — el verdadero origen del nombre Black Sabbath</div>
+                La banda, antes llamada Earth, tomó el nombre de la película de terror de 1963 <em>Black Sabbath</em> (protagonizada por Boris Karloff), exhibida en un cine frente a su sala de ensayo en Birmingham. El bajista Geezer Butler propuso la idea al notar cuánta gente pagaba por ver películas de terror; escribieron una canción homónima antes de adoptar el nombre para la banda. NO viene de ningún texto de Aleister Crowley — mito extendido, sin sustento en biografías de la banda.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Volvamos a 1980. Ozzy tiene treinta y un años. Lo acaban de sacar de la banda que él mismo fundó, la banda con la que definió un género entero, y ahora tiene que demostrar —a la disquera, a la prensa, y probablemente a sí mismo— que todavía tiene algo que decir sin ese nombre detrás. No es una posición cómoda para grabar un disco. Es la posición de alguien que tiene que ganarse otra vez, desde cero, el lugar que ya había tenido.<br><br>
+                    En algún punto de esas sesiones, alguien encuentra, tirado en el estudio, un mazo de cartas de tarot. Nadie sabe bien de quién es, ni cómo llegó ahí.<br><br>
+                    Y por esos mismos días, Ozzy anda leyendo un libro. Se llama <em>El diario de un adicto a las drogas</em>, y lo escribió, en 1922, el mismo hombre que ya conocemos en este expediente: Aleister Crowley. Es una novela sobre una pareja que se hunde en la adicción a la cocaína y a la heroína, y que —según la trama que Crowley imaginó— solo logra salir de ese pozo a través de su propia filosofía mística. Un libro escrito por un hombre que se pasó la vida jugando en el límite de lo que su cuerpo aguantaba, puesto justo en las manos de un cantante que llevaba años haciendo exactamente lo mismo.<br><br>
+                    Un mazo de tarot en el suelo del estudio. Un libro de Crowley en las manos del cantante. Y una banda que necesita, con urgencia, una canción que demuestre que Ozzy Osbourne todavía tiene algo que decir sin Sabbath.<br><br>
+                    De esa mezcla sale "Mr. Crowley".
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    [PAUSA]<br><br>
+                    La canción arranca con un teclado. No es un teclado cualquiera: el tecladista, Don Airey, le pidió a toda la banda que saliera del estudio y lo dejara solo media hora. Cuando volvieron a entrar, tenía grabado el arreglo entero que hoy es la introducción de la canción — ese órgano fúnebre, de iglesia derruida, que suena antes de que entre una sola guitarra.<br><br>
+                    Ozzy lo escuchó y le dijo una frase que hoy es casi tan famosa como la canción misma: "te acabas de conectar directo a mi cabeza, hermano".<br><br>
+                    Después entra la guitarra de Randy Rhoads. Rhoads tenía veintitrés años, venía de tocar en bandas de clubes de Los Ángeles que nadie fuera de California conocía todavía, y llegó a esta audición casi por casualidad, sin saber muy bien en qué se estaba metiendo. En este disco —su primer disco grande— se manda un solo que combina la agresividad del heavy metal con una técnica que hasta ese momento nadie había metido en el género con esa limpieza: escalas que suenan casi clásicas, casi de conservatorio, montadas sobre el órgano fúnebre de Airey. Treinta años después, los lectores de la revista <em>Guitar World</em> lo votarían entre los mejores solos de la historia del heavy metal.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — "Mr. Crowley"</div>
+                Álbum <em>Blizzard of Ozz</em>, septiembre de 1980. Escrita por Osbourne, Randy Rhoads y Bob Daisley. Inspirada en <em>The Diary of a Drug Fiend</em> (Crowley, 1922) y un mazo de tarot encontrado en el estudio. Solo de teclado de Don Airey, grabado a solas; cita de Ozzy: "you just plugged into my head, man". Solo de guitarra de Rhoads: puesto 28 en la encuesta de lectores de <em>Guitar World</em> (2011) entre los mejores solos de la historia. La canción: puesto 23 en la encuesta de lectores de Gibson (2011) entre las mejores canciones de heavy metal de la historia.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Fíjese en lo que pasó ahí, porque es lo mismo que ya vimos dos veces esta noche, pero con una vuelta de tuerca distinta. Con la portada de los Beatles, alguien puso a Crowley ahí sin dar la cara. Con Bowie, una referencia de juventud se convirtió, años después, en una obsesión real, con velas negras y pentagramas en la pared.<br><br>
+                    Y ahora, con Ozzy, el nombre de Crowley no está escondido entre setenta caras, ni enterrado en un verso sobre la Golden Dawn.<br><br>
+                    Está en el título. En letras grandes, en la portada del sencillo, en la marquesina de cada concierto donde la toca desde 1980 hasta hoy. [PAUSA] Cuarenta y tantos años, y Ozzy la sigue tocando en vivo. Cuarenta y tantos años de un estadio entero gritando, en coro, el apellido de un hombre que murió solo en una pensión de Hastings antes de que casi ninguno de los que gritan hubiera nacido.
+                </div>
+            </div>
+        </div>
+
+        <!-- 8 CIERRE -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">8</span><span class="segment-title">Cierre — El giro</span><span class="segment-time">39:30 — 42:30</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y volvemos, para cerrar, a donde empezamos.<br><br>
+                    Hastings, primero de diciembre de 1947. Doce personas en un crematorio de Brighton. Un hombre al que la prensa llamó, durante treinta años, el más malvado del mundo — y que cargó ese peso con el mismo título que ya le habían regalado de adolescente, sin querer, para insultarlo. Su propia madre le puso el nombre de "la Bestia" pensando que lo estaba condenando. Y él lo convirtió en marca personal, porque entendía algo que a la mayoría de la gente se le olvida: que la fama no siempre necesita que lo quieran a uno. A veces solo necesita que no lo puedan olvidar.<br><br>
+                    Crowley pasó su vida entera persiguiendo esa clase de notoriedad. Escaló montañas peligrosas para que hablaran de él. Escribió libros deliberadamente escandalosos para que hablaran de él. Fundó una comunidad en una isla, y cuando esa comunidad terminó en la muerte de un joven de veintitrés años y en el relato desgarrador de una viuda a la prensa, no lo desmintió con fuerza — dejó que el escándalo creciera, porque el escándalo también llenaba salas. Cultivó, con paciencia, la reputación de ser el hombre más temido de Inglaterra — porque el miedo, descubrió temprano, también es una forma de que no lo olviden a uno.<br><br>
+                    Y aun así, cuando le llegó la hora, solo doce personas se molestaron en ir a despedirlo. Ni Betty May, ni el fantasma de Raoul Loveday, ni los reporteros que habían vivido de su nombre durante décadas se aparecieron esa tarde en Brighton. El hombre que había llenado tabloides enteros se apagó en un cuarto de pensión, casi en silencio.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    [PAUSA]<br><br>
+                    Pero fíjese en lo que pasó después. Veinte años después de esa tarde en Brighton, un pintor en Londres arma una portada de disco con setenta caras de cartón, y decide —sin explicarle a nadie por qué— que la cara de Crowley merece un lugar ahí. Cuatro años después de esa portada, un músico de veinticuatro años escribe una canción citando su nombre casi de pasada, y cinco años más tarde ese mismo músico está dibujando sus símbolos en las paredes de su propia casa. Y trece años después de eso, un cantante recién expulsado de su banda encuentra, tirado en el piso de un estudio, un mazo de cartas que remite otra vez al mismo hombre, y escribe la canción que todavía hoy, más de cuatro décadas más tarde, sigue sonando en estadios.<br><br>
+                    Ninguno de esos tres momentos estaba planeado. Nadie se puso de acuerdo. Un pintor, un cantante glam en su peor año, y una banda de heavy metal en apuros nunca se sentaron en la misma mesa a decidir mantener vivo el nombre de un ocultista muerto. Y sin embargo, entre los tres, hicieron exactamente eso.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    [PAUSA]<br><br>
+                    Aquí es donde yo me quedo pensando, y se lo dejo para que usted también le dé vueltas: fíjese en el patrón que se repite. Su propia madre le regaló, sin querer, el nombre que se convertiría en su marca de por vida. Y décadas más tarde, un pintor, un músico glam y una banda de heavy metal le regalaron, sin querer y sin ponerse de acuerdo entre ellos, la inmortalidad que él mismo pasó la vida entera tratando de fabricar a punta de rituales, libros y escándalo calculado — y que en vida nunca terminó de conseguir del todo. Murió en una pensión, con doce personas despidiéndolo, casi olvidado.<br><br>
+                    Lo que sí funcionó, lo que de verdad lo volvió inmortal, no lo hizo él. Lo hicieron otros, sin querer, tres veces distintas, en tres décadas distintas. El rock le dio, después de muerto, exactamente lo que él se pasó la vida entera tratando de conseguir en vida — de la misma forma exacta en que su madre, sin quererlo, le dio el nombre con el que empezó todo.<br><br>
+                    La próxima vez que vea esa portada de los Beatles, o que suene "Mr. Crowley" en la radio, o que alguien le muestre esa foto de Bowie dibujando símbolos en Los Ángeles — ya sabe quién es el hombre que está mirando desde ahí. [PAUSA]<br><br>
+                    Y ya no se le va a poder quitar de encima.<br><br>
+                    Esto ha sido el Expediente 03. Yo soy Andrés, esto es Mr. Putrid's Den, y como siempre: la última palabra es suya.
+                </div>
+            </div>
+            <div class="nota-produccion"><strong>El giro irónico (experimento EC Comics):</strong> la "resolución" no es fáctica (no dice qué fue Crowley "en el fondo") — es temática: la ironía de que la fama que persiguió en vida se la dio, sin querer, la música después de su muerte. No deifica: lo humaniza (murió pobre y casi solo) y critica el mecanismo (la fama no distingue mérito de miedo). Cumple el límite de "no deificar artistas" porque el sujeto deificado-y-criticado es Crowley, no un músico del show.</div>
+        </div>
+
+        <!-- 9 OUTRO -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">9</span><span class="segment-title">Outro music</span><span class="segment-time">~42:30 — 43:00</span></div>
+            <div class="sfx">[SFX: OUTRO T2 — ~15 s, fade in sobre la última línea, fade out a negro.]</div>
+        </div>
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section">
+        <h2>Fuentes abiertas el 2026-08-14</h2>
+        <div class="nota-produccion">
+            Mr. Crowley — Wikipedia: https://en.wikipedia.org/wiki/Mr._Crowley<br>
+            Quicksand (David Bowie song) — Wikipedia: https://en.wikipedia.org/wiki/Quicksand_(David_Bowie_song)<br>
+            Aleister Crowley — Wikipedia: https://en.wikipedia.org/wiki/Aleister_Crowley<br>
+            List of images on the cover of Sgt. Pepper's... — Wikipedia: https://en.wikipedia.org/wiki/List_of_images_on_the_cover_of_Sgt._Pepper%27s_Lonely_Hearts_Club_Band<br>
+            Aleister Crowley (funeral, "wickedest man") — Sgt Pepper's Meet the Band: https://sgtpepper.udiscovermusic.com/aleister-crowley/<br>
+            <strong>Citadas por resumen de búsqueda, sin abrir directamente esta sesión — abrir antes de grabar:</strong> How David Bowie Brought Thin White Duke to Life on 'Station to Station' — Rolling Stone: https://www.rollingstone.com/music/music-features/how-david-bowie-brought-thin-white-duke-to-life-on-station-to-station-125797/ · The Fall To Earth: David Bowie, Cocaine And The Occult — The Quietus: https://thequietus.com/culture/books/david-bowie-cocaine-low/
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
