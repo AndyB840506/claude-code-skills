@@ -1,8 +1,11 @@
 # EP.026 — Artículo nativo de LinkedIn (fuente en texto)
 
-**Estado:** borrador, sin publicar. URL de Spotify confirmada. Falta solo la fecha de
-publicación (`PENDIENTE fecha`). Publicar a mitad de semana, NO el mismo día del post del
-episodio (compiten). Ver `EP026-vacante-launch.md` para el resto del kit.
+**Estado:** borrador, sin publicar — pendiente de Andy. URL de Spotify confirmada. El episodio
+lanza domingo 16 de agosto 8PM; el calendario social comprimido ya cubre sáb 15 → mar 18 (ver
+`EP026-vacante-launch.md` §B). **Fecha sugerida para este artículo: miércoles 19 de agosto** —
+primer día "mitad de semana" que no compite ni con el post de lanzamiento (domingo) ni con el
+refuerzo del martes 18. Confirmar con Andy antes de publicar. Ver `EP026-vacante-launch.md` para
+el resto del kit.
 
 **Titular (campo aparte en LinkedIn, no la primera línea del cuerpo):**
 

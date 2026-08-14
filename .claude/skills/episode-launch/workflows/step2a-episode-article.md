@@ -82,6 +82,20 @@ guion no se puede atribuir, **no entra al artículo**.
 
 8. **Desplegar** con el flujo de `deploy-preflight` (Vercel `--prod`, sin `ignoreCommand`).
 
+9. **Sincronizar el estado en la MISMA pasada, no después:** actualizar
+   `launch-assets/EP0NN-*-launch.md` §E/F (quitar cualquier "falta desplegar") y la fila
+   de `roadmap-btq.md` para ese episodio. Mordió el 2026-08-14: el despliegue de EP.026
+   quedó verificado en vivo (curl 200) pero `launch.md` y `roadmap-btq.md` se quedaron
+   diciendo "falta desplegar el artículo del sitio" hasta que Andy preguntó por otro
+   pendiente y salió a la luz — un turno completo de estado falso, evitable.
+
+10. **Al propagar una fecha/URL confirmada a varios archivos, grepear el placeholder
+    después, no antes de terminar la lista mental.** Mismo día: se propagó la fecha
+    confirmada a "los 4 lugares" pero el placeholder `PENDIENTE fecha` del artículo de
+    LinkedIn (`EP0NN-linkedin-articulo.md`) quedó fuera de esa lista. Correr
+    `grep -rn "PENDIENTE" launch-assets/EP0NN-*` (o el placeholder que corresponda) tras
+    cualquier propagación y confirmar 0 matches, en vez de confiar en la cuenta mental.
+
 ## Cuándo se publica
 
 **El domingo, junto con el episodio.** Antes no: el CTA de escucha del riel no tendría

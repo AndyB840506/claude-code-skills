@@ -301,19 +301,23 @@ Publicar a mitad de semana, no el mismo día del post del episodio.
 
 `btq-production/website/episodios/por-que-no-llena-esa-vacante-hace-cuatro-meses.html` —
 escrito, JSON-LD parsea OK (verificado programáticamente, `datePublished` = `2026-08-16T20:00:00-05:00`).
-URL de Spotify y fecha ya propagadas en los 2 CTA de escucha, el kicker y el rail. **NO
-desplegado todavía** — falta agregarlo a `website/episodios/index.html`, regenerar el sitemap, y
-correr `deploy-preflight` + `vercel --prod`.
+URL de Spotify y fecha propagadas en los 2 CTA de escucha, el kicker y el rail. **DESPLEGADO
+2026-08-14** — agregado a `website/episodios/index.html`, sitemap regenerado, `vercel --prod`
+corrido y verificado en vivo (curl 200, contenido real, og:image sirviendo). Commit `b0fcd56`.
 
-## F · Pendiente antes de poder publicar cualquier cosa de esto
+## F · Pendiente
 
 1. ~~Subir el episodio a Spotify~~ — **RESUELTO 2026-08-14.** URL confirmada por Andy, propagada
    a los 4 lugares (artículo x2, social plan del domingo, YouTube).
 2. ~~Confirmar la fecha real de publicación~~ — **RESUELTO 2026-08-14.** Domingo 16 de agosto,
    8:00 PM Colombia. Propagada al artículo (JSON-LD + visible) y al calendario del plan social
    (comprimido a 3 días — el jueves de intriga ya había pasado).
-3. Agregar la entrada a `website/episodios/index.html`, regenerar el sitemap, y desplegar con
-   `deploy-preflight` + `vercel --prod`.
+3. ~~Desplegar el artículo del sitio~~ — **RESUELTO 2026-08-14.** Ver §E arriba.
 4. ~~Decisión de Andy sobre el disclaimer de conflicto de interés~~ — **RESUELTO 2026-08-14.**
    HireSignal es un producto de Kuma Talent, no una empresa aparte; nombrar solo Kuma Talent en
    la grabación fue una declaración completa. Ver `pipeline-state-ep026.md`.
+5. **Pendiente real, manual de Andy:** publicar el artículo nativo de LinkedIn — fecha sugerida
+   miércoles 19 de agosto, ver `EP026-linkedin-articulo.md`. Subir la imagen de portada
+   16:9 (`E:\Podcast\BTQ\EP26\BTQ Artwork EP26\BTQ-EP026-COVER-16x9.png`) como header manualmente.
+6. **Pendiente real, manual de Andy:** ejecutar el calendario social (§B) sáb 15 → mar 18, y
+   editar metadata de YouTube (§C) cuando el episodio ingiera por RSS.
