@@ -61,6 +61,14 @@ escritura de guiones aquí**:
 | BTQ | `/btq-guion` si está instalada. **Si NO existe** (caso 2026-06-26): escribir el guion directamente siguiendo `btq-production/guion-style-btq.md` — esa guía ya tiene las 9 reglas de chispa, la estructura canónica del episodio, la voz narrativa y el lint. NO reimplementar reglas aquí. |
 | MPD | `podcast-creator/workflows/01-episodio.md` (recuerda leer `glosario-cachaco.md` y `podcast-profile.json` primero, y preguntar "¿esta semana hay Silla Pútrida?") |
 
+**MPD — checkpoint obligatorio antes de escribir el cierre:** "¿el cierre anuncia el próximo
+expediente, o lo deja abierto?" es una decisión de Andrés (`mrputridsden/CLAUDE.md` § Formato
+narrativo — "decidir ANTES de grabar... lo prohibido es improvisarlo frente al micrófono"), NO
+un default que el asistente pueda elegir por su cuenta. Preguntarlo explícitamente (AskUserQuestion
+o directo) antes de escribir el segmento de cierre — mordió en EP.03 (2026-08-14): el primer
+borrador decidió "no anunciar" sin consultar, y hubo que reescribir el cierre + `banco-expedientes.md`
+después de que Andrés corrigiera en la retrospectiva.
+
 **Requisitos adicionales para guiones BTQ** (analytics 2026-06-12 — pásalos a
 `/btq-guion` como parte del encargo, complementan su checklist propio):
 1. **Re-enganche al ~60% del guion:** los completion rates rondan 50–67% — el dato o
@@ -107,6 +115,13 @@ antes de que Andy vaya a grabar. Mostrar el render al usuario y esperar aprobaci
 explícita del concepto. El escalado a producción (3000×3000 vía upscale, 16:9, 9:16,
 composición de texto con PIL) y las quote cards SÍ quedan para más cerca del cierre del
 episodio (mismo patrón que EP.022 "Extra 2") — no es bloqueante para la pausa de Stage A.
+
+**MPD T2 — aplicar el `night_grade` al render de validación, no solo a producción final.**
+El grading azul (variante E, `comfyui/templates/night_grade.py`) ya está congelado y
+scripteado — es una línea de código, no una decisión nueva. Presentar el render de
+validación SIN esa línea (neutro) obliga a Andy a pedirla aparte antes de poder juzgar
+si el concepto funciona (mordió en EP.03, 2026-08-14). Aplicar `night_grade(im)` antes
+de mostrar cualquier render de MPD T2 para aprobación de concepto.
 
 ---
 

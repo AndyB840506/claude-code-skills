@@ -89,6 +89,14 @@ Template: `comfyui/templates/zimage-txt2img-api.json`.
   cabeza que produce el resultado deseado ("light source directly behind her, head
   turned away from camera, hair falling over where her face would be") — control
   geométrico/lumínico positivo, no una lista de prohibiciones.
+  **Variante — degradación física del material** (aprendido 2026-08-14, MPD EP.03): para
+  un retrato antiguo/foto de época, el control geométrico/lumínico no siempre aplica (la
+  escena pide una foto de frente, no un ángulo). Ahí funcionó describir el DETERIORO
+  FÍSICO del objeto — "the photograph so faded, water-stained and discolored by age
+  that the sitter's face has dissolved into a blank yellowed smear, no eyes, no nose, no
+  mouth visible" — en vez de negar visibilidad. Es la misma familia de solución (control
+  positivo sobre la causa física, no negación del resultado) aplicada a una escena donde
+  la luz/ángulo no es la palanca disponible.
 - **Consistencia visual de un sujeto recurrente a través de varias generaciones
   separadas** (aprendido 2026-07-17, MPD EP.005): al generar portada + múltiples quote
   cards que retratan a la MISMA persona (real o de marca) en generaciones

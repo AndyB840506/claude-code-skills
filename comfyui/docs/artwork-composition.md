@@ -103,6 +103,26 @@ se compone con PIL, deterministico. Ver `comfyui/templates/`.
   recortar la fila/ícono que se necesita de ahí es más rápido y confiable que pedirle
   al modelo que los regenere desde cero.
 
+## Purgar un motivo vetado sin borrar la identidad del objeto
+
+(aprendido 2026-08-14, MPD EP.03)
+
+Al corregir un motivo vetado (círculos concéntricos/diana en un sleeve de vinilo),
+describir el objeto de forma GENÉRICA para evitarlo ("plain solid-colored cardboard
+cover, no printed artwork") funcionó para quitar el patrón — pero también le borró al
+objeto lo que lo hacía reconocible: dejó de leerse como vinilo, se volvió una tarjeta en
+blanco. Eso rompe otra regla (el artwork tiene que decir de qué show es — ver
+`mrputridsden/CLAUDE.md` § Artwork).
+
+**Regla:** al purgar un motivo vetado de un objeto, no generalizar el objeto entero —
+describir sus rasgos REALES identificatorios que no incluyen el motivo prohibido. Un
+vinilo se reconoce por sus surcos, su etiqueta central y su hoyo — no por su sleeve.
+Describir "black circular edges and center holes visible side-on, the paper sleeves
+plain... with no printed artwork" (nombrar el sleeve sin arte, pero mantener el disco
+mismo con sus rasgos reales) recuperó la lectura de "vinilo" sin reintroducir el
+patrón — los surcos de un disco real son textura física esperable, no el motivo gráfico
+decorativo que la regla vetaba.
+
 ## Un derivado hereda los defectos del original — incluidos los que nadie busco
 
 (aprendido 2026-07-30, MPD T2E01)
