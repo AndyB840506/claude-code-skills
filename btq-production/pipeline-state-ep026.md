@@ -71,15 +71,15 @@ sí solo):
    **Para los assets públicos (show notes, Spotify, artículo):** no citar estos 3 números como
    "dicho en el episodio" — si se usan, aclarar que son contexto adicional del guion/investigación,
    no algo que el oyente escuchó.
-1. **⚠️ El disclaimer de conflicto de interés salió incompleto.** El guion decía "yo tengo dos
-   empresas de contratación, HireSignal y Kuma Talent". Lo que Andy dijo en la grabación,
-   textual de la transcripción: *"Junto con mi socio Hugo Lancheros tenemos una empresa de
-   contratación que se llama Akuma Talent"* (probable transcripción de "a Kuma Talent" —
-   revisar de oído). **Solo nombró Kuma Talent. HireSignal no se mencionó en absoluto**, y
-   apareció un socio, "Hugo Lancheros", que no estaba en el guion. Esto cambia lo que
-   efectivamente quedó declarado al aire — vale la pena preguntarle a Andy si fue intencional
-   (simplificó a propósito) o un olvido en vivo, porque afecta qué tan completo queda el
-   disclaimer que el propio roadmap pidió que fuera explícito y no disimulado.
+1. ~~El disclaimer de conflicto de interés salió incompleto~~ — **RESUELTO 2026-08-14, no era
+   un problema real.** Se había marcado como hallazgo porque el guion decía "HireSignal y Kuma
+   Talent" y la grabación solo nombró Kuma Talent. Andy aclaró: **HireSignal no es una empresa
+   aparte, es un producto de Kuma Talent** (consistente con `reference_kuma_infra.md` en
+   memoria, que ya tenía `app.kumatalent.com=HireSignal` — no se cruzó contra esa memoria antes
+   de reportar el "hallazgo"). Nombrar solo Kuma Talent en la grabación fue una declaración
+   completa, no parcial. Queda "Hugo Lancheros" como socio mencionado que no estaba en el
+   guion — sin importancia para el disclaimer, mencionado aquí solo por completitud del registro
+   transcripción-vs-guion.
 2. **"Imagínense" se usó 12 veces**, contra el presupuesto de la guía de estilo (máx. 1). Es
    ad-lib de Andy, no estaba en el guion escrito (ahí quedó en 0). No es corregible ya grabado;
    se anota como patrón a vigilar en la próxima sesión de escritura o como feedback de entrega
@@ -103,6 +103,10 @@ ahí — PASS. Ver `EP026-vacante-launch.md` § D para el detalle completo, incl
 EP.023 y EP.025 tienen el mismo problema sin corregir.
 
 stage_c: no iniciado.
+spotify_url: https://open.spotify.com/episode/683PSkr20tY9Jy57M8vPBa?si=ULDQW49kSyqC5ZfXZ3S_Fw
+(confirmada por Andy 2026-08-14). **Fecha de publicación: domingo 16 de agosto de 2026, 8:00 PM
+Colombia** (confirmada por Andy 2026-08-14). Ambas propagadas a artículo/social/YouTube — falta
+solo desplegar (`website/episodios/index.html` + sitemap + `vercel --prod`).
 
 **Carril:** Oficio de Jefe #3. **Esqueleto:** D (trenzado) — los dos casos colombianos
 (controladores aéreos + médicos rurales) trenzados en los segmentos 2-3, Reino Unido como giro

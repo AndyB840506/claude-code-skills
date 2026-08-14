@@ -1,7 +1,7 @@
 # EP.026 — Artículo nativo de LinkedIn (fuente en texto)
 
-**Estado:** borrador, sin publicar. Placeholders `PENDIENTE-URL-SPOTIFY` y `PENDIENTE fecha`
-pendientes de la subida a Spotify. Publicar a mitad de semana, NO el mismo día del post del
+**Estado:** borrador, sin publicar. URL de Spotify confirmada. Falta solo la fecha de
+publicación (`PENDIENTE fecha`). Publicar a mitad de semana, NO el mismo día del post del
 episodio (compiten). Ver `EP026-vacante-launch.md` para el resto del kit.
 
 **Titular (campo aparte en LinkedIn, no la primera línea del cuerpo):**
@@ -70,7 +70,7 @@ La tercera movida, sobre cuándo pagar y cuándo entrenar (con el caso de Estado
 
 Este texto es una versión corta del episodio 26. La completa, con el caso de los médicos rurales colombianos y la aplicación entera, está acá: behind-thequeue.com/episodios/por-que-no-llena-esa-vacante-hace-cuatro-meses
 
-Escuchar el episodio (~37 min): PENDIENTE-URL-SPOTIFY
+Escuchar el episodio (~37 min): https://open.spotify.com/episode/683PSkr20tY9Jy57M8vPBa?si=ULDQW49kSyqC5ZfXZ3S_Fw
 
 Sitio: behind-thequeue.com
 LinkedIn: linkedin.com/company/behind-the-queue

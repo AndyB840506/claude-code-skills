@@ -1,8 +1,9 @@
 # EP.026 — Launch assets: «Por qué no llena esa vacante hace cuatro meses: el candidato unicornio»
 
-**Estado:** grabado y transcrito (2026-08-14). **NO subido a Spotify todavía — Spotify URL y
-fecha de publicación PENDIENTES.** Todo lo de abajo usa placeholders `PENDIENTE-URL-SPOTIFY` /
-`PENDIENTE fecha` donde corresponde; hay que reemplazarlos antes de desplegar nada.
+**Estado:** grabado, transcrito, en Spotify, con fecha de lanzamiento confirmada. URL:
+https://open.spotify.com/episode/683PSkr20tY9Jy57M8vPBa?si=ULDQW49kSyqC5ZfXZ3S_Fw — **domingo 16
+de agosto de 2026, 8:00 PM Colombia** (confirmado por Andy 2026-08-14). Todo propagado. Falta
+solo desplegar (artículo + índice + sitemap).
 
 Duración real medida: **~36:45** (verificado con ffprobe sobre wav y mp3, coinciden). Ver
 `pipeline-state-ep026.md` para el detalle completo de casos, fuentes y hallazgos de la
@@ -72,13 +73,18 @@ recursos humanos, gestión de personas, LATAM, Colombia
 
 ---
 
-## B · Social Plan — calendario de 4 días
+## B · Social Plan — calendario comprimido a 3 días (fecha confirmada 2026-08-16)
 
-**Link del primer comentario por día** (regla §B.1): jueves → artículo · domingo → Spotify ·
-lunes → artículo · martes → artículo. **Todos los links de abajo usan placeholders** hasta que
-haya URL de Spotify y la fecha de publicación esté confirmada.
+**Lanzamiento: domingo 16 de agosto, 8:00 PM Colombia** (confirmado por Andy 2026-08-14).
+El jueves de intriga (13 de agosto) ya había pasado quedar el guion listo — mismo patrón de
+compresión que EP.025. Calendario real: **sábado 15 (calentamiento) → domingo 16, 8PM
+(lanzamiento) → lunes 17, 7-8AM (pico) → martes 18 (refuerzo)**. El bloque de "Jueves" queda
+abajo solo como referencia de copy, sin fecha — no se publica.
 
-### Jueves (intriga)
+**Link del primer comentario por día** (regla §B.1): domingo → Spotify · lunes → artículo ·
+martes → artículo. URL de Spotify ya resuelta en todos los bloques de abajo.
+
+### Jueves (intriga) — NO SE PUBLICA, el jueves 13 ya pasó
 
 **LinkedIn:**
 ```
@@ -115,7 +121,7 @@ Domingo les cuento por qué — con un país entero que se quedó sin gasolina p
 [Slide 3] "Es que está pidiendo uno que no existe a ese precio. Domingo, 8PM."
 ```
 
-### Sábado (calentamiento)
+### Sábado 15 de agosto (calentamiento)
 
 **Instagram / Facebook:**
 ```
@@ -124,7 +130,7 @@ Grabando el episodio de este domingo 🎙️ — hoy tocó hablar de por qué es
 #BehindTheQueue #DetrásDeCámaras #PodcastEnEspañol #Liderazgo
 ```
 
-### Domingo 8:00 PM (lanzamiento)
+### Domingo 16 de agosto, 8:00 PM (lanzamiento)
 
 **LinkedIn:**
 ```
@@ -140,7 +146,7 @@ Y le dejo una pregunta: ¿cuánto le ha costado de verdad la vacante que lleva m
 ```
 Primer comentario (link: Spotify, con el artículo como segundo enlace):
 ```
-Escúchalo aquí: PENDIENTE-URL-SPOTIFY
+Escúchalo aquí: https://open.spotify.com/episode/683PSkr20tY9Jy57M8vPBa?si=ULDQW49kSyqC5ZfXZ3S_Fw
 Y si prefiere leerlo: https://behind-thequeue.com/episodios/por-que-no-llena-esa-vacante-hace-cuatro-meses
 ```
 
@@ -155,7 +161,7 @@ Tres casos reales — uno de ellos es un país entero sin gasolina — y la mism
 #BehindTheQueue #PodcastEnEspañol #NuevoEpisodio #Liderazgo #GestiónDeEquipos #Contratación #RecursosHumanos #Talento #Reclutamiento #LATAM #Colombia #CustomerExperience
 ```
 
-### Lunes 7-8 AM (pico de escucha)
+### Lunes 17 de agosto, 7-8 AM (pico de escucha)
 
 **LinkedIn:**
 ```
@@ -170,7 +176,7 @@ Primer comentario (link: artículo):
 El artículo completo: https://behind-thequeue.com/episodios/por-que-no-llena-esa-vacante-hace-cuatro-meses
 ```
 
-### Martes (refuerzo)
+### Martes 18 de agosto (refuerzo)
 
 **LinkedIn:**
 ```
@@ -229,7 +235,7 @@ CONTENIDO DEL EPISODIO
 
 ENCUENTRA BTQ EN
 🌐 behind-thequeue.com
-🎧 Spotify: PENDIENTE-URL-SPOTIFY
+🎧 Spotify: https://open.spotify.com/episode/683PSkr20tY9Jy57M8vPBa?si=ULDQW49kSyqC5ZfXZ3S_Fw
 📩 andy@behind-thequeue.com
 💼 LinkedIn: Andrés Bermúdez Rodríguez
 📸 Instagram: @behindthequeue84
@@ -294,20 +300,20 @@ Publicar a mitad de semana, no el mismo día del post del episodio.
 ## E · Artículo del sitio
 
 `btq-production/website/episodios/por-que-no-llena-esa-vacante-hace-cuatro-meses.html` —
-escrito, JSON-LD parsea OK (verificado programáticamente). **NO desplegado todavía** — lleva dos
-placeholders (`PENDIENTE-CONFIRMAR-FECHA` en el JSON-LD, `PENDIENTE-URL-SPOTIFY` en los 2 CTA de
-escucha) que hay que resolver antes de `vercel --prod`. Tampoco se agregó todavía a
-`website/episodios/index.html` ni se regeneró el sitemap — eso se hace en el mismo paso que el
-despliegue, no antes.
+escrito, JSON-LD parsea OK (verificado programáticamente, `datePublished` = `2026-08-16T20:00:00-05:00`).
+URL de Spotify y fecha ya propagadas en los 2 CTA de escucha, el kicker y el rail. **NO
+desplegado todavía** — falta agregarlo a `website/episodios/index.html`, regenerar el sitemap, y
+correr `deploy-preflight` + `vercel --prod`.
 
 ## F · Pendiente antes de poder publicar cualquier cosa de esto
 
-1. **Subir el episodio a Spotify** y confirmar la URL en vivo (pegada del navegador, no
-   inferida) — reemplaza los 4 placeholders `PENDIENTE-URL-SPOTIFY` (artículo x2, social plan
-   domingo, YouTube).
-2. **Confirmar la fecha real de publicación** — reemplaza `PENDIENTE fecha` / `PENDIENTE-CONFIRMAR-FECHA`
-   (artículo x3, y ajusta el calendario de jueves-a-martes del plan social contra esa fecha).
-3. Con esos dos datos: agregar la entrada a `website/episodios/index.html`, regenerar el
-   sitemap, y desplegar con `deploy-preflight` + `vercel --prod`.
-4. Pendiente separado ya señalado en `pipeline-state-ep026.md`: decisión de Andy sobre el
-   disclaimer de conflicto de interés grabado (solo nombró Kuma Talent, no HireSignal).
+1. ~~Subir el episodio a Spotify~~ — **RESUELTO 2026-08-14.** URL confirmada por Andy, propagada
+   a los 4 lugares (artículo x2, social plan del domingo, YouTube).
+2. ~~Confirmar la fecha real de publicación~~ — **RESUELTO 2026-08-14.** Domingo 16 de agosto,
+   8:00 PM Colombia. Propagada al artículo (JSON-LD + visible) y al calendario del plan social
+   (comprimido a 3 días — el jueves de intriga ya había pasado).
+3. Agregar la entrada a `website/episodios/index.html`, regenerar el sitemap, y desplegar con
+   `deploy-preflight` + `vercel --prod`.
+4. ~~Decisión de Andy sobre el disclaimer de conflicto de interés~~ — **RESUELTO 2026-08-14.**
+   HireSignal es un producto de Kuma Talent, no una empresa aparte; nombrar solo Kuma Talent en
+   la grabación fue una declaración completa. Ver `pipeline-state-ep026.md`.
