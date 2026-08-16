@@ -101,3 +101,9 @@
 - Verificado en producción: `curl` da 200, el HTML contiene "Expediente 03", el título del episodio y el ID de Spotify; `ep03-cover.jpg` sirve 200. **No verificado (a propósito):** que el embed/link de Spotify cargue — no va a funcionar hasta el lunes 00:00 por diseño, no es un bug.
 - Commit + push a GitHub: `b32b63e`.
 - Resultado: OK — EP.03 completo en el sitio y desplegado. Pendiente real: nada de mi lado — falta solo que Spotify libere el episodio el lunes.
+
+## Stage 3b — Clip de audio para redes
+- Qué se hizo: extraído del máster limpio (`MPD EP 03.wav`, 33:01.8) el momento "Mr. Crowley" — Don Airey grabando el órgano a solas + la cita de Ozzy "te acabas de conectar directo a mi cabeza, hermano" (24:47.9–25:29.9, verbatim del SRT real). `ffmpeg` con `-ss`/`-to` ANTES de `-i` (seek de entrada) para que el `afade` quedara relativo al clip, no al archivo completo — evita el bug documentado en `~/.claude/CLAUDE.md` § Instrumentos que mienten en silencio (EP.02, 2026-08-09). Fade in/out 0.5s.
+- Verificado: 42.0s exactos, `volumedetect` -23.5 dB mean / -4.7 dB max (audio real, no silencio).
+- Archivo: `E:\Podcast\MPD\Temporada 2\EP 03\artwork\social-clip\MPD-EP03-clip-mr-crowley.mp3`. `social-ep03.md` actualizado — checklist de assets ahora 4/4 completo.
+- Resultado: OK

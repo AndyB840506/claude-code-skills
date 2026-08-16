@@ -89,9 +89,9 @@ La Bestia que el rock volvió inmortal — Expediente 03
   Assets para el lanzamiento de EP.03
 ══════════════════════════════════════════════════
   ✓ Copy generado para 3 días × Instagram/Facebook
-  □ Portada 1:1 y 9:16 — concepto aprobado (episodios/temporada-2/artwork-ep03.md), producción final (upscale + tipografía) pendiente
-  □ Quote cards — pendiente, generar verbatim contra el SRT real (E:\Transcriptor\transcripciones\MPD EP 03.srt) una vez esté la producción final del artwork
-  □ Clip de audio 30-60 seg — pendiente de seleccionar momento y extraer del máster (E:\Podcast\MPD\Temporada 2\EP 03\MPD EP 03.wav)
+  ✓ Portada 1:1, 16:9 y 9:16 — producción final completa, E:\Podcast\MPD\Temporada 2\EP 03\artwork\
+  ✓ Quote cards — 4 generadas 2026-08-15, verbatim del SRT real, mismo directorio
+  ✓ Clip de audio — generado 2026-08-16 desde el máster limpio (MPD EP 03.wav), momento "Mr. Crowley" (Don Airey + cita de Ozzy "te acabas de conectar directo a mi cabeza, hermano"), 24:47.9–25:29.9, 42s, fade in/out 0.5s. Verificado con volumedetect (-23.5 dB mean, no silencio). Archivo: E:\Podcast\MPD\Temporada 2\EP 03\artwork\social-clip\MPD-EP03-clip-mr-crowley.mp3
 ══════════════════════════════════════════════════
   Fechas del plan:
   Día 1 (Intriga):     sábado 2026-08-15
