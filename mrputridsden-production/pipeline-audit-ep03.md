@@ -92,3 +92,12 @@
 ## Cierre de Macro-Stage B — checkpoint de Spotify resuelto
 - Qué se hizo: Andrés entregó la URL de Spotify (pegada directo desde el navegador): https://open.spotify.com/episode/4CC5CsJPY75Wyg5Yd5RR6O?si=rWV9VInqRLOh84qBIS4nuQ. **Programado para publicarse el lunes 2026-08-17 a las 00:00 — NO está en vivo todavía** (hoy es 2026-08-15). `pipeline-state-ep03.md` y `roadmap-mpd.md` actualizados con la URL, marcada explícitamente como "programado, no verificar como live hasta esa fecha" para no repetir el patrón de declarar algo publicado sin comprobarlo.
 - Resultado: OK — Stage B cerrado. Sigue Stage C: rotación del sitio (acumulación, ver `episode-pipeline/workflows/04-grid-rotation.md` § MPD) y deploy — este último NO se verifica contra Spotify hasta el lunes.
+
+## Stage 4 — Sitio web (acumulación de Expedientes) + deploy
+- Qué se hizo: agregada sección `.case` completa para Expediente 03 en `website/index.html` (siguiendo el patrón de acumulación de MPD, no rotación) — hero actualizado para apuntar a Expediente 03, embed de "Sintoniza" actualizado a la URL de Spotify de EP.03. Portada web optimizada generada (`ep03-cover.jpg`, 760×760, 75 KB, redimensionada desde la portada 3000×3000 final).
+- **Timing consultado con Andrés antes de deployar:** el episodio está programado para el lunes 2026-08-17 00:00, no en vivo todavía — confirmó desplegar igual (el botón del show sigue funcionando aunque el episodio individual/embed no cargue hasta el lunes).
+- Deploy-preflight corrido: proyecto verificado contra el host real (`vercel inspect` → `mr-putrids-den-web`, coincide con `project.json`), sin secrets, baseline 200 antes de deployar. `.vercel/output/static/` (index.html + ep03-cover.jpg) sincronizado a mano — proyecto usa `ignoreCommand: exit 0`, requiere flujo prebuilt.
+- Deploy: `vercel deploy --prebuilt --prod` + `vercel alias set` a `www.mrputridsden.com` (el `--prod` solo no re-apunta el dominio custom).
+- Verificado en producción: `curl` da 200, el HTML contiene "Expediente 03", el título del episodio y el ID de Spotify; `ep03-cover.jpg` sirve 200. **No verificado (a propósito):** que el embed/link de Spotify cargue — no va a funcionar hasta el lunes 00:00 por diseño, no es un bug.
+- Commit + push a GitHub: `b32b63e`.
+- Resultado: OK — EP.03 completo en el sitio y desplegado. Pendiente real: nada de mi lado — falta solo que Spotify libere el episodio el lunes.
