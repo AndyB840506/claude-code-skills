@@ -235,3 +235,26 @@ arriba para el wordmark. Anclar el crop del lado que tiene el espacio nuevo (arr
 caso), no centrarlo — y revisar visualmente que el sujeto principal siga visible, no solo
 que el header tenga margen.
 
+**Copiar el compositor de portada de un episodio anterior (`mpd-portada-epNN-t2.py` u
+homologo) trae valores hardcodeados calibrados a ESA escena y ESE titulo, que no
+transfieren solos al episodio nuevo — dos bugs reales encontrados el 2026-08-15 (MPD
+EP.03, copiado de EP.02):**
+
+1. **El `y_center` del crop 16:9 esta calibrado a donde queda el sujeto en la escena
+   VIEJA.** Si la escena nueva tiene el sujeto/marco en otra posicion vertical, ese mismo
+   `y_center` puede dejar el wordmark superpuesto sobre el sujeto en vez de en zona
+   muerta. Se corrigio probando 4 valores (0.30/0.38/0.45/0.55) y comparando visualmente
+   cual dejaba headroom limpio — no hay atajo, hay que iterar sobre la escena real.
+2. **El piso del auto-fit del tamaño de fuente del titulo (`int(H * 0.030)` en el ejemplo)
+   asume un titulo tan corto como el del episodio de origen.** Un titulo mas largo puede
+   no caber nunca en el ancho disponible del formato 9:16 (el mas angosto) sin bajar de
+   ese piso, y el loop de auto-fit sale silenciosamente con el texto sin caber — el
+   render corta el titulo a la mitad sin ningun error. Verificar con un test aislado en
+   Python (`font.getlength(TITLE) <= max_w`) si el titulo cabe en el piso actual ANTES de
+   confiar en el render; si no cabe, bajar el piso (probado bajar de 0.030 a 0.018).
+
+**Regla:** al reusar el compositor de un episodio anterior, renderizar y revisar
+visualmente los 3 formatos (no solo 1:1) antes de dar por bueno — el 1:1 suele salir bien
+a la primera porque no depende de estos dos valores, y por eso un bug real en 16:9/9:16
+puede pasar desapercibido si solo se inspecciona la portada cuadrada.
+
