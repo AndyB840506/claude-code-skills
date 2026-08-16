@@ -1,6 +1,36 @@
 # Artwork EP.03 — "La Bestia que el rock volvió inmortal"
 
-## Estado: concepto aprobado (2026-08-14), producción final pendiente
+## Estado: PRODUCCIÓN FINAL COMPLETA (2026-08-15)
+
+Escena base regenerada a 1536×1536 (mismo prompt/seed 3082026 del concepto aprobado, ver
+abajo), upscaleada a 3000×3000 con RealESRGAN, `night_grade` variante E aplicado, compuesta
+con `comfyui/templates/mpd-portada-ep03-t2.py` (título/tagline/footer) y
+`mpd-quote-card-ep03-t2.py` (4 quotes verbatim del SRT real). Archivos finales:
+
+- `E:\Podcast\MPD\Temporada 2\EP 03\artwork\MPD-T2E03-PORTADA-3000.jpg` (1:1, Spotify)
+- `E:\Podcast\MPD\Temporada 2\EP 03\artwork\MPD-T2E03-16x9-FINAL.png`
+- `E:\Podcast\MPD\Temporada 2\EP 03\artwork\MPD-T2E03-9x16-FINAL.png`
+- `E:\Podcast\MPD\Temporada 2\EP 03\artwork\MPD-T2E03-Q1..Q4-1920x1080.png`
+
+**Nota sobre la composición final vs. el concepto v3 de abajo:** al regenerar a 1536×1536
+la composición salió simétrica (un vinilo a cada lado del marco, chimenea centrada) en vez
+de la agrupación asimétrica de 3 vinilos de v3 — mismo concepto (estudio, marco ovalado,
+retrato disuelto, vinilos reales, chimenea), composición distinta. Andrés vio ambas y
+aprobó la nueva. Se intentó además replicar el mood de `MPD-T2E03-validation_00001_.png`
+(v1, librero + candelabro) pero ese render tenía el patrón de diana vetado en el sleeve del
+vinilo Y el rostro demasiado legible — 2 intentos de corregirlo sin perder el mood
+fallaron (el rostro salía cada vez más nítido/reconocible), así que se descartó a favor de
+la simétrica, que sí cumplía las reglas desde el primer intento.
+
+**2 bugs reales encontrados y corregidos en el script de composición** (`mpd-portada-ep03-t2.py`,
+copiado de `mpd-portada-ep02-t2.py`): (1) el wordmark quedaba superpuesto sobre el marco en
+16:9 — el crop `y_center=0.55` heredado de EP02 no aplicaba a esta escena; corregido a
+`y_center=0.30` tras probar 4 valores. (2) el título de EP.03 (38 caracteres, más largo que
+el de EP02) se cortaba en 9:16 porque el piso del auto-fit de fuente (`0.030`) era muy alto
+para que el texto llegara a caber; bajado a `0.018`. Ambos verificados visualmente
+re-renderizando antes de dar por bueno — ver `pipeline-audit-ep03.md` Stage 3.
+
+## Concepto aprobado (2026-08-14) — referencia histórica del prompt/seed usados
 
 Aprobado por Andrés en la validación 1024×1024 + grading azul. El escalado a producción
 (upscale 3000×3000 vía RealESRGAN, tipografía/lockup/footer con `mpd-portada-ep-t2.py`,
