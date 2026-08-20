@@ -47,6 +47,18 @@ puntuación no se oye.
 Razón por la que existe: EP.024 se publicó como artículo nativo de LinkedIn el 2026-08-03 y
 Andy tuvo que reemplazar a mano las 17 comillas angulares y las 21 rayas del cuerpo.
 
+> ⚠️ **Contradicción sin resolver (detectada 2026-08-20, EP.027):** esta sección dice que la
+> regla aplica también al "artículo del sitio", pero el último artículo real publicado antes de
+> esa fecha (EP.026, `website/episodios/por-que-no-llena-esa-vacante-hace-cuatro-meses.html`)
+> tiene 26 rayas como conector y 10 comillas angulares — igual que EP.023, EP.024 y EP.025. La
+> razón por la que la regla existe (dolor de editar a mano en LinkedIn/Spotify) no aplica al
+> artículo del sitio: es HTML que se escribe y despliega directo, nadie lo pega en un editor de
+> terceros. La sesión de EP.027 siguió el entregable real (rayas permitidas) para el artículo del
+> sitio y la regla escrita (sin rayas) para LinkedIn/Spotify/social/YouTube. **No decidido
+> oficialmente** — si Andy confirma que el artículo del sitio queda exento, borrar "el artículo
+> del sitio" de la lista de arriba; si prefiere aplicarla ahí también, hay que corregir 4
+> artículos ya publicados.
+
 **Y el corolario, que es la parte cara:** cuando la corrección la hace un humano a mano
 sobre un texto largo, **borra el carácter y sigue** — no se detiene a decidir qué signo va
 en su lugar. En EP.024 eso dejó **8 frases rotas** en el artículo publicado, y una de ellas
