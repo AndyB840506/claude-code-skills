@@ -1,0 +1,381 @@
+<style>
+        /* ── SISTEMA "LA GUARIDA" — Temporada 2 (congelado 2026-07-22) ──
+           Tokens tomados de rebrand/identidad-la-guarida.html, no a ojo.
+           Regla de mood: contraste térmico. Todo frío; el calor SOLO en la brasa.
+           Retirados de Temporada 1: crimson #9B1C1C, ámbar #CE8B3A, oro #FFD700. */
+        :root {
+            --medianoche: #0B1A39;
+            --tinta:      #151E3B;
+            --humo:       #2C2F43;
+            --piedra:     #55555B;
+            --brasa:      #D9BF7A;
+            --polvo:      #E7DDC9;
+            --polvo-dim:  #9AA3B8;
+            --linea:      #242C47;
+            --alerta:     #C9736A;
+            --display: 'Bookman Old Style', Bookman, 'Book Antiqua', Georgia, serif;
+            --body:    'Segoe UI', system-ui, -apple-system, sans-serif;
+            --mono:    ui-monospace, 'Cascadia Code', Consolas, monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--body); background: var(--medianoche); color: var(--polvo); line-height: 1.75; font-size: 15px; }
+        .container { max-width: 780px; margin: 0 auto; background: var(--tinta); }
+
+        .header { background: var(--medianoche); color: var(--polvo); padding: 44px 44px 38px; border-bottom: 1px solid var(--brasa); }
+        .header .podcast { font-family: var(--mono); font-size: 0.7em; color: var(--brasa); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
+        .header .pilar { font-family: var(--mono); font-size: 0.66em; color: var(--piedra); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; }
+        .header h1 { font-family: var(--display); font-size: 2.1em; font-weight: 700; color: var(--polvo); margin-bottom: 10px; text-wrap: balance; line-height: 1.2; }
+        .header .tagline { color: var(--polvo-dim); font-style: italic; font-size: 0.98em; max-width: 60ch; }
+        .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+        .meta-item { background: var(--humo); border: 1px solid var(--linea); padding: 5px 12px; border-radius: 3px; font-family: var(--mono); font-size: 0.72em; letter-spacing: 0.5px; color: var(--polvo-dim); }
+
+        .section { padding: 30px 44px; border-bottom: 1px solid var(--linea); }
+        .section h2 { font-family: var(--mono); font-size: 0.7em; text-transform: uppercase; letter-spacing: 3px; color: var(--brasa); margin-bottom: 20px; padding-bottom: 8px; border-bottom: 1px solid var(--linea); }
+
+        .segment { margin: 38px 0; padding-bottom: 26px; border-bottom: 1px solid var(--linea); }
+        .segment:last-child { border-bottom: none; }
+        .segment-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+        .segment-number { background: var(--brasa); color: var(--medianoche); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 0.72em; font-weight: 700; flex-shrink: 0; }
+        .segment-title { font-family: var(--display); font-weight: 700; font-size: 1em; color: var(--polvo); letter-spacing: 0.5px; }
+        .segment-time { margin-left: auto; font-family: var(--mono); font-size: 0.72em; color: var(--piedra); background: var(--humo); padding: 3px 10px; border-radius: 3px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+        .sfx { background: var(--medianoche); color: var(--brasa); padding: 12px 16px; border-radius: 3px; border: 1px solid var(--linea); font-family: var(--mono); font-size: 0.8em; line-height: 1.65; margin: 16px 0; }
+
+        .host-block { margin: 20px 0; padding: 0 0 0 20px; border-left: 2px solid var(--linea); }
+        .host-name { font-family: var(--mono); font-weight: 700; font-size: 0.68em; text-transform: uppercase; letter-spacing: 2px; color: var(--brasa); margin-bottom: 8px; }
+        .host-text { font-size: 1.02em; line-height: 1.9; color: var(--polvo); }
+
+        .dato { background: var(--humo); color: var(--polvo); padding: 15px 18px; border-radius: 3px; margin: 18px 0; border-left: 3px solid var(--brasa); font-size: 0.94em; }
+        .dato-label { font-family: var(--mono); font-size: 0.66em; text-transform: uppercase; letter-spacing: 2px; color: var(--brasa); margin-bottom: 7px; font-weight: 700; }
+        .leyenda { background: var(--humo); color: var(--polvo-dim); padding: 15px 18px; border-radius: 3px; margin: 18px 0; border-left: 3px solid var(--piedra); font-size: 0.94em; }
+        .leyenda-label { font-family: var(--mono); font-size: 0.66em; text-transform: uppercase; letter-spacing: 2px; color: var(--polvo-dim); margin-bottom: 7px; font-weight: 700; }
+
+        .nota-produccion { background: transparent; border: 1px dashed var(--linea); border-radius: 3px; padding: 11px 15px; margin: 12px 0; font-size: 0.82em; line-height: 1.7; color: var(--polvo-dim); }
+        .nota-produccion::before { content: "NOTA PRODUCCIÓN: "; font-family: var(--mono); font-weight: 700; font-size: 0.9em; letter-spacing: 1px; color: var(--piedra); text-transform: uppercase; }
+        .nota-produccion strong { color: var(--polvo); }
+        .nota-produccion code { font-family: var(--mono); font-size: 0.92em; color: var(--brasa); }
+        .verificar { background: transparent; border: 1px solid var(--alerta); border-radius: 3px; padding: 11px 15px; margin: 12px 0; font-size: 0.82em; line-height: 1.7; color: var(--polvo-dim); }
+        .verificar::before { content: "⚠ VERIFICAR ANTES DE GRABAR: "; font-family: var(--mono); font-weight: 700; font-size: 0.9em; letter-spacing: 1px; color: var(--alerta); text-transform: uppercase; }
+        .verificar strong { color: var(--alerta); }
+        .verificar code { font-family: var(--mono); font-size: 0.92em; }
+
+        .arquitectura { font-size: 0.86em; overflow-x: auto; }
+        .arq-row { display: grid; grid-template-columns: 28px 210px 80px 1fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--linea); align-items: start; min-width: 560px; }
+        .arq-row:last-child { border-bottom: none; }
+        .arq-num { font-family: var(--mono); color: var(--brasa); font-weight: 700; }
+        .arq-seg { font-weight: 600; color: var(--polvo); }
+        .arq-time { color: var(--piedra); font-family: var(--mono); font-variant-numeric: tabular-nums; }
+        .arq-head { font-family: var(--mono); font-size: 0.88em; text-transform: uppercase; letter-spacing: 1.5px; color: var(--piedra); border-bottom-color: var(--piedra); }
+        .arq-head .arq-num, .arq-head .arq-seg, .arq-head .arq-time { color: var(--piedra); font-weight: 700; }
+        .arq-pivote { background: rgba(217,191,122,0.09); border-left: 2px solid var(--brasa); padding-left: 10px; margin-left: -12px; }
+
+        strong { color: var(--polvo); font-weight: 700; }
+        em { color: var(--polvo-dim); }
+        table { border-collapse: collapse; width: 100%; font-size: 0.9em; }
+        th, td { border: 1px solid var(--linea); padding: 7px 10px; text-align: left; }
+        th { color: var(--brasa); font-weight: 700; }
+
+        @media (max-width: 620px) {
+            .section, .header { padding-left: 22px; padding-right: 22px; }
+            .segment-time { margin-left: 0; }
+        }
+    </style>
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="podcast">Mr. Putrid's Den · Temporada 2</div>
+        <div class="pilar">Temporada 2 · Episodio 4 — Expediente 04</div>
+        <h1>Paul is Dead</h1>
+        <div class="tagline">No hay cadáver, no hay sospechoso, no hay caso. Solo un chiste de reseña de disco que medio mundo decidió creerse — y armó las pruebas con sus propias manos.</div>
+        <div class="meta">
+            <span class="meta-item">Temporada 2 · Ep. 4</span>
+            <span class="meta-item">Misterios / Leyendas</span>
+            <span class="meta-item">~43 min · Episodio único</span>
+            <span class="meta-item">Solo</span>
+        </div>
+    </div>
+
+    <!-- NOTA DE PRODUCCIÓN -->
+    <div class="section">
+        <div class="nota-produccion"><strong>Vuelta al canon estándar de T2</strong> — EP.03 fue un experimento de un solo episodio (estilo Tales from the Crypt, ver <code>project_mpd_ep03_crypt_experiment</code>); este guion regresa al molde de EP.02/EP.006: tercera persona investigativa, presente cinematográfico, sin giro tipo EC Comics, sin ruptura de la 3ª persona en Bienvenida/Cierre.</div>
+        <div class="nota-produccion"><strong>Conector al próximo expediente: esta vez NO se anuncia al aire</strong> — decisión explícita de Andrés (2026-08-20). El primer candidato disponible en <code>banco-expedientes.md</code> ("Pánico satánico ampliado") resultó ya cubierto entero en EP.02 (Judas Priest/Nevada, PMRC, audiencia del Senado 1985 — verificado abriendo <code>EP02-el-rock-y-el-diablo.html</code> directamente, no de memoria). El próximo expediente se decide desde el banco cuando llegue el momento, sin comprometer nada en este cierre.</div>
+        <div class="verificar"><strong>Fuentes abiertas el 2026-08-20</strong> (listadas al final): Wikipedia "Paul is dead" (artículo completo), Wikipedia "Avril Lavigne replacement conspiracy theory" (artículo completo), Wikipedia "Reptilian conspiracy theory" (artículo completo), ensayo de Columbia Journalism Review sobre desinformación (artículo completo), reportaje de Alan Cross sobre el origen del parche OPP, foro Metabunk sobre el video de Justin Bieber, búsquedas cruzadas con cita directa de Fred LaBour, John Lennon y Paul McCartney. <strong>Sin abrir directamente esta sesión, confirmar antes de grabar:</strong> el artículo original de LaBour en el <em>Michigan Daily</em> (se trabajó desde citas y resúmenes de Wikipedia/Michigan Today, no del facsímil); el texto completo de la entrevista de <em>Life</em> del 7-nov-1969 (se usó el resumen y la cita corta, no el artículo íntegro).</div>
+        <div class="nota-produccion"><strong>Word count verificado programáticamente (checklist Paso 4):</strong> 4.452 palabras de <code>host-text</code>, contra un target inicial de ~5.500 (pausa/expansión asumidas, sin medición propia de este episodio). Con la fórmula de <code>guion-style-mpd.md</code> esto estima <strong>~35 min</strong>, no los 43 del estándar editorial — por debajo del piso de 40. Se hicieron dos rondas de investigación adicionales (incluida la comparativa de "dobles" pedida por Andrés: Avril Lavigne/Melissa Vandella, teoría reptiliana, Justin Bieber) antes de reportar esta cifra como final. Decisión sobre si esto se publica as-is o necesita otra ronda: pendiente de Andrés.</div>
+    </div>
+
+    <!-- ARQUITECTURA -->
+    <div class="section">
+        <h2>Arquitectura del episodio</h2>
+        <div class="arquitectura">
+            <div class="arq-row arq-head"><span class="arq-num">#</span><span class="arq-seg">Segmento</span><span class="arq-time">Entra</span><span>Contenido</span></div>
+            <div class="arq-row"><span class="arq-num">0</span><span class="arq-seg">Logo sonoro</span><span class="arq-time">00:00</span><span>Bumper fijo, 3–5 s.</span></div>
+            <div class="arq-row"><span class="arq-num">1</span><span class="arq-seg">Disclaimer</span><span class="arq-time">00:05</span><span>Bumper fijo, ~15 s.</span></div>
+            <div class="arq-row"><span class="arq-num">2</span><span class="arq-seg">Intro music</span><span class="arq-time">00:20</span><span>Intro T2, ~15 s.</span></div>
+            <div class="arq-row"><span class="arq-num">3</span><span class="arq-seg">Cold open + Bienvenida</span><span class="arq-time">00:35</span><span>Detroit, 12-oct-1969. Un teléfono suena en una estación de radio.</span></div>
+            <div class="arq-row"><span class="arq-num">4</span><span class="arq-seg">Contexto — el rumor con antecedentes</span><span class="arq-time">04:00</span><span>Los falsos arranques de 1966 y 1967, y por qué esta vez sí prendió.</span></div>
+            <div class="arq-row"><span class="arq-num">5</span><span class="arq-seg">Acto I — El estudiante que inventó al doble</span><span class="arq-time">07:30</span><span>Fred LaBour, el <em>Michigan Daily</em>, y el nombre que se inventó en el momento.</span></div>
+            <div class="arq-row arq-pivote"><span class="arq-num">6</span><span class="arq-seg">Acto II — Las pruebas que el público fabricó solo</span><span class="arq-time">19:30</span><span>Abbey Road, Revolution 9, "cranberry sauce" — y el giro: el parche que ni Paul sabe explicar.</span></div>
+            <div class="arq-row"><span class="arq-num">7</span><span class="arq-seg">Reflexión — la primera vez que lo hicimos entre todos</span><span class="arq-time">31:30</span><span><em>Life</em> rastrea a Paul hasta Escocia. Lo que queda cuando se apaga el rumor — y cómo la misma maquinaria siguió fabricando dobles: Avril/Melissa, los reptilianos, Bieber.</span></div>
+            <div class="arq-row"><span class="arq-num">8</span><span class="arq-seg">Cierre + CTA</span><span class="arq-time">39:00</span><span>Sin anuncio del próximo expediente.</span></div>
+            <div class="arq-row"><span class="arq-num">9</span><span class="arq-seg">Outro music</span><span class="arq-time">~43:00</span><span>Outro T2, ~15 s, fade in.</span></div>
+        </div>
+    </div>
+
+    <!-- GUION -->
+    <div class="section">
+        <h2>Guion</h2>
+
+        <!-- 0-2 BUMPERS -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">0</span><span class="segment-title">Logo sonoro · Disclaimer · Intro</span><span class="segment-time">00:00 — 00:35</span></div>
+            <div class="sfx">[SFX: LOGO SONORO — bumper fijo de marca, 3–5 s.]</div>
+            <div class="sfx">[SFX: DISCLAIMER — bumper fijo, ~15 s, voz grave. Texto en <code>audio/t2-disclaimer-e-intro.md</code>.]</div>
+            <div class="sfx">[SFX: INTRO T2 — ~15 s.]</div>
+        </div>
+
+        <!-- 3 COLD OPEN + BIENVENIDA -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">3</span><span class="segment-title">Cold open + Bienvenida</span><span class="segment-time">00:35 — 04:00</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Detroit, 12 de octubre de 1969. Domingo por la noche. [PAUSA]<br><br>
+                    En la cabina de la WKNR-FM, el locutor Russ Gibb tiene el show al aire, línea abierta, como todos los domingos. Suena el teléfono. Contesta un muchacho que se identifica solo como "Tom". Tom no llama a pedir una canción.<br><br>
+                    Tom dice que tiene una pregunta rara, y que quiere que Russ lo acompañe con un disco a la mano. Pide que ponga "Revolution 9", del Álbum Blanco, y que lo pase al revés. Russ, en vivo, con medio Michigan escuchando, lo hace.<br><br>
+                    Del otro lado de los parlantes sale un murmullo grave, repetido, casi como un canto. Tom dice que ahí dice una frase. Russ la escucha, la vuelve a poner, y coincide: suena como "turn me on, dead man". "Enciéndeme, hombre muerto".<br><br>
+                    Nadie cuelga. Durante la hora siguiente, la línea de la estación no para de sonar, con oyente tras oyente aportando su propia pista, su propio dato, su propio "¿se dieron cuenta de que...?". Alguien menciona una foto. Alguien más menciona una palabra rara en una letra. Alguien jura que hay una placa de carro que no cuadra. Ninguno de ellos sabe que, en ese preciso momento, está participando —sin saberlo, sin quererlo— en la construcción colectiva de la teoría de conspiración más elaborada que el rock jamás produjo. Para cuando termina el programa esa noche, ya está armado el esqueleto completo de la historia que esta semana va a explotar en todo el país: que Paul McCartney, el Beatle, lleva tres años muerto. [PAUSA]<br><br>
+                    Solo hay un problema. A setecientos kilómetros de ahí, en una granja de las Tierras Altas de Escocia, Paul McCartney está perfectamente vivo, jugando con sus hijas, sin la menor idea de que acaba de morir por segunda vez — y de que le va a tomar casi un mes entero convencer al mundo de lo contrario.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Bienvenido de vuelta a la Guarida. Yo soy Andrés, y esta noche abrimos el <strong>Expediente 04</strong>.<br><br>
+                    Este es distinto a los que hemos abierto antes. No hay un cuerpo que buscar, ni una foto que verificar, ni un pacto que desmentir. Aquí el misterio no es "qué pasó" — eso ya lo sabemos: no pasó nada, Paul McCartney sigue vivo hoy. El misterio de verdad es otro: <strong>cómo un país entero se convenció de algo falso en menos de dos semanas, sin internet, sin redes sociales, sin nada más que discos de vinilo y mucha imaginación.</strong><br><br>
+                    Y lo mejor de esta historia — se lo adelanto — es que casi nadie mintió a propósito. Empezó como un chiste. Un chiste que se le fue de las manos a la persona que lo contó primero, y que después miles de personas terminaron de construir, ladrillo por ladrillo, sin que nadie estuviera al mando.<br><br>
+                    Apague la luz. Empecemos.
+                </div>
+            </div>
+            <div class="nota-produccion">Cold open reconstruido a partir de los hechos verificados de la llamada del 12-oct-1969 a WKNR-FM (nombre "Tom", contenido de la llamada, "Revolution 9" al revés) — la puesta en escena (hora exacta, cómo suena el teléfono, cuántas llamadas siguieron) es dramatización marcada, sobre un esqueleto de hechos reales.</div>
+        </div>
+
+        <!-- 4 CONTEXTO -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">4</span><span class="segment-title">Contexto — el rumor con antecedentes</span><span class="segment-time">04:00 — 07:30</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Lo primero que hay que entender es que esa llamada del 12 de octubre no salió de la nada. El rumor de que Paul McCartney había muerto llevaba <strong>tres años</strong> intentando prender, y cada vez se apagaba solo.<br><br>
+                    Ya en septiembre de 1966, reporteros de la prensa británica llamaban a la oficina de prensa de los Beatles preguntando, literalmente, si Paul estaba enfermo o algo peor — sin ninguna base concreta, solo porque llevaba semanas sin aparecer en público. Tony Barrow, el jefe de prensa del grupo, contestaba esas llamadas una por una, negando algo que ni siquiera tenía forma todavía. En enero de 1967 circuló en Londres una versión más específica: que había muerto en un accidente en la autopista M1. Nada de esto llegó a ningún lado — eran rumores sueltos, sin pruebas, sin nadie organizándolos, apagándose solos apenas alguien pedía ver una prueba.<br><br>
+                    El 17 de septiembre de 1969 — menos de un mes antes de la llamada a Detroit — un estudiante de la Universidad de Drake, en Iowa, llamado Tim Harper, publicó en el periódico de su universidad un artículo con un título que ya lo decía todo: "¿Está muerto el Beatle Paul McCartney?". Tampoco pasó nada. Fue un artículo más, en un periódico universitario más, de los que nadie fuera de Iowa llegó a leer.<br><br>
+                    Lo que cambió el 12 de octubre no fue que el rumor fuera nuevo. Fue que, por primera vez, alguien lo puso al aire, en vivo, con un público enorme escuchando en tiempo real y con un disco de verdad sonando de fondo para probarlo. El rumor ya existía. Lo que faltaba era un escenario — y ese escenario resultó ser mucho más grande de lo que Russ Gibb se imaginó esa noche de domingo.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato</div>
+                Los tres falsos arranques (sep-1966, ene-1967, sep-1969/Drake) están documentados en el artículo de Wikipedia "Paul is dead", con nombre y fecha del editor de Drake (Tim Harper). No se abrió el artículo original de Drake University esta sesión.
+            </div>
+        </div>
+
+        <!-- 5 ACTO I -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">5</span><span class="segment-title">Acto I — El estudiante que inventó al doble</span><span class="segment-time">07:30 — 19:30</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Dos días después de esa llamada a WKNR, el 14 de octubre de 1969, un estudiante de segundo año de la Universidad de Michigan se sienta frente a una máquina de escribir con una tarea pendiente: le tocaba escribir la reseña del disco nuevo de los Beatles, <em>Abbey Road</em>, para el periódico estudiantil, el <em>Michigan Daily</em>.<br><br>
+                    Se llama Fred LaBour. Y Fred LaBour tiene un problema con las reseñas de discos: está harto de ellas. Harto de crítico tras crítico encontrándole significados profundísimos a cosas que, sospecha, al artista ni se le habían ocurrido. Así que decide, casi como venganza, escribir la reseña más ridícula posible — y ve la oportunidad perfecta en algo que había escuchado esa misma semana, de pasada, sobre una llamada de radio en Detroit.<br><br>
+                    Se sienta con toda su colección de discos de los Beatles alrededor, en el piso de su cuarto, y empieza a inventar. No a investigar: a <strong>inventar</strong>, en el momento, mirando las portadas que tiene enfrente. Toma <em>Sgt. Pepper's</em>. Le da vueltas. Toma <em>Abbey Road</em>, todavía fresco — lleva menos de dos semanas en las tiendas. Se ríe solo de lo fácil que es encontrarle un significado siniestro a cualquier cosa si uno ya decidió de antemano que lo va a encontrar.<br><br>
+                    Necesita un nombre para el doble que, según la broma, habría reemplazado a Paul después de un accidente fatal. Se le ocurre "Glenn Campbell" — el cantante country real, bastante conocido en 1969. Lo piensa dos segundos y se da cuenta de que es demasiado obvio, que nadie se lo va a creer. Así que lo cambia. Y ahí, sentado en su cuarto, nace el nombre que millones de personas iban a repetir durante los siguientes cincuenta años: <strong>William Campbell</strong>.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — cita directa de Fred LaBour</div>
+                <em>"I made the guy up. It was originally going to be Glenn Campbell, with two Ns, and then I said 'that's too close, nobody'll buy that'. So I made it William Campbell."</em> — LaBour, años después, explicando de dónde salió el nombre.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    El artículo sale publicado al día siguiente, el 14 de octubre de 1969, en la página dos del <em>Michigan Daily</em>, bajo un titular que suena a nota de policía: <strong>"McCartney Dead; New Evidence Brought to Light"</strong> — "McCartney está muerto; sale a la luz nueva evidencia".<br><br>
+                    Fred LaBour no se lo tomó en serio ni un segundo. Él y su editor lo consideraban, en sus propias palabras, obviamente un chiste. Nunca esperaron que nadie lo creyera de verdad.<br><br>
+                    Se equivocaron por completo. El artículo se agota en horas. Los estudiantes lo fotocopian, lo pasan de mano en mano, lo mandan por correo a amigos de otras universidades. La estación de radio WKNR, la misma de la llamada original, dedica el 19 de octubre un programa completo al tema, titulado "The Beatle Plot" — "El complot de los Beatles" —, mitad reportaje, mitad falso documental, alimentando el fuego que ellos mismos habían ayudado a prender nueve días antes.<br><br>
+                    Pero lo que de verdad dispara esto a nivel nacional es un accidente de geografía radial. En 1969, la señal de WABC, en Nueva York, es tan potente de noche que se puede escuchar en treinta y ocho estados distintos, y hasta en varios países vecinos. Cuando un locutor de esa emisora recoge el rumor y lo pone al aire, ya no está hablando para Nueva York: está hablando, literalmente, para medio continente al mismo tiempo. De ahí en adelante, la historia deja de moverse de boca en boca y empieza a moverse por el dial, estación por estación, cada una agregando su propio detalle.<br><br>
+                    Para el 22 de octubre — diez días después de la llamada original — el rumor ya es el tema de más de cien artículos de periódico distintos, publicados en ciudades que ni siquiera sabían dónde quedaba Ann Arbor. Y no se queda en la prensa universitaria: <em>Time</em>, <em>Newsweek</em> y <em>Rolling Stone</em> le dedican sus propios reportajes, tratando de explicar cómo un rumor de pasillo se había convertido, en cuestión de días, en la conversación de todo un país.<br><br>
+                    Y acá está lo que hace esta historia distinta a cualquier otra teoría de conspiración que usted conozca: <strong>el hombre que la inventó nunca se escondió.</strong> Fred LaBour no salió corriendo a desmentirla ni se quedó callado por miedo. Se convirtió, literalmente, en el mayor experto mundial en una mentira que él mismo había fabricado — dando entrevistas, explicando "pistas" que se inventaba sobre la marcha, alineando sus propios discos de los Beatles sobre el piso de su cuarto como si fueran evidencia forense.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato</div>
+                El alcance de la señal de WABC (38 estados), el conteo de "más de cien artículos" para el 22 de octubre y la cobertura de <em>Time</em>, <em>Newsweek</em> y <em>Rolling Stone</em> están documentados en la reconstrucción del <em>Columbia Journalism Review</em> y en la línea de tiempo del sitio The Paul McCartney Project. No se abrieron los artículos originales de <em>Time</em>/<em>Newsweek</em> de 1969 esta sesión — solo la reconstrucción posterior que los cita.
+            </div>
+            <div class="leyenda">
+                <div class="leyenda-label">Cómo se cuenta</div>
+                La leyenda dice que LaBour "descifró un código secreto" escondido por los Beatles en sus discos. La realidad, contada por él mismo décadas después: no descifró nada. Inventó las pistas mirando las portadas que tenía a la mano, el mismo día que escribió el artículo, como sátira de las reseñas que encontraban simbolismo en todo.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y hay que decir por qué cayó justo en tierra fértil. Estos son campus universitarios de 1969 — el mismo año de Woodstock, el mismo año en que la desconfianza hacia cualquier versión oficial de cualquier cosa es casi un deporte generacional. Estudiantes que ya estaban acostumbrados a desconfiar de lo que les decían los periódicos grandes, los noticieros, el gobierno. Un grupo de rock que de pronto parece esconder un secreto real, descifrable si uno se queda despierto lo suficiente con el tocadiscos y una linterna, no es una amenaza — es una invitación. Es un juego que finalmente uno puede jugar, con reglas propias, sin que ningún adulto se lo explique.
+                </div>
+            </div>
+        </div>
+
+        <!-- 6 ACTO II -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">6</span><span class="segment-title">Acto II — Las pruebas que el público fabricó solo</span><span class="segment-time">19:30 — 31:30</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Acá es donde la historia deja de ser sobre Fred LaBour y se vuelve sobre todos los demás. Porque una vez que la idea quedó suelta en el aire, LaBour dejó de ser necesario. Miles de personas, en todo Estados Unidos, se pusieron a buscar sus propias pruebas — en discos que llevaban meses, incluso años, publicados.<br><br>
+                    Tomaron la portada de <em>Abbey Road</em>, la del cruce peatonal, publicada apenas ese mismo mes de septiembre. Y empezaron a mirarla como si fuera la escena de un crimen. Los cuatro Beatles cruzan la calle en fila. Tres de ellos pisan primero con el pie izquierdo. Paul, el único, pisa primero con el derecho — fuera de paso con los demás. Va descalzo, cuando los otros tres llevan zapatos. Lleva un cigarrillo en la mano derecha, aunque todo el mundo sabe que Paul McCartney es zurdo. Detrás de ellos, estacionado, hay un Volkswagen Escarabajo blanco con placa "LMW 281F" — y alguien, en algún lugar de ese otoño de 1969, la leyó como "28IF": veintiocho, si. Como si la placa del carro le estuviera preguntando al oyente si Paul hubiera cumplido veintiocho años, de seguir vivo.<br><br>
+                    Ninguno de esos detalles significaba nada cuando se tomó la foto. Paul iba descalzo porque hacía calor ese día de agosto. Sostenía el cigarrillo en la derecha porque en ese instante concreto lo tenía ahí. La placa del carro era, sencillamente, la placa de un carro estacionado en una calle real de Londres, que no tenía nada que ver con los Beatles. Pero una vez que alguien decide que todo significa algo, <strong>todo empieza a significar algo</strong>.<br><br>
+                    Y no se quedaron en los detalles sueltos. Alguien armó los cuatro personajes de esa foto en una escena completa: un funeral. John Lennon, de blanco de pies a cabeza, es el sacerdote. Ringo Starr, de traje negro entero, es quien carga el ataúd. Paul, descalzo y fuera de paso, es el cadáver. Y George Harrison, atrás de todos, vestido de mezclilla de trabajo como si viniera de otro lado por completo, es el sepulturero. Cuatro hombres cruzando una calle en Londres se convirtieron, en la imaginación de miles de desconocidos, en el cortejo fúnebre completo de uno de ellos — sin que ninguno de los cuatro supiera, mientras el fotógrafo les pedía que cruzaran otra vez porque la primera toma había salido movida, que acababan de posar para su propio velorio.<br><br>
+                    Fueron más lejos. Le dieron vuelta al disco de acetato del Álbum Blanco y pusieron "Revolution 9" al revés, como había hecho Russ Gibb en la radio, y ahí seguía sonando esa frase entre el ruido: "turn me on, dead man". Se fijaron en el final de "Strawberry Fields Forever", donde la voz de John Lennon murmura algo casi inaudible sobre el desvanecimiento final de la canción, y decidieron que decía "I buried Paul" — "enterré a Paul". Lennon, años después, iba a jurar que lo que de verdad estaba diciendo era mucho menos siniestro: "cranberry sauce". Salsa de arándano.<br><br>
+                    Hasta el Álbum Blanco, publicado un año antes de todo esto, se volvió sospechoso en retrospectiva. Después de la explosión de color de <em>Sgt. Pepper's</em>, una portada completamente blanca, sin una sola imagen, empezó a leerse como un obituario visual — el color de las flores se acaba, dicen, cuando alguien muere. Y en "I'm So Tired", otra canción del mismo disco, alguien juró encontrar, otra vez al revés, otra frase susurrada entre el ruido de fondo: "Paul is dead, man. Miss him, miss him". Nadie necesitaba ya una prueba nueva para creer. Solo necesitaba un disco distinto donde seguir buscando la misma que ya había decidido encontrar.<br><br>
+                    Y en algún dormitorio universitario, alguien encontró la que para mí es la más ingeniosa de todas. Sobre la portada de <em>Sgt. Pepper's</em>, en el bombo de la batería, hay un logo circular pintado a mano. Alguien tuvo la paciencia — o la obsesión — de poner un espejo justo en la mitad de ese círculo, partiendo el diseño en dos mitades reflejadas. Y ahí, en el reflejo, entre las letras que se doblan sobre sí mismas, jura haber leído una frase completa: "1 ONE 1 X HE DIE" — algo así como "uno, uno por, él muere". Nadie del otro lado del país podía comprobarlo sin tener el disco y un espejo a la mano. Así que lo comprobaban. Con su propio disco. En su propio cuarto.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato</div>
+                Los detalles de <em>Abbey Road</em> (Paul descalzo, fuera de paso, cigarrillo en la mano derecha siendo zurdo, placa "LMW 281F" leída como "28IF", la lectura de funeral con John/Ringo/George como sacerdote/cargador/sepulturero), el truco del espejo en el bombo de <em>Sgt. Pepper's</em> y las lecturas de "Revolution 9" y "Strawberry Fields Forever" están documentados en Wikipedia "Paul is dead" y en el listado de clues de That Eric Alper, con la aclaración de Lennon sobre "cranberry sauce" incluida en la fuente de Wikipedia.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    A John Lennon esto ya no le hacía ninguna gracia. El 26 de octubre, dos semanas después de la llamada original, llama él mismo a una estación de radio de Detroit para responder en vivo. No suena divertido. Suena cansado, y un poco molesto.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — cita directa de John Lennon, radio de Detroit, 26-oct-1969</div>
+                Llamó al rumor <em>"the most stupid rumor I've ever heard"</em> — "el rumor más estúpido que he escuchado en mi vida" — y negó específicamente ser el "sacerdote" de blanco del supuesto funeral: <em>"All I've got is a nice Humphrey Bogart suit."</em> — "Lo único que tengo es un lindo traje de Humphrey Bogart".
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Ni siquiera esa llamada, con John Lennon en persona negándolo al aire, apagó nada. Y hay una razón fría, de negocios, para que no le convenía a casi nadie apagarlo demasiado rápido.<br><br>
+                    En noviembre de 1969, los gerentes de ventas de Capitol Records — el sello de los Beatles en Estados Unidos — reportan un aumento enorme en las ventas de todo el catálogo del grupo. No solo de <em>Abbey Road</em>: también de discos de dos y tres años atrás, que la gente compraba de nuevo solo para releerlos en busca de pistas. El vicepresidente de mercadeo nacional del sello llega a decir que ese va a ser, en sus palabras, el mejor mes en la historia de la compañía en ventas de Beatles. <em>Abbey Road</em>, el disco que supuestamente contenía las pruebas de la muerte de Paul, termina superando en ventas a todos los discos anteriores del grupo. El rumor que debería haber sido una crisis de relaciones públicas terminó siendo, sin que nadie lo planeara ni lo pagara, la mejor campaña de mercadeo que un disco de los Beatles tuvo jamás — construida enteramente gratis, por miles de desconocidos convencidos de que estaban destapando un secreto y no vendiendo discos.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato</div>
+                El aumento de ventas reportado por Capitol Records en noviembre de 1969 y la cita del vicepresidente de mercadeo (Rocco Catena) están documentados en la reconstrucción de Wikipedia "Paul is dead" y en Album Classics. No se abrió la fuente primaria de la industria discográfica de 1969 esta sesión.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Pero la prueba favorita de todas — la que a mí, se lo confieso, más me gusta de esta historia entera — estaba en la portada de <em>Sgt. Pepper's Lonely Hearts Club Band</em>, dos años antes de todo esto. Ahí, entre las decenas de caras de la portada, Paul lleva puesto un parche militar sobre el uniforme. Alguien lo miró de cerca y leyó, o creyó leer, las letras "OPD". Y alguien más, en Estados Unidos, decidió que esas tres letras significaban "Officially Pronounced Dead" — "Oficialmente Declarado Muerto".<br><br>
+                    Es una de las "pruebas" que más viajó. Y acá viene el giro que nadie estaba buscando: ese parche no dice OPD. [PAUSA] Dice <strong>OPP</strong>. Es la insignia real de la Policía Provincial de Ontario, en Canadá.<br><br>
+                    Ahora, uno pensaría que resolver esto cierra el caso. Pero no. Porque cuando uno va a buscar de dónde salió ese parche real —cómo terminó en el uniforme de Paul McCartney para una sesión de fotos en Londres en 1967— se encuentra con que ni siquiera eso está claro. Hay una versión que dice que se lo regaló un cabo de la policía de Ontario en un aeropuerto, en 1964, cuando los Beatles esperaban un vuelo a Montreal. Hay otra que dice que fue un oficial distinto, en otro aeropuerto, en 1965. Hay una tercera que ni siquiera habla de Paul: dice que se lo dieron a John Lennon, un año después. Y cuando le preguntaron al propio Paul McCartney por esto, en 1969, en plena tormenta del rumor, su respuesta fue esta.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato — cita directa de Paul McCartney, revista Life, 1969</div>
+                <em>"It is all bloody stupid. I picked up that OPD badge in Canada. It was a police badge."</em> — el propio Paul, defendiéndose del rumor, se equivoca de memoria y también lo llama "OPD".
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Piense en lo que eso significa. La prueba más citada de que Paul McCartney estaba muerto era una lectura equivocada de tres letras. Y cuando por fin se corrige esa lectura, ni el dueño original del parche se acuerda bien de dónde salió. La "evidencia" nunca fue sólida — ni cuando la inventaron, ni cuando la desmintieron.
+                </div>
+            </div>
+            <div class="verificar">Las tres versiones del origen del parche OPP (aeropuerto 1964 con un cabo llamado Glenn Hickingbottom según el libro <em>The Beatles in Canada</em> de Piers Hemmingsen; Malton 1965; entregado a Lennon en 1966) vienen de un resumen de búsqueda que cita a Alan Cross — abrir su artículo completo antes de grabar si se va a nombrar al cabo por su nombre.</div>
+        </div>
+
+        <!-- 7 REFLEXION -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">7</span><span class="segment-title">Reflexión — la primera vez que lo hicimos entre todos</span><span class="segment-time">31:30 — 39:00</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    El rumor no murió porque alguien lo desmintiera con un comunicado. Murió porque la revista <em>Life</em> —la publicación más grande de Estados Unidos en ese momento— mandó a una periodista, Dorothy Bacon, junto con un fotógrafo, a buscar a Paul McCartney en persona. Lo encontraron donde de verdad estaba: en su granja, en Escocia, con Linda y sus hijas, lejos de cualquier estudio de grabación.<br><br>
+                    La revista salió el 7 de noviembre de 1969 con la foto de la familia en la portada y un titular que, esta vez, no necesitaba ninguna pista escondida: "Paul Is Still With Us" — "Paul sigue con nosotros". Adentro, Paul respondía, con el cansancio de quien lleva un mes explicando que está vivo: que todo era, en sus palabras, "bloody stupid" — una tontería absoluta —, y que tal vez el rumor había arrancado sencillamente porque él no había estado dando entrevistas últimamente.<br><br>
+                    Con esa portada, el rumor empezó a apagarse. Pero no desapareció — se volvió otra cosa. Dejó de ser una noticia y se convirtió en objeto de estudio: sociólogos y psicólogos de los años setenta lo analizaron como caso de comportamiento colectivo, y un biógrafo de los Beatles llegó a describirlo como "un genuino cuento popular de la era de las comunicaciones masivas". Décadas después, la revista <em>Time</em> lo sigue listando entre las teorías de conspiración más duraderas del mundo.<br><br>
+                    Y ni siquiera el siglo veintiuno lo dejó descansar del todo. En 2009, más de cuarenta años después de la llamada a WKNR, una publicación italiana volvió a sacar el tema con un "análisis forense" de las medidas del cráneo de Paul en fotos de antes y después de 1966, alegando diferencias. Ningún medio serio lo avaló, y la explicación es la de siempre — ángulos de cámara distintos, lentes distintos, años de por medio —, pero el detalle importa: la historia sigue teniendo suficiente gancho para que alguien, décadas después, quiera resucitarla con herramientas nuevas.<br><br>
+                    </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato</div>
+                El análisis de que los "creyentes" del rumor estaban jugando más que dolidos ("confused, but not sad") viene de un ensayo del <em>Columbia Journalism Review</em> firmado por alguien que vivió esos días como estudiante universitario — fuente abierta directamente esta sesión.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y hay otro epílogo, uno que no tiene nada que ver con Paul y sí con quiénes contamos estas historias. El periódico de otra universidad, Northern Illinois, había publicado su propia versión del rumor apenas seis días antes que el de Fred LaBour — copiada casi entera, sin citar, del artículo original de Iowa. En 2023, cincuenta y cuatro años después, la junta editorial de ese mismo periódico —gente que ni siquiera había nacido en 1969— publicó una disculpa formal por haber ayudado a esparcir "una teoría de conspiración internacional y falsa". Nadie se las había pedido. La escribieron solos, medio siglo tarde, porque alguien en la redacción encontró el archivo viejo y decidió que todavía valía la pena corregirlo.<br><br>
+                    Y acá es donde quiero que se detenga conmigo un segundo, porque esto es lo que de verdad me obsesiona de este expediente. Esto pasó en 1969. Sin internet. Sin teléfonos inteligentes. Sin nadie que pudiera compartir una captura de pantalla en dos segundos. Y aun así, en menos de dos semanas, miles de personas en un país entero —sin conocerse, sin coordinarse, sin que nadie estuviera al mando— hicieron exactamente lo mismo que hoy hacemos con un clic: tomaron un fragmento de "evidencia" ambiguo, decidieron que significaba algo, y se lo pasaron a otra persona para que agregara la suya.<br><br>
+                    Fred LaBour inventó un chiste sentado solo en su cuarto. Todo lo demás —cada pista nueva encontrada en cada portada, cada frase escuchada al revés, cada corazonada convertida en hecho— lo construyó gente que nunca se conoció entre sí, con vinilos y tornamesas en vez de algoritmos. La maquinaria era exactamente la misma que la de hoy. Lo único que cambió después fue la velocidad.
+                </div>
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y sé lo que está pensando, porque a mí me pasó lo mismo investigando este expediente: esa maquinaria nunca se apagó. Solo se puso a fabricar dobles nuevos.<br><br>
+                    2011. Un blog brasileño, escrito por un fan, con un título que no deja lugar a dudas: <em>"Avril Está Morta"</em> — "Avril está muerta". La teoría es un calco casi exacto de la de Paul, actualizado para la era del pop punk: Avril Lavigne se habría suicidado en 2003, poco después de su primer disco, y la habría reemplazado una doble llamada Melissa Vandella — contratada primero solo para las fotos de prensa, y después, según la leyenda, para grabar en su lugar. Las "pruebas" también le hacen honor a las de LaBour: cambios sutiles en la cara entre fotos de distintos años, una sesión fotográfica donde a Avril se le ve la palabra "Melissa" escrita en la mano, mensajes subliminales que alguien juró encontrar en el segundo disco.<br><br>
+                    Pero el giro real de esta historia está en lo que el propio autor del blog escribió, años después, cuando alguien por fin le preguntó por qué lo había hecho. No dijo que lo creyera. Dijo, casi palabra por palabra, que lo había escrito <strong>para demostrar qué tan fácil es hacer que una teoría de conspiración se vea verdadera.</strong> El mismo experimento de Fred LaBour, cuarenta y dos años después, en otro idioma, sin que el autor supiera que ya se había hecho antes.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato</div>
+                Origen (blog brasileño "Avril Está Morta", 2011), el nombre "Melissa Vandella" y las "pruebas" citadas (foto con "Melissa" escrita en la mano, mensajes subliminales en <em>Under My Skin</em>) están documentados en Wikipedia "Avril Lavigne replacement conspiracy theory". El propio blog aclaró después que se creó para mostrar "cómo las teorías de conspiración pueden parecer verdaderas" — cita tomada de esa misma fuente.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y de ahí en adelante el género mutó otra vez, hacia algo todavía más raro. Porque en algún punto, reemplazar a un artista por un doble humano dejó de ser suficientemente extraño. Alguien tenía que subir la apuesta. Y la subieron proponiendo que el doble ni siquiera era humano.<br><br>
+                    En 1999, un excomentarista deportivo británico llamado David Icke publicó un libro asegurando que buena parte de las élites del mundo —familias reales, banqueros, presidentes— son en realidad reptiles humanoides disfrazados con lo que él mismo llama "trajes de piel humana". La teoría, con el tiempo, se filtró del poder político al mundo del espectáculo: si un banquero puede ser un lagarto disfrazado, ¿por qué no una estrella de pop?<br><br>
+                    En marzo de 2017 circuló un video de tres millones de vistas donde Justin Bieber, en plena entrevista, parpadea de una forma que —si uno ya decidió de antemano qué está buscando— parece exactamente el parpadeo de un reptil: de abajo hacia arriba, no de arriba hacia abajo. Un sitio de noticias en Australia llegó a publicar que "cientos de fans" lo habían visto transformarse frente a un aeropuerto en Perth. La explicación real, rastreada después: un editor de video que se hace llamar "Tete" había alterado el clip a propósito, fotograma por fotograma, con software de edición — no fue un artefacto de compresión de video, como a veces pasa con estos parpadeos raros. Fue fabricado, a propósito, para que pareciera real. Bieber, cuando le preguntaron, se rió y dijo que no, que es humano como cualquiera.<br><br>
+                    Fíjese en la progresión completa. En 1969, alguien malinterpretó una placa de carro. En 2011, alguien inventó una historia completa para probar un punto. En 2017, alguien fabricó el video digitalmente, fotograma por fotograma, para que la "prueba" se viera real en cámara. La materia prima de la mentira se volvió cada vez más sofisticada. El impulso de creerla, ni un poco.
+                </div>
+            </div>
+            <div class="dato">
+                <div class="dato-label">Dato</div>
+                El libro de David Icke (<em>The Biggest Secret</em>, 1999) y el marco general de la teoría reptiliana están documentados en Wikipedia "Reptilian conspiracy theory". El video de Justin Bieber (marzo 2017, titular de Perth, ~3 millones de vistas) y su desmentido —video alterado digitalmente por el editor "Tete", no artefacto de compresión— están documentados y verificados en el foro de desmentidos Metabunk.
+            </div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Y hay un detalle que casi nadie menciona cuando cuenta esta historia, y que a mí me parece el más importante de todos: la gente que se pasaba las pistas de mano en mano, en su gran mayoría, no estaba realmente convencida de que Paul McCartney estuviera muerto. Un periodista que vivió esos días de estudiante lo resumió mejor que nadie, medio siglo después: la gente estaba confundida, dijo, pero no estaba triste. Nadie hacía duelo. Lo que estaban haciendo era jugar — juntos, sin ponerse de acuerdo, un rompecabezas gigante armado por miles de manos que nunca se tocaron.<br><br>
+                    Y ahí está, quizás, la lección real de este expediente, la que sí me atrevo a dejarle completa: cuando alguien le muestre la próxima "prueba" imposible de ignorar —un parpadeo raro, una palabra escondida, una placa de carro que no cuadra— la pregunta más útil no siempre es si es verdad o mentira. A veces la pregunta es si la persona que se la cuenta de verdad la cree, o si, como medio país en octubre de 1969 y como un fan brasileño cuarenta y dos años después, simplemente está disfrutando el juego de creer, y usted apenas se acaba de sumar sin saberlo.
+                </div>
+            </div>
+        </div>
+
+        <!-- 8 CIERRE -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">8</span><span class="segment-title">Cierre + CTA</span><span class="segment-time">39:00 — 42:30</span></div>
+            <div class="host-block">
+                <div class="host-name">Andrés</div>
+                <div class="host-text">
+                    Así que la próxima vez que alguien le jure que descubrió algo escondido en una canción, en una portada, en una foto vieja, en un video de tres segundos donde alguien parpadea raro — antes de creerle, hágase la misma pregunta que debería habérsele ocurrido a medio Estados Unidos en octubre de 1969: ¿quién fue el primero en decir esto, y qué tan seguro está usted de que no era, sencillamente, un chiste que se le salió de las manos?<br><br>
+                    [PAUSA]<br><br>
+                    Fred LaBour, por si le queda la curiosidad, nunca se disculpó por nada — porque no había nada de qué disculparse. Dejó el periodismo, formó una banda de country llamada Riders in the Sky, y todavía hoy, cuando le preguntan por aquel artículo, lo cuenta con la misma sonrisa con la que lo escribió aquella noche de octubre, frente a su colección de discos.<br><br>
+                    Esto ha sido el Expediente 04. Yo soy Andrés, esto es Mr. Putrid's Den, y como siempre: la última palabra es suya.
+                </div>
+            </div>
+        </div>
+
+        <!-- 9 OUTRO -->
+        <div class="segment">
+            <div class="segment-header"><span class="segment-number">9</span><span class="segment-title">Outro music</span><span class="segment-time">~42:30 — 43:00</span></div>
+            <div class="sfx">[SFX: OUTRO T2 — ~15 s, fade in sobre la última línea, fade out a negro.]</div>
+        </div>
+    </div>
+
+    <!-- FUENTES -->
+    <div class="section">
+        <h2>Fuentes abiertas el 2026-08-20</h2>
+        <div class="nota-produccion">
+            Paul is dead — Wikipedia (artículo completo): https://en.wikipedia.org/wiki/Paul_is_dead<br>
+            Paul McCartney interview, Life magazine, 1969 — Internet Archive: https://archive.org/details/paul-mc-cartney-interview-life-magazine-1969<br>
+            EXCLUSIVE: The REAL Sgt. Pepper Was a Canadian Cop — Alan Cross: https://www.ajournalofmusicalthings.com/exclusive-real-sgt-pepper-canadian-cop-police-assignment-beatles-created-50-year-mystery/<br>
+            'Paul is Dead!' (said Fred) — Michigan Today: https://michigantoday.umich.edu/2009/11/11/a7565/<br>
+            Avril Lavigne replacement conspiracy theory — Wikipedia (artículo completo): https://en.wikipedia.org/wiki/Avril_Lavigne_replacement_conspiracy_theory<br>
+            Reptilian conspiracy theory — Wikipedia (artículo completo): https://en.wikipedia.org/wiki/Reptilian_conspiracy_theory<br>
+            Misinformation and the saga of 'Paul is Dead' — Columbia Journalism Review: https://www.cjr.org/analysis/misinformation-paul-mccartney-dead.php<br>
+            Debunked: Justin Bieber's Reptilian Eyes Shapeshifting — Metabunk: https://www.metabunk.org/threads/debunked-justin-biebers-reptilian-eyes-shapeshifting-in-court.3047/<br>
+            Not letting it be: Student newspaper apologizes for 'Paul is Dead' speculation — NPR Illinois: https://www.nprillinois.org/arts-life/2023-10-19/not-letting-it-be-student-newspaper-apologizes-for-paul-is-dead-speculation<br>
+            <strong>Citadas por resumen de búsqueda, sin abrir directamente esta sesión — abrir antes de grabar:</strong> The 20 Most Infamous "Paul Is Dead" Clues — That Eric Alper: https://www.thatericalper.com/2025/04/05/the-20-most-infamous-paul-is-dead-clues-and-why-beatles-fans-still-cant-let-it-go/ · 'Paul Is Dead': The Bizarre Story of Music's Most Notorious Conspiracy Theory — Rolling Stone: https://www.rollingstone.com/music/music-features/paul-mccartney-is-dead-conspiracy-897189/
+        </div>
+    </div>
+
+</div>
