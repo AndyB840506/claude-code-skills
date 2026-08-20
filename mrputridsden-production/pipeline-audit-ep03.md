@@ -107,3 +107,9 @@
 - Verificado: 42.0s exactos, `volumedetect` -23.5 dB mean / -4.7 dB max (audio real, no silencio).
 - Archivo: `E:\Podcast\MPD\Temporada 2\EP 03\artwork\social-clip\MPD-EP03-clip-mr-crowley.mp3`. `social-ep03.md` actualizado — checklist de assets ahora 4/4 completo.
 - Resultado: OK
+
+## Cierre — verificación en vivo (2026-08-20)
+- Qué se hizo: retomada la sesión 3 días después del lanzamiento programado. Verificado con dos métodos independientes antes de declarar publicado: (1) WebFetch a la URL de Spotify confirmó título exacto "EP.03: La Bestia que el rock volvió inmortal", show "Mr. Putrid's Den", ~33 min, publicado lunes; (2) `curl -I` a la URL de Spotify dio 200.
+- Encontrado: el sitio seguía mostrando "Disponible el lunes" en el hero (`file-status` del Expediente 03) — quedó stale desde el deploy del 2026-08-15. Corregido a "Ya disponible", sincronizado a `.vercel/output/static/`, redesplegado a producción (`vercel deploy --prebuilt --prod` + `vercel alias set`), verificado en vivo con `curl` que el texto nuevo está publicado.
+- `pipeline-state-ep03.md` y `roadmap-mpd.md` actualizados — episodio marcado como publicado y verificado, stage_c: complete.
+- Resultado: OK — EPISODIO CERRADO.
