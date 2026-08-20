@@ -1,0 +1,88 @@
+# EP.027 — Artículo nativo de LinkedIn (fuente en texto)
+
+**Estado:** borrador, sin publicar. URL de Spotify confirmada 2026-08-20:
+https://open.spotify.com/episode/5GEHeLhfee0NmFYalIU1YW?si=NyN-FjRTR56ciSDEDc-dQg — lanza
+domingo 23 de agosto de 2026, 8PM Colombia. Fecha sugerida de publicación de este artículo:
+miércoles 26 de agosto (mitad de semana, no compite con el lanzamiento del domingo ni con el
+refuerzo del martes).
+
+**Versión renderizada con botón "copiar con formato":**
+https://claude.ai/code/artifact/224ca99f-5e4f-4c36-b645-535cfb4f814e
+Fuente: `EP027-linkedin-articulo.artifact.html`, en esta misma carpeta.
+
+**Titular (campo aparte en LinkedIn, no la primera línea del cuerpo):**
+
+```
+Ascendió a su mejor vendedor. Los datos dicen que fue un error.
+```
+
+---
+
+## Cuerpo
+
+En 1969, un profesor canadiense publicó un libro que era, textualmente, un chiste: en una jerarquía, todo empleado tiende a ascender hasta su nivel de incompetencia. No tenía datos, no tenía muestra. Tenía una frase y tenía gracia.
+
+Medio siglo después, tres economistas revisaron los datos de 131 empresas, con casi 40.000 personas adentro, para ver si el chiste tenía razón.
+
+La tenía.
+
+### El chiste que se convirtió en diagnóstico
+
+Laurence Peter llevaba años mirando colegios por dentro, obsesionado con un patrón: la persona que estorbaba en un cargo casi nunca era mediocre desde siempre. Era, casi siempre, alguien que había sido excelente en el puesto anterior. Tan excelente que lo sacaron de ahí.
+
+La formulación cabe en un renglón. No dice que la gente sea incompetente. Dice que la gente sube mientras es competente. El sistema, funcionando perfecto, sin que nadie se equivoque en ningún paso, termina dejando a cada persona en el puesto donde ya no rinde.
+
+La gente no leyó el libro como comedia. Lo leyó como explicación, y la frase se soltó sola durante décadas, citada en miles de reuniones sin que casi nadie la midiera.
+
+### 38.843 vendedores después
+
+En 2019, tres investigadores de Minnesota, MIT y Yale publicaron en el Quarterly Journal of Economics el primer intento serio de medirlo. Escogieron vendedores porque ahí hay un número que no se discute: lo que la persona vendió, en dólares, cada mes. Y porque cuando a un vendedor lo ascienden a jefe, sus subordinados también venden, así que se puede comparar con la misma vara el antes y el después.
+
+La primera mitad del hallazgo no sorprende: a quien más vende, más lo ascienden. La segunda mitad es la que duele. Entre los que ya fueron ascendidos, mientras más vendía la persona antes, peor jefe resultó ser. Duplicar las ventas previas de un jefe predice una caída del equipo equivalente a casi un tercio de un trabajador. Y el efecto es igual o más fuerte cuando al ascendido le dan un equipo distinto del suyo original, lo que descarta que el problema fuera del equipo.
+
+Había una señal que sí predecía un buen jefe, visible en los mismos datos: con cuánta gente la persona había repartido el crédito de sus ventas anteriores. Y a la hora de ascender, eso no pesaba, en parte porque, a diferencia de las ventas, la colaboración es fácil de fingir apenas alguien descubre que decide el ascenso.
+
+### No es torpeza. Es cálculo.
+
+La lectura fácil es "qué torpes las empresas". El mismo estudio la desarma: cuando el cargo de jefe implica más responsabilidad, o cuando los vendedores ya están bien pagados por comisión, esas mismas empresas le bajan el peso a las ventas y le suben el peso a la colaboración. La empresa promedio no está ciega. Está calculando.
+
+Lo que calcula es esto: el ascenso, en la mayoría de las organizaciones, no es principalmente una decisión de a quién le queda bien el cargo. Es el premio mayor del sistema de incentivos: la zanahoria que hace que la gente se esfuerce durante años en el puesto que ya tiene. La empresa acepta un jefe peor a cambio de mantener viva la promesa que motiva a todos los que no ascendieron.
+
+El ascenso dejó de ser una asignación de cargo y se volvió una forma de pago. El problema es que se paga con el equipo de otro.
+
+### Cuando ese precio se paga completo
+
+Nick Leeson entró al Barings Bank en 1989, la casa bancaria más antigua de Inglaterra, fundada en 1762. Era bueno resolviendo operaciones. En 1992 lo ascendieron a gerente general de futuros en Singapur, y con ese ascenso quedó a cargo de operar en el mercado y de liquidar y controlar sus propias operaciones al mismo tiempo (separar esas dos funciones es lo primero que revisa cualquier auditoría), pero separarlas habría significado quitarle una parte del cargo al que producía los mejores números de la región.
+
+Escondió pérdidas durante casi tres años. Cuando reventó, en febrero de 1995, la cifra era de 827 millones de libras, el doble del capital del banco. El Barings, 233 años después, se vendió por una libra.
+
+El Principio de Peter no explica el fraude de Leeson: eso fue una decisión suya, y por eso hay una condena. Lo que explica es por qué estaba ahí: un hombre bueno resolviendo operaciones terminó, por serlo, a cargo de juzgar riesgos y de supervisarse a sí mismo. El fraude fue de Leeson. El puesto fue del sistema.
+
+El episodio completo trae un tercer caso, con consecuencias medidas en vidas y no en libras esterlinas: el general que mejor organizó un ejército en la historia militar de Estados Unidos, y que resultó ser el peor comandándolo en batalla. Está desarrollado entero acá: behind-thequeue.com/episodios/por-que-su-mejor-empleado-se-vuelve-un-mal-jefe
+
+### Tres cosas para el lunes
+
+**Uno: deje de usar el ascenso como forma de pago.** Si la única manera de reconocer a alguien excelente es ponerlo a mandar, va a seguir convirtiendo especialistas en jefes mediocres para siempre. La salida es una segunda escalera real, con el mismo sueldo y el mismo peso en la mesa, no un premio de consuelo.
+
+**Dos: ascienda con evidencia del oficio nuevo, no del viejo.** Antes de dar el cargo, dé el trabajo por pedazos: que la persona entrene a alguien, que coordine un proyecto sin autoridad formal. Mire cómo quedó el equipo, no los resultados.
+
+**Tres: haga que volver no sea un castigo.** Si devolverse a un rol técnico se lee como fracaso, cada ascenso equivocado es permanente por diseño. Los mismos investigadores calcularon qué pasaría si esas empresas ascendieran buscando calidad gerencial en vez de premiar ventas: la calidad promedio de los jefes subía 30%, sin contratar a nadie nuevo.
+
+¿A quién ascendió usted por lo bueno que era en el puesto anterior, y alguna vez revisó si funcionó?
+
+---
+
+**Behind the Queue** es un podcast en español para quienes dirigen equipos y operaciones. Cada episodio toma un problema operativo real y lo baja al piso: qué significa cuando hay gente, plata y un lunes de por medio. Casos documentados, cifras verificables y las fuentes a la vista.
+
+Este texto es una versión corta del episodio 27. La completa, con el caso de McClellan y Antietam y la aplicación entera, está acá: behind-thequeue.com/episodios/por-que-su-mejor-empleado-se-vuelve-un-mal-jefe
+
+Escuchar el episodio (~41 min): https://open.spotify.com/episode/5GEHeLhfee0NmFYalIU1YW?si=NyN-FjRTR56ciSDEDc-dQg
+
+Sitio: behind-thequeue.com
+LinkedIn: linkedin.com/company/behind-the-queue
+Instagram: @behindthequeue84
+TikTok: @behind.the.queue
+Facebook: facebook.com/behindthequeue
+Escríbame: andy@behind-thequeue.com
+
+#Liderazgo #GestionDeEquipos #Management #CulturaOrganizacional #RecursosHumanos #Colombia
