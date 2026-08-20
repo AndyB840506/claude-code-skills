@@ -258,3 +258,41 @@ visualmente los 3 formatos (no solo 1:1) antes de dar por bueno — el 1:1 suele
 a la primera porque no depende de estos dos valores, y por eso un bug real en 16:9/9:16
 puede pasar desapercibido si solo se inspecciona la portada cuadrada.
 
+## Regenerar a mayor resolución con el mismo seed NO es lo mismo que escalar la imagen aprobada
+
+(aprendido 2026-08-20, MPD EP.04)
+
+El patrón de producción normal es: validar a 1024×1024, y para la pieza final
+"regenerar la escena aprobada nativamente a mayor resolución (1536²) con el mismo
+prompt/seed" antes de upscalear con RealESRGAN — así lo hizo EP.03. En EP.04 eso
+mismo (seed idéntico, prompt idéntico, solo cambió `width`/`height` a 1536) produjo
+una escena PEOR que la aprobada: un espejo que a 1024 reflejaba un borrón sin forma
+salió a 1536 reflejando un marco/cuadro con detalle reconocible — el mismo seed no
+garantiza el mismo resultado a otra resolución.
+
+**Regla:** el default es escalar directamente el PNG de 1024 ya aprobado (RealESRGAN
+4x → `ImageScale` exacto a la resolución final), no regenerar nativamente a mayor
+resolución. Si se regenera para ganar detalle nativo, **comparar el resultado contra
+la versión aprobada antes de usarlo** — no asumir que "mismo seed" significa "mismo
+resultado, solo más nítido". Si difiere, descartar la regeneración y volver al
+escalado directo del archivo aprobado.
+
+## El telón fijo por temporada puede no leerse como distinto entre episodios
+
+(aprendido 2026-08-20, MPD EP.04)
+
+El sistema de MPD T2 reusa a propósito la misma escena base cada episodio (chimenea,
+butaca, mármol, vinilos) y solo cambia el contenido del marco ovalado — así lo pide
+`mrputridsden/CLAUDE.md`. En EP.04 se generó y aprobó un concepto (espejo empañado en
+el marco, en vez del retrato de EP.03) sin confirmar con Andrés si ese cambio se leía
+suficientemente distinto — no se leyó: a primera vista, portada de EP.03 y el primer
+intento de EP.04 se veían "iguales", y hubo que rehacer el concepto completo después
+de escalarlo a producción final.
+
+**Regla:** cuando el único elemento que cambia es el contenido del marco/objeto
+central, mostrar el nuevo concepto **junto al thumbnail del episodio anterior** al
+pedir aprobación (no cada uno por separado) — la comparación lado a lado es lo que
+expone si la diferenciación real alcanza. Si el objeto central no basta, variar
+también el ángulo de cámara o los objetos de la mesa lateral, no solo lo que cuelga
+del marco.
+

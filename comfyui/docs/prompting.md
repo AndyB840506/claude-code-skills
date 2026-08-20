@@ -118,6 +118,18 @@ Template: `comfyui/templates/zimage-txt2img-api.json`.
   atribución: cuando dos objetos cercanos compiten por un efecto (humo, luz, reflejo), amarrar el
   efecto al objeto en la MISMA oración ("from the glowing tip of that cigar...") y verificar con un
   crop ampliado de la zona antes de dar la imagen por buena — a tamaño completo el error no se ve.
+- **Pedir texto "borroso/ilegible" sobre un objeto (periódico, cartel, etiqueta) sigue produciendo
+  pseudo-texto — letras que casi forman palabras — no una textura abstracta limpia** (aprendido
+  2026-08-20, MPD EP.04). Es la misma trampa de la negación de arriba, aplicada a texto: describir
+  el resultado que NO se quiere ("no legible letterforms", "washed out and pale") no lo suprime,
+  solo lo atenúa. Dos rondas de refuerzo redujeron el titular de un periódico de un titular casi
+  legible a uno más chico, pero nunca lo eliminó del todo — a tamaño de miniatura (150px) resultó
+  invisible, pero a tamaño completo seguía ahí. **Regla:** evitar objetos con superficie de texto
+  como prop de escena cuando el objeto no es el sujeto principal. Si es indispensable, angular el
+  objeto para que el plano de texto no quede de frente a cámara (de canto, doblado, con reflejo de
+  luz encima) en vez de pedir que el texto salga borroso — ocultar geométricamente es más confiable
+  que describir la degradación. Verificar siempre a tamaño real de uso (150px Spotify), no solo a
+  tamaño completo, antes de descartar un intento por esto.
 
 ## Chroma (T5-flan encoder) — prompts DENSOS o look genérico (aprendido 2026-07-11)
 
