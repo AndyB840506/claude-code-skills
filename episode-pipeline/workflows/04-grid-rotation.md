@@ -142,6 +142,16 @@ Expediente 01 (`id="expediente"`) y Expediente 02 (`id="expediente02"`) como pla
 6. Actualiza el índice de nav (`<nav class="bar-nav">`) si el ancla `#expediente0X` no
    está enlazada.
 
+**Si el deploy se hace ANTES de que el episodio esté en vivo en Spotify** (episodio
+programado, ver checkpoint de Spotify en `02-assets.md`), el `.file-status` del hero
+suele llevar texto condicionado a esa fecha (ej. "Disponible el lunes"). **Anotar
+explícitamente en el checkpoint/handoff el paso de volver y cambiarlo a "Ya disponible"
+cuando se verifique que el episodio salió** — no asumir que "confirmar que está en vivo"
+cubre automáticamente el copy del sitio. Mordió en EP.03 (2026-08-20): el episodio
+salió el lunes como programado, pero el sitio siguió mostrando "Disponible el lunes"
+3 días después porque nadie lo tenía anotado como pendiente puntual — se encontró por
+casualidad al hacer la verificación general, no porque hubiera una tarea marcada.
+
 **"El Archivo" (`id="archivo"`) es solo para Temporada 1** — la lista compacta de 5 filas
 de EP.001-005. Los expedientes de T2 NUNCA bajan a esa lista ni a ninguna otra; se
 quedan como sección `.case` completa para siempre. Si en el futuro la página se vuelve
