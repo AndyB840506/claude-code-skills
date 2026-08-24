@@ -1,9 +1,11 @@
 # EP.027 — Launch assets: «Por qué su mejor empleado se vuelve un mal jefe: el Principio de Peter»
 
-**Estado:** grabado (2026-07-31), transcrito (2026-08-20), portadas y quote cards regeneradas
-(las viejas llevaban el título de EP.24 horneado). URL de Spotify **confirmada** 2026-08-20:
-https://open.spotify.com/episode/5GEHeLhfee0NmFYalIU1YW?si=NyN-FjRTR56ciSDEDc-dQg. **Falta:**
-desplegar el artículo del sitio y hacer commit.
+**Estado:** **PUBLICADO y verificado en vivo (2026-08-23)** — grabado (2026-07-31), transcrito
+(2026-08-20), portadas y quote cards regeneradas (las viejas llevaban el título de EP.24
+horneado), desplegado y confirmado por curl (artículo, og-image, índice, sitemap). URL de
+Spotify: https://open.spotify.com/episode/5GEHeLhfee0NmFYalIU1YW?si=NyN-FjRTR56ciSDEDc-dQg.
+Clip de audio para redes extraído (§D). Falta solo lo manual de Andy: publicar el calendario
+social pendiente, YouTube y el artículo de LinkedIn.
 
 Fecha objetivo de lanzamiento: **domingo 23 de agosto de 2026, 8:00 PM Colombia** (confirmada
 por Andy 2026-08-20; siguiente domingo tras EP.026, sin hueco en la cadencia).
@@ -283,22 +285,30 @@ Archivo: `E:\Podcast\BTQ\EP 27\BTQ Artwork EP 27\social-clip\BTQ-EP027-clip-asce
 
 ---
 
-## F · Pendientes — todos bloquean el deploy, en orden
+## F · Pendientes — verificados en vivo 2026-08-23, ciclo cerrado
 
 - [x] **Subir el episodio a Spotify for Podcasters** y confirmar la URL real — hecho, URL pegada
       por Andy 2026-08-20: `https://open.spotify.com/episode/5GEHeLhfee0NmFYalIU1YW?si=NyN-FjRTR56ciSDEDc-dQg`.
 - [x] **Reemplazar los placeholders `PENDIENTE-URL-SPOTIFY`** en artículo del sitio (JSON-LD +
       botón ×2), artículo de LinkedIn (.md y .artifact.html), primer comentario del post de
       lanzamiento y descripción de YouTube — grepeado después, 0 matches confirmados.
-- [ ] **Copiar la portada 16:9 a `website/og/btq-ep027.png`** (paso 3 de `step2a-episode-article.md`)
-      antes de desplegar — el artículo referencia `/og/btq-ep027.png` y ese archivo no existe
-      todavía en el repo del sitio.
-- [ ] **Enlazar el episodio en `website/episodios/index.html`** dentro de `.lista`.
-- [ ] **Regenerar el sitemap** (`python website/build-sitemap.py`).
-- [ ] **Deploy** (`vercel --prod`, sin `ignoreCommand`) + verificación en vivo por curl.
-- [ ] **Commit + push**, y actualizar `pipeline-state-ep027-peter.md` y la fila de EP.027 en
-      `roadmap-btq.md` en la MISMA pasada del deploy — no después (mordió con EP.026 el
-      2026-08-14).
+- [x] **Copiar la portada 16:9 a `website/og/btq-ep027.png`** — confirmado en repo (Aug 20) y
+      curl 200 en vivo, 2026-08-23.
+- [x] **Enlazar el episodio en `website/episodios/index.html`** dentro de `.lista` — confirmado
+      en vivo 2026-08-23: `/episodios` (con redirect desde `/episodios/`) lista
+      `por-que-su-mejor-empleado-se-vuelve-un-mal-jefe` junto a EP.025/026.
+- [x] **Regenerar el sitemap** — confirmado en vivo 2026-08-23: `sitemap.xml` incluye el slug.
+- [x] **Deploy** (`vercel --prod`) + verificación en vivo por curl — confirmado 2026-08-23:
+      `vercel inspect` muestra el build de producción (2026-08-20 09:13 Colombia) aliasado a
+      `behind-thequeue.com`/`www.behind-thequeue.com`; artículo, og-image, índice y sitemap
+      responden 200/contienen el slug.
+- [x] **Commit + push**, y `pipeline-state-ep027-peter.md`/`roadmap-btq.md` actualizados — ambos
+      ya decían **PUBLICADO** desde el 2026-08-20, consistente con lo verificado hoy.
 - [ ] **Anotar en `guion-style-btq.md` § Calibración de duración** el factor real medido para
       el esqueleto TRENZADO (+11,4%, contra el +13% asumido) — pendiente sin urgencia, dos
       episodios de este esqueleto ya miden cerca del supuesto.
+
+**Nota de instrumento (2026-08-23):** el primer intento de verificar `episodios/index.html` en
+vivo dio 0 matches — falso negativo por no seguir el redirect 308 de `/episodios/` → `/episodios`
+(curl sin `-L`). Con `-L` el link aparece. El deploy estaba bien desde el 08-20; el cheque estaba
+roto, no el sitio.
