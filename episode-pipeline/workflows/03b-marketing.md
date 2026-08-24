@@ -27,7 +27,7 @@ usuario).
 | Show | Cómo se genera |
 |---|---|
 | BTQ | No hay un workflow compartido — cada episodio genera su sección "Quote Cards" inline dentro de `btq-production/launch-assets/EP0XX-*-launch.md` (ver EP019 como referencia reciente): extrae TODOS los `[REMATE]` del guion (no un subset curado — el usuario decide cuáles producir), genera prompts cuadrados 1:1 con specs de marca ya definidas (texto off-white sobre fondo derivado del artwork, atribución en gold) |
-| MPD | Sigue el mismo patrón que BTQ — extrae las frases más fuertes del guion (priorizando las que cumplen la regla "autoexplicables sin contexto del episodio", ver memoria `mrputridsden_project` regla #4) y genera prompts cuadrados 1:1 con el sistema tipográfico propio de MPD (silver/crimson — ver memoria `feedback_mpd_vs_btq_typography`, nunca mezclar con BTQ). Sigue la misma estructura que BTQ (un quote por card, atribución, formato 1080×1080 mínimo) pero con el sistema visual de MPD |
+| MPD | Sigue el mismo patrón que BTQ — extrae las frases más fuertes del guion, verificadas verbatim contra el SRT real, priorizando las autoexplicables sin contexto del episodio. Genera vía plantilla PIL propia por episodio (`comfyui/templates/mpd-quote-card-ep[NN]-t2.py`, copiada de la del episodio anterior — ver `mpd-quote-card-ep03-t2.py`/`ep04-t2.py` como referencia), 1920×1080, sistema visual "La Guarida" (navy/brass — ver `podcast-profile.json` § colores, vigente desde T2; NO silver/crimson, esa era la paleta archivada de T1). Sigue la misma estructura que BTQ (un quote por card, atribución, footer de plataformas) pero con el sistema visual de MPD |
 | CCC | Ver `corporate-crime-confidential-production/quotecards-ep001.md` como referencia — extrae las líneas marcadas `[ÉNFASIS]` del guion (equivalente al `[REMATE]` de BTQ) y verifica cada una contra la transcripción real antes de generar (el guion puede tener líneas no grabadas). **Regla propia de CCC:** distinguir cita real documentada (atribuir por nombre a la persona real) de narración dramatizada en primera persona (atribuir al show, nunca a la persona real como si fuera cita literal) — ver `corporate-crime-confidential-production/guion-style-ccc.md` |
 
 **Antes de generar los prompts**, pregunta si el usuario ya tiene quote cards de una
@@ -48,10 +48,13 @@ BTQ, MPD y CCC):** generarlas LOCALMENTE, sin pausa de Flow:
    marca + cita + atribución. Garantiza letra por letra perfecta y tildes correctas —
    elimina de raíz los patrones de fallo de texto de Flow (EP.020: 5 rondas; EP.021
    local: 0). Cada show usa SU sistema visual (BTQ: negro #0A0A0A / cita off-white
-   #F5F2EC / atribución gold #C9A84C; MPD: silver/crimson; CCC: el suyo). Plantilla
-   reutilizable (BTQ, adaptar colores/fuente para MPD/CCC):
-   `comfyui/templates/quote-card-compose.py` (split 50/50, tamaño de fuente dinámico
-   según longitud de la cita, escena generada directo a 960×1080 para no recortarla).
+   #F5F2EC / atribución gold #C9A84C; MPD: navy #0B1A39 / brasa #D9BF7A, sistema "La
+   Guarida" vigente desde T2 — ver `podcast-profile.json` § colores; CCC: el suyo).
+   BTQ usa la plantilla genérica `comfyui/templates/quote-card-compose.py` (split
+   50/50, tamaño de fuente dinámico según longitud de la cita, escena a 960×1080).
+   MPD usa su propia plantilla por episodio (`mpd-quote-card-ep[NN]-t2.py`, ver Paso 2
+   arriba) — no la genérica, porque reutiliza la escena y el grading ya aprobados de
+   la portada de ESE episodio.
 3. **Validar cada cita contra el SRT real** antes de componer (qué se dijo y dónde) —
    verbatim, sin recortes silenciosos. La versión RENDERIZADA en la card puede llevar
    limpieza aprobada (muletillas, gramática, arranque de frase); cualquier caption o
