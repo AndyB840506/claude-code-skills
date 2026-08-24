@@ -84,7 +84,10 @@ Paul is Dead — Expediente 04
   ✓ Copy generado para 2 días × Instagram/Facebook (plan comprimido)
   ✓ Portada 1:1, 16:9 y 9:16 — producción final completa, E:\Podcast\MPD\Temporada 2\EP 04\artwork\
   ✓ Quote cards — 4 generadas 2026-08-23, verbatim del SRT real, mismo directorio
-  □ Clip de audio 30-60s — pendiente, elegir momento desde el máster (MPD EP 04.wav)
+  ✓ Clip de audio — generado 2026-08-23 desde el máster limpio (MPD EP 04.wav), momento
+    "la maquinaria nunca se apagó" (Fred LaBour → reflexión → gancho hacia Avril Lavigne),
+    24:38.0–25:26.5, 48.5s, fade in/out 0.4/0.5s. Verificado con volumedetect (-20.6 dB
+    mean, no silencio). Archivo: E:\Podcast\MPD\Temporada 2\EP 04\artwork\social-clip\MPD-EP04-clip-maquinaria.mp3
 ══════════════════════════════════════════════════
   Fechas del plan:
   Día 1 (Intriga+Contenido): domingo 2026-08-23 (hoy)

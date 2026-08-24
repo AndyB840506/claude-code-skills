@@ -135,11 +135,16 @@
 - **Archivos generados:**
   - `comfyui/templates/mpd-quote-card-ep04-t2.py`
   - `E:\Podcast\MPD\Temporada 2\EP 04\artwork\MPD-T2E04-Q1..Q4-1920x1080.png`
-- **Pendiente:** clip de audio 30-60s para redes — no generado, es una elección de
-  momento/tono que le corresponde a Andrés (igual que en EP.03 se hizo aparte, 1 día
-  después). No bloquea el resto del pipeline.
-- **Resultado:** OK — plan social + 4 quote cards listas, clip de audio queda como
-  pendiente explícito, no silencioso.
+- **Clip de audio:** generado desde el máster limpio (`MPD EP 04.wav`, no el mp3
+  comprimido) — momento "la maquinaria nunca se apagó" (24:38.0–25:26.5, 48.5s),
+  arco autocontenido que cierra justo antes del giro hacia Avril Lavigne (gancho
+  natural al episodio completo). `-ss`/`-t` puestos ANTES de `-i` (evita el bug de
+  timing de `afade` ya documentado — fade relativo al clip, no al archivo completo).
+  Verificado con `volumedetect`: -20.6 dB mean, -2.2 dB max — audio real, no silencio
+  (consistente con el precedente de EP.03, -23.5 dB).
+- **Archivo:** `E:\Podcast\MPD\Temporada 2\EP 04\artwork\social-clip\MPD-EP04-clip-maquinaria.mp3`
+- **Resultado:** OK — plan social + 4 quote cards + clip de audio, los 3 assets de
+  marketing completos.
 
 ## Stage 4 — Sitio web (2026-08-23, BLOQUEADO)
 
