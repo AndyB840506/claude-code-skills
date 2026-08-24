@@ -262,6 +262,13 @@ en todas (no EP.24).
 3. "El ascenso dejó de ser una asignación de cargo y se volvió una forma de pago." (24:49)
 4. "El ascenso no es un premio. Es un cambio de oficio." (40:36, cierre)
 
+**Clip de audio para redes (reels/TikTok) — extraído 2026-08-23:**
+Momento "ascenso como forma de pago", 00:24:42.824–00:25:25.049 del máster limpio (`.wav`),
+verbatim del SRT real (`BTQ EP 27-PETER-OBSOLETO.srt`). 42.2s, fade in/out 0.5s, `ffmpeg` con
+`-ss`/`-to` antes de `-i` (seek de entrada, no filtro) para que el `afade` quedara relativo al
+clip. Verificado con `volumedetect`: -22.9 dB mean / -3.6 dB max — audio real, no silencio.
+Archivo: `E:\Podcast\BTQ\EP 27\BTQ Artwork EP 27\social-clip\BTQ-EP027-clip-ascenso-forma-de-pago.mp3`.
+
 ---
 
 ## E · Artículo del sitio y LinkedIn
