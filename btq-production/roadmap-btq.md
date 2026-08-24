@@ -30,10 +30,10 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.025 | **Oficio de Jefe #2** — «ponerse la camiseta»: el discurso de lealtad como herramienta tóxica | **grabado, transcrito, assets listos, publica domingo 9 de agosto 8PM Colombia** — https://open.spotify.com/episode/5AgkBZ1F1M9WPU4MxxqESq. Casos: WeWork · Uber/Fowler · Wells Fargo. **Renumerado de EP.026 a EP.025 el 2026-08-07** — ver nota abajo |
 | EP.026 | **Oficio de Jefe #3** — `Por qué no llena esa vacante hace cuatro meses: el candidato unicornio` | **grabado, transcrito, publica domingo 16 de agosto 8PM Colombia** — https://open.spotify.com/episode/683PSkr20tY9Jy57M8vPBa?si=ULDQW49kSyqC5ZfXZ3S_Fw. Assets de lanzamiento listos, artículo del sitio desplegado (commit `b0fcd56`). Pendiente manual de Andy: artículo nativo de LinkedIn (sugerido 19 de agosto) + calendario social + YouTube metadata. Ver `pipeline-state-ep026.md`. **Renumerado de EP.025 a EP.026 el 2026-08-07** para que el episodio ya producido (camiseta) ocupe el próximo cupo real. Ver nota abajo |
 | EP.027 | **Pilar SEO** — `Por qué su mejor empleado se vuelve un mal jefe: el Principio de Peter` (Peter y Hull, 1969 + Benson/Li/Shue, QJE 2019) | **PUBLICADO** — https://open.spotify.com/episode/5GEHeLhfee0NmFYalIU1YW?si=NyN-FjRTR56ciSDEDc-dQg, domingo 23 de agosto 2026 8PM Colombia. Artículo del sitio desplegado, kit de lanzamiento completo. Ver `pipeline-state-ep027-peter.md`. ~~GUION A REDISEÑAR — decisión de Andy 2026-08-03~~: **SUPERADA 2026-08-20** — Andy confirmó que la grabación del 07-31 es válida tal cual, la nota de rediseño quedó vieja. |
-| EP.028 | Oficio de Jefe #4 — carga cognitiva, aparcada (candidato disponible) | **aparcada 2026-08-07**, no descartada — casos y fuente de Sweller ya verificados en `pipeline-state-carga-cognitiva-parked.md`. Retomar con un esqueleto distinto a E y sin referencias cruzadas a EP.024 |
-| EP.029 | Oficio de Jefe #5 — tema por definir | en roadmap |
-| EP.030 | Oficio de Jefe #6 — tema por definir | en roadmap |
-| EP.031 | **Pilar SEO** — Ley de Little (John D. C. Little, 1961; teoría de colas). El show le debe este tema a su propio nombre | en roadmap — **carril decidido 2026-08-01: pilar SEO**, con teórico nombrado y fórmula, no reencuadrada como problema. Título por definir con la fórmula invertida |
+| EP.028 | **Pilar SEO** — Ley de Little (John D. C. Little, 1961; teoría de colas). El show le debe este tema a su propio nombre | en roadmap — **adelantada de EP.031 a EP.028 el 2026-08-23**: EP.027 ya está en vivo con el teaser grabado («la próxima vez les traigo la Ley de Little»), y esa promesa quedó pública. Rompe a propósito la rotación 3+1 (ver nota abajo). Título por definir con la fórmula invertida |
+| EP.029 | Oficio de Jefe #4 — carga cognitiva, aparcada (candidato disponible) | **aparcada 2026-08-07**, no descartada — casos y fuente de Sweller ya verificados en `pipeline-state-carga-cognitiva-parked.md`. Retomar con un esqueleto distinto a E y sin referencias cruzadas a EP.024. **Corrida de EP.028 a EP.029 el 2026-08-23** para darle el cupo a Little |
+| EP.030 | Oficio de Jefe #5 — tema por definir | en roadmap. **Corrida de EP.029 a EP.030 el 2026-08-23** |
+| EP.031 | Oficio de Jefe #6 — tema por definir | en roadmap. **Corrida de EP.030 a EP.031 el 2026-08-23** |
 
 > **EP.025 — «ponerse la camiseta» (2026-08-07, reasignado desde EP.028, y renumerado de
 > EP.026 a EP.025 el mismo día).** Origen: un video que un amigo de Andy le compartió sobre el
@@ -87,6 +87,11 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 > por qué la cola no baja) y **Andy escogió mantenerla en el carril teórico**. El teaser que
 > la anunciaba se grabó dentro del EP.024 de Peter, así que la promesa **no está publicada**
 > y no obliga a ninguna fecha.
+>
+> ⚠️ **SUPERADO 2026-08-23:** esa última frase dejó de ser cierta el día que EP.027 (el
+> episodio de Peter, renumerado) salió al aire con el teaser intacto — la promesa **sí es
+> pública** ahora. Andy decidió adelantar Little de EP.031 a EP.028 para honrarla. Ver la
+> fila de EP.028 en la tabla y la nota de rotación 3+1 más abajo.
 
 > **EP.024 — por qué este tema** (decisión de Andy, 2026-07-25). Continúa directamente el cierre
 > de EP.023, que preguntó literalmente «¿a quién ascendió? ¿a quién no le renovó?», y cumple el
@@ -129,6 +134,11 @@ del 2026-07-21 había reemplazado, pero el carril acompañante ya **no es pop-cu
    memoria.** El 2026-08-03 se afirmó dos veces que el siguiente pilar libre era EP.032
    —es EP.035— teniendo la tabla a la vista. Es §Procedencia: una aritmética sobre el estado
    del roadmap es una afirmación sobre el roadmap, y se comprueba abriéndolo.
+   **Excepción puntual, 2026-08-23:** EP.028 rompe el patrón a propósito — Pilar SEO
+   (Little) justo después de otro Pilar SEO (EP.027), sin los 3 de Oficio de Jefe entre
+   medio — para honrar el teaser que EP.027 ya sacó al aire en vivo. Los Oficio de Jefe
+   #4-6 no se cancelan, se corren un puesto (EP.029-031). La cadencia 3+1 se retoma después
+   de EP.028, no se abandona.
 2. **Oficio de Jefe** = el sujeto del episodio es un **problema operativo recurrente**, no
    una teoría. Se titula con la frase que el oyente ya usa («Mi puerta siempre está abierta»,
    «Póngale más gente»). La teoría entra solo si sostiene un punto concreto, y puede no tener
@@ -173,6 +183,13 @@ oficio»*.
   actualizar la descripción del show en `metadata-v4-macro.md`. Es un cambio en una plataforma
   pública y **necesita el sí de Andy antes de tocarlo** — no hay nada urgente empujándolo,
   porque no hay episodio publicado esperando esa agrupación.
+
+⚠️ **HISTÓRICO — SUPERADO 2026-08-20/23.** Lo que sigue describía el estado del 2026-08-01,
+cuando el audio de Peter estaba grabado pero no publicado. Ya no es cierto: **el guion se
+reusó tal cual, sin regrabar ningún tramo** (decisión de Andy, 2026-08-20 — los dos errores
+quedaron aceptados, ver `pipeline-state-ep027-peter.md`), y **el episodio sí está en una
+plataforma** — publicado como EP.027 el 2026-08-23, con el teaser de Little en vivo. Se
+conserva sin reescribir como registro de la decisión original.
 
 **Sobre la grabación de EP.024 (Peter):** no se descarta. El tema se reubicó a EP.027 como el
 pilar SEO de la primera vuelta. **Si se reusa el audio, hay que regrabar dos tramos**: el
@@ -280,8 +297,9 @@ cliente furioso, es quien aprobó la política o quien tiene que defenderla.
 
 #### Choque de calendario a vigilar
 
-La **Ley de Little es el EP.031** y también es sobre colas. Son distintos —Little es la
-matemática del flujo; la veta del cliente es percepción y política— pero no van pegados.
+La **Ley de Little es el EP.028** (adelantada de EP.031 el 2026-08-23) y también es sobre
+colas. Son distintos —Little es la matemática del flujo; la veta del cliente es percepción y
+política— pero no van pegados.
 
 ### Temas que llegan de un sugeridor externo — cómo se filtran (2026-08-03)
 
