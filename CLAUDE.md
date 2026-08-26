@@ -178,6 +178,9 @@ Instancias concretas ya documentadas (las dos primeras mordieron el 2026-07-23):
 - **Al renumerar, reordenar o insertar algo, re-verificar que el medidor siga apuntando ahí.** El renumerado es silencioso para el script.
 - **Un resultado que cruza el umbral por poco merece una segunda mirada al instrumento, no solo al dato.** El PASS falso venía con un margen cómodo, y eso fue justo lo que lo hizo creíble.
 
+- **Un test que carga un PORT del artefacto mide el port, no el artefacto — y su verde es falso.** `tests/candidate-simulator.js` de HireSignal dice validar "el prompt real del entrevistador", pero lo toma de `model-comparison.js`: una copia en JavaScript del prompt de PHP, marcada STALE en el propio repo. El 2026-08-26 esa copia todavía traía 6 fósiles que ya se habían retirado del PHP, así que validar la reescritura con ella habría medido el texto viejo y devuelto verde. No lo delata nada: el simulador corre, llama al modelo de verdad y produce métricas creíbles. **Antes de validar un cambio con un test que ya existe, abrir el test y seguir de dónde carga el artefacto** — si es una traducción, una copia o un fixture, mide eso. El reemplazo fue un arnés que entra por las mismas funciones de producción (`tests/smoke-interview.php`). Ojo con la memoria: decía que el simulador usaba el prompt real, y esa entrada llevaba meses siendo falsa.
+- **Un `str_contains` no ve una frase partida por el salto de línea.** Sobre un texto envuelto a ~80 columnas, buscar una frase plana falla cuando la mitad vive al otro lado del `\n`: el 2026-08-26, 8 de 8 aserciones sobre frases que SÍ estaban en el prompt dieron FAIL falso, y el primer diagnóstico fue "la regla se perdió en la reescritura". Es el mismo principio del `\r` de arriba, pero al revés — ahí el patrón busca un carácter que el buscador descarta; aquí el texto trae uno que el patrón no espera. **Normalizar el espacio antes de comparar** (`preg_replace('/\s+/', ' ', $texto)`), o buscar un fragmento que quepa en una línea.
+
 Antes de reportar un conteo o un "cero hallazgos", cruzar el total con una segunda herramienta. Ver §Procedencia en `~/.claude/CLAUDE.md`.
 
 **Antes de SUMAR un instrumento a esta lista, reproducir el fallo.** La lista de arriba es larga y buena, y por eso mismo genera falsos diagnósticos: cuando una salida rara se parece a un patrón ya documentado, el parecido hace que un dato suelto **se sienta confirmado**. El 2026-08-01 se reportó que `Get-ChildItem -Recurse -Filter "*.mp3" -File` devolvía cero teniendo 10 archivos; al intentar reproducirlo con cuatro variantes (`-Filter` antes y después de `-File`, `Where-Object Extension`, `-Include`) **las cuatro dieron 10**. No había tal instrumento mentiroso: era una anomalía de una corrida. Un cero que no se reproduce es una anomalía, no una regla — y escribirla habría hecho que la próxima sesión evitara una herramienta que funciona. Esto NO relaja el cruce de conteos de arriba: seguir cruzando siempre, pero **atribuir la causa solo después de reproducirla**.
@@ -195,6 +198,29 @@ Antes de reportar un conteo o un "cero hallazgos", cruzar el total con una segun
 - **Marcar el bloque superado donde vive:** tachado, `HISTÓRICO`, `SUPERADO por X el YYYY-MM-DD`, o moverlo a un anexo al final. Que sea imposible leerlo sin ver que ya no manda.
 - **Cuando el documento y el código se contradicen, gana el código** — es lo que corre. Y la contradicción se reporta, no se resuelve en silencio.
 - **Al escribir un prompt, un guion o una config desde un documento de reglas, abrir primero el último ENTREGABLE publicado** de esa familia. El entregable es el estado real; el documento es la intención. *(Es el espejo del párrafo anterior: allá los entregables se barren al RETIRAR una regla; acá se leen ANTES de escribir bajo ella. Misma palabra, momentos opuestos.)*
+
+## Reescribir un prompt con historia
+
+Un prompt viejo acumula fósiles y hay que limpiarlo. Pero también acumula **decisiones
+que costaron corridas pagadas**, y el texto no avisa cuál es cuál: las dos cosas se ven
+igual de prosa. Reescribir "de cero" el del chat de HireSignal el 2026-08-26 derogó dos
+reglas validadas sin que nada lo señalara — `cannot BOTH be true` (la barra estrecha de
+contradicción) y el guardrail contra fugas de XML de Opus 5. Las salvó la suite que ya
+existía, no el criterio de quien reescribió.
+
+- **Antes de tocar una línea, enumerar las decisiones ya validadas y afirmar cada una
+  sobre el prompt RENDERIZADO.** Se re-expresan, no se repiensan. Con esas aserciones
+  puestas, quitarlas después tiene que ser una decisión y no un descuido.
+- **Para impedir un comportamiento del modelo, quitar la sección que lo invita — no
+  agregar una frase que lo prohíba.** Ese mismo día el prompt decía literal "si el único
+  idioma requerido es el primario, no hay nada a lo que cambiar: salta a la etapa 4", y
+  el modelo anunció el cambio de idioma igual, se quedó tres turnos en esa etapa y marcó
+  evasivo al candidato por no responder en el idioma en el que ya respondía. La etapa y
+  sus 8 reglas de cambio seguían renderizándose, y eso pesa más que la frase que las
+  contradice. El arreglo fue no renderizarlas.
+- Corolario del anterior: **cuando una instrucción no se cumple, mirar primero qué la
+  contradice en el mismo prompt**, antes de reforzarla con más énfasis. Subir el volumen
+  de la regla es lo barato y casi nunca es lo que falla.
 
 ## Una cifra compuesta no es una constante
 
