@@ -31,6 +31,7 @@ function Invocar-Nativo([string[]]$argumentos) {
 }
 ```
 - Git Bash mangla rutas absolutas de Windows; usar PowerShell para cualquier cosa que pase rutas a ComfyUI u otros binarios de Windows.
+- **Un `\n` dentro de un heredoc de python lanzado por la herramienta Bash llega convertido en salto de línea REAL.** Así que un patrón de búsqueda que contenga `\n` literal —buscar dentro de un string de PHP/JS/Go, que es donde vive como dos caracteres— nunca matchea, y el script reporta "0 ocurrencias" sobre texto que sí está ahí. Mordió 3 veces el 2026-08-26. **Construir el backslash con `chr(92)`** (`NL = chr(92) + 'n'`) en vez de escribirlo en el literal. Corolario que salvó las tres veces: un script de reemplazo masivo que **cuenta cada patrón antes de escribir y aborta si alguno da != 1** convierte esto en un aviso en vez de un archivo a medias.
 - **`Start-Job` de PowerShell no sobrevive entre llamadas separadas de la herramienta.** Cada invocación de la tool PowerShell/Bash corre en su propio proceso host; un `Start-Job` lanzado en una llamada muere cuando ese proceso host termina, así que una llamada posterior (`Wait-Job`/`Receive-Job` por nombre) nunca lo encuentra — el log queda vacío y no hay error visible. Mordió el 2026-08-15 corriendo WhisperX en background: el job "existía" en la llamada que lo creó pero desapareció en la siguiente. **Fix:** lanzar el proceso real y detached con `Start-Process -PassThru` (guardando el `.Id`), y en una llamada `run_in_background` aparte hacer `Wait-Process -Id <PID>` — eso sí sobrevive porque es un proceso Win32 independiente, no un job hosteado dentro del proceso que lo creó.
 
 ## Comportamiento al iniciar
@@ -169,6 +170,8 @@ Instancias concretas ya documentadas (las dos primeras mordieron el 2026-07-23):
 
 - **`curl` sin `-L` sobre una URL con redirect (301/302/308) devuelve el cuerpo del redirect, no el contenido real — y no es un error visible.** Un `grep` sobre esa respuesta da "0 resultados" que se lee como "el sitio no tiene X", cuando en realidad el sitio nunca se llegó a pedir. Mordió el 2026-08-23: `curl -s "https://behind-thequeue.com/episodios/"` (con barra final) devolvió 15 bytes ("Redirecting...", el cuerpo del 308 hacia `/episodios` sin barra) y un grep del link de EP.027 dio 0 matches — a punto de reportarse como "el índice del sitio no tiene el episodio enlazado" cuando el deploy estaba bien desde días antes. Se cachó releyendo el archivo guardado antes de afirmar nada, no por un error de curl. **Con cualquier verificación de contenido vía curl, usar `-L` siempre** (o revisar el header `Location` si el `-s` oculta el código de estado).
 
+- **Una línea base clavada a `HEAD` deja de ser línea base en el momento en que commiteas — y no avisa, porque sigue reportando PASS.** El 2026-08-26 un test diferencial levantaba la versión "vieja" con `git show HEAD:archivo` para compararla contra la actual. Era correcto al escribirlo, y falso desde el commit siguiente: pasó a comparar el código nuevo **contra sí mismo**, con lo cual las diferencias daban cero y el test se veía más verde que nunca. Se destapó solo porque un cambio de umbral hizo fallar otras aserciones del mismo archivo. **Fijar la referencia a un SHA explícito, nunca a `HEAD`**, y nombrar en un comentario qué es ese SHA (ej. "lo que corre en producción") para que mover la referencia sea una decisión y no un efecto secundario de commitear.
+
 **Y el reverso, que es peor: un medidor que hardcodea QUÉ mide da aprobados falsos.** Los casos de arriba sub-reportan y producen «cero hallazgos» falsos; este **sobre**-reporta y cierra una compuerta que en realidad no pasó. Mordió el 2026-08-01: el script que verifica la compuerta de contenido aplicable de un guion tenía los segmentos objetivo fijos como `('1','6')`. Al renumerar el guion —se insertó un segmento nuevo— el 6 pasó a ser otra cosa, y el script reportó **32,3% OK** midiendo el segmento equivocado. Al arreglarlo dio un **fallo igualmente falso**, porque el segmento correcto no llevaba la marca. Solo la tercera medición era real.
 
 - **Un script de compuerta deriva del artefacto qué mide** — lee una marca dentro del propio bloque (`APLICABLE` en su nota, un atributo, un id), nunca un índice o un nombre posicional.
@@ -221,6 +224,17 @@ de dirección.
 **Antes de escribir un ratio como regla, preguntar: ¿qué dos cosas estoy multiplicando aquí, y
 puede una moverse sin la otra?** Si puede, medirlas por separado y dejar la fórmula, no el
 producto. Y nombrar cuál de las dos es decisión humana — esa es la que hay que fijar primero.
+
+**Y un umbral que hay que mover repetidamente probablemente no debería existir.** Antes de
+reubicar una frontera, medir la varianza de la variable que la cruza: **si el rango medido la
+contiene, ningún valor sirve** — moverla solo reubica la inestabilidad, y cada reubicación se
+siente como progreso porque la muestra chica la respalda. Ojo con la n: con 3 observaciones un
+umbral puede parecer fuera del ruido y estar adentro. El 2026-08-26 una compuerta de confianza
+se movió de 80 a 67 con n=3 y se reportó "fuera de la banda"; con n=6 el rango medido era 6 y
+el 67 pasaba 4 de 6 veces — el mismo candidato, los mismos bytes, distinto resultado según la
+corrida. **El arreglo no fue un tercer valor: fue borrar la compuerta** y reportar esa variable
+como un eje aparte. Cuando una frontera pide moverse por segunda vez, la pregunta ya no es
+dónde ponerla sino si la decisión debe depender de esa variable.
 
 ## Límites de lo publicable (medir, no estimar)
 
