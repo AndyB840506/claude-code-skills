@@ -43,12 +43,14 @@ website (Web Page Kit, Social Profile to Web). Language: written in the
 client's language (the order's "Language" line — en/es/pt), or the dominant
 language of the intake transcript if not recorded.
 
-`resolveServiceId()` (lines 26–35): normalize both sides (lowercase, strip
-accents, strip non-alphanumerics) and match against `id`, English `name`, or
-Spanish `name` via substring containment.
+`resolveServiceId()` (~line 60, drifted from 26–35 as `BASE_RULES` grew — verify
+against the live file, don't trust a line number here): normalize both sides
+(lowercase, strip accents, strip non-alphanumerics) and match against `id`,
+English `name`, or Spanish `name` via substring containment.
 
-`extractHtml()` (lines 37–43): strips markdown code fences the model may have
-added despite instructions, then slices from the first `<!DOCTYPE`/`<html`.
+`extractHtml()` (~line 88, same drift note): strips markdown code fences the
+model may have added despite instructions, then slices from the first
+`<!DOCTYPE`/`<html`.
 
 Truth rules: only facts from the transcript/JD/tools actually used; unknowns go
 in a visible "Preguntas pendientes / Pending questions" section, never guessed.
