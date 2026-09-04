@@ -103,6 +103,26 @@ se compone con PIL, deterministico. Ver `comfyui/templates/`.
   recortar la fila/ícono que se necesita de ahí es más rápido y confiable que pedirle
   al modelo que los regenere desde cero.
 
+## Purgar un motivo vetado sin borrar la identidad del objeto
+
+(aprendido 2026-08-14, MPD EP.03)
+
+Al corregir un motivo vetado (círculos concéntricos/diana en un sleeve de vinilo),
+describir el objeto de forma GENÉRICA para evitarlo ("plain solid-colored cardboard
+cover, no printed artwork") funcionó para quitar el patrón — pero también le borró al
+objeto lo que lo hacía reconocible: dejó de leerse como vinilo, se volvió una tarjeta en
+blanco. Eso rompe otra regla (el artwork tiene que decir de qué show es — ver
+`mrputridsden/CLAUDE.md` § Artwork).
+
+**Regla:** al purgar un motivo vetado de un objeto, no generalizar el objeto entero —
+describir sus rasgos REALES identificatorios que no incluyen el motivo prohibido. Un
+vinilo se reconoce por sus surcos, su etiqueta central y su hoyo — no por su sleeve.
+Describir "black circular edges and center holes visible side-on, the paper sleeves
+plain... with no printed artwork" (nombrar el sleeve sin arte, pero mantener el disco
+mismo con sus rasgos reales) recuperó la lectura de "vinilo" sin reintroducir el
+patrón — los surcos de un disco real son textura física esperable, no el motivo gráfico
+decorativo que la regla vetaba.
+
 ## Un derivado hereda los defectos del original — incluidos los que nadie busco
 
 (aprendido 2026-07-30, MPD T2E01)
@@ -214,4 +234,65 @@ crop centrado ciego puede saltarse por completo el espacio en blanco que se acab
 arriba para el wordmark. Anclar el crop del lado que tiene el espacio nuevo (arriba, en este
 caso), no centrarlo — y revisar visualmente que el sujeto principal siga visible, no solo
 que el header tenga margen.
+
+**Copiar el compositor de portada de un episodio anterior (`mpd-portada-epNN-t2.py` u
+homologo) trae valores hardcodeados calibrados a ESA escena y ESE titulo, que no
+transfieren solos al episodio nuevo — dos bugs reales encontrados el 2026-08-15 (MPD
+EP.03, copiado de EP.02):**
+
+1. **El `y_center` del crop 16:9 esta calibrado a donde queda el sujeto en la escena
+   VIEJA.** Si la escena nueva tiene el sujeto/marco en otra posicion vertical, ese mismo
+   `y_center` puede dejar el wordmark superpuesto sobre el sujeto en vez de en zona
+   muerta. Se corrigio probando 4 valores (0.30/0.38/0.45/0.55) y comparando visualmente
+   cual dejaba headroom limpio — no hay atajo, hay que iterar sobre la escena real.
+2. **El piso del auto-fit del tamaño de fuente del titulo (`int(H * 0.030)` en el ejemplo)
+   asume un titulo tan corto como el del episodio de origen.** Un titulo mas largo puede
+   no caber nunca en el ancho disponible del formato 9:16 (el mas angosto) sin bajar de
+   ese piso, y el loop de auto-fit sale silenciosamente con el texto sin caber — el
+   render corta el titulo a la mitad sin ningun error. Verificar con un test aislado en
+   Python (`font.getlength(TITLE) <= max_w`) si el titulo cabe en el piso actual ANTES de
+   confiar en el render; si no cabe, bajar el piso (probado bajar de 0.030 a 0.018).
+
+**Regla:** al reusar el compositor de un episodio anterior, renderizar y revisar
+visualmente los 3 formatos (no solo 1:1) antes de dar por bueno — el 1:1 suele salir bien
+a la primera porque no depende de estos dos valores, y por eso un bug real en 16:9/9:16
+puede pasar desapercibido si solo se inspecciona la portada cuadrada.
+
+## Regenerar a mayor resolución con el mismo seed NO es lo mismo que escalar la imagen aprobada
+
+(aprendido 2026-08-20, MPD EP.04)
+
+El patrón de producción normal es: validar a 1024×1024, y para la pieza final
+"regenerar la escena aprobada nativamente a mayor resolución (1536²) con el mismo
+prompt/seed" antes de upscalear con RealESRGAN — así lo hizo EP.03. En EP.04 eso
+mismo (seed idéntico, prompt idéntico, solo cambió `width`/`height` a 1536) produjo
+una escena PEOR que la aprobada: un espejo que a 1024 reflejaba un borrón sin forma
+salió a 1536 reflejando un marco/cuadro con detalle reconocible — el mismo seed no
+garantiza el mismo resultado a otra resolución.
+
+**Regla:** el default es escalar directamente el PNG de 1024 ya aprobado (RealESRGAN
+4x → `ImageScale` exacto a la resolución final), no regenerar nativamente a mayor
+resolución. Si se regenera para ganar detalle nativo, **comparar el resultado contra
+la versión aprobada antes de usarlo** — no asumir que "mismo seed" significa "mismo
+resultado, solo más nítido". Si difiere, descartar la regeneración y volver al
+escalado directo del archivo aprobado.
+
+## El telón fijo por temporada puede no leerse como distinto entre episodios
+
+(aprendido 2026-08-20, MPD EP.04)
+
+El sistema de MPD T2 reusa a propósito la misma escena base cada episodio (chimenea,
+butaca, mármol, vinilos) y solo cambia el contenido del marco ovalado — así lo pide
+`mrputridsden/CLAUDE.md`. En EP.04 se generó y aprobó un concepto (espejo empañado en
+el marco, en vez del retrato de EP.03) sin confirmar con Andrés si ese cambio se leía
+suficientemente distinto — no se leyó: a primera vista, portada de EP.03 y el primer
+intento de EP.04 se veían "iguales", y hubo que rehacer el concepto completo después
+de escalarlo a producción final.
+
+**Regla:** cuando el único elemento que cambia es el contenido del marco/objeto
+central, mostrar el nuevo concepto **junto al thumbnail del episodio anterior** al
+pedir aprobación (no cada uno por separado) — la comparación lado a lado es lo que
+expone si la diferenciación real alcanza. Si el objeto central no basta, variar
+también el ángulo de cámara o los objetos de la mesa lateral, no solo lo que cuelga
+del marco.
 

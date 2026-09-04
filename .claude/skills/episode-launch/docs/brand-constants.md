@@ -384,6 +384,24 @@ Formato **16:9 (1920×1080)**, **sin escena renderizada**. Todo determinista con
 validadas contra el SRT real. Procedimiento compartido para los 3 shows en
 `episode-pipeline/workflows/03b-marketing.md`.
 
+**"Verbatim" hasta dónde:** se puede recortar la muletilla de arranque de una frase ("y pues",
+"entonces", "bueno") para que la card no empiece a mitad de conector — el resto de la cita, palabra
+por palabra, tiene que coincidir con el SRT real. No vale limpiar gramática, cambiar orden ni
+completar una frase que el host dejó incompleta.
+
+**CLI y tildes:** a diferencia de `portada-ep-compose.py`, este script NO acepta el patrón
+`@archivo.txt` para blindar acentos contra la pérdida por `argv` en PowerShell 5.1. Para citas
+con tildes (o sea, siempre, en español), no invocar el CLI con la cita inline — escribir un
+driver corto que importe la función directo:
+```python
+import importlib.util
+spec = importlib.util.spec_from_file_location("quote_card_compose", ".../quote-card-compose.py")
+qcc = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(qcc)
+qcc.compose_quote_card("cita con tildes", "BEHIND THE QUEUE · EP.NN", "salida.png")
+```
+Verificado 2026-08-20, EP.027 (4 cards, tildes correctas en las cuatro).
+
 - **Composición:** fondo `#0E1113` a sangre completa, rejilla vertical fina en `#1F2428` como
   marca de agua, cita alineada a la izquierda y centrada en vertical, atribución debajo.
 - **Tipografía:** cita en **Supreme Bold** cream `#F4EFE7`, atribución en **Martian Mono**

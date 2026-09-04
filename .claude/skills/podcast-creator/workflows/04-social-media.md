@@ -39,6 +39,13 @@ Pregunta en un solo mensaje:
 > 4. ¿Hay algún dato sorprendente, controversia o ángulo que quieras destacar en el lanzamiento?
 > 5. **Solo si ya corrió un arco de revelación para este episodio o temporada:** ¿qué beats del arco alcanzaste a publicar? (decide si el gancho del lanzamiento ya está quemado — ver el bloque del arco más abajo)
 
+**Antes de calcular, verificar el día de la semana real de HOY con un comando de fecha**
+(`date -d`, `Get-Date`) — nunca de memoria ni aritmética mental sobre la fecha ISO. Un
+"lunes próximo" contado a ojo puede correrse un día entero. Mordió en MPD EP.04
+(2026-08-23): se calculó "lunes" como 2026-08-25 (que en realidad es martes) hasta
+verificar con `date -d` que hoy era domingo — autodetectado antes de publicar el plan,
+pero el cálculo mental había fallado.
+
 Calcula automáticamente:
 - **Día 1 (Intriga):** 2 días antes de la fecha de publicación
 - **Día 2 (Contenido):** 1 día antes

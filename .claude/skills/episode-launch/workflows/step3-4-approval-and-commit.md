@@ -1,5 +1,14 @@
 # Step 3 — Approval gate
 
+**Antes de presentar, correr el gate de puntuación** (regla completa en
+`step2-generate-assets.md` § Puntuación): grepear rayas (`—`) y comillas angulares (`«»`)
+dentro de cada bloque copiable — descripción de Spotify, los posts del plan social, la
+descripción de YouTube y el artículo de LinkedIn (.md y .artifact.html) — y confirmar 0
+matches antes de mostrarlos para aprobar. No cuenta el artículo del sitio (ver la nota de
+excepción en `step2-generate-assets.md`) ni las notas/instrucciones internas del propio
+archivo de assets. Mordió en EP.027 (2026-08-20): el texto se escribió primero y se verificó
+después, y hubo que reescribir 13 fragmentos en 4 archivos ya presentados como listos.
+
 After presenting all 4 asset blocks, ask:
 
 > "Assets listos para EP.0XX. ¿Apruebas o ajustas algún bloque antes de hacer commit?"

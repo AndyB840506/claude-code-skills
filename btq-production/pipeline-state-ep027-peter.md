@@ -1,7 +1,56 @@
 EPISODE: **EP.027** (BTQ) — el Principio de Peter
 stage_a: **complete** — guion aprobado 2026-07-28, **grabado la noche del 2026-07-31**.
-stage_b: no iniciado. **NO subido a Spotify, no programado, sin metadata publicada.**
-stage_c: no iniciado.
+stage_b: **completa (2026-08-20)**. Publicado en Spotify:
+  https://open.spotify.com/episode/5GEHeLhfee0NmFYalIU1YW?si=NyN-FjRTR56ciSDEDc-dQg — domingo
+  23 de agosto 2026, 8PM Colombia. Artículo del sitio desplegado y verificado en vivo (curl
+  200 en artículo, og-image, índice y sitemap). Kit completo en
+  `launch-assets/EP027-peter-launch.md`.
+stage_c: no iniciado (redes/YouTube — assets escritos en el kit, publicación manual de Andy).
+
+**Contradicción resuelta 2026-08-20:** `roadmap-btq.md` traía una fila del 2026-08-03 diciendo
+"GUION A REDISEÑAR... la grabación queda obsoleta", nunca reflejada en este archivo. Andy
+confirmó explícitamente que esa nota quedó vieja y que la grabación del 07-31 es válida — la
+fila del roadmap se corrigió en la misma sesión.
+
+## Sesión 2026-08-20 — destrabar stage_b
+
+- **Audio confirmado como válido**, no obsoleto — el nombre en disco
+  (`BTQ EP 27-PETER-OBSOLETO.mp3/.wav/.rpp`, en `E:\Podcast\BTQ\EP 27\`) arrastra el sufijo del
+  rename viejo del 2026-08-01, pero el contenido grabado el 31 de julio se usa tal cual
+  (confirmado por Andy, ignorando los 2 errores hablados conocidos abajo).
+- **Duración real medida con ffprobe: 41:00** (2460,27 s) — dentro del estándar 40-45 min.
+- **Transcrito por primera vez** con WhisperX large-v2 + diarización:
+  `E:\Transcriptor\transcripciones\BTQ EP 27-PETER-OBSOLETO.srt`. Confirmados por grep, no a
+  ojo, los 2 errores ya conocidos por el roadmap: el segmento 0 dice literalmente "episodio 24"
+  (min. 0:43) y el segmento 7 anuncia la Ley de Little como episodio siguiente (min. 40:00) —
+  ambos aceptados por Andy, no se regraba.
+  - **"Imagínense" se usó 10 veces al aire** (presupuesto de la guía: máx. 1), ad-lib de Andy,
+    no estaba en el guion. Mismo patrón que EP.026 (12 usos) — candidato a vigilar en la próxima
+    sesión de escritura.
+  - **Expansión real medida: +11,4%** (6.156 palabras habladas / 5.525 escritas), muy cerca del
+    +13% asumido al escribir. Dato nuevo para la tabla de calibración del esqueleto TRENZADO
+    (`guion-style-btq.md` § Calibración de duración) — el otro dato medido de ese esqueleto
+    (EP.026) dio solo +3,4%, así que la muestra sigue siendo de 2 episodios con resultados
+    dispares.
+- **Portadas regeneradas desde cero** en la carpeta correcta desde el primer intento
+  (`E:\Podcast\BTQ\EP 27\BTQ Artwork EP 27\`) — las 6 viejas con el título de EP.24 horneado se
+  eliminaron. Dirección: tipografía pura v4, sin la excepción de escena renderizada (esa era
+  para el EP.024 real, "puerta abierta", no para este episodio — confirmado leyendo
+  `brand-constants.md` antes de generar). Gate mecánico y verificación visual: **PASS**.
+- **4 quote cards generadas** desde citas verbatim del SRT real (no del guion), verificadas
+  contra el audio con grep.
+- **Kit completo escrito**: artículo del sitio (no desplegado), Spotify SEO, plan social de 4
+  días, YouTube metadata con capítulos reales del SRT, artículo nativo de LinkedIn (+ versión
+  renderizada en Artifact). Todo con placeholders `PENDIENTE-URL-SPOTIFY` explícitos donde
+  falta la URL real — ver `launch-assets/EP027-peter-launch.md` para el detalle y §F para los
+  pendientes que bloquean el deploy.
+- **Hallazgo de proceso, sin resolver:** `step2-generate-assets.md` dice que la regla de "sin
+  rayas ni comillas angulares" aplica también al artículo del sitio, pero el último artículo
+  publicado (EP.026, 2026-08-16) tiene 26 rayas como conector y 10 comillas angulares — el
+  documento y el entregable real se contradicen. Esta sesión siguió el entregable real para el
+  artículo del sitio (rayas permitidas, consistente con EP.023-026) y la regla escrita para
+  LinkedIn/Spotify/social/YouTube (texto que se pega a mano en un editor de terceros). Sin
+  resolver cuál de las dos gana oficialmente — reportado, no decidido en silencio.
 
 > ⚠️ **ESTE EPISODIO ERA EL EP.024 HASTA EL 2026-08-01.** Andy lo grabó, lo sintió
 > «demasiado teórico, como una reseña», y decidió cambiar el tema y regrabar. Peter no se

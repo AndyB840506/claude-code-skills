@@ -24,3 +24,13 @@
 
 Fuera de estos puntos, el pipeline corre sin interrupciones — y entre macro-stages,
 siempre puede cerrarse y retomarse en una sesión distinta gracias al archivo de estado.
+
+## El resumen de cualquier pausa lista TODOS los pendientes, no solo el que bloquea
+
+Al presentar el resumen en una pausa, enumerar cada línea "Pendiente"/"Falta" que ya
+está registrada en `pipeline-audit-ep[NNN].md` para ese episodio — no solo el bloqueo
+que impide seguir al siguiente stage. Mordió en MPD EP.04 (2026-08-23): el clip de audio
+quedó correctamente anotado como pendiente en la bitácora (Stage 3b), pero el resumen
+final al usuario solo mencionó el bloqueo de `spotify_url` — el usuario tuvo que volver
+a pedir el clip que ya estaba tracked pero no comunicado. El pendiente estaba bien
+registrado; lo que faltó fue leerlo de vuelta al armar el resumen.

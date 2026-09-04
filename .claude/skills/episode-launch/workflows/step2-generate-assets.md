@@ -47,6 +47,18 @@ puntuación no se oye.
 Razón por la que existe: EP.024 se publicó como artículo nativo de LinkedIn el 2026-08-03 y
 Andy tuvo que reemplazar a mano las 17 comillas angulares y las 21 rayas del cuerpo.
 
+> ⚠️ **Contradicción sin resolver (detectada 2026-08-20, EP.027):** esta sección dice que la
+> regla aplica también al "artículo del sitio", pero el último artículo real publicado antes de
+> esa fecha (EP.026, `website/episodios/por-que-no-llena-esa-vacante-hace-cuatro-meses.html`)
+> tiene 26 rayas como conector y 10 comillas angulares — igual que EP.023, EP.024 y EP.025. La
+> razón por la que la regla existe (dolor de editar a mano en LinkedIn/Spotify) no aplica al
+> artículo del sitio: es HTML que se escribe y despliega directo, nadie lo pega en un editor de
+> terceros. La sesión de EP.027 siguió el entregable real (rayas permitidas) para el artículo del
+> sitio y la regla escrita (sin rayas) para LinkedIn/Spotify/social/YouTube. **No decidido
+> oficialmente** — si Andy confirma que el artículo del sitio queda exento, borrar "el artículo
+> del sitio" de la lista de arriba; si prefiere aplicarla ahí también, hay que corregir 4
+> artículos ya publicados.
+
 **Y el corolario, que es la parte cara:** cuando la corrección la hace un humano a mano
 sobre un texto largo, **borra el carácter y sigue** — no se detiene a decidir qué signo va
 en su lugar. En EP.024 eso dejó **8 frases rotas** en el artículo publicado, y una de ellas
@@ -326,8 +338,15 @@ python comfyui/templates/portada-ep-compose.py @titulo.txt
 **Compuerta antes de aprobar:**
 
 ```
-python scripts/verify_assets.py EP0XX --root E:\AI\outputs\BTQ-EP0XX --show btq
+python scripts/verify_assets.py EP0XX --root "E:\Podcast\BTQ\EP NN\BTQ Artwork EP NN" --show btq
 ```
+
+> ⚠️ **No `E:\AI\outputs\BTQ-EP0XX\`** — esa es la carpeta de assets de MARCA (portada del show,
+> avatar, banner). Las portadas y quote cards de un EPISODIO van junto a su audio, en
+> `E:\Podcast\BTQ\EP NN\BTQ Artwork EP NN\` (regla fijada 2026-07-31 en `brand-constants.md`,
+> repetida sin corregir en EP.025 y en el primer intento de EP.026). Verificar el nombre real de
+> la carpeta del episodio antes de generar — no ha sido consistente (`EP 25` con espacio,
+> `EP26` sin espacio, por ejemplo).
 
 Más `--stage-a` si el episodio todavía no se ha grabado (sin audio no hay quote cards y la
 compuerta falla por cards faltantes).

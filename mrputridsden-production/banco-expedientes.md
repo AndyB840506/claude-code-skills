@@ -22,7 +22,8 @@ esto es el banco del que se surte.
 
 ## Carril principal (alta rotacion)
 
-### 1. Pactos, simbolos y mensajes ocultos: el rock y el diablo
+### 1. Pactos, simbolos y mensajes ocultos: el rock y el diablo — ⚠️ USADO (EP.02, publicado 2026-08-08)
+No disponible para futuros expedientes — ver `EP02-el-rock-y-el-diablo.html`.
 **YA ANUNCIADO AL AIRE en el cierre de EP.006** — no es una propuesta, es un compromiso.
 Cita textual del guion: *"Y de eso va el proximo Archivo Secreto. Pactos, simbolos y
 mensajes ocultos: el rock y el diablo."* Y ahi mismo se abre el alcance mas alla de
@@ -53,7 +54,11 @@ canciones que supuestamente esconden mensajes si uno las pone al reves."*
 - ⚠️ **No repetir el bloque C de EP.006** — ahi ya se conto que casi no hay fotos, que
   tocaba de cara a la pared y que fue coronado fundador retroactivo.
 
-### 2. Crowley y su huella en la música (CANDIDATO PRINCIPAL, 2026-08-05)
+### 2. Crowley y su huella en la música — ⚠️ USADO (EP.03, publicado 2026-08-17)
+No disponible para futuros expedientes — ver `EP03-la-bestia-que-el-rock-volvio-inmortal.html`.
+Casi se propuso de nuevo para EP.05 el 2026-08-20, detectado antes de comprometerlo.
+
+(CANDIDATO PRINCIPAL, 2026-08-05)
 **Decidido por Andrés al leer el borrador de EP.007 (nombre interno de ese momento, hoy EP.02)
 (Acto II ya deja a Crowley instalado como personaje)** — no es propuesta, es la direccion elegida
 para el Expediente 03.
@@ -71,7 +76,13 @@ para el Expediente 03.
   contado en EP.02 (Boleskine, Equinox, la ruptura con Anger) — esto entra por las bandas que lo
   citan a EL directamente, no por Page.
 
-### 3. Paul is Dead (candidato secundario)
+### 3. Paul is Dead — ⚠️ USADO (EP.04, guion listo 2026-08-20, pendiente de grabar)
+No disponible para futuros expedientes — ver `EP04-paul-is-dead.html`.
+YA ANUNCIADO AL AIRE en el cierre de EP.03 (2026-08-14)
+No es propuesta, es el compromiso para el Expediente 04. Cita del guion de EP.03: *"el
+próximo es distinto a este... la vez que medio mundo se convenció de que Paul McCartney
+estaba muerto, y armó las pruebas usted mismo, disco por disco."*
+
 - **Rotacion:** ALTA (Draw My Life, TikTok, *Time* lo listo entre las conspiraciones mas
   duraderas del mundo).
 - **Detalle — VERIFICADO:** las pistas son inventadas y se sabe quien las invento.
@@ -86,7 +97,13 @@ para el Expediente 03.
   de como funcionan hoy.
 - **Canon:** destape > mito, limpio. Cero ocultismo, cero muertes reales que tratar.
 
-### 4. Panico satanico ampliado (si no cabe entero en el expediente 1)
+### 4. Panico satanico ampliado — ⚠️ USADO (ya cubierto entero dentro de EP.02, confirmado 2026-08-20)
+**No es un expediente propio disponible.** Se verificó abriendo `EP02-el-rock-y-el-diablo.html`
+directamente (no de memoria): el episodio ya cubre Judas Priest/Nevada, PMRC, la audiencia del
+Senado de 1985 y "pánico satánico" explícito — la condición original de este ítem ("si no cabe
+entero en el expediente 1") se resolvió en NO, sí cupo. Casi se propuso de nuevo para EP.05 el
+2026-08-20, detectado solo al abrir el script real, no el roadmap ni la memoria.
+
 Si el expediente 1 (EP.02, ya producido) se enfoca en los pactos, el PMRC, las audiencias del Senado del 85 y
 la cruzada contra el metal quedan como episodio propio. **SIN VERIFICAR** mas alla de lo
 citado arriba.

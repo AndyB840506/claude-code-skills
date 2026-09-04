@@ -31,6 +31,8 @@ function Invocar-Nativo([string[]]$argumentos) {
 }
 ```
 - Git Bash mangla rutas absolutas de Windows; usar PowerShell para cualquier cosa que pase rutas a ComfyUI u otros binarios de Windows.
+- **Un `\n` dentro de un heredoc de python lanzado por la herramienta Bash llega convertido en salto de línea REAL.** Así que un patrón de búsqueda que contenga `\n` literal —buscar dentro de un string de PHP/JS/Go, que es donde vive como dos caracteres— nunca matchea, y el script reporta "0 ocurrencias" sobre texto que sí está ahí. Mordió 3 veces el 2026-08-26. **Construir el backslash con `chr(92)`** (`NL = chr(92) + 'n'`) en vez de escribirlo en el literal. Corolario que salvó las tres veces: un script de reemplazo masivo que **cuenta cada patrón antes de escribir y aborta si alguno da != 1** convierte esto en un aviso en vez de un archivo a medias.
+- **`Start-Job` de PowerShell no sobrevive entre llamadas separadas de la herramienta.** Cada invocación de la tool PowerShell/Bash corre en su propio proceso host; un `Start-Job` lanzado en una llamada muere cuando ese proceso host termina, así que una llamada posterior (`Wait-Job`/`Receive-Job` por nombre) nunca lo encuentra — el log queda vacío y no hay error visible. Mordió el 2026-08-15 corriendo WhisperX en background: el job "existía" en la llamada que lo creó pero desapareció en la siguiente. **Fix:** lanzar el proceso real y detached con `Start-Process -PassThru` (guardando el `.Id`), y en una llamada `run_in_background` aparte hacer `Wait-Process -Id <PID>` — eso sí sobrevive porque es un proceso Win32 independiente, no un job hosteado dentro del proceso que lo creó.
 
 ## Comportamiento al iniciar
 
@@ -162,11 +164,22 @@ Instancias concretas ya documentadas (las dos primeras mordieron el 2026-07-23):
 
 - **Un `ffmpeg -af afade` combinado con `-ss`/`-to` puestos DESPUÉS de `-i` mide el tiempo del filtro contra la línea de tiempo del archivo COMPLETO, no del clip recortado.** El export reporta duración y bitrate correctos, sin ningún error — pero el audio queda en silencio total si el fade-out cae (en tiempo absoluto del archivo original) antes de donde empieza el clip. Mordió el 2026-08-09 cortando un clip de 59.6s de MPD EP.02 (minuto 33:39–34:38 de un máster de 39:36): `-i master.wav -ss 33:39 -to 34:38 -af "afade=t=out:st=59.2:d=0.4"` puso el fade-out en el segundo 59.2 **del archivo completo** (dentro de la intro) en vez del segundo 59.2 del clip, y todo lo posterior —incluida la ventana recortada, minutos después— quedó mudo. `ffprobe`/duración no lo detectan; solo lo destapa `ffmpeg -af volumedetect -f null -` (mean_volume ≈ -91dB confirmó silencio real). **Fix:** mover `-ss`/`-to` (o `-t`) a ANTES de `-i` (seek de entrada) para que el stream decodificado empiece en t=0 del clip, y ahí sí los `st=` del `afade` quedan relativos al clip. Reproducido y aislado quitando el filtro (el export sin `afade` sí tenía audio) antes de anotar esto — no es teoría.
 
+- **Una firma de bytes corta (4 caracteres) sobre un archivo binario de alta entropía da falsos positivos por coincidencia — sin un clúster de firmas correlacionadas Y el campo de atribución real, un "hallazgo" de metadata embebida (C2PA/JUMBF) puede ser ruido.** El 2026-08-15, auditando 780 imágenes por watermarks de IA, un grep de 4 bytes (`jumb`, `c2ma`, etc.) marcó 3 archivos con una sola firma aislada — un ícono SVG del paquete de ComfyUI y dos renders locales de ComfyUI (`BTQ-v4-scene-4x`, `MPD-T2-tool-v19`). Extraer el campo `claim_generator`/`softwareAgent` real confirmó que esos 3 no tenían manifiesto: coincidencia de bytes en píxeles comprimidos, no C2PA. Los 66 archivos con el clúster completo (`c2pa`+`C2PA`+`caBX`+`jumb`+`jumd`+`urn:c2pa`+`c2ma`) sí eran reales, y la extracción de atribución mostró que ninguno era de Anthropic/Claude — todos eran de Google (SynthID) o Canva AI. **Antes de reportar un hallazgo de metadata embebida, exigir el clúster correlacionado completo Y extraer el campo de atribución real**, no solo una firma suelta.
+
+- **WhisperX no reporta silencio cuando no hay voz en un tramo — alucina texto genérico ("Subtítulos por la comunidad de Amara.org", boilerplate de subtítulos de YouTube) sobre música o silencio, en vez de dejar el SRT vacío ahí.** El SRT termina de verse "normal" y no da ningún error, pero la última línea con contenido real queda MUCHO antes del final del archivo. Mordió el 2026-08-15: grabación de MPD EP.03 con 18 min de música de fondo sin recortar al final (bug de export en Reaper) — el SRT mostraba diálogo real hasta 32:45 y después puro boilerplate alucinado hasta 50:28, y a simple vista el SRT no delataba nada raro. **Señal a vigilar:** comparar el timestamp de la última línea de diálogo real contra la duración total del archivo (`ffprobe -show_entries format=duration`) — una brecha grande es sospechosa. **Verificar, no asumir que es silencio inofensivo:** `ffmpeg -af volumedetect -f null -` sobre esa cola — silencio real da mean_volume por debajo de -60dB aprox; si da más alto (acá dio -25dB), hay audio real sin transcribir y hay que investigar qué es antes de seguir el pipeline.
+
+- **`curl` sin `-L` sobre una URL con redirect (301/302/308) devuelve el cuerpo del redirect, no el contenido real — y no es un error visible.** Un `grep` sobre esa respuesta da "0 resultados" que se lee como "el sitio no tiene X", cuando en realidad el sitio nunca se llegó a pedir. Mordió el 2026-08-23: `curl -s "https://behind-thequeue.com/episodios/"` (con barra final) devolvió 15 bytes ("Redirecting...", el cuerpo del 308 hacia `/episodios` sin barra) y un grep del link de EP.027 dio 0 matches — a punto de reportarse como "el índice del sitio no tiene el episodio enlazado" cuando el deploy estaba bien desde días antes. Se cachó releyendo el archivo guardado antes de afirmar nada, no por un error de curl. **Con cualquier verificación de contenido vía curl, usar `-L` siempre** (o revisar el header `Location` si el `-s` oculta el código de estado).
+
+- **Una línea base clavada a `HEAD` deja de ser línea base en el momento en que commiteas — y no avisa, porque sigue reportando PASS.** El 2026-08-26 un test diferencial levantaba la versión "vieja" con `git show HEAD:archivo` para compararla contra la actual. Era correcto al escribirlo, y falso desde el commit siguiente: pasó a comparar el código nuevo **contra sí mismo**, con lo cual las diferencias daban cero y el test se veía más verde que nunca. Se destapó solo porque un cambio de umbral hizo fallar otras aserciones del mismo archivo. **Fijar la referencia a un SHA explícito, nunca a `HEAD`**, y nombrar en un comentario qué es ese SHA (ej. "lo que corre en producción") para que mover la referencia sea una decisión y no un efecto secundario de commitear.
+
 **Y el reverso, que es peor: un medidor que hardcodea QUÉ mide da aprobados falsos.** Los casos de arriba sub-reportan y producen «cero hallazgos» falsos; este **sobre**-reporta y cierra una compuerta que en realidad no pasó. Mordió el 2026-08-01: el script que verifica la compuerta de contenido aplicable de un guion tenía los segmentos objetivo fijos como `('1','6')`. Al renumerar el guion —se insertó un segmento nuevo— el 6 pasó a ser otra cosa, y el script reportó **32,3% OK** midiendo el segmento equivocado. Al arreglarlo dio un **fallo igualmente falso**, porque el segmento correcto no llevaba la marca. Solo la tercera medición era real.
 
 - **Un script de compuerta deriva del artefacto qué mide** — lee una marca dentro del propio bloque (`APLICABLE` en su nota, un atributo, un id), nunca un índice o un nombre posicional.
 - **Al renumerar, reordenar o insertar algo, re-verificar que el medidor siga apuntando ahí.** El renumerado es silencioso para el script.
 - **Un resultado que cruza el umbral por poco merece una segunda mirada al instrumento, no solo al dato.** El PASS falso venía con un margen cómodo, y eso fue justo lo que lo hizo creíble.
+
+- **Un test que carga un PORT del artefacto mide el port, no el artefacto — y su verde es falso.** `tests/candidate-simulator.js` de HireSignal dice validar "el prompt real del entrevistador", pero lo toma de `model-comparison.js`: una copia en JavaScript del prompt de PHP, marcada STALE en el propio repo. El 2026-08-26 esa copia todavía traía 6 fósiles que ya se habían retirado del PHP, así que validar la reescritura con ella habría medido el texto viejo y devuelto verde. No lo delata nada: el simulador corre, llama al modelo de verdad y produce métricas creíbles. **Antes de validar un cambio con un test que ya existe, abrir el test y seguir de dónde carga el artefacto** — si es una traducción, una copia o un fixture, mide eso. El reemplazo fue un arnés que entra por las mismas funciones de producción (`tests/smoke-interview.php`). Ojo con la memoria: decía que el simulador usaba el prompt real, y esa entrada llevaba meses siendo falsa.
+- **Un `str_contains` no ve una frase partida por el salto de línea.** Sobre un texto envuelto a ~80 columnas, buscar una frase plana falla cuando la mitad vive al otro lado del `\n`: el 2026-08-26, 8 de 8 aserciones sobre frases que SÍ estaban en el prompt dieron FAIL falso, y el primer diagnóstico fue "la regla se perdió en la reescritura". Es el mismo principio del `\r` de arriba, pero al revés — ahí el patrón busca un carácter que el buscador descarta; aquí el texto trae uno que el patrón no espera. **Normalizar el espacio antes de comparar** (`preg_replace('/\s+/', ' ', $texto)`), o buscar un fragmento que quepa en una línea.
 
 Antes de reportar un conteo o un "cero hallazgos", cruzar el total con una segunda herramienta. Ver §Procedencia en `~/.claude/CLAUDE.md`.
 
@@ -185,6 +198,29 @@ Antes de reportar un conteo o un "cero hallazgos", cruzar el total con una segun
 - **Marcar el bloque superado donde vive:** tachado, `HISTÓRICO`, `SUPERADO por X el YYYY-MM-DD`, o moverlo a un anexo al final. Que sea imposible leerlo sin ver que ya no manda.
 - **Cuando el documento y el código se contradicen, gana el código** — es lo que corre. Y la contradicción se reporta, no se resuelve en silencio.
 - **Al escribir un prompt, un guion o una config desde un documento de reglas, abrir primero el último ENTREGABLE publicado** de esa familia. El entregable es el estado real; el documento es la intención. *(Es el espejo del párrafo anterior: allá los entregables se barren al RETIRAR una regla; acá se leen ANTES de escribir bajo ella. Misma palabra, momentos opuestos.)*
+
+## Reescribir un prompt con historia
+
+Un prompt viejo acumula fósiles y hay que limpiarlo. Pero también acumula **decisiones
+que costaron corridas pagadas**, y el texto no avisa cuál es cuál: las dos cosas se ven
+igual de prosa. Reescribir "de cero" el del chat de HireSignal el 2026-08-26 derogó dos
+reglas validadas sin que nada lo señalara — `cannot BOTH be true` (la barra estrecha de
+contradicción) y el guardrail contra fugas de XML de Opus 5. Las salvó la suite que ya
+existía, no el criterio de quien reescribió.
+
+- **Antes de tocar una línea, enumerar las decisiones ya validadas y afirmar cada una
+  sobre el prompt RENDERIZADO.** Se re-expresan, no se repiensan. Con esas aserciones
+  puestas, quitarlas después tiene que ser una decisión y no un descuido.
+- **Para impedir un comportamiento del modelo, quitar la sección que lo invita — no
+  agregar una frase que lo prohíba.** Ese mismo día el prompt decía literal "si el único
+  idioma requerido es el primario, no hay nada a lo que cambiar: salta a la etapa 4", y
+  el modelo anunció el cambio de idioma igual, se quedó tres turnos en esa etapa y marcó
+  evasivo al candidato por no responder en el idioma en el que ya respondía. La etapa y
+  sus 8 reglas de cambio seguían renderizándose, y eso pesa más que la frase que las
+  contradice. El arreglo fue no renderizarlas.
+- Corolario del anterior: **cuando una instrucción no se cumple, mirar primero qué la
+  contradice en el mismo prompt**, antes de reforzarla con más énfasis. Subir el volumen
+  de la regla es lo barato y casi nunca es lo que falla.
 
 ## Una cifra compuesta no es una constante
 
@@ -214,6 +250,17 @@ de dirección.
 **Antes de escribir un ratio como regla, preguntar: ¿qué dos cosas estoy multiplicando aquí, y
 puede una moverse sin la otra?** Si puede, medirlas por separado y dejar la fórmula, no el
 producto. Y nombrar cuál de las dos es decisión humana — esa es la que hay que fijar primero.
+
+**Y un umbral que hay que mover repetidamente probablemente no debería existir.** Antes de
+reubicar una frontera, medir la varianza de la variable que la cruza: **si el rango medido la
+contiene, ningún valor sirve** — moverla solo reubica la inestabilidad, y cada reubicación se
+siente como progreso porque la muestra chica la respalda. Ojo con la n: con 3 observaciones un
+umbral puede parecer fuera del ruido y estar adentro. El 2026-08-26 una compuerta de confianza
+se movió de 80 a 67 con n=3 y se reportó "fuera de la banda"; con n=6 el rango medido era 6 y
+el 67 pasaba 4 de 6 veces — el mismo candidato, los mismos bytes, distinto resultado según la
+corrida. **El arreglo no fue un tercer valor: fue borrar la compuerta** y reportar esa variable
+como un eje aparte. Cuando una frontera pide moverse por segunda vez, la pregunta ya no es
+dónde ponerla sino si la decisión debe depender de esa variable.
 
 ## Límites de lo publicable (medir, no estimar)
 

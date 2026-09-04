@@ -1,24 +1,21 @@
 # Workflow 04 — Rotación del grid "Episodios recientes"
 
-**Misma regla de ROTACIÓN para ambos shows** (confirmada con el usuario): el grid de 4
-cards muestra los 4 episodios ANTERIORES al que está en circulación — el nuevo NO se
-agrega al grid porque su propio embed/link ya lo cubre. Al lanzar: rota — entra el
-anterior al nuevo, sale el más antiguo.
+**Este workflow aplica a BTQ.** Para MPD ver la sección "MPD — acumulación de
+Expedientes" al final: desde el rediseño "La Guarida" (2026-07-22) el sitio de MPD ya
+no usa un grid de 4 cards que rota — usa un patrón distinto, decidido con Andrés el
+2026-08-14.
 
-**El ORDEN VISUAL sí difiere por show — verificar el archivo real, no asumir:**
-- **MPD** (`mrputridsden-production/website/index.html`): ascendente, oldest → newest,
-  arriba a abajo (verificado en vivo: 001, 002, 003, 004 — comentario `GRID RULE` en el
-  propio HTML lo confirma).
-- **BTQ** (`btq-production/website/index.html`): descendente, el más reciente de los 4
-  primero, arriba a abajo (verificado en vivo 2026-07-05 al lanzar EP.020: grid pasó de
-  `018,017,016,015` a `019,018,017,016` — 019 arriba, no abajo).
+**Regla de ROTACIÓN para BTQ** (confirmada con el usuario): el grid de 4 cards muestra
+los 4 episodios ANTERIORES al que está en circulación — el nuevo NO se agrega al grid
+porque su propio embed/link ya lo cubre. Al lanzar: rota — entra el anterior al nuevo,
+sale el más antiguo.
 
-Antes de editar el markup, confirma el orden real leyendo las 4 cards actuales del show
-correspondiente (Paso 1) — no reutilices el orden del otro show ni un ejemplo genérico.
+**Orden visual de BTQ** (`btq-production/website/index.html`): descendente, el más
+reciente de los 4 primero, arriba a abajo (verificado en vivo 2026-07-05 al lanzar
+EP.020: grid pasó de `018,017,016,015` a `019,018,017,016` — 019 arriba, no abajo).
 
-La lógica de rotación es idéntica en ambos sitios. Lo único que cambia es el markup —
-**cada show usa su propio sistema visual, nunca el del otro** (ver memoria
-`feedback_mpd_vs_btq_typography`).
+Antes de editar el markup, confirma el orden real leyendo las 4 cards actuales
+(Paso 1) — no asumas a partir de un ejemplo genérico.
 
 ---
 
@@ -54,12 +51,11 @@ el grid de EP.021 (2026-07-13).
 
 ## Paso 1 — Leer el grid actual
 
-Abre el `index.html` del show correspondiente y localiza el contenedor del grid:
+Abre `btq-production/website/index.html` y localiza el contenedor del grid:
 
 | Show | Contenedor | Card | Campos por card |
 |---|---|---|---|
-| BTQ | `<div class="stag">` (sección `#tracklist`) en `btq-production/website/index.html` | `<a class="track" href="[spotify URL]">` | `.t-num` (3 dígitos), `.t-ref` (referencia cultural), `.t-title`, `.t-quote`, `.t-right` (bloque "Escuchar →") — clases verificadas en vivo 2026-07-13 (EP.021); los nombres anteriores `ep-list`/`ep-row` eran de un markup viejo |
-| MPD | `<div class="episodes-grid">` en `mrputridsden-production/website/index.html` | `<div class="episode-card" data-ep="0XX">` | `.ep-number`, `.ep-title`, `.ep-meta` (duración · fecha · "Co-host"/invitado), `.ep-description`, `.ep-link` (con SVG + href de Spotify) |
+| BTQ | `<div class="stag">` (sección `#tracklist`) | `<a class="track" href="[spotify URL]">` | `.t-num` (3 dígitos), `.t-ref` (referencia cultural), `.t-title`, `.t-quote`, `.t-right` (bloque "Escuchar →") — clases verificadas en vivo 2026-07-13 (EP.021); los nombres anteriores `ep-list`/`ep-row` eran de un markup viejo |
 
 Anota las 4 cards actuales en orden — son tu punto de partida para el diff.
 
@@ -76,16 +72,10 @@ Dado que el episodio que se está lanzando es EP.0XX (el `ep_number` del episode
 3. El más antiguo de las 4 cards actuales **sale**.
 4. Las otras 3 cards se mantienen, recorriéndose una posición hacia "más antiguo".
 
-**La lógica de qué entra/sale es igual en ambos shows — el ejemplo de abajo usa el orden
-visual real de cada uno, no lo intercambies:**
-
-- **MPD (ascendente):** si el grid actual muestra `001, 002, 003, 004` y se lanza el
-  episodio cuyo anterior-en-circulación era `005`, el grid rotado queda
-  `002, 003, 004, 005` — `001` sale, `005` entra al final (posición más reciente).
-- **BTQ (descendente, verificado en vivo 2026-07-05, lanzamiento EP.020):** el grid
-  mostraba `018, 017, 016, 015` y se lanzó `EP.020` (lo que significa que `EP.019` era
-  el que estaba en circulación) → el grid rotado quedó `019, 018, 017, 016` — `015`
-  sale, `019` entra AL PRINCIPIO (posición más reciente, no al final).
+**BTQ es descendente** (verificado en vivo 2026-07-05, lanzamiento EP.020): el grid
+mostraba `018, 017, 016, 015` y se lanzó `EP.020` (lo que significa que `EP.019` era
+el que estaba en circulación) → el grid rotado quedó `019, 018, 017, 016` — `015`
+sale, `019` entra AL PRINCIPIO (posición más reciente, no al final).
 
 Si tienes dudas sobre cuál era "el episodio en circulación" antes de este lanzamiento
 (por ejemplo, hay un salto de números o el grid está desactualizado), **pregunta al
@@ -95,21 +85,15 @@ usuario antes de tocar el markup** — no asumas (ver memoria `feedback_confirm_
 
 ## Paso 3 — Editar el markup
 
-**BTQ**: usa los campos del episode brief + lo generado en Stage 2 (`episode-launch`)
-para la card que entra — `cultural_ref` → `.t-ref`, título → `.t-title`, una
-cita/frase representativa del episodio → `.t-quote`, número de 3 dígitos →
-`.t-num`, URL de Spotify → `href` del `<a class="track">`.
+Usa los campos del episode brief + lo generado en Stage 2 (`episode-launch`) para la
+card que entra — `cultural_ref` → `.t-ref`, título → `.t-title`, una cita/frase
+representativa del episodio → `.t-quote`, número de 3 dígitos → `.t-num`, URL de
+Spotify → `href` del `<a class="track">`.
 
-**MPD**: usa los campos del episode brief + lo generado en Stage 2
-(`shownotes-ep[NNN].md` / `youtube-ep[NNN].md`) para la card que entra — número →
-`.ep-number` y `data-ep`, título → `.ep-title`, duración/fecha/formato → `.ep-meta`,
-descripción breve → `.ep-description`, URL de Spotify → `href` del `.ep-link` (conserva
-el SVG existente, solo cambia el texto y el href).
+Edita las 4 cards para que reflejen el grid rotado — no agregues una quinta ni dejes
+la que sale.
 
-En ambos casos: edita las 4 cards para que reflejen el grid rotado — no agregues una
-quinta ni dejes la que sale.
-
-**No olvides el badge "Última pista" / hero del episodio más reciente** (BTQ: `<a
+**No olvides el badge "Última pista" / hero del episodio más reciente** (`<a
 class="latest">` cerca del top de `index.html`, fuera del contenedor del grid de 4
 cards) — es un elemento SEPARADO que también debe apuntar al episodio que se está
 lanzando ahora (EP.0XX), no al que entra al grid. Confirmado como hueco real: tras el
@@ -120,13 +104,56 @@ badge quedó apuntando a EP.017 hasta que se detectó y corrigió el 2026-06-29.
 
 ## Al terminar
 
-1. Confirma: "Grid de [show] rotado — [lista de 4 episodios resultante]." y continúa a
+1. Confirma: "Grid de BTQ rotado — [lista de 4 episodios resultante]." y continúa a
    `05-deploy-verify.md`.
 2. Agrega a la bitácora:
    ```
    ## Stage 4 — Rotación de grid
-   - Qué se hizo: grid de [show] rotado de [grid anterior] a [grid nuevo]
+   - Qué se hizo: grid de BTQ rotado de [grid anterior] a [grid nuevo]
    - Episodio que entra: EP.0XX | Episodio que sale: EP.0YY
    - Archivo modificado: [ruta a index.html]
    - Resultado: OK
    ```
+
+---
+
+## MPD — acumulación de Expedientes (no rotación)
+
+**Decidido con Andrés el 2026-08-14.** El sitio de MPD (`mrputridsden-production/website/index.html`)
+no tiene grid de 4 cards desde el rediseño "La Guarida" (2026-07-22). Cada expediente
+del pilar "Archivos Secretos del Rock" (ver memoria `project_mpd_archivos_secretos_pillar`)
+tiene su propia sección completa, y esas secciones **se acumulan indefinidamente** — no
+hay rotación, no hay archivado automático de expedientes de T2.
+
+**Markup real** (verificado 2026-08-09 en el fix del sitio, confirmado en vivo 2026-08-14):
+cada expediente es una `<section class="band" id="expedienteNN">` con un `.case`
+(`.case-art` = portada 340px + figcaption, `.case-body` = `<h3>` título, párrafos,
+`.roll` con los nombres/hechos clave, `.btn-outline` con el link de Spotify). Ver
+Expediente 01 (`id="expediente"`) y Expediente 02 (`id="expediente02"`) como plantilla.
+
+**Al lanzar un expediente nuevo (EP.0X):**
+1. Duplica la sección `.case` del expediente anterior, cambia el `id` a `expediente0X`.
+2. Rellena portada, título, párrafos y `.roll` desde el episode brief / show notes.
+3. Cambia el `href` del `.btn-outline` a la URL real de Spotify (nunca "pending" — mismo
+   Paso 0 que BTQ).
+4. Mueve el hero (`.file` en `#hero`) para que apunte al expediente nuevo — el anterior
+   se queda con su sección `.case` completa en el body, ya no en el hero.
+5. Actualiza el embed de "Sintoniza" (`#escucha`) al episodio más reciente.
+6. Actualiza el índice de nav (`<nav class="bar-nav">`) si el ancla `#expediente0X` no
+   está enlazada.
+
+**Si el deploy se hace ANTES de que el episodio esté en vivo en Spotify** (episodio
+programado, ver checkpoint de Spotify en `02-assets.md`), el `.file-status` del hero
+suele llevar texto condicionado a esa fecha (ej. "Disponible el lunes"). **Anotar
+explícitamente en el checkpoint/handoff el paso de volver y cambiarlo a "Ya disponible"
+cuando se verifique que el episodio salió** — no asumir que "confirmar que está en vivo"
+cubre automáticamente el copy del sitio. Mordió en EP.03 (2026-08-20): el episodio
+salió el lunes como programado, pero el sitio siguió mostrando "Disponible el lunes"
+3 días después porque nadie lo tenía anotado como pendiente puntual — se encontró por
+casualidad al hacer la verificación general, no porque hubiera una tarea marcada.
+
+**"El Archivo" (`id="archivo"`) es solo para Temporada 1** — la lista compacta de 5 filas
+de EP.001-005. Los expedientes de T2 NUNCA bajan a esa lista ni a ninguna otra; se
+quedan como sección `.case` completa para siempre. Si en el futuro la página se vuelve
+demasiado larga, es una decisión nueva de Andrés, no automática — no archivar por
+iniciativa propia.
