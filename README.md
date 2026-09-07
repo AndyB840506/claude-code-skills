@@ -106,7 +106,7 @@ Todos los skills siguen este patrón:
 - Triggers múltiples y específicos
 - Completamente auto-contenido (sin dependencias externas)
 
-Ver [skill-management](.claude/skills/skill-management/SKILL.md) para un ejemplo completo.
+Ver [skill-management](skill-management/SKILL.md) para un ejemplo completo.
 
 ---
 

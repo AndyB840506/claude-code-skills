@@ -82,7 +82,7 @@ Alternate backgrounds for visual separation: white / light grey / white
 
 ---
 
-## Animations (see [docs/design-guide.md](docs/design-guide.md))
+## Animations (see [design-guide.md](design-guide.md))
 
 - Scroll reveals: fade-in + slide-up on viewport entry
 - Counters: animate from 0 on first view
@@ -91,7 +91,7 @@ Alternate backgrounds for visual separation: white / light grey / white
 
 ---
 
-## Content Rules (see [docs/content-rules.md](docs/content-rules.md))
+## Content Rules (see [content-rules.md](content-rules.md))
 
 - No invented content, prices, or testimonials
 - All stats must be real and user-provided

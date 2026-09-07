@@ -140,7 +140,7 @@ Cualquier skill debe seguir este patrón:
 - Secciones numeradas claras
 - Referencias a workflows si existen
 
-Ver [skill-management/SKILL.md](.claude/skills/skill-management/SKILL.md) para ejemplo completo.
+Ver [skill-management/SKILL.md](skill-management/SKILL.md) para ejemplo completo.
 
 ## Código de Conducta
 
