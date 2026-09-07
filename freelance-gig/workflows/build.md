@@ -73,6 +73,13 @@ Before presenting the deliverable, do one explicit pass over the draft asking:
 autopilot?** If yes, name the specific tell and fix it — don't just note it.
 This is a required step, not a suggestion.
 
+- **Verify every contact detail against its source before it ships.** Any email
+  address, phone number, handle or URL that goes into a client-facing deliverable gets
+  grepped out of `the-freelancer` (or asked), never written from memory. On 2026-09-07 a
+  proposal went out with `andy@andyfreelancer.com` in its only call-to-action; the real
+  address is `hello@andyfreelancer.com`, 13 occurrences in the repo, and one grep would
+  have caught it. On a cold pitch a wrong reply-to does not degrade the deliverable, it
+  voids it — the prospect's reply bounces and the whole engagement dies silently.
 ## 5. Save and report
 
 Save the deliverable under the gig's working folder in

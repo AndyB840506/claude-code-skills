@@ -193,6 +193,34 @@ Always show the user the deployment URL.
 **Do not** curl or fetch the deployed URL to verify it works unless the user
 asks for verification. Just return the link.
 
+## Deployment Protection — verify the client can actually open it
+
+**A new Vercel project deploys with `ssoProtection` ON by default.** The CLI reports
+`readyState: READY` and hands back a URL that serves a Vercel **login wall** to anyone
+who is not signed into the owning account. "Deployment ready" does not mean "the client
+can see it." Handing that URL to a client gives them a dead link.
+
+Bit on 2026-09-07: a demo page deployed for a prospect returned 302 -> 307 into Vercel's
+SSO page; `curl` came back with 337 KB of Vercel dashboard HTML instead of the 21 KB page.
+
+**Always verify from outside the account after deploying anything a third party will open:**
+
+```bash
+curl -sSI -m 30 "https://<project>.vercel.app/" | grep -iE '^(HTTP/|location)'
+# 200 = public.  302/307 to vercel.com/sso-api = behind the login wall.
+```
+
+To disable it on that project only (no CLI command exists for this — it is API only):
+
+```
+PATCH https://api.vercel.com/v9/projects/<projectId>?teamId=<orgId>
+Authorization: Bearer <token from AppData/Roaming/xdg.data/com.vercel.cli/auth.json>
+Body: {"ssoProtection": null}
+```
+
+`projectId` and `orgId` come from the `.vercel/project.json` written at deploy time.
+Scope the change to the one project and say so — never disable protection account-wide.
+
 ## Troubleshooting
 
 ### CLI Auth Failure
