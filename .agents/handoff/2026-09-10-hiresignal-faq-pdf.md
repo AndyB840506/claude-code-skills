@@ -31,4 +31,4 @@
 ## Questions to Answer
 - Commit the FAQ to hiresignal (triggers a deploy) or keep it outside the repo?
 - Does `hello@kumatalent.com` exist? If not, which contact goes in the PDF?
-- Is a French version (FR-CA) wanted? Offered, not requested.
+- ~~Is a French version wanted?~~ Resolved: NO. Andy (2026-09-10): the FAQ is for internal use, so English is enough.
