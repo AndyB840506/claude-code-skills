@@ -11,10 +11,11 @@
 - UPDATED same day: Andy said the FAQ is for INTERNAL use and asked for a high-level overview without details. Added section 04 "How the assessment works" as a page-5 appendix (now 5 pages; pages 1-4 remain prospect-safe and end with the contact box). Still excluded at any level: weight/cut-off values, contradiction penalties, detection patterns, the prompt, cost per interview. Extended thinking is described as "off by default" because `LLM_REPORT_THINKING` can be set via env on DO (not visible from here).
 - Every claim checked against the code at hiresignal HEAD `a083628`: the three axes + disqualifiers (`api/intelligence-engine.php` ~663-690), every interview visible in the ranking (`admin/ranking.php` ~98), single-use expiring invites, admin locked when no password is set + cookie flags, per-endpoint rate limit, database TLS (`db.php` sslmode=require), sessions in Postgres (`session-store.php`), CORS origin-locked (`api/site-cors.php`), EN/FR/ES assessment, CSV export, AI disclosure EN+FR. Anthropic quote checked via WebFetch of anthropic.com/legal/commercial-terms today.
 - Retrospective: 3 memory entries — `feedback_always_show_image_paths` widened to any file with an absolute path (Andy had to ask "where is the file?"), new `reference_html_to_pdf_edge`, new `project_hiresignal_client_docs`.
+- Retrospective #2 (second close): `reference_html_to_pdf_edge` now says to measure blank space vs. block height before touching margins/font (2 blind tweaks failed; the structural appendix fix worked), plus the internal-appendix-on-its-own-page pattern.
 - Skill-kit audit: 0 issues (29 SKILL.md, 0 over 50 lines, 0 real trigger collisions; known warning D on mrputridsden).
 
 ## Where We Paused
-**Last action:** session close (retrospective + audit applied).
+**Last action:** second session close of the day (after adding section 04). The FAQ was verified as 5 pages, all viewed as PNG (render v6).
 **Next action:** ask Andy whether to commit the 2 FAQ files to hiresignal (push to `Lucca-Tech/hiresignal` master = production redeploy).
 **Blockers:** Andy's decision on the commit; confirming that `hello@kumatalent.com` is a real mailbox.
 
