@@ -10,14 +10,19 @@ sin hacer preguntas al usuario. Los parámetros están fijos: large-v2, español
 1. Toma `audio_path` del episode brief — ya viene auto-descubierto y confirmado por
    el usuario en `00-intake.md` (carpeta fija por show + match por número de episodio),
    no es necesario volver a preguntarlo ni validarlo aquí.
-2. Si el archivo no está ya en `E:\Transcriptor\audios\`, cópialo ahí primero —
+2. Detectar la unidad de esta máquina antes de construir cualquier ruta — nunca
+   hardcodear la letra (ver `transcriptor/workflows/transcribe.md` Paso 0, mismo patrón):
+   ```powershell
+   if (Test-Path "E:\Transcriptor") { $base = "E:\Transcriptor" } else { $base = "D:\Transcriptor" }
+   ```
+3. Si el archivo no está ya en `$base\audios\`, cópialo ahí primero —
    usa PowerShell `Copy-Item`, nunca `xcopy`.
-3. Invoca la skill con la ruta del audio:
+4. Invoca la skill con la ruta del audio:
    ```
    /transcriptor <audio_path>
    ```
    La skill corre en modo silencioso (sin preguntas interactivas) y devuelve el path del SRT.
-4. El resultado se guarda en `E:\Transcriptor\transcripciones\[nombre-audio].srt` con
+5. El resultado se guarda en `$base\transcripciones\[nombre-audio].srt` con
    tags `[SPEAKER_00]`, `[SPEAKER_01]`, etc.
 
 ---
@@ -41,7 +46,7 @@ música de intro/outro que corrió todos los números) — confirmado en BTQ EP.
 mismo `audio_path` pero tamaño de archivo distinto, o el usuario dice explícitamente que
 hubo que re-grabar/re-exportar algo.
 
-1. Sobrescribe el audio en `E:\Transcriptor\audios\` con `Copy-Item -Force` y respalda el
+1. Sobrescribe el audio en `$base\audios\` con `Copy-Item -Force` y respalda el
    SRT viejo (`[nombre] (pre-fix backup).srt`) antes de que WhisperX lo sobrescriba.
 2. Repite la ejecución completa del Paso 3 sobre el archivo nuevo.
 3. Si ya se habían generado capítulos de YouTube o quote cards con timestamps del SRT

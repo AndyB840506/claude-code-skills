@@ -1,5 +1,16 @@
 # Execution
 
+## Paso 0 — Detectar unidad de esta máquina
+
+WhisperX vive en `E:\Transcriptor\` en el escritorio y en `D:\Transcriptor\` en el portátil (no
+hay `E:` ahí). Detectar cuál existe antes de construir cualquier ruta — no asumir una fija:
+
+```powershell
+if (Test-Path "E:\Transcriptor") { $base = "E:\Transcriptor" } else { $base = "D:\Transcriptor" }
+```
+
+Usar `$base` en lugar de `E:\Transcriptor` en todos los pasos siguientes.
+
 ## Paso 1 — Determinar modo y ruta del audio
 
 **Si fue llamado desde el pipeline** (el mensaje incluye una ruta de audio explícita como argumento):
@@ -9,9 +20,9 @@
 - Saltar al Paso 2 sin hacer preguntas
 
 **Si fue invocado standalone:**
-- Revisar si hay archivos en `E:\Transcriptor\audios\`:
+- Revisar si hay archivos en `$base\audios\`:
   ```powershell
-  Get-ChildItem "E:\Transcriptor\audios" -Include "*.mp3","*.wav","*.m4a","*.mp4" -Recurse | Sort-Object LastWriteTime -Descending | Select-Object -First 5
+  Get-ChildItem "$base\audios" -Include "*.mp3","*.wav","*.m4a","*.mp4" -Recurse | Sort-Object LastWriteTime -Descending | Select-Object -First 5
   ```
 - Si hay archivos: mostrar la lista y preguntar cuál transcribir (o confirmar el más reciente)
 - Si la carpeta está vacía: pedir al usuario que pegue la ruta completa del audio
@@ -37,13 +48,13 @@ Ejecutar con PowerShell:
 
 ```powershell
 $env:PYTHONUTF8 = "1"
-& "E:\Transcriptor\venv-whisperx\Scripts\Activate.ps1"
+& "$base\venv-whisperx\Scripts\Activate.ps1"
 whisperx "<RUTA_AUDIO>" `
   --language <es|en> `
   --model large-v2 `
   --diarize `
   --hf_token $env:HF_TOKEN `
-  --output_dir "E:\Transcriptor\transcripciones" `
+  --output_dir "$base\transcripciones" `
   --output_format srt
 ```
 
@@ -59,9 +70,9 @@ Esperar a que termine (puede tardar varios minutos dependiendo del largo del aud
 ## Paso 4 — Confirmar output
 
 Una vez terminado:
-1. Buscar el SRT generado en `E:\Transcriptor\transcripciones\`:
+1. Buscar el SRT generado en `$base\transcripciones\`:
    ```powershell
-   Get-ChildItem "E:\Transcriptor\transcripciones" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+   Get-ChildItem "$base\transcripciones" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
    ```
 2. Confirmar al usuario con el path completo del SRT generado
 
