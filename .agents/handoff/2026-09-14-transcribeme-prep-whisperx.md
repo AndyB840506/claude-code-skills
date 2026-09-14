@@ -72,6 +72,16 @@ después, Step 4 hace el sync real de `~/.claude/skills` (commit+push de `transc
 
 ## Notes / Gotchas
 
+- **Al retomar en el escritorio: el skill `transcribeme-prep` NO hay que crearlo ahí de nuevo.**
+  Es un archivo más del repo `claude-code-skills` — el `git pull` de arranque que ya manda
+  `CLAUDE.md` § "Comportamiento al iniciar" lo trae solo a ambos clones (`~/.claude/skills` y
+  `kit-skill-creator`), igual que cualquier otro skill. Lo único que **sí** es local por
+  máquina y el pull no lo trae: `python-docx` (dependencia de `scripts/srt_to_docx.py`) —
+  pero ni eso requiere acción manual, el propio workflow `portfolio-sample.md` la chequea e
+  instala sola en su Paso 0 (`pip show python-docx` → instala si falta) la primera vez que se
+  use ese modo en el escritorio. No hay ninguna instalación de WhisperX/venv que rehacer ahí —
+  el escritorio ya tenía su `E:\Transcriptor\venv-whisperx\` desde antes de hoy; lo que se armó
+  hoy fue la copia del **portátil** (`D:\Transcriptor\`), que no existía.
 - **ffmpeg**: la build completa de `Gyan.FFmpeg` vía winget dio timeout de descarga (504 Gateway,
   reproducido 2 veces) en este portátil — funcionó `Gyan.FFmpeg.Essentials` (más liviana). El
   PATH quedó bien en el registro pero no se refleja en esta sesión (mismo patrón de env vars) —
