@@ -65,6 +65,12 @@ applies to every deliverable type, not just web pages:
   fast-paced world..."), qualifier-stacking.
 - Concrete, opinionated, varied rhythm — same voice specificity as the bot's
   playbook, not a safe neutral register.
+- Cold-pitch emails specifically: warm and approachable by default, regardless
+  of how tough or blunt the prospect's own persona reads from research —
+  kindness costs nothing and never backfires. Soften the delivery, not the
+  finding: still name the real technical gap precisely, just without gotcha
+  framing, confrontational subject lines, or implying the recipient is
+  careless. (Confirmed 2026-09-14, correction on the Twilight Medical pitch.)
 
 ## 4. Self-check before declaring done
 
