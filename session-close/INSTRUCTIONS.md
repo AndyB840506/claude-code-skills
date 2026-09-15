@@ -57,6 +57,11 @@ STEP 6: Memory + skill-kit audit check
   → If (current memory count - lastAuditFileCount) >= 15 OR (current skill count !=
     lastSkillCount): invoke Skill("memory-audit") now, no confirmation prompt to trigger
     it (memory-audit gates its own apply step; now also scans skill files for corruption)
+  → EXCEPCIÓN: si `memory-audit` YA corrió en esta sesión (a mano o por este paso),
+    reportar los conteos y NO volver a invocarlo. Y si esa corrida fue manual —no
+    disparada por umbral— NO mover `.audit-baseline.json`: moverla haría que la próxima
+    auditoría real llegue más tarde de lo debido. La línea base solo avanza cuando la
+    auditoría se disparó por umbral.
   → Otherwise: report "Memoria: N archivos (+M), Skills: K archivos (umbral: memoria +15
     o cambio en K)"
   → No user confirmation needed for this step itself

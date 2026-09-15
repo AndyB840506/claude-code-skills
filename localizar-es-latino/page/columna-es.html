@@ -1,0 +1,1490 @@
+<title>Columna ES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root {
+  --ground: #eef1f5;
+  --surface: #ffffff;
+  --surface-sunk: #f5f7fa;
+  --ink: #12171f;
+  --ink-mid: #4a5665;
+  --ink-soft: #6f7c8c;
+  --rule: #d8dfe8;
+  --rule-soft: #e6ebf1;
+  --accent: #1c5aa0;
+  --accent-soft: #e3edf9;
+  --error: #a32019;
+  --error-soft: #fbe9e7;
+  --warn: #7d5300;
+  --warn-soft: #fdf1da;
+  --ok: #1a6343;
+  --ok-soft: #e2f2ea;
+  --tok: #6b3fa0;
+  --tok-soft: #f0e9f9;
+  --shadow: 0 1px 2px rgba(18,23,31,.06), 0 8px 24px -12px rgba(18,23,31,.18);
+  --ui: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0e1219; --surface: #161c25; --surface-sunk: #11161e;
+    --ink: #e7ecf3; --ink-mid: #a3b0c0; --ink-soft: #7d8b9c;
+    --rule: #262f3b; --rule-soft: #1d242e;
+    --accent: #74aae8; --accent-soft: #162434;
+    --error: #ff9b8f; --error-soft: #2e1714;
+    --warn: #e0b364; --warn-soft: #2b2113;
+    --ok: #74cea3; --ok-soft: #12261d;
+    --tok: #c3a4ee; --tok-soft: #241b33;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0e1219; --surface: #161c25; --surface-sunk: #11161e;
+  --ink: #e7ecf3; --ink-mid: #a3b0c0; --ink-soft: #7d8b9c;
+  --rule: #262f3b; --rule-soft: #1d242e;
+  --accent: #74aae8; --accent-soft: #162434;
+  --error: #ff9b8f; --error-soft: #2e1714;
+  --warn: #e0b364; --warn-soft: #2b2113;
+  --ok: #74cea3; --ok-soft: #12261d;
+  --tok: #c3a4ee; --tok-soft: #241b33;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font-family: var(--ui); font-size: 15px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--ground) 88%, transparent);
+  backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule);
+}
+.bar-in { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px 0; }
+.marca { display: flex; flex-direction: column; gap: 1px; margin-right: auto; }
+.marca-k { font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 700; }
+.marca-v { font-family: var(--mono); font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
+.stats { display: flex; gap: 7px; flex-wrap: wrap; }
+.stat {
+  display: flex; align-items: baseline; gap: 5px; padding: 5px 10px; border-radius: 6px;
+  background: var(--surface); border: 1px solid var(--rule); font-size: 12px; color: var(--ink-mid);
+}
+.stat b { font-family: var(--mono); font-size: 13.5px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+.stat.is-error { background: var(--error-soft); border-color: color-mix(in srgb, var(--error) 35%, transparent); color: var(--error); }
+.stat.is-error b { color: var(--error); }
+.stat.is-warn { background: var(--warn-soft); border-color: color-mix(in srgb, var(--warn) 35%, transparent); color: var(--warn); }
+.stat.is-warn b { color: var(--warn); }
+.stat.is-ok { background: var(--ok-soft); border-color: color-mix(in srgb, var(--ok) 35%, transparent); color: var(--ok); }
+.stat.is-ok b { color: var(--ok); }
+
+button {
+  font: inherit; cursor: pointer; border-radius: 7px;
+  border: 1px solid var(--rule); background: var(--surface); color: var(--ink);
+  padding: 8px 13px; font-size: 13px; font-weight: 500;
+  transition: background .12s ease, border-color .12s ease, opacity .12s ease;
+}
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+.btn-main { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+:root[data-theme="dark"] .btn-main { color: #0e1219; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn-main { color: #0e1219; } }
+.btn-main:hover:not(:disabled) { filter: brightness(1.08); border-color: var(--accent); }
+.btn-main[data-riesgo="1"] { background: var(--error); border-color: var(--error); }
+
+/* ---------- entrada ---------- */
+.entrada { padding: 22px 0 8px; }
+.panel {
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 11px;
+  padding: 18px; box-shadow: var(--shadow); margin-bottom: 14px;
+}
+.panel h2 { font-size: 15px; font-weight: 600; margin: 0 0 4px; letter-spacing: -.01em; text-transform: none; color: var(--ink); }
+.panel .ayuda { font-size: 13px; color: var(--ink-soft); margin: 0 0 12px; max-width: 64ch; line-height: 1.5; }
+textarea {
+  width: 100%; font-family: var(--mono); font-size: 13px; line-height: 1.6;
+  padding: 12px 13px; border-radius: 8px; border: 1px solid var(--rule);
+  background: var(--surface-sunk); color: var(--ink); resize: vertical;
+}
+textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: -1px; border-color: var(--accent); }
+#fuente { min-height: 190px; }
+#contexto { min-height: 62px; }
+.fila-campo { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 11px; }
+label.campo { font-size: 12.5px; color: var(--ink-mid); display: flex; gap: 7px; align-items: center; }
+select, input[type="text"] {
+  font: inherit; font-size: 13px; padding: 6px 9px; border-radius: 6px;
+  border: 1px solid var(--rule); background: var(--surface); color: var(--ink);
+}
+.lectura { font-size: 12.5px; color: var(--ink-soft); margin-top: 10px; line-height: 1.55; }
+.lectura b { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+.progreso { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink-mid); }
+.pista { flex: 1; height: 5px; border-radius: 3px; background: var(--rule-soft); overflow: hidden; min-width: 120px; }
+.pista i { display: block; height: 100%; background: var(--accent); width: 0%; transition: width .3s ease; }
+
+.filtros { display: flex; gap: 6px; flex-wrap: wrap; padding: 4px 0 14px; }
+.chip {
+  padding: 5px 12px; border-radius: 999px; font-size: 12.5px; font-weight: 500;
+  border: 1px solid var(--rule); background: transparent; color: var(--ink-mid);
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+:root[data-theme="dark"] .chip[aria-pressed="true"] { color: #0e1219; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chip[aria-pressed="true"] { color: #0e1219; } }
+.chip b { font-variant-numeric: tabular-nums; opacity: .7; margin-left: 4px; font-weight: 600; }
+
+.nota {
+  display: flex; gap: 10px; align-items: flex-start; margin: 0 0 14px;
+  padding: 12px 14px; border-radius: 8px; font-size: 13px; line-height: 1.45;
+  background: var(--warn-soft); border: 1px solid color-mix(in srgb, var(--warn) 30%, transparent); color: var(--warn);
+}
+.nota.grave { background: var(--error-soft); border-color: color-mix(in srgb, var(--error) 30%, transparent); color: var(--error); }
+
+.diag { margin-top: 12px; display: flex; flex-direction: column; gap: 7px; }
+.diag-l {
+  display: flex; gap: 9px; align-items: flex-start; padding: 9px 12px;
+  border-radius: 7px; font-size: 12.5px; line-height: 1.5;
+  background: var(--surface-sunk); border: 1px solid var(--rule-soft); color: var(--ink-mid);
+}
+.diag-l.mal { background: var(--error-soft); border-color: color-mix(in srgb, var(--error) 30%, transparent); color: var(--error); }
+.diag-l.bien { background: var(--ok-soft); border-color: color-mix(in srgb, var(--ok) 30%, transparent); color: var(--ok); }
+.diag-l code {
+  font-family: var(--mono); font-size: 11px; font-weight: 600; flex-shrink: 0;
+  text-transform: uppercase; letter-spacing: .06em; opacity: .85; padding-top: 1px;
+}
+.diag-l pre {
+  font-family: var(--mono); font-size: 11.5px; margin: 6px 0 0; white-space: pre-wrap;
+  overflow-wrap: anywhere; max-height: 10em; overflow-y: auto; opacity: .85;
+}
+
+/* ---------- filas ---------- */
+.filas { display: flex; flex-direction: column; gap: 10px; padding-bottom: 34px; }
+.fila {
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 9px;
+  border-left: 3px solid var(--rule-soft); box-shadow: var(--shadow); overflow: hidden;
+}
+.fila[data-sev="ERROR"] { border-left-color: var(--error); }
+.fila[data-sev="AVISO"] { border-left-color: var(--warn); }
+.fila-top {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 7px 14px; border-bottom: 1px solid var(--rule-soft); background: var(--surface-sunk);
+}
+.num { font-family: var(--mono); font-size: 11.5px; font-weight: 600; color: var(--ink-soft); font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+.etiq { font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; }
+.etiq.adap { background: var(--accent-soft); color: var(--accent); }
+.etiq.cons { background: var(--tok-soft); color: var(--tok); }
+.etiq.pend { background: var(--rule-soft); color: var(--ink-soft); }
+
+.par { display: grid; grid-template-columns: 1fr 1fr; }
+.lado { padding: 11px 14px; min-width: 0; }
+.lado + .lado { border-left: 1px solid var(--rule-soft); }
+.lado-k { font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--ink-soft); font-weight: 700; margin-bottom: 6px; }
+.src { background: var(--surface-sunk); }
+.src .txt { color: var(--ink-mid); }
+.txt { font-family: var(--mono); font-size: 13.5px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; }
+.edit {
+  width: 100%; font-family: var(--mono); font-size: 13.5px; line-height: 1.6;
+  border: 1px solid transparent; border-radius: 6px; padding: 5px 7px; margin: -5px -7px;
+  background: transparent; color: var(--ink); resize: vertical; min-height: 2.9em;
+  display: block; white-space: pre-wrap; overflow-wrap: anywhere;
+}
+.edit:hover { border-color: var(--rule); }
+.edit:focus-visible { outline: none; border-color: var(--accent); background: var(--surface-sunk); }
+.tok { background: var(--tok-soft); color: var(--tok); border-radius: 3px; padding: 0 2px; font-weight: 500; }
+.ws { background: var(--error-soft); color: var(--error); border-radius: 2px; font-weight: 700; }
+.nl { color: var(--error); font-weight: 700; }
+
+.flags { display: flex; flex-direction: column; gap: 5px; padding: 0 14px 11px; }
+.flag { display: flex; gap: 8px; align-items: baseline; font-size: 12.5px; line-height: 1.45; padding: 7px 10px; border-radius: 6px; }
+.flag.ERROR { background: var(--error-soft); color: var(--error); }
+.flag.AVISO { background: var(--warn-soft); color: var(--warn); }
+.flag code { font-family: var(--mono); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; flex-shrink: 0; opacity: .85; }
+
+.seccion { padding: 0 0 32px; }
+.seccion-top { display: flex; align-items: center; gap: 12px; margin-bottom: 11px; }
+h2.sec { font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--ink-mid); margin: 0; margin-right: auto; }
+h2.sec b { font-family: var(--mono); color: var(--accent); font-variant-numeric: tabular-nums; }
+.item { background: var(--surface); border: 1px solid var(--rule); border-radius: 9px; padding: 13px 15px; margin-bottom: 9px; box-shadow: var(--shadow); }
+.item-k { font-family: var(--mono); font-size: 11.5px; font-weight: 600; color: var(--accent); margin-bottom: 7px; letter-spacing: .03em; }
+.item p { margin: 0; font-size: 14px; line-height: 1.55; max-width: 68ch; }
+.item .par-min { display: grid; gap: 3px; margin: 0 0 9px; font-family: var(--mono); font-size: 12.5px; }
+.item .par-min span { color: var(--ink-soft); }
+.vacio { color: var(--ink-soft); font-size: 14px; font-style: italic; }
+
+.pie { border-top: 1px solid var(--rule); padding: 18px 0 34px; color: var(--ink-soft); font-size: 12.5px; line-height: 1.6; max-width: 70ch; }
+.pie b { color: var(--ink-mid); }
+
+.toast {
+  position: fixed; left: 50%; transform: translateX(-50%);
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 40;
+  background: var(--ink); color: var(--ground); padding: 10px 18px; border-radius: 999px;
+  font-size: 13px; font-weight: 500; box-shadow: 0 8px 28px -8px rgba(0,0,0,.45);
+  opacity: 0; pointer-events: none; transition: opacity .18s ease; max-width: 86vw; text-align: center;
+}
+.toast.on { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+@media (max-width: 720px) {
+  .par { grid-template-columns: 1fr; }
+  .lado + .lado { border-left: 0; border-top: 1px solid var(--rule-soft); }
+  .marca { width: 100%; margin-right: 0; }
+}
+</style>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <div class="marca">
+      <span class="marca-k">Localización EN → ES · build <span id="sello"></span></span>
+      <span class="marca-v" id="titulo">Columna ES</span>
+    </div>
+    <div class="stats" id="stats"></div>
+    <button id="btn-limpiar-top" hidden>Limpiar</button>
+    <button id="btn-copiar" class="btn-main" hidden>Copiar columna ES</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="entrada" id="entrada">
+    <div class="panel">
+      <h2>Pegá la columna en inglés</h2>
+      <p class="ayuda">
+        Una frase por línea, tal como sale de la hoja. Si pegás varias columnas
+        separadas por tabulaciones, elegí abajo cuál es la del inglés. Los corchetes,
+        llaves, etiquetas y variables se detectan solos y se protegen: el traductor
+        nunca los ve como texto.
+      </p>
+      <textarea id="fuente" spellcheck="false" placeholder="&lt;i&gt;God fucking damn it, how much more...&lt;/i&gt;
+(GG), hey!
+Are you ready, {player}?
+[ITEM_KEY] was added to your bag.
+Save"></textarea>
+      <div class="fila-campo">
+        <label class="campo">Lote
+          <input type="text" id="nombre-lote" value="lote-01" size="14">
+        </label>
+        <label class="campo" id="caja-columna" hidden>Columna del inglés
+          <select id="columna"></select>
+        </label>
+      </div>
+      <p class="lectura" id="lectura">Pegá el texto arriba y te digo qué detecté.</p>
+    </div>
+
+    <div class="panel">
+      <h2>Contexto de la escena <span style="color:var(--ink-soft);font-weight:400">· opcional</span></h2>
+      <p class="ayuda">
+        Quién habla, con quién, en qué tono. Sirve sobre todo para el tratamiento
+        (tú/usted), el género gramatical y si la escena es sexual — ahí cambia el
+        vocabulario. Si no lo sabés, dejalo vacío: las líneas dudosas salen marcadas
+        como consulta en vez de resolverse a ciegas.
+      </p>
+      <textarea id="contexto" spellcheck="false" placeholder="Ej.: Mara le habla a su jefe, tensa y a la defensiva. Escena no sexual."></textarea>
+      <div class="fila-campo">
+        <button id="btn-traducir" class="btn-main">Traducir</button>
+        <button id="btn-retraducir">Retraducir todo</button>
+        <button id="btn-probar">Probar conexión</button>
+        <button id="btn-importar">Importar trabajo.json</button>
+        <span id="estado-traduccion"></span>
+      </div>
+      <div id="diagnostico"></div>
+    </div>
+  </section>
+
+  <div id="avisos"></div>
+  <div class="filtros" id="filtros" hidden></div>
+  <div class="filas" id="filas"></div>
+
+  <section class="seccion" id="sec-consultas" hidden>
+    <div class="seccion-top">
+      <h2 class="sec">Consultas para anna <b id="n-consultas"></b></h2>
+      <button id="copiar-consultas">Copiar</button>
+    </div>
+    <div id="consultas"></div>
+  </section>
+
+  <section class="seccion" id="sec-adaptaciones" hidden>
+    <div class="seccion-top">
+      <h2 class="sec">Adaptaciones creativas <b id="n-adaptaciones"></b></h2>
+      <button id="copiar-adaptaciones">Copiar</button>
+    </div>
+    <div id="adaptaciones"></div>
+  </section>
+
+  <section class="seccion" id="sec-salida" hidden>
+    <div class="seccion-top">
+      <h2 class="sec">Salida</h2>
+      <button id="btn-json">Copiar trabajo.json</button>
+      <button id="btn-limpiar">Empezar de nuevo</button>
+    </div>
+    <p class="lectura">
+      <b>trabajo.json</b> es lo que corre el validador de escritorio
+      (<code>qa_localizacion.py</code>), una segunda medición independiente de la que
+      hace esta página. Si los dos no coinciden, hay algo que investigar.
+    </p>
+  </section>
+
+  <p class="pie">
+    Los avisos de esta página cubren el <b>contrato mecánico</b>: tokens, puntuación
+    final, espacios, filas. Lo que no puede ver — si el chiste aterriza, si la voz del
+    personaje se sostiene, si un string de UI cabe en su botón — se revisa leyendo, y
+    esa es la razón de que el inglés y el español estén lado a lado.
+  </p>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  var VERSION = "v8";
+
+  /* Una promesa que no resuelve nunca se ve igual que "no funciona". Con esto,
+     un cuelgue se convierte en un mensaje. */
+  function conTiempo(promesa, ms, etiqueta) {
+    var t;
+    return Promise.race([
+      Promise.resolve(promesa),
+      new Promise(function (_, rechazar) {
+        t = setTimeout(function () {
+          rechazar({ code: "sin respuesta", message: etiqueta + " no respondió en " + Math.round(ms / 1000) + " s" });
+        }, ms);
+      })
+    ]).then(function (v) { clearTimeout(t); return v; },
+            function (e) { clearTimeout(t); throw e; });
+  }
+
+  /* ============ tokens de juego ============
+     Orden importa: lo mas especifico primero. Incluye secuencias de escape
+     literales (\n como dos caracteres), que en texto de juego son frecuentes
+     y NO deben convertirse en saltos reales. */
+  var TOKENS = /(\\[nrt]|<[^>]+>|\{[^{}]*\}|\[[^\[\]]*\]|\([A-Z0-9_]{2,14}\)|%\d+\$[sd]|%[sd]|\$[A-Za-z_][A-Za-z0-9_]*)/g;
+  var TAG = /<[^>]+>/g;
+  var FIN = ".!?…";
+  var BORDES = "\"'»”’)]";
+
+  /* Estándar: ESPAÑOL NEUTRO. Ninguna jerga local, venga del país que venga.
+     México incluido: es el regionalismo que más se cuela, porque el neutro se
+     construye sobre una base mexicana y es fácil pasarse de ahí.
+     Debe coincidir con REGIONALISMOS de scripts/qa_localizacion.py. */
+  var REGIONALISMOS = [
+    ["chingar", /\bching\w*/, "mexicanismo fuerte; en neutro: mierda/carajo/maldita sea/maldito"],
+    ["pinche", /\bpinches?\b/, "mexicanismo; en neutro: maldito/puto"],
+    ["guey", /\b(guey|wey)\b/, "mexicanismo; en neutro: amigo/idiota según el caso"],
+    ["no mames", /\bno (mames|manches)\b/, "mexicanismo; en neutro: no puede ser / no jodas / es en serio"],
+    ["orale", /\borale\b/, "mexicanismo; en neutro: vamos/anda/está bien"],
+    ["chido", /\bchido\w*/, "mexicanismo; en neutro: genial/buenísimo"],
+    ["neta", /\bneta\b/, "mexicanismo; en neutro: en serio/de verdad"],
+    ["carnal", /\bcarnal(es)?\b/, "si es 'amigo' es mexicanismo (usar hermano/amigo). Ignorar si es 'deseo carnal'"],
+    ["pendejo", /\bpendej\w*/, "marcado MX; en neutro: idiota/imbécil/estúpido"],
+    ["cabron", /\bcabron\w*/, "marcado MX; en neutro: desgraciado/maldito/bastardo"],
+    ["panocha", /\bpanocha\w*/, "mexicanismo; ver la sección de contenido adulto"],
+    ["chichis", /\bchichis\b/, "mexicanismo; en neutro: tetas/senos"],
+    ["puta madre", /\bputa madre\b/, "marcado MX/ES; en neutro: mierda/carajo/maldita sea"],
+    ["vosotros", /\b(vosotros|vuestr\w+|\w{3,}(ais|eis))\b/, "conjugación de España; usar ustedes"],
+    ["follar", /\bfoll\w*/, "de España; ver la sección de contenido adulto"],
+    ["polla", /\bpollas?\b/, "de España; en neutro: verga/miembro"],
+    ["gilipollas", /\bgilipollas\b/, "de España; en neutro: idiota/imbécil/estúpido"],
+    ["hostia", /\bhostias?\b/, "de España; en neutro: mierda/carajo (no suavizar)"],
+    ["joder", /\bjoder\b/, "como interjección es de España; en neutro: mierda/carajo. 'jódete' y 'jodido' sí son neutros"],
+    ["chaval", /\bchaval\w*/, "de España; usar chico/muchacho/joven"],
+    ["ordenador", /\bordenador\w*/, "de España; usar computadora"],
+    ["movil", /\bmovil\b/, "de España; usar celular"],
+    ["guay", /\bguay\b/, "de España; usar genial/buenísimo"],
+    ["aparcar", /\baparc\w*/, "de España; usar estacionar"],
+    ["correrse", /\b(correte|me corro|te corres|corriendome)\b/, "en sentido sexual es de España; en neutro: acabar/venirse"],
+    ["vale", /\bvale\b/, "si es 'ok' es de España; usar está bien/de acuerdo/listo. Ignorar si es el verbo valer"],
+    ["voseo", /\b(sos|vos|che|tenes|queres|podes|venis|decis)\b/, "voseo rioplatense; usar tú (eres/tienes/quieres/puedes)"],
+    ["boludo", /\bbolud\w*/, "de AR; en neutro: idiota/imbécil"],
+    ["pija", /\bpijas?\b/, "de AR; en neutro: verga/miembro"],
+    ["concha", /\bconchas?\b/, "vulgar en Cono Sur; ver la sección de contenido adulto"],
+    ["huevon", /\bhuevon\w*/, "de CL/CO; en neutro: idiota/imbécil"],
+    ["culear", /\bcule\w*/, "de Cono Sur/CO; ver la sección de contenido adulto"],
+    ["malparido", /\bmalparid\w*/, "de CO; en neutro: desgraciado/hijo de puta"],
+    ["parcero", /\bparcer\w*/, "de CO; en neutro: amigo/hermano"],
+    ["pinga", /\bpinga\b/, "del Caribe; en neutro: verga/miembro"],
+    ["coger", /\bcog(e|i)\w*/, "ambiguo y marcado: verbo sexual en MX/AR, 'agarrar' en otros países. Para agarrar un objeto usar agarrar/tomar; en escena sexual, reformular"]
+  ];
+
+  /* ============ estado ============ */
+  var S = { lote: "lote-01", contexto: "", filas: [], filtro: "todas" };
+  var LLAVE = "columna-es:v1";
+
+  var buildGuardado = null;
+
+  function guardar() {
+    try {
+      S.build = VERSION;
+      localStorage.setItem(LLAVE, JSON.stringify(S));
+    } catch (e) { /* sin storage */ }
+  }
+  function recuperar() {
+    try {
+      var s = localStorage.getItem(LLAVE);
+      if (!s) return false;
+      var d = JSON.parse(s);
+      if (!d || !d.filas || !d.filas.length) return false;
+      buildGuardado = d.build || "anterior a v6";
+      S = d; S.filtro = "todas";
+      return true;
+    } catch (e) { return false; }
+  }
+
+  /* ============ utilidades de texto ============ */
+  function sinTildes(t) {
+    return t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  function plano(t) { return t.replace(TAG, ""); }
+
+  // El cuadro de origen es para el INGLES. Si llega espanol, la traduccion
+  // sale al reves y conviene decirlo antes de gastar una llamada.
+  function pareceEspanol(t) {
+    if (/[¿¡ñáéíóú]/i.test(t)) return true;
+    var m = t.toLowerCase().match(/\b(que|los|las|una|unos|unas|con|para|pero|porque|esto|esta|eres|estoy|tienes|puedo|mierda|carajo)\b/g);
+    return !!(m && m.length >= 3);
+  }
+  function firmaFinal(t) {
+    var s = plano(t).replace(/\s+$/, "");
+    while (s.length && BORDES.indexOf(s[s.length - 1]) >= 0) s = s.slice(0, -1).replace(/\s+$/, "");
+    var i = s.length;
+    while (i > 0 && FIN.indexOf(s[i - 1]) >= 0) i--;
+    return s.slice(i);
+  }
+  function tokensDe(t) {
+    var m = t.match(TOKENS);
+    return m ? m.slice() : [];
+  }
+  function inventario(t) { return tokensDe(t).slice().sort().join(""); }
+
+  /* Enmascarado: cada token se reemplaza por un centinela opaco antes de
+     mandarlo a traducir, y se restaura despues. El modelo nunca ve el token. */
+  function enmascarar(texto) {
+    var toks = [];
+    var plantilla = texto.replace(TOKENS, function (m) {
+      toks.push(m);
+      return "⟦" + (toks.length - 1) + "⟧";
+    });
+    return { plantilla: plantilla, tokens: toks };
+  }
+  function desenmascarar(plantilla, toks) {
+    var perdidos = [];
+    var fuera = plantilla.replace(/⟦(\d+)⟧/g, function (m, i) {
+      var n = parseInt(i, 10);
+      return toks[n] !== undefined ? toks[n] : m;
+    });
+    for (var i = 0; i < toks.length; i++) {
+      if (fuera.indexOf(toks[i]) < 0) perdidos.push(toks[i]);
+    }
+    return { texto: fuera, perdidos: perdidos };
+  }
+
+  /* ============ checks ============ */
+  function checar(fila, vistos) {
+    var out = [];
+    var en = fila.en || "", es = fila.es || "";
+    function err(c, d) { out.push({ nivel: "ERROR", check: c, detalle: d }); }
+    function avi(c, d) { out.push({ nivel: "AVISO", check: c, detalle: d }); }
+
+    if (fila.es === null || fila.es === undefined) return out;
+    if (en.trim() && !es.trim()) { err("vacio", "el inglés tiene texto y el español está vacío"); return out; }
+    if (!en.trim() && !es.trim()) return out;
+
+    if (es !== es.trim()) err("espacios", "hay espacio o salto al inicio o al final de la celda");
+    if (es.indexOf("  ") >= 0) err("espacios", "hay espacio doble dentro del texto");
+    if (es.indexOf("\r") >= 0) err("saltos", "hay retorno de carro en la celda");
+
+    var nEn = (en.match(/\n/g) || []).length, nEs = (es.match(/\n/g) || []).length;
+    if (nEn !== nEs) err("saltos", "saltos de línea internos EN=" + nEn + " ES=" + nEs);
+
+    var fe = firmaFinal(en), fs = firmaFinal(es);
+    if (fe !== fs) err("puntuacion", "final EN=\"" + fe + "\" ES=\"" + fs + "\"");
+
+    var te = (en.match(TAG) || []).join(" "), ts = (es.match(TAG) || []).join(" ");
+    if (te !== ts) err("tags", "EN=[" + te + "] ES=[" + ts + "]");
+
+    if (inventario(en) !== inventario(es)) {
+      err("tokens", "no coinciden los tokens de juego. EN: " + (tokensDe(en).join(" ") || "ninguno") +
+        " | ES: " + (tokensDe(es).join(" ") || "ninguno"));
+    }
+    if (fila.perdidos && fila.perdidos.length) {
+      err("tokens", "el traductor perdió: " + fila.perdidos.join(" "));
+    }
+
+    if (/\s[!?;:]/.test(es)) err("espacio-signo", "espacio antes de signo (norma francesa, no española)");
+
+    var normal = sinTildes(plano(es));
+    REGIONALISMOS.forEach(function (r) {
+      if (r[1].test(normal)) avi("regionalismo", "'" + r[0] + "' — " + r[2]);
+    });
+
+    var pe = plano(es);
+    if ((pe.split("¿").length - 1) > (pe.split("?").length - 1))
+      avi("signos", "hay '¿' sin cerrar (esperable si el EN no cierra — confirmar)");
+    if ((pe.split("¡").length - 1) > (pe.split("!").length - 1))
+      avi("signos", "hay '¡' sin cerrar (esperable si el EN no cierra — confirmar)");
+
+    var le = plano(en).length, ls = pe.length;
+    if (le >= 8 && ls > le * 1.4)
+      avi("largo", "expansión +" + Math.round((ls / le - 1) * 100) + "% (" + le + " → " + ls + ") — revisar si es string de UI");
+
+    if (en && vistos[en] !== undefined && vistos[en].es !== es)
+      err("consistencia", "el mismo texto inglés ya se tradujo distinto en la fila " + vistos[en].id);
+    else if (en && vistos[en] === undefined) vistos[en] = { es: es, id: fila.id };
+
+    return out;
+  }
+
+  function recalcular() {
+    var vistos = {};
+    S.filas.forEach(function (f) { f.flags = checar(f, vistos); });
+  }
+
+  function sevDe(f) {
+    if (!f.flags || !f.flags.length) return "";
+    return f.flags.some(function (x) { return x.nivel === "ERROR"; }) ? "ERROR" : "AVISO";
+  }
+
+  /* ============ parseo de la entrada ============ */
+  /* Separa lineas respetando celdas entre comillas, como pega una hoja de calculo.
+     Clave: una comilla solo ABRE celda al principio de un campo (inicio de linea
+     o justo despues de un tab). Una comilla suelta en medio del dialogo -- 'He
+     said "hi"' -- es texto literal. Tratarlas todas como delimitador hacia que
+     un numero impar de comillas se tragara los saltos y el lote entero
+     colapsara en una sola fila. */
+  function lineas(txt) {
+    txt = txt.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+    var out = [], actual = "", enComillas = false, inicioCampo = true;
+    for (var i = 0; i < txt.length; i++) {
+      var c = txt[i];
+      if (enComillas) {
+        if (c === '"') {
+          if (txt[i + 1] === '"') { actual += '"'; i++; }
+          else { enComillas = false; inicioCampo = false; }
+        } else actual += c;
+        continue;
+      }
+      if (c === '"' && inicioCampo) { enComillas = true; continue; }
+      if (c === "\n") { out.push(actual); actual = ""; inicioCampo = true; continue; }
+      if (c === "\t") { actual += c; inicioCampo = true; continue; }
+      actual += c;
+      inicioCampo = false;
+    }
+    out.push(actual);
+    while (out.length && out[out.length - 1].trim() === "") out.pop();
+
+    // Red de seguridad: si todo colapso en una fila pero el texto traia saltos,
+    // algo del entrecomillado salio mal. Mejor partir por saltos y avisar.
+    if (out.length === 1 && txt.indexOf("\n") >= 0) {
+      var crudas = txt.split("\n");
+      while (crudas.length && crudas[crudas.length - 1].trim() === "") crudas.pop();
+      if (crudas.length > 1) {
+        diag("", "comillas", "El texto tiene comillas desbalanceadas, así que lo separé por saltos de línea (" + crudas.length + " filas). Revisá que las filas hayan quedado bien.");
+        return crudas;
+      }
+    }
+    return out;
+  }
+
+  // Reparsear borraria el trabajo hecho, asi que solo se permite mientras no
+  // haya ninguna fila traducida.
+  function puedeReparsear() {
+    return !S.filas.some(function (f) { return f.es; });
+  }
+
+  function analizar(silencioso) {
+    var crudo = document.getElementById("fuente").value;
+    if (!crudo.trim()) {
+      if (!silencioso) avisar("No hay texto que analizar.");
+      return null;
+    }
+    var ls = lineas(crudo);
+    var cols = Math.max.apply(null, ls.map(function (l) { return l.split("\t").length; }));
+    var sel = document.getElementById("columna");
+    var caja = document.getElementById("caja-columna");
+
+    if (cols > 1) {
+      caja.hidden = false;
+      if (sel.options.length !== cols) {
+        sel.textContent = "";
+        for (var c = 0; c < cols; c++) {
+          var o = document.createElement("option");
+          o.value = String(c); o.textContent = "Columna " + (c + 1);
+          sel.appendChild(o);
+        }
+      }
+    } else { caja.hidden = true; }
+
+    var idx = cols > 1 ? parseInt(sel.value || "0", 10) : 0;
+    var filas = ls.map(function (l, i) {
+      var partes = cols > 1 ? l.split("\t") : [l];
+      return { id: i + 1, en: (partes[idx] !== undefined ? partes[idx] : ""), es: null };
+    });
+
+    var conTokens = filas.filter(function (f) { return tokensDe(f.en).length; });
+    var todos = {};
+    conTokens.forEach(function (f) { tokensDe(f.en).forEach(function (t) { todos[t] = (todos[t] || 0) + 1; }); });
+    var lista = Object.keys(todos).sort(function (a, b) { return todos[b] - todos[a]; }).slice(0, 12);
+
+    var lec = document.getElementById("lectura");
+    lec.textContent = "";
+    var b1 = document.createElement("b"); b1.textContent = filas.length;
+    lec.appendChild(b1);
+    lec.appendChild(document.createTextNode(" filas detectadas" + (cols > 1 ? " · " + cols + " columnas" : "") + ". "));
+    if (lista.length) {
+      var b2 = document.createElement("b"); b2.textContent = conTokens.length;
+      lec.appendChild(b2);
+      lec.appendChild(document.createTextNode(" con tokens protegidos: "));
+      lista.forEach(function (t, i) {
+        if (i) lec.appendChild(document.createTextNode(" "));
+        var s = document.createElement("span");
+        s.className = "tok"; s.textContent = t;
+        lec.appendChild(s);
+      });
+    } else {
+      lec.appendChild(document.createTextNode("Ningún token de juego detectado."));
+    }
+
+    if (pareceEspanol(filas.map(function (f) { return f.en; }).join(" "))) {
+      lec.appendChild(document.createElement("br"));
+      var w = document.createElement("span");
+      w.className = "ws";
+      w.textContent = "Ojo: este texto parece estar en español. Este cuadro es para el inglés de origen — si pegás español acá, la traducción sale al revés.";
+      lec.appendChild(w);
+    }
+
+    S.lote = document.getElementById("nombre-lote").value.trim() || "lote-01";
+    S.filas = filas;
+    recalcular(); render();
+    return filas;
+  }
+
+  /* ============ traduccion ============ */
+  var INSTRUCCIONES = [
+    "Sos traductor profesional de localización de videojuegos para adultos (18+). Traducís del inglés al ESPAÑOL NEUTRO LATINOAMERICANO, el registro del doblaje: su objetivo es que ningún jugador pueda ubicar de qué país es la traducción. Tratamiento: tú / ustedes.",
+    "",
+    "NEUTRALIDAD — la regla que más se viola:",
+    "- Léxico neutro siempre, carácter regional nunca. Ninguna jerga local, venga del país que venga.",
+    "- FUERA de México: chingar, chingada, pinche, güey, no mames, órale, chido, neta, morro, carnal, pendejo, cabrón, panocha, chichis, puta madre.",
+    "- FUERA de España: vosotros, gilipollas, hostia, joder (como interjección), follar, polla, tío, vale, guay, correrse (sexual).",
+    "- FUERA del Cono Sur: vos, sos, tenés, che, boludo, pija, concha, huevón, culear.",
+    "- FUERA de Colombia y el Caribe: malparido, parcero, pinga.",
+    "- 'Coger' NUNCA para agarrar un objeto: usá agarrar o tomar.",
+    "- La prueba: si al leer la línea se puede decir de qué país es el traductor, está mal. Reescribila.",
+    "",
+    "FIDELIDAD DE REGISTRO — regla dura:",
+    "- Las groserías se traducen con groserías de la MISMA intensidad. Nunca las suavices, las omitas ni las escribas con asteriscos. 'fucking' es un intensificador que NO se pierde: 'Get the fucking door' es 'Abre la maldita puerta' o 'Abre la puta puerta', no 'Abre la puerta'.",
+    "- Repertorio fuerte Y neutro, que se entiende en todo el continente: mierda, carajo, maldita sea, maldición, maldito, puto/puta, jodido, jódete, púdrete, desgraciado, bastardo, hijo de puta, hijo de perra, idiota, imbécil, estúpido, cretino, zorra, perra, vete a la mierda, vete al carajo.",
+    "- Es contenido adulto explícito: el vocabulario sexual se traduce completo y crudo, nunca clínico ni poético. Vulgar y neutro a la vez: tetas, culo, nalgas, verga, miembro, acabar, venirse, metérsela.",
+    "- Para el acto sexual y para la vagina NO existe término vulgar neutro. Reformulá apoyándote en el verbo y la descripción física (métemela, hazlo ya, entre las piernas, ahí) en vez de usar un sustantivo marcado. Si la línea exige el término, dejá la mejor opción y explicalo en 'consulta'.",
+    "- Si la opción neutra pierde fuerza, redistribuila en la frase ('¡Mierda, otra vez no!') en vez de cambiar a una palabra regional. Subir el registro nunca justifica marcar el texto.",
+    "- La fidelidad corre en las dos direcciones: una línea limpia se traduce limpia, una sugerente se traduce sugerente. No agregues groserías donde no las hay.",
+    "",
+    "ADAPTACIÓN CREATIVA — se espera, no se tolera:",
+    "- Lo que se conserva es la FUNCIÓN y la INTENSIDAD de la línea; las palabras son negociables. Un chiste traducido literal que ya no da risa es una traducción fallida.",
+    "- Chistes, juegos de palabras, rimas, modismos y muletillas casi nunca sobreviven literales: cambiá el vehículo y conservá la función. Ej.: 'It's raining cats and dogs' → 'Está lloviendo a cántaros'.",
+    "- PRUEBA DEL LECTOR MONOLINGÜE: el jugador nunca ve el inglés. La línea tiene que entenderse sola, cumplir su función de verdad (si era chiste, que dé risa) y sonar a algo que una persona diría. Preferí humor de mecanismo (ironía, doble sentido, remate) sobre humor de referencia cultural, que no viaja entre países.",
+    "- Si adaptaste, declaralo en el campo 'adaptacion'.",
+    "",
+    "CONTRATO MECÁNICO — rompe el juego si falla:",
+    "- Los centinelas con forma ⟦0⟧ ⟦1⟧ ⟦2⟧ son código del juego enmascarado. Copialos EXACTOS, todos, sin traducirlos ni alterarlos. Podés moverlos de lugar si el español lo pide. No inventes centinelas nuevos.",
+    "- La puntuación FINAL del español espeja la del inglés. Si el inglés termina en punto, el español también; si no lleva, el español tampoco. Igual con ! ? y ...",
+    "- Abrí ¿ y ¡ cuando el español lo pida, pero cerrá solo si el inglés cierra. Es la convención de este proyecto.",
+    "- Nunca agregues ni quites filas. Nunca partas una frase en párrafos. Sin espacios al inicio ni al final. Sin saltos de línea que el inglés no tenga.",
+    "",
+    "CONSULTAS — usá el campo 'consulta' cuando:",
+    "- Un nombre propio es dudoso (los nombres se PROPONEN, no se deciden: dejá el original y proponé opciones).",
+    "- El inglés tiene un error o typo (traducí la intención correcta, pero reportalo; no lo corrijas en el español).",
+    "- Falta contexto para decidir el sentido, el tratamiento o el género gramatical.",
+    "",
+    "Respondé SOLO un objeto JSON con esta forma exacta:",
+    '{"filas":[{"id":1,"es":"...","consulta":null,"adaptacion":null}]}',
+    'donde adaptacion, cuando exista, es {"tipo":"chiste|rima|modismo|muletilla|nombre","por_que":"qué se habría perdido sin el cambio"}.',
+    "Devolvé una entrada por cada id que recibas, con el mismo id. Nada de texto fuera del JSON."
+  ].join("\n");
+
+  var TAMANO = 10;
+
+  /* ---- diagnostico visible: un fallo tiene que quedar ESCRITO, no en un toast ---- */
+  function diag(nivel, etiqueta, texto, crudo) {
+    var caja = document.getElementById("diagnostico");
+    var l = document.createElement("div");
+    l.className = "diag-l" + (nivel ? " " + nivel : "");
+    var c = document.createElement("code"); c.textContent = etiqueta;
+    var cuerpo = document.createElement("div");
+    var t = document.createElement("span"); t.textContent = texto;
+    cuerpo.appendChild(t);
+    if (crudo) {
+      var pre = document.createElement("pre");
+      pre.textContent = String(crudo).slice(0, 900);
+      cuerpo.appendChild(pre);
+    }
+    l.appendChild(c); l.appendChild(cuerpo);
+    caja.appendChild(l);
+    return l;
+  }
+  function limpiarDiag() { document.getElementById("diagnostico").textContent = ""; }
+
+  /* El modelo puede devolver la lista con otro nombre o suelta. Aceptamos las
+     formas razonables y, si no hay ninguna, lo decimos con el crudo a la vista. */
+  function extraerFilas(r) {
+    if (!r) return null;
+    if (Array.isArray(r)) return r;
+    var nombres = ["filas", "rows", "translations", "resultados", "items", "data"];
+    for (var i = 0; i < nombres.length; i++) {
+      if (Array.isArray(r[nombres[i]])) return r[nombres[i]];
+    }
+    var ks = Object.keys(r);
+    for (var j = 0; j < ks.length; j++) if (Array.isArray(r[ks[j]])) return r[ks[j]];
+    if (r.es !== undefined || r.id !== undefined) return [r];
+    return null;
+  }
+  /* sample.json puede no existir en este runtime, o reventar al parsear si el
+     modelo envolvio la respuesta. Respaldo: pedir texto y parsearlo a mano. */
+  async function pedirJson(sample, entrada) {
+    if (typeof sample.json === "function") {
+      try {
+        return await conTiempo(sample.json(entrada, { modelTier: "complex" }), 180000, "sample.json");
+      } catch (e) {
+        if (e && (e.code === "not_granted" || e.code === "rate_limited" || e.code === "sin respuesta")) throw e;
+        diag("", "reintento", "sample.json falló (" + ((e && (e.code || e.message)) || e) + "). Reintentando en modo texto.");
+      }
+    }
+    var r = await conTiempo(sample(entrada, { modelTier: "complex" }), 180000, "sample");
+    var texto = (r && r.text) || String(r || "");
+    var limpio = texto.replace(/^[\s\S]*?```(?:json)?/i, "").replace(/```[\s\S]*$/, "").trim();
+    if (!limpio) limpio = texto.trim();
+    var ini = limpio.indexOf("{"), fin = limpio.lastIndexOf("}");
+    if (ini >= 0 && fin > ini) limpio = limpio.slice(ini, fin + 1);
+    try { return JSON.parse(limpio); }
+    catch (e) {
+      throw { code: "json ilegible", message: "La respuesta no era JSON válido.", text: texto.slice(0, 900) };
+    }
+  }
+
+  function extraerEs(d) {
+    if (d === null || d === undefined) return null;
+    if (typeof d === "string") return d;
+    var campos = ["es", "texto", "translation", "text", "target", "spanish"];
+    for (var i = 0; i < campos.length; i++) {
+      if (typeof d[campos[i]] === "string") return d[campos[i]];
+    }
+    return null;
+  }
+
+  async function traducir(forzar) {
+    limpiarDiag();
+    var btn = document.getElementById("btn-traducir");
+    var estado = document.getElementById("estado-traduccion");
+
+    if (!S.filas.length || puedeReparsear()) analizar(true);
+    if (!S.filas.length) {
+      diag("mal", "sin texto", "No hay nada que traducir: pegá la columna en inglés en el cuadro de arriba.");
+      return;
+    }
+
+    var ctx = (S.contexto || "");
+    if (/<[^>]+>/.test(ctx) || /[¿¡áéíóúñ]/i.test(ctx) && ctx.length > 12 && /\b(el|la|los|las|que|de)\b/i.test(ctx) === false) {
+      diag("", "contexto", "El cuadro de contexto trae lo que parece texto traducido o etiquetas. Ese cuadro es solo para describir la escena (quién habla, en qué tono); su contenido entra al prompt y puede arrastrar el estilo. Si pegaste ahí la columna, vaciálo y usá el cuadro de arriba.");
+    }
+
+    btn.disabled = true;
+    var sample = null, falloUse = null;
+    try { sample = await conTiempo(window.claude.use("sample"), 20000, "claude.use(\"sample\")"); }
+    catch (e) { falloUse = (e && (e.message || e.code)) || String(e); }
+
+    if (!sample) {
+      diag("mal", "no disponible",
+        "Esta vista no puede pedirle la traducción a Claude" +
+        (falloUse ? " (" + falloUse + ")" : "") +
+        ". Suele pasar si la página se abrió como archivo local en vez de desde su enlace de claude.ai, o si la vista no tiene el permiso. La revisión, la edición y el copiado siguen funcionando igual.");
+      btn.disabled = false;
+      return;
+    }
+    diag("bien", "listo", "Traductor disponible. Si es la primera vez, el navegador va a pedirte permiso.");
+
+    var pendientes = S.filas.filter(function (f) {
+      return f.en.trim() && (forzar || f.es === null || f.es === "");
+    });
+    if (!pendientes.length) {
+      diag("", "nada pendiente",
+        "Todas las filas con texto ya tienen traducción, así que Traducir no toca nada. Si querés rehacerlas con las reglas actuales, usá «Retraducir todo».");
+      btn.disabled = false;
+      return;
+    }
+    if (forzar) diag("", "retraduciendo", "Rehaciendo las " + pendientes.length + " filas desde cero con el build " + VERSION + ".");
+
+    estado.textContent = "";
+    var caja = document.createElement("span");
+    caja.className = "progreso";
+    var pista = document.createElement("span"); pista.className = "pista";
+    var barra = document.createElement("i"); pista.appendChild(barra);
+    var txt = document.createElement("span");
+    caja.appendChild(txt); caja.appendChild(pista);
+    estado.appendChild(caja);
+
+    var hechas = 0, aplicadas = 0, cortado = false;
+    for (var i = 0; i < pendientes.length && !cortado; i += TAMANO) {
+      var grupo = pendientes.slice(i, i + TAMANO);
+      txt.textContent = "Traduciendo " + (hechas + 1) + "–" + Math.min(hechas + grupo.length, pendientes.length) + " de " + pendientes.length;
+
+      var mapa = {};
+      var payload = grupo.map(function (f) {
+        var m = enmascarar(f.en);
+        mapa[f.id] = m.tokens;
+        return { id: f.id, en: m.plantilla };
+      });
+
+      var entrada = INSTRUCCIONES +
+        (S.contexto ? "\n\nCONTEXTO DE LA ESCENA: " + S.contexto : "") +
+        "\n\nFILAS A TRADUCIR:\n" + JSON.stringify({ filas: payload });
+
+      try {
+        var r = await pedirJson(sample, entrada);
+        var devueltas = extraerFilas(r);
+        if (!devueltas) {
+          diag("mal", "respuesta rara",
+            "La respuesta no traía una lista de filas reconocible. Esto es lo que llegó:",
+            JSON.stringify(r, null, 2));
+          cortado = true;
+        } else {
+          devueltas.forEach(function (d, pos) {
+            var fila = null;
+            if (d && d.id !== undefined) fila = S.filas.find(function (f) { return String(f.id) === String(d.id); });
+            if (!fila && grupo[pos]) fila = grupo[pos];   // respaldo: por posición
+            if (!fila) return;
+            var bruto = extraerEs(d);
+            if (bruto === null) return;
+            var res = desenmascarar(bruto, mapa[fila.id] || []);
+            fila.es = res.texto;
+            fila.perdidos = res.perdidos;
+            fila.consulta = (d && d.consulta) || null;
+            fila.adaptacion = (d && d.adaptacion) || null;
+            aplicadas++;
+          });
+          if (!aplicadas) {
+            diag("mal", "vino vacío",
+              "Llegaron " + devueltas.length + " entrada(s) pero ninguna traía el español. Esto es lo que llegó:",
+              JSON.stringify(r, null, 2));
+            cortado = true;
+          } else if (devueltas.length < grupo.length) {
+            diag("", "parcial",
+              "Se enviaron " + grupo.length + " filas y volvieron " + devueltas.length +
+              ". Las que falten quedan pendientes: volvé a darle a Traducir para completarlas.");
+          }
+        }
+      } catch (e) {
+        var cod = (e && e.code) || "error";
+        var msg = (e && e.message) || String(e);
+        if (cod === "not_granted") {
+          diag("mal", cod, "Rechazaste el permiso para que la página le pregunte a Claude. Recargá y aceptá si querés usar la traducción automática.");
+        } else if (cod === "rate_limited") {
+          diag("mal", cod, "Se alcanzó el límite de uso. Esperá un momento y volvé a darle a Traducir: sigue con las filas que quedaron pendientes.");
+        } else {
+          diag("mal", cod, "Falló la llamada: " + msg, e && e.text ? e.text : null);
+        }
+        cortado = true;
+      }
+
+      hechas += grupo.length;
+      barra.style.width = Math.round(hechas / pendientes.length * 100) + "%";
+      recalcular(); render(); guardar();
+    }
+
+    if (!cortado) await depurarRegionalismos(sample, txt);
+
+    estado.textContent = "";
+    btn.disabled = false;
+    var faltan = S.filas.filter(function (f) { return f.en.trim() && !f.es; }).length;
+    if (!faltan) {
+      diag("bien", "completo", "Las " + S.filas.length + " filas quedaron traducidas. Revisá los avisos antes de copiar.");
+      avisar("Lote traducido.");
+    } else {
+      diag("", "pendiente", faltan + " fila(s) siguen sin traducir. Volvé a darle a Traducir para seguir desde donde quedó.");
+    }
+  }
+
+  /* Segunda pasada: el validador lee la salida del traductor y, si trae jerga
+     regional, pide la reescritura en vez de limitarse a marcarla. Marcar y no
+     corregir es lo que hacia que el mismo mexicanismo sobreviviera. */
+  function marcadasDe(f) {
+    return (f.flags || [])
+      .filter(function (x) { return x.check === "regionalismo"; })
+      .map(function (x) { return (x.detalle.split("'")[1] || "").trim(); })
+      .filter(Boolean);
+  }
+  function conRegionalismo(f) {
+    return f.es && (f.flags || []).some(function (x) { return x.check === "regionalismo"; });
+  }
+
+  async function depurarRegionalismos(sample, txt) {
+    recalcular();
+    var sucias = S.filas.filter(conRegionalismo);
+    if (!sucias.length) return;
+
+    diag("", "neutralizando",
+      sucias.length + " fila(s) salieron con jerga regional. Pidiendo una reescritura neutra que conserve la intensidad.");
+
+    for (var i = 0; i < sucias.length; i += TAMANO) {
+      var grupo = sucias.slice(i, i + TAMANO);
+      if (txt) txt.textContent = "Neutralizando " + (i + 1) + "–" + Math.min(i + grupo.length, sucias.length) + " de " + sucias.length;
+
+      var mapa = {};
+      var payload = grupo.map(function (f) {
+        var m = enmascarar(f.es);
+        mapa[f.id] = m.tokens;
+        return { id: f.id, es: m.plantilla, quitar: marcadasDe(f) };
+      });
+
+      var entrada = [
+        "Estas líneas ya están en español pero traen jerga regional que rompe el español neutro latinoamericano.",
+        "Reescribí cada una SIN las palabras listadas en 'quitar', conservando exactamente el mismo significado, la misma intensidad y los mismos centinelas ⟦n⟧ intactos.",
+        "NO suavices: si la palabra quitada era una grosería fuerte, va otra igual de fuerte pero neutra. Repertorio: mierda, carajo, maldita sea, maldición, maldito, puto/puta, jodido, jódete, púdrete, desgraciado, bastardo, hijo de puta, hijo de perra, idiota, imbécil, estúpido, cretino, zorra, perra, vete a la mierda, vete al carajo.",
+        "No cambies la puntuación final ni agregues ni quites filas.",
+        'Respondé SOLO: {"filas":[{"id":1,"es":"..."}]}',
+        "",
+        JSON.stringify({ filas: payload })
+      ].join("\n");
+
+      try {
+        var r = await pedirJson(sample, entrada);
+        var devueltas = extraerFilas(r) || [];
+        devueltas.forEach(function (d, pos) {
+          var fila = null;
+          if (d && d.id !== undefined) fila = S.filas.find(function (f) { return String(f.id) === String(d.id); });
+          if (!fila && grupo[pos]) fila = grupo[pos];
+          if (!fila) return;
+          var bruto = extraerEs(d);
+          if (bruto === null) return;
+          var res = desenmascarar(bruto, mapa[fila.id] || []);
+          fila.es = res.texto;
+          fila.perdidos = res.perdidos;
+        });
+      } catch (e) {
+        diag("", "sin neutralizar",
+          "No se pudo reescribir automáticamente (" + ((e && (e.code || e.message)) || e) + "). Las filas quedan marcadas para corregirlas a mano.");
+        break;
+      }
+      recalcular(); render(); guardar();
+    }
+
+    recalcular();
+    var quedan = S.filas.filter(conRegionalismo).length;
+    if (quedan) {
+      diag("", "revisar a ojo",
+        quedan + " fila(s) siguen con aviso de regionalismo. Puede ser un falso positivo (por ejemplo 'vale' como verbo valer, o 'carnal' como deseo carnal): revisalas vos.");
+    } else {
+      diag("bien", "neutro", "No queda jerga regional marcada en el lote.");
+    }
+  }
+
+  /* ============ render ============ */
+  function pintar(texto, marcarEspacios) {
+    var frag = document.createDocumentFragment();
+    if (texto === "" || texto === null) {
+      var v = document.createElement("span");
+      v.className = "ws"; v.textContent = texto === null ? "(sin traducir)" : "(vacío)";
+      frag.appendChild(v); return frag;
+    }
+    var ini = texto.match(/^\s*/)[0];
+    var fin = texto.length > ini.length ? texto.match(/\s*$/)[0] : "";
+    var cuerpo = texto.slice(ini.length, texto.length - fin.length);
+    function espacios(s) {
+      var e = document.createElement("span");
+      e.className = "ws";
+      e.textContent = s.replace(/ /g, "·").replace(/\t/g, "→").replace(/\n/g, "⏎");
+      frag.appendChild(e);
+    }
+    if (ini) { marcarEspacios ? espacios(ini) : frag.appendChild(document.createTextNode(ini)); }
+    cuerpo.split(TOKENS).forEach(function (parte, i) {
+      if (!parte) return;
+      if (i % 2 === 1) {
+        var t = document.createElement("span");
+        t.className = "tok"; t.textContent = parte;
+        frag.appendChild(t);
+      } else {
+        parte.split("\n").forEach(function (linea, j) {
+          if (j > 0) {
+            var nl = document.createElement("span");
+            nl.className = "nl"; nl.textContent = "⏎";
+            frag.appendChild(nl);
+            frag.appendChild(document.createTextNode("\n"));
+          }
+          frag.appendChild(document.createTextNode(linea));
+        });
+      }
+    });
+    if (fin) { marcarEspacios ? espacios(fin) : frag.appendChild(document.createTextNode(fin)); }
+    return frag;
+  }
+
+  function pasa(f) {
+    var s = sevDe(f);
+    if (S.filtro === "errores") return s === "ERROR";
+    if (S.filtro === "avisos") return s === "AVISO";
+    if (S.filtro === "adaptaciones") return !!f.adaptacion;
+    if (S.filtro === "consultas") return !!f.consulta;
+    if (S.filtro === "pendientes") return !f.es && !!f.en.trim();
+    return true;
+  }
+
+  function render() {
+    var hay = S.filas.length > 0;
+    document.getElementById("filtros").hidden = !hay;
+    document.getElementById("btn-copiar").hidden = !hay;
+    document.getElementById("btn-limpiar-top").hidden = !hay;
+    document.getElementById("sec-salida").hidden = !hay;
+    document.getElementById("titulo").textContent = hay ? S.lote : "Columna ES";
+
+    renderStats();
+    renderFiltros();
+    renderAvisos();
+
+    var cont = document.getElementById("filas");
+    cont.textContent = "";
+    var vistas = S.filas.filter(pasa);
+    if (hay && !vistas.length) {
+      var v = document.createElement("p");
+      v.className = "vacio"; v.textContent = "Ninguna fila en este filtro.";
+      cont.appendChild(v);
+    }
+    vistas.forEach(function (f) { cont.appendChild(filaNodo(f)); });
+    renderSecciones();
+  }
+
+  function filaNodo(f) {
+    var fila = document.createElement("article");
+    fila.className = "fila";
+    var s = sevDe(f);
+    if (s) fila.setAttribute("data-sev", s);
+
+    var top = document.createElement("div");
+    top.className = "fila-top";
+    var n = document.createElement("span");
+    n.className = "num"; n.textContent = "FILA " + f.id;
+    top.appendChild(n);
+    if (!f.es && f.en.trim()) {
+      var mp = document.createElement("span");
+      mp.className = "etiq pend"; mp.textContent = "Sin traducir";
+      top.appendChild(mp);
+    }
+    if (f.adaptacion) {
+      var ma = document.createElement("span");
+      ma.className = "etiq adap";
+      ma.textContent = "Adaptación" + (f.adaptacion.tipo ? " · " + f.adaptacion.tipo : "");
+      top.appendChild(ma);
+    }
+    if (f.consulta) {
+      var mc = document.createElement("span");
+      mc.className = "etiq cons"; mc.textContent = "Consulta";
+      top.appendChild(mc);
+    }
+    fila.appendChild(top);
+
+    var par = document.createElement("div");
+    par.className = "par";
+
+    var izq = document.createElement("div");
+    izq.className = "lado src";
+    var k1 = document.createElement("div"); k1.className = "lado-k"; k1.textContent = "Inglés";
+    var p1 = document.createElement("p"); p1.className = "txt";
+    p1.appendChild(pintar(f.en, false));
+    izq.appendChild(k1); izq.appendChild(p1);
+
+    var der = document.createElement("div");
+    der.className = "lado";
+    var k2 = document.createElement("div"); k2.className = "lado-k"; k2.textContent = "Español";
+    der.appendChild(k2);
+    if (f.es === null) {
+      var p2 = document.createElement("p"); p2.className = "txt";
+      p2.appendChild(pintar(null, true));
+      der.appendChild(p2);
+    } else {
+      var ta = document.createElement("textarea");
+      ta.className = "edit"; ta.spellcheck = false;
+      ta.id = "es-" + f.id;
+      ta.value = f.es;
+      ta.rows = Math.max(1, f.es.split("\n").length);
+      ta.addEventListener("input", function () {
+        f.es = ta.value;
+        f.perdidos = [];
+        recalcular(); guardar();
+        renderStats(); renderAvisos();
+        var padre = ta.closest(".fila");
+        var sev = sevDe(f);
+        if (sev) padre.setAttribute("data-sev", sev); else padre.removeAttribute("data-sev");
+        var viejas = padre.querySelector(".flags");
+        if (viejas) viejas.remove();
+        var nuevas = flagsNodo(f);
+        if (nuevas) padre.appendChild(nuevas);
+      });
+      der.appendChild(ta);
+    }
+
+    par.appendChild(izq); par.appendChild(der);
+    fila.appendChild(par);
+    var fl = flagsNodo(f);
+    if (fl) fila.appendChild(fl);
+    return fila;
+  }
+
+  function flagsNodo(f) {
+    if (!f.flags || !f.flags.length) return null;
+    var box = document.createElement("div");
+    box.className = "flags";
+    f.flags.forEach(function (p) {
+      var fl = document.createElement("div");
+      fl.className = "flag " + p.nivel;
+      var c = document.createElement("code"); c.textContent = p.check;
+      var t = document.createElement("span"); t.textContent = p.detalle;
+      fl.appendChild(c); fl.appendChild(t);
+      box.appendChild(fl);
+    });
+    return box;
+  }
+
+  function cuenta() {
+    var e = 0, a = 0;
+    S.filas.forEach(function (f) {
+      (f.flags || []).forEach(function (x) { x.nivel === "ERROR" ? e++ : a++; });
+    });
+    return { errores: e, avisos: a };
+  }
+
+  function renderStats() {
+    var stats = document.getElementById("stats");
+    stats.textContent = "";
+    if (!S.filas.length) return;
+    var c = cuenta();
+    var pend = S.filas.filter(function (f) { return f.en.trim() && !f.es; }).length;
+    var defs = [["", S.filas.length, "filas"]];
+    if (pend) defs.push(["is-warn", pend, "sin traducir"]);
+    defs.push([c.errores ? "is-error" : "is-ok", c.errores, c.errores === 1 ? "error" : "errores"]);
+    defs.push([c.avisos ? "is-warn" : "", c.avisos, c.avisos === 1 ? "aviso" : "avisos"]);
+    defs.forEach(function (d) {
+      var el = document.createElement("div");
+      el.className = "stat" + (d[0] ? " " + d[0] : "");
+      var b = document.createElement("b"); b.textContent = d[1];
+      el.appendChild(b); el.appendChild(document.createTextNode(d[2]));
+      stats.appendChild(el);
+    });
+    var btn = document.getElementById("btn-copiar");
+    if (c.errores) {
+      btn.setAttribute("data-riesgo", "1");
+      btn.textContent = "Copiar columna ES (" + c.errores + " error" + (c.errores === 1 ? "" : "es") + ")";
+    } else {
+      btn.removeAttribute("data-riesgo");
+      btn.textContent = "Copiar columna ES";
+    }
+  }
+
+  function renderFiltros() {
+    var caja = document.getElementById("filtros");
+    caja.textContent = "";
+    if (!S.filas.length) return;
+    var defs = [
+      ["todas", "Todas", S.filas.length],
+      ["pendientes", "Sin traducir", S.filas.filter(function (f) { return f.en.trim() && !f.es; }).length],
+      ["errores", "Errores", S.filas.filter(function (f) { return sevDe(f) === "ERROR"; }).length],
+      ["avisos", "Avisos", S.filas.filter(function (f) { return sevDe(f) === "AVISO"; }).length],
+      ["adaptaciones", "Adaptaciones", S.filas.filter(function (f) { return f.adaptacion; }).length],
+      ["consultas", "Consultas", S.filas.filter(function (f) { return f.consulta; }).length]
+    ];
+    defs.forEach(function (d) {
+      if (d[2] === 0 && d[0] !== "todas") return;
+      var b = document.createElement("button");
+      b.className = "chip"; b.id = "filtro-" + d[0];
+      b.setAttribute("aria-pressed", S.filtro === d[0] ? "true" : "false");
+      b.textContent = d[1];
+      var n = document.createElement("b"); n.textContent = d[2];
+      b.appendChild(n);
+      b.addEventListener("click", function () { S.filtro = d[0]; render(); });
+      caja.appendChild(b);
+    });
+  }
+
+  function renderAvisos() {
+    var caja = document.getElementById("avisos");
+    caja.textContent = "";
+    if (!S.filas.length) return;
+    var c = cuenta();
+    var conSalto = S.filas.filter(function (f) { return f.es && f.es.indexOf("\n") >= 0; });
+    var notas = [];
+    if (c.errores) notas.push({ grave: true, t: "El lote tiene " + c.errores + " error(es) de contrato. Pegarlo así puede romper el build de todos los idiomas, no solo el español." });
+    if (conSalto.length) notas.push({ grave: false, t: conSalto.length + " fila(s) traen salto de línea interno (" + conSalto.map(function (f) { return f.id; }).join(", ") + "). Al pegar en la hoja se parten en celdas distintas: copiarlas a mano." });
+    notas.forEach(function (n) {
+      var d = document.createElement("div");
+      d.className = "nota" + (n.grave ? " grave" : "");
+      var s = document.createElement("strong"); s.textContent = "Antes de pegar:";
+      var t = document.createElement("span"); t.textContent = n.t;
+      d.appendChild(s); d.appendChild(t);
+      caja.appendChild(d);
+    });
+  }
+
+  function renderSecciones() {
+    var cons = S.filas.filter(function (f) { return f.consulta; });
+    var adap = S.filas.filter(function (f) { return f.adaptacion; });
+    document.getElementById("sec-consultas").hidden = !cons.length;
+    document.getElementById("sec-adaptaciones").hidden = !adap.length;
+    document.getElementById("n-consultas").textContent = cons.length;
+    document.getElementById("n-adaptaciones").textContent = adap.length;
+
+    var c1 = document.getElementById("consultas");
+    c1.textContent = "";
+    cons.forEach(function (f) {
+      var d = document.createElement("div"); d.className = "item";
+      var k = document.createElement("div"); k.className = "item-k"; k.textContent = "Fila " + f.id;
+      var p = document.createElement("p"); p.textContent = f.consulta;
+      d.appendChild(k); d.appendChild(p); c1.appendChild(d);
+    });
+
+    var c2 = document.getElementById("adaptaciones");
+    c2.textContent = "";
+    adap.forEach(function (f) {
+      var a = f.adaptacion;
+      var d = document.createElement("div"); d.className = "item";
+      var k = document.createElement("div"); k.className = "item-k";
+      k.textContent = "Fila " + f.id + (a.tipo ? " · " + a.tipo : "");
+      var par = document.createElement("div"); par.className = "par-min";
+      [["EN", f.en], ["ES", f.es || ""]].forEach(function (x) {
+        var l = document.createElement("div");
+        var s = document.createElement("span"); s.textContent = x[0] + "  ";
+        l.appendChild(s); l.appendChild(document.createTextNode(x[1]));
+        par.appendChild(l);
+      });
+      var p = document.createElement("p"); p.textContent = a.por_que || "";
+      d.appendChild(k); d.appendChild(par); d.appendChild(p); c2.appendChild(d);
+    });
+  }
+
+  /* ============ copiar ============ */
+  var toast = document.getElementById("toast"), temporizador;
+  function avisar(msg) {
+    toast.textContent = msg;
+    toast.classList.add("on");
+    clearTimeout(temporizador);
+    temporizador = setTimeout(function () { toast.classList.remove("on"); }, 2600);
+  }
+  function copiar(texto, msg) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(texto).then(function () { avisar(msg); }, function () { respaldo(texto, msg); });
+    } else respaldo(texto, msg);
+  }
+  function respaldo(texto, msg) {
+    var ta = document.createElement("textarea");
+    ta.value = texto; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); avisar(msg); }
+    catch (e) { avisar("No se pudo copiar — seleccioná el texto a mano."); }
+    document.body.removeChild(ta);
+  }
+
+  /* ============ enganches ============ */
+  /* Confirmacion en dos toques, DENTRO de la pagina. El iframe del artifact
+     bloquea confirm()/alert(): devuelven false sin mostrar nada, asi que todo
+     lo que estuviera detras de un confirm() no se ejecutaba nunca. */
+  function dosToques(boton, accion) {
+    var original = boton.getAttribute("data-label") || boton.textContent;
+    boton.setAttribute("data-label", original);
+    if (boton.getAttribute("data-armado") === "1") {
+      boton.setAttribute("data-armado", "");
+      boton.textContent = original;
+      accion();
+      return;
+    }
+    boton.setAttribute("data-armado", "1");
+    boton.textContent = "¿Seguro? Tocá otra vez";
+    setTimeout(function () {
+      if (boton.getAttribute("data-armado") === "1") {
+        boton.setAttribute("data-armado", "");
+        boton.textContent = original;
+      }
+    }, 4000);
+  }
+
+  function limpiarTodo() {
+    S = { lote: S.lote || "lote-01", contexto: S.contexto || "", filas: [], filtro: "todas" };
+    try { localStorage.removeItem(LLAVE); } catch (e) { /* sin storage */ }
+    limpiarDiag();
+    document.getElementById("lectura").textContent = "Pegá el texto arriba y te digo qué detecté.";
+    render();
+    return true;
+  }
+
+  var reloj;
+  document.getElementById("fuente").addEventListener("input", function () {
+    clearTimeout(reloj);
+    reloj = setTimeout(function () {
+      if (!puedeReparsear()) {
+        var lec = document.getElementById("lectura");
+        lec.textContent = "Este lote ya tiene traducciones, así que no lo toco solo. ";
+        var b = document.createElement("button");
+        b.type = "button";
+        b.textContent = "Reemplazar el lote con este texto";
+        b.addEventListener("click", function () {
+          dosToques(b, function () {
+            S.filas = [];
+            limpiarDiag();
+            analizar(true);
+            guardar();
+          });
+        });
+        lec.appendChild(b);
+        return;
+      }
+      analizar(true);
+    }, 300);
+  });
+  document.getElementById("columna").addEventListener("change", function () {
+    if (puedeReparsear()) analizar(true);
+  });
+  document.getElementById("nombre-lote").addEventListener("input", function (e) {
+    S.lote = e.target.value.trim() || "lote-01";
+    document.getElementById("titulo").textContent = S.filas.length ? S.lote : "Columna ES";
+    guardar();
+  });
+  document.getElementById("contexto").addEventListener("input", function (e) {
+    S.contexto = e.target.value.trim(); guardar();
+  });
+  // El evento del click llegaria como primer argumento (y seria truthy), asi que
+  // no se puede pasar traducir directo: forzaria siempre la retraduccion.
+  document.getElementById("btn-traducir").addEventListener("click", function () { traducir(false); });
+  document.getElementById("btn-retraducir").addEventListener("click", function (e) {
+    if (!S.filas.length) { limpiarDiag(); diag("mal", "sin lote", "No hay ningún lote cargado."); return; }
+    dosToques(e.currentTarget, function () { traducir(true); });
+  });
+
+  /* Autodiagnóstico en tres pasos: dice exactamente dónde se corta. */
+  document.getElementById("btn-probar").addEventListener("click", async function () {
+    limpiarDiag();
+    var b = document.getElementById("btn-probar");
+    b.disabled = true;
+    diag(window.claude ? "" : "mal", "1 · entorno",
+      "build " + VERSION +
+      " · window.claude: " + (window.claude ? "presente" : "AUSENTE") +
+      " · claude.use: " + (window.claude && typeof window.claude.use === "function" ? "presente" : "AUSENTE"));
+
+    var sample = null;
+    try {
+      sample = await conTiempo(window.claude.use("sample"), 20000, "claude.use(\"sample\")");
+      if (sample) {
+        diag("bien", "2 · capacidad",
+          "use(\"sample\") respondió. tipo: " + (typeof sample) + " · .json: " + (typeof sample.json));
+      } else {
+        diag("mal", "2 · capacidad",
+          "use(\"sample\") devolvió null: esta vista no tiene la capacidad concedida. Suele pasar si la página se abrió fuera de claude.ai.");
+      }
+    } catch (e) {
+      diag("mal", "2 · capacidad", "use(\"sample\") falló: " + ((e && (e.code || e.message)) || String(e)));
+    }
+    if (!sample) { b.disabled = false; return; }
+
+    try {
+      var r = await conTiempo(sample("Responde exactamente con la palabra: LISTO", { modelTier: "quick" }), 60000, "sample");
+      diag("bien", "3 · llamada", "El traductor respondió. Esto es lo que vino:", JSON.stringify(r, null, 2));
+    } catch (e) {
+      diag("mal", "3 · llamada",
+        "La llamada falló con código \"" + ((e && e.code) || "error") + "\": " + ((e && e.message) || String(e)),
+        e && e.text);
+    }
+    b.disabled = false;
+  });
+
+  document.getElementById("btn-copiar").addEventListener("click", function () {
+    copiar(S.filas.map(function (f) { return f.es === null ? "" : f.es; }).join("\n"),
+      S.filas.length + " filas copiadas — pegá en tu columna asignada.");
+  });
+  document.getElementById("copiar-consultas").addEventListener("click", function () {
+    var t = S.filas.filter(function (f) { return f.consulta; })
+      .map(function (f) { return "Fila " + f.id + " · " + f.consulta; }).join("\n\n");
+    copiar(t, "Consultas copiadas.");
+  });
+  document.getElementById("copiar-adaptaciones").addEventListener("click", function () {
+    var t = S.filas.filter(function (f) { return f.adaptacion; }).map(function (f) {
+      var a = f.adaptacion;
+      return "Fila " + f.id + (a.tipo ? " · " + a.tipo : "") +
+        "\nEN: " + f.en + "\nES: " + (f.es || "") + "\nPor qué: " + (a.por_que || "");
+    }).join("\n\n");
+    copiar(t, "Adaptaciones copiadas.");
+  });
+  document.getElementById("btn-json").addEventListener("click", function () {
+    var d = {
+      proyecto: S.lote,
+      filas: S.filas.map(function (f) {
+        var o = { id: f.id, en: f.en, es: f.es === null ? "" : f.es };
+        if (f.consulta) o.consulta = f.consulta;
+        if (f.adaptacion) o.adaptacion = f.adaptacion;
+        return o;
+      })
+    };
+    copiar(JSON.stringify(d, null, 2), "trabajo.json copiado — pegalo en un archivo y corré el validador.");
+  });
+  document.getElementById("btn-importar").addEventListener("click", function () {
+    var crudo = document.getElementById("fuente").value.trim();
+    try {
+      var d = JSON.parse(crudo);
+      if (!d.filas || !d.filas.length) throw new Error("sin filas");
+      S.lote = d.proyecto || "lote-01";
+      document.getElementById("nombre-lote").value = S.lote;
+      S.filas = d.filas.map(function (f, i) {
+        return {
+          id: f.id !== undefined ? f.id : i + 1,
+          en: f.en || "",
+          es: (f.es === undefined || f.es === "") ? null : f.es,
+          consulta: f.consulta || null,
+          adaptacion: f.adaptacion || null
+        };
+      });
+      document.getElementById("btn-traducir").disabled = false;
+      recalcular(); render(); guardar();
+      avisar(S.filas.length + " filas importadas.");
+    } catch (e) {
+      avisar("Eso no es un trabajo.json válido. Pegalo completo en el cuadro de arriba.");
+    }
+  });
+  function alLimpiar(e) {
+    dosToques(e.currentTarget, function () {
+      limpiarTodo();
+      document.getElementById("fuente").value = "";
+      document.getElementById("contexto").value = "";
+      S.contexto = "";
+      document.getElementById("fuente").focus();
+      avisar("Lote borrado.");
+    });
+  }
+  document.getElementById("btn-limpiar").addEventListener("click", alLimpiar);
+  document.getElementById("btn-limpiar-top").addEventListener("click", alLimpiar);
+
+  /* ============ arranque ============ */
+  document.getElementById("sello").textContent = VERSION;
+  if (recuperar()) {
+    document.getElementById("nombre-lote").value = S.lote;
+    document.getElementById("contexto").value = S.contexto || "";
+    recalcular();
+    avisar("Se recuperó el lote guardado.");
+    if (buildGuardado !== VERSION) {
+      diag("", "lote viejo",
+        "Este lote se tradujo con el build " + buildGuardado + " y ahora corre " + VERSION +
+        ". Las reglas de idioma cambiaron desde entonces, así que lo de abajo NO refleja las reglas actuales. Dale a «Retraducir todo» para rehacerlo, o a «Limpiar» para empezar de cero.");
+    }
+  }
+  render();
+
+  // Sondeo de disponibilidad. use() no pide permiso por si solo: el permiso se
+  // pide en la primera llamada real, asi que esto es seguro al cargar.
+  (async function () {
+    try {
+      var s = await conTiempo(window.claude.use("sample"), 20000, "claude.use(\"sample\")");
+      if (!s) {
+        diag("mal", "sin traductor",
+          "Esta vista no puede pedirle la traducción a Claude, así que Traducir no va a hacer nada. Revisar, editar y copiar sigue funcionando. Dale a «Probar conexión» para ver dónde se corta.");
+      }
+    } catch (e) {
+      diag("mal", "sin traductor",
+        "No se pudo alcanzar el traductor: " + ((e && (e.code || e.message)) || String(e)) +
+        ". Dale a «Probar conexión» para el detalle.");
+    }
+  })();
+})();
+</script>

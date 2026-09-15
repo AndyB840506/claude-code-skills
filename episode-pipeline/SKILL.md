@@ -24,7 +24,8 @@ C — Lanzamiento:       validación de imágenes → marketing → grid → dep
 **No reimplementa nada que ya exista** — invoca y encadena `transcriptor`, `episode-launch`,
 `podcast-creator`, `deploy-preflight`. ⚠️ `btq-project` y `btq-guion` NO existen en disco
 (confirmado 2026-06-26) — no los busques como skills; donde un workflow los cite, usa el
-fallback documentado ahí mismo (típ. `guion-style-btq.md` o `episode-launch/docs/brand-constants.md`).
+fallback documentado ahí mismo (típ. `guion-style-btq.md` o
+`.claude/skills/episode-launch/docs/brand-constants.md`, relativo a la raíz del repo).
 
 **Regla fundamental:** corre autónomo entre los puntos de pausa; si los datos
 contradicen el checkpoint, detente y pregunta antes de sobreescribir. Routing

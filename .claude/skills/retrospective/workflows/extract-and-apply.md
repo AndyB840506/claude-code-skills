@@ -21,6 +21,16 @@ Scan the conversation for these patterns:
 - Reportar el número aunque sea 0 — es la métrica de si §Procedencia está funcionando.
   Referencia: 2026-07-23 tuvo 4 en una sesión; ~2/semana entre 06-19 y 07-23.
 
+**Reproceso por iteración ciega** (segundo conteo obligatorio, va junto al anterior):
+- Preguntar literal: **"¿cuántas veces entregué un arreglo que no había podido verificar,
+  y cuántas de esas sin una observación nueva del usuario?"**
+- Procedencia mide el reproceso que nace de un **input viejo**; este mide el que nace de
+  **iterar a ciegas** sobre algo que no se puede ejecutar desde acá. Son fallas distintas
+  y una no cubre a la otra.
+- Reportar ambos números aunque sean 0. Es la métrica del punto 7 de § Verification.
+  Referencia: el 2026-09-15 procedencia contó **1** y este habría contado **7** — la
+  sesión se veía sana con la primera métrica sola.
+
 **Corrections** (highest priority when present):
 - User rejected output: "this is not great", "remove this", "bullshit", "wrong"
 - User redirected approach: "no, do it this way", "don't do that", "let's not"

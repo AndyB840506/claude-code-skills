@@ -1,0 +1,71 @@
+{
+  "proyecto": "demo-lote-01",
+  "filas": [
+    {
+      "id": 1,
+      "en": "<i>God fucking damn it, how much more...</i>",
+      "es": "<i>Carajo, ¿cuánto más...</i>"
+    },
+    {
+      "id": 2,
+      "en": "(GG), hey!",
+      "es": "(GG), ¡eh!"
+    },
+    {
+      "id": 3,
+      "en": "Get the fucking door.",
+      "es": "Abre la puta puerta."
+    },
+    {
+      "id": 4,
+      "en": "Take the key.",
+      "es": "Agarra la llave."
+    },
+    {
+      "id": 5,
+      "en": "What do you get when you cross a snowman with a vampire?",
+      "es": "¿Qué sale si cruzas un muñeco de nieve con un vampiro?"
+    },
+    {
+      "id": 6,
+      "en": "Frostbite.",
+      "es": "Un escalofrío.",
+      "adaptacion": {
+        "tipo": "juego de palabras",
+        "por_que": "\"Frostbite\" junta frío y mordida en una palabra real; \"congelación\" no tiene nada de eso y mata el remate. \"Escalofrío\" hace el mismo truco en español: carga el frío del muñeco y el susto del vampiro. El remate no traduce la palabra original, reproduce su mecanismo."
+      }
+    },
+    {
+      "id": 7,
+      "en": "It's raining cats and dogs.",
+      "es": "Está lloviendo a cántaros.",
+      "adaptacion": {
+        "tipo": "modismo",
+        "por_que": "Traducido literal (\"llueven gatos y perros\") no existe en español y suena a doblaje malo. El modismo equivalente cumple la misma función descriptiva con el mismo tono coloquial."
+      }
+    },
+    {
+      "id": 8,
+      "en": "Are you ready, {player}?",
+      "es": "¿Estás listo?",
+      "consulta": "El placeholder {player} se perdió al traducir. Además: si el nombre del jugador puede ser de cualquier género, \"listo\" queda marcado en masculino. Propongo \"¿Ya estás, {player}?\" para evitar el adjetivo con género."
+    },
+    {
+      "id": 9,
+      "en": "Mr. Pickles is waiting for you.",
+      "es": "Mr. Pickles te está esperando.",
+      "consulta": "Nombre propio: ¿se traduce o se deja? El chiste depende de que se entienda \"pickles\" (pepinillos). Opciones: dejarlo tal cual, o \"Don Pepino\". Lo dejo en inglés hasta que confirmes, porque reaparece en todo el juego."
+    },
+    {
+      "id": 10,
+      "en": "Youre too late.",
+      "es": "Llegaste tarde.",
+      "consulta": "Error en el texto original: \"Youre\" sin apóstrofo. No lo corregí en el español (traduje la intención correcta), pero la celda inglesa hay que arreglarla en el código."
+    },
+    {
+      "id": 11,
+      "en": "Save",
+      "es": "Guardar"
+    }
+  ]
+}
