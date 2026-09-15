@@ -58,10 +58,12 @@ STEP 6: Memory + skill-kit audit check
     lastSkillCount): invoke Skill("memory-audit") now, no confirmation prompt to trigger
     it (memory-audit gates its own apply step; now also scans skill files for corruption)
   → EXCEPCIÓN: si `memory-audit` YA corrió en esta sesión (a mano o por este paso),
-    reportar los conteos y NO volver a invocarlo. Y si esa corrida fue manual —no
-    disparada por umbral— NO mover `.audit-baseline.json`: moverla haría que la próxima
-    auditoría real llegue más tarde de lo debido. La línea base solo avanza cuando la
-    auditoría se disparó por umbral.
+    reportar los conteos y NO volver a invocarlo.
+  → La línea base es una MARCA DE AGUA de qué estado ya se auditó, no un temporizador:
+    **avanza siempre que una auditoría haya corrido y cubierto el estado actual**, sea
+    manual o disparada por umbral. Dejarla atrás después de una auditoría real produce
+    un disparo falso en cada cierre siguiente, hasta que alguna la actualice — detectado
+    el 2026-09-15, cuando una primera versión de esta regla decía lo contrario.
   → Otherwise: report "Memoria: N archivos (+M), Skills: K archivos (umbral: memoria +15
     o cambio en K)"
   → No user confirmation needed for this step itself
