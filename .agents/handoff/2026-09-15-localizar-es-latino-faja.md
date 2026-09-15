@@ -49,8 +49,11 @@ interactivo), `session-close` (no re-disparar memory-audit si ya corrió).
 ## Where We Paused
 
 **Last action:** cierre de sesión — commit y push de todo lo anterior.
-**Next action:** que Andrés pruebe la página v8 con un lote real de la cliente.
-**Blockers:** ninguno técnico. Los pendientes son decisiones de la cliente (ver abajo).
+**Next action:** esperar el **lote de prueba que anna va a enviar** y correrlo por la
+página v8. Ese es el primer uso con texto real del juego.
+**Blockers:** **bloqueado del lado de la clienta.** No hay nada técnico pendiente: la
+herramienta funciona, pero la validación de la calidad de traducción depende de que
+llegue ese lote. Hasta entonces, todo lo verificado son líneas de ejemplo.
 
 ## Files to Read First
 
@@ -88,5 +91,9 @@ interactivo), `session-close` (no re-disparar memory-audit si ya corrió).
 3. **Las tablas de vocabulario son criterio profesional mío, no validadas por la
    cliente.** Ajustarlas con su primer feedback real, sobre todo la fila de términos
    sexuales.
-4. **Falta probar la página con un lote real.** Lo único verificado hasta ahora es una
-   línea de prueba; el registro neutro sobre un lote de verdad está sin confirmar.
+4. **Falta probar la página con un lote real — y el lote lo manda anna.** Al cerrar la
+   sesión quedó pendiente de su lado: ella envía un lote de prueba para comprobar la
+   traducción. Lo único verificado hasta ahora son líneas de ejemplo, así que el
+   registro neutro, las tablas de vocabulario y el enmascarado de tokens siguen sin
+   confirmarse contra texto de producción. **Al retomar, preguntar primero si ese lote
+   ya llegó** antes de planear cualquier otra cosa sobre esta skill.
