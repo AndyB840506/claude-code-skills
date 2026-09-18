@@ -4,3 +4,6 @@ business/
 .claude/scheduled_tasks.lock
 .vercel
 __pycache__/
+# Copias que el harness gestiona para los skills de plugins (no son skills del kit)
+.trash/
+synced/
