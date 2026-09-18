@@ -57,8 +57,14 @@ output instead of inventing separate sourcing criteria:
 
 Get the raw JD text by asking the user for the job code/title (they already
 wrote it to create the job in HireSignal), or have them paste it directly.
-The parser endpoint has no auth check, so it can be called directly:
-`POST` to `api/jd-parser.php` with `{"job_description": "..."}`.
+Since HireSignal 1.4.4 (2026-09-18) the parser endpoint **requires an API
+token** — before that it was public and anyone could spend Opus calls on it.
+`POST` to `api/jd-parser.php` with `{"job_description": "..."}` and the header
+`Authorization: Bearer <token>`. The token is minted by the user in
+Admin → Integrations → API tokens; read it from an env var (e.g.
+`HIRESIGNAL_API_TOKEN`), never paste it into a file or a prompt. No token →
+`401 Missing bearer token`. Since 1.5.0 the job may also carry a literal
+`Location` field (Admin → Jobs → edit), which answers the city/region question above.
 
 **No pre-interview scoring model.** Don't build a separate candidate-ranking
 system for sourced profiles — HireSignal's AI interview is the real filter.
