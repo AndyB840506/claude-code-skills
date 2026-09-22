@@ -31,8 +31,11 @@ STEP 4: Skills repo sync. NOTE: `~/.claude/skills` and this project's own repo r
         written straight into ~/.claude/skills, sat uncommitted through what would have
         been a full close until this step was added.)
   → cd "$env:USERPROFILE\.claude\skills"
-  → git pull --rebase origin main   (the project repo may have just pushed via Step 3 —
-    integrate that first so this push doesn't get rejected as non-fast-forward)
+  → git pull --rebase --autostash origin main   (the project repo may have just pushed via
+    Step 3 — integrate that first so this push doesn't get rejected as non-fast-forward.
+    `--autostash` is NOT optional here: this step exists precisely because skills were
+    edited this session, so the tree is dirty by definition and a plain rebase aborts with
+    "cannot pull with rebase: You have unstaged changes" — reproduced 2026-09-22)
   → git status --short
   → If dirty: git add -A; git commit -m "session-close: skill updates <date>"; git push origin main
   → If clean: report "sin cambios"
