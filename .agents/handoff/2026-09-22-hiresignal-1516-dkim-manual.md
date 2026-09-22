@@ -31,7 +31,7 @@
   `feedback_verify_screen_before_asking_user`.
 
 ## Where We Paused
-**Last action:** retrospectiva aplicada y commiteada en el kit (`01d3b64`); roadmap commiteado en local.
+**Last action:** retrospectiva aplicada (kit `01d3b64`); roadmap pusheado (`17a5f57`); los 4 repos limpios y en el remoto.
 **Next action:** preguntarle a Andrés si ya pasó el jueves/viernes y qué salió de las pruebas de abajo.
 **Blockers:**
 - **Jueves 24-sep:** Send follow-ups de Outreach (TEST A debe recibir `Re:`, C suprimido).
