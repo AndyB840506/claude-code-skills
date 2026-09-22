@@ -84,6 +84,21 @@ y 15:55 UTC actualizó `project_hiresignal_outreach.md`, ambos bajo
   **Métricas del cierre:** reproceso por procedencia **2** (los dos detectados antes de
   entregar, ninguno por Andrés); reproceso por iteración ciega **1** — `install.ps1` se
   modificó y **no se volvió a correr**, solo se verificó que parsea.
+- **El memory-audit destapó 3 memorias envenenadas por la memoria partida**, todas corregidas:
+  una mandaba «editar skills siempre en `kit-skill-creator`» (habría revertido el fix de hoy);
+  dos archivos declaraban el mismo `name:` y se contradecían sobre si el portátil tiene
+  WhisperX (sí, desde el 2026-09-14, verificado); y una afirmaba que HireSignal «no está
+  desplegado» y es de LuccaTech. Esta última llevaba **huérfana del índice desde junio**, así
+  que no se cargaba — al indexarla hoy se volvió visible junto con su dato falso.
+- **2 bugs del propio kit, arreglados y probados:**
+  - `sync.ps1` copiaba sin espejar, así que **ningún borrado se propagaba**: cada
+    `memory-audit` que borrara algo lo veía volver en el siguiente `start.ps1`. Ahora espeja,
+    pero **sólo si `start.ps1` corrió en las últimas 24 h** (marcador `.config/last-start.txt`,
+    gitignored). Sin esa compuerta, una sesión que se saltara `start.ps1` tendría el árbol
+    local por detrás del repo y borraría la memoria de la OTRA máquina en vez de la suya.
+    Ambas ramas probadas con un archivo señuelo.
+  - `session-close` paso 4: `git pull --rebase` sin `--autostash`. Fallo garantizado — ese
+    paso corre justo después de editar skills, así que el árbol está sucio por definición.
 
 ## Where We Paused
 
@@ -119,6 +134,13 @@ kit de skills `e673573`.
 
 ## Notes / Gotchas
 
+- **El orden importa: `start.ps1` al inicio, trabajar, `sync.ps1` al cierre.** Los dos se
+  neutralizan si se invierten — `start.ps1` restaura a local lo que esté en el repo y no en
+  local, así que correrlo DESPUÉS de borrar una memoria la resucita, y el sync posterior no
+  tiene nada que espejar. En el flujo normal no pasa, porque el borrado ocurre entre los dos.
+  Se descubrió porque la primera prueba del espejado estaba mal diseñada (el señuelo sólo
+  vivía en el repo, que es indistinguible de «archivo que subió la otra máquina»): el código
+  estaba bien, la prueba no.
 - **Git no preserva mtimes.** `start.ps1` NO compara fechas de archivo: un pull estampa
   «ahora» en todo lo que toca y le ganaría a trabajo local genuinamente más nuevo. Compara
   contra la **fecha de commit** del contenido, que es machine-independent, y sólo para
