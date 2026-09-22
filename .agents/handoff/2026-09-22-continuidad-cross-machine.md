@@ -76,6 +76,14 @@ y 15:55 UTC actualizó `project_hiresignal_outreach.md`, ambos bajo
   en la cabecera de `start.ps1`. No se había notado porque `sync.ps1` usa `--` y se corre
   siempre; `install.ps1` casi nunca.
 - **`CLAUDE.md` del kit:** paso 0 de arranque + regla de abrir siempre la misma ruta.
+- **Cierre de sesión (retrospectiva aplicada):** 2 reglas nuevas en el `CLAUDE.md` del kit
+  — «git NO preserva mtimes» (§ Instrumentos que mienten) y «un `.ps1` se escribe en ASCII
+  puro» (§ Windows — shell) — más la memoria `feedback_go_find_it_dont_reask`. Auditoría del
+  kit limpia: 0 colisiones de triggers sobre 31 skills, 0 `SKILL.md` >50 líneas, 0 referencias
+  rotas, 31/31 con frontmatter válido.
+  **Métricas del cierre:** reproceso por procedencia **2** (los dos detectados antes de
+  entregar, ninguno por Andrés); reproceso por iteración ciega **1** — `install.ps1` se
+  modificó y **no se volvió a correr**, solo se verificó que parsea.
 
 ## Where We Paused
 
@@ -95,6 +103,11 @@ kit de skills `e673573`.
   `C--Users-andre` (3 archivos, de abrir `C:\Users\andre` directo).
 - **`start.ps1` nunca se ha corrido en el portátil.** Mirar su salida la primera vez antes
   de ponerse a trabajar.
+- **`install.ps1` quedó modificado y NO se volvió a correr entero** — solo se verificó que
+  parsea (0 errores en PS 5.1). Los cambios sin ejecutar son los del paso 3: respaldar
+  `CLAUDE.md` si difiere y no instalar `settings.json`. Importa porque el portátil es quien
+  lo va a correr: si algo falla ahí, es en ese bloque. `start.ps1` cubre el caso normal del
+  día a día, así que `install.ps1` sólo hace falta en una máquina nueva.
 
 ## Files to Read First
 
