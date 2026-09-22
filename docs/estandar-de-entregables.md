@@ -122,3 +122,23 @@ Checklist obligatorio antes de entregar (correr greps literales sobre el guion):
 - [ ] **Self-check explícito antes de declarar listo:** una pasada final
       preguntando "¿algo aquí se ve/lee como plantilla o como IA en automático?"
       — nombrar el indicio específico y corregirlo, no solo anotarlo.
+
+## 9 · Documentos para compartir (Artifact, manuales, PDF)
+
+- [ ] **Escrito desde el código, no desde la pantalla → sello de borrador visible**
+      ("Draft — pending screen review") hasta contrastarlo con capturas reales, y
+      decir qué pantallas faltan. El 2026-09-22 las capturas corrigieron 6 frases
+      del manual de HireSignal que el código no delataba.
+- [ ] **PDF: nunca pedir que se imprima desde el visor de claude.ai.** Mete la
+      página en un iframe y Chrome la corta en rebanadas: líneas partidas a
+      mitad de altura y reglas `break-inside` ignoradas (mordió 2026-09-22).
+      Generarlo con Edge headless sobre una copia con `<!doctype html>`
+      (`msedge --headless=new --no-pdf-header-footer --print-to-pdf=<pdf> file:///…`)
+      y **revisar las páginas rasterizadas** (pymupdf) antes de entregarlo.
+- [ ] **Bloque `@media print`:** paleta clara forzada en los tres estados de tema,
+      nada significativo que dependa de un relleno (el navegador los descarta por
+      defecto), una columna, `overflow: visible` en contenedores con scroll,
+      `break-inside: avoid` en avisos y tarjetas, tamaño carta para Canadá.
+- [ ] **La fuente tiene que sobrevivir a la sesión:** el scratchpad es temporal.
+      El HTML fuente queda en el Artifact y en una ruta persistente (D:\ o repo),
+      y el handoff dice dónde.
