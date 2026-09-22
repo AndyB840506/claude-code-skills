@@ -25,7 +25,7 @@
   (TTL 3600). Verificados en 4 resolvers públicos + DoH (clave `v=DKIM1` real); GoDaddy dice
   "configuración correcta". **Send test de 15:36 UTC aún SIN `DKIM-Signature`.**
 - **Roadmap:** "Track paralelo — Campañas en redes sociales para promover HireSignal" en el checkpoint
-  (commit `17a5f57`, **solo local**, ver Blockers).
+  (commit `17a5f57`, pusheado con OK de Andrés; redeploy de la misma 1.5.16).
 - Retrospectiva: `docs/estandar-de-entregables.md` §9 (documentos para compartir / PDF), 2 reglas en
   `CLAUDE.md` (`python -c` con barras; test de escape debe afirmar la versión escapada), memoria nueva
   `feedback_verify_screen_before_asking_user`.
@@ -42,8 +42,9 @@
   desde el webmail de `hello@` → si sigue sin `DKIM-Signature`, soporte de GoDaddy. Si el webmail firma
   y HireSignal no, el fallback es que HireSignal firme con PHPMailer DKIM y selector propio
   (`hs1._domainkey`) — sin construir, necesita OK de Andrés.
-- **Commit `17a5f57` (roadmap) sin push:** en hiresignal un push = deploy a prod (redeploy de la misma
-  versión, inofensivo, pero pide OK). Está solo en el clon del portátil.
+- **El viernes corre en el ESCRITORIO** (decisión de Andrés): antes de empezar, correr `install.ps1`
+  de `claude-continuity` para restaurar la memoria de hoy (el sync es de una sola vía). Los 4 repos
+  quedaron limpios y pusheados al cierre (kit `ee0de86`+, skills, hiresignal `17a5f57`, continuity).
 
 ## Files to Read First
 - `hiresignal/.agents/build-state/integraciones-pool.md` — checkpoint vivo; 1.5.15 y 1.5.16 al final de
@@ -66,7 +67,6 @@
 - `andy@behind-thequeue.com` está en la misma cuenta de GoDaddy: probable mismo problema de DKIM.
 
 ## Questions to Answer
-- ¿Push del roadmap (`17a5f57`)?
 - **Inconsistencias del checkpoint (no resueltas):** el plan del 09-18 dice "usuarios → Sprint 6" pero
   la secuencia dice Sprint 6 = localización y 7 = usuarios; la tabla "Dónde arrancar" sigue en
   "Sprint 4 CERRADO ← aquí estamos"; "Sprint 8 — manual (Canva)" vs el manual hecho hoy como Artifact.
