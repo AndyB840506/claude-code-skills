@@ -206,6 +206,9 @@ kit de skills `e673573`.
   hay que activar la campaña, pulsar SÓLO *Send follow-ups* y volver a pausarla (activarla
   habilita «Send to 3» a postulantes REALES: Akshay, Alexander, Santiago). Mismo día,
   recheck de DKIM pasadas las 48 h.
-- ¿Archivar/borrar `repos\skills` (el repo legacy)?
-- Las 3 memorias huérfanas heredadas: ¿se quedan, se fusionan o se borran? Es trabajo de
-  `memory-audit`, no se decidió hoy.
+- ¿Archivar/borrar `repos\skills` (el repo legacy)? — **sigue abierta**; vive solo en el
+  escritorio.
+- ~~Las 3 memorias huérfanas heredadas: ¿se quedan, se fusionan o se borran?~~ **RESUELTA
+  2026-09-23** (ver «Cierre del mismo día» arriba): `btq_production_state` y
+  `project_hiresignal_do_deploy` marcadas HISTÓRICAS; `skill_reviewer_integration` cableada en
+  `retrospective` y `handoff`. Ninguna queda «sin verificar».
