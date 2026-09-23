@@ -5,6 +5,24 @@
 
 ---
 
+## ACTUALIZACIÓN 2026-09-23 (portátil, 09:21 COT)
+
+Verificado en el portátil (sin `E:\`), sesión abierta todavía en `repos\kit-skill-creator`:
+
+| pendiente del 09-22 | estado 09-23 | evidencia |
+|---|---|---|
+| `Test-Path C:\Users\andre\.claude\skills\.git` | **True** — clon existe, remoto `claude-code-skills`, en `60f2654` | salida del comando |
+| `start.ps1` nunca corrido en el portátil | **Corrido.** Continuity estaba 8 atrás → pull a `6650d45`. Memoria: 102 nuevos, 4 actualizados, 0 conservados | salida de `start.ps1` |
+| ¿memoria del portátil que el repo no tenga? | **Ninguna.** Slug `repos-kit-skill-creator`: 105 local = 105 repo, 0 solo-local. Slug unificado: 194 local | comparación de nombres |
+| Cambiar de ruta a `~/.claude/skills` | **PENDIENTE (Andrés)** — cerrar VS Code y reabrir en `C:\Users\andre\.claude\skills` | — |
+| Borrar slugs `C--Users-andre-repos-kit-skill-creator` y `C--Users-andre` del repo de continuity | **PENDIENTE** — desbloqueado en cuanto la primera sesión abra en la ruta nueva y `start.ps1` muestre el slug unificado cargado. Borrar en repo **y** en `~/.claude/projects/` local del portátil, o `sync.ps1` los re-sube | — |
+| `install.ps1` sin re-correr entero | **Ya no bloquea**: `start.ps1` cubrió el caso del portátil. Solo importa en una máquina nueva | — |
+| `repos\skills` legacy, 3 memorias huérfanas heredadas | Sin decidir | — |
+
+**Next action:** abrir `C:\Users\andre\.claude\skills`, correr `start.ps1` (paso 0), y ahí limpiar los 2 slugs viejos.
+
+---
+
 ## ⚠️ SI ESTA SESIÓN CORRE EN EL PORTÁTIL: HAZ ESTO PRIMERO
 
 La memoria estaba partida en dos slugs y se fusionó hoy en el del escritorio. Para que el
