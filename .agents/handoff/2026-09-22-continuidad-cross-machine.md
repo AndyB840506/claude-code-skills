@@ -21,6 +21,24 @@ Verificado en el portátil (sin `E:\`), sesión abierta todavía en `repos\kit-s
 
 **Next action:** abrir `C:\Users\andre\.claude\skills`, correr `start.ps1` (paso 0), y ahí limpiar los 2 slugs viejos.
 
+### Cierre del mismo día (Andrés: «continúa con todo»)
+
+- **Slugs viejos LIMPIADOS** (continuity `d3c1d4b`). Antes de sacarlos se diffeó contra el
+  unificado: 60 de 64 diferencias eran solo CRLF; las 4 reales tenían la versión unificada
+  más nueva; `e_drive_absent_post_wipe.md` ya estaba cubierto por `project_two_pcs.md`.
+  **2 memorias de `C--Users-andre` no existían en ningún otro slug** —
+  `ai-image-gen-exploration`, `feedback-permission-classifier-boundaries`— y se rescataron
+  al unificado e indexaron (git las registró como rename 100%). Las carpetas `memory` locales
+  se MOVIERON (no borraron) a `~/.claude/projects/_backup-old-slugs-2026-09-23/`.
+  `start.ps1` re-corrido: **1 slug, 195 archivos, sin avisos.**
+- `btq_production_state` marcada **SUPERADA** (congelada en EP.016; fuente real `roadmap-btq.md`).
+- `project_hiresignal_do_deploy` ya estaba marcada HISTÓRICA desde el 09-22.
+- **`repos\skills` no existe en el portátil** — vive en el escritorio. Archivarlo queda para allá.
+- **Sigue pendiente:** reabrir VS Code en `C:\Users\andre\.claude\skills` (si se sigue abriendo
+  `repos\kit-skill-creator`, el harness recrea el slug viejo y `start.ps1` volverá a avisar);
+  decidir si `skill_reviewer_integration` (sugerir `/prompt-reviewer` tras retrospective/handoff)
+  se cablea en las skills o se retira — hoy ninguna de las dos lo hace.
+
 ---
 
 ## ⚠️ SI ESTA SESIÓN CORRE EN EL PORTÁTIL: HAZ ESTO PRIMERO
