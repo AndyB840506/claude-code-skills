@@ -67,6 +67,12 @@ Write handoff doc to a file, commit, and push so any machine can resume.
    > Handoff saved to `.agents/handoff/YYYY-MM-DD-<topic>.md` — committed and pushed.
    > Resume on any machine: open this repo in VS Code, Claude will auto-resume from the handoff.
 
+7. **Offer a clarity review** — only if this session created or modified a skill, AND the
+   handoff was invoked on its own. Inside `/session-close`, skip it: the retrospective
+   (its Step 1) already offered it, and steps 3-6 there run without prompts.
+   > Backup pushed. Want to run `/prompt-reviewer-en quick` on the skills changed today
+   > before the next session? (~5 min)
+
 ## Parallel sessions (avoid "crossed wires")
 
 Andrés sometimes runs **two sessions at once** to keep unrelated work from confusing the

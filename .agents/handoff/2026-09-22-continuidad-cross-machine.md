@@ -35,9 +35,12 @@ Verificado en el portátil (sin `E:\`), sesión abierta todavía en `repos\kit-s
 - `project_hiresignal_do_deploy` ya estaba marcada HISTÓRICA desde el 09-22.
 - **`repos\skills` no existe en el portátil** — vive en el escritorio. Archivarlo queda para allá.
 - **Sigue pendiente:** reabrir VS Code en `C:\Users\andre\.claude\skills` (si se sigue abriendo
-  `repos\kit-skill-creator`, el harness recrea el slug viejo y `start.ps1` volverá a avisar);
-  decidir si `skill_reviewer_integration` (sugerir `/prompt-reviewer` tras retrospective/handoff)
-  se cablea en las skills o se retira — hoy ninguna de las dos lo hace.
+  `repos\kit-skill-creator`, el harness recrea el slug viejo y `start.ps1` volverá a avisar).
+- **`skill_reviewer_integration` → CABLEADA** (Andrés: «agrega a los skills»). Ninguna de las
+  dos skills lo tenía. Ahora: `retrospective/workflows/extract-and-apply.md` Step 5 y
+  `handoff/workflows/file-handoff.md` paso 7 (este solo si el handoff va suelto, no dentro de
+  `/session-close`). Memoria corregida: el skill real es `prompt-reviewer-en` y su modo es
+  `quick` ~5 min, no `/prompt-reviewer` «RÁPIDO».
 
 ---
 

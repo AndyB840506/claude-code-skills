@@ -75,3 +75,13 @@ Then show the actual edits for approval.
 ## Step 4: Apply
 
 After user approves, apply all edits. One edit per skill file, show the diff.
+
+## Step 5: Offer a Clarity Review
+
+If Step 4 changed any skill or rule file, offer — don't run — a review of the edited sections:
+
+> Skills updated. Want to run `/prompt-reviewer-en quick` on the changed sections to catch
+> ambiguities before the next session? (~5 min)
+
+List the files it would cover. The user says yes / no / later. Skip the offer if Step 4
+applied nothing.
