@@ -130,6 +130,14 @@ Template: `comfyui/templates/zimage-txt2img-api.json`.
   luz encima) en vez de pedir que el texto salga borroso — ocultar geométricamente es más confiable
   que describir la degradación. Verificar siempre a tamaño real de uso (150px Spotify), no solo a
   tamaño completo, antes de descartar un intento por esto.
+- **En logos y wordmarks, Z-Image falla la ortografía incluso con 2-3 palabras** (aprendido
+  2026-09-26, logos de la T3 de BTQ). Se pidió "BEHIND THE QUEUE" en 6 generaciones y salió bien
+  solo en las 2 donde el texto era chico: salieron "THE QUUE", "THE QQUE", "TH QUEUE", y
+  "TURBO 01" en vez de "TURNO 01". Lo detectó Andy en el concepto que eligió. **Regla:** para
+  un logo, generar solo el ícono (o recortar la zona del ícono) y componer el texto con PIL
+  **desde el primer intento**, no como arreglo. Lo que funcionó: recortar por la primera fila en
+  blanco bajo el ícono, tomar el fondo y el color de tinta de los píxeles de la imagen, ajustar
+  el ancho de la fuente a un bloque fijo y centrar el bloque en vertical midiendo la tinta.
 
 ## Chroma (T5-flan encoder) — prompts DENSOS o look genérico (aprendido 2026-07-11)
 
