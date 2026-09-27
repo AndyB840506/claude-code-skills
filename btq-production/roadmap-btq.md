@@ -25,7 +25,13 @@ y queda marcado como superado o en revisión donde choca.
   burnout, return to office. La minuta agrega: anécdotas de la experiencia real, oportunidades
   de carrera, la situación de los bilingües, desmentir estereotipos del call center, e IA como
   herramienta que facilita pero no reemplaza.
-- **Tono:** conversacional, didáctico pero ligero, menos corporativo.
+- **Tono:** conversacional, didáctico pero ligero, menos corporativo. Anécdotas cruzadas con
+  referencias.
+- **SIN GUION (decidido 2026-09-26).** Conversación libre entre los dos, como en MPD. Lo que se
+  prepara por episodio es el **tema y una hoja de ruta** (puntos, anécdotas, referencias), no
+  un guion. Primer episodio: **la industria BPO en general**.
+- **Invitados:** a futuro, sin fecha.
+- **"Buenas y santas":** Andy lo quiere cambiar por un saludo más fresco (por definir).
 - **Duración objetivo:** ~45 min. A futuro audio + video (panel presencial en vez de Zoom).
 - **Imagen nueva:** logo nuevo, refresh de la página y de la música. **Sin diseñar todavía**;
   mientras tanto, la identidad visual de T2 (`episode-launch/docs/brand-constants.md`) queda

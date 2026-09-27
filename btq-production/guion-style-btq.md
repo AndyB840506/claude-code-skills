@@ -6,9 +6,11 @@
 
 > ⚠️ **T3 (desde 2026-09-26): BTQ pasa a tener co-host (Alejandro)**, formato conversacional
 > y vuelta a los temas originales de BPO (ver `roadmap-btq.md` § Temporada 3). Esta guía se
-> escribió para el formato de T2, con un solo host. Las reglas marcadas **[SOLO T2]** abajo NO
-> aplican a T3. **El resto queda en revisión**: se confirma o se retira con el primer guion de
-> T3, no antes.
+> escribió para el formato de T2, con un solo host. **La T3 no lleva guion** (decisión de
+> Andy, 2026-09-26): es conversación libre con una hoja de ruta por episodio. Esta guía **no
+> se aplica a la T3**; solo sirven como insumo algunas de sus ideas (verificar las cifras que
+> se digan al aire, no dar señales de cierre falso). Las reglas marcadas **[SOLO T2]** abajo
+> quedan como registro.
 
 **[SOLO T2]** BTQ es **solo host (Andy)**: le explica a un supervisor/gerente de BPO de ~40 años una ley, teoría
 o principio real de gestión, bajado al piso con casos verificados. La chispa no viene de banter
