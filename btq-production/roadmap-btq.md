@@ -35,7 +35,18 @@ y queda marcado como superado o en revisión donde choca.
 - **Pendientes de la minuta:** checkpoint el miércoles antes de la grabación del sábado; fijar
   la fecha de la primera grabación; bio + CV + foto de Alejandro para la web; renovación de un
   dominio el 26-dic (la minuta no dice cuál).
-- **Abierto:** numeración de T3 (¿sigue en EP.028 o reinicia?); si el retiro de la cultura pop
+- **Numeración (decidido 2026-09-26): la T3 arranca en EP.01**, no continúa desde EP.028.
+  En Spotify for Creators va con **season 3, episode 1**, que es lo que la separa del EP.01 de
+  T1 en Apple y en el RSS. Es el mismo patrón que la T2 de MPD (título "EP.03: …" + campo de
+  temporada). En el RSS (2026-09-26), la T1 es EP.01–09 (season 1) y la T2 es EP.10–27 (season 2).
+- **Metadata del RSS a corregir en Spotify for Creators antes de publicar el EP.01 de T3**
+  (leída de `anchor.fm/s/10f9ccb50/podcast/rss` el 2026-09-26):
+  - **EP.23 Hawthorne está marcado como season 3, episode 1** → pasarlo a season 2, ep 23.
+    Si no se corrige, choca con el EP.01 de T3.
+  - EP.22 (Calidad) tiene episode 19 → 22.
+  - EP.16 (The Wall) no tiene season ni episode → season 2, ep 16.
+  - "Ponerse la camiseta" no lleva el prefijo "EP.25 —" en el título (opcional).
+- **Abierto:** si el retiro de la cultura pop
   del 2026-07-21 sigue vigente (EP.01–09 no la usaban, EP.10–19 sí); qué reglas de
   `guion-style-btq.md` sobreviven al formato conversacional (se define con el primer guion).
 
