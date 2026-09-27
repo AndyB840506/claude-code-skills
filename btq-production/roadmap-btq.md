@@ -33,7 +33,12 @@ y queda marcado como superado o en revisión donde choca.
 - **Invitados:** a futuro, sin fecha.
 - **"Buenas y santas":** Andy lo quiere cambiar por un saludo más fresco (por definir).
 - **Duración objetivo:** ~45 min. A futuro audio + video (panel presencial en vez de Zoom).
-- **Imagen nueva:** logo nuevo, refresh de la página y de la música. **Sin diseñar todavía**;
+- **Logo (2026-09-26):** Andy eligió el concepto "en vivo" (dos micrófonos + dos ondas, una
+  por host), variante v1 con "THE" apilado:
+  `E:\AI\outputs\BTQ-T3-logo-C-final-v1-the-apilado.png` (1024 px). El texto va compuesto
+  con PIL (Arial Black), nunca generado. **Pendiente:** visto bueno de Alejandro; después,
+  pasarlo a 3000×3000 o a vector.
+- **Imagen nueva:** refresh de la página y de la música. **Sin diseñar todavía**;
   mientras tanto, la identidad visual de T2 (`episode-launch/docs/brand-constants.md`) queda
   en revisión y no manda para piezas de T3.
 - **Primer tema mencionado en la minuta:** "echando chismes" (textual; puede ser un error del
