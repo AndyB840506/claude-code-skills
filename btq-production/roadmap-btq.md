@@ -11,6 +11,34 @@ después de publicado).
 
 Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` → `publicado`
 
+## Temporada 3 — relanzamiento con Alejandro (decidido 2026-09-26)
+
+**Fuente:** minuta de la reunión Andrés + Alejandro (pegada por Andy el 2026-09-26) + mensaje
+de Andy de ese mismo día. **Todo lo que este documento dice debajo de esta sección es plan de T2**
+y queda marcado como superado o en revisión donde choca.
+
+- **Co-host: Alejandro.** El show deja de ser de un solo host. Tiene admin en Spotify for
+  Creators, Meta, TikTok y el Gmail del podcast.
+- **Vuelta a los temas originales de BTQ**, los de EP.01–09 (verificado contra el RSS
+  `anchor.fm/s/10f9ccb50/podcast/rss` el 2026-09-26): qué es el BPO, el call center como escuela
+  de liderazgo, rotación, mujeres líderes, IA en el BPO, relaciones en el piso, inclusión,
+  burnout, return to office. La minuta agrega: anécdotas de la experiencia real, oportunidades
+  de carrera, la situación de los bilingües, desmentir estereotipos del call center, e IA como
+  herramienta que facilita pero no reemplaza.
+- **Tono:** conversacional, didáctico pero ligero, menos corporativo.
+- **Duración objetivo:** ~45 min. A futuro audio + video (panel presencial en vez de Zoom).
+- **Imagen nueva:** logo nuevo, refresh de la página y de la música. **Sin diseñar todavía**;
+  mientras tanto, la identidad visual de T2 (`episode-launch/docs/brand-constants.md`) queda
+  en revisión y no manda para piezas de T3.
+- **Primer tema mencionado en la minuta:** "echando chismes" (textual; puede ser un error del
+  note-taker). Alejandro manda el esquema del primer guion.
+- **Pendientes de la minuta:** checkpoint el miércoles antes de la grabación del sábado; fijar
+  la fecha de la primera grabación; bio + CV + foto de Alejandro para la web; renovación de un
+  dominio el 26-dic (la minuta no dice cuál).
+- **Abierto:** numeración de T3 (¿sigue en EP.028 o reinicia?); si el retiro de la cultura pop
+  del 2026-07-21 sigue vigente (EP.01–09 no la usaban, EP.10–19 sí); qué reglas de
+  `guion-style-btq.md` sobreviven al formato conversacional (se define con el primer guion).
+
 | EP | Título | Estado |
 |---|---|---|
 | EP.011 | Frieren | publicado |
@@ -30,10 +58,10 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 | EP.025 | **Oficio de Jefe #2** — «ponerse la camiseta»: el discurso de lealtad como herramienta tóxica | **grabado, transcrito, assets listos, publica domingo 9 de agosto 8PM Colombia** — https://open.spotify.com/episode/5AgkBZ1F1M9WPU4MxxqESq. Casos: WeWork · Uber/Fowler · Wells Fargo. **Renumerado de EP.026 a EP.025 el 2026-08-07** — ver nota abajo |
 | EP.026 | **Oficio de Jefe #3** — `Por qué no llena esa vacante hace cuatro meses: el candidato unicornio` | **grabado, transcrito, publica domingo 16 de agosto 8PM Colombia** — https://open.spotify.com/episode/683PSkr20tY9Jy57M8vPBa?si=ULDQW49kSyqC5ZfXZ3S_Fw. Assets de lanzamiento listos, artículo del sitio desplegado (commit `b0fcd56`). Pendiente manual de Andy: artículo nativo de LinkedIn (sugerido 19 de agosto) + calendario social + YouTube metadata. Ver `pipeline-state-ep026.md`. **Renumerado de EP.025 a EP.026 el 2026-08-07** para que el episodio ya producido (camiseta) ocupe el próximo cupo real. Ver nota abajo |
 | EP.027 | **Pilar SEO** — `Por qué su mejor empleado se vuelve un mal jefe: el Principio de Peter` (Peter y Hull, 1969 + Benson/Li/Shue, QJE 2019) | **PUBLICADO** — https://open.spotify.com/episode/5GEHeLhfee0NmFYalIU1YW?si=NyN-FjRTR56ciSDEDc-dQg, domingo 23 de agosto 2026 8PM Colombia. Artículo del sitio desplegado, kit de lanzamiento completo. Ver `pipeline-state-ep027-peter.md`. ~~GUION A REDISEÑAR — decisión de Andy 2026-08-03~~: **SUPERADA 2026-08-20** — Andy confirmó que la grabación del 07-31 es válida tal cual, la nota de rediseño quedó vieja. |
-| EP.028 | **Pilar SEO** — Ley de Little (John D. C. Little, 1961; teoría de colas). El show le debe este tema a su propio nombre | en roadmap — **adelantada de EP.031 a EP.028 el 2026-08-23**: EP.027 ya está en vivo con el teaser grabado («la próxima vez les traigo la Ley de Little»), y esa promesa quedó pública. Rompe a propósito la rotación 3+1 (ver nota abajo). Título por definir con la fórmula invertida |
-| EP.029 | Oficio de Jefe #4 — carga cognitiva, aparcada (candidato disponible) | **aparcada 2026-08-07**, no descartada — casos y fuente de Sweller ya verificados en `pipeline-state-carga-cognitiva-parked.md`. Retomar con un esqueleto distinto a E y sin referencias cruzadas a EP.024. **Corrida de EP.028 a EP.029 el 2026-08-23** para darle el cupo a Little |
-| EP.030 | Oficio de Jefe #5 — tema por definir | en roadmap. **Corrida de EP.029 a EP.030 el 2026-08-23** |
-| EP.031 | Oficio de Jefe #6 — tema por definir | en roadmap. **Corrida de EP.030 a EP.031 el 2026-08-23** |
+| EP.028 | ~~**Pilar SEO** — Ley de Little (John D. C. Little, 1961; teoría de colas). El show le debe este tema a su propio nombre~~ | **RETIRADA 2026-09-26 por la T3** — Andy decidió que la promesa del teaser de EP.027 se cae; Little queda aparcada, no descartada. Registro histórico: en roadmap — **adelantada de EP.031 a EP.028 el 2026-08-23**: EP.027 ya está en vivo con el teaser grabado («la próxima vez les traigo la Ley de Little»), y esa promesa quedó pública. Rompe a propósito la rotación 3+1 (ver nota abajo). Título por definir con la fórmula invertida |
+| EP.029 | Oficio de Jefe #4 — carga cognitiva, aparcada (candidato disponible) | **SUPERADO 2026-09-26 (plan de T2, ver § Temporada 3)**. Registro histórico: **aparcada 2026-08-07**, no descartada — casos y fuente de Sweller ya verificados en `pipeline-state-carga-cognitiva-parked.md`. Retomar con un esqueleto distinto a E y sin referencias cruzadas a EP.024. **Corrida de EP.028 a EP.029 el 2026-08-23** para darle el cupo a Little |
+| EP.030 | Oficio de Jefe #5 — tema por definir | **SUPERADO 2026-09-26 (plan de T2)**. Registro histórico: en roadmap. **Corrida de EP.029 a EP.030 el 2026-08-23** |
+| EP.031 | Oficio de Jefe #6 — tema por definir | **SUPERADO 2026-09-26 (plan de T2)**. Registro histórico: en roadmap. **Corrida de EP.030 a EP.031 el 2026-08-23** |
 
 > **EP.025 — «ponerse la camiseta» (2026-08-07, reasignado desde EP.028, y renumerado de
 > EP.026 a EP.025 el mismo día).** Origen: un video que un amigo de Andy le compartió sobre el
@@ -92,6 +120,9 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 > episodio de Peter, renumerado) salió al aire con el teaser intacto — la promesa **sí es
 > pública** ahora. Andy decidió adelantar Little de EP.031 a EP.028 para honrarla. Ver la
 > fila de EP.028 en la tabla y la nota de rotación 3+1 más abajo.
+>
+> ⚠️ **SUPERADO 2026-09-26:** con la T3, Andy decidió dejar caer la promesa. Little queda
+> aparcada.
 
 > **EP.024 — por qué este tema** (decisión de Andy, 2026-07-25). Continúa directamente el cierre
 > de EP.023, que preguntó literalmente «¿a quién ascendió? ¿a quién no le renovó?», y cumple el
@@ -106,11 +137,18 @@ Estados posibles: `en roadmap` → `guion listo` → `grabado` → `en Spotify` 
 
 ## Estrategia editorial (analytics Spotify 2026-06-12; giros 2026-07-21 y 2026-07-25)
 
+> ⚠️ **Estrategia de T2 — no manda para la T3** (2026-09-26, ver § Temporada 3 arriba). Se
+> conserva como registro y como banco de temas. Los datos de audiencia siguen siendo los últimos
+> medidos, pero conviene volver a medirlos con la T3 al aire.
+
 **Audiencia núcleo (verificada):** hombre 35–44 (43% del total; 56% sumando todo el rango),
 Colombia 70% + EE.UU. 20%, escucha en Android y ~15% en desktop Windows (en el trabajo).
 Perfil: gerente/supervisor de ~40 años.
 
 ### Rotación 3+1 y carril «Oficio de Jefe» (2026-08-01) — SUPERA el giro del 2026-07-21
+
+> ⚠️ **SUPERADO 2026-09-26 por la T3.** Los carriles Oficio de Jefe / Pilar SEO eran el
+> sistema de T2; la T3 vuelve a los temas originales de BPO con formato conversacional.
 
 **Decisión de Andy**, tomada después de grabar el EP.024 de Peter y sentirlo «demasiado
 teórico, como una reseña y un análisis, sin nada memorable que rescatar».
@@ -363,6 +401,9 @@ Oficio de Jefe.
 | **Riesgo moral** | Sirve, pero pisa el EP.020 (Goodhart). Distinguible —trasladar el riesgo no es falsear la métrica— pero hay que escribir esa frontera |
 
 ### Giro de alcance 2026-07-25 — de call center a gestión empresarial
+
+> ⚠️ **REVERTIDO 2026-09-26 por la T3:** el show vuelve al techo de BPO/call center. Lo que
+> sigue es el registro de por qué se abrió el alcance en julio.
 
 **Decisión de Andy.** El show sale del techo de BPO/contact center y pasa a **gestión de
 equipos y operaciones en cualquier industria**. La teoría puede venir de donde sea; el

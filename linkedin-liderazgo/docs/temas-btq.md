@@ -32,7 +32,7 @@ desactualiza igual que el roadmap que resume.
 | 022 | Costo de mala calidad | Cuánto cuesta NO invertir en calidad (ángulo P&L) | Philip Crosby, *Quality Is Free*, 1979 |
 | 023 | Efecto Hawthorne | Los límites de medir el desempeño cuando la gente sabe que la observan | Elton Mayo, estudios Western Electric (1920s); reanálisis Levitt & List, 2011 |
 | 027 | Principio de Peter | Por qué el mejor empleado se vuelve un mal jefe | Peter y Hull, 1969; Benson/Li/Shue, QJE 2019 |
-| 028 | Ley de Little | Teoría de colas aplicada a equipos sobrecargados | John D. C. Little, 1961 |
+| ~~028~~ (retirado 2026-09-26) | Ley de Little | Teoría de colas aplicada a equipos sobrecargados — nunca se produjo, no usar como episodio | John D. C. Little, 1961 |
 
 ## Otros episodios con ángulo de liderazgo explícito
 

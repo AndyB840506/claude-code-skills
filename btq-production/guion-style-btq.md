@@ -4,12 +4,18 @@
 > Nace del feedback de Andy (2026-06-17): los guiones estaban "muy tiesos, les falta chispa".
 > Referencia de narrativa con chispa: los guiones de MPD (ej. `mrputridsden-production/scripts/EP005-aterciopelados.html`).
 
-BTQ es **solo host (Andy)**: le explica a un supervisor/gerente de BPO de ~40 años una ley, teoría
+> ⚠️ **T3 (desde 2026-09-26): BTQ pasa a tener co-host (Alejandro)**, formato conversacional
+> y vuelta a los temas originales de BPO (ver `roadmap-btq.md` § Temporada 3). Esta guía se
+> escribió para el formato de T2, con un solo host. Las reglas marcadas **[SOLO T2]** abajo NO
+> aplican a T3. **El resto queda en revisión**: se confirma o se retira con el primer guion de
+> T3, no antes.
+
+**[SOLO T2]** BTQ es **solo host (Andy)**: le explica a un supervisor/gerente de BPO de ~40 años una ley, teoría
 o principio real de gestión, bajado al piso con casos verificados. La chispa no viene de banter
 entre hosts (no hay co-host) — viene del ritmo hablado, la escena, el dato que sorprende, el humor
 y la calidez.
 
-> **Carriles vigentes: rotación 3+1** (fijada 2026-08-01, supera el «100% pilar SEO» del
+> **[SOLO T2 — SUPERADO 2026-09-26]** **Carriles vigentes: rotación 3+1** (fijada 2026-08-01, supera el «100% pilar SEO» del
 > 2026-07-21). Tres episodios de **Oficio de Jefe** —el sujeto es un problema operativo
 > recurrente, titulado con la frase que el oyente ya usa— y luego uno de **pilar SEO** —teórico
 > nombrado, paper citable—. Todo lo que este documento dice sobre pilar SEO sigue vigente **para
@@ -43,6 +49,9 @@ y la calidez.
 ---
 
 ## Las 9 reglas de chispa (BTQ solo host)
+
+> **T3:** escritas para un solo host. Con co-host, parte de la chispa viene del diálogo entre
+> los dos. En revisión hasta el primer guion de T3; la regla 7 ("Andy solo") es **[SOLO T2]**.
 
 1. **Escribe como Andy habla, no como se escribe.** Frases cortas, declarativas. Rompe las cadenas
    de guiones largos en 2-3 frases. Si una oración no se puede decir de un respiro, pártela.
@@ -82,7 +91,7 @@ y la calidez.
    grabar, sin inventar (visto en EP.018 / Mundial 2026: las anécdotas son de 1950/1993/2014/2019;
    nada del torneo en curso se afirma como resultado).
 
-7. **Mete humor, guiño y autoconciencia.** Andy solo, 40-45 minutos — necesita contraste. Un chiste
+7. **[SOLO T2]** **Mete humor, guiño y autoconciencia.** Andy solo, 40-45 minutos — necesita contraste. Un chiste
    seco, admitir lo obvio ("sí, ya sé, otro que les habla de Cerati"), una exageración, un aparte.
    El humor no le quita peso a la lección: le da respiro para que la lección pegue más duro.
 
@@ -993,7 +1002,7 @@ seco por contraste, no por fórmula · cero cadena de guiones largos.
       del título. Si no se puede señalar, se corrige uno de los dos antes de grabar. (Fijado
       2026-07-28: un título que promete algo que el episodio no desarrolla se siente como «gato
       por liebre» y se paga en abandono, no en quejas.)
-- [ ] **Sin "Andy" en tercera persona dentro del guion hablado** (detectado 2026-07-21,
+- [ ] **[SOLO T2]** **Sin "Andy" en tercera persona dentro del guion hablado** (detectado 2026-07-21,
       EP.023 borrador Hawthorne: "del tipo que Andy, personalmente, desconfía..." — debía
       ser "yo, personalmente, desconfío"). BTQ es solo host narrando en primera persona
       todo el episodio; "Andy" en tercera persona solo es válido en la firma canónica del cierre

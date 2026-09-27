@@ -1,5 +1,10 @@
 # Brand constants (BTQ)
 
+> ⚠️ **EN REVISIÓN desde 2026-09-26:** la T3 (co-host Alejandro) trae logo nuevo y refresh de
+> la página. Todo lo de abajo es la identidad de T2: sigue vigente para piezas de EP.001–027,
+> pero **no se usa para diseñar piezas de T3** hasta que exista la identidad nueva. Ver
+> `btq-production/roadmap-btq.md` § Temporada 3.
+
 | Element | Value |
 |---------|-------|
 | Void (fondo base) | `#0E1113` — **nunca** negro puro `#000000` |
