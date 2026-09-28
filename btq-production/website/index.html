@@ -102,9 +102,14 @@
       .bar-link.hide-sm,.brand span{display:none}
       .bar-right{gap:16px}
     }
+    @media(max-width:420px){
+      .bar-right{gap:12px}
+      .bar-link{letter-spacing:.08em}
+      .brand img{width:38px;height:38px}
+    }
 
     /* ── HERO ── */
-    .hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:130px 44px 70px;max-width:1280px;margin:0 auto;position:relative}
+    .hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:130px 44px 70px;max-width:1280px;margin:0 auto;position:relative;overflow:hidden}
     .kicker{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:26px}
     .kicker .meta b{color:var(--ink);font-weight:500}
     .title{font-family:var(--disp);font-weight:900;color:var(--ink);line-height:.84;letter-spacing:-.01em;text-transform:uppercase}
@@ -237,9 +242,17 @@
     .listen h2{font-family:var(--disp);font-weight:900;font-size:clamp(2rem,3.4vw,2.9rem);line-height:1.05;margin-bottom:30px}
     .listen h2 .c{color:var(--coral-t)}
     .embed{border-radius:14px;overflow:hidden;border:2px solid var(--ink)}
+    .player{display:grid;grid-template-columns:190px 1fr;gap:28px;align-items:center;padding:26px;background:#fff;border:2px solid var(--ink);border-radius:18px;box-shadow:8px 8px 0 var(--ink)}
+    .player img{width:100%;height:auto;border-radius:12px;display:block}
+    .pl-k{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--coral-t);margin:16px 0 6px}
+    .pl-t{font-family:var(--disp);font-weight:900;font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.1}
+    .pl-wave{justify-content:flex-start;height:40px;margin:16px 0 18px;gap:4px}
+    .pl-wave i{width:5px}
+    .player .btn{padding:13px 20px}
+    @media(max-width:680px){.player{grid-template-columns:1fr;gap:18px;padding:20px;box-shadow:6px 6px 0 var(--ink)}.player img{max-width:150px}}
     .plat{display:flex;flex-direction:column;gap:10px}
-    .plat a{display:flex;align-items:center;gap:15px;padding:16px 20px;border:1.5px solid var(--line-2);border-radius:14px;text-decoration:none;color:var(--ink);font-size:.9rem;font-weight:700;background:#fff;transition:.22s}
-    .plat a:hover{border-color:var(--ink);transform:translateX(4px);box-shadow:4px 4px 0 var(--blue)}
+    .plat a{display:flex;align-items:center;gap:15px;padding:16px 20px;border:1.5px solid var(--line-2);border-radius:14px;text-decoration:none;color:var(--ink);font-size:.9rem;font-weight:700;background:#fff;transition:border-color .22s,box-shadow .22s,translate .22s}
+    .plat a:hover{border-color:var(--ink);translate:4px 0;box-shadow:4px 4px 0 var(--blue)}
     .plat svg{width:18px;height:18px;flex-shrink:0}
     .plat .pm{margin-left:auto;font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;color:var(--faint);font-weight:400}
 
@@ -250,7 +263,7 @@
     .contact h2{font-family:var(--disp);font-weight:900;font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.05;margin-bottom:16px}
     .contact .lead{color:var(--body);font-size:1rem;line-height:1.85;max-width:40ch;margin-bottom:24px}
     .contact .alt{font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;color:var(--faint)}
-    .contact .alt a{color:var(--blue);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+    .contact .alt a{color:var(--blue);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px;white-space:nowrap}
     .c-social{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
     .c-social a{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1.5px solid var(--line-2);border-radius:999px;padding:9px 15px;transition:.2s}
     .c-social a:hover{border-color:var(--ink);background:var(--ink);color:var(--bg)}
@@ -297,11 +310,15 @@
     /* ── RESPONSIVE ── */
     @media(max-width:980px){
       .hero{grid-template-columns:1fr;gap:48px;min-height:auto;padding-top:120px}
+      .title .l1,.title .l2{font-size:clamp(4rem,18vw,10rem)}
+      .hero-line{max-width:40ch}
+      .booth{max-width:640px}
       .premise-grid,.listen-grid,.contact-grid,.colo,.hosts-grid{grid-template-columns:1fr;gap:48px}
       .cform .frow{grid-template-columns:1fr}
     }
     @media(max-width:680px){
       .wrap,.hero{padding-left:16px;padding-right:16px}
+      .title .l1,.title .l2{font-size:clamp(3.4rem,21vw,6rem)}
       .mic.b{transform:translateY(-22px)}
       .mic .ph{border-radius:14px}
       .mic.a .ph,.mic.b .ph{box-shadow:6px 6px 0 var(--coral)}
@@ -310,6 +327,7 @@
       .host .ph{max-width:210px}
       .next{grid-template-columns:1fr;gap:14px;padding:24px 22px;box-shadow:6px 6px 0 var(--ink)}
       .next .num{font-size:3rem}
+      .next .pill{justify-self:start}
       .track{grid-template-columns:62px 1fr;gap:16px;padding-right:0}
       .t-num{font-size:2.3rem;padding-left:0}
       .t-right{display:none}
@@ -339,7 +357,7 @@
   <div class="bar-right">
     <a href="/episodios" class="bar-link">Episodios</a>
     <a href="#hosts" class="bar-link hide-sm">Quiénes somos</a>
-    <a href="#contacto" class="bar-link hide-sm">Contacto</a>
+    <a href="#contacto" class="bar-link">Contacto</a>
     <a href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP" target="_blank" rel="noopener" class="pill"><span class="led"></span>En vivo</a>
   </div>
 </header>
@@ -532,8 +550,23 @@
     <div class="listen-grid">
       <div>
         <h2 class="rv">Escúchanos <span class="c">donde prefieras</span></h2>
-        <div class="embed rv">
-          <iframe style="display:block" src="https://open.spotify.com/embed/show/5figtqa6zJxW1pE1sWJeEP?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Behind the Queue en Spotify"></iframe>
+        <!-- Tarjeta propia mientras no sale el EP.01 de T3 (2026-09-27): el embed de Spotify
+             no deja elegir colores y mostraba la caratula del EP.27 con el arte de T2.
+             Cuando se publique el EP.01, volver al embed SIN theme=0 (toma el color del arte nuevo):
+             <div class="embed rv"><iframe style="display:block" src="https://open.spotify.com/embed/show/5figtqa6zJxW1pE1sWJeEP?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Behind the Queue en Spotify"></iframe></div> -->
+        <div class="player rv">
+          <img src="btq-t3-logo.png" alt="Logo de Behind the Queue, temporada 3" width="512" height="512" loading="lazy">
+          <div class="pl-body">
+            <span class="pill"><span class="led"></span>Temporada 3</span>
+            <p class="pl-k">Episodio 01, próximamente</p>
+            <p class="pl-t">La industria BPO en general</p>
+            <div class="wave pl-wave" aria-hidden="true">
+              <i class="c" style="--h:.35"></i><i class="c" style="--h:.7"></i><i class="c" style="--h:1"></i><i class="c" style="--h:.55"></i>
+              <span class="joint"></span>
+              <i class="b" style="--h:.6"></i><i class="b" style="--h:1"></i><i class="b" style="--h:.7"></i><i class="b" style="--h:.4"></i>
+            </div>
+            <a class="btn solid" href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP" target="_blank" rel="noopener">Seguir en Spotify →</a>
+          </div>
         </div>
       </div>
       <div>
@@ -701,7 +734,7 @@
         .to('.title .l2', { xPercent: 8, ease: 'none' }, 0)
         .to('.mic.a', { xPercent: -10, rotate: -4, ease: 'none' }, 0)
         .to('.mic.b', { xPercent: 10, rotate: 4, ease: 'none' }, 0)
-        .to('.wave', { scaleX: 1.5, ease: 'none' }, 0)
+        .to('.hero .wave', { scaleX: 1.5, ease: 'none' }, 0)
         .to('.hero-line, .hero-cta, .kicker', { opacity: 0, y: -30, ease: 'none' }, 0);
     });
     gsap.matchMedia().add('(max-width: 980px)', () => {
@@ -715,7 +748,7 @@
         scrollTrigger: { trigger: el, start: 'top 88%' } });
     });
     gsap.utils.toArray('.stag').forEach(g => {
-      gsap.from(g.children, { y: 26, opacity: 0, duration: .7, stagger: .08, ease: 'power3.out',
+      gsap.from(g.children, { y: 26, opacity: 0, duration: .7, stagger: .08, ease: 'power3.out', clearProps: 'opacity,transform,translate,rotate,scale',
         scrollTrigger: { trigger: g, start: 'top 86%' } });
     });
     gsap.utils.toArray('.sec-tag .bar').forEach(b =>
