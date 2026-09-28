@@ -4,388 +4,442 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Behind the Queue — Podcast de gestión, calidad y liderazgo</title>
-  <meta name="description" content="Podcast en español para quienes dirigen equipos y operaciones. Una ley, una teoría o un principio real de gestión por episodio, bajado al piso. Nuevo episodio cada semana.">
+  <title>Behind the Queue: la industria BPO, contada desde adentro</title>
+  <meta name="description" content="Podcast en español sobre la industria BPO y el call center. Temporada 3: Andrés Bermúdez y Alejandro Aguirre conversan sin guion sobre el piso, el liderazgo, la carrera y los mitos del call center.">
   <link rel="canonical" href="https://behind-thequeue.com/">
+  <link rel="icon" type="image/png" href="/btq-t3-logo.png">
 
-  <meta property="og:title" content="Behind the Queue">
-  <meta property="og:description" content="Podcast en español para quienes dirigen equipos y operaciones. Teoría real de gestión, bajada al piso.">
+  <meta property="og:title" content="Behind the Queue, Temporada 3">
+  <meta property="og:description" content="La industria BPO, contada desde adentro. Andrés Bermúdez y Alejandro Aguirre, sin guion.">
   <meta property="og:url" content="https://behind-thequeue.com/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://behind-thequeue.com/og-image.png">
+  <meta property="og:image" content="https://behind-thequeue.com/og-image-t3.jpg">
   <meta property="og:image:width" content="1600">
   <meta property="og:image:height" content="900">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://behind-thequeue.com/og-image.png">
+  <meta name="twitter:image" content="https://behind-thequeue.com/og-image-t3.jpg">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "PodcastSeries",
     "name": "Behind the Queue",
-    "description": "Podcast en español para quienes dirigen equipos y operaciones. Teoría real de gestión, bajada al piso.",
+    "description": "Podcast en español sobre la industria BPO y el call center, contada desde adentro.",
     "url": "https://behind-thequeue.com/",
     "webFeed": "https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP",
-    "author": { "@type": "Person", "name": "Andrés Bermúdez Rodríguez" },
+    "author": [
+      { "@type": "Person", "name": "Andrés Bermúdez Rodríguez" },
+      { "@type": "Person", "name": "Alejandro Aguirre" }
+    ],
     "inLanguage": "es"
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Sistema BTQ v4: Cabinet Grotesk (display) + Supreme (cuerpo) + Martian Mono (datos) -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <!-- Sistema BTQ T3: Cabinet Grotesk (display, pesos altos como el logo) + Supreme (cuerpo) + Martian Mono (datos).
+       Paleta sacada del logo "EN VIVO" (2026-09-26): crema, azul marino, coral y azul. -->
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800,900&f[]=supreme@400,500,700&f[]=martian-mono@400,500&display=swap" rel="stylesheet">
 
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
     :root{
-      --bg:#0E1113;
-      --bg-2:#22262A;
-      --ink:#F4EFE7;
-      --body:#AEB5B3;          /* AA on dark */
-      --faint:#8B9492;         /* decorative labels only */
-      --signal:#FF3D00;
-      --signal-hi:#FF6A3D;
-      --signal-dim:rgba(255,61,0,.08);
-      --line:rgba(244,239,231,.09);
-      --line-2:rgba(244,239,231,.16);
+      --bg:#FDF9EF;            /* crema del logo */
+      --bg-2:#F5EEDC;
+      --ink:#03053C;           /* azul marino del logo */
+      --body:#3A3D5C;          /* AA sobre crema */
+      --faint:#666983;         /* AA sobre crema */
+      --coral:#F65B51;         /* onda izquierda del logo: rellenos, no texto chico */
+      --coral-t:#D2382E;       /* coral para texto: 4.6:1 sobre crema */
+      --blue:#1268FC;          /* onda derecha del logo: 4.6:1 sobre crema */
+      --coral-dim:rgba(246,91,81,.10);
+      --blue-dim:rgba(18,104,252,.08);
+      --line:rgba(3,5,60,.12);
+      --line-2:rgba(3,5,60,.22);
       --disp:'Cabinet Grotesk',system-ui,sans-serif;
       --body-f:'Supreme',system-ui,sans-serif;
       --mono:'Martian Mono',ui-monospace,monospace;
     }
 
     html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;background:var(--bg)}
-    body{
-      background:transparent;color:var(--ink);
-      font-family:var(--body-f);
-      line-height:1.65;overflow-x:hidden;position:relative;
-    }
-    ::selection{background:var(--signal);color:var(--bg)}
-    ::-webkit-scrollbar{width:3px}
-    ::-webkit-scrollbar-track{background:var(--bg)}
-    ::-webkit-scrollbar-thumb{background:var(--signal)}
-    a{color:inherit}
+    body{background:transparent;color:var(--ink);font-family:var(--body-f);line-height:1.65;overflow-x:hidden;position:relative}
 
-    /* film grain — the "pressed vinyl / print" texture */
-    .grain{
-      position:fixed;inset:0;z-index:3;pointer-events:none;opacity:.05;
-      mix-blend-mode:overlay;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
+    /* ── LÍNEA ABIERTA — campo global: la onda de conversación detrás de TODA la página.
+       Coral a la izquierda (Andrés), azul a la derecha (Alejandro), como el logo.
+       Reacciona al puntero, a la velocidad del scroll y al clic. Sin canvas = crema liso. ── */
+    #field{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block;pointer-events:none}
+    .ripple{position:fixed;z-index:4;pointer-events:none;border:2px solid var(--coral);border-radius:50%;transform:translate(-50%,-50%);will-change:width,height,opacity}
+    .ripple.r{border-color:var(--blue)}
+    .ripple.go{animation:ripple .6s cubic-bezier(.2,.7,.3,1) forwards}
+    @keyframes ripple{from{width:8px;height:8px;opacity:.8}to{width:150px;height:150px;opacity:0}}
+    ::selection{background:var(--coral);color:#fff}
+    ::-webkit-scrollbar{width:4px}
+    ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:var(--ink)}
+    a{color:inherit}
+    img{max-width:100%;height:auto}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
 
     .wrap{max-width:1180px;margin:0 auto;padding:0 44px}
-
-    /* mono liner-notes meta voice */
     .meta{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
-    .meta b{color:var(--signal);font-weight:500}
 
-    /* ── TOP BAR ── */
-    header{
-      position:fixed;top:0;left:0;right:0;z-index:50;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:20px 44px;transition:all .35s ease;
-      mix-blend-mode:difference;
+    /* pill "EN VIVO" — la misma pieza del logo */
+    .pill{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;font-family:var(--disp);font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:7px 14px 6px;border-radius:999px;text-decoration:none;line-height:1}
+    .pill .led{width:7px;height:7px;border-radius:50%;background:#fff;animation:blink 1.8s ease-in-out infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+    /* ── BARRA ── */
+    header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 44px;transition:background .3s,border-color .3s,padding .3s;border-bottom:1px solid transparent}
+    header.docked{background:rgba(253,249,239,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line);padding:10px 44px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand img{width:42px;height:42px;border-radius:8px;display:block}
+    .brand span{font-family:var(--disp);font-weight:900;font-size:1.02rem;letter-spacing:.04em;color:var(--ink);line-height:1}
+    .bar-right{display:flex;align-items:center;gap:26px}
+    .bar-link{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none;opacity:.8;transition:.2s}
+    .bar-link:hover{opacity:1;color:var(--coral-t)}
+    @media(max-width:760px){
+      header,header.docked{padding-left:16px;padding-right:16px}
+      .bar-link.hide-sm,.brand span{display:none}
+      .bar-right{gap:16px}
     }
-    header.docked{
-      mix-blend-mode:normal;background:rgba(14,17,19,.82);
-      backdrop-filter:blur(16px);padding:14px 44px;border-bottom:1px solid var(--line);
-    }
-    .cat{font-family:var(--disp);font-size:1.05rem;letter-spacing:.22em;color:var(--ink);text-decoration:none}
-    .cat i{color:var(--signal);font-style:normal}
-    .top-mid{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);opacity:.7}
-    .onair{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none}
-    .onair .led{width:7px;height:7px;border-radius:50%;background:var(--signal);box-shadow:0 0 10px var(--signal);animation:blink 1.8s ease-in-out infinite}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-    .bar-right{display:flex;align-items:center;gap:24px}
-    .bar-contact{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none;opacity:.82;transition:.2s}
-    .bar-contact:hover{color:var(--signal);opacity:1}
-    @media(max-width:760px){.top-mid{display:none}header,header.docked{padding-left:22px;padding-right:22px}}
 
-    /* ── MASTHEAD ── */
-    .mast{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;padding:120px 44px 60px}
-    .mast::after{content:'';position:absolute;left:0;right:0;bottom:0;height:40vh;background:radial-gradient(120% 100% at 20% 100%,var(--signal-dim),transparent 70%);pointer-events:none}
-    .mast-kicker{display:flex;gap:20px;align-items:center;margin-bottom:30px;flex-wrap:wrap}
-    .mast-kicker .rule{width:60px;height:1px;background:var(--signal)}
-    .title{position:relative;z-index:2}
-    .title .ln{
-      display:block;font-family:var(--disp);
-      font-size:clamp(4.2rem,18vw,15.5rem);line-height:.82;letter-spacing:.005em;
-      color:var(--ink);will-change:transform;
-    }
-    .title .ln.two{color:transparent;-webkit-text-stroke:1.4px var(--signal);text-stroke:1.4px var(--signal);padding-left:.12em}
-    .title .ln.three{padding-left:.04em}
-    .mast-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-top:48px;position:relative;z-index:2;flex-wrap:wrap}
-    .mast-line{font-family:var(--disp);font-size:clamp(1.15rem,2vw,1.55rem);font-weight:400;color:var(--body);max-width:30ch;line-height:1.45}
-    .mast-line b{color:var(--ink);font-style:normal;font-weight:500}
-    .latest{
-      display:inline-flex;align-items:center;gap:14px;text-decoration:none;
-      border:1px solid var(--line-2);border-radius:2px;padding:12px 18px;transition:.25s;flex-shrink:0;
-    }
-    .latest:hover{border-color:var(--signal);background:var(--signal-dim)}
-    .latest .lt-n{font-family:var(--disp);font-size:1.9rem;line-height:.8;color:var(--signal)}
-    .latest .lt-t{font-size:.8rem;color:var(--ink)}
-    .latest .lt-k{font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:3px}
-    .latest .lt-a{color:var(--signal);font-size:1.1rem}
+    /* ── HERO ── */
+    .hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:130px 44px 70px;max-width:1280px;margin:0 auto;position:relative}
+    .kicker{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+    .kicker .meta b{color:var(--ink);font-weight:500}
+    .title{font-family:var(--disp);font-weight:900;color:var(--ink);line-height:.84;letter-spacing:-.01em;text-transform:uppercase}
+    .title .l1{display:block;font-size:clamp(4rem,11.5vw,11rem);will-change:transform}
+    .title .l2{display:flex;align-items:flex-end;gap:.18em;font-size:clamp(4rem,11.5vw,11rem);will-change:transform}
+    .title .the{font-size:.26em;line-height:1;padding-bottom:.28em;letter-spacing:.02em}
+    .hero-line{font-family:var(--disp);font-weight:500;font-size:clamp(1.12rem,1.8vw,1.42rem);color:var(--body);max-width:34ch;line-height:1.45;margin-top:34px}
+    .hero-line b{color:var(--ink);font-weight:800}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+    .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:15px 22px;border-radius:999px;transition:.22s;font-weight:500}
+    .btn.solid{background:var(--ink);color:var(--bg)}
+    .btn.solid:hover{background:var(--blue)}
+    .btn.ghost{border:1.5px solid var(--ink);color:var(--ink)}
+    .btn.ghost:hover{background:var(--ink);color:var(--bg)}
 
-    /* ── SEASON REFERENCES (static editorial index) ── */
-    .refs{padding:96px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .refs-kick{font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--signal);margin-bottom:28px}
-    .refs-line{font-family:var(--disp);font-weight:500;font-size:clamp(1.9rem,5.4vw,4.6rem);line-height:1.08;letter-spacing:-.015em;color:var(--ink);max-width:20ch}
-    .refs-line span{color:var(--signal)}
+    /* la cabina: dos hosts con la onda entre ellos, como el logo */
+    .booth{position:relative}
+    .booth-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end}
+    .mic{position:relative;margin:0}
+    .mic .ph{aspect-ratio:4/5;overflow:hidden;border-radius:18px;border:3px solid var(--ink);background:var(--bg-2)}
+    .mic .ph img{width:100%;height:100%;object-fit:cover;display:block}
+    .mic.a .ph{box-shadow:10px 10px 0 var(--coral)}
+    .mic.b{transform:translateY(-38px)}
+    .mic.b .ph{box-shadow:10px 10px 0 var(--blue)}
+    .mic figcaption{margin-top:18px;font-family:var(--disp);font-weight:800;font-size:1.02rem;line-height:1.15;color:var(--ink)}
+    .mic figcaption small{display:block;font-family:var(--mono);font-weight:400;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;margin-top:6px}
+    .mic.a small{color:var(--coral-t)}
+    .mic.b small{color:var(--blue)}
 
-    /* ── WebGL atmosphere — now a GLOBAL reactive field behind the WHOLE page ── */
-    #atmo{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block;pointer-events:none}
-    .mast-kicker{position:relative;z-index:2}
+    /* onda de conversación: habla uno, contesta el otro */
+    .wave{display:flex;align-items:center;justify-content:center;gap:5px;height:74px;margin-top:26px}
+    .wave i{display:block;width:7px;border-radius:4px;height:100%;transform-origin:center;transform:scaleY(.18)}
+    .wave i.c{background:var(--coral);animation:talkA 3.2s ease-in-out infinite}
+    .wave i.b{background:var(--blue);animation:talkB 3.2s ease-in-out infinite}
+    .wave .joint{width:14px;height:5px;border-radius:3px;background:var(--ink);opacity:.25}
+    @keyframes talkA{0%,45%{transform:scaleY(var(--h,.6))}50%,95%{transform:scaleY(.14)}100%{transform:scaleY(var(--h,.6))}}
+    @keyframes talkB{0%,45%{transform:scaleY(.14)}50%,95%{transform:scaleY(var(--h,.6))}100%{transform:scaleY(.14)}}
 
-    /* ── SECTION SHELL ── */
+    /* ── TEMAS — el único corte oscuro de la página: lista editorial que se abre ── */
+    .topics{padding:104px 0 96px;background:var(--ink);color:var(--bg);position:relative;z-index:2}
+    .topics .meta{color:rgba(253,249,239,.72);margin-bottom:34px}
+    .tlist{list-style:none;border-top:1px solid rgba(253,249,239,.16)}
+    .tlist li{border-bottom:1px solid rgba(253,249,239,.16)}
+    .tlist button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:48px 1fr auto;gap:24px;align-items:baseline;padding:22px 4px}
+    .tlist .no{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;color:rgba(253,249,239,.6)}
+    .tlist .tt{font-family:var(--disp);font-weight:900;font-size:clamp(1.7rem,4.6vw,4rem);line-height:1;letter-spacing:-.015em;transition:color .3s,transform .4s cubic-bezier(.2,.7,.3,1)}
+    .tlist .ic{font-family:var(--disp);font-weight:800;font-size:1.6rem;line-height:1;transition:transform .35s;color:rgba(253,249,239,.6)}
+    .tlist li:nth-child(odd) button:hover .tt,.tlist li:nth-child(odd).open .tt{color:var(--coral)}
+    .tlist li:nth-child(even) button:hover .tt,.tlist li:nth-child(even).open .tt{color:#6FA2FF}
+    .tlist button:hover .tt{transform:translateX(12px)}
+    .tlist li.open .ic{transform:rotate(45deg)}
+    .tlist .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+    .tlist li.open .ans{grid-template-rows:1fr}
+    .tlist .ans>div{overflow:hidden}
+    .tlist .ans p{padding:0 4px 26px 76px;max-width:64ch;color:rgba(253,249,239,.82);font-size:1.02rem;line-height:1.75}
+    .tlist button:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+
+    /* ── SECCIONES ── */
     section{position:relative;z-index:2}
     .sec-tag{display:flex;align-items:center;gap:16px;margin-bottom:40px}
-    .sec-tag .n{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--signal)}
-    .sec-tag .bar{flex:1;height:1px;background:var(--line)}
+    .sec-tag .n{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--coral-t)}
+    .sec-tag .bar{flex:1;height:2px;background:var(--ink);opacity:.14;border-radius:2px}
 
-    /* ── PREMISE ── */
+    /* ── EL SHOW ── */
     .premise{padding:120px 0;border-bottom:1px solid var(--line)}
     .premise-grid{display:grid;grid-template-columns:1.55fr .9fr;gap:72px;align-items:start}
-    .premise h2{font-family:var(--disp);font-weight:400;font-size:clamp(2.1rem,4.4vw,3.7rem);line-height:1.08;letter-spacing:-.01em;margin-bottom:34px}
-    .premise h2 em{font-style:italic;color:var(--signal)}
-    .premise p{color:var(--body);font-size:1.02rem;line-height:1.95;margin-bottom:20px;max-width:54ch}
-    .premise p b{color:var(--ink);font-weight:500}
-    /* liner credits sidebar */
-    .credits{border:1px solid var(--line);border-radius:3px}
+    .premise h2{font-family:var(--disp);font-weight:900;font-size:clamp(2.2rem,4.6vw,3.9rem);line-height:1.02;letter-spacing:-.015em;margin-bottom:34px}
+    .premise h2 .c{color:var(--coral-t)}
+    .premise h2 .b{color:var(--blue)}
+    .premise p{color:var(--body);font-size:1.04rem;line-height:1.9;margin-bottom:20px;max-width:56ch}
+    .premise p b{color:var(--ink);font-weight:700}
+    .credits{border:2px solid var(--ink);border-radius:14px;background:#fff;overflow:hidden}
     .credits .row{display:flex;justify-content:space-between;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line)}
     .credits .row:last-child{border-bottom:none}
     .credits .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
-    .credits .v{font-size:.84rem;color:var(--ink);text-align:right;font-weight:500}
-    .credits .v.signal{color:var(--signal)}
+    .credits .v{font-size:.86rem;color:var(--ink);text-align:right;font-weight:700}
 
-    /* ── TRACKLIST ── */
-    .side{padding:118px 0;position:relative}
-    .side-rot{position:absolute;left:-4px;top:118px;font-family:var(--mono);font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--faint);writing-mode:vertical-rl;transform:rotate(180deg)}
-    .track{
-      display:grid;grid-template-columns:130px 1fr auto;gap:36px;align-items:center;
-      padding:30px 24px 30px 0;border-bottom:1px solid var(--line);
-      text-decoration:none;color:inherit;position:relative;transition:background .3s ease;
-    }
+    /* ── EPISODIOS ── */
+    .side{padding:118px 0}
+    .next{display:grid;grid-template-columns:auto 1fr auto;gap:30px;align-items:center;padding:30px 32px;border:2px solid var(--ink);border-radius:18px;background:#fff;margin-bottom:64px;box-shadow:8px 8px 0 var(--ink)}
+    .next .num{font-family:var(--disp);font-weight:900;font-size:4.2rem;line-height:.8;color:var(--ink)}
+    .next .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--coral-t);margin-bottom:8px}
+    .next .t{font-family:var(--disp);font-weight:800;font-size:clamp(1.3rem,2.4vw,1.8rem);line-height:1.15}
+    .next .d{color:var(--body);font-size:.95rem;margin-top:8px;max-width:52ch}
+    .arch-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+    .arch-head h3{font-family:var(--disp);font-weight:800;font-size:1.4rem}
+    .arch-head a{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:2px}
+    .track{display:grid;grid-template-columns:110px 1fr auto;gap:32px;align-items:center;padding:26px 20px 26px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;position:relative;transition:background .3s ease}
     .track:first-of-type{border-top:1px solid var(--line)}
-    .track::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--signal);transform:scaleY(0);transform-origin:top;transition:transform .35s ease}
-    .track:hover{background:linear-gradient(90deg,var(--signal-dim),transparent 60%)}
-    .track:hover::before{transform:scaleY(1)}
-    .track:hover .t-num{color:var(--signal);opacity:1}
-    .track:hover .t-title{color:var(--signal-hi)}
-    .track:hover .t-go{color:var(--signal);transform:translateX(5px)}
-    .track:focus-visible{outline:2px solid var(--signal);outline-offset:4px}
-    .t-num{font-family:var(--disp);font-size:4.6rem;line-height:.78;color:var(--ink);opacity:.14;transition:.3s;padding-left:18px}
-    .t-ref{font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);margin-bottom:9px}
-    .t-title{font-family:var(--disp);font-weight:500;font-size:1.22rem;line-height:1.32;margin-bottom:10px;transition:color .3s}
-    .t-quote{font-family:var(--disp);font-style:italic;font-size:.92rem;color:var(--body);line-height:1.55;max-width:62ch}
+    .track:hover{background:linear-gradient(90deg,var(--blue-dim),transparent 65%)}
+    .track:hover .t-num{color:var(--blue);opacity:1}
+    .track:hover .t-go{color:var(--blue);transform:translateX(5px)}
+    .t-num{font-family:var(--disp);font-weight:900;font-size:3.6rem;line-height:.8;color:var(--ink);opacity:.16;transition:.3s;padding-left:14px}
+    .t-ref{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--coral-t);margin-bottom:8px}
+    .t-title{font-family:var(--disp);font-weight:800;font-size:1.2rem;line-height:1.3;margin-bottom:8px}
+    .t-quote{font-style:italic;font-size:.92rem;color:var(--body);line-height:1.55;max-width:62ch}
     .t-right{display:flex;align-items:center;gap:18px;flex-shrink:0}
-    .t-listen{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+    .t-listen{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
     .t-go{font-size:1.3rem;color:var(--body);transition:.3s}
 
-    /* ── QUOTE SPREAD ── */
-    .spread{padding:130px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(16,15,12,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);text-align:center}
-    .spread .mk{font-family:var(--disp);font-size:5rem;line-height:0;color:var(--signal);opacity:.5;display:block;height:32px}
-    .spread blockquote{font-family:var(--disp);font-style:italic;font-weight:300;font-size:clamp(1.6rem,4vw,2.9rem);line-height:1.42;max-width:18ch;margin:18px auto 28px;letter-spacing:-.01em}
-    @media(min-width:760px){.spread blockquote{max-width:24ch}}
-    .spread blockquote em{font-style:normal;color:var(--signal);font-weight:400}
+    /* ── CITA ── */
+    .spread{padding:150px 0;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .spread .mk{display:inline-block;font-family:var(--disp);font-weight:900;font-size:7rem;line-height:.6;height:52px;color:var(--coral)}
+    .spread blockquote{font-family:var(--disp);font-weight:900;font-size:clamp(1.9rem,4.8vw,3.9rem);line-height:1.08;max-width:20ch;margin:0 auto 28px;letter-spacing:-.02em;will-change:transform}
+    .spread blockquote em{font-style:normal;color:var(--blue)}
     .spread cite{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);font-style:normal}
-    .spread cite b{color:var(--signal);font-weight:500}
 
-    /* ── LISTEN ── */
+    /* ── QUIÉNES SOMOS ── */
+    .hosts{padding:120px 0;border-bottom:1px solid var(--line)}
+    .hosts-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+    .host{display:grid;grid-template-columns:170px 1fr;gap:28px;align-items:start}
+    .host .ph{aspect-ratio:4/5;border-radius:14px;overflow:hidden;border:3px solid var(--ink)}
+    .host.a .ph{box-shadow:7px 7px 0 var(--coral)}
+    .host.b .ph{box-shadow:7px 7px 0 var(--blue)}
+    .host .ph img{width:100%;height:100%;object-fit:cover;display:block}
+    .host h3{font-family:var(--disp);font-weight:900;font-size:clamp(1.6rem,2.4vw,2.1rem);line-height:1.04;margin-bottom:8px}
+    .host .role{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:20px}
+    .host.a .role{color:var(--coral-t)}
+    .host.b .role{color:var(--blue)}
+    .host p{color:var(--body);font-size:.98rem;line-height:1.85;margin-bottom:14px}
+    .host p b{color:var(--ink);font-weight:700}
+    .host-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+    .host-tags span{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border:1.5px solid var(--line-2);padding:6px 11px;border-radius:999px}
+    .host .li{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:2px}
+    .host .li svg{width:13px;height:13px}
+
+    /* ── ESCUCHAR ── */
     .listen{padding:120px 0;border-bottom:1px solid var(--line)}
     .listen-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-    .listen h2{font-family:var(--disp);font-weight:400;font-size:clamp(1.9rem,3.4vw,2.8rem);line-height:1.1;margin-bottom:30px}
-    .listen h2 em{font-style:italic;color:var(--signal)}
-    .embed{border-radius:5px;overflow:hidden;border:1px solid var(--line)}
+    .listen h2{font-family:var(--disp);font-weight:900;font-size:clamp(2rem,3.4vw,2.9rem);line-height:1.05;margin-bottom:30px}
+    .listen h2 .c{color:var(--coral-t)}
+    .embed{border-radius:14px;overflow:hidden;border:2px solid var(--ink)}
     .plat{display:flex;flex-direction:column;gap:10px}
-    .plat a{display:flex;align-items:center;gap:15px;padding:15px 20px;border:1px solid var(--line);border-radius:2px;text-decoration:none;color:var(--ink);font-size:.85rem;font-weight:500;transition:.22s}
-    .plat a:hover{border-color:var(--signal);color:var(--signal);background:var(--signal-dim);transform:translateX(4px)}
+    .plat a{display:flex;align-items:center;gap:15px;padding:16px 20px;border:1.5px solid var(--line-2);border-radius:14px;text-decoration:none;color:var(--ink);font-size:.9rem;font-weight:700;background:#fff;transition:.22s}
+    .plat a:hover{border-color:var(--ink);transform:translateX(4px);box-shadow:4px 4px 0 var(--blue)}
     .plat svg{width:18px;height:18px;flex-shrink:0}
-    .plat .pm{margin-left:auto;font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;color:var(--faint)}
+    .plat .pm{margin-left:auto;font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;color:var(--faint);font-weight:400}
 
-    /* ── HOST / CREDITS ── */
-    .host{padding:120px 0}
-    .host-grid{display:grid;grid-template-columns:330px 1fr;gap:72px;align-items:start}
-    .host-photo{position:relative}
-    .host-photo .frame{aspect-ratio:4/5;border:1px solid var(--line);overflow:hidden;background:var(--bg-2);border-radius:2px}
-    .host-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.3) contrast(1.05)}
-    .host-photo .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-size:9rem;color:var(--signal);opacity:.14}
-    .host-photo::after{content:'BTQ';position:absolute;bottom:14px;left:14px;font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--signal);background:rgba(14,17,19,.7);padding:5px 9px;border-radius:2px}
-    .host h2{font-family:var(--disp);font-weight:400;font-size:clamp(2rem,3.4vw,3rem);line-height:1.08;margin-bottom:8px}
-    .host h2 em{font-style:italic;color:var(--signal)}
-    .host .role{font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:30px}
-    .host p{color:var(--body);font-size:1rem;line-height:1.95;margin-bottom:18px;max-width:58ch}
-    .host p b{color:var(--ink);font-weight:500}
-    .host-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
-    .host-tags span{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--body);border:1px solid var(--line);padding:6px 13px;border-radius:1px}
-
-    /* ── CONTACT ── */
-    .contact{padding:118px 0 30px;border-top:1px solid var(--line)}
+    /* ── CONTACTO ── */
+    .contact{padding:118px 0 40px}
     .contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:72px;align-items:start}
-    .contact .kicker{font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:16px}
-    .contact h2{font-family:var(--disp);font-weight:400;font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.08;margin-bottom:16px}
-    .contact h2 em{font-style:italic;color:var(--signal)}
-    .contact .lead{color:var(--body);font-size:1rem;line-height:1.9;max-width:40ch;margin-bottom:24px}
+    .contact .kicker-s{font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--coral-t);margin-bottom:16px}
+    .contact h2{font-family:var(--disp);font-weight:900;font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.05;margin-bottom:16px}
+    .contact .lead{color:var(--body);font-size:1rem;line-height:1.85;max-width:40ch;margin-bottom:24px}
     .contact .alt{font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;color:var(--faint)}
-    .contact .alt a{color:var(--signal);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
-    .contact .alt a:hover{color:var(--signal-hi)}
+    .contact .alt a{color:var(--blue);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
     .c-social{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-    .c-social a{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--body);text-decoration:none;border:1px solid var(--line);border-radius:2px;padding:9px 14px;transition:.2s}
-    .c-social a:hover{border-color:var(--signal);color:var(--signal);background:var(--signal-dim)}
-    .c-social svg{width:15px;height:15px;flex-shrink:0}
-    .cform{display:flex;flex-direction:column;gap:20px}
+    .c-social a{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1.5px solid var(--line-2);border-radius:999px;padding:9px 15px;transition:.2s}
+    .c-social a:hover{border-color:var(--ink);background:var(--ink);color:var(--bg)}
+    .c-social svg{width:14px;height:14px;flex-shrink:0}
+    .cform{display:flex;flex-direction:column;gap:20px;background:#fff;border:2px solid var(--ink);border-radius:18px;padding:30px}
     .cform .frow{display:grid;grid-template-columns:1fr 1fr;gap:20px}
     .cform label{display:flex;flex-direction:column;gap:8px;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-    .cform input,.cform textarea{background:transparent;border:none;border-bottom:1px solid var(--line-2);color:var(--ink);font-family:var(--body-f);font-size:.95rem;padding:10px 0;transition:border-color .22s;resize:vertical}
-    .cform input::placeholder,.cform textarea::placeholder{color:var(--faint)}
-    .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--signal)}
-    .cform button{align-self:flex-start;margin-top:6px;background:var(--signal);color:var(--bg);border:none;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding:15px 30px;border-radius:2px;cursor:pointer;transition:background .22s}
-    .cform button:hover{background:var(--signal-hi)}
+    .cform input,.cform textarea{background:transparent;border:none;border-bottom:1.5px solid var(--line-2);color:var(--ink);font-family:var(--body-f);font-size:1rem;padding:10px 0;transition:border-color .22s;resize:vertical}
+    .cform input::placeholder,.cform textarea::placeholder{color:#8A8CA0}
+    .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--blue)}
+    .cform button{align-self:flex-start;margin-top:6px;background:var(--coral);color:var(--ink);border:none;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding:15px 28px;border-radius:999px;cursor:pointer;transition:background .22s}
+    .cform button:hover{background:var(--ink);color:var(--bg)}
     .cform button:disabled{opacity:.5;cursor:default}
     .fstatus{font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;min-height:1.1em;margin-top:2px}
-    .fstatus.ok{color:var(--signal)}
-    .fstatus.err{color:#d98a6a}
+    .fstatus.ok{color:var(--blue)}
+    .fstatus.err{color:var(--coral-t)}
 
-    /* ── COLOPHON ── */
-    footer{border-top:1px solid var(--line);padding:64px 0 40px;background:var(--bg)}
+    /* ── PIE ── */
+    footer{padding:64px 0 40px;background:var(--ink);color:var(--bg);margin-top:80px}
     .colo{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:48px}
-    .colo h3{font-family:var(--disp);font-size:2.2rem;letter-spacing:.12em;margin-bottom:12px}
-    .colo h3 i{color:var(--signal);font-style:normal}
-    .colo p{color:var(--body);font-size:.86rem;line-height:1.7;max-width:38ch}
-    .colo .ct{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
-    .colo a.mail{font-family:var(--disp);font-style:italic;color:var(--signal);text-decoration:none;font-size:1rem;border-bottom:1px solid var(--line-2);padding-bottom:3px}
-    .colo a.mail:hover{color:var(--signal-hi)}
+    .colo h3{font-family:var(--disp);font-weight:900;font-size:2rem;letter-spacing:.02em;margin-bottom:12px;line-height:1}
+    .colo p{color:rgba(253,249,239,.78);font-size:.88rem;line-height:1.7;max-width:38ch}
+    .colo .ct{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:14px}
+    .colo a.mail{font-family:var(--disp);font-weight:700;color:var(--bg);text-decoration:none;font-size:1.02rem;border-bottom:1.5px solid var(--coral);padding-bottom:3px}
     .colo .soc{display:flex;flex-direction:column;gap:9px}
-    .colo .soc a{color:var(--body);text-decoration:none;font-size:.84rem;display:flex;align-items:center;gap:10px;transition:.2s}
-    .colo .soc a:hover{color:var(--signal)}
+    .colo .soc a{color:rgba(253,249,239,.85);text-decoration:none;font-size:.86rem;display:flex;align-items:center;gap:10px;transition:.2s}
+    .colo .soc a:hover{color:#fff}
     .colo .soc svg{width:15px;height:15px}
-    .colo-base{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:24px;border-top:1px solid var(--line);flex-wrap:wrap}
-    .colo-base p{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;color:var(--faint)}
-    .colo-base a{color:var(--signal);text-decoration:none}
+    .colo-base{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:24px;border-top:1px solid rgba(253,249,239,.16);flex-wrap:wrap}
+    .colo-base p{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;color:rgba(253,249,239,.7)}
+    .colo-base a{color:var(--bg);text-decoration:none}
 
-    /* ── REVEAL — GSAP-driven. No CSS hidden state on purpose: if the CDN
-       libs fail or reduced-motion is on, content still shows (graceful). ── */
-    .mast{overflow:hidden}
-
-    /* ── CUSTOM CURSOR (agency signal · pointer:fine only) ── */
+    /* ── CURSOR (solo puntero fino) ── */
     @media(pointer:fine){
-      body.cursor-on, body.cursor-on a, body.cursor-on button{cursor:none}
-      .cur-dot{position:fixed;top:0;left:0;width:7px;height:7px;border-radius:50%;background:var(--signal);z-index:90;pointer-events:none;transform:translate(-50%,-50%)}
-      .cur-ring{position:fixed;top:0;left:0;width:34px;height:34px;border:1px solid var(--signal);border-radius:50%;z-index:90;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s ease,height .25s ease,background .25s ease;mix-blend-mode:difference}
-      .cur-ring.hover{width:60px;height:60px;background:var(--signal-dim)}
-      .cur-ring.label{width:92px;height:92px;background:var(--signal);mix-blend-mode:normal;border-color:var(--signal)}
+      body.cursor-on,body.cursor-on a,body.cursor-on button{cursor:none}
+      .cur-dot{position:fixed;top:0;left:0;width:8px;height:8px;border-radius:50%;background:var(--coral);z-index:90;pointer-events:none;transform:translate(-50%,-50%)}
+      .cur-ring{position:fixed;top:0;left:0;width:34px;height:34px;border:1.5px solid var(--ink);border-radius:50%;z-index:90;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s ease,height .25s ease,background .25s ease}
+      .cur-ring.hover{width:58px;height:58px;background:var(--coral-dim)}
+      .cur-ring.label{width:92px;height:92px;background:var(--ink);border-color:var(--ink)}
       .cur-label{position:fixed;top:0;left:0;z-index:91;pointer-events:none;transform:translate(-50%,-50%);font-family:var(--mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bg);opacity:0;transition:opacity .2s}
       .cur-label.show{opacity:1}
     }
 
-    /* ── TAP / CLICK FEEDBACK — signal ripple wherever you touch ── */
-    .ripple{position:fixed;z-index:4;pointer-events:none;border:1px solid var(--signal);border-radius:50%;transform:translate(-50%,-50%);mix-blend-mode:screen;will-change:width,height,opacity}
-    .ripple.go{animation:ripple .62s cubic-bezier(.2,.7,.3,1) forwards}
-    @keyframes ripple{from{width:8px;height:8px;opacity:.75}to{width:180px;height:180px;opacity:0}}
-
     /* ── RESPONSIVE ── */
     @media(max-width:980px){
-      .premise-grid,.listen-grid,.host-grid,.colo,.contact-grid{grid-template-columns:1fr;gap:44px}
-      .host-photo .frame{max-width:300px}
-      .side-rot{display:none}
+      .hero{grid-template-columns:1fr;gap:48px;min-height:auto;padding-top:120px}
+      .premise-grid,.listen-grid,.contact-grid,.colo,.hosts-grid{grid-template-columns:1fr;gap:48px}
       .cform .frow{grid-template-columns:1fr}
     }
     @media(max-width:680px){
-      .wrap,.mast{padding-left:22px;padding-right:22px}
-      .title .ln.two{-webkit-text-stroke-width:1px;text-stroke-width:1px}
-      .track{grid-template-columns:64px 1fr;gap:18px;padding-right:0}
-      .t-num{font-size:2.6rem;padding-left:0}
+      .wrap,.hero{padding-left:16px;padding-right:16px}
+      .mic.b{transform:translateY(-22px)}
+      .mic .ph{border-radius:14px}
+      .mic.a .ph,.mic.b .ph{box-shadow:6px 6px 0 var(--coral)}
+      .mic.b .ph{box-shadow:6px 6px 0 var(--blue)}
+      .host{grid-template-columns:1fr;gap:22px}
+      .host .ph{max-width:210px}
+      .next{grid-template-columns:1fr;gap:14px;padding:24px 22px;box-shadow:6px 6px 0 var(--ink)}
+      .next .num{font-size:3rem}
+      .track{grid-template-columns:62px 1fr;gap:16px;padding-right:0}
+      .t-num{font-size:2.3rem;padding-left:0}
       .t-right{display:none}
-      .premise,.side,.listen,.host{padding:80px 0}
-      .spread{padding:90px 0}
+      .premise,.side,.listen,.hosts{padding:80px 0}
+      .topics,.spread{padding:76px 0}
+      .cform{padding:22px 18px}
+      .tlist button{grid-template-columns:34px 1fr auto;gap:12px;padding:18px 0}
+      .tlist .ans p{padding:0 0 22px 46px}
+      .tlist button:hover .tt{transform:none}
     }
 
     @media(prefers-reduced-motion:reduce){
       *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
       .rv,.stag>*{opacity:1!important;transform:none!important}
-      .marq-row{animation:none}
-      .title .ln{transform:none!important}
+      .wave i{transform:scaleY(var(--h,.6))!important}
       .ripple{display:none}
     }
   </style>
 </head>
 <body>
 
-<div class="grain" aria-hidden="true"></div>
-<canvas id="atmo" aria-hidden="true"></canvas>
+<canvas id="field" aria-hidden="true"></canvas>
 
-<!-- TOP BAR -->
+<!-- BARRA -->
 <header id="bar">
-  <a href="#top" class="cat">BTQ<i>·</i></a>
-  <span class="top-mid">Gestión · Calidad · Liderazgo</span>
+  <a href="#top" class="brand" aria-label="Behind the Queue, inicio"><img src="btq-t3-logo.png" alt="" width="42" height="42"><span>BEHIND THE QUEUE</span></a>
   <div class="bar-right">
-    <a href="/episodios" class="bar-contact">Episodios</a>
-    <a href="#contacto" class="bar-contact">Contacto</a>
-    <a href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP" target="_blank" rel="noopener" class="onair"><span class="led"></span>On Air</a>
+    <a href="/episodios" class="bar-link">Episodios</a>
+    <a href="#hosts" class="bar-link hide-sm">Quiénes somos</a>
+    <a href="#contacto" class="bar-link hide-sm">Contacto</a>
+    <a href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP" target="_blank" rel="noopener" class="pill"><span class="led"></span>En vivo</a>
   </div>
 </header>
 
-<!-- MASTHEAD -->
-<section class="mast" id="top">
-  <div class="mast-kicker rv">
-    <span class="meta"><b>Temporada</b> 2026</span>
-    <span class="rule"></span>
-    <span class="meta">Podcast · Gestión, Calidad &amp; Liderazgo · LATAM</span>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div>
+    <div class="kicker rv">
+      <span class="meta"><b>Temporada 3</b> de un podcast sobre la industria BPO</span>
+    </div>
+    <h1 class="title" aria-label="Behind the Queue">
+      <span class="l1">Behind</span>
+      <span class="l2"><span class="the">The</span>Queue</span>
+    </h1>
+    <p class="hero-line rv">Dos que llevan más de quince años en el call center se sientan a conversar, <b>sin guion</b>, de lo que de verdad pasa detrás de la cola.</p>
+    <div class="hero-cta rv">
+      <a class="btn solid" href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP" target="_blank" rel="noopener">Escuchar en Spotify →</a>
+      <a class="btn ghost" href="#hosts">Conoce a los hosts</a>
+    </div>
   </div>
 
-  <h1 class="title" aria-label="Behind the Queue">
-    <span class="ln one"  data-speed="-1">BEHIND</span>
-    <span class="ln two"  data-speed="1.6">THE</span>
-    <span class="ln three" data-speed="-.6">QUEUE</span>
-  </h1>
-
-  <div class="mast-foot">
-    <p class="mast-line rv">Una <b>ley que alguien formuló</b> y su nombre quedó pegado a ella. Qué explica de verdad, qué le hace a un equipo, y qué hace usted con eso el lunes por la mañana.</p>
-    <a class="latest rv" href="https://open.spotify.com/episode/25xgYzaTZmxEXqTNIu7yQp" target="_blank" rel="noopener">
-      <span class="lt-n">024</span>
-      <span><span class="lt-k">Último episodio · Seguridad psicológica</span><span class="lt-t">Por qué su equipo no le cuenta los problemas</span></span>
-      <span class="lt-a">→</span>
-    </a>
+  <div class="booth rv">
+    <div class="booth-pair">
+      <figure class="mic a">
+        <div class="ph"><img src="host-andres.jpg" alt="Andrés Bermúdez al teléfono en su oficina de Bogotá" width="720" height="900"></div>
+        <figcaption>Andrés Bermúdez<small>Host</small></figcaption>
+      </figure>
+      <figure class="mic b">
+        <div class="ph"><img src="host-alejandro.jpg" alt="Alejandro Aguirre en un piso de call center" width="720" height="900"></div>
+        <figcaption>Alejandro Aguirre<small>Co-host</small></figcaption>
+      </figure>
+    </div>
+    <div class="wave" aria-hidden="true">
+      <i class="c" style="--h:.35"></i><i class="c" style="--h:.7"></i><i class="c" style="--h:1"></i><i class="c" style="--h:.55"></i><i class="c" style="--h:.85"></i><i class="c" style="--h:.4"></i>
+      <span class="joint"></span>
+      <i class="b" style="--h:.45"></i><i class="b" style="--h:.9"></i><i class="b" style="--h:.6"></i><i class="b" style="--h:1"></i><i class="b" style="--h:.7"></i><i class="b" style="--h:.35"></i>
+    </div>
   </div>
 </section>
 
-<!-- SEASON REFERENCES — static editorial index (no carousel) -->
-<section class="refs">
+<!-- TEMAS -->
+<section class="topics">
   <div class="wrap">
-    <p class="refs-kick rv">Sobre la mesa esta temporada</p>
-    <h2 class="refs-line rv">Goodhart, Crosby, Hawthorne, Parkinson, Peter <span>&amp;</span> la teoría de colas.</h2>
+    <h2 class="meta rv">De qué hablamos</h2>
+    <ul class="tlist stag">
+      <li><button type="button" aria-expanded="false"><span class="no">01</span><span class="tt">El primer día en el piso</span><span class="ic" aria-hidden="true">+</span></button>
+        <div class="ans"><div><p>La capacitación, los primeros turnos, la primera llamada que sale mal. Lo que nadie le cuenta a quien entra a un call center.</p></div></div></li>
+      <li><button type="button" aria-expanded="false"><span class="no">02</span><span class="tt">Ser bilingüe en el BPO</span><span class="ic" aria-hidden="true">+</span></button>
+        <div class="ans"><div><p>Las oportunidades y las trampas de trabajar en dos idiomas, y cómo se lideran equipos bilingües y de habla hispana.</p></div></div></li>
+      <li><button type="button" aria-expanded="false"><span class="no">03</span><span class="tt">De agente a líder</span><span class="ic" aria-hidden="true">+</span></button>
+        <div class="ans"><div><p>El salto de atender llamadas a dirigir a quienes las atienden. Qué cambia, qué se aprende a los golpes y qué carrera hay de verdad en esta industria.</p></div></div></li>
+      <li><button type="button" aria-expanded="false"><span class="no">04</span><span class="tt">La IA en el call center</span><span class="ic" aria-hidden="true">+</span></button>
+        <div class="ans"><div><p>Una herramienta que facilita el trabajo, no un reemplazo de la gente. Qué ya está cambiando en la operación y qué no va a cambiar.</p></div></div></li>
+      <li><button type="button" aria-expanded="false"><span class="no">05</span><span class="tt">Los mitos del call center</span><span class="ic" aria-hidden="true">+</span></button>
+        <div class="ans"><div><p>Los estereotipos que se repiten sobre esta industria, contrastados con lo que vivimos adentro durante más de quince años.</p></div></div></li>
+    </ul>
   </div>
 </section>
 
-<!-- PREMISE -->
+<!-- EL SHOW -->
 <section class="premise">
   <div class="wrap">
-    <div class="sec-tag rv"><span class="n">A1 · El show</span><span class="bar"></span></div>
+    <div class="sec-tag rv"><span class="n">01 El show</span><span class="bar"></span></div>
     <div class="premise-grid">
       <div>
-        <h2 class="rv">No es teoría de management.<br>Es <em>la teoría, con la factura adjunta.</em></h2>
-        <p class="rv"><b>Behind the Queue</b> es un podcast en español para quienes dirigen equipos y operaciones. Cada episodio toma una ley, una teoría o un principio real de gestión y lo baja al piso: qué significa cuando hay gente, plata y un lunes de por medio.</p>
-        <p class="rv">Es Goodhart explicando por qué su tablero le miente. Es Crosby calculando lo que cuesta no invertir en calidad. Es Hawthorne mostrando que la gente rinde distinto cuando sabe que la miran.</p>
-        <p class="rv">Casos documentados, cifras verificables y decisiones aplicables el lunes por la mañana — desde la trinchera, no desde un libro.</p>
+        <h2 class="rv">Dos voces, una mesa<br>y <span class="c">ningún</span> <span class="b">guion.</span></h2>
+        <p class="rv"><b>Behind the Queue</b> vuelve en su tercera temporada con formato nuevo: una conversación entre dos personas que han vivido la industria BPO desde adentro. Anécdotas, liderazgo, oportunidades de carrera y la realidad de los agentes bilingües, contadas por quienes han estado en el piso.</p>
+        <p class="rv">Hablamos de la IA como una herramienta que ayuda y no reemplaza, y de los estereotipos del call center que ya es hora de desmentir. Didáctico, pero ligero. Serio cuando toca, y con humor el resto del tiempo.</p>
       </div>
       <div class="credits rv">
-        <div class="row"><span class="k">Género</span><span class="v">Gestión / Liderazgo</span></div>
+        <div class="row"><span class="k">Tema</span><span class="v">Industria BPO y call center</span></div>
+        <div class="row"><span class="k">Formato</span><span class="v">Conversación de ~45 min</span></div>
+        <div class="row"><span class="k">Conducen</span><span class="v">Andrés Bermúdez &amp; Alejandro Aguirre</span></div>
         <div class="row"><span class="k">Idioma</span><span class="v">Español</span></div>
-        <div class="row"><span class="k">Audiencia</span><span class="v">Quien dirige equipos · LATAM</span></div>
-        <div class="row"><span class="k">Conduce</span><span class="v signal">Andy Bermúdez</span></div>
-        <div class="row"><span class="k">Frecuencia</span><span class="v">Semanal · T2</span></div>
+        <div class="row"><span class="k">Temporada</span><span class="v">3, en 2026</span></div>
         <div class="row"><span class="k">Desde</span><span class="v">Bogotá, Colombia</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRACKLIST -->
+<!-- EPISODIOS -->
 <section class="side" id="tracklist">
-  <span class="side-rot" aria-hidden="true">Temporada 2026</span>
   <div class="wrap">
-    <div class="sec-tag rv"><span class="n">A2 · Episodios</span><span class="bar"></span></div>
+    <div class="sec-tag rv"><span class="n">02 Episodios</span><span class="bar"></span></div>
+
+    <div class="next rv">
+      <div class="num">01</div>
+      <div>
+        <p class="k">Temporada 3, próximamente</p>
+        <p class="t">La industria BPO en general</p>
+        <p class="d">El arranque de la temporada: qué es de verdad esta industria, quién trabaja en ella y por qué casi nadie la cuenta bien.</p>
+      </div>
+      <span class="pill"><span class="led"></span>Pronto</span>
+    </div>
+
+    <div class="arch-head rv">
+      <h3>Del archivo de la Temporada 2</h3>
+      <a href="/episodios">Todos los episodios →</a>
+    </div>
 
     <div class="stag">
       <a class="track" href="https://open.spotify.com/episode/3FQOeIT8bNTakHNGgBhMMR" target="_blank" rel="noopener">
@@ -427,36 +481,66 @@
         </div>
         <div class="t-right"><span class="t-listen">Escuchar</span><span class="t-go">→</span></div>
       </a>
-
     </div>
   </div>
 </section>
 
-<!-- QUOTE SPREAD -->
+<!-- CITA -->
 <section class="spread">
   <div class="wrap">
     <span class="mk rv" aria-hidden="true">&ldquo;</span>
     <blockquote class="rv">Lo que tienes hoy no va a estar para siempre. <em>Valóralo antes de que se convierta en recuerdo.</em></blockquote>
-    <cite class="rv">EP.011 · <b>Behind the Queue</b></cite>
+    <cite class="rv">Behind the Queue, episodio 11</cite>
   </div>
 </section>
 
-<!-- LISTEN -->
+<!-- QUIÉNES SOMOS -->
+<section class="hosts" id="hosts"><span id="andy"></span>
+  <div class="wrap">
+    <div class="sec-tag rv"><span class="n">03 Quiénes somos</span><span class="bar"></span></div>
+    <div class="hosts-grid">
+      <article class="host a rv">
+        <div class="ph"><img src="host-andres.jpg" alt="Andrés Bermúdez Rodríguez" width="720" height="900" loading="lazy"></div>
+        <div>
+          <h3>Andrés Bermúdez Rodríguez</h3>
+          <p class="role">Host y creador del show</p>
+          <p><b>Ingeniero Industrial</b> con más de 15 años en operaciones de BPO y Contact Center en Latinoamérica. Ha liderado equipos de servicio al cliente, operaciones y calidad en Colombia y la región.</p>
+          <p>Creó Behind the Queue para hablar de la operación como se vive en el piso, no como se cuenta en los libros.</p>
+          <div class="host-tags"><span>Operaciones</span><span>Calidad</span><span>Liderazgo</span><span>Ing. Industrial</span></div>
+          <a class="li" href="https://www.linkedin.com/in/andres-bermudez-rodriguez" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+        </div>
+      </article>
+
+      <article class="host b rv">
+        <div class="ph"><img src="host-alejandro.jpg" alt="Alejandro Aguirre" width="720" height="900" loading="lazy"></div>
+        <div>
+          <h3>Alejandro Aguirre</h3>
+          <p class="role">Co-host desde la Temporada 3</p>
+          <p>Casi diseñador gráfico, casi realizador audiovisual, y desde hace <b>más de 15 años en el mundo del BPO</b>. Líder apasionado, ha dirigido equipos bilingües y de habla hispana en servicio al cliente, retención y ventas.</p>
+          <p>En Behind the Queue trae la mirada de quien ha estado en el piso: las anécdotas, los aciertos y los errores que no salen en ningún manual.</p>
+          <div class="host-tags"><span>Equipos bilingües</span><span>Servicio al cliente</span><span>Retención</span><span>Ventas</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ESCUCHAR -->
 <section class="listen" id="escucha">
   <div class="wrap">
-    <div class="sec-tag rv"><span class="n">B1 · Escuchar</span><span class="bar"></span></div>
+    <div class="sec-tag rv"><span class="n">04 Escuchar</span><span class="bar"></span></div>
     <div class="listen-grid">
       <div>
-        <h2 class="rv">Escucha <em>donde prefieras</em></h2>
+        <h2 class="rv">Escúchanos <span class="c">donde prefieras</span></h2>
         <div class="embed rv">
-          <iframe style="border-radius:5px" src="https://open.spotify.com/embed/show/5figtqa6zJxW1pE1sWJeEP?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Behind the Queue en Spotify"></iframe>
+          <iframe style="display:block" src="https://open.spotify.com/embed/show/5figtqa6zJxW1pE1sWJeEP?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Behind the Queue en Spotify"></iframe>
         </div>
       </div>
       <div>
         <p class="meta rv" style="margin-bottom:20px">Plataformas</p>
         <div class="plat stag">
           <a href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.820-1.740-6.360-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.020zm1.440-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
             Spotify <span class="pm">Show</span>
           </a>
           <a href="https://podcasts.apple.com/us/podcast/behind-the-queue/id1891677775" target="_blank" rel="noopener">
@@ -477,39 +561,14 @@
   </div>
 </section>
 
-<!-- HOST / CREDITS -->
-<section class="host" id="andy">
-  <div class="wrap">
-    <div class="sec-tag rv"><span class="n">B2 · Créditos</span><span class="bar"></span></div>
-    <div class="host-grid">
-      <div class="host-photo rv">
-        <div class="frame">
-          <img src="1000092965.png" alt="Andrés Bermúdez Rodríguez, host de Behind the Queue" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="ph" style="display:none">A</div>
-        </div>
-      </div>
-      <div>
-        <h2 class="rv">Andrés Bermúdez <em>Rodríguez</em></h2>
-        <p class="role rv">Conducido &amp; producido por — Ing. Industrial · 15+ años BPO/CX</p>
-        <p class="rv"><b>Ingeniero Industrial</b> con más de 15 años en operaciones de BPO y Contact Center en Latinoamérica. Ha liderado equipos de servicio al cliente, operaciones y calidad en Colombia y la región.</p>
-        <p class="rv">Behind the Queue nació de una pregunta simple: <b>¿por qué las teorías de gestión que todo el mundo cita casi nunca sobreviven a un lunes en el piso?</b></p>
-        <p class="rv">Cada episodio toma una —Goodhart, Crosby, Hawthorne— y la pone a prueba donde hay gente, plata y consecuencias. Desde la trinchera, no desde un libro.</p>
-        <div class="host-tags stag">
-          <span>Operaciones</span><span>Ingeniería Industrial</span><span>Calidad</span><span>Liderazgo</span><span>LATAM</span><span>Bogotá</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
+<!-- CONTACTO -->
 <section class="contact" id="contacto">
   <div class="wrap">
     <div class="contact-grid">
       <div>
-        <p class="kicker">Contacto</p>
-        <h2>¿Una idea, una <em>colaboración</em>, o salir en el show?</h2>
-        <p class="lead">Escríbele a Behind the Queue. Propuestas de episodio, apariciones como invitado, alianzas — o simplemente para decir hola.</p>
+        <p class="kicker-s">Contacto</p>
+        <h2>¿Una historia del piso, una idea o quieres salir en el show?</h2>
+        <p class="lead">Escríbenos. Anécdotas de call center, propuestas de episodio, apariciones como invitado o alianzas. O simplemente para decir hola.</p>
         <p class="alt">También directo a <a href="mailto:andy@behind-thequeue.com">andy@behind-thequeue.com</a></p>
         <div class="c-social">
           <a href="https://www.instagram.com/behindthequeue84/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z"/></svg> Instagram</a>
@@ -526,7 +585,7 @@
           <label>Nombre<input type="text" name="name" placeholder="Tu nombre" required></label>
           <label>Email<input type="email" name="email" placeholder="tu@correo.com" required></label>
         </div>
-        <label>Mensaje<textarea name="message" rows="4" placeholder="Cuéntame en qué piensas…" required></textarea></label>
+        <label>Mensaje<textarea name="message" rows="4" placeholder="Cuéntanos en qué piensas…" required></textarea></label>
         <button type="submit">Enviar mensaje →</button>
         <p class="fstatus" aria-live="polite"></p>
       </form>
@@ -534,31 +593,30 @@
   </div>
 </section>
 
-<!-- COLOPHON FOOTER -->
+<!-- PIE -->
 <footer>
   <div class="wrap">
     <div class="colo">
       <div>
-        <h3>BEHIND THE QUEUE<i>·</i></h3>
-        <p>Una producción independiente sobre gestión, calidad y liderazgo para quienes dirigen equipos en Latinoamérica.</p>
+        <h3>BEHIND<br>THE QUEUE</h3>
+        <p>Una producción independiente sobre la industria BPO y el call center, conversada desde adentro por Andrés Bermúdez y Alejandro Aguirre.</p>
       </div>
       <div>
         <p class="ct">Contacto</p>
         <a class="mail" href="mailto:andy@behind-thequeue.com">andy@behind-thequeue.com →</a>
-        <p style="margin-top:14px;color:var(--body);font-size:.82rem">Colaboraciones, apariciones en el show, o simplemente para decir hola.</p>
+        <p style="margin-top:14px;font-size:.84rem">Colaboraciones, apariciones en el show, o simplemente para decir hola.</p>
       </div>
       <div>
-        <p class="ct">Síguelo</p>
+        <p class="ct">Síguenos</p>
         <div class="soc">
           <a href="https://www.instagram.com/behindthequeue84/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4z"/></svg> @behindthequeue84</a>
           <a href="https://www.tiktok.com/@behind.the.queue" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg> @behind.the.queue</a>
-          <a href="https://www.linkedin.com/in/andres-bermudez-rodriguez" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Andrés Bermúdez R.</a>
         </div>
       </div>
     </div>
     <div class="colo-base">
-      <p>© 2026 <a href="https://behind-thequeue.com">Behind the Queue</a> · Bogotá, Colombia</p>
-      <p>Podcast semanal · Gestión &amp; Liderazgo · LATAM</p>
+      <p>© 2026 <a href="https://behind-thequeue.com">Behind the Queue</a>, Bogotá, Colombia</p>
+      <p>Un podcast de la industria BPO en Latinoamérica</p>
     </div>
   </div>
 </footer>
@@ -567,12 +625,12 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
 <script>
-  // top bar dock
+  // barra: se acopla al hacer scroll
   const bar = document.getElementById('bar');
-  addEventListener('scroll', () => bar.classList.toggle('docked', scrollY > 80), { passive: true });
+  addEventListener('scroll', () => bar.classList.toggle('docked', scrollY > 40), { passive: true });
 
-  // contact form — AJAX submit to Web3Forms, inline status.
-  // Degrades to a normal POST (Web3Forms success page) if JS is disabled.
+  // formulario — envío AJAX a Web3Forms con estado en línea.
+  // Sin JS cae a un POST normal (página de éxito de Web3Forms).
   const cform = document.querySelector('.cform');
   if (cform) {
     cform.addEventListener('submit', async e => {
@@ -591,14 +649,14 @@
         if (json.success) {
           cform.reset();
           st.className = 'fstatus ok';
-          st.textContent = '¡Gracias! Tu mensaje llegó. Te responderé pronto.';
+          st.textContent = '¡Gracias! Tu mensaje llegó. Te responderemos pronto.';
         } else {
           st.className = 'fstatus err';
-          st.textContent = 'No se pudo enviar. Escríbeme a andy@behind-thequeue.com';
+          st.textContent = 'No se pudo enviar. Escríbenos a andy@behind-thequeue.com';
         }
       } catch (err) {
         st.className = 'fstatus err';
-        st.textContent = 'No se pudo enviar. Escríbeme a andy@behind-thequeue.com';
+        st.textContent = 'No se pudo enviar. Escríbenos a andy@behind-thequeue.com';
       }
       btn.disabled = false;
     });
@@ -606,129 +664,129 @@
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // PREMIUM SCROLL — Lenis (inertia) + GSAP ScrollTrigger (scrubbed motion).
-  // Guarded: if the CDN libs fail or reduced-motion is on, the page is a clean
-  // static editorial layout (content fully visible) — never broken.
+  // temas: lista que se abre (acordeón accesible)
+  document.querySelectorAll('.tlist button').forEach(b => b.addEventListener('click', () => {
+    const li = b.parentElement, open = !li.classList.contains('open');
+    li.classList.toggle('open', open); b.setAttribute('aria-expanded', open);
+  }));
+
+  // energía de voz compartida con el campo: el scroll y el clic la suben
+  const voice = { energy: 0 };
+
+  // Scroll con inercia (Lenis) + movimiento con GSAP. Si las librerías no cargan
+  // o hay reduced-motion, la página queda estática y completa: nunca rota.
   if (window.gsap && window.ScrollTrigger && !reduce) {
     gsap.registerPlugin(ScrollTrigger);
 
     if (window.Lenis) {
-      // syncTouch = momentum-smoothed scrolling on a finger, not the dry native scroll.
-      const lenis = new Lenis({ duration: 1.1, smoothWheel: true, syncTouch: true, touchInertiaMultiplier: 18, touchMultiplier: 1.6 });
-      lenis.on('scroll', ScrollTrigger.update);
+      // syncTouch: con el dedo también hay inercia, no el scroll seco nativo
+      const lenis = new Lenis({ duration: 1.1, smoothWheel: true, syncTouch: true, touchInertiaMultiplier: 18, touchMultiplier: 1.5 });
+      lenis.on('scroll', e => { ScrollTrigger.update(); voice.energy = Math.min(1, voice.energy + Math.abs(e.velocity || 0) * .012); });
       gsap.ticker.add(t => lenis.raf(t * 1000));
       gsap.ticker.lagSmoothing(0);
+    } else {
+      let ly = scrollY;
+      addEventListener('scroll', () => { voice.energy = Math.min(1, voice.energy + Math.abs(scrollY - ly) * .004); ly = scrollY; }, { passive: true });
     }
 
-    // Pinned kinetic masthead: the type splits apart, scales down and fades
-    // as you scroll through the first screen — the signature moment.
-    gsap.timeline({ scrollTrigger: { trigger: '.mast', start: 'top top', end: '+=110%', pin: true, scrub: 1 } })
-      .to('.ln.one',     { xPercent: -16, ease: 'none' }, 0)
-      .to('.ln.two',     { xPercent: 24,  ease: 'none' }, 0)
-      .to('.ln.three',   { xPercent: -8,  ease: 'none' }, 0)
-      .to('.title',      { scale: .8, opacity: .1, ease: 'none' }, 0)
-      .to('.mast-foot',  { yPercent: 70, opacity: 0, ease: 'none' }, 0)
-      .to('.mast-kicker',{ opacity: 0, ease: 'none' }, 0);
+    // entrada del hero
+    gsap.from('.title > span', { yPercent: 40, opacity: 0, duration: 1, stagger: .12, ease: 'power4.out' });
+    gsap.from('.mic', { y: 60, opacity: 0, duration: 1.1, stagger: .15, delay: .25, ease: 'power3.out' });
 
-    // Depth — big track numerals drift against the scroll (parallax layer)
-    gsap.utils.toArray('.t-num').forEach(n => {
-      gsap.fromTo(n, { yPercent: -26 }, { yPercent: 26, ease: 'none',
-        scrollTrigger: { trigger: n.closest('.track'), start: 'top bottom', end: 'bottom top', scrub: true } });
+    // Momento firma (solo escritorio): el hero queda fijo, el título se parte y los
+    // dos micrófonos se separan, como cuando arranca la conversación.
+    gsap.matchMedia().add('(min-width: 981px)', () => {
+      gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: '+=90%', pin: true, scrub: 1 } })
+        .to('.title .l1', { xPercent: -10, ease: 'none' }, 0)
+        .to('.title .l2', { xPercent: 8, ease: 'none' }, 0)
+        .to('.mic.a', { xPercent: -10, rotate: -4, ease: 'none' }, 0)
+        .to('.mic.b', { xPercent: 10, rotate: 4, ease: 'none' }, 0)
+        .to('.wave', { scaleX: 1.5, ease: 'none' }, 0)
+        .to('.hero-line, .hero-cta, .kicker', { opacity: 0, y: -30, ease: 'none' }, 0);
+    });
+    gsap.matchMedia().add('(max-width: 980px)', () => {
+      gsap.to('.mic.a', { xPercent: -4, rotate: -2, ease: 'none', scrollTrigger: { trigger: '.booth', start: 'top 70%', end: 'bottom top', scrub: true } });
+      gsap.to('.mic.b', { xPercent: 4, rotate: 2, ease: 'none', scrollTrigger: { trigger: '.booth', start: 'top 70%', end: 'bottom top', scrub: true } });
     });
 
-    // Reveals — eased, triggered (not the old uniform fade-up)
     gsap.utils.toArray('.rv').forEach(el => {
-      gsap.from(el, { y: 42, opacity: 0, duration: .9, ease: 'power3.out',
+      if (el.closest('.hero')) return;
+      gsap.from(el, { y: 40, opacity: 0, duration: .9, ease: 'power3.out',
         scrollTrigger: { trigger: el, start: 'top 88%' } });
     });
     gsap.utils.toArray('.stag').forEach(g => {
-      gsap.from(g.children, { y: 28, opacity: 0, duration: .7, stagger: .08, ease: 'power3.out',
+      gsap.from(g.children, { y: 26, opacity: 0, duration: .7, stagger: .08, ease: 'power3.out',
         scrollTrigger: { trigger: g, start: 'top 86%' } });
     });
-
-    // Keep the LOWER HALF alive — gentle scrubbed motion so nothing sits static after the hero.
-    gsap.utils.toArray('.refs-line').forEach(el =>
-      gsap.fromTo(el, { xPercent: -3 }, { xPercent: 3, ease: 'none',
-        scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } }));
-    gsap.fromTo('.spread blockquote', { scale: .92 }, { scale: 1.05, ease: 'none',
-      scrollTrigger: { trigger: '.spread', start: 'top bottom', end: 'bottom top', scrub: true } });
     gsap.utils.toArray('.sec-tag .bar').forEach(b =>
       gsap.fromTo(b, { scaleX: 0 }, { scaleX: 1, transformOrigin: 'left center', ease: 'none',
         scrollTrigger: { trigger: b, start: 'top 94%', end: 'top 64%', scrub: true } }));
-    gsap.fromTo('.host-photo', { yPercent: -7 }, { yPercent: 7, ease: 'none',
-      scrollTrigger: { trigger: '.host', start: 'top bottom', end: 'bottom top', scrub: true } });
+    // números del archivo derivan contra el scroll; la cita crece
+    gsap.utils.toArray('.t-num').forEach(n => gsap.fromTo(n, { yPercent: -22 }, { yPercent: 22, ease: 'none',
+      scrollTrigger: { trigger: n.closest('.track'), start: 'top bottom', end: 'bottom top', scrub: true } }));
+    gsap.fromTo('.spread blockquote', { scale: .93 }, { scale: 1.04, ease: 'none',
+      scrollTrigger: { trigger: '.spread', start: 'top bottom', end: 'bottom top', scrub: true } });
   }
 
-  // WebGL atmosphere behind the masthead — flowing dark/ember field for depth.
-  // Raw WebGL (no Three.js): light, fails gracefully to the CSS background.
+  // LÍNEA ABIERTA — la onda global. Canvas 2D, barras verticales sobre una línea
+  // horizontal; coral a la izquierda, azul a la derecha. Sube cerca del puntero,
+  // con la velocidad del scroll y con un "golpe de voz" al hacer clic.
   (function(){
-    const cv = document.getElementById('atmo'); if (!cv) return;
-    const gl = cv.getContext('webgl') || cv.getContext('experimental-webgl'); if (!gl) return;
-    const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const vs = `attribute vec2 p; void main(){ gl_Position = vec4(p,0.0,1.0); }`;
-    const fs = `
-      precision highp float;
-      uniform vec2 uRes; uniform float uTime; uniform vec2 uMouse; uniform vec3 uClick;
-      float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
-      float noise(vec2 p){vec2 i=floor(p),f=fract(p);float a=hash(i),b=hash(i+vec2(1.,0.)),c=hash(i+vec2(0.,1.)),d=hash(i+vec2(1.,1.));vec2 u=f*f*(3.-2.*f);return mix(mix(a,b,u.x),mix(c,d,u.x),u.y);}
-      float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*noise(p);p*=2.02;a*=.5;}return v;}
-      void main(){
-        vec2 uv=gl_FragCoord.xy/uRes.xy;
-        vec2 p=uv; p.x*=uRes.x/uRes.y; p+=uMouse*0.12;
-        float n=fbm(p*2.1+vec2(uTime*0.025,uTime*0.015));
-        float n2=fbm(p*4.3-uTime*0.012);
-        vec3 bg=vec3(0.055,0.067,0.075);
-        vec3 ember=vec3(0.72,0.26,0.08);
-        float glow=smoothstep(0.40,0.95,n)*0.5+n2*0.10;
-        glow*=smoothstep(1.15,0.0,length(uv-vec2(0.22,0.12)));
-        vec3 col=mix(bg,ember,clamp(glow*0.62,0.,1.));
-        col*=smoothstep(1.35,0.15,length(uv-0.5));
-        float cpulse=uClick.z*smoothstep(0.34,0.0,length(uv-uClick.xy));
-        col+=ember*cpulse*0.75;
-        gl_FragColor=vec4(col,1.0);
-      }`;
-    function sh(t,s){const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return gl.getShaderParameter(o,gl.COMPILE_STATUS)?o:null;}
-    const v=sh(gl.VERTEX_SHADER,vs), f=sh(gl.FRAGMENT_SHADER,fs);
-    if(!v||!f){cv.remove();return;}
-    const pr=gl.createProgram();gl.attachShader(pr,v);gl.attachShader(pr,f);gl.linkProgram(pr);
-    if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){cv.remove();return;}
-    gl.useProgram(pr);
-    const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
-    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
-    const loc=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
-    const uRes=gl.getUniformLocation(pr,'uRes'),uTime=gl.getUniformLocation(pr,'uTime'),uMouse=gl.getUniformLocation(pr,'uMouse'),uClick=gl.getUniformLocation(pr,'uClick');
-    let mouse=[0,0], click=[0,0,0], mt=[0,0];
-    // pointermove covers mouse AND a dragging finger on touch — the field follows you either way
-    addEventListener('pointermove',e=>{mt=[(e.clientX/innerWidth-0.5)*2,(0.5-e.clientY/innerHeight)*2];},{passive:true});
-    addEventListener('pointerdown',e=>{click=[e.clientX/innerWidth,1-e.clientY/innerHeight,1];mt=[(e.clientX/innerWidth-0.5)*2,(0.5-e.clientY/innerHeight)*2];},{passive:true});
-    function size(){const dpr=Math.min(devicePixelRatio||1,1.5);cv.width=Math.max(1,cv.clientWidth*dpr);cv.height=Math.max(1,cv.clientHeight*dpr);gl.viewport(0,0,cv.width,cv.height);}
-    addEventListener('resize',size,{passive:true});size();
-    const t0=performance.now();
+    const cv = document.getElementById('field'); if (!cv) return;
+    const ctx = cv.getContext('2d'); if (!ctx) { cv.remove(); return; }
+    const C = [246,91,81], B = [18,104,252];
+    let W = 0, H = 0, dpr = 1;
+    let px = .5, py = .9, tx = .5, ty = .9, near = 0, nearT = 0;
+    const hits = []; // golpes de voz: {x, t0}
+    function size(){ dpr = Math.min(devicePixelRatio || 1, 1.5); W = cv.clientWidth; H = cv.clientHeight; cv.width = W*dpr; cv.height = H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+    addEventListener('resize', size, { passive: true }); size();
+    addEventListener('pointermove', e => { tx = e.clientX / W; ty = e.clientY / H; nearT = 1; }, { passive: true });
+    addEventListener('pointerdown', e => {
+      tx = e.clientX / W; ty = e.clientY / H; nearT = 1;
+      hits.push({ x: e.clientX / W, t0: performance.now() }); if (hits.length > 6) hits.shift();
+      voice.energy = Math.min(1, voice.energy + .35);
+      if (reduce) return;
+      const r = document.createElement('div');
+      r.className = 'ripple' + (e.clientX > W/2 ? ' r' : '');
+      r.style.left = e.clientX + 'px'; r.style.top = e.clientY + 'px';
+      document.body.appendChild(r);
+      requestAnimationFrame(() => r.classList.add('go'));
+      setTimeout(() => r.remove(), 650);
+    }, { passive: true });
+    // ruido suave y barato (suma de senos) — suficiente para una voz
+    const n = (x, t) => .5 + .22*Math.sin(x*13.1 + t*2.3) + .16*Math.sin(x*29.7 - t*3.1) + .12*Math.sin(x*57.3 + t*4.7);
     function draw(now){
-      mouse[0]+=(mt[0]-mouse[0])*0.06;mouse[1]+=(mt[1]-mouse[1])*0.06; // eased follow = fluid, not jumpy
-      gl.uniform2f(uRes,cv.width,cv.height);gl.uniform1f(uTime,(now-t0)/1000);
-      gl.uniform2f(uMouse,mouse[0],mouse[1]);gl.uniform3f(uClick,click[0],click[1],click[2]);
-      click[2]*=0.93; // click pulse decays each frame
-      gl.drawArrays(gl.TRIANGLES,0,6);if(!rm)requestAnimationFrame(draw);
+      const t = now / 1000;
+      px += (tx - px) * .07; py += (ty - py) * .05; near += (nearT - near) * .05; nearT *= .985;
+      voice.energy *= .95;
+      ctx.clearRect(0, 0, W, H);
+      const gap = W < 700 ? 9 : 11, bw = W < 700 ? 4 : 5;
+      const base = H * (.9 + (py - .9) * .04);         // franja baja: medidor de transmisión, lejos del texto
+      const amp = H * (.035 + .09 * voice.energy);
+      for (let x = gap/2; x < W; x += gap) {
+        const u = x / W;
+        const d = Math.abs(u - px);
+        let a = .18 + .82 * Math.exp(-d*d*38) * (.35 + .65*near);   // se levanta donde está el puntero
+        for (const h of hits) {                                       // el golpe viaja hacia los lados
+          const age = (now - h.t0) / 1000; if (age > 1.4) continue;
+          const front = age * .55;
+          a += 1.4 * Math.exp(-Math.pow((Math.abs(u - h.x) - front) * 22, 2)) * (1 - age/1.4);
+        }
+        const hgt = Math.max(3, amp * a * n(u, t) * 2);
+        const k = Math.min(1, Math.max(0, (u - .38) / .24));          // coral → azul en el centro
+        const col = C.map((c, i) => Math.round(c + (B[i] - c) * k));
+        ctx.fillStyle = 'rgba(' + col.join(',') + ',' + (.08 + .22*Math.min(1, a)) + ')';
+        const r = bw/2;
+        ctx.beginPath();
+        ctx.roundRect ? ctx.roundRect(x - r, base - hgt/2, bw, hgt, r) : ctx.rect(x - r, base - hgt/2, bw, hgt);
+        ctx.fill();
+      }
+      if (!reduce) requestAnimationFrame(draw);
     }
     requestAnimationFrame(draw);
   })();
 
-  // TAP/CLICK FEEDBACK — quick signal ripple at the touch point (works on touch + mouse)
-  (function(){
-    if (reduce) return;
-    addEventListener('pointerdown', e => {
-      const r = document.createElement('div');
-      r.className = 'ripple';
-      r.style.left = e.clientX + 'px';
-      r.style.top  = e.clientY + 'px';
-      document.body.appendChild(r);
-      requestAnimationFrame(() => r.classList.add('go'));
-      setTimeout(() => r.remove(), 700);
-    }, { passive: true });
-  })();
-
-  // custom cursor — refined agency signal, perf-light, pointer:fine only
+  // cursor — solo puntero fino
   (function(){
     if (!matchMedia('(pointer:fine)').matches) return;
     const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
