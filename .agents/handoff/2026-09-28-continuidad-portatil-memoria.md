@@ -20,10 +20,9 @@
 
 ## Notes / Gotchas
 - `start.ps1` terminó con código de salida 128 aunque todos sus pasos imprimieron OK. Causa no investigada.
-- El índice `MEMORY.md` tiene 199 líneas, a una del límite de lectura de 200. Pendiente compactarlo con `/memory-audit`.
+- `/memory-audit` corrió al final de este cierre: `MEMORY.md` reagrupado por tema (199 -> 137 líneas, 194 memorias, todas enlazadas); borradas 3 memorias ya superadas (`project_laptop_hooks_pending`, `project_mpd_episodes_two_parts`, `project_hiresignal_do_deploy`); línea base = 194 memorias / 47 SKILL.md. Una memoria nueva va dentro de su grupo `##`, no al final.
 - La memoria sigue repartida en 3 slugs. El de `repos-kit-skill-creator` solo tiene un archivo propio (`e_drive_absent_post_wipe.md`), que repite `project_two_pcs.md`; no se trajo.
 - No se buscaron marcadores pendientes (`[TODO]`, `USER-COMMENT`): esta sesión no tocó archivos de proyecto.
 
 ## Questions to Answer
-- ¿Correr `/memory-audit` para compactar el índice?
 - ¿Investigar el código 128 de `start.ps1`?
