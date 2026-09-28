@@ -345,6 +345,14 @@ Every page must work on mobile. Core breakpoints:
 
 Always test: navigation collapses to hamburger on mobile, text is readable, CTAs are tappable.
 
+**Mandatory viewport matrix before delivering** (headless browser, `is_mobile`+`has_touch` below
+1400): **360, 390, 768, 820, 1024, 1180, 1440**. Per size, after scrolling the whole page: document
+width must equal the device width (compare against the device width, not `innerWidth`: the mobile
+browser widens the layout viewport to fit overflow), zero page errors, and zero reveal elements
+left at `opacity < .9`. Testing only 1440 + 390 on the BTQ T3 redesign (2026-09-27) let four bugs
+through: horizontal scroll on landscape tablets, an undersized hero title on portrait tablets, a
+nav link hidden on phones, and a section stuck invisible at every size.
+
 ---
 
 ## Rule 10b: Images — always pair `width:100%` with `height:auto`
@@ -793,6 +801,10 @@ BTQ liner-notes swap (validated 2026-06-24), and the user reported both as "miss
    worked: a **nav link** to the contact area, and a dedicated **contact section** that bundles
    email + a working form + social icons together (not scattered). If the nav can't reach it in
    one click, assume the user won't find it.
+3. **Parity is checked per breakpoint, not only on desktop.** Hiding a nav link on phones to
+   make the bar fit is a regression when the old page showed it there. BTQ T3 (2026-09-27) hid
+   "Contacto" below 760 px; the fix was tighter spacing (`letter-spacing:.08em`, `gap:12px` under
+   420 px), not dropping the link.
 
 **Static-site contact forms:** a static host (Vercel/Netlify) has no backend to receive a POST.
 Use a form service (Web3Forms — no account, key in the markup, AJAX + graceful no-JS fallback) or
@@ -866,6 +878,23 @@ else (CSS, shaders, fonts link) still lives in the one file.
   No JS = clean static editorial layout, never a broken page.
 - Full `prefers-reduced-motion` branch: kill scrub/pin, ripple `display:none`, shader draws one frame.
 - Passive listeners; cap `devicePixelRatio` (~1.5) in the shader; `will-change` only on animated nodes.
+- **Never `gsap.from()` an element whose CSS has `transition` on all properties** (`transition:.22s`,
+  `transition:all …`). When a pin forces a ScrollTrigger refresh, GSAP re-reads the end value while the
+  CSS transition is still near 0 and records 0 as the destination: the element stays invisible forever,
+  with no error. Reproduced on the BTQ T3 page (2026-09-27): the 4 platform links sat at `opacity:0` at
+  every size. Fix: list only the hover properties in `transition` (`border-color .22s, box-shadow .22s,
+  translate .22s`), hover with the `translate` property instead of `transform`, and add
+  `clearProps:'opacity,transform,translate,rotate,scale'` to reveal tweens.
+- **Scope the selectors of a pinned timeline to the pinned section** (`.hero .wave`, not `.wave`):
+  a generic selector animates every match on the page. Same day, the pin stretched a second `.wave`
+  in another section.
+- **A pinned section that moves children sideways gets `overflow:hidden`.** Without it the page
+  scrolls horizontally only on landscape tablets (1024: document 1058 px; 1180: 1259 px), where
+  there's no spare margin; on desktop and phones it doesn't show.
+- **Spotify embeds can't be themed.** `theme=0` renders dark grey; without it the background takes
+  the dominant color of the latest episode's art. During a rebrand before new episode art exists,
+  the embed shows the old art: swap it for a custom branded card and restore the embed (without
+  `theme=0`) once the first new episode is out.
 
 **Tell, not template:** the goal is that *we* are the differentiator. If the page could be
 swapped with another AI page by changing the logo, it failed Rule 0 — this tier is how you make

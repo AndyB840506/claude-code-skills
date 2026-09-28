@@ -1,9 +1,30 @@
 # Brand constants (BTQ)
 
-> ⚠️ **EN REVISIÓN desde 2026-09-26:** la T3 (co-host Alejandro) trae logo nuevo y refresh de
-> la página. Todo lo de abajo es la identidad de T2: sigue vigente para piezas de EP.001–027,
-> pero **no se usa para diseñar piezas de T3** hasta que exista la identidad nueva. Ver
-> `btq-production/roadmap-btq.md` § Temporada 3.
+## Identidad T3 (vigente desde 2026-09-27)
+
+Aplica a toda pieza de la Temporada 3 (co-host Alejandro). Fuente: logo aprobado por Andy y
+Alejandro, y la web publicada en behind-thequeue.com el 2026-09-27 (commits `fd0c114`..`c58c962`).
+Si este documento y `btq-production/website/index.html` chocan, gana la web: es lo que está en vivo.
+
+| Elemento | Valor |
+|---|---|
+| Logo | Concepto C "EN VIVO", variante v1 (THE apilado): `E:\AI\outputs\BTQ-T3-logo-C-final-v1-the-apilado.png`; web: `btq-production/website/btq-t3-logo.png` |
+| Crema (fondo) | `#FDF9EF` |
+| Azul marino (tinta) | `#03053C` |
+| Coral | `#F65B51` en rellenos; `#D2382E` en texto chico (4.6:1 sobre crema). Es **Andrés** (onda izquierda del logo) |
+| Azul | `#1268FC`, 4.6:1 sobre crema. Es **Alejandro** (onda derecha del logo) |
+| Tipografía | Cabinet Grotesk 800–900 (display), Supreme (cuerpo), Martian Mono (datos), todas de Fontshare. En imágenes compuestas con PIL, Arial Black, como el logo |
+| Concepto web | "Línea abierta": onda de conversación coral→azul detrás de la página; tarjetas con borde azul marino y sombra dura del color de cada host |
+
+- El texto de cualquier logo o pieza se compone con PIL, nunca lo escribe el generador
+  (regla de `comfyui/docs/prompting.md`).
+- Fotos de los hosts para la web: `host-andres.jpg` y `host-alejandro.jpg` (4:5, 720×900). La de
+  Alejandro es generada con IA y él la aprobó.
+
+---
+
+> **Identidad de T2 (histórica):** todo lo de abajo sigue vigente solo para piezas de EP.001–027
+> y **no se usa para diseñar piezas de T3**. Ver `btq-production/roadmap-btq.md` § Temporada 3.
 
 | Element | Value |
 |---------|-------|
