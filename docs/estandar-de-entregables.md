@@ -142,3 +142,23 @@ Checklist obligatorio antes de entregar (correr greps literales sobre el guion):
 - [ ] **La fuente tiene que sobrevivir a la sesión:** el scratchpad es temporal.
       El HTML fuente queda en el Artifact y en una ruta persistente (D:\ o repo),
       y el handoff dice dónde.
+
+## 10 · Aplicaciones con interfaz (Lucca Tune, HireSignal, sitios)
+
+Probar la lógica no es probar lo que la pantalla le dice a una persona. El 2026-10-01
+Andrés encontró tres cosas en Lucca Tune que las pruebas por programa habían dado por
+buenas: el motor hacía lo correcto y la pantalla callaba o prometía otra cosa.
+
+- [ ] **Toda acción que el programa hace SOLO deja un aviso visible.** Un cambio que se
+      deshace solo, un reintento, un valor que vuelve: sin aviso, en pantalla se ve igual
+      que si no hubiera pasado nada (una prueba de overclock vencía a los 20 s y «no
+      mostró nada»).
+- [ ] **El nombre de un botón dice lo que hace, y hace todo lo que dice.** «Back to
+      recommended range» solo cerraba un rango y dejaba los valores; el usuario esperaba
+      que volvieran. Leer cada etiqueta preguntando «¿qué creería alguien que va a pasar?».
+- [ ] **Las comprobaciones de página afirman lo que se VE** (texto de un aviso, etiqueta
+      de un botón, que un texto quepa en su caja), no solo el estado del motor. Medir el
+      ancho destapó un texto de 224 px en un espacio de 206.
+- [ ] **Lo que solo los ojos pueden confirmar se declara y se pide** (un led encendido, un
+      destello, cómo se siente una velocidad): va en «sin comprobar» con el paso exacto
+      que el usuario debe mirar.

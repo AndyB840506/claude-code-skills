@@ -43,7 +43,9 @@ def cargar(raiz):
     """Devuelve {nombre: {'ph': set(frases), 'desc': str, 'triggers': bool}}."""
     skills = {}
     for root, dirs, files in os.walk(raiz):
-        if '.git' in root.split(os.sep):
+        # 'synced' y '.trash' son skills que sincroniza la plataforma (docx, pptx...): no son del
+        # kit ni se pueden editar, y sus choques entre si tapaban el resultado del kit propio.
+        if {'.git', 'synced', '.trash'} & set(root.split(os.sep)):
             continue
         if 'SKILL.md' not in files:
             continue

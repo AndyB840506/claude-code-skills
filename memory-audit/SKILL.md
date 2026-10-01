@@ -14,10 +14,10 @@ hace ambas limpiezas juntas.
 ## Qué hace
 
 - Lee `MEMORY.md` + cada archivo de memoria en
-  `C:\Users\andre\.claude\projects\<workspace>\memory\`, y busca 5 tipos de problema:
+  `C:\Users\andre\.claude\projects\<workspace>\memory\`, y busca 6 tipos de problema:
   duplicados/solapados, contradicciones, obsoletas (afirmación verificable que ya no es
-  cierta), huérfanas (índice ↔ archivo desalineados), y sobredimensionadas (>60 líneas,
-  ver [[feedback_memory_file_discipline]]).
+  cierta), huérfanas (índice ↔ archivo desalineados), sobredimensionadas (>60 líneas o
+  >6 KB, ver [[feedback_memory_file_discipline]]) e índice truncado (`MEMORY.md` pasado de su límite de lectura).
 - Escanea también el skill kit completo (`Glob **/SKILL.md`, dinámico) por 3 tipos de
   corrupción: frontmatter vacío/roto, referencias rotas a `workflows/`/`docs/`, y texto
   corrupto. Prioridad de verificación real: skills que tocan producción en vivo

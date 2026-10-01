@@ -37,6 +37,14 @@ aprobación explícita antes de tocar cualquier archivo.
 4. **Huérfanos:** compara la lista de archivos contra las líneas de `MEMORY.md`.
    - Archivo sin línea en `MEMORY.md` → huérfano tipo A.
    - Línea en `MEMORY.md` cuyo archivo referenciado no existe → huérfano tipo B.
+5. **Índice truncado:** mide `MEMORY.md` en bytes y en líneas (python: `len(open(p,'rb').read())`
+   y el conteo de `\n`). El arranque solo carga los primeros ~24,4 KB y las primeras 200
+   líneas; lo que pasa de ahí no entra al contexto, y no da error. Por encima de cualquiera de
+   los dos → hallazgo **índice truncado**, y decir desde qué línea se corta. Cerca del límite
+   (más de ~20 KB o de ~180 líneas) → avisarlo: la próxima memoria nueva lo cruza.
+   Mordió el 2026-10-01: 71 de 199 entradas llevaban sin cargarse y esta auditoría no lo veía;
+   lo avisó un hook. Acortar las líneas arregla los bytes pero no el conteo: con 199 entradas
+   el índice quedó en 200 líneas justas, y bajar de ahí exige fusionar memorias.
 
 ### Paso 1b — Sobredimensionadas
 
@@ -46,6 +54,12 @@ silencio** — ver `skills/CLAUDE.md` § Debugging, "Instrumentos que sub-report
 (2026-07-23: dio 28 donde `wc -l` daba 36). Cualquier archivo por encima de ~60 líneas es
 un hallazgo tipo **sobredimensionada** — ver [[feedback_memory_file_discipline]]. No
 requiere verificación adicional, solo el conteo.
+
+**Mide también los bytes: más de ~6 KB es sobredimensionada aunque tenga pocas líneas.** Una
+memoria escrita como bitácora (una viñeta larguísima por evento) pasa el conteo de líneas sin
+problema: el 2026-10-01 `project_gpu_tuner_lucca.md` pesaba 34 KB y no llegaba a 60 líneas.
+La salida para esas es mover la historia al repo del proyecto y dejar en memoria el estado
+vigente con un puntero.
 
 ### Paso 2 — Detectar duplicados y contradicciones
 
@@ -92,6 +106,7 @@ vocabulario de trabajo, NO lo que se le muestra a Andy):
 | Huérfano tipo A | Agregar la línea faltante en `MEMORY.md` |
 | Huérfano tipo B | Eliminar la línea de `MEMORY.md` (el archivo no existe) |
 | Sobredimensionada | Recortar a lo esencial, o dividir en memorias enlazadas |
+| Índice truncado | Acortar cada línea a título + gancho corto (sin tocar memorias); si el conteo de líneas sigue pasado, proponer fusiones por grupo |
 
 **Tabla que ve Andy** (ver [[feedback_short_approval_asks]] — plana, visual, cero
 párrafos): traduce cada fila de arriba a lenguaje de consecuencia, sin nombrar el
