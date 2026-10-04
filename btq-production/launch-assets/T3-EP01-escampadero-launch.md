@@ -135,9 +135,11 @@ Con originales más grandes, reemplazar `host-*.jpg` y volver a correr.
 línea desde el **domingo 2026-10-04, 11:00 PM** (Colombia). Al 2026-10-03 22:40 el oEmbed
 devuelve vacío y el episodio no está en el RSS: normal para un episodio programado.
 
-- [ ] **Andy, antes del domingo 11 PM:** corregir en Spotify for Creators la metadata del RSS
-      (EP.23 está como S3E1 y choca con este episodio; EP.22 ep 19 → 22; EP.16 sin season →
-      S2E16). Leído en vivo 2026-10-03 22:40: **sigue sin corregir**.
+- [—] **Metadata del RSS de T2: NO se corrige (decisión de Andy, 2026-10-03).** "Ya cerremos
+      T2 y enfoque en T3". Queda así (leído 2026-10-03 22:53): EP.23 como S3E1 (comparte
+      temporada y número con este EP.01 en Apple y en las apps del feed), EP.22 como ep 19,
+      EP.16 sin season. Revisar solo si un oyente o una plataforma reporta confusión con el
+      EP.23 dentro de la temporada 3; el arreglo es editar el EP.23 a S2E23.
 - [x] Subido con la portada y programado (Andy, 2026-10-03).
 - [x] **Web preparada, SIN desplegar** (2026-10-03): `website/index.html` con la tarjeta del
       EP.01 enlazada al episodio y el embed del show en vez de la tarjeta propia. Revisado con

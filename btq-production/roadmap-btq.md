@@ -52,7 +52,8 @@ y queda marcado como superado o en revisión donde choca.
   En Spotify for Creators va con **season 3, episode 1**, que es lo que la separa del EP.01 de
   T1 en Apple y en el RSS. Es el mismo patrón que la T2 de MPD (título "EP.03: …" + campo de
   temporada). En el RSS (2026-09-26), la T1 es EP.01–09 (season 1) y la T2 es EP.10–27 (season 2).
-- **Metadata del RSS a corregir en Spotify for Creators antes de publicar el EP.01 de T3**
+- ~~**Metadata del RSS a corregir en Spotify for Creators antes de publicar el EP.01 de T3**~~
+  **DESCARTADO el 2026-10-03 por Andy ("ya cerremos T2"): no se corrige.** Registro histórico
   (leída de `anchor.fm/s/10f9ccb50/podcast/rss` el 2026-09-26):
   - **EP.23 Hawthorne está marcado como season 3, episode 1** → pasarlo a season 2, ep 23.
     Si no se corrige, choca con el EP.01 de T3.
@@ -63,8 +64,9 @@ y queda marcado como superado o en revisión donde choca.
   a carrera". Transcripción, portada, descripción de Spotify y clip listos en
   `launch-assets/T3-EP01-escampadero-launch.md`. Programado en Spotify para el domingo
   2026-10-04 a las 11 PM (https://open.spotify.com/episode/6Mssd4RGqkzrvrcLTwdr8b); web
-  preparada sin desplegar. Falta: que Andy corrija el RSS antes de esa hora y desplegar la web
-  después. En el
+  preparada sin desplegar. Falta: desplegar la web después de esa hora. **La corrección de la
+  metadata de T2 en el RSS queda descartada** (Andy, 2026-10-03: "ya cerremos T2"); ver el
+  launch file. En el
   audio la apertura sigue con "Buenas y santas"; el saludo nuevo queda para el EP.02. El EP.02
   quedó anunciado al aire: la contraparte de Alejo (subir sin terminar la carrera).
 - **Abierto:** si el retiro de la cultura pop
