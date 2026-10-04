@@ -61,7 +61,10 @@ y queda marcado como superado o en revisión donde choca.
   - "Ponerse la camiseta" no lleva el prefijo "EP.25 —" en el título (opcional).
 - **EP.01 grabado el 2026-10-03** (Zoom, 85:47; máster final según Andy). Título "De escampadero
   a carrera". Transcripción, portada, descripción de Spotify y clip listos en
-  `launch-assets/T3-EP01-escampadero-launch.md`. Falta: que Andy corrija el RSS y lo suba. En el
+  `launch-assets/T3-EP01-escampadero-launch.md`. Programado en Spotify para el domingo
+  2026-10-04 a las 11 PM (https://open.spotify.com/episode/6Mssd4RGqkzrvrcLTwdr8b); web
+  preparada sin desplegar. Falta: que Andy corrija el RSS antes de esa hora y desplegar la web
+  después. En el
   audio la apertura sigue con "Buenas y santas"; el saludo nuevo queda para el EP.02. El EP.02
   quedó anunciado al aire: la contraparte de Alejo (subir sin terminar la carrera).
 - **Abierto:** si el retiro de la cultura pop

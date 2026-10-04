@@ -242,14 +242,6 @@
     .listen h2{font-family:var(--disp);font-weight:900;font-size:clamp(2rem,3.4vw,2.9rem);line-height:1.05;margin-bottom:30px}
     .listen h2 .c{color:var(--coral-t)}
     .embed{border-radius:14px;overflow:hidden;border:2px solid var(--ink)}
-    .player{display:grid;grid-template-columns:190px 1fr;gap:28px;align-items:center;padding:26px;background:#fff;border:2px solid var(--ink);border-radius:18px;box-shadow:8px 8px 0 var(--ink)}
-    .player img{width:100%;height:auto;border-radius:12px;display:block}
-    .pl-k{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--coral-t);margin:16px 0 6px}
-    .pl-t{font-family:var(--disp);font-weight:900;font-size:clamp(1.3rem,2.2vw,1.7rem);line-height:1.1}
-    .pl-wave{justify-content:flex-start;height:40px;margin:16px 0 18px;gap:4px}
-    .pl-wave i{width:5px}
-    .player .btn{padding:13px 20px}
-    @media(max-width:680px){.player{grid-template-columns:1fr;gap:18px;padding:20px;box-shadow:6px 6px 0 var(--ink)}.player img{max-width:150px}}
     .plat{display:flex;flex-direction:column;gap:10px}
     .plat a{display:flex;align-items:center;gap:15px;padding:16px 20px;border:1.5px solid var(--line-2);border-radius:14px;text-decoration:none;color:var(--ink);font-size:.9rem;font-weight:700;background:#fff;transition:border-color .22s,box-shadow .22s,translate .22s}
     .plat a:hover{border-color:var(--ink);translate:4px 0;box-shadow:4px 4px 0 var(--blue)}
@@ -447,11 +439,11 @@
     <div class="next rv">
       <div class="num">01</div>
       <div>
-        <p class="k">Temporada 3, próximamente</p>
-        <p class="t">La industria BPO en general</p>
-        <p class="d">El arranque de la temporada: qué es de verdad esta industria, quién trabaja en ella y por qué casi nadie la cuenta bien.</p>
+        <p class="k">Temporada 3, episodio nuevo</p>
+        <p class="t">De escampadero a carrera</p>
+        <p class="d">Entraron pensando que era temporal. Veinte años después siguen ahí: Andy y Alejo cuentan cómo un trabajo de paso en el call center se volvió carrera.</p>
       </div>
-      <span class="pill"><span class="led"></span>Pronto</span>
+      <a class="pill" href="https://open.spotify.com/episode/6Mssd4RGqkzrvrcLTwdr8b" target="_blank" rel="noopener"><span class="led"></span>Escuchar</a>
     </div>
 
     <div class="arch-head rv">
@@ -551,24 +543,9 @@
     <div class="listen-grid">
       <div>
         <h2 class="rv">Escúchanos <span class="c">donde prefieras</span></h2>
-        <!-- Tarjeta propia mientras no sale el EP.01 de T3 (2026-09-27): el embed de Spotify
-             no deja elegir colores y mostraba la caratula del EP.27 con el arte de T2.
-             Cuando se publique el EP.01, volver al embed SIN theme=0 (toma el color del arte nuevo):
-             <div class="embed rv"><iframe style="display:block" src="https://open.spotify.com/embed/show/5figtqa6zJxW1pE1sWJeEP?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Behind the Queue en Spotify"></iframe></div> -->
-        <div class="player rv">
-          <img src="btq-t3-logo.png" alt="Logo de Behind the Queue, temporada 3" width="512" height="512" loading="lazy">
-          <div class="pl-body">
-            <span class="pill"><span class="led"></span>Temporada 3</span>
-            <p class="pl-k">Episodio 01, próximamente</p>
-            <p class="pl-t">La industria BPO en general</p>
-            <div class="wave pl-wave" aria-hidden="true">
-              <i class="c" style="--h:.35"></i><i class="c" style="--h:.7"></i><i class="c" style="--h:1"></i><i class="c" style="--h:.55"></i>
-              <span class="joint"></span>
-              <i class="b" style="--h:.6"></i><i class="b" style="--h:1"></i><i class="b" style="--h:.7"></i><i class="b" style="--h:.4"></i>
-            </div>
-            <a class="btn solid" href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP" target="_blank" rel="noopener">Seguir en Spotify →</a>
-          </div>
-        </div>
+        <!-- Embed del show SIN theme=0: toma el color del arte del ultimo episodio (T3 EP.01 desde
+             2026-10-04). Con theme=0 sale gris oscuro; no se puede elegir otro color. -->
+        <div class="embed rv"><iframe style="display:block" src="https://open.spotify.com/embed/show/5figtqa6zJxW1pE1sWJeEP?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Behind the Queue en Spotify"></iframe></div>
       </div>
       <div>
         <p class="meta rv" style="margin-bottom:20px">Plataformas</p>

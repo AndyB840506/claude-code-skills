@@ -129,12 +129,20 @@ Con originales más grandes, reemplazar `host-*.jpg` y volver a correr.
 
 ---
 
-## Pendiente antes de publicar
+## Publicación
 
-- [ ] **Andy:** corregir en Spotify for Creators la metadata del RSS (EP.23 está como S3E1 y
-      choca con este episodio; EP.22 ep 19 → 22; EP.16 sin season → S2E16). Leído en vivo
-      2026-10-03: **sigue sin corregir**.
-- [ ] **Andy:** subir con season 3, episode 1 y la portada 1:1.
-- [ ] **Claude, al publicar:** en `website/index.html`, volver al embed de Spotify (sin
-      `theme=0`) y cambiar la tarjeta "EP.01 próximamente" por este episodio; `vercel --prod` y
-      verificar con `curl -L`.
+**Spotify:** https://open.spotify.com/episode/6Mssd4RGqkzrvrcLTwdr8b — programado por Andy, en
+línea desde el **domingo 2026-10-04, 11:00 PM** (Colombia). Al 2026-10-03 22:40 el oEmbed
+devuelve vacío y el episodio no está en el RSS: normal para un episodio programado.
+
+- [ ] **Andy, antes del domingo 11 PM:** corregir en Spotify for Creators la metadata del RSS
+      (EP.23 está como S3E1 y choca con este episodio; EP.22 ep 19 → 22; EP.16 sin season →
+      S2E16). Leído en vivo 2026-10-03 22:40: **sigue sin corregir**.
+- [x] Subido con la portada y programado (Andy, 2026-10-03).
+- [x] **Web preparada, SIN desplegar** (2026-10-03): `website/index.html` con la tarjeta del
+      EP.01 enlazada al episodio y el embed del show en vez de la tarjeta propia. Revisado con
+      Playwright/Edge a 1440 y 390 px: sin desborde, sin `.player` huérfano. No se despliega
+      antes porque el embed todavía muestra el EP.27 en rojo.
+- [ ] **Claude, después del domingo 11 PM:** confirmar que el oEmbed del episodio responde,
+      `vercel deploy --prod --yes --cwd btq-production/website`, y verificar en
+      behind-thequeue.com con `curl -L` + captura del embed mostrando el EP.01.
