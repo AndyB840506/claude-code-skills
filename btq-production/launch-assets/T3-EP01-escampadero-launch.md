@@ -285,6 +285,9 @@ Con originales más grandes, reemplazar `host-*.jpg` y volver a correr.
 
 ## Publicación
 
+**Confirmado por Andy (2026-10-03):** el subtítulo de Spotify, los posts del lunes y martes en
+primera persona (sus anécdotas de team leader y de la carrera) y las "pulgas" de la descripción.
+
 **Spotify:** https://open.spotify.com/episode/6Mssd4RGqkzrvrcLTwdr8b — programado por Andy, en
 línea desde el **domingo 2026-10-04, 11:00 PM** (Colombia). Al 2026-10-03 22:40 el oEmbed
 devuelve vacío y el episodio no está en el RSS: normal para un episodio programado.

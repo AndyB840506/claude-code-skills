@@ -51,8 +51,6 @@
 
 ## Questions to Answer
 
-- ¿El subtítulo de Spotify ("lo que nadie cuenta de trabajar en un call center") está bien? Se cambió del "20 años dentro de un call center" que propuse, porque Andy dice "más de 15 años".
-- ¿Andy está cómodo con dos posts en primera persona que usan sus anécdotas: lo de aplicar a team leader y los casi ocho años para terminar la carrera?
-- ¿Las "pulgas" del primer edificio están bien entendidas por Whisper? Nadie escuchó ese tramo.
+- ~~Subtítulo de Spotify, posts en primera persona y "pulgas"~~: **confirmados por Andy el 2026-10-03** ("sí, todo está bien").
 - EP.02: el saludo nuevo y la fecha de grabación. El tema ya está anunciado al aire: la otra cara de Alejo, que subió sin terminar la carrera.
 - Sin comprobar desde el 27-sep: logo a 3000×3000 o vector, roadmap de 8 temas, transcripts a Drive para Alejo.
