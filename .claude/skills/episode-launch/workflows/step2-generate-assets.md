@@ -379,5 +379,10 @@ ensambla a mano con el clip + las quote cards + la portada, fuera de este kit). 
    ffmpeg -i clip.wav -af volumedetect -f null -
    ```
    Un `mean_volume` cercano a `-90dB` es silencio real, no una medición baja.
+   Que tenga audio no prueba los bordes: **re-transcribir el clip solo** y confirmar la
+   primera y la última palabra, con el fundido de salida empezando DESPUÉS del fin de la
+   última (en T3 EP.01 el primer corte se comía la cola de "vainas", 2026-10-03).
+   Para el MP4 de un reel (imagen fija + clip), cortar con `-t <duración del audio>`:
+   `-loop 1` con `-shortest` dejó ~2 s mudos al final.
 5. Guardar en `E:\AI\outputs\BTQ-EP0XX\` junto a portadas/quote cards (wav + mp3), mismo patrón
    de nombres: `BTQ-EP0XX-CLIP-Q<N>.wav`.

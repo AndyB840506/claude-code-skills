@@ -21,6 +21,8 @@ and lint).
 
 ## Workflow
 
+> **Temporada 3** (dos hosts, sin guion): leer antes [workflows/t3-conversacional.md](workflows/t3-conversacional.md).
+
 1. [workflows/step1-collect-inputs.md](workflows/step1-collect-inputs.md) — gather EP number, title, teórico/ley del episodio (el carril pop-culture está en pausa desde 2026-07-21), script path, Spotify URL
 2. [workflows/step2a-episode-article.md](workflows/step2a-episode-article.md) — artículo del episodio en `/episodios/<slug>` + su `og:image`. **Va antes del plan social**: los posts de LinkedIn se cortan del artículo, no del guion
 3. [workflows/step2-generate-assets.md](workflows/step2-generate-assets.md) — generate Spotify SEO, social plan, YouTube metadata (parallel, in one response); portadas y quote cards se **componen**, no se promptean. YouTube: el RSS crea el ítem, Andy edita la metadata a mano (§C)

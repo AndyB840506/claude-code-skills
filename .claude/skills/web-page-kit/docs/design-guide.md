@@ -353,6 +353,17 @@ left at `opacity < .9`. Testing only 1440 + 390 on the BTQ T3 redesign (2026-09-
 through: horizontal scroll on landscape tablets, an undersized hero title on portrait tablets, a
 nav link hidden on phones, and a section stuck invisible at every size.
 
+**How to capture a page with a pinned hero / GSAP reveals** (measured 2026-10-03, BTQ): Edge
+`--screenshot` lies here. Jumping to `#anchor` returned a near-blank image, and a 9000 px tall
+window stretched the pinned hero over everything. What works: Playwright with the installed Edge
+(`p.chromium.launch(channel="msedge")`, no browser download), scroll the page with
+`page.mouse.wheel(0, 400)` in steps so reveals fire, then `locator(sel).screenshot()`. Under
+`file://`, root-relative paths (`href="/logo.png"`) fail with `ERR_FILE_NOT_FOUND`: check them on
+the live domain before calling it a page error. And the "zero reveals at `opacity < .9` after
+scrolling the whole page" check flags a pinned hero's **exit** animation as stuck (BTQ ≥1024 px:
+kicker, hero line and CTA at opacity 0 at the bottom of the page, 1 again back at the top). Before
+calling one stuck, scroll back to the top and re-measure.
+
 ---
 
 ## Rule 10b: Images — always pair `width:100%` with `height:auto`
