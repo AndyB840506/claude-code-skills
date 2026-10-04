@@ -107,8 +107,22 @@ Adaptado de `episode-launch` §B (escrito para T2). Cambios para este episodio:
   mención.
 - Nada de la lista "Fuera de todo texto escrito" de arriba entra aquí.
 
-Assets a mano: portada 9:16 para stories y reels, 16:9 para LinkedIn y Facebook, clip
-`E:\Podcast\BTQ\T3\clip\BTQ-T3-EP01-CLIP-01.mp3` (48 s) para el reel del martes.
+**Imagen de cada post** (generador: `comfyui/templates/btq-social-t3.py`; todo en
+`E:\Podcast\BTQ\T3\redes\EP01\` salvo las portadas):
+
+| Post | Archivo |
+|---|---|
+| Domingo tarde · IG/FB | `BTQ-T3-EP01-teaser-1x1.png` |
+| Domingo tarde · stories 1-3 | `BTQ-T3-EP01-story-1-9x16.png`, `-story-2-`, `-story-3-` (la 3 deja libre abajo para el sticker de enlace) |
+| Domingo 11 PM · LinkedIn y Facebook | `E:\Podcast\BTQ\T3\portada\BTQ-T3-EP01-portada-v2-16x9.png` |
+| Domingo 11 PM · Instagram | `E:\Podcast\BTQ\T3\portada\BTQ-T3-EP01-portada-v2-1x1.png` |
+| Domingo 11 PM · TikTok | `BTQ-T3-EP01-reel-alejo-9x16.mp4` (o la portada 9:16 si prefiere no adelantar el clip) |
+| Lunes · LinkedIn | `BTQ-T3-EP01-cita-alejo-4x5.png` (cita textual, SRT 1:04:23) |
+| Martes · LinkedIn | `BTQ-T3-EP01-cita-andres-4x5.png` (SRT 1:23:39; se agregó la tilde de "sí" y una coma, y se cortó antes de "y le mete toda la ficha") |
+| Martes · reel IG/FB y TikTok | `BTQ-T3-EP01-reel-alejo-9x16.mp4` (1080×1920, H.264 + AAC, 48,07 s) |
+
+Las piezas 9:16 respetan las zonas que tapa la interfaz (stories ~250 px arriba y abajo; reels
+~220 arriba y ~420 abajo).
 
 ### Domingo 4 oct, tarde · intriga · Instagram/Facebook (+ 3 stories)
 
