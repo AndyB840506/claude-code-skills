@@ -15,6 +15,7 @@ Si este documento y `btq-production/website/index.html` chocan, gana la web: es 
 | Azul | `#1268FC`, 4.6:1 sobre crema. Es **Alejandro** (onda derecha del logo) |
 | Tipografía | Cabinet Grotesk 800–900 (display), Supreme (cuerpo), Martian Mono (datos), todas de Fontshare. En imágenes compuestas con PIL, Arial Black, como el logo |
 | Concepto web | "Línea abierta": onda de conversación coral→azul detrás de la página; tarjetas con borde azul marino y sombra dura del color de cada host |
+| Portada de episodio | Compuesta, no generada: `comfyui/templates/btq-portada-t3.py` (1:1, 9:16, 16:9). Pastilla "EP.NN · TEMPORADA 3", título en Arial Black (línea entre `*` en coral), las dos fotos con sombra dura. Primer uso: EP.01 (2026-10-03), ver `btq-production/launch-assets/T3-EP01-escampadero-launch.md` |
 
 - El texto de cualquier logo o pieza se compone con PIL, nunca lo escribe el generador
   (regla de `comfyui/docs/prompting.md`).

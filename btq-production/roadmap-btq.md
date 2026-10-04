@@ -59,6 +59,11 @@ y queda marcado como superado o en revisión donde choca.
   - EP.22 (Calidad) tiene episode 19 → 22.
   - EP.16 (The Wall) no tiene season ni episode → season 2, ep 16.
   - "Ponerse la camiseta" no lleva el prefijo "EP.25 —" en el título (opcional).
+- **EP.01 grabado el 2026-10-03** (Zoom, 85:47; máster final según Andy). Título "De escampadero
+  a carrera". Transcripción, portada, descripción de Spotify y clip listos en
+  `launch-assets/T3-EP01-escampadero-launch.md`. Falta: que Andy corrija el RSS y lo suba. En el
+  audio la apertura sigue con "Buenas y santas"; el saludo nuevo queda para el EP.02. El EP.02
+  quedó anunciado al aire: la contraparte de Alejo (subir sin terminar la carrera).
 - **Abierto:** si el retiro de la cultura pop
   del 2026-07-21 sigue vigente (EP.01–09 no la usaban, EP.10–19 sí); qué reglas de
   `guion-style-btq.md` sobreviven al formato conversacional (se define con el primer guion).
