@@ -96,6 +96,146 @@ escampadero (03:50, 1:18:22).
 
 ---
 
+## B · Plan social — domingo a martes
+
+Adaptado de `episode-launch` §B (escrito para T2). Cambios para este episodio:
+- El jueves de intriga ya pasó (el plan se armó el sábado 3 en la noche): la intriga va el
+  **domingo en la tarde**, y el lanzamiento es a las **11 PM**, no a las 8 PM.
+- El EP.01 **no tiene artículo**, así que el primer comentario lleva Spotify todos los días.
+- Los posts de LinkedIn van en primera persona (los publica Andy). Al pegarlos, escribir
+  `@Alejandro Aguirre` a mano para que LinkedIn lo etiquete: el texto pegado no crea la
+  mención.
+- Nada de la lista "Fuera de todo texto escrito" de arriba entra aquí.
+
+Assets a mano: portada 9:16 para stories y reels, 16:9 para LinkedIn y Facebook, clip
+`E:\Podcast\BTQ\T3\clip\BTQ-T3-EP01-CLIP-01.mp3` (48 s) para el reel del martes.
+
+### Domingo 4 oct, tarde · intriga · Instagram/Facebook (+ 3 stories)
+
+```
+En 2006 entramos a un call center pensando que era temporal. Un escampadero, mientras salía algo mejor.
+
+Veinte años después seguimos aquí. Esta noche a las 11 PM arranca la temporada 3 de Behind the Queue, y ahora somos dos.
+
+#BehindTheQueue #PodcastEnEspañol #NuevoEpisodio #BPO #CallCenter #ContactCenter #Liderazgo #Colombia #LATAM #Bogota
+```
+
+Stories (fondo crema, texto azul marino; la tercera con sticker de enlace a Spotify):
+```
+1 · En 2006 entramos a un call center "mientras tanto".
+2 · Veinte años después, seguimos aquí.
+3 · Temporada 3. Andy y Alejo. Hoy, 11 PM, en Spotify.
+```
+
+### Domingo 4 oct, 11:00 PM · lanzamiento
+
+**LinkedIn** (prioritaria):
+```
+¿A usted también le dio pena alguna vez decir que trabaja en un call center?
+
+Hace veinte años, Alejandro Aguirre y yo entramos a uno de los primeros call centers bilingües de Bogotá: un edificio viejo de la Jiménez, con ascensorista y turno de cierre hasta las nueve de la noche. Los dos pensábamos lo mismo. Esto es temporal, un escampadero mientras sale algo mejor.
+
+No salió algo mejor. Salió una carrera.
+
+Hoy arranca la temporada 3 de Behind the Queue, con Alejo de co-host y sin libreto: dos personas que hicieron carrera en el BPO contando cómo es por dentro. Están las anécdotas (los códigos de activación deletreados letra por letra, las diademas que se arreglaban con un pitillo) y lo que nos dejaron: que en esta industria se puede crecer sin un título profesional, que el inglés abre puertas que en Colombia todavía se subestiman y que el mejor agente del piso no siempre tiene madera de líder.
+
+¿Usted también entró a un call center pensando que era temporal?
+
+#BPO #ContactCenter #CallCenter #Liderazgo #PodcastEnEspañol #Colombia #LATAM
+```
+
+**Primer comentario:**
+```
+Episodio completo acá 👉 https://open.spotify.com/episode/6Mssd4RGqkzrvrcLTwdr8b
+```
+
+**Instagram/Facebook** (portada 1:1 o 16:9):
+```
+Temporada 3, al aire.
+
+Andy y Alejo, veinte años después de su primer call center: los códigos que había que deletrear letra por letra, las diademas arregladas con un pitillo, el eco en la línea que avisaba que lo estaban monitoreando desde Miami. Y cómo un trabajo "mientras tanto" se volvió carrera.
+
+¿Usted también entró a un call center pensando que era temporal? Cuéntenos abajo.
+
+Link en la bio.
+
+#BehindTheQueue #PodcastEnEspañol #NuevoEpisodio #BPO #CallCenter #ContactCenter #ServicioAlCliente #Liderazgo #Bilingue #TrabajoEnColombia #Colombia #LATAM #Bogota
+```
+
+**TikTok** (portada 9:16 con el clip de fondo):
+```
+Entramos a un call center "mientras tanto". Eso fue en 2006.
+Temporada 3 de Behind the Queue, ya en Spotify.
+#BPO #CallCenter #Colombia #PodcastEnEspañol
+```
+
+### Lunes 5 oct, 7 a 8 AM · LinkedIn
+
+```
+"No siempre el top performer tiene madera de líder."
+
+Lo dijo Alejo en el episodio que salió anoche, y es de las cosas que más se repiten en un call center: ascender al agente con los mejores números porque tiene los mejores números.
+
+A mí me tocó del otro lado. Apliqué varias veces a team leader en la misma empresa, y siempre terminaban ascendiendo a alguien con menos números que yo. Con los años entendí la otra mitad: cuando uno sube al siguiente peldaño, las habilidades que lo trajeron hasta ahí sirven, pero hace falta otro set completo, porque ya no se trata de llamadas sino de personas.
+
+Por eso la tarea es de quien lidera: identificar a ese buen agente y desarrollarle las habilidades blandas antes de darle un equipo, no después.
+
+¿Qué le faltó al mejor agente que usted vio ascender?
+
+#Liderazgo #BPO #ContactCenter #GestionDeEquipos #DesarrolloDeTalento #Colombia
+```
+
+**Primer comentario:**
+```
+El episodio completo, para el camino al trabajo 👉 https://open.spotify.com/episode/6Mssd4RGqkzrvrcLTwdr8b
+```
+
+### Martes 6 oct · refuerzo
+
+**LinkedIn:**
+```
+En un call center se puede crecer sin un título profesional. Lo digo con conocimiento de causa: a mí me tomó casi ocho años terminar la carrera, y en ese tiempo esta industria me dejó avanzar por lo que sabía hacer.
+
+En el EP.01 de la temporada 3, Alejo agregó algo que desde afuera no se ve: no solo se sube en vertical. Quien estudió marketing, contabilidad o psicología puede pasar a esas áreas dentro del mismo call center. Y el inglés sigue siendo la llave que en Colombia más se subestima.
+
+El próximo episodio es el de él: cómo subió sin haber terminado la carrera.
+
+¿Qué le diría a alguien que está pensando entrar a un call center "mientras tanto"?
+
+#BPO #ContactCenter #CarreraProfesional #Liderazgo #Bilingue #Colombia #LATAM
+```
+
+**Primer comentario:**
+```
+El EP.01 completo 👉 https://open.spotify.com/episode/6Mssd4RGqkzrvrcLTwdr8b
+```
+
+**Instagram/Facebook** (reel: portada 9:16 + clip de 48 s):
+```
+"No siempre el top performer tiene madera de líder."
+
+Fragmento del EP.01 de la temporada 3. ¿Está de acuerdo, o el mejor agente del piso siempre debería ser el próximo líder?
+
+Episodio completo en Spotify, link en la bio.
+
+#BehindTheQueue #PodcastEnEspañol #BPO #CallCenter #ContactCenter #Liderazgo #TopPerformer #GestionDeEquipos #TrabajoEnColombia #Colombia #LATAM
+```
+
+**TikTok** (mismo reel):
+```
+"No siempre el top performer tiene madera de líder."
+¿De acuerdo? EP.01, temporada 3, en Spotify.
+#BPO #CallCenter #Liderazgo #Colombia
+```
+
+**Fuente de cada afirmación del plan social** (SRT): las de la descripción, más: aplicó
+varias veces a team leader y subieron a alguien con menos números (1:03:10–1:03:36) · otro set
+de habilidades, lidiar con personas (1:04:48–1:05:10) · desarrollar las habilidades blandas del
+top performer (1:16:41–1:17:16) · casi ocho años para terminar la carrera (12:28) · avanzar por
+la propia experiencia sin título (12:42–12:57) · psicólogo a talento humano (15:43).
+
+---
+
 ## D · Portada (compuesta, no generada)
 
 Compositor: `comfyui/templates/btq-portada-t3.py` (sistema de `og-image-t3.jpg`).
