@@ -149,6 +149,8 @@ After adding the domain in Vercel Dashboard → Settings → Domains, use the **
 
 > ⚠️ **Before touching DNS, domain, or SSL cert on a site that is ALREADY live:** confirm the change is non-destructive before running it. Specifically — removing/re-adding a domain in Vercel (domain "churn") resets its SSL certificate and causes a few minutes of downtime/cert warning; never move a live domain's nameservers away from its current DNS provider just to add it to Vercel/Netlify (prefer a CNAME/A record at the existing provider, per the nameserver warning above). If unsure whether an action is destructive, say so explicitly and ask the user to confirm before proceeding, rather than assuming it's safe.
 
+> **A Vercel preview deployment cannot be checked with `curl`.** On a team with deployment protection every preview URL answers 302 to `vercel.com/sso-api`, for every path, so a status sweep proves nothing. Check the build output locally instead (`ls .vercel/output/static` after `vercel build`: it must list exactly the files meant to be public), then verify on the production domain right after promoting, with the previous deployment ready to promote back. Say in the report that the preview was not inspected. (Lucca Tech, 2026-10-06.)
+
 ---
 
 ## Post-Launch Checklist

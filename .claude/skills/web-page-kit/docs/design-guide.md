@@ -691,6 +691,25 @@ Small links in footer — visible but not prominent — let users override the d
 - Footer override handles edge case: browser set to wrong language
 - Single HTML file stays fully self-contained (no server-side rendering needed)
 
+### A display headline must be sized from its column, per language
+
+A big headline sized in `vw` fits the language it was drawn in and overflows the next one
+(Lucca Tech, 2026-10-06: "HECHAS POR UN" ran past the column at every width where
+"BUILT BY AN" fit, and the English one already collided with its neighbour at 1024 px).
+Make the headline's column a container and size from it, with one number per language:
+
+```css
+.lockup > div:first-child{container-type:inline-size}
+h1{font-size:clamp(1.6rem,6vw,7.8rem);                      /* fallback */
+   font-size:min(7.8rem,calc(100cqw / var(--h1w,8.8)))}     /* --h1w = widest line, in em */
+h1 span{display:block;white-space:nowrap}
+```
+
+Set `--h1w` per language from a measurement (text width divided by font size, plus a few
+percent), then measure the text edge against the column edge at 360, 390, 768, 1024, 1440
+and 1920 px in EVERY language. `scrollWidth` alone does not catch it: a grid track with
+`minmax(0,1fr)` lets the text spill over its neighbour without widening the document.
+
 ---
 
 ## Rule 16: Design Reference Database
@@ -936,6 +955,13 @@ The "reactive field" of point 1 doesn't have to be a shader. On Andyfreelancer i
   `header,section,footer{pointer-events:none}` then re-enable the interactive children
   (`a,button,input,select,textarea,summary,label,nav` + the map paths). Empty content areas then let
   the cursor light up the field behind them.
+- **Light and dark sections over one fixed canvas: move a band, do not fade the screen.** Easing
+  one global background value between paper and ink passes through a mid grey exactly while both
+  sections' text is on screen, and neither reads. Pass the section edges to the shader each frame
+  (their `getBoundingClientRect` top and bottom in the shader's space) and colour by position, with
+  a soft edge of a few percent of the height. The wall then travels with the scroll like a real
+  surface. `smoothstep(a, b, x)` with `a > b` is undefined in GLSL: write `1. - smoothstep(...)`.
+  Validated on Lucca Tech (2026-10-06).
 - **Live font specimen beats a Canva mockup** when the user is unfamiliar with a typeface — build a
   tiny standalone HTML specimen with the real Fontshare faces rather than rendering a Canva image
   (Canva bakes in un-editable garbled microtext). See [[feedback_named_concept_drives_render]].

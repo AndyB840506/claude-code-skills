@@ -44,6 +44,14 @@ viewport regardless of window/DPI limits.
   profile-lock flakiness; add `--virtual-time-budget=9000` so load handlers
   run before the dump.
 
+## Screenshots over CDP that never return
+
+`Page.captureScreenshot` hangs with no error (the WebSocket simply never answers) when the
+frame is too large for headless Edge: seen at `deviceScaleFactor: 2` and at a 2000 x 2000
+viewport with a WebGL canvas, both on 2026-10-06. Capture at `deviceScaleFactor: 1` and at
+most about 1600 px a side, and upscale or crop afterwards. For a static page that needs
+more pixels, use the `--screenshot` flag of the Edge command line instead.
+
 ## Reading the evidence
 
 - Overlap ≠ overflow: a clean probe with a visual overlap usually means a
