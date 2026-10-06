@@ -31,7 +31,9 @@ y queda marcado como superado o en revisión donde choca.
   prepara por episodio es el **tema y una hoja de ruta** (puntos, anécdotas, referencias), no
   un guion. Primer episodio: **la industria BPO en general**.
 - **Invitados:** a futuro, sin fecha.
-- **"Buenas y santas":** Andy lo quiere cambiar por un saludo más fresco (por definir).
+- **"Buenas y santas": RETIRADO desde el EP.02, sin reemplazo** (Andy, 2026-10-06). No hay
+  saludo fijo: cada episodio abre directo con la conversación y los hosts se presentan sobre
+  la marcha, como en MPD. (El EP.01 todavía lo dice, en 01:11.)
 - **Duración objetivo:** ~45 min. A futuro audio + video (panel presencial en vez de Zoom).
 - **Logo (2026-09-26):** Andy eligió el concepto "en vivo" (dos micrófonos + dos ondas, una
   por host), variante v1 con "THE" apilado:
@@ -64,11 +66,14 @@ y queda marcado como superado o en revisión donde choca.
   a carrera". Transcripción, portada, descripción de Spotify y clip listos en
   `launch-assets/T3-EP01-escampadero-launch.md`. Programado en Spotify para el domingo
   2026-10-04 a las 11 PM (https://open.spotify.com/episode/6Mssd4RGqkzrvrcLTwdr8b); web
-  preparada sin desplegar. Falta: desplegar la web después de esa hora. **La corrección de la
+  **desplegada a producción el 2026-10-06** y verificada en vivo. **La corrección de la
   metadata de T2 en el RSS queda descartada** (Andy, 2026-10-03: "ya cerremos T2"); ver el
   launch file. En el
   audio la apertura sigue con "Buenas y santas"; el saludo nuevo queda para el EP.02. El EP.02
   quedó anunciado al aire: la contraparte de Alejo (subir sin terminar la carrera).
+- **EP.02: grabación el sábado 2026-10-10** (fecha fijada por Andy el 2026-10-06). Tema: el
+  anunciado al aire en el EP.01. Primer episodio **sin "Buenas y santas" y sin saludo fijo** (ver
+  arriba). Hoja de ruta: sin escribir.
 - **Abierto:** si el retiro de la cultura pop
   del 2026-07-21 sigue vigente (EP.01–09 no la usaban, EP.10–19 sí); qué reglas de
   `guion-style-btq.md` sobreviven al formato conversacional (se define con el primer guion).
