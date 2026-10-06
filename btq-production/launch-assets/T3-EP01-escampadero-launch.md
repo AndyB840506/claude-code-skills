@@ -302,6 +302,9 @@ devuelve vacío y el episodio no está en el RSS: normal para un episodio progra
       EP.01 enlazada al episodio y el embed del show en vez de la tarjeta propia. Revisado con
       Playwright/Edge a 1440 y 390 px: sin desborde, sin `.player` huérfano. No se despliega
       antes porque el embed todavía muestra el EP.27 en rojo.
-- [ ] **Claude, después del domingo 11 PM:** confirmar que el oEmbed del episodio responde,
-      `vercel deploy --prod --yes --cwd btq-production/website`, y verificar en
-      behind-thequeue.com con `curl -L` + captura del embed mostrando el EP.01.
+- [x] **Web desplegada a producción el 2026-10-06** (desde el portátil, deployment
+      `dpl_DuDUcEXL6umGaQT7MajKj5wfLpNT`, con el OK de Andy). Antes de desplegar: el oEmbed del
+      episodio respondía con el título del EP.01 y el RSS lo listaba primero. Después: el HTML
+      de behind-thequeue.com (`curl -L`) es idéntico byte a byte a `website/index.html` de
+      `05774f9`, sin `.player`, y la captura del embed (Playwright/Edge, 1440 px) muestra el
+      EP.01 con el arte de T3 sobre azul, 1:25:47.
