@@ -43,4 +43,4 @@
 - ¿Alejandro manda el esquema del EP.02, o lo prepara Claude como borrador para el checkpoint?
 - Sin comprobar: cuáles posts del plan social (domingo 4 a martes 6 de octubre) se publicaron.
 - Sin comprobar desde el 27-sep: logo a 3000×3000 o vector, roadmap de 8 temas, transcripts a Drive para Alejandro.
-- El índice `MEMORY.md` está cerca del límite de 200 líneas; `/memory-audit` sigue pendiente de decisión.
+- `MEMORY.md` mide 140 líneas (contadas con `wc -l` el 2026-10-06): el aviso de "200 líneas" del handoff del 03-oct ya no aplica. Memoria: 202 archivos, +8 desde la última auditoría; no alcanza el umbral de `/memory-audit`.
