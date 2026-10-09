@@ -30,6 +30,17 @@ se compone con PIL, deterministico. Ver `comfyui/templates/`.
   rellenar el resto con el negro de marca exacto (`(10,10,10)` / `#0A0A0A`). Cero riesgo
   de reintroducir errores ya corregidos (género, checkbox, íconos extra) y más rápido
   que seguir apostando con el modelo.
+  **Cuando NO hay composición aprobada que recortar (desde 2026-10-09): dibujar la
+  composición y pasarla por ControlNet** — plantilla `comfyui/templates/zimage-controlnet-api.json`.
+  Un "blockout" de profundidad hecho en PIL (blanco = cerca, negro = lejos: cabeza, torso,
+  escritorio como formas grises sobre negro) fija dónde va cada cosa; el prompt decide
+  contenido, luz y estilo. Prueba A/B sobre exactamente este caso (9:16, figura en el tercio
+  superior, prompt de EP.023): texto solo **0/2** seeds respetaron el tercio; ControlNet a
+  strength 0.8 **1/2**; a **1.0, 2/2**. Ojo al medir: a 0.8 una imagen dio 21% de píxeles
+  encendidos abajo (parecía mejora) y en realidad la figura llenaba el cuadro — solo estaba
+  más oscura. **Mirar la imagen, no solo el conteo.** Costo: la figura sale pequeña (menos
+  detalle facial) y cada imagen tarda ~60-120 s en vez de ~10-20 s. n=2: suficiente para
+  adoptarlo, no para declararlo infalible. Imágenes en `E:\AI\outputs\TEST-zimage-cn\`.
 - **El "negro puro" que renderiza el modelo NO es pixel-idéntico al negro de marca
   programático `(10,10,10)`** (aprendido 2026-07-15, BTQ EP.022): una generación aislada
   con fondo "pure black" suele salir en `(0,0,0)` o similar, un valor distinto aunque

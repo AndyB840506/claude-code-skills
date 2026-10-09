@@ -13,7 +13,7 @@ Two installs with identical layout — paths below use `E:\AI`; on the laptop su
 |---|---|
 | ComfyUI v0.27.0 portable (own Python) | `E:\AI\ComfyUI_windows_portable\` |
 | Launcher (server + output dir arg) | `E:\AI\run_comfyui.bat` |
-| Shared models root | `E:\AI\models\` (checkpoints, diffusion_models, text_encoders, vae, loras, embeddings, controlnet, upscale_models) |
+| Shared models root | `E:\AI\models\` (checkpoints, diffusion_models, text_encoders, vae, loras, embeddings, controlnet, upscale_models, model_patches) |
 | Path mapping config | `E:\AI\ComfyUI_windows_portable\ComfyUI\extra_model_paths.yaml` — read at startup only |
 | Generated images | `E:\AI\outputs\` |
 | Offline user manual | `E:\AI\manual.html` |
@@ -31,6 +31,8 @@ Mismo nombre de carpeta, solo cambia la letra de unidad — igual que `E:\AI` �
 - `diffusion_models/`: `z_image_turbo_bf16` · `Chroma1-HD-fp8mixed` (uncensored, natural language, T5 flan) · `hidream_i1_dev_uncensored_fp8_v0.2` (quad encoders)
 - `text_encoders/`: qwen_3_4b (Z-Image) · clip_l/clip_g/t5xxl/llama fp8 (HiDream) · `t5xxl_flan_fp8_scaled` (Chroma)
 - `upscale_models/`: `RealESRGAN_x4plus.pth` (fotorreal) · `RealESRGAN_x4plus_anime_6B.pth` (anime/Pulir)
+- `model_patches/` (agregado 2026-10-09, solo desktop): `Z-Image-Turbo-Fun-Controlnet-Union-2.1-2602-8steps` (6.71 GB, Apache-2.0, `huggingface.co/alibaba-pai/Z-Image-Turbo-Fun-Controlnet-Union-2.1`) — ControlNet de Z-Image: profundidad, pose, canny, HED, MLSD, scribble, gray. Se carga con `ModelPatchLoader` + `ZImageFunControlnet` (nativos). Portátil: bajar la variante `lite-2602` (2.02 GB) del mismo repo y agregar `model_patches: model_patches` a su `extra_model_paths.yaml`.
+- `custom_nodes/comfyui_controlnet_aux` (Fannovel16, agregado 2026-10-09): preprocesadores (DepthAnythingV2, DWPose, Canny… 51 nodos). Instalado SIN `onnxruntime-gpu` a propósito (habría pisado el `onnxruntime` que ya está); dry-run previo confirmó que no tocó torch/numpy.
 - Workflows "Pro" (two-stage base→hi-res muteable) por modelo, en el repo de backup.
 
 ## Measured timings, RTX 3080 Ti (two-stage completo, 2026-07-11)
@@ -59,9 +61,9 @@ nativo directo a la resolución final.
   grafo API con prompt/seed/params, `img.info["workflow"]` = grafo UI) — leerlos con PIL
   para reproducir o editar EXACTAMENTE una generación del usuario, en vez de rederivar
   la receta (usado BTQ EP.021). Plantillas API listas en `comfyui/templates/`:
-  `zimage-txt2img-api.json` · `chroma-txt2img-api.json` ·
+  `zimage-txt2img-api.json` · `zimage-controlnet-api.json` (composición dibujada) · `chroma-txt2img-api.json` ·
   `illustrious-sdxl-booru-api.json` (estilizado/anime) ·
-  `sdxl-bigasp-photoreal-api.json` (fotorreal). Las 4 traen negativo anti-warping
+  `sdxl-bigasp-photoreal-api.json` (fotorreal). Las 5 traen negativo anti-warping
   pre-rellenado (editable); en Z-Image el negativo es decorativo por diseño (cfg 1.0) —
   ver `docs/prompting.md`.
 - **Antes de escribir CUALQUIER script nuevo en `templates/`, listar el directorio
