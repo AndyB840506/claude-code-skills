@@ -41,6 +41,11 @@ se compone con PIL, deterministico. Ver `comfyui/templates/`.
   más oscura. **Mirar la imagen, no solo el conteo.** Costo: la figura sale pequeña (menos
   detalle facial) y cada imagen tarda ~60-120 s en vez de ~10-20 s. n=2: suficiente para
   adoptarlo, no para declararlo infalible. Imágenes en `E:\AI\outputs\TEST-zimage-cn\`.
+  **Para QUITAR un objeto, el ControlNet va apagado (strength 0)** — en modo inpaint rellena el
+  hueco gris con algo gris/translúcido y re-crea lo que se quería borrar (9 corridas,
+  2026-10-09, humo de MPD-T2-poe-v14). Receta que funcionó: Content-Aware Fill de PhotoCraft +
+  Z-Image a denoise 0.7, con el objeto pintado ENTERO (lo que queda fuera de la máscara
+  sobrevive tal cual) y sin reusar la seed original. Prototipo: `E:\Sandbox\fixloop\fixloop.py`.
 - **El "negro puro" que renderiza el modelo NO es pixel-idéntico al negro de marca
   programático `(10,10,10)`** (aprendido 2026-07-15, BTQ EP.022): una generación aislada
   con fondo "pure black" suele salir en `(0,0,0)` o similar, un valor distinto aunque
