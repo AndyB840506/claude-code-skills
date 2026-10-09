@@ -8,7 +8,7 @@ publicar se regeneró el mismo día del cambio de formato usando el stack local 
 composición determinista con PIL), siguiendo el patrón fijado desde BTQ EP.021
 (memoria `feedback_local_artwork_pipeline`). Primera vez que MPD usa este pipeline.
 
-**Assets finales:** `E:\Podcast\MPD\EP 05\artwork-local\`
+**Assets finales:** `E:\Podcast\MPD\Temporada 1\EP 05\artwork-local\`
 - `EP005-1x1-FINAL-print.png` (3000×3000, para impresión/Spotify) + `EP005-1x1-FINAL-FOR-UPLOAD.jpg` (JPEG q85, 477 KB, bajo el límite de 500 KB)
 - `EP005-16x9-FINAL.png` (1920×1080 — YouTube/web/LinkedIn)
 - `EP005-9x16-FINAL.png` (1080×1920 — Stories/Reels/TikTok)

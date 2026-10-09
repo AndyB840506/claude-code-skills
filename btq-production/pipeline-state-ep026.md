@@ -7,7 +7,7 @@ medidos programáticamente (148 wpm +13%, esqueleto D sin precedente medido). Li
 PASS: `lint_guion_repeticion.py` (2 hallazgos corregidos, PASS final), grep de español neutro y
 de cifras en letras (limpio).
 
-**Grabación confirmada por Andy 2026-08-13** en `E:\Podcast\BTQ\EP26\` (`BTQ EP 26.wav` /
+**Grabación confirmada por Andy 2026-08-13** en `E:\Podcast\BTQ\EP 26\` (`BTQ EP 26.wav` /
 `.mp3` / `.rpp`). **Duración real medida con ffprobe (wav y mp3 coinciden): 2205,27 s = 36:45.**
 Esto es **~4 minutos por debajo del piso del estándar editorial de 40-45 min** (el guion escrito
 estimaba 40:43). No se preguntó ni se asumió la causa — pendiente de comparar contra la
@@ -98,7 +98,7 @@ sí solo):
 **Corrección de ruta de artwork, misma sesión (Andy la cazó):** las portadas y quote cards se
 generaron primero en `E:\AI\outputs\BTQ-EP026\` (carpeta de assets de MARCA). La regla fijada
 2026-07-31 en `brand-constants.md` manda que van en `E:\Podcast\BTQ\EP NN\BTQ Artwork EP NN\`,
-junto al audio. Copiado a `E:\Podcast\BTQ\EP26\BTQ Artwork EP26\` y el gate mecánico se re-corrió
+junto al audio. Copiado a `E:\Podcast\BTQ\EP 26\BTQ Artwork EP26\` y el gate mecánico se re-corrió
 ahí — PASS. Ver `EP026-vacante-launch.md` § D para el detalle completo, incluida la nota de que
 EP.023 y EP.025 tienen el mismo problema sin corregir.
 

@@ -244,7 +244,7 @@ Mr. Putrid's Den, ya disponible. 🤘
 ══════════════════════════════════════════════════
   ✓ Copy generado — 3 días × 4 plataformas
   ✓ Artwork — artwork-ep005.md (portada 1:1/16:9/9:16 + 4 quote cards,
-    ya generadas en E:\Podcast\MPD\EP 05\artwork-local\)
+    ya generadas en E:\Podcast\MPD\Temporada 1\EP 05\artwork-local\)
   ✓ Portada 1:1 comprimida para Spotify (JPEG q85, 477 KB)
   ✓ Portada 9:16 para Stories (EP005-9x16-FINAL.png)
   ✓ Quote cards para Día 2 (Q3-final.png — dúo Cerati/Andrea, calza con la quote elegida)

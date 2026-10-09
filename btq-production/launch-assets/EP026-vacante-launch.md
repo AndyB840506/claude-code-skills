@@ -270,13 +270,13 @@ contraprueba a 96px), sin errores tipográficos.
 carpeta de assets de MARCA, no de episodio. `brand-constants.md` (fijado 2026-07-31) manda que
 portadas y quote cards de episodio van en `E:\Podcast\BTQ\EP NN\BTQ Artwork EP NN\`, junto al
 audio, y así se corre la compuerta. Andy lo cazó. Copiado a la ruta canónica
-(`E:\Podcast\BTQ\EP26\BTQ Artwork EP26\`, siguiendo el nombre real de carpeta que ya existía —
+(`E:\Podcast\BTQ\EP 26\BTQ Artwork EP26\`, siguiendo el nombre real de carpeta que ya existía —
 sin espacio, distinto del "EP 26" con espacio de otros episodios) y el gate mecánico se volvió a
 correr ahí: mismo resultado, PASS. **EP.023 y EP.025 tienen el mismo problema sin corregir**
 (sus portadas quedaron en `E:\AI\outputs\BTQ-EP0XX\`, no en la carpeta del episodio) — no se
 tocan en esta sesión, pero queda para una limpieza aparte.
 
-- Portadas: `E:\Podcast\BTQ\EP26\BTQ Artwork EP26\BTQ-EP026-COVER-{1x1,16x9,9x16}.png`
+- Portadas: `E:\Podcast\BTQ\EP 26\BTQ Artwork EP26\BTQ-EP026-COVER-{1x1,16x9,9x16}.png`
 - Quote cards (4), citas verbatim verificadas contra el SRT real (no el guion escrito):
   1. "El mercado no le debe candidatos gratis. Se los cobra tarde o temprano, con la vacante abierta." (00:21:47)
   2. "No esperaron a que apareciera el candidato unicornio. Se pusieron a criarlo." (00:27:08)
@@ -318,6 +318,6 @@ corrido y verificado en vivo (curl 200, contenido real, og:image sirviendo). Com
    la grabación fue una declaración completa. Ver `pipeline-state-ep026.md`.
 5. **Pendiente real, manual de Andy:** publicar el artículo nativo de LinkedIn — fecha sugerida
    miércoles 19 de agosto, ver `EP026-linkedin-articulo.md`. Subir la imagen de portada
-   16:9 (`E:\Podcast\BTQ\EP26\BTQ Artwork EP26\BTQ-EP026-COVER-16x9.png`) como header manualmente.
+   16:9 (`E:\Podcast\BTQ\EP 26\BTQ Artwork EP26\BTQ-EP026-COVER-16x9.png`) como header manualmente.
 6. **Pendiente real, manual de Andy:** ejecutar el calendario social (§B) sáb 15 → mar 18, y
    editar metadata de YouTube (§C) cuando el episodio ingiera por RSS.

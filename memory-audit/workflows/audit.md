@@ -34,7 +34,10 @@ aprobación explícita antes de tocar cualquier archivo.
 1. Lee `MEMORY.md` completo (workspace: `C:\Users\andre\.claude\projects\<workspace>\memory\`).
 2. Lista todos los `.md` en esa carpeta (Glob `*.md`, excluyendo `MEMORY.md`).
 3. Para cada archivo, lee su frontmatter (`name`, `description`, `metadata.type`).
-4. **Huérfanos:** compara la lista de archivos contra las líneas de `MEMORY.md`.
+4. **Huérfanos:** compara la lista de archivos contra las líneas de `MEMORY.md` **y de los
+   hubs `hub_*.md`** — desde 2026-10-09 las memorias de cada proyecto se indexan en su hub
+   (podcasts, HireSignal/Kuma, freelance, imagen) y `MEMORY.md` solo enlaza el hub. Un
+   archivo enlazado desde un hub NO es huérfano.
    - Archivo sin línea en `MEMORY.md` → huérfano tipo A.
    - Línea en `MEMORY.md` cuyo archivo referenciado no existe → huérfano tipo B.
 5. **Índice truncado:** mide `MEMORY.md` en bytes y en líneas (python: `len(open(p,'rb').read())`

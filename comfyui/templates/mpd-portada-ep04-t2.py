@@ -40,7 +40,7 @@ WORDMARK = "MR. PUTRID'S DEN"
 FOOTER_FRAC = 0.058
 
 SCENE = r"E:\AI\outputs\MPD-T2E04-escenario-v4-3000-graded.png"
-ICONS = r"E:\Podcast\MPD\EP 05\artwork-local\mpd-icon-strip-source.png"
+ICONS = r"E:\Podcast\MPD\Temporada 1\EP 05\artwork-local\mpd-icon-strip-source.png"
 OUT_DIR = r"E:\Podcast\MPD\Temporada 2\EP 04\artwork"
 
 SEASON_LABEL = "Temporada 2 · Episodio 4"

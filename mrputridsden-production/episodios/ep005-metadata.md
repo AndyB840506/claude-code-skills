@@ -60,7 +60,7 @@ Aterciopelados, Andrea Echeverri, Héctor Buitrago, El Dorado, rock colombiano, 
 - **Duración real:** ~36:48 total (habla efectiva 00:31–36:18 ≈ 35:47; outro cantado 36:21–36:48)
 - **Duración vs target:** corta vs el objetivo de 43 min (ver `guion-style-mpd.md`) — Andrés decidió publicar as-is
 - **Fecha de producción:** grabado 2026-07-17 (mismo día del guion solo)
-- **Audio:** `E:\Podcast\MPD\EP 05\MPD EP 05.mp3`
+- **Audio:** `E:\Podcast\MPD\Temporada 1\EP 05\MPD EP 05.mp3`
 - **SRT:** `E:\Transcriptor\transcripciones\MPD EP 05.srt`
 - **Categoría Spotify:** Music / Music Commentary
 - **Idioma:** Español (Colombia)
@@ -93,7 +93,7 @@ Aterciopelados, Andrea Echeverri, Héctor Buitrago, El Dorado, rock colombiano, 
   `guion-style-mpd.md` (159 wpm, +23.5% expansión) — el próximo guion (EP.006) usa el target
   correcto de ~5.543 palabras escritas.
 - **Artwork:** hecho 2026-07-17 vía pipeline local (ComfyUI + PIL) — portada 1:1/16:9/9:16 + 4
-  quote cards en `E:\Podcast\MPD\EP 05\artwork-local\`. Detalle en `artwork-ep005.md`.
+  quote cards en `E:\Podcast\MPD\Temporada 1\EP 05\artwork-local\`. Detalle en `artwork-ep005.md`.
 - **Decidido 2026-07-19:** el paso a formato solo queda SIN mencionar — ni en el episodio, ni en
   show notes, ni en redes. El guion grabado ya no lo menciona al aire (a propósito); esta
   metadata tampoco lo menciona, por diseño.

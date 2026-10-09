@@ -135,7 +135,7 @@ Kraken, Elkin Ramírez, el Titán, metal colombiano, rock colombiano, metal en e
 ```
 
 ## Notas de producción
-- **Split:** episodio grabado ~2h45m → partido en 2. Audio: `E:\Podcast\MPD\EP 04\MPD 04 PT 1.mp3`
+- **Split:** episodio grabado ~2h45m → partido en 2. Audio: `E:\Podcast\MPD\Temporada 1\EP 04\MPD 04 PT 1.mp3`
   y `MPD 04 PT 2.mp3`. Ambas partes comparten esta metadata; solo cambia el título y el
   URL/capítulos por parte.
 - **Artwork:** prompts en `episodios/artwork-ep004.md`. Portada v2 congelada (aprobada 2026-06-12).

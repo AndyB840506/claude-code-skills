@@ -98,7 +98,7 @@ salir corto (~35.8 min vs 43 min target). El formula corregida (~5.543 palabras 
    descripcion EN/HTML, keywords, capitulos con timestamps reales del SRT, datos del episodio).
 2. ~~Artwork del episodio~~ - hecho 2026-07-17: regenerado vía pipeline local (ComfyUI + PIL),
    primera vez que MPD usa este stack (antes solo BTQ/CCC). Portada 1:1/16:9/9:16 + 4 quote
-   cards en `E:\Podcast\MPD\EP 05\artwork-local\`. Detalle completo en `artwork-ep005.md`. Las
+   cards en `E:\Podcast\MPD\Temporada 1\EP 05\artwork-local\`. Detalle completo en `artwork-ep005.md`. Las
    imágenes viejas de Flow (2026-06-17, pre-cambio de formato) quedan como referencia histórica,
    no se usan para publicar. Herramientas nuevas reusables: `comfyui/templates/mpd-portada-compose.py`
    y `mpd-quote-card-compose.py`.

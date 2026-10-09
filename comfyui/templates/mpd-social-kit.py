@@ -239,7 +239,7 @@ def build(accent_name):
     save(xh, f"MPD-T2-x-header-1500x500{sfx}.jpg")
 
 
-EP005_COVER = r"E:\Podcast\MPD\EP 05\artwork-local\EP005-1x1-FINAL-FOR-UPLOAD.jpg"
+EP005_COVER = r"E:\Podcast\MPD\Temporada 1\EP 05\artwork-local\EP005-1x1-FINAL-FOR-UPLOAD.jpg"
 TEASER_DIR = os.path.join(OUT_DIR, "teasers")
 
 ROLL = [

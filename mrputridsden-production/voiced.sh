@@ -18,8 +18,8 @@ measure () {
 
 for TH in -35 -40; do
   echo "=== umbral ${TH} dB ==="
-  measure "/e/Podcast/MPD/EP 04/MPD 04 PT 1.mp3" "MPD EP04 P1 (co-host)" "$TH"
-  measure "/e/Podcast/MPD/EP 04/MPD 04 PT 2.mp3" "MPD EP04 P2 (co-host)" "$TH"
+  measure "/e/Podcast/MPD/Temporada 1/EP 04/MPD 04 PT 1.mp3" "MPD EP04 P1 (co-host)" "$TH"
+  measure "/e/Podcast/MPD/Temporada 1/EP 04/MPD 04 PT 2.mp3" "MPD EP04 P2 (co-host)" "$TH"
   measure "/e/Podcast/MPD/Temporada 2/EP 01/MPD EP 01.mp3" "PILOTO T2 (solo)" "$TH"
   echo ""
 done

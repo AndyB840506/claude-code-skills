@@ -147,5 +147,5 @@ if __name__ == "__main__":
         title="Misterios y Leyendas",
         tagline="Donde la música se encuentra con el mito",
         out_path=f"{base}/MPD-T2-PORTADA-CONTEXTO-3000.jpg",
-        icon_strip_path="E:/Podcast/MPD/EP 05/artwork-local/mpd-icon-strip-source.png",
+        icon_strip_path="E:/Podcast/MPD/Temporada 1/EP 05/artwork-local/mpd-icon-strip-source.png",
     )
