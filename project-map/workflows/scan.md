@@ -36,8 +36,11 @@ Generated: YYYY-MM-DD
 ## Step 4 — Save and confirm
 Write to `~/.claude/project-map.md`.
 Report: how many repos indexed, path saved to.
-The file is automatically synced to GitHub on the next bootstrap sync (sync.ps1) — no
-manual action needed.
+**The file is NOT synced between machines** — `claude-continuity\sync.ps1` copies
+`CLAUDE.md`, hooks and memory, not `project-map.md` (checked 2026-10-09; this line used to
+claim the opposite). Each PC keeps its own map. The cross-machine view is the Project Hub
+dashboard (https://claude.ai/artifact/53P61HDQafMEKpW3fuciqU), built by
+`claude-continuity\project-hub\build_projects.py`.
 
 ---
 
