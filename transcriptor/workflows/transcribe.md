@@ -20,6 +20,14 @@ Usar `$base` en lugar de `E:\Transcriptor` en todos los pasos siguientes.
 - Saltar al Paso 2 sin hacer preguntas
 
 **Si fue invocado standalone:**
+- **Antes de buscar audio, listar los SRT que ya existen** — el pedido puede ser por una
+  transcripción ya hecha, no por una nueva:
+  ```powershell
+  Get-ChildItem "$base\transcripciones" -Filter "*.srt" | Sort-Object LastWriteTime -Descending | Select-Object -First 8
+  ```
+  Si el pedido puede corresponder a uno de esos, ofrecerlo. Si no queda claro qué episodio
+  es, preguntar cuál ANTES de barrer el disco buscando audio (mordió el 2026-10-13: "necesito
+  el transcript de BTQ" era el EP.01 ya transcrito, y se barrieron dos discos buscando el EP.02).
 - Revisar si hay archivos en `$base\audios\`:
   ```powershell
   Get-ChildItem "$base\audios" -Include "*.mp3","*.wav","*.m4a","*.mp4" -Recurse | Sort-Object LastWriteTime -Descending | Select-Object -First 5
