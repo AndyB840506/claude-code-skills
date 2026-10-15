@@ -1,71 +1,73 @@
-# App Spec — "Field Ops Terminal" (interactive)
+# App Spec — "NEON SIEGE" (since 2026-10-15)
 
-One self-contained file (inline CSS/JS, Google Fonts CDN allowed). The named
-concept is **Field Ops Terminal**: a military intel console rendering a live
-briefing — not a gamer landing page. If it looks like a generic dark dashboard
-with three cards, it's wrong.
+The app is generated, not hand-written: `assets/template.html` holds the design and
+logic, `assets/build.py` injects the data. **Edit the template, never the output file.**
+The previous "Field Ops Terminal" design (olive and phosphor green) is retired.
 
-**It is an APP, not a report** (user decision 2026-07-06): a controls row at
-the top — Mode (MP/REDSEC) · Playstyle · Class filter · Platform — as tactical
-segmented buttons; every choice re-renders client-side from the embedded JSON
-and persists in `localStorage` (key `bf6ops`). Playstyle switches the optic on
-pattern-pick builds; platform filters the controller-settings rows; class
-filter hides non-matching weapon categories. A data-age chip in the header
-computes age from the JSON `generated` date and self-marks **STALE — RE-RUN THE
-SKILL** past 60 days. All copy in English.
+```
+python assets/build.py <weapons.json> <vehicles.json> <out.html> [<copy-to.html> ...]
+```
 
-## Banned (generic-AI tells)
+`build.py` cleans visible copy on the way in (an em dash between clauses becomes a
+period, a middot separator becomes a comma) and aborts if one survives. `stats` keep
+their middot: the app splits them into chips on it.
 
-Centered hero + 3 equal cards, purple/blue gradients, glassmorphism, rounded
-pill buttons everywhere, Inter/system-default headers, emoji as icons,
-decorative progress rings.
+## Concept
 
-## Art direction
+A tactical briefing on a Las Vegas casino floor after hours, anchored to the official
+Season 5 ("Siege of Vegas") key art. Approved by Andrés on 2026-10-15 ("premium, close to
+BF6, the new season's colors"). When a new season ships, re-measure the palette from that
+season's key art (pixel sampling, see below) instead of keeping these values by inertia.
 
-- **Palette:** near-black olive `#0C0F0A` base; panel `#141A12`; primary accent
-  phosphor green `#9FE870`; secondary amber `#E8B44F` (warnings/INFERRED);
-  alert red `#E85D4F` (nerfs/STALE); text `#E8EDE4`; muted `#7A8471`.
-  Rank chips: gold `#D4AF37` / silver `#B8BDC4` / bronze `#B08D57`.
-- **Type:** headers **Barlow Condensed** (700, uppercase, tracked +4%); data &
-  numbers **IBM Plex Mono**; body **Barlow**. Sizes in `rem`.
-- **Texture:** 1px scanline overlay at ~3% opacity + faint dot-grid on panels.
-  Thin 1px borders with clipped corners (CSS `clip-path` notch on one corner)
-  instead of big border-radius — console panels, not app cards.
-- **Motion:** subtle only — section reveal (translateY 8px + fade), a one-time
-  "boot" flicker on the header. No parallax, no floating blobs.
+- **Palette, measured from the S5 key art pixels:** wine-black base `#160A11`, neon
+  magenta `#BA4BC0` (light tint `#E07BE6`), lavender rail `#A381D1`, ember `#C15129`
+  (UI `#E0612F`, core `#F7BA6C`), brass `#CA914A` (light `#E8BD7A`). Text `#F6ECF0`.
+- **Type:** Tanker (Fontshare) for display, Khand (Fontshare) for UI, JetBrains Mono
+  for data. None shared with luccatech.com (Panchang, General Sans) on purpose.
+- **Signature:** opening a build rolls each attachment into place like a slot reel.
+- **Field:** fixed WebGL canvas behind everything: drifting neon bokeh plus rising
+  embers that dodge the pointer; a tap fires a muzzle-flash ring.
+- **Rail:** the key art's vertical lavender strip, used as the scroll progress bar.
 
 ## Layout
 
-1. **Header bar** — `BF6 // META REPORT` + mono meta-line: patch, date,
-   platform, playstyle. STALE banner here when applicable (amber, full-width).
-2. **Mode switch** — MP / REDSEC as two tactical tabs (only if both requested).
-   Persist choice with a `data-` attribute; no library.
-3. **Category nav** — sticky horizontal strip of mono chips (AR · SMG · LMG …)
-   that scroll-jump to sections.
-4. **Weapon cards** — per category, 3 cards in `grid-template-columns:
-   repeat(auto-fit, minmax(280px, 1fr))`. Card anatomy: rank chip top-left,
-   source badge top-right (`✓ CONFIRMED` green / `⚙ COMMUNITY` blue /
-   `◈ INFERRED` amber / `NO DATA` gray / `STALE` red-outline), weapon name in
-   condensed caps, one-line reason, TTK/DPS as mono stat pair, and a
-   **"LOADOUT ▸" affordance: clicking the card expands the full attachment
-   loadout in place** (accordion; slot | attachment name | build source line
-   with its own badge + date). Pattern-pick names carry `*` and render amber.
-   No cell is ever empty — see run-report.md's contract. All report copy in
-   English.
-5. **Controller settings** — 5-column table (Setting | Value | Reason | Where |
-   Source). On ≤480px hide "Reason" (`display:none`), keep the rest. Rows that
-   changed this patch get a green left-border.
-6. **Sources footer** — every URL + access date, mono, small.
+Hero (oversized "META OPS", side intel block) → WEAPONS / VEHICLES tabs → controls
+(mode, playstyle, class, platform; playstyle and class hide in VEHICLES) → collapsible
+Season 5 briefing → sticky section index → ranked editorial rows (huge rank numerals,
+not a card grid) → tuning → footer with disclaimer and a CLOSED sources drawer.
 
-## Data block
+Vehicles view: tier ladder S/A/B/C, vehicle groups with per-seat loadouts (main and alt
+build), counters (anti-vehicle Engineer + target list), vehicle controls.
 
-Keep the `<script id="meta-data" type="application/json">` snapshot (generated
-date, patch, platform, playstyle, per-mode weapons with attachments + tiers,
-controller settings). It is the data layer for a future companion app.
+## Sources stay hidden but present (Andrés, 2026-10-15)
 
-## Mobile-first checks (before delivering)
+He wants a clean page with no visible source clutter. Attribution is still required,
+because the app republishes other sites' builds. So:
+- **No site names in visible copy** (`reason`, notes, settings reasons). Say "in the
+  meta rankings", "in usage tracking", "by build curators" instead.
+- Site names live only in `src`, `source`, `rankingSource`, `tierSource` and `sources`,
+  which render inside small closed "Intel" disclosures and the footer drawer.
+- Check before delivering: no site name in `document.body.innerText`.
 
-Viewport meta present; no fixed widths; cards stack at 280px; tables inside
-`overflow-x:auto` wrappers; tap targets ≥44px; text ≥14px equivalent. Verify by
-resizing logic mentally against 360px width — if a table would overflow the
-viewport without its scroll wrapper, fix it before writing the file.
+## Motion rules (learned the hard way, 2026-10-15)
+
+- **No `steps()` flicker.** Andrés found the stepped neon flicker too abrupt. Use
+  interpolated easing, `cubic-bezier(.22,1,.36,1)` across the board.
+- **Never let an end state depend on a transition or on requestAnimationFrame.**
+  Expansion animates height in px, then a timer pins `height:auto`. Crossfades remove
+  their class after a forced reflow and `setTimeout`, never rAF (rAF pauses in background
+  tabs). Reveals have three independent exits: observer, frame loop, safety timer.
+- Full `prefers-reduced-motion` branch: no reels, no reveals; the canvas keeps its single
+  frame (`preserveDrawingBuffer`).
+
+## Verify before delivering (headless Edge, no human needed)
+
+- Edge headless will not lay out narrower than about 477 px: test phones by loading the
+  page in a **390 px iframe**, not with `--window-size=390`.
+- `--dump-dom` paints no frames, so transitions never advance there. Assert END states
+  (pinned by timers), and confirm visuals with `--screenshot`.
+- Run the 4 combos (weapons and vehicles, MP and REDSEC) at desktop and 390 px. Expect:
+  no JS errors, `scrollWidth == clientWidth`, 0 em dashes, 0 middots, 0 site names in
+  visible text, no element left in `.pre`, row counts equal to the data.
+- Click test: open a build (height > 0), switch tabs and mode (content changes, no zone
+  left at `.out`).

@@ -45,6 +45,14 @@ guide (thecontrollerpeople), and a REDSEC-specific preset (mitchcactus). The
 app shows a different table per platform + a REDSEC override block. Record: patch version + date, buffs/nerfs,
 attachment data, aim/deadzone changes, every URL used.
 
+**Pass 4, vehicles (added 2026-10-15):** builds per seat (bftactics.com/vehicle-builds is
+the bulk source, GameRant as alt), EA's vehicle page for the roster and NATO/PAX names,
+a vehicle tier list (Timesaver), counters (Switchblade, Timesaver anti-vehicle), and
+vehicle control settings (Dexerto, Overgear, GameRant). Read every vehicle line of the
+current patch notes and attach it to the vehicle it touches. **REDSEC roster:** as of
+2026-10-15 EA only says which vehicles are NOT in REDSEC (Mobile AA, Attack Helicopter,
+Attack Jet, Fighter Jet). Never list a vehicle as in REDSEC without a source saying so.
+
 **Staleness rule:** if the newest usable source is >60 days old, the report and
 the chat summary get a visible `STALE` banner ("meta de <date> — puede haber
 cambiado"). Never present old data as current.
@@ -98,12 +106,27 @@ This section burned the user before — it shipped hardcoded values. Rules:
 
 ## Step 4 — Regenerate the app
 
-Follow [html-spec.md](html-spec.md). **Stable path — same file every time** (the
-user's bookmark must keep working): `E:\Claude Output\bf6\bf6-meta-app.html`
-(desktop) or `D:\Claude Output\bf6\bf6-meta-app.html` (laptop) — create the
-folder if missing, detect which drive exists. Embed ALL fetched data (both
-modes, all platforms' settings) in the JSON block; the app renders and filters
-client-side. Open it: `Start-Process "<path>"` (PowerShell).
+Write the data as two files in `<drive>:\Claude Output\bf6\data\` (`E:` desktop, `D:`
+laptop): `weapons.json` (generated, patch, modes, patternBuild, controllerSettings,
+sources) and `vehicles.json` (tiers, s5Changes, groups, counters, controls, sources).
+Open the previous copies first: they are the baseline for "what changed". The schema is
+whatever `assets/template.html` reads; copy the shape of the previous files.
+
+Then build, following [html-spec.md](html-spec.md) for copy and verification rules:
+
+```
+python assets/build.py data\weapons.json data\vehicles.json "<drive>:\Claude Output\bf6\bf6-meta-app.html" "C:\Users\andre\repos\lucca-tech-web\bf6\index.html"
+```
+
+**Stable path, same file every time** (the user's bookmark must keep working). Run the
+html-spec verification, then open it: `Start-Process "<path>"`.
+
+## Step 4b — Publish to luccatech.com/bf6/ (only with the user's OK)
+
+The public copy lives in `repos\lucca-tech-web\bf6\index.html` (build.py already wrote
+it). Pull that repo first. Then: `node build.js` (refreshes sitemap lastmod), commit,
+run the `deploy-preflight` skill, and deploy by hand with Vercel (prebuilt; recipe in the
+Lucca Tech memory). Verify the live page with `curl -sL` against the local file.
 
 ## Step 5 — Chat summary (compact, user's language)
 
@@ -115,4 +138,6 @@ client-side. Open it: `Start-Process "<path>"` (PowerShell).
 #1 por categoría — MP:      #1 por categoría — REDSEC:
   AR  → <arma>                AR  → <arma>
   SMG → <arma>                ...
+Vehículos: <cambios del parche que mueven la tier list>
+Publicado en luccatech.com/bf6/: <sí, verificado en vivo / no, pendiente de OK>
 ```
