@@ -8,7 +8,7 @@ description: "Data refresher for the BF6 Meta Ops app — an interactive local H
 The deliverable is **`bf6-meta-app.html`** — an interactive single-file app with
 WEAPONS and VEHICLES tabs (mode MP/REDSEC, playstyle, class filter, and platform are
 selected IN the app; choices persist via localStorage; rows click-open into full
-loadouts). It is built from `assets/template.html` + data JSON by `assets/build.py`,
+loadouts). It is built from `templates/template.html` + data JSON by `scripts/build.py`,
 and the same file is published at **luccatech.com/bf6/** (design: "NEON SIEGE", see
 html-spec). This skill's job on invocation: **fetch fresh data and rebuild that file at
 the same path**, then open it; publishing is a separate step that needs the user's OK.
@@ -30,11 +30,11 @@ Follow [workflows/run-report.md](workflows/run-report.md):
    fetches for exact attachment builds, plus the vehicle pass. Max 10 fetches per
    pass (weapons and vehicles each).
 3. **Rank Top 3 per category, PER MODE** — MP and REDSEC are different metas.
-4. **Rebuild the app** with `assets/build.py` per
+4. **Rebuild the app** with `scripts/build.py` per
    [workflows/html-spec.md](workflows/html-spec.md): data in
    `E:\Claude Output\bf6\data\` (desktop) or `D:\...` (laptop), output at
    `<drive>:\Claude Output\bf6\bf6-meta-app.html` AND
-   `repos\lucca-tech-web\bf6\index.html`. Same paths every time. The app shows its
+   `C:\Users\andre\repos\lucca-tech-web\bf6\index.html`. Same paths every time. The app shows its
    own data age and self-marks STALE after 60 days. Run html-spec's checks.
 5. **Open it** (`Start-Process`), post a compact chat summary (what changed vs the
    previous data files, patch version, freshness), and ask before publishing

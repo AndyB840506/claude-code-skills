@@ -925,6 +925,12 @@ else (CSS, shaders, fonts link) still lives in the one file.
   the dominant color of the latest episode's art. During a rebrand before new episode art exists,
   the embed shows the old art: swap it for a custom branded card and restore the embed (without
   `theme=0`) once the first new episode is out.
+- **No end state may depend on a transition or on `requestAnimationFrame` actually running.**
+  An expanding panel animates its height in px and then a timer pins `height:auto`; a
+  crossfade removes its class after a forced reflow plus `setTimeout`, never rAF (rAF pauses
+  in background tabs). Found on BF6 Meta Ops (2026-10-15): a `grid-template-rows` expansion
+  stayed at 0 px in headless and the cause could not be proven; the timer-pinned version
+  works whether or not the transition runs.
 
 **Tell, not template:** the goal is that *we* are the differentiator. If the page could be
 swapped with another AI page by changing the logo, it failed Rule 0 — this tier is how you make

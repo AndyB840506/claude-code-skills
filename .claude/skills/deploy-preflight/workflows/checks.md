@@ -166,6 +166,12 @@ directorio del proyecto (`<dir>`, ej. `mrputridsden-production/website`):
 3. `vercel deploy --prebuilt --prod` desde `<dir>` -> devuelve la URL del deployment.
 4. `vercel alias set <deployment-url> www.<dominio>` — **`--prod` NO reapunta solo el
    dominio custom**; este paso es obligatorio.
+   **Falsa alarma con el CLI 54 (2026-10-15, lucca-tech-web):** `vercel deploy --prebuilt
+   --prod` terminó imprimiendo un JSON de "siguientes pasos" que incluye "Promote to
+   production", y parecía que no había llegado a producción. Sí había llegado, y en ese
+   proyecto `--prod` reapuntó el dominio solo. Ni el texto del CLI ni este punto 4 deciden:
+   correr `vercel inspect https://www.<dominio>/` y mirar que `created` sea el deploy recién
+   hecho; si no lo es, ahí sí `alias set`.
 5. **Verificar:** `curl -sI https://www.<dominio>/` debe dar `200`, y
    `curl -s https://www.<dominio>/ | grep "<marcador nuevo>"` debe encontrar el cambio.
 

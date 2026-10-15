@@ -24,6 +24,14 @@ mandatory: **`bfhub.gg/meta/mp` and `bfhub.gg/meta/br`** — bulk source of full
 attachment loadouts with exact names (wzstats/battlefieldmeta hide theirs
 behind JS subpages; VGC/boostmatch 403). Prefer sources that show a date.
 
+**Two traps found 2026-10-15:**
+- **bfhub's page header date ("updated Oct 15, 2026") is NOT the build date.** Each loadout
+  carries its own date (in 2026 they were still Oct–Nov 2025). Label builds with the entry
+  date ("build dated 2025"), never with the page date: the July run did the opposite.
+- **Near-identical names are different weapons:** RPK-74M and RPKM are separate LMGs
+  (wzstats lists both). The July data gave the RPK-74M a build bfhub publishes for the
+  RPKM. Match the exact name string before attaching a build to a weapon.
+
 **Pass 2 — per-weapon loadout searches (this is where proper names live):**
 for EVERY top-ranked weapon still missing a named build after the bfhub fetch,
 run `"<weapon>" best loadout attachments Battlefield 6` — the search summaries
@@ -110,12 +118,16 @@ Write the data as two files in `<drive>:\Claude Output\bf6\data\` (`E:` desktop,
 laptop): `weapons.json` (generated, patch, modes, patternBuild, controllerSettings,
 sources) and `vehicles.json` (tiers, s5Changes, groups, counters, controls, sources).
 Open the previous copies first: they are the baseline for "what changed". The schema is
-whatever `assets/template.html` reads; copy the shape of the previous files.
+whatever `templates/template.html` reads; copy the shape of the previous files.
+
+Before building, update the site repo, because the build writes into it:
+`git -C C:\Users\andre\repos\lucca-tech-web pull --ff-only origin master`. If it is not a
+fast-forward, stop and sort it out first: never build on top of a stale clone.
 
 Then build, following [html-spec.md](html-spec.md) for copy and verification rules:
 
 ```
-python assets/build.py data\weapons.json data\vehicles.json "<drive>:\Claude Output\bf6\bf6-meta-app.html" "C:\Users\andre\repos\lucca-tech-web\bf6\index.html"
+python scripts/build.py data\weapons.json data\vehicles.json "<drive>:\Claude Output\bf6\bf6-meta-app.html" "C:\Users\andre\repos\lucca-tech-web\bf6\index.html"
 ```
 
 **Stable path, same file every time** (the user's bookmark must keep working). Run the
@@ -124,7 +136,7 @@ html-spec verification, then open it: `Start-Process "<path>"`.
 ## Step 4b — Publish to luccatech.com/bf6/ (only with the user's OK)
 
 The public copy lives in `repos\lucca-tech-web\bf6\index.html` (build.py already wrote
-it). Pull that repo first. Then: `node build.js` (refreshes sitemap lastmod), commit,
+it; Step 4 already pulled the repo). Then: `node build.js` (refreshes sitemap lastmod), commit,
 run the `deploy-preflight` skill, and deploy by hand with Vercel (prebuilt; recipe in the
 Lucca Tech memory). Verify the live page with `curl -sL` against the local file.
 

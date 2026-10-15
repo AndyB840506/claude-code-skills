@@ -1,11 +1,11 @@
 # App Spec — "NEON SIEGE" (since 2026-10-15)
 
-The app is generated, not hand-written: `assets/template.html` holds the design and
-logic, `assets/build.py` injects the data. **Edit the template, never the output file.**
+The app is generated, not hand-written: `templates/template.html` holds the design and
+logic, `scripts/build.py` injects the data. **Edit the template, never the output file.**
 The previous "Field Ops Terminal" design (olive and phosphor green) is retired.
 
 ```
-python assets/build.py <weapons.json> <vehicles.json> <out.html> [<copy-to.html> ...]
+python scripts/build.py <weapons.json> <vehicles.json> <out.html> [<copy-to.html> ...]
 ```
 
 `build.py` cleans visible copy on the way in (an em dash between clauses becomes a
@@ -69,10 +69,21 @@ because the app republishes other sites' builds. So:
 
 ## Verify before delivering (headless Edge, no human needed)
 
-- Edge headless will not lay out narrower than about 477 px: test phones by loading the
-  page in a **390 px iframe**, not with `--window-size=390`.
-- `--dump-dom` paints no frames, so transitions never advance there. Assert END states
-  (pinned by timers), and confirm visuals with `--screenshot`.
+**Method:** use `web-page-kit/docs/mobile-qa-headless.md` (iframe harness, overflow probe,
+headless gotchas, animated-page rules). Do not rebuild the harness from scratch: on
+2026-10-15 it was reinvented here because nobody searched the kit first. What follows are
+only the BF6-specific assertions to run with it.
+
+**Run them with the saved script** (it does all of the below and prints a verdict):
+
+```
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify/verify-all.ps1 -Html "<path to bf6-meta-app.html>"
+```
+
+Expect the last line `VERDICT: PASS (9 of 9 runs, every expected check present)`. Any
+`NO RESULT` is a FAIL, not a skip. Proven both ways on 2026-10-15: PASS on the live app,
+FAIL when a site name was put back into a visible reason.
+
 - Run the 4 combos (weapons and vehicles, MP and REDSEC) at desktop and 390 px. Expect:
   no JS errors, `scrollWidth == clientWidth`, 0 em dashes, 0 middots, 0 site names in
   visible text, no element left in `.pre`, row counts equal to the data.

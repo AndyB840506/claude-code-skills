@@ -14,8 +14,11 @@ wordmark on phones; found and verified fixed with this exact flow).
    at that size silently shows a ~492px layout cropped to a 375px bitmap —
    it LOOKS like horizontal overflow that isn't real. Never diagnose from
    that artifact; measure `document.documentElement.clientWidth` first.
-2. **PS 5.1 sometimes returns empty stdout from `msedge --dump-dom`.**
-   Run it from Bash with `> out.html` redirection instead.
+2. **`msedge --dump-dom` sometimes returns empty stdout, from either shell.**
+   2026-07-07 it failed in PS 5.1 and worked from Bash; 2026-10-15 it was the reverse
+   (0 bytes from Bash). What worked that day: PowerShell
+   `Start-Process -Wait -RedirectStandardOutput out.html`. If one route gives 0 bytes,
+   try the other before concluding the page is broken.
 
 ## Working pattern: iframe harness + injected probe
 
@@ -51,6 +54,22 @@ frame is too large for headless Edge: seen at `deviceScaleFactor: 2` and at a 20
 viewport with a WebGL canvas, both on 2026-10-06. Capture at `deviceScaleFactor: 1` and at
 most about 1600 px a side, and upscale or crop afterwards. For a static page that needs
 more pixels, use the `--screenshot` flag of the Edge command line instead.
+
+## Animated pages: what headless can and cannot show (2026-10-15, BF6 Meta Ops)
+
+- **`--dump-dom` paints no frames, so CSS transitions and animations never advance.** A
+  panel that opens by transition measures 0 px there forever. Assert END states that a
+  timer pins (see design-guide Rule 18), not mid-transition values.
+- **`--screenshot` does not reliably finish them either:** a 2 s title animation was
+  still half-lit at an 8 s budget. For the final look, add `--force-prefers-reduced-motion`
+  (the page's reduced-motion branch shows end states).
+- **A page that starts scrolled screenshots blank** (`#anchor` in the URL, or a
+  `scrollTo` in an injected script). To see something far down the page: load it in a
+  tall iframe (e.g. 390 x 12000), measure the element's top inside the frame via the DOM,
+  and crop the screenshot at that offset.
+- **The harness can read the frame directly:** with `--allow-file-access-from-files`,
+  `iframe.contentDocument` is readable from the parent page, so the probe result can be
+  copied into a `<pre>` without `postMessage`.
 
 ## Reading the evidence
 

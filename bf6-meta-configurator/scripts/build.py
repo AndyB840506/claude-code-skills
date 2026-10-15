@@ -35,7 +35,7 @@ def main():
     if bad:
         sys.exit(f'em dash survived cleaning: {len(bad)}')
     blob = json.dumps(data, ensure_ascii=False, indent=1).replace('</', '<\\/')
-    tpl = (HERE / 'template.html').read_text(encoding='utf-8')
+    tpl = (HERE.parent / 'templates' / 'template.html').read_text(encoding='utf-8')
     if tpl.count('__DATA__') != 1:
         sys.exit('template must contain __DATA__ exactly once')
     html = tpl.replace('__DATA__', blob)
