@@ -56,6 +56,10 @@ h1.title .ch{display:inline-block;animation:ignite 2s cubic-bezier(.22,1,.36,1) 
 .fresh.stale{border-color:var(--ember);color:var(--ember-hi)}
 .by{color:var(--lav);text-decoration:none;border-bottom:1px solid var(--hair2);align-self:flex-start;padding-bottom:2px}
 .by:hover{color:var(--neon-hi)}
+.tip{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;min-height:46px;padding:10px 20px 10px 14px;font-family:var(--ui);font-weight:700;font-size:1.08rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);background:linear-gradient(135deg,var(--brass-hi),var(--ember));clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);transition:filter .35s ease,translate .35s cubic-bezier(.22,1,.36,1)}
+.tip:hover{filter:brightness(1.08) drop-shadow(0 0 14px rgba(224,97,47,.55));translate:0 -2px}
+.tip svg{width:20px;height:20px;flex:none}
+.tip small{font-family:var(--mono);font-weight:400;font-size:.62rem;letter-spacing:.1em;opacity:.75}
 
 /* view switch */
 .views{position:relative;display:flex;gap:4px;margin:8px 0 0;border-bottom:1px solid var(--hair)}
@@ -279,6 +283,7 @@ footer.end{position:relative;z-index:2;margin-top:80px;padding:34px var(--pad) 4
         <dt>Data</dt><dd><span id="h-date"></span> &nbsp;<span class="fresh" id="h-fresh"></span></dd>
       </dl>
       <a class="by mono" href="https://www.luccatech.com/">Fan-made by Lucca Tech</a>
+      <a class="tip" href="https://ko-fi.com/boogie8405" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c0 1.5 1.5 1.5 1.5 3M12 3c0 1.5 1.5 1.5 1.5 3"/></svg><span>Buy me a coffee</span></a>
     </div>
   </header>
 
@@ -309,6 +314,7 @@ footer.end{position:relative;z-index:2;margin-top:80px;padding:34px var(--pad) 4
   <div class="big">Play the objective</div>
   <p id="disc">Fan-made tool. Not affiliated with or endorsed by Electronic Arts. Rankings and builds belong to the sites credited in the intel sources.</p>
   <div class="row2">
+    <a class="tip" href="https://ko-fi.com/boogie8405" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c0 1.5 1.5 1.5 1.5 3M12 3c0 1.5 1.5 1.5 1.5 3"/></svg><span>Keep the updates coming <small>on Ko-fi</small></span></a>
     <a class="by mono" href="https://www.luccatech.com/">Built by Lucca Tech</a>
     <details class="sources"><summary class="mono" id="src-sum"></summary><ul id="src-list"></ul></details>
   </div>

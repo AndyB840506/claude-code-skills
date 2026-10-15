@@ -39,6 +39,13 @@ not a card grid) → tuning → footer with disclaimer and a CLOSED sources draw
 Vehicles view: tier ladder S/A/B/C, vehicle groups with per-seat loadouts (main and alt
 build), counters (anti-vehicle Engineer + target list), vehicle controls.
 
+## Support button (Andrés, 2026-10-15)
+
+Two Ko-fi links are hard-coded in the template: "Buy me a coffee" in the hero side block
+and "Keep the updates coming on Ko-fi" in the footer, both to `https://ko-fi.com/boogie8405`.
+Buy Me a Coffee does not pay out in Colombia, so it was replaced by Ko-fi on PayPal.
+Keep both links on every rebuild; change the URL only if Andrés gives a new one.
+
 ## Sources stay hidden but present (Andrés, 2026-10-15)
 
 He wants a clean page with no visible source clutter. Attribution is still required,
