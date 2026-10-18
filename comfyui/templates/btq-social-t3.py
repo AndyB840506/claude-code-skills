@@ -1,7 +1,7 @@
 # Piezas de redes BTQ T3 (identidad "EN VIVO"): teaser 1:1, 3 stories 9:16, quote cards 4:5,
 # lamina de reel 9:16 (+ mp4 con el clip). Compuesto con PIL, nunca generado.
-# Uso: python btq-social-t3.py <out_dir>
-# El texto de cada episodio vive en EP abajo. Las citas van TEXTUALES del SRT (regla de quote cards).
+# Uso: python btq-social-t3.py <out_dir> <EP.xx>
+# El texto de cada episodio vive en EPS abajo. Las citas van TEXTUALES del SRT (regla de quote cards).
 import sys
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
@@ -16,7 +16,7 @@ CORAL, CORAL_TXT, AZUL = (246, 91, 81), (210, 56, 46), (18, 104, 252)
 HOST = {"andres": ("host-andres.jpg", CORAL, CORAL_TXT, "ANDR\u00c9S BERM\u00daDEZ"),
         "alejo": ("host-alejandro.jpg", AZUL, AZUL, "ALEJANDRO AGUIRRE")}
 
-EP = {
+EPS = {"EP.01": {
     "ep": "EP.01",
     "teaser": ["EN 2006 ENTRAMOS", "A UN CALL CENTER", '*"MIENTRAS TANTO"*'],
     "teaser_pill": "TEMPORADA 3  \u00b7  HOY 11 PM",
@@ -29,7 +29,22 @@ EP = {
         ("andres", "andres", "Aqu\u00ed estamos Alejo y yo como prueba de que s\u00ed se puede, cuando uno se toma las cosas en serio.", "1:23:39"),
     ],
     "reel_quote": "alejo",
-}
+}, "EP.02": {
+    "ep": "EP.02",
+    "teaser": ["NO RENUNCIA", "AL TRABAJO.", "*RENUNCIA AL JEFE.*"],  # 3 lineas: con 4 la ultima pisa las fotos
+    "teaser_pill": "EP.02  ·  HOY 9:30 PM",
+    "stories": [["¿SU TOP", "PERFORMER?", "*PUEDE SER LA*", "*MANZANA*", "*PODRIDA.*"],
+                ["LO QUE NO", "ESTÁ ESCRITO,", "*NO PASÓ.*"]],
+    "story3_pill": "HOY  ·  9:30 PM",
+    "story3_sub": "EP.02 EN SPOTIFY",
+    "quotes": [
+        ("alejo", "alejo", "La gente no renuncia al trabajo, la gente renuncia a sus jefes.", "31:19"),
+        ("andres", "andres", "Prefiero sufrir la atrición de una sola persona que se me vaya, a que se me vayan 15.", "43:46"),
+        ("alejo-pregunta", "alejo", "¿Le ha tocado a algún agente que sea su top performer y que sea la manzana podrida?", "45:38"),
+    ],
+    "reel_quote": "alejo-pregunta",
+}}
+EP = EPS[sys.argv[2]] if len(sys.argv) > 2 else EPS["EP.01"]
 
 
 def font(px, f=FONT):
