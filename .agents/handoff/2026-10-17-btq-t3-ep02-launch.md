@@ -32,6 +32,4 @@
 - Extra sin post asignado: `BTQ-T3-EP02-cita-alejo-pregunta-4x5.png` (Andy no respondió si se borra).
 
 ## Questions to Answer
-- NO CONFIRMADO: ¿las anécdotas personales de Andy en los posts de LinkedIn del domingo (equipos pulidos que le quitaban) y del lunes (top performer que llegaba tarde) están OK para publicar? El workflow T3 pide avisar antes.
-- NO CONFIRMADO: el título no lleva keyword call center/BPO (el formato T3 la pide); avisado a Andy en la retro, sin respuesta explícita.
-- ¿Se borra la tarjeta extra `cita-alejo-pregunta-4x5.png`?
+- Ninguna abierta. Respondidas por Andy al cierre (2026-10-17): las anécdotas de los posts de LinkedIn quedan como están; el título se queda sin BPO (desde el EP.03 sí lo lleva); la tarjeta extra `cita-alejo-pregunta-4x5.png` se borró y el generador ya no la crea (`solo_reel`).
