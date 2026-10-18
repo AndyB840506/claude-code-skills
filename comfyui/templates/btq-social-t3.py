@@ -39,7 +39,7 @@ EPS = {"EP.01": {
     "story3_sub": "EP.02 EN SPOTIFY",
     "quotes": [
         ("alejo", "alejo", "La gente no renuncia al trabajo, la gente renuncia a sus jefes.", "31:19"),
-        ("andres", "andres", "Prefiero sufrir la atrición de una sola persona que se me vaya, a que se me vayan 15.", "43:46"),
+        ("andres", "andres", "Prefiero sufrir la attrition de una sola persona que se me vaya, a que se me vayan 15.", "43:46"),
         ("alejo-pregunta", "alejo", "¿Le ha tocado a algún agente que sea su top performer y que sea la manzana podrida?", "45:38"),
     ],
     "reel_quote": "alejo-pregunta",

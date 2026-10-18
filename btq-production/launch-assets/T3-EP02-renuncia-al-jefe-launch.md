@@ -119,7 +119,7 @@ Andy) y `@Alejandro Aguirre` escrito a mano al pegar. Link del episodio: lo pas�
 | Domingo 9:30 PM · LinkedIn y Facebook | `E:\Podcast\BTQ\T3\portada\BTQ-T3-EP02-portada-16x9.png` |
 | Domingo 9:30 PM · Instagram | `E:\Podcast\BTQ\T3\portada\BTQ-T3-EP02-portada-1x1.png` |
 | Domingo 9:30 PM · TikTok | `E:\Podcast\BTQ\T3\portada\BTQ-T3-EP02-portada-9x16.png` |
-| Lunes · LinkedIn | `BTQ-T3-EP02-cita-andres-4x5.png` (SRT 43:46; cortada después de "15") |
+| Lunes · LinkedIn | `BTQ-T3-EP02-cita-andres-4x5.png` (SRT 43:46; cortada después de "15"; al aire dice "atrición", escrito "attrition" por decisión de Andy) |
 | Martes · LinkedIn | `BTQ-T3-EP02-cita-alejo-4x5.png` (SRT 31:19; cortada antes de "ni siquiera al líder") |
 | Martes · reel IG/FB y TikTok | `BTQ-T3-EP02-reel-alejo-pregunta-9x16.mp4` (1080×1920, H.264 + AAC, 55,0 s) |
 | (extra, sin post asignado) | `BTQ-T3-EP02-cita-alejo-pregunta-4x5.png` |
@@ -189,7 +189,7 @@ EP.02 de Behind the Queue, ya en Spotify.
 ### Lunes 19 oct, 7 a 8 AM · LinkedIn
 
 ```
-"Prefiero sufrir la atrición de una sola persona que se me vaya, a que se me vayan 15."
+"Prefiero sufrir la attrition de una sola persona que se me vaya, a que se me vayan 15."
 
 Lo dije en el EP.02 y lo sostengo: si toca, prefiero perder a mi top performer que perder al equipo.
 
@@ -282,7 +282,7 @@ python comfyui/templates/btq-portada-t3.py "EP.02" "LA GENTE NO RENUNCIA|AL TRAB
 | Duración | 55,00 s |
 | Archivos | `E:\Podcast\BTQ\T3\clip\BTQ-T3-EP02-CLIP-01.wav` (24-bit) y `.mp3` (192 kbps) |
 | Volumen | mean -23,2 dB / max -2,8 dB (wav); no es silencio |
-| Bordes | Re-transcrito el clip solo: abre en "Le hago una pregunta acá…" (0,03 s) y cierra en "…absuelto de cualquier situación" (54,68 s). La "Y" inicial del SRT completo no aparece en la re-transcripción: puede estar recortada a medias; no se escuchó |
+| Bordes | Re-transcrito el clip solo: abre en "Le hago una pregunta acá…" (0,03 s) y cierra en "…absuelto de cualquier situación" (54,68 s). La "Y" inicial del SRT completo no aparece en la re-transcripción; Andy revisó el clip y lo aprobó (2026-10-17) |
 
 ---
 
@@ -293,5 +293,5 @@ python comfyui/templates/btq-portada-t3.py "EP.02" "LA GENTE NO RENUNCIA|AL TRAB
       devuelve vacío y la página da 403: igual que el EP.01 mientras estaba programado. Que es el
       EP.02 y a las 9:30 PM lo dice Andy; no se puede confirmar desde afuera hasta que salga.
 - [x] Link puesto en los primeros comentarios de los tres días.
-- [ ] Web: la tarjeta del episodio en `website/index.html` sigue apuntando al EP.01; el embed del
-      show se actualiza solo. Pendiente decidir si se cambia la tarjeta al EP.02.
+- [—] Web: la tarjeta del episodio en `website/index.html` sigue apuntando al EP.01 y **se deja
+      así** (decisión de Andy, 2026-10-17); el embed del show se actualiza solo.
