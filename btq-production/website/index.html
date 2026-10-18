@@ -194,6 +194,9 @@
     .next .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--coral-t);margin-bottom:8px}
     .next .t{font-family:var(--disp);font-weight:800;font-size:clamp(1.3rem,2.4vw,1.8rem);line-height:1.15}
     .next .d{color:var(--body);font-size:.95rem;margin-top:8px;max-width:52ch}
+    .next .pill{margin-top:18px}
+    .next .qc{display:block;width:260px;height:auto;border:2px solid var(--ink);border-radius:12px}
+    .t3{margin-bottom:56px}
     .arch-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:18px}
     .arch-head h3{font-family:var(--disp);font-weight:800;font-size:1.4rem}
     .arch-head a{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:2px}
@@ -320,6 +323,7 @@
       .next{grid-template-columns:1fr;gap:14px;padding:24px 22px;box-shadow:6px 6px 0 var(--ink)}
       .next .num{font-size:3rem}
       .next .pill{justify-self:start}
+      .next .qc{width:100%;max-width:300px;height:auto}
       .track{grid-template-columns:62px 1fr;gap:16px;padding-right:0}
       .t-num{font-size:2.3rem;padding-left:0}
       .t-right{display:none}
@@ -437,13 +441,31 @@
     <div class="sec-tag rv"><span class="n">02 Episodios</span><span class="bar"></span></div>
 
     <div class="next rv">
-      <div class="num">01</div>
+      <div class="num">02</div>
       <div>
-        <p class="k">Temporada 3, episodio nuevo</p>
-        <p class="t">De escampadero a carrera</p>
-        <p class="d">Entraron pensando que era temporal. Veinte años después siguen ahí: Andy y Alejo cuentan cómo un trabajo de paso en el call center se volvió carrera.</p>
+        <p class="k">Temporada 3 · Domingo 18 de octubre, 9:30 PM</p>
+        <p class="t">La gente no renuncia al trabajo, renuncia al jefe</p>
+        <p class="d">Jefe o líder: Andy y Alejo lo vivieron de los dos lados del piso. Y a veces el problema es el top performer.</p>
+        <!-- Al salir el episodio: href al episodio (open.spotify.com/episode/6wAsgLBFQmDPcEf9vX5DdU) y texto "Escuchar". -->
+        <a class="pill" href="https://open.spotify.com/show/5figtqa6zJxW1pE1sWJeEP" target="_blank" rel="noopener"><span class="led"></span>Domingo 9:30 PM</a>
       </div>
-      <a class="pill" href="https://open.spotify.com/episode/6Mssd4RGqkzrvrcLTwdr8b" target="_blank" rel="noopener"><span class="led"></span>Escuchar</a>
+      <img class="qc" src="ep02-cita-alejo.jpg" width="540" height="675" alt="Cita de Alejandro Aguirre: La gente no renuncia al trabajo, la gente renuncia a sus jefes." loading="lazy">
+    </div>
+
+    <div class="arch-head rv">
+      <h3>Temporada 3</h3>
+    </div>
+
+    <div class="stag t3">
+      <a class="track" href="https://open.spotify.com/episode/6Mssd4RGqkzrvrcLTwdr8b" target="_blank" rel="noopener">
+        <div class="t-num">01</div>
+        <div>
+          <div class="t-ref">Andy y Alejo</div>
+          <div class="t-title">De escampadero a carrera</div>
+          <div class="t-quote">"No siempre el top performer tiene madera de líder."</div>
+        </div>
+        <div class="t-right"><span class="t-listen">Escuchar</span><span class="t-go">→</span></div>
+      </a>
     </div>
 
     <div class="arch-head rv">
