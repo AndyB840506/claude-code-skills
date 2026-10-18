@@ -106,8 +106,8 @@ escríbanos con su situación de líder (1:01:46–1:02:14).
 
 Adaptado del plan del EP.01. Igual que allá: intriga el **domingo en la tarde** (no hubo
 jueves), primer comentario con Spotify todos los días, LinkedIn en primera persona (lo publica
-Andy) y `@Alejandro Aguirre` escrito a mano al pegar. **El link del episodio no existe todavía:
-reemplazar `[LINK SPOTIFY EP.02]` cuando Andy programe el episodio.**
+Andy) y `@Alejandro Aguirre` escrito a mano al pegar. Link del episodio: lo pasó Andy el
+2026-10-17 (sin el parámetro `?si=`).
 
 **Imagen de cada post** (generador: `comfyui/templates/btq-social-t3.py <out> EP.02`; todo en
 `E:\Podcast\BTQ\T3\redes\EP02\` salvo las portadas):
@@ -163,7 +163,7 @@ También hablamos del top performer con todo en verde que llega tarde, se pasa d
 
 **Primer comentario:**
 ```
-Episodio completo acá 👉 [LINK SPOTIFY EP.02]
+Episodio completo acá 👉 https://open.spotify.com/episode/6wAsgLBFQmDPcEf9vX5DdU
 ```
 
 **Instagram/Facebook** (portada 1:1 o 16:9):
@@ -204,7 +204,7 @@ Desde afuera parece que uno no hace nada. En realidad uno está documentando y a
 
 **Primer comentario:**
 ```
-El episodio completo, para el camino al trabajo 👉 [LINK SPOTIFY EP.02]
+El episodio completo, para el camino al trabajo 👉 https://open.spotify.com/episode/6wAsgLBFQmDPcEf9vX5DdU
 ```
 
 ### Martes 20 oct · refuerzo
@@ -222,7 +222,7 @@ No todas las personas se motivan igual. Y como él lo dijo en el EP.02 de Behind
 
 **Primer comentario:**
 ```
-El EP.02 completo 👉 [LINK SPOTIFY EP.02]
+El EP.02 completo 👉 https://open.spotify.com/episode/6wAsgLBFQmDPcEf9vX5DdU
 ```
 
 **Instagram/Facebook** (reel de 55 s):
@@ -288,7 +288,10 @@ python comfyui/templates/btq-portada-t3.py "EP.02" "LA GENTE NO RENUNCIA|AL TRAB
 
 ## Publicación
 
-- [ ] Subir y programar en Spotify for Creators para el domingo 2026-10-18, 9:30 PM (Andy).
-- [ ] Pegar el link del episodio en los primeros comentarios (`[LINK SPOTIFY EP.02]`).
+- [x] Subido y programado en Spotify for Creators (Andy, 2026-10-17):
+      https://open.spotify.com/episode/6wAsgLBFQmDPcEf9vX5DdU — al 2026-10-17 ~21:35 el oEmbed
+      devuelve vacío y la página da 403: igual que el EP.01 mientras estaba programado. Que es el
+      EP.02 y a las 9:30 PM lo dice Andy; no se puede confirmar desde afuera hasta que salga.
+- [x] Link puesto en los primeros comentarios de los tres días.
 - [ ] Web: la tarjeta del episodio en `website/index.html` sigue apuntando al EP.01; el embed del
       show se actualiza solo. Pendiente decidir si se cambia la tarjeta al EP.02.
