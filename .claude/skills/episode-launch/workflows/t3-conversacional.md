@@ -26,12 +26,10 @@ attrition, decisión de Andy en EP.02).
 Portada: comfyui/templates/btq-portada-t3.py · Redes: comfyui/templates/btq-social-t3.py
 (citas TEXTUALES del SRT, zonas seguras de stories/reels ya incluidas). El texto de cada
 episodio va en `EPS` (`btq-social-t3.py <out> EP.NN`). Al editar el generador, correr el
-EP.01 con la versión anterior (`git show <sha>:comfyui/templates/btq-social-t3.py`) y con la
-nueva y diffear las dos salidas: 0 px salvo lo que el cambio busca. No contra lo publicado:
-las 3 piezas con cita del EP.01 difieren a propósito desde 5ab4690. PIL `Errno 22` al guardar = archivo abierto
-en un visor (consistente con lo observado, no aislado): generar en temporal y copiar.
-La frase de portada/teaser es una oración completa: al recortar el título no se quita el
-sujeto (EP.02 salió "No renuncia al trabajo" y Andy: "¿renuncia quién?").
+EP.01 con la versión anterior (`git show <sha>:<ruta>`) y con la nueva y diffear: 0 px salvo
+lo buscado (no contra lo publicado: sus 3 piezas con cita difieren a propósito desde 5ab4690).
+PIL `Errno 22` al guardar = archivo abierto en un visor (no aislado): generar en temporal.
+Portada/teaser = oración completa: al recortar el título no se quita el sujeto (EP.02).
 
 ## Plan social (§B)
 Sin artículo, así que el primer comentario lleva siempre Spotify. LinkedIn en primera
