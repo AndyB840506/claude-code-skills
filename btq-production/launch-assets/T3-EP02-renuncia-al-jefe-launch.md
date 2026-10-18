@@ -47,7 +47,8 @@ Notas del audio:
 
 ## A · Spotify
 
-**Título** (101 caracteres, elegido por Andy; Spotify no publica un límite para el título del
+**Título** (101 caracteres, elegido por Andy; sin keyword BPO/call center, que el formato T3
+pide: avisado y **se deja así** por decisión de Andy, 2026-10-17 — desde el EP.03 sí la lleva; Spotify no publica un límite para el título del
 episodio, verificado 2026-10-17 en su centro de ayuda — si el formulario lo recorta, avisar):
 `EP.02 — La gente no renuncia al trabajo, renuncia al jefe (y a veces el problema es el top performer)`
 
@@ -125,7 +126,6 @@ Andy) y `@Alejandro Aguirre` escrito a mano al pegar. Link del episodio: lo pas�
 | Lunes · LinkedIn | `BTQ-T3-EP02-cita-andres-4x5.png` (SRT 43:46; cortada después de "15"; al aire dice "atrición", escrito "attrition" por decisión de Andy) |
 | Martes · LinkedIn | `BTQ-T3-EP02-cita-alejo-4x5.png` (SRT 31:19; cortada antes de "ni siquiera al líder") |
 | Martes · reel IG/FB y TikTok | `BTQ-T3-EP02-reel-alejo-pregunta-9x16.mp4` (1080×1920, H.264 + AAC, 55,0 s) |
-| (extra, sin post asignado) | `BTQ-T3-EP02-cita-alejo-pregunta-4x5.png` |
 
 Las tres citas se confirmaron con una segunda pasada de WhisperX sobre el audio recortado
 (2026-10-17): coinciden con el SRT completo.
@@ -245,6 +245,9 @@ Episodio completo en Spotify, link en la bio.
 EP.02, temporada 3, en Spotify.
 #BPO #CallCenter #Liderazgo #Colombia
 ```
+
+**Anécdotas personales de Andy** (post del domingo: equipos pulidos que le quitaban; post del
+lunes: su top performer): Andy las revisó y quedan así (2026-10-17).
 
 **Fuente de cada afirmación del plan social** (SRT): las de la descripción, más: equipos
 pulidos, "cero late" y gente nueva (25:41–26:16) · los líderes también renuncian (26:38–26:57)

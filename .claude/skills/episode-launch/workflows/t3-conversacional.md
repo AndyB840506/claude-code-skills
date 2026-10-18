@@ -13,7 +13,7 @@ Ejemplo completo: btq-production/launch-assets/T3-EP01-escampadero-launch.md
 `EP.NN — <frase dicha en el episodio>: <gancho con keyword call center/BPO>`. Sin
 teórico. Ninguna cifra que el audio no sostenga para los dos hosts. Todas las opciones
 que se propongan cumplen el formato (chequeo: cada una matchea `(?i)call center|bpo`); si
-el host elige una sin keyword, avisarlo una vez.
+el host elige una sin keyword, avisarlo una vez (Andy, tras EP.02: "la próxima vez sí").
 
 ## Descripción (§A)
 Se mantiene: 250-400 palabras contadas con script, usted, sin rayas ni angulares,

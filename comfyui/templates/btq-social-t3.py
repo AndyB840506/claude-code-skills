@@ -43,6 +43,7 @@ EPS = {"EP.01": {
         ("alejo-pregunta", "alejo", "¿Le ha tocado a algún agente que sea su top performer y que sea la manzana podrida?", "45:38"),
     ],
     "reel_quote": "alejo-pregunta",
+    "solo_reel": ["alejo-pregunta"],  # sin tarjeta 4:5: Andy la borro por no tener post (2026-10-17)
 }}
 EP = EPS[sys.argv[2]] if len(sys.argv) > 2 else EPS["EP.01"]
 
@@ -224,6 +225,8 @@ if __name__ == "__main__":
     for i in range(3):
         guardar(story(i), out / ("%s-story-%d-9x16.png" % (p, i + 1)))
     for slug, quien, cita, ts in EP["quotes"]:
+        if slug in EP.get("solo_reel", []):
+            continue
         guardar(tarjeta_cita(slug, quien, cita, ts, 1080, 1350), out / ("%s-cita-%s-4x5.png" % (p, slug)))
     q = [x for x in EP["quotes"] if x[0] == EP["reel_quote"]][0]
     guardar(tarjeta_cita(*q, 1080, 1920), out / ("%s-reel-%s-9x16.png" % (p, q[0])))
