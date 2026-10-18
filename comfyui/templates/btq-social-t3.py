@@ -31,7 +31,7 @@ EPS = {"EP.01": {
     "reel_quote": "alejo",
 }, "EP.02": {
     "ep": "EP.02",
-    "teaser": ["NO RENUNCIA", "AL TRABAJO.", "*RENUNCIA AL JEFE.*"],  # 3 lineas: con 4 la ultima pisa las fotos
+    "teaser": ["LA GENTE NO RENUNCIA", "AL TRABAJO,", "*RENUNCIA AL JEFE.*"],  # 3 lineas: con 4 la ultima pisa las fotos
     "teaser_pill": "EP.02  ·  HOY 9:30 PM",
     "stories": [["¿SU TOP", "PERFORMER?", "*PUEDE SER LA*", "*MANZANA*", "*PODRIDA.*"],
                 ["LO QUE NO", "ESTÁ ESCRITO,", "*NO PASÓ.*"]],
