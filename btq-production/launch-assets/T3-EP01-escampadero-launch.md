@@ -1,5 +1,8 @@
 # BTQ T3 · EP.01 — De escampadero a carrera (launch assets)
 
+> Procedimiento: `.claude/skills/episode-launch/workflows/t3-conversacional.md` — leerlo antes
+> de copiar este kit (el EP.02 se armó copiando este archivo y se saltó sus reglas).
+
 **Temporada 3, episodio 1** (en Spotify for Creators: season 3, episode 1). Primer episodio con
 Alejandro Aguirre de co-host. Grabado el 2026-10-03 por Zoom; máster final confirmado por Andy
 ese mismo día.

@@ -1,5 +1,8 @@
 # BTQ T3 · EP.02 — La gente no renuncia al trabajo, renuncia al jefe (launch assets)
 
+> Procedimiento: `.claude/skills/episode-launch/workflows/t3-conversacional.md` — leerlo antes
+> de copiar este kit.
+
 **Temporada 3, episodio 2** (en Spotify for Creators: season 3, episode 2). Andrés Bermúdez y
 Alejandro Aguirre. Grabado el 2026-10-17 por Zoom (la carpeta de Zoom se llama "BTQ EP 01
 Season 3" porque se reusó la reunión; el contenido es el EP.02). Publicación: **domingo

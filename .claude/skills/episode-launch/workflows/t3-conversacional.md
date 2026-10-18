@@ -11,16 +11,24 @@ Ejemplo completo: btq-production/launch-assets/T3-EP01-escampadero-launch.md
 
 ## Título
 `EP.NN — <frase dicha en el episodio>: <gancho con keyword call center/BPO>`. Sin
-teórico. Ninguna cifra que el audio no sostenga para los dos hosts.
+teórico. Ninguna cifra que el audio no sostenga para los dos hosts. Todas las opciones
+que se propongan cumplen el formato; si el host elige una sin keyword, avisarlo una vez.
 
 ## Descripción (§A)
 Se mantiene: 250-400 palabras contadas con script, usted, sin rayas ni angulares,
 pregunta personal, "Escúchalo ahora en Spotify.", contacto, HTML + texto. No aplica:
 abrir con referencia cultural. Cada afirmación anotada con su timestamp del SRT.
+Términos de industria en inglés quedan en inglés, también en citas (atrición →
+attrition, decisión de Andy en EP.02).
 
 ## Piezas (compuestas con PIL, nunca generadas)
 Portada: comfyui/templates/btq-portada-t3.py · Redes: comfyui/templates/btq-social-t3.py
-(citas TEXTUALES del SRT, zonas seguras de stories/reels ya incluidas).
+(citas TEXTUALES del SRT, zonas seguras de stories/reels ya incluidas). El texto de cada
+episodio va en `EPS` (`btq-social-t3.py <out> EP.NN`). Al editar el generador, regenerar
+el EP.01 y diffear contra lo publicado (0 px). PIL `Errno 22` al guardar = archivo abierto
+en un visor (consistente con lo observado, no aislado): generar en temporal y copiar.
+La frase de portada/teaser es una oración completa: al recortar el título no se quita el
+sujeto (EP.02 salió "No renuncia al trabajo" y Andy: "¿renuncia quién?").
 
 ## Plan social (§B)
 Sin artículo, así que el primer comentario lleva siempre Spotify. LinkedIn en primera
@@ -32,4 +40,7 @@ Sin quote cards: elegirlo del SRT con el gancho al inicio.
 
 ## Web
 El embed del show muestra el último episodio publicado: commitear la web antes y
-desplegar (`vercel --prod`) solo cuando el episodio ya esté en línea.
+desplegar (`vercel --prod`) solo cuando el episodio ya esté en línea. Excepción si Andy
+pide teaser antes (EP.02): tarjeta con fecha y botón al show; al salir, botón al link del
+episodio y redeploy. El preview tiene Vercel Auth: `curl` da 200 con el login (mirar el
+`<title>`), así que la revisión del preview la hace Andy.
