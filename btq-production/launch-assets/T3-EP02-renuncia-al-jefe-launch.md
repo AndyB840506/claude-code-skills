@@ -253,12 +253,14 @@ el business case (47:01–47:45) · resistencia de arriba a sacar al top perform
 
 ## D · Portada (compuesta, no generada)
 
-Compositor: `comfyui/templates/btq-portada-t3.py`. Elegida por Andy la opción B (frase corta,
-letra más grande); la A ("La gente no renuncia al trabajo, renuncia al jefe") queda como
-`E:\Podcast\BTQ\T3\portada\BORRADOR-EP02-A-*`.
+Compositor: `comfyui/templates/btq-portada-t3.py`. **Elegida por Andy la opción A** (frase
+completa, 2026-10-17). Primero eligió la B ("No renuncia al trabajo. Renuncia al jefe.", letra
+más grande) y la cambió al verla porque le faltaba "La gente". Descartadas, como borradores en
+`E:\Podcast\BTQ\T3\portada\`: `BORRADOR-EP02-B-*` y `BORRADOR-EP02-C-*` (frase completa en 5
+líneas). Tamaño del título en la A: 128 px (1:1), 64 px (9:16), 69 px (16:9).
 
 ```
-python comfyui/templates/btq-portada-t3.py "EP.02" "NO RENUNCIA|AL TRABAJO.|*RENUNCIA*|*AL JEFE.*" "E:/Podcast/BTQ/T3/portada/BTQ-T3-EP02-portada"
+python comfyui/templates/btq-portada-t3.py "EP.02" "LA GENTE NO RENUNCIA|AL TRABAJO,|*RENUNCIA AL JEFE*" "E:/Podcast/BTQ/T3/portada/BTQ-T3-EP02-portada"
 ```
 
 | Formato | Archivo |
