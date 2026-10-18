@@ -199,10 +199,11 @@ def tarjeta_cita(slug, quien, cita, ts, w, h):
     f, px, lineas = envolver(d, cita, w - 2 * m, pie_y - caja_y - int(w * 0.08), int(w * 0.11))
     alto = int(px * 1.12) * len(lineas)
     y = caja_y + (pie_y - int(w * 0.06) - caja_y - alto) // 2
+    # Por linea base: una linea sin mayusculas ni letras altas ("se me vaya, a que") subia y se pegaba a la anterior.
+    base = y + int(px * 0.78)
     for l in lineas:
-        b = d.textbbox((0, 0), l, font=f)
-        d.text((m - b[0], y - b[1]), l, font=f, fill=NAVY)
-        y += int(px * 1.12)
+        d.text((m, base), l, font=f, fill=NAVY, anchor="ls")
+        base += int(px * 1.12)
     foto(img, d, m, pie_y, foto_h, foto_h, quien)
     tx = m + foto_h + int(w * 0.06)
     d.text((tx, pie_y + int(foto_h * 0.36)), HOST[quien][3], font=font(int(w * 0.034)), fill=color, anchor="ls")
