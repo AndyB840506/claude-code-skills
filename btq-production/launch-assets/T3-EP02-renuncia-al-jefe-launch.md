@@ -293,5 +293,13 @@ python comfyui/templates/btq-portada-t3.py "EP.02" "LA GENTE NO RENUNCIA|AL TRAB
       devuelve vacío y la página da 403: igual que el EP.01 mientras estaba programado. Que es el
       EP.02 y a las 9:30 PM lo dice Andy; no se puede confirmar desde afuera hasta que salga.
 - [x] Link puesto en los primeros comentarios de los tres días.
-- [—] Web: la tarjeta del episodio en `website/index.html` sigue apuntando al EP.01 y **se deja
-      así** (decisión de Andy, 2026-10-17); el embed del show se actualiza solo.
+- [x] ~~Web: la tarjeta sigue en el EP.01 y se deja así~~ — **SUPERADO el mismo 2026-10-17:**
+      Andy pidió actualizar la web con una quote card de teaser. Tarjeta principal = EP.02
+      ("Domingo 18 de octubre, 9:30 PM", quote card de Alejo `ep02-cita-alejo.jpg`, botón
+      "Domingo 9:30 PM" al show) y el EP.01 pasa a una fila "Temporada 3". Preview revisado por
+      Andy y desplegado a producción (`dpl_2QgreA5ddq6rvch45uWHPv2EotpU`). Verificado: HTML en
+      vivo (`curl -L`, sin CR) idéntico a `website/index.html`; imagen 200 `image/jpeg`
+      46.176 B; captura en vivo a 1440 y 390 px sin desborde.
+- [ ] **Al salir el episodio (domingo 18, después de las 9:30 PM):** botón de la tarjeta a
+      "Escuchar" con href `https://open.spotify.com/episode/6wAsgLBFQmDPcEf9vX5DdU` (nota en el
+      HTML encima del botón), quitar la fecha de la etiqueta y volver a desplegar a producción.
