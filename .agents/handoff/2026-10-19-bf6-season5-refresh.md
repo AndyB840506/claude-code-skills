@@ -1,7 +1,7 @@
 # Handoff: BF6 Meta Ops, Season 5 refresh (+ continuity start.ps1 fix)
 **Date:** 2026-10-19 (Monday)
 **Machine:** desktop (E:\)
-**Status:** In progress. Data refreshed and app rebuilt and verified locally; NOT published to luccatech.com/bf6/.
+**Status:** Complete. Refresh PUBLISHED to luccatech.com/bf6/ (lucca-tech-web `2764a24`, deploy `lucca-tech-n8hd2jdqd`, live == local).
 ---
 ## What We Accomplished This Session
 - **claude-continuity `start.ps1` fixed (`7ed79a9`, pushed):** `Resolve-Path -Relative` resolved from
@@ -32,11 +32,13 @@
   `html-spec.md` (short stat chips), kit `CLAUDE.md` (start.ps1 root cause).
 
 ## Where We Paused
-**Last action:** app rebuilt, verified, opened; session close.
-**Next action:** ask Andres whether to publish to luccatech.com/bf6/ (run-report Step 4b:
-`node build.js`, commit, `deploy-preflight`, Vercel prebuilt deploy, `curl -sL` live vs local).
-**Blockers:** publishing needs Andres's OK. Desktop only: the data lives on `E:\`, and
-`lucca-tech-web\bf6\index.html` is modified but uncommitted on this machine.
+**Last action:** published on Andres's OK: `node build.js` (sitemap lastmod), commit
+`2764a24` pushed, deploy-preflight passed (domain served by `lucca-tech-web`, no secrets,
+baseline 200), `vercel build --prod` output cmp'd against the repo, `deploy --prebuilt --prod`.
+Live check: `vercel inspect` shows the new deploy (17:41), `/bf6/` 200 and identical to local,
+sitemap lastmod 2026-10-19, home and `/es/` 200. Memory `project_bf6_meta_ops` updated.
+**Next action:** nothing pending on BF6 unless Andres asks; next refresh should run the vehicle pass.
+**Blockers:** none. The data still lives only on `E:\` (desktop).
 
 ## Files to Read First
 - `E:\Claude Output\bf6\data\weapons.json` (desktop only): current data.
@@ -51,7 +53,6 @@
   commit behind, not pulled) and `2026-10-18-lucca-tune-tdr-cputemp.md`.
 
 ## Questions to Answer
-- Publish the refreshed app to luccatech.com/bf6/?
 - Mk 24 Versatile / Z84M per-playstyle builds: never seen on screen (the verify suite does not
   switch playstyle). Set the app to Aggressive: the Z84M should show Iron Sights.
 - Has EA re-enabled the Mk 24 Underslung Mount? (newest source: Oct 16)
