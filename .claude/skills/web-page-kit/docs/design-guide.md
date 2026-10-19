@@ -902,6 +902,20 @@ External CDN libraries **are allowed** here (GSAP, ScrollTrigger, Lenis via jsde
 self-contained constraint is relaxed because the motion quality is the deliverable. Everything
 else (CSS, shaders, fonts link) still lives in the one file.
 
+### Tool / app variant (dense data, not a landing page)
+When the "premium" brief is for an app people work in (a vault manager, a dashboard), not a
+page people scroll through once, keep only the parts of the engine that do not get in the way
+of reading. Decided on Black Armory (2026-10-18, a Destiny 2 vault tool; Andres: "make it your
+own, premium"):
+- **Keep:** art direction from real reference pixels, distinctive type, a subtle reactive
+  background behind the shell, tactile feedback on ACTIONS (confirm, move), crossfades on state
+  changes, the product's own imagery as the hero (there: Bungie's in-game screenshots as
+  banners, emblem art on character plates).
+- **Skip:** momentum scroll and pinned or scrubbed scroll sequences. They fight sticky headers,
+  hijack the scroll of a long grid and slow down someone looking for one item.
+- Color is a function, not decoration: one accent reserved for actions, grades told apart by
+  shape AND color.
+
 ### Non-negotiable guardrails (still apply)
 - Everything degrades: wrap GSAP/Lenis in `if (window.gsap && window.ScrollTrigger && !reduce)`;
   the WebGL IIFE must `canvas.remove()` on context/compile/link failure → CSS background shows.
