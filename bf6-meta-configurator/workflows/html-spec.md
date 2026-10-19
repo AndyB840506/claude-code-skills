@@ -10,7 +10,9 @@ python scripts/build.py <weapons.json> <vehicles.json> <out.html> [<copy-to.html
 
 `build.py` cleans visible copy on the way in (an em dash between clauses becomes a
 period, a middot separator becomes a comma) and aborts if one survives. `stats` keep
-their middot: the app splits them into chips on it.
+their middot: the app splits them into chips on it. Chips do not wrap (`white-space:nowrap`):
+keep each middot segment short (about 24 chars) and put long figures in `reason`. A 45-char
+TTK chip pushed the 390 px view to 421 px (2026-10-19).
 
 ## Concept
 

@@ -61,6 +61,13 @@ current patch notes and attach it to the vehicle it touches. **REDSEC roster:** 
 2026-10-15 EA only says which vehicles are NOT in REDSEC (Mobile AA, Attack Helicopter,
 Attack Jet, Fighter Jet). Never list a vehicle as in REDSEC without a source saying so.
 
+**Incremental refresh (previous data < 14 days old):** a lighter pass is fine, but it still
+needs the patch check, bfhub, both usage pages and both meta-ranking pages, AND Pass 2 for
+every weapon added this season plus every top-3 still on a pattern build: new guns get their
+builds and data in their first weeks (2026-10-19: the Z84M had 3 published builds while the
+data still said "No published build yet"). If the vehicle pass is skipped, say so in the
+summary.
+
 **Staleness rule:** if the newest usable source is >60 days old, the report and
 the chat summary get a visible `STALE` banner ("meta de <date> — puede haber
 cambiado"). Never present old data as current.
@@ -75,6 +82,15 @@ loot-based attachment access). For each mode requested, per weapon category
 confirmed by sources: rank by (1) recent buffs/nerfs, (2) TTK, (3) DPS,
 (4) recoil control, (5) ADS speed. Each weapon: name, 1-line reason,
 TTK/DPS **only if a source states them**, source tier.
+
+**Three source families, and what to do when they split** (2026-10-19): usage (Battlefinity
+pick rates + tier, separate MP and REDSEC pages), meta rankings (wzstats), and match
+performance (int.gg tier list: MP only, 7-day window, ~330k matches). When they disagree on
+a weapon's rank, do NOT settle it silently: show a menu with the split, and the `reason`
+names the basis ("#1 here on usage" / "on performance"). Andres's 2026-10-19 calls: Mk 24 #1
+on usage in both modes; Z84M #1 MP LMG and RSPR #2 MP SMG on performance + MP TTK.
+**TTK trap:** Battlefinity's per-weapon TTK is REDSEC (armor): Z84M 417 ms there vs 167 ms
+MP (Timesaver, same tracker). Never put a REDSEC TTK in MP stats.
 
 ### Attachment slots — the no-blanks / no-inventions contract
 
