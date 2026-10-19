@@ -154,7 +154,9 @@ html-spec verification, then open it: `Start-Process "<path>"`.
 The public copy lives in `repos\lucca-tech-web\bf6\index.html` (build.py already wrote
 it; Step 4 already pulled the repo). Then: `node build.js` (refreshes sitemap lastmod), commit,
 run the `deploy-preflight` skill, and deploy by hand with Vercel (prebuilt; recipe in the
-Lucca Tech memory). Verify the live page with `curl -sL` against the local file.
+Lucca Tech memory). Before `vercel deploy --prebuilt --prod`, `cmp` `.vercel/output/static/bf6/index.html`
+against `bf6/index.html`: the output is what ships, not the repo file. Verify the live page with
+`curl -sL` against the local file.
 
 ## Step 5 — Chat summary (compact, user's language)
 

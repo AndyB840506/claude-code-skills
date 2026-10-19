@@ -54,7 +54,9 @@ STEP 5: Run the claude-continuity sync (backs up ~/.claude memory + config)
 
 STEP 6: Memory + skill-kit audit check
   → Count *.md files in C:\Users\andre\.claude\projects\<workspace>\memory\ (exclude MEMORY.md)
-  → Count SKILL.md files via Glob "**/SKILL.md" in c:\Users\andre\.claude\skills
+  → Count SKILL.md files via Glob "**/SKILL.md" in c:\Users\andre\.claude\skills, EXCLUDING
+    paths under `synced\` (Anthropic-managed skills the app syncs) and `.trash\`: the raw
+    Glob gave 55 vs 31 kit skills on 2026-10-19 and would trigger a false memory-audit
   → Read memory\.audit-baseline.json for lastAuditFileCount/lastSkillCount (if missing,
     create it with current counts and skip the trigger this time — nothing to compare yet)
   → If (current memory count - lastAuditFileCount) >= 15 OR (current skill count !=
