@@ -5,6 +5,9 @@ Ejemplo completo: btq-production/launch-assets/T3-EP01-escampadero-launch.md
 ## Antes de escribir nada
 - No hay guion: la fuente es el SRT, leído entero.
 - Mapear hablantes por una línea que se nombre ("Yo soy Andy") y medir el reparto de voz.
+- Duración: decodificando el máster entero (`ffmpeg -i x.mp3 -f null -`), no con la cabecera
+  (`ffprobe format=duration`): en EP.03 la cabecera dio 45:13 y el audio dura 46:51. Lo delató
+  un SRT que terminaba después del "final".
 - Escribir en el launch file la lista "fuera de todo texto escrito" ANTES de redactar:
   acusaciones a empresas identificables, personas con nombre en tono negativo,
   ilegalidades. Las nombradas en tono positivo tampoco van sin su permiso.
@@ -30,6 +33,8 @@ EP.01 con la versión anterior (`git show <sha>:<ruta>`) y con la nueva y diffea
 lo buscado (no contra lo publicado: sus 3 piezas con cita difieren a propósito desde 5ab4690).
 PIL `Errno 22` al guardar = archivo abierto en un visor (no aislado): generar en temporal.
 Portada/teaser = oración completa: al recortar el título no se quita el sujeto (EP.02).
+Ortografía: leer el texto renderizado de cada imagen, no el de `EPS`. Grafía de personajes o
+marcas (Balú/Baloo en EP.03): preguntarla antes de componer, porque se repite en 4+ piezas.
 
 ## Plan social (§B)
 Sin artículo, así que el primer comentario lleva siempre Spotify. LinkedIn en primera
@@ -38,7 +43,8 @@ del host, avisarle antes.
 
 ## Clip (§E)
 No sale de una quote card (en T2 sí): se elige del SRT con el gancho al inicio y la lámina
-del reel lleva una cita de ese clip (`reel_quote`). Bordes y MP4: step2-generate-assets.md
+del reel lleva una cita de ese clip (`reel_quote`), que se lea sola: si la frase textual es
+agramatical fuera de contexto ("Cualquier empleo uno…", EP.03), otra del mismo clip. Bordes y MP4: step2-generate-assets.md
 §E (re-transcribir el clip solo; `-t`, no `-shortest`).
 
 ## Web
@@ -46,5 +52,7 @@ El embed del show muestra el último episodio publicado: commitear la web antes 
 desplegar (`vercel --prod`) solo cuando el episodio ya esté en línea. Excepción si Andy
 pide teaser antes (EP.02): tarjeta con fecha y botón al show; al salir, botón al link del
 episodio y redeploy; antes, el oEmbed del link debe devolver el título del episodio, y
-después `curl -L` del sitio + diff contra el local. El preview tiene Vercel Auth: `curl` da 200 con el login (mirar el
+después `curl -L` del sitio + diff contra el local. El teaser del EP.N reemplaza la tarjeta
+del EP.N-1: ese pasa a la fila "Temporada 3" con su link (si su botón no llegó a "Escuchar",
+ya no hace falta) y su quote card web queda huérfana: se borra (EP.03). El preview tiene Vercel Auth: `curl` da 200 con el login (mirar el
 `<title>`), así que la revisión del preview la hace Andy.
