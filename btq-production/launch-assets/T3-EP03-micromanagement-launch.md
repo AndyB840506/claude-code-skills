@@ -123,8 +123,7 @@ feedback para felicitar (39:49–40:46) · mujeres líderes del BPO la próxima 
 
 Igual que el EP.02: intriga el **domingo en la tarde**, primer comentario con Spotify todos los
 días, LinkedIn en primera persona (lo publica Andy) y `@Alejandro Aguirre` escrito a mano al
-pegar. **Link del episodio: pendiente de Andy** (al programar en Spotify for Creators); va en
-los primeros comentarios donde dice `<LINK EP.03>`.
+pegar. Link del episodio: lo pasó Andy el 2026-10-24 (sin el parámetro `?si=`).
 
 **Imagen de cada post** (generador: `comfyui/templates/btq-social-t3.py <out> EP.03`; todo en
 `E:\Podcast\BTQ\T3\redes\EP03\` salvo las portadas):
@@ -178,7 +177,7 @@ Pero también hablamos de cuándo sí hace falta estar encima. Un PIP o un proce
 
 **Primer comentario:**
 ```
-Episodio completo acá 👉 <LINK EP.03>
+Episodio completo acá 👉 https://open.spotify.com/episode/64SD7d1siRZ6gLYgX6FPll
 ```
 
 **Instagram/Facebook** (portada 1:1 o 16:9):
@@ -221,7 +220,7 @@ Toca ser jefe cuando hay que serlo. Pero no por cosas minúsculas.
 
 **Primer comentario:**
 ```
-El episodio completo, para el camino al trabajo 👉 <LINK EP.03>
+El episodio completo, para el camino al trabajo 👉 https://open.spotify.com/episode/64SD7d1siRZ6gLYgX6FPll
 ```
 
 ### Martes 27 oct · refuerzo
@@ -241,7 +240,7 @@ Y la otra mitad: el feedback no es solo para corregir. "Cojan a su gente que lo 
 
 **Primer comentario:**
 ```
-El EP.03 completo 👉 <LINK EP.03>
+El EP.03 completo 👉 https://open.spotify.com/episode/64SD7d1siRZ6gLYgX6FPll
 ```
 
 **Instagram/Facebook** (reel de 68 s):
@@ -308,9 +307,13 @@ python comfyui/templates/btq-portada-t3.py "EP.03" "EL SEÑOR BURNS Y BALÚ:|LOS
 
 ## Publicación
 
-- [ ] Subir y programar en Spotify for Creators (domingo 25, 9:30 PM) y pasar el link del
-      episodio para los primeros comentarios.
-- [ ] Web: teaser antes de salir (tarjeta EP.03 con fecha, quote card y botón "Domingo 9:30 PM"
-      al show; EP.02 pasa a la fila "Temporada 3"). Preview lo revisa Andy; luego producción.
-- [ ] **Al salir el episodio:** botón a "Escuchar" con el link del episodio, quitar la fecha de
-      la etiqueta, redeploy y verificar con `curl -L` + diff.
+- [x] Subido y programado en Spotify for Creators (Andy, 2026-10-24):
+      https://open.spotify.com/episode/64SD7d1siRZ6gLYgX6FPll
+- [x] Link puesto en los primeros comentarios de los tres días.
+- [x] Anécdota del cumpleaños en el post del lunes: Andy la revisó y queda así (2026-10-24).
+- [x] Web: teaser antes de salir (tarjeta EP.03 con fecha, quote card de Alejo
+      `ep03-cita-alejo.jpg` y botón "Domingo 9:30 PM" al show; EP.02 pasa a la fila
+      "Temporada 3"). Preview revisado por Andy (2026-10-24) y desplegado a producción.
+- [ ] **Al salir el episodio (domingo 25, después de las 9:30 PM):** botón a "Escuchar" con
+      href `https://open.spotify.com/episode/64SD7d1siRZ6gLYgX6FPll` (nota en el HTML encima
+      del botón), quitar la fecha de la etiqueta, redeploy y verificar con `curl -L` + diff.
