@@ -44,6 +44,21 @@ EPS = {"EP.01": {
     ],
     "reel_quote": "alejo-pregunta",
     "solo_reel": ["alejo-pregunta"],  # sin tarjeta 4:5: Andy la borro por no tener post (2026-10-17)
+}, "EP.03": {
+    "ep": "EP.03",
+    "teaser": ["EN TODO CALL CENTER", "HAY DOS JEFES:", "*BURNS Y BALÚ.*"],
+    "teaser_pill": "EP.03  ·  HOY 9:30 PM",
+    "stories": [["¿SU JEFE ES", "EL SEÑOR", "BURNS", "*O ES BALÚ?*"],
+                ["HAY QUE", "DAR FEEDBACK.", "*ASÍ SEA PARA*", "*FELICITAR.*"]],
+    "story3_pill": "HOY  ·  9:30 PM",
+    "story3_sub": "EP.03 EN SPOTIFY",
+    "quotes": [
+        ("andres", "andres", "Un líder de verdad no debería sentirse en ningún momento amenazado.", "8:07"),
+        ("alejo", "alejo", "Este micromanagement no es para hacerte caer. Este micromanagement es para darte la mano y sacarte de donde estás.", "13:04"),
+        ("andres-burns", "andres", "Un señor Burns tiene un Smithers.", "26:13"),  # el SRT dice "Sr."; la re-transcripcion del clip, "señor"
+    ],
+    "reel_quote": "andres-burns",
+    "solo_reel": ["andres-burns"],  # la cita del reel no tiene post propio en 4:5
 }}
 EP = EPS[sys.argv[2]] if len(sys.argv) > 2 else EPS["EP.01"]
 

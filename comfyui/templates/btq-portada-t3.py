@@ -40,9 +40,11 @@ def titulo_fit(d, w, h_max, px_max):
 
 
 def dibujar_titulo(d, x, y, f, px):
+    # Tope comun de mayuscula ("H"): con el tope de cada linea, una con Ñ/Ú bajaba y se pegaba a la siguiente (EP.03).
+    tope = d.textbbox((0, 0), "H", font=f)[1]
     for t, acento in lineas:
         b = d.textbbox((0, 0), t, font=f)
-        d.text((x - b[0], y - b[1]), t, font=f, fill=CORAL_TXT if acento else NAVY)
+        d.text((x - b[0], y - tope), t, font=f, fill=CORAL_TXT if acento else NAVY)
         y += int(px * 1.02)
     return y
 
