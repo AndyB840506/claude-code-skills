@@ -314,6 +314,6 @@ python comfyui/templates/btq-portada-t3.py "EP.03" "EL SEÑOR BURNS Y BALÚ:|LOS
 - [x] Web: teaser antes de salir (tarjeta EP.03 con fecha, quote card de Alejo
       `ep03-cita-alejo.jpg` y botón "Domingo 9:30 PM" al show; EP.02 pasa a la fila
       "Temporada 3"). Preview revisado por Andy (2026-10-24) y desplegado a producción.
-- [ ] **Al salir el episodio (domingo 25, después de las 9:30 PM):** botón a "Escuchar" con
-      href `https://open.spotify.com/episode/64SD7d1siRZ6gLYgX6FPll` (nota en el HTML encima
-      del botón), quitar la fecha de la etiqueta, redeploy y verificar con `curl -L` + diff.
+- [x] **Al salir el episodio:** al aire el domingo 25, 9:30 PM (RSS `Mon, 26 Oct 2026 02:30 GMT`;
+      oEmbed devuelve el título). Botón a "Escuchar" con href al episodio, fecha quitada de la
+      etiqueta, desplegado a producción el 2026-10-26; HTML en vivo == local (`curl -L` + diff).
