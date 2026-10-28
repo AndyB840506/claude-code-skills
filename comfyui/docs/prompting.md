@@ -55,6 +55,11 @@ Template: `comfyui/templates/zimage-txt2img-api.json`.
   sombras aunque la escena tenga fuentes de luz. Para covers dramáticos describir la
   iluminación SIEMPRE (rim light, lado en sombra, sombra proyectada, oclusión) — para
   2D con drama, la referencia útil es "cinematic style of The Simpsons Movie (2007)".
+- **Lo mismo con la textura: "faint / scattered" sale vacío.** El 2026-10-28 (LinkedIn de
+  HireSignal) "a thin line of light across a field of faint, scattered static" dio una raya
+  sobre negro liso, 2/2 seeds. Con densidad y elementos concretos ("filled edge to edge with
+  dense television static: thousands of tiny specks, streaks, drifting dust") salió el ruido,
+  2/2. Describir la textura por cantidad y forma, nunca con adjetivos de poca intensidad.
 - Para retoques localizados usar VAEEncode + **SetLatentNoiseMask** (img2img enmascarado);
   `VAEEncodeForInpaint` con denoise <1 deja parches grises en modelos no-inpaint. Si hay
   que ELIMINAR estructura (no solo retocarla), destruirla primero (blur pesado en PIL) y

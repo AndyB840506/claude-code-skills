@@ -156,6 +156,19 @@ Es la faja #4 ("tratar cualquier 'esto ya quedo resuelto' de una sesion anterior
 hipotesis") aplicada al CONTENIDO y no solo al estado: preguntar si el archivo existe no
 es preguntar si el archivo esta bien.
 
+## Fuentes de un sitio web: woff2 en subset — convertir y chequear glifos ANTES de componer
+
+Las fuentes que se alojan en un sitio vienen como `.woff2` partidas por subset (`-latin`,
+`-latin-ext`). PIL no las abre: convertirlas con fontTools (`f = TTFont(x); f.flavor = None;
+f.save(y)`), que para woff2 necesita `pip install brotli`. Si son variables, el peso se elige
+con `font.set_variation_by_name(b"Medium")`.
+**El subset `-latin` no trae flechas ni otros signos fuera de Latin-1**: el 2026-10-28 la
+Geist de kumatalent.com no tenía "→" (U+2192) y PIL la habría dibujado como cajita sin
+avisar. Antes de componer, comprobar cada carácter del texto contra `getBestCmap()` de la
+fuente y abortar si falta alguno. Junto con el `assert` de ancho por línea (que ese mismo día
+atajó un titular de 1044 px en un hueco de 1040), son los dos chequeos baratos de toda pieza
+con texto. Ejemplo completo (generación + compose + fuentes convertidas): `E:\AI\outputs\HireSignal\linkedin-pilot\scripts\`.
+
 ## Tipografia sobre escenas simetricas — los scrims de borde no bastan
 
 (aprendido 2026-07-22, kit de redes MPD T2)
