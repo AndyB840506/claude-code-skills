@@ -14,7 +14,10 @@ FONT_B = "C:/Windows/Fonts/arialbd.ttf"
 CREMA, NAVY = (253, 249, 239), (3, 5, 60)
 CORAL, CORAL_TXT, AZUL = (246, 91, 81), (210, 56, 46), (18, 104, 252)
 HOST = {"andres": ("host-andres.jpg", CORAL, CORAL_TXT, "ANDR\u00c9S BERM\u00daDEZ"),
-        "alejo": ("host-alejandro.jpg", AZUL, AZUL, "ALEJANDRO AGUIRRE")}
+        "alejo": ("host-alejandro.jpg", AZUL, AZUL, "ALEJANDRO AGUIRRE"),
+        "adriana": ("E:/Podcast/BTQ/T3/1715703004044.jpg", NAVY, NAVY, "ADRIANA SIMBAQUEBA"),
+        "paula": ("E:/Podcast/BTQ/T3/WhatsApp Image 2026-10-31 at 9.15.34 PM.jpeg", NAVY, NAVY, "PAULA CANTOR")}
+RECORTE = {"adriana": (185, 0, 320), "paula": (255, 70, 300)}  # (centro x, tope y, ancho): igual que en la portada
 
 EPS = {"EP.01": {
     "ep": "EP.01",
@@ -59,6 +62,23 @@ EPS = {"EP.01": {
     ],
     "reel_quote": "andres-burns",
     "solo_reel": ["andres-burns"],  # la cita del reel no tiene post propio en 4:5
+}, "EP.04": {
+    "ep": "EP.04",
+    "gente": ["andres", "alejo", "adriana", "paula"],  # 4 fotos en teaser y story 3
+    "teaser": ['"ESTA NIÑA":', "ASÍ LE DECÍAN", "*A SU SUPERVISORA.*"],
+    "teaser_pill": "EP.04  ·  HOY 9:30 PM",
+    "stories": [["¿LE HAN", "DICHO", '*"ESTA NIÑA"*', "EN EL", "TRABAJO?"],
+                ["SOMOS", "PERSONAS", "TRABAJANDO", "CON PERSONAS", "*Y PARA*", "*PERSONAS.*"]],
+    "story3_pill": "HOY  ·  9:30 PM",
+    "story3_sub": "EP.04 EN SPOTIFY",
+    "quotes": [
+        ("paula", "paula", "Me siento feliz de que puedan ver el ejemplo de mujeres como nosotras y decir, ok, sí se puede.", "64:37"),
+        ("adriana", "adriana", "Si la gente se siente bien donde está, va a hacer su trabajo bien y los números van a aparecer.", "67:07"),
+        ("paula-irme", "paula", "Fui esa gente que llegó y quería irse a los 10 minutos.", "30:52"),
+        ("paula-nina", "paula", "Es que esta niña me está diciendo tal cosa.", "27:24"),  # dentro del clip del reel
+    ],
+    "reel_quote": "paula-nina",
+    "solo_reel": ["paula-nina"],
 }}
 EP = EPS[sys.argv[2]] if len(sys.argv) > 2 else EPS["EP.01"]
 
@@ -143,7 +163,12 @@ def foto(img, d, x, y, w, h, quien):
     src = Image.open(WEB / archivo).convert("RGB")
     sw, sh = src.size
     ratio = h / w
-    if sh / sw > ratio:
+    if quien in RECORTE:
+        cx, tope, cw = RECORTE[quien]
+        cw = min(cw, sw, int(sh / ratio)); ch = int(cw * ratio)
+        x0, y0 = min(max(0, cx - cw // 2), sw - cw), min(tope, sh - ch)
+        src = src.crop((x0, y0, x0 + cw, y0 + ch))
+    elif sh / sw > ratio:
         ch = int(sw * ratio); top = int((sh - ch) * 0.25); src = src.crop((0, top, sw, top + ch))
     else:
         cw = int(sh / ratio); left = (sw - cw) // 2; src = src.crop((left, 0, left + cw, sh))
@@ -166,6 +191,11 @@ def teaser():
     pastilla(d, m, m + 20, EP["teaser_pill"], 30, fondo=CORAL, tinta=(255, 255, 255))
     f, px = lineas_fit(d, EP["teaser"], W - 2 * m, 360, 120)
     dibujar_lineas(d, m, 380, EP["teaser"], f, px)
+    if "gente" in EP:
+        fw, gap = 205, 28
+        for i, q in enumerate(EP["gente"]):
+            foto(img, d, m + i * (fw + gap), H - m - 300, fw, 300, q)
+        return img
     fw = 270
     foto(img, d, m, H - m - 300, fw, 300, "andres")
     foto(img, d, m + fw + 50, H - m - 300, fw, 300, "alejo")
@@ -191,8 +221,13 @@ def story(n):
         logo(img, (W - 600) // 2, 260, 600)
         fw, fh = 360, 440
         fy = 260 + 600 + 50
-        foto(img, d, (W - 2 * fw - 70) // 2, fy, fw, fh, "andres")
-        foto(img, d, (W - 2 * fw - 70) // 2 + fw + 70, fy, fw, fh, "alejo")
+        if "gente" in EP:
+            fw, fh = 205, 300
+            for i, q in enumerate(EP["gente"]):
+                foto(img, d, (W - 4 * fw - 90) // 2 + i * (fw + 30), fy, fw, fh, q)
+        else:
+            foto(img, d, (W - 2 * fw - 70) // 2, fy, fw, fh, "andres")
+            foto(img, d, (W - 2 * fw - 70) // 2 + fw + 70, fy, fw, fh, "alejo")
         y = fy + fh + 80
         _, ph = pastilla(d, W // 2, y, EP["story3_pill"], 64, fondo=CORAL, tinta=(255, 255, 255), centro=True)
         d.text((W // 2, y + ph + 70), EP["story3_sub"], font=font(44), fill=NAVY, anchor="mt")

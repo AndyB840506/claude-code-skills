@@ -13,6 +13,13 @@ LOGO = str(REPO / "btq-production" / "brand" / "btq-t3-logo-1024.png")
 FONT = "C:/Windows/Fonts/ariblk.ttf"
 CREMA, NAVY = (253, 249, 239), (3, 5, 60)
 CORAL, CORAL_TXT, AZUL = (246, 91, 81), (210, 56, 46), (18, 104, 252)
+# Episodios con invitadas: portada de 4. (foto, nombre, apellido, recorte); las fotos viven en E:\ (solo escritorio).
+# Recorte = (centro x, tope y, ancho) en px de la foto, para que las 4 caras queden a escala parecida.
+RECORTE_HOSTS = {"host-andres.jpg": (420, 50, 600), "host-alejandro.jpg": (367, 40, 500)}
+INVITADAS = {"EP.04": [
+    ("E:/Podcast/BTQ/T3/1715703004044.jpg", "ADRIANA", "SIMBAQUEBA", (185, 0, 320)),
+    ("E:/Podcast/BTQ/T3/WhatsApp Image 2026-10-31 at 9.15.34 PM.jpeg", "PAULA", "CANTOR", (255, 70, 300)),
+]}
 
 ep, titulo, out = sys.argv[1], sys.argv[2], sys.argv[3]
 lineas = [(l.strip("*"), l.startswith("*")) for l in titulo.split("|")]
@@ -64,23 +71,37 @@ def host_alto(w, ratio, px):
     return int(w * ratio) + max(8, w // 22) + int(px * 3.2)
 
 
-def host(img, d, x, y, w, ratio, foto, sombra, nombre, apellido, px):
+def caja(sw, sh, recorte, ratio):
+    cx, top, cw = recorte
+    cw = min(cw, sw, int(sh / ratio))
+    ch = int(cw * ratio)
+    x0 = min(max(0, cx - cw // 2), sw - cw)
+    y0 = min(max(0, top), sh - ch)
+    return (x0, y0, x0 + cw, y0 + ch)
+
+
+def host(img, d, x, y, w, ratio, foto, sombra, nombre, apellido, px, recorte=None):
     h = int(w * ratio)
     off, r, borde = max(8, w // 22), max(10, w // 18), max(4, w // 90)
     d.rounded_rectangle((x + off, y + off, x + w + off, y + h + off), radius=r, fill=sombra)
     d.rounded_rectangle((x, y, x + w, y + h), radius=r, fill=NAVY)
-    src = Image.open(WEB + foto).convert("RGB")
+    src = Image.open(Path(WEB) / foto).convert("RGB")
     sw, sh = src.size
-    ch = min(sh, int(sw * ratio))
-    top = int((sh - ch) * 0.25)  # recorte cargado arriba para conservar las caras
-    p = src.crop((0, top, sw, top + ch)).resize((w - 2 * borde, h - 2 * borde), Image.LANCZOS)
+    if recorte:
+        cuadro = caja(sw, sh, recorte, ratio)
+    else:
+        ch = min(sh, int(sw * ratio))
+        top = int((sh - ch) * 0.25)  # recorte cargado arriba para conservar las caras
+        cuadro = (0, top, sw, top + ch)
+    p = src.crop(cuadro).resize((w - 2 * borde, h - 2 * borde), Image.LANCZOS)
     m = Image.new("L", p.size, 0)
     ImageDraw.Draw(m).rounded_rectangle((0, 0) + p.size, radius=r - borde, fill=255)
     img.paste(p, (x + borde, y + borde), m)
     f = font(px)
     base = y + h + off + int(px * 1.75)  # linea base: la tilde de la E no desalinea
     d.text((x, base), nombre, font=f, fill=NAVY, anchor="ls")
-    d.text((x, base + int(px * 1.2)), apellido, font=f, fill=CORAL_TXT if sombra == CORAL else AZUL, anchor="ls")
+    color = CORAL_TXT if sombra == CORAL else AZUL if sombra == AZUL else NAVY
+    d.text((x, base + int(px * 1.2)), apellido, font=f, fill=color, anchor="ls")
 
 
 def logo(img, x, y, lado):
@@ -91,7 +112,63 @@ def logo(img, x, y, lado):
     img.paste(l, (x, y), a)
 
 
+def componer4(W, H, lay):
+    # Hosts + 2 invitadas: en fila en 1:1, en 2x2 en 9:16 y 16:9.
+    img = Image.new("RGB", (W, H), CREMA)
+    d = ImageDraw.Draw(img)
+    u = W / 100.0
+    gente = [("host-andres.jpg", CORAL, "ANDRÉS", "BERMÚDEZ", RECORTE_HOSTS["host-andres.jpg"]),
+             ("host-alejandro.jpg", AZUL, "ALEJANDRO", "AGUIRRE", RECORTE_HOSTS["host-alejandro.jpg"])]
+    gente += [(fo, NAVY, n, a, r) for fo, n, a, r in INVITADAS[ep]]
+    if lay == "1x1":
+        m, gap = int(6 * u), int(3 * u)
+        fw = (W - 2 * m - 3 * gap - int(1 * u)) // 4
+        ratio, npx = 1.4, int(2 * u)
+        fy = H - m - host_alto(fw, ratio, npx)
+        lado = int(30 * u)
+        logo(img, W - m - lado + int(2 * u), m - int(4 * u), lado)
+        pastilla(d, m, m + int(2 * u), ep + "  ·  TEMPORADA 3", int(2.4 * u))
+        ty, tw = int(30 * u), W - 2 * m  # bajo el logo y a todo el ancho: con 4 fotos no cabe al lado
+        h_disp = fy - ty - int(3 * u)
+        f, px = titulo_fit(d, tw, h_disp, int(16 * u))
+        dibujar_titulo(d, m, ty + (h_disp - int(px * 1.02) * len(lineas)) // 2, f, px)
+        pos = [(m + i * (fw + gap), fy) for i in range(4)]
+    elif lay == "9x16":
+        m, gap = int(8 * u), int(7 * u)
+        fw = (W - 2 * m - gap - int(2 * u)) // 2
+        ratio, npx = 0.95, int(3.6 * u)
+        alto = host_alto(fw, ratio, npx)
+        fy2 = H - m - alto
+        fy = fy2 - alto - int(3 * u)
+        lado = int(34 * u)
+        logo(img, (W - lado) // 2, int(3 * u), lado)
+        ty = int(37 * u)
+        ty += pastilla(d, m, ty, ep + "  ·  TEMPORADA 3", int(3.6 * u)) + int(3 * u)
+        h_disp = fy - ty - int(3 * u)
+        f, px = titulo_fit(d, W - 2 * m, h_disp, int(20 * u))
+        dibujar_titulo(d, m, ty + (h_disp - int(px * 1.02) * len(lineas)) // 2, f, px)
+        pos = [(m + i * (fw + gap), yy) for yy in (fy, fy2) for i in range(2)]
+    else:  # 16x9
+        m = int(4.5 * u)
+        logo(img, m - int(2 * u), m - int(2.5 * u), int(20 * u))
+        y = m + int(19 * u)
+        y += pastilla(d, m, y, ep + "  ·  TEMPORADA 3", int(1.7 * u)) + int(2.5 * u)
+        f, px = titulo_fit(d, int(52 * u), H - y - m, int(8 * u))
+        dibujar_titulo(d, m, y, f, px)
+        fw, gap = int(14 * u), int(4 * u)
+        ratio, npx = 0.95, int(1.25 * u)
+        alto = host_alto(fw, ratio, npx)
+        fy = (H - 2 * alto - int(1.5 * u)) // 2
+        x0 = W - m - 2 * fw - gap - int(1 * u)
+        pos = [(x0 + i * (fw + gap), yy) for yy in (fy, fy + alto + int(1.5 * u)) for i in range(2)]
+    for (x, y), (fo, sombra, n, a, r) in zip(pos, gente):
+        host(img, d, x, y, fw, ratio, fo, sombra, n, a, npx, recorte=r)
+    return img, px
+
+
 def componer(W, H, lay):
+    if ep in INVITADAS:
+        return componer4(W, H, lay)
     img = Image.new("RGB", (W, H), CREMA)
     d = ImageDraw.Draw(img)
     u = W / 100.0  # unidad = 1% del ancho

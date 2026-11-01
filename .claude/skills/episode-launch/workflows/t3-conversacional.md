@@ -36,6 +36,13 @@ Portada/teaser = oración completa: al recortar el título no se quita el sujeto
 Ortografía: leer el texto renderizado de cada imagen, no el de `EPS`. Grafía de personajes o
 marcas (Balú/Baloo en EP.03): preguntarla antes de componer, porque se repite en 4+ piezas.
 
+Invitadas (EP.04): pedir foto y LinkedIn de cada una antes de componer; si al aire se promete
+su contacto, va en la descripción, sin el `lipi` del link. Generadores: `INVITADAS` en la
+portada (4 fotos) y `gente` + `HOST` + `RECORTE` en redes, con recorte a mano por cara: cada foto
+viene en otra escala. Fotos en E:, solo escritorio.
+Citas: si una frase no gusta, buscar otra textual; editarla le quita lo textual y en EP.04 no
+convenció. Firma = quien la dice: si alguien cuenta una frase ajena, no firmarla con su nombre.
+
 ## Plan social (§B)
 Sin artículo, así que el primer comentario lleva siempre Spotify. LinkedIn en primera
 persona: la @-mención del co-host se hace a mano. Si un post usa una anécdota personal
@@ -45,7 +52,8 @@ del host, avisarle antes.
 No sale de una quote card (en T2 sí): se elige del SRT con el gancho al inicio y la lámina
 del reel lleva una cita de ese clip (`reel_quote`), que se lea sola: si la frase textual es
 agramatical fuera de contexto ("Cualquier empleo uno…", EP.03), otra del mismo clip. Bordes y MP4: step2-generate-assets.md
-§E (re-transcribir el clip solo; `-t`, no `-shortest`).
+§E (re-transcribir el clip solo; `-t`, no `-shortest`). El SRT da tiempos por segmento: el out
+sale de la re-transcripción, no del SRT (EP.04 se comió "tiene problemas" en la primera pasada).
 
 ## Web
 El embed del show muestra el último episodio publicado: commitear la web antes y
